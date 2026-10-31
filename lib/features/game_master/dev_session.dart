@@ -150,6 +150,13 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
         devSessionProvider.overrideWithValue(DevSession(active: true, enter: _enter, exit: _exit)),
       ],
     );
+    // The sound switch is the device's: switched here, it is the player's
+    // too, which the one sound service listens to.
+    test.listen<bool>(soundEnabledProvider, (_, on) {
+      if (_own.read(soundEnabledProvider) == on) return;
+      _own.read(soundEnabledProvider.notifier).toggle();
+      _own.read(audioServiceProvider).refresh();
+    });
     // It opens on the Game Master's tools.
     test.read(gameMasterAccessProvider.notifier).grant();
     test.read(routerProvider).go(Routes.gameMaster);

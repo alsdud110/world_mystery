@@ -438,6 +438,17 @@ void main() {
     await wait(t, const Duration(seconds: 1));
   });
 
+  testWidgets('The sound switch in a test session is the device\'s: the one sound service hears it', (t) async {
+    final prefs = await pumpGame(t, {...player(), AppConstants.soundEnabledKey: false});
+    await enterDeveloperMode(t);
+    session(t).read(soundEnabledProvider.notifier).toggle();
+    await wait(t, const Duration(milliseconds: 300));
+    expect(prefs.getBool(AppConstants.soundEnabledKey), isTrue);
+    await exitDeveloperMode(t);
+    expect(session(t).read(soundEnabledProvider), isTrue);
+    await wait(t, const Duration(seconds: 1));
+  });
+
   testWidgets('Without a detective yet: developer mode still opens (TESTER), and the device stays without one', (t) async {
     final prefs = await pumpGame(t, const {});
     await enterDeveloperMode(t);
