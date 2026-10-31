@@ -138,6 +138,7 @@ class _EvidenceZoom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final paper = ArtAssets.paperOf(evidence.id);
     return Material(
       type: MaterialType.transparency,
       child: SafeArea(
@@ -168,9 +169,24 @@ class _EvidenceZoom extends StatelessWidget {
                           children: [
                             Hero(
                               tag: 'evidence-${evidence.id}',
-                              // A wide picture (a ticket, a painting) whole;
-                              // anything else in its round frame.
-                              child: ArtAssets.evidencePrints[evidence.id] == null
+                              // A document on its paper, its words written on
+                              // it; a wide picture (a ticket, a painting)
+                              // whole; anything else in its round frame.
+                              child: paper != null
+                                  ? ConstrainedBox(
+                                      constraints: const BoxConstraints(maxHeight: 340),
+                                      child: EvidencePaperView(
+                                        key: ValueKey('evidence-paper-${evidence.id}'),
+                                        paper: paper,
+                                        words: _Words(
+                                          evidence.inscription ?? evidence.description,
+                                          evidenceId: evidence.id,
+                                          style: AppText.letter(size: 18, color: AppColors.ink),
+                                        ),
+                                        fallback: _EvidenceArt(evidence: evidence, size: 150),
+                                      ),
+                                    )
+                                  : ArtAssets.evidencePrints[evidence.id] == null
                                   ? _EvidenceArt(evidence: evidence, size: 150)
                                   : _EvidencePrint(evidence: evidence),
                             ),
@@ -180,7 +196,8 @@ class _EvidenceZoom extends StatelessWidget {
                             const SizedBox(height: 10),
                             // The evidence's own case explains its words (also in the archive).
                             _Words(evidence.description, evidenceId: evidence.id, style: AppText.bodyText(size: 17)),
-                            if (evidence.inscription != null) ...[
+                            // Its words below, unless its paper already shows them.
+                            if (evidence.inscription != null && paper == null) ...[
                               const SizedBox(height: 16),
                               Container(
                                 width: double.infinity,
@@ -292,8 +309,9 @@ class SymbolSequence extends StatelessWidget {
 }
 
 /// The evidence's picture in a round paper frame: its real picture where it
-/// has one (ArtAssets.evidencePictures), else its ink symbol. A picture
-/// that fails to load shows the symbol too.
+/// has one (ArtAssets.evidencePictures), a document its blank paper
+/// (ArtAssets.evidenceDocs: its words only in the close look), else its ink
+/// symbol. A picture that fails to load shows the symbol too.
 class _EvidenceArt extends StatelessWidget {
   const _EvidenceArt({required this.evidence, required this.size});
 
@@ -335,7 +353,15 @@ class _EvidenceArt extends StatelessWidget {
               ),
             )
           : picture == null
-          ? mark
+          ? switch (ArtAssets.paperOf(evidence.id)) {
+              // The paper whole, small, inside the ring (its words are
+              // read in the close look).
+              final paper? => Padding(
+                  padding: EdgeInsets.all(size * 0.15),
+                  child: Center(child: EvidencePaperView(paper: paper, fallback: mark)),
+                ),
+              null => mark,
+            }
           : ClipOval(
               child: Transform.scale(
                 // Closer where the object sits small in its margin.
@@ -353,6 +379,64 @@ class _EvidenceArt extends StatelessWidget {
                 ),
               ),
             ),
+    );
+  }
+}
+
+/// A document evidence on its blank paper ([ArtAssets.evidencePapers]), at
+/// the paper's own shape: with [words] (the close look) they are set in its
+/// writing area, shrunk to fit at any text size, never cut. A paper that
+/// fails to load shows [fallback] (without words) or plain parchment with
+/// the words, so they are never lost.
+class EvidencePaperView extends StatelessWidget {
+  const EvidencePaperView({super.key, required this.paper, this.words, required this.fallback});
+
+  final PaperArt paper;
+  final Widget? words;
+  final Widget fallback;
+
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: paper.aspect,
+      child: LayoutBuilder(
+        builder: (context, box) {
+          final r = paper.writing;
+          final writingWidth = box.maxWidth * r.width;
+          return Stack(
+            fit: StackFit.expand,
+            children: [
+              Image.asset(
+                paper.file,
+                fit: BoxFit.fill,
+                excludeFromSemantics: true,
+                cacheWidth: (box.maxWidth * MediaQuery.devicePixelRatioOf(context)).ceil().clamp(1, 1024),
+                errorBuilder: (context, error, stack) => words == null
+                    ? Center(child: fallback)
+                    : DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: AppColors.parchment,
+                          borderRadius: BorderRadius.circular(AppRadius.paper),
+                        ),
+                      ),
+              ),
+              if (words != null)
+                Positioned(
+                  left: box.maxWidth * r.left,
+                  top: box.maxHeight * r.top,
+                  width: writingWidth,
+                  height: box.maxHeight * r.height,
+                  child: Center(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: SizedBox(width: writingWidth, child: words),
+                    ),
+                  ),
+                ),
+            ],
+          );
+        },
+      ),
     );
   }
 }

@@ -7,7 +7,7 @@ import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../data/models/mission.dart';
 import '../../../widgets/game_button.dart';
-import '../../../widgets/ink_icon.dart';
+import '../../../widgets/coin_balance.dart' show GameCoin;
 import '../../../widgets/paper.dart';
 import '../../game/game_controller.dart';
 import '../../game/rewarded_ad_service.dart';
@@ -274,11 +274,7 @@ class TipShopCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const InkIcon(
-                        InkGlyph.coin,
-                        size: AppIconSize.medium + 4,
-                        color: AppColors.goldDeep,
-                      ),
+                      const GameCoin(size: AppIconSize.medium + 4, color: AppColors.goldDeep),
                       const SizedBox(width: AppSpace.sm),
                       Text.rich(
                         TextSpan(

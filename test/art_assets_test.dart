@@ -364,8 +364,11 @@ void main() {
   });
 
   test('evidence shows its real picture only where the picture agrees with it', () {
-    // London's and Paris's (the seasons made from plans bring theirs: generated_seasons_test.dart).
-    expect({for (final MapEntry(:key, :value) in ArtAssets.evidencePictures.entries) if (!generatedEvidencePictures.containsKey(key)) key: value}, {
+    // London's and Paris's (the seasons made from plans are checked in
+    // generated_seasons_test.dart and their own tests).
+    bool planned(String id) => id.startsWith('s3_') || id.startsWith('s4_');
+    expect(generatedEvidencePictures.keys.every(planned), isTrue);
+    expect({for (final MapEntry(:key, :value) in ArtAssets.evidencePictures.entries) if (!planned(key)) key: value}, {
       'e01': ArtAssets.objects['letter'],
       'e02': ArtAssets.objects['key'],
       // The Pocket Watch is the Royal Box's clock picture (2026-10-19, requested).
@@ -396,7 +399,32 @@ void main() {
       's2_ep04_e2': 'assets/seasons/season_02_paris/cases/case_04/keeper_ledger.png',
       's2_ep04_e3': 'assets/seasons/season_02_paris/cases/case_04/delivery_label_blank.png',
       's2_ep04_e4': 'assets/seasons/season_02_paris/cases/case_04/delivery_label_blank.png',
+      // The icon upgrade: pictures the game had, where they agree with the
+      // evidence (the gear of Case 02's belfry, twice; the cloth and the
+      // footprint of Gallery 8, the footprint cut out of its black; the
+      // envelope the postmark is on) …
+      'ep02_e2': 'assets/seasons/season_01_london/objects/brass_gear.png',
+      'ep12_e1': 'assets/seasons/season_01_london/objects/brass_gear.png',
+      'ep03_e2': 'assets/seasons/season_01_london/objects/blue_cloth.png',
+      'ep03_e3': 'assets/seasons/season_01_london/objects/wet_footprint_cutout.png',
+      'ep04_e3': ArtAssets.objects['letter'],
+      // … and objects made for them, never their words.
+      'ep02_e4': 'assets/seasons/season_01_london/objects/raven_feather.png',
+      'ep06_e4': 'assets/seasons/season_01_london/objects/silver_whistle.png',
+      'ep08_e3': 'assets/seasons/season_01_london/objects/raven_tower_painting.png',
+      'ep08_e4': 'assets/seasons/season_01_london/objects/empty_jewel_box.png',
+      'ep09_e4': 'assets/seasons/season_01_london/objects/blue_star_jewel.png',
+      'ep10_e1': 'assets/seasons/season_01_london/objects/poppys_ring.png',
+      'ep11_e2': 'assets/seasons/season_01_london/objects/white_mask.png',
+      'ep11_e3': 'assets/seasons/season_01_london/objects/toy_train_whistle.png',
+      's2_ep01_e3': 'assets/seasons/season_02_paris/cases/case_01/clockmaker_mark.png',
     });
+    // The Paris records, the log and the painter's message still never show
+    // their blank puzzle papers: they are documents, their words on paper.
+    for (final id in ['s2_ep02_e2', 's2_ep02_e4', 's2_ep03_e1', 's2_ep03_e2']) {
+      expect(ArtAssets.evidencePictures.keys, isNot(contains(id)), reason: id);
+      expect(ArtAssets.evidenceDocs[id], isNotNull, reason: id);
+    }
     final evidence = {for (final e in MockEpisodeRepository.bundled()) for (final x in e.allEvidence) x.id: x};
     expect(evidence.keys, containsAll(ArtAssets.evidencePictures.keys), reason: 'real evidence ids');
     // Case 01's map (two swans) gives a number for the Royal Box; its

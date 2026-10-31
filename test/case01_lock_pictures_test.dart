@@ -158,10 +158,12 @@ void main() {
           expect(ev.symbols, isEmpty, reason: '${e.id} ${ev.id}');
         }
       }
-      // The clue stamps of every case are as before.
+      // The clue stamps of every case: their one-colour stamp (the icon
+      // upgrade), never Case 01's full-colour lock pictures.
       expect(GameSymbol.of('park').label, 'Park');
       expect(GameSymbol.of('museum').label, 'Museum');
-      expect(GameSymbol.of('park').asset, isNull);
+      expect(GameSymbol.of('park').asset, ArtAssets.symbols['park']);
+      expect(ArtAssets.symbols.values.toSet().intersection(ArtAssets.royalBoxLocks.values.toSet()), isEmpty);
     });
   });
 
@@ -233,20 +235,26 @@ void main() {
         await wait(t, const Duration(milliseconds: 400));
         expect(t.takeException(), isNull, reason: 'no overflow');
         String asset(Finder image) => ((t.widget<Image>(image).image as ResizeImage).imageProvider as AssetImage).assetName;
-        final tileImage = find.descendant(of: tile, matching: find.byType(Image));
+        // The evidence's picture (a ResizeImage), not its stamp shown while it loads.
+        final sized = find.byWidgetPredicate((w) => w is Image && w.image is ResizeImage);
+        final tileImage = find.descendant(of: tile, matching: sized);
         expect(asset(tileImage), RoyalBoxPicture.of('clock')!.file);
         // The picture inside the tile, not cut by its edges.
         final tileRect = t.getRect(tile);
         final pictureRect = t.getRect(tileImage);
         expect(tileRect.contains(pictureRect.topLeft) && tileRect.contains(pictureRect.bottomRight - const Offset(1, 1)), isTrue);
         expect(find.bySemanticsLabel('Pocket Watch. Tap to look closer.'), findsOneWidget, reason: 'read once, the picture silent');
-        // The other evidence as before: letter and key pictures, the map drawn.
+        // The other evidence as before: letter and key pictures; the map on
+        // its blank map paper (never a picture: its swans are its words, the
+        // Royal Box's number).
         for (final (name, file) in [('Old Letter', ArtAssets.objects['letter']), ('Golden Key', ArtAssets.objects['key'])]) {
-          final other = find.descendant(of: find.ancestor(of: find.text(name), matching: find.byType(EvidenceTile)), matching: find.byType(Image));
+          final other = find.descendant(of: find.ancestor(of: find.text(name), matching: find.byType(EvidenceTile)), matching: sized);
           expect(asset(other), file, reason: name);
         }
-        expect(find.descendant(of: find.ancestor(of: find.text('London Map'), matching: find.byType(EvidenceTile)), matching: find.byType(Image)),
-            findsNothing);
+        final mapTile = find.ancestor(of: find.text('London Map'), matching: find.byType(EvidenceTile));
+        expect(find.descendant(of: mapTile, matching: find.byType(EvidencePaperView)), findsOneWidget);
+        expect(find.descendant(of: mapTile, matching: find.textContaining('swans')), findsNothing, reason: 'its words only in the close look');
+        expect(ArtAssets.evidencePictures.keys, isNot(contains('e04')));
         // Decoded for real, so the shot shows the picture, not its fallback mark.
         await t.runAsync(() => precacheImage(AssetImage(RoyalBoxPicture.of('clock')!.file), t.element(tile)));
         await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 200)));
@@ -422,26 +430,29 @@ void main() {
       await t.pump(const Duration(milliseconds: 300));
       expect(t.takeException(), isNull);
       Finder inChip(String id, Finder f) => find.descendant(of: find.byKey(ValueKey('chip-$id')), matching: f);
+      // The evidence's picture (sized for the screen: a ResizeImage), not its
+      // stamp shown while the picture loads (a plain asset).
+      final picture = find.byWidgetPredicate((w) => w is Image && w.image is ResizeImage);
       // e05: the crown picture, whole (the parchment margin trimmed), 1.5×.
-      final crown = t.widget<Image>(inChip('e05', find.byType(Image)));
+      final crown = t.widget<Image>(inChip('e05', picture));
       // (Sized for the screen: the asset inside a ResizeImage.)
       expect(((crown.image as ResizeImage).imageProvider as AssetImage).assetName, ArtAssets.objects['crown']);
       expect(crown.color, isNull, reason: 'its own colours');
-      final zoom = t.widget<Transform>(find.ancestor(of: inChip('e05', find.byType(Image)), matching: find.byType(Transform)).first);
+      final zoom = t.widget<Transform>(find.ancestor(of: inChip('e05', picture), matching: find.byType(Transform)).first);
       expect(zoom.transform.getMaxScaleOnAxis(), closeTo(1.5, 1e-9));
       // Its name and words as before, for every reader.
       expect(inChip('e05', find.text('Crown Symbol')), findsOneWidget);
       expect(inChip('e05', find.textContaining('Four pictures for four locks.')), findsOneWidget);
       // e03: the Royal Box's watch, whole, in its own colours; its words as before.
-      final watch = t.widget<Image>(inChip('e03', find.byType(Image)));
+      final watch = t.widget<Image>(inChip('e03', picture));
       expect(((watch.image as ResizeImage).imageProvider as AssetImage).assetName, RoyalBoxPicture.of('clock')!.file);
       expect(watch.color, isNull, reason: 'its own colours');
-      final farther = find.ancestor(of: inChip('e03', find.byType(Image)), matching: find.byType(Transform)).first;
+      final farther = find.ancestor(of: inChip('e03', picture), matching: find.byType(Transform)).first;
       expect(t.widget<Transform>(farther).transform.entry(0, 0), closeTo(0.95, 1e-9), reason: "x scale (z stays 1)");
       expect(inChip('e03', find.text('Pocket Watch')), findsOneWidget);
       expect(inChip('e03', find.text("It stopped at 7 o'clock.")), findsOneWidget);
       // Another case's pictured evidence: its picture as before, not closer.
-      final other = find.ancestor(of: inChip('ep12_e4', find.byType(Image)), matching: find.byType(Transform)).first;
+      final other = find.ancestor(of: inChip('ep12_e4', picture), matching: find.byType(Transform)).first;
       expect(t.widget<Transform>(other).transform.getMaxScaleOnAxis(), closeTo(1, 1e-9));
       await capture(t, 'case01_evidence_chips');
     });

@@ -444,7 +444,14 @@ class _SealedFile extends StatelessWidget {
       padding: const EdgeInsets.all(AppSpace.lg),
       child: Row(
         children: [
-          const InkIcon(InkGlyph.seal, size: AppIconSize.emblem, color: AppColors.leather),
+          // The Archive's wax seal (its picture; the ink seal while it is missing).
+          Image.asset(
+            ArtAssets.archiveSeal,
+            width: AppIconSize.emblem,
+            height: AppIconSize.emblem,
+            excludeFromSemantics: true,
+            errorBuilder: (context, error, stack) => const InkIcon(InkGlyph.seal, size: AppIconSize.emblem, color: AppColors.leather),
+          ),
           const SizedBox(width: AppSpace.md),
           Expanded(
             child: Column(

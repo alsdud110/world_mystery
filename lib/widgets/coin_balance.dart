@@ -5,7 +5,31 @@ import '../core/theme/app_colors.dart';
 import '../core/theme/app_text.dart';
 import '../core/theme/app_tokens.dart';
 import '../features/game/wallet_controller.dart';
+import 'art_assets.dart';
 import 'ink_icon.dart';
+
+/// The detective's coin, everywhere coins are shown: its gold picture
+/// ([ArtAssets.coin], full colour, a little larger than an ink icon so its
+/// star reads), or the ink coin in [color] while the file is missing.
+class GameCoin extends StatelessWidget {
+  const GameCoin({super.key, this.size = AppIconSize.small, this.color});
+
+  final double size;
+
+  /// The ink coin's colour (the picture keeps its own gold).
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) => ExcludeSemantics(
+        child: Image.asset(
+          ArtAssets.coin,
+          width: size,
+          height: size,
+          cacheWidth: (size * MediaQuery.devicePixelRatioOf(context)).ceil(),
+          errorBuilder: (context, error, stack) => InkIcon(InkGlyph.coin, size: size, color: color),
+        ),
+      );
+}
 
 /// The detective's coins, quietly in the app bar beside the notebook: the
 /// gold coin and the number, nothing to tap. The wallet is read from the
@@ -30,7 +54,7 @@ class CoinBalance extends ConsumerWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            InkIcon(InkGlyph.coin, size: AppIconSize.small, color: dark ? AppColors.goldLight : AppColors.goldDeep),
+            GameCoin(size: AppIconSize.small, color: dark ? AppColors.goldLight : AppColors.goldDeep),
             const SizedBox(width: AppSpace.xs + 2),
             AnimatedSwitcher(
               duration: still ? Duration.zero : const Duration(milliseconds: 220),

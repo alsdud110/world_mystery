@@ -24,6 +24,7 @@ import '../../widgets/detective_character.dart';
 import '../../widgets/detective_tips.dart';
 import '../../widgets/game_button.dart';
 import '../../widgets/glossary_text.dart';
+import '../../widgets/coin_balance.dart' show GameCoin;
 import '../../widgets/ink_icon.dart';
 import '../../widgets/letter_card.dart';
 import '../../widgets/paper.dart';
@@ -2268,11 +2269,7 @@ class _TipsScene extends StatelessWidget {
                         .copyWith(fontSize: 11),
                   ),
                   const SizedBox(width: AppSpace.sm),
-                  const InkIcon(
-                    InkGlyph.coin,
-                    size: AppIconSize.small,
-                    color: AppColors.goldLight,
-                  ),
+                  const GameCoin(size: AppIconSize.small, color: AppColors.goldLight),
                   const SizedBox(width: AppSpace.xs),
                   Text(
                     '$coins',
@@ -2435,11 +2432,7 @@ class _TipCard extends StatelessWidget {
                           child: Row(
                             children: [
                               if (price > 0) ...[
-                                const InkIcon(
-                                  InkGlyph.coin,
-                                  size: AppIconSize.tiny,
-                                  color: AppColors.goldDeep,
-                                ),
+                                const GameCoin(size: AppIconSize.tiny, color: AppColors.goldDeep),
                                 const SizedBox(width: AppSpace.xs),
                               ],
                               Text(

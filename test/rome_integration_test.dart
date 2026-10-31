@@ -20,6 +20,7 @@ import 'package:world_mystery/features/mission_map/map_world.dart';
 import 'package:world_mystery/features/season/world_archive_screen.dart';
 import 'package:world_mystery/features/world_map/world_cities.dart';
 import 'package:world_mystery/features/world_map/world_map_state.dart';
+import 'package:world_mystery/data/generated/generated_season_art.g.dart' show generatedEvidencePictures;
 import 'package:world_mystery/widgets/art_assets.dart';
 
 import 'full_playthrough_test.dart' show wait;
@@ -115,7 +116,12 @@ void main() {
 
       final evidence = {for (final e in MockEpisodeRepository.bundled().where((e) => e.seasonId == SeasonIds.rome)) for (final v in e.allEvidence) v.id};
       final pictures = {for (final MapEntry(:key, :value) in ArtAssets.evidencePictures.entries) if (key.startsWith('s3_')) key: value};
-      expect(pictures.keys.toSet(), hasLength(14), reason: '11 drawn for the notebook, 3 the puzzles\' (the real piece, the card, the helmet)');
+      // 14 of the plan (11 drawn for the notebook, 3 the puzzles': the real
+      // piece, the card, the helmet), and 12 of the icon upgrade (the Owl's
+      // card on its 7 other cards, 5 objects made for their evidence).
+      expect(pictures.keys.toSet(), hasLength(26), reason: '14 planned + 12 from the icon upgrade');
+      expect({for (final MapEntry(:key, :value) in generatedEvidencePictures.entries) if (key.startsWith('s3_')) key: value}, hasLength(14),
+          reason: 'the plan\'s own pictures unchanged');
       for (final MapEntry(:key, :value) in pictures.entries) {
         expect(evidence, contains(key), reason: '$key is evidence of a Rome case');
         expect(bundled(value), isTrue, reason: value);

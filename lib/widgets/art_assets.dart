@@ -35,6 +35,15 @@ typedef ClockHandsArt = ({
   ({int hour, int minute}) after,
 });
 
+/// The kinds of paper a document evidence is shown on
+/// ([ArtAssets.evidencePapers]): its words are the evidence's own, set by
+/// the app, never drawn into the picture.
+enum EvidencePaper { note, card, letter, log, diary, ticket, tag, notice, map, music, statement }
+
+/// A blank paper picture: its file, its width / height and where its words
+/// go (fractions of the picture).
+typedef PaperArt = ({String file, double aspect, Rect writing});
+
 /// How the player's detective looks at a moment of play (see
 /// [ArtAssets.detective]). The pictures are named after these: never rename
 /// one without its files.
@@ -602,10 +611,191 @@ abstract final class ArtAssets {
     's2_ep04_e2': '$_paris04/keeper_ledger.png',
     's2_ep04_e3': '$_paris04/delivery_label_blank.png',
     's2_ep04_e4': '$_paris04/delivery_label_blank.png',
+    // The icon upgrade (docs/WORLD_MYSTERY_ICON_UPGRADE_PROGRESS.md): each
+    // object shown as itself, never its words or what it answers. Pictures
+    // the game already had, where they agree with the evidence:
+    'ep02_e2': _londonGear, // Small Brass Gear: the gear of Case 02's belfry search
+    'ep12_e1': _londonGear, // The Real Gear: the same gear, back where it belongs
+    'ep03_e2': '$_londonObjects/blue_cloth.png', // Blue Cloth, as found on the frame
+    // Wet Footprint: the search's footprint, its black ground cut away.
+    'ep03_e3': '$_londonObjects/wet_footprint_cutout.png',
+    'ep04_e3': 'assets/shared/objects/letter.png', // Postmark: on the second envelope
+    // Rome's Owl leaves the same card each time (its words differ).
+    's3_ep02_e1': _owlCard,
+    's3_ep02_e4': _owlCard,
+    's3_ep04_e1': _owlCard,
+    's3_ep04_e3': _owlCard,
+    's3_ep07_e1': _owlCard,
+    's3_ep08_e1': _owlCard,
+    's3_ep12_e4': _owlCard,
+    's4_ep11_e2': '$_newYorkObjects/brass_bird.png', // The Brass Bird, Found: Case 04's bird
+    // Made for it (gpt-image-1.5, content_pipeline/icon_upgrade/).
+    'ep02_e4': '$_londonObjects/raven_feather.png',
+    'ep06_e4': '$_londonObjects/silver_whistle.png',
+    'ep08_e3': '$_londonObjects/raven_tower_painting.png',
+    'ep08_e4': '$_londonObjects/empty_jewel_box.png',
+    'ep09_e4': '$_londonObjects/blue_star_jewel.png',
+    'ep10_e1': '$_londonObjects/poppys_ring.png', // no letters: they are its words
+    'ep11_e2': '$_londonObjects/white_mask.png', // nothing written: its words say what
+    'ep11_e3': '$_londonObjects/toy_train_whistle.png',
+    's2_ep01_e3': '$_paris01/clockmaker_mark.png', // the carved gear (the M is in its words)
+    's3_ep01_e2': '$_romeObjects/white_dust.png',
+    's3_ep01_e4': '$_romeObjects/light_box.png',
+    's3_ep03_e2': '$_romeObjects/bag_of_white_dust.png',
+    's3_ep05_e1': '$_romeObjects/orange_cat_hair.png',
+    's3_ep05_e2': '$_romeObjects/cat_collar_tag.png', // blank: its letters are its words
+    's4_ep05_e3': '$_newYorkObjects/tiny_screws.png',
+    's4_ep05_e4': '$_newYorkObjects/karl_old_photo.png',
+    's4_ep06_e2': '$_newYorkObjects/seagull_photo.png',
+    's4_ep06_e4': '$_newYorkObjects/karl_pocket_book.png', // shut: the notes on its page are words
+    's4_ep09_e2': '$_newYorkObjects/wheel_box.png', // blank rings
+    's4_ep11_e4': '$_newYorkObjects/dexter_safe.png',
+    's4_ep12_e1': '$_newYorkObjects/stone_nest.png', // no letters
+    's4_ep12_e2': '$_newYorkObjects/open_stone.png', // no letters
     // The seasons made from plans (Rome on): each picture made for an
     // evidence of their cases (their asset manifests).
     ...generatedEvidencePictures,
   };
+
+  static const _londonObjects = 'assets/seasons/season_01_london/objects';
+  static const _londonGear = '$_londonObjects/brass_gear.png';
+  static const _romeObjects = 'assets/seasons/season_03_rome/objects';
+  static const _owlCard = '$_romeObjects/owl_card.png';
+  static const _newYorkObjects = 'assets/seasons/season_04_newyork/objects';
+
+  /// The papers documents are shown on: blank, the evidence's own words set
+  /// on them by the app (`EvidencePaperView`) in the close look, so its
+  /// English stays the game's (and follows the detective's level). [writing]
+  /// is where the words go, as fractions of the picture.
+  static const evidencePapers = <EvidencePaper, PaperArt>{
+    // Clear of the torn top and the margin line.
+    EvidencePaper.note: (file: '$_docs/doc_note.png', aspect: 731 / 777, writing: Rect.fromLTRB(0.2, 0.15, 0.94, 0.92)),
+    // Inside the printed border.
+    EvidencePaper.card: (file: '$_docs/doc_card.png', aspect: 961 / 639, writing: Rect.fromLTRB(0.12, 0.15, 0.88, 0.85)),
+    EvidencePaper.letter: (file: '$_docs/doc_letter.png', aspect: 790 / 942, writing: Rect.fromLTRB(0.12, 0.1, 0.88, 0.9)),
+    EvidencePaper.log: (file: '$_docs/doc_log.png', aspect: 846 / 982, writing: Rect.fromLTRB(0.14, 0.1, 0.9, 0.9)),
+    // Below the ribbon.
+    EvidencePaper.diary: (file: '$_docs/doc_diary.png', aspect: 775 / 978, writing: Rect.fromLTRB(0.12, 0.14, 0.88, 0.9)),
+    // Between the printed ends, before the stub.
+    EvidencePaper.ticket: (file: '$_docs/doc_ticket.png', aspect: 967 / 377, writing: Rect.fromLTRB(0.24, 0.16, 0.74, 0.84)),
+    // Right of the eyelet.
+    EvidencePaper.tag: (file: '$_docs/doc_tag.png', aspect: 977 / 478, writing: Rect.fromLTRB(0.2, 0.16, 0.92, 0.84)),
+    // Inside the pins and the border.
+    EvidencePaper.notice: (file: '$_docs/doc_notice.png', aspect: 848 / 903, writing: Rect.fromLTRB(0.12, 0.1, 0.88, 0.9)),
+    // The clear middle of the old map.
+    EvidencePaper.map: (file: '$_docs/doc_map.png', aspect: 1024 / 893, writing: Rect.fromLTRB(0.2, 0.2, 0.8, 0.8)),
+    EvidencePaper.music: (file: '$_docs/doc_music.png', aspect: 953 / 731, writing: Rect.fromLTRB(0.08, 0.1, 0.92, 0.9)),
+    // Right of the red margin, below the leather corner.
+    EvidencePaper.statement: (file: '$_docs/doc_statement.png', aspect: 736 / 935, writing: Rect.fromLTRB(0.14, 0.1, 0.9, 0.92)),
+  };
+
+  static const _docs = 'assets/shared/evidence_docs';
+
+  /// The paper of document evidence [evidenceId], or null.
+  static PaperArt? paperOf(String evidenceId) => evidencePapers[evidenceDocs[evidenceId]];
+
+  /// Document evidence by id: the paper it is shown on. One place for every
+  /// season; an evidence with its own picture ([evidencePictures]) or drawn
+  /// by its case ([SeasonCatalog.evidenceArt]) is never listed here.
+  static const evidenceDocs = <String, EvidencePaper>{
+    // London.
+    'e04': EvidencePaper.map, // its swans are its words (the Royal Box's number)
+    'ep02_e1': EvidencePaper.note,
+    'ep02_e3': EvidencePaper.card,
+    'ep03_e4': EvidencePaper.tag,
+    'ep04_e2': EvidencePaper.card,
+    'ep04_e4': EvidencePaper.letter,
+    'ep05_e1': EvidencePaper.card,
+    'ep05_e2': EvidencePaper.note,
+    'ep05_e4': EvidencePaper.map,
+    'ep06_e1': EvidencePaper.statement,
+    'ep06_e2': EvidencePaper.card,
+    'ep06_e3': EvidencePaper.ticket,
+    'ep07_e1': EvidencePaper.map, // map pieces: their ravens are their words
+    'ep07_e2': EvidencePaper.map,
+    'ep07_e3': EvidencePaper.map,
+    'ep07_e4': EvidencePaper.map,
+    'ep08_e1': EvidencePaper.tag,
+    'ep08_e2': EvidencePaper.note,
+    'ep09_e1': EvidencePaper.card,
+    'ep09_e2': EvidencePaper.tag,
+    'ep09_e3': EvidencePaper.log,
+    'ep10_e2': EvidencePaper.note,
+    'ep10_e4': EvidencePaper.note,
+    'ep11_e1': EvidencePaper.note,
+    'ep11_e4': EvidencePaper.card,
+    'ep12_e2': EvidencePaper.notice, // the arrivals board's line
+    'ep12_e3': EvidencePaper.note,
+    // Paris (Cases 01–03; 04–12 are drawn by their cases).
+    's2_ep01_e1': EvidencePaper.notice,
+    's2_ep02_e2': EvidencePaper.note,
+    's2_ep02_e4': EvidencePaper.note, // the canvas says it in French: its words in English
+    's2_ep03_e1': EvidencePaper.notice,
+    's2_ep03_e2': EvidencePaper.log, // the puzzle's ledger is blank paper
+    // Rome.
+    's3_ep02_e2': EvidencePaper.note,
+    's3_ep03_e1': EvidencePaper.log,
+    's3_ep03_e3': EvidencePaper.statement,
+    's3_ep04_e2': EvidencePaper.note,
+    's3_ep05_e3': EvidencePaper.note,
+    's3_ep06_e1': EvidencePaper.statement,
+    's3_ep06_e2': EvidencePaper.log,
+    's3_ep06_e3': EvidencePaper.note, // the mirror word: words, never drawn
+    's3_ep07_e2': EvidencePaper.notice, // the chalk code: words, never drawn
+    's3_ep08_e2': EvidencePaper.statement,
+    's3_ep08_e3': EvidencePaper.diary,
+    's3_ep09_e1': EvidencePaper.card,
+    's3_ep09_e2': EvidencePaper.map,
+    's3_ep09_e3': EvidencePaper.note,
+    's3_ep10_e1': EvidencePaper.notice,
+    's3_ep10_e3': EvidencePaper.log,
+    's3_ep10_e4': EvidencePaper.letter,
+    's3_ep11_e2': EvidencePaper.statement,
+    's3_ep11_e3': EvidencePaper.note,
+    's3_ep11_e4': EvidencePaper.statement,
+    's3_ep12_e1': EvidencePaper.card,
+    's3_ep12_e2': EvidencePaper.card,
+    // New York.
+    's4_ep01_e1': EvidencePaper.log,
+    's4_ep01_e4': EvidencePaper.diary, // the stub's zigzag is its words (Case 11 matches it)
+    // The Star Print: the notebook's words, never the sole (Case 07 asks
+    // which sole made it, its answer a picture of that sole).
+    's4_ep02_e1': EvidencePaper.statement,
+    's4_ep02_e3': EvidencePaper.note,
+    's4_ep02_e4': EvidencePaper.note,
+    's4_ep03_e2': EvidencePaper.note,
+    's4_ep03_e3': EvidencePaper.diary,
+    's4_ep03_e4': EvidencePaper.note,
+    's4_ep04_e1': EvidencePaper.notice,
+    's4_ep04_e3': EvidencePaper.note,
+    's4_ep04_e4': EvidencePaper.note,
+    's4_ep05_e1': EvidencePaper.letter,
+    's4_ep05_e2': EvidencePaper.diary,
+    's4_ep06_e1': EvidencePaper.ticket,
+    's4_ep06_e3': EvidencePaper.note,
+    's4_ep07_e2': EvidencePaper.statement,
+    's4_ep07_e3': EvidencePaper.log,
+    's4_ep07_e4': EvidencePaper.note,
+    's4_ep08_e1': EvidencePaper.music, // blank staves: the tune is its words
+    's4_ep08_e2': EvidencePaper.note,
+    's4_ep08_e3': EvidencePaper.diary,
+    's4_ep09_e1': EvidencePaper.card,
+    's4_ep09_e3': EvidencePaper.letter,
+    's4_ep09_e4': EvidencePaper.map,
+    's4_ep10_e1': EvidencePaper.note,
+    's4_ep10_e2': EvidencePaper.note,
+    's4_ep10_e3': EvidencePaper.note,
+    's4_ep10_e4': EvidencePaper.music,
+    's4_ep11_e1': EvidencePaper.card,
+    's4_ep12_e3': EvidencePaper.letter,
+  };
+
+  /// The detective's coin (wallet, tip shop, How to Play), full colour on
+  /// transparency. Missing: the ink coin.
+  static const coin = 'assets/shared/ui/coin.png';
+
+  /// The World Archive's wax seal, full colour. Missing: the ink seal.
+  static const archiveSeal = 'assets/shared/ui/archive_seal.png';
 
   /// Evidence pictures too wide for the round frame's close look: shown
   /// whole there, at their width / height.
@@ -729,7 +919,39 @@ abstract final class ArtAssets {
   /// `GameSymbol`, e.g. `'park': 'assets/art/symbols/park.png'`.
   /// One-colour artwork on transparency: the game tints it with the symbol's
   /// colour, as it does the ink glyphs.
-  static const Map<String, String> symbols = {};
+  ///
+  /// Every key of `GameSymbol` has its stamp (the icon upgrade): clue cards,
+  /// lock dials and a fallen-back evidence mark, in all four seasons. The
+  /// Royal Box's four locks keep their own full-colour pictures
+  /// ([royalBoxLocks]); a missing stamp falls back to its ink glyph.
+  static const Map<String, String> symbols = {
+    'train': '$_symbols/symbol_train.png',
+    'museum': '$_symbols/symbol_museum.png',
+    'clock': '$_symbols/symbol_clock.png',
+    'watch': '$_symbols/symbol_watch.png',
+    'park': '$_symbols/symbol_park.png',
+    'palace': '$_symbols/symbol_palace.png',
+    'crown': '$_symbols/symbol_crown.png',
+    'raven': '$_symbols/symbol_raven.png',
+    'gear': '$_symbols/symbol_gear.png',
+    'letter': '$_symbols/symbol_letter.png',
+    'key': '$_symbols/symbol_key.png',
+    'map': '$_symbols/symbol_map.png',
+    'ticket': '$_symbols/symbol_ticket.png',
+    'feather': '$_symbols/symbol_feather.png',
+    'footprint': '$_symbols/symbol_footprint.png',
+    'button': '$_symbols/symbol_button.png',
+    'cloth': '$_symbols/symbol_cloth.png',
+    'seal': '$_symbols/symbol_seal.png',
+    'frame': '$_symbols/symbol_frame.png',
+    'mask': '$_symbols/symbol_mask.png',
+    'gem': '$_symbols/symbol_gem.png',
+    'bag': '$_symbols/symbol_bag.png',
+    'umbrella': '$_symbols/symbol_umbrella.png',
+    'whistle': '$_symbols/symbol_whistle.png',
+  };
+
+  static const _symbols = 'assets/shared/symbols';
 
   /// Case 01's Royal Box: the four pictures of its locks, in full colour on
   /// transparency (cut out of the delivered files kept in

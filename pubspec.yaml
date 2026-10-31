@@ -155,6 +155,10 @@ flutter:
     - assets/seasons/season_01_london/characters/
     - assets/seasons/season_01_london/objects/
     - assets/shared/objects/
+    # The icon upgrade: document papers, clue/lock stamps, the coin and seal.
+    - assets/shared/evidence_docs/
+    - assets/shared/symbols/
+    - assets/shared/ui/
     - assets/seasons/season_01_london/symbols/
     - assets/seasons/season_01_london/special/
     # How to Play: the player's detective, the practice witness, the lost cat.

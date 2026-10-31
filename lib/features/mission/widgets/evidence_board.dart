@@ -6,12 +6,11 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../core/utils/audio_service.dart' show TapRole;
 import '../../../data/models/mission.dart';
 import '../../../data/models/tower_puzzles.dart';
-import '../../../widgets/evidence_card.dart' show EvidenceLinkRow, showEvidenceZoom;
+import '../../../widgets/evidence_card.dart' show EvidenceLinkRow, EvidenceThumb, showEvidenceZoom;
 import '../../../widgets/game_button.dart';
 import '../../../widgets/glossary_text.dart';
 import '../../../widgets/ink_icon.dart';
 import '../../../widgets/paper.dart' show OrnamentRule;
-import '../../../widgets/symbol_icon.dart';
 import 'tower_documents.dart';
 
 /// The final's board ([EvidenceBoardSpec]: Case 03's, Case 08's): its
@@ -217,7 +216,8 @@ class _EvidenceRow extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: AppSpace.md, vertical: AppSpace.xs),
                     child: Row(
                       children: [
-                        SymbolBadge(evidence.icon, size: 34, light: linked),
+                        // The evidence as the notebook shows it (its picture or paper).
+                        EvidenceThumb(evidence: evidence, size: 34),
                         const SizedBox(width: AppSpace.md),
                         Expanded(
                           child: Text(

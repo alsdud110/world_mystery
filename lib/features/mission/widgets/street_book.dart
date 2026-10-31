@@ -9,10 +9,9 @@ import '../../../core/utils/audio_service.dart' show TapRole;
 import '../../../data/models/mission.dart';
 import '../../../data/models/river_puzzles.dart';
 import '../../../widgets/glossary_text.dart';
-import '../../../widgets/evidence_card.dart' show EvidenceLinkRow, showEvidenceZoom;
+import '../../../widgets/evidence_card.dart' show EvidenceLinkRow, EvidenceThumb, showEvidenceZoom;
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
-import '../../../widgets/symbol_icon.dart';
 import 'river_papers.dart';
 import 'tower_documents.dart' show showDocumentCloser;
 
@@ -273,7 +272,8 @@ class _EvidencePick extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: AppSpace.md, vertical: AppSpace.xs),
                     child: Row(
                       children: [
-                        Opacity(opacity: onTap == null ? 0.45 : 1, child: SymbolBadge(evidence.icon, size: 32, light: picked)),
+                        // The evidence as the notebook shows it (its picture or paper).
+                        Opacity(opacity: onTap == null ? 0.45 : 1, child: EvidenceThumb(evidence: evidence, size: 32)),
                         const SizedBox(width: AppSpace.md),
                         Expanded(
                           child: Text(
