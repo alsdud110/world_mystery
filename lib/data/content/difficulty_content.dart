@@ -63,7 +63,7 @@ abstract final class DifficultyContent {
   /// words (their ids, values, inscriptions and pictures never); a recall's
   /// lines for wrong evidence by evidence id (`recall.feedback`, PART 7C).
   static const missionParts = {
-    'options': {'label', 'feedback', 'altText'},
+    'options': {'label', 'feedback', 'altText', 'note'},
     'feedback': <String>{},
     'clue': {'title', 'note'},
     'evidence': {'name', 'description'},

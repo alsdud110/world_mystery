@@ -295,7 +295,7 @@ final class SeasonScene extends MissionScene {
 
 @immutable
 class ChoiceOption {
-  const ChoiceOption({required this.id, required this.label, this.artwork, this.picture, this.feedback, this.altText});
+  const ChoiceOption({required this.id, required this.label, this.artwork, this.picture, this.feedback, this.altText, this.note});
 
   final String id;
   final String label;
@@ -315,6 +315,11 @@ class ChoiceOption {
   /// describes the picture, never names the place.
   final String? altText;
 
+  /// A short written line under a picture (Case 03's visitors: what the
+  /// guard noted each one wore), so the words to compare stay beside the
+  /// pictures instead of only in the letter.
+  final String? note;
+
   factory ChoiceOption.fromJson(Map<String, dynamic> json) => ChoiceOption(
     id: json['id'] as String,
     label: json['label'] as String,
@@ -322,6 +327,7 @@ class ChoiceOption {
     picture: json['picture'] as String?,
     feedback: json['feedback'] as String?,
     altText: json['altText'] as String?,
+    note: json['note'] as String?,
   );
 
   Map<String, dynamic> toJson() => {
@@ -331,6 +337,7 @@ class ChoiceOption {
     if (picture != null) 'picture': picture,
     if (feedback != null) 'feedback': feedback,
     if (altText != null) 'altText': altText,
+    if (note != null) 'note': note,
   };
 }
 

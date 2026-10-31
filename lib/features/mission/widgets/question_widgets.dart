@@ -622,6 +622,7 @@ class _ImageChoiceQuestionState extends ConsumerState<ImageChoiceQuestion> {
             ? o.label
             : null;
     final named = options.any((o) => nameOf(o) != null);
+    final noted = options.any((o) => o.note != null);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -631,8 +632,9 @@ class _ImageChoiceQuestionState extends ConsumerState<ImageChoiceQuestion> {
           physics: const NeverScrollableScrollPhysics(),
           mainAxisSpacing: 12,
           crossAxisSpacing: 12,
-          // Named tiles are a little taller: the name sits under the picture.
-          childAspectRatio: named ? 0.78 : 0.95,
+          // Named tiles are a little taller: the name sits under the picture,
+          // and a written note under the name.
+          childAspectRatio: noted ? 0.66 : named ? 0.78 : 0.95,
           children: [
             for (var i = 0; i < options.length; i++)
               _ImageTile(
@@ -642,6 +644,7 @@ class _ImageChoiceQuestionState extends ConsumerState<ImageChoiceQuestion> {
                 description: nameOf(options[i]) == null ? options[i].altText : null,
                 artwork: options[i].artwork ?? Artwork.bigBen,
                 picture: options[i].picture,
+                note: options[i].note,
                 selected: _selected == options[i].id,
                 onTap: () => setState(() => _selected = options[i].id),
               ),
@@ -668,10 +671,14 @@ class _ImageTile extends StatelessWidget {
     this.picture,
     this.name,
     this.description,
+    this.note,
   });
 
   final String letter;
   final Artwork artwork;
+
+  /// A written line under the name ("red coat, blue scarf"), or null.
+  final String? note;
 
   /// A season's own picture file, shown in place of [artwork].
   final String? picture;
@@ -690,6 +697,7 @@ class _ImageTile extends StatelessWidget {
       button: true,
       selected: selected,
       label: 'Picture $letter${name != null ? ', $name' : description != null ? ': $description' : ''}',
+      value: note,
       excludeSemantics: true,
       child: _Pressable(
         onTap: onTap,
@@ -717,6 +725,23 @@ class _ImageTile extends StatelessWidget {
                         style: AppText.title(size: 15, color: selected ? AppColors.paperLight : AppColors.navy)
                             .copyWith(height: 1.15),
                       ),
+                    ),
+                  ),
+                ),
+              // Handwritten under the name: the words to compare, beside
+              // the picture rather than only in the letter.
+              if (note != null)
+                SizedBox(
+                  height: 40,
+                  child: Center(
+                    child: Text(
+                      note!,
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      textScaler: MediaQuery.textScalerOf(context).clamp(maxScaleFactor: 1.15),
+                      style: AppText.aside(size: 15, color: selected ? AppColors.paperLight : AppColors.inkBrown)
+                          .copyWith(height: 1.15),
                     ),
                   ),
                 ),

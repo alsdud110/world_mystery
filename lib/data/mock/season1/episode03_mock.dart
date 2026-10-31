@@ -106,7 +106,8 @@ const Map<String, dynamic> episode03Json = {
       // Red Button brought from the notebook); the cloth's from the scene
       // above. The visitors are the guard's pencil sketches (2026-10-30):
       // what each wore, never its colour — only the notes say the colours,
-      // and every coat has all its buttons.
+      // and every coat has all its buttons. Each sketch carries the guard's
+      // note of the colours under it, so they are read beside the pictures.
       'type': 'imageChoice',
       'question': 'Who took the painting?',
       'options': [
@@ -114,6 +115,7 @@ const Map<String, dynamic> episode03Json = {
           'id': 'a',
           'label': 'Mr Green',
           'picture': 'assets/seasons/season_01_london/cases/case_03/sketch_mr_green.png',
+          'note': 'brown coat, green hat',
           'altText': 'a pencil sketch of a man in a buttoned coat and a hat',
           'feedback': 'Mr Green wore brown and green. Which colours did you find in Gallery 8?',
         },
@@ -121,12 +123,14 @@ const Map<String, dynamic> episode03Json = {
           'id': 'b',
           'label': 'Miss Rose',
           'picture': 'assets/seasons/season_01_london/cases/case_03/sketch_miss_rose.png',
+          'note': 'red coat, blue scarf',
           'altText': 'a pencil sketch of a woman in a buttoned coat and a scarf',
         },
         {
           'id': 'c',
           'label': 'Mr Grey',
           'picture': 'assets/seasons/season_01_london/cases/case_03/sketch_mr_grey.png',
+          'note': 'black coat, red scarf',
           'altText': 'a pencil sketch of a man in a buttoned coat and a scarf',
           'feedback': 'Mr Grey has something red, but it is his scarf. A button comes from a coat.',
         },

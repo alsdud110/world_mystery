@@ -132,6 +132,12 @@ void main() {
       for (final level in Difficulty.values) {
         final m = at('ep03_m2', level);
         expect(m.letter, allOf(contains('red coat'), contains('blue scarf')), reason: '${level.name}: the colours are in the notes');
+        // The guard's note under each sketch: the colours beside the pictures.
+        expect({for (final o in m.options) o.id: o.note}, {
+          'a': 'brown coat, green hat',
+          'b': 'red coat, blue scarf',
+          'c': 'black coat, red scarf',
+        }, reason: level.name);
       }
     });
 
