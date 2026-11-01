@@ -442,7 +442,10 @@ class FigurePlan {
   Map<String, Object?> toJson() => {'after': after, 'figure': figure, 'label': label};
 }
 
-/// The season's opening, in the keys of the game's `SeasonPrologue` JSON.
+/// The season's opening, in the keys of the game's `SeasonPrologue` JSON:
+/// its words (Rookie's; Junior's and Master's in `season.levels.json`) and
+/// its pictures — [hero] for the first scene, one of [pieces] for each of
+/// [cases], and the first case's picture (files).
 class ProloguePlan {
   const ProloguePlan({
     this.city,
@@ -452,6 +455,8 @@ class ProloguePlan {
     this.bigger,
     this.promise = const [],
     this.firstCase,
+    this.hero,
+    this.pieces = const [],
   });
 
   final String? city;
@@ -461,6 +466,20 @@ class ProloguePlan {
   final String? bigger;
   final List<String> promise;
   final ({String picture, String line})? firstCase;
+  final ({String file, int width, int height})? hero;
+  final List<String> pieces;
+
+  /// Every line the opening says, in the order the game shows them (the
+  /// game's `SeasonPrologue.linesOf`).
+  List<String> get lines => [
+    ?city,
+    ...cases,
+    ...separate,
+    ?question,
+    ?bigger,
+    ...promise,
+    ?firstCase?.line,
+  ];
 
   factory ProloguePlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
@@ -477,6 +496,19 @@ class ProloguePlan {
         f.done();
         return out;
       }),
+      hero: r.optObj('hero', (json, path) {
+        final f = _Reader(json, path);
+        final file = f.str('file');
+        final pixels = f.obj('pixels', (json, path) {
+          final p = _Reader(json, path);
+          final out = (p.integer('width', min: 1), p.integer('height', min: 1));
+          p.done();
+          return out;
+        });
+        f.done();
+        return (file: file, width: pixels.$1, height: pixels.$2);
+      }),
+      pieces: r.optStrings('pieces'),
     );
     r.done();
     return out;
@@ -491,6 +523,13 @@ class ProloguePlan {
     _putText(json, 'bigger', bigger);
     _putList(json, 'promise', promise);
     if (firstCase case final f?) json['firstCase'] = {'picture': f.picture, 'line': f.line};
+    if (hero case final h?) {
+      json['hero'] = {
+        'file': h.file,
+        'pixels': {'width': h.width, 'height': h.height},
+      };
+    }
+    _putList(json, 'pieces', pieces);
     return json;
   }
 }

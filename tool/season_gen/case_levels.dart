@@ -118,9 +118,9 @@ enum PlanLevel { junior, master }
 
 /// A season's own words at each level: `season.levels.json` beside its
 /// plan, as a case's (`lines`: each Rookie line, Junior's and Master's),
-/// for the lines the season shows itself — its [textKeys] (the words when
-/// its last case is solved and on its completed board). Nothing else of
-/// the season changes with the level.
+/// for the lines the season shows itself — its [textKeys] (its opening,
+/// the words when its last case is solved and on its completed board).
+/// Nothing else of the season changes with the level.
 class SeasonLevels {
   SeasonLevels({required this.seasonId, required this.lines});
 
@@ -130,15 +130,22 @@ class SeasonLevels {
   static const fileName = 'season.levels.json';
 
   /// The season plan's lines shown to the player, by their `Season` key.
-  static const textKeys = ['outro', 'finale'];
+  static const textKeys = ['prologue', 'outro', 'finale'];
 
   static String pathFor(String seasonPlanPath) => '${File(seasonPlanPath).parent.path.replaceAll(r'\', '/')}/$fileName';
 
+  /// The lines of season plan [json]'s [key], in order: the opening's
+  /// spoken lines ([ProloguePlan.lines]), or the list's.
+  static List<String> linesOf(Object? json, String key) {
+    if (json is! Map) return const [];
+    final v = json[key];
+    if (key == 'prologue') return v is Map ? ProloguePlan.fromJson(v, r'$.prologue').lines : const [];
+    return [for (final s in v as List? ?? const []) '$s'];
+  }
+
   /// Every Rookie line of season plan [json], each once.
   static List<String> rookieLines(Object? json) => {
-    if (json is Map)
-      for (final k in textKeys)
-        for (final s in json[k] as List? ?? const []) '$s',
+    for (final k in textKeys) ...linesOf(json, k),
   }.toList();
 
   static SeasonLevels? load(String seasonPlanPath) {
@@ -155,9 +162,8 @@ class SeasonLevels {
   /// [level]'s lines of each of the season's [textKeys] it has (as many
   /// lines as the plan's, in their order).
   Map<String, List<String>> textAt(Object? seasonJson, PlanLevel level) => {
-    if (seasonJson is Map)
-      for (final k in textKeys)
-        if ((seasonJson[k] as List? ?? const []).isNotEmpty) k: [for (final s in seasonJson[k] as List) lines['$s']?[level] ?? '$s'],
+    for (final k in textKeys)
+      if (linesOf(seasonJson, k) case final own when own.isNotEmpty) k: [for (final s in own) lines[s]?[level] ?? s],
   };
 
   /// A line of the season not written at a level, or one written for no line.

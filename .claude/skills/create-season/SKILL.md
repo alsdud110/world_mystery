@@ -30,6 +30,13 @@ plan-season writes, the game target needs (Rome's `season.plan.json`):
 - `art.worldCity` (`cityId`, `latitude`, `longitude`; `mapAt` only when the
   World Map artwork draws that city: London, Paris, Rome, Tokyo and Seoul
   are drawn, see `lib/features/world_map/world_cities.dart`).
+- its opening, `prologue` (Rome's and New York's): the mood only, never a
+  name or an answer — `city`, four `cases` (kinds of trouble), `separate`,
+  `question`, `bigger`, `promise`, `firstCase` {`picture`, `line`}; four
+  `pieces` (evidence pictures already in the plans, one per case line); and
+  `hero` {`file`, `pixels`}, its city at night (a `prologue` asset, portrait
+  1024×1536, words over its bottom 40%), named only once it is made. Without
+  `hero` the season opens at its Case 01 (`Season.playsPrologue`).
 
 Before any picture: read each prompt against its mission. A choice's right
 picture must differ from the wrong ones only by what the clue says (Rome's
@@ -78,9 +85,10 @@ never a choice more or less.
   learning expressions (and its level sentences still hold them), a search's
   `reportLine` word for word inside its letter. Master still tells clearly
   how to play.
-- The season's own lines (its `outro` and `finale`, shown when its last
-  case is solved and on its completed board) are written the same way in
-  `season.levels.json` beside `season.plan.json`, line for line.
+- The season's own lines (its `prologue`'s lines, and its `outro` and
+  `finale`, shown when its last case is solved and on its completed board)
+  are written the same way in `season.levels.json` beside
+  `season.plan.json`, line for line.
 - Harder words a level brings: `glossary.junior` / `glossary.master` (one
   lower-case word → Korean).
 At exit 35 do this yourself, without asking (writing is not approving:

@@ -195,13 +195,19 @@ abstract final class AssetWiring {
               '"not ready", so a released season needs this one.',
         );
       case 'prologue':
+        // The opening's city at night: the plan's prologue.hero names it.
+        final hero = season.prologue?.hero;
+        final named = hero != null && hero.file == a.outputPath;
         return Wiring(
           asset: a,
-          status: WiringStatus.notSupported,
-          screen: null,
-          field: null,
-          note: 'The season openings\' pictures are written per season in lib/ (ArtAssets.season1LondonNight, season2GareDuNord); '
-              'SeasonPrologue (season.plan.json prologue) is words only.',
+          status: named ? generated : WiringStatus.readyToWire,
+          screen: "The season's opening, its first scene (SeasonPrologueScreen, CityNightHero)",
+          field: 'season.plan.json prologue.hero (file, pixels) → SeasonPrologue.hero',
+          via: 'generator',
+          note: named
+              ? 'Shown by the generated content: the opening plays once it has this picture (Season.playsPrologue).${made ? '' : ' Not in assets/ yet.'}'
+              : 'Not shown yet: once made, name it in season.plan.json prologue.hero (file, pixels ${a.width}×${a.height}) and '
+                  'generate the season; until then the season opens at its Case 01.',
         );
       case 'scene':
         return Wiring(

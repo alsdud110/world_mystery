@@ -147,8 +147,9 @@ abstract final class SeasonFactory {
   }
 
   /// The pictures the game shows, by asset id: every one a case shows
-  /// (the generator writes it in), the cover, the map, and each picture made
-  /// for an evidence (its notebook card). Not the ones no screen shows
+  /// (the generator writes it in), the cover, the map, the opening's city at
+  /// night (named in the plan's `prologue.hero` once made), and each picture
+  /// made for an evidence (its notebook card). Not the ones no screen shows
   /// (`not_supported`), nor a story scene the generator has no table for.
   static Set<String> neededPictures(AssetPlan plan) {
     final evidence = <String>{};
@@ -163,6 +164,7 @@ abstract final class SeasonFactory {
             w.status == WiringStatus.wiredWhenMade ||
             w.asset.type == 'cover' ||
             w.asset.type == 'map' ||
+            w.asset.type == 'prologue' ||
             evidence.contains(w.asset.subject))
           w.asset.assetId,
     };

@@ -225,9 +225,10 @@ abstract final class AssetManifest {
         } else {
           final want = kindOf[type];
           if (want != null && s.kind != want) error('asset_style_mismatch', '$at.stylePreset', '$style draws ${s.kind}s, a $type is drawn as a $want');
-          if (type == 'cover') {
+          if (type == 'cover' || type == 'prologue') {
+            // The cover and the opening's city at night both fill the phone.
             if (sizes.contains(size) && size != coverSize) {
-              warning('asset_cover_shape', '$at.width', '$size: a season cover is a portrait painting ($coverSize; SeasonCover fills the phone)');
+              warning('asset_cover_shape', '$at.width', '$size: a season ${type == 'cover' ? 'cover' : 'opening\'s first scene'} is a portrait painting ($coverSize; it fills the phone)');
             }
           } else if (sizes.contains(size) && size != s.size) {
             warning('asset_size_unusual', '$at.width', '$size, $style is made at ${s.size}');

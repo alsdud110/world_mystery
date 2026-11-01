@@ -318,6 +318,19 @@ abstract final class CaseGenerator {
         failed(seasonPath, ['[map_remeasure] \$.art.map.measuredOn: ${map.file} is not the file its landmarks were measured on']);
       }
       if (art?.cover case final c? when !onDisk(c.file)) failed(seasonPath, ['[game_cover_missing] \$.art.cover.file: ${c.file} is not on disk']);
+      // Its opening, when planned: every scene's words and pictures. The
+      // game plays it only whole (`Season.playsPrologue`): a hero not made
+      // yet is written without it, and said.
+      if (season.prologue case final p?) {
+        failed(seasonPath, [
+          if (p.city == null || p.question == null || p.bigger == null || p.cases.length != 4 || p.separate.isEmpty || p.promise.isEmpty || p.firstCase == null)
+            '[game_prologue_words] \$.prologue: city, four cases, separate, question, bigger, promise and firstCase are all written',
+          if (p.pieces.length != p.cases.length) '[game_prologue_pictures] \$.prologue.pieces: one for each of cases',
+          for (final f in [?p.hero?.file, ...p.pieces, ?p.firstCase?.picture])
+            if (!onDisk(f)) '[game_prologue_missing] \$.prologue: $f is not on disk',
+        ]);
+        if (p.hero == null) notes.add('${season.seasonId}: its opening has no hero picture yet (\$.prologue.hero): not played until it has');
+      }
       if (lines.isNotEmpty) throw GenerateFailure(lines);
     }
 
@@ -353,7 +366,7 @@ abstract final class CaseGenerator {
           '${[for (final (_, p) in plans) if (!levels.containsKey(p.caseId)) p.caseId].join(', ')} not']);
       throw GenerateFailure(lines);
     }
-    // The season's own lines (its outro and finale) at each level, with its cases'.
+    // The season's own lines (its opening, outro and finale) at each level, with its cases'.
     SeasonLevels? seasonLevels;
     if (leveled) {
       failed(seasonPath, [for (final f in SeasonLevels.check(seasonPath)) 'levels $f']);
@@ -564,7 +577,7 @@ abstract final class CaseGenerator {
     b
       ..write('};\n\n')
       ..write('/// The season\'s own lines at Junior and Master (`SeasonContent.infoLevels`):\n')
-      ..write('/// its ${SeasonLevels.textKeys.join(' and ')}, as many lines as its own.\n')
+      ..write('/// its ${SeasonLevels.textKeys.join(', ')}, as many lines as its own.\n')
       ..write('const ${name}InfoLevels = <Difficulty, Map<String, List<String>>>{\n');
     for (final l in PlanLevel.values) {
       if (own[l]?.isNotEmpty ?? false) b.write('  Difficulty.${l.name}: ${DartLiteral.of(own[l], indent: '  ')},\n');
