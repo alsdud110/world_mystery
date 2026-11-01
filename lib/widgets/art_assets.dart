@@ -105,11 +105,12 @@ abstract final class ArtAssets {
   /// Pixel size of [parisMap].
   static const parisMapPixels = Size(1536, 1024);
 
-  /// The World Map: the whole world (1983 × 793), navy sea and golden land
-  /// with landmarks, no Antarctica, no markers: the cities' pins are the app's, by their
+  /// The World Map: the whole world, navy sea and golden land with
+  /// landmarks, no Antarctica, no markers: the cities' pins are the app's, by their
   /// landmarks (`WorldCity.mapAt`). A missing or broken file shows plain
-  /// navy sea, never another map.
-  static const worldMap = 'assets/shared/world_map/world_map_v4.png';
+  /// navy sea, never another map. The v4 artwork (1983 × 793) upscaled
+  /// three times (5949 × 2379, Real-ESRGAN) so it stays sharp zoomed in.
+  static const worldMap = 'assets/shared/world_map/world_map_v5.jpg';
 
   /// Width / height of [worldMap].
   static const worldMapAspect = 1983 / 793;

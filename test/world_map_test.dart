@@ -639,14 +639,19 @@ void main() {
     }
   });
 
-  test('the world map artwork is world_map_v4 (1983 × 793) with its pins, listed in the app', () {
+  test('the world map artwork is world_map_v5 (v4 at 3×: 5949 × 2379) with its pins, listed in the app', () {
     final file = File(ArtAssets.worldMap);
     expect(file.existsSync(), isTrue);
-    expect(ArtAssets.worldMap, endsWith('world_map_v4.png'));
-    // The PNG header: width and height, big-endian, at bytes 16..23.
-    final head = ByteData.sublistView(file.readAsBytesSync().sublist(16, 24));
-    expect((head.getUint32(0), head.getUint32(4)), (1983, 793));
-    expect(head.getUint32(0) / head.getUint32(4), ArtAssets.worldMapAspect);
+    expect(ArtAssets.worldMap, endsWith('world_map_v5.jpg'));
+    // The JPEG's frame header (SOF0..SOF2): height, then width, big-endian.
+    final bytes = ByteData.sublistView(file.readAsBytesSync());
+    var at = 2;
+    while (bytes.getUint8(at + 1) < 0xC0 || bytes.getUint8(at + 1) > 0xC2) {
+      at += 2 + bytes.getUint16(at + 2);
+    }
+    final (w, h) = (bytes.getUint16(at + 7), bytes.getUint16(at + 5));
+    expect((w, h), (5949, 2379));
+    expect(w / h, ArtAssets.worldMapAspect);
     for (final (pin, w, h) in const [
       (ArtAssets.worldMapPinInProgress, 96, 120),
       (ArtAssets.worldMapPinCompleted, 96, 120),
