@@ -1,3 +1,4 @@
+import '../../models/difficulty.dart';
 import 'episode02_mock.dart';
 import 'episode03_mock.dart';
 import 'episode04_mock.dart';
@@ -29,7 +30,43 @@ const Map<String, dynamic> season1InfoJson = {
   // The season's opening sequence, played once before Case 01: the mood of
   // the season only — kinds of trouble, never a case's answer or a person.
   // One short message per scene (`\n` is where a line breaks on screen).
-  'prologue': {
+  // These are Rookie's words; Junior's and Master's are in
+  // [season1PrologueLevelsJson] (see [season1PrologueAt]).
+  'prologue': season1PrologueJson,
+  'outro': ['All the pieces have come together.', 'But this is not the end...'],
+  // On the last case's report, once the season is complete: on to Season 2.
+  'finale': ['London is safe.', 'But the watch says PARIS.'],
+  'figures': [
+    {'after': 'ep02', 'figure': 'ravens', 'label': 'Who are the ravens?'},
+    {'after': 'ep04', 'figure': 'ravenSociety', 'label': 'The Raven Society'},
+    {'after': 'ep05', 'figure': 'clockmaker', 'label': 'The Clockmaker'},
+    {'after': 'ep12', 'figure': 'clockmakerWatch', 'label': 'The Clockmaker'},
+  ],
+};
+
+/// Season 1's opening at Rookie (the base): short, easy English.
+const Map<String, dynamic> season1PrologueJson = {
+  'city': 'Strange things are happening\nin London.',
+  'cases': [
+    'Treasures are gone.',
+    'Secret letters appear.',
+    'Doors are locked.',
+    'And people hide secrets.',
+  ],
+  'separate': ['They look like different cases.', 'But a good detective\nlooks again.'],
+  'question': 'Are they connected?',
+  'bigger': 'Every clue may be part\nof one big story.',
+  'promise': ['Find the clues.', 'Connect them.', 'Find the truth.'],
+  // The first case's file, handed over at the end: the picture of what is
+  // missing (Case 01's own opening line says the Crown is gone).
+  'firstCase': {'picture': 'crown', 'line': 'Your first case\nstarts tonight.'},
+};
+
+/// [season1PrologueJson]'s words at Junior and Master (Rookie is the base
+/// itself). Only the words change: as many lines in each scene, the same
+/// thing told at the same moment, and the first case's picture stays.
+const Map<Difficulty, Map<String, dynamic>> season1PrologueLevelsJson = {
+  Difficulty.junior: {
     'city': 'Something strange is happening\nacross the city.',
     'cases': [
       'Treasures have vanished.',
@@ -41,20 +78,35 @@ const Map<String, dynamic> season1InfoJson = {
     'question': "What if they're connected?",
     'bigger': 'Every clue could be part\nof something bigger.',
     'promise': ['Follow the clues.', 'Find the connection.', 'Discover the truth.'],
-    // The first case's file, handed over at the end: the picture of what is
-    // missing (Case 01's own opening line says the Crown is gone).
-    'firstCase': {'picture': 'crown', 'line': 'Your first investigation\nbegins tonight.'},
+    'firstCase': {'line': 'Your first investigation\nbegins tonight.'},
   },
-  'outro': ['All the pieces have come together.', 'But this is not the end...'],
-  // On the last case's report, once the season is complete: on to Season 2.
-  'finale': ['London is safe.', 'But the watch says PARIS.'],
-  'figures': [
-    {'after': 'ep02', 'figure': 'ravens', 'label': 'Who are the ravens?'},
-    {'after': 'ep04', 'figure': 'ravenSociety', 'label': 'The Raven Society'},
-    {'after': 'ep05', 'figure': 'clockmaker', 'label': 'The Clockmaker'},
-    {'after': 'ep12', 'figure': 'clockmakerWatch', 'label': 'The Clockmaker'},
-  ],
+  Difficulty.master: {
+    'city': 'Something strange is stirring\nacross the city.',
+    'cases': [
+      'Priceless treasures have vanished.',
+      'Secret letters have surfaced.',
+      'Doors have been sealed shut.',
+      'And strangers guard their secrets.',
+    ],
+    'separate': ['They appear to be unrelated cases.', 'But a great detective\nlooks beneath the surface.'],
+    'question': 'What if they are all connected?',
+    'bigger': 'Each clue may be a piece\nof something far larger.',
+    'promise': ['Follow every clue.', 'Uncover the connection.', 'Reveal the truth.'],
+    'firstCase': {'line': 'Your first investigation\nawaits you tonight.'},
+  },
 };
+
+/// [season1PrologueJson] at [level]: each scene's words looked for along the
+/// level's [Difficulty.fallbackChain], then the base's.
+Map<String, dynamic> season1PrologueAt(Difficulty level) {
+  final words = Map<String, dynamic>.of(season1PrologueJson);
+  for (final d in level.fallbackChain.reversed) {
+    season1PrologueLevelsJson[d]?.forEach((key, value) {
+      words[key] = value is Map ? {...(words[key] as Map), ...value} : value;
+    });
+  }
+  return words;
+}
 
 /// Season 1 cases after Case 01 (The Missing Crown), in case order.
 ///

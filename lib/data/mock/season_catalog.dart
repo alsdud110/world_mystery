@@ -448,6 +448,11 @@ final season1Content = SeasonContent(
   casePatches: season1CasePatches,
   variants: season1Variants,
   writtenLevels: season1WrittenLevels,
+  // Its opening's lines at Junior and Master (`season1PrologueLevelsJson`).
+  infoLevels: {
+    for (final level in const [Difficulty.junior, Difficulty.master])
+      level: {'prologue': SeasonPrologue.linesOf(season1PrologueAt(level))},
+  },
 );
 
 /// Season 2 — Paris Stands Still: in the making, not released (its cases

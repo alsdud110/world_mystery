@@ -1,3 +1,5 @@
+import 'dart:ui' show Size;
+
 import 'package:flutter/foundation.dart';
 
 import '../../core/constants/app_constants.dart';
@@ -31,6 +33,10 @@ class SeasonFigure {
 
 /// The season's opening sequence: short scenes, one message each, played
 /// once before the first case.
+///
+/// London's pictures are its own (written in the screen); a season made from
+/// its plans names its own: [hero], the four [pieces] and the first case's
+/// picture as files.
 @immutable
 class SeasonPrologue {
   const SeasonPrologue({
@@ -42,9 +48,12 @@ class SeasonPrologue {
     this.promise = const [],
     this.firstCasePicture = '',
     this.firstCaseLine = '',
+    this.hero = '',
+    this.heroPixels,
+    this.pieces = const [],
   });
 
-  /// London at night.
+  /// The city at night.
   final String city;
 
   /// The kinds of trouble, laid on the desk one by one.
@@ -60,15 +69,42 @@ class SeasonPrologue {
   /// Under 12 CASES · ONE MYSTERY.
   final List<String> promise;
 
-  /// The first case's file: its picture (an `ArtAssets.objects` key) and a line.
+  /// The first case's file: its picture (an `ArtAssets.objects` key, or a
+  /// file) and a line.
   final String firstCasePicture;
   final String firstCaseLine;
+
+  /// The first scene's picture, full screen (a file), and its pixel size
+  /// (never decoded larger). Empty: London's own.
+  final String hero;
+  final Size? heroPixels;
+
+  /// The pictures of the [cases], one each, in order (files). Empty:
+  /// London's own.
+  final List<String> pieces;
+
+  /// Whether there is an opening to play: every scene has its words.
+  bool get isPlayable =>
+      city.isNotEmpty &&
+      cases.length == 4 &&
+      separate.isNotEmpty &&
+      question.isNotEmpty &&
+      bigger.isNotEmpty &&
+      promise.isNotEmpty &&
+      firstCasePicture.isNotEmpty &&
+      firstCaseLine.isNotEmpty;
+
+  /// Whether its pictures are its own ([hero], one of [pieces] per case)
+  /// rather than London's.
+  bool get hasOwnPictures => hero.isNotEmpty && pieces.length == cases.length;
 
   factory SeasonPrologue.fromJson(Object? json) {
     if (json is! Map) return const SeasonPrologue();
     List<String> lines(Object? v) => v is List ? v.whereType<String>().toList() : const [];
     String text(Object? v) => v is String ? v : '';
     final first = json['firstCase'];
+    final hero = json['hero'];
+    final pixels = hero is Map ? hero['pixels'] : null;
     return SeasonPrologue(
       city: text(json['city']),
       cases: lines(json['cases']),
@@ -78,8 +114,51 @@ class SeasonPrologue {
       promise: lines(json['promise']),
       firstCasePicture: first is Map ? text(first['picture']) : '',
       firstCaseLine: first is Map ? text(first['line']) : '',
+      hero: hero is Map ? text(hero['file']) : '',
+      heroPixels: pixels is Map && pixels['width'] is num && pixels['height'] is num
+          ? Size((pixels['width'] as num).toDouble(), (pixels['height'] as num).toDouble())
+          : null,
+      pieces: lines(json['pieces']),
     );
   }
+
+  /// Every line the opening JSON [json] says, in the order it shows them:
+  /// `city`, `cases`, `separate`, `question`, `bigger`, `promise`, then
+  /// `firstCase.line` — a level gives them all again, line for line
+  /// (`SeasonContent.infoLevels['prologue']`).
+  static List<String> linesOf(Object? json) {
+    if (json is! Map) return const [];
+    final first = json['firstCase'];
+    return [
+      for (final key in _spoken)
+        if (json[key] is String)
+          json[key] as String
+        else if (json[key] is List)
+          ...(json[key] as List).whereType<String>(),
+      if (first is Map && first['line'] is String) first['line'] as String,
+    ];
+  }
+
+  /// [json] with its spoken lines ([linesOf]) replaced by [lines], in the
+  /// same order; null when [lines] are not as many. Its pictures stay.
+  static Map<String, dynamic>? withLines(Map<dynamic, dynamic> json, List<String> lines) {
+    if (linesOf(json).length != lines.length) return null;
+    var i = 0;
+    final out = <String, dynamic>{for (final e in json.entries) '${e.key}': e.value};
+    for (final key in _spoken) {
+      final v = json[key];
+      if (v is String) {
+        out[key] = lines[i++];
+      } else if (v is List) {
+        out[key] = [for (final s in v) s is String ? lines[i++] : s];
+      }
+    }
+    final first = json['firstCase'];
+    if (first is Map && first['line'] is String) out['firstCase'] = {...first, 'line': lines[i++]};
+    return out;
+  }
+
+  static const _spoken = ['city', 'cases', 'separate', 'question', 'bigger', 'promise'];
 }
 
 /// The seasons' ids. Saved with a season's own records (Season 2 on), so they
@@ -169,6 +248,10 @@ class Season {
   }
 
   /// Tolerant decoding, like the episodes: malformed lines are skipped.
+  /// Whether the season opens with its [prologue]: all its words, and
+  /// pictures of its own (London's are written in the screen).
+  bool get playsPrologue => prologue.isPlayable && (id == SeasonIds.london || prologue.hasOwnPictures);
+
   factory Season.fromJson(Map<String, dynamic> json) {
     List<String> lines(Object? v) => v is List ? v.whereType<String>().toList() : const [];
     final id = json['id'];

@@ -99,8 +99,9 @@ abstract final class DifficultyContent {
     return Episode.fromJson(apply(base.toJson(), level, own), difficulty: level);
   }
 
-  /// The season's own lines a level may give ([SeasonContent.infoLevels]).
-  static const seasonText = {'outro', 'finale'};
+  /// The season's own lines a level may give ([SeasonContent.infoLevels]):
+  /// its outro and finale, and its opening's lines ([SeasonPrologue.linesOf]).
+  static const seasonText = {'outro', 'finale', 'prologue'};
 
   /// [season] as played at [level]: its own lines ([seasonText]) at the
   /// nearest level of [level]'s fallback chain that gives them, each only
@@ -110,7 +111,12 @@ abstract final class DifficultyContent {
     final info = Map<String, dynamic>.of(season.info);
     for (final l in level.fallbackChain.reversed) {
       season.infoLevels[l]?.forEach((key, lines) {
-        if (seasonText.contains(key) && info[key] is List && (info[key] as List).length == lines.length) info[key] = lines;
+        if (!seasonText.contains(key)) return;
+        if (info[key] case final Map<dynamic, dynamic> opening) {
+          if (SeasonPrologue.withLines(opening, lines) case final words?) info[key] = words;
+        } else if (info[key] is List && (info[key] as List).length == lines.length) {
+          info[key] = lines;
+        }
       });
     }
     return Season.fromJson(info);
@@ -212,8 +218,9 @@ abstract final class DifficultyContent {
         final base = season.info[key];
         if (!seasonText.contains(key)) {
           out.add('$at: may not change with the level');
-        } else if (base is! List || base.length != lines.length) {
-          out.add('$at: ${lines.length} lines for the season\'s ${base is List ? base.length : 0}');
+        } else {
+          final own = base is Map ? SeasonPrologue.linesOf(base).length : (base is List ? base.length : 0);
+          if (own != lines.length) out.add('$at: ${lines.length} lines for the season\'s $own');
         }
       });
     });

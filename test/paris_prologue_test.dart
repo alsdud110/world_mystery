@@ -169,7 +169,7 @@ void main() {
       await openPrologue(t);
       for (var scene = 1; scene <= 6; scene++) {
         final text = screenText(t);
-        for (final london in ['something strange', 'one mystery', 'shadows over london', 'your first investigation', 'big ben']) {
+        for (final london in ['something strange', 'strange things are happening', 'one mystery', 'shadows over london', 'your first investigation', 'big ben']) {
           expect(text, isNot(contains(london)), reason: 'scene $scene');
         }
         for (final picture in [ArtAssets.londonMap, ArtAssets.season1LondonNight, ArtAssets.season1CoverLondonPanorama]) {
@@ -190,7 +190,7 @@ void main() {
       appRef.read(routerProvider).go(Routes.prologue);
       await wait(t, const Duration(milliseconds: 2000));
       expect(find.text('LONDON'), findsOneWidget);
-      expect(find.text('Something strange is happening\nacross the city.'), findsOneWidget);
+      expect(find.text('Strange things are happening\nin London.'), findsOneWidget);
       expect(find.text('THE LAST CLUE'), findsNothing);
       await wait(t, const Duration(seconds: 3));
     });

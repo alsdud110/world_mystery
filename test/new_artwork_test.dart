@@ -472,7 +472,7 @@ void main() {
       await wait(t, const Duration(milliseconds: 2800));
       await t.tap(find.text('NEXT ›'));
       await settle(t, const Duration(milliseconds: 2800));
-      expect(find.text('And strangers are hiding secrets.'), findsOneWidget);
+      expect(find.text('And people hide secrets.'), findsOneWidget);
       for (final file in [stranger, door, 'assets/seasons/season_01_london/objects/crown.png', 'assets/shared/objects/letter.png']) {
         expect(picture(file), findsOneWidget, reason: file);
       }

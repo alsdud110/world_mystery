@@ -297,11 +297,11 @@ void main() {
     expect(appRef.read(gameControllerProvider).introSeen, isFalse, reason: 'the opening starts no case');
 
     final scenes = <List<String>>[
-      ['LONDON', 'Something strange is happening\nacross the city.'],
-      ['Treasures have vanished.', 'Secret letters have appeared.', 'Doors have been found locked.', 'And strangers are hiding secrets.'],
-      ['They look like separate cases.', 'But a great detective\nlooks closer.'],
-      ["What if they're connected?", 'Every clue could be part\nof something bigger.'],
-      ['SEASON ONE', 'SHADOWS OVER LONDON', '12 CASES', 'ONE MYSTERY', 'Follow the clues.', 'Find the connection.', 'Discover the truth.'],
+      ['LONDON', 'Strange things are happening\nin London.'],
+      ['Treasures are gone.', 'Secret letters appear.', 'Doors are locked.', 'And people hide secrets.'],
+      ['They look like different cases.', 'But a good detective\nlooks again.'],
+      ['Are they connected?', 'Every clue may be part\nof one big story.'],
+      ['SEASON ONE', 'SHADOWS OVER LONDON', '12 CASES', 'ONE MYSTERY', 'Find the clues.', 'Connect them.', 'Find the truth.'],
     ];
     for (final (i, words) in scenes.indexed) {
       await wait(t, const Duration(milliseconds: 2800));
@@ -323,7 +323,7 @@ void main() {
       }
     }
     expectOnScreen(t, find.text('ACCEPT THE CASE'), size);
-    expect(t.getRect(find.text('Discover the truth.')).bottom, lessThanOrEqualTo(t.getRect(find.text('ACCEPT THE CASE')).top),
+    expect(t.getRect(find.text('Find the truth.')).bottom, lessThanOrEqualTo(t.getRect(find.text('ACCEPT THE CASE')).top),
         reason: 'the button never covers the words');
 
     // The first case's file: Season → Case.
@@ -334,7 +334,7 @@ void main() {
       'CASE 01',
       'THE MISSING CROWN',
       'The Crown has disappeared from the Royal Archive in London!',
-      'Your first investigation\nbegins tonight.',
+      'Your first case\nstarts tonight.',
       'ASSIGNED',
     ]) {
       expect(find.text(s), findsOneWidget, reason: s);
@@ -373,7 +373,7 @@ void main() {
     expect(find.text('LONDON'), findsOneWidget, reason: 'still scene 1, now complete');
     await t.tapAt(const Offset(180, 300)); // on
     await wait(t, const Duration(milliseconds: 600));
-    expect(find.text('Treasures have vanished.'), findsOneWidget);
+    expect(find.text('Treasures are gone.'), findsOneWidget);
     await t.tap(find.text('SKIP ›'));
     await wait(t, const Duration(milliseconds: 1600));
     expect(find.text('ACCEPT THE CASE'), findsOneWidget);
@@ -391,11 +391,11 @@ void main() {
       await t.tap(find.text('NEXT ›'));
       await wait(t, const Duration(milliseconds: 3000));
     }
-    expect(find.text('They look like separate cases.'), findsOneWidget);
+    expect(find.text('They look like different cases.'), findsOneWidget);
     await t.binding.handlePopRoute(); // Android back
     await wait(t, const Duration(milliseconds: 600));
     expect(path(), Routes.prologue);
-    expect(find.text('Treasures have vanished.'), findsOneWidget, reason: 'one scene back, shown complete');
+    expect(find.text('Treasures are gone.'), findsOneWidget, reason: 'one scene back, shown complete');
     await t.tap(find.byTooltip('Back'));
     await wait(t, const Duration(milliseconds: 600));
     expect(find.text('LONDON'), findsOneWidget);
