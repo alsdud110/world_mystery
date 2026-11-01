@@ -20,8 +20,8 @@
   ],
   "approved": false,
   "inputs": {
-    "season.plan.json": "sha256:68c786c4be08f229f1f6ef390e7e04b4a4e821e615deda7627c948acb8dc44be",
-    "season.levels.json": "sha256:92ca03c2631cf8a84e41e8749167f18c57dd892ce53c919a41fdedf49ce5d2c5",
+    "season.plan.json": "sha256:c63089a38b620b4c8a787fd68bae58a5e70db6922e69e0acfa44ed136c9d294c",
+    "season.levels.json": "sha256:5cd9e6a2010fd6cb56bb5e28beee35b58db27d78557f59572d459158e1552593",
     "cases/s4_ep01/case.plan.json": "sha256:fa87b292f02801582f1aa43a2e85a873ea71b7cb1450f3e1ae57509cfd422702",
     "cases/s4_ep01/levels.json": "sha256:7f608884dbce18d4499e71570cfe1e794c41c3c2d30b3e7eef13432e7045ca03",
     "cases/s4_ep02/case.plan.json": "sha256:f30bc91a5cc655f754a6ad3308d5f9e971f337f3f61655596c1b390831e149aa",
@@ -48,7 +48,7 @@
     "cases/s4_ep12/levels.json": "sha256:44fe0dfa9b36b40f09afd3bae4312d31d7117680dd7bcb6f19b80a47bfe60a26"
   },
   "outputs": {
-    "s4_newyork_season.g.dart": "sha256:c16f860bc05f75ecefc067ff9c7df194173fe83ff0a171f7d907f56342825647",
+    "s4_newyork_season.g.dart": "sha256:18a4a8ae2daab870b49af75ca634fb1a96b967b98e8e32f3d1a8d8f88fba0d37",
     "s4_ep01.g.dart": "sha256:7c72b349534a85313d2cd5f01f9ae95487124c0f29dcd44cb3fc76bf7c7e329f",
     "s4_ep02.g.dart": "sha256:c2e237bfdc3d8557471ea8a00220c2dc01abbf3135e221689712662916095b81",
     "s4_ep03.g.dart": "sha256:8769f5432c9835e3a56735acf6505f91b2782b9ee49d088dc4c0d08fa0657ec6",
@@ -74,7 +74,7 @@
     "s4_ep10_levels.g.dart": "sha256:071bc6ace098acc144f6a59abbe9196efcb9fbfe53ed43782455d3930f33bf66",
     "s4_ep11_levels.g.dart": "sha256:468b01c4c7ebe2cc54b0e049de2212f54ab5b9af0e69854ed2e24451d769a860",
     "s4_ep12_levels.g.dart": "sha256:bc59298b9c16da54320be10df310c6ebd2c68c1d23bc3ce9acf37d0cd272a8ca",
-    "s4_newyork_levels.g.dart": "sha256:9a0b714887e2ea6168b5be2561a8a9c31b0041bfeaf20ec8247d99d72f098378",
+    "s4_newyork_levels.g.dart": "sha256:42ad680835df127f53e394dd0396e9c9821415e21e95372f256582150a6f365a",
     "s4_newyork_content.g.dart": "sha256:d1b6346d438238189441a327c6176c9838fded14eea38e58f12c2b4a6644da0d",
     "s4_newyork_art.g.dart": "sha256:420047f9a4e6cf73698ec22c0022a6cd3d744df31e33ba77e5f1464cd21d66f3"
   }

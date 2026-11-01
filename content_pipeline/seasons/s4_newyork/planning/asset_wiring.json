@@ -4,7 +4,7 @@
   "tool": "tool/asset_pipeline/asset_pipeline.dart --wiring --write",
   "checkedAgainst": "lib/ as of 2026-10-30 (SeasonContent.places, explores, investigations, dialogues, talkMissions, endings, ChoiceOption.picture, ArtAssets.seasonCovers, SeasonMap.bySeason, ArtAssets.evidencePictures, SeasonContent.storyScenes); wired: in assets/ now",
   "counts": {
-    "wired": 51,
+    "wired": 52,
     "wired_when_made": 0,
     "ready_to_wire": 8,
     "blocked": 0,
@@ -22,6 +22,18 @@
       "field": "ArtAssets.seasonCovers['s4_newyork'] (SeasonCover: file, pixels, crop, push, archiveLook) in lib/widgets/art_assets.dart",
       "via": "libEdit",
       "note": "Not shown yet: one SeasonCover line in lib/ (file, pixels 1024×1536, crop, push, archiveLook chosen on the drawn picture). Shown by BoxFit.cover: full screen on the season board, a 2:1 band in the archive, a 56×72 thumbnail."
+    },
+    {
+      "assetId": "s4_newyork.asset.prologue",
+      "type": "prologue",
+      "subject": "s4_newyork.prologue",
+      "caseIds": [],
+      "outputPath": "assets/seasons/season_04_newyork/cover/season4_prologue_night.png",
+      "status": "wired",
+      "screen": "The season's opening, its first scene (SeasonPrologueScreen, CityNightHero)",
+      "field": "season.plan.json prologue.hero (file, pixels) → SeasonPrologue.hero",
+      "via": "generator",
+      "note": "Shown by the generated content: the opening plays once it has this picture (Season.playsPrologue)."
     },
     {
       "assetId": "s4_newyork.asset.city_map",

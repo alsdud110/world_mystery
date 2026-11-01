@@ -31,12 +31,16 @@ part 'paris_prologue.dart';
 /// The season's opening sequence, played once — from the casebook (or from
 /// How to Play's START FIRST CASE), before the first case. Short scenes, one message each, the picture first:
 ///
-///  1. London at night: something strange is happening.
+///  1. The city at night: something strange is happening.
 ///  2. The desk: the kinds of trouble, laid down one by one.
 ///  3. The map: they look like separate cases…
 ///  4. …until the first red thread: what if they're connected?
 ///  5. The promise: 12 CASES · ONE MYSTERY → ACCEPT THE CASE.
 ///  6. The first case's file → START CASE 01 → the case's own story intro.
+///
+/// London's, and every season's made from its plans that has one
+/// ([Season.playsPrologue]: its words, its city at night, its four pieces
+/// of trouble, its map). Paris has its own page ([ParisPrologueScreen]).
 ///
 /// A tap finishes a scene's animation, then moves on. Back (app bar or
 /// system) goes to the scene before; from the first, back to the casebook.
@@ -93,6 +97,9 @@ class _SeasonPrologueScreenState extends ConsumerState<SeasonPrologueScreen>
   /// Shows scene [step], playing it in (or complete, going back).
   void _show(int step, {bool complete = false}) {
     setState(() => _step = step);
+    // The opening watched to its end: the season has begun (its board, the
+    // archive), as Paris's.
+    if (step == _file) ref.read(seasonProvider.notifier).markPrologueSeen();
     _assigned = false;
     _c.duration = Duration(milliseconds: _durations[step]);
     if (complete) {
@@ -183,18 +190,24 @@ class _SeasonPrologueScreenState extends ConsumerState<SeasonPrologueScreen>
       Curves.easeOutCubic.transform(((_c.value - a) / (b - a)).clamp(0.0, 1.0));
 
   Widget _scene(Season season, SeasonOverview overview, Episode first) {
+    // Its words at the season's own level (`seasonInfoProvider`); its own
+    // pictures (Rome on), else London's.
     final p = season.prologue;
+    final own = p.hasOwnPictures;
     switch (_step) {
       case _city:
         return _SceneLayout(
-          // The whole screen is London: the picture full-bleed, a little
+          // The whole screen is the city: the picture full-bleed, a little
           // shade at the top for Back / SKIP and at the bottom for the words
-          // (the warm paving and the river's lights show through it).
+          // (London's warm paving and the river's lights show through it).
           background: Stack(
             fit: StackFit.expand,
             children: [
               const ColoredBox(color: AppColors.nightBottom),
-              LondonNightHero(push: _iv(0, 1)),
+              if (own)
+                CityNightHero(file: p.hero, pixels: p.heroPixels, push: _iv(0, 1))
+              else
+                LondonNightHero(push: _iv(0, 1)),
               DecoratedBox(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -215,19 +228,23 @@ class _SeasonPrologueScreenState extends ConsumerState<SeasonPrologueScreen>
             children: [
               Opacity(
                 opacity: _iv(0.2, 0.55),
-                child: Text(
-                  'LONDON',
-                  style: AppText.logo(size: 34, color: AppColors.goldLight)
-                      .copyWith(
-                        letterSpacing: 10,
-                        // Lifted off the lit river behind it.
-                        shadows: [
-                          Shadow(
-                            color: AppColors.navyDeep.withValues(alpha: 0.8),
-                            blurRadius: 14,
-                          ),
-                        ],
-                      ),
+                // One line, however long the city's name (NEW YORK).
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    season.city.toUpperCase(),
+                    style: AppText.logo(size: 34, color: AppColors.goldLight)
+                        .copyWith(
+                          letterSpacing: 10,
+                          // Lifted off the lit river behind it.
+                          shadows: [
+                            Shadow(
+                              color: AppColors.navyDeep.withValues(alpha: 0.8),
+                              blurRadius: 14,
+                            ),
+                          ],
+                        ),
+                  ),
                 ),
               ),
               const SizedBox(height: AppSpace.md),
@@ -238,7 +255,10 @@ class _SeasonPrologueScreenState extends ConsumerState<SeasonPrologueScreen>
         );
       case _cases:
         return _SceneLayout(
-          art: _TroubleDesk(appear: (i) => _iv(i * 0.22, i * 0.22 + 0.3)),
+          art: _TroubleDesk(
+            pieces: own ? p.pieces : const [],
+            appear: (i) => _iv(i * 0.22, i * 0.22 + 0.3),
+          ),
           words: _Words(
             children: [
               for (final (i, line) in p.cases.indexed)
@@ -260,6 +280,8 @@ class _SeasonPrologueScreenState extends ConsumerState<SeasonPrologueScreen>
           art: Padding(
             padding: const EdgeInsets.symmetric(horizontal: AppSpace.lg),
             child: TroubleMap(
+              seasonId: own ? season.id : null,
+              pieces: p.pieces,
               pinned: connecting ? 1 : _iv(0, 0.45),
               threads: connecting ? _iv(0, 0.35) + _iv(0.25, 0.6) : 0,
               push: connecting ? 0.5 + 0.5 * _iv(0, 1) : 0.5 * _iv(0, 1),
@@ -312,7 +334,12 @@ class _SeasonPrologueScreenState extends ConsumerState<SeasonPrologueScreen>
                 padding: const EdgeInsets.symmetric(horizontal: AppSpace.lg),
                 child: Opacity(
                   opacity: 0.22,
-                  child: TroubleMap(threads: 2, push: 1),
+                  child: TroubleMap(
+                    seasonId: own ? season.id : null,
+                    pieces: p.pieces,
+                    threads: 2,
+                    push: 1,
+                  ),
                 ),
               ),
               Center(
@@ -592,7 +619,10 @@ class _NextBar extends StatelessWidget {
 
 /// The desk, and the four kinds of trouble laid on it one by one.
 class _TroubleDesk extends StatelessWidget {
-  const _TroubleDesk({required this.appear});
+  const _TroubleDesk({required this.pieces, required this.appear});
+
+  /// The season's own pictures of them (files); empty: London's.
+  final List<String> pieces;
 
   /// How far piece [i] has been laid down (0..1).
   final double Function(int i) appear;
@@ -618,7 +648,7 @@ class _TroubleDesk extends StatelessWidget {
           final size = (box.maxWidth * 0.47).clamp(0.0, box.maxHeight * 0.5);
           return Stack(
             children: [
-              for (final (i, piece) in TroublePiece.values.indexed)
+              for (final (i, print) in TroublePrint.of(pieces, border: 5).indexed)
                 () {
                   final p = appear(i);
                   return Align(
@@ -635,7 +665,7 @@ class _TroubleDesk extends StatelessWidget {
                             child: SizedBox(
                               width: size,
                               height: size * 0.9,
-                              child: TroublePrint(piece, border: 5),
+                              child: print,
                             ),
                           ),
                         ),
@@ -674,7 +704,8 @@ class _CaseFile extends StatelessWidget {
     final stamp = Curves.easeInCubic.transform(
       ((t - 0.55) / 0.25).clamp(0.0, 1.0),
     );
-    final file = ArtAssets.objects[picture];
+    // A London object's key, or a season's own file.
+    final file = ArtAssets.objects[picture] ?? (picture.contains('/') ? picture : null);
     return Padding(
       padding: const EdgeInsets.fromLTRB(
         AppSpace.lg,

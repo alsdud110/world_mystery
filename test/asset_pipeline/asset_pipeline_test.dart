@@ -434,7 +434,7 @@ void main() {
       // By where a case plan names the file, not by its type (STEP 3-15A):
       // every picture a generated mission shows (scene, choice, witness,
       // talk or ending face) goes in through the generator.
-      expect(AssetWiring.counts(wiring), {'wired': 46, 'wired_when_made': 0, 'ready_to_wire': 15, 'blocked': 0, 'not_supported': 2});
+      expect(AssetWiring.counts(wiring), {'wired': 47, 'wired_when_made': 0, 'ready_to_wire': 15, 'blocked': 0, 'not_supported': 1});
       expect({for (final w in wiring) if (w.status == WiringStatus.wired) w.asset.assetId.split('.').last}, {
         'cat_ruins', 'cast_workshop', 'cat_tito', 'cat_rosso', 'cat_luna', //
         'pantheon_hall', 'floor_stone_ship', 'floor_stone_lion', 'floor_stone_book', 'floor_stone_key', //
@@ -445,7 +445,8 @@ void main() {
         'forum_view', 'map_archive', 'civetta_square', 'site_office', 'roman_library', //
         'char_bruno_base', 'char_bruno_site', 'char_pia_base', //
         'ev_real_piece', 'ev_yellow_helmet', 'room_bath', 'room_theatre', 'helmet_white_crane', 'helmet_yellow_plain', 'stone_lion', 'stone_street',
-      }, reason: 'every picture a case shows, in assets/ (STEP 3-15A, 3-15B B1–B3)');
+        'prologue', // the opening's city at night (prologue.hero)
+      }, reason: 'every picture a case or the opening shows, in assets/ (STEP 3-15A, 3-15B B1–B3)');
       final characters = wiring.where((w) => w.asset.type == 'character');
       for (final w in characters) {
         expect(w.via, 'generator', reason: 'every face is a talk\'s, an ending\'s or a witness\'s');
@@ -457,11 +458,21 @@ void main() {
       final helmet = wiring.singleWhere((w) => w.asset.assetId == 's3_rome.asset.ev_yellow_helmet');
       expect(helmet.status, WiringStatus.wired, reason: 'a choice in Case 10, made in STEP 3-15B B3');
       expect(helmet.note, contains('ArtAssets.evidencePictures'), reason: 'its notebook card still needs a lib/ line');
-      expect({for (final w in wiring) if (w.status == WiringStatus.notSupported) w.asset.assetId.split('.').last}, {'prologue', 'ev_gold_tiles'});
+      expect({for (final w in wiring) if (w.status == WiringStatus.notSupported) w.asset.assetId.split('.').last}, {'ev_gold_tiles'});
+      // The opening's city at night: shown since the plan's prologue.hero names it.
+      final opening = wiring.singleWhere((w) => w.asset.type == 'prologue');
+      expect(opening.status, WiringStatus.wired);
+      expect(opening.via, 'generator');
+      expect(opening.field, contains('prologue.hero'));
       final cover = wiring.singleWhere((w) => w.asset.type == 'cover');
       expect(cover.status, WiringStatus.readyToWire, reason: 'portrait now, but no SeasonCover line in lib/: not wired');
       expect(cover.via, 'libEdit');
-      expect(wiring.where((w) => w.status == WiringStatus.readyToWire || w.status == WiringStatus.notSupported).every((w) => w.via != 'generator'), isTrue);
+      expect(
+        wiring
+            .where((w) => w.status == WiringStatus.readyToWire || w.status == WiringStatus.notSupported)
+            .every((w) => w.via != 'generator'),
+        isTrue,
+      );
     });
 
     test('the cover: portrait at the API\'s 1024x1536, a safe area in its prompt; a landscape cover is warned of', () {

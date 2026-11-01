@@ -3,6 +3,71 @@
   "seasonId": "s3_rome",
   "lines": [
     {
+      "rookie": "Rome is old and quiet.\nBut something is wrong.",
+      "junior": "Rome is ancient and calm.\nBut something has gone wrong.",
+      "master": "Ancient Rome lies still.\nYet something is amiss."
+    },
+    {
+      "rookie": "A piece of an old map is gone.",
+      "junior": "An ancient map has lost a piece.",
+      "master": "A marble fragment has vanished."
+    },
+    {
+      "rookie": "Owl cards appear in the city.",
+      "junior": "Owl cards keep turning up.",
+      "master": "Owl cards surface across the city."
+    },
+    {
+      "rookie": "A box holds strange white dust.",
+      "junior": "A box is full of strange white dust.",
+      "master": "A box conceals a curious white dust."
+    },
+    {
+      "rookie": "And a night log hides a secret.",
+      "junior": "And a guard's night log hides a secret.",
+      "master": "And a night log guards a secret."
+    },
+    {
+      "rookie": "They look like different cases.",
+      "junior": "They look like separate cases.",
+      "master": "They appear to be unrelated cases."
+    },
+    {
+      "rookie": "But a good detective\nputs the pieces together.",
+      "junior": "But a great detective\nfits the pieces together.",
+      "master": "But a great detective\nsees how the pieces belong."
+    },
+    {
+      "rookie": "Do the pieces fit?",
+      "junior": "What if the pieces fit together?",
+      "master": "What if every piece belongs together?"
+    },
+    {
+      "rookie": "Every clue may be a piece\nof one old map.",
+      "junior": "Every clue could be a piece\nof one ancient map.",
+      "master": "Each clue may be a fragment\nof one forgotten map."
+    },
+    {
+      "rookie": "Find the pieces.",
+      "junior": "Follow the pieces.",
+      "master": "Gather every piece."
+    },
+    {
+      "rookie": "Read the clues.",
+      "junior": "Read every clue.",
+      "master": "Weigh every clue."
+    },
+    {
+      "rookie": "Find the truth.",
+      "junior": "Discover the truth.",
+      "master": "Reveal the truth."
+    },
+    {
+      "rookie": "Your first case starts\nat the museum.",
+      "junior": "Your first investigation\nbegins at the museum.",
+      "master": "Your first investigation\nawaits at the museum."
+    },
+    {
       "rookie": "The real piece is back in its glass case.",
       "junior": "The real piece is finally back in its glass case.",
       "master": "At last, the genuine piece rests once more in its glass case."

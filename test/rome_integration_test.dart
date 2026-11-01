@@ -220,7 +220,7 @@ void main() {
     });
   });
 
-  testWidgets('Rome begins at its own Case 01 from its board: never London\'s opening page', (t) async {
+  testWidgets('Rome begins with its own opening (its night, its pieces), then its Case 01: never London\'s', (t) async {
     ctrl().createDetective('Kim', DetectiveAvatar.boy);
     save(AppConstants.seasonStorageKey, SeasonProgress(activeEpisodeId: 'ep01', solvedEpisodeIds: londonIds));
     save(AppConstants.seasonKeyFor(SeasonIds.paris), SeasonProgress(activeEpisodeId: 's2_ep12', solvedEpisodeIds: parisIds));
@@ -233,13 +233,21 @@ void main() {
     await t.pumpWidget(UncontrolledProviderScope(container: container, child: const WorldMysteryApp()));
     await wait(t);
     final router = container.read(routerProvider);
-    // A link to the opening page in Rome goes back to Rome's board.
-    router.go(Routes.prologue);
+    router.go(Routes.season);
     await wait(t, const Duration(milliseconds: 1500));
-    expect(router.routerDelegate.currentConfiguration.uri.path, Routes.season);
     expect(find.text('THE BROKEN MAP OF ROME'), findsOneWidget, reason: "Rome's own board");
     expect(find.text('SEASON THREE'), findsOneWidget);
     await t.tap(find.text('BEGIN INVESTIGATION'));
+    await wait(t, const Duration(milliseconds: 3000));
+    // Rome's opening: its city, never London's.
+    expect(router.routerDelegate.currentConfiguration.uri.path, Routes.prologue);
+    expect(find.text('ROME'), findsOneWidget);
+    expect(find.text('LONDON'), findsNothing);
+    await t.tap(find.text('SKIP ›'));
+    await wait(t, const Duration(milliseconds: 2000));
+    await t.tap(find.text('ACCEPT THE CASE'));
+    await wait(t, const Duration(milliseconds: 2000));
+    await t.tap(find.text('START CASE 01'));
     await wait(t, const Duration(milliseconds: 3000));
     expect(router.routerDelegate.currentConfiguration.uri.path, Routes.intro, reason: 'Case 01\'s story intro');
     expect(container.read(currentEpisodeProvider).id, 's3_ep01');

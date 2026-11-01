@@ -23,10 +23,10 @@ void main() {
     final needed = SeasonFactory.neededPictures(plan);
     String id(String name) => 's3_rome.asset.$name';
     expect(needed, containsAll([id('cover'), id('city_map'), id('pantheon_hall'), id('char_bruno_site'), id('stone_lion'), id('ev_owl_card'), id('ev_business_card')]));
-    expect(needed, isNot(contains(id('prologue'))), reason: 'no screen shows a generated season\'s prologue');
+    expect(needed, contains(id('prologue')), reason: 'its opening\'s city at night (prologue.hero)');
     expect(needed, isNot(contains(id('ev_gold_tiles'))), reason: 'the game writes the tiles');
     expect(needed, isNot(contains(id('scene_owl_reveal'))), reason: 'a story scene the generator has no table for');
-    expect(needed, hasLength(60));
+    expect(needed, hasLength(61));
     for (final a in plan.assets.where((a) => needed.contains(a.assetId))) {
       expect(File(a.outputPath).existsSync(), isTrue, reason: '${a.assetId}: Rome has every picture it shows');
     }

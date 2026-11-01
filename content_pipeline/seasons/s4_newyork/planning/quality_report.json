@@ -17,26 +17,27 @@
       "englishReviews": 12
     },
     "assets": {
-      "total": 59,
+      "total": 60,
       "byType": {
         "cover": 1,
         "map": 1,
+        "prologue": 1,
         "place": 14,
         "scene": 13,
         "character": 9,
         "object": 18,
         "document": 3
       },
-      "backgrounds": 29,
+      "backgrounds": 30,
       "characters": 9,
       "objects": 21,
       "reusedAcrossCases": 11,
       "planned": 0,
-      "generated": 59,
+      "generated": 60,
       "shownBySeasonPlaces": 14,
       "model": "gpt-image-2",
       "quality": "medium",
-      "estimatedUsd": 3.78539,
+      "estimatedUsd": 3.83471,
       "estimateNote": "List prices of 2026-10-29 (image_pricing.dart), an estimate before any call, each reference picture priced as 8000 image input tokens; nothing was sent."
     },
     "generator": {

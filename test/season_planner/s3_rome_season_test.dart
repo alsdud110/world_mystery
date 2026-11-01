@@ -21,9 +21,8 @@ import '../../tool/season_planner/season_quality.dart';
 /// `tool/season_planner`, checked whole: the planner's checks, the real
 /// generator, and the game's own `SeasonContentValidator` on the cases'
 /// game JSON. Since STEP 3-15B B3 every picture a case shows is made and the
-/// season is in the game (the Rome integration); the 3 still planned (the
-/// cover, the map, the owl scene, the prologue, the gold tiles) are shown by
-/// no generated case yet.
+/// season is in the game (the Rome integration); the 2 still planned (the
+/// owl scene, the gold tiles) are shown by no generated case yet.
 void main() {
   const dir = 'content_pipeline/seasons/s3_rome';
   final season = PlanFiles.loadSeasonPlan('$dir/season.plan.json');
@@ -170,6 +169,8 @@ void main() {
         // The Rome integration: the cover, the map, the evidence cards.
         'cover', 'city_map', 'ev_night_log', 'ev_owl_card', 'ev_brass_key', 'ev_dropped_pass', 'ev_plaster_copy', //
         'ev_order_card', 'ev_aldo_photo', 'ev_loan_page', 'ev_livia_drawing', 'ev_city_plan', 'ev_owl_mosaic',
+        // Its opening's city at night.
+        'prologue',
       };
       for (final a in assets) {
         final isMade = made.contains('${a['assetId']}'.split('.').last);
@@ -193,12 +194,12 @@ void main() {
       }
     });
 
-    test('the planner calls no API, and the cost is an estimate; the 60 made by the asset pipeline are counted', () {
+    test('the planner calls no API, and the cost is an estimate; the 61 made by the asset pipeline are counted', () {
       final a = report.summary['assets'] as Map;
       expect(report.summary['apiCalls'], 0);
       expect(a['estimatedUsd'], isA<double>());
-      expect(a['generated'], 60);
-      expect(a['planned'], 3, reason: 'the prologue, the gold tiles and the owl scene: no screen shows them');
+      expect(a['generated'], 61);
+      expect(a['planned'], 2, reason: 'the gold tiles and the owl scene: no screen shows them');
       expect(Directory(dir).listSync(recursive: true).whereType<File>().any((f) => f.path.endsWith('image_manifest.json')), isFalse);
     });
   });

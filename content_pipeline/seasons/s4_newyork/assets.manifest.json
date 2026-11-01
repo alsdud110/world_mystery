@@ -35,6 +35,26 @@
       ]
     },
     {
+      "assetId": "s4_newyork.asset.prologue",
+      "type": "prologue",
+      "use": "notWired",
+      "subject": "s4_newyork.prologue",
+      "caseIds": [],
+      "description": "Season opening, first scene (portrait, full screen): New York at night, the great stone library on Fifth Avenue with its lion statue, the towers beyond.",
+      "prompt": "A tall portrait view of a New York avenue at night after the rain: in the upper middle, the grand white-marble public library with tall arched windows and wide steps, one high window glowing warm gold as if someone is still inside, a calm stone lion statue resting on a pedestal beside the steps; beyond it, art-deco towers rise into a deep evening-blue sky with a few lit windows and a thin crescent moon. Old iron street lamps cast warm pools of light. Quiet, mysterious, inviting, never scary. Composition for a full-screen phone opening scene (portrait, shown edge to edge by cover-fit): the top 12% is quiet night sky; the main subject sits in the upper middle (between 15% and 55% of the height) and within the central two-thirds of the width; the lower 40% is calm, darker foreground (a wet dark street and pavement softly reflecting the lamps) with no important detail, because words are laid over it.",
+      "stylePreset": "newyork_scene",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_04_newyork/cover/season4_prologue_night.png",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The opening's first scene, full-bleed (as London's season1_london_night.png, 941x1671): the words lie over the bottom 40%, Back and SKIP over the top 12%.",
+        "Wiring: season.plan.json prologue.hero (file, pixels)."
+      ]
+    },
+    {
       "assetId": "s4_newyork.asset.city_map",
       "type": "map",
       "use": "notWired",

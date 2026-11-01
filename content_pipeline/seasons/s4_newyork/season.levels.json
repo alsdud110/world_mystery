@@ -3,6 +3,71 @@
   "seasonId": "s4_newyork",
   "lines": [
     {
+      "rookie": "New York is big and busy.\nBut it hides an old secret.",
+      "junior": "New York never stops moving.\nBut it keeps an old secret.",
+      "master": "New York never sleeps.\nYet it guards an old secret."
+    },
+    {
+      "rookie": "A page is torn from an old notebook.",
+      "junior": "A notebook has lost its last page.",
+      "master": "A notebook's final page has vanished."
+    },
+    {
+      "rookie": "A brass egg waits to be opened.",
+      "junior": "A brass egg is waiting to be opened.",
+      "master": "A brass egg holds something hidden."
+    },
+    {
+      "rookie": "An old tea tin keeps a secret.",
+      "junior": "An old tea tin is keeping a secret.",
+      "master": "An old tea tin guards a secret."
+    },
+    {
+      "rookie": "And a brass bird has flown away.",
+      "junior": "And a brass bird has disappeared.",
+      "master": "And a brass bird has vanished."
+    },
+    {
+      "rookie": "They look like different puzzles.",
+      "junior": "They look like separate puzzles.",
+      "master": "They seem like unrelated puzzles."
+    },
+    {
+      "rookie": "But a good detective\nfollows the trail.",
+      "junior": "But a great detective\nsees where the trail goes.",
+      "master": "But a great detective\nfollows the trail to its end."
+    },
+    {
+      "rookie": "Where does the trail lead?",
+      "junior": "Where could the trail lead?",
+      "master": "What if every clue leads to the same place?"
+    },
+    {
+      "rookie": "Every clue may be a note\nin one old song.",
+      "junior": "Every clue could be a note\nin one old song.",
+      "master": "Each clue may be a note\nin one forgotten song."
+    },
+    {
+      "rookie": "Follow the trail.",
+      "junior": "Follow where it leads.",
+      "master": "Pursue the trail."
+    },
+    {
+      "rookie": "Read every clue.",
+      "junior": "Read each clue carefully.",
+      "master": "Weigh every clue."
+    },
+    {
+      "rookie": "Find the truth.",
+      "junior": "Discover the truth.",
+      "master": "Reveal the truth."
+    },
+    {
+      "rookie": "Your first case starts\nat the library.",
+      "junior": "Your first investigation\nbegins at the library.",
+      "master": "Your first investigation\nawaits at the library."
+    },
+    {
       "rookie": "The Silver Lark sings again in the library's great hall.",
       "junior": "The Silver Lark sings once more in the library's great hall.",
       "master": "Once again, the Silver Lark's voice rings out through the library's great hall."

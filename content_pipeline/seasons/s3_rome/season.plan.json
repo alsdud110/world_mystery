@@ -156,6 +156,43 @@
       ]
     }
   ],
+  "prologue": {
+    "city": "Rome is old and quiet.\nBut something is wrong.",
+    "cases": [
+      "A piece of an old map is gone.",
+      "Owl cards appear in the city.",
+      "A box holds strange white dust.",
+      "And a night log hides a secret."
+    ],
+    "separate": [
+      "They look like different cases.",
+      "But a good detective\nputs the pieces together."
+    ],
+    "question": "Do the pieces fit?",
+    "bigger": "Every clue may be a piece\nof one old map.",
+    "promise": [
+      "Find the pieces.",
+      "Read the clues.",
+      "Find the truth."
+    ],
+    "firstCase": {
+      "picture": "assets/seasons/season_03_rome/objects/real_map_piece.png",
+      "line": "Your first case starts\nat the museum."
+    },
+    "hero": {
+      "file": "assets/seasons/season_03_rome/cover/season3_prologue_night.png",
+      "pixels": {
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    "pieces": [
+      "assets/seasons/season_03_rome/objects/real_map_piece.png",
+      "assets/seasons/season_03_rome/objects/owl_card.png",
+      "assets/seasons/season_03_rome/objects/bag_of_white_dust.png",
+      "assets/seasons/season_03_rome/objects/night_log.png"
+    ]
+  },
   "outro": [
     "The real piece is back in its glass case.",
     "Under Piazza della Civetta, an old Roman library sees the light again."

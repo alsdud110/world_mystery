@@ -60,6 +60,44 @@ class LondonNightHero extends StatelessWidget {
   }
 }
 
+/// The opening's first scene of a season with its own picture (Rome on):
+/// its city at night, filling the screen, held at its centre. [push] (0..1)
+/// moves the camera in a little. Without the file, the night colour.
+class CityNightHero extends StatelessWidget {
+  const CityNightHero({super.key, required this.file, this.pixels, this.push = 1});
+
+  final String file;
+
+  /// Its pixel size (never decoded larger); null: decoded at the screen's.
+  final Size? pixels;
+  final double push;
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRect(
+      child: LayoutBuilder(
+        builder: (context, box) {
+          final aspect = pixels?.aspectRatio ?? box.maxWidth / box.maxHeight;
+          final width = (math.max(box.maxWidth, box.maxHeight * aspect) * 1.05 * MediaQuery.devicePixelRatioOf(context)).ceil();
+          return Transform.scale(
+            scale: 1 + 0.04 * push,
+            alignment: const Alignment(0, -0.3),
+            child: Image.asset(
+              file,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
+              cacheWidth: pixels == null ? width : math.min(width, pixels!.width.toInt()),
+              excludeFromSemantics: true,
+              errorBuilder: (context, error, stack) => const ColoredBox(color: AppColors.nightBottom),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
 /// London at night drawn in code (the fallback of [LondonNightHero]): sky,
 /// the skyline with Big Ben in front, the Thames with the city's lights on it, fog, and gas lamps on
 /// the embankment. [push] (0..1) moves the camera in a little.
@@ -246,16 +284,21 @@ class _NightLondonPainter extends CustomPainter {
 /// them is a case's answer.
 enum TroublePiece { treasure, letter, door, stranger }
 
-/// A print of one [TroublePiece].
+/// A print of one [TroublePiece], or of a season's own picture ([file]).
 class TroublePrint extends StatelessWidget {
-  const TroublePrint(this.piece, {super.key, this.border = 4});
+  const TroublePrint(TroublePiece this.piece, {super.key, this.border = 4}) : file = null;
 
-  final TroublePiece piece;
+  /// A season's own piece of trouble: its picture (Rome on).
+  const TroublePrint.file(String this.file, {super.key, this.border = 4}) : piece = null;
+
+  final TroublePiece? piece;
+  final String? file;
   final double border;
 
   @override
   Widget build(BuildContext context) {
-    return switch (piece) {
+    if (file case final f?) return PrintFrame.file(f, border: border);
+    return switch (piece!) {
       TroublePiece.treasure => PrintFrame.file(ArtAssets.objects['crown']!, border: border),
       TroublePiece.letter => PrintFrame.file(ArtAssets.objects['letter']!, border: border),
       TroublePiece.door => PrintFrame(
@@ -271,6 +314,12 @@ class TroublePrint extends StatelessWidget {
         ),
     };
   }
+
+  /// The four prints of an opening: [files] when it has its own, else
+  /// London's.
+  static List<TroublePrint> of(List<String> files, {double border = 4}) => files.length == TroublePiece.values.length
+      ? [for (final f in files) TroublePrint.file(f, border: border)]
+      : [for (final p in TroublePiece.values) TroublePrint(p, border: border)];
 }
 
 /// A picture cut out on transparency, laid on the same parchment as the
@@ -371,11 +420,16 @@ class _StrangerPainter extends CustomPainter {
 /// [pinned] (0..1) brings the pieces in one by one; [threads] (0..2) draws
 /// the first red thread, then the second; [push] moves the camera in.
 class TroubleMap extends StatelessWidget {
-  const TroubleMap({super.key, this.pinned = 1, this.threads = 0, this.push = 0});
+  const TroubleMap({super.key, this.pinned = 1, this.threads = 0, this.push = 0, this.seasonId, this.pieces = const []});
 
   final double pinned;
   final double threads;
   final double push;
+
+  /// A season with an opening of its own (Rome on): its map, under its own
+  /// [pieces] (files). Null: London's map and pieces.
+  final String? seasonId;
+  final List<String> pieces;
 
   /// Where each piece is pinned (fractions of the map): far apart.
   static const spots = [Offset(0.25, 0.22), Offset(0.76, 0.3), Offset(0.27, 0.74), Offset(0.74, 0.76)];
@@ -401,7 +455,9 @@ class TroubleMap extends StatelessWidget {
               scale: 1 + 0.05 * push,
               child: Stack(
                 children: [
-                  const Positioned.fill(child: MapPrint(strength: 0.62)),
+                  Positioned.fill(
+                    child: seasonId == null ? const MapPrint(strength: 0.62) : MapPrint.ofSeason(seasonId!, strength: 0.62),
+                  ),
                   const Positioned.fill(
                     child: DecoratedBox(
                       decoration: BoxDecoration(
@@ -409,7 +465,8 @@ class TroubleMap extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // The crown to the stranger, the letter to the door: two
+                  // The first piece to the last, the second to the third (London's
+                  // crown to the stranger, the letter to the door): two
                   // threads crossing in the middle.
                   Positioned.fill(
                     child: CustomPaint(
@@ -419,7 +476,7 @@ class TroubleMap extends StatelessWidget {
                       ]),
                     ),
                   ),
-                  for (final (i, p) in TroublePiece.values.indexed)
+                  for (final (i, print) in TroublePrint.of(seasonId == null ? const [] : pieces, border: 3).indexed)
                     () {
                       final shown = ((pinned * 4) - i).clamp(0.0, 1.0);
                       return Positioned(
@@ -437,7 +494,7 @@ class TroubleMap extends StatelessWidget {
                                 clipBehavior: Clip.none,
                                 alignment: Alignment.topCenter,
                                 children: [
-                                  Positioned.fill(child: TroublePrint(p, border: 3)),
+                                  Positioned.fill(child: print),
                                   const Positioned(top: -4, child: PushPin(size: 11)),
                                 ],
                               ),

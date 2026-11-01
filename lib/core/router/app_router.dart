@@ -132,11 +132,12 @@ final routerProvider = Provider<GoRouter>((ref) {
 
       if (!progress.hasDetective) return Routes.register;
 
-      if (path == Routes.prologue && ref.read(selectedSeasonIdProvider) != SeasonIds.london) {
-        // The opening page is London's (its night, its map): another season
-        // never shows it. A season made from its plans begins at its Case
-        // 01 from its board.
-        return ref.read(selectedSeasonIdProvider) == SeasonIds.paris ? Routes.parisPrologue : Routes.season;
+      if (path == Routes.prologue) {
+        // The opening page is London's and that of each season made from its
+        // plans with an opening of its own; Paris has its own page, and a
+        // season without one begins at its Case 01 from its board.
+        if (ref.read(selectedSeasonIdProvider) == SeasonIds.paris) return Routes.parisPrologue;
+        if (!ref.read(seasonInfoProvider).playsPrologue) return Routes.season;
       }
       if (path == Routes.parisPrologue) {
         // Season 2 is not unlocked for anyone by its opening: only the season

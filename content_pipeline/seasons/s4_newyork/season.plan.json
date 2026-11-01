@@ -157,6 +157,43 @@
       ]
     }
   ],
+  "prologue": {
+    "city": "New York is big and busy.\nBut it hides an old secret.",
+    "cases": [
+      "A page is torn from an old notebook.",
+      "A brass egg waits to be opened.",
+      "An old tea tin keeps a secret.",
+      "And a brass bird has flown away."
+    ],
+    "separate": [
+      "They look like different puzzles.",
+      "But a good detective\nfollows the trail."
+    ],
+    "question": "Where does the trail lead?",
+    "bigger": "Every clue may be a note\nin one old song.",
+    "promise": [
+      "Follow the trail.",
+      "Read every clue.",
+      "Find the truth."
+    ],
+    "firstCase": {
+      "picture": "assets/seasons/season_04_newyork/objects/torn_page.png",
+      "line": "Your first case starts\nat the library."
+    },
+    "hero": {
+      "file": "assets/seasons/season_04_newyork/cover/season4_prologue_night.png",
+      "pixels": {
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    "pieces": [
+      "assets/seasons/season_04_newyork/objects/torn_page.png",
+      "assets/seasons/season_04_newyork/objects/brass_egg.png",
+      "assets/seasons/season_04_newyork/objects/red_tin.png",
+      "assets/seasons/season_04_newyork/objects/brass_bird.png"
+    ]
+  },
   "outro": [
     "The Silver Lark sings again in the library's great hall.",
     "Every Saturday, the children of New York come to hear its song."

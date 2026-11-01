@@ -48,9 +48,24 @@ const s3RomeWrittenLevels = <String, Set<Difficulty>>{
 };
 
 /// The season's own lines at Junior and Master (`SeasonContent.infoLevels`):
-/// its outro and finale, as many lines as its own.
+/// its prologue, outro, finale, as many lines as its own.
 const s3RomeInfoLevels = <Difficulty, Map<String, List<String>>>{
   Difficulty.junior: {
+    'prologue': [
+      'Rome is ancient and calm.\nBut something has gone wrong.',
+      'An ancient map has lost a piece.',
+      'Owl cards keep turning up.',
+      'A box is full of strange white dust.',
+      'And a guard\'s night log hides a secret.',
+      'They look like separate cases.',
+      'But a great detective\nfits the pieces together.',
+      'What if the pieces fit together?',
+      'Every clue could be a piece\nof one ancient map.',
+      'Follow the pieces.',
+      'Read every clue.',
+      'Discover the truth.',
+      'Your first investigation\nbegins at the museum.',
+    ],
     'outro': [
       'The real piece is finally back in its glass case.',
       'Beneath Piazza della Civetta, an old Roman library sees daylight once again.',
@@ -61,6 +76,21 @@ const s3RomeInfoLevels = <Difficulty, Map<String, List<String>>>{
     ],
   },
   Difficulty.master: {
+    'prologue': [
+      'Ancient Rome lies still.\nYet something is amiss.',
+      'A marble fragment has vanished.',
+      'Owl cards surface across the city.',
+      'A box conceals a curious white dust.',
+      'And a night log guards a secret.',
+      'They appear to be unrelated cases.',
+      'But a great detective\nsees how the pieces belong.',
+      'What if every piece belongs together?',
+      'Each clue may be a fragment\nof one forgotten map.',
+      'Gather every piece.',
+      'Weigh every clue.',
+      'Reveal the truth.',
+      'Your first investigation\nawaits at the museum.',
+    ],
     'outro': [
       'At last, the genuine piece rests once more in its glass case.',
       'Beneath Piazza della Civetta, a long-forgotten Roman library emerges into the light once more.',

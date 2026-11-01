@@ -4,11 +4,11 @@
   "tool": "tool/asset_pipeline/asset_pipeline.dart --wiring --write",
   "checkedAgainst": "lib/ as of 2026-10-30 (SeasonContent.places, explores, investigations, dialogues, talkMissions, endings, ChoiceOption.picture, ArtAssets.seasonCovers, SeasonMap.bySeason, ArtAssets.evidencePictures, SeasonContent.storyScenes); wired: in assets/ now",
   "counts": {
-    "wired": 46,
+    "wired": 47,
     "wired_when_made": 0,
     "ready_to_wire": 15,
     "blocked": 0,
-    "not_supported": 2
+    "not_supported": 1
   },
   "assets": [
     {
@@ -40,12 +40,12 @@
       "type": "prologue",
       "subject": "s3_rome.prologue",
       "caseIds": [],
-      "outputPath": "assets/seasons/season_03_rome/cover/prologue_map_hall_dawn.png",
-      "status": "not_supported",
-      "screen": null,
-      "field": null,
-      "via": null,
-      "note": "The season openings' pictures are written per season in lib/ (ArtAssets.season1LondonNight, season2GareDuNord); SeasonPrologue (season.plan.json prologue) is words only."
+      "outputPath": "assets/seasons/season_03_rome/cover/season3_prologue_night.png",
+      "status": "wired",
+      "screen": "The season's opening, its first scene (SeasonPrologueScreen, CityNightHero)",
+      "field": "season.plan.json prologue.hero (file, pixels) → SeasonPrologue.hero",
+      "via": "generator",
+      "note": "Shown by the generated content: the opening plays once it has this picture (Season.playsPrologue)."
     },
     {
       "assetId": "s3_rome.asset.guard_room",

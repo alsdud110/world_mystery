@@ -92,9 +92,24 @@ const s4NewyorkWrittenLevels = <String, Set<Difficulty>>{
 };
 
 /// The season's own lines at Junior and Master (`SeasonContent.infoLevels`):
-/// its outro and finale, as many lines as its own.
+/// its prologue, outro, finale, as many lines as its own.
 const s4NewyorkInfoLevels = <Difficulty, Map<String, List<String>>>{
   Difficulty.junior: {
+    'prologue': [
+      'New York never stops moving.\nBut it keeps an old secret.',
+      'A notebook has lost its last page.',
+      'A brass egg is waiting to be opened.',
+      'An old tea tin is keeping a secret.',
+      'And a brass bird has disappeared.',
+      'They look like separate puzzles.',
+      'But a great detective\nsees where the trail goes.',
+      'Where could the trail lead?',
+      'Every clue could be a note\nin one old song.',
+      'Follow where it leads.',
+      'Read each clue carefully.',
+      'Discover the truth.',
+      'Your first investigation\nbegins at the library.',
+    ],
     'outro': [
       'The Silver Lark sings once more in the library\'s great hall.',
       'Every Saturday, the children of New York gather to listen to its song.',
@@ -105,6 +120,21 @@ const s4NewyorkInfoLevels = <Difficulty, Map<String, List<String>>>{
     ],
   },
   Difficulty.master: {
+    'prologue': [
+      'New York never sleeps.\nYet it guards an old secret.',
+      'A notebook\'s final page has vanished.',
+      'A brass egg holds something hidden.',
+      'An old tea tin guards a secret.',
+      'And a brass bird has vanished.',
+      'They seem like unrelated puzzles.',
+      'But a great detective\nfollows the trail to its end.',
+      'What if every clue leads to the same place?',
+      'Each clue may be a note\nin one forgotten song.',
+      'Pursue the trail.',
+      'Weigh every clue.',
+      'Reveal the truth.',
+      'Your first investigation\nawaits at the library.',
+    ],
     'outro': [
       'Once again, the Silver Lark\'s voice rings out through the library\'s great hall.',
       'Each Saturday, the children of New York crowd in to hear its long-silent song.',

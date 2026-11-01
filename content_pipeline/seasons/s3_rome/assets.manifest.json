@@ -53,15 +53,19 @@
       "use": "notWired",
       "subject": "s3_rome.prologue",
       "caseIds": [],
-      "description": "Season prologue background: the museum's map hall at dawn, an empty glass case lit by the first sun.",
-      "prompt": "A grand marble museum hall at dawn, tall windows letting in pale gold light. In the centre stands an empty glass display case on a stone stand, a soft beam of sunlight falling on it. Old statues line the walls in shadow. Quiet and puzzling, not frightening.",
+      "description": "Season opening, first scene (portrait, full screen): Rome at night, the ancient Forum and the Capitoline Hill under the moon, one museum window lit.",
+      "prompt": "A tall portrait view over Rome at night under a bright moon: the ancient Forum's columns and arches silver in the moonlight, the Capitoline Hill above them with its museum palace, one tall window glowing warm gold as if someone is still inside; church domes and red-tiled roofs soft in the blue dark beyond. A small owl sits on top of a broken column in the near middle ground, a dark shape against the moonlit stone. Quiet, mysterious, inviting, never scary; cool moonlight blues with a few warm lamp lights. Composition for a full-screen phone opening scene (portrait, shown edge to edge by cover-fit): the top 12% is quiet night sky; the main subject sits in the upper middle (between 15% and 55% of the height) and within the central two-thirds of the width; the lower 40% is calm, darker foreground (old paving stones and the shadowed bases of ruined columns) with no important detail, because words are laid over it.",
       "stylePreset": "rome_scene",
-      "width": 1536,
-      "height": 1024,
+      "width": 1024,
+      "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cover/prologue_map_hall_dawn.png",
+      "outputPath": "assets/seasons/season_03_rome/cover/season3_prologue_night.png",
       "references": [],
-      "status": "planned"
+      "status": "generated",
+      "notes": [
+        "The opening's first scene, full-bleed (as London's season1_london_night.png, 941x1671): the words lie over the bottom 40%, Back and SKIP over the top 12%.",
+        "Wiring: season.plan.json prologue.hero (file, pixels)."
+      ]
     },
     {
       "assetId": "s3_rome.asset.guard_room",
