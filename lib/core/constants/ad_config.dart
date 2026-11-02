@@ -49,15 +49,39 @@ abstract final class AdConfig {
     rewarded: '$samplePublisher/1712485313',
   );
 
+  /// The platform this build runs on, or null when it shows no ads.
+  static AdPlatform? get platform => switch (defaultTargetPlatform) {
+    _ when kIsWeb => null,
+    TargetPlatform.android => AdPlatform.android,
+    TargetPlatform.iOS => AdPlatform.ios,
+    _ => null,
+  };
+
+  /// The platforms whose release builds may request ads: none until that
+  /// store's checks in docs/ADMOB_POLICY_CHECKLIST.md are done (children's
+  /// ads policy, consent where the law asks for it). Adding a platform here
+  /// is that sign-off.
+  static const releaseCleared = <AdPlatform>{};
+
+  /// Whether this build may ask the SDK for ads at all.
+  static bool get requestsAllowedNow {
+    final p = platform;
+    return p != null && requestsAllowed(platform: p, release: kReleaseMode);
+  }
+
+  /// Debug and profile builds may (sample ads only); a release only on a
+  /// platform [cleared] for it.
+  @visibleForTesting
+  static bool requestsAllowed({
+    required AdPlatform platform,
+    required bool release,
+    Set<AdPlatform> cleared = releaseCleared,
+  }) => !release || cleared.contains(platform);
+
   /// This build's ad units, or null when it shows no ads (another platform,
   /// or a release without valid IDs).
   static AdUnitIds? get current => resolve(
-    platform: switch (defaultTargetPlatform) {
-      _ when kIsWeb => null,
-      TargetPlatform.android => AdPlatform.android,
-      TargetPlatform.iOS => AdPlatform.ios,
-      _ => null,
-    },
+    platform: platform,
     release: kReleaseMode,
     configured: const {
       AdPlatform.android: AdUnitIds(banner: _androidBannerId, rewarded: _androidRewardedId),

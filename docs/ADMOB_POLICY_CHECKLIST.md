@@ -1,0 +1,58 @@
+# AdMob 정책 체크리스트 (World Mystery, 8–12세)
+
+Release 빌드는 이 체크리스트의 해당 플랫폼 항목이 모두 끝나기 전까지 광고를 요청하지 않는다.
+코드 게이트: `AdConfig.releaseCleared` (lib/core/constants/ad_config.dart) — 현재 빈 집합.
+항목을 모두 확인한 플랫폼만 이 집합에 추가한다. 추가하는 커밋이 곧 정책 승인 기록이다.
+
+Debug/Profile 빌드는 Google 공식 테스트 광고 ID로만 요청한다 (PART 1).
+
+## 코드에 이미 적용된 보호 (PART 2)
+
+| 항목 | 값 | 위치 |
+|---|---|---|
+| 연령 처리 | `AgeRestrictedTreatment.child` | `ChildSafeAds.configuration` |
+| 최대 광고 콘텐츠 등급 | `MaxAdContentRating.g` | 〃 |
+| 비맞춤 광고 | `AdRequest(nonPersonalizedAds: true)` | `ChildSafeAds.request` |
+| 적용 순서 | 설정 → 읽어서 확인 → `initialize()` → 첫 광고 로드 | `AdService.start()` |
+| 실패 시 | SDK 시작·광고 요청 안 함 (fail-closed) | 〃 |
+| Android 광고 ID | `AD_ID` 권한을 병합 매니페스트에서 제거 | AndroidManifest.xml |
+| iOS ATT | 요청 안 함, `NSUserTrackingUsageDescription` 없음 | Info.plist |
+
+`tagForChildDirectedTreatment` / `tagForUnderAgeOfConsent`는 google_mobile_ads 9.x에서 deprecated이고
+`ageRestrictedTreatment`로 대체되었으므로 함께 설정하지 않는다.
+
+## Android — Google Play Families (확인 필요)
+
+- [ ] Play Console 타깃 연령층 설정(8–12세 포함)과 Families 정책 적용 여부 확인
+- [ ] Google Mobile Ads SDK 버전(25.5.0, plugin 9.2.0)이 Families 자체 인증 광고 SDK 목록 조건을 충족하는지 확인
+- [ ] AdMob 콘솔: 앱 단위 "아동 대상" 설정, 광고 콘텐츠 등급 G, 민감 카테고리 차단 확인
+- [ ] AdMob 콘솔: 미디에이션을 쓰지 않음(또는 쓰는 네트워크도 Families 인증) 확인
+- [ ] Release 병합 매니페스트에 `com.google.android.gms.permission.AD_ID`가 없는지 확인
+      (Debug 병합 매니페스트에서는 제거 확인됨, 2026-11-02)
+- [ ] SDK가 추가하는 Privacy Sandbox 권한 `android.permission.ACCESS_ADSERVICES_AD_ID`
+      (및 ATTRIBUTION/TOPICS 등)도 제거해야 하는지 결정 — 현재 병합 매니페스트에 남아 있음
+- [ ] Data safety 신고: SDK가 수집하는 항목(기기 식별자/앱 상호작용/진단 등) — Google 공식 문서 기준으로 작성
+- [ ] 광고 포함 앱 표시("광고 포함") 설정
+
+## iOS — App Store (확인 필요, Windows에서 검증 불가)
+
+- [ ] **Kids Category 등록 여부 결정.** App Review Guidelines 1.3 / 5.1.4는 Kids Category 앱의 제3자 광고를
+      엄격히 제한한다. AdMob 사용이 허용되는지 최신 가이드라인으로 확인하기 전까지 iOS Release 광고 금지
+- [ ] ATT 프롬프트를 띄우지 않는 구성이 심사 기준에 맞는지 확인 (아동 대상 앱은 추적 금지)
+- [ ] Google Mobile Ads SDK의 Privacy Manifest(PrivacyInfo.xcprivacy) 포함 여부를 Xcode 빌드에서 확인
+- [ ] App Privacy(영양 성분표) 신고: SDK 수집 항목을 Google 공식 문서 기준으로 작성
+- [ ] SKAdNetwork 식별자 목록(`SKAdNetworkItems`) 필요 여부 확인 (현재 미설정)
+- [ ] 실기기에서 `getRequestConfiguration()` 읽기 결과가 G / child로 돌아오는지 확인
+      (불일치하면 서비스가 광고를 꺼 버린다 — 안전하지만 iOS 광고가 영원히 꺼진다)
+
+## 동의 (GDPR/EEA·UK 등) — 미구현
+
+- [ ] 동의가 필요한 지역의 처리 방식 결정 (UMP `ConsentInformation` + 연령 태그 등)
+- [ ] 동의 흐름이 구현되기 전까지 Release 광고 금지 — 현재 동의 완료를 가정하지 않으며,
+      `releaseCleared`가 비어 있어 Release 요청 자체가 없다
+- [ ] 개인정보처리방침에 광고 SDK와 수집 항목 명시
+
+## 공통
+
+- [ ] AdMob 계정·앱 등록, 실제 광고 단위 ID를 `config/ads.local.json`에 입력 (저장소 제외)
+- [ ] 보호자 게이트 뒤가 아닌 위치의 광고 클릭 동작(외부 이동) 정책 확인 — PART 3/4 배치 시
