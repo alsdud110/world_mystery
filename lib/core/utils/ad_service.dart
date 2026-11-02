@@ -188,6 +188,10 @@ class AdService extends ChangeNotifier {
   /// Whether an ad may be requested now.
   bool get canRequestAds => _state == AdServiceState.ready;
 
+  /// Whether ads may still come this session: false for a build that asks
+  /// for none (no ad units, a release not cleared), and once ads are off.
+  bool get mayStart => _units != null && _requestsAllowed && _state != AdServiceState.off;
+
   /// The ad units, only while ads may be requested.
   AdUnitIds? get units => canRequestAds ? _units : null;
 
