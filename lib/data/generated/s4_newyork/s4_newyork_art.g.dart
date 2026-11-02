@@ -9,7 +9,7 @@ import 'package:world_mystery/features/world_map/world_cities.dart' show WorldCi
 import 'package:world_mystery/widgets/art_assets.dart' show SeasonCover;
 
 // The landmarks drawn on the map, at the centre of each one's drawing,
-// measured on assets/seasons/season_04_newyork/locations/map/newyork_map.png (sha256:22742456195ccd38…).
+// measured on assets/seasons/season_04_newyork/locations/map/newyork_map.webp (sha256:7180585fc49d94dc…).
 const _centralPark = SeasonLandmark('central_park', 'Central Park', Offset(800 / 1536, 150 / 1024));
 const _timesSquare = SeasonLandmark('times_square', 'Times Square', Offset(515 / 1536, 330 / 1024));
 const _newYorkPublicLibrary = SeasonLandmark('new_york_public_library', 'New York Public Library', Offset(715 / 1536, 385 / 1024));
@@ -23,7 +23,7 @@ const _coneyIsland = SeasonLandmark('coney_island', 'Coney Island', Offset(1265 
 
 /// The Mission Map of season s4_newyork: every mission at its place's landmark.
 const s4NewyorkMap = SeasonMap(
-  artwork: 'assets/seasons/season_04_newyork/locations/map/newyork_map.png',
+  artwork: 'assets/seasons/season_04_newyork/locations/map/newyork_map.webp',
   pixels: Size(1536, 1024),
   aspect: 1536 / 1024,
   landmarks: [_centralPark, _timesSquare, _newYorkPublicLibrary, _grandCentral, _washingtonSquare, _hartBuilding, _chinatown, _brooklynBridge, _statueOfLiberty, _coneyIsland],
@@ -83,7 +83,7 @@ const s4NewyorkMap = SeasonMap(
 
 /// Its cover (portrait, no text) and how the screens frame it.
 const s4NewyorkCover = SeasonCover(
-  file: 'assets/seasons/season_04_newyork/cover/season4_cover_newyork.png',
+  file: 'assets/seasons/season_04_newyork/cover/season4_cover_newyork.webp',
   pixels: Size(1024, 1536),
   archiveLook: Alignment(0, -0.15),
   crop: Alignment(0, 0),
@@ -102,13 +102,13 @@ const s4NewyorkWorldCity = WorldCity(
 /// Its evidence shown by a picture (`ArtAssets.evidencePictures`), by evidence id:
 /// each picture made for it (assets.manifest.json, on disk).
 const s4NewyorkEvidencePictures = <String, String>{
-  's4_ep01_e2': 'assets/seasons/season_04_newyork/objects/newspaper.png',
-  's4_ep01_e3': 'assets/seasons/season_04_newyork/objects/rubbing.png',
-  's4_ep02_e2': 'assets/seasons/season_04_newyork/objects/brass_egg.png',
-  's4_ep03_e1': 'assets/seasons/season_04_newyork/objects/red_tin.png',
-  's4_ep04_e2': 'assets/seasons/season_04_newyork/objects/brass_bird.png',
-  's4_ep07_e1': 'assets/seasons/season_04_newyork/objects/star_sole.png',
-  's4_ep08_e4': 'assets/seasons/season_04_newyork/objects/music_box.png',
-  's4_ep11_e3': 'assets/seasons/season_04_newyork/objects/torn_page.png',
-  's4_ep12_e4': 'assets/seasons/season_04_newyork/objects/silver_lark.png',
+  's4_ep01_e2': 'assets/seasons/season_04_newyork/objects/newspaper.webp',
+  's4_ep01_e3': 'assets/seasons/season_04_newyork/objects/rubbing.webp',
+  's4_ep02_e2': 'assets/seasons/season_04_newyork/objects/brass_egg.webp',
+  's4_ep03_e1': 'assets/seasons/season_04_newyork/objects/red_tin.webp',
+  's4_ep04_e2': 'assets/seasons/season_04_newyork/objects/brass_bird.webp',
+  's4_ep07_e1': 'assets/seasons/season_04_newyork/objects/star_sole.webp',
+  's4_ep08_e4': 'assets/seasons/season_04_newyork/objects/music_box.webp',
+  's4_ep11_e3': 'assets/seasons/season_04_newyork/objects/torn_page.webp',
+  's4_ep12_e4': 'assets/seasons/season_04_newyork/objects/silver_lark.webp',
 };

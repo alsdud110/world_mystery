@@ -55,14 +55,14 @@ void main() {
     await t.pumpWidget(const Directionality(
       textDirection: TextDirection.ltr,
       child: Center(
-        child: SizedBox(width: 220, height: 330, child: DisplaySizedImage('assets/seasons/season_03_rome/characters/pia_base.png', fit: BoxFit.contain)),
+        child: SizedBox(width: 220, height: 330, child: DisplaySizedImage('assets/seasons/season_03_rome/characters/pia_base.webp', fit: BoxFit.contain)),
       ),
     ));
     final image = t.widget<Image>(find.byType(Image)).image;
     expect(image, isA<ResizeImage>());
     expect((image as ResizeImage).width, 660, reason: '220 wide on a 3x screen: 660 of the file\'s 1024');
     expect(image.allowUpscaling, isFalse, reason: 'never decoded larger than the file');
-    expect((image.imageProvider as AssetImage).assetName, 'assets/seasons/season_03_rome/characters/pia_base.png');
+    expect((image.imageProvider as AssetImage).assetName, 'assets/seasons/season_03_rome/characters/pia_base.webp');
     expect(DisplaySizedImage.decodeWidth(null, 3), isNull, reason: 'a box of no known width: the file\'s own size');
   });
 }

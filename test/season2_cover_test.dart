@@ -67,10 +67,9 @@ void main() {
   test('the Season 2 cover is in the game, at its size, its folder bundled', () {
     final file = File(paris);
     expect(file.existsSync(), isTrue);
-    final png = file.readAsBytesSync();
-    int u32(int at) => (png[at] << 24) | (png[at + 1] << 16) | (png[at + 2] << 8) | png[at + 3];
-    expect(png.sublist(0, 8), [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]);
-    expect((u32(16), u32(20)), (941, 1671));
+    final webp = file.readAsBytesSync();
+    expect(String.fromCharCodes(webp.sublist(0, 4)) + String.fromCharCodes(webp.sublist(8, 12)), 'RIFFWEBP', reason: 'the game ships its pictures as WebP');
+    expect(imageSize(file.path), (941.0, 1671.0));
     expect(ArtAssets.season2CoverParisPanoramaPixels.width, 941);
     expect(ArtAssets.season2CoverParisPanoramaPixels.height, 1671);
     expect(ArtAssets.seasonCovers[SeasonIds.paris]!.file, paris);

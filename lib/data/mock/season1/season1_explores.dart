@@ -19,7 +19,7 @@ final Map<String, ExploreScene> season1Explores = {
   // to look at (the case's clue for the final lock, saved with the solve
   // as always): never needed to go on.
   'm01': ExploreScene(
-    picture: 'assets/seasons/season_01_london/cases/case_01/kings_cross_platform_night.png',
+    picture: 'assets/seasons/season_01_london/cases/case_01/kings_cross_platform_night.webp',
     pixels: _platform,
     place: "King's Cross station at night",
     task: 'Look around the station. Your first clue is waiting!',
@@ -108,22 +108,22 @@ final Map<String, ExploreScene> season1Explores = {
     choices: [
       ExplorePicture(
         optionId: 'a',
-        picture: 'assets/seasons/season_01_london/cases/case_01/poster_natural_history.png',
+        picture: 'assets/seasons/season_01_london/cases/case_01/poster_natural_history.webp',
         description: 'a dinosaur skeleton in a great hall',
       ),
       ExplorePicture(
         optionId: 'b',
-        picture: 'assets/seasons/season_01_london/cases/case_01/poster_british_museum.png',
+        picture: 'assets/seasons/season_01_london/cases/case_01/poster_british_museum.webp',
         description: 'a golden pharaoh, a mummy case and a big stone covered in writing',
       ),
       ExplorePicture(
         optionId: 'c',
-        picture: 'assets/seasons/season_01_london/cases/case_01/poster_transport.png',
+        picture: 'assets/seasons/season_01_london/cases/case_01/poster_transport.webp',
         description: 'a steam train, a red double-decker bus and an old car',
       ),
       ExplorePicture(
         optionId: 'd',
-        picture: 'assets/seasons/season_01_london/cases/case_01/poster_science.png',
+        picture: 'assets/seasons/season_01_london/cases/case_01/poster_science.webp',
         description: 'a rocket, a telescope and planets',
       ),
     ],

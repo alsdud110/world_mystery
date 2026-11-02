@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import '../ai_agents/png_check.dart';
+import '../asset_optimizer/image_file.dart';
 import '../season_gen/sha256.dart';
 
 /// Where one asset of a season's manifest stands in the pipeline.
@@ -32,9 +32,10 @@ class FileRecord {
   final int height;
   final bool hasAlpha;
 
+  /// The file at [path], read whole (PNG, or the game's WebP).
   static FileRecord of(String root, String path) {
     final bytes = File('$root/$path').readAsBytesSync();
-    final info = PngCheck.bytes(bytes);
+    final info = ImageFileCheck.bytes(bytes);
     return FileRecord(path: path, sha256: 'sha256:${Sha256.hex(bytes)}', width: info.width, height: info.height, hasAlpha: info.hasAlpha);
   }
 
@@ -45,8 +46,8 @@ class FileRecord {
     final bytes = f.readAsBytesSync();
     if ('sha256:${Sha256.hex(bytes)}' != sha256) return 'changed since it was written';
     try {
-      PngCheck.bytes(bytes);
-    } on PngProblem catch (e) {
+      ImageFileCheck.bytes(bytes);
+    } on ImageFileProblem catch (e) {
       return '$e';
     }
     return null;
@@ -76,6 +77,10 @@ class AssetRecord {
   FileRecord? raw;
   FileRecord? game;
   bool transformed = false;
+
+  /// How [game] was made from the API's PNG when it is a WebP: kind,
+  /// setting, quality, encoder and policy version (`OptimizeResult`).
+  Map<String, Object?>? optimized;
   String? error;
   double? estimatedUsd;
   double? conservativeUsd;
@@ -89,6 +94,7 @@ class AssetRecord {
     'raw': ?raw?.toJson(),
     'game': ?game?.toJson(),
     if (game != null) 'transformed': transformed,
+    'optimized': ?optimized,
     'error': ?error,
     'cost': {'estimatedUsd': estimatedUsd, 'conservativeUsd': conservativeUsd, 'fromUsageUsd': fromUsageUsd},
     'updatedAt': ?updatedAt,
@@ -103,6 +109,7 @@ class AssetRecord {
       ..raw = FileRecord.fromJson(j['raw'])
       ..game = FileRecord.fromJson(j['game'])
       ..transformed = j['transformed'] as bool? ?? false
+      ..optimized = (j['optimized'] as Map?)?.cast<String, Object?>()
       ..error = j['error'] as String?
       ..estimatedUsd = (cost['estimatedUsd'] as num?)?.toDouble()
       ..conservativeUsd = (cost['conservativeUsd'] as num?)?.toDouble()

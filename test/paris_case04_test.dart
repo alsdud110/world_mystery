@@ -34,6 +34,7 @@ import 'package:world_mystery/widgets/game_button.dart';
 import 'package:world_mystery/widgets/ink_icon.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'easy_play.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
@@ -102,30 +103,31 @@ void main() {
     const folder = 'assets/seasons/season_02_paris/cases/case_04';
     // Size, and whether it is cut out on transparency (as delivered).
     const pictures = {
-      'seine_quays_dusk.png': (1536, 1024, false),
-      'quay_wall_marks.png': (1536, 1024, false),
-      'river_mark_a.png': (1254, 1254, false),
-      'river_mark_b.png': (1254, 1254, false),
-      'river_mark_c.png': (1254, 1254, false),
-      'river_mark_d.png': (1254, 1254, false),
-      'brass_plaque_back.png': (1536, 1024, true),
-      'keeper_hut.png': (1536, 1024, false),
-      'keeper_hut_interior.png': (1536, 1024, false),
-      'keeper_ledger.png': (1536, 1024, true),
-      'quay_boxes.png': (1536, 1024, false),
-      'metal_box_open.png': (1536, 1024, false),
-      'delivery_label_blank.png': (1377, 1142, true),
-      'delivery_label_back.png': (1377, 1142, true),
-      'decoy_label_piece.png': (1842, 854, true),
-      'street_book.png': (1024, 1536, true),
-      'passage_gate.png': (1024, 1536, true),
-      'hands_sign.png': (1254, 1254, true),
+      'seine_quays_dusk.webp': (1536, 1024, false),
+      'quay_wall_marks.webp': (1536, 1024, false),
+      'river_mark_a.webp': (1254, 1254, false),
+      'river_mark_b.webp': (1254, 1254, false),
+      'river_mark_c.webp': (1254, 1254, false),
+      'river_mark_d.webp': (1254, 1254, false),
+      'brass_plaque_back.webp': (1536, 1024, true),
+      'keeper_hut.webp': (1536, 1024, false),
+      'keeper_hut_interior.webp': (1536, 1024, false),
+      'keeper_ledger.webp': (1536, 1024, true),
+      'quay_boxes.webp': (1536, 1024, false),
+      'metal_box_open.webp': (1536, 1024, false),
+      'delivery_label_blank.webp': (1377, 1142, true),
+      'delivery_label_back.webp': (1377, 1142, true),
+      'decoy_label_piece.webp': (1842, 854, true),
+      'street_book.webp': (1024, 1536, true),
+      'passage_gate.webp': (1024, 1536, true),
+      'hands_sign.webp': (1254, 1254, true),
     };
 
+    /// A picture's width, height and whether it can hold transparency, read
+    /// whole from its own bytes (the game's WebP, or a PNG).
     (int, int, bool) header(Uint8List b) {
-      final d = ByteData.sublistView(b);
-      final colourType = b[25];
-      return (d.getUint32(16), d.getUint32(20), colourType == 4 || colourType == 6);
+      final i = ImageFileCheck.bytes(b);
+      return (i.width, i.height, i.hasAlpha);
     }
 
     Future<(ByteData, int, int)> pixels(String path) async {
@@ -136,7 +138,8 @@ void main() {
 
     test('all eighteen are in, listed in pubspec, at their sizes, cut out where they are papers or parts', () {
       expect(pubspecAssets(), contains('$folder/'), reason: 'its folder, exactly, in flutter: assets:');
-      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')).length, 18);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 18);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, cutOut)) in pictures.entries) {
         final file = File('$folder/$name');
         expect(file.existsSync(), isTrue, reason: name);
@@ -165,7 +168,7 @@ void main() {
         ArtAssets.scenes[case04.introScene]!,
       };
       expect({for (final f in played) f.split('/').last}, {...pictures.keys});
-      expect(ArtAssets.scenes[Artwork.seineQuays], endsWith('case_04/seine_quays_dusk.png'));
+      expect(ArtAssets.scenes[Artwork.seineQuays], endsWith('case_04/seine_quays_dusk.webp'));
     });
 
     test('the plaque\'s back has the front\'s outline; the label\'s back is a little wider round the same card', () async {
@@ -181,11 +184,11 @@ void main() {
         return n / total;
       }
 
-      final (front, fw, fh) = await pixels('assets/seasons/season_02_paris/cases/case_03/brass_plaque.png');
-      final (back, _, _) = await pixels('$folder/brass_plaque_back.png');
+      final (front, fw, fh) = await pixels('assets/seasons/season_02_paris/cases/case_03/brass_plaque.webp');
+      final (back, _, _) = await pixels('$folder/brass_plaque_back.webp');
       expect(differ(front, back, fw, fh), lessThan(0.01), reason: 'the same plaque turned over');
-      final (blank, lw, lh) = await pixels('$folder/delivery_label_blank.png');
-      final (lback, _, _) = await pixels('$folder/delivery_label_back.png');
+      final (blank, lw, lh) = await pixels('$folder/delivery_label_blank.webp');
+      final (lback, _, _) = await pixels('$folder/delivery_label_back.webp');
       // Not cut on one outline (measured 3.6%): the back is drawn on its own,
       // a little wider. The last piece's back is its own outline, turned over.
       expect(differ(blank, lback, lw, lh), lessThan(0.05));
@@ -817,7 +820,7 @@ void main() {
         await shot('m2_place');
         await tapText(t, 'INVESTIGATE', after: const Duration(milliseconds: 900));
         expect(find.byKey(const ValueKey('hut-outside')), findsOneWidget);
-        expect(find.byKey(const ValueKey('hut-picture-hut-door')), findsOneWidget, reason: 'keeper_hut.png');
+        expect(find.byKey(const ValueKey('hut-picture-hut-door')), findsOneWidget, reason: 'keeper_hut.webp');
         await shot('m2_outside');
         // The door, where it is in the picture.
         final picture = t.getRect(find.byKey(const ValueKey('hut-picture-hut-door')));
@@ -825,13 +828,13 @@ void main() {
         expect(door.center.dx, closeTo(picture.left + picture.width * hut.doorArea.center.dx, 1));
         await tapKey('hut-door', after: const Duration(milliseconds: 600));
         expect(find.byKey(const ValueKey('hut-inside')), findsOneWidget);
-        expect(find.byKey(const ValueKey('hut-picture-hut-ledger')), findsOneWidget, reason: 'keeper_hut_interior.png');
+        expect(find.byKey(const ValueKey('hut-picture-hut-ledger')), findsOneWidget, reason: 'keeper_hut_interior.webp');
         await shot('m2_inside');
         await back();
         expect(find.byKey(const ValueKey('hut-outside')), findsOneWidget, reason: 'back: inside → outside');
         await tapKey('hut-door', after: const Duration(milliseconds: 600));
         await tapKey('hut-ledger', after: const Duration(milliseconds: 600));
-        expect(find.byKey(const ValueKey('ledger-page-0')), findsOneWidget, reason: 'keeper_ledger.png');
+        expect(find.byKey(const ValueKey('ledger-page-0')), findsOneWidget, reason: 'keeper_ledger.webp');
         expect(find.byKey(const ValueKey('ledger-title-1')), findsNothing, reason: 'page 2 is not open before the answer');
         expect(examined(), contains('s2_ep04_m2:ledger'));
         await shot('m2_ledger');

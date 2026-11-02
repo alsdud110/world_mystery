@@ -289,7 +289,7 @@ const s4Ep11JuniorInvestigations = <String, InvestigationScene>{};
 const s4Ep11JuniorDialogues = <String, DialogueScene>{
   's4_ep11_m1': DialogueScene(
     place: 'TV STUDIO',
-    background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+    background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     goal: 'Find out where Dexter was on Friday at ten.',
     how: 'Ask each person, and write down their answers.',
     guide: 'Speak to a witness.',
@@ -298,7 +298,7 @@ const s4Ep11JuniorDialogues = <String, DialogueScene>{
         id: 'dexter',
         name: 'Dexter Vance',
         title: 'THE TREASURE HUNTER',
-        portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
         description: 'a tall man with a wide smile, a safari vest and sunglasses pushed up on his head',
         greeting: 'Ask me whatever you like. The cameras love me!',
         answers: {
@@ -320,7 +320,7 @@ const s4Ep11JuniorDialogues = <String, DialogueScene>{
         id: 'nora',
         name: 'Nora Bell',
         title: 'THE CAMERA OPERATOR',
-        portrait: 'assets/seasons/season_04_newyork/characters/nora_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/nora_base.webp',
         description: 'a young woman in a black cap, with headphones around her neck',
         greeting: 'I\'m finished keeping his secrets. Ask me.',
         answers: {
@@ -342,7 +342,7 @@ const s4Ep11JuniorDialogues = <String, DialogueScene>{
         id: 'frank',
         name: 'Frank Russo',
         title: 'THE NIGHT GUARD',
-        portrait: 'assets/seasons/season_04_newyork/characters/frank_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/frank_base.webp',
         description: 'a big, friendly guard in a blue uniform, with a flashlight on his belt',
         greeting: 'I\'ve brought the library\'s pass list.',
         answers: {
@@ -496,32 +496,32 @@ const s4Ep11JuniorEndings = <String, List<EndingLine>>{
       'I found them first! Finders keepers!',
       voice: TalkVoice.speaker,
       name: 'DEXTER VANCE',
-      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     ),
     EndingLine(
       'The Lark is meant for a child of the city. Not for you.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
       evidenceId: 's4_ep01_e2',
     ),
     EndingLine(
       'And you cut a page out of one of this library\'s treasures.',
       voice: TalkVoice.speaker,
       name: 'HAROLD BROOKS',
-      portrait: 'assets/seasons/season_04_newyork/characters/harold_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/harold_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     ),
     EndingLine(
       'I\'m sorry I stayed quiet for so long.',
       voice: TalkVoice.speaker,
       name: 'NORA BELL',
-      portrait: 'assets/seasons/season_04_newyork/characters/nora_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/nora_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     ),
     EndingLine(
       'The police take Dexter away. The Lark is still sleeping in its castle.',
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     ),
   ],
 };
@@ -811,7 +811,7 @@ const s4Ep11MasterInvestigations = <String, InvestigationScene>{};
 const s4Ep11MasterDialogues = <String, DialogueScene>{
   's4_ep11_m1': DialogueScene(
     place: 'TV STUDIO',
-    background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+    background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     goal: 'Find out where Dexter was on Friday at ten.',
     how: 'Question each person and record what they tell you.',
     guide: 'Approach a witness.',
@@ -820,7 +820,7 @@ const s4Ep11MasterDialogues = <String, DialogueScene>{
         id: 'dexter',
         name: 'Dexter Vance',
         title: 'THE TREASURE HUNTER',
-        portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
         description: 'a tall man with a dazzling smile, a safari vest and sunglasses perched on his head',
         greeting: 'Ask me anything at all. The cameras adore me!',
         answers: {
@@ -842,7 +842,7 @@ const s4Ep11MasterDialogues = <String, DialogueScene>{
         id: 'nora',
         name: 'Nora Bell',
         title: 'THE CAMERA OPERATOR',
-        portrait: 'assets/seasons/season_04_newyork/characters/nora_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/nora_base.webp',
         description: 'a young woman in a black cap, headphones slung around her neck',
         greeting: 'I\'m through keeping his secrets. Ask away.',
         answers: {
@@ -864,7 +864,7 @@ const s4Ep11MasterDialogues = <String, DialogueScene>{
         id: 'frank',
         name: 'Frank Russo',
         title: 'THE NIGHT GUARD',
-        portrait: 'assets/seasons/season_04_newyork/characters/frank_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/frank_base.webp',
         description: 'a burly, good-natured guard in a blue uniform, a torch hanging from his belt',
         greeting: 'I\'ve brought along the library\'s pass list.',
         answers: {
@@ -1018,32 +1018,32 @@ const s4Ep11MasterEndings = <String, List<EndingLine>>{
       'I discovered them first! Finders keepers!',
       voice: TalkVoice.speaker,
       name: 'DEXTER VANCE',
-      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     ),
     EndingLine(
       'The Lark was meant for a child of the city. Never for you.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
       evidenceId: 's4_ep01_e2',
     ),
     EndingLine(
       'And you sliced a page from one of this library\'s treasures.',
       voice: TalkVoice.speaker,
       name: 'HAROLD BROOKS',
-      portrait: 'assets/seasons/season_04_newyork/characters/harold_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/harold_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     ),
     EndingLine(
       'Forgive me for keeping silent so long.',
       voice: TalkVoice.speaker,
       name: 'NORA BELL',
-      portrait: 'assets/seasons/season_04_newyork/characters/nora_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/nora_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     ),
     EndingLine(
       'The police escort Dexter out. The Lark still slumbers in its castle.',
-      background: 'assets/seasons/season_04_newyork/locations/tv_studio.png',
+      background: 'assets/seasons/season_04_newyork/locations/tv_studio.webp',
     ),
   ],
 };

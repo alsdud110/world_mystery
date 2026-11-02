@@ -18,6 +18,8 @@ import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
+
 final episode01 = Episode.fromJson(episode01Json);
 
 /// Looking up a word as a player does: press and hold it.
@@ -140,12 +142,15 @@ List<String> missingAssets(Iterable<String> assets) => [
       a,
 ];
 
-/// A PNG file's size in pixels, read from its header (null: not a PNG).
-(double, double)? pngSize(String file) {
-  final png = File(file).readAsBytesSync();
-  if (png.length < 24 || png[1] != 0x50 || png[2] != 0x4E || png[3] != 0x47) return null;
-  int u32(int at) => (png[at] << 24) | (png[at + 1] << 16) | (png[at + 2] << 8) | png[at + 3];
-  return (u32(16).toDouble(), u32(20).toDouble());
+/// A picture file's size in pixels (PNG, the game's WebP, JPEG), read whole
+/// from its own bytes (null: not a valid picture).
+(double, double)? imageSize(String file) {
+  try {
+    final info = ImageFileCheck.file(file);
+    return (info.width.toDouble(), info.height.toDouble());
+  } on ImageFileProblem {
+    return null;
+  }
 }
 
 /// Why each of [places]' pictures cannot be bundled: missing on disk, in
@@ -160,7 +165,7 @@ List<String> placeAssetProblems(Map<String, ScenePlace> places) {
         '$id: ${p.file} is not on disk'
       else if (!listed.any((a) => a == p.file || (a.endsWith('/') && p.file.startsWith(a) && !p.file.substring(a.length).contains('/'))))
         '$id: ${p.file} is not listed in pubspec.yaml'
-      else if (pngSize(p.file) case final size when size != (p.pixels.width, p.pixels.height))
+      else if (imageSize(p.file) case final size when size != (p.pixels.width, p.pixels.height))
         '$id: ${p.file} is $size pixels, not (${p.pixels.width}, ${p.pixels.height})',
   ];
 }

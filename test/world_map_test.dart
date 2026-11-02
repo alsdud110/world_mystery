@@ -716,8 +716,7 @@ void main() {
       (ArtAssets.worldMapPinLocked, 96, 120),
       (ArtAssets.worldMapPinRing, 144, 144),
     ]) {
-      final head = ByteData.sublistView(File(pin).readAsBytesSync().sublist(16, 24));
-      expect((head.getUint32(0), head.getUint32(4)), (w, h), reason: pin);
+      expect(imageSize(pin), (w.toDouble(), h.toDouble()), reason: pin);
     }
     expect(File('pubspec.yaml').readAsStringSync(), contains('- assets/shared/world_map/'));
   });

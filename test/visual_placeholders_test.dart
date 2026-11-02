@@ -83,20 +83,20 @@ void main() {
       }
       // Case 11 recalls Case 01's suitcase on Platform 9, not Mrs Robin's.
       expect(PlaceArt.sceneOf(mission('ep11_final')), Artwork.suitcase);
-      expect(ArtAssets.scene(Artwork.oldSuitcase), 'assets/shared/objects/suitcase.png');
+      expect(ArtAssets.scene(Artwork.oldSuitcase), 'assets/shared/objects/suitcase.webp');
       expect(LandmarkArt.hasPicture(Artwork.suitcase), isFalse);
     });
 
     test("the Royal Box photo is the open box, never the theatre's royal box", () {
-      expect(ArtAssets.scene(Artwork.royalBox), 'assets/seasons/season_01_london/special/royal_box_open.png');
-      expect(ArtAssets.scene(Artwork.royalBox, solved: 1), 'assets/seasons/season_01_london/special/royal_box_open.png');
-      expect(ArtAssets.scenes.values, isNot(contains('assets/seasons/season_01_london/special/royal_box.png')));
+      expect(ArtAssets.scene(Artwork.royalBox), 'assets/seasons/season_01_london/special/royal_box_open.webp');
+      expect(ArtAssets.scene(Artwork.royalBox, solved: 1), 'assets/seasons/season_01_london/special/royal_box_open.webp');
+      expect(ArtAssets.scenes.values, isNot(contains('assets/seasons/season_01_london/special/royal_box.webp')));
       // The final case still animates its own two pictures.
       // (Its shut picture: the delivered one with its painted 0000 taken off
       // the drums, so the locks' own numbers are written there: 2026-10-19.)
-      expect(ArtAssets.royalBox.closed, 'assets/seasons/season_01_london/special/royal_box_closed_blank.png');
-      expect(ArtAssets.royalBoxClosedPainted, 'assets/seasons/season_01_london/special/royal_box_closed.png');
-      expect(ArtAssets.royalBox.open, 'assets/seasons/season_01_london/special/royal_box_open.png');
+      expect(ArtAssets.royalBox.closed, 'assets/seasons/season_01_london/special/royal_box_closed_blank.webp');
+      expect(ArtAssets.royalBoxClosedPainted, 'assets/seasons/season_01_london/special/royal_box_closed.webp');
+      expect(ArtAssets.royalBox.open, 'assets/seasons/season_01_london/special/royal_box_open.webp');
       expect(mission('final').scene, Artwork.royalBox);
     });
 
@@ -239,9 +239,9 @@ void main() {
       router.go(Routes.solved);
       await settle(t, const Duration(milliseconds: 3200));
       // Its file shows the Crown itself now, not the small box photo (2026-10-19).
-      expect(picture('assets/seasons/season_01_london/objects/crown_cutout.png'), findsOneWidget);
-      expect(picture('assets/seasons/season_01_london/special/royal_box_open.png'), findsNothing);
-      expect(picture('assets/seasons/season_01_london/special/royal_box.png'), findsNothing);
+      expect(picture('assets/seasons/season_01_london/objects/crown_cutout.webp'), findsOneWidget);
+      expect(picture('assets/seasons/season_01_london/special/royal_box_open.webp'), findsNothing);
+      expect(picture('assets/seasons/season_01_london/special/royal_box.webp'), findsNothing);
       await reveal(t, find.text('MASTER DETECTIVE'));
       expect(monogram, findsNothing, reason: 'headline medal and the badge row');
       expect(picture(ArtAssets.badges[GameBadge.masterDetective]!), findsOneWidget);
@@ -249,7 +249,7 @@ void main() {
     });
 
     testWidgets("Case 04 $tag: Platform 4 and the last train show the brown suitcase", (t) async {
-      const suitcase = 'assets/shared/objects/suitcase.png';
+      const suitcase = 'assets/shared/objects/suitcase.webp';
       Finder drawnSuitcase() => find.byWidgetPredicate((w) => w is LandmarkArt && w.artwork == Artwork.suitcase);
       final router = await start(t, size, await prefsFor('ep04', done: 2));
       router.go(Routes.mission('ep04_m3'));
@@ -277,8 +277,8 @@ void main() {
       final router = await start(t, size, await prefsFor('ep12', solved: true));
       router.go(Routes.season);
       await settle(t, const Duration(milliseconds: 2500));
-      expect(picture('assets/seasons/season_01_london/special/royal_box_open.png'), findsOneWidget, reason: 'Case 01');
-      expect(picture('assets/shared/objects/suitcase.png'), findsOneWidget, reason: 'Case 04');
+      expect(picture('assets/seasons/season_01_london/special/royal_box_open.webp'), findsOneWidget, reason: 'Case 01');
+      expect(picture('assets/shared/objects/suitcase.webp'), findsOneWidget, reason: 'Case 04');
       // Case 11's black suitcase (Platform 9) stays drawn.
       expect(find.byWidgetPredicate((w) => w is LandmarkArt && w.artwork == Artwork.suitcase), findsOneWidget);
       await capture(t, 'fix_board_$tag');
@@ -288,11 +288,11 @@ void main() {
       final router = await start(t, size, await prefsFor('ep12', done: 0));
       router.go(Routes.mission('ep12_m1'));
       await settle(t);
-      expect(picture('assets/seasons/season_01_london/locations/landmarks/big_ben.png'), findsOneWidget);
+      expect(picture('assets/seasons/season_01_london/locations/landmarks/big_ben.webp'), findsOneWidget);
       expect(find.byWidgetPredicate((w) => w is LandmarkArt && w.artwork == Artwork.clockFace), findsNothing);
       await capture(t, 'fix_case12_m1_$tag');
 
-      expect(picture('assets/seasons/season_01_london/locations/big_ben/clock_face.png'), findsNothing);
+      expect(picture('assets/seasons/season_01_london/locations/big_ben/clock_face.webp'), findsNothing);
     });
   }
 }

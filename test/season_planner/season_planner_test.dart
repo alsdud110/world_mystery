@@ -404,7 +404,7 @@ void main() {
       final out = '${tmp.path.replaceAll(r'\', '/')}/out';
       // Every Rome place is drawn since STEP 3-15B B3: the copy's map archive
       // is planned at a file not made, as a season still being drawn is.
-      const drawn = 'cases/case_09/map_archive.png', notMade = 'cases/case_09/map_archive_not_made.png';
+      const drawn = 'cases/case_09/map_archive.webp', notMade = 'cases/case_09/map_archive_not_made.png';
       final plan = File('$dir/season.plan.json');
       expect(plan.readAsStringSync(), contains(drawn));
       plan.writeAsStringSync(plan.readAsStringSync().replaceAll(drawn, notMade));

@@ -222,11 +222,10 @@ void main() {
     const folder = 'assets/seasons/season_02_paris/cases/case_01';
     final [m1, m2, m3, fin] = paris.allMissions;
 
-    /// A PNG's width and height, from its header.
+    /// A picture's width and height (the game's WebP, or a PNG), read whole.
     (int, int) pixelsOf(String file) {
-      final b = File(file).readAsBytesSync();
-      int at(int i) => (b[i] << 24) | (b[i + 1] << 16) | (b[i + 2] << 8) | b[i + 3];
-      return (at(16), at(20));
+      final (w, h) = imageSize(file)!;
+      return (w.round(), h.round());
     }
 
     test('the six pictures are in the game, at the sizes their scenes are measured on', () {
@@ -246,8 +245,8 @@ void main() {
         expect(File(file).existsSync(), isTrue, reason: file);
         expect(pixelsOf(file), (px.width.toInt(), px.height.toInt()), reason: file);
       }
-      expect(pixelsOf('$folder/old_clock_face.png'), (1254, 1254));
-      expect(ArtAssets.scenes[Artwork.oldClockFace], '$folder/old_clock_face.png');
+      expect(pixelsOf('$folder/old_clock_face.webp'), (1254, 1254));
+      expect(ArtAssets.scenes[Artwork.oldClockFace], '$folder/old_clock_face.webp');
       expect(ArtAssets.evidencePictures['s2_ep01_e2'], ticket.picture);
       expect(ArtAssets.evidencePictures['s2_ep01_e4'], box.found);
     });

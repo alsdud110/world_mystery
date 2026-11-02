@@ -38,20 +38,20 @@
               "label": "The room with a pool of water",
               "feedback": "That room is for washing: a BALNEUM. Livia's half word is BIBLIO...",
               "altText": "a Roman room with a big pool of water and columns",
-              "picture": "assets/seasons/season_03_rome/cases/case_09/room_bath.png"
+              "picture": "assets/seasons/season_03_rome/cases/case_09/room_bath.webp"
             },
             {
               "id": "library",
               "label": "The room with square holes in the walls",
               "altText": "an old stone room with rows of small square holes in the walls, lit by a lamp",
-              "picture": "assets/seasons/season_03_rome/locations/roman_library.png"
+              "picture": "assets/seasons/season_03_rome/locations/roman_library.webp"
             },
             {
               "id": "theatre",
               "label": "The room with rows of stone seats",
               "feedback": "That is a place for shows: a THEATRUM. Does it start with BIBLIO?",
               "altText": "a half-round Roman theatre with rows of stone seats",
-              "picture": "assets/seasons/season_03_rome/cases/case_09/room_theatre.png"
+              "picture": "assets/seasons/season_03_rome/cases/case_09/room_theatre.webp"
             }
           ]
         },
@@ -130,7 +130,7 @@
         "hideOptionNames": true,
         "talk": {
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp",
           "goal": "Read the half word on the map.",
           "after": {
             "lines": [
@@ -345,7 +345,7 @@
         },
         "talk": {
           "speaker": "livia_conti",
-          "portrait": "assets/seasons/season_03_rome/characters/livia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp",
           "goal": "Find the owl square on a map of today.",
           "after": {
             "lines": [
@@ -465,7 +465,7 @@
           "by": "speaker",
           "text": "Four, six, nine. The cabinet opens!",
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp"
         },
         {
           "by": "narrator",
@@ -480,13 +480,13 @@
           "by": "speaker",
           "text": "Concrete on 10 May. That is in two days!",
           "speaker": "livia_conti",
-          "portrait": "assets/seasons/season_03_rome/characters/livia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp"
         },
         {
           "by": "speaker",
           "text": "The library will be covered forever.",
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp"
         }
       ]
     }

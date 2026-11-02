@@ -487,7 +487,7 @@ Future<void> capture(WidgetTester t, String name) async {
 
 /// Where the painting's moon and ship land on a [size] screen (the title
 /// page's crop: `BoxFit.cover`, leaning right at `Alignment(0.55, 0)`).
-/// Measured on `title_detective_office.png` (942 × 1670), as fractions.
+/// Measured on `title_detective_office.webp` (942 × 1670), as fractions.
 (Rect, Rect) _skyMarks(Size size) {
   const pixels = ArtAssets.titleDetectiveOfficePixels;
   final scale = math.max(size.width / pixels.width, size.height / pixels.height);

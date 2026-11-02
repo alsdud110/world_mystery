@@ -29,24 +29,23 @@ void main() {
   final scene = exploreOf(m01)!;
   ExploreSpot spot(String id) => scene.spot(id);
 
-  /// A PNG's width and height, read from its header.
-  Size pngSize(String path) {
-    final b = File(path).readAsBytesSync();
-    int word(int at) => (b[at] << 24) | (b[at + 1] << 16) | (b[at + 2] << 8) | b[at + 3];
-    return Size(word(16).toDouble(), word(20).toDouble());
+  /// A picture's width and height (the game's WebP, or a PNG), read whole.
+  Size pictureSize(String path) {
+    final (w, h) = imageSize(path)!;
+    return Size(w, h);
   }
 
   group('the pictures', () {
     test('the five pictures are in the app, at the sizes the scene is measured on', () {
       final pubspec = File('pubspec.yaml').readAsStringSync();
       expect(pubspec, contains('- assets/seasons/season_01_london/cases/case_01/'));
-      expect(pngSize(scene.picture), Size(scene.pixels.width, scene.pixels.height));
+      expect(pictureSize(scene.picture), Size(scene.pixels.width, scene.pixels.height));
       expect(scene.choices, hasLength(4));
       for (final c in scene.choices) {
-        final s = pngSize(c.picture);
+        final s = pictureSize(c.picture);
         expect(s.width / s.height, closeTo(scene.pictureAspect, 0.001), reason: c.picture);
       }
-      expect(File('assets/seasons/season_01_london/locations/kings_cross/kings_cross_waiting_hall.png').existsSync(), isTrue, reason: 'kept');
+      expect(File('assets/seasons/season_01_london/locations/kings_cross/kings_cross_waiting_hall.webp').existsSync(), isTrue, reason: 'kept');
     });
 
     test('the suitcase, the sign and the board: inside the picture, apart, a fingertip wide', () {
@@ -99,7 +98,7 @@ void main() {
     test('each poster is one of its options; the British Museum is the answer', () {
       expect(scene.choices.map((c) => c.optionId), ['a', 'b', 'c', 'd']);
       final right = scene.choices.firstWhere((c) => c.optionId == m01.answer);
-      expect(right.picture, endsWith('poster_british_museum.png'));
+      expect(right.picture, endsWith('poster_british_museum.webp'));
       expect(m01.options.firstWhere((o) => o.id == m01.answer).label, startsWith('The British Museum'));
     });
 

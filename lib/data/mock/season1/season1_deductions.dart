@@ -19,7 +19,7 @@ final Map<String, DeductionScene> season1Deductions = {
   // pale scratches around it. Under the bench, behind that stone, under the
   // drain cover: only the stone is where all three point.
   'm03': DeductionScene(
-    picture: 'assets/seasons/season_01_london/cases/case_01/big_ben_base_night.png',
+    picture: 'assets/seasons/season_01_london/cases/case_01/big_ben_base_night.webp',
     pixels: _base,
     place: 'The foot of Big Ben, at night',
     task: 'Look for three clues the thief left.',
@@ -102,7 +102,7 @@ final Map<String, DeductionScene> season1Deductions = {
       DeductionPlace(optionId: 'c', areas: [_base.rect(915, 860, 1265, 990)], mark: _base.at(1090, 920)),
     ],
   ),
-  // ── Case 04 M2 — the platforms (cases/case_04/kings_cross_platforms.png)
+  // ── Case 04 M2 — the platforms (cases/case_04/kings_cross_platforms.webp)
   // Four platform arches in a row, their sign boards blank: a big white
   // clock over the first, a small red clock over the second, no clock but a
   // red door beside the third, a green clock over the fourth. Each one,
@@ -111,7 +111,7 @@ final Map<String, DeductionScene> season1Deductions = {
   // English; then the card's three words pick one platform. The red door is
   // the trap the porter's "but no clock" answers.
   'ep04_m2': DeductionScene(
-    picture: 'assets/seasons/season_01_london/cases/case_04/kings_cross_platforms.png',
+    picture: 'assets/seasons/season_01_london/cases/case_04/kings_cross_platforms.webp',
     pixels: _platforms,
     place: "King's Cross: four platforms, their clocks and a red door",
     task: 'Tap each platform. Listen to the porter.',

@@ -117,12 +117,12 @@
         },
         "explore": {
           "picture": {
-            "file": "assets/seasons/season_01_london/cases/case_01/kings_cross_platform_night.png",
+            "file": "assets/seasons/season_01_london/cases/case_01/kings_cross_platform_night.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:a648d80959381e48d85c45f6a40160dc576dffc681cdd9564ddc29699d22955b"
+            "measuredOn": "sha256:2fa60394e29b4cc086eb832b25b4ee8b31de5dd71e022f3b850e84a2f315449f"
           },
           "place": "The station at night",
           "task": "Look around the station. What did the courier leave?",
@@ -205,22 +205,22 @@
           "choices": [
             {
               "optionId": "bones",
-              "picture": "assets/seasons/season_01_london/cases/case_01/poster_natural_history.png",
+              "picture": "assets/seasons/season_01_london/cases/case_01/poster_natural_history.webp",
               "description": "a dinosaur skeleton in a great hall"
             },
             {
               "optionId": "mummies",
-              "picture": "assets/seasons/season_01_london/cases/case_01/poster_british_museum.png",
+              "picture": "assets/seasons/season_01_london/cases/case_01/poster_british_museum.webp",
               "description": "a golden mummy case and a big stone covered in writing"
             },
             {
               "optionId": "wheels",
-              "picture": "assets/seasons/season_01_london/cases/case_01/poster_transport.png",
+              "picture": "assets/seasons/season_01_london/cases/case_01/poster_transport.webp",
               "description": "a steam train, a red double-decker bus and an old car"
             },
             {
               "optionId": "stars",
-              "picture": "assets/seasons/season_01_london/cases/case_01/poster_science.png",
+              "picture": "assets/seasons/season_01_london/cases/case_01/poster_science.webp",
               "description": "a rocket, a telescope and planets"
             }
           ],
@@ -326,12 +326,12 @@
         },
         "search": {
           "picture": {
-            "file": "assets/seasons/season_01_london/locations/british_museum/british_museum_gallery_8.png",
+            "file": "assets/seasons/season_01_london/locations/british_museum/british_museum_gallery_8.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:406bf4e50187fba44fc7eafd4a011e5653b593279be67ee58ad7a70eb43d3591"
+            "measuredOn": "sha256:039a8886942d0f62b035e9efd53c757004020e471466d6ddb0d0ae8e74c17bec"
           },
           "task": "Find the three things in the report.",
           "documentTitle": "GUARD REPORT",
@@ -352,7 +352,7 @@
               "areas": [[395, 805, 795, 965]],
               "foundLine": "You found a red button under the bench!",
               "picture": {
-                "file": "assets/seasons/season_01_london/objects/red_button.png",
+                "file": "assets/seasons/season_01_london/objects/red_button.webp",
                 "pixels": {
                   "width": 1254,
                   "height": 1254
@@ -370,7 +370,7 @@
               "areas": [[1218, 190, 1392, 550]],
               "foundLine": "A piece of blue cloth was caught on the frame.",
               "picture": {
-                "file": "assets/seasons/season_01_london/objects/blue_cloth.png",
+                "file": "assets/seasons/season_01_london/objects/blue_cloth.webp",
                 "pixels": {
                   "width": 1254,
                   "height": 1254
@@ -388,7 +388,7 @@
               "areas": [[165, 752, 385, 872], [306, 300, 362, 752]],
               "foundLine": "A wet footprint was found next to the door.",
               "picture": {
-                "file": "assets/seasons/season_01_london/objects/wet_footprint.png",
+                "file": "assets/seasons/season_01_london/objects/wet_footprint.webp",
                 "pixels": {
                   "width": 1024,
                   "height": 1536
@@ -555,7 +555,7 @@
         },
         "dialogue": {
           "place": "MARKET HALL",
-          "background": "assets/seasons/season_01_london/locations/covent_garden/covent_garden_market_hall.png",
+          "background": "assets/seasons/season_01_london/locations/covent_garden/covent_garden_market_hall.webp",
           "goal": "Find out what the man carried.",
           "how": "Ask what they saw. You may find different clues.",
           "guide": "Talk to a witness.",
@@ -578,7 +578,7 @@
               "id": "flower_seller",
               "name": "The flower seller",
               "title": "THE FLOWER SELLER",
-              "portrait": "assets/seasons/season_01_london/characters/flower_seller.png",
+              "portrait": "assets/seasons/season_01_london/characters/flower_seller.webp",
               "description": "a young woman in a straw bonnet and a red shawl, with a basket of flowers",
               "greeting": "The man from the museum? Yes, I saw him.",
               "answers": {
@@ -603,7 +603,7 @@
               "id": "juggler",
               "name": "The juggler",
               "title": "THE JUGGLER",
-              "portrait": "assets/seasons/season_01_london/characters/juggler.png",
+              "portrait": "assets/seasons/season_01_london/characters/juggler.webp",
               "description": "a young man in a striped waistcoat, juggling three balls",
               "greeting": "I saw him while I was juggling!",
               "answers": {
@@ -628,7 +628,7 @@
               "id": "baker",
               "name": "The baker",
               "title": "THE BAKER",
-              "portrait": "assets/seasons/season_01_london/characters/baker.png",
+              "portrait": "assets/seasons/season_01_london/characters/baker.webp",
               "description": "a bearded baker in a white cap and apron, holding a round loaf",
               "greeting": "That man? He walked right past my stall.",
               "answers": {
@@ -694,20 +694,20 @@
               "label": "The iron chest",
               "feedback": "Is it black, with two brown straps? Look again.",
               "altText": "a big iron chest with a keyhole, on a red rug",
-              "picture": "assets/seasons/season_01_london/objects/iron_chest.png"
+              "picture": "assets/seasons/season_01_london/objects/iron_chest.webp"
             },
             {
               "id": "case",
               "label": "The black case",
               "altText": "a black case with two brown straps and a paper label",
-              "picture": "assets/seasons/season_01_london/objects/suitcase_black.png"
+              "picture": "assets/seasons/season_01_london/objects/suitcase_black.webp"
             },
             {
               "id": "box",
               "label": "The red box",
               "feedback": "This box is red, not black. Read the note again.",
               "altText": "a red box with gold feet, open, a crown inside",
-              "picture": "assets/seasons/season_01_london/objects/jewel_case.png"
+              "picture": "assets/seasons/season_01_london/objects/jewel_case.webp"
             }
           ]
         },

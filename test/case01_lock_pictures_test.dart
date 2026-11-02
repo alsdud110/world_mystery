@@ -57,7 +57,7 @@ void main() {
       expect(ArtAssets.royalBoxLocks.keys, order);
       for (final s in order) {
         final p = RoyalBoxPicture.of(s)!;
-        expect(p.file, 'assets/images/case01/symbols/${files[s]}.png', reason: s);
+        expect(p.file, 'assets/images/case01/symbols/${files[s]}.webp', reason: s);
         expect(File(p.file).existsSync(), isTrue, reason: s);
         expect(p.name.toUpperCase(), names[s]);
       }

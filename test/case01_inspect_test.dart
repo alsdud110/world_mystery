@@ -31,18 +31,18 @@ void main() {
   final scene = inspectionOf(m02)!;
   InspectSpot spot(String id) => scene.spot(id);
 
-  Size pngSize(String path) {
-    final b = File(path).readAsBytesSync();
-    int word(int at) => (b[at] << 24) | (b[at + 1] << 16) | (b[at + 2] << 8) | b[at + 3];
-    return Size(word(16).toDouble(), word(20).toDouble());
+  /// A picture's width and height (the game's WebP, or a PNG), read whole.
+  Size pictureSize(String path) {
+    final (w, h) = imageSize(path)!;
+    return Size(w, h);
   }
 
   group('the picture', () {
     test('the room is in the app, at the size its exhibits are measured on', () {
       expect(File('pubspec.yaml').readAsStringSync(), contains('- assets/seasons/season_01_london/cases/case_01/'));
-      expect(scene.picture, 'assets/seasons/season_01_london/cases/case_01/british_museum_room4_night.png');
-      expect(pngSize(scene.picture), Size(scene.pixels.width, scene.pixels.height));
-      expect(File('assets/seasons/season_01_london/cases/case_01/poster_british_museum.png').existsSync(), isTrue, reason: 'Case 01 M1 kept');
+      expect(scene.picture, 'assets/seasons/season_01_london/cases/case_01/british_museum_room4_night.webp');
+      expect(pictureSize(scene.picture), Size(scene.pixels.width, scene.pixels.height));
+      expect(File('assets/seasons/season_01_london/cases/case_01/poster_british_museum.webp').existsSync(), isTrue, reason: 'Case 01 M1 kept');
     });
 
     test('every exhibit is in the picture, inside its paper edge, apart from the others', () {

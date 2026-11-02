@@ -71,7 +71,7 @@ final _hallClocks = [
 
 final Map<String, StationClocksScene> season2StationClocks = {
   's2_ep01_m1': StationClocksScene(
-    picture: '$_case01/station_hall_clocks.png',
+    picture: '$_case01/station_hall_clocks.webp',
     pixels: _hall,
     place: 'The station hall at Gare du Nord',
     task: 'Tap the three clocks to investigate.',
@@ -156,7 +156,7 @@ final Map<String, StationClocksScene> season2StationClocks = {
 final Map<String, Exhibit> season2Exhibits = {
   's2_ep01_m2': Exhibit(
     id: 'ticket',
-    picture: '$_case01/lost_ticket.png',
+    picture: '$_case01/lost_ticket.webp',
     pixels: ScenePixels(1774, 887),
     title: 'THE LOST TICKET',
     description:
@@ -188,7 +188,7 @@ const _open = ScenePixels(1446, 1088);
 
 final Map<String, LockBoxArt> season2LockBoxes = {
   's2_ep01_final': LockBoxArt(
-    closed: '$_case01/brass_box_closed.png',
+    closed: '$_case01/brass_box_closed.webp',
     closedPixels: _shut,
     closedSlots: [
       _shut.rect(360, 682, 438, 828),
@@ -196,7 +196,7 @@ final Map<String, LockBoxArt> season2LockBoxes = {
       _shut.rect(665, 730, 745, 868),
       _shut.rect(822, 755, 913, 900),
     ],
-    open: '$_case01/brass_box_open.png',
+    open: '$_case01/brass_box_open.webp',
     openPixels: _open,
     openSlots: [
       _open.rect(372, 722, 443, 840),
@@ -206,7 +206,7 @@ final Map<String, LockBoxArt> season2LockBoxes = {
     ],
     inside: _open.rect(372, 398, 1152, 735),
     insideLabel: 'A small painting in the box, on red velvet',
-    found: '$_case01/montmartre_painting.png',
+    found: '$_case01/montmartre_painting.webp',
     foundPixels: ScenePixels(1774, 887),
     foundTitle: 'THE PAINTING',
     foundLine: 'A white church on a hill, above the roofs of Paris.',
@@ -250,7 +250,7 @@ const _faceAtTen = PaintedClock(
 );
 
 final _hallWhole = StoryPicture(
-  file: '$_case01/station_hall_clocks.png',
+  file: '$_case01/station_hall_clocks.webp',
   pixels: _hall,
   label: 'The station hall at Gare du Nord, its three clocks high on the walls',
   clocks: _hallClocks,
@@ -261,7 +261,7 @@ final _hallWhole = StoryPicture(
 /// beside it (wider than tall: a print a phone shows large). Right of the
 /// platform clock's lamp, under the old clock's bracket.
 final _desk = StoryPicture(
-  file: '$_case01/station_hall_clocks.png',
+  file: '$_case01/station_hall_clocks.webp',
   pixels: _hall,
   crop: _hall.rect(905, 445, 1536, 1020),
   label: 'The Lost Property desk: its counter, the shelves behind it and a luggage trolley',
@@ -269,7 +269,7 @@ final _desk = StoryPicture(
 
 /// The old clock in its brass bracket, high over the hall.
 final _oldClockHigh = StoryPicture(
-  file: '$_case01/station_hall_clocks.png',
+  file: '$_case01/station_hall_clocks.webp',
   pixels: _hall,
   crop: _hall.rect(1120, 130, 1490, 560),
   label: 'The old brass clock, high over the hall',
@@ -282,7 +282,7 @@ final _oldClockHigh = StoryPicture(
 /// does; never closer than this, nor through a lens.) Its hands at nine.
 /// Right of the platform clock (whose painted dial has no hands).
 final _oldClockWall = StoryPicture(
-  file: '$_case01/station_hall_clocks.png',
+  file: '$_case01/station_hall_clocks.webp',
   pixels: _hall,
   crop: _hall.rect(1070, 20, 1536, 600),
   label: 'The old brass clock on the wall, its hands at nine',
@@ -290,7 +290,7 @@ final _oldClockWall = StoryPicture(
 );
 
 const _boxShut = StoryPicture(
-  file: '$_case01/brass_box_closed.png',
+  file: '$_case01/brass_box_closed.webp',
   pixels: _shut,
   label: 'A small brass box, an E on its lid and four letter slots on its front',
   cutOut: true,
@@ -305,7 +305,7 @@ final Map<String, StoryScenes> season2StoryScenes = {
   's2_ep01_m2': StoryScenes(
     place: _desk,
     after: StoryPicture(
-      file: '$_case01/lost_ticket.png',
+      file: '$_case01/lost_ticket.webp',
       pixels: ScenePixels(1774, 887),
       label: 'The lost ticket',
       cutOut: true,
@@ -317,7 +317,7 @@ final Map<String, StoryScenes> season2StoryScenes = {
   's2_ep01_m3': StoryScenes(
     place: _oldClockWall,
     after: const StoryPicture(
-      file: '$_case01/old_clock_face.png',
+      file: '$_case01/old_clock_face.webp',
       pixels: _face,
       label: "The old clock's face, its hands at ten",
       clocks: [_faceAtTen],
@@ -328,7 +328,7 @@ final Map<String, StoryScenes> season2StoryScenes = {
   // After the case: the box open, the painting in it.
   's2_ep01_final': StoryScenes(
     after: StoryPicture(
-      file: '$_case01/brass_box_open.png',
+      file: '$_case01/brass_box_open.webp',
       pixels: _open,
       label: 'The brass box open, a small painting on red velvet inside',
       cutOut: true,
@@ -346,8 +346,8 @@ const _street = ScenePixels(1536, 1024);
 
 final Map<String, CompareScene> season2Compares = {
   's2_ep02_m1': CompareScene(
-    real: '$_case02/montmartre_street_real.png',
-    painted: '$_case02/montmartre_street_painted.png',
+    real: '$_case02/montmartre_street_real.webp',
+    painted: '$_case02/montmartre_street_painted.webp',
     pixels: _street,
     realLabel: 'THE STREET',
     paintedLabel: 'THE PAINTING',
@@ -383,7 +383,7 @@ const _square = ScenePixels(1254, 1254);
 
 final Map<String, StudioScene> season2Studios = {
   's2_ep02_m2': StudioScene(
-    picture: '$_case02/painters_studio.png',
+    picture: '$_case02/painters_studio.webp',
     pixels: _studio,
     place: "The painter's studio, sunlight through a big window",
     paintings: [
@@ -391,7 +391,7 @@ final Map<String, StudioScene> season2Studios = {
         id: 'p1',
         area: _studio.rect(884, 1195, 1024, 1410),
         mark: _studio.at(950, 1230),
-        file: '$_case02/studio_painting_p1.png',
+        file: '$_case02/studio_painting_p1.webp',
         pixels: _square,
         label: 'A painting of a café square: the whole sky gold, the stones dry',
         line: 'In the old trunk: a painting of a square.',
@@ -400,7 +400,7 @@ final Map<String, StudioScene> season2Studios = {
         id: 'p2',
         area: _studio.rect(676, 850, 860, 985),
         mark: _studio.at(770, 905),
-        file: '$_case02/studio_painting_p2.png',
+        file: '$_case02/studio_painting_p2.webp',
         pixels: _square,
         label: 'A painting of the same square: dark grey clouds, the stones dry',
         line: 'In the desk drawer: a painting of a square.',
@@ -409,7 +409,7 @@ final Map<String, StudioScene> season2Studios = {
         id: 'p3',
         area: _studio.rect(762, 1040, 866, 1160),
         mark: _studio.at(815, 1085),
-        file: '$_case02/studio_painting_p3.png',
+        file: '$_case02/studio_painting_p3.webp',
         pixels: _square,
         label: 'A painting of the same square: the stones wet and shiny after rain',
         line: 'In the crate under the desk: a painting of a square.',
@@ -472,8 +472,8 @@ const _easel = ScenePixels(1536, 1024);
 
 final Map<String, LayerScene> season2Layers = {
   's2_ep02_m3': LayerScene(
-    paint: '$_case02/hidden_layer_paint.png',
-    sketch: '$_case02/hidden_layer_sketch.png',
+    paint: '$_case02/hidden_layer_paint.webp',
+    sketch: '$_case02/hidden_layer_sketch.webp',
     pixels: _easel,
     view: _easel.rect(140, 190, 780, 880),
     canvas: _easel.rect(225, 255, 690, 795),
@@ -521,14 +521,14 @@ const _canvas = ScenePixels(1536, 1024);
 final Map<String, CanvasScene> season2Canvases = {
   's2_ep02_final': CanvasScene(
     canvases: [
-      ChoiceCanvas(id: 'a', file: '$_case02/canvas_a.png', name: 'CANVAS A'),
-      ChoiceCanvas(id: 'b', file: '$_case02/canvas_b.png', name: 'CANVAS B'),
-      ChoiceCanvas(id: 'c', file: '$_case02/canvas_c.png', name: 'CANVAS C'),
-      ChoiceCanvas(id: 'd', file: '$_case02/canvas_d.png', name: 'CANVAS D'),
+      ChoiceCanvas(id: 'a', file: '$_case02/canvas_a.webp', name: 'CANVAS A'),
+      ChoiceCanvas(id: 'b', file: '$_case02/canvas_b.webp', name: 'CANVAS B'),
+      ChoiceCanvas(id: 'c', file: '$_case02/canvas_c.webp', name: 'CANVAS C'),
+      ChoiceCanvas(id: 'd', file: '$_case02/canvas_d.webp', name: 'CANVAS D'),
     ],
     pixels: _canvas,
     paint: _canvas.rect(140, 70, 1440, 900),
-    back: '$_case02/canvas_back.png',
+    back: '$_case02/canvas_back.webp',
     backPixels: _canvas,
     writeOn: _canvas.rect(300, 600, 1290, 870),
     message: 'A city can lose an hour.\nBut who can steal it?',
@@ -539,19 +539,19 @@ final Map<String, CanvasScene> season2Canvases = {
 
 // ── Case 02 — the story's pictures, mission by mission ──────────────────
 const _streetWhole = StoryPicture(
-  file: '$_case02/montmartre_street_real.png',
+  file: '$_case02/montmartre_street_real.webp',
   pixels: _street,
   label: 'A quiet street in Montmartre: a red door, stone steps and an old lamp',
 );
 
 const _studioWhole = StoryPicture(
-  file: '$_case02/painters_studio.png',
+  file: '$_case02/painters_studio.webp',
   pixels: _studio,
   label: "The painter's studio, sunlight through a big window",
 );
 
 final _easelPainted = StoryPicture(
-  file: '$_case02/hidden_layer_paint.png',
+  file: '$_case02/hidden_layer_paint.webp',
   pixels: _easel,
   crop: _easel.rect(140, 190, 780, 880),
   label: 'A canvas on the big easel, covered in thick paint',
@@ -563,7 +563,7 @@ final Map<String, StoryScenes> season2Case02StoryScenes = {
   's2_ep02_m1': StoryScenes(
     place: _streetWhole,
     after: StoryPicture(
-      file: '$_case02/montmartre_street_painted.png',
+      file: '$_case02/montmartre_street_painted.webp',
       pixels: _street,
       crop: _street.rect(360, 40, 1000, 600),
       label: 'The painting: a small clock above the red door',
@@ -574,7 +574,7 @@ final Map<String, StoryScenes> season2Case02StoryScenes = {
   's2_ep02_m2': StoryScenes(
     place: _studioWhole,
     after: const StoryPicture(
-      file: '$_case02/studio_painting_p1.png',
+      file: '$_case02/studio_painting_p1.webp',
       pixels: _square,
       label: 'The painting of the square under a gold sky',
     ),
@@ -585,7 +585,7 @@ final Map<String, StoryScenes> season2Case02StoryScenes = {
   's2_ep02_m3': StoryScenes(
     place: _easelPainted,
     after: StoryPicture(
-      file: '$_case02/hidden_layer_sketch.png',
+      file: '$_case02/hidden_layer_sketch.webp',
       pixels: _easel,
       crop: _easel.rect(140, 190, 780, 880),
       label: 'The pencil sketch under the paint: a lamp, stone steps and an iron gate',
@@ -595,7 +595,7 @@ final Map<String, StoryScenes> season2Case02StoryScenes = {
   // After the case: the back of the canvas.
   's2_ep02_final': StoryScenes(
     after: StoryPicture(
-      file: '$_case02/canvas_back.png',
+      file: '$_case02/canvas_back.webp',
       pixels: _canvas,
       label: 'The back of the canvas: ATELIER MONTMARTRE, and Paris, toujours plus haut',
     ),

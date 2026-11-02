@@ -25,7 +25,7 @@ const _case05 = 'assets/seasons/season_02_paris/cases/case_05';
 const _hands = ScenePixels(1254, 1254);
 
 const makerMark = MakerMark(
-  file: '$_case04/hands_sign.png',
+  file: '$_case04/hands_sign.webp',
   pixels: _hands,
   split: [
     Offset(0, 880),
@@ -49,7 +49,7 @@ const makerMark = MakerMark(
   ],
   // Towards the long hand, across the two (they run up to the right).
   shift: Offset(-52, -76),
-  tipFile: '$_case05/maker_mark_a.png',
+  tipFile: '$_case05/maker_mark_a.webp',
   tipShift: Offset(16, -38),
 );
 
@@ -68,7 +68,7 @@ const _sheet = ScenePixels(1254, 1254);
 const _card = ScenePixels(1480, 1062);
 
 const repairCard = WrittenPaper(
-  file: '$_case05/repair_card_blank.png',
+  file: '$_case05/repair_card_blank.webp',
   pixels: _card,
   writeOn: Rect.fromLTRB(360, 250, 1390, 660),
   lines: ['I changed one clock.', 'I added one small wheel.', 'Now its hands turn', 'the wrong way.'],
@@ -80,7 +80,7 @@ const repairCard = WrittenPaper(
 
 final Map<String, MarkCompareScene> season2MarkCompares = {
   's2_ep05_m1': MarkCompareScene(
-    bench: '$_case05/workbench_marks.png',
+    bench: '$_case05/workbench_marks.webp',
     pixels: _bench,
     place: 'A long workbench in a dim workshop: a toolbox, a tin, a clock case and a small drawer, each with a round stamp',
     seals: [
@@ -118,7 +118,7 @@ final Map<String, MarkCompareScene> season2MarkCompares = {
       ),
     ],
     mark: makerMark,
-    sheet: '$_case05/tracing_sheet.png',
+    sheet: '$_case05/tracing_sheet.webp',
     sheetPixels: _sheet,
     sheetMarkAt: const Rect.fromLTRB(200, 210, 1060, 1070),
     note: 'My mark is on everything I make.\nA copy is never the same.',
@@ -144,7 +144,7 @@ const _back = ScenePixels(1024, 1024);
 
 final Map<String, ClockWallScene> season2ClockWalls = {
   's2_ep05_m2': ClockWallScene(
-    wall: '$_case05/wall_of_clocks.png',
+    wall: '$_case05/wall_of_clocks.webp',
     pixels: _wall,
     place: 'Four old clocks in a row on a workshop wall, their dials pale, a brass plate under each',
     view: _wall.rect(180, 80, 1400, 740),
@@ -158,7 +158,7 @@ final Map<String, ClockWallScene> season2ClockWalls = {
         plateAt: _wall.rect(258, 673, 420, 728),
         shows: 3 * 60 + 10,
         change: 1,
-        back: '$_case05/clock_back_normal.png',
+        back: '$_case05/clock_back_normal.webp',
         backLabel: 'The back of Clock I: brass gears and two weights',
         backNote: 'Brass gears and two weights.',
       ),
@@ -171,7 +171,7 @@ final Map<String, ClockWallScene> season2ClockWalls = {
         plateAt: _wall.rect(561, 673, 720, 728),
         shows: 7 * 60 + 25,
         change: 5,
-        back: '$_case05/clock_back_spring.png',
+        back: '$_case05/clock_back_spring.webp',
         backLabel: 'The back of Clock II: a big, shiny spring in the middle of the gears',
         backNote: 'A big, shiny spring.',
       ),
@@ -184,7 +184,7 @@ final Map<String, ClockWallScene> season2ClockWalls = {
         plateAt: _wall.rect(866, 673, 1023, 728),
         shows: 10 * 60 + 40,
         change: -1,
-        back: '$_case05/clock_back_extra_wheel.png',
+        back: '$_case05/clock_back_extra_wheel.webp',
         backLabel: 'The back of Clock III: one small brass wheel at the side of the gears',
         backNote: 'A small brass wheel at the side of the gears.',
       ),
@@ -197,7 +197,7 @@ final Map<String, ClockWallScene> season2ClockWalls = {
         plateAt: _wall.rect(1169, 673, 1323, 728),
         shows: 1 * 60 + 55,
         change: 0,
-        back: '$_case05/clock_back_broken.png',
+        back: '$_case05/clock_back_broken.webp',
         backLabel: 'The back of Clock IV: its pendulum hook broken and hanging loose',
         backNote: 'The pendulum hook is broken.',
       ),
@@ -228,7 +228,7 @@ const _mirror = ScenePixels(896, 1200);
 const _envelope = ScenePixels(1216, 880);
 
 const hideaway = WrittenPaper(
-  file: '$_case05/envelope_corner.png',
+  file: '$_case05/envelope_corner.webp',
   pixels: _envelope,
   writeOn: Rect.fromLTRB(600, 440, 1090, 770),
   lines: ['16 MAY', 'ONE LETTER COLLECTED', 'FROM No. 7', 'LETTER No. 4417'],
@@ -240,7 +240,7 @@ const hideaway = WrittenPaper(
 
 final Map<String, BlotterScene> season2Blotters = {
   's2_ep05_m3': BlotterScene(
-    desk: '$_case05/writing_desk_blotter.png',
+    desk: '$_case05/writing_desk_blotter.webp',
     pixels: _desk,
     place: 'A writing desk seen from above: a big sheet of blotting paper, ink bottles and pens round it',
     blotter: const Rect.fromLTRB(228, 170, 1036, 762),
@@ -267,7 +267,7 @@ final Map<String, BlotterScene> season2Blotters = {
         mark: MarkCopy.exact,
       ),
     ],
-    mirror: '$_case05/hand_mirror.png',
+    mirror: '$_case05/hand_mirror.webp',
     mirrorPixels: _mirror,
     glassCentre: const Offset(448, 382),
     glassRadius: 208,
@@ -278,7 +278,7 @@ final Map<String, BlotterScene> season2Blotters = {
     chooseLabel: 'THIS IS WHERE',
     hideaway: hideaway,
     receipt: const ['16 MAY — ONE LETTER COLLECTED FROM No. 7.', 'LETTER No. 4417'],
-    hideawayBack: '$_case05/clock_back_extra_wheel.png',
+    hideawayBack: '$_case05/clock_back_extra_wheel.webp',
     hideawayLines: const ['Inside Clock III, there is no letter.', 'Only a torn envelope corner and a small receipt.'],
   ),
 };
@@ -292,7 +292,7 @@ const _workshop = ScenePixels(1536, 1024);
 
 final Map<String, PostTrailScene> season2PostTrails = {
   's2_ep05_final': PostTrailScene(
-    slip: '$_case05/post_slip_blank.png',
+    slip: '$_case05/post_slip_blank.webp',
     slipPixels: _slip,
     slipWriteOn: const Rect.fromLTRB(250, 125, 1140, 650),
     // In the order they lie under the door (not the trail's).
@@ -306,7 +306,7 @@ final Map<String, PostTrailScene> season2PostTrails = {
     slots: const ['first', 'second', 'third'],
     slotLabels: const ['1st', '2nd', '3rd'],
     receipt: hideaway,
-    stage: '$_case05/workshop_interior.png',
+    stage: '$_case05/workshop_interior.webp',
     stagePixels: _workshop,
     stageView: _workshop.rect(1000, 100, 1536, 820),
     stageLabel: 'The workshop door, a line of light under it',
@@ -325,14 +325,14 @@ final Map<String, PostTrailScene> season2PostTrails = {
 // it), then its trail written out, to the Louvre post room. The mirror's
 // glass, (240, 174)–(656, 590) of its picture, holds the words.
 const _deskPicture = EasyPicture(
-  file: '$_case05/writing_desk_blotter.png',
+  file: '$_case05/writing_desk_blotter.webp',
   pixels: _desk,
   crop: Rect.fromLTRB(228, 170, 1036, 762),
   label: 'A big sheet of blotting paper; one note is blotted on it, backwards',
 );
 
 const _mirrorPicture = EasyPicture(
-  file: '$_case05/hand_mirror.png',
+  file: '$_case05/hand_mirror.webp',
   pixels: _mirror,
   label: 'A small hand mirror with a brass frame',
 );
@@ -352,7 +352,7 @@ PicturePanel _wallClock(String id) {
   return PicturePanel(
     id: 'clock-$id',
     picture: EasyPicture(
-      file: '$_case05/wall_of_clocks.png',
+      file: '$_case05/wall_of_clocks.webp',
       pixels: _wall,
       crop: Rect.fromLTRB(c.centre.dx - 150, 90, c.centre.dx + 150, 742),
       label: 'Clock ${c.numeral} on the workshop wall',
@@ -426,7 +426,7 @@ final Map<String, EasyStepsScene> season2Case05Steps = {
         after: const [
           PicturePanel(
             id: 'clock',
-            picture: EasyPicture(file: '$_case05/clock_back_extra_wheel.png', pixels: _back, label: 'The back of Clock III, opened'),
+            picture: EasyPicture(file: '$_case05/clock_back_extra_wheel.webp', pixels: _back, label: 'The back of Clock III, opened'),
             caption: 'Clock III, opened',
           ),
           DrawnPanel(id: 'receipt', drawn: hideaway, caption: 'LETTER No. 4417'),
@@ -480,7 +480,7 @@ final Map<String, EasyStepsScene> season2Case05Steps = {
 /// corner, and the slip that says where the letter stopped.
 final Map<String, RiverEvidenceArt> season2Case05EvidenceArt = {
   's2_ep05_e1': const DrawnEvidenceArt(repairCard),
-  's2_ep05_e2': const DrawnEvidenceArt(PictureEvidence(file: '$_case05/clock_back_extra_wheel.png', pixels: _back)),
+  's2_ep05_e2': const DrawnEvidenceArt(PictureEvidence(file: '$_case05/clock_back_extra_wheel.webp', pixels: _back)),
   's2_ep05_e3': const DrawnEvidenceArt(hideaway),
   's2_ep05_e4': DrawnEvidenceArt(season2PostTrails['s2_ep05_final']!.paperOf(season2PostTrails['s2_ep05_final']!.slipOf('s3'))),
 };
@@ -500,19 +500,19 @@ const Map<String, EvidenceLink> season2Case05EvidenceLinks = {
 // drawer only once its mark is found, Clock III's back only once it is
 // caught, the envelope corner only once the place is found.
 const _workshopWhole = StoryPicture(
-  file: '$_case05/workshop_interior.png',
+  file: '$_case05/workshop_interior.webp',
   pixels: _workshop,
   label: 'Inside a dim workshop: clocks on every wall, a long workbench, a desk and a closed door',
 );
 
 const _wallWhole = StoryPicture(
-  file: '$_case05/wall_of_clocks.png',
+  file: '$_case05/wall_of_clocks.webp',
   pixels: _wall,
   label: 'Four old clocks in a row on the workshop wall',
 );
 
 const _deskWhole = StoryPicture(
-  file: '$_case05/writing_desk_blotter.png',
+  file: '$_case05/writing_desk_blotter.webp',
   pixels: _desk,
   label: 'A writing desk with a big sheet of blotting paper and ink bottles',
 );
@@ -522,7 +522,7 @@ final Map<String, StoryScenes> season2Case05StoryScenes = {
   's2_ep05_m1': StoryScenes(
     place: _workshopWhole,
     after: StoryPicture(
-      file: '$_case05/workbench_marks.png',
+      file: '$_case05/workbench_marks.webp',
       pixels: _bench,
       crop: _bench.rect(1060, 300, 1536, 720),
       label: "The small drawer on the workbench, the maker's mark on its front",
@@ -533,7 +533,7 @@ final Map<String, StoryScenes> season2Case05StoryScenes = {
   's2_ep05_m2': const StoryScenes(
     place: _wallWhole,
     after: StoryPicture(
-      file: '$_case05/clock_back_extra_wheel.png',
+      file: '$_case05/clock_back_extra_wheel.webp',
       pixels: _back,
       label: 'The back of Clock III: one small brass wheel among the gears',
     ),
@@ -543,13 +543,13 @@ final Map<String, StoryScenes> season2Case05StoryScenes = {
   's2_ep05_m3': StoryScenes(
     place: _deskWhole,
     after: const StoryPicture(
-      file: '$_case05/envelope_corner.png',
+      file: '$_case05/envelope_corner.webp',
       pixels: _envelope,
       label: 'A torn envelope corner with a small receipt clipped to it',
       cutOut: true,
     ),
     next: StoryPicture(
-      file: '$_case05/workshop_interior.png',
+      file: '$_case05/workshop_interior.webp',
       pixels: _workshop,
       crop: _workshop.rect(1000, 100, 1536, 820),
       label: 'The workshop door, a line of light under it',

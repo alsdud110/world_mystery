@@ -597,7 +597,7 @@ class _FigureNote extends StatelessWidget {
       // Paris: the Clockmaker's face, once Case 12 has shown it.
       'emile' => ClipOval(
           child: Image.asset(
-            'assets/seasons/season_02_paris/characters/emile_base.png',
+            'assets/seasons/season_02_paris/characters/emile_base.webp',
             width: art,
             height: art,
             fit: BoxFit.cover,

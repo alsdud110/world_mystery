@@ -11,6 +11,10 @@ import '../../tool/ai_agents/image_pricing.dart';
 import '../../tool/ai_agents/image_styles.dart';
 import '../../tool/ai_agents/openai_image.dart';
 import '../../tool/ai_agents/png_check.dart';
+import '../../tool/asset_optimizer/image_file.dart';
+import '../../tool/asset_optimizer/image_optimizer.dart';
+import '../../tool/asset_optimizer/image_policy.dart';
+import '../../tool/asset_optimizer/image_quality.dart';
 import '../../tool/asset_pipeline/asset_budget.dart';
 import '../../tool/asset_pipeline/asset_pipeline.dart';
 import '../../tool/asset_pipeline/asset_plan.dart';
@@ -19,8 +23,10 @@ import '../../tool/asset_pipeline/asset_state.dart';
 import '../../tool/asset_pipeline/asset_transform.dart';
 import '../../tool/asset_pipeline/asset_wiring.dart';
 import '../../tool/season_gen/plan_files.dart';
+import '../../tool/season_gen/sha256.dart';
 import '../../tool/season_planner/asset_manifest.dart';
 import '../../tool/season_planner/finding.dart';
+import '../asset_optimizer/webp_fixture.dart';
 
 /// STEP 3-12A: the asset pipeline with no call to OpenAI. A fake API answers;
 /// the Rome trial season's manifest is the input, copied to a temporary
@@ -284,7 +290,8 @@ void main() {
       expect(s.statusOf('s3_rome.asset.prologue'), AssetStatus.planned);
       final raw = File('${tmp.path}/$work/raw/cover/season3_cover_rome.png');
       expect((PngCheck.file(raw.path).width, PngCheck.file(raw.path).height), (1024, 1536), reason: 'the cover is portrait');
-      expect(s.of('s3_rome.asset.cover').game!.path, '$work/raw/cover/season3_cover_rome.png', reason: 'the game\'s size already: no copy');
+      expect(s.of('s3_rome.asset.cover').game!.path, '$work/game/cover/season3_cover_rome.webp',
+          reason: 'the game\'s size already, made into the game\'s WebP beside the API\'s PNG');
 
       expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 2), 0);
       expect(api.calls, 4);
@@ -307,7 +314,7 @@ void main() {
       final edit = api.bodies.last;
       expect(edit['prompt'], contains(AssetPlan.referenceLine));
       final sent = base64Decode(((edit['images'] as List).single['image_url'] as String).split(',').last);
-      expect(sent, File('${tmp.path}/$work/raw/characters/livia_base.png').readAsBytesSync());
+      expect(sent, File('${tmp.path}/$work/raw/characters/livia_base.png').readAsBytesSync(), reason: 'the API\'s PNG, not the game\'s WebP');
       expect(edit.containsKey('input_fidelity'), isFalse);
       expect(state().statusOf(hood), AssetStatus.validated);
     });
@@ -364,8 +371,9 @@ void main() {
       expect(r.status, AssetStatus.validated);
       expect(r.transformed, isTrue);
       expect((r.raw!.width, r.raw!.height), (1024, 1600));
-      expect(r.game!.path, '$work/game/cover/season3_cover_rome.png');
-      expect(PngCheck.file('${tmp.path}/${r.game!.path}').height, 1536);
+      expect(r.game!.path, '$work/game/cover/season3_cover_rome.webp');
+      expect(ImageFileCheck.file('${tmp.path}/${r.game!.path}').height, 1536);
+      expect(File('${tmp.path}/${r.raw!.path}').existsSync(), isTrue, reason: 'the API\'s picture kept');
     });
 
     test('an answer that cannot be fitted: failed, nothing in game/', () async {
@@ -380,7 +388,7 @@ void main() {
       final before = _listing(tmp);
       log.clear();
       expect(pipeline().applyPlan(), 0);
-      expect(all(), contains('copy     $work/raw/cover/season3_cover_rome.png → assets/seasons/season_03_rome/cover/season3_cover_rome.png (approval: draft)'));
+      expect(all(), contains('copy     $work/game/cover/season3_cover_rome.webp → assets/seasons/season_03_rome/cover/season3_cover_rome.webp (approval: draft)'));
       expect(all(), contains('assets/seasons/season_03_rome/locations/'));
       expect(_listing(tmp), before);
     });
@@ -537,6 +545,7 @@ void main() {
     test('.gitignore: the pipeline\'s pictures out of Git; the plans and the wiring in; .env out', () {
       bool ignored(String path) => Process.runSync('git', ['check-ignore', '-q', '--no-index', path]).exitCode == 0;
       expect(ignored('content_pipeline/asset_work/s3_rome/raw/locations/forum_view.png'), isTrue);
+      expect(ignored('content_pipeline/asset_originals/seasons/season_03_rome/locations/forum_view.png'), isTrue, reason: 'the optimizer\'s originals, out of Git');
       expect(ignored('content_pipeline/asset_work/s3_rome/pipeline_state.json'), isTrue);
       expect(ignored(manifest), isFalse);
       expect(ignored('$seasonDir/planning/asset_wiring.json'), isFalse);
@@ -570,7 +579,7 @@ void intoTheGame() {
   const manifest = '$seasonDir/assets.manifest.json';
   const work = 'content_pipeline/asset_work/s3_rome';
   const cover = 's3_rome.asset.cover', map = 's3_rome.asset.city_map';
-  const coverFile = 'assets/seasons/season_03_rome/cover/season3_cover_rome.png';
+  const coverFile = 'assets/seasons/season_03_rome/cover/season3_cover_rome.webp';
 
   late Directory tmp;
   late _FakeApi api;
@@ -583,7 +592,15 @@ void intoTheGame() {
   });
   tearDown(() => tmp.deleteSync(recursive: true));
 
-  AssetPipeline pipeline() => _pipeline(AssetPlan.load(manifest, root: tmp.path), api, tmp.path, log, 'sk-test-0123456789abcdefSECRET');
+  AssetPipeline pipeline({PictureOptimizer? optimizer, bool noOptimizer = false}) => _pipeline(
+    AssetPlan.load(manifest, root: tmp.path),
+    api,
+    tmp.path,
+    log,
+    'sk-test-0123456789abcdefSECRET',
+    optimizer: optimizer,
+    withOptimizer: !noOptimizer,
+  );
   PipelineState state() => PipelineState.load('${tmp.path}/$work/pipeline_state.json', 's3_rome');
   Map<String, dynamic> manifestOf(String id) =>
       ((jsonDecode(File('${tmp.path}/$manifest').readAsStringSync()) as Map)['assets'] as List).cast<Map<String, dynamic>>().singleWhere((a) => a['assetId'] == id);
@@ -610,17 +627,17 @@ void intoTheGame() {
     expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 0);
     File('${tmp.path}/$coverFile')
       ..createSync(recursive: true)
-      ..writeAsBytesSync(_png(10, 10));
+      ..writeAsBytesSync(solidWebp(10, 10));
     expect(pipeline().apply(), 1);
     expect(log.join('\n'), contains('CONFLICT s3_rome.asset.cover'));
-    expect(File('${tmp.path}/$coverFile').readAsBytesSync(), _png(10, 10));
+    expect(File('${tmp.path}/$coverFile').readAsBytesSync(), solidWebp(10, 10));
     expect(manifestOf(cover)['status'], 'planned');
   });
 
   test('a picture in assets/ that this machine never made is never made again; --doctor --fix records it', () async {
     File('${tmp.path}/$coverFile')
       ..createSync(recursive: true)
-      ..writeAsBytesSync(_png(1024, 1536));
+      ..writeAsBytesSync(solidWebp(1024, 1536));
     expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 2, only: {cover, map}), 0);
     expect(api.calls, 1, reason: 'the map only');
     expect(log.join('\n'), contains('in game  s3_rome.asset.cover'));
@@ -632,10 +649,15 @@ void intoTheGame() {
     expect(log.join('\n'), contains('adopted  s3_rome.asset.cover'));
     final r = state().of(cover);
     expect(r.status, AssetStatus.validated);
-    expect(File('${tmp.path}/${r.raw!.path}').readAsBytesSync(), _png(1024, 1536), reason: 'its picture a copy of the game\'s');
+    expect(File('${tmp.path}/${r.raw!.path}').readAsBytesSync(), solidWebp(1024, 1536), reason: 'its picture a copy of the game\'s');
+    expect(r.raw!.path, '$work/game/cover/season3_cover_rome.webp', reason: 'a WebP is recorded as the game copy it is, never as the API\'s PNG');
   });
 
-  test('a work folder that lost its picture: put back from the identical game copy, nothing made again', () async {
+  test('a work folder that lost its API picture (an older .png manifest): put back from the identical game copy, nothing made again', () async {
+    // The API's PNG is the game's file only where the manifest still names a .png.
+    final json = jsonDecode(File('${tmp.path}/$manifest').readAsStringSync()) as Map;
+    (json['assets'] as List).cast<Map>().singleWhere((a) => a['assetId'] == cover)['outputPath'] = coverFile.replaceAll('.webp', '.png');
+    File('${tmp.path}/$manifest').writeAsStringSync(jsonEncode(json));
     expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 0);
     expect(pipeline().apply(only: {cover}), 0);
     final raw = File('${tmp.path}/${state().of(cover).raw!.path}');
@@ -649,15 +671,137 @@ void intoTheGame() {
     expect(state().statusOf(cover), AssetStatus.validated);
   });
 
+  test('a work folder that lost its game WebP: put back from the identical one in assets/, nothing made again', () async {
+    expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 0);
+    expect(pipeline().apply(only: {cover}), 0);
+    final made = File('${tmp.path}/${state().of(cover).game!.path}');
+    final bytes = made.readAsBytesSync();
+    made.deleteSync();
+    log.clear();
+    expect(await pipeline(optimizer: _FakeOptimizer(fail: true)).run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 0);
+    expect(api.calls, 1, reason: 'not made again');
+    expect(log.join('\n'), contains('its game picture put back from $coverFile'));
+    expect(made.readAsBytesSync(), bytes);
+    expect(state().statusOf(cover), AssetStatus.validated);
+  });
+
+  test('a .webp picture: made by its kind (the manifest\'s type and use), recorded, then copied by --apply', () async {
+    final optimizer = _FakeOptimizer();
+    expect(await pipeline(optimizer: optimizer).run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 0);
+    expect(optimizer.kinds, ['scene'], reason: 'a cover is a scene');
+    final r = state().of(cover);
+    expect(r.status, AssetStatus.validated);
+    expect(r.raw!.path, '$work/raw/cover/season3_cover_rome.png', reason: 'the API\'s PNG kept outside the app');
+    expect(ImageFileCheck.file('${tmp.path}/${r.game!.path}').format, ImageFormat.webp);
+    expect(r.optimized, containsPair('policyVersion', ImagePolicy.load().version));
+    expect(r.optimized, containsPair('kind', 'scene'));
+    expect(log.join('\n'), contains('valid    s3_rome.asset.cover'));
+    expect(pipeline().apply(only: {cover}), 0);
+    expect(File('${tmp.path}/$coverFile').readAsBytesSync(), File('${tmp.path}/${r.game!.path}').readAsBytesSync());
+    expect(File('${tmp.path}/${coverFile.replaceAll('.webp', '.png')}').existsSync(), isFalse, reason: 'no PNG in the game');
+    expect(File('${tmp.path}/pubspec.yaml').readAsStringSync(), contains('- assets/seasons/season_03_rome/cover/'));
+    expect(manifestOf(cover)['status'], 'generated');
+  });
+
+  test('no optimizer here, or none good: the picture waits (generated), nothing in game/ or assets/; then made without the API', () async {
+    expect(await pipeline(noOptimizer: true).run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 1);
+    expect(log.join('\n'), contains('WAITING  s3_rome.asset.cover'));
+    expect(state().statusOf(cover), AssetStatus.generated);
+    expect(state().of(cover).game, isNull);
+    expect(Directory('${tmp.path}/$work/game').existsSync(), isFalse);
+    expect(pipeline().apply(), 0);
+    expect(File('${tmp.path}/$coverFile').existsSync(), isFalse, reason: 'nothing not validated goes into the game');
+
+    expect(await pipeline(optimizer: _FakeOptimizer(fail: true)).run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 1);
+    expect(state().of(cover).error, contains('not optimized (scene)'));
+    expect(Directory('${tmp.path}/$work/game').existsSync(), isFalse);
+
+    expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 0);
+    expect(api.calls, 1, reason: 'the API\'s picture made once, optimized when it could be');
+    expect(state().statusOf(cover), AssetStatus.validated);
+  });
+
+  test('a machine whose records predate the optimization: --doctor --fix records the optimizer\'s WebP of its own picture', () async {
+    // Made and applied while the manifest named the API's PNG ...
+    final pngFile = coverFile.replaceAll('.webp', '.png');
+    Map json() => jsonDecode(File('${tmp.path}/$manifest').readAsStringSync()) as Map;
+    void outputPath(String p) {
+      final j = json();
+      (j['assets'] as List).cast<Map>().singleWhere((a) => a['assetId'] == cover)['outputPath'] = p;
+      File('${tmp.path}/$manifest').writeAsStringSync(jsonEncode(j));
+    }
+
+    outputPath(pngFile);
+    expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 0);
+    expect(pipeline().apply(only: {cover}), 0);
+    final png = File('${tmp.path}/$pngFile').readAsBytesSync();
+    // ... then optimized in the repository (optimize_assets.dart): the WebP, its record, the PNG gone.
+    final webp = solidWebp(1024, 1536);
+    File('${tmp.path}/$coverFile').writeAsBytesSync(webp);
+    File('${tmp.path}/$pngFile').deleteSync();
+    String sha(List<int> b) => 'sha256:${Sha256.hex(b)}';
+    File('${tmp.path}/tool/asset_optimizer/optimized_assets.json')
+      ..createSync(recursive: true)
+      ..writeAsStringSync(jsonEncode({
+        'schemaVersion': 1,
+        'entries': {
+          coverFile: {
+            'source': {'path': pngFile, 'sha256': sha(png)},
+            'output': {'path': coverFile, 'sha256': sha(webp)},
+            'kind': 'scene', 'setting': '-q 88 -sharp_yuv', 'policyVersion': 1, 'width': 1024, 'height': 1536,
+          },
+        },
+      }));
+    outputPath(coverFile);
+    log.clear();
+    expect(pipeline().doctor(), 1);
+    expect(log.join('\n'), contains('migrate  s3_rome.asset.cover'));
+    expect(log.join('\n'), isNot(contains('CONFLICT')));
+    expect(pipeline().doctor(fix: true), 0);
+    expect(log.join('\n'), contains('migrated s3_rome.asset.cover'));
+    final r = state().of(cover);
+    expect(File('${tmp.path}/${r.game!.path}').readAsBytesSync(), webp);
+    expect(r.raw!.path, '$work/raw/cover/season3_cover_rome.png', reason: 'the API\'s picture kept as it was');
+    expect(r.optimized, containsPair('kind', 'scene'));
+    log.clear();
+    expect(pipeline().doctor(), 0);
+    expect(log.join('\n'), contains('all as recorded'));
+    expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 0);
+    expect(api.calls, 1, reason: 'never made again');
+
+    // A WebP the ledger says was made from another picture: a CONFLICT, as before.
+    File('${tmp.path}/$coverFile').writeAsBytesSync(solidWebp(1024, 1536, r: 1));
+    log.clear();
+    expect(pipeline().doctor(fix: true), 1);
+    expect(log.join('\n'), contains('CONFLICT s3_rome.asset.cover'));
+  });
+
+  test('a pose drawn from a base known here only as its game WebP: the reference sent as PNG, its pixels', () async {
+    const base = 's3_rome.asset.char_livia_base', hood = 's3_rome.asset.char_livia_hood';
+    final baseFile = jsonDecode(File('${tmp.path}/$manifest').readAsStringSync())['assets'].cast<Map>().singleWhere((a) => a['assetId'] == base)['outputPath'] as String;
+    final webp = solidWebp(1024, 1536, r: 10, g: 200, b: 30);
+    File('${tmp.path}/$baseFile')
+      ..createSync(recursive: true)
+      ..writeAsBytesSync(webp);
+    expect(pipeline().doctor(fix: true), 0, reason: 'the base adopted; nothing else made here');
+    expect(log.join('\n'), contains('adopted  $base'));
+    expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 1, only: {base, hood}), 0);
+    expect(api.edits, 1);
+    final sent = base64Decode(((api.bodies.last['images'] as List).single['image_url'] as String).split(',').last);
+    expect(ImageFileCheck.bytes(sent).format, ImageFormat.png);
+    final px = img.decodePng(sent)!.getPixel(500, 700);
+    expect((px.r, px.g, px.b), (10, 200, 30));
+  });
+
   test('--doctor: a game copy that is another picture than this machine made, CONFLICT, never written over', () async {
     expect(await pipeline().run(generate: true, maxBudget: 1, maxCalls: 1, only: {cover}), 0);
     File('${tmp.path}/$coverFile')
       ..createSync(recursive: true)
-      ..writeAsBytesSync(_png(10, 10));
+      ..writeAsBytesSync(solidWebp(10, 10));
     log.clear();
     expect(pipeline().doctor(fix: true), 1);
     expect(log.join('\n'), contains('CONFLICT s3_rome.asset.cover'));
-    expect(File('${tmp.path}/$coverFile').readAsBytesSync(), _png(10, 10));
+    expect(File('${tmp.path}/$coverFile').readAsBytesSync(), solidWebp(10, 10));
     expect(state().of(cover).raw!.path, isNot(coverFile), reason: 'this machine\'s picture kept as it was');
   });
 
@@ -672,7 +816,45 @@ void intoTheGame() {
   });
 }
 
-AssetPipeline _pipeline(AssetPlan plan, _FakeApi api, String root, List<String> log, String? key) {
+/// The game's WebP of a picture with no cwebp: a real lossless WebP of its
+/// size (one colour), so every step after it reads a true WebP. The policy's
+/// own quality is tested with cwebp in test/asset_optimizer.
+class _FakeOptimizer implements PictureOptimizer {
+  _FakeOptimizer({this.fail = false});
+
+  final bool fail;
+  final kinds = <String>[];
+
+  @override
+  final ImagePolicy policy = ImagePolicy.load();
+
+  @override
+  String get encoderVersion => 'fake';
+
+  @override
+  OptimizeResult optimize(Uint8List source, String kindName, {bool keepPngWhenSmaller = false}) {
+    kinds.add(kindName);
+    if (fail) throw const OptimizeFailure('no setting made a good picture: fake');
+    final info = ImageFileCheck.bytes(source);
+    return OptimizeResult(
+      bytes: solidWebp(info.width, info.height),
+      format: ImageFormat.webp,
+      kind: kindName,
+      setting: 'fake',
+      quality: const QualityReport(psnr: 99, ssim: 1, alphaMaxDiff: 0, sameSize: true),
+      sourceBytes: source.length,
+      width: info.width,
+      height: info.height,
+      hasAlpha: false,
+      tried: const [],
+    );
+  }
+}
+
+/// [optimizer]: the fake one unless given; [withOptimizer] false: none (a
+/// machine without cwebp).
+AssetPipeline _pipeline(AssetPlan plan, _FakeApi api, String root, List<String> log, String? key,
+    {PictureOptimizer? optimizer, bool withOptimizer = true}) {
   var clock = DateTime.utc(2026, 10, 29, 9);
   DateTime now() => clock = clock.add(const Duration(seconds: 1));
   final studio = ImageStudio(
@@ -683,7 +865,7 @@ AssetPipeline _pipeline(AssetPlan plan, _FakeApi api, String root, List<String> 
     log: log.add,
     now: now,
   );
-  return AssetPipeline(plan: plan, studio: studio, log: log.add, now: now);
+  return AssetPipeline(plan: plan, studio: studio, log: log.add, now: now, optimizer: withOptimizer ? optimizer ?? _FakeOptimizer() : null);
 }
 
 /// The season's folder copied under a new temporary root as a season whose

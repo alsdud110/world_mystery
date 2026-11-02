@@ -154,7 +154,7 @@
         "status": "awaitingAssets",
         "notes": [
           "Played as a look round (ExploreScene) on the boardwalk: the keeper's note is at the ticket booth; the wheel opens once it is read. The Wonder Wheel really has cars that stay still on its outside edge and cars that swing on curved rails inside it. The three white cars are told apart by where they hang and by their roof shape, never by colour.",
-          "Coordinates measured on the made coney_boardwalk.png (1536x1024, sha256 98eb6975…) with a 50px grid sheet (season_factory). The wheel's area is its rim and cars down to the beach line; its legs below that belong to the railing's area, which runs between the booth and the hot dog stand."
+          "Coordinates measured on the made coney_boardwalk.webp (1536x1024, sha256 98eb6975…) with a 50px grid sheet (season_factory). The wheel's area is its rim and cars down to the beach line; its legs below that belong to the railing's area, which runs between the booth and the hot dog stand."
         ]
       },
       "clueInputs": [
@@ -216,12 +216,12 @@
         },
         "explore": {
           "picture": {
-            "file": "assets/seasons/season_04_newyork/locations/coney_boardwalk.png",
+            "file": "assets/seasons/season_04_newyork/locations/coney_boardwalk.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:98eb6975528fbb70945e6831b47855cdc2f57d090ccce89a1ffb0818f94fd428"
+            "measuredOn": "sha256:f650d7410272e8d4a00e1d5bab574d8cc238f01023e0a7086805d57b08614239"
           },
           "place": "The boardwalk",
           "task": "Look around the boardwalk. Where is the keeper's note?",
@@ -339,17 +339,17 @@
           "choices": [
             {
               "optionId": "rail",
-              "picture": "assets/seasons/season_04_newyork/cases/case_09/car_rail.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_09/car_rail.webp",
               "description": "a white wheel car with a flat roof, riding on a curved rail inside the wheel"
             },
             {
               "optionId": "dome",
-              "picture": "assets/seasons/season_04_newyork/cases/case_09/car_dome.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_09/car_dome.webp",
               "description": "a white wheel car with a round dome roof, hanging from the outside edge"
             },
             {
               "optionId": "still",
-              "picture": "assets/seasons/season_04_newyork/cases/case_09/car_still.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_09/car_still.webp",
               "description": "a white wheel car with a flat roof, hanging from the outside edge"
             }
           ],
@@ -581,13 +581,13 @@
           "by": "speaker",
           "text": "And the man in star boots said 'palace'!",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "speaker",
           "text": "He does not know the place. Or the whole song.",
           "speaker": "rosa_diaz",
-          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.webp"
         },
         {
           "by": "narrator",

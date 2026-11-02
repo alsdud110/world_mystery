@@ -16,6 +16,8 @@ import 'package:world_mystery/widgets/landmark_art.dart';
 import 'package:world_mystery/widgets/place_art.dart';
 import 'package:world_mystery/widgets/place_scenery.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
+
 /// The screens a backdrop must look right on (portrait phones and a tablet).
 const sizes = [Size(375, 667), Size(393, 852), Size(430, 932), Size(412, 915), Size(820, 1180)];
 
@@ -76,10 +78,10 @@ void main() {
     for (final file in files) {
       final art = BackdropArt.of(file);
       expect(art, isNotNull, reason: file);
-      final bytes = (await rootBundle.load(file)).buffer.asByteData();
-      // A PNG's width and height, in its header.
-      expect(bytes.getUint32(16).toDouble(), art!.pixels.width, reason: '$file width');
-      expect(bytes.getUint32(20).toDouble(), art.pixels.height, reason: '$file height');
+      // As the app's bundle holds it (the game's WebP), read whole.
+      final info = ImageFileCheck.bytes((await rootBundle.load(file)).buffer.asUint8List());
+      expect(info.width.toDouble(), art!.pixels.width, reason: '$file width');
+      expect(info.height.toDouble(), art.pixels.height, reason: '$file height');
     }
   });
 
@@ -164,7 +166,7 @@ void main() {
   });
 
   group('Case 09: the garden\'s post clock (ten past ten) is never shown', () {
-    const garden = 'assets/seasons/season_02_paris/cases/case_09/garden_model_view.png';
+    const garden = 'assets/seasons/season_02_paris/cases/case_09/garden_model_view.webp';
     const clockLeft = 1412 / 1536;
 
     test('every look its picture is laid by stops left of the clock', () {

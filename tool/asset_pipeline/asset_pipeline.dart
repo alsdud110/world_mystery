@@ -1,11 +1,19 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
+
+import 'package:image/image.dart' as img;
 
 import '../ai_agents/env_file.dart';
 import '../ai_agents/image_manifest.dart';
 import '../ai_agents/image_pricing.dart';
 import '../ai_agents/openai_image.dart';
-import '../ai_agents/png_check.dart';
+import '../asset_optimizer/image_file.dart';
+import '../asset_optimizer/image_optimizer.dart';
+import '../asset_optimizer/image_policy.dart';
+import '../asset_optimizer/image_quality.dart';
+import '../asset_optimizer/optimized_ledger.dart';
+import '../asset_optimizer/webp_encoder.dart';
 import '../season_gen/content_approval.dart';
 import '../season_gen/plan_files.dart';
 import '../season_gen/sha256.dart';
@@ -42,6 +50,13 @@ import 'asset_wiring.dart';
 ///   (`asset_work/` is not in Git); `--fix` does only what is safe.
 /// * A picture in `assets/` that this machine has not made is never made
 ///   again; a missing picture whose game copy is the same is put back.
+/// * A picture whose `outputPath` is a `.webp` (every season planned since
+///   the asset optimization) is kept as the API's PNG in `raw/` and made
+///   into the game's WebP in `game/` by its kind's policy
+///   (`tool/asset_optimizer/image_policy.json`, the kind from the manifest's
+///   `type` and `use`) before it is validated; `--apply` copies that WebP.
+///   No cwebp, or no good picture: it stays `generated` (never made again
+///   by the API) and nothing goes to the game.
 ///
 /// Exit codes: 0 done (or a dry run); 1 a call or a picture failed; 2
 /// refused before any call; 64 usage.
@@ -59,6 +74,7 @@ Future<void> main(List<String> args) async {
     plan: plan,
     studio: ImageStudio(api: openAi, editApi: openAi, findKey: () => ApiKey.find(envPath: a.envPath)),
     work: a.work,
+    optimizer: AssetPipeline.findOptimizer(),
   );
   if (a.wiring) exit(pipeline.wiring(write: a.write));
   if (a.applyPlan) exit(pipeline.applyPlan());
@@ -122,13 +138,23 @@ class _Args {
 
 /// Runs a season's [plan] through [studio].
 class AssetPipeline {
-  AssetPipeline({required this.plan, required this.studio, String? work, void Function(String)? log, DateTime Function()? now})
+  AssetPipeline({required this.plan, required this.studio, String? work, void Function(String)? log, DateTime Function()? now, this.optimizer})
       : work = (work ?? AssetPlan.workDirFor(plan.seasonId)).replaceAll(r'\', '/').replaceAll(RegExp(r'/$'), ''),
         log = log ?? stdout.writeln,
         now = now ?? DateTime.now;
 
   final AssetPlan plan;
   final ImageStudio studio;
+
+  /// Makes the game's WebP of a picture whose `outputPath` is `.webp`
+  /// (null: none on this machine; such pictures wait, `generated`).
+  final PictureOptimizer? optimizer;
+
+  /// The game's image policy with cwebp, when cwebp is on this machine.
+  static PictureOptimizer? findOptimizer({String policyPath = ImagePolicy.defaultPath}) {
+    final encoder = CwebpEncoder.find();
+    return encoder == null ? null : ImageOptimizer(policy: ImagePolicy.load(policyPath), encoder: encoder);
+  }
 
   /// Where the pictures and records are kept, from the repository's root.
   final String work;
@@ -160,6 +186,26 @@ class AssetPipeline {
   /// The picture the game takes of [id] (its game copy, else its API
   /// picture), when it is validated.
   String? _gameFile(PipelineState s, String id) => s.statusOf(id) == AssetStatus.validated ? s.of(id).game?.path : null;
+
+  /// The PNG a picture drawn from [id] is sent (images/edits takes PNG):
+  /// its game copy when that is a PNG, else the API's own PNG; a picture
+  /// known only by its game WebP (adopted from another machine) is
+  /// decoded once into `<work>/reference/` (lossless PNG of its pixels).
+  String? _referenceFile(PipelineState s, String id) {
+    final game = _gameFile(s, id);
+    if (game == null) return null;
+    if (ImageFormat.ofPath(game) == ImageFormat.png) return game;
+    final raw = s.of(id).raw;
+    if (raw != null && ImageFormat.ofPath(raw.path) == ImageFormat.png && raw.problem(root) == null) return raw.path;
+    final a = plan.asset(id);
+    final ref = '$work/reference/${plan.rawPath(a, work: work).substring('$work/raw/'.length)}';
+    final file = File('$root/$ref');
+    if (!file.existsSync()) {
+      file.parent.createSync(recursive: true);
+      file.writeAsBytesSync(Uint8List.fromList(img.encodePng(ImageQuality.decode(File('$root/$game').readAsBytesSync()))), flush: true);
+    }
+    return ref;
+  }
 
   /// Makes (or with [generate] false, only shows) the season's pictures.
   /// Its exit code.
@@ -331,7 +377,7 @@ class AssetPipeline {
   Future<_Made> _make(PipelineAsset a, PipelineState state, AssetBudget budget, AssetCost cost) async {
     final r = state.of(a.assetId);
     final raw = plan.rawPath(a, work: work);
-    final req = plan.request(a, raw: raw, refFiles: [for (final ref in a.references) _gameFile(state, ref)!]);
+    final req = plan.request(a, raw: raw, refFiles: [for (final ref in a.references) _referenceFile(state, ref)!]);
     final problems = studio.problems(req);
     if (problems.isNotEmpty) {
       r
@@ -412,6 +458,7 @@ class AssetPipeline {
       return false;
     }
     final fit = AssetTransform.plan(raw.width, raw.height, a.width, a.height, anchor: AssetPlan.anchorOf(a));
+    if (AssetPlan.optimized(a)) return _optimize(a, state, fit, fail);
     if (!fit.needed) {
       r
         ..status = AssetStatus.validated
@@ -436,7 +483,7 @@ class AssetPipeline {
     }
     file.parent.createSync(recursive: true);
     final part = File('${file.path}.part')..writeAsBytesSync(bytes, flush: true);
-    final info = PngCheck.file(part.path);
+    final info = ImageFileCheck.file(part.path);
     if (info.width != a.width || info.height != a.height) {
       part.deleteSync();
       fail('fitted to ${info.width}x${info.height}, not ${a.size}');
@@ -451,6 +498,78 @@ class AssetPipeline {
       ..updatedAt = now().toUtc().toIso8601String();
     state.save();
     log('valid    ${a.assetId}: ${raw.width}x${raw.height} → ${a.size} (${jsonEncode(fit.toJson())}) $gamePath');
+    return true;
+  }
+
+  /// [a]'s game WebP made from its API picture (fitted first when [fit]
+  /// says so) by its kind's policy, written beside itself, read back and
+  /// recorded. When it cannot be made (no optimizer here, or no setting
+  /// made a good picture) the picture stays `generated`: never made again
+  /// by the API, nothing in `game/` or the game, tried again by the next run.
+  bool _optimize(PipelineAsset a, PipelineState state, TransformPlan fit, void Function(String, {AssetStatus status}) fail) {
+    final r = state.of(a.assetId);
+    void wait(String why) {
+      r
+        ..status = AssetStatus.generated
+        ..game = null
+        ..error = why
+        ..updatedAt = now().toUtc().toIso8601String();
+      state.save();
+      log('WAITING  ${a.assetId}: $why');
+    }
+
+    if (fit.needed && fit.problems.isNotEmpty) {
+      fail('${r.raw!.width}x${r.raw!.height} → ${a.size}: ${fit.problems.join('; ')}');
+      return false;
+    }
+    final o = optimizer;
+    if (o == null) {
+      wait('its game picture is a WebP and there is no optimizer here: ${CwebpEncoder.missing}');
+      return false;
+    }
+    final rawBytes = File('$root/${r.raw!.path}').readAsBytesSync();
+    final source = fit.needed ? AssetTransform.apply(rawBytes, fit) : rawBytes;
+    final kind = o.policy.kindOfManifest(type: a.type, use: a.use);
+    final OptimizeResult made;
+    try {
+      made = o.optimize(source, kind);
+    } on OptimizeFailure catch (e) {
+      wait('not optimized ($kind): $e');
+      return false;
+    }
+    final gamePath = plan.gamePath(a, work: work);
+    final file = File('$root/$gamePath');
+    if (file.existsSync() && 'sha256:${Sha256.hex(file.readAsBytesSync())}' != 'sha256:${Sha256.hex(made.bytes)}') {
+      fail('$gamePath is there and is not this picture: never written over (move it away)', status: AssetStatus.blocked);
+      return false;
+    }
+    file.parent.createSync(recursive: true);
+    final part = File('${file.path}.part')..writeAsBytesSync(made.bytes, flush: true);
+    final ImageFileInfo info;
+    try {
+      info = ImageFileCheck.file(part.path);
+    } on ImageFileProblem catch (e) {
+      part.deleteSync();
+      wait('the WebP written does not read back: $e');
+      return false;
+    }
+    if (info.format != ImageFormat.webp || info.width != a.width || info.height != a.height) {
+      part.deleteSync();
+      wait('optimized to a ${info.format.name} of ${info.width}x${info.height}, not a WebP of ${a.size}');
+      return false;
+    }
+    part.renameSync(file.path);
+    r
+      ..status = AssetStatus.validated
+      ..game = FileRecord.of(root, gamePath)
+      ..transformed = fit.needed
+      ..optimized = {...made.toJson(), 'encoder': o.encoderVersion, 'policyVersion': o.policy.version}
+      ..error = null
+      ..updatedAt = now().toUtc().toIso8601String();
+    state.save();
+    log('valid    ${a.assetId}: ${r.raw!.width}x${r.raw!.height} → $gamePath ($kind, ${made.setting}, '
+        '${(made.sourceBytes / 1024).round()} KB → ${(made.bytes.length / 1024).round()} KB, '
+        'PSNR ${made.quality.psnr.toStringAsFixed(1)}, SSIM ${made.quality.ssim.toStringAsFixed(4)})');
     return true;
   }
 
@@ -530,6 +649,16 @@ class AssetPipeline {
       final r = state.records[a.assetId];
       final raw = r?.raw;
       if (r == null || raw == null || (r.status != AssetStatus.validated && r.status != AssetStatus.generated)) continue;
+      // An optimized game copy (work/game/….webp) lost here, its very bytes in assets/.
+      final made = r.game;
+      if (r.status == AssetStatus.validated && made != null && made.path != raw.path && made.problem(root) == 'missing') {
+        final inGame = File('$root/${a.outputPath}');
+        if (inGame.existsSync() && 'sha256:${Sha256.hex(inGame.readAsBytesSync())}' == made.sha256) {
+          File('$root/${made.path}').parent.createSync(recursive: true);
+          inGame.copySync('$root/${made.path}');
+          out.add('${a.assetId}: its game picture put back from ${a.outputPath} (the same sha256)');
+        }
+      }
       if (raw.problem(root) != 'missing') continue;
       final game = File('$root/${a.outputPath}');
       if (!game.existsSync() || 'sha256:${Sha256.hex(game.readAsBytesSync())}' != raw.sha256) continue;
@@ -538,6 +667,21 @@ class AssetPipeline {
       out.add('${a.assetId}: its picture put back from its game copy ${a.outputPath} (the same sha256)');
     }
     return out;
+  }
+
+  /// How the optimizer made the game's [gameSha] of [a] from the picture
+  /// [sourceSha] (`tool/asset_optimizer/optimized_assets.json`, both sha256
+  /// recorded), or null when it did not: the season's pictures made before
+  /// the asset optimization, as this machine's records still hold them.
+  Map<String, Object?>? _optimizedFrom(PipelineAsset a, String sourceSha, String gameSha) {
+    final file = File('$root/${OptimizedLedger.defaultPath}');
+    if (!file.existsSync()) return null;
+    final e = OptimizedLedger.load(file.path).of(a.outputPath);
+    if (e == null || (e['source'] as Map?)?['sha256'] != sourceSha || (e['output'] as Map?)?['sha256'] != gameSha) return null;
+    return {
+      for (final k in const ['kind', 'setting', 'quality', 'width', 'height', 'hasAlpha', 'encoder', 'policyVersion']) k: e[k],
+      'madeBy': 'tool/asset_optimizer/optimize_assets.dart',
+    };
   }
 
   /// The pictures into the game (the Rome integration; STEP 3-12C's step,
@@ -638,12 +782,34 @@ class AssetPipeline {
       if (status == AssetStatus.validated && rawProblem == 'missing' && gameSha != null && gameSha == r!.raw!.sha256) {
         issue = 'restore  its picture is missing here; its game copy is the same picture (--fix puts it back)';
       } else if (status == AssetStatus.validated && rawProblem == null && gameSha != null && gameSha != (r!.game ?? r.raw)!.sha256) {
-        issue = 'CONFLICT ${a.outputPath} is another picture than this machine made: never written over';
+        final made = _optimizedFrom(a, (r.game ?? r.raw)!.sha256, gameSha);
+        if (made == null) {
+          issue = 'CONFLICT ${a.outputPath} is another picture than this machine made: never written over';
+        } else if (!fix) {
+          issue = 'migrate  ${a.outputPath} is the WebP the optimizer made of this machine\'s picture (--fix records it)';
+        } else {
+          final gamePath = plan.gamePath(a, work: work);
+          final there = File('$root/$gamePath');
+          if (there.existsSync() && 'sha256:${Sha256.hex(there.readAsBytesSync())}' != gameSha) {
+            issue = 'CONFLICT $gamePath is another picture than ${a.outputPath}: nothing recorded';
+          } else {
+            there.parent.createSync(recursive: true);
+            if (!there.existsSync()) game.copySync(there.path);
+            r
+              ..game = FileRecord.of(root, gamePath)
+              ..optimized = made
+              ..updatedAt = now().toUtc().toIso8601String();
+            changed = true;
+            log('migrated ${a.assetId}: ${a.outputPath} recorded as the WebP made from its picture (${made['kind']}, ${made['setting']})');
+            continue;
+          }
+        }
       } else if (status == AssetStatus.validated && rawProblem != null) {
         issue = 'CHANGED  its picture ${r!.raw!.path} is $rawProblem';
       } else if (status != AssetStatus.validated && gameSha != null) {
         if (fix) {
-          final raw = plan.rawPath(a, work: work);
+          // A WebP made elsewhere is recorded as the game copy it is (its API PNG is not here).
+          final raw = AssetPlan.optimized(a) ? plan.gamePath(a, work: work) : plan.rawPath(a, work: work);
           final there = File('$root/$raw');
           if (there.existsSync() && 'sha256:${Sha256.hex(there.readAsBytesSync())}' != gameSha) {
             issue = 'CONFLICT $raw is another picture than ${a.outputPath}: nothing recorded';

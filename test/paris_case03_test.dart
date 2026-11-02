@@ -34,6 +34,7 @@ import 'package:world_mystery/widgets/game_button.dart';
 import 'package:world_mystery/widgets/letter_card.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 
@@ -97,25 +98,26 @@ void main() {
     const folder = 'assets/seasons/season_02_paris/cases/case_03';
     // Size, and whether it is cut out on transparency.
     const pictures = {
-      'eiffel_tower_exterior.png': (1024, 1536, false),
-      'tower_notice_board.png': (1536, 1024, false),
-      'inspection_log.png': (1254, 1254, true),
-      'tower_lift.png': (1536, 1024, false),
-      'lift_route_diagram.png': (1024, 1536, true),
-      'lift_log.png': (1254, 1254, true),
-      'service_door.png': (1536, 1024, false),
-      'mechanical_lock.png': (1536, 1024, true),
-      'lock_dial.png': (1254, 1254, true),
-      'service_room.png': (1536, 1024, false),
-      'time_recording_machine.png': (1536, 1024, false),
-      'time_recording_machine_open.png': (1536, 1024, false),
-      'brass_plaque.png': (1536, 1024, true),
+      'eiffel_tower_exterior.webp': (1024, 1536, false),
+      'tower_notice_board.webp': (1536, 1024, false),
+      'inspection_log.webp': (1254, 1254, true),
+      'tower_lift.webp': (1536, 1024, false),
+      'lift_route_diagram.webp': (1024, 1536, true),
+      'lift_log.webp': (1254, 1254, true),
+      'service_door.webp': (1536, 1024, false),
+      'mechanical_lock.webp': (1536, 1024, true),
+      'lock_dial.webp': (1254, 1254, true),
+      'service_room.webp': (1536, 1024, false),
+      'time_recording_machine.webp': (1536, 1024, false),
+      'time_recording_machine_open.webp': (1536, 1024, false),
+      'brass_plaque.webp': (1536, 1024, true),
     };
 
+    /// A picture's width, height and whether it can hold transparency, read
+    /// whole from its own bytes (the game's WebP, or a PNG).
     (int, int, bool) header(Uint8List b) {
-      final d = ByteData.sublistView(b);
-      final colourType = b[25];
-      return (d.getUint32(16), d.getUint32(20), colourType == 4 || colourType == 6);
+      final i = ImageFileCheck.bytes(b);
+      return (i.width, i.height, i.hasAlpha);
     }
 
     Future<(ByteData, int)> pixels(String name) async {
@@ -133,7 +135,7 @@ void main() {
         expect((pw, ph), (w, h), reason: name);
         expect(alpha, cutOut, reason: name);
       }
-      expect(File('$folder/pection_log.png').existsSync(), isFalse, reason: 'renamed to inspection_log.png');
+      expect(File('$folder/pection_log.png').existsSync(), isFalse, reason: 'renamed to inspection_log.webp');
     });
 
     test('every one of them is played on', () {
@@ -155,12 +157,12 @@ void main() {
       };
       expect({for (final f in played) f.split('/').last}, {...pictures.keys});
       // The story's pictures name only the case's own (and Case 02's canvas back).
-      expect(ArtAssets.scenes[Artwork.paintersMessage], endsWith('case_02/canvas_back.png'));
+      expect(ArtAssets.scenes[Artwork.paintersMessage], endsWith('case_02/canvas_back.webp'));
     });
 
     test('the padlock\'s windows are cut clean at their measured centres; the dial turns about its hole', () async {
       final scene = SeasonCatalog.dialLock(m3)!;
-      final (lock, lockW) = await pixels('mechanical_lock.png');
+      final (lock, lockW) = await pixels('mechanical_lock.webp');
       int alpha(ByteData b, int w, double x, double y) => b.getUint8((y.round() * w + x.round()) * 4 + 3);
       for (final c in scene.windows) {
         for (var a = 0.0; a < 2 * math.pi; a += math.pi / 8) {
@@ -172,7 +174,7 @@ void main() {
       }
       // The dial's centre hole is round its pivot; shown 405 px round it,
       // it is all dial (no transparent rim shows in a window).
-      final (dial, dialW) = await pixels('lock_dial.png');
+      final (dial, dialW) = await pixels('lock_dial.webp');
       final p = scene.pivot;
       expect(alpha(dial, dialW, p.dx, p.dy), lessThan(10));
       for (var a = 0.0; a < 2 * math.pi; a += math.pi / 12) {
@@ -182,8 +184,8 @@ void main() {
     });
 
     test('the machine, shut and open, is one picture but for its hatch', () async {
-      final (shut, w) = await pixels('time_recording_machine.png');
-      final (open, _) = await pixels('time_recording_machine_open.png');
+      final (shut, w) = await pixels('time_recording_machine.webp');
+      final (open, _) = await pixels('time_recording_machine_open.webp');
       // Mean difference outside the hatch (x 640–1150, y 540–960) stays
       // small: no shift of the machine, only the hatch changes.
       double meanDiff(bool hatch) {

@@ -96,17 +96,17 @@ const _slip = ScenePixels(1536, 1024);
 const _sketch = ScenePixels(1536, 1024);
 
 const _photo = PhotoPrint(
-  file: '$_case07/photo_frame.png',
+  file: '$_case07/photo_frame.webp',
   pixels: _mount,
   window: Rect.fromLTRB(199, 130, 1337, 687),
-  stage: '$_case07/stage_ghost.png',
+  stage: '$_case07/stage_ghost.webp',
   stagePixels: _stage,
   caption: '3:00 PM · CURTAIN UP!',
   captionAt: Rect.fromLTRB(240, 718, 1296, 925),
 );
 
 final _file3 = OfficeRecord(
-  file: '$_case07/office_record_blank.png',
+  file: '$_case07/office_record_blank.webp',
   pixels: _record,
   fileLabel: 'FILE 3',
   fileAt: const Rect.fromLTRB(494, 176, 578, 286),
@@ -118,7 +118,7 @@ final _file3 = OfficeRecord(
     RecordRow(id: RecordSpot.down, label: 'CURTAIN DOWN ·', time: clockPm(pm(6, 10)), labelAt: const Rect.fromLTRB(150, 896, 540, 974), timeAt: const Rect.fromLTRB(575, 896, 845, 974)),
   ],
   patch: RecordPatch(
-    file: '$_case07/record_patch.png',
+    file: '$_case07/record_patch.webp',
     pixels: _patch,
     paper: const Rect.fromLTRB(154, 134, 1831, 655),
     at: const Rect.fromLTRB(560, 610, 860, 800),
@@ -135,7 +135,7 @@ final _file3 = OfficeRecord(
 // frame round it (x 78–947, down to y 1435), the nightingale's ornament
 // down to y 293. Its words in the frame below it.
 const _file4 = ProgrammePage(
-  file: '$_case07/programme_page_blank.png',
+  file: '$_case07/programme_page_blank.webp',
   pixels: _programme,
   title: ['THE GOLDEN NIGHTINGALE', 'THE PROGRAMME'],
   titleAt: Rect.fromLTRB(150, 345, 875, 515),
@@ -150,7 +150,7 @@ const _file4 = ProgrammePage(
 // hole top left, a red rule at y 313 under the heading's space, blue rules
 // from y 388 down.
 const _cue = CueCard(
-  file: '$_case07/cue_card_blank.png',
+  file: '$_case07/cue_card_blank.webp',
   pixels: _card,
   heading: 'SHOW No. 34',
   headingAt: Rect.fromLTRB(200, 168, 1430, 300),
@@ -165,7 +165,7 @@ const _cue = CueCard(
 // (1536 × 1024, cut out: its metro sign's empty panel (1130, 352)–(1305,
 // 415)) laid in the border, the line under it.
 const _amendment = AmendmentSlip(
-  file: '$_case07/amendment_slip_blank.png',
+  file: '$_case07/amendment_slip_blank.webp',
   pixels: _slip,
   paper: Rect.fromLTRB(160, 159, 1375, 853),
   header: 'FILE 3',
@@ -178,10 +178,10 @@ const _amendment = AmendmentSlip(
   oldAt: Rect.fromLTRB(290, 575, 560, 715),
   newTime: '3:00',
   newAt: Rect.fromLTRB(720, 575, 990, 715),
-  stamp: '$_case07/office_stamp.png',
+  stamp: '$_case07/office_stamp.webp',
   stampAt: Rect.fromLTRB(1090, 585, 1300, 795),
   back: SlipBack(
-    sketch: '$_case07/abbesses_sketch.png',
+    sketch: '$_case07/abbesses_sketch.webp',
     sketchPixels: _sketch,
     sketchAt: Rect.fromLTRB(395, 232, 1140, 729),
     sign: 'ABBESSES',
@@ -203,7 +203,7 @@ final Map<String, ShowStripScene> season2ShowStripScenes = {
     strip: season2ShowStrips['s2_ep07_m1']!,
     record: _file3,
     programme: _file4,
-    stripFile: '$_case07/show_strip_blank.png',
+    stripFile: '$_case07/show_strip_blank.webp',
     stripPixels: const ScenePixels(2172, 724),
     stripPaper: const Rect.fromLTRB(37, 275, 2137, 448),
     stripSlice: const Rect.fromLTRB(150, 300, 2024, 423),
@@ -228,7 +228,7 @@ const _desk = ScenePixels(1536, 1024);
 const _book = ScenePixels(1536, 1024);
 
 const _lightingBook = LightingBook(
-  file: '$_case07/lighting_book_open.png',
+  file: '$_case07/lighting_book_open.webp',
   pixels: _book,
   left: Rect.fromLTRB(185, 125, 665, 800),
   right: Rect.fromLTRB(845, 125, 1365, 800),
@@ -243,15 +243,15 @@ const _lightingBook = LightingBook(
 final Map<String, LightBoardScene> season2LightBoardScenes = {
   's2_ep07_m2': LightBoardScene(
     board: season2LightBoards['s2_ep07_m2']!,
-    stage: '$_case07/stage_base.png',
+    stage: '$_case07/stage_base.webp',
     stagePixels: _stage,
     lit: const {
-      StageLight.ghost: '$_case07/stage_ghost.png',
-      StageLight.house: '$_case07/stage_house.png',
-      StageLight.foot: '$_case07/stage_foot.png',
-      StageLight.spot: '$_case07/stage_spot.png',
+      StageLight.ghost: '$_case07/stage_ghost.webp',
+      StageLight.house: '$_case07/stage_house.webp',
+      StageLight.foot: '$_case07/stage_foot.webp',
+      StageLight.spot: '$_case07/stage_spot.webp',
     },
-    desk: '$_case07/lighting_desk.png',
+    desk: '$_case07/lighting_desk.webp',
     deskPixels: _desk,
     deskPaper: const Rect.fromLTRB(34, 175, 1501, 829),
     slots: const [
@@ -260,14 +260,14 @@ final Map<String, LightBoardScene> season2LightBoardScenes = {
       DeskSlot(light: StageLight.foot, slot: Rect.fromLTRB(886, 332, 922, 564), plate: Rect.fromLTRB(832, 621, 976, 670)),
       DeskSlot(light: StageLight.spot, slot: Rect.fromLTRB(1158, 332, 1195, 564), plate: Rect.fromLTRB(1104, 621, 1248, 670)),
     ],
-    lever: '$_case07/lighting_lever.png',
+    lever: '$_case07/lighting_lever.webp',
     leverPixels: const ScenePixels(1024, 1536),
     leverPaper: const Rect.fromLTRB(308, 70, 710, 1455),
     book: _lightingBook,
     photo: _photo,
     cue: _cue,
     cueOnPage: const Rect.fromLTRB(826, 160, 1378, 528),
-    scrap: '$_case07/scrap_clock_door.png',
+    scrap: '$_case07/scrap_clock_door.webp',
     scrapPixels: const ScenePixels(1254, 1254),
     scrapAt: const Rect.fromLTRB(1080, 500, 1420, 840),
     pageTitle: const ['SHOW No. 34', 'THE GOLDEN NIGHTINGALE'],
@@ -296,11 +296,11 @@ const _backdrop = ScenePixels(1536, 1024);
 final Map<String, FlyRailScene> season2FlyRailScenes = {
   's2_ep07_m3': FlyRailScene(
     rail: season2FlyRails['s2_ep07_m3']!,
-    stage: '$_case07/stage_base.png',
+    stage: '$_case07/stage_base.webp',
     stagePixels: _stage,
     stageView: const Rect.fromLTRB(250, 40, 1290, 760),
     opening: const Rect.fromLTRB(340, 112, 1210, 700),
-    railFile: '$_case07/fly_rail.png',
+    railFile: '$_case07/fly_rail.webp',
     railPixels: _rail,
     railView: const Rect.fromLTRB(170, 250, 1420, 750),
     ropeX: const [337, 637, 943, 1250],
@@ -311,23 +311,23 @@ final Map<String, FlyRailScene> season2FlyRailScenes = {
       Rect.fromLTRB(1177, 323, 1323, 382),
     ],
     lockTop: 396,
-    rope: '$_case07/rope_line.png',
+    rope: '$_case07/rope_line.webp',
     ropePixels: const ScenePixels(1024, 1536),
     ropeStrand: (460, 568),
     backdrops: const [
-      BackdropArt(id: 'lampRed', file: '$_case07/backdrop_lamp_red.png', label: 'A painted street at night: a red door, a small wall lamp above it'),
-      BackdropArt(id: 'towerRed', file: '$_case07/backdrop_tower_red.png', label: 'A painted street at night: a red door, plain wall above it, a clock tower far off on the right'),
-      BackdropArt(id: 'clockRed', file: '$_case07/backdrop_clock_red.png', label: 'A painted street at night: a red door, a small round clock right above it'),
-      BackdropArt(id: 'clockBlue', file: '$_case07/backdrop_clock_blue.png', label: 'A painted street at night: a blue door, a small round clock right above it'),
+      BackdropArt(id: 'lampRed', file: '$_case07/backdrop_lamp_red.webp', label: 'A painted street at night: a red door, a small wall lamp above it'),
+      BackdropArt(id: 'towerRed', file: '$_case07/backdrop_tower_red.webp', label: 'A painted street at night: a red door, plain wall above it, a clock tower far off on the right'),
+      BackdropArt(id: 'clockRed', file: '$_case07/backdrop_clock_red.webp', label: 'A painted street at night: a red door, a small round clock right above it'),
+      BackdropArt(id: 'clockBlue', file: '$_case07/backdrop_clock_blue.webp', label: 'A painted street at night: a blue door, a small round clock right above it'),
     ],
     backdropPixels: _backdrop,
     canvas: const Rect.fromLTRB(4, 0, 1529, 985),
     closer: const Rect.fromLTRB(450, 330, 790, 800),
-    clueFile: 'assets/seasons/season_02_paris/cases/case_02/montmartre_street_painted.png',
+    clueFile: 'assets/seasons/season_02_paris/cases/case_02/montmartre_street_painted.webp',
     cluePixels: const ScenePixels(1536, 1024),
     clueCrop: const Rect.fromLTRB(565, 290, 830, 620),
     clueLine: 'Above the red door: a small clock.',
-    back: '$_case07/backdrop_back_pocket.png',
+    back: '$_case07/backdrop_back_pocket.webp',
     backPixels: _backdrop,
     pocket: const Rect.fromLTRB(598, 700, 828, 872),
     slip: _amendment,
@@ -356,7 +356,7 @@ const _table = ScenePixels(1536, 1024);
 final Map<String, LightTableScene> season2LightTableScenes = {
   's2_ep07_final': LightTableScene(
     record: season2ChangedRecords['s2_ep07_final']!,
-    archive: '$_case07/opera_archive_room.png',
+    archive: '$_case07/opera_archive_room.webp',
     archivePixels: _archive,
     archiveView: const Rect.fromLTRB(300, 230, 1260, 870),
     label: 'FILE 3–4',
@@ -364,8 +364,8 @@ final Map<String, LightTableScene> season2LightTableScenes = {
     file3: _file3,
     programme: _file4,
     cue: _cue,
-    table: '$_case07/light_table_off.png',
-    tableOn: '$_case07/light_table_on.png',
+    table: '$_case07/light_table_off.webp',
+    tableOn: '$_case07/light_table_on.webp',
     tablePixels: _table,
     glass: const Rect.fromLTRB(213, 165, 1315, 699),
     switchAt: const Rect.fromLTRB(1355, 500, 1490, 680),
@@ -399,25 +399,25 @@ final Map<String, RiverEvidenceArt> season2Case07EvidenceArt = {
 // rope rail, the backdrop's back, the light table, and after the case the
 // sketch on the slip's back.
 const _archiveWhole = StoryPicture(
-  file: '$_case07/opera_archive_room.png',
+  file: '$_case07/opera_archive_room.webp',
   pixels: _archive,
   label: 'An archive under the roof of the opera house: shelves of boxes, a long table, one green box on it',
 );
 
 const _stageDark = StoryPicture(
-  file: '$_case07/stage_base.png',
+  file: '$_case07/stage_base.webp',
   pixels: _stage,
   label: 'A dark opera stage seen from the back of the hall, its curtain open',
 );
 
 const _railWhole = StoryPicture(
-  file: '$_case07/fly_rail.png',
+  file: '$_case07/fly_rail.webp',
   pixels: _rail,
   label: 'Backstage: a wooden rail on a brick wall, four brass rope locks',
 );
 
 const _tableWhole = StoryPicture(
-  file: '$_case07/light_table_off.png',
+  file: '$_case07/light_table_off.webp',
   pixels: _table,
   label: 'A wooden light table with a frosted glass top, its light off',
 );
@@ -427,7 +427,7 @@ final Map<String, StoryScenes> season2Case07StoryScenes = {
   's2_ep07_m1': StoryScenes(
     place: _archiveWhole,
     after: StoryPicture(
-      file: '$_case07/opera_archive_room.png',
+      file: '$_case07/opera_archive_room.webp',
       pixels: _archive,
       crop: _archive.rect(420, 380, 1180, 880),
       label: 'The green archive box on the long table, under a brass lamp',
@@ -438,7 +438,7 @@ final Map<String, StoryScenes> season2Case07StoryScenes = {
   's2_ep07_m2': const StoryScenes(
     place: _stageDark,
     after: StoryPicture(
-      file: '$_case07/stage_ghost.png',
+      file: '$_case07/stage_ghost.webp',
       pixels: _stage,
       label: 'The empty stage, lit only by one bare bulb on a stand',
     ),
@@ -448,7 +448,7 @@ final Map<String, StoryScenes> season2Case07StoryScenes = {
   's2_ep07_m3': const StoryScenes(
     place: _railWhole,
     after: StoryPicture(
-      file: '$_case07/backdrop_back_pocket.png',
+      file: '$_case07/backdrop_back_pocket.webp',
       pixels: _backdrop,
       label: 'The back of a painted backdrop, a canvas pocket sewn at its foot',
     ),
@@ -457,7 +457,7 @@ final Map<String, StoryScenes> season2Case07StoryScenes = {
   // After the case: the sketch on the back of the slip.
   's2_ep07_final': const StoryScenes(
     after: StoryPicture(
-      file: '$_case07/abbesses_sketch.png',
+      file: '$_case07/abbesses_sketch.webp',
       pixels: _sketch,
       label: 'A pencil sketch of Montmartre: stone steps, a street lamp, a metro entrance',
       cutOut: true,
@@ -482,13 +482,13 @@ const _stageView = Rect.fromLTRB(250, 40, 1290, 760);
 
 const _darkStage = PicturePanel(
   id: 'stage',
-  picture: EasyPicture(file: '$_case07/stage_base.png', pixels: _stage, crop: _stageView, label: 'The opera stage, dark'),
+  picture: EasyPicture(file: '$_case07/stage_base.webp', pixels: _stage, crop: _stageView, label: 'The opera stage, dark'),
 );
 
 const _ghostStage = PicturePanel(
   id: 'stage',
   picture: EasyPicture(
-    file: '$_case07/stage_ghost.png',
+    file: '$_case07/stage_ghost.webp',
     pixels: _stage,
     crop: _stageView,
     label: 'The empty stage, lit only by one bare bulb on a stand',
@@ -496,7 +496,7 @@ const _ghostStage = PicturePanel(
 );
 
 const _deskColumn = EasyPicture(
-  file: '$_case07/lighting_desk.png',
+  file: '$_case07/lighting_desk.webp',
   pixels: _desk,
   crop: Rect.fromLTRB(120, 185, 560, 730),
   label: 'The lighting desk: the ghost light\'s lever in its slot',
@@ -508,7 +508,7 @@ const _leverUp = Rect.fromLTRB(268, 199, 453, 477);
 PicturePanel _ghostSwitch({required bool on, String? caption}) => PicturePanel(
   id: 'desk',
   picture: _deskColumn,
-  layers: [EasyLayer(file: '$_case07/lighting_lever.png', at: on ? _leverUp : _leverDown)],
+  layers: [EasyLayer(file: '$_case07/lighting_lever.webp', at: on ? _leverUp : _leverDown)],
   writing: [
     const EasyWriting('GHOST LIGHT', at: Rect.fromLTRB(292, 627, 426, 665), size: 34, ink: EasyInk.typed),
     EasyWriting(on ? 'ON' : 'OFF', at: const Rect.fromLTRB(290, 678, 430, 726), size: 44, ink: EasyInk.brass, strong: on),
@@ -526,7 +526,7 @@ const _fileLines = Rect.fromLTRB(120, 506, 900, 1010);
 PicturePanel _lightTable({required bool on, String? caption}) => PicturePanel(
   id: 'table',
   picture: EasyPicture(
-    file: on ? '$_case07/light_table_on.png' : '$_case07/light_table_off.png',
+    file: on ? '$_case07/light_table_on.webp' : '$_case07/light_table_off.webp',
     pixels: _table,
     crop: _tablePicture,
     label: on ? 'The light table, its glass lit from under' : 'The light table, its light off; a brass switch on its right edge',
@@ -607,7 +607,7 @@ final Map<String, EasyStepsScene> season2Case07Steps = {
           PicturePanel(
             id: 'scrap',
             picture: EasyPicture(
-              file: '$_case07/scrap_clock_door.png',
+              file: '$_case07/scrap_clock_door.webp',
               pixels: ScenePixels(1254, 1254),
               crop: Rect.fromLTRB(161, 182, 1076, 1073),
               label: 'A scrap of paper tucked in the book: a tiny drawing of a small clock above a red door',

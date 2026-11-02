@@ -125,7 +125,7 @@
         },
         "talk": {
           "speaker": "livia_conti",
-          "portrait": "assets/seasons/season_03_rome/characters/livia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp",
           "goal": "Play the Owl's last game.",
           "before": {
             "lines": [
@@ -258,7 +258,7 @@
         },
         "talk": {
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp",
           "goal": "Find out what the holes were for.",
           "before": {
             "lines": [
@@ -371,7 +371,7 @@
         },
         "talk": {
           "speaker": "livia_conti",
-          "portrait": "assets/seasons/season_03_rome/characters/livia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp",
           "goal": "Read the word around the owl.",
           "after": {
             "lines": [
@@ -522,7 +522,7 @@
           "by": "speaker",
           "text": "HISTORY. The story of the past.",
           "speaker": "livia_conti",
-          "portrait": "assets/seasons/season_03_rome/characters/livia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp"
         },
         {
           "by": "detective",
@@ -533,25 +533,25 @@
           "by": "speaker",
           "text": "And now it is back where it belongs.",
           "speaker": "sofia_ferri",
-          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.webp"
         },
         {
           "by": "speaker",
           "text": "No more dark ten minutes in my hall!",
           "speaker": "enzo_greco",
-          "portrait": "assets/seasons/season_03_rome/characters/enzo_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/enzo_base.webp"
         },
         {
           "by": "speaker",
           "text": "I will write a new chapter tonight!",
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp"
         },
         {
           "by": "speaker",
           "text": "Rome has more stories, Detective. Come back soon.",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         }
       ]
     }

@@ -222,6 +222,13 @@ picture, else `notWired`), `subject` (placeId, charId, evidence id, or
   An object drawn from another (a copy of a real thing) references it.
 - One picture serves every case that shows the same thing (list all its cases).
 - No text in pictures: signs, papers and tiles are blank; the game writes words.
+- `outputPath` ends in **`.webp`** (`assets/seasons/season_NN_<city>/…/name.webp`),
+  and every plan file that shows the picture names that same `.webp`. The API
+  draws a PNG, kept in `content_pipeline/asset_work/` (out of the app); the
+  pipeline makes the game's WebP from it by the picture's `type` and `use`
+  (`tool/asset_optimizer/image_policy.json`: a `use: puzzle` object or a
+  `document` is kept near-lossless or exact). A `.png` `outputPath` ships the
+  API's picture as it is: only for older plans.
 
 ## 4. Check, fix, repeat
 

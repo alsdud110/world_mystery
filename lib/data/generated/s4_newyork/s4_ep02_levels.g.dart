@@ -269,7 +269,7 @@ const s4Ep02JuniorInvestigations = <String, InvestigationScene>{};
 const s4Ep02JuniorDialogues = <String, DialogueScene>{
   's4_ep02_m1': DialogueScene(
     place: 'MAIN CONCOURSE',
-    background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+    background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     goal: 'Find out who came at seven o\'clock.',
     how: 'Question each person. Write down their answers.',
     guide: 'Speak to a witness.',
@@ -278,7 +278,7 @@ const s4Ep02JuniorDialogues = <String, DialogueScene>{
         id: 'grace',
         name: 'Grace Kim',
         title: 'THE LOST AND FOUND',
-        portrait: 'assets/seasons/season_04_newyork/characters/grace_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/grace_base.webp',
         description: 'a tidy woman with short black hair, wearing a station uniform and carrying a ring of keys',
         greeting: 'I look after lost things. And one very old box.',
         answers: {
@@ -300,7 +300,7 @@ const s4Ep02JuniorDialogues = <String, DialogueScene>{
         id: 'rosa',
         name: 'Rosa Diaz',
         title: 'THE VIOLINIST',
-        portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.webp',
         description: 'a young violinist wearing a green beret, with her violin under her arm',
         greeting: 'Hi. I play here every single morning.',
         answers: {
@@ -322,7 +322,7 @@ const s4Ep02JuniorDialogues = <String, DialogueScene>{
         id: 'otto',
         name: 'Otto Brandt',
         title: 'THE CLOCKMAKER',
-        portrait: 'assets/seasons/season_04_newyork/characters/otto_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/otto_base.webp',
         description: 'an old man with bushy white eyebrows, wearing a leather apron and carrying a toolbox',
         greeting: 'Hmph. I\'m busy. What do you want?',
         answers: {
@@ -476,32 +476,32 @@ const s4Ep02JuniorEndings = <String, List<EndingLine>>{
       'This tea house is one hundred years old!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     ),
     EndingLine(
       'And the man in star boots never got his hands on the egg.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
       evidenceId: 's4_ep02_e1',
     ),
     EndingLine(
       'Good luck. Eleanor\'s friends ask difficult questions.',
       voice: TalkVoice.speaker,
       name: 'GRACE KIM',
-      portrait: 'assets/seasons/season_04_newyork/characters/grace_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/grace_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     ),
     EndingLine(
       'Rosa\'s violin plays that same old tune once more.',
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     ),
     EndingLine(
       'That song... where have I heard it before?',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     ),
   ],
 };
@@ -769,7 +769,7 @@ const s4Ep02MasterInvestigations = <String, InvestigationScene>{};
 const s4Ep02MasterDialogues = <String, DialogueScene>{
   's4_ep02_m1': DialogueScene(
     place: 'MAIN CONCOURSE',
-    background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+    background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     goal: 'Uncover who appeared at seven.',
     how: 'Question each person and record every answer.',
     guide: 'Choose a witness to question.',
@@ -778,7 +778,7 @@ const s4Ep02MasterDialogues = <String, DialogueScene>{
         id: 'grace',
         name: 'Grace Kim',
         title: 'THE LOST AND FOUND',
-        portrait: 'assets/seasons/season_04_newyork/characters/grace_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/grace_base.webp',
         description: 'a neat woman with cropped black hair, a station uniform and a jangling ring of keys',
         greeting: 'I safeguard lost belongings. And one very old box.',
         answers: {
@@ -800,7 +800,7 @@ const s4Ep02MasterDialogues = <String, DialogueScene>{
         id: 'rosa',
         name: 'Rosa Diaz',
         title: 'THE VIOLINIST',
-        portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.webp',
         description: 'a young violinist in a green beret, her violin tucked beneath her arm',
         greeting: 'Hello. I perform here each morning.',
         answers: {
@@ -822,7 +822,7 @@ const s4Ep02MasterDialogues = <String, DialogueScene>{
         id: 'otto',
         name: 'Otto Brandt',
         title: 'THE CLOCKMAKER',
-        portrait: 'assets/seasons/season_04_newyork/characters/otto_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/otto_base.webp',
         description: 'an elderly man with bushy white eyebrows, a leather apron and a battered toolbox',
         greeting: 'Hmph. I am occupied. What is it you want?',
         answers: {
@@ -976,32 +976,32 @@ const s4Ep02MasterEndings = <String, List<EndingLine>>{
       'This tea house has stood for a hundred years!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     ),
     EndingLine(
       'And the egg never fell into the hands of the man in star boots.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
       evidenceId: 's4_ep02_e1',
     ),
     EndingLine(
       'Good luck. Eleanor\'s friends pose formidable questions.',
       voice: TalkVoice.speaker,
       name: 'GRACE KIM',
-      portrait: 'assets/seasons/season_04_newyork/characters/grace_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/grace_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     ),
     EndingLine(
       'Once again, Rosa\'s violin drifts into that same old melody.',
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     ),
     EndingLine(
       'That melody... where have I heard it before?',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
     ),
   ],
 };

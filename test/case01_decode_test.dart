@@ -47,18 +47,18 @@ void main() {
   // The code as drawn on the card (measured on the picture).
   const qr = Rect.fromLTRB(652 / 1536, 420 / 1024, 972 / 1536, 706 / 1024);
 
-  Size pngSize(String path) {
-    final b = File(path).readAsBytesSync();
-    int word(int at) => (b[at] << 24) | (b[at + 1] << 16) | (b[at + 2] << 8) | b[at + 3];
-    return Size(word(16).toDouble(), word(20).toDouble());
+  /// A picture's width and height (the game's WebP, or a PNG), read whole.
+  Size pictureSize(String path) {
+    final (w, h) = imageSize(path)!;
+    return Size(w, h);
   }
 
   group('the scene', () {
     test('the new picture is in the app, at the size its places are measured on', () {
       expect(File('pubspec.yaml').readAsStringSync(), contains('- assets/seasons/season_01_london/cases/case_01/'));
-      expect(scene.picture, 'assets/seasons/season_01_london/cases/case_01/buckingham_palace_crown_card.png');
+      expect(scene.picture, 'assets/seasons/season_01_london/cases/case_01/buckingham_palace_crown_card.webp');
       expect(File(scene.picture).existsSync(), isTrue);
-      expect(pngSize(scene.picture), Size(scene.pixels.width, scene.pixels.height));
+      expect(pictureSize(scene.picture), Size(scene.pixels.width, scene.pixels.height));
       expect(scene.pixels.width, 1536);
       expect(scene.pixels.height, 1024);
     });

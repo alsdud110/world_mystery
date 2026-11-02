@@ -58,7 +58,7 @@
         "notes": [
           "Played as a look round (ExploreScene) in the tea room: the framed card on the wall describes the tin's lid; the tin shelf opens once it is read. The three tins are the same red tin; only the lid picture changes (a rabbit or a fish, a full moon or a sun).",
           "The right tin is also the case's evidence picture (ev_red_tin, 1024x1024); the two wrong tins are drawn from it.",
-          "Coordinates measured on the made tea_room.png (1536x1024, sha256 1b2ee811…) with a 50px grid sheet (season_factory). The framed card hangs left of centre; the shelf's area starts right of the lantern (the tins under the lantern belong to no spot), and the counter's starts above the teapots, below the shelf; the lantern is its body and its tassel."
+          "Coordinates measured on the made tea_room.webp (1536x1024, sha256 1b2ee811…) with a 50px grid sheet (season_factory). The framed card hangs left of centre; the shelf's area starts right of the lantern (the tins under the lantern belong to no spot), and the counter's starts above the teapots, below the shelf; the lantern is its body and its tassel."
         ]
       },
       "clueInputs": [
@@ -119,12 +119,12 @@
         },
         "explore": {
           "picture": {
-            "file": "assets/seasons/season_04_newyork/locations/tea_room.png",
+            "file": "assets/seasons/season_04_newyork/locations/tea_room.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:1b2ee8116b7924f45fc6f74d2cec17febc4869ccdd834d9b9e1d6ffcbc3bb3ac"
+            "measuredOn": "sha256:a57af1ec537ed3f56632b089a2c6950666358ba49d3f27593302c9e09334d418"
           },
           "place": "The tea room",
           "task": "Look around the tea room. What does the old card say?",
@@ -254,17 +254,17 @@
           "choices": [
             {
               "optionId": "sun_rabbit",
-              "picture": "assets/seasons/season_04_newyork/cases/case_03/tin_sun_rabbit.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_03/tin_sun_rabbit.webp",
               "description": "a red tea tin, its lid painted with a white rabbit under a round yellow sun with rays"
             },
             {
               "optionId": "moon_fish",
-              "picture": "assets/seasons/season_04_newyork/cases/case_03/tin_moon_fish.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_03/tin_moon_fish.webp",
               "description": "a red tea tin, its lid painted with a white fish under a full moon"
             },
             {
               "optionId": "moon_rabbit",
-              "picture": "assets/seasons/season_04_newyork/objects/red_tin.png",
+              "picture": "assets/seasons/season_04_newyork/objects/red_tin.webp",
               "description": "a red tea tin, its lid painted with a white rabbit under a full moon"
             }
           ],
@@ -277,7 +277,7 @@
         },
         "talk": {
           "speaker": "dexter_vance",
-          "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.png",
+          "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.webp",
           "goal": "Find Eleanor's tin.",
           "before": {
             "lines": [
@@ -616,7 +616,7 @@
           "by": "speaker",
           "text": "Wonderful! We'll film there tomorrow!",
           "speaker": "dexter_vance",
-          "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.webp"
         },
         {
           "by": "detective",
@@ -627,7 +627,7 @@
           "by": "speaker",
           "text": "Sorry... I have to go now.",
           "speaker": "nora_bell",
-          "portrait": "assets/seasons/season_04_newyork/characters/nora_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/nora_base.webp"
         },
         {
           "by": "narrator",

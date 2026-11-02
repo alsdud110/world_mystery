@@ -3,6 +3,9 @@ import 'dart:io';
 
 import '../ai_agents/env_file.dart';
 import '../ai_agents/openai_image.dart';
+import '../asset_optimizer/asset_size_report.dart';
+import '../asset_optimizer/bundle_assets.dart';
+import '../asset_optimizer/image_policy.dart';
 import '../asset_pipeline/asset_pipeline.dart';
 import '../asset_pipeline/asset_plan.dart';
 import '../asset_pipeline/asset_state.dart';
@@ -143,7 +146,12 @@ abstract final class SeasonFactory {
 
   static AssetPipeline _pipeline(AssetPlan plan, {void Function(String)? log}) {
     final openAi = OpenAiImageApi();
-    return AssetPipeline(plan: plan, studio: ImageStudio(api: openAi, editApi: openAi, findKey: () => ApiKey.find()), log: log);
+    return AssetPipeline(
+      plan: plan,
+      studio: ImageStudio(api: openAi, editApi: openAi, findKey: () => ApiKey.find()),
+      log: log,
+      optimizer: AssetPipeline.findOptimizer(),
+    );
   }
 
   /// The pictures the game shows, by asset id: every one a case shows
@@ -234,6 +242,27 @@ abstract final class SeasonFactory {
     return out;
   }
 
+  /// What the season under [assetRoot] adds to the app (the bundle as
+  /// `pubspec.yaml` lists it, against `size_baseline.json`) and the size
+  /// report's warnings about it: diagnostics, never a stop.
+  static List<String> sizeLines(String assetRoot) {
+    final area = assetRoot.split('/').last;
+    final baselineFile = File('tool/asset_optimizer/size_baseline.json');
+    final report = SizeReport.of(
+      BundleAssets.list(),
+      policy: ImagePolicy.load(),
+      baseline: baselineFile.existsSync() ? jsonDecode(baselineFile.readAsStringSync()) as Map<String, Object?> : null,
+    );
+    final mine = (report.json['areas'] as Map)[area] as Map?;
+    return [
+      if (mine == null) '$area: nothing of it in the bundle yet'
+      else '$area: ${mine['files']} files, ${SizeReport.mb(mine['bytes'] as int)} MB in the app'
+          '${mine['growthBytes'] == null ? ' (new since the size baseline)' : ', ${SizeReport.mb(mine['growthBytes'] as int)} MB since the size baseline'}; '
+          'the whole bundle ${SizeReport.mb(report.json['bytes'] as int)} MB',
+      for (final w in report.warnings) if (w.contains(area) || w.startsWith('the bundle')) '! $w',
+    ];
+  }
+
   // ── status ───────────────────────────────────────────────────────────
 
   static int status(String dir) {
@@ -316,9 +345,13 @@ abstract final class SeasonFactory {
       return 1;
     }
     final raw = File(r!.raw!.path);
-    final name = asset.outputPath.split('/').last.replaceAll('.png', '');
+    final name = asset.outputPath.split('/').last.replaceAll(RegExp(r'\.(png|webp)$'), '');
     final aside = Directory('$work/superseded/${name}_${r.raw!.sha256.substring(7, 23)}')..createSync(recursive: true);
     if (raw.existsSync()) raw.renameSync('${aside.path}/${raw.uri.pathSegments.last}');
+    // Its game copy (fitted, or the WebP made from it) goes with it: the next
+    // picture's would otherwise meet it in game/ and never be written.
+    final game = r.game == null || r.game!.path == r.raw!.path ? null : File(r.game!.path);
+    if (game != null && game.existsSync()) game.renameSync('${aside.path}/game_${game.uri.pathSegments.last}');
     File('${aside.path}/state_record.json').writeAsStringSync(
       '${const JsonEncoder.withIndent('  ').convert({'assetId': assetId, 'record': r.toJson(), 'why': why})}\n',
     );
@@ -418,6 +451,7 @@ abstract final class SeasonFactory {
       return 1;
     }
     pipeline.wiring(write: true);
+    sizeLines(plan.assetRoot).forEach((l) => say('size', l));
 
     // 6. Measured on the made pictures.
     final measure = unmeasured(dir);

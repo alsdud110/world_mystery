@@ -260,7 +260,7 @@ const s3Ep10JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s3Ep10JuniorExplores = <String, ExploreScene>{
   's3_ep10_m1': ExploreScene(
-    picture: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+    picture: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -351,17 +351,17 @@ const s3Ep10JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'worker',
-        picture: 'assets/seasons/season_03_rome/cases/case_10/helmet_white_crane.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_10/helmet_white_crane.webp',
         description: 'a white helmet with a small crane sticker, hanging on a hook',
       ),
       ExplorePicture(
         optionId: 'visitor',
-        picture: 'assets/seasons/season_03_rome/cases/case_10/helmet_yellow_plain.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_10/helmet_yellow_plain.webp',
         description: 'a plain yellow helmet with no sticker, hanging on a hook',
       ),
       ExplorePicture(
         optionId: 'boss',
-        picture: 'assets/seasons/season_03_rome/objects/yellow_helmet.png',
+        picture: 'assets/seasons/season_03_rome/objects/yellow_helmet.webp',
         description: 'a yellow helmet with a small crane sticker, hanging on a hook',
       ),
     ],
@@ -386,7 +386,7 @@ final s3Ep10JuniorTalkMissions = <String, TalkMission>{
         id: 'livia_conti',
         name: 'LIVIA CONTI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/livia_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/livia_base.webp',
         },
       ),
       goal: 'Take a look around the site.',
@@ -403,7 +403,7 @@ final s3Ep10JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE SITE FENCE',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
       finishLabel: 'LOOK AROUND',
     ),
   ),
@@ -414,7 +414,7 @@ final s3Ep10JuniorTalkMissions = <String, TalkMission>{
         id: 'livia_conti',
         name: 'LIVIA CONTI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/livia_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/livia_base.webp',
         },
       ),
       goal: 'Find out what the heavy box holds.',
@@ -431,7 +431,7 @@ final s3Ep10JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE SITE GATE',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
   ),
 };
@@ -465,35 +465,35 @@ const s3Ep10JuniorEndings = <String, List<EndingLine>>{
       'A Roman library? Right under the square?',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
     EndingLine(
       'BIBLIOTHECA. It\'s a room for books, marked on the old map.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
       evidenceId: 's3_ep09_e1',
     ),
     EndingLine(
       'Then the concrete must not be poured.',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
     EndingLine(
       'I\'ll bring the city inspector tomorrow!',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
     EndingLine(
       'But without the real piece, who\'s going to believe us?',
       voice: TalkVoice.speaker,
       name: 'LIVIA CONTI',
-      portrait: 'assets/seasons/season_03_rome/characters/livia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      portrait: 'assets/seasons/season_03_rome/characters/livia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
   ],
 };
@@ -755,7 +755,7 @@ const s3Ep10MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s3Ep10MasterExplores = <String, ExploreScene>{
   's3_ep10_m1': ExploreScene(
-    picture: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+    picture: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -846,17 +846,17 @@ const s3Ep10MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'worker',
-        picture: 'assets/seasons/season_03_rome/cases/case_10/helmet_white_crane.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_10/helmet_white_crane.webp',
         description: 'a white helmet bearing a small crane sticker, hanging from a hook',
       ),
       ExplorePicture(
         optionId: 'visitor',
-        picture: 'assets/seasons/season_03_rome/cases/case_10/helmet_yellow_plain.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_10/helmet_yellow_plain.webp',
         description: 'a plain yellow helmet without any sticker, hanging from a hook',
       ),
       ExplorePicture(
         optionId: 'boss',
-        picture: 'assets/seasons/season_03_rome/objects/yellow_helmet.png',
+        picture: 'assets/seasons/season_03_rome/objects/yellow_helmet.webp',
         description: 'a yellow helmet bearing a small crane sticker, hanging from a hook',
       ),
     ],
@@ -881,7 +881,7 @@ final s3Ep10MasterTalkMissions = <String, TalkMission>{
         id: 'livia_conti',
         name: 'LIVIA CONTI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/livia_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/livia_base.webp',
         },
       ),
       goal: 'Search the building site.',
@@ -898,7 +898,7 @@ final s3Ep10MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE SITE FENCE',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
       finishLabel: 'LOOK AROUND',
     ),
   ),
@@ -909,7 +909,7 @@ final s3Ep10MasterTalkMissions = <String, TalkMission>{
         id: 'livia_conti',
         name: 'LIVIA CONTI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/livia_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/livia_base.webp',
         },
       ),
       goal: 'Work out what the heavy box contains.',
@@ -926,7 +926,7 @@ final s3Ep10MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE SITE GATE',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
   ),
 };
@@ -960,35 +960,35 @@ const s3Ep10MasterEndings = <String, List<EndingLine>>{
       'A Roman library? Hidden beneath the square?',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
     EndingLine(
       'BIBLIOTHECA: a room for books, marked on the ancient map.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
       evidenceId: 's3_ep09_e1',
     ),
     EndingLine(
       'Then not a drop of concrete can be poured.',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
     EndingLine(
       'I\'m bringing the city inspector first thing tomorrow!',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
     EndingLine(
       'But without the real piece, who on earth will believe us?',
       voice: TalkVoice.speaker,
       name: 'LIVIA CONTI',
-      portrait: 'assets/seasons/season_03_rome/characters/livia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/civetta_square.png',
+      portrait: 'assets/seasons/season_03_rome/characters/livia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/civetta_square.webp',
     ),
   ],
 };

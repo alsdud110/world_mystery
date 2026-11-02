@@ -39,10 +39,10 @@ void main() {
   test('the sheets: a review sheet of a batch, numbered; a grid sheet the size of its picture', () {
     final tmp = Directory.systemTemp.createTempSync('factory_sheets');
     addTearDown(() => tmp.deleteSync(recursive: true));
-    final files = ['assets/seasons/season_03_rome/objects/owl_card.png', 'assets/seasons/season_03_rome/locations/map/rome_map.png', 'assets/seasons/season_03_rome/characters/pia_base.png'];
+    final files = ['assets/seasons/season_03_rome/objects/owl_card.webp', 'assets/seasons/season_03_rome/locations/map/rome_map.webp', 'assets/seasons/season_03_rome/characters/pia_base.webp'];
     Sheets.review(files, '${tmp.path}/review.png', cell: 200);
     expect((PngCheck.file('${tmp.path}/review.png').width, PngCheck.file('${tmp.path}/review.png').height), (400, 400), reason: 'two a row');
-    Sheets.grid('assets/seasons/season_03_rome/locations/map/rome_map.png', '${tmp.path}/grid.png');
+    Sheets.grid('assets/seasons/season_03_rome/locations/map/rome_map.webp', '${tmp.path}/grid.png');
     expect((PngCheck.file('${tmp.path}/grid.png').width, PngCheck.file('${tmp.path}/grid.png').height), (1536, 1024), reason: 'read in the picture\'s own pixels');
   });
 

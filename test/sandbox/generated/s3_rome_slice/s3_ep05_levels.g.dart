@@ -260,7 +260,7 @@ const s3Ep05JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s3Ep05JuniorExplores = <String, ExploreScene>{
   's3_ep05_m1': ExploreScene(
-    picture: 'assets/seasons/season_03_rome/locations/cat_ruins.png',
+    picture: 'assets/seasons/season_03_rome/locations/cat_ruins.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -340,17 +340,17 @@ const s3Ep05JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'rosso',
-        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_rosso.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_rosso.webp',
         description: 'an orange cat with a long, fluffy tail, sitting on a stone',
       ),
       ExplorePicture(
         optionId: 'tito',
-        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_tito.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_tito.webp',
         description: 'an orange cat with a short tail and white dust on its paws',
       ),
       ExplorePicture(
         optionId: 'luna',
-        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_luna.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_luna.webp',
         description: 'a black cat with a long tail, lying on a warm stone',
       ),
     ],
@@ -375,7 +375,7 @@ final s3Ep05JuniorTalkMissions = <String, TalkMission>{
         id: 'carla_bassi',
         name: 'CARLA BASSI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/carla_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/carla_base.webp',
         },
       ),
       goal: 'Find out how a copy gets made.',
@@ -392,7 +392,7 @@ final s3Ep05JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE BASSI WORKSHOP',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
       finishLabel: 'READ THE SIGN',
     ),
     after: TalkScene(
@@ -401,7 +401,7 @@ final s3Ep05JuniorTalkMissions = <String, TalkMission>{
         id: 'carla_bassi',
         name: 'CARLA BASSI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/carla_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/carla_base.webp',
         },
       ),
       goal: 'Find out how a copy gets made.',
@@ -418,7 +418,7 @@ final s3Ep05JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE BASSI WORKSHOP',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
   ),
 };
@@ -452,32 +452,32 @@ const s3Ep05JuniorEndings = <String, List<EndingLine>>{
       'Order 318. Here\'s its card.',
       voice: TalkVoice.speaker,
       name: 'CARLA BASSI',
-      portrait: 'assets/seasons/season_03_rome/characters/carla_base.png',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/carla_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
     EndingLine(
       'Picked up on Thursday at 7 PM, by a big man in a yellow helmet.',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
     EndingLine(
       'On Tuesday, he brought the real piece here for three hours.',
       voice: TalkVoice.speaker,
       name: 'CARLA BASSI',
-      portrait: 'assets/seasons/season_03_rome/characters/carla_base.png',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/carla_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
     EndingLine(
       'A yellow helmet, just like the man Pia saw!',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
       evidenceId: 's3_ep03_e3',
     ),
     EndingLine(
       'Oh! And Professor Aldo came on Tuesday, too.',
       voice: TalkVoice.speaker,
       name: 'CARLA BASSI',
-      portrait: 'assets/seasons/season_03_rome/characters/carla_base.png',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/carla_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
   ],
 };
@@ -739,7 +739,7 @@ const s3Ep05MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s3Ep05MasterExplores = <String, ExploreScene>{
   's3_ep05_m1': ExploreScene(
-    picture: 'assets/seasons/season_03_rome/locations/cat_ruins.png',
+    picture: 'assets/seasons/season_03_rome/locations/cat_ruins.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -819,17 +819,17 @@ const s3Ep05MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'rosso',
-        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_rosso.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_rosso.webp',
         description: 'an orange cat with a long, fluffy tail, perched on a stone',
       ),
       ExplorePicture(
         optionId: 'tito',
-        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_tito.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_tito.webp',
         description: 'an orange cat with a short tail, its paws dusted with white',
       ),
       ExplorePicture(
         optionId: 'luna',
-        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_luna.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_05/cat_luna.webp',
         description: 'a black cat with a long tail, stretched out on a warm stone',
       ),
     ],
@@ -854,7 +854,7 @@ final s3Ep05MasterTalkMissions = <String, TalkMission>{
         id: 'carla_bassi',
         name: 'CARLA BASSI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/carla_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/carla_base.webp',
         },
       ),
       goal: 'Learn how a copy is made.',
@@ -871,7 +871,7 @@ final s3Ep05MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE BASSI WORKSHOP',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
       finishLabel: 'READ THE SIGN',
     ),
     after: TalkScene(
@@ -880,7 +880,7 @@ final s3Ep05MasterTalkMissions = <String, TalkMission>{
         id: 'carla_bassi',
         name: 'CARLA BASSI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/carla_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/carla_base.webp',
         },
       ),
       goal: 'Learn how a copy is made.',
@@ -897,7 +897,7 @@ final s3Ep05MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE BASSI WORKSHOP',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
   ),
 };
@@ -931,32 +931,32 @@ const s3Ep05MasterEndings = <String, List<EndingLine>>{
       'Order 318. And here is its card.',
       voice: TalkVoice.speaker,
       name: 'CARLA BASSI',
-      portrait: 'assets/seasons/season_03_rome/characters/carla_base.png',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/carla_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
     EndingLine(
       'Collected on Thursday at 7 PM, by a big man wearing a yellow helmet.',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
     EndingLine(
       'On Tuesday, he brought the real piece in, and it stayed here for three hours.',
       voice: TalkVoice.speaker,
       name: 'CARLA BASSI',
-      portrait: 'assets/seasons/season_03_rome/characters/carla_base.png',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/carla_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
     EndingLine(
       'A yellow helmet, exactly like the man Pia saw!',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
       evidenceId: 's3_ep03_e3',
     ),
     EndingLine(
       'Oh! Now I remember: Professor Aldo came on Tuesday, too.',
       voice: TalkVoice.speaker,
       name: 'CARLA BASSI',
-      portrait: 'assets/seasons/season_03_rome/characters/carla_base.png',
-      background: 'assets/seasons/season_03_rome/locations/cast_workshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/carla_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/cast_workshop.webp',
     ),
   ],
 };

@@ -12,7 +12,7 @@ import '../../models/scene_explore.dart' show ScenePixels;
 /// answer, so the solve, its Clue and Evidence, XP, coins and the save are
 /// the ones the puzzle always gave.
 final Map<String, InvestigationScene> season1Investigations = {
-  // ── Case 02 M2 — the belfry (cases/case_02/big_ben_belfry.png, 1536 × 1024)
+  // ── Case 02 M2 — the belfry (cases/case_02/big_ben_belfry.webp, 1536 × 1024)
   // Five bells, each its own size; the back of a clock face on the left
   // wall, the stairs coming up on the right. R.'s note says where the gear
   // is NOT (the biggest bell) and where it IS (its opposite): the detective
@@ -50,7 +50,7 @@ final Map<String, InvestigationScene> season1Investigations = {
         // The smallest bell and the floor just under its rim.
         areas: [_belfry.rect(1278, 425, 1400, 700)],
         foundLine: 'Under the smallest bell: the brass gear!',
-        picture: 'assets/seasons/season_01_london/objects/brass_gear.png',
+        picture: 'assets/seasons/season_01_london/objects/brass_gear.webp',
         at: _belfry.at(1338, 668),
         width: 70 / 1536,
         squash: 0.7,
@@ -88,7 +88,7 @@ final Map<String, InvestigationScene> season1Investigations = {
       ),
     ],
   ),
-  // ── Case 07 M2 — the boathouse (cases/case_07/boathouse_inside.png) ──
+  // ── Case 07 M2 — the boathouse (cases/case_07/boathouse_inside.webp) ──
   // A shelf of four little boxes (the boxes the note rules out), a table
   // with a coil of rope on it, and under the table a green watering can that
   // hides the floor behind it. The note's place words decide: NOT on the
@@ -124,7 +124,7 @@ final Map<String, InvestigationScene> season1Investigations = {
         // The can itself: a tap on it looks behind it.
         areas: [_boathouse.rect(545, 612, 780, 835)],
         foundLine: 'Behind the green watering can, under the table: a box!',
-        picture: 'assets/seasons/season_01_london/objects/small_wooden_box.png',
+        picture: 'assets/seasons/season_01_london/objects/small_wooden_box.webp',
         at: _boathouse.at(800, 770),
         width: 120 / 1536,
         squash: 0.85,
@@ -163,7 +163,7 @@ final Map<String, InvestigationScene> season1Investigations = {
       ),
     ],
   ),
-  // ── Case 03 M1 — Gallery 8 (british_museum_gallery_8.png, 1536 × 1024) ──
+  // ── Case 03 M1 — Gallery 8 (british_museum_gallery_8.webp, 1536 × 1024) ──
   // The guard's report says where each thing is ("under the bench", "on the
   // frame", "next to the door"): the detective finds all three where the
   // report says. The last answers the puzzle's question (which one is next
@@ -199,7 +199,7 @@ final Map<String, InvestigationScene> season1Investigations = {
         // Between the bench legs, down to the floor just below them.
         areas: [_px(395, 805, 795, 965)],
         foundLine: 'You found a red button under the bench!',
-        picture: 'assets/seasons/season_01_london/objects/red_button.png',
+        picture: 'assets/seasons/season_01_london/objects/red_button.webp',
         at: _at(560, 885),
         width: 72 / _w,
       ),
@@ -212,7 +212,7 @@ final Map<String, InvestigationScene> season1Investigations = {
         // The empty gold frame on the right wall, its gilt edge included.
         areas: [_px(1218, 190, 1392, 550)],
         foundLine: 'A piece of blue cloth was caught on the frame.',
-        picture: 'assets/seasons/season_01_london/objects/blue_cloth.png',
+        picture: 'assets/seasons/season_01_london/objects/blue_cloth.webp',
         at: _at(1262, 592),
         width: 150 / _w,
       ),
@@ -226,7 +226,7 @@ final Map<String, InvestigationScene> season1Investigations = {
         // bust on its left and the bench on its right are their own places).
         areas: [_px(165, 752, 385, 872), _px(306, 300, 362, 752)],
         foundLine: 'A wet footprint was found next to the door.',
-        picture: 'assets/seasons/season_01_london/objects/wet_footprint.png',
+        picture: 'assets/seasons/season_01_london/objects/wet_footprint.webp',
         at: _at(276, 812),
         width: 96 / _w,
         pictureAspect: 1024 / 1536,
@@ -293,11 +293,11 @@ final Map<String, InvestigationScene> season1Investigations = {
 InvestigationScene? investigationOf(Mission m) => season1Investigations[m.id];
 
 // Case 02's belfry, in pixels.
-const _belfryFile = 'assets/seasons/season_01_london/cases/case_02/big_ben_belfry.png';
+const _belfryFile = 'assets/seasons/season_01_london/cases/case_02/big_ben_belfry.webp';
 const _belfry = ScenePixels(1536, 1024);
 
 // Case 07's boathouse, inside, in pixels.
-const _boathouseFile = 'assets/seasons/season_01_london/cases/case_07/boathouse_inside.png';
+const _boathouseFile = 'assets/seasons/season_01_london/cases/case_07/boathouse_inside.webp';
 const _boathouse = ScenePixels(1536, 1024);
 
 // Gallery 8's picture, in pixels.

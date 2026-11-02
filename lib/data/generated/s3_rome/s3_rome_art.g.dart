@@ -9,7 +9,7 @@ import 'package:world_mystery/features/world_map/world_cities.dart' show WorldCi
 import 'package:world_mystery/widgets/art_assets.dart' show SeasonCover;
 
 // The landmarks drawn on the map, at the centre of each one's drawing,
-// measured on assets/seasons/season_03_rome/locations/map/rome_map.png (sha256:5bf9329343cc935e…).
+// measured on assets/seasons/season_03_rome/locations/map/rome_map.webp (sha256:80f25567e5db204d…).
 const _capitolineMuseums = SeasonLandmark('capitoline_museums', 'Capitoline Museums', Offset(860 / 1536, 790 / 1024));
 const _treviFountain = SeasonLandmark('trevi_fountain', 'Trevi Fountain', Offset(785 / 1536, 235 / 1024));
 const _campoDeFiori = SeasonLandmark('campo_de_fiori', 'Campo de\' Fiori', Offset(470 / 1536, 485 / 1024));
@@ -24,7 +24,7 @@ const _piazzaDellaCivetta = SeasonLandmark('piazza_della_civetta', 'Piazza della
 
 /// The Mission Map of season s3_rome: every mission at its place's landmark.
 const s3RomeMap = SeasonMap(
-  artwork: 'assets/seasons/season_03_rome/locations/map/rome_map.png',
+  artwork: 'assets/seasons/season_03_rome/locations/map/rome_map.webp',
   pixels: Size(1536, 1024),
   aspect: 1536 / 1024,
   landmarks: [_capitolineMuseums, _treviFountain, _campoDeFiori, _pantheon, _torreArgentina, _piazzaNavona, _romeUniversity, _spanishSteps, _tiberIsland, _romanForum, _piazzaDellaCivetta],
@@ -84,7 +84,7 @@ const s3RomeMap = SeasonMap(
 
 /// Its cover (portrait, no text) and how the screens frame it.
 const s3RomeCover = SeasonCover(
-  file: 'assets/seasons/season_03_rome/cover/season3_cover_rome.png',
+  file: 'assets/seasons/season_03_rome/cover/season3_cover_rome.webp',
   pixels: Size(1024, 1536),
   archiveLook: Alignment(0, 0.15),
   crop: Alignment(0.1, 0),
@@ -104,18 +104,18 @@ const s3RomeWorldCity = WorldCity(
 /// Its evidence shown by a picture (`ArtAssets.evidencePictures`), by evidence id:
 /// each picture made for it (assets.manifest.json, on disk).
 const s3RomeEvidencePictures = <String, String>{
-  's3_ep01_e1': 'assets/seasons/season_03_rome/objects/night_log.png',
-  's3_ep01_e3': 'assets/seasons/season_03_rome/objects/owl_card.png',
-  's3_ep02_e3': 'assets/seasons/season_03_rome/objects/brass_key.png',
-  's3_ep03_e4': 'assets/seasons/season_03_rome/objects/dropped_pass.png',
-  's3_ep04_e4': 'assets/seasons/season_03_rome/objects/plaster_copy.png',
-  's3_ep05_e4': 'assets/seasons/season_03_rome/objects/order_card_318.png',
-  's3_ep06_e4': 'assets/seasons/season_03_rome/objects/aldo_photo.png',
-  's3_ep07_e3': 'assets/seasons/season_03_rome/objects/business_card.png',
-  's3_ep07_e4': 'assets/seasons/season_03_rome/objects/loan_book_page.png',
-  's3_ep08_e4': 'assets/seasons/season_03_rome/objects/livia_drawing.png',
-  's3_ep09_e4': 'assets/seasons/season_03_rome/objects/city_plan.png',
-  's3_ep10_e2': 'assets/seasons/season_03_rome/objects/yellow_helmet.png',
-  's3_ep11_e1': 'assets/seasons/season_03_rome/objects/real_map_piece.png',
-  's3_ep12_e3': 'assets/seasons/season_03_rome/objects/owl_mosaic.png',
+  's3_ep01_e1': 'assets/seasons/season_03_rome/objects/night_log.webp',
+  's3_ep01_e3': 'assets/seasons/season_03_rome/objects/owl_card.webp',
+  's3_ep02_e3': 'assets/seasons/season_03_rome/objects/brass_key.webp',
+  's3_ep03_e4': 'assets/seasons/season_03_rome/objects/dropped_pass.webp',
+  's3_ep04_e4': 'assets/seasons/season_03_rome/objects/plaster_copy.webp',
+  's3_ep05_e4': 'assets/seasons/season_03_rome/objects/order_card_318.webp',
+  's3_ep06_e4': 'assets/seasons/season_03_rome/objects/aldo_photo.webp',
+  's3_ep07_e3': 'assets/seasons/season_03_rome/objects/business_card.webp',
+  's3_ep07_e4': 'assets/seasons/season_03_rome/objects/loan_book_page.webp',
+  's3_ep08_e4': 'assets/seasons/season_03_rome/objects/livia_drawing.webp',
+  's3_ep09_e4': 'assets/seasons/season_03_rome/objects/city_plan.webp',
+  's3_ep10_e2': 'assets/seasons/season_03_rome/objects/yellow_helmet.webp',
+  's3_ep11_e1': 'assets/seasons/season_03_rome/objects/real_map_piece.webp',
+  's3_ep12_e3': 'assets/seasons/season_03_rome/objects/owl_mosaic.webp',
 };

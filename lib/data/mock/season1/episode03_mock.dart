@@ -114,7 +114,7 @@ const Map<String, dynamic> episode03Json = {
         {
           'id': 'a',
           'label': 'Mr Green',
-          'picture': 'assets/seasons/season_01_london/cases/case_03/sketch_mr_green.png',
+          'picture': 'assets/seasons/season_01_london/cases/case_03/sketch_mr_green.webp',
           'note': 'brown coat, green hat',
           'altText': 'a pencil sketch of a man in a buttoned coat and a hat',
           'feedback': 'Mr Green wore brown and green. Which colours did you find in Gallery 8?',
@@ -122,14 +122,14 @@ const Map<String, dynamic> episode03Json = {
         {
           'id': 'b',
           'label': 'Miss Rose',
-          'picture': 'assets/seasons/season_01_london/cases/case_03/sketch_miss_rose.png',
+          'picture': 'assets/seasons/season_01_london/cases/case_03/sketch_miss_rose.webp',
           'note': 'red coat, blue scarf',
           'altText': 'a pencil sketch of a woman in a buttoned coat and a scarf',
         },
         {
           'id': 'c',
           'label': 'Mr Grey',
-          'picture': 'assets/seasons/season_01_london/cases/case_03/sketch_mr_grey.png',
+          'picture': 'assets/seasons/season_01_london/cases/case_03/sketch_mr_grey.webp',
           'note': 'black coat, red scarf',
           'altText': 'a pencil sketch of a man in a buttoned coat and a scarf',
           'feedback': 'Mr Grey has something red, but it is his scarf. A button comes from a coat.',

@@ -1,0 +1,35 @@
+{
+  "note": "The bundle as measured by asset_size_report.dart --write-baseline: compare a later bundle (a new season) with it.",
+  "files": 481,
+  "bytes": 329051546,
+  "areas": {
+    "audio": {
+      "files": 7,
+      "bytes": 193124
+    },
+    "fonts": {
+      "files": 4,
+      "bytes": 637676
+    },
+    "season_01_london": {
+      "files": 81,
+      "bytes": 38449164
+    },
+    "season_02_paris": {
+      "files": 165,
+      "bytes": 150846100
+    },
+    "season_03_rome": {
+      "files": 66,
+      "bytes": 50057996
+    },
+    "season_04_newyork": {
+      "files": 68,
+      "bytes": 53711458
+    },
+    "shared": {
+      "files": 90,
+      "bytes": 35156028
+    }
+  }
+}

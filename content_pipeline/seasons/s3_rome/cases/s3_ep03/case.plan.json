@@ -114,7 +114,7 @@
         },
         "talk": {
           "speaker": "pia_ricci",
-          "portrait": "assets/seasons/season_03_rome/characters/pia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/pia_base.webp",
           "goal": "Find out who left something in Box 7.",
           "before": {
             "lines": [
@@ -341,7 +341,7 @@
         },
         "talk": {
           "speaker": "pia_ricci",
-          "portrait": "assets/seasons/season_03_rome/characters/pia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/pia_base.webp",
           "goal": "Find out what Pia saw on Thursday night.",
           "after": {
             "lines": [
@@ -461,7 +461,7 @@
           "by": "speaker",
           "text": "Two, four, seven! My cash box is open!",
           "speaker": "pia_ricci",
-          "portrait": "assets/seasons/season_03_rome/characters/pia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/pia_base.webp"
         },
         {
           "by": "narrator",
@@ -476,13 +476,13 @@
           "by": "speaker",
           "text": "A museum pass? So he was at the museum!",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         },
         {
           "by": "speaker",
           "text": "Find him, Detective. And find that young woman, too!",
           "speaker": "pia_ricci",
-          "portrait": "assets/seasons/season_03_rome/characters/pia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/pia_base.webp"
         }
       ]
     }

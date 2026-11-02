@@ -14,6 +14,7 @@ import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/landmark_art.dart';
 
+import '../tool/asset_optimizer/optimized_ledger.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
@@ -21,17 +22,22 @@ import 'title_screen_test.dart' show capture;
 /// Case 01's Case Closed file (2026-10-19): the small tilted photo of the
 /// open box by the detective's name (the stamp coming down across it) gives
 /// way to the Missing Crown alone, under the case's title, on the file's own
-/// paper — the crown cut out of `objects/crown.png` (kept). Every other case
+/// paper — the crown cut out of `objects/crown.webp` (kept). Every other case
 /// keeps its photo.
 void main() {
   final catalog = MockEpisodeRepository.bundled();
 
   test('the crown cut out: transparent around it, the source kept', () async {
     final file = ArtAssets.caseClosedEmblems['ep01']!;
-    expect(file, 'assets/seasons/season_01_london/objects/crown_cutout.png');
+    expect(file, 'assets/seasons/season_01_london/objects/crown_cutout.webp');
     // Of Season 1, Case 01 only; Paris Case 01 shows its painting.
     expect(ArtAssets.caseClosedEmblems.keys, ['ep01', 's2_ep01']);
-    expect(File(ArtAssets.objects['crown']!).lengthSync(), 2101713, reason: 'the source as it was');
+    // The source as it was: the game's WebP of it was made from the delivered
+    // PNG (its record in the asset optimizer's ledger), never another picture.
+    final made = OptimizedLedger.load().of(ArtAssets.objects['crown']!)!;
+    expect((made['source'] as Map)['path'], 'assets/seasons/season_01_london/objects/crown.png'); // its source PNG
+    expect((made['source'] as Map)['bytes'], 2101713, reason: 'the source as it was');
+    expect((made['output'] as Map)['bytes'], File(ArtAssets.objects['crown']!).lengthSync());
     final codec = await ui.instantiateImageCodec(File(file).readAsBytesSync());
     final img = (await codec.getNextFrame()).image;
     final px = (await img.toByteData(format: ui.ImageByteFormat.rawStraightRgba))!.buffer.asUint8List();

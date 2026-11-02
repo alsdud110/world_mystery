@@ -26,7 +26,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cover/season4_cover_newyork.png",
+      "outputPath": "assets/seasons/season_04_newyork/cover/season4_cover_newyork.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -46,11 +46,11 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cover/season4_prologue_night.png",
+      "outputPath": "assets/seasons/season_04_newyork/cover/season4_prologue_night.webp",
       "references": [],
       "status": "generated",
       "notes": [
-        "The opening's first scene, full-bleed (as London's season1_london_night.png, 941x1671): the words lie over the bottom 40%, Back and SKIP over the top 12%.",
+        "The opening's first scene, full-bleed (as London's season1_london_night.webp, 941x1671): the words lie over the bottom 40%, Back and SKIP over the top 12%.",
         "Wiring: season.plan.json prologue.hero (file, pixels)."
       ]
     },
@@ -66,7 +66,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/map/newyork_map.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/map/newyork_map.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -87,7 +87,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/exhibit_hall.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/exhibit_hall.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -109,7 +109,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/library_steps.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/library_steps.webp",
       "references": [],
       "status": "generated"
     },
@@ -127,7 +127,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/main_concourse.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/main_concourse.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -148,7 +148,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/tea_house.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/tea_house.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -169,7 +169,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/tea_room.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/tea_room.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -190,7 +190,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/bridge_walkway.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/bridge_walkway.webp",
       "references": [],
       "status": "generated"
     },
@@ -208,7 +208,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/clock_shop.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/clock_shop.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -229,7 +229,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/liberty_island.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/liberty_island.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -250,7 +250,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/times_square.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/times_square.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -272,7 +272,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/square_arch.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/square_arch.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -293,7 +293,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/coney_boardwalk.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/coney_boardwalk.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -314,7 +314,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/bethesda_terrace.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/bethesda_terrace.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -335,7 +335,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/tv_studio.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/tv_studio.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -356,7 +356,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/locations/belvedere_castle.png",
+      "outputPath": "assets/seasons/season_04_newyork/locations/belvedere_castle.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -389,7 +389,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/characters/maya_base.png",
+      "outputPath": "assets/seasons/season_04_newyork/characters/maya_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -414,7 +414,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/characters/harold_base.png",
+      "outputPath": "assets/seasons/season_04_newyork/characters/harold_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -437,7 +437,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/characters/frank_base.png",
+      "outputPath": "assets/seasons/season_04_newyork/characters/frank_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -460,7 +460,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/characters/sam_base.png",
+      "outputPath": "assets/seasons/season_04_newyork/characters/sam_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -486,7 +486,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/characters/dexter_base.png",
+      "outputPath": "assets/seasons/season_04_newyork/characters/dexter_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -508,7 +508,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/characters/grace_base.png",
+      "outputPath": "assets/seasons/season_04_newyork/characters/grace_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -535,7 +535,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/characters/rosa_base.png",
+      "outputPath": "assets/seasons/season_04_newyork/characters/rosa_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -563,7 +563,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/characters/otto_base.png",
+      "outputPath": "assets/seasons/season_04_newyork/characters/otto_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -588,7 +588,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/characters/nora_base.png",
+      "outputPath": "assets/seasons/season_04_newyork/characters/nora_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -609,7 +609,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_08/musician_violin.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_08/musician_violin.webp",
       "references": [
         "s4_newyork.asset.char_rosa_base"
       ],
@@ -629,7 +629,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_08/musician_guitar.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_08/musician_guitar.webp",
       "references": [],
       "status": "generated"
     },
@@ -647,7 +647,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_08/musician_cello.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_08/musician_cello.webp",
       "references": [],
       "status": "generated"
     },
@@ -665,7 +665,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_01/planetarium.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_01/planetarium.webp",
       "references": [],
       "status": "generated"
     },
@@ -683,7 +683,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_01/glass_station.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_01/glass_station.webp",
       "references": [],
       "status": "generated"
     },
@@ -701,7 +701,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_02/bakery_lanterns.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_02/bakery_lanterns.webp",
       "references": [],
       "status": "generated"
     },
@@ -719,7 +719,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_02/dragon_awning.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_02/dragon_awning.webp",
       "references": [],
       "status": "generated"
     },
@@ -737,7 +737,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_05/ellis_island.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_05/ellis_island.webp",
       "references": [],
       "status": "generated"
     },
@@ -755,7 +755,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_05/island_fort.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_05/island_fort.webp",
       "references": [],
       "status": "generated"
     },
@@ -773,7 +773,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_07/river_carousel.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_07/river_carousel.webp",
       "references": [],
       "status": "generated"
     },
@@ -791,7 +791,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_10/building_star.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_10/building_star.webp",
       "references": [],
       "status": "generated"
     },
@@ -809,7 +809,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_10/building_clock.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_10/building_clock.webp",
       "references": [
         "s4_newyork.asset.building_star"
       ],
@@ -829,7 +829,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_10/building_spire.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_10/building_spire.webp",
       "references": [
         "s4_newyork.asset.building_star"
       ],
@@ -849,7 +849,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/objects/red_tin.png",
+      "outputPath": "assets/seasons/season_04_newyork/objects/red_tin.webp",
       "references": [],
       "status": "generated"
     },
@@ -867,7 +867,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_03/tin_sun_rabbit.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_03/tin_sun_rabbit.webp",
       "references": [
         "s4_newyork.asset.ev_red_tin"
       ],
@@ -887,7 +887,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_03/tin_moon_fish.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_03/tin_moon_fish.webp",
       "references": [
         "s4_newyork.asset.ev_red_tin"
       ],
@@ -908,7 +908,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/objects/brass_bird.png",
+      "outputPath": "assets/seasons/season_04_newyork/objects/brass_bird.webp",
       "references": [],
       "status": "generated"
     },
@@ -927,7 +927,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_04/bird_feet_down.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_04/bird_feet_down.webp",
       "references": [
         "s4_newyork.asset.ev_brass_bird"
       ],
@@ -948,7 +948,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_04/bird_wings_closed.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_04/bird_wings_closed.webp",
       "references": [
         "s4_newyork.asset.ev_brass_bird"
       ],
@@ -968,7 +968,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/objects/star_sole.png",
+      "outputPath": "assets/seasons/season_04_newyork/objects/star_sole.webp",
       "references": [],
       "status": "generated"
     },
@@ -986,7 +986,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_07/sole_circles.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_07/sole_circles.webp",
       "references": [
         "s4_newyork.asset.ev_star_sole"
       ],
@@ -1006,7 +1006,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_07/sole_no_line.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_07/sole_no_line.webp",
       "references": [
         "s4_newyork.asset.ev_star_sole"
       ],
@@ -1026,7 +1026,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_09/car_still.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_09/car_still.webp",
       "references": [],
       "status": "generated"
     },
@@ -1044,7 +1044,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_09/car_rail.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_09/car_rail.webp",
       "references": [
         "s4_newyork.asset.car_still"
       ],
@@ -1064,7 +1064,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_09/car_dome.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_09/car_dome.webp",
       "references": [
         "s4_newyork.asset.car_still"
       ],
@@ -1084,7 +1084,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_12/stone_lark_nest.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_12/stone_lark_nest.webp",
       "references": [],
       "status": "generated"
     },
@@ -1102,7 +1102,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_12/stone_owl_nest.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_12/stone_owl_nest.webp",
       "references": [
         "s4_newyork.asset.stone_lark_nest"
       ],
@@ -1122,7 +1122,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/cases/case_12/stone_lark_plain.png",
+      "outputPath": "assets/seasons/season_04_newyork/cases/case_12/stone_lark_plain.webp",
       "references": [
         "s4_newyork.asset.stone_lark_nest"
       ],
@@ -1142,7 +1142,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/objects/newspaper.png",
+      "outputPath": "assets/seasons/season_04_newyork/objects/newspaper.webp",
       "references": [],
       "status": "generated"
     },
@@ -1160,7 +1160,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/objects/rubbing.png",
+      "outputPath": "assets/seasons/season_04_newyork/objects/rubbing.webp",
       "references": [],
       "status": "generated"
     },
@@ -1178,7 +1178,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/objects/brass_egg.png",
+      "outputPath": "assets/seasons/season_04_newyork/objects/brass_egg.webp",
       "references": [],
       "status": "generated"
     },
@@ -1196,7 +1196,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/objects/music_box.png",
+      "outputPath": "assets/seasons/season_04_newyork/objects/music_box.webp",
       "references": [],
       "status": "generated"
     },
@@ -1214,7 +1214,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/objects/torn_page.png",
+      "outputPath": "assets/seasons/season_04_newyork/objects/torn_page.webp",
       "references": [],
       "status": "generated"
     },
@@ -1232,7 +1232,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_04_newyork/objects/silver_lark.png",
+      "outputPath": "assets/seasons/season_04_newyork/objects/silver_lark.webp",
       "references": [],
       "status": "generated"
     }

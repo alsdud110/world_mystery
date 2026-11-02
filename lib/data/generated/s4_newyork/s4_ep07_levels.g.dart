@@ -267,7 +267,7 @@ const s4Ep07JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s4Ep07JuniorExplores = <String, ExploreScene>{
   's4_ep07_m3': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/times_square.png',
+    picture: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -338,17 +338,17 @@ const s4Ep07JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'terrace',
-        picture: 'assets/seasons/season_04_newyork/locations/bethesda_terrace.png',
+        picture: 'assets/seasons/season_04_newyork/locations/bethesda_terrace.webp',
         description: 'a fountain with an angel statue, wide stone steps and a walkway with a roof',
       ),
       ExplorePicture(
         optionId: 'arch',
-        picture: 'assets/seasons/season_04_newyork/locations/square_arch.png',
+        picture: 'assets/seasons/season_04_newyork/locations/square_arch.webp',
         description: 'a big white stone arch standing alone, with a round fountain in front of it',
       ),
       ExplorePicture(
         optionId: 'carousel',
-        picture: 'assets/seasons/season_04_newyork/cases/case_07/river_carousel.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_07/river_carousel.webp',
         description: 'an old carousel in a glass box next to a river, with a bridge behind it',
       ),
     ],
@@ -365,7 +365,7 @@ const s4Ep07JuniorInvestigations = <String, InvestigationScene>{};
 const s4Ep07JuniorDialogues = <String, DialogueScene>{
   's4_ep07_m2': DialogueScene(
     place: 'TIMES SQUARE',
-    background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+    background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     goal: 'Find out where Dexter really was on Sunday morning.',
     how: 'Ask every person. Note down what they tell you.',
     guide: 'Speak to a witness.',
@@ -374,7 +374,7 @@ const s4Ep07JuniorDialogues = <String, DialogueScene>{
         id: 'dexter',
         name: 'Dexter Vance',
         title: 'THE TREASURE HUNTER',
-        portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
         description: 'a tall man with a wide smile, a safari vest and sunglasses pushed up on his head',
         greeting: 'Go ahead and ask! I have nothing to hide!',
         answers: {
@@ -396,7 +396,7 @@ const s4Ep07JuniorDialogues = <String, DialogueScene>{
         id: 'nora',
         name: 'Nora Bell',
         title: 'THE CAMERA OPERATOR',
-        portrait: 'assets/seasons/season_04_newyork/characters/nora_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/nora_base.webp',
         description: 'a young woman in a black cap with headphones around her neck',
         greeting: 'Um... all right. Be quick, please.',
         answers: {
@@ -418,7 +418,7 @@ const s4Ep07JuniorDialogues = <String, DialogueScene>{
         id: 'sam',
         name: 'Sam Okafor',
         title: 'THE PRETZEL SELLER',
-        portrait: 'assets/seasons/season_04_newyork/characters/sam_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/sam_base.webp',
         description: 'a happy man wearing a white apron and a red cap',
         greeting: 'Every Sunday, my cart stands next to the bridge!',
         answers: {
@@ -570,26 +570,26 @@ const s4Ep07JuniorEndings = <String, List<EndingLine>>{
     EndingLine(
       'The person who wrote this has the brass bird.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+      background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
       evidenceId: 's4_ep04_e2',
     ),
     EndingLine(
       'And the violin girl... could she be Rosa?',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     ),
     EndingLine(
       'Rosa plays an old song every day. Just like the one Otto hummed!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     ),
     EndingLine(
       'The crew is coming on Monday at 4 PM. You have to get there first.',
-      background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+      background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     ),
   ],
 };
@@ -856,7 +856,7 @@ const s4Ep07MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s4Ep07MasterExplores = <String, ExploreScene>{
   's4_ep07_m3': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/times_square.png',
+    picture: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -927,17 +927,17 @@ const s4Ep07MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'terrace',
-        picture: 'assets/seasons/season_04_newyork/locations/bethesda_terrace.png',
+        picture: 'assets/seasons/season_04_newyork/locations/bethesda_terrace.webp',
         description: 'a fountain crowned by an angel statue, sweeping stone steps and a covered walkway',
       ),
       ExplorePicture(
         optionId: 'arch',
-        picture: 'assets/seasons/season_04_newyork/locations/square_arch.png',
+        picture: 'assets/seasons/season_04_newyork/locations/square_arch.webp',
         description: 'a big white stone arch standing on its own, a round fountain before it',
       ),
       ExplorePicture(
         optionId: 'carousel',
-        picture: 'assets/seasons/season_04_newyork/cases/case_07/river_carousel.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_07/river_carousel.webp',
         description: 'an old carousel enclosed in a glass box beside a river, a bridge beyond it',
       ),
     ],
@@ -954,7 +954,7 @@ const s4Ep07MasterInvestigations = <String, InvestigationScene>{};
 const s4Ep07MasterDialogues = <String, DialogueScene>{
   's4_ep07_m2': DialogueScene(
     place: 'TIMES SQUARE',
-    background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+    background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     goal: 'Discover where Dexter truly was on Sunday morning.',
     how: 'Question each person and record their answers.',
     guide: 'Approach a witness.',
@@ -963,7 +963,7 @@ const s4Ep07MasterDialogues = <String, DialogueScene>{
         id: 'dexter',
         name: 'Dexter Vance',
         title: 'THE TREASURE HUNTER',
-        portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
         description: 'a tall, grinning man in a safari vest, sunglasses perched on his head',
         greeting: 'Fire away! I have nothing to hide!',
         answers: {
@@ -985,7 +985,7 @@ const s4Ep07MasterDialogues = <String, DialogueScene>{
         id: 'nora',
         name: 'Nora Bell',
         title: 'THE CAMERA OPERATOR',
-        portrait: 'assets/seasons/season_04_newyork/characters/nora_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/nora_base.webp',
         description: 'a young woman in a black cap, headphones slung around her neck',
         greeting: 'Um... fine. But make it brief, please.',
         answers: {
@@ -1007,7 +1007,7 @@ const s4Ep07MasterDialogues = <String, DialogueScene>{
         id: 'sam',
         name: 'Sam Okafor',
         title: 'THE PRETZEL SELLER',
-        portrait: 'assets/seasons/season_04_newyork/characters/sam_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/sam_base.webp',
         description: 'a cheerful fellow in a white apron and a red cap',
         greeting: 'Sundays, you\'ll find my cart stationed by the bridge!',
         answers: {
@@ -1159,26 +1159,26 @@ const s4Ep07MasterEndings = <String, List<EndingLine>>{
     EndingLine(
       'Whoever penned this note has the brass bird.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+      background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
       evidenceId: 's4_ep04_e2',
     ),
     EndingLine(
       'And the violin girl... might she be Rosa?',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     ),
     EndingLine(
       'Rosa plays an old song every single day. Precisely like the tune Otto hummed!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     ),
     EndingLine(
       'The crew arrives on Monday at 4 PM. You must reach her before they do.',
-      background: 'assets/seasons/season_04_newyork/locations/times_square.png',
+      background: 'assets/seasons/season_04_newyork/locations/times_square.webp',
     ),
   ],
 };

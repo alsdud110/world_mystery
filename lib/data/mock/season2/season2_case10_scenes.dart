@@ -16,7 +16,7 @@ import '../../models/story_picture.dart';
 
 const _case09 = 'assets/seasons/season_02_paris/cases/case_09';
 const _case10 = 'assets/seasons/season_02_paris/cases/case_10';
-const _map = 'assets/seasons/season_02_paris/locations/map/paris_mystery.png';
+const _map = 'assets/seasons/season_02_paris/locations/map/paris_mystery.webp';
 
 const _wide = ScenePixels(1536, 1024);
 const _square = ScenePixels(1254, 1254);
@@ -29,7 +29,7 @@ const _square = ScenePixels(1254, 1254);
 // brass drum (130, 430)–(690, 790), the box of photos (630, 415)–(1085, 700)
 // and the green book (735, 630)–(1375, 900).
 const season2StarRoom = StarRoom(
-  file: '$_case10/star_room.png',
+  file: '$_case10/star_room.webp',
   pixels: _wide,
   label: 'A little stone room under the roof: a brass drum with a paper tape, a box of old photos and a thick green book on a table; a brass plate on the wall; a star on the door',
   plateCentre: Offset(760, 268),
@@ -52,14 +52,14 @@ final Map<String, IntroPicture> season2Case10IntroPictures = {
   's2_ep10': const IntroPicture(
     afterLine: 0,
     turnAtLine: 3,
-    from: '$_case10/arc_star_view.png',
-    to: '$_case10/star_room.png',
+    from: '$_case10/arc_star_view.webp',
+    to: '$_case10/star_room.webp',
     pixels: _wide,
     fromLabel: 'The Arc de Triomphe at the end of the afternoon, wide roads running out from it like the points of a star',
     toLabel: 'The little room under the roof: a brass drum, a box of photos, a thick book; a brass plate on the wall; a star on the door',
     room: season2StarRoom,
     inset: IntroInset(
-      file: '$_case09/clock_model_t1.png',
+      file: '$_case09/clock_model_t1.webp',
       pixels: _square,
       label: 'T1: a little arch with a clock on top, a star carved on its base',
       fromLine: 1,
@@ -81,7 +81,7 @@ final Map<String, IntroPicture> season2Case10IntroPictures = {
 // fifteen minutes. At 3:00 its hour hand went one hour back (it printed
 // 2:00); at 4:00 it was right again. Real times are never printed.
 const season2DrumTape = DrumTapeScene(
-  drumFile: '$_case10/record_drum.png',
+  drumFile: '$_case10/record_drum.webp',
   drumPixels: _square,
   slot: Offset(1043, 490),
   plate: Rect.fromLTRB(640, 890, 812, 1003),
@@ -118,7 +118,7 @@ final Map<String, DrumTapeScene> season2DrumTapes = {'s2_ep10_m1': season2DrumTa
 // The sundial: its lines meet at (1009, 755); its plate 228 × 77 on the
 // picture; its gnomon points 40° round from straight away from the camera.
 const _photo = RoofPhoto(
-  file: '$_case10/roof_photo.png',
+  file: '$_case10/roof_photo.webp',
   pixels: _wide,
   label: 'An old photo from the roof: T1 on its post with a star, a sundial, and the city behind with a café clock, a church clock and a clock over a post office door',
   clocks: [
@@ -208,7 +208,7 @@ final Map<String, CityClocksScene> season2CityClocksScenes = {'s2_ep10_m2': seas
 // gnomon's own line: no hour. The lines end 470 from the hub; the plate's
 // edge is 578 out.
 const season2Sundial = Sundial(
-  file: '$_case10/sundial_top.png',
+  file: '$_case10/sundial_top.webp',
   pixels: _square,
   hub: Offset(627, 627),
   radius: 470,
@@ -267,7 +267,7 @@ const season2HourRecord = HourRecordScene(
   ],
   backLabel: 'one hour back',
   rightLabel: 'right again',
-  logFile: '$_case10/trial_log_open.png',
+  logFile: '$_case10/trial_log_open.webp',
   logPixels: _wide,
   leftPage: Rect.fromLTRB(185, 148, 742, 848),
   rightPage: Rect.fromLTRB(808, 150, 1365, 846),
@@ -336,47 +336,47 @@ final Map<String, RiverEvidenceArt> season2Case10EvidenceArt = {
 // Each moment shows what the detective has just reached, never more: the
 // room, the drum, the photo, the sundial, the book, the arch.
 const _room = StoryPicture(
-  file: '$_case10/star_room.png',
+  file: '$_case10/star_room.webp',
   pixels: _wide,
   label: 'A little stone room under the roof: a brass drum, a box of old photos and a thick book on a table, a star on the door',
 );
 
 const _drum = StoryPicture(
-  file: '$_case10/record_drum.png',
+  file: '$_case10/record_drum.webp',
   pixels: _square,
   label: 'A brass drum that prints the time on a paper tape',
   cutOut: true,
 );
 
 const _roofPhoto = StoryPicture(
-  file: '$_case10/roof_photo.png',
+  file: '$_case10/roof_photo.webp',
   pixels: _wide,
   label: 'An old photo from the roof: T1 on its post, a sundial, and the city behind',
 );
 
 const _photoDial = StoryPicture(
-  file: '$_case10/roof_photo.png',
+  file: '$_case10/roof_photo.webp',
   pixels: _wide,
   crop: Rect.fromLTRB(700 / 1536, 560 / 1024, 1340 / 1536, 960 / 1024),
   label: 'The sundial on the roof, in the old photo',
 );
 
 const _sundial = StoryPicture(
-  file: '$_case10/sundial_top.png',
+  file: '$_case10/sundial_top.webp',
   pixels: _square,
   label: 'An old bronze sundial, seen from above',
   cutOut: true,
 );
 
 const _book = StoryPicture(
-  file: '$_case10/trial_log_open.png',
+  file: '$_case10/trial_log_open.webp',
   pixels: _wide,
   label: 'A thick old book, open: the Trial Log',
   cutOut: true,
 );
 
 const _arch = StoryPicture(
-  file: '$_case10/arc_star_view.png',
+  file: '$_case10/arc_star_view.webp',
   pixels: _wide,
   label: 'The Arc de Triomphe, roads running out from it like a star',
 );

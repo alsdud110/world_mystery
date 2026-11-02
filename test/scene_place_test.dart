@@ -180,7 +180,7 @@ void main() {
     });
 
     test("a place's pixel size must be its picture's own", () {
-      expect(pngSize(station.file), (941.0, 1671.0));
+      expect(imageSize(station.file), (941.0, 1671.0));
       expect(placeAssetProblems({'s3_test.wrong': const ScenePlace(file: ArtAssets.season2GareDuNord, pixels: ScenePixels(1536, 1024))}), [
         contains('is (941.0, 1671.0) pixels, not (1536.0, 1024.0)'),
       ]);

@@ -122,7 +122,7 @@
         },
         "talk": {
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp",
           "goal": "Compare Aldo with Pia's helmet man.",
           "before": {
             "lines": [
@@ -251,7 +251,7 @@
         "evidenceLinkLine": "Aldo's notebook page said the same: Friday, 9:00 PM to 1:00 AM.",
         "talk": {
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp",
           "goal": "Check where Aldo was on Friday at midnight.",
           "before": {
             "lines": [
@@ -479,7 +479,7 @@
           "by": "speaker",
           "text": "A builder! Good. You think like a detective.",
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp"
         },
         {
           "by": "detective",
@@ -490,25 +490,25 @@
           "by": "speaker",
           "text": "Here. I took this photo of the real piece.",
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp"
         },
         {
           "by": "speaker",
           "text": "See the crack? It is shaped like a Y.",
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp"
         },
         {
           "by": "speaker",
           "text": "A copy would not have it. Let me help you.",
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp"
         },
         {
           "by": "speaker",
           "text": "But which builder? Rome has hundreds!",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         }
       ]
     }

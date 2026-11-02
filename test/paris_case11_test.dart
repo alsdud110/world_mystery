@@ -48,11 +48,10 @@ void main() {
 
   setUpAll(loadGameFonts);
 
-  /// PNG width and height, from its header.
+  /// A picture's width and height (the game's WebP, or a PNG), read whole.
   (int, int) pixelsOf(String file) {
-    final b = File(file).readAsBytesSync();
-    int at(int i) => (b[i] << 24) | (b[i + 1] << 16) | (b[i + 2] << 8) | b[i + 3];
-    return (at(16), at(20));
+    final (w, h) = imageSize(file)!;
+    return (w.round(), h.round());
   }
 
   /// Every picture a panel shows (its file and size), and the files laid on it.

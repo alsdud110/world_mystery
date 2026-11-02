@@ -59,7 +59,7 @@
         "notes": [
           "Played as a look round (ExploreScene) on the castle's top terrace: Eleanor's small brass plate is set in the floor by the tower door; the east wall opens once it is read. The three stone birds are told apart by the plate's words (a lark with open wings, a round nest the size of an egg below it).",
           "Eleanor's steps (Case 09) and the egg's word EAST (Case 02) are followed here. Two silver letters (R, O) lie in the nest: the first of the final's seven.",
-          "Coordinates measured on the made belvedere_castle.png (1536x1024, sha256 a17fde78…) with a 50px grid sheet (season_factory). The three small carved birds sit in a row on the right wall's face at about y 440–530; the low wall runs along the whole lower left and middle; the little round tower between them belongs to no spot."
+          "Coordinates measured on the made belvedere_castle.webp (1536x1024, sha256 a17fde78…) with a 50px grid sheet (season_factory). The three small carved birds sit in a row on the right wall's face at about y 440–530; the low wall runs along the whole lower left and middle; the little round tower between them belongs to no spot."
         ]
       },
       "clueInputs": [
@@ -125,12 +125,12 @@
         },
         "explore": {
           "picture": {
-            "file": "assets/seasons/season_04_newyork/locations/belvedere_castle.png",
+            "file": "assets/seasons/season_04_newyork/locations/belvedere_castle.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:a17fde78a2dbb970fca0f6b3b3b03690bda332007341ccf8313f31528421df48"
+            "measuredOn": "sha256:d14949828bc917205ab99f4c1da93ebac3bf5e8d6ef5df30aa0a3517cc0af04e"
           },
           "place": "The castle tower",
           "task": "Look around the top of the tower. What did Eleanor leave here?",
@@ -242,17 +242,17 @@
           "choices": [
             {
               "optionId": "owl_nest",
-              "picture": "assets/seasons/season_04_newyork/cases/case_12/stone_owl_nest.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_12/stone_owl_nest.webp",
               "description": "a carved stone owl with folded wings, a round nest below it"
             },
             {
               "optionId": "lark_plain",
-              "picture": "assets/seasons/season_04_newyork/cases/case_12/stone_lark_plain.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_12/stone_lark_plain.webp",
               "description": "a carved stone lark with open wings, plain stone below it"
             },
             {
               "optionId": "lark_nest",
-              "picture": "assets/seasons/season_04_newyork/cases/case_12/stone_lark_nest.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_12/stone_lark_nest.webp",
               "description": "a carved stone lark with open wings, a round nest below it"
             }
           ],
@@ -380,7 +380,7 @@
         },
         "talk": {
           "speaker": "otto_brandt",
-          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.png",
+          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.webp",
           "goal": "Wake the Silver Lark.",
           "before": {
             "lines": [
@@ -622,13 +622,13 @@
           "by": "speaker",
           "text": "Great-grandma's song. I can hear her.",
           "speaker": "rosa_diaz",
-          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.webp"
         },
         {
           "by": "speaker",
           "text": "A hundred years, and it still sings. Wonderful work.",
           "speaker": "otto_brandt",
-          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.webp"
         },
         {
           "by": "detective",
@@ -639,13 +639,13 @@
           "by": "speaker",
           "text": "Then it will sing in the library, every Saturday.",
           "speaker": "harold_brooks",
-          "portrait": "assets/seasons/season_04_newyork/characters/harold_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/harold_base.webp"
         },
         {
           "by": "speaker",
           "text": "And Otto will keep it ticking!",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "narrator",

@@ -176,21 +176,21 @@
       "Find the truth."
     ],
     "firstCase": {
-      "picture": "assets/seasons/season_03_rome/objects/real_map_piece.png",
+      "picture": "assets/seasons/season_03_rome/objects/real_map_piece.webp",
       "line": "Your first case starts\nat the museum."
     },
     "hero": {
-      "file": "assets/seasons/season_03_rome/cover/season3_prologue_night.png",
+      "file": "assets/seasons/season_03_rome/cover/season3_prologue_night.webp",
       "pixels": {
         "width": 1024,
         "height": 1536
       }
     },
     "pieces": [
-      "assets/seasons/season_03_rome/objects/real_map_piece.png",
-      "assets/seasons/season_03_rome/objects/owl_card.png",
-      "assets/seasons/season_03_rome/objects/bag_of_white_dust.png",
-      "assets/seasons/season_03_rome/objects/night_log.png"
+      "assets/seasons/season_03_rome/objects/real_map_piece.webp",
+      "assets/seasons/season_03_rome/objects/owl_card.webp",
+      "assets/seasons/season_03_rome/objects/bag_of_white_dust.webp",
+      "assets/seasons/season_03_rome/objects/night_log.webp"
     ]
   },
   "outro": [
@@ -209,7 +209,7 @@
   "places": [
     {
       "placeId": "s3_rome.guard_room",
-      "file": "assets/seasons/season_03_rome/cases/case_01/guard_room.png",
+      "file": "assets/seasons/season_03_rome/cases/case_01/guard_room.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -218,7 +218,7 @@
     },
     {
       "placeId": "s3_rome.map_hall",
-      "file": "assets/seasons/season_03_rome/locations/map_hall.png",
+      "file": "assets/seasons/season_03_rome/locations/map_hall.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -227,7 +227,7 @@
     },
     {
       "placeId": "s3_rome.trevi_fountain",
-      "file": "assets/seasons/season_03_rome/locations/trevi_fountain.png",
+      "file": "assets/seasons/season_03_rome/locations/trevi_fountain.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -236,7 +236,7 @@
     },
     {
       "placeId": "s3_rome.flower_market",
-      "file": "assets/seasons/season_03_rome/locations/flower_market.png",
+      "file": "assets/seasons/season_03_rome/locations/flower_market.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -245,7 +245,7 @@
     },
     {
       "placeId": "s3_rome.pantheon_hall",
-      "file": "assets/seasons/season_03_rome/locations/pantheon_hall.png",
+      "file": "assets/seasons/season_03_rome/locations/pantheon_hall.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -254,7 +254,7 @@
     },
     {
       "placeId": "s3_rome.rotonda_bookshop",
-      "file": "assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png",
+      "file": "assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -263,7 +263,7 @@
     },
     {
       "placeId": "s3_rome.cat_ruins",
-      "file": "assets/seasons/season_03_rome/locations/cat_ruins.png",
+      "file": "assets/seasons/season_03_rome/locations/cat_ruins.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -272,7 +272,7 @@
     },
     {
       "placeId": "s3_rome.cast_workshop",
-      "file": "assets/seasons/season_03_rome/locations/cast_workshop.png",
+      "file": "assets/seasons/season_03_rome/locations/cast_workshop.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -281,7 +281,7 @@
     },
     {
       "placeId": "s3_rome.navona_square",
-      "file": "assets/seasons/season_03_rome/locations/navona_square.png",
+      "file": "assets/seasons/season_03_rome/locations/navona_square.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -290,7 +290,7 @@
     },
     {
       "placeId": "s3_rome.lecture_hall",
-      "file": "assets/seasons/season_03_rome/cases/case_06/lecture_hall.png",
+      "file": "assets/seasons/season_03_rome/cases/case_06/lecture_hall.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -299,7 +299,7 @@
     },
     {
       "placeId": "s3_rome.spanish_steps",
-      "file": "assets/seasons/season_03_rome/locations/spanish_steps.png",
+      "file": "assets/seasons/season_03_rome/locations/spanish_steps.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -308,7 +308,7 @@
     },
     {
       "placeId": "s3_rome.tiber_bridge",
-      "file": "assets/seasons/season_03_rome/locations/tiber_bridge.png",
+      "file": "assets/seasons/season_03_rome/locations/tiber_bridge.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -317,7 +317,7 @@
     },
     {
       "placeId": "s3_rome.restoration_lab",
-      "file": "assets/seasons/season_03_rome/locations/restoration_lab.png",
+      "file": "assets/seasons/season_03_rome/locations/restoration_lab.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -326,7 +326,7 @@
     },
     {
       "placeId": "s3_rome.forum_view",
-      "file": "assets/seasons/season_03_rome/locations/forum_view.png",
+      "file": "assets/seasons/season_03_rome/locations/forum_view.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -335,7 +335,7 @@
     },
     {
       "placeId": "s3_rome.map_archive",
-      "file": "assets/seasons/season_03_rome/cases/case_09/map_archive.png",
+      "file": "assets/seasons/season_03_rome/cases/case_09/map_archive.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -344,7 +344,7 @@
     },
     {
       "placeId": "s3_rome.civetta_square",
-      "file": "assets/seasons/season_03_rome/locations/civetta_square.png",
+      "file": "assets/seasons/season_03_rome/locations/civetta_square.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -353,7 +353,7 @@
     },
     {
       "placeId": "s3_rome.site_office",
-      "file": "assets/seasons/season_03_rome/locations/site_office.png",
+      "file": "assets/seasons/season_03_rome/locations/site_office.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -362,7 +362,7 @@
     },
     {
       "placeId": "s3_rome.roman_library",
-      "file": "assets/seasons/season_03_rome/locations/roman_library.png",
+      "file": "assets/seasons/season_03_rome/locations/roman_library.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -372,7 +372,7 @@
   ],
   "art": {
     "cover": {
-      "file": "assets/seasons/season_03_rome/cover/season3_cover_rome.png",
+      "file": "assets/seasons/season_03_rome/cover/season3_cover_rome.webp",
       "pixels": {
         "width": 1024,
         "height": 1536
@@ -391,12 +391,12 @@
       ]
     },
     "map": {
-      "file": "assets/seasons/season_03_rome/locations/map/rome_map.png",
+      "file": "assets/seasons/season_03_rome/locations/map/rome_map.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
       },
-      "measuredOn": "sha256:5bf9329343cc935e0b56cffa8d1bdf85017602fb2cb5d2f49f0591291eea1a38",
+      "measuredOn": "sha256:80f25567e5db204d448801b23e83a0ef1944c898805a5f5de7e0da99b3dfab4d",
       "landmarks": [
         {
           "locId": "capitoline_museums",
@@ -492,6 +492,6 @@
     "Every place's picture is planned in assets.manifest.json and not made yet: the files above are where they will be written. No London or Paris picture stands in for them.",
     "Piazza della Civetta and its Roman library are made up for the story; every other place is a real place in Rome.",
     "STEP 3-14: the twelve cases were redesigned for production (missions on pictures, talks, Discovery Moments, endings); still a trial, not in SeasonCatalog. No place was added or moved.",
-    "Rome integration: every place is in a location (locId) for the season map; art holds the cover, the map (each landmark measured at the centre of its drawing on the made rome_map.png, a 50/100px grid overlay) and Rome on the World Map (its pin where WorldCities had it)."
+    "Rome integration: every place is in a location (locId) for the season map; art holds the cover, the map (each landmark measured at the centre of its drawing on the made rome_map.webp, a 50/100px grid overlay) and Rome on the World Map (its pin where WorldCities had it)."
   ]
 }

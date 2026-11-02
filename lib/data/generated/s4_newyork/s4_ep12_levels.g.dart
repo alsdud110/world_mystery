@@ -273,7 +273,7 @@ const s4Ep12JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s4Ep12JuniorExplores = <String, ExploreScene>{
   's4_ep12_m1': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+    picture: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -343,17 +343,17 @@ const s4Ep12JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'owl_nest',
-        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_owl_nest.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_owl_nest.webp',
         description: 'a carved stone owl with its wings folded, a round nest below it',
       ),
       ExplorePicture(
         optionId: 'lark_plain',
-        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_lark_plain.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_lark_plain.webp',
         description: 'a carved stone lark with its wings open, plain stone below it',
       ),
       ExplorePicture(
         optionId: 'lark_nest',
-        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_lark_nest.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_lark_nest.webp',
         description: 'a carved stone lark with its wings open, a round nest below it',
       ),
     ],
@@ -378,7 +378,7 @@ final s4Ep12JuniorTalkMissions = <String, TalkMission>{
         id: 'otto_brandt',
         name: 'OTTO BRANDT',
         portraits: {
-          'base': 'assets/seasons/season_04_newyork/characters/otto_base.png',
+          'base': 'assets/seasons/season_04_newyork/characters/otto_base.webp',
         },
       ),
       goal: 'Wake up the Silver Lark.',
@@ -395,7 +395,7 @@ final s4Ep12JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'BELVEDERE CASTLE',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
       finishLabel: 'READ YOUR NOTEBOOK',
     ),
   ),
@@ -430,39 +430,39 @@ const s4Ep12JuniorEndings = <String, List<EndingLine>>{
       'Great-grandma\'s song. I can hear her voice in it.',
       voice: TalkVoice.speaker,
       name: 'ROSA DIAZ',
-      portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
     EndingLine(
       'A hundred years, and it\'s still singing. Wonderful work.',
       voice: TalkVoice.speaker,
       name: 'OTTO BRANDT',
-      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
     EndingLine(
       'Eleanor wanted every child to be able to hear it.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
       evidenceId: 's4_ep12_e3',
     ),
     EndingLine(
       'Then it will sing in the library every Saturday.',
       voice: TalkVoice.speaker,
       name: 'HAROLD BROOKS',
-      portrait: 'assets/seasons/season_04_newyork/characters/harold_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/harold_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
     EndingLine(
       'And Otto will keep it running!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
     EndingLine(
       'Above Central Park, a real lark answers the silver one.',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
   ],
 };
@@ -734,7 +734,7 @@ const s4Ep12MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s4Ep12MasterExplores = <String, ExploreScene>{
   's4_ep12_m1': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+    picture: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -804,17 +804,17 @@ const s4Ep12MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'owl_nest',
-        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_owl_nest.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_owl_nest.webp',
         description: 'a carved stone owl, wings folded, a round nest beneath it',
       ),
       ExplorePicture(
         optionId: 'lark_plain',
-        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_lark_plain.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_lark_plain.webp',
         description: 'a carved stone lark, wings open, bare stone beneath it',
       ),
       ExplorePicture(
         optionId: 'lark_nest',
-        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_lark_nest.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_12/stone_lark_nest.webp',
         description: 'a carved stone lark, wings open, a round nest beneath it',
       ),
     ],
@@ -839,7 +839,7 @@ final s4Ep12MasterTalkMissions = <String, TalkMission>{
         id: 'otto_brandt',
         name: 'OTTO BRANDT',
         portraits: {
-          'base': 'assets/seasons/season_04_newyork/characters/otto_base.png',
+          'base': 'assets/seasons/season_04_newyork/characters/otto_base.webp',
         },
       ),
       goal: 'Rouse the Silver Lark.',
@@ -856,7 +856,7 @@ final s4Ep12MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'BELVEDERE CASTLE',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
       finishLabel: 'READ YOUR NOTEBOOK',
     ),
   ),
@@ -891,39 +891,39 @@ const s4Ep12MasterEndings = <String, List<EndingLine>>{
       'Great-grandma\'s song. It\'s as if I can hear her.',
       voice: TalkVoice.speaker,
       name: 'ROSA DIAZ',
-      portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
     EndingLine(
       'A whole century, and still it sings. Splendid work.',
       voice: TalkVoice.speaker,
       name: 'OTTO BRANDT',
-      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
     EndingLine(
       'Eleanor intended every child to hear it.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
       evidenceId: 's4_ep12_e3',
     ),
     EndingLine(
       'Then it shall sing in the library each and every Saturday.',
       voice: TalkVoice.speaker,
       name: 'HAROLD BROOKS',
-      portrait: 'assets/seasons/season_04_newyork/characters/harold_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/harold_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
     EndingLine(
       'And Otto shall keep it ticking along!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
     EndingLine(
       'High over Central Park, a living lark answers the silver one.',
-      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.png',
+      background: 'assets/seasons/season_04_newyork/locations/belvedere_castle.webp',
     ),
   ],
 };

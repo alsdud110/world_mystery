@@ -139,20 +139,20 @@
               "label": "The bird standing on both feet",
               "feedback": "Its wings are open. But the tag says one foot is up.",
               "altText": "a small brass songbird with its wings wide open, standing on both feet, its beak open",
-              "picture": "assets/seasons/season_04_newyork/cases/case_04/bird_feet_down.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_04/bird_feet_down.webp"
             },
             {
               "id": "dancing",
               "label": "The bird with one foot up",
               "altText": "a small brass songbird with its wings wide open, one foot lifted and its beak open",
-              "picture": "assets/seasons/season_04_newyork/objects/brass_bird.png"
+              "picture": "assets/seasons/season_04_newyork/objects/brass_bird.webp"
             },
             {
               "id": "wings_closed",
               "label": "The bird with folded wings",
               "feedback": "One foot is up. But the tag says its wings are wide open.",
               "altText": "a small brass songbird with its wings folded, one foot lifted, its beak open",
-              "picture": "assets/seasons/season_04_newyork/cases/case_04/bird_wings_closed.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_04/bird_wings_closed.webp"
             }
           ]
         },
@@ -323,7 +323,7 @@
         },
         "talk": {
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png",
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp",
           "goal": "Read the painter's note.",
           "after": {
             "lines": [
@@ -450,7 +450,7 @@
           "by": "speaker",
           "text": "Someone heard the tin note and came first.",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "detective",
@@ -461,7 +461,7 @@
           "by": "speaker",
           "text": "And Otto Brandt was here at nine.",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "narrator",

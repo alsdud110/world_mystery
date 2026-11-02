@@ -115,10 +115,10 @@ void main() {
 
   group('the guide\'s pictures', () {
     test('boy and girl, welcome and ready (a detective made before avatars: the boy)', () {
-      expect(ArtAssets.onboardingWelcome(DetectiveAvatar.boy), 'assets/shared/onboarding/detective_welcome_boy.png');
-      expect(ArtAssets.onboardingWelcome(DetectiveAvatar.girl), 'assets/shared/onboarding/detective_welcome_girl.png');
-      expect(ArtAssets.onboardingReady(DetectiveAvatar.boy), 'assets/shared/onboarding/detective_ready_boy.png');
-      expect(ArtAssets.onboardingReady(DetectiveAvatar.girl), 'assets/shared/onboarding/detective_ready_girl.png');
+      expect(ArtAssets.onboardingWelcome(DetectiveAvatar.boy), 'assets/shared/onboarding/detective_welcome_boy.webp');
+      expect(ArtAssets.onboardingWelcome(DetectiveAvatar.girl), 'assets/shared/onboarding/detective_welcome_girl.webp');
+      expect(ArtAssets.onboardingReady(DetectiveAvatar.boy), 'assets/shared/onboarding/detective_ready_boy.webp');
+      expect(ArtAssets.onboardingReady(DetectiveAvatar.girl), 'assets/shared/onboarding/detective_ready_girl.webp');
       expect(ArtAssets.onboardingWelcome(null), ArtAssets.onboardingWelcome(DetectiveAvatar.boy));
       expect(ArtAssets.onboardingReady(null), ArtAssets.onboardingReady(DetectiveAvatar.boy));
     });

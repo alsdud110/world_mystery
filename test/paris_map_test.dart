@@ -74,16 +74,15 @@ void main() {
       expect(SeasonMap.forSeason(SeasonIds.paris), same(SeasonMap.paris));
       expect(SeasonMap.bySeason.keys, [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork], reason: 'Rome its own since the Rome integration');
       expect(SeasonMap.paris.artwork, ArtAssets.parisMap);
-      expect(ArtAssets.parisMap, 'assets/seasons/season_02_paris/locations/map/paris_mystery.png');
+      expect(ArtAssets.parisMap, 'assets/seasons/season_02_paris/locations/map/paris_mystery.webp');
       expect(SeasonMap.paris.aspect, 3 / 2);
       expect(SeasonMap.paris.pixels, ArtAssets.parisMapPixels);
       // The file is in the game, and is the size the map is decoded at.
       final file = File(ArtAssets.parisMap);
       expect(file.existsSync(), isTrue);
-      final png = file.readAsBytesSync();
-      int u32(int at) => (png[at] << 24) | (png[at + 1] << 16) | (png[at + 2] << 8) | png[at + 3];
-      expect(png.sublist(0, 8), [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]);
-      expect((u32(16), u32(20)), (1536, 1024));
+      final webp = file.readAsBytesSync();
+      expect(String.fromCharCodes(webp.sublist(0, 4)) + String.fromCharCodes(webp.sublist(8, 12)), 'RIFFWEBP', reason: 'the game ships its pictures as WebP');
+      expect(imageSize(file.path), (1536.0, 1024.0));
       expect(SeasonMap.paris.pixels.width, 1536);
       expect(SeasonMap.paris.pixels.height, 1024);
       expect(File('pubspec.yaml').readAsStringSync(), contains('- assets/seasons/season_02_paris/locations/map/'));

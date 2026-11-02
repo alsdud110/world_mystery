@@ -23,7 +23,7 @@ import 'river_papers.dart' show PictureCanvas;
 bool _still(BuildContext context) => MediaQuery.maybeDisableAnimationsOf(context) ?? false;
 
 /// The case's clock dial (Case 09's) and its pivot and face, in its pixels.
-const _dialFile = 'assets/seasons/season_02_paris/cases/case_09/clock_dial.png';
+const _dialFile = 'assets/seasons/season_02_paris/cases/case_09/clock_dial.webp';
 const _dialPixels = ScenePixels(1254, 1254);
 const _dialPivot = Offset(625, 616);
 const _dialFace = 495.0;

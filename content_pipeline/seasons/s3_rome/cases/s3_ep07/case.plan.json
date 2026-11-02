@@ -301,7 +301,7 @@
         },
         "talk": {
           "speaker": "bruno_valli",
-          "portrait": "assets/seasons/season_03_rome/characters/bruno_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/bruno_base.webp",
           "goal": "Listen to the sponsor's story.",
           "before": {
             "lines": [
@@ -434,7 +434,7 @@
           "by": "speaker",
           "text": "Four, two, seven. The box opens!",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         },
         {
           "by": "narrator",
@@ -453,7 +453,7 @@
           "by": "speaker",
           "text": "Bruno Valli took the piece out on Tuesday!",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         }
       ]
     }

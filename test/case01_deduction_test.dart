@@ -38,17 +38,17 @@ void main() {
   final scene = deductionOf(m03)!;
   DeductionClue clue(String id) => scene.clue(id);
 
-  Size pngSize(String path) {
-    final b = File(path).readAsBytesSync();
-    int word(int at) => (b[at] << 24) | (b[at + 1] << 16) | (b[at + 2] << 8) | b[at + 3];
-    return Size(word(16).toDouble(), word(20).toDouble());
+  /// A picture's width and height (the game's WebP, or a PNG), read whole.
+  Size pictureSize(String path) {
+    final (w, h) = imageSize(path)!;
+    return Size(w, h);
   }
 
   group('the scene', () {
     test('the picture is in the app, at the size its places are measured on', () {
       expect(File('pubspec.yaml').readAsStringSync(), contains('- assets/seasons/season_01_london/cases/case_01/'));
-      expect(scene.picture, 'assets/seasons/season_01_london/cases/case_01/big_ben_base_night.png');
-      expect(pngSize(scene.picture), Size(scene.pixels.width, scene.pixels.height));
+      expect(scene.picture, 'assets/seasons/season_01_london/cases/case_01/big_ben_base_night.webp');
+      expect(pictureSize(scene.picture), Size(scene.pixels.width, scene.pixels.height));
     });
 
     test('three traces and three places, every one inside the paper edge', () {

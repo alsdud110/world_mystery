@@ -15,7 +15,7 @@ import 'scene_explore.dart' show ScenePixels;
 // ── The maker's mark ─────────────────────────────────────────────────────
 
 /// How a mark stamped on the workbench differs from the maker's own (the
-/// two clock hands of `hands_sign.png`).
+/// two clock hands of `hands_sign.webp`).
 enum MarkCopy {
   /// The long hand's tip is another shape (its own picture).
   tip,

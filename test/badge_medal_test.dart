@@ -19,6 +19,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/badge_medal.dart';
 import 'package:world_mystery/widgets/ink_icon.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 
@@ -52,9 +53,9 @@ void main() {
       expect(ArtAssets.badges.keys.toSet(), GameBadge.values.toSet());
       expect(ArtAssets.badges.values.toSet(), hasLength(GameBadge.values.length), reason: 'no shared picture');
       for (final b in GameBadge.values) {
-        expect(ArtAssets.badges[b], 'assets/shared/badges/badge_${snake(b.name)}.png', reason: b.name);
+        expect(ArtAssets.badges[b], 'assets/shared/badges/badge_${snake(b.name)}.webp', reason: b.name);
       }
-      expect(ArtAssets.badgeFrame, 'assets/shared/badges/badge_frame.png');
+      expect(ArtAssets.badgeFrame, 'assets/shared/badges/badge_frame.webp');
       expect(ArtAssets.badges.values, isNot(contains(ArtAssets.badgeFrame)));
     });
 
@@ -99,15 +100,15 @@ void main() {
     int alpha(ByteData px, int x, int y) => px.getUint8((y * 128 + x) * 4 + 3);
 
     for (final path in [...ArtAssets.badges.values, ArtAssets.badgeFrame]) {
-      test('$path: a square PNG with a transparent background', () async {
+      test('$path: a square WebP with a transparent background', () async {
         final file = File(path);
         expect(file.existsSync(), isTrue);
         final bytes = file.readAsBytesSync();
-        expect(bytes.sublist(1, 4), ascii.encode('PNG'));
-        // The IHDR header: its size, and colour type 6 (RGBA).
-        final header = ByteData.sublistView(bytes, 16, 26);
-        expect(Size(header.getUint32(0).toDouble(), header.getUint32(4).toDouble()), ArtAssets.badgePixels);
-        expect(header.getUint8(9), 6, reason: 'RGBA: an alpha channel');
+        expect(ascii.decode(bytes.sublist(0, 4)) + ascii.decode(bytes.sublist(8, 12)), 'RIFFWEBP');
+        // Read whole: its size, and an alpha channel (the asset optimization's WebP).
+        final info = ImageFileCheck.bytes(bytes);
+        expect(Size(info.width.toDouble(), info.height.toDouble()), ArtAssets.badgePixels);
+        expect(info.hasAlpha, isTrue, reason: 'an alpha channel');
 
         final (image, px) = await decode(path);
         addTearDown(image.dispose);

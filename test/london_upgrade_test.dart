@@ -120,7 +120,7 @@ void main() {
       expect(m2.answer, 'b');
       expect(m2.recall!.evidenceId, 'ep03_e1', reason: 'the Red Button, found in Mission 01');
       for (final o in m2.options) {
-        final png = img.decodePng(File(o.picture!).readAsBytesSync())!;
+        final png = img.decodeImage(File(o.picture!).readAsBytesSync())!;
         var most = 0;
         for (final p in png) {
           most = math.max(most, [p.r, p.g, p.b].reduce(math.max).toInt() - [p.r, p.g, p.b].reduce(math.min).toInt());
