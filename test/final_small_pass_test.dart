@@ -452,7 +452,10 @@ const _otherCases = <String, int>{
   // Wave 1.2: a no-break space in its title ('GALLERY 8').
   // London gameplay upgrade (2026-10-30, requested): 03-M2's pencil
   // sketches and Red Button recall. Value before it: ep03 2213693696.
-  'ep03': 1384014364,
+  // Each sketch carries the guard's note of its colours (2026-11-01, commit
+  // 3d0f852: options' `note`, nothing else). Value before it: ep03
+  // 1384014364.
+  'ep03': 1141287210,
   // Audit fix D3 (2026-10-12): the postmark keeps only its picture.
   // Puzzle wording (2026-10-23, approved): 04-M2's card says RED · SMALL ·
   // CLOCK · PLATFORM, not FOUR; tip 2 matches it (was 1263118138).

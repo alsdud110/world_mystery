@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 
+import '../../tool/season_gen/case_levels.dart' show CaseLevels;
 import '../../tool/season_planner/english_check.dart';
 import '../../tool/season_planner/finding.dart';
 import '../../tool/season_planner/plan_season.dart';
@@ -29,6 +30,29 @@ void main() {
     final json = read(file);
     change(json);
     write(file, json);
+  }
+
+  /// Edits case [caseId]'s plan and keeps its `levels.json` with it, as the
+  /// skeleton would: a new line is written at every level (the same words),
+  /// a line the plan no longer has goes. So the generator's level check sees
+  /// a whole change, and a test sees only the finding it is about.
+  void editCase(String caseId, void Function(Map<String, dynamic> plan) change) {
+    final planFile = 'cases/$caseId/case.plan.json';
+    edit(planFile, change);
+    final plan = read(planFile);
+    edit('cases/$caseId/levels.json', (l) {
+      final rookie = CaseLevels.rookieLines(plan);
+      final lines = [
+        for (final line in l['lines'] as List)
+          if (rookie.contains((line as Map)['rookie'])) line,
+      ];
+      final written = {for (final line in lines) line['rookie']};
+      l['lines'] = [
+        ...lines,
+        for (final s in rookie)
+          if (!written.contains(s)) {'rookie': s, 'junior': s, 'master': s},
+      ];
+    });
   }
 
   QualityReport check() => SeasonQuality.run(dir);
@@ -122,7 +146,7 @@ void main() {
     });
 
     test('a hint that says the answer is a WARNING, not an ERROR', () {
-      edit('cases/s3_ep04/case.plan.json', (c) => ((((c['missions'] as List)[1] as Map)['play'] as Map)['hints'] as List)[1] = 'The password is FOUND.');
+      editCase('s3_ep04', (c) => ((((c['missions'] as List)[1] as Map)['play'] as Map)['hints'] as List)[1] = 'The password is FOUND.');
       final r = check();
       expect(r.findings.where((f) => f.code == 'hint_reveals_answer').single.level, Level.warning);
       expect(errors(r), isEmpty);
@@ -342,7 +366,7 @@ void main() {
 
   group('English heuristics', () {
     test('only warn, and say they are heuristics', () {
-      edit('cases/s3_ep01/case.plan.json', (c) => (c['play'] as Map)['intro'] = [
+      editCase('s3_ep01', (c) => (c['play'] as Map)['intro'] = [
         'This is a very long sentence that goes on and on with far too many words for a young reader.',
         'The extraordinary investigation continues.',
       ]);
