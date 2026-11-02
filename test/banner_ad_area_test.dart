@@ -18,6 +18,7 @@ import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/widgets/banner_ad_area.dart';
 
+import 'fake_consent_sdk.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 
@@ -81,7 +82,7 @@ void main() {
   /// [allowed] false: a release not cleared for ads.
   List<Override> adOverrides({bool allowed = true, BannerSizeLookup? lookup}) => [
     adServiceProvider.overrideWith((ref) {
-      final service = AdService(sdk: sdk, units: _units, requestsAllowed: allowed);
+      final service = AdService(sdk: sdk, units: _units, requestsAllowed: allowed, consent: allowingConsent());
       ref.onDispose(service.dispose);
       return service;
     }),

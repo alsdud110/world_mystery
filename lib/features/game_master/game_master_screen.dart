@@ -275,6 +275,9 @@ class GameMasterScreen extends ConsumerWidget {
                   child: const Text('SEASON 2 프롤로그 미리보기'),
                 ),
               ],
+              // The ads privacy options, only where the UMP SDK requires an
+              // entry point: behind this page's parent gate, not in the game.
+              const _AdPrivacyOptions(),
               // The one destructive action, set apart from the test tools below a
               // rule and in the try-again ink, so it is never tapped by mistake.
               // The player's own game only: a test session has nothing to reset
@@ -526,6 +529,46 @@ class _CaseRow extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// The ads privacy options entry point, shown only while the UMP SDK says
+/// one is required ([AdConsent.privacyOptionsRequired]).
+class _AdPrivacyOptions extends ConsumerWidget {
+  const _AdPrivacyOptions();
+
+  Future<void> _open(BuildContext context, WidgetRef ref) async {
+    final shown = await ref.read(adServiceProvider).consent.showPrivacyOptions();
+    if (!shown && context.mounted) {
+      showGameToast(context, '광고 개인정보 설정을 지금 열 수 없습니다.', glyph: InkGlyph.close);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final consent = ref.watch(adServiceProvider).consent;
+    return ListenableBuilder(
+      listenable: consent,
+      builder: (context, _) {
+        if (!consent.privacyOptionsRequired) return const SizedBox.shrink();
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const SizedBox(height: 24),
+            const Divider(),
+            Text('광고 개인정보 설정', style: AppText.title(size: 20)),
+            Text('광고 동의 선택을 확인하거나 바꿉니다.', style: AppText.caption()),
+            const SizedBox(height: 12),
+            OutlinedButton(
+              key: const ValueKey('ad-privacy-options'),
+              style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(48)),
+              onPressed: () => _open(context, ref),
+              child: const Text('광고 개인정보 옵션 열기'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

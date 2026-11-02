@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../constants/ad_config.dart';
+import 'ad_consent.dart';
 
 /// What every ad request of the game carries. The players are 8 to 12, so
 /// the SDK is told so before it starts:
@@ -139,6 +140,10 @@ enum AdOffReason {
   /// The children's protection could not be set, or did not read back.
   childSafetyNotApplied,
 
+  /// The consent could not be updated or read, or does not allow ad
+  /// requests ([AdConsent]).
+  noConsent,
+
   /// The SDK failed to start, or did not within [AdService.timeout].
   sdkNotStarted,
 
@@ -151,28 +156,37 @@ enum AdOffReason {
 /// network only turns ads off for the session.
 ///
 /// Fail-closed: the SDK is never started (and so never requests an ad)
-/// unless this build has ad units, may request ads, and the children's
-/// protection ([ChildSafeAds]) is set and read back first.
+/// unless this build has ad units, may request ads, the children's
+/// protection ([ChildSafeAds]) is set and read back, and the players'
+/// consent ([AdConsent]) allows ad requests, in that order.
 ///
-/// Nothing calls [start] at launch; the first [AdSlot] that loads does.
+/// Nothing calls [start] at launch; the first [AdSlot] that loads does. At
+/// launch the app only updates the consent ([refreshConsent]).
 class AdService extends ChangeNotifier {
   AdService({
     required this._sdk,
     required this._units,
     required this._requestsAllowed,
+    required this.consent,
     this.timeout = const Duration(seconds: 10),
-  });
+  }) {
+    consent.addListener(_consentChanged);
+  }
 
   /// This build's: the plugin, its ad units, its policy.
   factory AdService.forThisBuild() => AdService(
     sdk: const GoogleMobileAdsSdk(),
     units: AdConfig.current,
     requestsAllowed: AdConfig.requestsAllowedNow,
+    consent: AdConsent(const UmpConsentSdk()),
   );
 
   final AdSdk _sdk;
   final AdUnitIds? _units;
   final bool _requestsAllowed;
+
+  /// The players' consent, gathered by [start] before the SDK starts.
+  final AdConsent consent;
 
   /// How long each step of [start] may take before ads are given up.
   final Duration timeout;
@@ -185,8 +199,9 @@ class AdService extends ChangeNotifier {
   AdServiceState get state => _state;
   AdOffReason? get offReason => _offReason;
 
-  /// Whether an ad may be requested now.
-  bool get canRequestAds => _state == AdServiceState.ready;
+  /// Whether an ad may be requested now: started, and the consent's last
+  /// `canRequestAds()` still allows it.
+  bool get canRequestAds => _state == AdServiceState.ready && consent.allowsAds;
 
   /// Whether ads may still come this session: false for a build that asks
   /// for none (no ad units, a release not cleared), and once ads are off.
@@ -195,8 +210,16 @@ class AdService extends ChangeNotifier {
   /// The ad units, only while ads may be requested.
   AdUnitIds? get units => canRequestAds ? _units : null;
 
-  /// Protects the requests, then starts the SDK. Called again, it gives the
-  /// first call's answer: the SDK is started at most once.
+  /// Updates the players' consent once this app run, ahead of the first ad
+  /// ([AdConsent.gather]); nothing for a build or session that shows no ads.
+  /// The SDK is still started only by [start].
+  void refreshConsent() {
+    if (mayStart) unawaited(consent.gather());
+  }
+
+  /// Protects the requests, gathers the consent, then starts the SDK. Called
+  /// again, it gives the first call's answer: the consent is gathered and
+  /// the SDK started at most once.
   Future<bool> start() => _start ??= _run();
 
   Future<bool> _run() async {
@@ -213,6 +236,8 @@ class AdService extends ChangeNotifier {
       return _off(AdOffReason.childSafetyNotApplied);
     }
     if (_state != AdServiceState.starting) return false; // disposed meanwhile
+    if (!await consent.gather()) return _off(AdOffReason.noConsent);
+    if (_state != AdServiceState.starting) return false;
     try {
       await _sdk.initialize().timeout(timeout);
     } catch (e) {
@@ -222,6 +247,16 @@ class AdService extends ChangeNotifier {
     if (_state != AdServiceState.starting) return false;
     _set(AdServiceState.ready);
     return true;
+  }
+
+  /// Consent withdrawn (the privacy options form): ads go off, and the ads
+  /// already loaded are released unshown.
+  void _consentChanged() {
+    if (_state != AdServiceState.ready || consent.allowsAds) return;
+    _off(AdOffReason.noConsent);
+    for (final slot in [..._slots]) {
+      slot.release();
+    }
   }
 
   bool _off(AdOffReason reason) {
@@ -265,6 +300,9 @@ class AdService extends ChangeNotifier {
     for (final slot in [..._slots]) {
       slot.dispose();
     }
+    consent
+      ..removeListener(_consentChanged)
+      ..dispose();
     super.dispose();
   }
 }

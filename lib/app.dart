@@ -33,6 +33,11 @@ class _WorldMysteryAppState extends ConsumerState<WorldMysteryApp> {
     // The sound follows the page on top (pushed pages included).
     _router = ref.read(routerProvider)..routerDelegate.addListener(_followPage);
     WidgetsBinding.instance.addPostFrameCallback((_) => _followPage());
+    // Each launch updates the ads consent (no ads SDK start, no ad request);
+    // after the first frame, so a form the UMP SDK must show has a screen.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) ref.read(adServiceProvider).refreshConsent();
+    });
     // A page whose sound depends on the case (the final, once solved: Big
     // Ben's clock runs again) follows it too. The same scene changes nothing.
     ref.listenManual(gameControllerProvider, (_, _) => _followPage());

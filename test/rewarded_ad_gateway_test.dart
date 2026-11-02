@@ -12,6 +12,7 @@ import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/features/game/rewarded_ad_service.dart';
 import 'package:world_mystery/features/game/wallet_controller.dart';
 
+import 'fake_consent_sdk.dart';
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'mission_play.dart';
 
@@ -88,7 +89,7 @@ class _ShowError extends Fake implements AdError {
 
 const _units = AdUnitIds(banner: 'banner-unit', rewarded: 'rewarded-unit');
 
-AdService fakeAds(FakeAdSdk sdk, {bool allowed = true}) => AdService(sdk: sdk, units: _units, requestsAllowed: allowed);
+AdService fakeAds(FakeAdSdk sdk, {bool allowed = true}) => AdService(sdk: sdk, units: _units, requestsAllowed: allowed, consent: allowingConsent());
 
 /// GET COINS' ads on [sdk], paying into the app's own wallet.
 Override rewardedAdsOn(FakeAdSdk sdk, {bool allowed = true}) => rewardedAdGatewayProvider.overrideWith((ref) {

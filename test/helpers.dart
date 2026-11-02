@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
+import 'package:world_mystery/core/utils/ad_consent.dart';
 import 'package:world_mystery/core/utils/ad_service.dart';
 import 'package:world_mystery/core/utils/audio_service.dart';
 import 'package:world_mystery/data/repositories/profile_store.dart';
@@ -88,7 +89,12 @@ Future<List<Override>> testOverridesFor(
   // Ads off: nothing reaches the ads plugin (banner_ad_area_test.dart plays them).
   if (adsOff)
     adServiceProvider.overrideWith((ref) {
-      final service = AdService(sdk: const GoogleMobileAdsSdk(), units: null, requestsAllowed: false);
+      final service = AdService(
+        sdk: const GoogleMobileAdsSdk(),
+        units: null,
+        requestsAllowed: false,
+        consent: AdConsent(const UmpConsentSdk()),
+      );
       ref.onDispose(service.dispose);
       return service;
     }),

@@ -3,7 +3,10 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:world_mystery/core/constants/ad_config.dart';
+import 'package:world_mystery/core/utils/ad_consent.dart';
 import 'package:world_mystery/core/utils/ad_service.dart';
+
+import 'fake_consent_sdk.dart';
 
 /// Records every call, in order; each step can fail or hang.
 class _FakeSdk implements AdSdk {
@@ -83,12 +86,17 @@ void main() {
   const failure = AdLoadFailure(3, 'No fill');
 
   late _FakeSdk sdk;
-  setUp(() => sdk = _FakeSdk());
+  late FakeConsentSdk ump;
+  setUp(() {
+    sdk = _FakeSdk();
+    ump = FakeConsentSdk();
+  });
 
   AdService service({AdUnitIds? ids = units, bool allowed = true, Duration? timeout}) => AdService(
     sdk: sdk,
     units: ids,
     requestsAllowed: allowed,
+    consent: AdConsent(ump, timeout: timeout ?? const Duration(seconds: 10)),
     timeout: timeout ?? const Duration(seconds: 10),
   );
 
@@ -306,6 +314,141 @@ void main() {
       expect(await slot.load(), isTrue);
       expect(slot.failures, 0);
       expect(sdk.loads, hasLength(4));
+    });
+  });
+
+  group('consent (UMP)', () {
+    test('gathered after the protection and before the SDK starts: update, form, canRequestAds', () async {
+      final ads = service();
+      expect(await ads.start(), isTrue);
+      expect(sdk.calls, ['configure', 'read', 'initialize']);
+      expect(ump.calls, ['update', 'form', 'canRequestAds', 'privacyStatus']);
+      expect(ads.canRequestAds, isTrue);
+    });
+
+    test('every player is tagged under the age of consent: no consent message for children', () async {
+      await service().start();
+      expect(ump.params.single.tagForUnderAgeOfConsent, isTrue);
+      expect(AdConsent.tagForUnderAgeOfConsent, isTrue);
+    });
+
+    test('consent required and given through the form: ads may be requested', () async {
+      // The form is the SDK's; what counts is canRequestAds() after it.
+      ump.canRequest = [true];
+      final ads = service();
+      final slot = ads.banner(AdSize.banner);
+      sdk.bannerResults.add(_FakeBanner());
+      expect(await slot.load(), isTrue);
+      expect(ump.calls.take(3), ['update', 'form', 'canRequestAds']);
+    });
+
+    test('consent not given (canRequestAds false): the SDK never starts, nothing loads', () async {
+      ump.canRequest = [false];
+      final ads = service();
+      final slot = ads.banner(AdSize.banner);
+      expect(await slot.load(), isFalse);
+      expect(sdk.calls, ['configure', 'read']);
+      expect(sdk.loads, isEmpty);
+      expect(ads.offReason, AdOffReason.noConsent);
+      expect(ads.canRequestAds, isFalse);
+    });
+
+    test('update that fails: no form, no canRequestAds, no SDK, no ads', () async {
+      ump.updateError = FormError(errorCode: 2, message: 'network');
+      final ads = service();
+      expect(await ads.start(), isFalse);
+      expect(ump.calls, ['update']);
+      expect(sdk.calls, isNot(contains('initialize')));
+      expect(ads.offReason, AdOffReason.noConsent);
+    });
+
+    test('update that never answers: ads off after the timeout', () async {
+      ump.hangUpdate = Completer<void>();
+      final ads = service(timeout: const Duration(milliseconds: 20));
+      expect(await ads.start(), isFalse);
+      expect(ads.offReason, AdOffReason.noConsent);
+      expect(sdk.calls, isNot(contains('initialize')));
+    });
+
+    test('canRequestAds that cannot be read: ads off', () async {
+      ump.failCanRequest = true;
+      final ads = service();
+      expect(await ads.start(), isFalse);
+      expect(ads.offReason, AdOffReason.noConsent);
+    });
+
+    test('a form error or a form that cannot show: canRequestAds still decides', () async {
+      ump.formError = FormError(errorCode: 1, message: 'no form');
+      expect(await service().start(), isTrue);
+
+      sdk = _FakeSdk();
+      ump = FakeConsentSdk()
+        ..throwOnForm = true
+        ..canRequest = [false];
+      final ads = service();
+      expect(await ads.start(), isFalse);
+      expect(ads.offReason, AdOffReason.noConsent);
+    });
+
+    test('gathered once per run: launch refresh and many starts share one update', () async {
+      final ads = service();
+      ads.refreshConsent();
+      ads.refreshConsent();
+      await Future.wait([ads.start(), ads.start()]);
+      await ads.start();
+      expect(ump.updates, 1);
+      expect(sdk.calls.where((c) => c == 'initialize'), hasLength(1));
+    });
+
+    test('a build that shows no ads asks the UMP SDK nothing', () async {
+      service(allowed: false).refreshConsent();
+      service(ids: null).refreshConsent();
+      expect(await service(allowed: false).start(), isFalse);
+      await Future<void>.delayed(Duration.zero);
+      expect(ump.calls, isEmpty);
+    });
+
+    test('refreshing the consent at launch starts no SDK and requests no ad', () async {
+      final ads = service();
+      ads.refreshConsent();
+      await ads.consent.gather();
+      expect(sdk.calls, isEmpty);
+      expect(ads.state, AdServiceState.idle);
+    });
+
+    test('privacy options: offered only when required, and the form is the SDK\'s', () async {
+      final none = service();
+      await none.start();
+      expect(none.consent.privacyOptionsRequired, isFalse);
+      expect(await none.consent.showPrivacyOptions(), isFalse);
+      expect(ump.calls, isNot(contains('privacyForm')));
+
+      ump = FakeConsentSdk()..privacyStatus = PrivacyOptionsRequirementStatus.required;
+      final ads = service();
+      await ads.start();
+      expect(ads.consent.privacyOptionsRequired, isTrue);
+      expect(await ads.consent.showPrivacyOptions(), isTrue);
+      expect(ump.calls, contains('privacyForm'));
+    });
+
+    test('consent withdrawn in the privacy options: ads off, loaded ads released, no more requests', () async {
+      ump
+        ..privacyStatus = PrivacyOptionsRequirementStatus.required
+        ..canRequest = [true, false];
+      final ads = service();
+      final banner = _FakeBanner();
+      sdk.bannerResults.add(banner);
+      final slot = ads.banner(AdSize.banner);
+      expect(await slot.load(), isTrue);
+
+      await ads.consent.showPrivacyOptions();
+      expect(ads.consent.allowsAds, isFalse);
+      expect(ads.canRequestAds, isFalse);
+      expect(ads.offReason, AdOffReason.noConsent);
+      expect(slot.ad, isNull);
+      expect(banner.disposed, 1);
+      expect(await slot.load(), isFalse);
+      expect(sdk.loads, hasLength(1));
     });
   });
 }
