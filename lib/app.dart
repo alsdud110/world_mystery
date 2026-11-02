@@ -6,11 +6,13 @@ import 'package:go_router/go_router.dart';
 
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
+import 'core/theme/app_tokens.dart';
 import 'core/utils/audio_service.dart';
 import 'features/game/audio_scenes.dart';
 import 'features/game/game_controller.dart';
 import 'features/game/game_providers.dart';
 import 'features/season/season_overview.dart';
+import 'widgets/edge_swipe_back.dart';
 
 class WorldMysteryApp extends ConsumerStatefulWidget {
   const WorldMysteryApp({super.key});
@@ -103,8 +105,13 @@ class _WorldMysteryAppState extends ConsumerState<WorldMysteryApp> {
       builder: (context, child) {
         // Keep kid-sized text readable without breaking layouts at huge scales.
         final media = MediaQuery.of(context);
+        // iOS has no back button: a swipe from the left edge does what
+        // Android's back does (each page's own back decides where to).
+        if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
+          child = EdgeSwipeBack(onBack: () => _router.routerDelegate.popRoute(), child: child!);
+        }
         return MediaQuery(
-          data: media.copyWith(textScaler: media.textScaler.clamp(maxScaleFactor: 1.3)),
+          data: media.copyWith(textScaler: media.textScaler.clamp(maxScaleFactor: AppTextScale.page)),
           // The page annotation can be absent during route setup, or outside
           // the status-bar sample point while the page slides/fades in.
           // Keep the fallback white until a non-title route is resolved.

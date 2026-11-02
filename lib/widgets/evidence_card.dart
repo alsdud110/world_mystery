@@ -16,6 +16,7 @@ import 'game_button.dart';
 import 'glossary_text.dart';
 import 'ink_icon.dart';
 import 'paper.dart';
+import 'reading_text_scale.dart';
 import 'royal_box_picture.dart';
 import 'symbol_icon.dart';
 
@@ -195,7 +196,10 @@ class _EvidenceZoom extends StatelessWidget {
                             if (location != null) Text(location!, style: AppText.eyebrow(color: AppColors.royalBlue)),
                             const SizedBox(height: 10),
                             // The evidence's own case explains its words (also in the archive).
-                            _Words(evidence.description, evidenceId: evidence.id, style: AppText.bodyText(size: 17)),
+                            // Its words wrap in the scroll: they may grow larger.
+                            ReadingTextScale(
+                              child: _Words(evidence.description, evidenceId: evidence.id, style: AppText.bodyText(size: 17)),
+                            ),
                             // Its words below, unless its paper already shows them.
                             if (evidence.inscription != null && paper == null) ...[
                               const SizedBox(height: 16),
@@ -207,7 +211,9 @@ class _EvidenceZoom extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(AppRadius.paper),
                                   border: Border.all(color: AppColors.parchmentDark, width: AppLine.hairline),
                                 ),
-                                child: _Words(evidence.inscription!, evidenceId: evidence.id, style: AppText.letter(size: 18)),
+                                child: ReadingTextScale(
+                                  child: _Words(evidence.inscription!, evidenceId: evidence.id, style: AppText.letter(size: 18)),
+                                ),
                               ),
                             ],
                             if (evidence.symbols.isNotEmpty) ...[

@@ -78,3 +78,14 @@ abstract final class AppLine {
   /// Faint ink for borders and rules on paper.
   static Color faint([double alpha = 0.18]) => AppColors.ink.withValues(alpha: alpha);
 }
+
+/// How far the system's text size may grow the game's text.
+abstract final class AppTextScale {
+  /// Every page: kid-sized text stays readable without breaking layouts.
+  static const page = 1.3;
+
+  /// Long reading that wraps inside a scroll (a clue's words in the
+  /// notebook, an evidence's words in its large view): larger text only
+  /// makes it longer. See [ReadingTextScale].
+  static const reading = 1.6;
+}

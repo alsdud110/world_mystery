@@ -518,6 +518,64 @@ void main() {
       await wait(t, const Duration(milliseconds: 600));
       expect(path(), Routes.seasons);
     });
+
+    // iOS has no back button: the way to the title, the sound and the
+    // detective from the map, on the case map menu's paper.
+    testWidgets('the menu: the sound switch, My detective (back to the map), the title screen', (t) async {
+      await pumpApp(t, seasonSaves(0));
+      await openMap(t);
+      final button = find.byKey(const ValueKey('world-map-menu'));
+      final size = t.getSize(button);
+      expect(size.width >= 44 && size.height >= 44, isTrue, reason: 'a comfortable touch target ($size)');
+      expect(find.byTooltip('Menu'), findsOneWidget, reason: 'named for VoiceOver');
+
+      Future<void> open() async {
+        await t.tap(button);
+        await wait(t, const Duration(milliseconds: 600));
+        expect(find.byType(BottomSheet), findsOneWidget);
+      }
+
+      await open();
+      expect(t.takeException(), isNull);
+      final labels = ['Sound effects', 'My detective', 'Title screen'];
+      final tops = [for (final l in labels) t.getRect(find.descendant(of: find.byType(BottomSheet), matching: find.text(l))).top];
+      expect(tops, [...tops]..sort(), reason: 'in this order');
+      // The game's one sound switch.
+      final soundOn = appRef.read(soundEnabledProvider);
+      await t.tap(find.text('Sound effects'));
+      await wait(t, const Duration(milliseconds: 300));
+      expect(appRef.read(soundEnabledProvider), !soundOn);
+      await t.tap(find.text('Sound effects'));
+      await wait(t, const Duration(milliseconds: 300));
+      expect(appRef.read(soundEnabledProvider), soundOn);
+      // (The sound setting is saved; nothing else is, from here on.)
+      final before = saves();
+      // Back closes the paper, the map stays.
+      await t.binding.handlePopRoute();
+      await wait(t, const Duration(milliseconds: 600));
+      expect(find.byType(BottomSheet), findsNothing);
+      expect(path(), Routes.worldMap);
+
+      // My detective opens over the map; its back returns to it.
+      await open();
+      await t.tap(find.text('My detective'));
+      await wait(t, const Duration(milliseconds: 1200));
+      String top() => appRef.read(routerProvider).routerDelegate.currentConfiguration.last.matchedLocation;
+      expect(top(), Routes.detective, reason: 'pushed over the map');
+      expect(find.text('SAVE CHANGES'), findsOneWidget);
+      await t.binding.handlePopRoute();
+      await wait(t, const Duration(milliseconds: 1200));
+      expect(top(), Routes.worldMap);
+      expect(find.byKey(const ValueKey('world-map-menu')), findsOneWidget);
+
+      // The title screen.
+      await open();
+      await t.tap(find.text('Title screen'));
+      await wait(t, const Duration(milliseconds: 1200));
+      expect(path(), Routes.start);
+      expect(saves(), before, reason: 'nothing saved changes');
+      await wait(t, const Duration(seconds: 3));
+    });
   });
 
   // MAP-5: the World Map as the hub — a season played from it goes back to
