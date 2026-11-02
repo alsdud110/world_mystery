@@ -323,7 +323,8 @@
       "mcp__claude-vscode__getDiagnostics",
       "Read(//c/Users/20210701/AppData/Local/Pub/Cache/hosted/pub.dev/google_mobile_ads-9.2.0/lib/**)",
       "Read(//c/Users/20210701/AppData/Local/Pub/Cache/hosted/pub.dev/google_mobile_ads-9.2.0/lib/src/**)",
-      "Read(//c/Users/20210701/AppData/Local/Pub/Cache/hosted/pub.dev/google_mobile_ads-9.2.0/**)"
+      "Read(//c/Users/20210701/AppData/Local/Pub/Cache/hosted/pub.dev/google_mobile_ads-9.2.0/**)",
+      "Read(//c/Users/20210701/AppData/Local/Pub/Cache/hosted/pub.dev/**)"
     ],
     "additionalDirectories": [
       "C:\\Users\\20210701\\AppData\\Local\\Temp\\claude\\v--vscode-basic-london-mystery\\d4562509-5c5c-4753-adf3-0ec6f5e28a2c\\scratchpad\\shots\\p01"

@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
+import 'package:world_mystery/core/utils/ad_service.dart';
 import 'package:world_mystery/core/utils/audio_service.dart';
 import 'package:world_mystery/data/repositories/profile_store.dart';
 import 'package:world_mystery/data/generated/generated_seasons.g.dart';
@@ -66,22 +67,31 @@ List<Episode> season1Cases() =>
 ///
 /// [prefs] may hold saves under the keys used before profiles: on the first
 /// read the game copies them to the device's detective, as an updated app
-/// does.
+/// does. [adsOff] false: the test brings its own ads.
 Future<List<Override>> testOverrides({
   Map<String, Object> prefs = const {},
   AudioService? audio,
+  bool adsOff = true,
 }) async {
   SharedPreferences.setMockInitialValues(prefs);
-  return testOverridesFor(await SharedPreferences.getInstance(), audio: audio);
+  return testOverridesFor(await SharedPreferences.getInstance(), audio: audio, adsOff: adsOff);
 }
 
 /// [testOverrides] for storage that already exists (an app restart).
 Future<List<Override>> testOverridesFor(
   SharedPreferences prefs, {
   AudioService? audio,
+  bool adsOff = true,
 }) async => [
   sharedPreferencesProvider.overrideWithValue(prefs),
   audioServiceProvider.overrideWithValue(audio ?? MockAudioService()),
+  // Ads off: nothing reaches the ads plugin (banner_ad_area_test.dart plays them).
+  if (adsOff)
+    adServiceProvider.overrideWith((ref) {
+      final service = AdService(sdk: const GoogleMobileAdsSdk(), units: null, requestsAllowed: false);
+      ref.onDispose(service.dispose);
+      return service;
+    }),
 ];
 
 /// The detective's key for a save kept under [legacyKey] before profiles
