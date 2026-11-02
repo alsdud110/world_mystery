@@ -286,6 +286,22 @@ void main() {
       expect(errors(check()), contains('asset_reference_unknown'));
     });
 
+    test('the opening: its words and its city at night are planned; every picture it shows is the game\'s or the manifest\'s', () {
+      edit('season.plan.json', (s) => s.remove('prologue'));
+      expect(errors(check()), contains('prologue_missing'));
+    });
+
+    test('the opening without its four pieces, or without its prologue picture in the manifest', () {
+      edit('season.plan.json', (s) => ((s['prologue'] as Map)['pieces'] as List).removeLast());
+      edit('assets.manifest.json', (m) => (m['assets'] as List).removeWhere((a) => (a as Map)['type'] == 'prologue'));
+      expect(errors(check()), containsAll(['prologue_pictures_missing', 'asset_prologue_missing']));
+    });
+
+    test('an opening piece neither in the game nor planned', () {
+      edit('season.plan.json', (s) => ((s['prologue'] as Map)['pieces'] as List)[0] = 'assets/seasons/season_03_rome/objects/nothing.png');
+      expect(errors(check()), contains('asset_prologue_unplanned'));
+    });
+
     test('a picture marked generated that is not on disk', () {
       edit('assets.manifest.json', (m) => asset(m, 's3_rome.asset.scene_owl_reveal')['status'] = 'generated');
       expect(errors(check()), contains('asset_file_missing'));

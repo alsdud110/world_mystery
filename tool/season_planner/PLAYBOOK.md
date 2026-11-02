@@ -61,8 +61,30 @@ Write `planning/story_bible.json` before any case. It is the writer's truth:
 
 Then `season.plan.json` from it: the same ids and names, `plannedCases: 12`,
 three acts of four, `mainMystery`, `places` (each place's picture file under
-`assets/seasons/season_NN_<city>/`, 1536x1024), `outro`, `finale`,
-`languageArc`, notes that say it is planned, not released.
+`assets/seasons/season_NN_<city>/`, 1536x1024), `prologue`, `outro`,
+`finale`, `languageArc`, notes that say it is planned, not released.
+
+**The opening (`prologue`)** — played once when the season begins, before
+Case 01 (`SeasonPrologueScreen`, as London's, Rome's and New York's). The
+mood only: kinds of trouble, never a person's name, a culprit or an answer;
+Rookie English (Junior and Master come later in `season.levels.json`).
+Rome's is the worked example.
+
+- `city`: two short lines (`\n` between them) — the city, and that something
+  is wrong ("Rome is old and quiet.\nBut something is wrong.").
+- `cases`: four kinds of trouble, one short line each (≤ 35 characters),
+  each something the first cases really show; the last begins "And …".
+- `pieces`: four pictures, one per `cases` line in the same order — evidence
+  pictures already in the manifest (`outputPath`s), early cases only.
+- `separate`: two lines ("They look like different cases." / "But a good
+  detective\nputs the pieces together.").
+- `question` (a short question), `bigger` (two lines with `\n`): the season's
+  thread, echoing its tagline.
+- `promise`: three very short lines ("Find the pieces." …).
+- `firstCase`: `picture` (Case 01's thing, a manifest `outputPath`) and
+  `line` (two lines: where the first case starts, ≤ 22 characters on the
+  second so the ASSIGNED stamp stays clear).
+- No `hero`: the factory makes the `prologue` picture and names it there.
 
 ## 2. The twelve cases
 
@@ -215,6 +237,14 @@ picture, else `notWired`), `subject` (placeId, charId, evidence id, or
   (`asset_scene_unplanned` is an ERROR). A witness who is a season
   character reuses their portrait; a talk's background may be the place's
   own picture.
+- One `prologue` asset: the opening's first scene, the city at night,
+  portrait **1024x1536** (it fills the phone), the season's scene style,
+  `use: notWired`, `caseIds: []`, `outputPath`
+  `assets/seasons/season_NN_<city>/cover/seasonN_prologue_night.png`. Its
+  prompt (Rome's): a landmark of the city at night with one warm lit window
+  in the upper middle (15–55% of the height, central two-thirds of the
+  width), the top 12% quiet sky, the lower 40% calm, darker foreground with
+  no detail (the words lie over it); quiet, mysterious, never scary.
 - Define the city's scene style once in `seasonStyles` (the common lines of
   `tool/ai_agents/image_styles.dart` + the city's look); characters and
   objects use `character` / `object`.

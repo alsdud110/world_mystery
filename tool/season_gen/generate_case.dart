@@ -318,18 +318,20 @@ abstract final class CaseGenerator {
         failed(seasonPath, ['[map_remeasure] \$.art.map.measuredOn: ${map.file} is not the file its landmarks were measured on']);
       }
       if (art?.cover case final c? when !onDisk(c.file)) failed(seasonPath, ['[game_cover_missing] \$.art.cover.file: ${c.file} is not on disk']);
-      // Its opening, when planned: every scene's words and pictures. The
-      // game plays it only whole (`Season.playsPrologue`): a hero not made
-      // yet is written without it, and said.
+      // Its opening: every scene's words and pictures, its city at night
+      // among them (the factory names it in prologue.hero once made). The
+      // game plays it only whole (`Season.playsPrologue`).
       if (season.prologue case final p?) {
         failed(seasonPath, [
           if (p.city == null || p.question == null || p.bigger == null || p.cases.length != 4 || p.separate.isEmpty || p.promise.isEmpty || p.firstCase == null)
             '[game_prologue_words] \$.prologue: city, four cases, separate, question, bigger, promise and firstCase are all written',
           if (p.pieces.length != p.cases.length) '[game_prologue_pictures] \$.prologue.pieces: one for each of cases',
+          if (p.hero == null) '[game_prologue_pictures] \$.prologue.hero: its city at night, not made or not named yet (season_factory.dart run)',
           for (final f in [?p.hero?.file, ...p.pieces, ?p.firstCase?.picture])
             if (!onDisk(f)) '[game_prologue_missing] \$.prologue: $f is not on disk',
         ]);
-        if (p.hero == null) notes.add('${season.seasonId}: its opening has no hero picture yet (\$.prologue.hero): not played until it has');
+      } else {
+        failed(seasonPath, ['[game_prologue_missing] \$.prologue: a season in the game opens with its opening (plan-season)']);
       }
       if (lines.isNotEmpty) throw GenerateFailure(lines);
     }

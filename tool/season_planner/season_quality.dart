@@ -151,6 +151,7 @@ abstract final class SeasonQuality {
 
     // 5. The season's own rules: people, places, puzzles, words.
     _people(season, plans, out);
+    _prologue(season, out);
     _puzzles(plans, out);
     _play(plans, out);
     _story(plans, out);
@@ -273,6 +274,35 @@ abstract final class SeasonQuality {
   /// How the season is played, as a whole (STEP 3-13): not reading alone.
   /// No quota per kind: the story chooses (PLAYBOOK §2); a season with no
   /// mission on pictures, or a case all of one kind, is said.
+  /// The season's opening (`prologue`): every scene written, four kinds of
+  /// trouble each with its picture, the mood only — never one of its people.
+  /// Its city at night (`hero`) is named by the factory once made.
+  static void _prologue(SeasonPlan season, Findings out) {
+    const at = r'season.plan.json $.prologue';
+    final p = season.prologue;
+    if (p == null) {
+      out.error('prologue_missing', at, 'the season opens with its opening: city, four cases, separate, question, bigger, promise, '
+          'firstCase {picture, line} and four pieces (pictures of the manifest)', source: Source.season);
+      return;
+    }
+    if (p.city == null || p.question == null || p.bigger == null || p.separate.isEmpty || p.promise.isEmpty || p.firstCase == null) {
+      out.error('prologue_words_missing', at, 'city, separate, question, bigger, promise and firstCase are all written', source: Source.season);
+    }
+    if (p.cases.length != 4) out.error('prologue_words_missing', '$at.cases', '${p.cases.length} kinds of trouble, not 4', source: Source.season);
+    if (p.pieces.length != p.cases.length) {
+      out.error('prologue_pictures_missing', '$at.pieces', '${p.pieces.length} pictures for ${p.cases.length} kinds of trouble: one each', source: Source.season);
+    }
+    final names = {
+      for (final c in season.characters) ...c.name.replaceAll('.', '').toLowerCase().split(' ').where((w) => w.length > 2),
+    };
+    for (final line in p.lines) {
+      final words = line.toLowerCase().split(RegExp(r'[^a-z]+'));
+      for (final n in names.where(words.contains)) {
+        out.warning('prologue_names_someone', at, '"$line" names $n: the opening tells the mood only', source: Source.season);
+      }
+    }
+  }
+
   static void _play(List<CasePlan> plans, Findings out) {
     if (plans.isEmpty) return;
     final onPictures = [for (final c in plans) for (final m in c.allMissions) if (PlayCheck.pictured.contains(m.puzzle.paletteId)) m.missionId];

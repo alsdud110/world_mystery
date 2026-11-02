@@ -8,6 +8,7 @@ import 'package:world_mystery/app.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
 import 'package:world_mystery/core/router/app_router.dart';
 import 'package:world_mystery/data/content/difficulty_content.dart';
+import 'package:world_mystery/data/generated/generated_seasons.g.dart';
 import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/models/difficulty.dart';
 import 'package:world_mystery/data/models/game_progress.dart';
@@ -21,7 +22,8 @@ import 'helpers.dart';
 /// their words at each level, their own pictures, and the shared opening
 /// page playing them.
 void main() {
-  const made = [SeasonIds.rome, SeasonIds.newyork];
+  // Every season made from its plans (Rome on): a new one is held to the same.
+  final made = [for (final s in generatedSeasons) s.id];
 
   /// The scenes' words, in the order the opening shows them.
   List<List<String>> scenes(SeasonPrologue p) => [

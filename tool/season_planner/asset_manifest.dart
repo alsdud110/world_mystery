@@ -228,7 +228,8 @@ abstract final class AssetManifest {
           if (type == 'cover' || type == 'prologue') {
             // The cover and the opening's city at night both fill the phone.
             if (sizes.contains(size) && size != coverSize) {
-              warning('asset_cover_shape', '$at.width', '$size: a season ${type == 'cover' ? 'cover' : 'opening\'s first scene'} is a portrait painting ($coverSize; it fills the phone)');
+              (type == 'cover' ? warning : error)('asset_cover_shape', '$at.width',
+                  '$size: a season ${type == 'cover' ? 'cover' : 'opening\'s first scene'} is a portrait painting ($coverSize; it fills the phone)');
             }
           } else if (sizes.contains(size) && size != s.size) {
             warning('asset_size_unusual', '$at.width', '$size, $style is made at ${s.size}');
@@ -356,6 +357,32 @@ abstract final class AssetManifest {
       if (!bases.containsKey(c.charId)) warning('asset_portrait_missing', c.charId, 'no base portrait planned for ${c.name}');
     }
     if ((counts['cover'] ?? 0) == 0) warning('asset_cover_missing', r'$.assets', 'no season cover planned');
+
+    // The opening (season.plan.json prologue): its city at night planned
+    // (the factory makes it, then names it in prologue.hero), and every
+    // picture it shows in the game or one of the manifest's (made with the
+    // others).
+    final openings = [for (final a in list) if (a is Map && a['type'] == 'prologue') a];
+    if (openings.length != 1) {
+      error('asset_prologue_missing', r'$.assets',
+          '${openings.length} pictures of type prologue: the opening\'s first scene is one, its city at night ($coverSize, words over its bottom 40%)');
+    }
+    if (season.prologue case final p?) {
+      for (final (at, file) in [
+        for (final (i, f) in p.pieces.indexed) ('pieces[$i]', f),
+        if (p.firstCase case final f?) ('firstCase.picture', f.picture),
+      ]) {
+        if (!paths.containsKey(file) && !File('$root/$file').existsSync()) {
+          out.error('asset_prologue_unplanned', 'season.plan.json \$.prologue.$at',
+              '$file is neither in the game nor an outputPath of $where: the opening shows only pictures planned with the others',
+              source: Source.assets);
+        }
+      }
+      if (p.hero case final h? when openings.length == 1 && h.file != openings.single['outputPath']) {
+        out.error('asset_prologue_unplanned', r'season.plan.json $.prologue.hero.file', '${h.file} is not the prologue picture (${openings.single['outputPath']})',
+            source: Source.assets);
+      }
+    }
 
     // The pictures a puzzle shows (STEP 3-13): each a picture of the
     // manifest, asked for by its puzzle; each planned for a puzzle, shown.

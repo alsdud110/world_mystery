@@ -32,6 +32,23 @@ void main() {
     }
   });
 
+  test('the opening\'s city at night, once in the game, is named in prologue.hero by the factory, once', () {
+    final tmp = Directory.systemTemp.createTempSync('factory_opening');
+    addTearDown(() => tmp.deleteSync(recursive: true));
+    final s = '${tmp.path.replaceAll(r'\', '/')}/s3_rome';
+    for (final f in ['season.plan.json', 'assets.manifest.json']) {
+      File('$dir/$f').copySync((File('$s/$f')..createSync(recursive: true)).path);
+    }
+    final rome = PlanFiles.loadSeasonPlan('$dir/season.plan.json');
+    final json = PlanFiles.readJson('$s/season.plan.json') as Map<String, dynamic>;
+    (json['prologue'] as Map).remove('hero');
+    File('$s/season.plan.json').writeAsStringSync(PlanFiles.encode(json));
+    expect(SeasonFactory.nameOpening(s), rome.prologue!.hero!.file);
+    expect(File('$s/season.plan.json').readAsStringSync(), File('$dir/season.plan.json').readAsStringSync(),
+        reason: 'named as Rome names it: its file and its pixels, nothing else changed');
+    expect(SeasonFactory.nameOpening(s), isNull, reason: 'already named: nothing written');
+  });
+
   test('Rome is measured whole: its map and its four look rounds, each on its very file', () {
     expect(SeasonFactory.unmeasured(dir), isEmpty);
   });

@@ -1,12 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:world_mystery/data/content/difficulty_content.dart';
 import 'package:world_mystery/data/content/season_content_validator.dart';
 import 'package:world_mystery/data/generated/generated_seasons.g.dart';
 import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/models/difficulty.dart';
 import 'package:world_mystery/data/models/episode.dart';
 import 'package:world_mystery/data/models/mission.dart';
+import 'package:world_mystery/data/models/season.dart';
 import 'package:world_mystery/features/mission_map/map_world.dart';
 import 'package:world_mystery/features/world_map/world_cities.dart';
 import 'package:world_mystery/widgets/art_assets.dart';
@@ -68,6 +70,24 @@ void main() {
         };
         for (final f in files) {
           expect(bundled(f), isTrue, reason: '$f: on disk and in a pubspec assets folder');
+        }
+      });
+
+      test('opens with its own opening, every picture bundled; Junior and Master write every line again', () {
+        final season = content.season;
+        expect(season.playsPrologue, isTrue, reason: 'its words, its city at night and four pieces (prologue.hero named by the factory)');
+        final p = season.prologue;
+        for (final f in [p.hero, ...p.pieces, p.firstCasePicture]) {
+          expect(bundled(f), isTrue, reason: '$f: on disk and in a pubspec assets folder');
+        }
+        final rookie = SeasonPrologue.linesOf(content.info['prologue']);
+        for (final level in [Difficulty.junior, Difficulty.master]) {
+          final lines = content.infoLevels[level]?['prologue'];
+          expect(lines, hasLength(rookie.length), reason: '${level.name}: every line of the opening');
+          expect(DifficultyContent.seasonAt(content, level).playsPrologue, isTrue, reason: level.name);
+          for (final (i, line) in lines!.indexed) {
+            if (line.split(RegExp(r'\s+')).length >= 6) expect(line, isNot(rookie[i]), reason: '${level.name}: "$line" is Rookie\'s');
+          }
         }
       });
 

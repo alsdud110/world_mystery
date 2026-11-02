@@ -30,13 +30,12 @@ plan-season writes, the game target needs (Rome's `season.plan.json`):
 - `art.worldCity` (`cityId`, `latitude`, `longitude`; `mapAt` only when the
   World Map artwork draws that city: London, Paris, Rome, Tokyo and Seoul
   are drawn, see `lib/features/world_map/world_cities.dart`).
-- its opening, `prologue` (Rome's and New York's): the mood only, never a
-  name or an answer — `city`, four `cases` (kinds of trouble), `separate`,
-  `question`, `bigger`, `promise`, `firstCase` {`picture`, `line`}; four
-  `pieces` (evidence pictures already in the plans, one per case line); and
-  `hero` {`file`, `pixels`}, its city at night (a `prologue` asset, portrait
-  1024×1536, words over its bottom 40%), named only once it is made. Without
-  `hero` the season opens at its Case 01 (`Season.playsPrologue`).
+- its opening, `prologue` (PLAYBOOK §1 "The opening"), and one `prologue`
+  picture in the manifest (PLAYBOOK §3) — `plan_season.dart check` refuses
+  a season without them. The factory makes that picture like the others
+  and names it in `prologue.hero` itself once it is in the game; its
+  Junior and Master lines come with the levels (exit 35). Never write
+  `hero` by hand.
 
 Before any picture: read each prompt against its mission. A choice's right
 picture must differ from the wrong ones only by what the clue says (Rome's

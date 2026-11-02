@@ -14,6 +14,7 @@ import '../season_gen/generate_season.dart';
 import '../season_gen/json_schema_lite.dart';
 import '../season_gen/plan_files.dart';
 import '../season_gen/plan_ids.dart';
+import '../season_gen/plan_models.dart';
 import '../season_gen/season_cases.dart';
 import '../season_planner/finding.dart';
 import '../season_planner/season_quality.dart';
@@ -45,7 +46,8 @@ import 'sheets.dart';
 ///     `planning/factory.json`); then step 3 (exit 20). The budget spent:
 ///     exit 40, nothing sent. An API error: exit 1, nothing more sent.
 ///  5. into the game: every validated picture copied into `assets/`
-///     (`asset_pipeline.dart --apply`).
+///     (`asset_pipeline.dart --apply`); the opening's city at night, once
+///     in the game, named in the plan's `prologue.hero` ([nameOpening]).
 ///  6. measured: the season map's landmarks and every look round's areas,
 ///     on the very files; anything not measured (or measured on another
 ///     file) gets a grid sheet and stops the run (exit 30).
@@ -196,6 +198,43 @@ abstract final class SeasonFactory {
       }
     }
     return out;
+  }
+
+  /// Names the opening's city at night (the manifest's `prologue` picture)
+  /// in the season plan's `prologue.hero`, with its pixel size, once it is
+  /// in the game and the plan does not name it yet; returns its file, or
+  /// null when nothing was written (no opening planned, the picture not in
+  /// the game yet, or already named).
+  static String? nameOpening(String dir, {String root = '.'}) {
+    final path = '$dir/season.plan.json';
+    final plan = PlanFiles.loadSeasonPlan(path);
+    final p = plan.prologue;
+    final files = _assetsOfType(dir, 'prologue');
+    if (p == null || files.length != 1) return null;
+    final file = files.single;
+    final png = File('$root/$file');
+    if (!png.existsSync() || p.hero?.file == file) return null;
+    final (width, height) = pngSize(png.readAsBytesSync());
+    PlanFiles.saveSeasonPlan(
+      SeasonPlan.fromJson({
+        ...plan.toJson(),
+        'prologue': {
+          ...p.toJson(),
+          'hero': {
+            'file': file,
+            'pixels': {'width': width, 'height': height},
+          },
+        },
+      }),
+      path,
+    );
+    return file;
+  }
+
+  /// A PNG's width and height, from its header.
+  static (int, int) pngSize(List<int> bytes) {
+    int at(int i) => (bytes[i] << 24) | (bytes[i + 1] << 16) | (bytes[i + 2] << 8) | bytes[i + 3];
+    return (at(16), at(20));
   }
 
   static List<String> _assetsOfType(String dir, String type) => [
@@ -417,6 +456,7 @@ abstract final class SeasonFactory {
       say('apply', 'a picture could not go into the game (see above)');
       return 1;
     }
+    if (nameOpening(dir) case final named?) say('opening', 'its city at night named in season.plan.json prologue.hero: $named');
     pipeline.wiring(write: true);
 
     // 6. Measured on the made pictures.

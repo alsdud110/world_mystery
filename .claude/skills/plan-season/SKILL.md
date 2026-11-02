@@ -16,8 +16,10 @@ Follow `tool/season_planner/PLAYBOOK.md` step by step. In short:
    `CLAUDE.md` §20 and the trial season `content_pipeline/seasons/s3_rome/`
    as the worked example (its shapes, not its story).
 2. `dart run tool/season_planner/plan_season.dart init --season <n> --city <City>`
-3. Write `planning/story_bible.json`, then `season.plan.json`, then the twelve
-   `cases/<caseId>/case.plan.json`, and `assets.manifest.json` alongside.
+3. Write `planning/story_bible.json`, then `season.plan.json` (with its
+   opening, `prologue`: PLAYBOOK §1 "The opening"), then the twelve
+   `cases/<caseId>/case.plan.json`, and `assets.manifest.json` alongside
+   (with its one `prologue` picture, PLAYBOOK §3).
    Choose each mission's play from its clue (PLAYBOOK §2 "Choosing how each
    mission is played"; the game's play types are in
    `tool/season_gen/GAMEPLAY_CATALOG.md`): text puzzles, and the missions on
