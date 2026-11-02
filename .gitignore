@@ -92,3 +92,5 @@ skills-lock.json
 # kept for re-encoding, outside the app and out of Git (the ones committed
 # before the optimization stay in Git's history). Back them up elsewhere.
 /content_pipeline/asset_originals/
+
+/config/ads.local.json

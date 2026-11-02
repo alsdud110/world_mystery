@@ -17,6 +17,7 @@ dependencies:
   shared_preferences: ^2.5.5
   # Sound effects
   audioplayers: ^6.8.1
+  google_mobile_ads: ^9.2.0
 
 dev_dependencies:
   flutter_test:
