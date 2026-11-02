@@ -161,7 +161,7 @@
     "cases": [
       "A piece of an old map is gone.",
       "Owl cards appear in the city.",
-      "A box holds strange white dust.",
+      "An old key waits for its lock.",
       "And a night log hides a secret."
     ],
     "separate": [
@@ -189,7 +189,7 @@
     "pieces": [
       "assets/seasons/season_03_rome/objects/real_map_piece.png",
       "assets/seasons/season_03_rome/objects/owl_card.png",
-      "assets/seasons/season_03_rome/objects/bag_of_white_dust.png",
+      "assets/seasons/season_03_rome/objects/brass_key.png",
       "assets/seasons/season_03_rome/objects/night_log.png"
     ]
   },
