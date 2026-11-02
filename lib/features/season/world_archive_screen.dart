@@ -10,6 +10,7 @@ import '../../core/theme/app_text.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../data/models/season.dart';
 import '../../widgets/art_assets.dart';
+import '../../widgets/banner_ad_area.dart';
 import '../../widgets/desk_background.dart';
 import '../../widgets/game_button.dart';
 import '../../widgets/game_toast.dart';
@@ -178,44 +179,46 @@ class _WorldArchiveScreenState extends ConsumerState<WorldArchiveScreen> with Si
           onPressed: () => context.go(Routes.worldMap),
         ),
       ),
-      body: DeskBackground(
-        child: SafeArea(
-          top: false,
-          child: Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 560),
-              child: AnimatedBuilder(
-                animation: _lay,
-                builder: (context, _) {
-                  // Each file comes down a little after the one before it.
-                  Widget laid(int i, Widget child) {
-                    final start = math.min(0.15 * i, 0.6);
-                    final t = Curves.easeOutCubic.transform(((_lay.value - start) / 0.4).clamp(0.0, 1.0));
-                    return Opacity(
-                      opacity: t,
-                      child: Transform.translate(offset: Offset(0, 6 * (1 - t)), child: child),
-                    );
-                  }
+      body: BannerAdArea(
+        child: DeskBackground(
+          child: SafeArea(
+            top: false,
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 560),
+                child: AnimatedBuilder(
+                  animation: _lay,
+                  builder: (context, _) {
+                    // Each file comes down a little after the one before it.
+                    Widget laid(int i, Widget child) {
+                      final start = math.min(0.15 * i, 0.6);
+                      final t = Curves.easeOutCubic.transform(((_lay.value - start) / 0.4).clamp(0.0, 1.0));
+                      return Opacity(
+                        opacity: t,
+                        child: Transform.translate(offset: Offset(0, 6 * (1 - t)), child: child),
+                      );
+                    }
 
-                  return ListView(
-                    padding: const EdgeInsets.fromLTRB(AppSpace.screen, 0, AppSpace.screen, AppSpace.xxl),
-                    children: [
-                      laid(0, const _Heading()),
-                      for (final (i, f) in files.indexed) ...[
-                        const SizedBox(height: AppSpace.xl),
-                        laid(
-                          i + 1,
-                          _SeasonFileCard(
-                            key: ValueKey('season-file-${f.season.id}'),
-                            file: f,
-                            onOpen: () => _open(f),
-                            onExplain: () => _explain(f),
+                    return ListView(
+                      padding: const EdgeInsets.fromLTRB(AppSpace.screen, 0, AppSpace.screen, AppSpace.xxl),
+                      children: [
+                        laid(0, const _Heading()),
+                        for (final (i, f) in files.indexed) ...[
+                          const SizedBox(height: AppSpace.xl),
+                          laid(
+                            i + 1,
+                            _SeasonFileCard(
+                              key: ValueKey('season-file-${f.season.id}'),
+                              file: f,
+                              onOpen: () => _open(f),
+                              onExplain: () => _explain(f),
+                            ),
                           ),
-                        ),
+                        ],
                       ],
-                    ],
-                  );
-                },
+                    );
+                  },
+                ),
               ),
             ),
           ),

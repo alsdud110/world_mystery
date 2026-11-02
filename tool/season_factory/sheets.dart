@@ -3,7 +3,8 @@ import 'dart:io';
 import 'package:image/image.dart' as img;
 
 /// The pictures a person (or Claude, reading the PNG) looks at before the
-/// factory goes on: never a verdict of its own.
+/// factory goes on: never a verdict of its own. The pictures read may be
+/// PNG or the game's WebP; the sheets are PNG.
 abstract final class Sheets {
   /// [files] side by side, two a row, each fitted in a [cell] square, with
   /// its number (1, 2, …) in its corner: one picture to review a batch by.
@@ -12,7 +13,7 @@ abstract final class Sheets {
     final sheet = img.Image(width: cell * 2, height: cell * rows);
     img.fill(sheet, color: img.ColorRgb8(255, 255, 255));
     for (final (i, f) in files.indexed) {
-      final src = img.decodePng(File(f).readAsBytesSync())!;
+      final src = img.decodeImage(File(f).readAsBytesSync())!;
       final scale = cell / (src.width > src.height ? src.width : src.height);
       final small = img.copyResize(src, width: (src.width * scale).round(), height: (src.height * scale).round());
       final x = (i % 2) * cell, y = (i ~/ 2) * cell;
@@ -29,7 +30,7 @@ abstract final class Sheets {
   /// its own pixels: where things are on it are read off it and written
   /// into the plans as they are (never guessed).
   static void grid(String file, String out) {
-    final im = img.decodePng(File(file).readAsBytesSync())!;
+    final im = img.decodeImage(File(file).readAsBytesSync())!;
     final red = img.ColorRgb8(255, 0, 0), pink = img.ColorRgb8(255, 120, 200);
     for (var x = 0; x <= im.width; x += 50) {
       img.drawLine(im, x1: x, y1: 0, x2: x, y2: im.height - 1, color: x % 100 == 0 ? red : pink, thickness: x % 100 == 0 ? 2 : 1);

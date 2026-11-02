@@ -35,10 +35,10 @@ String? shownBy(String id) => ArtAssets.evidencePictures.containsKey(id)
     ? 'paper'
     : null;
 
-(int, int) pngSize(String path) {
-  final b = File(path).readAsBytesSync();
-  int u32(int o) => (b[o] << 24) | (b[o + 1] << 16) | (b[o + 2] << 8) | b[o + 3];
-  return (u32(16), u32(20));
+/// A picture's width and height (the game's WebP, or a PNG), read whole.
+(int, int) pictureSize(String path) {
+  final (w, h) = imageSize(path)!;
+  return (w.round(), h.round());
 }
 
 void main() {
@@ -77,7 +77,7 @@ void main() {
       // picture of that sole: the print is the notebook's words.
       expect(ArtAssets.evidencePictures['s4_ep02_e1'], isNull);
       expect(ArtAssets.evidenceDocs['s4_ep02_e1'], EvidencePaper.statement);
-      final sole = 'assets/seasons/season_04_newyork/objects/star_sole.png';
+      final sole = 'assets/seasons/season_04_newyork/objects/star_sole.webp';
       expect(ArtAssets.evidencePictures.entries.where((e) => e.value == sole).map((e) => e.key), ['s4_ep07_e1']);
       // Words that are clues stay words: the map's swans, the map pieces'
       // ravens, the board's train, the mirror word, the chalk code, the stub.
@@ -89,8 +89,8 @@ void main() {
         expect(ArtAssets.evidencePictures[id], isNull, reason: id);
       }
       // The Wet Footprint: the search's own footprint, cut out of its black.
-      expect(ArtAssets.evidencePictures['ep03_e3'], 'assets/seasons/season_01_london/objects/wet_footprint_cutout.png');
-      final cut = img.decodePng(File(ArtAssets.evidencePictures['ep03_e3']!).readAsBytesSync())!;
+      expect(ArtAssets.evidencePictures['ep03_e3'], 'assets/seasons/season_01_london/objects/wet_footprint_cutout.webp');
+      final cut = img.decodeImage(File(ArtAssets.evidencePictures['ep03_e3']!).readAsBytesSync())!;
       expect(cut.getPixel(0, 0).a, 0, reason: 'no black ground in the round frame');
       expect(cut.width, cut.height);
     });
@@ -100,7 +100,8 @@ void main() {
     final pubspec = File('pubspec.yaml').readAsStringSync();
     void bundled(String path) {
       expect(File(path).existsSync(), isTrue, reason: path);
-      expect(path, endsWith('.png'));
+      expect(path, endsWith('.webp'), reason: 'the game ships its pictures as WebP (tool/asset_optimizer)');
+      expect(imageSize(path), isNotNull, reason: '$path: a whole picture');
       expect(pubspec, contains('- ${path.substring(0, path.lastIndexOf('/') + 1)}'), reason: path);
     }
 
@@ -119,7 +120,7 @@ void main() {
 
     test("a paper's shape is its file's, its words inside it", () {
       for (final MapEntry(key: kind, value: p) in ArtAssets.evidencePapers.entries) {
-        final (w, h) = pngSize(p.file);
+        final (w, h) = pictureSize(p.file);
         expect(p.aspect, closeTo(w / h, 0.01), reason: kind.name);
         final r = p.writing;
         expect(r.left >= 0 && r.top >= 0 && r.right <= 1 && r.bottom <= 1 && r.width > 0.4 && r.height > 0.5, isTrue, reason: kind.name);
@@ -136,7 +137,7 @@ void main() {
         expect(GameSymbol.of(k).asset, ArtAssets.symbols[k], reason: k);
       }
       for (final f in ArtAssets.symbols.values) {
-        final p = img.decodePng(File(f).readAsBytesSync())!;
+        final p = img.decodeImage(File(f).readAsBytesSync())!;
         expect((p.width, p.height), (256, 256), reason: f);
         expect(p.every((c) => c.a == 0 || (c.r == 0 && c.g == 0 && c.b == 0)), isTrue, reason: '$f: ink only');
       }
@@ -220,7 +221,7 @@ void main() {
 
       await tile(evidence['ep03_e2']!);
       final image = t.widget<Image>(find.byWidgetPredicate((w) => w is Image && w.image is ResizeImage));
-      expect(((image.image as ResizeImage).imageProvider as AssetImage).assetName, 'assets/seasons/season_01_london/objects/blue_cloth.png');
+      expect(((image.image as ResizeImage).imageProvider as AssetImage).assetName, 'assets/seasons/season_01_london/objects/blue_cloth.webp');
       expect(find.byWidgetPredicate((w) => w is InkIcon && w.glyph == InkGlyph.cloth), findsNothing);
     });
 

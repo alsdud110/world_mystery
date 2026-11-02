@@ -11,7 +11,7 @@ import '../../models/scene_trail.dart';
 /// wrong order, the solve, its Clue and Evidence, XP, coins and the save are
 /// the ones the puzzle always gave.
 final Map<String, TrailScene> season1Trails = {
-  // ── Case 03 M3 — the Great Court (cases/case_03/great_court_footprints.png)
+  // ── Case 03 M3 — the Great Court (cases/case_03/great_court_footprints.webp)
   // Four footprints, one by each place the cleaner names: the shop (back
   // left), the stairs (front left), the café (front right) and the north
   // door (back, in the middle). All four are drawn alike — the same boot,
@@ -19,7 +19,7 @@ final Map<String, TrailScene> season1Trails = {
   // to back, or left to right, is wrong), so only her words "very wet",
   // "wet", "a little wet" and "almost dry" give the order.
   'ep03_m3': TrailScene(
-    picture: 'assets/seasons/season_01_london/cases/case_03/great_court_footprints.png',
+    picture: 'assets/seasons/season_01_london/cases/case_03/great_court_footprints.webp',
     pixels: _court,
     place: 'The Great Court: a shop, the stairs, a café and the north door, a footprint by each',
     lead: 'Four footprints cross the floor. Tap them in the order she walked.',

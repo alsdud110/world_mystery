@@ -34,6 +34,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'easy_play.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
@@ -103,31 +104,35 @@ void main() {
   group('its pictures', () {
     TestWidgetsFlutterBinding.ensureInitialized();
     const folder = 'assets/seasons/season_02_paris/cases/case_05';
-    // Size, and whether it has an alpha channel (as delivered). Clock I's
-    // back is larger than the other three and has none: the same picture.
-    // Clock IV's back has none either since its watermark was taken off
-    // (b64ed09): the backs are shown whole, opaque.
+    // Size, and whether it has an alpha channel (as stored: a WebP keeps one
+    // only when some pixel uses it). Clock I's back is larger than the other
+    // three and has none: the same picture. Clock IV's back has none either
+    // since its watermark was taken off (b64ed09); Clock II's and III's were
+    // delivered RGBA with every pixel opaque, so their WebPs have none (asset
+    // optimization): the backs are shown whole, opaque.
     const pictures = {
-      'workshop_interior.png': (1536, 1024, false),
-      'wall_of_clocks.png': (1536, 1024, false),
-      'clock_back_normal.png': (1254, 1254, false),
-      'clock_back_spring.png': (1024, 1024, true),
-      'clock_back_extra_wheel.png': (1024, 1024, true),
-      'clock_back_broken.png': (1024, 1024, false),
-      'workbench_marks.png': (1536, 1024, false),
-      'maker_mark_a.png': (1254, 1254, true),
-      'writing_desk_blotter.png': (1264, 848, true),
-      'hand_mirror.png': (896, 1200, true),
-      'envelope_corner.png': (1216, 880, true),
-      'post_slip_blank.png': (1376, 768, true),
-      'repair_card_blank.png': (1480, 1062, true),
-      'tracing_sheet.png': (1254, 1254, true),
+      'workshop_interior.webp': (1536, 1024, false),
+      'wall_of_clocks.webp': (1536, 1024, false),
+      'clock_back_normal.webp': (1254, 1254, false),
+      'clock_back_spring.webp': (1024, 1024, false),
+      'clock_back_extra_wheel.webp': (1024, 1024, false),
+      'clock_back_broken.webp': (1024, 1024, false),
+      'workbench_marks.webp': (1536, 1024, false),
+      'maker_mark_a.webp': (1254, 1254, true),
+      // Delivered RGBA with every pixel opaque: its WebP has no alpha (shown the same).
+      'writing_desk_blotter.webp': (1264, 848, false),
+      'hand_mirror.webp': (896, 1200, true),
+      'envelope_corner.webp': (1216, 880, true),
+      'post_slip_blank.webp': (1376, 768, true),
+      'repair_card_blank.webp': (1480, 1062, true),
+      'tracing_sheet.webp': (1254, 1254, true),
     };
 
+    /// A picture's width, height and whether it can hold transparency, read
+    /// whole from its own bytes (the game's WebP, or a PNG).
     (int, int, bool) header(Uint8List b) {
-      final d = ByteData.sublistView(b);
-      final colourType = b[25];
-      return (d.getUint32(16), d.getUint32(20), colourType == 4 || colourType == 6);
+      final i = ImageFileCheck.bytes(b);
+      return (i.width, i.height, i.hasAlpha);
     }
 
     Future<(ByteData, int, int)> pixels(String path) async {
@@ -140,7 +145,8 @@ void main() {
 
     test('all fourteen are in, listed in pubspec, at their sizes', () {
       expect(pubspecAssets(), contains('$folder/'), reason: 'its folder, exactly, in flutter: assets:');
-      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')).length, 14);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 14);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, alpha)) in pictures.entries) {
         final file = File('$folder/$name');
         expect(file.existsSync(), isTrue, reason: name);
@@ -155,17 +161,17 @@ void main() {
       for (final name in pictures.keys) {
         expect(scenes, contains(name), reason: name);
       }
-      expect(scenes, contains(r"'$_case04/hands_sign.png'"));
+      expect(scenes, contains(r"'$_case04/hands_sign.webp'"));
       expect(case05.introScene, Artwork.passageGate);
-      expect(ArtAssets.parisScenes[Artwork.wallOfClocks], '$folder/wall_of_clocks.png');
+      expect(ArtAssets.parisScenes[Artwork.wallOfClocks], '$folder/wall_of_clocks.webp');
     });
 
     test('the cut-outs are clear round their object; the mirror\'s glass is clear', () async {
-      for (final name in ['envelope_corner.png', 'post_slip_blank.png', 'repair_card_blank.png', 'hand_mirror.png', 'maker_mark_a.png']) {
+      for (final name in ['envelope_corner.webp', 'post_slip_blank.webp', 'repair_card_blank.webp', 'hand_mirror.webp', 'maker_mark_a.webp']) {
         final (d, w, h) = await pixels('$folder/$name');
         expect(alphaAt(d, w, w - 2, h - 2), 0, reason: '$name: a clear corner');
       }
-      final (m, mw, _) = await pixels('$folder/hand_mirror.png');
+      final (m, mw, _) = await pixels('$folder/hand_mirror.webp');
       final c = blotter.glassCentre;
       expect(alphaAt(m, mw, c.dx.round(), c.dy.round()), 0, reason: 'the glass is clear');
       expect(alphaAt(m, mw, (c.dx + blotter.glassRadius * 0.8).round(), c.dy.round()), 0);
@@ -265,11 +271,11 @@ void main() {
       expect({for (final c in wall.clocks) c.id: (clockTime(c.shows), clockTime(c.after))},
           {'i': ('3:10', '3:11'), 'ii': ('7:25', '7:30'), 'iii': ('10:40', '10:39'), 'iv': ('1:55', '1:55')});
       final backwards = [for (final c in wall.clocks) if (c.change < 0) c.id];
-      final wheel = [for (final c in wall.clocks) if (c.back.endsWith('clock_back_extra_wheel.png')) c.id];
+      final wheel = [for (final c in wall.clocks) if (c.back.endsWith('clock_back_extra_wheel.webp')) c.id];
       expect(backwards, ['iii']);
       expect(wheel, ['iii']);
       expect({for (final c in wall.clocks) c.id: c.back.split('/').last},
-          {'i': 'clock_back_normal.png', 'ii': 'clock_back_spring.png', 'iii': 'clock_back_extra_wheel.png', 'iv': 'clock_back_broken.png'});
+          {'i': 'clock_back_normal.webp', 'ii': 'clock_back_spring.webp', 'iii': 'clock_back_extra_wheel.webp', 'iv': 'clock_back_broken.webp'});
       expect(m2.answer, 'iii');
       for (final o in m2.options) {
         expect(AnswerChecker.isCorrect(m2, o.id), o.id == 'iii');

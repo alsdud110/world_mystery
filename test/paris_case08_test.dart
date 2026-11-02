@@ -38,6 +38,7 @@ import 'package:world_mystery/features/season/season_overview.dart';
 import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 
@@ -112,24 +113,25 @@ void main() {
     // Size, and whether it has an alpha channel (as delivered, never
     // changed).
     const pictures = {
-      'abbesses_square.png': (1536, 1024, false),
-      'corner_1.png': (1536, 1024, false),
-      'corner_2.png': (1536, 1024, false),
-      'corner_3.png': (1536, 1024, false),
-      'drawing_bundle.png': (1536, 1024, false),
-      'torn_form_blank.png': (1536, 1024, true),
-      'folded_paper.png': (1254, 1254, true),
-      'sketch_morning_1_dark.png': (1536, 1024, true),
-      'sketch_morning_2_bag.png': (1536, 1024, true),
-      'sketch_morning_3_light.png': (1536, 1024, true),
-      'paper_study.png': (1254, 1254, true),
-      'last_sketch_garden.png': (1536, 1024, true),
+      'abbesses_square.webp': (1536, 1024, false),
+      'corner_1.webp': (1536, 1024, false),
+      'corner_2.webp': (1536, 1024, false),
+      'corner_3.webp': (1536, 1024, false),
+      'drawing_bundle.webp': (1536, 1024, false),
+      'torn_form_blank.webp': (1536, 1024, true),
+      'folded_paper.webp': (1254, 1254, true),
+      'sketch_morning_1_dark.webp': (1536, 1024, true),
+      'sketch_morning_2_bag.webp': (1536, 1024, true),
+      'sketch_morning_3_light.webp': (1536, 1024, true),
+      'paper_study.webp': (1254, 1254, true),
+      'last_sketch_garden.webp': (1536, 1024, true),
     };
 
+    /// A picture's width, height and whether it can hold transparency, read
+    /// whole from its own bytes (the game's WebP, or a PNG).
     (int, int, bool) header(Uint8List b) {
-      final d = ByteData.sublistView(b);
-      final colourType = b[25];
-      return (d.getUint32(16), d.getUint32(20), colourType == 4 || colourType == 6);
+      final i = ImageFileCheck.bytes(b);
+      return (i.width, i.height, i.hasAlpha);
     }
 
     Future<(ByteData, int, int)> pixels(String path) async {
@@ -153,7 +155,8 @@ void main() {
 
     test('all twelve are in, listed in pubspec, at their sizes', () {
       expect(pubspecAssets(), contains('$folder/'), reason: 'its folder, exactly, in flutter: assets:');
-      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')).length, 12);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 12);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, alpha)) in pictures.entries) {
         final file = File('$folder/$name');
         expect(file.existsSync(), isTrue, reason: name);
@@ -168,7 +171,7 @@ void main() {
       for (final name in pictures.keys) {
         expect(scenes, contains(name), reason: name);
       }
-      expect(ArtAssets.parisScenes[case08.introScene], '$folder/abbesses_square.png');
+      expect(ArtAssets.parisScenes[case08.introScene], '$folder/abbesses_square.webp');
       for (final m in case08.allMissions) {
         expect(ArtAssets.parisScenes[m.scene], isNotNull, reason: m.id);
       }

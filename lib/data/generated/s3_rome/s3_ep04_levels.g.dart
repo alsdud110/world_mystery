@@ -273,7 +273,7 @@ const s3Ep04JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s3Ep04JuniorExplores = <String, ExploreScene>{
   's3_ep04_m1': ExploreScene(
-    picture: 'assets/seasons/season_03_rome/locations/pantheon_hall.png',
+    picture: 'assets/seasons/season_03_rome/locations/pantheon_hall.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -352,22 +352,22 @@ const s3Ep04JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'ship',
-        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_ship.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_ship.webp',
         description: 'a round floor stone with a sailing ship carved on it',
       ),
       ExplorePicture(
         optionId: 'lion',
-        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_lion.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_lion.webp',
         description: 'a round floor stone with a lion carved on it',
       ),
       ExplorePicture(
         optionId: 'book',
-        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_book.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_book.webp',
         description: 'a round floor stone with an open book carved on it',
       ),
       ExplorePicture(
         optionId: 'key',
-        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_key.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_key.webp',
         description: 'a round floor stone with a large key carved on it',
       ),
     ],
@@ -415,32 +415,32 @@ const s3Ep04JuniorEndings = <String, List<EndingLine>>{
       'Plaster? Not marble at all?',
       voice: TalkVoice.speaker,
       name: 'GIULIA MARINO',
-      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
     ),
     EndingLine(
       'It\'s the same soft white dust that was in Box 7.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
       evidenceId: 's3_ep03_e2',
     ),
     EndingLine(
       'So the Owl took a copy out of the case, not the real piece!',
       voice: TalkVoice.speaker,
       name: 'GIULIA MARINO',
-      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
     ),
     EndingLine(
       'On its back, there is a tiny paw print and No. 3?8.',
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
     ),
     EndingLine(
       'Then where is the real piece now?',
       voice: TalkVoice.speaker,
       name: 'GIULIA MARINO',
-      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
     ),
   ],
 };
@@ -714,7 +714,7 @@ const s3Ep04MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s3Ep04MasterExplores = <String, ExploreScene>{
   's3_ep04_m1': ExploreScene(
-    picture: 'assets/seasons/season_03_rome/locations/pantheon_hall.png',
+    picture: 'assets/seasons/season_03_rome/locations/pantheon_hall.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -793,22 +793,22 @@ const s3Ep04MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'ship',
-        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_ship.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_ship.webp',
         description: 'a round floor stone engraved with a sailing ship',
       ),
       ExplorePicture(
         optionId: 'lion',
-        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_lion.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_lion.webp',
         description: 'a round floor stone engraved with a lion',
       ),
       ExplorePicture(
         optionId: 'book',
-        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_book.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_book.webp',
         description: 'a round floor stone engraved with an open book',
       ),
       ExplorePicture(
         optionId: 'key',
-        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_key.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_04/floor_stone_key.webp',
         description: 'a round floor stone engraved with a large key',
       ),
     ],
@@ -856,32 +856,32 @@ const s3Ep04MasterEndings = <String, List<EndingLine>>{
       'Plaster? Not marble after all?',
       voice: TalkVoice.speaker,
       name: 'GIULIA MARINO',
-      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
     ),
     EndingLine(
       'The very same soft white dust we found in Box 7.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
       evidenceId: 's3_ep03_e2',
     ),
     EndingLine(
       'So it was only a copy the Owl took from the case!',
       voice: TalkVoice.speaker,
       name: 'GIULIA MARINO',
-      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
     ),
     EndingLine(
       'On its back are a tiny paw print and a smudged number: No. 3?8.',
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
     ),
     EndingLine(
       'Then where on earth is the real piece?',
       voice: TalkVoice.speaker,
       name: 'GIULIA MARINO',
-      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png',
+      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp',
     ),
   ],
 };

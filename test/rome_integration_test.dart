@@ -73,7 +73,7 @@ void main() {
     test('Rome has its own map: its eleven landmarks, every mission at one, never Paris\'s', () {
       final map = SeasonMap.forSeason(SeasonIds.rome)!;
       expect(map, isNot(same(SeasonMap.paris)));
-      expect(map.artwork, 'assets/seasons/season_03_rome/locations/map/rome_map.png');
+      expect(map.artwork, 'assets/seasons/season_03_rome/locations/map/rome_map.webp');
       expect(File(map.artwork).existsSync(), isTrue);
       expect(map.aspect, 1.5);
       expect(map.landmarks, hasLength(11));
@@ -103,7 +103,7 @@ void main() {
       bool bundled(String f) => File(f).existsSync() && folders.any((d) => f.startsWith(d) && !f.substring(d.length).contains('/'));
 
       final cover = ArtAssets.seasonCovers[SeasonIds.rome]!;
-      expect(cover.file, 'assets/seasons/season_03_rome/cover/season3_cover_rome.png');
+      expect(cover.file, 'assets/seasons/season_03_rome/cover/season3_cover_rome.webp');
       expect(bundled(cover.file), isTrue);
       expect(cover.pixels, const Size(1024, 1536));
       expect(ArtAssets.seasonCovers[SeasonIds.paris]!.file, contains('season_02_paris'), reason: 'Paris keeps its own');
@@ -126,8 +126,8 @@ void main() {
         expect(evidence, contains(key), reason: '$key is evidence of a Rome case');
         expect(bundled(value), isTrue, reason: value);
       }
-      expect(pictures['s3_ep11_e1'], 'assets/seasons/season_03_rome/objects/real_map_piece.png');
-      expect(ArtAssets.evidencePictures['e01'], 'assets/shared/objects/letter.png', reason: 'London\'s unchanged');
+      expect(pictures['s3_ep11_e1'], 'assets/seasons/season_03_rome/objects/real_map_piece.webp');
+      expect(ArtAssets.evidencePictures['e01'], 'assets/shared/objects/letter.webp', reason: 'London\'s unchanged');
     });
   });
 

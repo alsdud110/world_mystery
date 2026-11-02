@@ -270,7 +270,7 @@ const s4Ep01JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s4Ep01JuniorExplores = <String, ExploreScene>{
   's4_ep01_m3': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/exhibit_hall.png',
+    picture: 'assets/seasons/season_04_newyork/locations/exhibit_hall.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -347,17 +347,17 @@ const s4Ep01JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'planetarium',
-        picture: 'assets/seasons/season_04_newyork/cases/case_01/planetarium.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_01/planetarium.webp',
         description: 'a dark, round room under a dome, with a big machine showing stars',
       ),
       ExplorePicture(
         optionId: 'grand_central',
-        picture: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+        picture: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
         description: 'a great train hall with gold stars painted across a green ceiling',
       ),
       ExplorePicture(
         optionId: 'glass_station',
-        picture: 'assets/seasons/season_04_newyork/cases/case_01/glass_station.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_01/glass_station.webp',
         description: 'a busy train hall under a plain glass roof, without any stars',
       ),
     ],
@@ -374,7 +374,7 @@ const s4Ep01JuniorInvestigations = <String, InvestigationScene>{};
 const s4Ep01JuniorDialogues = <String, DialogueScene>{
   's4_ep01_m1': DialogueScene(
     place: 'EXHIBIT HALL',
-    background: 'assets/seasons/season_04_newyork/locations/exhibit_hall.png',
+    background: 'assets/seasons/season_04_newyork/locations/exhibit_hall.webp',
     goal: 'Find out what happened at ten o\'clock.',
     how: 'Question each person. Write down their answers.',
     guide: 'Speak to a witness.',
@@ -383,7 +383,7 @@ const s4Ep01JuniorDialogues = <String, DialogueScene>{
         id: 'frank',
         name: 'Frank Russo',
         title: 'THE NIGHT GUARD',
-        portrait: 'assets/seasons/season_04_newyork/characters/frank_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/frank_base.webp',
         description: 'a big, friendly guard in a blue uniform who carries a torch on his belt',
         greeting: 'I walk around this hall every night. Ask me anything.',
         answers: {
@@ -405,7 +405,7 @@ const s4Ep01JuniorDialogues = <String, DialogueScene>{
         id: 'harold',
         name: 'Harold Brooks',
         title: 'THE KEEPER OF RARE BOOKS',
-        portrait: 'assets/seasons/season_04_newyork/characters/harold_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/harold_base.webp',
         description: 'an older man with a grey beard, wearing a tweed jacket and a bow tie',
         greeting: 'That notebook is a real treasure. Please help us.',
         answers: {
@@ -427,7 +427,7 @@ const s4Ep01JuniorDialogues = <String, DialogueScene>{
         id: 'sam',
         name: 'Sam Okafor',
         title: 'THE PRETZEL SELLER',
-        portrait: 'assets/seasons/season_04_newyork/characters/sam_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/sam_base.webp',
         description: 'a cheerful man wearing a white apron and a red cap',
         greeting: 'Want a pretzel? No? That\'s fine, I can still help!',
         answers: {
@@ -557,7 +557,7 @@ final s4Ep01JuniorTalkMissions = <String, TalkMission>{
         id: 'maya_chen',
         name: 'MAYA CHEN',
         portraits: {
-          'base': 'assets/seasons/season_04_newyork/characters/maya_base.png',
+          'base': 'assets/seasons/season_04_newyork/characters/maya_base.webp',
         },
       ),
       goal: 'Read the old newspaper page.',
@@ -574,7 +574,7 @@ final s4Ep01JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE EXHIBIT HALL',
-      background: 'assets/seasons/season_04_newyork/locations/exhibit_hall.png',
+      background: 'assets/seasons/season_04_newyork/locations/exhibit_hall.webp',
       finishLabel: 'READ THE NEWSPAPER',
     ),
   ),
@@ -607,38 +607,38 @@ const s4Ep01JuniorEndings = <String, List<EndingLine>>{
   's4_ep01_final': [
     EndingLine(
       'A tall man jumps out of the TV van.',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
     EndingLine(
       'Dexter Vance, treasure hunter! I\'ve come to help!',
       voice: TalkVoice.speaker,
       name: 'DEXTER VANCE',
-      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
     EndingLine(
       'Wow! He\'s on TV every single week!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
     EndingLine(
       'Somebody took the page between nine and ten past ten.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
       evidenceId: 's4_ep01_e1',
     ),
     EndingLine(
       'Then let\'s hurry to Grand Central!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
     EndingLine(
       'How did a TV star get the news so quickly?',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
   ],
 };
@@ -907,7 +907,7 @@ const s4Ep01MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s4Ep01MasterExplores = <String, ExploreScene>{
   's4_ep01_m3': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/exhibit_hall.png',
+    picture: 'assets/seasons/season_04_newyork/locations/exhibit_hall.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -984,17 +984,17 @@ const s4Ep01MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'planetarium',
-        picture: 'assets/seasons/season_04_newyork/cases/case_01/planetarium.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_01/planetarium.webp',
         description: 'a dim circular chamber beneath a dome, where a vast machine projects stars',
       ),
       ExplorePicture(
         optionId: 'grand_central',
-        picture: 'assets/seasons/season_04_newyork/locations/main_concourse.png',
+        picture: 'assets/seasons/season_04_newyork/locations/main_concourse.webp',
         description: 'a grand train hall whose green ceiling is painted with gold stars',
       ),
       ExplorePicture(
         optionId: 'glass_station',
-        picture: 'assets/seasons/season_04_newyork/cases/case_01/glass_station.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_01/glass_station.webp',
         description: 'a bustling train hall beneath a plain glass roof, entirely starless',
       ),
     ],
@@ -1011,7 +1011,7 @@ const s4Ep01MasterInvestigations = <String, InvestigationScene>{};
 const s4Ep01MasterDialogues = <String, DialogueScene>{
   's4_ep01_m1': DialogueScene(
     place: 'EXHIBIT HALL',
-    background: 'assets/seasons/season_04_newyork/locations/exhibit_hall.png',
+    background: 'assets/seasons/season_04_newyork/locations/exhibit_hall.webp',
     goal: 'Uncover what took place at ten.',
     how: 'Question each person and record every answer.',
     guide: 'Choose a witness to question.',
@@ -1020,7 +1020,7 @@ const s4Ep01MasterDialogues = <String, DialogueScene>{
         id: 'frank',
         name: 'Frank Russo',
         title: 'THE NIGHT GUARD',
-        portrait: 'assets/seasons/season_04_newyork/characters/frank_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/frank_base.webp',
         description: 'a burly, genial guard in a blue uniform, a torch hanging from his belt',
         greeting: 'I patrol this hall every single night. Ask away.',
         answers: {
@@ -1042,7 +1042,7 @@ const s4Ep01MasterDialogues = <String, DialogueScene>{
         id: 'harold',
         name: 'Harold Brooks',
         title: 'THE KEEPER OF RARE BOOKS',
-        portrait: 'assets/seasons/season_04_newyork/characters/harold_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/harold_base.webp',
         description: 'an elderly gentleman with a grey beard, a tweed jacket and a neat bow tie',
         greeting: 'That notebook is a priceless treasure. I beg you, help us.',
         answers: {
@@ -1064,7 +1064,7 @@ const s4Ep01MasterDialogues = <String, DialogueScene>{
         id: 'sam',
         name: 'Sam Okafor',
         title: 'THE PRETZEL SELLER',
-        portrait: 'assets/seasons/season_04_newyork/characters/sam_base.png',
+        portrait: 'assets/seasons/season_04_newyork/characters/sam_base.webp',
         description: 'a good-humored man in a white apron and a bright red cap',
         greeting: 'Fancy a pretzel? No? Never mind, I can still lend a hand!',
         answers: {
@@ -1194,7 +1194,7 @@ final s4Ep01MasterTalkMissions = <String, TalkMission>{
         id: 'maya_chen',
         name: 'MAYA CHEN',
         portraits: {
-          'base': 'assets/seasons/season_04_newyork/characters/maya_base.png',
+          'base': 'assets/seasons/season_04_newyork/characters/maya_base.webp',
         },
       ),
       goal: 'Study the yellowed newspaper closely.',
@@ -1211,7 +1211,7 @@ final s4Ep01MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE EXHIBIT HALL',
-      background: 'assets/seasons/season_04_newyork/locations/exhibit_hall.png',
+      background: 'assets/seasons/season_04_newyork/locations/exhibit_hall.webp',
       finishLabel: 'READ THE NEWSPAPER',
     ),
   ),
@@ -1244,38 +1244,38 @@ const s4Ep01MasterEndings = <String, List<EndingLine>>{
   's4_ep01_final': [
     EndingLine(
       'A tall man leaps out of the TV van.',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
     EndingLine(
       'Dexter Vance, treasure hunter, at your service! I\'m here to help!',
       voice: TalkVoice.speaker,
       name: 'DEXTER VANCE',
-      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
     EndingLine(
       'Wow! He\'s on television every week!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
     EndingLine(
       'The page vanished between nine and ten past ten.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
       evidenceId: 's4_ep01_e1',
     ),
     EndingLine(
       'Then let\'s make haste to Grand Central!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
     EndingLine(
       'How could a TV star have learned the news so swiftly?',
-      background: 'assets/seasons/season_04_newyork/locations/library_steps.png',
+      background: 'assets/seasons/season_04_newyork/locations/library_steps.webp',
     ),
   ],
 };

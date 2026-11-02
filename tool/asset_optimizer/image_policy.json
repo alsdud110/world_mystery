@@ -1,0 +1,170 @@
+{
+  "policyVersion": 2,
+  "notes": [
+    "Version 2: the kinds 'glyph' and 'exact' (lossless only) for the one-colour stamps the game tints and for pictures cleared from another (exactFiles); version 1's pictures keep their records.",
+    "How the game's pictures are stored (tool/asset_optimizer/README.md). Changing a kind's ladder or gate: raise policyVersion.",
+    "ladder: cwebp settings tried in order; the first whose decoded result passes the kind's gate is kept. Lossless WebP (exact pixels) always ends a ladder.",
+    "gate: minPsnr (dB, RGB premultiplied by alpha) and minSsim (luma, 8x8 blocks); alpha is always kept exactly (alphaMaxDiff 0).",
+    "maxEdge 0: the picture keeps its pixels (no resize). Coordinates measured on a picture (plans' measuredOn, hand-placed areas) assume its size."
+  ],
+  "encoder": {
+    "common": ["-m", "6", "-metadata", "none", "-alpha_q", "100"],
+    "lossless": ["-lossless", "-z", "9"]
+  },
+  "kinds": {
+    "scene": {
+      "about": "Places, covers, maps, prologue and story scenes: large paintings seen whole.",
+      "ladder": [["-q", "88", "-sharp_yuv"], ["-q", "92", "-sharp_yuv"], ["-near_lossless", "60"]],
+      "minPsnr": 30,
+      "minSsim": 0.975,
+      "maxEdge": 0
+    },
+    "character": {
+      "about": "Portraits, the player's detective, How to Play figures.",
+      "ladder": [["-q", "90", "-sharp_yuv"], ["-q", "94", "-sharp_yuv"], ["-near_lossless", "60"]],
+      "minPsnr": 32,
+      "minSsim": 0.985,
+      "maxEdge": 0
+    },
+    "ui": {
+      "about": "Badges, symbols, stamps, coins, pins, frames.",
+      "ladder": [["-q", "90", "-sharp_yuv"], ["-q", "94", "-sharp_yuv"], ["-near_lossless", "60"]],
+      "minPsnr": 32,
+      "minSsim": 0.985,
+      "maxEdge": 0
+    },
+    "evidence": {
+      "about": "Objects, evidence cards, clue items and the pictures a case's missions show.",
+      "ladder": [["-q", "92", "-sharp_yuv"], ["-q", "95", "-sharp_yuv"], ["-near_lossless", "60"]],
+      "minPsnr": 35,
+      "minSsim": 0.99,
+      "maxEdge": 0
+    },
+    "document": {
+      "about": "Letters, papers, notices: writing and fine lines.",
+      "ladder": [["-q", "94", "-sharp_yuv"], ["-near_lossless", "60"]],
+      "minPsnr": 37,
+      "minSsim": 0.993,
+      "maxEdge": 0
+    },
+    "glyph": {
+      "about": "One-colour stamps the game tints (ink on transparency): every pixel exact, lossless only. Small files.",
+      "ladder": [],
+      "minPsnr": 99,
+      "minSsim": 1,
+      "maxEdge": 0
+    },
+    "exact": {
+      "about": "A picture cut or cleared from another, whose pixels must match it exactly where it was not changed (exactFiles): lossless only.",
+      "ladder": [],
+      "minPsnr": 99,
+      "minSsim": 1,
+      "maxEdge": 0
+    },
+    "puzzle": {
+      "about": "A picture whose small differences decide an answer (variants of one scene, marks, hands, counts). Near-lossless at most.",
+      "ladder": [["-near_lossless", "60"]],
+      "minPsnr": 42,
+      "minSsim": 0.997,
+      "maxEdge": 0
+    }
+  },
+  "defaultKind": "puzzle",
+  "manifestKinds": [
+    { "type": "document", "kind": "document" },
+    { "type": "object", "use": "puzzle", "kind": "puzzle" },
+    { "type": "character", "kind": "character" },
+    { "type": "object", "kind": "evidence" },
+    { "type": "place", "use": "puzzle", "kind": "evidence" },
+    { "type": "scene", "use": "puzzle", "kind": "evidence" },
+    { "type": "place", "kind": "scene" },
+    { "type": "scene", "kind": "scene" },
+    { "type": "cover", "kind": "scene" },
+    { "type": "map", "kind": "scene" },
+    { "type": "prologue", "kind": "scene" }
+  ],
+  "pathKinds": [
+    { "prefix": "assets/shared/badges/", "kind": "ui" },
+    { "prefix": "assets/shared/symbols/", "kind": "glyph" },
+    { "prefix": "assets/shared/ui/", "kind": "ui" },
+    { "prefix": "assets/shared/world_map/", "kind": "ui" },
+    { "prefix": "assets/images/case01/symbols/", "kind": "ui" },
+    { "contains": "/symbols/", "kind": "ui" },
+    { "contains": "/locations/landmarks/", "kind": "ui" },
+    { "prefix": "assets/shared/evidence_docs/", "kind": "document" },
+    { "prefix": "assets/shared/detectives/", "kind": "character" },
+    { "prefix": "assets/shared/onboarding/", "kind": "character" },
+    { "contains": "/characters/", "kind": "character" },
+    { "prefix": "assets/shared/title/", "kind": "scene" },
+    { "contains": "/cover/", "kind": "scene" },
+    { "contains": "/locations/", "kind": "scene" },
+    { "prefix": "assets/shared/objects/", "kind": "evidence" },
+    { "contains": "/objects/", "kind": "evidence" },
+    { "contains": "/special/", "kind": "evidence" },
+    { "contains": "/cases/", "kind": "evidence" }
+  ],
+  "exactFiles": [
+    "assets/seasons/season_01_london/cases/case_01/buckingham_palace_crown_card.png",
+    "assets/seasons/season_01_london/cases/case_01/buckingham_palace_crown_card_code_clear.png"
+  ],
+  "puzzleFiles": [
+    "assets/seasons/season_01_london/cases/case_03/great_court_footprints.png",
+    "assets/seasons/season_01_london/cases/case_03/sketch_miss_rose.png",
+    "assets/seasons/season_01_london/cases/case_03/sketch_mr_green.png",
+    "assets/seasons/season_01_london/cases/case_03/sketch_mr_grey.png",
+    "assets/seasons/season_01_london/cases/case_12/gear_brass_6_stamp.png",
+    "assets/seasons/season_01_london/cases/case_12/gear_brass_8_plain.png",
+    "assets/seasons/season_01_london/cases/case_12/gear_brass_8_stamp.png",
+    "assets/seasons/season_01_london/cases/case_12/gear_silver_8_stamp.png",
+    "assets/seasons/season_01_london/objects/wet_footprint.png",
+    "assets/seasons/season_01_london/objects/wet_footprint_cutout.png",
+    "assets/seasons/season_02_paris/cases/case_02/canvas_a.png",
+    "assets/seasons/season_02_paris/cases/case_02/canvas_b.png",
+    "assets/seasons/season_02_paris/cases/case_02/canvas_c.png",
+    "assets/seasons/season_02_paris/cases/case_02/canvas_d.png",
+    "assets/seasons/season_02_paris/cases/case_04/hands_sign.png",
+    "assets/seasons/season_02_paris/cases/case_04/river_mark_a.png",
+    "assets/seasons/season_02_paris/cases/case_04/river_mark_b.png",
+    "assets/seasons/season_02_paris/cases/case_04/river_mark_c.png",
+    "assets/seasons/season_02_paris/cases/case_04/river_mark_d.png",
+    "assets/seasons/season_02_paris/cases/case_05/clock_back_normal.png",
+    "assets/seasons/season_02_paris/cases/case_05/maker_mark_a.png",
+    "assets/seasons/season_02_paris/cases/case_05/workbench_marks.png",
+    "assets/seasons/season_02_paris/cases/case_06/torn_corner_4417.png",
+    "assets/seasons/season_02_paris/cases/case_06/torn_envelope_decoy_a.png",
+    "assets/seasons/season_02_paris/cases/case_06/torn_envelope_decoy_b.png",
+    "assets/seasons/season_02_paris/cases/case_06/torn_envelope_match.png",
+    "assets/seasons/season_02_paris/cases/case_08/corner_1.png",
+    "assets/seasons/season_02_paris/cases/case_08/corner_2.png",
+    "assets/seasons/season_02_paris/cases/case_08/corner_3.png",
+    "assets/seasons/season_02_paris/cases/case_08/sketch_morning_1_dark.png",
+    "assets/seasons/season_02_paris/cases/case_09/clock_dial.png",
+    "assets/seasons/season_02_paris/cases/case_09/clock_model_t1.png",
+    "assets/seasons/season_02_paris/cases/case_09/clock_model_t2.png",
+    "assets/seasons/season_02_paris/cases/case_09/clock_model_t3.png",
+    "assets/seasons/season_02_paris/cases/case_10/record_drum.png",
+    "assets/seasons/season_02_paris/cases/case_10/roof_photo.png",
+    "assets/seasons/season_02_paris/cases/case_10/sundial_top.png",
+    "assets/seasons/season_02_paris/cases/case_11/signature_old_a.png",
+    "assets/seasons/season_02_paris/cases/case_11/signature_old_b.png",
+    "assets/seasons/season_02_paris/cases/case_11/victor_signature.png",
+    "assets/seasons/season_02_paris/cases/case_12/emile_gear_stamp.png",
+    "assets/seasons/season_02_paris/cases/case_12/machine_wheel_row.png"
+  ],
+  "twins": {
+    "about": "Two pictures of one folder, of one size and one of these kinds, alike at this likeness (luma over grey, SSIM at 128 px): variants a puzzle tells apart, so both are 'puzzle'. Portraits and title variants are not puzzles.",
+    "minLikeness": 0.8,
+    "kinds": ["evidence", "document"]
+  },
+  "keep": [
+    { "prefix": "assets/branding/", "why": "flutter_native_splash and flutter_launcher_icons read these as PNG" }
+  ],
+  "originalsDir": "content_pipeline/asset_originals",
+  "sizeWarnings": {
+    "about": "Diagnostics only (exit 0): the size report says what passed them and why; nothing is blocked.",
+    "bundleMb": 200,
+    "seasonMb": 60,
+    "seasonGrowthMb": 50,
+    "fileKb": 1200
+  }
+}

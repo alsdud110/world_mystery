@@ -115,7 +115,7 @@
         },
         "dialogue": {
           "place": "EXHIBIT HALL",
-          "background": "assets/seasons/season_04_newyork/locations/exhibit_hall.png",
+          "background": "assets/seasons/season_04_newyork/locations/exhibit_hall.webp",
           "goal": "Find out what happened at ten.",
           "how": "Ask each person. Write down what they say.",
           "guide": "Talk to a witness.",
@@ -138,7 +138,7 @@
               "id": "frank",
               "name": "Frank Russo",
               "title": "THE NIGHT GUARD",
-              "portrait": "assets/seasons/season_04_newyork/characters/frank_base.png",
+              "portrait": "assets/seasons/season_04_newyork/characters/frank_base.webp",
               "description": "a big, friendly guard in a blue uniform, with a torch on his belt",
               "greeting": "I walk this hall every night. Ask me.",
               "answers": {
@@ -160,7 +160,7 @@
               "id": "harold",
               "name": "Harold Brooks",
               "title": "THE KEEPER OF RARE BOOKS",
-              "portrait": "assets/seasons/season_04_newyork/characters/harold_base.png",
+              "portrait": "assets/seasons/season_04_newyork/characters/harold_base.webp",
               "description": "an older man with a grey beard, a tweed jacket and a bow tie",
               "greeting": "That notebook is a treasure. Please help.",
               "answers": {
@@ -182,7 +182,7 @@
               "id": "sam",
               "name": "Sam Okafor",
               "title": "THE PRETZEL SELLER",
-              "portrait": "assets/seasons/season_04_newyork/characters/sam_base.png",
+              "portrait": "assets/seasons/season_04_newyork/characters/sam_base.webp",
               "description": "a cheerful man in a white apron and a red cap",
               "greeting": "Pretzel? No? Okay, I can still help!",
               "answers": {
@@ -325,7 +325,7 @@
         },
         "talk": {
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png",
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp",
           "goal": "Read the old newspaper.",
           "before": {
             "lines": [
@@ -390,7 +390,7 @@
         "notes": [
           "Played as a look round (ExploreScene) in the exhibit hall: the notebook's next page holds the marks of the cut page; Maya's pencil rubbing brings them back. The city guide opens once it is read; its three pictures are told apart by 'great hall of trains' and 'stars painted' on the ceiling.",
           "The choice pictures reuse one place picture (main_concourse, Case 02) and add two (planetarium, glass_station), all 1536x1024.",
-          "Coordinates measured on the made exhibit_hall.png (1536x1024, sha256 a06f1eb5…) with a 50px grid sheet (season_factory). The notebook's area is the whole glass case on its table; the guide's is the open book with its lectern; the door's is the open doorway and its door."
+          "Coordinates measured on the made exhibit_hall.webp (1536x1024, sha256 a06f1eb5…) with a 50px grid sheet (season_factory). The notebook's area is the whole glass case on its table; the guide's is the open book with its lectern; the door's is the open doorway and its door."
         ]
       },
       "clueInputs": [
@@ -451,12 +451,12 @@
         },
         "explore": {
           "picture": {
-            "file": "assets/seasons/season_04_newyork/locations/exhibit_hall.png",
+            "file": "assets/seasons/season_04_newyork/locations/exhibit_hall.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:a06f1eb5240d63ebf59dcc30dcfc3b1de72578a9ec391ffdcfdf77f56e9df4bb"
+            "measuredOn": "sha256:79a87b5682982056c58d73714555c88a88246561baa19ceba7753fced21fdb1f"
           },
           "place": "The exhibit hall",
           "task": "Look around the hall. Where is Eleanor's notebook?",
@@ -580,17 +580,17 @@
           "choices": [
             {
               "optionId": "planetarium",
-              "picture": "assets/seasons/season_04_newyork/cases/case_01/planetarium.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_01/planetarium.webp",
               "description": "a dark round room under a dome, a big machine showing stars"
             },
             {
               "optionId": "grand_central",
-              "picture": "assets/seasons/season_04_newyork/locations/main_concourse.png",
+              "picture": "assets/seasons/season_04_newyork/locations/main_concourse.webp",
               "description": "a great train hall with gold stars painted on a green ceiling"
             },
             {
               "optionId": "glass_station",
-              "picture": "assets/seasons/season_04_newyork/cases/case_01/glass_station.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_01/glass_station.webp",
               "description": "a busy train hall under a plain glass roof, with no stars"
             }
           ],
@@ -714,13 +714,13 @@
           "by": "speaker",
           "text": "Dexter Vance, treasure hunter! I'm here to help!",
           "speaker": "dexter_vance",
-          "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.webp"
         },
         {
           "by": "speaker",
           "text": "Wow! He's on TV every week!",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "detective",
@@ -731,7 +731,7 @@
           "by": "speaker",
           "text": "Then let's go to Grand Central, fast!",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "narrator",

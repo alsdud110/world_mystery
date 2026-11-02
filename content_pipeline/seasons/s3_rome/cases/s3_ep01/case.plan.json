@@ -116,7 +116,7 @@
         },
         "dialogue": {
           "place": "GUARD ROOM",
-          "background": "assets/seasons/season_03_rome/cases/case_01/guard_room.png",
+          "background": "assets/seasons/season_03_rome/cases/case_01/guard_room.webp",
           "goal": "Find out what happened at midnight.",
           "how": "Ask each person. Write down what they say.",
           "guide": "Talk to a witness.",
@@ -139,7 +139,7 @@
               "id": "enzo",
               "name": "Enzo Greco",
               "title": "THE NIGHT GUARD",
-              "portrait": "assets/seasons/season_03_rome/characters/enzo_base.png",
+              "portrait": "assets/seasons/season_03_rome/characters/enzo_base.webp",
               "description": "an old guard with a grey moustache, a cap and a thermos of coffee",
               "greeting": "I was on duty all night. Ask me.",
               "answers": {
@@ -161,7 +161,7 @@
               "id": "sofia",
               "name": "Sofia Ferri",
               "title": "THE DIRECTOR",
-              "portrait": "assets/seasons/season_03_rome/characters/sofia_base.png",
+              "portrait": "assets/seasons/season_03_rome/characters/sofia_base.webp",
               "description": "a director in a navy suit, with reading glasses on a chain",
               "greeting": "I came as soon as Enzo called me.",
               "answers": {
@@ -183,7 +183,7 @@
               "id": "livia",
               "name": "Livia Conti",
               "title": "THE RESTORER",
-              "portrait": "assets/seasons/season_03_rome/characters/livia_base.png",
+              "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp",
               "description": "a young restorer in a white lab coat, with a long brown braid and a silver owl ring",
               "greeting": "Oh... yes. I can help, I think.",
               "answers": {
@@ -331,7 +331,7 @@
         },
         "talk": {
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp",
           "goal": "Follow the white dust.",
           "before": {
             "lines": [
@@ -396,7 +396,7 @@
         "notes": [
           "Played as a look round (ExploreScene) in the map hall: the dust leads to the back door, where the Owl's card lies; the visitor map board opens once it is read, and its three place pictures are told apart by what people do there (a girl throws a coin into the fountain).",
           "The choice pictures reuse two place pictures (trevi_fountain, pantheon_hall) and add one (colosseum), all 1536x1024.",
-          "Coordinates measured on the made map_hall.png (1536x1024, sha256 266bb26b88598120…) with a 100px grid overlay, STEP 3-15B B1. The card is drawn small at the door's foot: its area takes in the floor around it. The middle window is split around the statue's head."
+          "Coordinates measured on the made map_hall.webp (1536x1024, sha256 266bb26b88598120…) with a 100px grid overlay, STEP 3-15B B1. The card is drawn small at the door's foot: its area takes in the floor around it. The middle window is split around the statue's head."
         ]
       },
       "clueInputs": [
@@ -457,12 +457,12 @@
         },
         "explore": {
           "picture": {
-            "file": "assets/seasons/season_03_rome/locations/map_hall.png",
+            "file": "assets/seasons/season_03_rome/locations/map_hall.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:266bb26b88598120a711939d831c5c009272c389a109c522db9c109fbb586102"
+            "measuredOn": "sha256:b2d5c3805fe79edb9c3737602d81e4c487f946a22898c6996cd956bd24e81e90"
           },
           "place": "The map hall",
           "task": "Look around the map hall. Where does the dust trail end?",
@@ -623,17 +623,17 @@
           "choices": [
             {
               "optionId": "pantheon",
-              "picture": "assets/seasons/season_03_rome/locations/pantheon_hall.png",
+              "picture": "assets/seasons/season_03_rome/locations/pantheon_hall.webp",
               "description": "inside a round temple, sunlight falling through a round hole in the roof"
             },
             {
               "optionId": "trevi",
-              "picture": "assets/seasons/season_03_rome/locations/trevi_fountain.png",
+              "picture": "assets/seasons/season_03_rome/locations/trevi_fountain.webp",
               "description": "a great fountain of rushing water, a girl throwing a coin into it"
             },
             {
               "optionId": "colosseum",
-              "picture": "assets/seasons/season_03_rome/cases/case_01/colosseum.png",
+              "picture": "assets/seasons/season_03_rome/cases/case_01/colosseum.webp",
               "description": "a huge round stone arena with rows of arches"
             }
           ],
@@ -751,7 +751,7 @@
           "by": "speaker",
           "text": "But the power never went off!",
           "speaker": "sofia_ferri",
-          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.webp"
         },
         {
           "by": "detective",
@@ -762,7 +762,7 @@
           "by": "speaker",
           "text": "So this was a plan, not an accident.",
           "speaker": "sofia_ferri",
-          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.webp"
         },
         {
           "by": "narrator",
@@ -772,7 +772,7 @@
           "by": "speaker",
           "text": "Who is this Owl? Let's follow the card!",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         }
       ]
     }

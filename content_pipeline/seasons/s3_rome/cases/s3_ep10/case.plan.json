@@ -59,7 +59,7 @@
         "notes": [
           "Played as a look round (ExploreScene) of the site fence: the site rules are read, then the three helmets by the gate. Each wrong helmet shares one thing with Pia's (the crane, or the yellow): colour and picture together decide.",
           "Replaces the work-plan order: the concrete date is already the city plan's (Case 09 final).",
-          "Coordinates measured on the made civetta_square.png (1536x1024, sha256 baed25cdbb5a5310…) with a 50/100px grid overlay, STEP 3-15B B3: the notice board [197-400, 595-780], the crane (jib and tower), the site office cabin, the three helmets [970-1265, 590-750] (white with a crane, plain yellow, yellow with a crane, left to right), the chained gate. No two areas overlap; the fence is the rest of the boards."
+          "Coordinates measured on the made civetta_square.webp (1536x1024, sha256 baed25cdbb5a5310…) with a 50/100px grid overlay, STEP 3-15B B3: the notice board [197-400, 595-780], the crane (jib and tower), the site office cabin, the three helmets [970-1265, 590-750] (white with a crane, plain yellow, yellow with a crane, left to right), the chained gate. No two areas overlap; the fence is the rest of the boards."
         ]
       },
       "clueInputs": [
@@ -131,12 +131,12 @@
         "evidenceLinkLine": "The site on the city plan: the car park of Valli Building.",
         "explore": {
           "picture": {
-            "file": "assets/seasons/season_03_rome/locations/civetta_square.png",
+            "file": "assets/seasons/season_03_rome/locations/civetta_square.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:baed25cdbb5a5310668f1ba394574bc834a06a185167f96cea70dcd962bb8de3"
+            "measuredOn": "sha256:347a70b5cf90fbab783f79504cfffa846f29b7dff3c4a8dd9cc229a03a1c6723"
           },
           "place": "The site fence at Piazza della Civetta",
           "task": "Look around the site. What are the rules here?",
@@ -314,17 +314,17 @@
           "choices": [
             {
               "optionId": "worker",
-              "picture": "assets/seasons/season_03_rome/cases/case_10/helmet_white_crane.png",
+              "picture": "assets/seasons/season_03_rome/cases/case_10/helmet_white_crane.webp",
               "description": "a white helmet with a small crane sticker, on a hook"
             },
             {
               "optionId": "visitor",
-              "picture": "assets/seasons/season_03_rome/cases/case_10/helmet_yellow_plain.png",
+              "picture": "assets/seasons/season_03_rome/cases/case_10/helmet_yellow_plain.webp",
               "description": "a plain yellow helmet with no sticker, on a hook"
             },
             {
               "optionId": "boss",
-              "picture": "assets/seasons/season_03_rome/objects/yellow_helmet.png",
+              "picture": "assets/seasons/season_03_rome/objects/yellow_helmet.webp",
               "description": "a yellow helmet with a small crane sticker, on a hook"
             }
           ],
@@ -337,7 +337,7 @@
         },
         "talk": {
           "speaker": "livia_conti",
-          "portrait": "assets/seasons/season_03_rome/characters/livia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp",
           "goal": "Look around the site.",
           "before": {
             "lines": [
@@ -580,7 +580,7 @@
         },
         "talk": {
           "speaker": "livia_conti",
-          "portrait": "assets/seasons/season_03_rome/characters/livia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp",
           "goal": "Find out what the heavy box is.",
           "after": {
             "lines": [
@@ -698,7 +698,7 @@
           "by": "speaker",
           "text": "A Roman library? Under the square?",
           "speaker": "sofia_ferri",
-          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.webp"
         },
         {
           "by": "detective",
@@ -709,19 +709,19 @@
           "by": "speaker",
           "text": "Then the concrete must not come.",
           "speaker": "sofia_ferri",
-          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.webp"
         },
         {
           "by": "speaker",
           "text": "I am bringing the city inspector tomorrow!",
           "speaker": "sofia_ferri",
-          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.webp"
         },
         {
           "by": "speaker",
           "text": "But without the real piece, who will believe us?",
           "speaker": "livia_conti",
-          "portrait": "assets/seasons/season_03_rome/characters/livia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp"
         }
       ]
     }

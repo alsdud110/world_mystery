@@ -84,7 +84,7 @@ abstract final class ArtAssets {
   /// Streets, river and landmarks only; pins and place names are drawn by
   /// the app (landmark positions: `Landmark` in `map_world.dart`). A missing
   /// or broken file falls back to the map drawn in code (`LondonMapPainter`).
-  static const londonMap = 'assets/seasons/season_01_london/locations/map/london_mystery.png';
+  static const londonMap = 'assets/seasons/season_01_london/locations/map/london_mystery.webp';
 
   /// Width / height of [londonMap]: the map world keeps this ratio (never
   /// stretched); the map camera shows one part of it at a time.
@@ -97,7 +97,7 @@ abstract final class ArtAssets {
   /// Streets, the Seine and ten landmarks only (landmark positions:
   /// `ParisLandmark` in `map_world.dart`). A missing or broken file shows
   /// plain parchment, never London.
-  static const parisMap = 'assets/seasons/season_02_paris/locations/map/paris_mystery.png';
+  static const parisMap = 'assets/seasons/season_02_paris/locations/map/paris_mystery.webp';
 
   /// Width / height of [parisMap] (the same ratio as London's).
   static const parisMapAspect = 3 / 2;
@@ -118,10 +118,10 @@ abstract final class ArtAssets {
   /// The cities' pins on [worldMap] (96 × 120, the tip at the bottom
   /// middle, transparent): the season under way, a season complete, a city
   /// locked; and the gold ring round a chosen pin's head (144 × 144).
-  static const worldMapPinInProgress = 'assets/shared/world_map/pin_in_progress.png';
-  static const worldMapPinCompleted = 'assets/shared/world_map/pin_completed.png';
-  static const worldMapPinLocked = 'assets/shared/world_map/pin_locked.png';
-  static const worldMapPinRing = 'assets/shared/world_map/pin_selected_ring.png';
+  static const worldMapPinInProgress = 'assets/shared/world_map/pin_in_progress.webp';
+  static const worldMapPinCompleted = 'assets/shared/world_map/pin_completed.webp';
+  static const worldMapPinLocked = 'assets/shared/world_map/pin_locked.webp';
+  static const worldMapPinRing = 'assets/shared/world_map/pin_selected_ring.webp';
 
   /// The longitudes at [worldMap]'s west and east edges and the latitudes
   /// at its north and south edges (for a city with no painted marker, and
@@ -140,7 +140,7 @@ abstract final class ArtAssets {
   /// Westminster (Big Ben on the right, the moon above it). Portrait, no
   /// text: the window's sky is left for the title. The title screen (and,
   /// blurred, behind the registration form) only.
-  static const titleDetectiveOffice = 'assets/shared/title/title_detective_office.png';
+  static const titleDetectiveOffice = 'assets/shared/title/title_detective_office.webp';
 
   /// Pixel size of [titleDetectiveOffice] (never decoded larger).
   static const titleDetectiveOfficePixels = Size(942, 1670);
@@ -148,7 +148,7 @@ abstract final class ArtAssets {
   /// [titleDetectiveOffice] with the desk lamp off: the room lit by the
   /// moon alone, everything else in place to the pixel (same size). Faded
   /// over it when the lamp falters on the title screen.
-  static const titleDetectiveOfficeLampOff = 'assets/shared/title/title_detective_office_lamp_off.png';
+  static const titleDetectiveOfficeLampOff = 'assets/shared/title/title_detective_office_lamp_off.webp';
 
   /// The Season 1 cover: London from above at dusk — the Thames and its
   /// bridges, Westminster and Big Ben on the right, St Paul's far off, a
@@ -156,7 +156,7 @@ abstract final class ArtAssets {
   /// only (and the season's file in the archive, [seasonCovers]): the
   /// opening's first scene has its own picture ([season1LondonNight]),
   /// closer in.
-  static const season1CoverLondonPanorama = 'assets/seasons/season_01_london/cover/season1_cover_london_panorama.png';
+  static const season1CoverLondonPanorama = 'assets/seasons/season_01_london/cover/season1_cover_london_panorama.webp';
 
   /// Pixel size of [season1CoverLondonPanorama] (never decoded larger).
   static const season1CoverLondonPanoramaPixels = Size(941, 1672);
@@ -165,7 +165,7 @@ abstract final class ArtAssets {
   /// its bridges, the Eiffel Tower on the left, Notre-Dame on the right, a
   /// gas lamp and a pocket watch on the table in front (portrait, no text).
   /// It names the city: shown only once Season 2 is unsealed.
-  static const season2CoverParisPanorama = 'assets/seasons/season_02_paris/cover/season2_cover_paris_panorama.png';
+  static const season2CoverParisPanorama = 'assets/seasons/season_02_paris/cover/season2_cover_paris_panorama.webp';
 
   /// Pixel size of [season2CoverParisPanorama].
   static const season2CoverParisPanoramaPixels = Size(941, 1671);
@@ -174,7 +174,7 @@ abstract final class ArtAssets {
   /// morning light, a train on the left, great station clocks on the right
   /// (portrait, no text). Shown full screen once, in the opening's third
   /// scene. Missing → only the night.
-  static const season2GareDuNord = 'assets/seasons/season_02_paris/cover/season2_gare_du_nord.png';
+  static const season2GareDuNord = 'assets/seasons/season_02_paris/cover/season2_gare_du_nord.webp';
 
   /// Pixel size of [season2GareDuNord] (never decoded larger).
   static const season2GareDuNordPixels = Size(941, 1671);
@@ -213,7 +213,7 @@ abstract final class ArtAssets {
   /// lamp and wet paving in front (portrait, no text). Shown full screen
   /// once, as that scene's hero picture; used nowhere else, so the opening
   /// keeps its moment. Missing → the London drawn in code.
-  static const season1LondonNight = 'assets/seasons/season_01_london/cover/season1_london_night.png';
+  static const season1LondonNight = 'assets/seasons/season_01_london/cover/season1_london_night.webp';
 
   /// Pixel size of [season1LondonNight] (never decoded larger).
   static const season1LondonNightPixels = Size(941, 1671);
@@ -223,11 +223,11 @@ abstract final class ArtAssets {
   /// shoulders on transparency, 4:5. Custom Asset Required: the folder is
   /// already in pubspec.yaml, so dropping the two files in is enough; until
   /// then the choice shows the cap icon and its word.
-  static const avatarBoy = 'assets/shared/detectives/avatars/detective_boy.png';
-  static const avatarGirl = 'assets/shared/detectives/avatars/detective_girl.png';
+  static const avatarBoy = 'assets/shared/detectives/avatars/detective_boy.webp';
+  static const avatarGirl = 'assets/shared/detectives/avatars/detective_girl.webp';
 
   /// The player's detective through the cases, one picture per
-  /// [DetectiveExpression]: `detectives/<boy|girl>/<expression>.png`. The
+  /// [DetectiveExpression]: `detectives/<boy|girl>/<expression>.webp`. The
   /// avatar is the one chosen at CREATE YOUR DETECTIVE; a detective made
   /// before avatars existed is shown as the boy (as in How to Play).
   ///
@@ -236,7 +236,7 @@ abstract final class ArtAssets {
   /// files are no longer kept). Shown whole (an illustration) or in a
   /// medallion ([detectiveCrops]).
   static String detective(DetectiveAvatar? avatar, DetectiveExpression expression) =>
-      'assets/shared/detectives/expressions/${(avatar ?? DetectiveAvatar.boy).name}/${expression.name}.png';
+      'assets/shared/detectives/expressions/${(avatar ?? DetectiveAvatar.boy).name}/${expression.name}.webp';
 
   /// The medallion of each detective picture (its pixel size, and the
   /// circle round the face with the hands and what they hold).
@@ -275,15 +275,15 @@ abstract final class ArtAssets {
   /// figure on transparency, 2:3. One rule for every page: see
   /// [onboardingReady].
   static String onboardingWelcome(DetectiveAvatar? avatar) => switch (avatar) {
-        DetectiveAvatar.girl => 'assets/shared/onboarding/detective_welcome_girl.png',
-        DetectiveAvatar.boy || null => 'assets/shared/onboarding/detective_welcome_boy.png',
+        DetectiveAvatar.girl => 'assets/shared/onboarding/detective_welcome_girl.webp',
+        DetectiveAvatar.boy || null => 'assets/shared/onboarding/detective_welcome_boy.webp',
       };
 
   /// The same detective setting off, letter and magnifying glass in hand
   /// (the guide's last page). Same size as [onboardingWelcome].
   static String onboardingReady(DetectiveAvatar? avatar) => switch (avatar) {
-        DetectiveAvatar.girl => 'assets/shared/onboarding/detective_ready_girl.png',
-        DetectiveAvatar.boy || null => 'assets/shared/onboarding/detective_ready_boy.png',
+        DetectiveAvatar.girl => 'assets/shared/onboarding/detective_ready_girl.webp',
+        DetectiveAvatar.boy || null => 'assets/shared/onboarding/detective_ready_boy.webp',
       };
 
   /// Pixel size of the [onboardingWelcome] and [onboardingReady] pictures
@@ -292,16 +292,16 @@ abstract final class ArtAssets {
 
   /// Mrs Moss, the tea seller: the practice witness (no case's), printed
   /// like the witnesses of the cases (4:5 on parchment, [witnessPortraitAspect]).
-  static const onboardingWitness = 'assets/shared/onboarding/witness_tea_seller.png';
+  static const onboardingWitness = 'assets/shared/onboarding/witness_tea_seller.webp';
 
   /// Pip, the practice puzzle's lost kitten (red collar): square, on
   /// transparency.
-  static const onboardingCat = 'assets/shared/onboarding/lost_cat.png';
+  static const onboardingCat = 'assets/shared/onboarding/lost_cat.webp';
 
   /// A pointing hand with a gold touch ring (the guide's word page shows
   /// how to press and hold a word): square, on transparency. Its fingertip
   /// is at [onboardingHandTip], as fractions of the picture.
-  static const onboardingHand = 'assets/shared/onboarding/long_press_hand.png';
+  static const onboardingHand = 'assets/shared/onboarding/long_press_hand.webp';
   static const onboardingHandTip = Offset(0.42, 0.15);
 
   /// Scene pictures (mission, final, image choices, the arrival at a place,
@@ -322,52 +322,52 @@ abstract final class ArtAssets {
   /// the painter's studio.
   static const parisScenes = <Artwork, String>{
     Artwork.gareDuNord: season2GareDuNord,
-    Artwork.oldClockFace: '$_paris01/old_clock_face.png',
-    Artwork.montmartrePainting: '$_paris01/montmartre_painting.png',
-    Artwork.montmartreStreet: '$_paris02/montmartre_street_real.png',
-    Artwork.paintersStudio: '$_paris02/painters_studio.png',
-    Artwork.paintersMessage: '$_paris02/canvas_back.png',
-    Artwork.eiffelTower: '$_paris03/eiffel_tower_exterior.png',
-    Artwork.towerEntrance: '$_paris03/tower_notice_board.png',
-    Artwork.towerLift: '$_paris03/tower_lift.png',
-    Artwork.serviceDoor: '$_paris03/service_door.png',
-    Artwork.serviceRoom: '$_paris03/service_room.png',
-    Artwork.timeMachine: '$_paris03/time_recording_machine.png',
-    Artwork.seineQuays: '$_paris04/seine_quays_dusk.png',
-    Artwork.quayWall: '$_paris04/quay_wall_marks.png',
-    Artwork.keeperHut: '$_paris04/keeper_hut.png',
-    Artwork.keeperHutInside: '$_paris04/keeper_hut_interior.png',
-    Artwork.quayBoxes: '$_paris04/quay_boxes.png',
-    Artwork.passageGate: '$_paris04/passage_gate.png',
-    Artwork.workshopInterior: '$_paris05/workshop_interior.png',
-    Artwork.workbenchMarks: '$_paris05/workbench_marks.png',
-    Artwork.wallOfClocks: '$_paris05/wall_of_clocks.png',
-    Artwork.writingDesk: '$_paris05/writing_desk_blotter.png',
-    Artwork.louvrePostRoom: '$_paris06/louvre_post_room_exterior.png',
-    Artwork.holdRack: '$_paris06/post_room_hold_rack.png',
-    Artwork.archiveFloorPlan: '$_paris06/archive_floor_plan.png',
-    Artwork.archiveRoom: '$_paris06/archive_room.png',
-    Artwork.palaisGarnierNight: '$_paris07/palais_garnier_night.png',
-    Artwork.operaArchive: '$_paris07/opera_archive_room.png',
-    Artwork.operaStage: '$_paris07/stage_base.png',
-    Artwork.flyRail: '$_paris07/fly_rail.png',
-    Artwork.lightTable: '$_paris07/light_table_off.png',
-    Artwork.abbessesSquare: '$_paris08/abbesses_square.png',
-    Artwork.paintersCorner: '$_paris08/corner_2.png',
-    Artwork.drawingBundle: '$_paris08/drawing_bundle.png',
+    Artwork.oldClockFace: '$_paris01/old_clock_face.webp',
+    Artwork.montmartrePainting: '$_paris01/montmartre_painting.webp',
+    Artwork.montmartreStreet: '$_paris02/montmartre_street_real.webp',
+    Artwork.paintersStudio: '$_paris02/painters_studio.webp',
+    Artwork.paintersMessage: '$_paris02/canvas_back.webp',
+    Artwork.eiffelTower: '$_paris03/eiffel_tower_exterior.webp',
+    Artwork.towerEntrance: '$_paris03/tower_notice_board.webp',
+    Artwork.towerLift: '$_paris03/tower_lift.webp',
+    Artwork.serviceDoor: '$_paris03/service_door.webp',
+    Artwork.serviceRoom: '$_paris03/service_room.webp',
+    Artwork.timeMachine: '$_paris03/time_recording_machine.webp',
+    Artwork.seineQuays: '$_paris04/seine_quays_dusk.webp',
+    Artwork.quayWall: '$_paris04/quay_wall_marks.webp',
+    Artwork.keeperHut: '$_paris04/keeper_hut.webp',
+    Artwork.keeperHutInside: '$_paris04/keeper_hut_interior.webp',
+    Artwork.quayBoxes: '$_paris04/quay_boxes.webp',
+    Artwork.passageGate: '$_paris04/passage_gate.webp',
+    Artwork.workshopInterior: '$_paris05/workshop_interior.webp',
+    Artwork.workbenchMarks: '$_paris05/workbench_marks.webp',
+    Artwork.wallOfClocks: '$_paris05/wall_of_clocks.webp',
+    Artwork.writingDesk: '$_paris05/writing_desk_blotter.webp',
+    Artwork.louvrePostRoom: '$_paris06/louvre_post_room_exterior.webp',
+    Artwork.holdRack: '$_paris06/post_room_hold_rack.webp',
+    Artwork.archiveFloorPlan: '$_paris06/archive_floor_plan.webp',
+    Artwork.archiveRoom: '$_paris06/archive_room.webp',
+    Artwork.palaisGarnierNight: '$_paris07/palais_garnier_night.webp',
+    Artwork.operaArchive: '$_paris07/opera_archive_room.webp',
+    Artwork.operaStage: '$_paris07/stage_base.webp',
+    Artwork.flyRail: '$_paris07/fly_rail.webp',
+    Artwork.lightTable: '$_paris07/light_table_off.webp',
+    Artwork.abbessesSquare: '$_paris08/abbesses_square.webp',
+    Artwork.paintersCorner: '$_paris08/corner_2.webp',
+    Artwork.drawingBundle: '$_paris08/drawing_bundle.webp',
     // Case 09: the garden (its own clock covered where its hands would
     // tell the wrong time: `season2_case09_scenes.dart`), and the board.
-    Artwork.luxembourgGarden: '$_paris09/garden_model_view.png',
-    Artwork.gearBoard: '$_paris09/gear_board.png',
+    Artwork.luxembourgGarden: '$_paris09/garden_model_view.webp',
+    Artwork.gearBoard: '$_paris09/gear_board.webp',
     // Case 10: the arch, and the room under its roof.
-    Artwork.arcStarView: '$_paris10/arc_star_view.png',
-    Artwork.starRoom: '$_paris10/star_room.png',
+    Artwork.arcStarView: '$_paris10/arc_star_view.webp',
+    Artwork.starRoom: '$_paris10/star_room.webp',
     // Case 11: the street and the Archive Annex's reading room.
-    Artwork.annexStreet: '$_paris11/annex_street.png',
-    Artwork.annexReadingRoom: '$_paris11/annex_reading_room.png',
+    Artwork.annexStreet: '$_paris11/annex_street.webp',
+    Artwork.annexReadingRoom: '$_paris11/annex_reading_room.webp',
     // Case 12: the museum hall and the room of old machines.
-    Artwork.artsMetiersHall: '$_paris12/arts_metiers_hall.png',
-    Artwork.oldMachineRoom: '$_paris12/old_machine_room.png',
+    Artwork.artsMetiersHall: '$_paris12/arts_metiers_hall.webp',
+    Artwork.oldMachineRoom: '$_paris12/old_machine_room.webp',
   };
 
   static const _paris01 = 'assets/seasons/season_02_paris/cases/case_01';
@@ -391,31 +391,31 @@ abstract final class ArtAssets {
   /// for the raven scenes, the old brown suitcase where the story finds one,
   /// and the Royal Box as it is once found: open, the Crown inside (the case
   /// photo; the final case itself animates [royalBox]). Never `special/
-  /// royal_box.png`: that is a theatre's royal box. Mrs Robin's black
+  /// royal_box.webp`: that is a theatre's royal box. Mrs Robin's black
   /// suitcase (Case 08, its name tag washed blank). Case 09's open glass
   /// case, its cushion empty and a card left on it. The two doors, each for
   /// its own case: the White Tower's, a dial and the four gears the final
   /// lock asks about (Case 05), and the small iron door under Big Ben
   /// (Case 12).
   ///
-  /// Not here, on purpose: `objects/jewel_case.png` (a full red box with a
+  /// Not here, on purpose: `objects/jewel_case.webp` (a full red box with a
   /// tiara: Case 09's glass case is empty, the Blue Star is a blue jewel) and
-  /// `objects/locked_door.png` (a plain arched wooden door, neither case's).
+  /// `objects/locked_door.webp` (a plain arched wooden door, neither case's).
   /// That door is the Season opening's "doors found locked" print only.
   static const objectScenes = <Artwork, String>{
-    Artwork.raven: '${_london}characters/raven_master.png',
-    Artwork.oldSuitcase: 'assets/shared/objects/suitcase.png',
-    Artwork.royalBox: '${_london}special/royal_box_open.png',
-    Artwork.blackSuitcase: 'assets/seasons/season_01_london/objects/suitcase_black.png',
-    Artwork.jewelCase: 'assets/seasons/season_01_london/objects/empty_glass_jewel_case.png',
-    Artwork.gearDoor: 'assets/seasons/season_01_london/objects/locked_door_gears.png',
-    Artwork.ironDoor: 'assets/seasons/season_01_london/objects/small_iron_door.png',
+    Artwork.raven: '${_london}characters/raven_master.webp',
+    Artwork.oldSuitcase: 'assets/shared/objects/suitcase.webp',
+    Artwork.royalBox: '${_london}special/royal_box_open.webp',
+    Artwork.blackSuitcase: 'assets/seasons/season_01_london/objects/suitcase_black.webp',
+    Artwork.jewelCase: 'assets/seasons/season_01_london/objects/empty_glass_jewel_case.webp',
+    Artwork.gearDoor: 'assets/seasons/season_01_london/objects/locked_door_gears.webp',
+    Artwork.ironDoor: 'assets/seasons/season_01_london/objects/small_iron_door.webp',
     // The iron chest behind the White Tower's door (Case 05's final).
-    Artwork.ironChest: 'assets/seasons/season_01_london/objects/iron_chest.png',
+    Artwork.ironChest: 'assets/seasons/season_01_london/objects/iron_chest.webp',
     // Big Ben's clock (Case 02): its face with no hands (the hands are drawn
     // over it: [clockHands]), and the wheels behind it, no time to read.
-    Artwork.clockFace: '$_scenes/big_ben/clock_face.png',
-    Artwork.clockMechanism: '$_scenes/big_ben/clock_mechanism.png',
+    Artwork.clockFace: '$_scenes/big_ben/clock_face.webp',
+    Artwork.clockMechanism: '$_scenes/big_ben/clock_mechanism.webp',
   };
 
   /// Width / height of each scene picture that is not printed like the
@@ -505,11 +505,11 @@ abstract final class ArtAssets {
   /// witnesses a mission talks to (Case 06's market hall: printed on
   /// parchment, 4:5 portraits, see `season1_dialogues.dart`).
   static const characters = <String, String>{
-    'raven': '${_london}characters/raven_master.png',
-    'clockmaker': '${_london}characters/clockmaker_master.png',
-    'flowerSeller': '${_london}characters/flower_seller.png',
-    'juggler': '${_london}characters/juggler.png',
-    'baker': '${_london}characters/baker.png',
+    'raven': '${_london}characters/raven_master.webp',
+    'clockmaker': '${_london}characters/clockmaker_master.webp',
+    'flowerSeller': '${_london}characters/flower_seller.webp',
+    'juggler': '${_london}characters/juggler.webp',
+    'baker': '${_london}characters/baker.webp',
   };
 
   /// Width / height of a witness portrait ([characters]: flower seller,
@@ -518,39 +518,39 @@ abstract final class ArtAssets {
 
   /// The Covent Garden market hall at closing time, inside (portrait 2:3):
   /// the room Case 06's witnesses are talked to in.
-  static const marketHall = '$_scenes/covent_garden/covent_garden_market_hall.png';
+  static const marketHall = '$_scenes/covent_garden/covent_garden_market_hall.webp';
 
   /// Story objects (full colour, on parchment, square except the map).
   static const objects = <String, String>{
-    'crown': 'assets/seasons/season_01_london/objects/crown.png',
-    'key': 'assets/shared/objects/key.png',
-    'letter': 'assets/shared/objects/letter.png',
-    'map': 'assets/shared/objects/map.png',
-    'pocketWatch': 'assets/shared/objects/pocket_watch.png',
-    'suitcase': 'assets/shared/objects/suitcase.png',
+    'crown': 'assets/seasons/season_01_london/objects/crown.webp',
+    'key': 'assets/shared/objects/key.webp',
+    'letter': 'assets/shared/objects/letter.webp',
+    'map': 'assets/shared/objects/map.webp',
+    'pocketWatch': 'assets/shared/objects/pocket_watch.webp',
+    'suitcase': 'assets/shared/objects/suitcase.webp',
   };
 
   /// The Season opening's prints of trouble, cut out on transparency: a
   /// stranger hiding his face (no one in particular: never the Clockmaker
   /// or the Ravenmaster) and a locked old door (mood only, no case's door).
-  static const mysteriousStranger = '${_london}characters/mysterious_stranger.png';
-  static const lockedDoor = 'assets/shared/objects/locked_door.png';
+  static const mysteriousStranger = '${_london}characters/mysterious_stranger.webp';
+  static const lockedDoor = 'assets/shared/objects/locked_door.webp';
 
   /// The Raven Society mark (full colour, not a tinted [symbols] glyph).
-  static const ravenMark = '${_london}symbols/raven_mark.png';
+  static const ravenMark = '${_london}symbols/raven_mark.webp';
 
   /// Case 01's Royal Box (the final mission's golden box with the Crown
   /// inside), as two pictures on transparency (1659 × 948, in register):
-  /// shut, its four dial drums blank — `royal_box_closed_blank.png`, made
-  /// from the delivered `royal_box_closed.png` (kept, its drums painted
+  /// shut, its four dial drums blank — `royal_box_closed_blank.webp`, made
+  /// from the delivered `royal_box_closed.webp` (kept, its drums painted
   /// 0000) by `tool/royal_box_blank/blank_test.dart` — so the game writes
   /// on them the numbers the detective turns the locks to; and open with the
   /// Crown in it, its drums showing the code (7924), shown only once the box
   /// is opened. The opening animation crossfades the two; a missing picture
   /// falls back to the box drawn in code (`RoyalBoxAnimation`).
   static const RoyalBoxArt royalBox = (
-    closed: '${_london}special/royal_box_closed_blank.png',
-    open: '${_london}special/royal_box_open.png',
+    closed: '${_london}special/royal_box_closed_blank.webp',
+    open: '${_london}special/royal_box_open.webp',
     // The drums' digit faces, measured on the picture (pixels 521–552,
     // 709–740, 909–940, 1104–1135 across; 644–688 down).
     dials: [
@@ -568,12 +568,12 @@ abstract final class ArtAssets {
   /// The delivered shut Royal Box, its drums painted 0000: the source of
   /// [royalBox]'s shut picture, never shown (the 0000 would not follow the
   /// locks).
-  static const royalBoxClosedPainted = '${_london}special/royal_box_closed.png';
+  static const royalBoxClosedPainted = '${_london}special/royal_box_closed.webp';
 
   /// Special pictures. The theatre royal box: listed, not shown yet — the
   /// game's Royal Box (Case 01) is a golden box with the Crown inside.
   static const special = <String, String>{
-    'theatreRoyalBox': '${_london}special/royal_box.png',
+    'theatreRoyalBox': '${_london}special/royal_box.webp',
   };
 
   /// Evidence shown by its real picture (notebook, zoom, celebrations),
@@ -583,44 +583,44 @@ abstract final class ArtAssets {
   /// (2026-10-19, requested), though that picture reads about ten past ten,
   /// not the 7 o'clock its words give.
   static const evidencePictures = <String, String>{
-    'e01': 'assets/shared/objects/letter.png', // Old Letter
-    'e02': 'assets/shared/objects/key.png', // Golden Key
+    'e01': 'assets/shared/objects/letter.webp', // Old Letter
+    'e02': 'assets/shared/objects/key.webp', // Golden Key
     'e03': _case01PocketWatch, // Pocket Watch: the Royal Box's clock lock
     // Crown Symbol: the card with a crown on it (the crown it shows).
-    'e05': 'assets/seasons/season_01_london/objects/crown.png',
-    'e06': 'assets/seasons/season_01_london/objects/crown.png', // The Missing Crown
-    'ep03_e1': 'assets/seasons/season_01_london/objects/red_button.png', // Red Button (Case 03, again in Case 08)
+    'e05': 'assets/seasons/season_01_london/objects/crown.webp',
+    'e06': 'assets/seasons/season_01_london/objects/crown.webp', // The Missing Crown
+    'ep03_e1': 'assets/seasons/season_01_london/objects/red_button.webp', // Red Button (Case 03, again in Case 08)
     'ep04_e1': ravenMark, // Black Wax Seal: a raven pressed into the wax
-    'ep05_e3': 'assets/shared/objects/key.png', // Brass Key
-    'ep10_e3': 'assets/shared/objects/letter.png', // Ravenmaster's Letter
-    'ep12_e4': 'assets/shared/objects/pocket_watch.png', // The Clockmaker's Watch
+    'ep05_e3': 'assets/shared/objects/key.webp', // Brass Key
+    'ep10_e3': 'assets/shared/objects/letter.webp', // Ravenmaster's Letter
+    'ep12_e4': 'assets/shared/objects/pocket_watch.webp', // The Clockmaker's Watch
     // Paris Case 01: the lost ticket and the Montmartre painting (wide
     // pictures: their middle in the round frame, whole in the close look,
     // [evidencePrints]).
-    's2_ep01_e2': '$_paris01/lost_ticket.png',
-    's2_ep01_e4': '$_paris01/montmartre_painting.png',
+    's2_ep01_e2': '$_paris01/lost_ticket.webp',
+    's2_ep01_e4': '$_paris01/montmartre_painting.webp',
     // Paris Case 02: the painting of the street, its clock above the door.
-    's2_ep02_e1': '$_paris02/montmartre_street_painted.png',
+    's2_ep02_e1': '$_paris02/montmartre_street_painted.webp',
     // Paris Case 03: the hidden room, and the plaque from the machine
     // (its message is in its words: the picture is the blank brass).
-    's2_ep03_e3': '$_paris03/service_room.png',
-    's2_ep03_e4': '$_paris03/brass_plaque.png',
+    's2_ep03_e3': '$_paris03/service_room.webp',
+    's2_ep03_e4': '$_paris03/brass_plaque.webp',
     // Paris Case 04: its stone, ledger and label are blank pictures, drawn
     // with their words where they are shown (`season2Case04EvidenceArt`);
     // these are what stands under them.
-    's2_ep04_e1': '$_paris04/river_mark_d.png',
-    's2_ep04_e2': '$_paris04/keeper_ledger.png',
-    's2_ep04_e3': '$_paris04/delivery_label_blank.png',
-    's2_ep04_e4': '$_paris04/delivery_label_blank.png',
+    's2_ep04_e1': '$_paris04/river_mark_d.webp',
+    's2_ep04_e2': '$_paris04/keeper_ledger.webp',
+    's2_ep04_e3': '$_paris04/delivery_label_blank.webp',
+    's2_ep04_e4': '$_paris04/delivery_label_blank.webp',
     // The icon upgrade (docs/WORLD_MYSTERY_ICON_UPGRADE_PROGRESS.md): each
     // object shown as itself, never its words or what it answers. Pictures
     // the game already had, where they agree with the evidence:
     'ep02_e2': _londonGear, // Small Brass Gear: the gear of Case 02's belfry search
     'ep12_e1': _londonGear, // The Real Gear: the same gear, back where it belongs
-    'ep03_e2': '$_londonObjects/blue_cloth.png', // Blue Cloth, as found on the frame
+    'ep03_e2': '$_londonObjects/blue_cloth.webp', // Blue Cloth, as found on the frame
     // Wet Footprint: the search's footprint, its black ground cut away.
-    'ep03_e3': '$_londonObjects/wet_footprint_cutout.png',
-    'ep04_e3': 'assets/shared/objects/letter.png', // Postmark: on the second envelope
+    'ep03_e3': '$_londonObjects/wet_footprint_cutout.webp',
+    'ep04_e3': 'assets/shared/objects/letter.webp', // Postmark: on the second envelope
     // Rome's Owl leaves the same card each time (its words differ).
     's3_ep02_e1': _owlCard,
     's3_ep02_e4': _owlCard,
@@ -629,39 +629,39 @@ abstract final class ArtAssets {
     's3_ep07_e1': _owlCard,
     's3_ep08_e1': _owlCard,
     's3_ep12_e4': _owlCard,
-    's4_ep11_e2': '$_newYorkObjects/brass_bird.png', // The Brass Bird, Found: Case 04's bird
+    's4_ep11_e2': '$_newYorkObjects/brass_bird.webp', // The Brass Bird, Found: Case 04's bird
     // Made for it (gpt-image-1.5, content_pipeline/icon_upgrade/).
-    'ep02_e4': '$_londonObjects/raven_feather.png',
-    'ep06_e4': '$_londonObjects/silver_whistle.png',
-    'ep08_e3': '$_londonObjects/raven_tower_painting.png',
-    'ep08_e4': '$_londonObjects/empty_jewel_box.png',
-    'ep09_e4': '$_londonObjects/blue_star_jewel.png',
-    'ep10_e1': '$_londonObjects/poppys_ring.png', // no letters: they are its words
-    'ep11_e2': '$_londonObjects/white_mask.png', // nothing written: its words say what
-    'ep11_e3': '$_londonObjects/toy_train_whistle.png',
-    's2_ep01_e3': '$_paris01/clockmaker_mark.png', // the carved gear (the M is in its words)
-    's3_ep01_e2': '$_romeObjects/white_dust.png',
-    's3_ep01_e4': '$_romeObjects/light_box.png',
-    's3_ep03_e2': '$_romeObjects/bag_of_white_dust.png',
-    's3_ep05_e1': '$_romeObjects/orange_cat_hair.png',
-    's3_ep05_e2': '$_romeObjects/cat_collar_tag.png', // blank: its letters are its words
-    's4_ep05_e3': '$_newYorkObjects/tiny_screws.png',
-    's4_ep05_e4': '$_newYorkObjects/karl_old_photo.png',
-    's4_ep06_e2': '$_newYorkObjects/seagull_photo.png',
-    's4_ep06_e4': '$_newYorkObjects/karl_pocket_book.png', // shut: the notes on its page are words
-    's4_ep09_e2': '$_newYorkObjects/wheel_box.png', // blank rings
-    's4_ep11_e4': '$_newYorkObjects/dexter_safe.png',
-    's4_ep12_e1': '$_newYorkObjects/stone_nest.png', // no letters
-    's4_ep12_e2': '$_newYorkObjects/open_stone.png', // no letters
+    'ep02_e4': '$_londonObjects/raven_feather.webp',
+    'ep06_e4': '$_londonObjects/silver_whistle.webp',
+    'ep08_e3': '$_londonObjects/raven_tower_painting.webp',
+    'ep08_e4': '$_londonObjects/empty_jewel_box.webp',
+    'ep09_e4': '$_londonObjects/blue_star_jewel.webp',
+    'ep10_e1': '$_londonObjects/poppys_ring.webp', // no letters: they are its words
+    'ep11_e2': '$_londonObjects/white_mask.webp', // nothing written: its words say what
+    'ep11_e3': '$_londonObjects/toy_train_whistle.webp',
+    's2_ep01_e3': '$_paris01/clockmaker_mark.webp', // the carved gear (the M is in its words)
+    's3_ep01_e2': '$_romeObjects/white_dust.webp',
+    's3_ep01_e4': '$_romeObjects/light_box.webp',
+    's3_ep03_e2': '$_romeObjects/bag_of_white_dust.webp',
+    's3_ep05_e1': '$_romeObjects/orange_cat_hair.webp',
+    's3_ep05_e2': '$_romeObjects/cat_collar_tag.webp', // blank: its letters are its words
+    's4_ep05_e3': '$_newYorkObjects/tiny_screws.webp',
+    's4_ep05_e4': '$_newYorkObjects/karl_old_photo.webp',
+    's4_ep06_e2': '$_newYorkObjects/seagull_photo.webp',
+    's4_ep06_e4': '$_newYorkObjects/karl_pocket_book.webp', // shut: the notes on its page are words
+    's4_ep09_e2': '$_newYorkObjects/wheel_box.webp', // blank rings
+    's4_ep11_e4': '$_newYorkObjects/dexter_safe.webp',
+    's4_ep12_e1': '$_newYorkObjects/stone_nest.webp', // no letters
+    's4_ep12_e2': '$_newYorkObjects/open_stone.webp', // no letters
     // The seasons made from plans (Rome on): each picture made for an
     // evidence of their cases (their asset manifests).
     ...generatedEvidencePictures,
   };
 
   static const _londonObjects = 'assets/seasons/season_01_london/objects';
-  static const _londonGear = '$_londonObjects/brass_gear.png';
+  static const _londonGear = '$_londonObjects/brass_gear.webp';
   static const _romeObjects = 'assets/seasons/season_03_rome/objects';
-  static const _owlCard = '$_romeObjects/owl_card.png';
+  static const _owlCard = '$_romeObjects/owl_card.webp';
   static const _newYorkObjects = 'assets/seasons/season_04_newyork/objects';
 
   /// The papers documents are shown on: blank, the evidence's own words set
@@ -670,24 +670,24 @@ abstract final class ArtAssets {
   /// is where the words go, as fractions of the picture.
   static const evidencePapers = <EvidencePaper, PaperArt>{
     // Clear of the torn top and the margin line.
-    EvidencePaper.note: (file: '$_docs/doc_note.png', aspect: 731 / 777, writing: Rect.fromLTRB(0.2, 0.15, 0.94, 0.92)),
+    EvidencePaper.note: (file: '$_docs/doc_note.webp', aspect: 731 / 777, writing: Rect.fromLTRB(0.2, 0.15, 0.94, 0.92)),
     // Inside the printed border.
-    EvidencePaper.card: (file: '$_docs/doc_card.png', aspect: 961 / 639, writing: Rect.fromLTRB(0.12, 0.15, 0.88, 0.85)),
-    EvidencePaper.letter: (file: '$_docs/doc_letter.png', aspect: 790 / 942, writing: Rect.fromLTRB(0.12, 0.1, 0.88, 0.9)),
-    EvidencePaper.log: (file: '$_docs/doc_log.png', aspect: 846 / 982, writing: Rect.fromLTRB(0.14, 0.1, 0.9, 0.9)),
+    EvidencePaper.card: (file: '$_docs/doc_card.webp', aspect: 961 / 639, writing: Rect.fromLTRB(0.12, 0.15, 0.88, 0.85)),
+    EvidencePaper.letter: (file: '$_docs/doc_letter.webp', aspect: 790 / 942, writing: Rect.fromLTRB(0.12, 0.1, 0.88, 0.9)),
+    EvidencePaper.log: (file: '$_docs/doc_log.webp', aspect: 846 / 982, writing: Rect.fromLTRB(0.14, 0.1, 0.9, 0.9)),
     // Below the ribbon.
-    EvidencePaper.diary: (file: '$_docs/doc_diary.png', aspect: 775 / 978, writing: Rect.fromLTRB(0.12, 0.14, 0.88, 0.9)),
+    EvidencePaper.diary: (file: '$_docs/doc_diary.webp', aspect: 775 / 978, writing: Rect.fromLTRB(0.12, 0.14, 0.88, 0.9)),
     // Between the printed ends, before the stub.
-    EvidencePaper.ticket: (file: '$_docs/doc_ticket.png', aspect: 967 / 377, writing: Rect.fromLTRB(0.24, 0.16, 0.74, 0.84)),
+    EvidencePaper.ticket: (file: '$_docs/doc_ticket.webp', aspect: 967 / 377, writing: Rect.fromLTRB(0.24, 0.16, 0.74, 0.84)),
     // Right of the eyelet.
-    EvidencePaper.tag: (file: '$_docs/doc_tag.png', aspect: 977 / 478, writing: Rect.fromLTRB(0.2, 0.16, 0.92, 0.84)),
+    EvidencePaper.tag: (file: '$_docs/doc_tag.webp', aspect: 977 / 478, writing: Rect.fromLTRB(0.2, 0.16, 0.92, 0.84)),
     // Inside the pins and the border.
-    EvidencePaper.notice: (file: '$_docs/doc_notice.png', aspect: 848 / 903, writing: Rect.fromLTRB(0.12, 0.1, 0.88, 0.9)),
+    EvidencePaper.notice: (file: '$_docs/doc_notice.webp', aspect: 848 / 903, writing: Rect.fromLTRB(0.12, 0.1, 0.88, 0.9)),
     // The clear middle of the old map.
-    EvidencePaper.map: (file: '$_docs/doc_map.png', aspect: 1024 / 893, writing: Rect.fromLTRB(0.2, 0.2, 0.8, 0.8)),
-    EvidencePaper.music: (file: '$_docs/doc_music.png', aspect: 953 / 731, writing: Rect.fromLTRB(0.08, 0.1, 0.92, 0.9)),
+    EvidencePaper.map: (file: '$_docs/doc_map.webp', aspect: 1024 / 893, writing: Rect.fromLTRB(0.2, 0.2, 0.8, 0.8)),
+    EvidencePaper.music: (file: '$_docs/doc_music.webp', aspect: 953 / 731, writing: Rect.fromLTRB(0.08, 0.1, 0.92, 0.9)),
     // Right of the red margin, below the leather corner.
-    EvidencePaper.statement: (file: '$_docs/doc_statement.png', aspect: 736 / 935, writing: Rect.fromLTRB(0.14, 0.1, 0.9, 0.92)),
+    EvidencePaper.statement: (file: '$_docs/doc_statement.webp', aspect: 736 / 935, writing: Rect.fromLTRB(0.14, 0.1, 0.9, 0.92)),
   };
 
   static const _docs = 'assets/shared/evidence_docs';
@@ -793,10 +793,10 @@ abstract final class ArtAssets {
 
   /// The detective's coin (wallet, tip shop, How to Play), full colour on
   /// transparency. Missing: the ink coin.
-  static const coin = 'assets/shared/ui/coin.png';
+  static const coin = 'assets/shared/ui/coin.webp';
 
   /// The World Archive's wax seal, full colour. Missing: the ink seal.
-  static const archiveSeal = 'assets/shared/ui/archive_seal.png';
+  static const archiveSeal = 'assets/shared/ui/archive_seal.webp';
 
   /// Evidence pictures too wide for the round frame's close look: shown
   /// whole there, at their width / height.
@@ -819,12 +819,12 @@ abstract final class ArtAssets {
   /// What a case's Case Closed file shows under its title in place of the
   /// small tilted case photo, by case id: the thing the case was about,
   /// alone on the file's paper. Case 01: the Missing Crown, cut out of
-  /// `objects/crown.png` (kept, on its parchment) by
+  /// `objects/crown.webp` (kept, on its parchment) by
   /// `tool/crown_cutout/cutout_test.dart`. Other cases keep their photo.
   static const caseClosedEmblems = <String, String>{
-    'ep01': 'assets/seasons/season_01_london/objects/crown_cutout.png',
+    'ep01': 'assets/seasons/season_01_london/objects/crown_cutout.webp',
     // Paris Case 01: the painting found in the brass box.
-    's2_ep01': '$_paris01/montmartre_painting.png',
+    's2_ep01': '$_paris01/montmartre_painting.webp',
   };
 
   /// Width / height of a [caseClosedEmblems] picture that is not square.
@@ -832,7 +832,7 @@ abstract final class ArtAssets {
 
   /// How much closer an [evidencePictures] picture is shown in its round
   /// frame, where its object sits small in a wide parchment margin: only
-  /// the margin goes, never the object. The crown (crown.png) fills about
+  /// the margin goes, never the object. The crown (crown.webp) fills about
   /// the middle half of its square; at 1.5× its cross, jewels and band
   /// still lie inside the circle.
   /// Below 1, farther: the Pocket Watch's bow and open lid reach just past
@@ -841,41 +841,41 @@ abstract final class ArtAssets {
 
   static const _london = 'assets/seasons/season_01_london/';
   static const _case01 = 'assets/images/case01';
-  static const _case01PocketWatch = '$_case01/symbols/symbol_pocket_watch.png';
+  static const _case01PocketWatch = '$_case01/symbols/symbol_pocket_watch.webp';
 
   /// The nine London landmarks.
   static const landmarkScenes = <Artwork, String>{
-    Artwork.kingsCross: '$_scenes/landmarks/kings_cross.png',
-    Artwork.britishMuseum: '$_scenes/landmarks/british_museum.png',
-    Artwork.coventGarden: '$_scenes/landmarks/covent_garden.png',
-    Artwork.bigBen: '$_scenes/landmarks/big_ben.png',
-    Artwork.hydePark: '$_scenes/landmarks/hyde_park.png',
-    Artwork.buckinghamPalace: '$_scenes/landmarks/buckingham_palace.png',
-    Artwork.towerBridge: '$_scenes/landmarks/tower_bridge.png',
-    Artwork.towerOfLondon: '$_scenes/landmarks/tower_of_london.png',
-    Artwork.londonEye: '$_scenes/landmarks/london_eye.png',
+    Artwork.kingsCross: '$_scenes/landmarks/kings_cross.webp',
+    Artwork.britishMuseum: '$_scenes/landmarks/british_museum.webp',
+    Artwork.coventGarden: '$_scenes/landmarks/covent_garden.webp',
+    Artwork.bigBen: '$_scenes/landmarks/big_ben.webp',
+    Artwork.hydePark: '$_scenes/landmarks/hyde_park.webp',
+    Artwork.buckinghamPalace: '$_scenes/landmarks/buckingham_palace.webp',
+    Artwork.towerBridge: '$_scenes/landmarks/tower_bridge.webp',
+    Artwork.towerOfLondon: '$_scenes/landmarks/tower_of_london.webp',
+    Artwork.londonEye: '$_scenes/landmarks/london_eye.webp',
   };
 
   /// Places inside a landmark, each in its landmark's folder.
   static const insideScenes = <Artwork, String>{
-    Artwork.greatCourt: '$_scenes/british_museum/british_museum_great_court.png',
-    Artwork.egyptRoom: '$_scenes/british_museum/british_museum_egypt_room.png',
-    Artwork.boathouse: '$_scenes/hyde_park/hyde_park_boathouse.png',
-    Artwork.roseGarden: '$_scenes/hyde_park/hyde_park_rose_garden.png',
-    Artwork.staffRoom: '$_scenes/buckingham_palace/buckingham_palace_palace_staff_room.png',
-    Artwork.courtyard: '$_scenes/buckingham_palace/buckingham_palace_palace_courtyard.png',
-    Artwork.dressingRoom: '$_scenes/covent_garden/covent_garden_dressing_room.png',
-    Artwork.waitingRoom: '$_scenes/kings_cross/kings_cross_waiting_hall.png',
+    Artwork.greatCourt: '$_scenes/british_museum/british_museum_great_court.webp',
+    Artwork.egyptRoom: '$_scenes/british_museum/british_museum_egypt_room.webp',
+    Artwork.boathouse: '$_scenes/hyde_park/hyde_park_boathouse.webp',
+    Artwork.roseGarden: '$_scenes/hyde_park/hyde_park_rose_garden.webp',
+    Artwork.staffRoom: '$_scenes/buckingham_palace/buckingham_palace_palace_staff_room.webp',
+    Artwork.courtyard: '$_scenes/buckingham_palace/buckingham_palace_palace_courtyard.webp',
+    Artwork.dressingRoom: '$_scenes/covent_garden/covent_garden_dressing_room.webp',
+    Artwork.waitingRoom: '$_scenes/kings_cross/kings_cross_waiting_hall.webp',
     // Gallery 8 (Case 03): the room as the theft left it — the empty gold
     // frame, the bench, the door (its M1 is searched in this picture: see
     // `season1_investigations.dart`). And the theatre's auditorium (Case 11).
-    Artwork.gallery: '$_scenes/british_museum/british_museum_gallery_8.png',
-    Artwork.auditorium: '$_scenes/covent_garden/covent_garden_theatre.png',
+    Artwork.gallery: '$_scenes/british_museum/british_museum_gallery_8.webp',
+    Artwork.auditorium: '$_scenes/covent_garden/covent_garden_theatre.webp',
     // The theatre's door at night (Case 06; the file keeps its delivered name).
-    Artwork.theatreDoor: '$_scenes/covent_garden/theatre_door_dark.png',
+    Artwork.theatreDoor: '$_scenes/covent_garden/theatre_door_dark.webp',
     // The Royal Archive, down the secret stairs of Buckingham Palace (its own
     // folder: it is no landmark of the map).
-    Artwork.royalArchive: '$_scenes/royal_archive/royal_archive.png',
+    Artwork.royalArchive: '$_scenes/royal_archive/royal_archive.webp',
   };
 
   static const _scenes = 'assets/seasons/season_01_london/locations';
@@ -894,7 +894,7 @@ abstract final class ArtAssets {
 
   /// Clock faces whose hands are drawn over the picture. Case 02: Big Ben
   /// stopped at 8:17, set to 9:17 when the case is solved. The pivot and the
-  /// hands are measured on `big_ben/clock_face.png` (1254 × 1254: the pivot
+  /// hands are measured on `big_ben/clock_face.webp` (1254 × 1254: the pivot
   /// at 627, 548; the numerals' ring about 337 px out).
   static const Map<Artwork, ClockHandsArt> clockHands = {
     Artwork.clockFace: (
@@ -917,7 +917,7 @@ abstract final class ArtAssets {
   };
 
   /// Symbol pictures (clue stamps, evidence, lock dials), keyed like
-  /// `GameSymbol`, e.g. `'park': 'assets/art/symbols/park.png'`.
+  /// `GameSymbol`, e.g. `'park': 'assets/shared/symbols/symbol_park.webp'`.
   /// One-colour artwork on transparency: the game tints it with the symbol's
   /// colour, as it does the ink glyphs.
   ///
@@ -926,30 +926,30 @@ abstract final class ArtAssets {
   /// Royal Box's four locks keep their own full-colour pictures
   /// ([royalBoxLocks]); a missing stamp falls back to its ink glyph.
   static const Map<String, String> symbols = {
-    'train': '$_symbols/symbol_train.png',
-    'museum': '$_symbols/symbol_museum.png',
-    'clock': '$_symbols/symbol_clock.png',
-    'watch': '$_symbols/symbol_watch.png',
-    'park': '$_symbols/symbol_park.png',
-    'palace': '$_symbols/symbol_palace.png',
-    'crown': '$_symbols/symbol_crown.png',
-    'raven': '$_symbols/symbol_raven.png',
-    'gear': '$_symbols/symbol_gear.png',
-    'letter': '$_symbols/symbol_letter.png',
-    'key': '$_symbols/symbol_key.png',
-    'map': '$_symbols/symbol_map.png',
-    'ticket': '$_symbols/symbol_ticket.png',
-    'feather': '$_symbols/symbol_feather.png',
-    'footprint': '$_symbols/symbol_footprint.png',
-    'button': '$_symbols/symbol_button.png',
-    'cloth': '$_symbols/symbol_cloth.png',
-    'seal': '$_symbols/symbol_seal.png',
-    'frame': '$_symbols/symbol_frame.png',
-    'mask': '$_symbols/symbol_mask.png',
-    'gem': '$_symbols/symbol_gem.png',
-    'bag': '$_symbols/symbol_bag.png',
-    'umbrella': '$_symbols/symbol_umbrella.png',
-    'whistle': '$_symbols/symbol_whistle.png',
+    'train': '$_symbols/symbol_train.webp',
+    'museum': '$_symbols/symbol_museum.webp',
+    'clock': '$_symbols/symbol_clock.webp',
+    'watch': '$_symbols/symbol_watch.webp',
+    'park': '$_symbols/symbol_park.webp',
+    'palace': '$_symbols/symbol_palace.webp',
+    'crown': '$_symbols/symbol_crown.webp',
+    'raven': '$_symbols/symbol_raven.webp',
+    'gear': '$_symbols/symbol_gear.webp',
+    'letter': '$_symbols/symbol_letter.webp',
+    'key': '$_symbols/symbol_key.webp',
+    'map': '$_symbols/symbol_map.webp',
+    'ticket': '$_symbols/symbol_ticket.webp',
+    'feather': '$_symbols/symbol_feather.webp',
+    'footprint': '$_symbols/symbol_footprint.webp',
+    'button': '$_symbols/symbol_button.webp',
+    'cloth': '$_symbols/symbol_cloth.webp',
+    'seal': '$_symbols/symbol_seal.webp',
+    'frame': '$_symbols/symbol_frame.webp',
+    'mask': '$_symbols/symbol_mask.webp',
+    'gem': '$_symbols/symbol_gem.webp',
+    'bag': '$_symbols/symbol_bag.webp',
+    'umbrella': '$_symbols/symbol_umbrella.webp',
+    'whistle': '$_symbols/symbol_whistle.webp',
   };
 
   static const _symbols = 'assets/shared/symbols';
@@ -963,9 +963,9 @@ abstract final class ArtAssets {
   /// never tinted. Other cases keep their [symbols] glyphs.
   static const royalBoxLocks = <String, String>{
     'clock': _case01PocketWatch,
-    'train': '$_case01/symbols/symbol_steam_train.png',
-    'park': '$_case01/symbols/symbol_swan.png',
-    'museum': '$_case01/symbols/symbol_rosetta_stone.png',
+    'train': '$_case01/symbols/symbol_steam_train.webp',
+    'park': '$_case01/symbols/symbol_swan.webp',
+    'museum': '$_case01/symbols/symbol_rosetta_stone.webp',
   };
 
   /// The Royal Box lock pictures are square (512 × 512), each drawing
@@ -979,26 +979,26 @@ abstract final class ArtAssets {
   /// face and the badge's own emblem — in full colour on transparency,
   /// shown by `BadgeMedal` as it is: never tinted, never framed again.
   static const Map<GameBadge, String> badges = {
-    GameBadge.firstClue: '$_badges/badge_first_clue.png',
-    GameBadge.sharpEyes: '$_badges/badge_sharp_eyes.png',
-    GameBadge.quickThinker: '$_badges/badge_quick_thinker.png',
-    GameBadge.puzzleSolver: '$_badges/badge_puzzle_solver.png',
-    GameBadge.londonExplorer: '$_badges/badge_london_explorer.png',
-    GameBadge.masterDetective: '$_badges/badge_master_detective.png',
-    GameBadge.clockWatcher: '$_badges/badge_clock_watcher.png',
-    GameBadge.evidenceHunter: '$_badges/badge_evidence_hunter.png',
-    GameBadge.letterReader: '$_badges/badge_letter_reader.png',
-    GameBadge.codeBreaker: '$_badges/badge_code_breaker.png',
-    GameBadge.mapMaster: '$_badges/badge_map_master.png',
-    GameBadge.londonLegend: '$_badges/badge_london_legend.png',
-    GameBadge.secondLook: '$_badges/badge_second_look.png',
-    GameBadge.notebookExplorer: '$_badges/badge_notebook_explorer.png',
-    GameBadge.wordCollector: '$_badges/badge_word_collector.png',
+    GameBadge.firstClue: '$_badges/badge_first_clue.webp',
+    GameBadge.sharpEyes: '$_badges/badge_sharp_eyes.webp',
+    GameBadge.quickThinker: '$_badges/badge_quick_thinker.webp',
+    GameBadge.puzzleSolver: '$_badges/badge_puzzle_solver.webp',
+    GameBadge.londonExplorer: '$_badges/badge_london_explorer.webp',
+    GameBadge.masterDetective: '$_badges/badge_master_detective.webp',
+    GameBadge.clockWatcher: '$_badges/badge_clock_watcher.webp',
+    GameBadge.evidenceHunter: '$_badges/badge_evidence_hunter.webp',
+    GameBadge.letterReader: '$_badges/badge_letter_reader.webp',
+    GameBadge.codeBreaker: '$_badges/badge_code_breaker.webp',
+    GameBadge.mapMaster: '$_badges/badge_map_master.webp',
+    GameBadge.londonLegend: '$_badges/badge_london_legend.webp',
+    GameBadge.secondLook: '$_badges/badge_second_look.webp',
+    GameBadge.notebookExplorer: '$_badges/badge_notebook_explorer.webp',
+    GameBadge.wordCollector: '$_badges/badge_word_collector.webp',
   };
 
   /// The same rosette with an empty face: a badge still to win. Every locked
   /// badge shows it (greyed, with a lock), so its emblem stays a surprise.
-  static const badgeFrame = '$_badges/badge_frame.png';
+  static const badgeFrame = '$_badges/badge_frame.webp';
 
   /// The badge pictures and [badgeFrame] are square, all the same size, so
   /// medals line up whatever their emblem.

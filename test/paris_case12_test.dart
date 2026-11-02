@@ -48,10 +48,10 @@ void main() {
 
   setUpAll(loadGameFonts);
 
+  /// A picture's width and height (the game's WebP, or a PNG), read whole.
   (int, int) pixelsOf(String file) {
-    final b = File(file).readAsBytesSync();
-    int at(int i) => (b[i] << 24) | (b[i + 1] << 16) | (b[i + 2] << 8) | b[i + 3];
-    return (at(16), at(20));
+    final (w, h) = imageSize(file)!;
+    return (w.round(), h.round());
   }
 
   group('in the game', () {
@@ -96,7 +96,7 @@ void main() {
       expect(MachineScene.timeOf(m.right), '11:20');
       expect(m.right - m.wrong, 60, reason: 'one hour behind, as the story says');
       for (final face in ['emile_base', 'emile_sad', 'emile_back']) {
-        expect(pixelsOf('assets/seasons/season_02_paris/characters/$face.png'), (1122, 1402));
+        expect(pixelsOf('assets/seasons/season_02_paris/characters/$face.webp'), (1122, 1402));
       }
       for (final l in season2Case12Ending) {
         expect(File(l.background).existsSync(), isTrue);

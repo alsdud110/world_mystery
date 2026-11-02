@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
+import 'package:world_mystery/core/utils/ad_service.dart';
 import 'package:world_mystery/core/utils/audio_service.dart';
 import 'package:world_mystery/data/repositories/profile_store.dart';
 import 'package:world_mystery/data/generated/generated_seasons.g.dart';
@@ -17,6 +18,8 @@ import 'package:world_mystery/data/models/season.dart' show SeasonIds;
 import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../tool/asset_optimizer/image_file.dart';
 
 final episode01 = Episode.fromJson(episode01Json);
 
@@ -64,22 +67,31 @@ List<Episode> season1Cases() =>
 ///
 /// [prefs] may hold saves under the keys used before profiles: on the first
 /// read the game copies them to the device's detective, as an updated app
-/// does.
+/// does. [adsOff] false: the test brings its own ads.
 Future<List<Override>> testOverrides({
   Map<String, Object> prefs = const {},
   AudioService? audio,
+  bool adsOff = true,
 }) async {
   SharedPreferences.setMockInitialValues(prefs);
-  return testOverridesFor(await SharedPreferences.getInstance(), audio: audio);
+  return testOverridesFor(await SharedPreferences.getInstance(), audio: audio, adsOff: adsOff);
 }
 
 /// [testOverrides] for storage that already exists (an app restart).
 Future<List<Override>> testOverridesFor(
   SharedPreferences prefs, {
   AudioService? audio,
+  bool adsOff = true,
 }) async => [
   sharedPreferencesProvider.overrideWithValue(prefs),
   audioServiceProvider.overrideWithValue(audio ?? MockAudioService()),
+  // Ads off: nothing reaches the ads plugin (banner_ad_area_test.dart plays them).
+  if (adsOff)
+    adServiceProvider.overrideWith((ref) {
+      final service = AdService(sdk: const GoogleMobileAdsSdk(), units: null, requestsAllowed: false);
+      ref.onDispose(service.dispose);
+      return service;
+    }),
 ];
 
 /// The detective's key for a save kept under [legacyKey] before profiles
@@ -140,12 +152,15 @@ List<String> missingAssets(Iterable<String> assets) => [
       a,
 ];
 
-/// A PNG file's size in pixels, read from its header (null: not a PNG).
-(double, double)? pngSize(String file) {
-  final png = File(file).readAsBytesSync();
-  if (png.length < 24 || png[1] != 0x50 || png[2] != 0x4E || png[3] != 0x47) return null;
-  int u32(int at) => (png[at] << 24) | (png[at + 1] << 16) | (png[at + 2] << 8) | png[at + 3];
-  return (u32(16).toDouble(), u32(20).toDouble());
+/// A picture file's size in pixels (PNG, the game's WebP, JPEG), read whole
+/// from its own bytes (null: not a valid picture).
+(double, double)? imageSize(String file) {
+  try {
+    final info = ImageFileCheck.file(file);
+    return (info.width.toDouble(), info.height.toDouble());
+  } on ImageFileProblem {
+    return null;
+  }
 }
 
 /// Why each of [places]' pictures cannot be bundled: missing on disk, in
@@ -160,7 +175,7 @@ List<String> placeAssetProblems(Map<String, ScenePlace> places) {
         '$id: ${p.file} is not on disk'
       else if (!listed.any((a) => a == p.file || (a.endsWith('/') && p.file.startsWith(a) && !p.file.substring(a.length).contains('/'))))
         '$id: ${p.file} is not listed in pubspec.yaml'
-      else if (pngSize(p.file) case final size when size != (p.pixels.width, p.pixels.height))
+      else if (imageSize(p.file) case final size when size != (p.pixels.width, p.pixels.height))
         '$id: ${p.file} is $size pixels, not (${p.pixels.width}, ${p.pixels.height})',
   ];
 }

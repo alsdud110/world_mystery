@@ -40,20 +40,20 @@
               "label": "Stone A",
               "feedback": "This stone has a lion, not a street and an owl.",
               "altText": "a grey marble stone carved with a lion's head",
-              "picture": "assets/seasons/season_03_rome/cases/case_11/stone_lion.png"
+              "picture": "assets/seasons/season_03_rome/cases/case_11/stone_lion.webp"
             },
             {
               "id": "stone_b",
               "label": "Stone B",
               "feedback": "It has street lines. But look for the tiny owl and the crack.",
               "altText": "a grey marble stone carved with street lines, with no owl and no crack",
-              "picture": "assets/seasons/season_03_rome/cases/case_11/stone_street.png"
+              "picture": "assets/seasons/season_03_rome/cases/case_11/stone_street.webp"
             },
             {
               "id": "stone_c",
               "label": "Stone C",
               "altText": "a grey marble stone carved with street lines, a tiny owl and a crack shaped like a Y",
-              "picture": "assets/seasons/season_03_rome/objects/real_map_piece.png"
+              "picture": "assets/seasons/season_03_rome/objects/real_map_piece.webp"
             }
           ]
         },
@@ -140,7 +140,7 @@
         "hideOptionNames": true,
         "talk": {
           "speaker": "bruno_valli",
-          "portrait": "assets/seasons/season_03_rome/characters/bruno_site.png",
+          "portrait": "assets/seasons/season_03_rome/characters/bruno_site.webp",
           "goal": "Find the real map piece.",
           "after": {
             "lines": [
@@ -275,7 +275,7 @@
         },
         "dialogue": {
           "place": "SITE OFFICE",
-          "background": "assets/seasons/season_03_rome/locations/site_office.png",
+          "background": "assets/seasons/season_03_rome/locations/site_office.webp",
           "goal": "Is Signor Valli's market story true?",
           "how": "Ask about the market. Write down what they say.",
           "guide": "Talk to someone.",
@@ -298,7 +298,7 @@
               "id": "valli",
               "name": "Bruno Valli",
               "title": "THE BUILDER",
-              "portrait": "assets/seasons/season_03_rome/characters/bruno_site.png",
+              "portrait": "assets/seasons/season_03_rome/characters/bruno_site.webp",
               "description": "a big man in a yellow helmet with a small crane sticker, arms crossed",
               "greeting": "Ask me anything! I have nothing to hide.",
               "answers": {
@@ -320,7 +320,7 @@
               "id": "pia",
               "name": "Pia Ricci",
               "title": "THE FLOWER SELLER",
-              "portrait": "assets/seasons/season_03_rome/characters/pia_base.png",
+              "portrait": "assets/seasons/season_03_rome/characters/pia_base.webp",
               "description": "a cheerful flower seller in a flowered apron and a red scarf",
               "greeting": "I came as fast as I could!",
               "answers": {
@@ -342,7 +342,7 @@
               "id": "sofia",
               "name": "Sofia Ferri",
               "title": "THE DIRECTOR",
-              "portrait": "assets/seasons/season_03_rome/characters/sofia_base.png",
+              "portrait": "assets/seasons/season_03_rome/characters/sofia_base.webp",
               "description": "a director in a navy suit, with reading glasses on a chain",
               "greeting": "I want the truth, Detective.",
               "answers": {
@@ -624,7 +624,7 @@
           "by": "speaker",
           "text": "I wanted my car park. That is all.",
           "speaker": "bruno_valli",
-          "portrait": "assets/seasons/season_03_rome/characters/bruno_site.png"
+          "portrait": "assets/seasons/season_03_rome/characters/bruno_site.webp"
         },
         {
           "by": "detective",
@@ -635,13 +635,13 @@
           "by": "speaker",
           "text": "Livia, you were right. I am sorry I did not listen.",
           "speaker": "sofia_ferri",
-          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/sofia_base.webp"
         },
         {
           "by": "speaker",
           "text": "Now we can open the owl square.",
           "speaker": "livia_conti",
-          "portrait": "assets/seasons/season_03_rome/characters/livia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/livia_base.webp"
         },
         {
           "by": "narrator",

@@ -214,7 +214,7 @@
         },
         "talk": {
           "speaker": "otto_brandt",
-          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.png",
+          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.webp",
           "goal": "Check Otto's story.",
           "after": {
             "lines": [
@@ -436,7 +436,7 @@
           "by": "speaker",
           "text": "E, G, G. Now we know the song's first half.",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "detective",
@@ -447,7 +447,7 @@
           "by": "speaker",
           "text": "And the thief is not me. Find the TV people!",
           "speaker": "otto_brandt",
-          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.webp"
         },
         {
           "by": "narrator",

@@ -37,7 +37,7 @@ final Map<String, IntroPaper> season2IntroPapers = {
 // bench in front of each: the church above the gate in every one.
 final Map<String, CornerChoiceScene> season2CornerChoices = {
   's2_ep08_m1': const CornerChoiceScene(
-    square: '$_case08/abbesses_square.png',
+    square: '$_case08/abbesses_square.webp',
     squarePixels: _wide,
     cornerPixels: _wide,
     corners: [
@@ -45,21 +45,21 @@ final Map<String, CornerChoiceScene> season2CornerChoices = {
         id: 'corner1',
         name: 'CORNER 1',
         area: Rect.fromLTRB(60, 330, 500, 640),
-        file: '$_case08/corner_1.png',
+        file: '$_case08/corner_1.webp',
         label: 'Stone steps going up on the left, an old lamp left of a dark green iron gate between two pillars, the white church above',
       ),
       PainterCorner(
         id: 'corner2',
         name: 'CORNER 2',
         area: Rect.fromLTRB(520, 330, 960, 640),
-        file: '$_case08/corner_2.png',
+        file: '$_case08/corner_2.webp',
         label: 'Stone steps going up on the left, an old lamp left of a black iron gate between two pillars, the white church above',
       ),
       PainterCorner(
         id: 'corner3',
         name: 'CORNER 3',
         area: Rect.fromLTRB(960, 320, 1300, 640),
-        file: '$_case08/corner_3.png',
+        file: '$_case08/corner_3.webp',
         label: 'Stone steps going up on the right, an old lamp right of a black iron gate between two pillars, the white church above',
       ),
     ],
@@ -80,23 +80,23 @@ final Map<String, CornerChoiceScene> season2CornerChoices = {
 // flat bag full of papers (280, 600)–(370, 710); in the margin, the badge
 // drawn larger (1240, 450)–(1460, 720). The third: a white sky, the lamp
 // out, nobody, a paper on the bottom step (280, 850)–(370, 895); in the
-// margin, the paper drawn larger (laid by the app: `paper_study.png`).
+// margin, the paper drawn larger (laid by the app: `paper_study.webp`).
 const _study = MarginStudy(
-  file: '$_case08/paper_study.png',
+  file: '$_case08/paper_study.webp',
   pixels: _square,
   at: Rect.fromLTRB(1150, 330, 1500, 680),
 );
 
 const _dark = MorningSketch(
   id: 'dark',
-  file: '$_case08/sketch_morning_1_dark.png',
+  file: '$_case08/sketch_morning_1_dark.webp',
   pixels: _wide,
   label: 'A pencil drawing of the corner: a dark sky with stars, the lamp lit, the gate shut, nobody on the steps',
 );
 
 const _bag = MorningSketch(
   id: 'bag',
-  file: '$_case08/sketch_morning_2_bag.png',
+  file: '$_case08/sketch_morning_2_bag.webp',
   pixels: _wide,
   label:
       'A pencil drawing of the corner: a grey sky getting light, the lamp still lit, the gate open, someone in a hat seen from behind going up the steps with a flat bag full of papers',
@@ -109,7 +109,7 @@ const _bag = MorningSketch(
 
 const season2LightSketch = MorningSketch(
   id: 'light',
-  file: '$_case08/sketch_morning_3_light.png',
+  file: '$_case08/sketch_morning_3_light.webp',
   pixels: _wide,
   label: 'A pencil drawing of the corner: a white morning sky, the lamp out, the gate open, nobody, a paper on the bottom step',
   study: _study,
@@ -149,7 +149,7 @@ final Map<String, MorningSketchesScene> season2MorningSketches = {
 // folds (y 515, x 805), dust at the lower left. Folded (1254 × 1254, cut
 // out), P.'s note clipped to it.
 const _form = TornForm(
-  file: '$_case08/torn_form_blank.png',
+  file: '$_case08/torn_form_blank.webp',
   pixels: _wide,
   paper: Rect.fromLTRB(65, 85, 1460, 915),
   fileWord: 'FILE',
@@ -157,13 +157,13 @@ const _form = TornForm(
   minutes: ':00',
   minutesAt: Rect.fromLTRB(822, 430, 962, 512),
   arrowAt: Rect.fromLTRB(975, 440, 1120, 500),
-  stamp: 'assets/seasons/season_02_paris/cases/case_07/office_stamp.png',
+  stamp: 'assets/seasons/season_02_paris/cases/case_07/office_stamp.webp',
   stampAt: Rect.fromLTRB(930, 575, 1200, 845),
 );
 
 final Map<String, TornSlipScene> season2TornSlips = {
   's2_ep08_m3': const TornSlipScene(
-    folded: '$_case08/folded_paper.png',
+    folded: '$_case08/folded_paper.webp',
     foldedPixels: _square,
     form: _form,
     parts: [
@@ -232,7 +232,7 @@ final Map<String, TornHourScene> season2TornHours = {
       solveLabel: 'SOLVE THE CASE',
     ),
     lead: NextLead(
-      file: '$_case08/last_sketch_garden.png',
+      file: '$_case08/last_sketch_garden.webp',
       pixels: _wide,
       label:
           "P.'s last drawing: a garden with a long palace and a round pond with a fountain; a little clock tower on a stone base with tiny roofs round it; someone in a hat seen from behind, a flat bag at the side; a round basket on the grass",
@@ -245,7 +245,7 @@ final Map<String, TornHourScene> season2TornHours = {
       bagTask: 'Is it the same bag? Tap three things that match the Bag Sketch.',
       bagDone: ['P. saw the bag again, in a garden.'],
       features: ['A long palace', 'A round pond with a fountain', 'Flowerbeds'],
-      mapFile: 'assets/seasons/season_02_paris/locations/map/paris_mystery.png',
+      mapFile: 'assets/seasons/season_02_paris/locations/map/paris_mystery.webp',
       mapPixels: _wide,
       spots: [
         MapSpot(id: 'montmartre', name: 'Montmartre', at: Offset(0.555, 0.098)),
@@ -298,7 +298,7 @@ const season2Case08EvidenceLinks = <String, EvidenceLink>{
 /// (its badge in the margin), the torn paper with its words and seal, and
 /// drawing 3 with the paper drawn in its margin.
 final Map<String, RiverEvidenceArt> season2Case08EvidenceArt = {
-  's2_ep08_e1': const DrawnEvidenceArt(PictureEvidence(file: '$_case08/corner_2.png', pixels: _wide)),
+  's2_ep08_e1': const DrawnEvidenceArt(PictureEvidence(file: '$_case08/corner_2.webp', pixels: _wide)),
   's2_ep08_e2': const DrawnEvidenceArt(_bag, whole: true),
   's2_ep08_e3': const DrawnEvidenceArt(_form, whole: true),
   's2_ep08_e4': const DrawnEvidenceArt(season2LightSketch, whole: true),
@@ -309,25 +309,25 @@ final Map<String, RiverEvidenceArt> season2Case08EvidenceArt = {
 // square, the corner, the bundle behind the stone, the bag's drawing, the
 // folded paper, the torn paper, and after the case P.'s last drawing.
 const _squareWhole = StoryPicture(
-  file: '$_case08/abbesses_square.png',
+  file: '$_case08/abbesses_square.webp',
   pixels: _wide,
   label: 'The square of Abbesses: three corners with steps and gates, the metro entrance, the white church on the hill',
 );
 
 const _cornerWhole = StoryPicture(
-  file: '$_case08/corner_2.png',
+  file: '$_case08/corner_2.webp',
   pixels: _wide,
   label: 'The corner: steps on the left, an old lamp, a black gate between two pillars, the white church above',
 );
 
 const _bundle = StoryPicture(
-  file: '$_case08/drawing_bundle.png',
+  file: '$_case08/drawing_bundle.webp',
   pixels: _wide,
   label: 'A loose stone pulled from the pillar; behind it, a bundle of drawings tied with string',
 );
 
 const _folded = StoryPicture(
-  file: '$_case08/folded_paper.png',
+  file: '$_case08/folded_paper.webp',
   pixels: _square,
   label: 'A paper folded small, a note clipped to it',
   cutOut: true,
@@ -345,13 +345,13 @@ final Map<String, StoryScenes> season2Case08StoryScenes = {
   // The folded paper; after it, the torn paper; then the corner again.
   's2_ep08_m3': const StoryScenes(
     place: _folded,
-    after: StoryPicture(file: '$_case08/torn_form_blank.png', pixels: _wide, label: 'A torn paper with a double border, a V-shaped tear at the top', cutOut: true),
+    after: StoryPicture(file: '$_case08/torn_form_blank.webp', pixels: _wide, label: 'A torn paper with a double border, a V-shaped tear at the top', cutOut: true),
     next: _cornerWhole,
   ),
   // After the case: P.'s last drawing.
   's2_ep08_final': const StoryScenes(
     after: StoryPicture(
-      file: '$_case08/last_sketch_garden.png',
+      file: '$_case08/last_sketch_garden.webp',
       pixels: _wide,
       label: "P.'s last drawing: the same bag beside a little clock in a garden, a palace behind",
       cutOut: true,

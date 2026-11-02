@@ -14,6 +14,7 @@ import '../mission/widgets/clockwork_garden.dart' show IntroPictureView;
 import '../mission/widgets/river_papers.dart' show PlaqueBackView;
 import '../mission/widgets/workshop_papers.dart' show DrawnEvidenceView;
 import '../../widgets/game_button.dart';
+import '../../widgets/ink_icon.dart';
 import '../../widgets/place_scenery.dart';
 import '../../widgets/paper_background.dart';
 import '../../widgets/typewriter_text.dart';
@@ -180,16 +181,26 @@ class _StoryIntroScreenState extends ConsumerState<StoryIntroScreen> {
                       padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
                       child: Column(
                         children: [
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child: AnimatedOpacity(
-                              opacity: _ready ? 0 : 1,
-                              duration: const Duration(milliseconds: 250),
-                              child: TextButton(
-                                onPressed: _ready ? null : _skipAll,
-                                child: Text('SKIP ›', style: AppText.button(size: 15, color: AppColors.goldLight)),
+                          Row(
+                            children: [
+                              // Back to the case files, as Android back does
+                              // (the page's BackTo): iOS has no back button.
+                              IconButton(
+                                key: const ValueKey('intro-back'),
+                                tooltip: 'Back to case files',
+                                onPressed: () => Navigator.of(context).maybePop(),
+                                icon: const InkIcon(InkGlyph.back, color: AppColors.goldLight),
                               ),
-                            ),
+                              const Spacer(),
+                              AnimatedOpacity(
+                                opacity: _ready ? 0 : 1,
+                                duration: const Duration(milliseconds: 250),
+                                child: TextButton(
+                                  onPressed: _ready ? null : _skipAll,
+                                  child: Text('SKIP ›', style: AppText.button(size: 15, color: AppColors.goldLight)),
+                                ),
+                              ),
+                            ],
                           ),
                           // A picture the lines keep talking about (Case 09's garden):
                           // held above them from the first line, never scrolled

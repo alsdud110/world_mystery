@@ -452,7 +452,13 @@ const _otherCases = <String, int>{
   // Wave 1.2: a no-break space in its title ('GALLERY 8').
   // London gameplay upgrade (2026-10-30, requested): 03-M2's pencil
   // sketches and Red Button recall. Value before it: ep03 2213693696.
-  'ep03': 1384014364,
+  // Each sketch carries the guard's note of its colours (2026-11-01, commit
+  // 3d0f852: options' `note`, nothing else). Value before it: ep03
+  // 1384014364.
+  // Asset optimization (2026-11-02): only the sketches' files, now WebP
+  // (`.png` → `.webp`); with `.webp` read back as `.png` the hash is the value
+  // before it, exactly. Value before it: ep03 1141287210.
+  'ep03': 2584886525,
   // Audit fix D3 (2026-10-12): the postmark keeps only its picture.
   // Puzzle wording (2026-10-23, approved): 04-M2's card says RED · SMALL ·
   // CLOCK · PLATFORM, not FOUR; tip 2 matches it (was 1263118138).
@@ -490,5 +496,8 @@ const _otherCases = <String, int>{
   // London gameplay upgrade (2026-10-30, requested): 12-M1's four gears
   // drawn, names hidden, with the Small Brass Gear's recall. Value before
   // it: ep12 1822783536.
-  'ep12': 383368549,
+  // Asset optimization (2026-11-02): only the gears' files, now WebP (`.png` →
+  // `.webp`); with `.webp` read back as `.png` the hash is the value before
+  // it, exactly. Value before it: ep12 383368549.
+  'ep12': 4083644127,
 };

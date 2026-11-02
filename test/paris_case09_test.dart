@@ -37,6 +37,7 @@ import 'package:world_mystery/features/season/season_overview.dart';
 import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 
@@ -116,20 +117,21 @@ void main() {
     // Size, and whether it has an alpha channel (as delivered, never
     // changed).
     const pictures = {
-      'garden_model_view.png': (1536, 1024, false),
-      'clock_model_t1.png': (1254, 1254, true),
-      'clock_model_t2.png': (1254, 1254, true),
-      'clock_model_t3.png': (1254, 1254, true),
-      'gear_board.png': (1536, 1024, false),
-      'gear_brass.png': (1254, 1254, true),
-      'clock_dial.png': (1254, 1254, true),
-      'chronos_plan.png': (1536, 1024, true),
+      'garden_model_view.webp': (1536, 1024, false),
+      'clock_model_t1.webp': (1254, 1254, true),
+      'clock_model_t2.webp': (1254, 1254, true),
+      'clock_model_t3.webp': (1254, 1254, true),
+      'gear_board.webp': (1536, 1024, false),
+      'gear_brass.webp': (1254, 1254, true),
+      'clock_dial.webp': (1254, 1254, true),
+      'chronos_plan.webp': (1536, 1024, true),
     };
 
+    /// A picture's width, height and whether it can hold transparency, read
+    /// whole from its own bytes (the game's WebP, or a PNG).
     (int, int, bool) header(Uint8List b) {
-      final d = ByteData.sublistView(b);
-      final colourType = b[25];
-      return (d.getUint32(16), d.getUint32(20), colourType == 4 || colourType == 6);
+      final i = ImageFileCheck.bytes(b);
+      return (i.width, i.height, i.hasAlpha);
     }
 
     Future<(ByteData, int, int)> pixels(String path) async {
@@ -140,7 +142,8 @@ void main() {
 
     test('all eight are in, listed in pubspec, at their sizes', () {
       expect(pubspecAssets(), contains('$folder/'), reason: 'its folder, exactly, in flutter: assets:');
-      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')).length, 8);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 8);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, alpha)) in pictures.entries) {
         final file = File('$folder/$name');
         expect(file.existsSync(), isTrue, reason: name);
@@ -155,7 +158,7 @@ void main() {
       for (final name in pictures.keys) {
         expect(scenes, contains(name), reason: name);
       }
-      expect(ArtAssets.parisScenes[case09.introScene], '$folder/garden_model_view.png');
+      expect(ArtAssets.parisScenes[case09.introScene], '$folder/garden_model_view.webp');
       for (final m in case09.allMissions) {
         expect(ArtAssets.parisScenes[m.scene], isNotNull, reason: m.id);
       }
@@ -182,12 +185,12 @@ void main() {
       }
       // The gear: opaque straight through its middle ring, left and right
       // alike (so it never wobbles as it turns), its hole in the middle.
-      final (g, gw, _) = await pixels('$folder/gear_brass.png');
+      final (g, gw, _) = await pixels('$folder/gear_brass.webp');
       int ga(int x, int y) => g.getUint8((y * gw + x) * 4 + 3);
       expect(ga(627, 627), lessThan(40), reason: 'the axle hole');
       expect(ga(627 - 300, 627) > 200, ga(627 + 300, 627) > 200);
       // The dial: its pivot (the brass dot) where the scene says.
-      final (dd, dw, _) = await pixels('$folder/clock_dial.png');
+      final (dd, dw, _) = await pixels('$folder/clock_dial.webp');
       int red(int x, int y) => dd.getUint8((y * dw + x) * 4);
       int blue(int x, int y) => dd.getUint8((y * dw + x) * 4 + 2);
       final (px, py) = (gears.dialPivot.dx.toInt(), gears.dialPivot.dy.toInt());
@@ -196,7 +199,7 @@ void main() {
     });
 
     test("the garden clock's face is where it is covered; the story's garden leaves it out", () async {
-      final (d, w, _) = await pixels('$folder/garden_model_view.png');
+      final (d, w, _) = await pixels('$folder/garden_model_view.webp');
       double light(Rect r) {
         var sum = 0.0;
         var n = 0;
@@ -269,7 +272,7 @@ void main() {
   group('its story and puzzles', () {
     test("it opens on P.'s last drawing, turning into the garden; the bag is remembered, never explained", () {
       final picture = SeasonCatalog.introPicture('s2_ep09')!;
-      expect(picture.from, 'assets/seasons/season_02_paris/cases/case_08/last_sketch_garden.png', reason: "Case 08's own drawing");
+      expect(picture.from, 'assets/seasons/season_02_paris/cases/case_08/last_sketch_garden.webp', reason: "Case 08's own drawing");
       expect(picture.afterLine, 0, reason: 'shown from the first line');
       expect(case09.intro[picture.afterLine], "You look at P.'s last drawing again.");
       expect(case09.intro[picture.turnAtLine], 'You walk into the Luxembourg Gardens.');
@@ -341,7 +344,7 @@ void main() {
       final all = {for (final e in inGame) for (final ev in e.allEvidence) ev.id: ev};
       expect(all['s2_ep01_e3']!.inscription, 'A tiny carved gear, and the letter M.');
       expect(all['s2_ep05_e1']!.inscription, contains('Signed with two clock hands.'));
-      expect(marks.handsFile, endsWith('case_04/hands_sign.png'), reason: 'the very picture of the two hands');
+      expect(marks.handsFile, endsWith('case_04/hands_sign.webp'), reason: 'the very picture of the two hands');
       expect(MakerMarksState.decode('a=key;b=repair', marks), {'b': 'repair'});
       expect(m3.transition, contains('Two marks on two different papers. Did one person make both? The papers do not say.'));
       expect(m3.transition.join(' '), contains('Is it linked to this machine? We can\'t tell yet.'));

@@ -29,6 +29,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
+import 'rewarded_ad_gateway_test.dart' show FakeAdSdk, rewardedAdsOn;
 import 'title_screen_test.dart' show capture;
 
 /// GET A TIP and the coins: tip 1 free, tip 2 for coins (or free help when
@@ -64,14 +65,16 @@ void main() {
       expect((AppConstants.missionXp, AppConstants.finalXp), (30, 60));
     });
 
-    test('a completed ad credits 20 coins once per reward event', () {
-      expect(wallet().rewardCompletedAd('ad-event-1'), 20);
-      expect(coins().balance, 40);
+    test('a completed ad credits 30 coins once per reward event', () {
+      expect(wallet().rewardCompletedAd('ad-event-1'), 30);
+      expect(coins().balance, 50);
+      expect(wallet().hasRewardedAd('ad-event-1'), isTrue);
       expect(wallet().rewardCompletedAd('ad-event-1'), 0);
-      expect(coins().balance, 40);
+      expect(coins().balance, 50);
       expect(wallet().rewardCompletedAd(''), 0);
-      expect(wallet().rewardCompletedAd('ad-event-2'), 20);
-      expect(coins().balance, 60);
+      expect(wallet().hasRewardedAd('ad-event-2'), isFalse);
+      expect(wallet().rewardCompletedAd('ad-event-2'), 30);
+      expect(coins().balance, 80);
     });
 
     test('a new detective starts with the start coins', () {
@@ -675,9 +678,10 @@ void main() {
     );
 
     testWidgets(
-      'short of coins: debug simulated ad awards 20 coins and keeps tip locked until purchased',
+      'short of coins: GET COINS\' rewarded ad awards 30 coins and keeps tip locked until purchased',
       (t) async {
-        final play = MissionPlay();
+        final sdk = FakeAdSdk();
+        final play = MissionPlay(overrides: [rewardedAdsOn(sdk)]);
         await play.openPuzzle(t, const Size(360, 640), 'm02');
         for (final other in season.skip(1).expand((e) => e.allMissions)) {
           if (play.ref.read(walletProvider).balance < 20) break;
@@ -688,16 +692,20 @@ void main() {
         await tapText(t, 'Get a Free Hint', after: const Duration(milliseconds: 600));
         await press(t, find.text('Get More Hints'));
         expect(find.text('Not enough coins! You have $left ${left == 1 ? 'coin' : 'coins'}.'), findsOneWidget);
-        expect(find.text('WATCH AD +20'), findsOneWidget);
+        expect(find.text('GET COINS'), findsOneWidget);
         expect(find.text('GET MORE HINTS'), findsNothing);
-        await t.tap(find.text('WATCH AD +20'));
+        await t.tap(find.text('GET COINS'));
+        await t.pump();
+        sdk.loaded.single
+          ..earn()
+          ..close();
         await wait(t, const Duration(milliseconds: 900));
-        expect(find.text('You earned 20 coins!'), findsOneWidget);
-        expect(play.ref.read(walletProvider).balance, left + 20);
+        expect(find.text('You earned 30 coins!'), findsOneWidget);
+        expect(play.ref.read(walletProvider).balance, left + 30);
         expect(find.text('GET MORE HINTS'), findsOneWidget);
         await t.tap(cancel);
         await wait(t, const Duration(milliseconds: 400));
-        expect(play.ref.read(walletProvider).balance, left + 20);
+        expect(play.ref.read(walletProvider).balance, left + 30);
         expect(play.ref.read(gameControllerProvider).hintsFor('m02'), 1);
         expect(play.ref.read(walletProvider).ownsTip('m02', 2), isFalse);
       },

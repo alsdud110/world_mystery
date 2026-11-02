@@ -287,7 +287,7 @@ const s3Ep11JuniorInvestigations = <String, InvestigationScene>{};
 const s3Ep11JuniorDialogues = <String, DialogueScene>{
   's3_ep11_m2': DialogueScene(
     place: 'SITE OFFICE',
-    background: 'assets/seasons/season_03_rome/locations/site_office.png',
+    background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     goal: 'Is Signor Valli\'s story about the market true?',
     how: 'Ask about the market, then write down what each person says.',
     guide: 'Talk to one of them.',
@@ -296,7 +296,7 @@ const s3Ep11JuniorDialogues = <String, DialogueScene>{
         id: 'valli',
         name: 'Bruno Valli',
         title: 'THE BUILDER',
-        portrait: 'assets/seasons/season_03_rome/characters/bruno_site.png',
+        portrait: 'assets/seasons/season_03_rome/characters/bruno_site.webp',
         description: 'a big man in a yellow helmet with a small crane sticker, with his arms crossed',
         greeting: 'Ask me anything you like! I have nothing to hide.',
         answers: {
@@ -318,7 +318,7 @@ const s3Ep11JuniorDialogues = <String, DialogueScene>{
         id: 'pia',
         name: 'Pia Ricci',
         title: 'THE FLOWER SELLER',
-        portrait: 'assets/seasons/season_03_rome/characters/pia_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/pia_base.webp',
         description: 'a cheerful flower seller wearing a flowered apron and a red scarf',
         greeting: 'I came as quickly as I could!',
         answers: {
@@ -340,7 +340,7 @@ const s3Ep11JuniorDialogues = <String, DialogueScene>{
         id: 'sofia',
         name: 'Sofia Ferri',
         title: 'THE DIRECTOR',
-        portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
         description: 'a director wearing a navy suit, with reading glasses on a chain',
         greeting: 'I just want the truth, Detective.',
         answers: {
@@ -462,7 +462,7 @@ final s3Ep11JuniorTalkMissions = <String, TalkMission>{
         id: 'bruno_valli',
         name: 'BRUNO VALLI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/bruno_site.png',
+          'base': 'assets/seasons/season_03_rome/characters/bruno_site.webp',
         },
       ),
       goal: 'Find out which stone is the real map piece.',
@@ -482,7 +482,7 @@ final s3Ep11JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'VALLI\'S SITE OFFICE',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
   ),
 };
@@ -517,32 +517,32 @@ const s3Ep11JuniorEndings = <String, List<EndingLine>>{
       'I just wanted my car park. That\'s all.',
       voice: TalkVoice.speaker,
       name: 'BRUNO VALLI',
-      portrait: 'assets/seasons/season_03_rome/characters/bruno_site.png',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      portrait: 'assets/seasons/season_03_rome/characters/bruno_site.webp',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
     EndingLine(
       'You dropped this pass on Thursday night.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
       evidenceId: 's3_ep03_e4',
     ),
     EndingLine(
       'Livia, you were right. I\'m sorry I didn\'t listen to you.',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
     EndingLine(
       'Now we can finally open the owl square.',
       voice: TalkVoice.speaker,
       name: 'LIVIA CONTI',
-      portrait: 'assets/seasons/season_03_rome/characters/livia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      portrait: 'assets/seasons/season_03_rome/characters/livia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
     EndingLine(
       'Under the fence, the old library is still waiting.',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
   ],
 };
@@ -833,7 +833,7 @@ const s3Ep11MasterInvestigations = <String, InvestigationScene>{};
 const s3Ep11MasterDialogues = <String, DialogueScene>{
   's3_ep11_m2': DialogueScene(
     place: 'SITE OFFICE',
-    background: 'assets/seasons/season_03_rome/locations/site_office.png',
+    background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     goal: 'Does Signor Valli\'s market story hold up?',
     how: 'Ask about the market and note down every answer.',
     guide: 'Speak to someone.',
@@ -842,7 +842,7 @@ const s3Ep11MasterDialogues = <String, DialogueScene>{
         id: 'valli',
         name: 'Bruno Valli',
         title: 'THE BUILDER',
-        portrait: 'assets/seasons/season_03_rome/characters/bruno_site.png',
+        portrait: 'assets/seasons/season_03_rome/characters/bruno_site.webp',
         description: 'a big man in a yellow helmet bearing a small crane sticker, his arms folded',
         greeting: 'Ask away! I\'ve got nothing to hide.',
         answers: {
@@ -864,7 +864,7 @@ const s3Ep11MasterDialogues = <String, DialogueScene>{
         id: 'pia',
         name: 'Pia Ricci',
         title: 'THE FLOWER SELLER',
-        portrait: 'assets/seasons/season_03_rome/characters/pia_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/pia_base.webp',
         description: 'a cheerful flower seller in a flowered apron, a red scarf around her neck',
         greeting: 'I hurried here as fast as my legs would carry me!',
         answers: {
@@ -886,7 +886,7 @@ const s3Ep11MasterDialogues = <String, DialogueScene>{
         id: 'sofia',
         name: 'Sofia Ferri',
         title: 'THE DIRECTOR',
-        portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
         description: 'a director in a navy suit, reading glasses hanging from a chain',
         greeting: 'Nothing but the truth will do, Detective.',
         answers: {
@@ -1008,7 +1008,7 @@ final s3Ep11MasterTalkMissions = <String, TalkMission>{
         id: 'bruno_valli',
         name: 'BRUNO VALLI',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/bruno_site.png',
+          'base': 'assets/seasons/season_03_rome/characters/bruno_site.webp',
         },
       ),
       goal: 'Identify the real map piece.',
@@ -1028,7 +1028,7 @@ final s3Ep11MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'VALLI\'S SITE OFFICE',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
   ),
 };
@@ -1063,32 +1063,32 @@ const s3Ep11MasterEndings = <String, List<EndingLine>>{
       'All I wanted was my car park. Nothing more.',
       voice: TalkVoice.speaker,
       name: 'BRUNO VALLI',
-      portrait: 'assets/seasons/season_03_rome/characters/bruno_site.png',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      portrait: 'assets/seasons/season_03_rome/characters/bruno_site.webp',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
     EndingLine(
       'This pass fell from your pocket on Thursday night.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
       evidenceId: 's3_ep03_e4',
     ),
     EndingLine(
       'Livia, you were right all along. I\'m sorry I didn\'t listen.',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
     EndingLine(
       'At last, the owl square can be opened.',
       voice: TalkVoice.speaker,
       name: 'LIVIA CONTI',
-      portrait: 'assets/seasons/season_03_rome/characters/livia_base.png',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      portrait: 'assets/seasons/season_03_rome/characters/livia_base.webp',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
     EndingLine(
       'Beneath the fence, the old library lies waiting.',
-      background: 'assets/seasons/season_03_rome/locations/site_office.png',
+      background: 'assets/seasons/season_03_rome/locations/site_office.webp',
     ),
   ],
 };

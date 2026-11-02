@@ -14,6 +14,7 @@ import '../../widgets/art_assets.dart';
 import '../../widgets/game_button.dart';
 import '../../widgets/game_toast.dart';
 import '../../widgets/ink_icon.dart';
+import '../../widgets/paper_menu.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import '../onboarding/detective_form.dart' show DetectivePortrait;
@@ -304,8 +305,36 @@ class _Header extends ConsumerWidget {
               ),
             ),
           ),
+          // The way out to the title, and the sound and the detective (the
+          // case map's menu has them too): iOS has no back button to the title.
+          IconButton(
+            key: const ValueKey('world-map-menu'),
+            tooltip: 'Menu',
+            onPressed: () => _showMenu(context),
+            icon: const InkIcon(InkGlyph.menu, color: AppColors.goldLight),
+          ),
         ],
       ),
+    );
+  }
+
+  void _showMenu(BuildContext context) {
+    showPaperMenu(
+      context,
+      items: (sheetContext, ref) => [
+        const SoundSwitchTile(),
+        // The detective's name and picture (progress stays); its back
+        // returns to the map.
+        PaperMenuItem(InkGlyph.pen, 'My detective', onTap: () {
+          Navigator.of(sheetContext).pop();
+          context.push(Routes.detective);
+        }),
+        // Where Android back goes from the map.
+        PaperMenuItem(InkGlyph.home, 'Title screen', onTap: () {
+          Navigator.of(sheetContext).pop();
+          context.go(Routes.start);
+        }),
+      ],
     );
   }
 }

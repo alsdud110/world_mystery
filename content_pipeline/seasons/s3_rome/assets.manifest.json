@@ -18,7 +18,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cover/season3_cover_rome.png",
+      "outputPath": "assets/seasons/season_03_rome/cover/season3_cover_rome.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -39,7 +39,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/map/rome_map.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/map/rome_map.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -59,11 +59,11 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cover/season3_prologue_night.png",
+      "outputPath": "assets/seasons/season_03_rome/cover/season3_prologue_night.webp",
       "references": [],
       "status": "generated",
       "notes": [
-        "The opening's first scene, full-bleed (as London's season1_london_night.png, 941x1671): the words lie over the bottom 40%, Back and SKIP over the top 12%.",
+        "The opening's first scene, full-bleed (as London's season1_london_night.webp, 941x1671): the words lie over the bottom 40%, Back and SKIP over the top 12%.",
         "Wiring: season.plan.json prologue.hero (file, pixels)."
       ]
     },
@@ -81,7 +81,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_01/guard_room.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_01/guard_room.webp",
       "references": [],
       "status": "generated"
     },
@@ -101,7 +101,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/map_hall.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/map_hall.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -123,7 +123,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/trevi_fountain.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/trevi_fountain.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -145,7 +145,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/flower_market.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/flower_market.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -166,7 +166,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/pantheon_hall.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/pantheon_hall.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -187,7 +187,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_04/rotonda_bookshop.webp",
       "references": [],
       "status": "generated"
     },
@@ -205,7 +205,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/cat_ruins.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/cat_ruins.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -226,7 +226,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/cast_workshop.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/cast_workshop.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -247,7 +247,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/navona_square.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/navona_square.webp",
       "references": [],
       "status": "generated"
     },
@@ -265,7 +265,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_06/lecture_hall.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_06/lecture_hall.webp",
       "references": [],
       "status": "generated"
     },
@@ -283,7 +283,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/spanish_steps.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/spanish_steps.webp",
       "references": [],
       "status": "generated"
     },
@@ -301,7 +301,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/tiber_bridge.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/tiber_bridge.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -322,7 +322,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/restoration_lab.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/restoration_lab.webp",
       "references": [],
       "status": "generated"
     },
@@ -340,7 +340,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/forum_view.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/forum_view.webp",
       "references": [],
       "status": "generated"
     },
@@ -358,7 +358,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_09/map_archive.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_09/map_archive.webp",
       "references": [],
       "status": "generated"
     },
@@ -377,7 +377,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/civetta_square.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/civetta_square.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -398,7 +398,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/site_office.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/site_office.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -419,7 +419,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/locations/roman_library.png",
+      "outputPath": "assets/seasons/season_03_rome/locations/roman_library.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -452,7 +452,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/giulia_base.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/giulia_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -477,7 +477,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/sofia_base.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/sofia_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -500,7 +500,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/enzo_base.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/enzo_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -527,7 +527,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/livia_base.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/livia_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -550,7 +550,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/livia_hood.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/livia_hood.webp",
       "references": [
         "s3_rome.asset.char_livia_base"
       ],
@@ -575,7 +575,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/bruno_base.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/bruno_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -597,7 +597,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/bruno_site.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/bruno_site.webp",
       "references": [
         "s3_rome.asset.char_bruno_base"
       ],
@@ -624,7 +624,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/aldo_base.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/aldo_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -648,7 +648,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/pia_base.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/pia_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -673,7 +673,7 @@
       "width": 1024,
       "height": 1536,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/characters/carla_base.png",
+      "outputPath": "assets/seasons/season_03_rome/characters/carla_base.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -694,7 +694,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/night_log.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/night_log.webp",
       "references": [],
       "status": "generated"
     },
@@ -715,7 +715,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/owl_card.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/owl_card.webp",
       "references": [],
       "status": "generated"
     },
@@ -734,7 +734,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/brass_key.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/brass_key.webp",
       "references": [],
       "status": "generated"
     },
@@ -753,7 +753,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/dropped_pass.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/dropped_pass.webp",
       "references": [],
       "status": "generated"
     },
@@ -772,7 +772,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/real_map_piece.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/real_map_piece.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -795,7 +795,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/plaster_copy.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/plaster_copy.webp",
       "references": [
         "s3_rome.asset.ev_real_piece"
       ],
@@ -819,7 +819,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/order_card_318.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/order_card_318.webp",
       "references": [],
       "status": "generated"
     },
@@ -839,7 +839,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/aldo_photo.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/aldo_photo.webp",
       "references": [
         "s3_rome.asset.ev_real_piece"
       ],
@@ -860,7 +860,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/business_card.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/business_card.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -883,7 +883,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/loan_book_page.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/loan_book_page.webp",
       "references": [],
       "status": "generated"
     },
@@ -902,7 +902,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/livia_drawing.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/livia_drawing.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -925,7 +925,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/city_plan.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/city_plan.webp",
       "references": [],
       "status": "generated"
     },
@@ -943,7 +943,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/yellow_helmet.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/yellow_helmet.webp",
       "references": [
         "s3_rome.asset.ev_business_card"
       ],
@@ -968,7 +968,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/owl_mosaic.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/owl_mosaic.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -989,7 +989,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/objects/gold_tiles.png",
+      "outputPath": "assets/seasons/season_03_rome/objects/gold_tiles.webp",
       "references": [],
       "status": "planned"
     },
@@ -1007,7 +1007,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_01/colosseum.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_01/colosseum.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -1028,7 +1028,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_04/floor_stone_ship.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_04/floor_stone_ship.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -1049,7 +1049,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_04/floor_stone_lion.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_04/floor_stone_lion.webp",
       "references": [
         "s3_rome.asset.floor_stone_ship"
       ],
@@ -1069,7 +1069,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_04/floor_stone_book.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_04/floor_stone_book.webp",
       "references": [
         "s3_rome.asset.floor_stone_ship"
       ],
@@ -1089,7 +1089,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_04/floor_stone_key.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_04/floor_stone_key.webp",
       "references": [
         "s3_rome.asset.floor_stone_ship"
       ],
@@ -1109,7 +1109,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_05/cat_tito.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_05/cat_tito.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -1130,7 +1130,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_05/cat_rosso.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_05/cat_rosso.webp",
       "references": [],
       "status": "generated"
     },
@@ -1148,7 +1148,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_05/cat_luna.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_05/cat_luna.webp",
       "references": [],
       "status": "generated"
     },
@@ -1166,7 +1166,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_08/bridge_angels.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_08/bridge_angels.webp",
       "references": [],
       "status": "generated"
     },
@@ -1184,7 +1184,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_08/bridge_hole.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_08/bridge_hole.webp",
       "references": [],
       "status": "generated"
     },
@@ -1202,7 +1202,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_09/room_bath.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_09/room_bath.webp",
       "references": [],
       "status": "generated"
     },
@@ -1220,7 +1220,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_09/room_theatre.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_09/room_theatre.webp",
       "references": [],
       "status": "generated"
     },
@@ -1238,7 +1238,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_10/helmet_white_crane.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_10/helmet_white_crane.webp",
       "references": [
         "s3_rome.asset.ev_yellow_helmet"
       ],
@@ -1258,7 +1258,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_10/helmet_yellow_plain.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_10/helmet_yellow_plain.webp",
       "references": [
         "s3_rome.asset.ev_yellow_helmet"
       ],
@@ -1278,7 +1278,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_11/stone_lion.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_11/stone_lion.webp",
       "references": [
         "s3_rome.asset.ev_real_piece"
       ],
@@ -1298,7 +1298,7 @@
       "width": 1024,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_11/stone_street.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_11/stone_street.webp",
       "references": [
         "s3_rome.asset.ev_real_piece"
       ],
@@ -1318,7 +1318,7 @@
       "width": 1536,
       "height": 1024,
       "transparent": false,
-      "outputPath": "assets/seasons/season_03_rome/cases/case_08/owl_reveal.png",
+      "outputPath": "assets/seasons/season_03_rome/cases/case_08/owl_reveal.webp",
       "references": [
         "s3_rome.asset.char_livia_hood",
         "s3_rome.asset.tiber_bridge"

@@ -108,10 +108,10 @@ void main() {
     final secondMission = container.read(currentEpisodeProvider).missions[1];
     expect(wallet.unlockTip(secondMission, 2), TipUnlock.insufficientCoins);
     expect(container.read(walletProvider).ownsTip(secondMission.id, 2), isFalse);
-    expect(wallet.rewardCompletedAd('test-completed-event'), 20);
+    expect(wallet.rewardCompletedAd('test-completed-event'), 30);
     expect(wallet.rewardCompletedAd('test-completed-event'), 0);
-    expect(container.read(walletProvider).balance, 20);
+    expect(container.read(walletProvider).balance, 30);
     expect(wallet.unlockTip(secondMission, 2), TipUnlock.paid);
-    expect(container.read(walletProvider).balance, 0);
+    expect(container.read(walletProvider).balance, 10);
   });
 }

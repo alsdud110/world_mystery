@@ -17,6 +17,7 @@ dependencies:
   shared_preferences: ^2.5.5
   # Sound effects
   audioplayers: ^6.8.1
+  google_mobile_ads: ^9.2.0
 
 dev_dependencies:
   flutter_test:
@@ -163,7 +164,7 @@ flutter:
     - assets/seasons/season_01_london/special/
     # How to Play: the player's detective, the practice witness, the lost cat.
     - assets/shared/onboarding/
-    # The player's detective: detective_boy.png and detective_girl.png
+    # The player's detective: detective_boy.webp and detective_girl.webp
     # (until they are added, the choice shows the cap icon and the word).
     - assets/shared/detectives/avatars/
     # The player's detective in play, one picture per expression

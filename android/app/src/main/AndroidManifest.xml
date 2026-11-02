@@ -1,4 +1,11 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- The players are children: the advertising ID is never read (Google
+         Play Families policy). The Mobile Ads SDK adds this permission;
+         it is removed from the merged manifest here. -->
+    <uses-permission
+        android:name="com.google.android.gms.permission.AD_ID"
+        tools:node="remove" />
     <application
         android:label="${appLabel}"
         android:allowBackup="false"
@@ -31,6 +38,11 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <!-- AdMob App ID, set by app/build.gradle.kts: Google's sample ID in
+             debug and profile, the real one (config/ads.local.json) in release. -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${admobAppId}" />
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

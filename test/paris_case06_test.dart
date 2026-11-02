@@ -37,6 +37,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 
@@ -113,27 +114,28 @@ void main() {
     // Size, and whether it has an alpha channel (as delivered, never
     // changed): the torn pieces share one canvas.
     const pictures = {
-      'louvre_post_room_exterior.png': (1536, 1024, false),
-      'post_room_hold_rack.png': (1536, 1024, false),
-      'hold_tag_blank.png': (1254, 1254, true),
-      'ink_blot.png': (1254, 1254, true),
-      'archive_floor_plan.png': (1024, 1536, false),
-      'archive_room.png': (1536, 1024, false),
-      'archive_cabinet.png': (1254, 1254, false),
-      'archive_drawer_open.png': (1536, 1024, false),
-      'torn_corner_4417.png': (1474, 1067, true),
-      'torn_envelope_match.png': (1474, 1067, true),
-      'torn_envelope_decoy_a.png': (1474, 1067, true),
-      'torn_envelope_decoy_b.png': (1474, 1067, true),
-      'opera_seal.png': (1254, 1254, true),
-      'opera_sketch.png': (1448, 1086, true),
-      'letter_paper_open.png': (1086, 1448, true),
+      'louvre_post_room_exterior.webp': (1536, 1024, false),
+      'post_room_hold_rack.webp': (1536, 1024, false),
+      'hold_tag_blank.webp': (1254, 1254, true),
+      'ink_blot.webp': (1254, 1254, true),
+      'archive_floor_plan.webp': (1024, 1536, false),
+      'archive_room.webp': (1536, 1024, false),
+      'archive_cabinet.webp': (1254, 1254, false),
+      'archive_drawer_open.webp': (1536, 1024, false),
+      'torn_corner_4417.webp': (1474, 1067, true),
+      'torn_envelope_match.webp': (1474, 1067, true),
+      'torn_envelope_decoy_a.webp': (1474, 1067, true),
+      'torn_envelope_decoy_b.webp': (1474, 1067, true),
+      'opera_seal.webp': (1254, 1254, true),
+      'opera_sketch.webp': (1448, 1086, true),
+      'letter_paper_open.webp': (1086, 1448, true),
     };
 
+    /// A picture's width, height and whether it can hold transparency, read
+    /// whole from its own bytes (the game's WebP, or a PNG).
     (int, int, bool) header(Uint8List b) {
-      final d = ByteData.sublistView(b);
-      final colourType = b[25];
-      return (d.getUint32(16), d.getUint32(20), colourType == 4 || colourType == 6);
+      final i = ImageFileCheck.bytes(b);
+      return (i.width, i.height, i.hasAlpha);
     }
 
     Future<(ByteData, int, int)> pixels(String path) async {
@@ -146,7 +148,8 @@ void main() {
 
     test('all fifteen are in, listed in pubspec, at their sizes', () {
       expect(pubspecAssets(), contains('$folder/'), reason: 'its folder, exactly, in flutter: assets:');
-      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')).length, 15);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 15);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, alpha)) in pictures.entries) {
         final file = File('$folder/$name');
         expect(file.existsSync(), isTrue, reason: name);
@@ -162,7 +165,7 @@ void main() {
       for (final name in pictures.keys) {
         expect(scenes, contains(name), reason: name);
       }
-      expect(ArtAssets.parisScenes[case06.introScene], '$folder/louvre_post_room_exterior.png');
+      expect(ArtAssets.parisScenes[case06.introScene], '$folder/louvre_post_room_exterior.webp');
       for (final m in case06.allMissions) {
         expect(ArtAssets.parisScenes[m.scene], isNotNull, reason: m.id);
       }
@@ -184,12 +187,12 @@ void main() {
       }
 
       const w = 1474;
-      final corner = await mask('torn_corner_4417.png');
+      final corner = await mask('torn_corner_4417.webp');
       final cornerArea = corner.where((a) => a).length;
       // Inside the whole envelope, a little in from its edges.
       const inner = Rect.fromLTRB(126, 115, 1362, 950);
       bool inside(int i) => inner.contains(Offset((i % w).toDouble(), (i ~/ w).toDouble()));
-      for (final (name, fits) in [('torn_envelope_match.png', true), ('torn_envelope_decoy_a.png', false), ('torn_envelope_decoy_b.png', false)]) {
+      for (final (name, fits) in [('torn_envelope_match.webp', true), ('torn_envelope_decoy_a.webp', false), ('torn_envelope_decoy_b.webp', false)]) {
         final e = await mask(name);
         var overlap = 0, gap = 0, area = 0;
         for (var i = 0; i < e.length; i++) {
@@ -213,8 +216,8 @@ void main() {
       }
       // The right envelope is the one the rules fit, and its seal spot is
       // where the seal is pressed.
-      expect(archiveScene.envelope(archive.fitting.single.id).file, '$folder/torn_envelope_match.png');
-      final (m, mw, _) = await pixels('$folder/torn_envelope_match.png');
+      expect(archiveScene.envelope(archive.fitting.single.id).file, '$folder/torn_envelope_match.webp');
+      final (m, mw, _) = await pixels('$folder/torn_envelope_match.webp');
       final c = archiveScene.sealAt.center;
       expect(alphaAt(m, mw, c.dx.round(), c.dy.round()), greaterThan(240), reason: 'the seal is on the paper');
       expect(corner[archiveScene.cornerTagAt.center.dy.round() * w + archiveScene.cornerTagAt.center.dx.round()], isTrue, reason: 'the number is on the sticker');

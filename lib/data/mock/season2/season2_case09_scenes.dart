@@ -15,7 +15,7 @@ import '../../models/story_picture.dart';
 
 const _case08 = 'assets/seasons/season_02_paris/cases/case_08';
 const _case09 = 'assets/seasons/season_02_paris/cases/case_09';
-const _map = 'assets/seasons/season_02_paris/locations/map/paris_mystery.png';
+const _map = 'assets/seasons/season_02_paris/locations/map/paris_mystery.webp';
 
 const _wide = ScenePixels(1536, 1024);
 const _square = ScenePixels(1254, 1254);
@@ -28,7 +28,7 @@ const _square = ScenePixels(1254, 1254);
 // (1412, 325)–(1506, 420), has painted hands at ten past ten. The story
 // wants it at four: it is covered with the case's own dial and the app's
 // hands, or left out of the picture.
-const _dial = '$_case09/clock_dial.png';
+const _dial = '$_case09/clock_dial.webp';
 
 /// The dial's pivot (its brass dot) and its white face's radius, in its
 /// own pixels (1254 × 1254, cut out).
@@ -54,8 +54,8 @@ final Map<String, IntroPicture> season2IntroPictures = {
   's2_ep09': const IntroPicture(
     afterLine: 0,
     turnAtLine: 3,
-    from: '$_case08/last_sketch_garden.png',
-    to: '$_case09/garden_model_view.png',
+    from: '$_case08/last_sketch_garden.webp',
+    to: '$_case09/garden_model_view.webp',
     pixels: _wide,
     fromLabel: "P.'s last drawing: a palace, a round pond, a little clock on a stone base, the same flat bag beside it",
     toLabel: 'The Luxembourg Gardens: the palace, the round pond, the little clock tower on its stone base, the garden clock at four',
@@ -85,7 +85,7 @@ const _spots = [
 const _t1 = TrialModel(
   id: 't1',
   name: 'T1',
-  file: '$_case09/clock_model_t1.png',
+  file: '$_case09/clock_model_t1.webp',
   label: 'T1: a little arch with a clock on top, a star carved on its base',
   spot: 'arcDeTriomphe',
   wrongLine: 'Look for a big arch.',
@@ -95,7 +95,7 @@ const _t1 = TrialModel(
 const _t2 = TrialModel(
   id: 't2',
   name: 'T2',
-  file: '$_case09/clock_model_t2.png',
+  file: '$_case09/clock_model_t2.webp',
   label: 'T2: a little bridge of three arches with green bookstalls and a clock, three arches carved on its base',
   spot: 'seineQuays',
   wrongLine: 'Look for a bridge with green bookstalls.',
@@ -105,7 +105,7 @@ const _t2 = TrialModel(
 const _t3 = TrialModel(
   id: 't3',
   name: 'T3',
-  file: '$_case09/clock_model_t3.png',
+  file: '$_case09/clock_model_t3.webp',
   label: 'T3: a little long hall with one tall spire and a clock, a bell carved on its base',
   spot: 'artsEtMetiers',
   wrongLine: 'Look for one tall spire, north of the river.',
@@ -138,10 +138,10 @@ final Map<String, TrialMapScene> season2TrialMaps = {'s2_ep09_m1': season2TrialM
 // The gear (1254 × 1254, cut out): ten teeth, centred; its teeth reach
 // 589 from the centre.
 const season2GearBoard = GearBoardScene(
-  file: '$_case09/gear_board.png',
+  file: '$_case09/gear_board.webp',
   pixels: _wide,
   view: Rect.fromLTRB(110, 140, 1426, 735),
-  gearFile: '$_case09/gear_brass.png',
+  gearFile: '$_case09/gear_brass.webp',
   gearPixels: _square,
   dialFile: _dial,
   dialPixels: _square,
@@ -180,9 +180,9 @@ final Map<String, GearBoardScene> season2GearBoards = {'s2_ep09_m2': season2Gear
 // ending in an empty square, centred (1438, 246) and (1414, 324). The words
 // sit on the rules and the marks in the squares, turned with the note.
 const season2MakerMarks = MakerMarksScene(
-  file: '$_case09/chronos_plan.png',
+  file: '$_case09/chronos_plan.webp',
   pixels: _wide,
-  handsFile: 'assets/seasons/season_02_paris/cases/case_04/hands_sign.png',
+  handsFile: 'assets/seasons/season_02_paris/cases/case_04/hands_sign.webp',
   handsPixels: _square,
   marks: [
     NotebookMark(id: 'a', kind: MarkKind.gear, name: "The Clockmaker's Mark", source: 'Gare du Nord', evidenceId: 's2_ep01_e3'),
@@ -234,7 +234,7 @@ final Map<String, MakerMarksScene> season2MakerMarksScenes = {'s2_ep09_m3': seas
 
 // ── Final — the wrong hour ──────────────────────────────────────────────
 const season2TowerTest = TowerTestScene(
-  garden: '$_case09/garden_model_view.png',
+  garden: '$_case09/garden_model_view.webp',
   gardenPixels: _wide,
   gardenLabel: 'The Luxembourg Gardens: the little clock tower on its stone base; the garden clock at four',
   gardenClock: _gardenClock,
@@ -302,27 +302,27 @@ final Map<String, RiverEvidenceArt> season2Case09EvidenceArt = {
 // garden (left of its clock, whose painted hands the story does not
 // want), T1 with its star, the board, the gear, the plan.
 const _garden = StoryPicture(
-  file: '$_case09/garden_model_view.png',
+  file: '$_case09/garden_model_view.webp',
   pixels: _wide,
   crop: _gardenNoClock,
   label: 'The Luxembourg Gardens: the palace, the round pond, the little clock tower on its stone base',
 );
 
 const _starClock = StoryPicture(
-  file: '$_case09/clock_model_t1.png',
+  file: '$_case09/clock_model_t1.webp',
   pixels: _square,
   label: 'T1: a little arch with a clock on top, a star carved on its base',
   cutOut: true,
 );
 
 const _board = StoryPicture(
-  file: '$_case09/gear_board.png',
+  file: '$_case09/gear_board.webp',
   pixels: _wide,
   label: 'A brass board in a little stone niche under the model',
 );
 
 const _plan = StoryPicture(
-  file: '$_case09/chronos_plan.png',
+  file: '$_case09/chronos_plan.webp',
   pixels: _wide,
   label: 'An old blue plan of gears, a repair note pinned to it',
   cutOut: true,
@@ -334,7 +334,7 @@ final Map<String, StoryScenes> season2Case09StoryScenes = {
   // The board; after it, a gear; then the plan.
   's2_ep09_m2': const StoryScenes(
     place: _board,
-    after: StoryPicture(file: '$_case09/gear_brass.png', pixels: _square, label: 'A brass gear', cutOut: true),
+    after: StoryPicture(file: '$_case09/gear_brass.webp', pixels: _square, label: 'A brass gear', cutOut: true),
     next: _plan,
   ),
   // The plan; after it, the plan again; then the tower in the garden.

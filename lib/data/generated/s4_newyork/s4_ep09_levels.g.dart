@@ -265,7 +265,7 @@ const s4Ep09JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s4Ep09JuniorExplores = <String, ExploreScene>{
   's4_ep09_m2': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+    picture: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -336,17 +336,17 @@ const s4Ep09JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'rail',
-        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_rail.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_rail.webp',
         description: 'a white wheel car with a flat roof, running on a curved rail inside the wheel',
       ),
       ExplorePicture(
         optionId: 'dome',
-        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_dome.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_dome.webp',
         description: 'a white wheel car with a round dome roof, hanging on the outside edge',
       ),
       ExplorePicture(
         optionId: 'still',
-        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_still.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_still.webp',
         description: 'a white wheel car with a flat roof, hanging on the outside edge',
       ),
     ],
@@ -394,26 +394,26 @@ const s4Ep09JuniorEndings = <String, List<EndingLine>>{
     EndingLine(
       'The wall my egg named is the east one.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
       evidenceId: 's4_ep02_e3',
     ),
     EndingLine(
       'And the man in star boots answered \'palace\'!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
     ),
     EndingLine(
       'He doesn\'t know the place, or the whole song.',
       voice: TalkVoice.speaker,
       name: 'ROSA DIAZ',
-      portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
     ),
     EndingLine(
       'Far along the boardwalk, someone in a safari vest is walking away.',
-      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
     ),
   ],
 };
@@ -678,7 +678,7 @@ const s4Ep09MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s4Ep09MasterExplores = <String, ExploreScene>{
   's4_ep09_m2': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+    picture: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -749,17 +749,17 @@ const s4Ep09MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'rail',
-        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_rail.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_rail.webp',
         description: 'a white wheel car with a flat roof, travelling along a curved rail inside the wheel',
       ),
       ExplorePicture(
         optionId: 'dome',
-        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_dome.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_dome.webp',
         description: 'a white wheel car crowned with a round dome roof, suspended from the outside edge',
       ),
       ExplorePicture(
         optionId: 'still',
-        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_still.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_09/car_still.webp',
         description: 'a white wheel car with a flat roof, suspended from the outside edge',
       ),
     ],
@@ -807,26 +807,26 @@ const s4Ep09MasterEndings = <String, List<EndingLine>>{
     EndingLine(
       'The wall named by my egg is the east wall.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
       evidenceId: 's4_ep02_e3',
     ),
     EndingLine(
       'And the man in star boots guessed \'palace\'!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
     ),
     EndingLine(
       'He knows neither the place nor the whole song.',
       voice: TalkVoice.speaker,
       name: 'ROSA DIAZ',
-      portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/rosa_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
     ),
     EndingLine(
       'Far down the boardwalk, a figure in a safari vest slips away.',
-      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.png',
+      background: 'assets/seasons/season_04_newyork/locations/coney_boardwalk.webp',
     ),
   ],
 };

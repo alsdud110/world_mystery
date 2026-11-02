@@ -81,7 +81,7 @@ const season2ArchiveDrawers = <String, ArchiveDrawers>{
 
 /// The final: the letter's drawing (a dome, statues on the roof, arched
 /// windows: the opera house) and the buildings of the map of Paris
-/// (`paris_mystery.png`), as drawn there. Montmartre's church has domes
+/// (`paris_mystery.webp`), as drawn there. Montmartre's church has domes
 /// and arches but no statues on its roof and no shows; the Louvre has
 /// statues and arches but a glass pyramid, no dome.
 const season2LetterMaps = <String, LetterMap>{
@@ -134,7 +134,7 @@ const _tag = ScenePixels(1254, 1254);
 final Map<String, HoldRackScene> season2HoldRackScenes = {
   's2_ep06_m1': HoldRackScene(
     rack: season2HoldRacks['s2_ep06_m1']!,
-    file: '$_case06/post_room_hold_rack.png',
+    file: '$_case06/post_room_hold_rack.webp',
     pixels: _rack,
     view: const Rect.fromLTRB(215, 60, 1370, 935),
     place: 'A wooden rack of slots full of letters and parcels, one slot empty, four paper tags hanging from it',
@@ -144,10 +144,10 @@ final Map<String, HoldRackScene> season2HoldRackScenes = {
       RackTag(id: 'c', spot: Rect.fromLTRB(1146, 280, 1328, 488), paper: Rect.fromLTRB(1196, 322, 1278, 465)),
       RackTag(id: 'd', spot: Rect.fromLTRB(340, 740, 515, 925), paper: Rect.fromLTRB(390, 775, 465, 908)),
     ],
-    tagFile: '$_case06/hold_tag_blank.png',
+    tagFile: '$_case06/hold_tag_blank.webp',
     tagPixels: _tag,
     writeOn: const Rect.fromLTRB(372, 478, 882, 1186),
-    ink: '$_case06/ink_blot.png',
+    ink: '$_case06/ink_blot.webp',
     trail: season2PostTrails['s2_ep05_final']!.paperOf(season2PostTrails['s2_ep05_final']!.slipOf('s3')),
     lookTask: 'Tap a tag to look at it closely.',
     turnTask: 'Turn the tag over to read its back.',
@@ -170,7 +170,7 @@ const _plan = ScenePixels(1024, 1536);
 final Map<String, PlanScene> season2PlanScenes = {
   's2_ep06_m2': PlanScene(
     route: season2PlanRoutes['s2_ep06_m2']!,
-    file: '$_case06/archive_floor_plan.png',
+    file: '$_case06/archive_floor_plan.webp',
     pixels: _plan,
     view: const Rect.fromLTRB(250, 180, 774, 1490),
     place: 'A plan of the building seen from above: the post room at the bottom, stairs, a long corridor with a statue, and doors on both sides',
@@ -216,7 +216,7 @@ const _seal = ScenePixels(1254, 1254);
 final Map<String, ArchiveScene> season2ArchiveScenes = {
   's2_ep06_m3': ArchiveScene(
     drawers: season2ArchiveDrawers['s2_ep06_m3']!,
-    cabinet: '$_case06/archive_cabinet.png',
+    cabinet: '$_case06/archive_cabinet.webp',
     cabinetPixels: _cabinet,
     cabinetView: const Rect.fromLTRB(105, 140, 1150, 1190),
     // Where each drawer of the rules is in the cabinet: the parcels' beside
@@ -227,22 +227,22 @@ final Map<String, ArchiveScene> season2ArchiveScenes = {
       CabinetDrawer(id: 'l4400', area: Rect.fromLTRB(185, 655, 612, 1040), label: Rect.fromLTRB(302, 736, 503, 836)),
       CabinetDrawer(id: 'l4200', area: Rect.fromLTRB(657, 655, 1083, 1040), label: Rect.fromLTRB(775, 736, 980, 836)),
     ],
-    drawer: '$_case06/archive_drawer_open.png',
+    drawer: '$_case06/archive_drawer_open.webp',
     drawerPixels: _drawer,
     drawerView: const Rect.fromLTRB(170, 50, 1450, 830),
     felt: const Rect.fromLTRB(300, 140, 1330, 690),
     envelopes: const [
-      DrawerEnvelope(id: 'x', file: '$_case06/torn_envelope_decoy_a.png', inDrawer: Rect.fromLTRB(196, 180, 636, 498.5)),
-      DrawerEnvelope(id: 'y', file: '$_case06/torn_envelope_match.png', inDrawer: Rect.fromLTRB(538, 142, 978, 460.5)),
-      DrawerEnvelope(id: 'z', file: '$_case06/torn_envelope_decoy_b.png', inDrawer: Rect.fromLTRB(880, 196, 1320, 514.5)),
+      DrawerEnvelope(id: 'x', file: '$_case06/torn_envelope_decoy_a.webp', inDrawer: Rect.fromLTRB(196, 180, 636, 498.5)),
+      DrawerEnvelope(id: 'y', file: '$_case06/torn_envelope_match.webp', inDrawer: Rect.fromLTRB(538, 142, 978, 460.5)),
+      DrawerEnvelope(id: 'z', file: '$_case06/torn_envelope_decoy_b.webp', inDrawer: Rect.fromLTRB(880, 196, 1320, 514.5)),
     ],
     envelopePixels: _envelopes,
-    corner: '$_case06/torn_corner_4417.png',
+    corner: '$_case06/torn_corner_4417.webp',
     cornerPiece: const Rect.fromLTRB(118, 105, 1023, 811),
     cornerTagAt: const Rect.fromLTRB(225, 200, 645, 418),
     // On every envelope, over the seal spot (centre (1195, 780), radius 100).
     numberTag: Rect.fromCircle(center: const Offset(1195, 780), radius: 122),
-    seal: '$_case06/opera_seal.png',
+    seal: '$_case06/opera_seal.webp',
     sealPixels: _seal,
     sealAt: const Rect.fromLTRB(1083, 668, 1307, 892),
     cabinetTask: 'Read the labels. Tap the drawer for Letter 4417.',
@@ -268,11 +268,11 @@ const _sketch = ScenePixels(1448, 1086);
 const _map = ScenePixels(1536, 1024);
 
 const _letterPaper = LetterPaper(
-  file: '$_case06/letter_paper_open.png',
+  file: '$_case06/letter_paper_open.webp',
   pixels: _letter,
   lines: ['The clocks may lie.', 'But the show remembers.'],
   writeOn: Rect.fromLTRB(110, 150, 980, 470),
-  sketch: '$_case06/opera_sketch.png',
+  sketch: '$_case06/opera_sketch.webp',
   sketchAt: Rect.fromLTRB(120, 640, 966, 1274),
   back: ['OPERA ARCHIVE', 'FILE 3–4'],
   backOn: Rect.fromLTRB(140, 560, 950, 900),
@@ -283,7 +283,7 @@ final Map<String, LetterMapScene> season2LetterMapScenes = {
     map: season2LetterMaps['s2_ep06_final']!,
     letter: _letterPaper,
     sketchPixels: _sketch,
-    mapFile: 'assets/seasons/season_02_paris/locations/map/paris_mystery.png',
+    mapFile: 'assets/seasons/season_02_paris/locations/map/paris_mystery.webp',
     mapPixels: _map,
     // The map's own landmarks (`ParisLandmark`), in the order of the
     // case's options.
@@ -309,7 +309,7 @@ final Map<String, LetterMapScene> season2LetterMapScenes = {
 final Map<String, RiverEvidenceArt> season2Case06EvidenceArt = {
   's2_ep06_e1': DrawnEvidenceArt(
     WrittenPaper(
-      file: '$_case06/hold_tag_blank.png',
+      file: '$_case06/hold_tag_blank.webp',
       pixels: _tag,
       writeOn: const Rect.fromLTRB(372, 478, 882, 1186),
       lines: season2HoldRacks['s2_ep06_m1']!.tag('d').back,
@@ -317,7 +317,7 @@ final Map<String, RiverEvidenceArt> season2Case06EvidenceArt = {
       size: 52,
     ),
   ),
-  's2_ep06_e2': const DrawnEvidenceArt(PictureEvidence(file: '$_case06/archive_floor_plan.png', pixels: _plan)),
+  's2_ep06_e2': const DrawnEvidenceArt(PictureEvidence(file: '$_case06/archive_floor_plan.webp', pixels: _plan)),
   's2_ep06_e3': DrawnEvidenceArt(season2ArchiveScenes['s2_ep06_m3']!.fitted),
   's2_ep06_e4': const DrawnEvidenceArt(_letterPaper),
 };
@@ -327,20 +327,20 @@ final Map<String, RiverEvidenceArt> season2Case06EvidenceArt = {
 // once it is found, the archive once the door is found, the seal once the
 // envelope is, the drawing's building once the letter is read.
 const _rackWhole = StoryPicture(
-  file: '$_case06/post_room_hold_rack.png',
+  file: '$_case06/post_room_hold_rack.webp',
   pixels: _rack,
   label: 'A wooden rack of slots in a quiet post room, paper tags hanging from it',
 );
 
 const _planWhole = StoryPicture(
-  file: '$_case06/archive_floor_plan.png',
+  file: '$_case06/archive_floor_plan.webp',
   pixels: _plan,
   crop: Rect.fromLTRB(0.18, 0.1, 0.82, 0.97),
   label: 'A plan of the building: stairs, a corridor with a statue, doors on both sides',
 );
 
 const _archiveWhole = StoryPicture(
-  file: '$_case06/archive_room.png',
+  file: '$_case06/archive_room.webp',
   pixels: _wide,
   label: 'A dim archive room: tall cabinets full of small drawers, a lamp on a reading table',
 );
@@ -350,7 +350,7 @@ final Map<String, StoryScenes> season2Case06StoryScenes = {
   's2_ep06_m1': StoryScenes(
     place: _rackWhole,
     after: StoryPicture(
-      file: '$_case06/post_room_hold_rack.png',
+      file: '$_case06/post_room_hold_rack.webp',
       pixels: _rack,
       crop: _rack.rect(250, 640, 640, 960),
       label: 'Tag D, hanging under the bottom row of the rack',
@@ -362,7 +362,7 @@ final Map<String, StoryScenes> season2Case06StoryScenes = {
     place: _planWhole,
     after: _archiveWhole,
     next: StoryPicture(
-      file: '$_case06/archive_cabinet.png',
+      file: '$_case06/archive_cabinet.webp',
       pixels: _cabinet,
       label: 'An archive cabinet of four drawers, each with a brass label holder',
     ),
@@ -371,13 +371,13 @@ final Map<String, StoryScenes> season2Case06StoryScenes = {
   's2_ep06_m3': StoryScenes(
     place: _archiveWhole,
     after: const StoryPicture(
-      file: '$_case06/opera_seal.png',
+      file: '$_case06/opera_seal.webp',
       pixels: _seal,
       label: 'A red wax seal with a tiny drawing of a grand building',
       cutOut: true,
     ),
     next: StoryPicture(
-      file: '$_case06/archive_room.png',
+      file: '$_case06/archive_room.webp',
       pixels: _wide,
       crop: _wide.rect(0, 500, 960, 1024),
       label: 'The reading table in the archive, under its green lamp',
@@ -386,7 +386,7 @@ final Map<String, StoryScenes> season2Case06StoryScenes = {
   // After the case: the letter's drawing, the building the case goes to.
   's2_ep06_final': const StoryScenes(
     after: StoryPicture(
-      file: '$_case06/opera_sketch.png',
+      file: '$_case06/opera_sketch.webp',
       pixels: _sketch,
       label: 'An ink drawing of the Palais Garnier, the opera house',
       cutOut: true,

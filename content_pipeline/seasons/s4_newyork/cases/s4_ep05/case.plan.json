@@ -112,7 +112,7 @@
         },
         "talk": {
           "speaker": "harold_brooks",
-          "portrait": "assets/seasons/season_04_newyork/characters/harold_base.png",
+          "portrait": "assets/seasons/season_04_newyork/characters/harold_base.webp",
           "goal": "Read Otto's letter.",
           "before": {
             "lines": [
@@ -178,7 +178,7 @@
           "Played as a look round (ExploreScene) in Otto's shop: his diary is on the desk; the photo wall opens once it is read. The three islands of New York Harbor are told apart by what stands on them (a tall green lady with a torch, a red-brick hall with four towers, a round stone fort).",
           "Otto's plain boots by the door (a note) are paid off in Case 06: the star prints are not his.",
           "The choice pictures reuse one place picture (liberty_island, Case 06) and add two (ellis_island, island_fort), all 1536x1024.",
-          "Coordinates measured on the made clock_shop.png (1536x1024, sha256 defcaf8a…) with a 50px grid sheet (season_factory). The diary lies open on the desk left of centre (its area is the desk top and drawers, not the chair); the three photos hang one above another on the right wall, above the workbench."
+          "Coordinates measured on the made clock_shop.webp (1536x1024, sha256 defcaf8a…) with a 50px grid sheet (season_factory). The diary lies open on the desk left of centre (its area is the desk top and drawers, not the chair); the three photos hang one above another on the right wall, above the workbench."
         ]
       },
       "clueInputs": [
@@ -244,12 +244,12 @@
         },
         "explore": {
           "picture": {
-            "file": "assets/seasons/season_04_newyork/locations/clock_shop.png",
+            "file": "assets/seasons/season_04_newyork/locations/clock_shop.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:defcaf8a3312808e80e1ef61a7ffa55922abea636b5744110f58cb34aab5370e"
+            "measuredOn": "sha256:a43f12afe4fc13edcdf0336a744f2da2fd812346b2df4419f9c73f961dcdb5fc"
           },
           "place": "The clock shop",
           "task": "Look around the shop. Where did Otto go on Sunday?",
@@ -361,17 +361,17 @@
           "choices": [
             {
               "optionId": "ellis",
-              "picture": "assets/seasons/season_04_newyork/cases/case_05/ellis_island.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_05/ellis_island.webp",
               "description": "an island with a big red-brick hall with four towers"
             },
             {
               "optionId": "liberty",
-              "picture": "assets/seasons/season_04_newyork/locations/liberty_island.png",
+              "picture": "assets/seasons/season_04_newyork/locations/liberty_island.webp",
               "description": "an island with a tall green statue of a lady holding up a torch"
             },
             {
               "optionId": "fort",
-              "picture": "assets/seasons/season_04_newyork/cases/case_05/island_fort.png",
+              "picture": "assets/seasons/season_04_newyork/cases/case_05/island_fort.webp",
               "description": "an island with a round old stone fort among trees"
             }
           ],
@@ -571,7 +571,7 @@
           "by": "speaker",
           "text": "Eleanor's family. I never met them.",
           "speaker": "otto_brandt",
-          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.webp"
         },
         {
           "by": "detective",
@@ -582,13 +582,13 @@
           "by": "speaker",
           "text": "A violin! Just like in the photo!",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "speaker",
           "text": "And I did NOT take that bird. Ask my sister!",
           "speaker": "otto_brandt",
-          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/otto_base.webp"
         },
         {
           "by": "narrator",

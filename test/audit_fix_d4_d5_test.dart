@@ -207,8 +207,13 @@ void main() {
         // never breaks (a no-break space). See test/case03_investigation_test.dart.
         // London gameplay upgrade (2026-10-30, requested): 03-M2's visitors
         // are pencil sketches (imageChoice, pictures, alt text) with the Red
-        // Button brought from the notebook (was 494843145).
-        'ep03': 2465803525,
+        // Button brought from the notebook (was 494843145). Then each sketch
+        // carries the guard's note of its colours (2026-11-01, commit
+        // 3d0f852: options' `note`, nothing else; was 2465803525).
+        // Asset optimization (2026-11-02): only the sketches' files, now WebP
+        // (`.png` → `.webp`); with `.webp` read back as `.png` the hash is the
+        // value before it, exactly (was 4015551375).
+        'ep03': 2052892534,
         // Puzzle wording (2026-10-23, approved): 04-M2's card says RED ·
         // SMALL · CLOCK · PLATFORM, not FOUR; tip 2 matches it (was
         // 3227171614).
@@ -249,7 +254,10 @@ void main() {
         // London gameplay upgrade (2026-10-30, requested): 12-M1's four
         // gears drawn, names hidden (imageChoice), Case 02's Small Brass Gear
         // brought from the notebook (was 3678739778).
-        'ep12': 1397412993,
+        // Asset optimization (2026-11-02): only the pictures' files, now WebP
+        // (`.png` → `.webp`); with `.webp` read back as `.png` the hash is the
+        // value before it, exactly (was 1397412993).
+        'ep12': 835595691,
       });
     });
   });

@@ -37,20 +37,20 @@
               "label": "The guitar player",
               "feedback": "A guitar has strings. But is it played with a bow?",
               "altText": "a young man playing a guitar with his fingers, no bow",
-              "picture": "assets/seasons/season_04_newyork/cases/case_08/musician_guitar.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_08/musician_guitar.webp"
             },
             {
               "id": "violin",
               "label": "The violin player",
               "altText": "a young woman in a green beret playing a violin with a bow, the violin under her chin",
-              "picture": "assets/seasons/season_04_newyork/cases/case_08/musician_violin.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_08/musician_violin.webp"
             },
             {
               "id": "cello",
               "label": "The cello player",
               "feedback": "Strings and a bow, yes. But a cello stands on the floor, not under the chin.",
               "altText": "an old man playing a big cello with a bow, the cello standing on the floor",
-              "picture": "assets/seasons/season_04_newyork/cases/case_08/musician_cello.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_08/musician_cello.webp"
             }
           ]
         },
@@ -329,7 +329,7 @@
         },
         "talk": {
           "speaker": "rosa_diaz",
-          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.png",
+          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.webp",
           "goal": "Learn Rosa's secret.",
           "after": {
             "lines": [
@@ -457,7 +457,7 @@
           "by": "speaker",
           "text": "A big wheel by the sea... Coney Island!",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "detective",
@@ -468,13 +468,13 @@
           "by": "speaker",
           "text": "Yesterday Dexter Vance offered me money for this box.",
           "speaker": "rosa_diaz",
-          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.webp"
         },
         {
           "by": "speaker",
           "text": "I said no. He did not smile then.",
           "speaker": "rosa_diaz",
-          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.webp"
         },
         {
           "by": "narrator",

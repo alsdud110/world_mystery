@@ -119,7 +119,7 @@ abstract final class AppConstants {
   static const startCoins = 20;
 
   /// Awarded once per completed rewarded-ad event (not on ad dismissal).
-  static const rewardedAdCoins = 20;
+  static const rewardedAdCoins = 30;
 
   /// Price of tip 1 and tip 2 of a mission. Tip 1 is always free; a tip the
   /// detective cannot pay for is given free too, so no one is ever stuck.

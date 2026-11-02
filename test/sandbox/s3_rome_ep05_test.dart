@@ -67,8 +67,8 @@ void main() {
       final ep = m1.play!.explore!;
       final explore = s3Ep05Explores['s3_ep05_m1']!;
       final file = File(ep.picture.file);
-      expect(explore.picture, 'assets/seasons/season_03_rome/locations/cat_ruins.png');
-      expect(PlayCheck.pngSize(file), (1536, 1024));
+      expect(explore.picture, 'assets/seasons/season_03_rome/locations/cat_ruins.webp');
+      expect(PlayCheck.imageSize(file), (1536, 1024));
       expect(ep.picture.measuredOn, ContentHash.ofBytes(file.readAsBytesSync()), reason: 'measured on the file the game shows');
       expect(m1.puzzle.notes.any((n) => n.contains('UNMEASURED')), isFalse);
       Rect px(SceneRect r) => Rect.fromLTRB(r.left / 1536, r.top / 1024, r.right / 1536, r.bottom / 1024);
@@ -77,17 +77,17 @@ void main() {
       }
       expect(explore.document!.id, 'board');
       expect([for (final c in explore.choices) c.picture], [
-        'assets/seasons/season_03_rome/cases/case_05/cat_rosso.png',
-        'assets/seasons/season_03_rome/cases/case_05/cat_tito.png',
-        'assets/seasons/season_03_rome/cases/case_05/cat_luna.png',
+        'assets/seasons/season_03_rome/cases/case_05/cat_rosso.webp',
+        'assets/seasons/season_03_rome/cases/case_05/cat_tito.webp',
+        'assets/seasons/season_03_rome/cases/case_05/cat_luna.webp',
       ]);
       for (final c in explore.choices) {
-        expect(PlayCheck.pngSize(File(c.picture)), (1024, 1024), reason: c.picture);
+        expect(PlayCheck.imageSize(File(c.picture)), (1024, 1024), reason: c.picture);
       }
     });
 
     test('Carla\'s face, drawn in STEP 3-15B B1, is written into her talk and her ending lines, never another face', () {
-      const carla = 'assets/seasons/season_03_rome/characters/carla_base.png';
+      const carla = 'assets/seasons/season_03_rome/characters/carla_base.webp';
       expect(File(carla).existsSync(), isTrue);
       expect(planOf('s3_ep05_m3').play!.talk!.portrait, carla);
       final talk = romeSliceContent.talkMissions['s3_ep05_m3']!;
@@ -167,7 +167,7 @@ void main() {
       await tapText(t, 'INVESTIGATE', after: const Duration(milliseconds: 900));
       expect(find.byKey(const ValueKey('explore-picture')), findsOneWidget, reason: 'the cat ruins, looked round: ${play.texts()}');
       final picture = find.descendant(of: find.byKey(const ValueKey('explore-picture')), matching: find.byType(Image));
-      expect(((t.widget<Image>(picture.first)).image as AssetImage).assetName, 'assets/seasons/season_03_rome/locations/cat_ruins.png');
+      expect(((t.widget<Image>(picture.first)).image as AssetImage).assetName, 'assets/seasons/season_03_rome/locations/cat_ruins.webp');
       final explore = s3Ep05Explores[m1.id]!;
       await engine.tapExplore(t, explore.spots.firstWhere((s) => s.kind == ExploreKind.choice).areas.first.center);
       expect(findReadableContaining('Read something first'), findsWidgets, reason: play.texts());

@@ -261,7 +261,7 @@ const s3Ep01JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s3Ep01JuniorExplores = <String, ExploreScene>{
   's3_ep01_m3': ExploreScene(
-    picture: 'assets/seasons/season_03_rome/locations/map_hall.png',
+    picture: 'assets/seasons/season_03_rome/locations/map_hall.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -352,17 +352,17 @@ const s3Ep01JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'pantheon',
-        picture: 'assets/seasons/season_03_rome/locations/pantheon_hall.png',
+        picture: 'assets/seasons/season_03_rome/locations/pantheon_hall.webp',
         description: 'inside a round temple, with sunlight falling through a round hole in the roof',
       ),
       ExplorePicture(
         optionId: 'trevi',
-        picture: 'assets/seasons/season_03_rome/locations/trevi_fountain.png',
+        picture: 'assets/seasons/season_03_rome/locations/trevi_fountain.webp',
         description: 'a great fountain of rushing water, with a girl throwing a coin into it',
       ),
       ExplorePicture(
         optionId: 'colosseum',
-        picture: 'assets/seasons/season_03_rome/cases/case_01/colosseum.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_01/colosseum.webp',
         description: 'a huge round stone arena with rows of arches',
       ),
     ],
@@ -379,7 +379,7 @@ const s3Ep01JuniorInvestigations = <String, InvestigationScene>{};
 const s3Ep01JuniorDialogues = <String, DialogueScene>{
   's3_ep01_m1': DialogueScene(
     place: 'GUARD ROOM',
-    background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+    background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     goal: 'Discover what happened at midnight.',
     how: 'Ask each person, and write down what they tell you.',
     guide: 'Talk to a witness.',
@@ -388,7 +388,7 @@ const s3Ep01JuniorDialogues = <String, DialogueScene>{
         id: 'enzo',
         name: 'Enzo Greco',
         title: 'THE NIGHT GUARD',
-        portrait: 'assets/seasons/season_03_rome/characters/enzo_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/enzo_base.webp',
         description: 'an old guard with a grey moustache, a cap and a thermos of coffee',
         greeting: 'I was on duty the whole night. Go ahead and ask me.',
         answers: {
@@ -410,7 +410,7 @@ const s3Ep01JuniorDialogues = <String, DialogueScene>{
         id: 'sofia',
         name: 'Sofia Ferri',
         title: 'THE DIRECTOR',
-        portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
         description: 'a director in a navy suit, with reading glasses on a chain',
         greeting: 'I rushed here as soon as Enzo called me.',
         answers: {
@@ -432,7 +432,7 @@ const s3Ep01JuniorDialogues = <String, DialogueScene>{
         id: 'livia',
         name: 'Livia Conti',
         title: 'THE RESTORER',
-        portrait: 'assets/seasons/season_03_rome/characters/livia_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/livia_base.webp',
         description: 'a young restorer in a white lab coat, with a long brown braid and a silver owl ring',
         greeting: 'Oh... yes. I think I can help.',
         answers: {
@@ -562,7 +562,7 @@ final s3Ep01JuniorTalkMissions = <String, TalkMission>{
         id: 'giulia_marino',
         name: 'GIULIA MARINO',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/giulia_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/giulia_base.webp',
         },
       ),
       goal: 'Follow the trail of white dust.',
@@ -579,7 +579,7 @@ final s3Ep01JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE MAP HALL',
-      background: 'assets/seasons/season_03_rome/locations/map_hall.png',
+      background: 'assets/seasons/season_03_rome/locations/map_hall.webp',
       finishLabel: 'READ GIULIA\'S NOTES',
     ),
   ),
@@ -612,38 +612,38 @@ const s3Ep01JuniorEndings = <String, List<EndingLine>>{
   's3_ep01_final': [
     EndingLine(
       'The lid swings open. The big switch has been pushed down.',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
     EndingLine(
       'But the power never went off!',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
     EndingLine(
       'Someone switched the lights off by hand.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
       evidenceId: 's3_ep01_e1',
     ),
     EndingLine(
       'So this was planned. It wasn\'t an accident.',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
     EndingLine(
       'There is white dust on the switch, too.',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
     EndingLine(
       'Who is this Owl? Let\'s follow the card!',
       voice: TalkVoice.speaker,
       name: 'GIULIA MARINO',
-      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
   ],
 };
@@ -904,7 +904,7 @@ const s3Ep01MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s3Ep01MasterExplores = <String, ExploreScene>{
   's3_ep01_m3': ExploreScene(
-    picture: 'assets/seasons/season_03_rome/locations/map_hall.png',
+    picture: 'assets/seasons/season_03_rome/locations/map_hall.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -995,17 +995,17 @@ const s3Ep01MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'pantheon',
-        picture: 'assets/seasons/season_03_rome/locations/pantheon_hall.png',
+        picture: 'assets/seasons/season_03_rome/locations/pantheon_hall.webp',
         description: 'inside a round temple, sunlight pouring through a round hole in the roof',
       ),
       ExplorePicture(
         optionId: 'trevi',
-        picture: 'assets/seasons/season_03_rome/locations/trevi_fountain.png',
+        picture: 'assets/seasons/season_03_rome/locations/trevi_fountain.webp',
         description: 'a magnificent fountain of rushing water, a girl tossing a coin into it',
       ),
       ExplorePicture(
         optionId: 'colosseum',
-        picture: 'assets/seasons/season_03_rome/cases/case_01/colosseum.png',
+        picture: 'assets/seasons/season_03_rome/cases/case_01/colosseum.webp',
         description: 'a vast round stone arena ringed with rows of arches',
       ),
     ],
@@ -1022,7 +1022,7 @@ const s3Ep01MasterInvestigations = <String, InvestigationScene>{};
 const s3Ep01MasterDialogues = <String, DialogueScene>{
   's3_ep01_m1': DialogueScene(
     place: 'GUARD ROOM',
-    background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+    background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     goal: 'Uncover what happened at midnight.',
     how: 'Question each person and note down every answer.',
     guide: 'Talk to a witness.',
@@ -1031,7 +1031,7 @@ const s3Ep01MasterDialogues = <String, DialogueScene>{
         id: 'enzo',
         name: 'Enzo Greco',
         title: 'THE NIGHT GUARD',
-        portrait: 'assets/seasons/season_03_rome/characters/enzo_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/enzo_base.webp',
         description: 'a weathered old guard with a grey moustache, a cap and a thermos of coffee',
         greeting: 'I was on duty from dusk till dawn. Ask me anything.',
         answers: {
@@ -1053,7 +1053,7 @@ const s3Ep01MasterDialogues = <String, DialogueScene>{
         id: 'sofia',
         name: 'Sofia Ferri',
         title: 'THE DIRECTOR',
-        portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
         description: 'an elegant director in a navy suit, with reading glasses on a chain',
         greeting: 'I hurried here the moment Enzo telephoned me.',
         answers: {
@@ -1075,7 +1075,7 @@ const s3Ep01MasterDialogues = <String, DialogueScene>{
         id: 'livia',
         name: 'Livia Conti',
         title: 'THE RESTORER',
-        portrait: 'assets/seasons/season_03_rome/characters/livia_base.png',
+        portrait: 'assets/seasons/season_03_rome/characters/livia_base.webp',
         description: 'a young restorer in a white lab coat, with a long brown braid and a silver owl ring',
         greeting: 'Oh... yes, of course. I suppose I can help.',
         answers: {
@@ -1205,7 +1205,7 @@ final s3Ep01MasterTalkMissions = <String, TalkMission>{
         id: 'giulia_marino',
         name: 'GIULIA MARINO',
         portraits: {
-          'base': 'assets/seasons/season_03_rome/characters/giulia_base.png',
+          'base': 'assets/seasons/season_03_rome/characters/giulia_base.webp',
         },
       ),
       goal: 'Trace the trail of white dust.',
@@ -1222,7 +1222,7 @@ final s3Ep01MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE MAP HALL',
-      background: 'assets/seasons/season_03_rome/locations/map_hall.png',
+      background: 'assets/seasons/season_03_rome/locations/map_hall.webp',
       finishLabel: 'READ GIULIA\'S NOTES',
     ),
   ),
@@ -1255,38 +1255,38 @@ const s3Ep01MasterEndings = <String, List<EndingLine>>{
   's3_ep01_final': [
     EndingLine(
       'The lid creaks open. The big switch is down.',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
     EndingLine(
       'But the power never failed for a moment!',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
     EndingLine(
       'Someone switched the lights off deliberately, by hand.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
       evidenceId: 's3_ep01_e1',
     ),
     EndingLine(
       'So this was a carefully laid plan, not an accident.',
       voice: TalkVoice.speaker,
       name: 'SOFIA FERRI',
-      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      portrait: 'assets/seasons/season_03_rome/characters/sofia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
     EndingLine(
       'A smear of white dust clings to the switch, too.',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
     EndingLine(
       'Who on earth is this Owl? Let\'s follow the card!',
       voice: TalkVoice.speaker,
       name: 'GIULIA MARINO',
-      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.png',
-      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.png',
+      portrait: 'assets/seasons/season_03_rome/characters/giulia_base.webp',
+      background: 'assets/seasons/season_03_rome/cases/case_01/guard_room.webp',
     ),
   ],
 };

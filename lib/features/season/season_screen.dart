@@ -12,6 +12,7 @@ import '../../core/theme/app_tokens.dart';
 import '../../core/utils/audio_service.dart';
 import '../../data/models/season.dart' show SeasonIds;
 import '../../widgets/art_assets.dart';
+import '../../widgets/banner_ad_area.dart';
 import '../../widgets/desk_background.dart';
 import '../../widgets/game_button.dart';
 import '../../widgets/game_toast.dart';
@@ -197,12 +198,15 @@ class _SeasonScreenState extends ConsumerState<SeasonScreen> with TickerProvider
         onPointerDown: (_) => _finish(),
         child: _casebook
             ? InkSurface(night: true, child: _coverPage(overview))
-            : DeskBackground(
-                child: SafeArea(
-                  child: Center(
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 520),
-                      child: _boardPage(overview),
+            // The board, not the cover, has a banner under it.
+            : BannerAdArea(
+                child: DeskBackground(
+                  child: SafeArea(
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 520),
+                        child: _boardPage(overview),
+                      ),
                     ),
                   ),
                 ),

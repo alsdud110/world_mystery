@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import '../asset_optimizer/image_file.dart';
 import 'content_hash.dart';
 import 'palette_facts.dart';
 import 'plan_ids.dart';
@@ -241,7 +242,10 @@ abstract final class PlayCheck {
         return;
       }
       if (size == null) return;
-      if (pngSize(disk) case (final width, final height) when (width, height) != size) {
+      final got = imageSize(disk);
+      if (got == null) {
+        issue('asset_unreadable', path, '$f is not a picture the game can open (PNG, WebP or JPEG, read whole)');
+      } else if (got case (final width, final height) when (width, height) != size) {
         issue('asset_size_mismatch', path, '$f is ${width}x$height, not ${size.$1}x${size.$2}: places on it are measured on the file');
       }
     }
@@ -546,17 +550,14 @@ abstract final class PlayCheck {
     ];
   }
 
-  /// A PNG file's width and height (its header), or null for another kind of file.
-  static (int, int)? pngSize(File f) {
-    final b = f.openSync();
+  /// A picture file's width and height (PNG, or the game's WebP or JPEG,
+  /// read whole), or null when it is not a valid picture.
+  static (int, int)? imageSize(File f) {
     try {
-      final head = b.readSync(24);
-      const signature = [137, 80, 78, 71, 13, 10, 26, 10];
-      if (head.length < 24 || [for (var i = 0; i < 8; i++) head[i]].join(',') != signature.join(',')) return null;
-      int u32(int o) => (head[o] << 24) | (head[o + 1] << 16) | (head[o + 2] << 8) | head[o + 3];
-      return (u32(16), u32(20));
-    } finally {
-      b.closeSync();
+      final info = ImageFileCheck.file(f.path);
+      return (info.width, info.height);
+    } on ImageFileProblem {
+      return null;
     }
   }
 }

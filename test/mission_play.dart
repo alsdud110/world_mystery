@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart' show Override;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/app.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
@@ -79,10 +80,13 @@ Map<String, Object> prefsAt(List<Episode> season, String missionId, {bool starte
 /// puzzle (earlier cases and missions solved) and answers it through its own
 /// puzzle, as a child would.
 class MissionPlay {
-  MissionPlay({this.audio});
+  MissionPlay({this.audio, this.overrides = const []});
 
   /// The sounds the app plays (a fresh silent one when not given).
   final MockAudioService? audio;
+
+  /// More overrides for the app (e.g. its ads).
+  final List<Override> overrides;
 
   final season = MockEpisodeRepository.bundled();
   late WidgetRef ref;
@@ -101,7 +105,7 @@ class MissionPlay {
     addTearDown(t.platformDispatcher.clearTextScaleFactorTestValue);
     final e = caseOf(missionId);
     await t.pumpWidget(ProviderScope(
-      overrides: await testOverrides(audio: audio, prefs: prefsAt(season, missionId, level: level)),
+      overrides: [...await testOverrides(audio: audio, prefs: prefsAt(season, missionId, level: level)), ...overrides],
       child: RepaintBoundary(
         key: const ValueKey('shot'),
         child: Consumer(builder: (context, r, _) {

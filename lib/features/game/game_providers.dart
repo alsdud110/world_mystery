@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/constants/app_constants.dart';
+import '../../core/utils/ad_service.dart';
 import '../../core/utils/audio_service.dart';
 import '../../data/content/difficulty_content.dart';
 import '../../data/mock/season_catalog.dart';
@@ -594,6 +595,14 @@ final soundEnabledProvider = NotifierProvider<SoundEnabledNotifier, bool>(SoundE
 
 final audioServiceProvider = Provider<AudioService>((ref) {
   final service = AssetAudioService(isEnabled: () => ref.read(soundEnabledProvider));
+  ref.onDispose(service.dispose);
+  return service;
+});
+
+/// Ads (see [AdService]): nothing is asked of the SDK until a place in the
+/// game first loads an ad. Disposed with the app, releasing every ad.
+final adServiceProvider = Provider<AdService>((ref) {
+  final service = AdService.forThisBuild();
   ref.onDispose(service.dispose);
   return service;
 });

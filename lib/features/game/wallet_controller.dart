@@ -152,6 +152,9 @@ class WalletController extends Notifier<Wallet> {
     return AppConstants.rewardedAdCoins;
   }
 
+  /// Whether the rewarded-ad event [rewardId] has been credited.
+  bool hasRewardedAd(String rewardId) => state.has('rewarded-ad:${rewardId.trim()}');
+
   /// Everything was wiped (a new detective): a new wallet with the start
   /// coins only. Nothing is paid back for saves written after the wipe.
   void startFresh() => _set(_firstWallet(backfill: false));

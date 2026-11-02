@@ -16,7 +16,7 @@ String clockText(int minutes) => '${(minutes ~/ 60 + 11) % 12 + 1}:${(minutes % 
 
 // ── The Star Room ───────────────────────────────────────────────────────
 
-/// The little stone room under the roof (`star_room.png`): its blank brass
+/// The little stone room under the roof (`star_room.webp`): its blank brass
 /// plate, where the app engraves its words ([plateLines]) turned with it,
 /// the star on its door, and the three things on its table.
 @immutable
@@ -69,7 +69,7 @@ class TapeMark {
 }
 
 /// T1's paper tape ([MissionType.matchPairs], `jump:mark`): pulled from the
-/// drum (`record_drum.png`, its slot at [slot]), then the two marks where
+/// drum (`record_drum.webp`, its slot at [slot]), then the two marks where
 /// the time jumps tapped. A mark that follows on fifteen minutes is said so,
 /// never a wrong answer.
 @immutable
@@ -208,7 +208,7 @@ class PhotoDial {
   }
 }
 
-/// Both roof photos: one picture (`roof_photo.png`, taken from the same
+/// Both roof photos: one picture (`roof_photo.webp`, taken from the same
 /// place twice), its four clocks and its sundial. The hands and the shadow
 /// are the app's.
 @immutable
@@ -324,7 +324,7 @@ abstract final class CityClocksState {
 // ── M3 — the hour of shadows ────────────────────────────────────────────
 
 /// One hour line of the sundial: its time (minutes) and its direction
-/// (degrees, clockwise from the gnomon, measured on `sundial_top.png`).
+/// (degrees, clockwise from the gnomon, measured on `sundial_top.webp`).
 @immutable
 class SundialLine {
   const SundialLine(this.time, this.angle);
@@ -333,7 +333,7 @@ class SundialLine {
   final double angle;
 }
 
-/// The roof's sundial seen from above (`sundial_top.png`): its hub, its
+/// The roof's sundial seen from above (`sundial_top.webp`): its hub, its
 /// plate's radius and its seven hour lines, 1:00 to 4:00. Everything about
 /// the sun and the shadow comes from [lines] alone (never an even spread:
 /// the lines are not evenly apart). The straight line down from the hub is

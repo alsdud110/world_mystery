@@ -140,20 +140,20 @@
               "label": "The building with a clock on top",
               "feedback": "This roof has a big round clock. Nora says a glass star.",
               "altText": "a tall building near Times Square with a big round clock on its roof",
-              "picture": "assets/seasons/season_04_newyork/cases/case_10/building_clock.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_10/building_clock.webp"
             },
             {
               "id": "star",
               "label": "The building with a star on top",
               "altText": "a tall building near Times Square with a big glass star on its roof",
-              "picture": "assets/seasons/season_04_newyork/cases/case_10/building_star.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_10/building_star.webp"
             },
             {
               "id": "spire",
               "label": "The building with a needle on top",
               "feedback": "This roof has a tall needle. Nora says a glass star.",
               "altText": "a tall building near Times Square with a tall thin needle on its roof",
-              "picture": "assets/seasons/season_04_newyork/cases/case_10/building_spire.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_10/building_spire.webp"
             }
           ]
         },
@@ -423,7 +423,7 @@
           "by": "speaker",
           "text": "The song is safe. But my great-grandmother's box!",
           "speaker": "rosa_diaz",
-          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.webp"
         },
         {
           "by": "detective",
@@ -434,13 +434,13 @@
           "by": "speaker",
           "text": "And Nora told us where he went.",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "speaker",
           "text": "I will open the studio door for you. Hurry!",
           "speaker": "nora_bell",
-          "portrait": "assets/seasons/season_04_newyork/characters/nora_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/nora_base.webp"
         },
         {
           "by": "narrator",

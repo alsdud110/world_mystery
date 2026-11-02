@@ -18,6 +18,7 @@ import '../../widgets/evidence_card.dart';
 import '../../widgets/ink_icon.dart';
 import '../../widgets/paper.dart';
 import '../../widgets/paper_background.dart';
+import '../../widgets/reading_text_scale.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import '../game/scoring.dart';
@@ -203,10 +204,13 @@ class _CluesTab extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 12),
             child: _Appear(
               index: i,
-              child: ClueCard(
-                clue: clue,
-                index: i,
-                location: episode.allMissions.firstWhere((m) => m.clue?.id == clue.id).location,
+              // The clue's words wrap down the card: they may grow larger.
+              child: ReadingTextScale(
+                child: ClueCard(
+                  clue: clue,
+                  index: i,
+                  location: episode.allMissions.firstWhere((m) => m.clue?.id == clue.id).location,
+                ),
               ),
             ),
           ),

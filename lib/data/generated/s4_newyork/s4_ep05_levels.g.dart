@@ -252,7 +252,7 @@ const s4Ep05JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s4Ep05JuniorExplores = <String, ExploreScene>{
   's4_ep05_m2': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+    picture: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -322,17 +322,17 @@ const s4Ep05JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'ellis',
-        picture: 'assets/seasons/season_04_newyork/cases/case_05/ellis_island.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_05/ellis_island.webp',
         description: 'an island with a big red-brick hall with four towers',
       ),
       ExplorePicture(
         optionId: 'liberty',
-        picture: 'assets/seasons/season_04_newyork/locations/liberty_island.png',
+        picture: 'assets/seasons/season_04_newyork/locations/liberty_island.webp',
         description: 'an island with a tall green statue of a lady holding up a torch',
       ),
       ExplorePicture(
         optionId: 'fort',
-        picture: 'assets/seasons/season_04_newyork/cases/case_05/island_fort.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_05/island_fort.webp',
         description: 'an island with a round old stone fort among trees',
       ),
     ],
@@ -357,7 +357,7 @@ final s4Ep05JuniorTalkMissions = <String, TalkMission>{
         id: 'harold_brooks',
         name: 'HAROLD BROOKS',
         portraits: {
-          'base': 'assets/seasons/season_04_newyork/characters/harold_base.png',
+          'base': 'assets/seasons/season_04_newyork/characters/harold_base.webp',
         },
       ),
       goal: 'Read the letter from Otto.',
@@ -374,7 +374,7 @@ final s4Ep05JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE HART BUILDING',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
       finishLabel: 'READ OTTO\'S LETTER',
     ),
   ),
@@ -409,32 +409,32 @@ const s4Ep05JuniorEndings = <String, List<EndingLine>>{
       'Eleanor\'s family. I never got to meet them.',
       voice: TalkVoice.speaker,
       name: 'OTTO BRANDT',
-      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     ),
     EndingLine(
       'Her family plays the song on strings, using a bow.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
       evidenceId: 's4_ep04_e4',
     ),
     EndingLine(
       'A violin! Just like the one in the photo!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     ),
     EndingLine(
       'And I did NOT take that bird. Go and ask my sister!',
       voice: TalkVoice.speaker,
       name: 'OTTO BRANDT',
-      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     ),
     EndingLine(
       'Is Otto telling us the truth?',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     ),
   ],
 };
@@ -683,7 +683,7 @@ const s4Ep05MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s4Ep05MasterExplores = <String, ExploreScene>{
   's4_ep05_m2': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+    picture: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -753,17 +753,17 @@ const s4Ep05MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'ellis',
-        picture: 'assets/seasons/season_04_newyork/cases/case_05/ellis_island.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_05/ellis_island.webp',
         description: 'an island with a big red-brick hall with four towers',
       ),
       ExplorePicture(
         optionId: 'liberty',
-        picture: 'assets/seasons/season_04_newyork/locations/liberty_island.png',
+        picture: 'assets/seasons/season_04_newyork/locations/liberty_island.webp',
         description: 'an island with a tall green statue of a lady holding up a torch',
       ),
       ExplorePicture(
         optionId: 'fort',
-        picture: 'assets/seasons/season_04_newyork/cases/case_05/island_fort.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_05/island_fort.webp',
         description: 'an island with a round old stone fort among trees',
       ),
     ],
@@ -788,7 +788,7 @@ final s4Ep05MasterTalkMissions = <String, TalkMission>{
         id: 'harold_brooks',
         name: 'HAROLD BROOKS',
         portraits: {
-          'base': 'assets/seasons/season_04_newyork/characters/harold_base.png',
+          'base': 'assets/seasons/season_04_newyork/characters/harold_base.webp',
         },
       ),
       goal: 'Study Otto\'s letter.',
@@ -805,7 +805,7 @@ final s4Ep05MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE HART BUILDING',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
       finishLabel: 'READ OTTO\'S LETTER',
     ),
   ),
@@ -840,32 +840,32 @@ const s4Ep05MasterEndings = <String, List<EndingLine>>{
       'Eleanor\'s family. I never had the chance to meet them.',
       voice: TalkVoice.speaker,
       name: 'OTTO BRANDT',
-      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     ),
     EndingLine(
       'Her family performs the song on strings, with a bow.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
       evidenceId: 's4_ep04_e4',
     ),
     EndingLine(
       'A violin! Exactly as in the photograph!',
       voice: TalkVoice.speaker,
       name: 'MAYA CHEN',
-      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/maya_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     ),
     EndingLine(
       'And I did NOT take that bird. Ask my sister, if you doubt me!',
       voice: TalkVoice.speaker,
       name: 'OTTO BRANDT',
-      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/otto_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     ),
     EndingLine(
       'Is Otto being truthful?',
-      background: 'assets/seasons/season_04_newyork/locations/clock_shop.png',
+      background: 'assets/seasons/season_04_newyork/locations/clock_shop.webp',
     ),
   ],
 };

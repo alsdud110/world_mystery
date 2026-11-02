@@ -61,7 +61,7 @@
         "status": "awaitingAssets",
         "notes": [
           "Played as a look round (ExploreScene) inside the Pantheon: the Owl's card and the guide sign lie on the bench by the door; the floor stones open once it is read. The four stones are told apart by their carvings (ship, lion, book, key).",
-          "Coordinates measured on the made pantheon_hall.png (1536x1024, sha256 d960679b186dda4b…) with a 100px grid overlay, STEP 3-15B B1. The bench area stops at y 880 and the stones start below it at x 1095+, so the two never overlap.",
+          "Coordinates measured on the made pantheon_hall.webp (1536x1024, sha256 d960679b186dda4b…) with a 100px grid overlay, STEP 3-15B B1. The bench area stops at y 880 and the stones start below it at x 1095+, so the two never overlap.",
           "STEP 3-15B B3: the opening narrowed to x 300-1350 (the plain columns on the left and the bronze door on the right left outside, reached by a drag), so a phone opens the hall about 1.46 times larger; the full height is kept so the eye, the light, the card and the stones are all on screen as it opens. Coordinates and measuredOn unchanged."
         ]
       },
@@ -123,12 +123,12 @@
         },
         "explore": {
           "picture": {
-            "file": "assets/seasons/season_03_rome/locations/pantheon_hall.png",
+            "file": "assets/seasons/season_03_rome/locations/pantheon_hall.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:d960679b186dda4b511ac068aa9e4161f8e7ed153fbbb2a1e87d89f37e7b4351"
+            "measuredOn": "sha256:7953fdb80ae48c141a49cce4f40b02d8abefac58eb0e1f3d6cdda26c7b9c8dba"
           },
           "place": "Inside the Pantheon",
           "task": "Look around the Pantheon. Find the Owl's card.",
@@ -264,22 +264,22 @@
           "choices": [
             {
               "optionId": "ship",
-              "picture": "assets/seasons/season_03_rome/cases/case_04/floor_stone_ship.png",
+              "picture": "assets/seasons/season_03_rome/cases/case_04/floor_stone_ship.webp",
               "description": "a round floor stone carved with a sailing ship"
             },
             {
               "optionId": "lion",
-              "picture": "assets/seasons/season_03_rome/cases/case_04/floor_stone_lion.png",
+              "picture": "assets/seasons/season_03_rome/cases/case_04/floor_stone_lion.webp",
               "description": "a round floor stone carved with a lion"
             },
             {
               "optionId": "book",
-              "picture": "assets/seasons/season_03_rome/cases/case_04/floor_stone_book.png",
+              "picture": "assets/seasons/season_03_rome/cases/case_04/floor_stone_book.webp",
               "description": "a round floor stone carved with an open book"
             },
             {
               "optionId": "key",
-              "picture": "assets/seasons/season_03_rome/cases/case_04/floor_stone_key.png",
+              "picture": "assets/seasons/season_03_rome/cases/case_04/floor_stone_key.webp",
               "description": "a round floor stone carved with a large key"
             }
           ],
@@ -608,7 +608,7 @@
           "by": "speaker",
           "text": "Plaster? Not marble?",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         },
         {
           "by": "detective",
@@ -619,7 +619,7 @@
           "by": "speaker",
           "text": "So the Owl took a copy out of the case!",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         },
         {
           "by": "narrator",
@@ -629,7 +629,7 @@
           "by": "speaker",
           "text": "Then where is the real piece?",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         }
       ]
     }

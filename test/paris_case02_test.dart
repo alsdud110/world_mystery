@@ -35,6 +35,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 
@@ -78,26 +79,26 @@ void main() {
   group('its pictures', () {
     const folder = 'assets/seasons/season_02_paris/cases/case_02';
     const pictures = {
-      'montmartre_street_real.png': (1536, 1024),
-      'montmartre_street_painted.png': (1536, 1024),
-      'painters_studio.png': (1024, 1536),
-      'studio_painting_p1.png': (1254, 1254),
-      'studio_painting_p2.png': (1254, 1254),
-      'studio_painting_p3.png': (1254, 1254),
-      'hidden_layer_paint.png': (1536, 1024),
-      'hidden_layer_sketch.png': (1536, 1024),
-      'canvas_a.png': (1536, 1024),
-      'canvas_b.png': (1536, 1024),
-      'canvas_c.png': (1536, 1024),
-      'canvas_d.png': (1536, 1024),
-      'canvas_back.png': (1536, 1024),
+      'montmartre_street_real.webp': (1536, 1024),
+      'montmartre_street_painted.webp': (1536, 1024),
+      'painters_studio.webp': (1024, 1536),
+      'studio_painting_p1.webp': (1254, 1254),
+      'studio_painting_p2.webp': (1254, 1254),
+      'studio_painting_p3.webp': (1254, 1254),
+      'hidden_layer_paint.webp': (1536, 1024),
+      'hidden_layer_sketch.webp': (1536, 1024),
+      'canvas_a.webp': (1536, 1024),
+      'canvas_b.webp': (1536, 1024),
+      'canvas_c.webp': (1536, 1024),
+      'canvas_d.webp': (1536, 1024),
+      'canvas_back.webp': (1536, 1024),
     };
 
-    /// A PNG's width, height and whether it has an alpha channel (its IHDR).
+    /// A picture's width, height and whether it can hold transparency, read
+    /// whole from its own bytes (the game's WebP, or a PNG).
     (int, int, bool) header(Uint8List b) {
-      final d = ByteData.sublistView(b);
-      final colourType = b[25];
-      return (d.getUint32(16), d.getUint32(20), colourType == 4 || colourType == 6);
+      final i = ImageFileCheck.bytes(b);
+      return (i.width, i.height, i.hasAlpha);
     }
 
     test('all thirteen are in, listed in pubspec, opaque, at the sizes their places are measured on', () {

@@ -15,7 +15,7 @@ import 'season2_case03_scenes.dart' show season2EvidenceBoards;
 /// delivered picture (pixels, then fractions).
 
 const _case04 = 'assets/seasons/season_02_paris/cases/case_04';
-const _hands = '$_case04/hands_sign.png';
+const _hands = '$_case04/hands_sign.webp';
 
 // ── The plaque's back (the opening and M1) ─────────────────────────────
 // The back of Case 03's plaque (1536 × 1024, cut out on the front's own
@@ -23,7 +23,7 @@ const _hands = '$_case04/hands_sign.png';
 const _brass = ScenePixels(1536, 1024);
 
 final plaqueBack = PlaqueBack(
-  file: '$_case04/brass_plaque_back.png',
+  file: '$_case04/brass_plaque_back.webp',
   pixels: _brass,
   writeOn: _brass.rect(260, 360, 1290, 620),
   lines: const [
@@ -51,7 +51,7 @@ const _mark = ScenePixels(1254, 1254);
 
 final Map<String, RiverMarksScene> season2RiverMarks = {
   's2_ep04_m1': RiverMarksScene(
-    wall: '$_case04/quay_wall_marks.png',
+    wall: '$_case04/quay_wall_marks.webp',
     pixels: _wall,
     place: 'An old stone quay wall by the river at dusk, four carved marks in a row, steps down to the water',
     marks: [
@@ -60,7 +60,7 @@ final Map<String, RiverMarksScene> season2RiverMarks = {
         name: 'MARK A',
         area: _wall.rect(181, 371, 373, 580),
         wordAt: _wall.rect(202, 519, 350, 552),
-        closeUp: '$_case04/river_mark_a.png',
+        closeUp: '$_case04/river_mark_a.webp',
         closeWordAt: _mark.rect(260, 885, 1005, 1025),
         word: 'RIVER KEEPER',
         waves: 3,
@@ -71,7 +71,7 @@ final Map<String, RiverMarksScene> season2RiverMarks = {
         name: 'MARK B',
         area: _wall.rect(472, 382, 656, 583),
         wordAt: _wall.rect(494, 526, 634, 563),
-        closeUp: '$_case04/river_mark_b.png',
+        closeUp: '$_case04/river_mark_b.webp',
         closeWordAt: _mark.rect(260, 885, 1005, 1025),
         word: 'BOOKSELLERS',
         waves: 3,
@@ -82,7 +82,7 @@ final Map<String, RiverMarksScene> season2RiverMarks = {
         name: 'MARK C',
         area: _wall.rect(751, 395, 918, 585),
         wordAt: _wall.rect(769, 530, 898, 566),
-        closeUp: '$_case04/river_mark_c.png',
+        closeUp: '$_case04/river_mark_c.webp',
         closeWordAt: _mark.rect(260, 885, 1005, 1025),
         word: 'RIVER KEEPER',
         waves: 2,
@@ -93,7 +93,7 @@ final Map<String, RiverMarksScene> season2RiverMarks = {
         name: 'MARK D',
         area: _wall.rect(1005, 401, 1164, 588),
         wordAt: _wall.rect(1022, 532, 1148, 572),
-        closeUp: '$_case04/river_mark_d.png',
+        closeUp: '$_case04/river_mark_d.webp',
         closeWordAt: _mark.rect(260, 885, 1005, 1025),
         word: 'RIVER KEEPER',
         waves: 3,
@@ -133,14 +133,14 @@ LedgerPart _box(String id, String text) => LedgerPart(text, box: id);
 
 final Map<String, KeeperHutScene> season2KeeperHuts = {
   's2_ep04_m2': KeeperHutScene(
-    outside: '$_case04/keeper_hut.png',
+    outside: '$_case04/keeper_hut.webp',
     outsideLabel: 'A small wooden hut by the river at night, its door open, a lamp burning inside',
     doorArea: _hut.rect(745, 360, 1050, 850),
-    inside: '$_case04/keeper_hut_interior.png',
+    inside: '$_case04/keeper_hut_interior.webp',
     insideLabel: "Inside the keeper's hut: a desk with an open ledger, keys on the wall, the river through the door",
     ledgerArea: _hut.rect(95, 640, 705, 865),
     pixels: _hut,
-    ledger: '$_case04/keeper_ledger.png',
+    ledger: '$_case04/keeper_ledger.webp',
     ledgerPixels: _ledger,
     ledgerLabel: "The river keeper's ledger, open",
     pages: [
@@ -200,8 +200,8 @@ const _label = ScenePixels(1377, 1142);
 const _decoy = ScenePixels(1842, 854);
 
 const deliveryLabel = DeliveryLabel(
-  file: '$_case04/delivery_label_blank.png',
-  back: '$_case04/delivery_label_back.png',
+  file: '$_case04/delivery_label_blank.webp',
+  back: '$_case04/delivery_label_back.webp',
   pixels: _label,
   lines: [
     LabelLine(piece: DeliveryLabel.top, text: 'PARIS PARCEL SERVICE', left: 0, top: 196, size: 50, centred: true),
@@ -234,7 +234,7 @@ const deliveryLabel = DeliveryLabel(
 
 final Map<String, BoxesScene> season2QuayBoxes = {
   's2_ep04_m3': BoxesScene(
-    picture: '$_case04/quay_boxes.png',
+    picture: '$_case04/quay_boxes.webp',
     pixels: _quay,
     place: 'Four green boxes in a row on the river wall at night, each with a small brass plate',
     view: _quay.rect(250, 490, 1310, 910),
@@ -262,10 +262,10 @@ final Map<String, BoxesScene> season2QuayBoxes = {
       ),
       QuayBox(id: 'box23', number: '23', area: _quay.rect(882, 571, 1283, 880), plateAt: _quay.rect(968, 751, 1044, 814)),
     ],
-    open: '$_case04/metal_box_open.png',
+    open: '$_case04/metal_box_open.webp',
     openPixels: _quay,
     openLabel: 'Inside Box 23: brown paper, string, and torn scraps of paper',
-    decoy: '$_case04/decoy_label_piece.png',
+    decoy: '$_case04/decoy_label_piece.webp',
     decoyPixels: _decoy,
     decoyAt: _decoy.rect(230, 300, 1180, 600),
     decoyLines: const ['TO: BOOKSTALL 12', 'QUAY 1'],
@@ -289,7 +289,7 @@ const _gate = ScenePixels(1024, 1536);
 
 final Map<String, StreetBookScene> season2StreetBooks = {
   's2_ep04_final': StreetBookScene(
-    book: '$_case04/street_book.png',
+    book: '$_case04/street_book.webp',
     bookPixels: _book,
     pages: [_book.rect(115, 290, 455, 1190), _book.rect(530, 290, 920, 1190)],
     // The keeper's own street book, as the story tells it (not a guide to
@@ -321,7 +321,7 @@ final Map<String, StreetBookScene> season2StreetBooks = {
       BoardEvidence(id: 'e3', evidenceId: 's2_ep04_e3'),
     ],
     maxEvidence: 2,
-    hut: '$_case04/keeper_hut_interior.png',
+    hut: '$_case04/keeper_hut_interior.webp',
     hutLabel: "Inside the keeper's hut, the street book on a shelf",
     hutPixels: _hut,
     pickTask: 'Tap an address in the street book.',
@@ -329,7 +329,7 @@ final Map<String, StreetBookScene> season2StreetBooks = {
     crossLabel: 'CROSS IT OUT',
     addressTask: 'One address is left.',
     submitLabel: 'THIS IS THE ADDRESS',
-    gate: '$_case04/passage_gate.png',
+    gate: '$_case04/passage_gate.webp',
     gatePixels: _gate,
     gateLabel: 'A wrought-iron gate under a stone arch, lamps on each side, its sign: PASSAGE DES HORLOGERS',
     gateView: _gate.rect(0, 40, 1024, 723),
@@ -366,25 +366,25 @@ const Map<String, EvidenceLink> season2Case04EvidenceLinks = {
 // hut's inside only once its door is opened, the open box only once the
 // label is whole, the gate only after the case.
 const _wallWhole = StoryPicture(
-  file: '$_case04/quay_wall_marks.png',
+  file: '$_case04/quay_wall_marks.webp',
   pixels: _wall,
   label: 'An old stone quay wall by the river at dusk, four carved marks in a row',
 );
 
 const _hutOutside = StoryPicture(
-  file: '$_case04/keeper_hut.png',
+  file: '$_case04/keeper_hut.webp',
   pixels: _hut,
   label: 'A small wooden hut by the river at night, its door open',
 );
 
 const _boxesWhole = StoryPicture(
-  file: '$_case04/quay_boxes.png',
+  file: '$_case04/quay_boxes.webp',
   pixels: _quay,
   label: 'Four green boxes in a row on the river wall at night',
 );
 
 const _hutInside = StoryPicture(
-  file: '$_case04/keeper_hut_interior.png',
+  file: '$_case04/keeper_hut_interior.webp',
   pixels: _hut,
   label: "Inside the keeper's hut: a desk, a lamp, books on the shelves",
 );
@@ -394,7 +394,7 @@ final Map<String, StoryScenes> season2Case04StoryScenes = {
   's2_ep04_m1': StoryScenes(
     place: _wallWhole,
     after: StoryPicture(
-      file: '$_case04/quay_wall_marks.png',
+      file: '$_case04/quay_wall_marks.webp',
       pixels: _wall,
       crop: _wall.rect(900, 160, 1536, 760),
       label: "The fourth mark on the quay wall, beside the keeper's steps",
@@ -405,7 +405,7 @@ final Map<String, StoryScenes> season2Case04StoryScenes = {
   's2_ep04_m2': StoryScenes(
     place: _hutOutside,
     after: StoryPicture(
-      file: '$_case04/keeper_hut_interior.png',
+      file: '$_case04/keeper_hut_interior.webp',
       pixels: _hut,
       crop: _hut.rect(0, 420, 900, 1020),
       label: "The keeper's ledger open on the desk, a lamp beside it",
@@ -416,7 +416,7 @@ final Map<String, StoryScenes> season2Case04StoryScenes = {
   's2_ep04_m3': const StoryScenes(
     place: _boxesWhole,
     after: StoryPicture(
-      file: '$_case04/metal_box_open.png',
+      file: '$_case04/metal_box_open.webp',
       pixels: _quay,
       label: 'Box 23 open: brown paper and string inside',
     ),
@@ -425,7 +425,7 @@ final Map<String, StoryScenes> season2Case04StoryScenes = {
   // After the case: the gate of the address.
   's2_ep04_final': StoryScenes(
     after: StoryPicture(
-      file: '$_case04/passage_gate.png',
+      file: '$_case04/passage_gate.webp',
       pixels: _gate,
       crop: _gate.rect(0, 40, 1024, 1064),
       label: 'A wrought-iron gate under a stone arch, its lamps lit',

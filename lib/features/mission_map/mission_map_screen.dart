@@ -20,6 +20,7 @@ import '../../widgets/game_toast.dart';
 import '../../widgets/ink_icon.dart';
 import '../../widgets/paper.dart';
 import '../../widgets/paper_background.dart';
+import '../../widgets/paper_menu.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import '../game/scoring.dart';
@@ -160,123 +161,78 @@ class _MissionMapScreenState extends ConsumerState<MissionMapScreen> with Single
   }
 
   void _showMenu(BuildContext context, WidgetRef ref) {
-    showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      // A page of the casebook slid over the map (this sheet only; the
-      // other sheets keep the app's sheet theme): the case files' paper,
-      // nearly square corners, a thin ink-brown tab printed on it (the
-      // theme's grey handle is off; the whole sheet still drags to close).
-      backgroundColor: AppColors.paper,
-      shape: paperSheetShape,
-      showDragHandle: false,
-      builder: (sheetContext) => Consumer(
-        builder: (context, ref, _) {
-          final soundOn = ref.watch(soundEnabledProvider);
-          final progress = ref.watch(gameControllerProvider);
-          final episode = ref.watch(currentEpisodeProvider);
-          final playTime = ref.read(gameControllerProvider.notifier).playTime;
-          final xp = XpBreakdown.totalFor(episode, progress);
+    // A page of the casebook slid over the map.
+    showPaperMenu(
+      context,
+      items: (sheetContext, ref) {
+        final progress = ref.watch(gameControllerProvider);
+        final episode = ref.watch(currentEpisodeProvider);
+        final playTime = ref.read(gameControllerProvider.notifier).playTime;
+        final xp = XpBreakdown.totalFor(episode, progress);
 
-          // A press leaves a faint ink mark on the paper, not a Material ripple.
-          final press = AppColors.inkBrown.withValues(alpha: 0.08);
+        Widget item(InkGlyph glyph, String label, VoidCallback onTap) => PaperMenuItem(glyph, label, onTap: onTap);
 
-          Widget item(InkGlyph glyph, String label, VoidCallback onTap) => ListTile(
-            leading: InkIcon(glyph, color: AppColors.ink),
-            title: Text(label, style: AppText.subtitle()),
-            splashColor: press,
-            hoverColor: press,
-            focusColor: press,
-            onTap: onTap,
-          );
-
-          return SafeArea(
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const PaperSheetTab(),
-                  // Case status: shown here, on request, instead of on the map.
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(AppSpace.screen, 0, AppSpace.screen, AppSpace.sm),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(episode.title, style: AppText.aside()),
-                        Text(DetectiveName.title(progress.detectiveName), style: AppText.title(size: 22)),
-                        const SizedBox(height: AppSpace.xs),
-                        Text(
-                          '$xp XP  ·  ${Formatters.clock(playTime)}',
-                          style: AppText.caption(color: AppColors.goldDeep)
-                              .copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
-                        ),
-                      ],
-                    ),
-                  ),
-                  // A faint printed rule in the paper's own ink.
-                  Divider(color: AppColors.inkBrown.withValues(alpha: 0.18)),
-                  // Its press and focus marks in the same faint ink (this row only).
-                  Theme(
-                    data: Theme.of(context)
-                        .copyWith(focusColor: press, hoverColor: press, splashColor: press, highlightColor: press),
-                    child: SwitchListTile(
-                      secondary: InkIcon(soundOn ? InkGlyph.speaker : InkGlyph.speakerOff, color: AppColors.ink),
-                      title: Text('Sound effects', style: AppText.subtitle()),
-                      hoverColor: press,
-                      activeThumbColor: AppColors.goldLight,
-                      activeTrackColor: AppColors.navy,
-                      inactiveThumbColor: AppColors.paperLight,
-                      inactiveTrackColor: AppColors.parchmentDark,
-                      value: soundOn,
-                      onChanged: (_) => ref.read(soundEnabledProvider.notifier).toggle(),
-                    ),
-                  ),
-                  item(InkGlyph.notebook, 'Detective Notebook', () {
-                    Navigator.of(sheetContext).pop();
-                    context.push(Routes.notebook);
-                  }),
-                  // The detective's name and picture (progress stays).
-                  item(InkGlyph.pen, 'My detective', () {
-                    Navigator.of(sheetContext).pop();
-                    context.push(Routes.detective);
-                  }),
-                  if (progress.isCaseSolved)
-                    item(InkGlyph.folder, 'Case results', () {
-                      Navigator.of(sheetContext).pop();
-                      context.go(Routes.solved);
-                    }),
-                  item(InkGlyph.pin, 'Season board', () {
-                    Navigator.of(sheetContext).pop();
-                    context.go(Routes.season);
-                  }),
-                  // Every season's file, to choose the next adventure.
-                  item(InkGlyph.seal, 'World Archive', () {
-                    Navigator.of(sheetContext).pop();
-                    context.go(Routes.seasons);
-                  }),
-                  item(InkGlyph.folder, 'Case files', () {
-                    Navigator.of(sheetContext).pop();
-                    context.go(Routes.episodes);
-                  }),
-                  // The first-play guide again, over the map (back returns here).
-                  item(InkGlyph.hint, 'How to play', () {
-                    Navigator.of(sheetContext).pop();
-                    context.push(Routes.howToPlayAgain);
-                  }),
-                  // Out to the World Map: the case stays saved, and the
-                  // city's CONTINUE comes back to it.
-                  item(InkGlyph.home, 'World map', () {
-                    Navigator.of(sheetContext).pop();
-                    context.go(Routes.worldMap);
-                  }),
-                  const SizedBox(height: AppSpace.sm),
-                ],
-              ),
+        return [
+          // Case status: shown here, on request, instead of on the map.
+          Padding(
+            padding: const EdgeInsets.fromLTRB(AppSpace.screen, 0, AppSpace.screen, AppSpace.sm),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(episode.title, style: AppText.aside()),
+                Text(DetectiveName.title(progress.detectiveName), style: AppText.title(size: 22)),
+                const SizedBox(height: AppSpace.xs),
+                Text(
+                  '$xp XP  ·  ${Formatters.clock(playTime)}',
+                  style: AppText.caption(color: AppColors.goldDeep)
+                      .copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
+                ),
+              ],
             ),
-          );
-        },
-      ),
+          ),
+          // A faint printed rule in the paper's own ink.
+          Divider(color: AppColors.inkBrown.withValues(alpha: 0.18)),
+          const SoundSwitchTile(),
+          item(InkGlyph.notebook, 'Detective Notebook', () {
+            Navigator.of(sheetContext).pop();
+            context.push(Routes.notebook);
+          }),
+          // The detective's name and picture (progress stays).
+          item(InkGlyph.pen, 'My detective', () {
+            Navigator.of(sheetContext).pop();
+            context.push(Routes.detective);
+          }),
+          if (progress.isCaseSolved)
+            item(InkGlyph.folder, 'Case results', () {
+              Navigator.of(sheetContext).pop();
+              context.go(Routes.solved);
+            }),
+          item(InkGlyph.pin, 'Season board', () {
+            Navigator.of(sheetContext).pop();
+            context.go(Routes.season);
+          }),
+          // Every season's file, to choose the next adventure.
+          item(InkGlyph.seal, 'World Archive', () {
+            Navigator.of(sheetContext).pop();
+            context.go(Routes.seasons);
+          }),
+          item(InkGlyph.folder, 'Case files', () {
+            Navigator.of(sheetContext).pop();
+            context.go(Routes.episodes);
+          }),
+          // The first-play guide again, over the map (back returns here).
+          item(InkGlyph.hint, 'How to play', () {
+            Navigator.of(sheetContext).pop();
+            context.push(Routes.howToPlayAgain);
+          }),
+          // Out to the World Map: the case stays saved, and the
+          // city's CONTINUE comes back to it.
+          item(InkGlyph.home, 'World map', () {
+            Navigator.of(sheetContext).pop();
+            context.go(Routes.worldMap);
+          }),
+        ];
+      },
     );
   }
 

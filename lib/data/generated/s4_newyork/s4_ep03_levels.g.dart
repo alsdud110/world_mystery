@@ -264,7 +264,7 @@ const s4Ep03JuniorLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Junior.
 const s4Ep03JuniorExplores = <String, ExploreScene>{
   's4_ep03_m1': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/tea_room.png',
+    picture: 'assets/seasons/season_04_newyork/locations/tea_room.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -342,17 +342,17 @@ const s4Ep03JuniorExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'sun_rabbit',
-        picture: 'assets/seasons/season_04_newyork/cases/case_03/tin_sun_rabbit.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_03/tin_sun_rabbit.webp',
         description: 'a red tea tin, its lid painted with a white rabbit under a round yellow sun with rays',
       ),
       ExplorePicture(
         optionId: 'moon_fish',
-        picture: 'assets/seasons/season_04_newyork/cases/case_03/tin_moon_fish.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_03/tin_moon_fish.webp',
         description: 'a red tea tin, its lid painted with a white fish under a full moon',
       ),
       ExplorePicture(
         optionId: 'moon_rabbit',
-        picture: 'assets/seasons/season_04_newyork/objects/red_tin.png',
+        picture: 'assets/seasons/season_04_newyork/objects/red_tin.webp',
         description: 'a red tea tin, its lid painted with a white rabbit under a full moon',
       ),
     ],
@@ -377,7 +377,7 @@ final s4Ep03JuniorTalkMissions = <String, TalkMission>{
         id: 'dexter_vance',
         name: 'DEXTER VANCE',
         portraits: {
-          'base': 'assets/seasons/season_04_newyork/characters/dexter_base.png',
+          'base': 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
         },
       ),
       goal: 'Find the tin that belongs to Eleanor.',
@@ -394,7 +394,7 @@ final s4Ep03JuniorTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE GOLDEN LANTERN TEA HOUSE',
-      background: 'assets/seasons/season_04_newyork/locations/tea_room.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_room.webp',
       finishLabel: 'LOOK AROUND',
     ),
   ),
@@ -428,35 +428,35 @@ const s4Ep03JuniorEndings = <String, List<EndingLine>>{
   's4_ep03_final': [
     EndingLine(
       'The note tells you to walk across the great bridge to Brooklyn.',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
     EndingLine(
       'Beneath the first stone tower, a brass bird sits on a bench.',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
     EndingLine(
       'Fantastic! We\'ll film there tomorrow!',
       voice: TalkVoice.speaker,
       name: 'DEXTER VANCE',
-      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
     EndingLine(
       'The first three notes of the song are on the bird.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
       evidenceId: 's4_ep03_e3',
     ),
     EndingLine(
       'Sorry... I need to leave now.',
       voice: TalkVoice.speaker,
       name: 'NORA BELL',
-      portrait: 'assets/seasons/season_04_newyork/characters/nora_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/nora_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
     EndingLine(
       'Why does Nora seem so worried?',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
   ],
 };
@@ -722,7 +722,7 @@ const s4Ep03MasterLearning = <String, LearningObjective>{
 /// Its missions played on `explores` at Master.
 const s4Ep03MasterExplores = <String, ExploreScene>{
   's4_ep03_m1': ExploreScene(
-    picture: 'assets/seasons/season_04_newyork/locations/tea_room.png',
+    picture: 'assets/seasons/season_04_newyork/locations/tea_room.webp',
     pixels: ScenePixels(
       1536.0,
       1024.0,
@@ -800,17 +800,17 @@ const s4Ep03MasterExplores = <String, ExploreScene>{
     choices: [
       ExplorePicture(
         optionId: 'sun_rabbit',
-        picture: 'assets/seasons/season_04_newyork/cases/case_03/tin_sun_rabbit.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_03/tin_sun_rabbit.webp',
         description: 'a red tea tin, its lid painted with a white rabbit under a round yellow sun with rays',
       ),
       ExplorePicture(
         optionId: 'moon_fish',
-        picture: 'assets/seasons/season_04_newyork/cases/case_03/tin_moon_fish.png',
+        picture: 'assets/seasons/season_04_newyork/cases/case_03/tin_moon_fish.webp',
         description: 'a red tea tin, its lid painted with a white fish under a full moon',
       ),
       ExplorePicture(
         optionId: 'moon_rabbit',
-        picture: 'assets/seasons/season_04_newyork/objects/red_tin.png',
+        picture: 'assets/seasons/season_04_newyork/objects/red_tin.webp',
         description: 'a red tea tin, its lid painted with a white rabbit under a full moon',
       ),
     ],
@@ -835,7 +835,7 @@ final s4Ep03MasterTalkMissions = <String, TalkMission>{
         id: 'dexter_vance',
         name: 'DEXTER VANCE',
         portraits: {
-          'base': 'assets/seasons/season_04_newyork/characters/dexter_base.png',
+          'base': 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
         },
       ),
       goal: 'Locate Eleanor\'s tin.',
@@ -852,7 +852,7 @@ final s4Ep03MasterTalkMissions = <String, TalkMission>{
       ],
       finishWhen: const {},
       place: 'THE GOLDEN LANTERN TEA HOUSE',
-      background: 'assets/seasons/season_04_newyork/locations/tea_room.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_room.webp',
       finishLabel: 'LOOK AROUND',
     ),
   ),
@@ -886,35 +886,35 @@ const s4Ep03MasterEndings = <String, List<EndingLine>>{
   's4_ep03_final': [
     EndingLine(
       'The note instructs you to cross the great bridge on foot to Brooklyn.',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
     EndingLine(
       'Beneath the first stone tower, a brass bird is perched on a bench.',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
     EndingLine(
       'Splendid! We\'ll shoot there tomorrow!',
       voice: TalkVoice.speaker,
       name: 'DEXTER VANCE',
-      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/dexter_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
     EndingLine(
       'The bird carries the first three notes of the song.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
       evidenceId: 's4_ep03_e3',
     ),
     EndingLine(
       'Forgive me... I really must go.',
       voice: TalkVoice.speaker,
       name: 'NORA BELL',
-      portrait: 'assets/seasons/season_04_newyork/characters/nora_base.png',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      portrait: 'assets/seasons/season_04_newyork/characters/nora_base.webp',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
     EndingLine(
       'Why does Nora appear so troubled?',
-      background: 'assets/seasons/season_04_newyork/locations/tea_house.png',
+      background: 'assets/seasons/season_04_newyork/locations/tea_house.webp',
     ),
   ],
 };

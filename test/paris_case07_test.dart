@@ -37,6 +37,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'easy_play.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
@@ -122,41 +123,42 @@ void main() {
     // Size, and whether it has an alpha channel (as delivered, never
     // changed).
     const pictures = {
-      'palais_garnier_night.png': (1536, 1024, false),
-      'opera_archive_room.png': (1536, 1024, false),
-      'office_record_blank.png': (1055, 1491, true),
-      'record_patch.png': (1983, 793, true),
-      'programme_page_blank.png': (1024, 1536, true),
-      'show_strip_blank.png': (2172, 724, true),
-      'photo_frame.png': (1536, 1024, true),
-      'stage_base.png': (1536, 1024, false),
-      'stage_ghost.png': (1536, 1024, false),
-      'stage_house.png': (1536, 1024, false),
-      'stage_foot.png': (1536, 1024, false),
-      'stage_spot.png': (1536, 1024, false),
-      'lighting_desk.png': (1536, 1024, true),
-      'lighting_lever.png': (1024, 1536, true),
-      'lighting_book_open.png': (1536, 1024, true),
-      'cue_card_blank.png': (1536, 1024, true),
-      'scrap_clock_door.png': (1254, 1254, true),
-      'fly_rail.png': (1536, 1024, false),
-      'rope_line.png': (1024, 1536, true),
-      'backdrop_clock_red.png': (1536, 1024, true),
-      'backdrop_lamp_red.png': (1536, 1024, true),
-      'backdrop_clock_blue.png': (1536, 1024, true),
-      'backdrop_tower_red.png': (1536, 1024, true),
-      'backdrop_back_pocket.png': (1536, 1024, false),
-      'amendment_slip_blank.png': (1536, 1024, true),
-      'office_stamp.png': (1254, 1254, true),
-      'abbesses_sketch.png': (1536, 1024, true),
-      'light_table_off.png': (1536, 1024, false),
-      'light_table_on.png': (1536, 1024, false),
+      'palais_garnier_night.webp': (1536, 1024, false),
+      'opera_archive_room.webp': (1536, 1024, false),
+      'office_record_blank.webp': (1055, 1491, true),
+      'record_patch.webp': (1983, 793, true),
+      'programme_page_blank.webp': (1024, 1536, true),
+      'show_strip_blank.webp': (2172, 724, true),
+      'photo_frame.webp': (1536, 1024, true),
+      'stage_base.webp': (1536, 1024, false),
+      'stage_ghost.webp': (1536, 1024, false),
+      'stage_house.webp': (1536, 1024, false),
+      'stage_foot.webp': (1536, 1024, false),
+      'stage_spot.webp': (1536, 1024, false),
+      'lighting_desk.webp': (1536, 1024, true),
+      'lighting_lever.webp': (1024, 1536, true),
+      'lighting_book_open.webp': (1536, 1024, true),
+      'cue_card_blank.webp': (1536, 1024, true),
+      'scrap_clock_door.webp': (1254, 1254, true),
+      'fly_rail.webp': (1536, 1024, false),
+      'rope_line.webp': (1024, 1536, true),
+      'backdrop_clock_red.webp': (1536, 1024, true),
+      'backdrop_lamp_red.webp': (1536, 1024, true),
+      'backdrop_clock_blue.webp': (1536, 1024, true),
+      'backdrop_tower_red.webp': (1536, 1024, true),
+      'backdrop_back_pocket.webp': (1536, 1024, false),
+      'amendment_slip_blank.webp': (1536, 1024, true),
+      'office_stamp.webp': (1254, 1254, true),
+      'abbesses_sketch.webp': (1536, 1024, true),
+      'light_table_off.webp': (1536, 1024, false),
+      'light_table_on.webp': (1536, 1024, false),
     };
 
+    /// A picture's width, height and whether it can hold transparency, read
+    /// whole from its own bytes (the game's WebP, or a PNG).
     (int, int, bool) header(Uint8List b) {
-      final d = ByteData.sublistView(b);
-      final colourType = b[25];
-      return (d.getUint32(16), d.getUint32(20), colourType == 4 || colourType == 6);
+      final i = ImageFileCheck.bytes(b);
+      return (i.width, i.height, i.hasAlpha);
     }
 
     Future<(ByteData, int, int)> pixels(String path) async {
@@ -169,7 +171,8 @@ void main() {
 
     test('all twenty-nine are in, listed in pubspec, at their sizes', () {
       expect(pubspecAssets(), contains('$folder/'), reason: 'its folder, exactly, in flutter: assets:');
-      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')).length, 29);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 29);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, alpha)) in pictures.entries) {
         final file = File('$folder/$name');
         expect(file.existsSync(), isTrue, reason: name);
@@ -184,7 +187,7 @@ void main() {
       for (final name in pictures.keys) {
         expect(scenes, contains(name), reason: name);
       }
-      expect(ArtAssets.parisScenes[case07.introScene], '$folder/palais_garnier_night.png');
+      expect(ArtAssets.parisScenes[case07.introScene], '$folder/palais_garnier_night.webp');
       for (final m in case07.allMissions) {
         expect(ArtAssets.parisScenes[m.scene], isNotNull, reason: m.id);
       }
@@ -221,12 +224,12 @@ void main() {
       }
 
       for (final lit in lightScene.lit.values) {
-        expect(await difference('stage_base.png', lit.split('/').last), lessThan(25), reason: '$lit: the same stage');
+        expect(await difference('stage_base.webp', lit.split('/').last), lessThan(25), reason: '$lit: the same stage');
       }
       for (final b in railScene.backdrops.where((b) => b.id != 'clockRed')) {
-        expect(await difference('backdrop_clock_red.png', b.file.split('/').last), lessThan(20), reason: '${b.id}: the same painting');
+        expect(await difference('backdrop_clock_red.webp', b.file.split('/').last), lessThan(20), reason: '${b.id}: the same painting');
       }
-      expect(await difference('light_table_off.png', 'light_table_on.png'), lessThan(60), reason: 'the same table');
+      expect(await difference('light_table_off.webp', 'light_table_on.webp'), lessThan(60), reason: 'the same table');
     });
 
     test('every place tapped or written on is inside its picture, and no two taps meet', () {
@@ -439,7 +442,7 @@ void main() {
       expect(sw.does, EasyDo.tap);
       // One switch: one lever, named GHOST LIGHT; no other light to set.
       final [dark, desk] = sw.panels.cast<PicturePanel>();
-      expect(dark.picture.file, endsWith('stage_base.png'));
+      expect(dark.picture.file, endsWith('stage_base.webp'));
       expect(desk.caption, 'TAP TO TURN ON');
       expect(desk.layers.single.file, lightScene.lever);
       expect([for (final w in desk.writing) w.text], ['GHOST LIGHT', 'OFF']);
@@ -950,7 +953,7 @@ void main() {
         await shot('m2_switch');
         await play.tapOn('desk', desk, lever);
         expect(findReadable('Only the ghost light: an empty stage, not a show.'), findsOneWidget);
-        expect(find.byWidgetPredicate((w) => w is Image && w.image is AssetImage && (w.image as AssetImage).assetName.endsWith('stage_ghost.png')), findsOneWidget, reason: 'the stage lit');
+        expect(find.byWidgetPredicate((w) => w is Image && w.image is AssetImage && (w.image as AssetImage).assetName.endsWith('stage_ghost.webp')), findsOneWidget, reason: 'the stage lit');
         expect(find.text('ON'), findsOneWidget, reason: 'the switch up');
         await shot('m2_lit');
         await play.next();

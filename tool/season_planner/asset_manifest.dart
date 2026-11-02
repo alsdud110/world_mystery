@@ -25,7 +25,7 @@ import 'finding.dart';
 ///     "assetId": "s3_rome.asset.trevi_fountain", "type": "place", "use": "seasonPlace",
 ///     "subject": "s3_rome.trevi_fountain", "caseIds": ["s3_ep02"], "description": "...", "prompt": "...",
 ///     "stylePreset": "rome_scene", "width": 1536, "height": 1024, "transparent": false,
-///     "outputPath": "assets/seasons/season_03_rome/locations/trevi_fountain.png",
+///     "outputPath": "assets/seasons/season_03_rome/locations/trevi_fountain.webp",
 ///     "references": [], "status": "planned"
 ///   }]
 /// }
@@ -255,8 +255,10 @@ abstract final class AssetManifest {
       // Where it goes.
       final path = str('outputPath');
       if (path != null) {
-        if (!PlanIds.assetFile.hasMatch(path) || !path.endsWith('.png')) {
-          error('asset_path_invalid', '$at.outputPath', '$path is not a .png under assets/');
+        // .webp: the game's picture made from the API's PNG by the image policy
+        // (tool/asset_optimizer); .png: the API's picture as it is (older plans).
+        if (!PlanIds.assetFile.hasMatch(path) || !(path.endsWith('.webp') || path.endsWith('.png'))) {
+          error('asset_path_invalid', '$at.outputPath', '$path is not a .webp (or .png) under assets/');
         } else if (!path.startsWith('$assetRoot/')) {
           error('asset_path_invalid', '$at.outputPath', '$path is not under $assetRoot/ (no other season\'s folder)');
         }

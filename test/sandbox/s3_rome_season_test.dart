@@ -38,10 +38,10 @@ void main() {
 
   /// The four look rounds, each measured on the very file the game shows.
   const measured = [
-    ('s3_ep01_m3', 'assets/seasons/season_03_rome/locations/map_hall.png'),
-    ('s3_ep04_m1', 'assets/seasons/season_03_rome/locations/pantheon_hall.png'),
-    ('s3_ep05_m1', 'assets/seasons/season_03_rome/locations/cat_ruins.png'),
-    ('s3_ep10_m1', 'assets/seasons/season_03_rome/locations/civetta_square.png'),
+    ('s3_ep01_m3', 'assets/seasons/season_03_rome/locations/map_hall.webp'),
+    ('s3_ep04_m1', 'assets/seasons/season_03_rome/locations/pantheon_hall.webp'),
+    ('s3_ep05_m1', 'assets/seasons/season_03_rome/locations/cat_ruins.webp'),
+    ('s3_ep10_m1', 'assets/seasons/season_03_rome/locations/civetta_square.webp'),
   ];
 
   group('the generated season', () {
@@ -94,7 +94,7 @@ void main() {
         final explore = content.explores[id]!;
         final f = File(ep.picture.file);
         expect(explore.picture, file);
-        expect(PlayCheck.pngSize(f), (1536, 1024));
+        expect(PlayCheck.imageSize(f), (1536, 1024));
         expect(ep.picture.measuredOn, ContentHash.ofBytes(f.readAsBytesSync()), reason: 'measured on the file the game shows');
         expect(m.puzzle.notes.any((n) => n.contains('UNMEASURED')), isFalse);
         Rect px(SceneRect r) => Rect.fromLTRB(r.left / 1536, r.top / 1024, r.right / 1536, r.bottom / 1024);
@@ -132,18 +132,18 @@ void main() {
       final hooks = civetta.spots.firstWhere((s) => s.id == 'hooks');
       expect(hooks.kind, ExploreKind.choice);
       expect(hooks.requires, 'notice');
-      expect([for (final c in civetta.choices) c.picture.split('/').last], ['helmet_white_crane.png', 'helmet_yellow_plain.png', 'yellow_helmet.png']);
+      expect([for (final c in civetta.choices) c.picture.split('/').last], ['helmet_white_crane.webp', 'helmet_yellow_plain.webp', 'yellow_helmet.webp']);
     });
 
     test('every face is drawn and written in: Pia and Bruno too', () {
-      const pia = 'assets/seasons/season_03_rome/characters/pia_base.png';
-      const bruno = 'assets/seasons/season_03_rome/characters/bruno_base.png';
-      const brunoSite = 'assets/seasons/season_03_rome/characters/bruno_site.png';
+      const pia = 'assets/seasons/season_03_rome/characters/pia_base.webp';
+      const bruno = 'assets/seasons/season_03_rome/characters/bruno_base.webp';
+      const brunoSite = 'assets/seasons/season_03_rome/characters/bruno_site.webp';
       final d = content.dialogues['s3_ep01_m1']!;
       expect({for (final s in d.speakers) s.portrait}, {
-        'assets/seasons/season_03_rome/characters/enzo_base.png',
-        'assets/seasons/season_03_rome/characters/sofia_base.png',
-        'assets/seasons/season_03_rome/characters/livia_base.png',
+        'assets/seasons/season_03_rome/characters/enzo_base.webp',
+        'assets/seasons/season_03_rome/characters/sofia_base.webp',
+        'assets/seasons/season_03_rome/characters/livia_base.webp',
       });
       final talks = [for (final m in content.talkMissions.values) ?m.before, for (final m in content.talkMissions.values) ?m.after];
       for (final s in talks) {
@@ -173,7 +173,7 @@ void main() {
       expect(used, containsAll([pia, bruno, brunoSite]));
       // The Owl, hood down on the bridge: the hooded portrait drawn in STEP 3-12B.
       expect(content.talkMissions['s3_ep08_m2']!.before!.speaker.portraits.values,
-          everyElement('assets/seasons/season_03_rome/characters/livia_hood.png'));
+          everyElement('assets/seasons/season_03_rome/characters/livia_hood.webp'));
     });
 
     test('a picture choice never shows its right picture as the mission\'s own place (Case 08 M1)', () {

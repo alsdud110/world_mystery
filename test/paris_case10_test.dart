@@ -40,6 +40,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/ink_icon.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 
@@ -124,18 +125,19 @@ void main() {
     // Size, and whether it has an alpha channel (as delivered, never
     // changed).
     const pictures = {
-      'arc_star_view.png': (1536, 1024, false),
-      'star_room.png': (1536, 1024, false),
-      'record_drum.png': (1254, 1254, true),
-      'roof_photo.png': (1536, 1024, false),
-      'sundial_top.png': (1254, 1254, true),
-      'trial_log_open.png': (1536, 1024, true),
+      'arc_star_view.webp': (1536, 1024, false),
+      'star_room.webp': (1536, 1024, false),
+      'record_drum.webp': (1254, 1254, true),
+      'roof_photo.webp': (1536, 1024, false),
+      'sundial_top.webp': (1254, 1254, true),
+      'trial_log_open.webp': (1536, 1024, true),
     };
 
+    /// A picture's width, height and whether it can hold transparency, read
+    /// whole from its own bytes (the game's WebP, or a PNG).
     (int, int, bool) header(Uint8List b) {
-      final d = ByteData.sublistView(b);
-      final colourType = b[25];
-      return (d.getUint32(16), d.getUint32(20), colourType == 4 || colourType == 6);
+      final i = ImageFileCheck.bytes(b);
+      return (i.width, i.height, i.hasAlpha);
     }
 
     Future<(ByteData, int, int)> pixels(String path) async {
@@ -146,7 +148,8 @@ void main() {
 
     test('all six are in, listed in pubspec, at their sizes; no frame is borrowed', () {
       expect(pubspecAssets(), contains('$folder/'));
-      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')).length, 6);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 6);
+      expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, alpha)) in pictures.entries) {
         final (pw, ph, a) = header(File('$folder/$name').readAsBytesSync());
         expect((pw, ph), (w, h), reason: name);
@@ -164,7 +167,7 @@ void main() {
       for (final name in pictures.keys) {
         expect(scenes, contains(name), reason: name);
       }
-      expect(ArtAssets.parisScenes[case10.introScene], '$folder/arc_star_view.png');
+      expect(ArtAssets.parisScenes[case10.introScene], '$folder/arc_star_view.webp');
       for (final m in case10.allMissions) {
         expect(ArtAssets.parisScenes[m.scene], isNotNull, reason: m.id);
       }
@@ -181,7 +184,7 @@ void main() {
     });
 
     test("the sundial's seven hour lines are where the data says, each darker than the plate beside it; the line down is no hour", () async {
-      final (d, w, _) = await pixels('$folder/sundial_top.png');
+      final (d, w, _) = await pixels('$folder/sundial_top.webp');
       double light(double degrees) {
         final a = degrees * math.pi / 180;
         var sum = 0.0;
@@ -209,7 +212,7 @@ void main() {
     });
 
     test("the photo's four clock faces are white where the scenes say; the church's is small", () async {
-      final (d, w, _) = await pixels('$folder/roof_photo.png');
+      final (d, w, _) = await pixels('$folder/roof_photo.webp');
       double light(Offset c, double r) {
         var sum = 0.0;
         var n = 0;
@@ -289,7 +292,7 @@ void main() {
         "Let's read what T1 wrote.",
       ]);
       expect(case10.intro[picture.turnAtLine], 'Under the roof, a small door has a star on it.');
-      expect(picture.inset!.file, endsWith('case_09/clock_model_t1.png'), reason: "T1's own star");
+      expect(picture.inset!.file, endsWith('case_09/clock_model_t1.webp'), reason: "T1's own star");
       expect([picture.inset!.fromLine, picture.inset!.toLine], [1, 3]);
       expect(picture.room!.plateLines, ['TRIAL RECORDS', 'KEPT AT THE STAR']);
       final plateMark = picture.marks.firstWhere((m) => m.area.contains(picture.room!.plateCentre));

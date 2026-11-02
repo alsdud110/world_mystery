@@ -226,11 +226,19 @@ class AssetPlan {
   /// `assets/` (the game's) or `lib/` (the app).
   static String workDirFor(String seasonId) => 'content_pipeline/asset_work/$seasonId';
 
-  /// The API's picture of [a]: `<work>/raw/<its path under the season's asset root>`.
+  /// The API's picture of [a]: `<work>/raw/<its path under the season's asset root>`,
+  /// always a `.png` (the API's format), whatever the game's is.
   static String rawPathFor(String seasonId, String assetRoot, PipelineAsset a, {String? work}) =>
-      '${work ?? workDirFor(seasonId)}/raw/${a.outputPath.substring(assetRoot.length + 1)}';
+      '${work ?? workDirFor(seasonId)}/raw/${_asPng(a.outputPath.substring(assetRoot.length + 1))}';
 
-  /// [a]'s picture at the game's size when it had to be changed:
+  static String _asPng(String path) => path.endsWith('.webp') ? '${path.substring(0, path.length - 5)}.png' : path;
+
+  /// Whether the game's file of [a] is a WebP made from the API's PNG by
+  /// the image policy (`tool/asset_optimizer`), not the PNG itself.
+  static bool optimized(PipelineAsset a) => a.outputPath.endsWith('.webp');
+
+  /// [a]'s picture as the game stores it when it is not the API's own file
+  /// (fitted to the game's size, or optimized to WebP):
   /// `<work>/game/<its path under the season's asset root>`.
   static String gamePathFor(String seasonId, String assetRoot, PipelineAsset a, {String? work}) =>
       '${work ?? workDirFor(seasonId)}/game/${a.outputPath.substring(assetRoot.length + 1)}';

@@ -177,21 +177,21 @@
       "Find the truth."
     ],
     "firstCase": {
-      "picture": "assets/seasons/season_04_newyork/objects/torn_page.png",
+      "picture": "assets/seasons/season_04_newyork/objects/torn_page.webp",
       "line": "Your first case starts\nat the library."
     },
     "hero": {
-      "file": "assets/seasons/season_04_newyork/cover/season4_prologue_night.png",
+      "file": "assets/seasons/season_04_newyork/cover/season4_prologue_night.webp",
       "pixels": {
         "width": 1024,
         "height": 1536
       }
     },
     "pieces": [
-      "assets/seasons/season_04_newyork/objects/torn_page.png",
-      "assets/seasons/season_04_newyork/objects/brass_egg.png",
-      "assets/seasons/season_04_newyork/objects/red_tin.png",
-      "assets/seasons/season_04_newyork/objects/brass_bird.png"
+      "assets/seasons/season_04_newyork/objects/torn_page.webp",
+      "assets/seasons/season_04_newyork/objects/brass_egg.webp",
+      "assets/seasons/season_04_newyork/objects/red_tin.webp",
+      "assets/seasons/season_04_newyork/objects/brass_bird.webp"
     ]
   },
   "outro": [
@@ -210,7 +210,7 @@
   "places": [
     {
       "placeId": "s4_newyork.exhibit_hall",
-      "file": "assets/seasons/season_04_newyork/locations/exhibit_hall.png",
+      "file": "assets/seasons/season_04_newyork/locations/exhibit_hall.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -219,7 +219,7 @@
     },
     {
       "placeId": "s4_newyork.library_steps",
-      "file": "assets/seasons/season_04_newyork/locations/library_steps.png",
+      "file": "assets/seasons/season_04_newyork/locations/library_steps.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -228,7 +228,7 @@
     },
     {
       "placeId": "s4_newyork.main_concourse",
-      "file": "assets/seasons/season_04_newyork/locations/main_concourse.png",
+      "file": "assets/seasons/season_04_newyork/locations/main_concourse.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -237,7 +237,7 @@
     },
     {
       "placeId": "s4_newyork.tea_house",
-      "file": "assets/seasons/season_04_newyork/locations/tea_house.png",
+      "file": "assets/seasons/season_04_newyork/locations/tea_house.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -246,7 +246,7 @@
     },
     {
       "placeId": "s4_newyork.tea_room",
-      "file": "assets/seasons/season_04_newyork/locations/tea_room.png",
+      "file": "assets/seasons/season_04_newyork/locations/tea_room.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -255,7 +255,7 @@
     },
     {
       "placeId": "s4_newyork.bridge_walkway",
-      "file": "assets/seasons/season_04_newyork/locations/bridge_walkway.png",
+      "file": "assets/seasons/season_04_newyork/locations/bridge_walkway.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -264,7 +264,7 @@
     },
     {
       "placeId": "s4_newyork.clock_shop",
-      "file": "assets/seasons/season_04_newyork/locations/clock_shop.png",
+      "file": "assets/seasons/season_04_newyork/locations/clock_shop.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -273,7 +273,7 @@
     },
     {
       "placeId": "s4_newyork.liberty_island",
-      "file": "assets/seasons/season_04_newyork/locations/liberty_island.png",
+      "file": "assets/seasons/season_04_newyork/locations/liberty_island.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -282,7 +282,7 @@
     },
     {
       "placeId": "s4_newyork.times_square",
-      "file": "assets/seasons/season_04_newyork/locations/times_square.png",
+      "file": "assets/seasons/season_04_newyork/locations/times_square.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -291,7 +291,7 @@
     },
     {
       "placeId": "s4_newyork.square_arch",
-      "file": "assets/seasons/season_04_newyork/locations/square_arch.png",
+      "file": "assets/seasons/season_04_newyork/locations/square_arch.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -300,7 +300,7 @@
     },
     {
       "placeId": "s4_newyork.coney_boardwalk",
-      "file": "assets/seasons/season_04_newyork/locations/coney_boardwalk.png",
+      "file": "assets/seasons/season_04_newyork/locations/coney_boardwalk.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -309,7 +309,7 @@
     },
     {
       "placeId": "s4_newyork.bethesda_terrace",
-      "file": "assets/seasons/season_04_newyork/locations/bethesda_terrace.png",
+      "file": "assets/seasons/season_04_newyork/locations/bethesda_terrace.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -318,7 +318,7 @@
     },
     {
       "placeId": "s4_newyork.tv_studio",
-      "file": "assets/seasons/season_04_newyork/locations/tv_studio.png",
+      "file": "assets/seasons/season_04_newyork/locations/tv_studio.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -327,7 +327,7 @@
     },
     {
       "placeId": "s4_newyork.belvedere_castle",
-      "file": "assets/seasons/season_04_newyork/locations/belvedere_castle.png",
+      "file": "assets/seasons/season_04_newyork/locations/belvedere_castle.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -337,7 +337,7 @@
   ],
   "art": {
     "cover": {
-      "file": "assets/seasons/season_04_newyork/cover/season4_cover_newyork.png",
+      "file": "assets/seasons/season_04_newyork/cover/season4_cover_newyork.webp",
       "pixels": {
         "width": 1024,
         "height": 1536
@@ -356,12 +356,12 @@
       ]
     },
     "map": {
-      "file": "assets/seasons/season_04_newyork/locations/map/newyork_map.png",
+      "file": "assets/seasons/season_04_newyork/locations/map/newyork_map.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
       },
-      "measuredOn": "sha256:22742456195ccd380cd6a736a63c416dd85ccd9b81ee01d23d95f54dd74aa2b1",
+      "measuredOn": "sha256:7180585fc49d94dc045ab8672b705514a839176033a3a0a5cfbc9fd890a76bbd",
       "landmarks": [
         {
           "locId": "central_park",
@@ -445,6 +445,6 @@
     "Season 4, planned by Claude Code with tool/season_planner (PLAYBOOK.md) and carried into the game by the create-season skill from the input 'Season 4, New York'.",
     "The Hart Building (Bleecker Street, Greenwich Village) and its clock shop are made up for the story; every other place is a real place in New York. The Golden Lantern Tea House and the TV studio are made up, in real neighbourhoods.",
     "Real facts the puzzles lean on: Grand Central's ceiling shows the stars back to front, its information booth has a four-faced clock and the station has a Lost and Found; the Wonder Wheel at Coney Island (1920) has cars that swing and cars that stay still; Belvedere Castle stands on a rock above a pond in Central Park.",
-    "art.map (assets/seasons/season_04_newyork/locations/map/newyork_map.png) is written once the map is made, its landmarks measured on it (season_factory step 6), never guessed."
+    "art.map (assets/seasons/season_04_newyork/locations/map/newyork_map.webp) is written once the map is made, its landmarks measured on it (season_factory step 6), never guessed."
   ]
 }

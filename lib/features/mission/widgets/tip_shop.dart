@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
@@ -9,6 +10,7 @@ import '../../../data/models/mission.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/coin_balance.dart' show GameCoin;
 import '../../../widgets/paper.dart';
+import '../../game/admob_rewarded_ad_gateway.dart';
 import '../../game/game_controller.dart';
 import '../../game/rewarded_ad_service.dart';
 import '../../game/wallet_controller.dart';
@@ -136,25 +138,44 @@ class _TipDialog extends ConsumerStatefulWidget {
 class _TipDialogState extends ConsumerState<_TipDialog> {
   /// Set by the first tap: the dialog reveals one tip, once.
   bool _opening = false;
+
+  /// Set by the first GET COINS tap, until its ad has closed: one ad at a time.
   bool _watchingAd = false;
   String? _rewardMessage;
 
+  @override
+  void initState() {
+    super.initState();
+    // Short of coins: GET COINS' ad is loaded while the question is read
+    // (nothing is asked when ads are off, or one is loaded already).
+    final wallet = ref.read(walletProvider);
+    final price = WalletController.priceOf(_tip);
+    if (wallet.balance < price && !wallet.ownsTip(widget.mission.id, _tip)) {
+      ref.read(rewardedAdGatewayProvider).preload();
+    }
+  }
+
+  /// GET COINS: the ad, only on this tap. Its coins are paid when the SDK
+  /// says the reward was earned (even if this dialog is gone by then).
   Future<void> _watchAd() async {
     if (_watchingAd) return;
-    setState(() => _watchingAd = true);
+    setState(() {
+      _watchingAd = true;
+      _rewardMessage = null;
+    });
     try {
       final result = await ref.read(rewardedAdServiceProvider).showAndReward();
       if (!mounted) return;
       setState(() {
-        _rewardMessage = result.coins > 0
-            ? 'You earned ${result.coins} coins!'
-            : result.status == RewardedAdStatus.unavailable
-                ? 'Ads are not available yet.'
-                : 'No coins earned. Please try again.';
+        _rewardMessage = switch (result.status) {
+          RewardedAdStatus.earned => 'You earned ${result.coins} coins!',
+          RewardedAdStatus.unavailable => 'No ad right now. Try again later.',
+          RewardedAdStatus.notEarned => 'No coins this time.',
+        };
       });
     } catch (error, stack) {
       FlutterError.reportError(FlutterErrorDetails(exception: error, stack: stack, library: 'rewarded ad'));
-      if (mounted) setState(() => _rewardMessage = 'Ad unavailable. Please try again.');
+      if (mounted) setState(() => _rewardMessage = 'No ad right now. Try again later.');
     } finally {
       if (mounted) setState(() => _watchingAd = false);
     }
@@ -187,15 +208,23 @@ class _TipDialogState extends ConsumerState<_TipDialog> {
     final wallet = ref.watch(walletProvider);
     final state = tipStateOf(tip: tip, revealed: tip - 1,
         owns: wallet.ownsTip(widget.mission.id, tip), balance: wallet.balance);
-    return TipShopCard(
-      balance: wallet.balance,
-      price: WalletController.priceOf(tip),
-      state: state,
-      onCancel: () => Navigator.of(context).pop(false),
-      onReveal: () => _reveal(tip),
-      onWatchAd: ref.watch(rewardedAdGatewayProvider).isAvailable ? _watchAd : null,
-      watchingAd: _watchingAd,
-      rewardMessage: _rewardMessage,
+    final ads = ref.watch(rewardedAdGatewayProvider);
+    // GET COINS follows its ad: loading, ready, on screen, or not there.
+    return ListenableBuilder(
+      listenable: ads,
+      builder: (context, _) {
+        final offer = _watchingAd ? RewardedOffer.showing : ads.offer;
+        return TipShopCard(
+          balance: wallet.balance,
+          price: WalletController.priceOf(tip),
+          state: state,
+          onCancel: () => Navigator.of(context).pop(false),
+          onReveal: () => _reveal(tip),
+          adOffer: offer,
+          onGetCoins: offer == RewardedOffer.ready ? _watchAd : null,
+          rewardMessage: _rewardMessage,
+        );
+      },
     );
   }
 }
@@ -211,8 +240,8 @@ class TipShopCard extends StatelessWidget {
     required this.state,
     required this.onCancel,
     required this.onReveal,
-    this.onWatchAd,
-    this.watchingAd = false,
+    this.adOffer,
+    this.onGetCoins,
     this.rewardMessage,
   });
 
@@ -221,8 +250,12 @@ class TipShopCard extends StatelessWidget {
   final TipState state;
   final VoidCallback onCancel;
   final VoidCallback onReveal;
-  final VoidCallback? onWatchAd;
-  final bool watchingAd;
+
+  /// GET COINS' ad, offered when coins are short (null: no ads, nothing said).
+  final RewardedOffer? adOffer;
+
+  /// Shows the ad; null while it is not ready.
+  final VoidCallback? onGetCoins;
   final String? rewardMessage;
 
   @override
@@ -337,10 +370,16 @@ class TipShopCard extends StatelessWidget {
                     ),
                   ),
                 ],
-                if (short && onWatchAd == null) ...[
+                if (short && adOffer != null) ...[
                   const SizedBox(height: AppSpace.md),
                   Text(
-                    'Watch an ad for 20 coins — Coming soon',
+                    // What the ad gives, said plainly; whether it is there yet.
+                    switch (adOffer!) {
+                      RewardedOffer.loading => 'Getting an ad ready…',
+                      RewardedOffer.unavailable => 'No ad right now. Try again later.',
+                      _ => 'Watch an ad to earn ${AppConstants.rewardedAdCoins} Coins',
+                    },
+                    key: const ValueKey('get-coins-note'),
                     textAlign: TextAlign.center,
                     style: AppText.bodyText(size: 14, color: AppColors.muted),
                   ),
@@ -352,11 +391,12 @@ class TipShopCard extends StatelessWidget {
                   runSpacing: AppSpace.sm,
                   children: [
                     CompactButton(label: 'CANCEL', onPressed: onCancel),
-                    if (short && onWatchAd != null)
+                    if (short && adOffer != null)
                       CompactButton(
-                        label: watchingAd ? 'WATCHING...' : 'WATCH AD +20',
+                        label: 'GET COINS',
                         primary: true,
-                        onPressed: watchingAd ? null : onWatchAd,
+                        semanticLabel: 'Get coins: watch an ad to earn ${AppConstants.rewardedAdCoins} coins',
+                        onPressed: onGetCoins,
                       ),
                     if (!short)
                       CompactButton(

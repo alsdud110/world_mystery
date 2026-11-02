@@ -87,3 +87,10 @@ skills-lock.json
 # up elsewhere (tool/asset_pipeline/README.md). The season's plans
 # (assets.manifest.json, planning/asset_wiring.json) stay tracked.
 /content_pipeline/asset_work/
+
+# The PNGs the game's WebP pictures were made from (tool/asset_optimizer):
+# kept for re-encoding, outside the app and out of Git (the ones committed
+# before the optimization stay in Git's history). Back them up elsewhere.
+/content_pipeline/asset_originals/
+
+/config/ads.local.json

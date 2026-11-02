@@ -33,8 +33,8 @@ void main() {
   const seasonId = 's9_test';
   const station = 's9_test.station';
   const office = 's9_test.office';
-  const stationPlace = ScenePlace(file: 'assets/seasons/season_02_paris/cover/season2_gare_du_nord.png', pixels: ScenePixels(941, 1671));
-  const officePlace = ScenePlace(file: 'assets/seasons/season_02_paris/cases/case_04/keeper_hut.png', pixels: ScenePixels(1536, 1024));
+  const stationPlace = ScenePlace(file: 'assets/seasons/season_02_paris/cover/season2_gare_du_nord.webp', pixels: ScenePixels(941, 1671));
+  const officePlace = ScenePlace(file: 'assets/seasons/season_02_paris/cases/case_04/keeper_hut.webp', pixels: ScenePixels(1536, 1024));
 
   const season = {
     'id': seasonId,

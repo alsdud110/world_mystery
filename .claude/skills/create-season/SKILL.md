@@ -45,6 +45,13 @@ meanings is named plainly ("construction tower crane", not "crane").
 
 ## 2. Run the factory, again and again
 
+Every manifest `outputPath` (and every plan file naming it) ends in `.webp`:
+the pipeline keeps the API's PNG out of the app and makes the game's WebP
+by the picture's kind (`tool/asset_optimizer/README.md`). That needs Google's
+`cwebp` on this machine (`CWEBP`, the PATH, or `~/.world_mystery/libwebp-*/bin/`;
+macOS `brew install webp`). Without it a made picture waits `WAITING …`
+(`generated`, never paid for again) and the run exits 1: install cwebp, run again.
+
 ```sh
 dart run tool/season_factory/season_factory.dart status <seasonDir>
 dart run tool/season_factory/season_factory.dart run <seasonDir> --budget <usd>
@@ -138,10 +145,17 @@ and set them so the city's landmarks, not the foreground, are framed
   factory runs both), then the whole `flutter test` (a new season is a
   release milestone, CLAUDE.md §21).
 - `asset_pipeline.dart --manifest <manifest> --doctor`: everything as recorded.
+- `dart run tool/asset_optimizer/asset_size_report.dart`: the new season's
+  area and its growth over `size_baseline.json`, no unoptimized PNG, no work
+  file in the bundle (the factory prints the season's lines after `--apply`);
+  `flutter test test/asset_optimizer test/asset_bundle_decode_test.dart`.
+  Once the season is accepted, `--write-baseline` (the next season is measured
+  against it).
 - Back up `content_pipeline/asset_work/<seasonId>/` (not in Git) to
   `~/world_mystery_backups/<seasonId>_asset_work_<date>/` and compare sha256.
 - Write `planning/FACTORY_REPORT.md` (Korean) and report in Korean: pictures
-  made, reused, rejected and why, calls and cost (usage and conservative),
+  made, reused, rejected and why, their WebP settings and sizes (the state's
+  `optimized` records), the season's MB in the app, calls and cost (usage and conservative),
   budget left, what was measured, tests run and their results, what was not
   checked (a real device), what is left.
 

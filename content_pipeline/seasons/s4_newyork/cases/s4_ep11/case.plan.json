@@ -127,7 +127,7 @@
         },
         "dialogue": {
           "place": "TV STUDIO",
-          "background": "assets/seasons/season_04_newyork/locations/tv_studio.png",
+          "background": "assets/seasons/season_04_newyork/locations/tv_studio.webp",
           "goal": "Find out where Dexter was on Friday at ten.",
           "how": "Ask each person. Write down what they say.",
           "guide": "Talk to a witness.",
@@ -150,7 +150,7 @@
               "id": "dexter",
               "name": "Dexter Vance",
               "title": "THE TREASURE HUNTER",
-              "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.png",
+              "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.webp",
               "description": "a tall man with a big smile, a safari vest and sunglasses on his head",
               "greeting": "Ask me anything. The cameras love me!",
               "answers": {
@@ -172,7 +172,7 @@
               "id": "nora",
               "name": "Nora Bell",
               "title": "THE CAMERA OPERATOR",
-              "portrait": "assets/seasons/season_04_newyork/characters/nora_base.png",
+              "portrait": "assets/seasons/season_04_newyork/characters/nora_base.webp",
               "description": "a young woman in a black cap, headphones round her neck",
               "greeting": "I'm done keeping his secrets. Ask me.",
               "answers": {
@@ -194,7 +194,7 @@
               "id": "frank",
               "name": "Frank Russo",
               "title": "THE NIGHT GUARD",
-              "portrait": "assets/seasons/season_04_newyork/characters/frank_base.png",
+              "portrait": "assets/seasons/season_04_newyork/characters/frank_base.webp",
               "description": "a big, friendly guard in a blue uniform, with a torch on his belt",
               "greeting": "I brought the library's pass list.",
               "answers": {
@@ -262,20 +262,20 @@
               "label": "The bird with folded wings",
               "feedback": "Eleanor's bird has its wings wide open. Look at your Notebook.",
               "altText": "a small brass songbird with its wings folded, one foot lifted, its beak open",
-              "picture": "assets/seasons/season_04_newyork/cases/case_04/bird_wings_closed.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_04/bird_wings_closed.webp"
             },
             {
               "id": "feet_down",
               "label": "The bird standing on both feet",
               "feedback": "Eleanor's bird dances on one foot. Look again.",
               "altText": "a small brass songbird with its wings wide open, standing on both feet, its beak open",
-              "picture": "assets/seasons/season_04_newyork/cases/case_04/bird_feet_down.png"
+              "picture": "assets/seasons/season_04_newyork/cases/case_04/bird_feet_down.webp"
             },
             {
               "id": "dancing",
               "label": "The bird with one foot up",
               "altText": "a small brass songbird with its wings wide open, one foot lifted and its beak open",
-              "picture": "assets/seasons/season_04_newyork/objects/brass_bird.png"
+              "picture": "assets/seasons/season_04_newyork/objects/brass_bird.webp"
             }
           ]
         },
@@ -583,7 +583,7 @@
           "by": "speaker",
           "text": "I found them first! Finders keepers!",
           "speaker": "dexter_vance",
-          "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/dexter_base.webp"
         },
         {
           "by": "detective",
@@ -594,13 +594,13 @@
           "by": "speaker",
           "text": "And you cut a page from a treasure of this library.",
           "speaker": "harold_brooks",
-          "portrait": "assets/seasons/season_04_newyork/characters/harold_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/harold_base.webp"
         },
         {
           "by": "speaker",
           "text": "I'm sorry I kept quiet so long.",
           "speaker": "nora_bell",
-          "portrait": "assets/seasons/season_04_newyork/characters/nora_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/nora_base.webp"
         },
         {
           "by": "narrator",

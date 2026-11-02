@@ -84,7 +84,7 @@
   "places": [
     {
       "placeId": "s9_sandbox.front_desk",
-      "file": "assets/seasons/season_02_paris/cases/case_11/annex_reading_room.png",
+      "file": "assets/seasons/season_02_paris/cases/case_11/annex_reading_room.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -92,7 +92,7 @@
     },
     {
       "placeId": "s9_sandbox.window_shelf",
-      "file": "assets/seasons/season_02_paris/cases/case_11/annex_shelves.png",
+      "file": "assets/seasons/season_02_paris/cases/case_11/annex_shelves.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -100,7 +100,7 @@
     },
     {
       "placeId": "s9_sandbox.reading_room",
-      "file": "assets/seasons/season_02_paris/cases/case_11/annex_reading_room.png",
+      "file": "assets/seasons/season_02_paris/cases/case_11/annex_reading_room.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -108,7 +108,7 @@
     },
     {
       "placeId": "s9_sandbox.station",
-      "file": "assets/seasons/season_01_london/cases/case_01/kings_cross_platform_night.png",
+      "file": "assets/seasons/season_01_london/cases/case_01/kings_cross_platform_night.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -116,7 +116,7 @@
     },
     {
       "placeId": "s9_sandbox.gallery",
-      "file": "assets/seasons/season_01_london/locations/british_museum/british_museum_gallery_8.png",
+      "file": "assets/seasons/season_01_london/locations/british_museum/british_museum_gallery_8.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -124,7 +124,7 @@
     },
     {
       "placeId": "s9_sandbox.market",
-      "file": "assets/seasons/season_01_london/locations/covent_garden/covent_garden_market_hall.png",
+      "file": "assets/seasons/season_01_london/locations/covent_garden/covent_garden_market_hall.webp",
       "pixels": {
         "width": 1024,
         "height": 1536
@@ -132,7 +132,7 @@
     },
     {
       "placeId": "s9_sandbox.lost_property",
-      "file": "assets/seasons/season_01_london/locations/kings_cross/kings_cross_waiting_hall.png",
+      "file": "assets/seasons/season_01_london/locations/kings_cross/kings_cross_waiting_hall.webp",
       "pixels": {
         "width": 1273,
         "height": 832

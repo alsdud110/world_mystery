@@ -50,7 +50,8 @@ before any call; `64` usage.
 ```
 content_pipeline/asset_work/<seasonId>/
   raw/<path under the asset root>     the API's picture, as it came (never changed)
-  game/<path under the asset root>    the picture fitted to the game's size, only when it had to be
+  game/<path under the asset root>    the game's WebP (below), or the PNG fitted to the game's size when it had to be
+  reference/<path>.png                a reference known here only as a WebP, decoded for images/edits
   pipeline_state.json                 every asset's status, files (sha256, size) and cost; every run
   image_manifest.json                 ImageStudio's call ledger: every request and call, usage, cost
 ```
@@ -170,6 +171,37 @@ the game's older sizes, as `1122x1402`):
   away; past either, refused (ask for the right size instead);
 - transparency kept (RGBA stays RGBA); the result is checked whole and must
   be exactly the planned size.
+
+## The game's WebP (asset optimization, 2026-11-02)
+
+A picture whose manifest `outputPath` ends in `.webp` (every season since;
+Rome's and New York's were converted) is not shipped as the API drew it:
+
+```
+OpenAI (PNG) → raw/<path>.png  → fitted if needed → ImageOptimizer (its kind) → game/<path>.webp → --apply → assets/<path>.webp
+               (kept, never in                       (tool/asset_optimizer,     (read back,       (sha256-checked copy,
+                the app)                              image_policy.json)          recorded)         pubspec folder)
+```
+
+- The kind is the manifest's `type` and `use` (`manifestKinds`): a
+  `use: puzzle` object is near-lossless or exact, a document near-lossless at
+  most, places and scenes high-quality lossy; each result is decoded and
+  judged against the PNG (PSNR, SSIM, exact alpha) before it is kept.
+- The record (`pipeline_state.json`) keeps the API's PNG as `raw`, the WebP
+  as `game`, and how it was made (`optimized`: kind, setting, quality,
+  encoder, policy version).
+- No cwebp here (`tool/asset_optimizer/README.md`), or no good picture: the
+  picture stays `generated` with its reason (`WAITING`), nothing is written to
+  `game/` or the game, and it is never sent to the API again: the next run
+  with cwebp makes its WebP.
+- A picture drawn from another (images/edits) is sent its reference's PNG
+  (the API's own; one known only as a WebP is decoded into `reference/`).
+- `--doctor --fix` on a machine whose records predate the optimization:
+  a game WebP that `tool/asset_optimizer/optimized_assets.json` says was
+  made from this machine's recorded picture is recorded as its game copy
+  (`migrated`); anything else is still a `CONFLICT`. A WebP made elsewhere is
+  adopted as the game copy it is (never as the API's PNG).
+- A `.png` `outputPath` still ships the API's picture as it is (older plans).
 
 ## Wiring (where the game shows each picture)
 

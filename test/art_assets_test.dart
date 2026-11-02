@@ -54,109 +54,109 @@ void main() {
 
   test('the nine landmarks and the places inside them each have their own picture', () {
     const landmarks = {
-      Artwork.kingsCross: 'assets/seasons/season_01_london/locations/landmarks/kings_cross.png',
-      Artwork.britishMuseum: 'assets/seasons/season_01_london/locations/landmarks/british_museum.png',
-      Artwork.coventGarden: 'assets/seasons/season_01_london/locations/landmarks/covent_garden.png',
-      Artwork.bigBen: 'assets/seasons/season_01_london/locations/landmarks/big_ben.png',
-      Artwork.hydePark: 'assets/seasons/season_01_london/locations/landmarks/hyde_park.png',
-      Artwork.buckinghamPalace: 'assets/seasons/season_01_london/locations/landmarks/buckingham_palace.png',
-      Artwork.towerBridge: 'assets/seasons/season_01_london/locations/landmarks/tower_bridge.png',
-      Artwork.towerOfLondon: 'assets/seasons/season_01_london/locations/landmarks/tower_of_london.png',
-      Artwork.londonEye: 'assets/seasons/season_01_london/locations/landmarks/london_eye.png',
+      Artwork.kingsCross: 'assets/seasons/season_01_london/locations/landmarks/kings_cross.webp',
+      Artwork.britishMuseum: 'assets/seasons/season_01_london/locations/landmarks/british_museum.webp',
+      Artwork.coventGarden: 'assets/seasons/season_01_london/locations/landmarks/covent_garden.webp',
+      Artwork.bigBen: 'assets/seasons/season_01_london/locations/landmarks/big_ben.webp',
+      Artwork.hydePark: 'assets/seasons/season_01_london/locations/landmarks/hyde_park.webp',
+      Artwork.buckinghamPalace: 'assets/seasons/season_01_london/locations/landmarks/buckingham_palace.webp',
+      Artwork.towerBridge: 'assets/seasons/season_01_london/locations/landmarks/tower_bridge.webp',
+      Artwork.towerOfLondon: 'assets/seasons/season_01_london/locations/landmarks/tower_of_london.webp',
+      Artwork.londonEye: 'assets/seasons/season_01_london/locations/landmarks/london_eye.webp',
     };
     const inside = {
-      Artwork.greatCourt: 'assets/seasons/season_01_london/locations/british_museum/british_museum_great_court.png',
-      Artwork.egyptRoom: 'assets/seasons/season_01_london/locations/british_museum/british_museum_egypt_room.png',
-      Artwork.boathouse: 'assets/seasons/season_01_london/locations/hyde_park/hyde_park_boathouse.png',
-      Artwork.roseGarden: 'assets/seasons/season_01_london/locations/hyde_park/hyde_park_rose_garden.png',
-      Artwork.staffRoom: 'assets/seasons/season_01_london/locations/buckingham_palace/buckingham_palace_palace_staff_room.png',
-      Artwork.courtyard: 'assets/seasons/season_01_london/locations/buckingham_palace/buckingham_palace_palace_courtyard.png',
-      Artwork.dressingRoom: 'assets/seasons/season_01_london/locations/covent_garden/covent_garden_dressing_room.png',
-      Artwork.waitingRoom: 'assets/seasons/season_01_london/locations/kings_cross/kings_cross_waiting_hall.png',
-      Artwork.gallery: 'assets/seasons/season_01_london/locations/british_museum/british_museum_gallery_8.png',
-      Artwork.auditorium: 'assets/seasons/season_01_london/locations/covent_garden/covent_garden_theatre.png',
-      Artwork.theatreDoor: 'assets/seasons/season_01_london/locations/covent_garden/theatre_door_dark.png',
-      Artwork.royalArchive: 'assets/seasons/season_01_london/locations/royal_archive/royal_archive.png',
+      Artwork.greatCourt: 'assets/seasons/season_01_london/locations/british_museum/british_museum_great_court.webp',
+      Artwork.egyptRoom: 'assets/seasons/season_01_london/locations/british_museum/british_museum_egypt_room.webp',
+      Artwork.boathouse: 'assets/seasons/season_01_london/locations/hyde_park/hyde_park_boathouse.webp',
+      Artwork.roseGarden: 'assets/seasons/season_01_london/locations/hyde_park/hyde_park_rose_garden.webp',
+      Artwork.staffRoom: 'assets/seasons/season_01_london/locations/buckingham_palace/buckingham_palace_palace_staff_room.webp',
+      Artwork.courtyard: 'assets/seasons/season_01_london/locations/buckingham_palace/buckingham_palace_palace_courtyard.webp',
+      Artwork.dressingRoom: 'assets/seasons/season_01_london/locations/covent_garden/covent_garden_dressing_room.webp',
+      Artwork.waitingRoom: 'assets/seasons/season_01_london/locations/kings_cross/kings_cross_waiting_hall.webp',
+      Artwork.gallery: 'assets/seasons/season_01_london/locations/british_museum/british_museum_gallery_8.webp',
+      Artwork.auditorium: 'assets/seasons/season_01_london/locations/covent_garden/covent_garden_theatre.webp',
+      Artwork.theatreDoor: 'assets/seasons/season_01_london/locations/covent_garden/theatre_door_dark.webp',
+      Artwork.royalArchive: 'assets/seasons/season_01_london/locations/royal_archive/royal_archive.webp',
     };
     expect(ArtAssets.landmarkScenes, landmarks);
     expect(ArtAssets.insideScenes, inside);
     const objectScenes = {
-      Artwork.raven: 'assets/seasons/season_01_london/characters/raven_master.png',
-      Artwork.oldSuitcase: 'assets/shared/objects/suitcase.png',
+      Artwork.raven: 'assets/seasons/season_01_london/characters/raven_master.webp',
+      Artwork.oldSuitcase: 'assets/shared/objects/suitcase.webp',
       // The Royal Box once found (case photo): open, never the theatre box.
-      Artwork.royalBox: 'assets/seasons/season_01_london/special/royal_box_open.png',
+      Artwork.royalBox: 'assets/seasons/season_01_london/special/royal_box_open.webp',
       // Case 08's black suitcase.
-      Artwork.blackSuitcase: 'assets/seasons/season_01_london/objects/suitcase_black.png',
+      Artwork.blackSuitcase: 'assets/seasons/season_01_london/objects/suitcase_black.webp',
       // Case 09's empty glass case; Case 05's and Case 12's own doors.
-      Artwork.jewelCase: 'assets/seasons/season_01_london/objects/empty_glass_jewel_case.png',
-      Artwork.gearDoor: 'assets/seasons/season_01_london/objects/locked_door_gears.png',
-      Artwork.ironDoor: 'assets/seasons/season_01_london/objects/small_iron_door.png',
-      Artwork.ironChest: 'assets/seasons/season_01_london/objects/iron_chest.png',
+      Artwork.jewelCase: 'assets/seasons/season_01_london/objects/empty_glass_jewel_case.webp',
+      Artwork.gearDoor: 'assets/seasons/season_01_london/objects/locked_door_gears.webp',
+      Artwork.ironDoor: 'assets/seasons/season_01_london/objects/small_iron_door.webp',
+      Artwork.ironChest: 'assets/seasons/season_01_london/objects/iron_chest.webp',
       // Case 02: Big Ben's clock stopped at 8:17, and the wheels behind it.
-      Artwork.clockFace: 'assets/seasons/season_01_london/locations/big_ben/clock_face.png',
-      Artwork.clockMechanism: 'assets/seasons/season_01_london/locations/big_ben/clock_mechanism.png',
+      Artwork.clockFace: 'assets/seasons/season_01_london/locations/big_ben/clock_face.webp',
+      Artwork.clockMechanism: 'assets/seasons/season_01_london/locations/big_ben/clock_mechanism.webp',
     };
     expect(ArtAssets.objectScenes, objectScenes);
     // Season 2's places: Gare du Nord (Case 01), its own picture.
     const parisScenes = {
-      Artwork.gareDuNord: 'assets/seasons/season_02_paris/cover/season2_gare_du_nord.png',
+      Artwork.gareDuNord: 'assets/seasons/season_02_paris/cover/season2_gare_du_nord.webp',
       // Case 01 M3: the old clock's face, its hands set by the detective.
-      Artwork.oldClockFace: 'assets/seasons/season_02_paris/cases/case_01/old_clock_face.png',
+      Artwork.oldClockFace: 'assets/seasons/season_02_paris/cases/case_01/old_clock_face.webp',
       // Case 02 begins on the painting from Case 01's brass box; its street
       // (as it really is) and the painter's studio.
-      Artwork.montmartrePainting: 'assets/seasons/season_02_paris/cases/case_01/montmartre_painting.png',
-      Artwork.montmartreStreet: 'assets/seasons/season_02_paris/cases/case_02/montmartre_street_real.png',
-      Artwork.paintersStudio: 'assets/seasons/season_02_paris/cases/case_02/painters_studio.png',
+      Artwork.montmartrePainting: 'assets/seasons/season_02_paris/cases/case_01/montmartre_painting.webp',
+      Artwork.montmartreStreet: 'assets/seasons/season_02_paris/cases/case_02/montmartre_street_real.webp',
+      Artwork.paintersStudio: 'assets/seasons/season_02_paris/cases/case_02/painters_studio.webp',
       // Case 03 begins on the back of Case 02's last canvas (its tower
       // sketch); then the tower, its entrance, lift, iron door, hidden room
       // and time-recording machine.
-      Artwork.paintersMessage: 'assets/seasons/season_02_paris/cases/case_02/canvas_back.png',
-      Artwork.eiffelTower: 'assets/seasons/season_02_paris/cases/case_03/eiffel_tower_exterior.png',
-      Artwork.towerEntrance: 'assets/seasons/season_02_paris/cases/case_03/tower_notice_board.png',
-      Artwork.towerLift: 'assets/seasons/season_02_paris/cases/case_03/tower_lift.png',
-      Artwork.serviceDoor: 'assets/seasons/season_02_paris/cases/case_03/service_door.png',
-      Artwork.serviceRoom: 'assets/seasons/season_02_paris/cases/case_03/service_room.png',
-      Artwork.timeMachine: 'assets/seasons/season_02_paris/cases/case_03/time_recording_machine.png',
+      Artwork.paintersMessage: 'assets/seasons/season_02_paris/cases/case_02/canvas_back.webp',
+      Artwork.eiffelTower: 'assets/seasons/season_02_paris/cases/case_03/eiffel_tower_exterior.webp',
+      Artwork.towerEntrance: 'assets/seasons/season_02_paris/cases/case_03/tower_notice_board.webp',
+      Artwork.towerLift: 'assets/seasons/season_02_paris/cases/case_03/tower_lift.webp',
+      Artwork.serviceDoor: 'assets/seasons/season_02_paris/cases/case_03/service_door.webp',
+      Artwork.serviceRoom: 'assets/seasons/season_02_paris/cases/case_03/service_room.webp',
+      Artwork.timeMachine: 'assets/seasons/season_02_paris/cases/case_03/time_recording_machine.webp',
       // Case 04's places on the Seine: the quays at dusk, the quay wall, the
       // keeper's hut outside and in, the green boxes and the passage's gate.
-      Artwork.seineQuays: 'assets/seasons/season_02_paris/cases/case_04/seine_quays_dusk.png',
-      Artwork.quayWall: 'assets/seasons/season_02_paris/cases/case_04/quay_wall_marks.png',
-      Artwork.keeperHut: 'assets/seasons/season_02_paris/cases/case_04/keeper_hut.png',
-      Artwork.keeperHutInside: 'assets/seasons/season_02_paris/cases/case_04/keeper_hut_interior.png',
-      Artwork.quayBoxes: 'assets/seasons/season_02_paris/cases/case_04/quay_boxes.png',
-      Artwork.passageGate: 'assets/seasons/season_02_paris/cases/case_04/passage_gate.png',
+      Artwork.seineQuays: 'assets/seasons/season_02_paris/cases/case_04/seine_quays_dusk.webp',
+      Artwork.quayWall: 'assets/seasons/season_02_paris/cases/case_04/quay_wall_marks.webp',
+      Artwork.keeperHut: 'assets/seasons/season_02_paris/cases/case_04/keeper_hut.webp',
+      Artwork.keeperHutInside: 'assets/seasons/season_02_paris/cases/case_04/keeper_hut_interior.webp',
+      Artwork.quayBoxes: 'assets/seasons/season_02_paris/cases/case_04/quay_boxes.webp',
+      Artwork.passageGate: 'assets/seasons/season_02_paris/cases/case_04/passage_gate.webp',
       // Case 05's places in No. 7's workshop: the room, the workbench, the
       // wall of clocks and the writing desk.
-      Artwork.workshopInterior: 'assets/seasons/season_02_paris/cases/case_05/workshop_interior.png',
-      Artwork.workbenchMarks: 'assets/seasons/season_02_paris/cases/case_05/workbench_marks.png',
-      Artwork.wallOfClocks: 'assets/seasons/season_02_paris/cases/case_05/wall_of_clocks.png',
-      Artwork.writingDesk: 'assets/seasons/season_02_paris/cases/case_05/writing_desk_blotter.png',
-      Artwork.louvrePostRoom: 'assets/seasons/season_02_paris/cases/case_06/louvre_post_room_exterior.png',
-      Artwork.holdRack: 'assets/seasons/season_02_paris/cases/case_06/post_room_hold_rack.png',
-      Artwork.archiveFloorPlan: 'assets/seasons/season_02_paris/cases/case_06/archive_floor_plan.png',
-      Artwork.archiveRoom: 'assets/seasons/season_02_paris/cases/case_06/archive_room.png',
-      Artwork.palaisGarnierNight: 'assets/seasons/season_02_paris/cases/case_07/palais_garnier_night.png',
-      Artwork.operaArchive: 'assets/seasons/season_02_paris/cases/case_07/opera_archive_room.png',
-      Artwork.operaStage: 'assets/seasons/season_02_paris/cases/case_07/stage_base.png',
-      Artwork.flyRail: 'assets/seasons/season_02_paris/cases/case_07/fly_rail.png',
-      Artwork.lightTable: 'assets/seasons/season_02_paris/cases/case_07/light_table_off.png',
+      Artwork.workshopInterior: 'assets/seasons/season_02_paris/cases/case_05/workshop_interior.webp',
+      Artwork.workbenchMarks: 'assets/seasons/season_02_paris/cases/case_05/workbench_marks.webp',
+      Artwork.wallOfClocks: 'assets/seasons/season_02_paris/cases/case_05/wall_of_clocks.webp',
+      Artwork.writingDesk: 'assets/seasons/season_02_paris/cases/case_05/writing_desk_blotter.webp',
+      Artwork.louvrePostRoom: 'assets/seasons/season_02_paris/cases/case_06/louvre_post_room_exterior.webp',
+      Artwork.holdRack: 'assets/seasons/season_02_paris/cases/case_06/post_room_hold_rack.webp',
+      Artwork.archiveFloorPlan: 'assets/seasons/season_02_paris/cases/case_06/archive_floor_plan.webp',
+      Artwork.archiveRoom: 'assets/seasons/season_02_paris/cases/case_06/archive_room.webp',
+      Artwork.palaisGarnierNight: 'assets/seasons/season_02_paris/cases/case_07/palais_garnier_night.webp',
+      Artwork.operaArchive: 'assets/seasons/season_02_paris/cases/case_07/opera_archive_room.webp',
+      Artwork.operaStage: 'assets/seasons/season_02_paris/cases/case_07/stage_base.webp',
+      Artwork.flyRail: 'assets/seasons/season_02_paris/cases/case_07/fly_rail.webp',
+      Artwork.lightTable: 'assets/seasons/season_02_paris/cases/case_07/light_table_off.webp',
       // Case 08's places in Abbesses: the square, the painter's corner and
       // the bundle behind the loose stone.
-      Artwork.abbessesSquare: 'assets/seasons/season_02_paris/cases/case_08/abbesses_square.png',
-      Artwork.paintersCorner: 'assets/seasons/season_02_paris/cases/case_08/corner_2.png',
-      Artwork.drawingBundle: 'assets/seasons/season_02_paris/cases/case_08/drawing_bundle.png',
-      Artwork.luxembourgGarden: 'assets/seasons/season_02_paris/cases/case_09/garden_model_view.png',
-      Artwork.gearBoard: 'assets/seasons/season_02_paris/cases/case_09/gear_board.png',
+      Artwork.abbessesSquare: 'assets/seasons/season_02_paris/cases/case_08/abbesses_square.webp',
+      Artwork.paintersCorner: 'assets/seasons/season_02_paris/cases/case_08/corner_2.webp',
+      Artwork.drawingBundle: 'assets/seasons/season_02_paris/cases/case_08/drawing_bundle.webp',
+      Artwork.luxembourgGarden: 'assets/seasons/season_02_paris/cases/case_09/garden_model_view.webp',
+      Artwork.gearBoard: 'assets/seasons/season_02_paris/cases/case_09/gear_board.webp',
       // Case 10's places at the Arc de Triomphe: the arch, and the room
       // under its roof.
-      Artwork.arcStarView: 'assets/seasons/season_02_paris/cases/case_10/arc_star_view.png',
-      Artwork.starRoom: 'assets/seasons/season_02_paris/cases/case_10/star_room.png',
+      Artwork.arcStarView: 'assets/seasons/season_02_paris/cases/case_10/arc_star_view.webp',
+      Artwork.starRoom: 'assets/seasons/season_02_paris/cases/case_10/star_room.webp',
       // Case 11's street and the Archive Annex's reading room; Case 12's
       // museum hall and room of old machines.
-      Artwork.annexStreet: 'assets/seasons/season_02_paris/cases/case_11/annex_street.png',
-      Artwork.annexReadingRoom: 'assets/seasons/season_02_paris/cases/case_11/annex_reading_room.png',
-      Artwork.artsMetiersHall: 'assets/seasons/season_02_paris/cases/case_12/arts_metiers_hall.png',
-      Artwork.oldMachineRoom: 'assets/seasons/season_02_paris/cases/case_12/old_machine_room.png',
+      Artwork.annexStreet: 'assets/seasons/season_02_paris/cases/case_11/annex_street.webp',
+      Artwork.annexReadingRoom: 'assets/seasons/season_02_paris/cases/case_11/annex_reading_room.webp',
+      Artwork.artsMetiersHall: 'assets/seasons/season_02_paris/cases/case_12/arts_metiers_hall.webp',
+      Artwork.oldMachineRoom: 'assets/seasons/season_02_paris/cases/case_12/old_machine_room.webp',
     };
     expect(ArtAssets.parisScenes, parisScenes);
     expect(LandmarkArt.hasPicture(Artwork.montmartreStreet), isTrue);
@@ -170,7 +170,7 @@ void main() {
       );
     }
     // Each inside place's picture is in its landmark's folder.
-    final landmarkFolders = {for (final p in landmarks.values) p.split('/').last.replaceAll('.png', '')};
+    final landmarkFolders = {for (final p in landmarks.values) p.split('/').last.replaceAll(RegExp(r'\.(png|webp)$'), '')};
     for (final MapEntry(key: place, value: path) in inside.entries) {
       // The picture's own folder and name (however deep its season folder is).
       final [..., folder, file] = path.split('/');
@@ -341,24 +341,24 @@ void main() {
 
   test('characters, objects, the Raven mark and special pictures are listed by name', () {
     expect(ArtAssets.characters, {
-      'raven': 'assets/seasons/season_01_london/characters/raven_master.png',
-      'clockmaker': 'assets/seasons/season_01_london/characters/clockmaker_master.png',
+      'raven': 'assets/seasons/season_01_london/characters/raven_master.webp',
+      'clockmaker': 'assets/seasons/season_01_london/characters/clockmaker_master.webp',
       // Wave 2: Case 06's three witnesses (see test/case06_dialogue_test.dart).
-      'flowerSeller': 'assets/seasons/season_01_london/characters/flower_seller.png',
-      'juggler': 'assets/seasons/season_01_london/characters/juggler.png',
-      'baker': 'assets/seasons/season_01_london/characters/baker.png',
+      'flowerSeller': 'assets/seasons/season_01_london/characters/flower_seller.webp',
+      'juggler': 'assets/seasons/season_01_london/characters/juggler.webp',
+      'baker': 'assets/seasons/season_01_london/characters/baker.webp',
     });
-    expect(ArtAssets.marketHall, 'assets/seasons/season_01_london/locations/covent_garden/covent_garden_market_hall.png');
+    expect(ArtAssets.marketHall, 'assets/seasons/season_01_london/locations/covent_garden/covent_garden_market_hall.webp');
     expect(ArtAssets.objects, {
-      'crown': 'assets/seasons/season_01_london/objects/crown.png',
-      'key': 'assets/shared/objects/key.png',
-      'letter': 'assets/shared/objects/letter.png',
-      'map': 'assets/shared/objects/map.png',
-      'pocketWatch': 'assets/shared/objects/pocket_watch.png',
-      'suitcase': 'assets/shared/objects/suitcase.png',
+      'crown': 'assets/seasons/season_01_london/objects/crown.webp',
+      'key': 'assets/shared/objects/key.webp',
+      'letter': 'assets/shared/objects/letter.webp',
+      'map': 'assets/shared/objects/map.webp',
+      'pocketWatch': 'assets/shared/objects/pocket_watch.webp',
+      'suitcase': 'assets/shared/objects/suitcase.webp',
     });
-    expect(ArtAssets.ravenMark, 'assets/seasons/season_01_london/symbols/raven_mark.png');
-    expect(ArtAssets.special, {'theatreRoyalBox': 'assets/seasons/season_01_london/special/royal_box.png'});
+    expect(ArtAssets.ravenMark, 'assets/seasons/season_01_london/symbols/raven_mark.webp');
+    expect(ArtAssets.special, {'theatreRoyalBox': 'assets/seasons/season_01_london/special/royal_box.webp'});
     // Full-colour pictures never go in the tinted one-colour symbol slot.
     expect(ArtAssets.symbols.values, isNot(contains(ArtAssets.ravenMark)));
   });
@@ -376,48 +376,48 @@ void main() {
       // The Crown Symbol card shows a crown (2026-10-19, requested).
       'e05': ArtAssets.objects['crown'],
       'e06': ArtAssets.objects['crown'],
-      'ep03_e1': 'assets/seasons/season_01_london/objects/red_button.png',
+      'ep03_e1': 'assets/seasons/season_01_london/objects/red_button.webp',
       'ep04_e1': ArtAssets.ravenMark,
       'ep05_e3': ArtAssets.objects['key'],
       'ep10_e3': ArtAssets.objects['letter'],
       'ep12_e4': ArtAssets.objects['pocketWatch'],
       // Paris Case 01: the lost ticket and the painting, their own pictures.
-      's2_ep01_e2': 'assets/seasons/season_02_paris/cases/case_01/lost_ticket.png',
-      's2_ep01_e4': 'assets/seasons/season_02_paris/cases/case_01/montmartre_painting.png',
+      's2_ep01_e2': 'assets/seasons/season_02_paris/cases/case_01/lost_ticket.webp',
+      's2_ep01_e4': 'assets/seasons/season_02_paris/cases/case_01/montmartre_painting.webp',
       // Paris Case 02: the painted street (its clock above the door). The
       // notes, the sketch and the message keep their marks: no picture shows
       // them as the evidence says.
-      's2_ep02_e1': 'assets/seasons/season_02_paris/cases/case_02/montmartre_street_painted.png',
+      's2_ep02_e1': 'assets/seasons/season_02_paris/cases/case_02/montmartre_street_painted.webp',
       // Paris Case 03: the hidden room, and the plaque (blank brass: its
       // message is in its words). The records and the log keep their marks:
       // their pictures are blank paper.
-      's2_ep03_e3': 'assets/seasons/season_02_paris/cases/case_03/service_room.png',
-      's2_ep03_e4': 'assets/seasons/season_02_paris/cases/case_03/brass_plaque.png',
+      's2_ep03_e3': 'assets/seasons/season_02_paris/cases/case_03/service_room.webp',
+      's2_ep03_e4': 'assets/seasons/season_02_paris/cases/case_03/brass_plaque.webp',
       // Paris Case 04: blank stone, ledger and label, drawn with their words
       // wherever they are shown (`season2Case04EvidenceArt`).
-      's2_ep04_e1': 'assets/seasons/season_02_paris/cases/case_04/river_mark_d.png',
-      's2_ep04_e2': 'assets/seasons/season_02_paris/cases/case_04/keeper_ledger.png',
-      's2_ep04_e3': 'assets/seasons/season_02_paris/cases/case_04/delivery_label_blank.png',
-      's2_ep04_e4': 'assets/seasons/season_02_paris/cases/case_04/delivery_label_blank.png',
+      's2_ep04_e1': 'assets/seasons/season_02_paris/cases/case_04/river_mark_d.webp',
+      's2_ep04_e2': 'assets/seasons/season_02_paris/cases/case_04/keeper_ledger.webp',
+      's2_ep04_e3': 'assets/seasons/season_02_paris/cases/case_04/delivery_label_blank.webp',
+      's2_ep04_e4': 'assets/seasons/season_02_paris/cases/case_04/delivery_label_blank.webp',
       // The icon upgrade: pictures the game had, where they agree with the
       // evidence (the gear of Case 02's belfry, twice; the cloth and the
       // footprint of Gallery 8, the footprint cut out of its black; the
       // envelope the postmark is on) …
-      'ep02_e2': 'assets/seasons/season_01_london/objects/brass_gear.png',
-      'ep12_e1': 'assets/seasons/season_01_london/objects/brass_gear.png',
-      'ep03_e2': 'assets/seasons/season_01_london/objects/blue_cloth.png',
-      'ep03_e3': 'assets/seasons/season_01_london/objects/wet_footprint_cutout.png',
+      'ep02_e2': 'assets/seasons/season_01_london/objects/brass_gear.webp',
+      'ep12_e1': 'assets/seasons/season_01_london/objects/brass_gear.webp',
+      'ep03_e2': 'assets/seasons/season_01_london/objects/blue_cloth.webp',
+      'ep03_e3': 'assets/seasons/season_01_london/objects/wet_footprint_cutout.webp',
       'ep04_e3': ArtAssets.objects['letter'],
       // … and objects made for them, never their words.
-      'ep02_e4': 'assets/seasons/season_01_london/objects/raven_feather.png',
-      'ep06_e4': 'assets/seasons/season_01_london/objects/silver_whistle.png',
-      'ep08_e3': 'assets/seasons/season_01_london/objects/raven_tower_painting.png',
-      'ep08_e4': 'assets/seasons/season_01_london/objects/empty_jewel_box.png',
-      'ep09_e4': 'assets/seasons/season_01_london/objects/blue_star_jewel.png',
-      'ep10_e1': 'assets/seasons/season_01_london/objects/poppys_ring.png',
-      'ep11_e2': 'assets/seasons/season_01_london/objects/white_mask.png',
-      'ep11_e3': 'assets/seasons/season_01_london/objects/toy_train_whistle.png',
-      's2_ep01_e3': 'assets/seasons/season_02_paris/cases/case_01/clockmaker_mark.png',
+      'ep02_e4': 'assets/seasons/season_01_london/objects/raven_feather.webp',
+      'ep06_e4': 'assets/seasons/season_01_london/objects/silver_whistle.webp',
+      'ep08_e3': 'assets/seasons/season_01_london/objects/raven_tower_painting.webp',
+      'ep08_e4': 'assets/seasons/season_01_london/objects/empty_jewel_box.webp',
+      'ep09_e4': 'assets/seasons/season_01_london/objects/blue_star_jewel.webp',
+      'ep10_e1': 'assets/seasons/season_01_london/objects/poppys_ring.webp',
+      'ep11_e2': 'assets/seasons/season_01_london/objects/white_mask.webp',
+      'ep11_e3': 'assets/seasons/season_01_london/objects/toy_train_whistle.webp',
+      's2_ep01_e3': 'assets/seasons/season_02_paris/cases/case_01/clockmaker_mark.webp',
     });
     // The Paris records, the log and the painter's message still never show
     // their blank puzzle papers: they are documents, their words on paper.
@@ -450,7 +450,7 @@ void main() {
     await tile(evidence['e03']!);
     final watch = t.widget<Image>(find.byType(Image));
     expect((watch.image as ResizeImage).imageProvider,
-        isA<AssetImage>().having((a) => a.assetName, 'asset', 'assets/images/case01/symbols/symbol_pocket_watch.png'));
+        isA<AssetImage>().having((a) => a.assetName, 'asset', 'assets/images/case01/symbols/symbol_pocket_watch.webp'));
 
     await t.pumpWidget(const MaterialApp(home: Center(child: SizedBox(width: 160, height: 120, child: LandmarkArt(Artwork.raven)))));
     expect(find.byType(Image), findsOneWidget);

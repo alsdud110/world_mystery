@@ -43,10 +43,10 @@ import '../../../models/learning.dart';
 const Map<String, Object?> ep06Rookie = {};
 
 // ── Mission 01's talk at each level ──────────────────────────────────────
-const _hall = 'assets/seasons/season_01_london/locations/covent_garden/covent_garden_market_hall.png';
-const _flower = 'assets/seasons/season_01_london/characters/flower_seller.png';
-const _juggler = 'assets/seasons/season_01_london/characters/juggler.png';
-const _baker = 'assets/seasons/season_01_london/characters/baker.png';
+const _hall = 'assets/seasons/season_01_london/locations/covent_garden/covent_garden_market_hall.webp';
+const _flower = 'assets/seasons/season_01_london/characters/flower_seller.webp';
+const _juggler = 'assets/seasons/season_01_london/characters/juggler.webp';
+const _baker = 'assets/seasons/season_01_london/characters/baker.webp';
 
 const Map<String, DialogueScene> ep06JuniorDialogues = {
   'ep06_m1': DialogueScene(

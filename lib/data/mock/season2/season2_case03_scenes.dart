@@ -37,7 +37,7 @@ final Map<String, RecordsScene> season2Records = {
     first: RecordDoc(
       id: 'notice',
       name: 'THE VISITOR NOTICE',
-      file: '$_case03/tower_notice_board.png',
+      file: '$_case03/tower_notice_board.webp',
       pixels: _entrance,
       // The notice in its wooden frame, close enough to read.
       crop: _entrance.rect(258, 316, 698, 702),
@@ -74,7 +74,7 @@ final Map<String, RecordsScene> season2Records = {
     second: RecordDoc(
       id: 'log',
       name: 'THE MAINTENANCE LOG',
-      file: '$_case03/inspection_log.png',
+      file: '$_case03/inspection_log.webp',
       pixels: _clipboard,
       // The sheet whole, the clip's foot above it.
       crop: _clipboard.rect(226, 236, 1046, 1146),
@@ -130,12 +130,12 @@ const _ledger = ScenePixels(1254, 1254);
 
 final Map<String, LiftScene> season2Lifts = {
   's2_ep03_m2': LiftScene(
-    picture: '$_case03/tower_lift.png',
+    picture: '$_case03/tower_lift.webp',
     pixels: _lift,
     place: 'Inside the old lift: brass gates, wooden walls, Paris far below',
     plateArea: _lift.rect(52, 26, 302, 716),
     logArea: _lift.rect(1222, 300, 1468, 702),
-    plate: '$_case03/lift_route_diagram.png',
+    plate: '$_case03/lift_route_diagram.webp',
     platePixels: _plate,
     stops: [
       LiftStop(id: 'top', name: 'TOP', at: _plate.at(512, 283)),
@@ -148,7 +148,7 @@ final Map<String, LiftScene> season2Lifts = {
     serviceRoute: const ['second', 'service'],
     legend: 'S = SERVICE RUN',
     legendAt: _plate.rect(170, 1340, 854, 1440),
-    log: '$_case03/lift_log.png',
+    log: '$_case03/lift_log.webp',
     logPixels: _ledger,
     // The left page, the ribbon at its side.
     logCrop: _ledger.rect(92, 205, 640, 1012),
@@ -192,12 +192,12 @@ const _dial = ScenePixels(1254, 1254);
 
 const Map<String, DialLockScene> season2DialLocks = {
   's2_ep03_m3': DialLockScene(
-    lock: '$_case03/mechanical_lock.png',
+    lock: '$_case03/mechanical_lock.webp',
     pixels: _padlock,
     view: Rect.fromLTRB(362, 492, 1176, 852),
     windows: [Offset(482.0, 671.1), Offset(768.6, 671.3), Offset(1055.2, 671.2)],
     windowRadius: 78.3,
-    dial: '$_case03/lock_dial.png',
+    dial: '$_case03/lock_dial.webp',
     dialPixels: _dial,
     pivot: Offset(624.2, 624.8),
     showRadius: 405,
@@ -257,8 +257,8 @@ const _brass = ScenePixels(1536, 1024);
 
 final Map<String, EvidenceBoardScene> season2EvidenceBoards = {
   's2_ep03_final': EvidenceBoardScene(
-    shut: '$_case03/time_recording_machine.png',
-    open: '$_case03/time_recording_machine_open.png',
+    shut: '$_case03/time_recording_machine.webp',
+    open: '$_case03/time_recording_machine_open.webp',
     pixels: _machine,
     machineLabel: 'An old time-recording machine with a clock face and a small hatch',
     questions: const [
@@ -281,7 +281,7 @@ final Map<String, EvidenceBoardScene> season2EvidenceBoards = {
     linkTask: 'Tap a question. Then tap the evidence that answers it.',
     concludeTask: 'Now choose what the evidence shows.',
     solveLabel: 'SOLVE THE CASE',
-    plaque: '$_case03/brass_plaque.png',
+    plaque: '$_case03/brass_plaque.webp',
     plaquePixels: _brass,
     plaqueWriteOn: _brass.rect(270, 372, 1266, 620),
     plaqueMessage: 'ONE HOUR IS MISSING.\nTHE CLOCK IS STILL RUNNING.',
@@ -306,25 +306,25 @@ const Map<String, EvidenceLink> season2Case03EvidenceLinks = {
 const _tower = ScenePixels(1024, 1536);
 
 const _entranceWhole = StoryPicture(
-  file: '$_case03/tower_notice_board.png',
+  file: '$_case03/tower_notice_board.webp',
   pixels: _entrance,
   label: 'The entrance of the Eiffel Tower at dusk: a notice board, a gate and a ticket booth',
 );
 
 const _liftWhole = StoryPicture(
-  file: '$_case03/tower_lift.png',
+  file: '$_case03/tower_lift.webp',
   pixels: _lift,
   label: 'Inside the old lift: brass gates, wooden walls, Paris far below',
 );
 
 const _doorWhole = StoryPicture(
-  file: '$_case03/service_door.png',
+  file: '$_case03/service_door.webp',
   pixels: ScenePixels(1536, 1024),
   label: 'An iron door at the Service Level, locked with a heavy padlock',
 );
 
 const _machineShut = StoryPicture(
-  file: '$_case03/time_recording_machine.png',
+  file: '$_case03/time_recording_machine.webp',
   pixels: _machine,
   label: 'An old time-recording machine with a clock face and a small hatch',
 );
@@ -334,7 +334,7 @@ final Map<String, StoryScenes> season2Case03StoryScenes = {
   's2_ep03_m1': StoryScenes(
     place: _entranceWhole,
     after: StoryPicture(
-      file: '$_case03/eiffel_tower_exterior.png',
+      file: '$_case03/eiffel_tower_exterior.webp',
       pixels: _tower,
       crop: _tower.rect(0, 200, 1024, 1300),
       label: 'The Eiffel Tower at dusk, its lamps coming on',
@@ -345,7 +345,7 @@ final Map<String, StoryScenes> season2Case03StoryScenes = {
   's2_ep03_m2': StoryScenes(
     place: _liftWhole,
     after: StoryPicture(
-      file: '$_case03/tower_lift.png',
+      file: '$_case03/tower_lift.webp',
       pixels: _lift,
       crop: _lift.rect(430, 140, 1090, 950),
       label: 'Paris far below, through the brass gates of the lift',
@@ -356,7 +356,7 @@ final Map<String, StoryScenes> season2Case03StoryScenes = {
   's2_ep03_m3': const StoryScenes(
     place: _doorWhole,
     after: StoryPicture(
-      file: '$_case03/service_room.png',
+      file: '$_case03/service_room.webp',
       pixels: ScenePixels(1536, 1024),
       label: 'A hidden machine room: wheels, cables and gears inside the tower',
     ),
@@ -365,7 +365,7 @@ final Map<String, StoryScenes> season2Case03StoryScenes = {
   // After the case: the machine, its hatch open.
   's2_ep03_final': StoryScenes(
     after: StoryPicture(
-      file: '$_case03/time_recording_machine_open.png',
+      file: '$_case03/time_recording_machine_open.webp',
       pixels: _machine,
       crop: _machine.rect(380, 120, 1200, 960),
       label: 'The machine, its hatch open, a brass plaque inside',

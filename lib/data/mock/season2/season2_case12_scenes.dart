@@ -26,14 +26,14 @@ const _square = ScenePixels(1254, 1254);
 const _tallTool = ScenePixels(1024, 1536);
 const _clockBack = ScenePixels(1024, 1024);
 
-const _room = '$_case12/old_machine_room.png';
-const _morning = '$_case12/finale_morning.png';
+const _room = '$_case12/old_machine_room.webp';
+const _morning = '$_case12/finale_morning.webp';
 
 // ── Émile ───────────────────────────────────────────────────────────────
 const _emileFaces = {
-  'base': '$_people/emile_base.png',
-  'sad': '$_people/emile_sad.png',
-  'back': '$_people/emile_back.png',
+  'base': '$_people/emile_base.webp',
+  'sad': '$_people/emile_sad.webp',
+  'back': '$_people/emile_back.webp',
 };
 const _emileDescription = 'A lean clockmaker in his fifties: dark hair going grey, a short beard, a leather apron.';
 
@@ -61,22 +61,22 @@ const _emileUnknown = TalkSpeaker(
 const _emile = TalkSpeaker(id: 'emile', name: 'ÉMILE MOREAU', portraits: _emileFaces, description: _emileDescription);
 
 // ── The wheels ──────────────────────────────────────────────────────────
-// Clock III's small wheel (Case 05, `clock_back_extra_wheel.png`, 1024 ×
+// Clock III's small wheel (Case 05, `clock_back_extra_wheel.webp`, 1024 ×
 // 1024): four straight spokes like an X, round (671, 522), 59 across its
-// teeth. The machine's open side (`machine_wheel_row.png`, 1536 × 1024):
+// teeth. The machine's open side (`machine_wheel_row.webp`, 1536 × 1024):
 // a six-spoked wheel round (313, 538), the four-spoked one round
 // (707, 538) — Émile's — and a large four-spoked one round (1162, 480).
 const _clockIIIWheel = PicturePanel(
   id: 'ref',
   picture: EasyPicture(
-    file: '$_case05/clock_back_extra_wheel.png',
+    file: '$_case05/clock_back_extra_wheel.webp',
     pixels: _clockBack,
     crop: Rect.fromLTRB(596, 447, 746, 597),
     label: "Clock III's small wheel: four spokes like an X",
   ),
   caption: "Clock III's wheel (No. 7)",
 );
-const _rowFile = '$_case12/machine_wheel_row.png';
+const _rowFile = '$_case12/machine_wheel_row.webp';
 const _sixSpokes = PicturePanel(
   id: 'six',
   picture: EasyPicture(file: _rowFile, pixels: _wide, crop: Rect.fromLTRB(113, 338, 513, 738), label: 'A wheel with six spokes'),
@@ -93,7 +93,7 @@ const season2NameTag = PaperPanel(
   title: 'NAME TAG',
   lines: [EasyLine('Made by'), EasyLine('Émile Moreau', strong: true)],
   old: false,
-  foot: '$_case04/hands_sign.png',
+  foot: '$_case04/hands_sign.webp',
   footLabel: 'Two clock hands: the mark of No. 7',
   aspect: 1.5,
 );
@@ -104,20 +104,20 @@ const season2NameTag = PaperPanel(
 // round (793, 685), 113 across its teeth.
 const _watchClosed = PicturePanel(
   id: 'watch',
-  picture: EasyPicture(file: '$_case12/watch_back_closed.png', pixels: _square, label: "The Clockmaker's pocket watch, face down"),
+  picture: EasyPicture(file: '$_case12/watch_back_closed.webp', pixels: _square, label: "The Clockmaker's pocket watch, face down"),
   writing: [EasyWriting('PARIS', at: Rect.fromLTRB(330, 585, 650, 700), size: 92, ink: EasyInk.brass)],
 );
 const _watchWheel = Rect.fromLTRB(680, 572, 906, 798);
 const _watchOpen = PicturePanel(
   id: 'watch',
-  picture: EasyPicture(file: '$_case12/watch_back_open.png', pixels: _square, label: "The Clockmaker's watch, open: small wheels inside"),
+  picture: EasyPicture(file: '$_case12/watch_back_open.webp', pixels: _square, label: "The Clockmaker's watch, open: small wheels inside"),
   caption: "The Clockmaker's watch",
 );
 
 // ── Émile's little stamp (1024 × 1536, cut out) ─────────────────────────
 const _tool = PicturePanel(
   id: 'tool',
-  picture: EasyPicture(file: '$_case12/emile_gear_stamp.png', pixels: _tallTool, label: "Émile's little stamp: its end is a gear with eight teeth"),
+  picture: EasyPicture(file: '$_case12/emile_gear_stamp.webp', pixels: _tallTool, label: "Émile's little stamp: its end is a gear with eight teeth"),
   caption: "Émile's stamp",
 );
 const _blankPaper = GearMarkPanel(id: 'paper', label: '', stamped: false);
@@ -133,26 +133,26 @@ const _clockmakersMark = GearMarkPanel(id: 'mark', label: "The Clockmaker's mark
 // hub (622, 622); twelve spokes, so one spoke is one hour.
 const season2Machine = MachineScene(
   machine: EasyPicture(
-    file: '$_case12/chronos_machine.png',
+    file: '$_case12/chronos_machine.webp',
     pixels: _square,
     crop: Rect.fromLTRB(0, -130, 1254, 1254),
     label: 'The old test machine: a big brass wheel on top, a lever, a pin, and three little clocks',
   ),
-  wheel: '$_case12/machine_big_wheel.png',
+  wheel: '$_case12/machine_big_wheel.webp',
   wheelPixels: _square,
   wheelHub: Offset(622, 622),
   wheelAt: Rect.fromLTRB(437, 155, 835, 553),
   window: Rect.fromLTRB(509, 583, 718, 630),
-  lever: '$_case12/machine_lever.png',
+  lever: '$_case12/machine_lever.webp',
   leverPixels: _tallTool,
   leverAt: Rect.fromLTRB(171, 321, 387, 645),
-  pin: '$_case12/machine_pin.png',
+  pin: '$_case12/machine_pin.webp',
   pinPixels: _square,
   pinOut: Rect.fromLTRB(230, 180, 370, 320),
   pinIn: Rect.fromLTRB(293, 295, 393, 395),
   dials: [Offset(337, 792), Offset(599, 803), Offset(867, 812)],
   dialRadius: 80,
-  wallDial: '$_case09/clock_dial.png',
+  wallDial: '$_case09/clock_dial.webp',
   wallDialPixels: _square,
   wallDialPivot: Offset(625, 616),
   wrong: 10 * 60 + 20,
@@ -166,13 +166,13 @@ const _emileLook = QuotePanel(
   id: 'emileWords',
   name: 'Émile',
   quote: 'I wanted people to find the page.',
-  portrait: '$_people/emile_base.png',
+  portrait: '$_people/emile_base.webp',
 );
 const _emileSorry = QuotePanel(
   id: 'emileWords',
   name: 'Émile',
   quote: 'I scared people. I was wrong.',
-  portrait: '$_people/emile_sad.png',
+  portrait: '$_people/emile_sad.webp',
 );
 
 // ── The steps ───────────────────────────────────────────────────────────
@@ -273,7 +273,7 @@ final Map<String, EasyStepsScene> season2Case12Steps = {
           ),
           PicturePanel(
             id: 'clue2',
-            picture: EasyPicture(file: '$_case12/watch_back_open.png', pixels: _square, crop: Rect.fromLTRB(520, 410, 960, 850), label: "The wheel in the Clockmaker's watch"),
+            picture: EasyPicture(file: '$_case12/watch_back_open.webp', pixels: _square, crop: Rect.fromLTRB(520, 410, 960, 850), label: "The wheel in the Clockmaker's watch"),
             caption: 'It is in the watch.',
           ),
           GearMarkPanel(id: 'clue3', label: "Émile's stamp", caption: 'His stamp, the same mark.'),
@@ -587,9 +587,9 @@ final Map<String, TalkMission> season2Case12TalkMissions = {
 const season2Case12Ending = <EndingLine>[
   EndingLine("Victor's words are in the case file.", background: _room, evidenceId: 's2_ep11_e4'),
   EndingLine('Yes. I hid the page.', voice: TalkVoice.speaker, name: "VICTOR'S RECORD", background: _room, evidenceId: 's2_ep11_e4'),
-  EndingLine('And I made bad choices.', voice: TalkVoice.speaker, name: 'ÉMILE MOREAU', portrait: '$_people/emile_sad.png', background: _room),
-  EndingLine("I scared people. I'm sorry.", voice: TalkVoice.speaker, name: 'ÉMILE MOREAU', portrait: '$_people/emile_sad.png', background: _room),
-  EndingLine('I will tell everyone what I did.', voice: TalkVoice.speaker, name: 'ÉMILE MOREAU', portrait: '$_people/emile_base.png', background: _room),
+  EndingLine('And I made bad choices.', voice: TalkVoice.speaker, name: 'ÉMILE MOREAU', portrait: '$_people/emile_sad.webp', background: _room),
+  EndingLine("I scared people. I'm sorry.", voice: TalkVoice.speaker, name: 'ÉMILE MOREAU', portrait: '$_people/emile_sad.webp', background: _room),
+  EndingLine('I will tell everyone what I did.', voice: TalkVoice.speaker, name: 'ÉMILE MOREAU', portrait: '$_people/emile_base.webp', background: _room),
   EndingLine('The clocks were wrong.', voice: TalkVoice.detective, background: _room),
   EndingLine('Victor hid the truth.', voice: TalkVoice.detective, background: _room),
   EndingLine('Émile left the clues.', voice: TalkVoice.detective, background: _room),
@@ -605,7 +605,7 @@ final Map<String, IntroPicture> season2Case12IntroPictures = {
   's2_ep12': const IntroPicture(
     afterLine: 0,
     turnAtLine: 1,
-    from: '$_case12/arts_metiers_hall.png',
+    from: '$_case12/arts_metiers_hall.webp',
     to: _room,
     pixels: _wide,
     fromLabel: 'A tall old museum hall full of historic machines',
@@ -647,9 +647,9 @@ final Map<String, RiverEvidenceArt> season2Case12EvidenceArt = {
 // ── The story's pictures ────────────────────────────────────────────────
 const _roomPicture = StoryPicture(file: _room, pixels: _wide, label: 'A small quiet room for old machines');
 const _rowPicture = StoryPicture(file: _rowFile, pixels: _wide, label: 'Three brass wheels inside the machine', cutOut: true);
-const _watchPicture = StoryPicture(file: '$_case12/watch_back_closed.png', pixels: _square, label: "The Clockmaker's pocket watch", cutOut: true);
-const _toolPicture = StoryPicture(file: '$_case12/emile_gear_stamp.png', pixels: _tallTool, label: "Émile's little stamp", cutOut: true);
-const _machinePicture = StoryPicture(file: '$_case12/chronos_machine.png', pixels: _square, label: 'The old test machine', cutOut: true);
+const _watchPicture = StoryPicture(file: '$_case12/watch_back_closed.webp', pixels: _square, label: "The Clockmaker's pocket watch", cutOut: true);
+const _toolPicture = StoryPicture(file: '$_case12/emile_gear_stamp.webp', pixels: _tallTool, label: "Émile's little stamp", cutOut: true);
+const _machinePicture = StoryPicture(file: '$_case12/chronos_machine.webp', pixels: _square, label: 'The old test machine', cutOut: true);
 const _morningPicture = StoryPicture(file: _morning, pixels: _wide, label: 'Morning in the machine room: page 3 safe in a glass case');
 
 final Map<String, StoryScenes> season2Case12StoryScenes = {

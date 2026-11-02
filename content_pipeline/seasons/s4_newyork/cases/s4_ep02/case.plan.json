@@ -120,7 +120,7 @@
         },
         "dialogue": {
           "place": "MAIN CONCOURSE",
-          "background": "assets/seasons/season_04_newyork/locations/main_concourse.png",
+          "background": "assets/seasons/season_04_newyork/locations/main_concourse.webp",
           "goal": "Find out who came at seven.",
           "how": "Ask each person. Write down what they say.",
           "guide": "Talk to a witness.",
@@ -143,7 +143,7 @@
               "id": "grace",
               "name": "Grace Kim",
               "title": "THE LOST AND FOUND",
-              "portrait": "assets/seasons/season_04_newyork/characters/grace_base.png",
+              "portrait": "assets/seasons/season_04_newyork/characters/grace_base.webp",
               "description": "a neat woman with short black hair, a station uniform and a ring of keys",
               "greeting": "I keep lost things. And one very old box.",
               "answers": {
@@ -165,7 +165,7 @@
               "id": "rosa",
               "name": "Rosa Diaz",
               "title": "THE VIOLINIST",
-              "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.png",
+              "portrait": "assets/seasons/season_04_newyork/characters/rosa_base.webp",
               "description": "a young violinist in a green beret, her violin under her arm",
               "greeting": "Hello. I play here every morning.",
               "answers": {
@@ -187,7 +187,7 @@
               "id": "otto",
               "name": "Otto Brandt",
               "title": "THE CLOCKMAKER",
-              "portrait": "assets/seasons/season_04_newyork/characters/otto_base.png",
+              "portrait": "assets/seasons/season_04_newyork/characters/otto_base.webp",
               "description": "an old man with bushy white eyebrows, a leather apron and a toolbox",
               "greeting": "Hmph. I am busy. What do you want?",
               "answers": {
@@ -460,20 +460,20 @@
             "label": "The shop with a cake in the window",
             "feedback": "Two red lanterns, yes. But where is the gold dragon?",
             "altText": "a small bakery with two red lanterns over its door and a big cake in its window",
-            "picture": "assets/seasons/season_04_newyork/cases/case_02/bakery_lanterns.png"
+            "picture": "assets/seasons/season_04_newyork/cases/case_02/bakery_lanterns.webp"
           },
           {
             "id": "tea_house",
             "label": "The shop with lanterns and a dragon",
             "altText": "a tea shop with two red lanterns over its door and a gold dragon in its window",
-            "picture": "assets/seasons/season_04_newyork/locations/tea_house.png"
+            "picture": "assets/seasons/season_04_newyork/locations/tea_house.webp"
           },
           {
             "id": "awning",
             "label": "The shop with a striped awning",
             "feedback": "A gold dragon, yes. But are there lanterns over the door?",
             "altText": "a shop with a green striped awning over its door and a gold dragon in its window",
-            "picture": "assets/seasons/season_04_newyork/cases/case_02/dragon_awning.png"
+            "picture": "assets/seasons/season_04_newyork/cases/case_02/dragon_awning.webp"
           }
         ]
       },
@@ -543,7 +543,7 @@
           "by": "speaker",
           "text": "This tea house is a hundred years old!",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         },
         {
           "by": "detective",
@@ -554,7 +554,7 @@
           "by": "speaker",
           "text": "Good luck. Eleanor's friends ask hard questions.",
           "speaker": "grace_kim",
-          "portrait": "assets/seasons/season_04_newyork/characters/grace_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/grace_base.webp"
         },
         {
           "by": "narrator",
@@ -564,7 +564,7 @@
           "by": "speaker",
           "text": "That song... where have I heard it?",
           "speaker": "maya_chen",
-          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.png"
+          "portrait": "assets/seasons/season_04_newyork/characters/maya_base.webp"
         }
       ]
     }

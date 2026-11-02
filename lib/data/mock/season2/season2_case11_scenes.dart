@@ -24,34 +24,34 @@ const _wide = ScenePixels(1536, 1024);
 const _square = ScenePixels(1254, 1254);
 const _tall = ScenePixels(1024, 1536);
 
-const _stamp = '$_case07/office_stamp.png';
+const _stamp = '$_case07/office_stamp.webp';
 
 // ── Victor ──────────────────────────────────────────────────────────────
 const season2Victor = TalkSpeaker(
   id: 'victor',
   name: 'VICTOR DELACROIX',
   portraits: {
-    'base': '$_people/victor_base.png',
-    'nervous': '$_people/victor_nervous.png',
-    'sad': '$_people/victor_sad.png',
+    'base': '$_people/victor_base.webp',
+    'nervous': '$_people/victor_nervous.webp',
+    'sad': '$_people/victor_sad.webp',
   },
   description: 'A tall, thin man in his sixties: silver hair, a grey coat, reading glasses in his hand.',
 );
 
-const _readingRoom = '$_case11/annex_reading_room.png';
+const _readingRoom = '$_case11/annex_reading_room.webp';
 
 // ── The big book (1536 × 1024, cut out) ──────────────────────────────────
 // Open, seen from above: the torn page's stub along the spine
 // (726, 96)–(768, 883); the right page's paper (797, 134)–(1379, 845), its
 // top third rubbed. The pen pressed through: two lines and a name.
 const _book = EasyPicture(
-  file: '$_case11/big_book_torn.png',
+  file: '$_case11/big_book_torn.webp',
   pixels: _wide,
   label: 'A thick old book lying open. One page is torn out by the spine.',
 );
 /// The torn page's stub and the next page, close (the words come out large).
 const _bookClose = EasyPicture(
-  file: '$_case11/big_book_torn.png',
+  file: '$_case11/big_book_torn.webp',
   pixels: _wide,
   crop: Rect.fromLTRB(640, 80, 1440, 900),
   label: 'The big book, close: the stub of the torn page, and the next page',
@@ -62,7 +62,7 @@ const _rubLines = [
   EasyWriting('Lock it. No one may read it.', at: Rect.fromLTRB(830, 244, 1360, 318), size: 52, ink: EasyInk.graphite),
 ];
 const _rubSignature = EasyLayer(
-  file: '$_case11/victor_signature.png',
+  file: '$_case11/victor_signature.webp',
   at: Rect.fromLTRB(925, 322, 1295, 470),
   graphite: true,
   opacity: 0.85,
@@ -72,7 +72,7 @@ const _rubSignature = EasyLayer(
 const _rubbedPage = PicturePanel(
   id: 'rubbing',
   picture: EasyPicture(
-    file: '$_case11/big_book_torn.png',
+    file: '$_case11/big_book_torn.webp',
     pixels: _wide,
     crop: Rect.fromLTRB(785, 120, 1405, 490),
     label: 'The rubbed page of the big book',
@@ -94,7 +94,7 @@ const _box9 = Rect.fromLTRB(1048, 399, 1388, 637);
 const _shelves = PicturePanel(
   id: 'shelves',
   picture: EasyPicture(
-    file: '$_case11/annex_shelves.png',
+    file: '$_case11/annex_shelves.webp',
     pixels: _wide,
     crop: Rect.fromLTRB(150, 20, 1420, 680),
     label: 'Dark wooden shelves with three archive boxes and old books',
@@ -112,7 +112,7 @@ const _shelves = PicturePanel(
 // front, (451, 972)–(799, 1105).
 const _openBox = PicturePanel(
   id: 'box',
-  picture: EasyPicture(file: '$_case11/box9_open.png', pixels: _square, label: 'An open archive box with a folder inside and a purple seal on its lid'),
+  picture: EasyPicture(file: '$_case11/box9_open.webp', pixels: _square, label: 'An open archive box with a folder inside and a purple seal on its lid'),
   writing: [EasyWriting('BOX 9', at: Rect.fromLTRB(471, 985, 779, 1092), size: 72)],
   layers: [EasyLayer(file: _stamp, at: Rect.fromLTRB(527, 213, 743, 429), opacity: 0.8, turns: 0.02)],
 );
@@ -144,7 +144,7 @@ const _page3Line = PaperPanel(
 // A neat report under a pale blue cover: its header box (122, 361)–(906,
 // 481); ruled lines from 518 to 1190; a stamp circle round (512, 1312),
 // 102 across its inner ring, where the office stamp is pressed.
-const _victorsPaperFile = '$_case11/victors_paper.png';
+const _victorsPaperFile = '$_case11/victors_paper.webp';
 const _victorsWriting = [
   EasyWriting('CLOCK TEST · V.D.', at: Rect.fromLTRB(150, 375, 880, 467), size: 64, ink: EasyInk.typed),
   EasyWriting('All the clocks were fine.', at: Rect.fromLTRB(130, 545, 900, 650), size: 64, ink: EasyInk.typed, strong: true),
@@ -189,7 +189,7 @@ const _victorsStampClose = PicturePanel(
 const _slipStampClose = PicturePanel(
   id: 'slipStamp',
   picture: EasyPicture(
-    file: '$_case07/amendment_slip_blank.png',
+    file: '$_case07/amendment_slip_blank.webp',
     pixels: _wide,
     crop: Rect.fromLTRB(880, 470, 1375, 853),
     label: 'The stamp on the opera slip: a clock with no hands in a ring of leaves',
@@ -203,9 +203,9 @@ const _slipStampClose = PicturePanel(
 // Four empty lines on its right page, at y 340, 445, 551 and 655, from
 // x 822 to 1350. An old visitor's name on the first (no line under it, no
 // dot), Victor's today on the third.
-const _visitorFile = '$_case11/visitor_book_open.png';
-const _oldName = EasyLayer(file: '$_case11/signature_old_b.png', at: Rect.fromLTRB(840, 225, 1230, 357), opacity: 0.85);
-const _victorsName = EasyLayer(file: '$_case11/victor_signature.png', at: Rect.fromLTRB(850, 420, 1220, 568));
+const _visitorFile = '$_case11/visitor_book_open.webp';
+const _oldName = EasyLayer(file: '$_case11/signature_old_b.webp', at: Rect.fromLTRB(840, 225, 1230, 357), opacity: 0.85);
+const _victorsName = EasyLayer(file: '$_case11/victor_signature.webp', at: Rect.fromLTRB(850, 420, 1220, 568));
 const _visitorBook = PicturePanel(
   id: 'visitor',
   picture: EasyPicture(file: _visitorFile, pixels: _wide, label: 'The visitor book, open, with two names on its right page'),
@@ -525,7 +525,7 @@ final Map<String, IntroPicture> season2Case11IntroPictures = {
   's2_ep11': const IntroPicture(
     afterLine: 0,
     turnAtLine: 2,
-    from: '$_case11/annex_street.png',
+    from: '$_case11/annex_street.webp',
     to: _readingRoom,
     pixels: _wide,
     fromLabel: 'A quiet street in old Paris, a small wooden door with a brass plate',
@@ -546,7 +546,7 @@ const season2VictorsWords = QuotePanel(
   id: 'victorsWords',
   name: 'Victor',
   quote: 'Yes. I hid the page.',
-  portrait: '$_people/victor_sad.png',
+  portrait: '$_people/victor_sad.webp',
 );
 
 final Map<String, RiverEvidenceArt> season2Case11EvidenceArt = {
@@ -563,12 +563,12 @@ const _room = StoryPicture(
   label: 'The archive reading room: tall shelves of old boxes and a long table',
 );
 const _street = StoryPicture(
-  file: '$_case11/annex_street.png',
+  file: '$_case11/annex_street.webp',
   pixels: _wide,
   label: 'The quiet street at Saint-Sulpice, the Archive Annex door',
 );
 const _boxPicture = StoryPicture(
-  file: '$_case11/box9_open.png',
+  file: '$_case11/box9_open.webp',
   pixels: _square,
   label: 'Box 9, open, a purple seal on its lid',
   cutOut: true,

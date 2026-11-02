@@ -113,7 +113,7 @@
         "evidenceLinkLine": "The same owl stamp as the card at the museum's back door.",
         "talk": {
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp",
           "goal": "Find the second shell.",
           "before": {
             "lines": [
@@ -233,7 +233,7 @@
         },
         "talk": {
           "speaker": "aldo_rinaldi",
-          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.png",
+          "portrait": "assets/seasons/season_03_rome/characters/aldo_base.webp",
           "goal": "Find out why the professor wants the piece.",
           "after": {
             "lines": [
@@ -477,7 +477,7 @@
           "by": "speaker",
           "text": "Gelato shop, Pantheon, market square, flower stall!",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         },
         {
           "by": "detective",
@@ -488,13 +488,13 @@
           "by": "speaker",
           "text": "Fiori means flowers in Italian.",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         },
         {
           "by": "speaker",
           "text": "Box 7 must be at Campo de' Fiori!",
           "speaker": "giulia_marino",
-          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.png"
+          "portrait": "assets/seasons/season_03_rome/characters/giulia_base.webp"
         },
         {
           "by": "narrator",

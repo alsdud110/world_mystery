@@ -112,7 +112,7 @@ void main() {
       expect(art, isA<DrawnEvidenceArt>());
       final p = (art! as DrawnEvidenceArt).drawn as PictureEvidence;
       expect(p.file, layer.sketch);
-      expect(p.file, 'assets/seasons/season_02_paris/cases/case_02/hidden_layer_sketch.png');
+      expect(p.file, 'assets/seasons/season_02_paris/cases/case_02/hidden_layer_sketch.webp');
       expect(p.crop, layer.view, reason: 'as the puzzle showed it');
       expect(p.crop, season2Case02StoryScenes['s2_ep02_m3']!.after!.crop, reason: 'as the scene after it showed it');
       expect(p.aspect, closeTo(640 / 690, 1e-9));

@@ -147,6 +147,8 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
         operatorToolsAvailableProvider.overrideWithValue(_own.read(operatorToolsAvailableProvider)),
         // One sound for the device: the player's (stopped with their game).
         audioServiceProvider.overrideWithValue(_own.read(audioServiceProvider)),
+        // One ads SDK for the device too: the player's, started at most once.
+        adServiceProvider.overrideWithValue(_own.read(adServiceProvider)),
         devSessionProvider.overrideWithValue(DevSession(active: true, enter: _enter, exit: _exit)),
       ],
     );
