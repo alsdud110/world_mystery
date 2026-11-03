@@ -16,7 +16,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/landmark_art.dart';
 import 'package:world_mystery/widgets/place_art.dart';
 
-import 'full_playthrough_test.dart' show reveal, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
 
@@ -260,6 +260,8 @@ void main() {
         final go = await start(t, size, [for (final m in ep02.missions) m.id]);
         go(Routes.finalMission);
         await wait(t, const Duration(milliseconds: 1200));
+        // Mrs Bell whispers first (S1 dialogue PART C): heard, then the clock.
+        await hearTalk(t);
         expect(t.takeException(), isNull);
         // The clock to set is the case's own face (2026-10-30: no number
         // wheels): its stage waits for the solve, the hands where they froze.

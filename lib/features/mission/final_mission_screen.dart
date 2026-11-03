@@ -12,6 +12,8 @@ import '../../core/utils/answer_checker.dart';
 import '../../core/utils/audio_service.dart';
 import '../../data/mock/season1/season1_sounds.dart';
 import '../../data/mock/season_catalog.dart';
+import '../../data/models/mission_speech.dart';
+import '../../widgets/mission_words.dart';
 import '../../data/models/abbesses_puzzles.dart';
 import '../../data/models/case_talk.dart';
 import '../../data/models/difficulty.dart';
@@ -727,7 +729,10 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
           child: Column(
             children: [
               const PaperSheetTab(),
-              LetterCard(text: _mission.letter, sealPicture: ArtAssets.letterSeals[_mission.id]),
+              if (SeasonCatalog.speech(_mission)?.saysLetter ?? false)
+                MissionWords(mission: _mission)
+              else
+                LetterCard(text: _mission.letter, sealPicture: ArtAssets.letterSeals[_mission.id]),
               const SizedBox(height: AppSpace.xl),
               GameButton(
                 label: 'BACK TO THE LOCKS',
@@ -1237,8 +1242,13 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
       : Column(
     children: [
       // The story said in the talk before (the stranger's greeting): only
-      // what hands the paper over is left.
-      for (final line in SeasonCatalog.speech(m)?.fromStory == true ? [m.letterIntro] : m.story)
+      // what hands the paper over is left; a person who said the letter
+      // (Mrs Bell, Grey…): nothing, their words follow in their own card.
+      for (final line in switch (SeasonCatalog.speech(m)) {
+        MissionSpeech(fromStory: true) => [m.letterIntro],
+        MissionSpeech(saysLetter: true) => const <String>[],
+        _ => m.story,
+      })
         Padding(
           padding: const EdgeInsets.only(bottom: 8),
           child: GlossaryText(
@@ -1251,7 +1261,10 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
       // puzzle (Paris Case 07): not again.
       if (_letterMap == null && _lightTable == null) ...[
         const SizedBox(height: 12),
-        LetterCard(text: m.letter, tilt: 0.01, sealPicture: ArtAssets.letterSeals[m.id]),
+        if (SeasonCatalog.speech(m)?.saysLetter ?? false)
+          MissionWords(mission: m)
+        else
+          LetterCard(text: m.letter, tilt: 0.01, sealPicture: ArtAssets.letterSeals[m.id]),
       ],
     ],
   );
@@ -1299,7 +1312,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
       ),
       Center(
         child: InkTextButton(
-          label: 'Reread Letter',
+          label: MissionWords.rereadLabel(m),
           glyph: InkGlyph.letter,
           color: AppColors.goldLight,
           onPressed: _rereadLetter,
@@ -1668,7 +1681,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
           ),
         ),
       )
-    else
+    else ...[
       // Any other puzzle type: the case's last page, laid on the desk.
       ShakeOnChange(
         trigger: _wrongPulse,
@@ -1677,6 +1690,18 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
           child: questionFor(m, _submit),
         ),
       ),
+      // What a person said (Grey's way, Mrs Robin's lie…), heard again
+      // without scrolling back up.
+      if (SeasonCatalog.speech(m)?.saysLetter ?? false)
+        Center(
+          child: InkTextButton(
+            label: MissionWords.rereadLabel(m),
+            glyph: InkGlyph.letter,
+            color: AppColors.goldLight,
+            onPressed: _rereadLetter,
+          ),
+        ),
+    ],
     const SizedBox(height: 12),
     GameButton(
       label: 'OPEN MY NOTEBOOK',

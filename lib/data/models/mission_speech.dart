@@ -12,15 +12,26 @@ import 'mission.dart';
 ///  * [fromStory] false: the mission's letter is what the person says (the
 ///    taxi driver's description). The talk replaces the letter: it is not
 ///    shown again as a letter, and the puzzle's "reread" shows what was said.
+///    A final's talk opens with its story (a final has no story page).
 ///  * [fromStory] true: the person's words are the quoted parts of the
 ///    mission's story (the stranger's greeting), and the letter stays a real
 ///    paper handed over after them ([Mission.letterIntro] closes the talk).
+///  * [inLetter] true: the person's words are the quote that ends the
+///    mission's letter (`Inspector Grey: "…"` under the arrivals board). They
+///    are said in the talk and left off the paper, which stays a paper; the
+///    puzzle's reread shows both, nothing twice ([paperOf], [wordsOf]).
 ///
 /// Heard to its end, the talk is kept with the things looked at in the
 /// mission ([TalkMission.beforeKey]), so it is never played again.
 @immutable
 class MissionSpeech {
-  const MissionSpeech({required this.speaker, required this.goal, this.background, this.fromStory = false});
+  const MissionSpeech({
+    required this.speaker,
+    required this.goal,
+    this.background,
+    this.fromStory = false,
+    this.inLetter = false,
+  });
 
   final TalkSpeaker speaker;
 
@@ -30,6 +41,18 @@ class MissionSpeech {
   /// The place behind the person (null: the night).
   final String? background;
   final bool fromStory;
+  final bool inLetter;
+
+  /// Whether the whole letter is what the person says (no paper is read).
+  bool get saysLetter => !fromStory && !inLetter;
+
+  /// The letter as its paper shows it: without the person's words when they
+  /// end it ([inLetter]).
+  String paperOf(Mission m) => inLetter ? _split(m.letter).$1 : m.letter;
+
+  /// What the person says, as [spokenLines] reads it: the whole letter, or
+  /// the quote that ends it ([inLetter]), one line.
+  String wordsOf(Mission m) => inLetter ? _split(m.letter).$2 : m.letter;
 
   /// The talk of [m], the detective named [detectiveName] where the words
   /// address them.
@@ -40,7 +63,11 @@ class MissionSpeech {
             for (final line in m.story) ...storyLines(named(line)),
             if (m.letterIntro.trim().isNotEmpty) TalkLine.narrator(named(m.letterIntro.trim())),
           ]
-        : [for (final line in spokenLines(named(m.letter))) TalkLine(line)];
+        : [
+            // A final has no story page: its story opens the talk, told once.
+            if (m.finale) for (final line in m.story) ...storyLines(named(line)),
+            for (final line in spokenLines(named(wordsOf(m)))) TalkLine(line),
+          ];
     return TalkMission(
       before: TalkScene(
         id: '${m.id}:speech',
@@ -71,6 +98,16 @@ class MissionSpeech {
   }
 
   static final _quoted = RegExp(r'"([^"]+)"');
+
+  /// A letter that ends with `Name: "words"` as (the paper before it, the
+  /// words on one line); a letter without one stays whole.
+  static (String, String) _split(String letter) {
+    final q = _endQuote.firstMatch(letter);
+    if (q == null) return (letter, '');
+    return (letter.substring(0, q.start).trimRight(), q.group(1)!.replaceAll(RegExp(r'\s*\n\s*'), ' ').trim());
+  }
+
+  static final _endQuote = RegExp(r'[^\n"]*:[ \t]*"([^"]+)"\s*$');
 
   static String _unquote(String s) {
     var t = s.trim();

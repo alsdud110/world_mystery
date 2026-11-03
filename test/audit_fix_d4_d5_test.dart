@@ -15,7 +15,7 @@ import 'package:world_mystery/data/models/mission.dart';
 import 'package:world_mystery/data/models/season_progress.dart';
 import 'package:world_mystery/widgets/glossary_text.dart';
 
-import 'full_playthrough_test.dart' show reveal, tapText, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'personalized_lines.dart';
@@ -519,6 +519,8 @@ Future<void> _openFinal(
       .read(routerProvider)
       .go(Routes.finalMission);
   await wait(t, const Duration(milliseconds: 1200));
+  // A person who talks first (Case 08's Mrs Robin, S1 dialogue PART C): heard.
+  await hearTalk(t);
   await t.runAsync(
     () => Future<void>.delayed(const Duration(milliseconds: 500)),
   );

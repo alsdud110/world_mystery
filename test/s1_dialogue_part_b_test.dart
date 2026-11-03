@@ -134,7 +134,12 @@ void main() {
       for (final s in SeasonCatalog.all) {
         if (s.id != season1Content.id) expect(s.speeches, isEmpty, reason: s.id);
       }
-      expect(season1Content.speeches.keys, {'ep11_m3', 'ep11_final'});
+      // PART B's two, and PART C's ten (2026-11-03: every Season 1 person who
+      // talks to the detective; see s1_dialogue_part_c_test).
+      expect(season1Content.speeches.keys, {
+        'ep11_m3', 'ep11_final',
+        'ep02_final', 'ep03_m3', 'ep07_final', 'ep08_final', 'ep09_m1', 'ep09_m2', 'ep10_m1', 'ep10_final', 'ep12_m1', 'ep12_m2',
+      });
       // Every picture a talk shows is in the bundle (its place, its faces).
       expect(
         missingAssets([

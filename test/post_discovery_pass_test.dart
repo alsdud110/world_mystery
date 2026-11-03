@@ -11,7 +11,7 @@ import 'package:world_mystery/features/game/scoring.dart';
 import 'package:world_mystery/features/game/wallet_controller.dart';
 import 'package:world_mystery/widgets/evidence_card.dart';
 
-import 'full_playthrough_test.dart' show reveal, tapText, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart' show findReadable, season1Cases;
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
@@ -160,6 +160,10 @@ void main() {
         // The final: its maps are lettered, not named; nothing on its page names the spot.
         play.ref.read(routerProvider).go(Routes.finalMission);
         await wait(t, const Duration(milliseconds: 1500));
+        // Grey calls out the way first (S1 dialogue PART C): heard, the
+        // gate never said in it either.
+        expect(find.textContaining('gate'), findsNothing);
+        await hearTalk(t);
         await capture(t, 'pass_ep07_final_$tag');
         expect(find.textContaining('old gate'), findsNothing);
         expect(find.textContaining('gate'), findsNothing);

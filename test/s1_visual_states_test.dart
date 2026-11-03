@@ -16,7 +16,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/evidence_card.dart';
 import 'package:world_mystery/widgets/letter_card.dart';
 
-import 'full_playthrough_test.dart' show wait;
+import 'full_playthrough_test.dart' show hearTalk, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
 
@@ -154,6 +154,8 @@ void main() {
       await wait(t, const Duration(milliseconds: 300));
       ProviderScope.containerOf(find.byType(WorldMysteryApp).evaluate().first).read(routerProvider).go(Routes.finalMission);
       await wait(t, const Duration(milliseconds: 1500));
+      // A person who talks first (Case 10's Ravenmaster, PART C): heard.
+      await hearTalk(t);
       await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 600)));
       await t.pump();
       expect(t.takeException(), isNull);
@@ -181,6 +183,8 @@ void main() {
       await wait(t, const Duration(milliseconds: 300));
       ProviderScope.containerOf(find.byType(WorldMysteryApp).evaluate().first).read(routerProvider).go(Routes.mission(missionId));
       await wait(t, const Duration(milliseconds: 1500));
+      // A person who says the letter (the butler, the Ravenmaster, PART C): heard.
+      await hearTalk(t);
       await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 600)));
       await t.pump();
       expect(t.takeException(), isNull);

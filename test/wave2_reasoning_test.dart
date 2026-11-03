@@ -15,7 +15,7 @@ import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/glossary_text.dart';
 
-import 'full_playthrough_test.dart' show reveal, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
 
@@ -531,6 +531,8 @@ void main() {
           await open(t, size, 'ep07', [
             for (final m in e.missions) m.id,
           ], Routes.finalMission);
+          // Grey calls out the way first (S1 dialogue PART C): heard.
+          await hearTalk(t);
           await capture(t, 'ep07_final_page_$tag');
           await reveal(t, shown(e.finalMission.question));
           await capture(t, 'ep07_final_question_$tag');

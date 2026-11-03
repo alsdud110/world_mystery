@@ -18,7 +18,7 @@ import 'package:world_mystery/data/models/mission.dart';
 import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/game/game_controller.dart';
 
-import 'full_playthrough_test.dart' show reveal, tapText, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
@@ -100,6 +100,8 @@ void main() {
         play.ref.read(gameControllerProvider.notifier).submitAnswer(m3, m3.answer);
         play.ref.read(routerProvider).go(Routes.finalMission);
         await wait(t, const Duration(milliseconds: 1500));
+        // Mrs Bell whispers first (S1 dialogue PART C): heard, then the clock.
+        await hearTalk(t);
         final fin = at('ep02_final', level);
         await reveal(t, find.byKey(const ValueKey('clock-dial')));
         expect(findReadable(SeasonCatalog.finalClock(fin)!.lead), findsOneWidget, reason: level.name);
@@ -372,6 +374,10 @@ void main() {
 
     testWidgets("Case 02's final started before: the Great Clock, both tips kept", (t) async {
       final ref = await openWith(t, 'ep02', oldSave(['ep02_m1', 'ep02_m2', 'ep02_m3'], hints: {'ep02_final': 2}, started: 'ep02_final'), Routes.finalMission);
+      // Mrs Bell's words, now a talk (S1 dialogue PART C): heard once, even
+      // on a save started before; then the clock as it was.
+      expect(find.byKey(const ValueKey('case-talk-line')), findsOneWidget);
+      await hearTalk(t);
       expect(find.byKey(const ValueKey('clock-dial')), findsOneWidget);
       expect(ref.read(gameControllerProvider).hintsFor('ep02_final'), 2);
       final fin = caseOf('ep02_final').finalMission;

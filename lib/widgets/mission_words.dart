@@ -25,10 +25,13 @@ class MissionWords extends StatelessWidget {
   /// person heard again, else the letter read again.
   static String rereadLabel(Mission m) {
     if (ArtAssets.inscriptions.containsKey(m.id)) return 'Look Again';
-    final speech = SeasonCatalog.speech(m);
-    if (speech != null && !speech.fromStory) return 'Hear It Again';
+    if (SeasonCatalog.speech(m)?.saysLetter ?? false) return 'Hear It Again';
     return 'Reread Letter';
   }
+
+  /// The letter as its paper shows it: a person's words that end it are
+  /// said in the talk, not written again (see [MissionSpeech.inLetter]).
+  static String paperOf(Mission m) => SeasonCatalog.speech(m)?.paperOf(m) ?? m.letter;
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +47,18 @@ class MissionWords extends StatelessWidget {
       );
     }
     final speech = SeasonCatalog.speech(m);
-    if (speech != null && !speech.fromStory) return SpokenWordsCard(speaker: speech.speaker, words: m.letter);
-    return LetterCard(text: m.letter, sealPicture: ArtAssets.letterSeals[m.id]);
+    if (speech != null && speech.saysLetter) return SpokenWordsCard(speaker: speech.speaker, words: m.letter);
+    final paper = LetterCard(text: paperOf(m), sealPicture: ArtAssets.letterSeals[m.id]);
+    if (speech == null || !speech.inLetter) return paper;
+    // What was said, then the paper read with it (Case 12: Grey, the board).
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SpokenWordsCard(speaker: speech.speaker, words: speech.wordsOf(m)),
+        const SizedBox(height: AppSpace.lg),
+        paper,
+      ],
+    );
   }
 }
 

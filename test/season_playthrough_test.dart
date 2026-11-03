@@ -14,6 +14,7 @@ import 'full_playthrough_test.dart'
     show
         finishMission,
         goToTime,
+        hearTalk,
         openMission,
         reveal,
         tapText,
@@ -203,6 +204,9 @@ void main() {
       // ── Final case: 8:17 + one hour — the Great Clock's own hands, frozen
       // at 8:17, set to 9:17 (2026-10-30; was three number wheels).
       await tapText(t, 'OPEN THE FINAL CASE', after: goToTime);
+      // Mrs Bell whispers what to do first (S1 dialogue PART C), as herself.
+      expect(find.byKey(const ValueKey('case-talk-line')), findsOneWidget);
+      await hearTalk(t);
       expect(find.text('INSIDE BIG BEN'), findsOneWidget);
       expect(
         find.textContaining('9:17'),

@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/app.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
 import 'package:world_mystery/core/router/app_router.dart';
+import 'package:world_mystery/data/models/case_talk.dart';
 import 'package:world_mystery/data/models/game_progress.dart';
 import 'package:world_mystery/data/models/mission.dart';
 import 'package:world_mystery/data/models/season_progress.dart';
@@ -98,6 +99,8 @@ void main() {
             detectiveName: 'KIM',
             introSeen: true,
             completedMissionIds: const ['ep12_m1'],
+            // At the puzzle: Grey's words heard (S1 dialogue PART C, 2026-11-03).
+            examined: [TalkMission.beforeKey('ep12_m2')],
             missionStartedAt: {'ep12_m2': DateTime(2026, 9, 29, 10)},
             startedAt: DateTime(2026, 9, 29, 10),
             playMillis: 0,

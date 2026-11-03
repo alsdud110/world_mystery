@@ -136,8 +136,18 @@ void main() {
     ref.read(routerProvider).go(Routes.mission(missionId));
     await wait(t, const Duration(milliseconds: 1600));
     // A person who says the letter first (Case 11's taxi driver): heard,
-    // then the puzzle's page.
-    if (puzzle) await hearTalk(t);
+    // then the puzzle's page. One whose words end a paper (Case 12's Grey,
+    // then the arrivals board, PART C): heard, the paper read, the puzzle.
+    if (puzzle) {
+      await hearTalk(t);
+      if (find.text('TAP TO OPEN').evaluate().isNotEmpty) {
+        await t.tap(find.text('TAP TO OPEN'));
+        await wait(t, const Duration(milliseconds: 1800));
+        await t.ensureVisible(find.text('SOLVE THE PUZZLE'));
+        await t.tap(find.text('SOLVE THE PUZZLE'));
+        await wait(t, const Duration(milliseconds: 900));
+      }
+    }
     expect(
       puzzle ? find.textContaining('· THE PUZZLE') : find.text('INVESTIGATE'),
       findsOneWidget,

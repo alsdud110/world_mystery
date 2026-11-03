@@ -1146,6 +1146,35 @@
         "bytes": 568538
       }
     },
+    "assets/seasons/season_01_london/characters/cleaner.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/cleaner.png",
+        "sha256": "sha256:94b442a863ee59f3d98492d88a579f8e2f7f61c6ee5dd90fd4eda59cd0627d16",
+        "bytes": 3281744
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 94 -sharp_yuv",
+      "quality": {
+        "psnr": 41.17,
+        "ssim": 0.99045,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "tried": [
+        "-q 90 -sharp_yuv: PSNR 39.06 / SSIM 0.9804 under 32.0 / 0.985"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/cleaner.webp",
+        "sha256": "sha256:de850bae5d1d945b54d073d361824cde81e85f75fc0be5bd40fd0619771ec625",
+        "bytes": 738816
+      }
+    },
     "assets/seasons/season_01_london/characters/clockmaker_master.webp": {
       "source": {
         "path": "assets/seasons/season_01_london/characters/clockmaker_master.png",
@@ -1205,6 +1234,90 @@
         "bytes": 716838
       }
     },
+    "assets/seasons/season_01_london/characters/guard_carl.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/guard_carl.png",
+        "sha256": "sha256:6cf365f7b0f0a6ba86aa05b3eb3f0e7fe4ad4741f2447dc44e1e0cd5b374cd8a",
+        "bytes": 3346536
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 94 -sharp_yuv",
+      "quality": {
+        "psnr": 41.45,
+        "ssim": 0.99047,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "tried": [
+        "-q 90 -sharp_yuv: PSNR 39.43 / SSIM 0.9809 under 32.0 / 0.985"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/guard_carl.webp",
+        "sha256": "sha256:f1d92eaad9af2f5787c6e26ac6a2c797bdf63c318372acbf4864810f35844f73",
+        "bytes": 703028
+      }
+    },
+    "assets/seasons/season_01_london/characters/head_butler.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/head_butler.png",
+        "sha256": "sha256:99b66b96d49045be7ff413c50669c3347584b9ab676cd552c86a5355943ac612",
+        "bytes": 3329573
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 94 -sharp_yuv",
+      "quality": {
+        "psnr": 40.99,
+        "ssim": 0.99024,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "tried": [
+        "-q 90 -sharp_yuv: PSNR 38.85 / SSIM 0.9804 under 32.0 / 0.985"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/head_butler.webp",
+        "sha256": "sha256:8eccd0744e677ffc14ef3edc1e0d8025a1f83277ca04a1e4416a3215b2530acb",
+        "bytes": 720398
+      }
+    },
+    "assets/seasons/season_01_london/characters/inspector_grey.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/inspector_grey.png",
+        "sha256": "sha256:8aa87b47d849c32cba2a15d088dfa390a31a5c66d38f5fa0230581cee50ee813",
+        "bytes": 3631137
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 38.2,
+        "ssim": 0.98705,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/inspector_grey.webp",
+        "sha256": "sha256:7acc355b05b140174a48945dea5ad4ed98f3c52342115cc08fc354c0c9d023bd",
+        "bytes": 669596
+      }
+    },
     "assets/seasons/season_01_london/characters/juggler.webp": {
       "source": {
         "path": "assets/seasons/season_01_london/characters/juggler.png",
@@ -1232,6 +1345,64 @@
         "path": "assets/seasons/season_01_london/characters/juggler.webp",
         "sha256": "sha256:1940dc1c7684e5917d41617acb85471fbb0f5baa2101466c4cea4bac4abef0ef",
         "bytes": 582546
+      }
+    },
+    "assets/seasons/season_01_london/characters/mrs_bell.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/mrs_bell.png",
+        "sha256": "sha256:4b42aab04a5174f7a7bf222e254f1c658b4071c3a5d373d0c7dd7f794c952448",
+        "bytes": 3359729
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 94 -sharp_yuv",
+      "quality": {
+        "psnr": 41.46,
+        "ssim": 0.98978,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "tried": [
+        "-q 90 -sharp_yuv: PSNR 39.41 / SSIM 0.9792 under 32.0 / 0.985"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/mrs_bell.webp",
+        "sha256": "sha256:ef32bb2d845891717ab42c62d1e818efbbe36273adc700a376292849034a4fed",
+        "bytes": 692308
+      }
+    },
+    "assets/seasons/season_01_london/characters/mrs_robin.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/mrs_robin.png",
+        "sha256": "sha256:68f854ba7042d8ba81e40d0d024b7a010d3b26bdce7bf8f6d78578f87fd8cf46",
+        "bytes": 3188269
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 94 -sharp_yuv",
+      "quality": {
+        "psnr": 41.21,
+        "ssim": 0.99024,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "tried": [
+        "-q 90 -sharp_yuv: PSNR 38.98 / SSIM 0.9796 under 32.0 / 0.985"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/mrs_robin.webp",
+        "sha256": "sha256:4e4af2eb44ee2dc0692f78f5dd6393e0bddee8a518eed8ccffbb471526525558",
+        "bytes": 702406
       }
     },
     "assets/seasons/season_01_london/characters/mysterious_stranger.webp": {
@@ -1318,6 +1489,32 @@
         "path": "assets/seasons/season_01_london/characters/raven_master_caw.webp",
         "sha256": "sha256:b56a0f055635315574c4e949ce90cc51ab37e6d5bed0e553e980cdcd8de130fc",
         "bytes": 697902
+      }
+    },
+    "assets/seasons/season_01_london/characters/ravenmaster.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/ravenmaster.png",
+        "sha256": "sha256:8866340f53455fc2cdf20438051852fb41ab07143cfcaaeee6d65c1b6580b4f5",
+        "bytes": 3555399
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 39.33,
+        "ssim": 0.98629,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/ravenmaster.webp",
+        "sha256": "sha256:50c6f159932b821c0098f60c82be23a5bc106b0141533010bd72a7cc30023185",
+        "bytes": 574592
       }
     },
     "assets/seasons/season_01_london/characters/stranger_masked.webp": {

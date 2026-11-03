@@ -13,7 +13,7 @@ import 'package:world_mystery/data/models/game_progress.dart';
 import 'package:world_mystery/data/models/mission.dart';
 import 'package:world_mystery/data/models/season_progress.dart';
 
-import 'full_playthrough_test.dart' show reveal, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
 import 'personalized_lines.dart';
@@ -290,6 +290,8 @@ void main() {
       await wait(t, const Duration(milliseconds: 300));
       ProviderScope.containerOf(find.byType(WorldMysteryApp).evaluate().first).read(routerProvider).go(Routes.finalMission);
       await wait(t, const Duration(milliseconds: 1200));
+      // A person who talks first (Case 08's Mrs Robin, S1 dialogue PART C): heard.
+      await hearTalk(t);
       await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 500)));
       await t.pump();
       expect(t.takeException(), isNull);

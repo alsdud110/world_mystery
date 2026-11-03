@@ -415,6 +415,10 @@ void main() {
       // The final: 8:17 until the clock is set — on the Great Clock's own
       // face, its hands the detective's (2026-10-30: no number wheels).
       await openMission(t, size, 'ep02_final');
+      // Mrs Bell whispers first (S1 dialogue PART C): heard, then the clock
+      // (its page built now: its pictures decoded, as on opening).
+      await hearTalk(t);
+      await settle(t);
       expect(picture(face), findsOneWidget);
       expect(painter().hourDegrees, at817, reason: 'not 9:17 before the answer');
       expect(painter().hourDegrees, closeTo(248.5, 1e-9));

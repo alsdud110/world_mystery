@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/widgets/letter_card.dart';
+import 'package:world_mystery/widgets/mission_words.dart';
 import 'package:world_mystery/data/models/profile.dart';
 import 'package:world_mystery/core/utils/answer_checker.dart';
 import 'package:world_mystery/data/mock/season1/season1_learning.dart';
@@ -183,8 +184,13 @@ void main() {
         await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
         await tapText(t, 'Reread Letter', after: const Duration(milliseconds: 800));
         expect(find.byType(LetterCard), findsOneWidget, reason: 'one letter, many lines');
-        expect(find.descendant(of: find.byType(LetterCard), matching: findReadable('after the train from Edinburgh."')), findsOneWidget,
-            reason: 'the board line, on the letter');
+        // Grey's line is said, not written on the board (S1 dialogue PART C,
+        // 2026-11-03): read again in his own card, over the board, once.
+        expect(find.descendant(of: find.byType(SpokenWordsCard), matching: findReadableContaining('after the train from Edinburgh.')),
+            findsOneWidget,
+            reason: "Grey's line, in his words");
+        expect(find.descendant(of: find.byType(LetterCard), matching: findReadableContaining('Edinburgh — Platform 9')), findsOneWidget,
+            reason: 'the board, on the letter');
         expect(find.textContaining('10:15', findRichText: true), findsWidgets);
         await capture(t, 'phase4_board_letter_$tag');
         expect(t.takeException(), isNull);

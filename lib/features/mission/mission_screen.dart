@@ -1500,7 +1500,7 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
     // A person who says the letter (Season 1): the talk before the puzzle
     // is the letter; it is not read again as one. Not a puzzle engine (the
     // puzzle is played as always), so not one of the engines' tables below.
-    final saysLetter = SeasonCatalog.speech(m)?.fromStory == false;
+    final saysLetter = SeasonCatalog.speech(m)?.saysLetter ?? false;
     // A talk, a look round, a place read for its traces, a thing to examine
     // and the like start at once: the letter is found in the place itself,
     // or there is none. (A searched place shows its own arrival.)
@@ -2068,7 +2068,7 @@ class _LetterStage extends StatelessWidget {
           MissionWords(mission: mission)
         else
           EnvelopeReveal(
-            letterText: mission.letter,
+            letterText: MissionWords.paperOf(mission),
             sealPicture: ArtAssets.letterSeals[mission.id],
             initiallyOpen: opened,
             onOpen: onOpening,

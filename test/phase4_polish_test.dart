@@ -18,7 +18,7 @@ import 'package:world_mystery/features/mission/widgets/question_widgets.dart';
 import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/landmark_art.dart';
 
-import 'full_playthrough_test.dart' show reveal, tapText, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
 
 /// Phase 4 polish: the solved Case 02 clock, a disabled Undo that looks
@@ -81,6 +81,8 @@ void main() {
       final ref = await pumpApp(t, case02([for (final m in ep02.missions) m.id]));
       ref.read(routerProvider).go(Routes.finalMission);
       await wait(t, const Duration(milliseconds: 1200));
+      // Mrs Bell whispers first (S1 dialogue PART C): heard, then the clock.
+      await hearTalk(t);
       expect(clockArt(t).solved, 0, reason: 'still stopped before the answer');
 
       // The Great Clock's hands, frozen at 8:17, one hour on (no wheels).

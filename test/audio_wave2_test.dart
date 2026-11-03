@@ -15,7 +15,7 @@ import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/game/audio_scenes.dart';
 import 'package:world_mystery/features/game/game_controller.dart';
 
-import 'full_playthrough_test.dart' show reveal, tapText, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
 
 /// Audio Wave 2 (provisional, listening pending): the places of Season 1,
@@ -450,6 +450,8 @@ Future<WidgetRef> _openFinal(
   await wait(t, const Duration(milliseconds: 300));
   ref.read(routerProvider).go(Routes.finalMission);
   await wait(t, const Duration(milliseconds: 1500));
+  // A person who talks first (Case 02's Mrs Bell, S1 dialogue PART C): heard.
+  await hearTalk(t);
   return ref;
 }
 

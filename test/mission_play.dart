@@ -118,8 +118,13 @@ class MissionPlay {
     ref.read(routerProvider).go(Routes.mission(missionId));
     await wait(t, const Duration(milliseconds: 1200));
     // A person who says the letter first (Case 11's taxi driver): heard,
-    // then the puzzle.
+    // then the puzzle. One whose words end a paper (Case 12's Grey, then
+    // the arrivals board): heard, the paper read, then the puzzle.
     await hearTalk(t);
+    if (find.text('TAP TO OPEN').evaluate().isNotEmpty) {
+      await tapText(t, 'TAP TO OPEN', after: const Duration(milliseconds: 1800));
+      await tapText(t, 'SOLVE THE PUZZLE', after: const Duration(milliseconds: 900));
+    }
     expect(
         find.text('CHECK ANSWER').evaluate().isNotEmpty ||
             find.text('UNLOCK').evaluate().isNotEmpty ||
