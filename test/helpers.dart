@@ -86,9 +86,12 @@ Future<List<Override>> testOverridesFor(
 }) async => [
   sharedPreferencesProvider.overrideWithValue(prefs),
   audioServiceProvider.overrideWithValue(audio ?? MockAudioService()),
-  // Ads off: nothing reaches the ads plugin (banner_ad_area_test.dart plays them).
-  if (adsOff)
-    adServiceProvider.overrideWith((ref) {
+  if (adsOff) adsOffOverride(),
+];
+
+/// Ads off: nothing reaches the ads plugin (banner_ad_area_test.dart plays
+/// them), and no consent request leaves a timer behind.
+Override adsOffOverride() => adServiceProvider.overrideWith((ref) {
       final service = AdService(
         sdk: const GoogleMobileAdsSdk(),
         units: null,
@@ -97,8 +100,7 @@ Future<List<Override>> testOverridesFor(
       );
       ref.onDispose(service.dispose);
       return service;
-    }),
-];
+    });
 
 /// The detective's key for a save kept under [legacyKey] before profiles
 /// (e.g. `AppConstants.progressStorageKey`).

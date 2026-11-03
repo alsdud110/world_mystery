@@ -525,6 +525,7 @@ void main() {
       await t.pumpWidget(ProviderScope(
         overrides: [
           sharedPreferencesProvider.overrideWithValue(prefs),
+          adsOffOverride(),
           // The real wiring: the service asks the saved setting.
           audioServiceProvider.overrideWith((r) => audio = MockAudioService(isEnabled: () => r.read(soundEnabledProvider))),
         ],
