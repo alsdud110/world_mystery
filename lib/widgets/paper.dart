@@ -50,6 +50,38 @@ class PaperSheet extends StatelessWidget {
   }
 }
 
+/// A scene picture laid straight on the page, a little askew: no paper
+/// margin round it (a second, white frame round a picture that carries its
+/// own painted edge), only a hairline edge and the sheet's shadow.
+class ScenePrint extends StatelessWidget {
+  const ScenePrint({super.key, required this.child, this.tilt = -0.01});
+
+  final Widget child;
+
+  /// Small rotation in radians, as [PaperSheet.tilt].
+  final double tilt;
+
+  static const _radius = BorderRadius.all(Radius.circular(2));
+
+  @override
+  Widget build(BuildContext context) {
+    final onNight = InkSurface.isNight(context);
+    final print = Container(
+      decoration: BoxDecoration(
+        borderRadius: _radius,
+        boxShadow: onNight ? AppShadow.onNight : AppShadow.paperLift,
+      ),
+      foregroundDecoration: BoxDecoration(
+        borderRadius: _radius,
+        border: Border.all(color: AppLine.faint(), width: AppLine.hairline),
+      ),
+      // A drawn scene (no picture file) still draws in paper ink.
+      child: ClipRRect(borderRadius: _radius, child: InkSurface(night: false, child: child)),
+    );
+    return tilt == 0 ? print : Transform.rotate(angle: tilt, child: print);
+  }
+}
+
 /// A bottom sheet as a sheet of paper (the map menu, a letter, the word card,
 /// "Not quite!", the final case's notebook): nearly square top corners. Set
 /// per sheet with `showDragHandle: false`, [PaperSheetTab] at its top — the

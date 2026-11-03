@@ -1068,12 +1068,6 @@ abstract final class ArtAssets {
   static bool onParchment(String file) =>
       file.startsWith('${_london}cases/case_09/key_') || file.startsWith('${_london}cases/case_10/raven_');
 
-  /// Final scenes printed with their own aged-paper border: laid on the desk
-  /// as they are, never inside the light paper sheet (a second, white frame
-  /// round the dark chest read as a white background on the device). Only
-  /// Case 05's chest so far.
-  static const ownPaperEdge = {Artwork.ironChest};
-
   /// What a scene that changes with its solve shows, read out before and
   /// after (the picture itself is decoration): null for any other scene.
   static String? sceneLabel(Artwork artwork, {double solved = 0}) => switch (artwork) {

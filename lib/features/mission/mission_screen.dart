@@ -1885,23 +1885,15 @@ class _PlacePicture extends StatelessWidget {
             ),
           );
         }
-        final width = math.min(
-          box.maxWidth - 2 * AppSpace.sm,
-          tallest * p.aspect,
-        );
+        final width = math.min(box.maxWidth, tallest * p.aspect);
         return Center(
-          child: PaperSheet(
-            padding: const EdgeInsets.all(AppSpace.sm),
-            tilt: -0.01,
+          child: ScenePrint(
             child: SizedBox(
               width: width,
               height: width / p.aspect,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(2),
-                child: StoryPictureView(
-                  p,
-                  imageKey: const ValueKey('story-picture'),
-                ),
+              child: StoryPictureView(
+                p,
+                imageKey: const ValueKey('story-picture'),
               ),
             ),
           ),
@@ -1959,9 +1951,7 @@ class _StoryStage extends StatelessWidget {
                     ? 240
                     : double.infinity,
               ),
-              child: PaperSheet(
-                padding: const EdgeInsets.all(AppSpace.sm),
-                tilt: -0.01,
+              child: ScenePrint(
                 child: own == null
                     ? AspectRatio(
                         aspectRatio: LandmarkArt.aspectOfScene(PlaceArt.pictureOf(m)),

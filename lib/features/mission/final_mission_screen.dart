@@ -2094,14 +2094,7 @@ class _SceneReveal extends StatelessWidget {
           child: Center(
             child: AspectRatio(
               aspectRatio: LandmarkArt.aspectOfScene(scene),
-              child: ArtAssets.ownPaperEdge.contains(artwork)
-                  // Its own paper edge: only a shadow under it on the desk.
-                  ? DecoratedBox(decoration: const BoxDecoration(boxShadow: AppShadow.paperLift), child: art)
-                  : PaperSheet(
-                      padding: const EdgeInsets.all(AppSpace.sm),
-                      tilt: -0.01,
-                      child: art,
-                    ),
+              child: ScenePrint(child: art),
             ),
           ),
         );
