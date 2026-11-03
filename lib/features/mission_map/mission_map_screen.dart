@@ -13,6 +13,7 @@ import '../../core/utils/formatters.dart';
 import '../../data/models/episode.dart';
 import '../../data/models/game_progress.dart';
 import '../../data/models/mission.dart';
+import '../../data/models/profile.dart';
 import '../../widgets/clue_card.dart';
 import '../../widgets/game_button.dart';
 import '../../widgets/game_dialog.dart';
@@ -24,6 +25,7 @@ import '../../widgets/paper_menu.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import '../game/scoring.dart';
+import '../onboarding/detective_form.dart';
 import 'map_camera.dart';
 import 'map_world.dart';
 import 'widgets/london_map_painter.dart';
@@ -161,76 +163,75 @@ class _MissionMapScreenState extends ConsumerState<MissionMapScreen> with Single
   }
 
   void _showMenu(BuildContext context, WidgetRef ref) {
+    // One page opens from the menu, however fast it is tapped.
+    var leaving = false;
     // A page of the casebook slid over the map.
     showPaperMenu(
       context,
       items: (sheetContext, ref) {
         final progress = ref.watch(gameControllerProvider);
         final episode = ref.watch(currentEpisodeProvider);
+        final avatar = ref.watch(detectiveProfileProvider).avatar;
         final playTime = ref.read(gameControllerProvider.notifier).playTime;
         final xp = XpBreakdown.totalFor(episode, progress);
 
-        Widget item(InkGlyph glyph, String label, VoidCallback onTap) => PaperMenuItem(glyph, label, onTap: onTap);
+        /// Closes the menu, then opens [route]: pushed over the map (back
+        /// returns to it as it was), or with [replace], instead of it.
+        void open(String route, {bool replace = false}) {
+          if (leaving) return;
+          leaving = true;
+          Navigator.of(sheetContext).pop();
+          replace ? context.go(route) : context.push(route);
+        }
+
+        Widget item(InkGlyph glyph, String label, String route, {bool replace = false}) =>
+            PaperMenuItem(glyph, label, onTap: () => open(route, replace: replace));
 
         return [
-          // Case status: shown here, on request, instead of on the map.
+          // Case status: shown here, on request, instead of on the map; the
+          // detective's picture beside it opens their profile.
           Padding(
-            padding: const EdgeInsets.fromLTRB(AppSpace.screen, 0, AppSpace.screen, AppSpace.sm),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            padding: const EdgeInsets.fromLTRB(AppSpace.screen, 0, AppSpace.lg, AppSpace.sm),
+            child: Row(
               children: [
-                Text(episode.title, style: AppText.aside()),
-                Text(DetectiveName.title(progress.detectiveName), style: AppText.title(size: 22)),
-                const SizedBox(height: AppSpace.xs),
-                Text(
-                  '$xp XP  ·  ${Formatters.clock(playTime)}',
-                  style: AppText.caption(color: AppColors.goldDeep)
-                      .copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(episode.title, style: AppText.aside(), maxLines: 1, overflow: TextOverflow.ellipsis),
+                      Text(
+                        DetectiveName.title(progress.detectiveName),
+                        style: AppText.title(size: 22),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const SizedBox(height: AppSpace.xs),
+                      Text(
+                        '$xp XP  ·  ${Formatters.clock(playTime)}',
+                        style: AppText.caption(color: AppColors.goldDeep)
+                            .copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
+                      ),
+                    ],
+                  ),
                 ),
+                const SizedBox(width: AppSpace.md),
+                _MenuPortrait(avatar: avatar, onTap: () => open(Routes.detective)),
               ],
             ),
           ),
           // A faint printed rule in the paper's own ink.
           Divider(color: AppColors.inkBrown.withValues(alpha: 0.18)),
-          const SoundSwitchTile(),
-          item(InkGlyph.notebook, 'Detective Notebook', () {
-            Navigator.of(sheetContext).pop();
-            context.push(Routes.notebook);
-          }),
-          // The detective's name and picture (progress stays).
-          item(InkGlyph.pen, 'My detective', () {
-            Navigator.of(sheetContext).pop();
-            context.push(Routes.detective);
-          }),
-          if (progress.isCaseSolved)
-            item(InkGlyph.folder, 'Case results', () {
-              Navigator.of(sheetContext).pop();
-              context.go(Routes.solved);
-            }),
-          item(InkGlyph.pin, 'Season board', () {
-            Navigator.of(sheetContext).pop();
-            context.go(Routes.season);
-          }),
-          // Every season's file, to choose the next adventure.
-          item(InkGlyph.seal, 'World Archive', () {
-            Navigator.of(sheetContext).pop();
-            context.go(Routes.seasons);
-          }),
-          item(InkGlyph.folder, 'Case files', () {
-            Navigator.of(sheetContext).pop();
-            context.go(Routes.episodes);
-          }),
-          // The first-play guide again, over the map (back returns here).
-          item(InkGlyph.hint, 'How to play', () {
-            Navigator.of(sheetContext).pop();
-            context.push(Routes.howToPlayAgain);
-          }),
+          item(InkGlyph.notebook, 'Detective Notebook', Routes.notebook),
+          item(InkGlyph.folder, 'Case Files', Routes.episodes),
           // Out to the World Map: the case stays saved, and the
           // city's CONTINUE comes back to it.
-          item(InkGlyph.home, 'World map', () {
-            Navigator.of(sheetContext).pop();
-            context.go(Routes.worldMap);
-          }),
+          item(InkGlyph.map, 'World Map', Routes.worldMap, replace: true),
+          // The detective's name and picture (progress stays).
+          item(InkGlyph.pen, 'My Detective Profile', Routes.detective),
+          Divider(color: AppColors.inkBrown.withValues(alpha: 0.18), indent: AppSpace.screen, endIndent: AppSpace.screen),
+          const SoundSwitchTile(),
+          // The first-play guide again, over the map (back returns here).
+          item(InkGlyph.hint, 'How to Play', Routes.howToPlayAgain),
         ];
       },
     );
@@ -945,6 +946,54 @@ class _ProgressMark extends StatelessWidget {
         border: Border.all(
           color: done ? AppColors.navy : (here ? AppColors.burgundy : AppLine.faint(0.35)),
           width: here ? AppLine.ink : AppLine.rule,
+        ),
+      ),
+    );
+  }
+}
+
+/// The detective's picture in the corner of the map's menu, a small card
+/// of the profile's own portrait (the cap in ink while none is chosen):
+/// a tap opens the profile.
+class _MenuPortrait extends StatelessWidget {
+  const _MenuPortrait({required this.avatar, required this.onTap});
+
+  final DetectiveAvatar? avatar;
+  final VoidCallback onTap;
+
+  static const _size = 64.0;
+
+  @override
+  Widget build(BuildContext context) {
+    final avatar = this.avatar;
+    return Semantics(
+      button: true,
+      label: 'My Detective Profile',
+      excludeSemantics: true,
+      child: GestureDetector(
+        key: const ValueKey('menu-portrait'),
+        behavior: HitTestBehavior.opaque,
+        onTap: onTap,
+        child: Container(
+          width: _size,
+          height: _size,
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(AppRadius.paper),
+            border: Border.all(color: AppColors.goldDeep.withValues(alpha: 0.6), width: AppLine.hairline),
+            // The same dusk as behind the portrait on the detective's form.
+            gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [AppColors.royalBlueSoft, AppColors.paperLight],
+            ),
+          ),
+          child: avatar == null
+              ? const Center(child: InkIcon(InkGlyph.deerstalker, size: AppIconSize.small, color: AppColors.inkBrown))
+              : Padding(
+                  padding: const EdgeInsets.only(top: AppSpace.xs),
+                  child: DetectivePortrait(avatar: avatar, alignment: Alignment.bottomCenter),
+                ),
         ),
       ),
     );

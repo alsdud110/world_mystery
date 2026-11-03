@@ -220,9 +220,19 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: Routes.parisPrologue, pageBuilder: (c, s) => _fade(s, const ParisPrologueScreen())),
       GoRoute(
         path: Routes.episodes,
-        // The case files sit under the season: back goes up to it.
-        pageBuilder: (c, s) =>
-            _fade(s, _backTo(c, Routes.season, EpisodeSelectScreen(focusCase: s.uri.queryParameters['case']))),
+        // Opened over the case map (its menu), back returns to the map as it
+        // was; reached any other way, the case files sit under the season:
+        // back goes up to it.
+        pageBuilder: (c, s) => _fade(
+          s,
+          BackTo(
+            onBack: () {
+              final router = GoRouter.of(c);
+              router.canPop() ? router.pop() : router.go(Routes.season);
+            },
+            child: EpisodeSelectScreen(focusCase: s.uri.queryParameters['case']),
+          ),
+        ),
       ),
       GoRoute(path: Routes.intro, pageBuilder: (c, s) => _fade(s, _backTo(c, Routes.episodes, const StoryIntroScreen()))),
       GoRoute(path: Routes.map, pageBuilder: (c, s) => _fade(s, const MissionMapScreen())),

@@ -323,7 +323,7 @@ void main() {
     await wait(t, const Duration(milliseconds: 1600));
     await t.tap(find.byTooltip('Menu'));
     await wait(t);
-    await tapText(t, 'How to play', after: const Duration(milliseconds: 900));
+    await tapText(t, 'How to Play', after: const Duration(milliseconds: 900));
     expect(find.byType(HowToPlayScreen), findsOneWidget);
     for (var i = 1; i < titles.length; i++) {
       await next(t);

@@ -79,7 +79,7 @@ class SoundSwitchTile extends ConsumerWidget {
       data: Theme.of(context).copyWith(focusColor: press, hoverColor: press, splashColor: press, highlightColor: press),
       child: SwitchListTile(
         secondary: InkIcon(soundOn ? InkGlyph.speaker : InkGlyph.speakerOff, color: AppColors.ink),
-        title: Text('Sound effects', style: AppText.subtitle()),
+        title: Text('Sound Effects', style: AppText.subtitle()),
         hoverColor: press,
         activeThumbColor: AppColors.goldLight,
         activeTrackColor: AppColors.navy,

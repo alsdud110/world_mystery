@@ -677,15 +677,31 @@ void main() {
     await wait(t, const Duration(seconds: 3));
   });
 
-  testWidgets('the map menu opens the season board', (t) async {
+  testWidgets('the map menu no longer lists the season board; the board still opens its case files, and back returns to it', (t) async {
     await pumpApp(t, seasonSaves(4, active: 'ep05', activeBegun: true));
     appRef.read(routerProvider).go(Routes.map);
     await wait(t, const Duration(milliseconds: 1500));
     await t.tap(find.byTooltip('Menu'));
     await wait(t);
-    await tapText(t, 'Season board', after: const Duration(milliseconds: 2400));
-    expect(path(), Routes.season);
-    expect(find.text('CONTINUE INVESTIGATION'), findsOneWidget);
+    expect(find.text('Season board'), findsNothing);
+    expect(find.text('World Archive'), findsNothing);
+    await t.binding.handlePopRoute();
+    await wait(t);
+
+    // Season Board → Case Files → back → Season Board (the button and the system back).
+    for (final back in [
+      () => t.tap(find.byTooltip('Back')),
+      () => t.binding.handlePopRoute(),
+    ]) {
+      appRef.read(routerProvider).go(Routes.season);
+      await wait(t, const Duration(milliseconds: 1500));
+      await tapText(t, 'View all case files', after: const Duration(milliseconds: 1500));
+      expect(path(), Routes.episodes);
+      await back();
+      await wait(t, const Duration(milliseconds: 1500));
+      expect(path(), Routes.season);
+      expect(find.text('CONTINUE INVESTIGATION'), findsOneWidget);
+    }
     await wait(t, const Duration(seconds: 3));
   });
 

@@ -142,8 +142,9 @@ class _EpisodeSelectScreenState extends ConsumerState<EpisodeSelectScreen> {
         leading: IconButton(
           tooltip: 'Back',
           icon: const InkIcon(InkGlyph.back),
-          // Up to the season the case files belong to.
-          onPressed: () => context.go(Routes.season),
+          // Back to the page it was opened over (the case map's menu),
+          // else up to the season the case files belong to.
+          onPressed: () => context.canPop() ? context.pop() : context.go(Routes.season),
         ),
         actions: [
           // QA only: every file is open (Game Master tools, test builds).

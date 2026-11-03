@@ -537,15 +537,15 @@ void main() {
 
       await open();
       expect(t.takeException(), isNull);
-      final labels = ['Sound effects', 'My detective', 'Title screen'];
+      final labels = ['Sound Effects', 'My detective', 'Title screen'];
       final tops = [for (final l in labels) t.getRect(find.descendant(of: find.byType(BottomSheet), matching: find.text(l))).top];
       expect(tops, [...tops]..sort(), reason: 'in this order');
       // The game's one sound switch.
       final soundOn = appRef.read(soundEnabledProvider);
-      await t.tap(find.text('Sound effects'));
+      await t.tap(find.text('Sound Effects'));
       await wait(t, const Duration(milliseconds: 300));
       expect(appRef.read(soundEnabledProvider), !soundOn);
-      await t.tap(find.text('Sound effects'));
+      await t.tap(find.text('Sound Effects'));
       await wait(t, const Duration(milliseconds: 300));
       expect(appRef.read(soundEnabledProvider), soundOn);
       // (The sound setting is saved; nothing else is, from here on.)
@@ -655,7 +655,7 @@ void main() {
       final episode = appRef.read(currentEpisodeProvider).id;
       await t.tap(find.byTooltip('Menu'));
       await wait(t);
-      await t.tap(find.text('World map'));
+      await t.tap(find.text('World Map'));
       await wait(t, const Duration(milliseconds: 1200));
       expect(path(), Routes.worldMap);
       expect(saves(), before, reason: 'the case stays as it was');
