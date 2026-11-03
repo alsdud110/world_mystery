@@ -10,13 +10,13 @@ Bilingual Korean/English privacy-policy draft: `privacy/index.html`.
 - Child-protective treatment, G-rated content limits, and non-personalized ad requests are configured for all users.
 - Android Debug merged manifest excludes AD_ID and the three ACCESS_ADSERVICES permissions. This does not prove that all SDK data collection stops.
 - Game progress, coins, and hints are stored locally. Third-party ad SDK processing is separately disclosed.
-- No live-device, regional EEA/UK, iOS Archive, or production-ad validation has been completed.
+- Android emulator test ads, rewarded playback, and 30-coin credit have been user-verified. EEA/UK, iOS Archive, and production-ad validation remain outstanding.
 
 ## Publishing
 
-This PR remains a **draft**. The page includes `noindex` and a pre-release notice. Do not merge, remove these notices, enable GitHub Pages, or advertise a public policy URL until the actual release configuration and legal disclosures are reviewed.
+The privacy policy is prepared for publication with an effective date of November 3, 2026. Production ad requests remain disabled pending policy and platform review. The public URL must be verified after GitHub Pages is enabled.
 
-GitHub Pages can use `main` / `docs` only after moving the page to `docs/privacy/index.html`, or a separate deployment workflow can publish the existing path. Verify the live URL before using it in store listings.
+A publication copy is located at `docs/privacy/index.html`. To publish it, configure GitHub Pages: **Settings → Pages → Deploy from a branch → main → /docs → Save**. The expected URL is `https://alsdud110.github.io/world_mystery/privacy/`, but it must be opened and verified before submitting it to stores.
 
 ## Release blockers
 
@@ -24,7 +24,7 @@ GitHub Pages can use `main` / `docs` only after moving the page to `docs/privacy
 - Confirm actual target-audience declarations and ad compliance for child users on Google Play and Apple, including whether iOS third-party ads are permissible.
 - Verify UMP regional behavior, console messages, privacy-options UI, and real-device ad behavior.
 - Verify Android Release merged manifest and iOS Xcode Archive/App Privacy Report.
-- Complete applicable legal operator identity, retention, international-transfer, and user-rights disclosures, and set the effective date.
+- Reassess legal sufficiency of operator identity, retention, international-transfer, and user-rights disclosures for each distribution region; effective date is November 3, 2026.
 - Align Google Play Data safety and App Store App Privacy answers with the final binaries and this policy.
 
 This PR only updates documentation; it does not turn on production advertising.
