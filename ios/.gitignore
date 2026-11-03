@@ -32,3 +32,7 @@ Runner/GeneratedPluginRegistrant.*
 !default.mode2v3
 !default.pbxuser
 !default.perspectivev3
+
+# Made by Xcode when Runner.xcodeproj is opened on its own; Flutter builds
+# from Runner.xcworkspace, whose swiftpm/Package.resolved is the one kept.
+Runner.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
