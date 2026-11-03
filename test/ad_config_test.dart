@@ -108,4 +108,44 @@ void main() {
     final ignored = File('.gitignore').readAsLinesSync().map((l) => l.trim());
     expect(ignored, contains('/config/ads.local.json'));
   });
+
+  group('native ads settings', () {
+    final manifest = File('android/app/src/main/AndroidManifest.xml').readAsStringSync();
+    final plist = File('ios/Runner/Info.plist').readAsStringSync();
+
+    int count(String source, String text) => text.allMatches(source).length;
+
+    test('Android delays the SDK\'s app measurement, once', () {
+      expect(count(manifest, 'com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT'), 1);
+      expect(
+        manifest,
+        matches(RegExp(r'android:name="com\.google\.android\.gms\.ads\.DELAY_APP_MEASUREMENT_INIT"\s+android:value="true"')),
+      );
+    });
+
+    test('iOS delays the SDK\'s app measurement, once', () {
+      expect(count(plist, '<key>GADDelayAppMeasurementInit</key>'), 1);
+      expect(plist, matches(RegExp(r'<key>GADDelayAppMeasurementInit</key>\s*<true/>')));
+    });
+
+    test('the App IDs are still injected by the builds, and the ad permissions still removed', () {
+      expect(manifest, matches(RegExp(r'com\.google\.android\.gms\.ads\.APPLICATION_ID"\s+android:value="\$\{admobAppId\}"')));
+      for (final permission in [
+        'com.google.android.gms.permission.AD_ID',
+        'android.permission.ACCESS_ADSERVICES_AD_ID',
+        'android.permission.ACCESS_ADSERVICES_ATTRIBUTION',
+        'android.permission.ACCESS_ADSERVICES_TOPICS',
+      ]) {
+        expect(manifest, matches(RegExp('android:name="${RegExp.escape(permission)}"\\s+tools:node="remove"')),
+            reason: permission);
+      }
+      // Info.plist holds the sample App ID; the build phase sets the real one
+      // in a release, and touches nothing else.
+      expect(count(plist, '<key>GADApplicationIdentifier</key>'), 1);
+      expect(plist, contains('${AdConfig.samplePublisher}~1458002511'));
+      final script = File('ios/scripts/admob_app_id.sh').readAsStringSync();
+      expect(RegExp(r'PlistBuddy -c "(\w+) :(\w+)').allMatches(script).map((m) => '${m[1]} ${m[2]}'),
+          ['Set GADApplicationIdentifier']);
+    });
+  });
 }
