@@ -254,7 +254,9 @@ void main() {
         // says "written backwards" (Rookie), its clue note names Case 10's
         // Raven's Warning; 11-F brings Case 01's Old Letter at Rookie
         // (was 2940818726).
-        'ep11': 3224893254,
+        // S1 C11 final made easier (2026-11-03): recall at every level, the
+        // card, question, letterIntro and tips (was 3224893254).
+        'ep11': 3934886201,
         // Time code fix (2026-10-21): 12-M2 reads as HH:MM ('codeFormat': 'time').
         // Case 12 M3 (2026-10-21): UNDER ___ ___, one blank per word of BIG BEN.
         // Evidence recall (2026-10-23, requested): 12-F tip 1 says where the

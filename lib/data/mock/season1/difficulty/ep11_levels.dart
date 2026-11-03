@@ -19,8 +19,9 @@ import '../../../models/learning.dart';
 // ep11_m2's question says the word is written backwards at Rookie and
 // Junior (the puzzle page, not only the story); Master's leaves it to the
 // story. Its clue note ties MIDNIGHT to Case 10's Raven's Warning at every
-// level. The final's recall (Case 01's Old Letter) is Rookie's only: the
-// final page shows it at that level.
+// level. The final's recall (Case 01's Old Letter) is shown at every level
+// (device feedback 2026-11-03: Junior and Master had no way back to Case 01
+// on the page), each level with its own words for it.
 //
 // Intentionally the same as the base at every level (puzzle data, kept so
 // the player reasons from the exact words):
@@ -160,20 +161,26 @@ const Map<String, Object?> ep11Junior = {
         'The stranger smiles and gives a little bow.',
         '"Hello again, Detective {detectiveName}," he says. "Do you still remember me?"',
       ],
-      'letterIntro': 'He hands you a small card.',
+      'letterIntro': 'He hands you a small card. It takes you back to your first case.',
       'letter': 'We met at the very start.\n'
           'I left you a letter in a suitcase.\n'
-          'I still love trains.\n\n'
+          'I still love trains.\n'
+          'I signed that letter with my name.\n\n'
           'I am not with the Raven Society any more. Now I want to help you.',
-      'question': 'Who is the stranger behind the mask?',
+      'question': 'Who is the stranger behind the mask? Check the letter from Case 01.',
+      'recall': {
+        'title': 'Find the letter from the suitcase',
+        'prompt': 'Open your Notebook and go to Case 01, your first case.',
+        'miss': 'This is not the letter from the suitcase. Look in Case 01.',
+      },
       'options': {
         'a': {'feedback': 'Inspector Grey helped you in Case 06. But did he leave you a letter at the very start?'},
         'b': {'feedback': "Mrs Robin had a suitcase in Case 08. But 'the very start' means your first case."},
         'c': {'feedback': 'The Ravenmaster sent words with Poppy. Who signed the letter in your first case?'},
       },
       'hints': [
-        "'The very start' means your first case. Open your Case Archive and go to Case 01. What was inside a suitcase there?",
-        'Open Case 01 in your Case Archive. Look closely at the letter from the suitcase. Whose name is at the bottom?',
+        "'The very start' means your first case. What was inside a suitcase in Case 01? Bring it beside the card.",
+        'Look closely at the letter from Case 01. Whose name is at the bottom?',
       ],
       'evidence': {'description': 'He was a thief. Is he a friend now?'},
       'successMessage': 'It is the Shadow, from your first case!',
@@ -335,15 +342,20 @@ const Map<String, Object?> ep11Master = {
           'I left you a letter in a suitcase.\n'
           'I still love trains.\n\n'
           'I have turned my back on the Raven Society. Now I wish to help you.',
-      'question': 'Whose face is hidden behind the mask?',
+      'question': 'Whose face is hidden behind the mask? Your first case holds the answer.',
+      'recall': {
+        'title': 'Recall the letter from the suitcase',
+        'prompt': 'Your Notebook still keeps your first case.',
+        'miss': 'This is not the letter from the suitcase. Return to Case 01.',
+      },
       'options': {
         'a': {'feedback': 'Inspector Grey was your ally in Case 06. Was it he who left a letter at the very start?'},
         'b': {'feedback': "Mrs Robin carried a suitcase in Case 08 — yet 'the very start' points to your first case."},
         'c': {'feedback': 'The Ravenmaster sent his words with Poppy. Whose name was signed on the letter in your first case?'},
       },
       'hints': [
-        "'The very start' takes you back to your first case. In your Case Archive, what waited inside a suitcase in Case 01?",
-        'Return to Case 01 in your Case Archive and study the letter from the suitcase. How did its writer sign it?',
+        "'The very start' takes you back to your first case. What waited inside a suitcase in Case 01? Bring it beside the card.",
+        'Study the letter from Case 01 closely. How did its writer sign it?',
       ],
       'evidence': {'description': 'Once a thief. Now, perhaps, a friend?'},
       'successMessage': 'The Shadow, unmasked at last!',

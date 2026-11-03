@@ -598,13 +598,13 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
 
   /// Finals that bring a piece of evidence from the notebook beside the
   /// puzzle, at the levels listed (null: every level): Case 03, the boot, to
-  /// tell the two clock towers apart; Case 11, at Rookie only, Case 01's Old
+  /// tell the two clock towers apart; Case 11, at every level, Case 01's Old
   /// Letter, from the suitcase "at the very start" (the detective finds it
   /// and reads its name: the card never names him). Only these: another
   /// final's recall is not shown yet.
   static const _recallFinals = <String, Set<Difficulty>?>{
     'ep03_final': null,
-    'ep11_final': {Difficulty.rookie},
+    'ep11_final': null,
   };
 
   /// Whether [m]'s recall is shown at its level (see [_recallFinals]).

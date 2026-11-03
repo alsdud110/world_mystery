@@ -369,7 +369,9 @@ void main() {
         expect(findReadable(m.story.last), findsNothing);
         expect(shownAssets(t), contains('assets/seasons/season_01_london/characters/stranger_masked.webp'));
         expect(shownAssets(t), isNot(contains('assets/seasons/season_01_london/characters/stranger_unmasked.webp')));
-        expect(find.byType(EvidenceRecallDock), level == Difficulty.rookie ? findsOneWidget : findsNothing);
+        // Case 01's Old Letter is brought beside the card at every level
+        // (device feedback 2026-11-03; it was Rookie's only).
+        expect(find.byType(EvidenceRecallDock), findsOneWidget);
         await decodePictures(t);
         await capture(t, 's1b_ep11_final_card_${level.name}');
         expect(t.takeException(), isNull);

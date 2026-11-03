@@ -492,7 +492,10 @@ const _otherCases = <String, int>{
   // to read it; tip 1 does (was 3504206302).
   // S1 dialogue feedback PART B (2026-11-03, approved): 11-M2's question
   // and clue note, 11-F's Rookie recall of the Old Letter (was 102824680).
-  'ep11': 3921216648,
+  // S1 C11 final made easier (2026-11-03, approved): the Old Letter recall
+  // at every level, the card's "I signed it" line, the question, letterIntro
+  // and tips; answer The Shadow unchanged (was 3921216648).
+  'ep11': 4259668583,
   // Time code fix (2026-10-21): 12-M2 reads as HH:MM ('codeFormat': 'time').
   // Case 12 M3 (2026-10-21): UNDER ___ ___, one blank per word of BIG BEN.
   // Evidence recall (2026-10-23, requested): 12-F tip 1 says where the

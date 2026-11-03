@@ -29,8 +29,10 @@ void main() {
 
   test('Case 11 final: tip 1 leads to Case 01 in the Case Archive, and names nobody', () {
     final f = m('ep11_final');
+    // Device feedback (2026-11-03): the Old Letter is brought beside the card
+    // on the final page now, so tip 1 sends the player there.
     expect(f.hints.first,
-        "'The very start' means your first case. Open your Case Archive, then Case 01. What did you find in a suitcase there?");
+        "'The very start' means your first case. What did you find in a suitcase in Case 01? Bring it here.");
     for (final answer in ['shadow', 'signed', 'letter']) {
       expect(f.hints.first.toLowerCase(), isNot(contains(answer)), reason: answer);
     }

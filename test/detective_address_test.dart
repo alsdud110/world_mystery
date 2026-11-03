@@ -336,7 +336,7 @@ void main() {
       await wait(t, const Duration(milliseconds: 1500));
       expect(find.byKey(const ValueKey('case-talk-line')), findsNothing);
       expect(findReadableContaining('Detective Luna'), findsNothing);
-      expect(findReadable('He gives you a small card.'), findsOneWidget);
+      expect(findReadable('He gives you a small card. It is about your first case.'), findsOneWidget);
     });
 
     testWidgets('the case file names the detective once', (t) async {

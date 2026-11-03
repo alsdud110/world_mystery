@@ -197,16 +197,18 @@ const Map<String, dynamic> episode11Json = {
       'The stranger smiles and bows.',
       '"Hello again, Detective {detectiveName}," he says. "Do you remember me?"',
     ],
-    'letterIntro': 'He gives you a small card.',
+    'letterIntro': 'He gives you a small card. It is about your first case.',
     // Case 01's Old Letter ("Signed: The Shadow / P.S. I love trains!", in
     // the Case Archive) names him: the card only points back to it.
     'letter':
         'We met at the very start.\n'
         'I left you a letter in a suitcase.\n'
-        'I still love trains.\n\n'
+        'I still love trains.\n'
+        'I signed it with my secret name.\n\n'
         'I left the Raven Society. I want to help you now.',
     'type': 'multipleChoice',
-    'question': 'Who is behind the mask?',
+    // The way to the answer on the page: the name signed on the letter.
+    'question': 'Who is behind the mask? Who signed the letter in the suitcase?',
     'options': [
       {'id': 'a', 'label': 'Inspector Grey', 'feedback': 'Inspector Grey helped you in Case 06. Did he leave you a letter at the very start?'},
       {'id': 'b', 'label': 'Mrs Robin', 'feedback': "Mrs Robin had a suitcase in Case 08. But 'the very start' is your first case."},
@@ -214,18 +216,18 @@ const Map<String, dynamic> episode11Json = {
       {'id': 'd', 'label': 'The Shadow'},
     ],
     'answer': 'd',
-    // Rookie only (the final page gates it: `_recallFinals`): Case 01's Old
+    // Every level (the final page gates it: `_recallFinals`): Case 01's Old
     // Letter, brought from the notebook beside the card. The detective finds
     // the letter from the suitcase and reads its name; nothing here names it.
     'recall': {
       'evidence': 'e01',
       'title': 'Find the letter from the suitcase',
-      'prompt': 'Look in your Notebook: your first case.',
+      'prompt': 'Look in your Notebook: Case 01, your first case.',
       'miss': 'This is not the letter from the suitcase. Look at your first case.',
     },
     'hints': [
-      "'The very start' means your first case. Open your Case Archive, then Case 01. What did you find in a suitcase there?",
-      'Open Case 01 in your Case Archive. Look closer at the letter from the suitcase. Who signed it?',
+      "'The very start' means your first case. What did you find in a suitcase in Case 01? Bring it here.",
+      'Look closer at the letter from Case 01. Read the last line. Who signed it?',
     ],
     'evidence': {
       'id': 'ep11_e4',
