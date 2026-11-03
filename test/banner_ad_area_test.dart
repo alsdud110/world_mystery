@@ -72,7 +72,6 @@ class _FakeBanner extends Fake implements BannerAd {
 }
 
 const _units = AdUnitIds(banner: 'banner-unit', rewarded: 'rewarded-unit');
-const _bannerSize = AdSize(width: 320, height: 50);
 
 void main() {
   late _FakeSdk sdk;
@@ -80,13 +79,12 @@ void main() {
 
   /// The ads of a build that may request them (debug, sample units), on [sdk];
   /// [allowed] false: a release not cleared for ads.
-  List<Override> adOverrides({bool allowed = true, BannerSizeLookup? lookup}) => [
+  List<Override> adOverrides({bool allowed = true}) => [
     adServiceProvider.overrideWith((ref) {
       final service = AdService(sdk: sdk, units: _units, requestsAllowed: allowed, consent: allowingConsent());
       ref.onDispose(service.dispose);
       return service;
     }),
-    bannerSizeLookupProvider.overrideWithValue(lookup ?? (orientation, width) async => _bannerSize),
     // A plain box for the native ad view (AdWidget needs the plugin).
     bannerAdViewProvider.overrideWithValue((ad) => const SizedBox.expand(key: ValueKey('ad-view'))),
   ];
@@ -121,10 +119,12 @@ void main() {
       sdk.banners.add(ad);
       await pumpArea(t);
       expect(sdk.calls, ['configure', 'read', 'initialize', 'banner'], reason: 'protected, started, then asked');
-      expect(sdk.sizes.single, _bannerSize);
+      expect(sdk.sizes.single, AdSize.banner, reason: 'the standard banner, not an adaptive one');
       expect(strip, findsOneWidget);
       expect(view, findsOneWidget);
-      expect(t.getSize(view), const Size(320, 50));
+      expect(t.getSize(view), const Size(320, 50), reason: 'drawn at its own size');
+      expect(t.getSize(strip).height, 50 + 24, reason: '50 for the ad, the navigation bar apart');
+      expect(t.getRect(view).center.dx, 180, reason: 'centred');
       expect(pageBottomPadding(t), 0, reason: 'the strip keeps the navigation bar clear itself');
       // The page above, never under it.
       expect(t.getRect(find.byKey(page)).bottom, lessThanOrEqualTo(t.getRect(strip).top));
@@ -161,14 +161,17 @@ void main() {
       expect(find.byKey(page), findsOneWidget);
     });
 
-    testWidgets('no size for it (the lookup fails or hangs): nothing is asked for', (t) async {
-      await pumpArea(t, overrides: adOverrides(lookup: (o, w) async => throw Exception('channel')));
-      expect(sdk.bannerLoads, 0);
-      expect(strip, findsNothing);
-
-      final never = Completer<AdSize?>();
-      await pumpArea(t, child: area(key: const ValueKey('again')), overrides: adOverrides(lookup: (o, w) => never.future));
-      await t.pump(BannerAdArea.sizeTimeout + const Duration(seconds: 1));
+    testWidgets('a page too narrow for it asks for none', (t) async {
+      await pumpArea(
+        t,
+        child: MediaQuery(
+          data: const MediaQueryData(size: Size(340, 640), padding: EdgeInsets.symmetric(horizontal: 12)),
+          child: Directionality(
+            textDirection: TextDirection.ltr,
+            child: BannerAdArea(child: const SizedBox.expand(key: page)),
+          ),
+        ),
+      );
       expect(sdk.bannerLoads, 0);
       expect(strip, findsNothing);
     });
@@ -228,14 +231,9 @@ void main() {
       expect(second.disposed, 0);
     });
 
-    testWidgets('turning the phone asks for a banner of the new width, releasing the old', (t) async {
+    testWidgets('turning the phone keeps the same banner', (t) async {
       final first = _FakeBanner();
-      sdk.banners.addAll([first, _FakeBanner()]);
-      final asked = <(Orientation, int)>[];
-      final overrides = adOverrides(lookup: (o, w) async {
-        asked.add((o, w));
-        return AdSize(width: w, height: 50);
-      });
+      sdk.banners.add(first);
       Widget sized(Size size, EdgeInsets pad) => MediaQuery(
         data: MediaQueryData(size: size, padding: pad),
         child: Directionality(
@@ -243,11 +241,10 @@ void main() {
           child: BannerAdArea(child: const SizedBox.expand(key: page)),
         ),
       );
-      await pumpArea(t, overrides: overrides, child: sized(const Size(360, 640), EdgeInsets.zero));
-      await pumpArea(t, overrides: overrides, child: sized(const Size(640, 360), const EdgeInsets.symmetric(horizontal: 30)));
-      expect(asked, [(Orientation.portrait, 360), (Orientation.landscape, 580)]);
-      expect(first.disposed, 1);
-      expect(sdk.bannerLoads, 2);
+      await pumpArea(t, child: sized(const Size(360, 640), EdgeInsets.zero));
+      await pumpArea(t, child: sized(const Size(640, 360), const EdgeInsets.symmetric(horizontal: 30)));
+      expect(sdk.bannerLoads, 1);
+      expect(first.disposed, 0);
       expect(strip, findsOneWidget);
     });
   });
