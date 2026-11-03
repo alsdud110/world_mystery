@@ -176,8 +176,9 @@ const Map<String, dynamic> episode09Json = {
         'title': 'The Third Change',
         'value': '12',
         'symbol': 'clock',
-        // Who the guard is, kept for the final (its page never names whose key).
-        'note': "Anna hid the jewel at twelve o'clock. Carl, the guard, lent her his key.",
+        // Who the guard is, kept for the final (its page never names whose
+        // key): the notebook's bridge from the key's owner to Carl.
+        'note': "Anna hid the jewel at twelve o'clock. Anna used Carl's key. Carl is the guard.",
       },
       'evidence': {
         'id': 'ep09_e3',
@@ -208,10 +209,11 @@ const Map<String, dynamic> episode09Json = {
     'scene': 'buckinghamPalace',
     'story': [
       'Anna, Ben the gardener and Carl the guard stand at the palace gate.',
-      'One of their things is hiding the Blue Star.',
+      // One thing each: the notes leave the last thing to the key's owner.
+      'Each of them has one thing. One thing hides the Blue Star.',
     ],
     // To Anna: the note's "you" is Anna, never the detective.
-    'letterIntro': 'A small note falls out of Anna\'s pocket. R. wrote it to Anna.',
+    'letterIntro': "A small note falls out of Anna's pocket. R. wrote it to Anna, so 'you' means Anna.",
     // R.'s note gives the rule; which key it was is Mission 01's (the
     // guard's, lent to Anna); the detective's notes give whose thing is
     // whose. Typing Anna's thing (she used the key) is the slip to avoid.
@@ -223,24 +225,28 @@ const Map<String, dynamic> episode09Json = {
         'Ben has the green bag.\n'
         "Anna's thing is not black.",
     'type': 'wordInput',
-    'question': 'Where is the jewel? Type the thing.',
+    // The slip named before it is made: using the key is not owning it.
+    'question': 'Anna used the key. But whose key was it? Where is the jewel? Type the thing.',
     'prompt': 'IN THE ___',
     'answer': 'HAT',
     'feedback': {
       // Never spells the answer by chance (no "that", "what"): see type_b_cases_test.
-      'UMBRELLA': "Anna borrowed the key, but the note says WHOSE key you used. Was it Anna's own key?",
+      'UMBRELLA': "The umbrella is Anna's. Anna borrowed the key, but the note says WHOSE key you used. Was it Anna's own key?",
       'RED UMBRELLA': "Anna's thing is red. But the note says the one WHOSE key you used: was it Anna's key?",
       'BAG': "The green bag is Ben's. Did Ben's key open the jewel case?",
       'GREEN BAG': "This is Ben's bag. Whose key opened the jewel case?",
       'ANNA': 'The note asks for a thing, not a person.',
+      'CARL': 'The note asks for a thing, not a person. Which thing is his?',
+      'GUARD': 'The guard is a person. The note asks for his thing. Which one?',
+      'KEY': "The key opened the case. Now find the thing of the key's owner.",
     },
     'acceptedAnswers': ['BLACK HAT', 'TALL BLACK HAT', 'THE HAT', 'THE BLACK HAT', 'CARLS HAT'],
     // The way through, step by step (never the word, nor Carl's name): the
     // note's "you" is Anna; the key's owner is Mission 01's; the notes leave
     // Anna the umbrella and Ben the bag, so the owner has the last thing.
     'hints': [
-      "R. wrote the note to Anna, so 'you' means Anna. Anna used the key, but whose key was it? Look in your notebook at the Jewel Room.",
-      "Find the key's owner among the three at the gate. Ben has the green bag. Anna's thing is not black, so Anna has the red umbrella. Which thing is left for the owner?",
+      "Open your notebook and read 'The Gold Key'. Anna used this key. But whose key is it?",
+      "Ben has the green bag. Anna has the red umbrella. The key's owner has the last thing. Look at the three things. Which one is left?",
     ],
     'evidence': {
       'id': 'ep09_e4',

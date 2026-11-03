@@ -476,7 +476,11 @@ const _otherCases = <String, int>{
   'ep07': 1648693040, // S1 device feedback PART C: pictures on the choices (was 2754950822)
   // Mission links (2026-10-23, approved): 09-M3's scene names Carl as the
   // guard who lent Anna his key (was 660966236).
-  'ep09': 1920117374, // S1 device feedback PART C: pictures on the choices (was 412892549)
+  // S1 C9 final made easier (2026-11-03, approved): the final's story,
+  // letterIntro, question, tips and wrong-answer lines (CARL/GUARD/KEY
+  // added), 09-M3's notebook line names Carl's key; answer HAT and the note
+  // unchanged (was 1920117374).
+  'ep09': 1205664007, // S1 device feedback PART C: pictures on the choices (was 412892549)
   // London gameplay upgrade (2026-10-30, requested): 10-M3's recall of the
   // Raven Papers. Value before it: ep10 1827099610.
   'ep10': 1155795128, // S1 device feedback PART C: pictures on the choices (was 905019164)

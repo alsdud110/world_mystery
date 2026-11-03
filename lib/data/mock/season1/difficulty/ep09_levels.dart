@@ -155,9 +155,9 @@ const Map<String, Object?> ep09Junior = {
     'ep09_final': {
       'story': [
         'Anna, Ben the gardener and Carl the guard stand by the palace gate.',
-        'The Blue Star is hidden in one of their things.',
+        'Each of them has one thing, and the Blue Star is hidden in one of them.',
       ],
-      'letterIntro': "A small note drops out of Anna's pocket. R. wrote it to her.",
+      'letterIntro': "A small note drops out of Anna's pocket. R. wrote it to Anna, not to you.",
       // Puzzle data: R.'s rule and the notes, the same at every level.
       'letter': 'Hide it in the thing of the one whose key you used.\n'
           '— R.\n\n'
@@ -165,7 +165,7 @@ const Map<String, Object?> ep09Junior = {
           'Three things: a red umbrella, a green bag and a tall black hat.\n'
           'Ben has the green bag.\n'
           "Anna's thing is not black.",
-      'question': 'Where is the Blue Star hidden? Type the thing.',
+      'question': "Read 'whose key' carefully. Where is the Blue Star hidden? Type the thing.",
       // How to play it: the same at every level.
       'prompt': 'IN THE ___',
       'feedback': {
@@ -174,9 +174,12 @@ const Map<String, Object?> ep09Junior = {
         'BAG': "Ben has the green bag. Did Ben's key open the jewel case?",
         'GREEN BAG': 'Ben owns the green bag. Whose key opened the jewel case?',
         'ANNA': 'The note wants a thing, not a person.',
+        'CARL': 'The note wants a thing, not a person. Which thing does he have?',
+        'GUARD': 'The guard is a person, not a hiding place. Which thing does he have?',
+        'KEY': "The key opened the jewel case. Now find the thing of the key's owner.",
       },
       'hints': [
-        "R. wrote this note to Anna, so 'you' is Anna. Anna was the one who used the key. But whose key was it? Remember the Jewel Room.",
+        "R. wrote this note to Anna, so 'you' is Anna. She used the key, but whose key was it? Check the Gold Key in your notebook.",
         "Find the owner of the key among the three at the gate. Ben has the green bag. Anna's thing is not black, so the red umbrella is Anna's. Which thing is left for the key's owner?",
       ],
       'evidence': {'description': 'The royal jewel, back in its rightful place.'},
@@ -342,7 +345,7 @@ const Map<String, Object?> ep09Master = {
     'ep09_final': {
       'story': [
         'Anna, Ben the gardener and Carl the guard wait in silence at the palace gate.',
-        'Somewhere among their things, the Blue Star lies hidden.',
+        'Each carries a single thing; somewhere among them, the Blue Star lies hidden.',
       ],
       'letterIntro': "A folded note slips from Anna's pocket, signed with a single R. and meant for Anna alone.",
       // Puzzle data: R.'s rule and the notes, the same at every level.
@@ -361,10 +364,13 @@ const Map<String, Object?> ep09Master = {
         'BAG': "The bag belongs to Ben. Was it Ben's key in the lock?",
         'GREEN BAG': "Ben's green bag, true. Whose key opened the jewel case?",
         'ANNA': 'Anna is a person. The note asks for a thing.',
+        'CARL': 'A person is no hiding place. Which of the three things is his?',
+        'GUARD': 'The guard himself hides nothing. Which of the three things is his?',
+        'KEY': "The key only opened the case. The jewel hides in its owner's thing.",
       },
       'hints': [
-        "The note was written to Anna. Using a key is not the same as owning it. But whose key was it? The Jewel Room remembers.",
-        "Match the key's owner to one of the three at the gate. Ben's thing is known; Anna's cannot be black, so it can only be the umbrella. One thing remains.",
+        'The note was written to Anna. Using a key is not owning it. Whose key did she use? Your notebook remembers the Jewel Room.',
+        "Match the key's owner to one of the three at the gate. Ben's thing is known; Anna's cannot be black, so it must be the umbrella. Which thing remains for the owner?",
       ],
       'evidence': {'description': 'The royal jewel, at last returned to its proper place.'},
       'successMessage': 'The Blue Star lay hidden inside the hat all along!',

@@ -240,7 +240,9 @@ void main() {
         // Mission links (2026-10-23, approved): 09-M3's scene names Carl as
         // the guard who lent Anna his key (was 3984906767).
         // S1 device feedback PART B (2026-11-03, approved; was 1856530826).
-        'ep09': 2935571933, // S1 device feedback PART C, 2026-11-03 (was 4264744070)
+        // S1 C9 final made easier (2026-11-03, approved): the final's words
+        // and 09-M3's notebook line; answer and note unchanged (was 2935571933).
+        'ep09': 1427433500, // S1 device feedback PART C, 2026-11-03 (was 4264744070)
         // London gameplay upgrade (2026-10-30, requested): 10-M3 brings the
         // Raven Papers from the notebook (was 1240895729).
         'ep10': 2489463261, // S1 device feedback PART C, 2026-11-03 (was 507417399)

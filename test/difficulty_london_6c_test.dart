@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:world_mystery/core/utils/answer_checker.dart';
 import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/models/difficulty.dart';
 
@@ -68,6 +69,32 @@ void main() {
         expect(e.missionById('ep09_m1')!.letter, contains("The guard's key is big and gold."));
         expect(fin.answer, baseCase('ep09').finalMission.answer);
       });
+
+      // Device feedback (2026-11-03): the final's links are on its page — one
+      // thing each, and a person or the key typed gets the next step, never
+      // the thing.
+      test('${level.label}: one thing each, and CARL, GUARD and KEY each get a line', () {
+        final fin = caseAt('ep09', level).finalMission;
+        expect(fin.story.join(' ').toLowerCase(), contains('each'));
+        for (final typed in ['carl', 'guard', 'key']) {
+          final line = AnswerChecker.feedbackFor(fin, typed);
+          expect(line, isNotNull, reason: typed);
+          expect(AnswerChecker.normalize(line!).contains('HAT'), isFalse, reason: line);
+          expect(hasWord(line, 'carl'), isFalse, reason: line);
+        }
+        for (final h in fin.hints) {
+          expect(AnswerChecker.normalize(h).contains('HAT'), isFalse, reason: h);
+          expect(hasWord(h, 'carl'), isFalse, reason: h);
+        }
+        expect(AnswerChecker.isCorrect(fin, 'hat'), isTrue);
+      });
     }
+
+    test("Rookie and Junior name the slip; Rookie's notebook ties the key to Carl", () {
+      expect(caseAt('ep09', Difficulty.rookie).finalMission.question, contains('whose key was it?'));
+      expect(caseAt('ep09', Difficulty.rookie).finalMission.letterIntro, contains("'you' means Anna"));
+      expect(caseAt('ep09', Difficulty.junior).finalMission.question, contains("'whose key'"));
+      expect(caseAt('ep09', Difficulty.rookie).missionById('ep09_m3')!.clue!.note, contains("Anna used Carl's key."));
+    });
   });
 }
