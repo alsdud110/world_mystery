@@ -404,20 +404,33 @@ class InkTextButton extends StatelessWidget {
 /// wide): [primary] is navy, the other paper with a fine rule. Flat, so the
 /// dialog's own content (a price, a question) leads, not its buttons.
 class CompactButton extends StatelessWidget {
-  const CompactButton({super.key, required this.label, required this.onPressed, this.primary = false, this.semanticLabel});
+  const CompactButton({
+    super.key,
+    required this.label,
+    required this.onPressed,
+    this.primary = false,
+    this.semanticLabel,
+    this.icon,
+  });
 
   final String label;
   final VoidCallback? onPressed;
   final bool primary;
   final String? semanticLabel;
 
+  /// A small mark before [label] (GET COINS' video camera).
+  final IconData? icon;
+
   @override
   Widget build(BuildContext context) {
-    final ink = primary ? AppColors.paperLight : AppColors.navy;
+    final on = onPressed != null;
+    // Off, a primary button is the navy faded, its words with it.
+    final ink = primary ? AppColors.paperLight.withValues(alpha: on ? 1 : 0.75) : AppColors.navy;
     return Semantics(
       label: semanticLabel,
       excludeSemantics: semanticLabel != null,
       button: true,
+      enabled: on,
       child: ConstrainedBox(
         constraints: const BoxConstraints(minWidth: 104, maxWidth: 140, minHeight: 44),
         child: TextButton(
@@ -426,7 +439,9 @@ class CompactButton extends StatelessWidget {
             minimumSize: const Size(104, 44),
             padding: const EdgeInsets.symmetric(horizontal: AppSpace.lg, vertical: AppSpace.sm),
             backgroundColor: primary ? AppColors.navy : AppColors.paperLight,
+            disabledBackgroundColor: primary ? AppColors.navy.withValues(alpha: 0.38) : AppColors.paperLight,
             foregroundColor: ink,
+            disabledForegroundColor: ink,
             overlayColor: primary ? AppColors.paperLight : AppColors.navy,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(AppRadius.button),
@@ -436,10 +451,19 @@ class CompactButton extends StatelessWidget {
           // One line always: a large text size scales it down, never cuts it.
           child: FittedBox(
             fit: BoxFit.scaleDown,
-            child: Text(
-              label,
-              maxLines: 1,
-              style: AppText.button(size: 14, color: ink).copyWith(letterSpacing: 1.2),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (icon != null) ...[
+                  Icon(icon, size: 18, color: ink),
+                  const SizedBox(width: AppSpace.sm - 2),
+                ],
+                Text(
+                  label,
+                  maxLines: 1,
+                  style: AppText.button(size: 14, color: ink).copyWith(letterSpacing: 1.2),
+                ),
+              ],
             ),
           ),
         ),

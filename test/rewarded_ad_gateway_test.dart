@@ -1,4 +1,6 @@
-import 'package:flutter/widgets.dart';
+import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -40,7 +42,9 @@ class FakeAdSdk implements AdSdk {
   Future<RewardedAd> loadRewarded({required String adUnitId, required AdRequest request}) async {
     calls.add('rewarded');
     expect(request.nonPersonalizedAds, isTrue);
-    final r = rewarded.isEmpty ? FakeRewardedAd() : rewarded.removeAt(0);
+    var r = rewarded.isEmpty ? FakeRewardedAd() : rewarded.removeAt(0);
+    // A load still under way until the test completes it.
+    if (r is Completer<FakeRewardedAd>) r = await r.future;
     if (r is FakeRewardedAd) {
       loaded.add(r);
       return r;
@@ -269,7 +273,6 @@ void main() {
     }
 
     final getCoins = find.text('GET COINS');
-    final note = find.byKey(const ValueKey('get-coins-note'));
 
     bool enabled(WidgetTester t) {
       final button = find.ancestor(of: getCoins, matching: find.byWidgetPredicate((w) => w is Semantics && w.properties.button == true)).first;
@@ -286,8 +289,10 @@ void main() {
       final (play, before) = await shortOfCoins(t);
       final entriesBefore = play.ref.read(walletProvider).entries.toList();
       expect(sdk.rewardedLoads, 1, reason: 'loaded while the question is read');
-      expect(find.text('Watch an ad to earn 30 Coins'), findsOneWidget);
       expect(enabled(t), isTrue);
+      // A video camera before its words, nothing said of the ad around it.
+      expect(find.descendant(of: find.ancestor(of: getCoins, matching: find.byType(TextButton)), matching: find.byIcon(Icons.videocam_outlined)), findsOneWidget);
+      expect(find.textContaining('Watch an ad'), findsNothing);
       await tapGetCoins(t);
       final ad = sdk.loaded.single;
       expect(ad.shows, 1);
@@ -310,6 +315,24 @@ void main() {
       expect(play.ref.read(gameControllerProvider).hintsFor('m02'), 1);
       expect(play.ref.read(walletProvider).ownsTip('m02', 2), isFalse);
       expect(sdk.rewardedLoads, 2, reason: 'the next ad loaded after this one closed');
+      await wait(t, const Duration(seconds: 2));
+    });
+
+    testWidgets('while its ad loads GET COINS is off, with no words or spinner; on of itself once the ad is ready', (t) async {
+      final pending = Completer<FakeRewardedAd>();
+      sdk.rewarded.add(pending);
+      await shortOfCoins(t);
+      expect(getCoins, findsOneWidget);
+      expect(enabled(t), isFalse);
+      expect(find.textContaining('Getting an ad ready'), findsNothing);
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      await t.tap(getCoins, warnIfMissed: false);
+      await t.pump();
+      pending.complete(FakeRewardedAd());
+      await t.pump();
+      await t.pump();
+      expect(enabled(t), isTrue);
+      expect(sdk.loaded.single.shows, 0, reason: 'the tap while it loaded showed nothing');
       await wait(t, const Duration(seconds: 2));
     });
 
@@ -343,11 +366,11 @@ void main() {
       await wait(t, const Duration(seconds: 2));
     });
 
-    testWidgets('the ad did not load: GET COINS is off and says so, the dialog works as before', (t) async {
+    testWidgets('the ad did not load: GET COINS stays off, no words, the dialog works as before', (t) async {
       sdk.rewarded.add(const AdLoadFailure(3, 'No fill'));
       final (play, before) = await shortOfCoins(t);
       await t.pump();
-      expect(find.text('No ad right now. Try again later.'), findsOneWidget);
+      expect(find.text('No ad right now. Try again later.'), findsNothing);
       expect(enabled(t), isFalse);
       await tapText(t, 'CANCEL', after: const Duration(milliseconds: 400));
       expect(play.ref.read(walletProvider).balance, before);
@@ -358,7 +381,6 @@ void main() {
     testWidgets('a release not cleared for ads: no GET COINS, no word of ads, nothing asked', (t) async {
       final (play, before) = await shortOfCoins(t, allowed: false);
       expect(getCoins, findsNothing);
-      expect(note, findsNothing);
       expect(find.textContaining(RegExp(r'\b[Aa]ds?\b')), findsNothing);
       expect(sdk.calls, isEmpty);
       expect(play.ref.read(walletProvider).balance, before);

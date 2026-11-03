@@ -370,20 +370,6 @@ class TipShopCard extends StatelessWidget {
                     ),
                   ),
                 ],
-                if (short && adOffer != null) ...[
-                  const SizedBox(height: AppSpace.md),
-                  Text(
-                    // What the ad gives, said plainly; whether it is there yet.
-                    switch (adOffer!) {
-                      RewardedOffer.loading => 'Getting an ad ready…',
-                      RewardedOffer.unavailable => 'No ad right now. Try again later.',
-                      _ => 'Watch an ad to earn ${AppConstants.rewardedAdCoins} Coins',
-                    },
-                    key: const ValueKey('get-coins-note'),
-                    textAlign: TextAlign.center,
-                    style: AppText.bodyText(size: 14, color: AppColors.muted),
-                  ),
-                ],
                 const SizedBox(height: AppSpace.xl),
                 Wrap(
                   alignment: WrapAlignment.center,
@@ -394,6 +380,8 @@ class TipShopCard extends StatelessWidget {
                     if (short && adOffer != null)
                       CompactButton(
                         label: 'GET COINS',
+                        // An ad to watch: off (dim, no words) until it is ready.
+                        icon: Icons.videocam_outlined,
                         primary: true,
                         semanticLabel: 'Get coins: watch an ad to earn ${AppConstants.rewardedAdCoins} coins',
                         onPressed: onGetCoins,
