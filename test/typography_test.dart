@@ -73,7 +73,8 @@ void main() {
     ));
     TextStyle styleOf(String s) {
       final w = t.widget<Text>(find.text(s));
-      return DefaultTextStyle.of(t.element(find.text(s))).style.merge(w.style);
+      // A heading's text is a span (its numbers in lining figures): its style is the span's.
+      return DefaultTextStyle.of(t.element(find.text(s))).style.merge(w.style ?? w.textSpan?.style);
     }
 
     expect(styleOf('THE CLOCK ROOM').fontFamily, 'IMFellEnglishSC');

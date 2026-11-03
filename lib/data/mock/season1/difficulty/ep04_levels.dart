@@ -79,6 +79,7 @@ const Map<String, Object?> ep04Junior = {
   'caseSummary': 'You read every letter, followed the clues across the station and found out who is behind it all.',
   'hook': 'The little picture on the postmark is the Tower of London.',
   'glossary': {
+    'large': '큰',
     'hands': '건네다',
     'forgot': '잊어버렸다',
     'closes': '닫다, 문을 닫다',
@@ -197,6 +198,7 @@ const Map<String, Object?> ep04Junior = {
           'You are a very good reader. Now read one more time.\n\n'
           'My friends and I share a secret name.\n'
           'Our name comes from a bird.\n'
+          'It is a large black bird with dark feathers.\n'
           'It makes its home at the Tower.\n'
           'It is pressed into every seal we send.\n\n'
           'We are the _____ Society.',
@@ -210,8 +212,8 @@ const Map<String, Object?> ep04Junior = {
         'TOWER': "The Tower is its home. But what is the bird's name?",
       },
       'hints': [
-        'Two things meet here: the bird pressed into the seal, and the black birds that live at the Tower.',
-        'Look at the Black Wax Seal in your Notebook. Their name is the name of the bird on every seal.',
+        'Two things meet here: the large black bird that lives at the Tower, and the bird pressed into the seal.',
+        'Look closer at the Black Wax Seal in your Notebook and read its words. Their name is the name of the bird on every seal.',
       ],
       'evidence': {'description': 'This letter is signed by the Raven Society.'},
       'successMessage': 'You found it: the Raven Society!',
@@ -245,6 +247,7 @@ const Map<String, Object?> ep04Master = {
   'caseSummary': 'You read every letter closely, traced its words across the station and uncovered who stands behind them.',
   'hook': 'The faded picture on the postmark shows the Tower of London.',
   'glossary': {
+    'great': '거대한',
     'unclaimed': '찾아가지 않은',
     'within': '~ 안에',
     'vanished': '사라졌다',
@@ -392,6 +395,7 @@ const Map<String, Object?> ep04Master = {
           'You read remarkably well. So read once more.\n\n'
           'My companions and I go by a secret name.\n'
           'We take our name from a bird.\n'
+          'A great black bird, its feathers dark as night.\n'
           'It dwells at the Tower.\n'
           'Its mark is pressed into every seal we send.\n\n'
           'We are the _____ Society.',

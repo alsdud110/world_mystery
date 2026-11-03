@@ -38,6 +38,9 @@ abstract final class PlaceArt {
     // Behind it, the final: "The iron chest is cold and heavy."
     'ep05_final': Artwork.ironChest, // THE LOCKED ROOM
     'ep12_final': Artwork.ironDoor, // UNDER BIG BEN: "a small iron door"
+    // The stranger himself, not Case 01's suitcase: he talks to you on
+    // Platform 9 (the place stays King's Cross).
+    'ep11_final': Artwork.maskedStranger, // PLATFORM 9
     // Mrs Robin's black suitcase, its name tag washed blank (Case 11's
     // final recalls Case 01's suitcase on Platform 9: it stays drawn).
     'ep08_m1': Artwork.blackSuitcase, // PLATFORM 9

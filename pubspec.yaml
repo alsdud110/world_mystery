@@ -136,6 +136,8 @@ flutter:
     - assets/seasons/season_01_london/cases/case_03/
     - assets/seasons/season_01_london/cases/case_04/
     - assets/seasons/season_01_london/cases/case_07/
+    - assets/seasons/season_01_london/cases/case_09/
+    - assets/seasons/season_01_london/cases/case_10/
     - assets/seasons/season_01_london/cases/case_12/
     # Case 01's Royal Box lock pictures (cut out; the delivered files in
     # symbols/original/ are kept out of the app).

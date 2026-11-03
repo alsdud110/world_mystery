@@ -122,6 +122,7 @@ void main() {
       expect(fin.evidence!.name, 'The Blue Star');
       expect(fin.transition, [
         'The Blue Star is safe.',
+        "R. chose Carl's hat on purpose.\nThen everyone would blame the guard, not Anna.",
         "But on the back of Anna's name tag,\na raven is drawn.",
         'And the card inside the hat\nleft a warning:',
         '"The jewel was never the prize."',

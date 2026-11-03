@@ -93,7 +93,9 @@ const Map<String, dynamic> episode11Json = {
           // How to read it is the puzzle (tip 1 tells it).
           'THGINDIM',
       'type': 'wordInput',
-      'question': 'What is the word inside the mask?',
+      // On the puzzle page too: the word is written backwards (Rookie and
+      // Junior say it; Master leaves it to the story).
+      'question': 'The word is written backwards. What does it really say?',
       'prompt': '________',
       'answer': 'MIDNIGHT',
       'feedback': {
@@ -108,7 +110,8 @@ const Map<String, dynamic> episode11Json = {
         'title': 'Midnight',
         'value': '12',
         'symbol': 'clock',
-        'note': 'The plan happens at midnight.',
+        // The hour of the Raven's Warning (Case 10's final sentence).
+        'note': "The plan happens at midnight — the time in the Raven's Warning (Case 10).",
       },
       'evidence': {
         'id': 'ep11_e2',
@@ -211,6 +214,15 @@ const Map<String, dynamic> episode11Json = {
       {'id': 'd', 'label': 'The Shadow'},
     ],
     'answer': 'd',
+    // Rookie only (the final page gates it: `_recallFinals`): Case 01's Old
+    // Letter, brought from the notebook beside the card. The detective finds
+    // the letter from the suitcase and reads its name; nothing here names it.
+    'recall': {
+      'evidence': 'e01',
+      'title': 'Find the letter from the suitcase',
+      'prompt': 'Look in your Notebook: your first case.',
+      'miss': 'This is not the letter from the suitcase. Look at your first case.',
+    },
     'hints': [
       "'The very start' means your first case. Open your Case Archive, then Case 01. What did you find in a suitcase there?",
       'Open Case 01 in your Case Archive. Look closer at the letter from the suitcase. Who signed it?',

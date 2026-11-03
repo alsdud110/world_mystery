@@ -138,8 +138,8 @@ const Map<String, LearningObjective> season1Learning = {
     dependency: LanguageDependency.essential,
     level: LearningLevel.recall,
     skill: LanguageSkill.sentenceMeaning,
-    objective: '택시 기사의 말과 앞에서 찾은 증거 글귀(기차 냄새)를 함께 읽어 장소를 정한다.',
-    expressions: ['Take me north', 'a tall clock tower', 'The boot smells of trains and smoke'],
+    objective: '택시 기사의 묘사(유리 지붕의 두 아치, 연기)와 앞에서 찾은 증거 글귀(기차 냄새)를 함께 읽어 장소를 정한다.',
+    expressions: ['Take me north', 'a long glass roof with two big arches', 'The boot smells of trains and smoke'],
     recallFrom: 'ep03_m3',
   ),
 

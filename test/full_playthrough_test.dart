@@ -68,6 +68,21 @@ Future<void> tapText(
   await wait(t, after);
 }
 
+/// A talk on screen heard to its end (each line typed out, NEXT until the
+/// last), then gone on from (Season 1's talks before a puzzle: the taxi
+/// driver, the stranger). Nothing when no talk is on screen.
+Future<void> hearTalk(WidgetTester t) async {
+  const next = ValueKey('case-talk-next'), finish = ValueKey('case-talk-finish');
+  if (find.byKey(const ValueKey('case-talk-line')).evaluate().isEmpty) return;
+  for (var i = 0; i < 12 && find.byKey(next).evaluate().isNotEmpty; i++) {
+    await t.tap(find.byKey(next));
+    await wait(t, const Duration(seconds: 3));
+  }
+  await t.ensureVisible(find.byKey(finish));
+  await t.tap(find.byKey(finish));
+  await wait(t, const Duration(milliseconds: 1500));
+}
+
 /// The final case is solved: CONTINUE → the post-case scene (a tap shows
 /// all of it) with the case's last evidence → SEE MY CASE REPORT.
 Future<void> throughPostCase(

@@ -14,6 +14,7 @@ import '../models/investigation.dart';
 import '../models/learning.dart';
 import '../models/letter_puzzles.dart';
 import '../models/mission.dart';
+import '../models/mission_speech.dart';
 import '../models/opera_puzzles.dart';
 import '../models/painter_puzzles.dart';
 import '../models/river_puzzles.dart';
@@ -36,6 +37,7 @@ import 'season1/season1_decodes.dart';
 import 'season1/season1_deductions.dart';
 import 'season1/season1_difficulty.dart';
 import 'season1/season1_dialogues.dart';
+import 'season1/season1_speeches.dart';
 import 'season1/season1_discoveries.dart';
 import 'season1/season1_explores.dart';
 import 'season1/season1_inspections.dart';
@@ -82,6 +84,7 @@ class SeasonContent {
     this.dialogues = const {},
     this.talks = const {},
     this.talkMissions = const {},
+    this.speeches = const {},
     this.easySteps = const {},
     this.endings = const {},
     this.clocks = const {},
@@ -192,6 +195,12 @@ class SeasonContent {
   /// Missions played with their own puzzle and a talk before and/or after
   /// it (see [TalkMission]).
   final Map<String, TalkMission> talkMissions;
+
+  /// Missions whose person talks to the detective (Season 1): their words,
+  /// the mission's own, played as a talk before the puzzle (see
+  /// [MissionSpeech]; the page reads them through `talkMissionOfProvider`).
+  /// Not a puzzle engine: the mission's puzzle is played as always.
+  final Map<String, MissionSpeech> speeches;
 
   /// Missions (and finals) played one small step at a time (Season 2,
   /// Cases 11–12, and the very-easy missions of Cases 04, 05 and 07: see
@@ -438,6 +447,7 @@ final season1Content = SeasonContent(
   deductions: season1Deductions,
   decodes: season1Decodes,
   dialogues: season1Dialogues,
+  speeches: season1Speeches,
   clocks: season1Clocks,
   trails: season1Trails,
   finalClocks: season1FinalClocks,
@@ -704,6 +714,9 @@ abstract final class SeasonCatalog {
   static TalkScene? caseTalk(Mission m) => _pick(m, (s) => s.talks);
 
   static TalkMission? talkMission(Mission m) => _pick(m, (s) => s.talkMissions);
+
+  /// The person who talks to the detective in [m] (Season 1), if any.
+  static MissionSpeech? speech(Mission m) => _pick(m, (s) => s.speeches);
 
   static EasyStepsScene? easySteps(Mission m) => _pick(m, (s) => s.easySteps);
 

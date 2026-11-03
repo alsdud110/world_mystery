@@ -759,7 +759,7 @@ class _ImageTile extends StatelessWidget {
                   // Whole, never cropped: what tells the pictures apart may
                   // be at their edge.
                   final file? => ColoredBox(
-                      color: AppColors.ink,
+                      color: ArtAssets.onParchment(file) ? AppColors.parchment : AppColors.ink,
                       child: DisplaySizedImage(file, fit: BoxFit.contain, excludeFromSemantics: true),
                     ),
                   null => LandmarkArt(artwork, borderRadius: 2, showName: false),
@@ -821,6 +821,9 @@ class _SequenceQuestionState extends ConsumerState<SequenceQuestion> {
   String _label(String id) =>
       widget.mission.options.firstWhere((o) => o.id == id).label;
 
+  String? _pictureOf(String id) =>
+      widget.mission.options.firstWhere((o) => o.id == id).picture;
+
   void _pick(String id) {
     if (_picked.length >= _length) return;
     // A step is quiet unless it is a real thing in the scene: a piece of
@@ -867,6 +870,12 @@ class _SequenceQuestionState extends ConsumerState<SequenceQuestion> {
                 children: [
                   _LetterMark('${i + 1}'),
                   const SizedBox(width: AppSpace.md),
+                  // The chosen thing's picture beside its name, when it has one.
+                  if (i < _picked.length)
+                    if (_pictureOf(_picked[i]) case final picture?) ...[
+                      _TilePicture(picture, height: 36),
+                      const SizedBox(width: AppSpace.sm),
+                    ],
                   Expanded(
                     child: Text(
                       i < _picked.length ? _label(_picked[i]) : '',
@@ -889,6 +898,7 @@ class _SequenceQuestionState extends ConsumerState<SequenceQuestion> {
             for (final o in options)
               _SequenceTile(
                 label: o.label,
+                picture: o.picture,
                 used: !_reusable && _picked.contains(o.id),
                 onTap: () => _pick(o.id),
               ),
@@ -925,14 +935,37 @@ class _SequenceQuestionState extends ConsumerState<SequenceQuestion> {
   }
 }
 
+/// A thing's own picture on an order puzzle's tile or step (a map piece, a
+/// word's little drawing): whole, at [height]; read by its name beside it.
+class _TilePicture extends StatelessWidget {
+  const _TilePicture(this.picture, {required this.height});
+
+  final String picture;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) => Image.asset(
+        picture,
+        height: height,
+        width: height * 1.4,
+        fit: BoxFit.contain,
+        cacheHeight: (height * MediaQuery.devicePixelRatioOf(context)).round(),
+        excludeFromSemantics: true,
+      );
+}
+
 class _SequenceTile extends StatelessWidget {
   const _SequenceTile({
     required this.label,
     required this.used,
     required this.onTap,
+    this.picture,
   });
 
   final String label;
+
+  /// The thing's picture above its name (null: the name only, as before).
+  final String? picture;
   final bool used;
   final VoidCallback onTap;
 
@@ -955,11 +988,24 @@ class _SequenceTile extends StatelessWidget {
               vertical: AppSpace.md,
             ),
             decoration: _answerPaper(used ? AnswerState.disabled : AnswerState.idle),
-            child: Text(
-              label,
-              textAlign: TextAlign.center,
-              style: AppText.subtitle(color: AppColors.navy),
-            ),
+            child: picture == null
+                ? Text(
+                    label,
+                    textAlign: TextAlign.center,
+                    style: AppText.subtitle(color: AppColors.navy),
+                  )
+                : Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      _TilePicture(picture!, height: 64),
+                      const SizedBox(height: AppSpace.xs),
+                      Text(
+                        label,
+                        textAlign: TextAlign.center,
+                        style: AppText.subtitle(color: AppColors.navy),
+                      ),
+                    ],
+                  ),
           ),
         ),
       ),

@@ -47,13 +47,16 @@ const Map<String, dynamic> episode09Json = {
           "The cook's key is old and iron.\n"
           "The guard's key is big and gold.\n\n"
           'The jewel case opens only with a big gold key.',
-      'type': 'multipleChoice',
+      // The keys as pictures, their owners named under them (2026-11-03):
+      // drawn to one scale, so "small" and "big" show; the King's is small
+      // and gold with a crown — gold, but not big, and not one of the three.
+      'type': 'imageChoice',
       'question': 'Whose key opened the jewel case?',
       'options': [
-        {'id': 'a', 'label': "The maid's key", 'feedback': "The maid's key is small and silver. Which key is big and gold?"},
-        {'id': 'b', 'label': "The cook's key", 'feedback': "The cook's key is old and iron. Read the last line again."},
-        {'id': 'c', 'label': "The guard's key"},
-        {'id': 'd', 'label': "The King's key", 'feedback': "The butler names three keys. Is the King's key one of them?"},
+        {'id': 'a', 'label': "The maid's key", 'picture': 'assets/seasons/season_01_london/cases/case_09/key_maid.webp', 'altText': 'a small, plain silver key', 'feedback': "The maid's key is small and silver. Which key is big and gold?"},
+        {'id': 'b', 'label': "The cook's key", 'picture': 'assets/seasons/season_01_london/cases/case_09/key_cook.webp', 'altText': 'an old, dark iron key', 'feedback': "The cook's key is old and iron. Read the last line again."},
+        {'id': 'c', 'label': "The guard's key", 'picture': 'assets/seasons/season_01_london/cases/case_09/key_guard.webp', 'altText': 'a big, shiny gold key'},
+        {'id': 'd', 'label': "The King's key", 'picture': 'assets/seasons/season_01_london/cases/case_09/key_king.webp', 'altText': 'a small gold key with a little crown on top', 'feedback': "The butler names three keys. Is the King's key one of them?"},
       ],
       'answer': 'c',
       'hints': [
@@ -173,7 +176,8 @@ const Map<String, dynamic> episode09Json = {
         'title': 'The Third Change',
         'value': '12',
         'symbol': 'clock',
-        'note': "Anna hid the jewel at twelve o'clock.",
+        // Who the guard is, kept for the final (its page never names whose key).
+        'note': "Anna hid the jewel at twelve o'clock. Carl, the guard, lent her his key.",
       },
       'evidence': {
         'id': 'ep09_e3',
@@ -206,7 +210,8 @@ const Map<String, dynamic> episode09Json = {
       'Anna, Ben the gardener and Carl the guard stand at the palace gate.',
       'One of their things is hiding the Blue Star.',
     ],
-    'letterIntro': 'A small note falls out of Anna\'s pocket. It is signed R.',
+    // To Anna: the note's "you" is Anna, never the detective.
+    'letterIntro': 'A small note falls out of Anna\'s pocket. R. wrote it to Anna.',
     // R.'s note gives the rule; which key it was is Mission 01's (the
     // guard's, lent to Anna); the detective's notes give whose thing is
     // whose. Typing Anna's thing (she used the key) is the slip to avoid.
@@ -230,9 +235,12 @@ const Map<String, dynamic> episode09Json = {
       'ANNA': 'The note asks for a thing, not a person.',
     },
     'acceptedAnswers': ['BLACK HAT', 'TALL BLACK HAT', 'THE HAT', 'THE BLACK HAT', 'CARLS HAT'],
+    // The way through, step by step (never the word, nor Carl's name): the
+    // note's "you" is Anna; the key's owner is Mission 01's; the notes leave
+    // Anna the umbrella and Ben the bag, so the owner has the last thing.
     'hints': [
-      'Anna used the key. But whose key was it? Think back to the Jewel Room.',
-      'Open your notebook: whose key opened the jewel case? Find the owner here, then use your notes to find the owner\'s thing.',
+      "R. wrote the note to Anna, so 'you' means Anna. Anna used the key, but whose key was it? Look in your notebook at the Jewel Room.",
+      "Find the key's owner among the three at the gate. Ben has the green bag. Anna's thing is not black, so Anna has the red umbrella. Which thing is left for the owner?",
     ],
     'evidence': {
       'id': 'ep09_e4',
@@ -245,6 +253,7 @@ const Map<String, dynamic> episode09Json = {
     // After the case is closed: the post-case story scene (existing facts only).
     'transition': [
       'The Blue Star is safe.',
+      "R. chose Carl's hat on purpose.\nThen everyone would blame the guard, not Anna.",
       "But on the back of Anna's name tag,\na raven is drawn.",
       'And the card inside the hat\nleft a warning:',
       '"The jewel was never the prize."',

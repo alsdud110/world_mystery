@@ -216,6 +216,7 @@ const Map<String, dynamic> episode04Json = {
         'You read very well. Now read one more time.\n\n'
         'My friends and I have a secret name.\n'
         'We are named after a bird.\n'
+        'It is a big black bird with dark feathers.\n'
         'It lives at the Tower.\n'
         'It is pressed into every seal we send.\n\n'
         'We are the _____ Society.',
@@ -233,8 +234,8 @@ const Map<String, dynamic> episode04Json = {
     'hints': [
       // The seal (Mission 01) and the Tower's birds (Mission 03) give the
       // name: the tips point there, never to the word.
-      'Open your notebook and look closer at the seal from the first letter.',
-      "'Named after a bird' means their name is a bird's name: the bird pressed into every seal.",
+      'A big black bird lives at the Tower. Open your notebook and look closer at the Black Wax Seal from the first letter.',
+      "'Named after a bird' means their name is a bird's name. Read the words under the seal: which black bird is pressed into the wax?",
     ],
     'evidence': {
       'id': 'ep04_e4',
@@ -287,6 +288,8 @@ const Map<String, dynamic> episode04Json = {
     'named': '이름 붙여진',
     'society': '모임, 협회',
     'neat': '깔끔한',
+    'feathers': '깃털들',
+    'dark': '어두운',
     'pressed': '눌러 찍힌',
     'watching': '지켜보고 있는',
     'describes': '묘사하다, 설명하다',

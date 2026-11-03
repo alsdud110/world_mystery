@@ -49,7 +49,9 @@ import '../../widgets/glossary_text.dart';
 import '../../widgets/ink_icon.dart';
 import '../../widgets/landmark_art.dart';
 import '../../widgets/place_art.dart';
+import '../../widgets/art_assets.dart';
 import '../../widgets/letter_card.dart';
+import '../../widgets/mission_words.dart';
 import '../../widgets/paper.dart';
 import '../../widgets/paper_background.dart';
 import '../../widgets/scroll_more_cue.dart';
@@ -1262,10 +1264,9 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              place,
+            Text.rich(
+              AppText.liningDigits(place, AppText.mark(color: AppColors.goldLight, size: 17)),
               maxLines: 1,
-              style: AppText.mark(color: AppColors.goldLight, size: 17),
             ),
             Semantics(
               label: spoken,
@@ -1322,7 +1323,7 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
           child: Column(
             children: [
               const PaperSheetTab(),
-              LetterCard(text: m.letter),
+              MissionWords(mission: m),
               const SizedBox(height: AppSpace.xl),
               GameButton(
                 label: 'BACK TO THE PUZZLE',
@@ -1496,10 +1497,15 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
     final city = SeasonCatalog.cityClocks(m);
     final shadow = SeasonCatalog.shadowCheck(m);
     final easy = SeasonCatalog.easySteps(m);
+    // A person who says the letter (Season 1): the talk before the puzzle
+    // is the letter; it is not read again as one. Not a puzzle engine (the
+    // puzzle is played as always), so not one of the engines' tables below.
+    final saysLetter = SeasonCatalog.speech(m)?.fromStory == false;
     // A talk, a look round, a place read for its traces, a thing to examine
     // and the like start at once: the letter is found in the place itself,
     // or there is none. (A searched place shows its own arrival.)
     final noLetter =
+        saysLetter ||
         talk != null ||
         caseTalk != null ||
         easy != null ||
@@ -1770,10 +1776,9 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
               : talking
               ? MediaQuery.withClampedTextScaling(
                   maxScaleFactor: 1.1,
-                  child: Text(
-                    talk.place,
+                  child: Text.rich(
+                    AppText.liningDigits(talk.place, AppText.mark(color: AppColors.goldLight, size: 17)),
                     maxLines: 1,
-                    style: AppText.mark(color: AppColors.goldLight, size: 17),
                   ),
                 )
               : null,
@@ -2037,6 +2042,7 @@ class _LetterStage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final inscribed = ArtAssets.inscriptions.containsKey(mission.id);
     // The intro, the letter, the word note and the button are one
     // group: centred under the bar when the letter is short, read from the
     // top and scrolled when it is long.
@@ -2057,12 +2063,17 @@ class _LetterStage extends StatelessWidget {
           ),
           const SizedBox(height: AppSpace.xl),
         ],
-        EnvelopeReveal(
-          letterText: mission.letter,
-          initiallyOpen: opened,
-          onOpen: onOpening,
-          onOpened: onOpened,
-        ),
+        // Words written on a thing: the thing itself, no envelope to open.
+        if (inscribed)
+          MissionWords(mission: mission)
+        else
+          EnvelopeReveal(
+            letterText: mission.letter,
+            sealPicture: ArtAssets.letterSeals[mission.id],
+            initiallyOpen: opened,
+            onOpen: onOpening,
+            onOpened: onOpened,
+          ),
         // The note and the button arrive with a short grow, so the centred
         // group eases up to make room instead of jumping.
         AnimatedSize(
@@ -2073,17 +2084,20 @@ class _LetterStage extends StatelessWidget {
           alignment: Alignment.topCenter,
           child: AnimatedSwitcher(
             duration: const Duration(milliseconds: 300),
-            child: !opened
+            child: !opened && !inscribed
                 ? const SizedBox(key: ValueKey('sealed'), height: AppSpace.xl)
                 : Column(
                     key: const ValueKey('open'),
                     children: [
-                      const SizedBox(height: AppSpace.lg),
-                      Text(
-                        'Press and hold a word to see what it means.',
-                        style: AppText.caption(),
-                        textAlign: TextAlign.center,
-                      ),
+                      // Words on a thing are read as written: no meanings.
+                      if (!inscribed) ...[
+                        const SizedBox(height: AppSpace.lg),
+                        Text(
+                          'Press and hold a word to see what it means.',
+                          style: AppText.caption(),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
                       const SizedBox(height: AppSpace.xl),
                       GameButton(
                         label: 'SOLVE THE PUZZLE',
@@ -2163,7 +2177,7 @@ class _PuzzleStage extends StatelessWidget {
           spacing: AppSpace.sm,
           children: [
             InkTextButton(
-              label: 'Reread Letter',
+              label: MissionWords.rereadLabel(mission),
               glyph: InkGlyph.letter,
               onPressed: onReread,
             ),
@@ -2213,7 +2227,7 @@ class _SolvedStage extends ConsumerWidget {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: AppSpace.xl),
-        LetterCard(text: m.letter),
+        MissionWords(mission: m),
         if (m.clue != null) ...[
           const SizedBox(height: AppSpace.lg),
           ClueCard(

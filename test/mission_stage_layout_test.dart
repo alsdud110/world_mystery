@@ -21,7 +21,7 @@ import 'package:world_mystery/widgets/centered_scroll.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:world_mystery/widgets/letter_card.dart';
 
-import 'full_playthrough_test.dart' show wait;
+import 'full_playthrough_test.dart' show hearTalk, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
 
@@ -135,6 +135,9 @@ void main() {
     await wait(t, const Duration(milliseconds: 300));
     ref.read(routerProvider).go(Routes.mission(missionId));
     await wait(t, const Duration(milliseconds: 1600));
+    // A person who says the letter first (Case 11's taxi driver): heard,
+    // then the puzzle's page.
+    if (puzzle) await hearTalk(t);
     expect(
       puzzle ? find.textContaining('· THE PUZZLE') : find.text('INVESTIGATE'),
       findsOneWidget,

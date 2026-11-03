@@ -43,13 +43,15 @@ const Map<String, dynamic> episode10Json = {
           'Poppy is the smallest. She has a gold ring on her leg.\n'
           'Harris is very noisy, and he never flies far.\n\n'
           'Your raven is small, quiet and has a gold ring.',
-      'type': 'multipleChoice',
+      // The four ravens drawn to one scale, each with only its own mark
+      // (2026-11-03): the biggest, a white feather, a gold ring, a beak open.
+      'type': 'imageChoice',
       'question': 'Which raven brings the words?',
       'options': [
-        {'id': 'a', 'label': 'Jubilee', 'feedback': 'Jubilee is the biggest raven. Your raven is small.'},
-        {'id': 'b', 'label': 'Merlin', 'feedback': 'Merlin has a white feather. Does the note say she has a gold ring?'},
-        {'id': 'c', 'label': 'Poppy'},
-        {'id': 'd', 'label': 'Harris', 'feedback': 'Harris is very noisy. Your raven is quiet.'},
+        {'id': 'a', 'label': 'Jubilee', 'picture': 'assets/seasons/season_01_london/cases/case_10/raven_jubilee.webp', 'altText': 'the biggest raven, all black', 'feedback': 'Jubilee is the biggest raven. Your raven is small.'},
+        {'id': 'b', 'label': 'Merlin', 'picture': 'assets/seasons/season_01_london/cases/case_10/raven_merlin.webp', 'altText': 'a raven with one white feather on its wing', 'feedback': 'Merlin has a white feather. Does the note say she has a gold ring?'},
+        {'id': 'c', 'label': 'Poppy', 'picture': 'assets/seasons/season_01_london/cases/case_10/raven_poppy.webp', 'altText': 'the smallest raven, a gold ring on its leg'},
+        {'id': 'd', 'label': 'Harris', 'picture': 'assets/seasons/season_01_london/cases/case_10/raven_harris.webp', 'altText': 'a raven cawing, its beak wide open', 'feedback': 'Harris is very noisy. Your raven is quiet.'},
       ],
       'answer': 'c',
       'hints': [
@@ -99,11 +101,14 @@ const Map<String, dynamic> episode10Json = {
           'On Tuesday: TOWER.',
       'type': 'sequence',
       'question': 'Put the words in the order they came, starting with Monday.',
+      // Each paper with a little ink drawing of its word (2026-11-03): a
+      // plain tower and a plain stone bridge, never a landmark (Mission 03's
+      // answer is the place two of them name).
       'options': [
-        {'id': 'bridge', 'label': 'BRIDGE'},
-        {'id': 'three', 'label': 'THREE'},
-        {'id': 'north', 'label': 'NORTH'},
-        {'id': 'tower', 'label': 'TOWER'},
+        {'id': 'bridge', 'label': 'BRIDGE', 'picture': 'assets/seasons/season_01_london/cases/case_10/word_bridge.webp', 'altText': 'a small stone bridge'},
+        {'id': 'three', 'label': 'THREE', 'picture': 'assets/seasons/season_01_london/cases/case_10/word_three.webp', 'altText': 'three black feathers'},
+        {'id': 'north', 'label': 'NORTH', 'picture': 'assets/seasons/season_01_london/cases/case_10/word_north.webp', 'altText': 'a compass pointing to N'},
+        {'id': 'tower', 'label': 'TOWER', 'picture': 'assets/seasons/season_01_london/cases/case_10/word_tower.webp', 'altText': 'a round stone tower'},
       ],
       'codeLength': 4,
       'answer': 'north,tower,bridge,three',
@@ -252,6 +257,8 @@ const Map<String, dynamic> episode10Json = {
     'transition': [
       'The warning is clear.',
       'THE CLOCKMAKER WILL STOP\nBIG BEN AT MIDNIGHT.',
+      // Quiet Poppy's one loud call (2026-11-03): the scene's picture caws.
+      'Then quiet little Poppy caws once,\nloud and long.',
       'The Ravenmaster whispers:\n"The Clockmaker is watching me."',
       'There is not much time.',
       'Then you remember an old ticket:',
@@ -262,6 +269,8 @@ const Map<String, dynamic> episode10Json = {
     'mapY': 0.82,
   },
   'glossary': {
+    'caws': '까악 하고 울다',
+    'loud': '큰 소리의',
     'raven': '까마귀',
     'ravens': '까마귀들',
     'biggest': '가장 큰',

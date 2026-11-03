@@ -498,14 +498,18 @@ class _EvidencePrint extends StatelessWidget {
         child: AspectRatio(aspectRatio: drawn.aspect, child: RiverEvidenceArtView(art: drawn)),
       );
     }
-    return AspectRatio(
-      aspectRatio: ArtAssets.evidencePrints[evidence.id]!,
-      child: Image.asset(
-        ArtAssets.evidencePictures[evidence.id]!,
-        key: ValueKey('evidence-print-${evidence.id}'),
-        fit: BoxFit.contain,
-        excludeFromSemantics: true,
-        errorBuilder: (context, error, stack) => Center(child: mark),
+    // A tall one (London's joined map) no taller than a drawn one.
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxHeight: 360),
+      child: AspectRatio(
+        aspectRatio: ArtAssets.evidencePrints[evidence.id]!,
+        child: Image.asset(
+          ArtAssets.evidencePictures[evidence.id]!,
+          key: ValueKey('evidence-print-${evidence.id}'),
+          fit: BoxFit.contain,
+          excludeFromSemantics: true,
+          errorBuilder: (context, error, stack) => Center(child: mark),
+        ),
       ),
     );
   }

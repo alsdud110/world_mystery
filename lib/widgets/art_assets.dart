@@ -416,6 +416,9 @@ abstract final class ArtAssets {
     // over it: [clockHands]), and the wheels behind it, no time to read.
     Artwork.clockFace: '$_scenes/big_ben/clock_face.webp',
     Artwork.clockMechanism: '$_scenes/big_ben/clock_mechanism.webp',
+    // The masked stranger on Platform 9 (Case 11's final), a portrait on
+    // parchment: his face is never shown (see [solvedScenes]).
+    Artwork.maskedStranger: '${_london}characters/stranger_masked.webp',
   };
 
   /// Width / height of each scene picture that is not printed like the
@@ -443,6 +446,7 @@ abstract final class ArtAssets {
     Artwork.royalArchive: 1536 / 1024,
     Artwork.clockFace: 1,
     Artwork.clockMechanism: 1536 / 1024,
+    Artwork.maskedStranger: 1024 / 1536,
     // Season 2: Gare du Nord's hall, a portrait picture.
     Artwork.gareDuNord: 941 / 1671,
     Artwork.oldClockFace: 1,
@@ -536,8 +540,37 @@ abstract final class ArtAssets {
   static const mysteriousStranger = '${_london}characters/mysterious_stranger.webp';
   static const lockedDoor = 'assets/shared/objects/locked_door.webp';
 
+  /// Words written on a thing, shown on the thing itself instead of a
+  /// letter (Season 1), by mission: the picture ([file], width / height
+  /// [aspect]), where on it the words are written ([text], fractions of the
+  /// picture: the game sets the mission's own letter there, so its spelling
+  /// is exact and a screen reader can read it) and what the thing is
+  /// ([thing], read out with the words). Case 11's white mask, turned over:
+  /// its blank inner brow.
+  static const Map<String, ({String file, double aspect, Rect text, String thing})> inscriptions = {
+    'ep11_m2': (
+      file: '${_london}objects/white_mask_inside.webp',
+      aspect: 1,
+      text: Rect.fromLTRB(0.31, 0.305, 0.69, 0.385),
+      thing: 'The inside of the white mask',
+    ),
+  };
+
   /// The Raven Society mark (full colour, not a tinted [symbols] glyph).
   static const ravenMark = '${_london}symbols/raven_mark.webp';
+
+  /// Case 04's black wax seal, a raven pressed into it (on transparency):
+  /// the seal of R.'s letters and the Black Wax Seal in the notebook.
+  static const blackWaxSeal = '${_london}objects/black_wax_seal_raven.webp';
+
+  /// The seal pressed on a mission's letter, where it is not the game's own
+  /// wax seal: Case 04's letters from R. ("the same black seal as the first
+  /// letter"; the final's "pressed into every seal we send"). Only these.
+  static const letterSeals = <String, String>{
+    'ep04_m1': blackWaxSeal,
+    'ep04_m3': blackWaxSeal,
+    'ep04_final': blackWaxSeal,
+  };
 
   /// Case 01's Royal Box (the final mission's golden box with the Crown
   /// inside), as two pictures on transparency (1659 × 948, in register):
@@ -590,7 +623,7 @@ abstract final class ArtAssets {
     'e05': 'assets/seasons/season_01_london/objects/crown.webp',
     'e06': 'assets/seasons/season_01_london/objects/crown.webp', // The Missing Crown
     'ep03_e1': 'assets/seasons/season_01_london/objects/red_button.webp', // Red Button (Case 03, again in Case 08)
-    'ep04_e1': ravenMark, // Black Wax Seal: a raven pressed into the wax
+    'ep04_e1': blackWaxSeal, // Black Wax Seal: a raven pressed into the black wax
     'ep05_e3': 'assets/shared/objects/key.webp', // Brass Key
     'ep10_e3': 'assets/shared/objects/letter.webp', // Ravenmaster's Letter
     'ep12_e4': 'assets/shared/objects/pocket_watch.webp', // The Clockmaker's Watch
@@ -637,6 +670,14 @@ abstract final class ArtAssets {
     'ep08_e4': '$_londonObjects/empty_jewel_box.webp',
     'ep09_e4': '$_londonObjects/blue_star_jewel.webp',
     'ep10_e1': '$_londonObjects/poppys_ring.webp', // no letters: they are its words
+    // The lost map of London, piece by piece (2026-11-03): the Tower's piece
+    // (Case 05's chest), the river's and the station's, joined (its arrow),
+    // and whole (nine ravens round the station). Their words under them.
+    'ep05_e4': '$_london07/map_piece_park.webp',
+    'ep07_e1': '$_london07/map_piece_river.webp',
+    'ep07_e2': '$_london07/map_piece_station.webp',
+    'ep07_e3': '$_london07/map_joined.webp',
+    'ep07_e4': '$_london07/old_london_map.webp',
     'ep11_e2': '$_londonObjects/white_mask.webp', // nothing written: its words say what
     'ep11_e3': '$_londonObjects/toy_train_whistle.webp',
     's2_ep01_e3': '$_paris01/clockmaker_mark.webp', // the carved gear (the M is in its words)
@@ -659,6 +700,7 @@ abstract final class ArtAssets {
   };
 
   static const _londonObjects = 'assets/seasons/season_01_london/objects';
+  static const _london07 = 'assets/seasons/season_01_london/cases/case_07';
   static const _londonGear = '$_londonObjects/brass_gear.webp';
   static const _romeObjects = 'assets/seasons/season_03_rome/objects';
   static const _owlCard = '$_romeObjects/owl_card.webp';
@@ -708,14 +750,9 @@ abstract final class ArtAssets {
     'ep04_e4': EvidencePaper.letter,
     'ep05_e1': EvidencePaper.card,
     'ep05_e2': EvidencePaper.note,
-    'ep05_e4': EvidencePaper.map,
     'ep06_e1': EvidencePaper.statement,
     'ep06_e2': EvidencePaper.card,
     'ep06_e3': EvidencePaper.ticket,
-    'ep07_e1': EvidencePaper.map, // map pieces: their ravens are their words
-    'ep07_e2': EvidencePaper.map,
-    'ep07_e3': EvidencePaper.map,
-    'ep07_e4': EvidencePaper.map,
     'ep08_e1': EvidencePaper.tag,
     'ep08_e2': EvidencePaper.note,
     'ep09_e1': EvidencePaper.card,
@@ -801,6 +838,12 @@ abstract final class ArtAssets {
   /// Evidence pictures too wide for the round frame's close look: shown
   /// whole there, at their width / height.
   static const evidencePrints = <String, double>{
+    // London's map, whole in the close look (its pieces are wide, joined tall).
+    'ep05_e4': 768 / 512,
+    'ep07_e1': 768 / 559,
+    'ep07_e2': 768 / 600,
+    'ep07_e3': 768 / 1115,
+    'ep07_e4': 768 / 1091,
     's2_ep01_e2': 1774 / 887,
     's2_ep01_e4': 1774 / 887,
     's2_ep02_e1': 1536 / 1024,
@@ -888,9 +931,18 @@ abstract final class ArtAssets {
   /// Fractions of the picture's width / height.
   static const scenePrint = (size: Size(400, 256), frame: 0.045, nameTop: 0.68);
 
-  /// A scene after its case is solved, when it is another picture (none
-  /// today: Case 02's clock keeps its face and turns its drawn hands).
-  static const Map<Artwork, String> solvedScenes = {};
+  /// A scene after its case is solved, when it is another picture of the
+  /// same view (Case 02's clock keeps its face and turns its drawn hands):
+  /// Case 05's iron chest open, the map fragment inside; Case 10's raven
+  /// cawing once, the warning delivered; Case 11's stranger, his white mask
+  /// off and in his hand, his face still hidden in his hood (never shown);
+  /// Case 12's small iron door standing open on the Clockmaker's empty room.
+  static const Map<Artwork, String> solvedScenes = {
+    Artwork.ironChest: 'assets/seasons/season_01_london/objects/iron_chest_open.webp',
+    Artwork.raven: '${_london}characters/raven_master_caw.webp',
+    Artwork.maskedStranger: '${_london}characters/stranger_unmasked.webp',
+    Artwork.ironDoor: 'assets/seasons/season_01_london/objects/small_iron_door_open.webp',
+  };
 
   /// Clock faces whose hands are drawn over the picture. Case 02: Big Ben
   /// stopped at 8:17, set to 9:17 when the case is solved. The pivot and the
@@ -1010,9 +1062,43 @@ abstract final class ArtAssets {
   static String? scene(Artwork artwork, {double solved = 0}) =>
       solved > 0 && changesWhenSolved.contains(artwork) ? solvedScenes[artwork] ?? scenes[artwork] : scenes[artwork];
 
+  /// Choice pictures drawn on transparency (Case 09's keys, Case 10's
+  /// ravens): shown on parchment, as drawn, not in the dark mount of a
+  /// photograph (a dark iron key on it was hard to see).
+  static bool onParchment(String file) =>
+      file.startsWith('${_london}cases/case_09/key_') || file.startsWith('${_london}cases/case_10/raven_');
+
+  /// Final scenes printed with their own aged-paper border: laid on the desk
+  /// as they are, never inside the light paper sheet (a second, white frame
+  /// round the dark chest read as a white background on the device). Only
+  /// Case 05's chest so far.
+  static const ownPaperEdge = {Artwork.ironChest};
+
+  /// What a scene that changes with its solve shows, read out before and
+  /// after (the picture itself is decoration): null for any other scene.
+  static String? sceneLabel(Artwork artwork, {double solved = 0}) => switch (artwork) {
+        Artwork.ironChest => solved > 0
+            ? 'The iron chest is open. An old map fragment lies inside.'
+            : 'The heavy iron chest, shut with three number locks.',
+        Artwork.raven => solved > 0 ? 'Poppy the raven caws loudly, her beak wide open.' : 'A black raven, standing quietly.',
+        Artwork.maskedStranger => solved > 0
+            ? 'The stranger holds his white mask in his hand. His face is hidden in his hood.'
+            : 'A stranger in a white mask and a long black cloak, the hood up.',
+        Artwork.ironDoor => solved > 0
+            ? "The small iron door stands open. Inside, lamplight falls on an empty desk."
+            : 'A small iron door under the tower, shut tight.',
+        _ => null,
+      };
+
   /// Scenes that show differently once their case is solved (the clock's
-  /// drawn hands; drawn in code, its hands turn too).
-  static const changesWhenSolved = {Artwork.clockFace};
+  /// drawn hands, drawn in code, its hands turn too; the [solvedScenes]).
+  static const changesWhenSolved = {
+    Artwork.clockFace,
+    Artwork.ironChest,
+    Artwork.raven,
+    Artwork.maskedStranger,
+    Artwork.ironDoor,
+  };
 }
 
 /// A season's cover painting (portrait, no text) and how it is framed.

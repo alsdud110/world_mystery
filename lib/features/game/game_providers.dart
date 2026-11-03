@@ -21,6 +21,7 @@ import '../../data/repositories/episode_repository.dart';
 import '../../data/repositories/profile_store.dart';
 import '../../data/repositories/progress_repository.dart';
 import '../mission_map/map_world.dart' show SeasonMap;
+import 'game_controller.dart';
 
 // These are overridden in main() once async setup (prefs, content) is done.
 
@@ -106,7 +107,14 @@ final playedEpisodesProvider = Provider<List<Episode>>((ref) {
 /// around a mission's puzzle ([SeasonCatalog.talkMission]), as the mission
 /// page finds them: providers, so a test can give a mission a talk.
 final caseTalkOfProvider = Provider<TalkScene? Function(Mission m)>((ref) => SeasonCatalog.caseTalk);
-final talkMissionOfProvider = Provider<TalkMission? Function(Mission m)>((ref) => SeasonCatalog.talkMission);
+///
+/// A Season 1 mission whose person talks to the detective
+/// ([SeasonCatalog.speech]) has its talk before the puzzle made from its own
+/// words, the detective's name in them.
+final talkMissionOfProvider = Provider<TalkMission? Function(Mission m)>((ref) {
+  final name = ref.watch(gameControllerProvider.select((p) => p.detectiveName));
+  return (m) => SeasonCatalog.talkMission(m) ?? SeasonCatalog.speech(m)?.talkOf(m, name);
+});
 
 /// Every season of the game, in play order.
 final seasonsProvider = Provider<List<Season>>((ref) => [for (final s in SeasonCatalog.all) s.season]);

@@ -143,7 +143,7 @@ const Map<String, Object?> ep09Junior = {
         'Look at the timetable. When is the first change, and how often do the guards change?',
         "'Every two hours' means add two hours each time. And 'the third change' counts the first one too.",
       ],
-      'clue': {'note': "At twelve o'clock, Anna hid the jewel."},
+      'clue': {'note': "At twelve o'clock, Anna hid the jewel. Carl is the guard who lent her his key."},
       'evidence': {'description': 'It shows when the guards change.'},
       'successMessage': "It was twelve o'clock!",
       'transition': [
@@ -157,7 +157,7 @@ const Map<String, Object?> ep09Junior = {
         'Anna, Ben the gardener and Carl the guard stand by the palace gate.',
         'The Blue Star is hidden in one of their things.',
       ],
-      'letterIntro': "A small note drops out of Anna's pocket. R. has signed it.",
+      'letterIntro': "A small note drops out of Anna's pocket. R. wrote it to her.",
       // Puzzle data: R.'s rule and the notes, the same at every level.
       'letter': 'Hide it in the thing of the one whose key you used.\n'
           '— R.\n\n'
@@ -176,13 +176,14 @@ const Map<String, Object?> ep09Junior = {
         'ANNA': 'The note wants a thing, not a person.',
       },
       'hints': [
-        'Anna was the one who used the key. But whose key was it? Remember the Jewel Room.',
-        "Open your notebook: whose key opened the jewel case? Find the owner at the gate, then check your notes to work out the owner's thing.",
+        "R. wrote this note to Anna, so 'you' is Anna. Anna was the one who used the key. But whose key was it? Remember the Jewel Room.",
+        "Find the owner of the key among the three at the gate. Ben has the green bag. Anna's thing is not black, so the red umbrella is Anna's. Which thing is left for the key's owner?",
       ],
       'evidence': {'description': 'The royal jewel, back in its rightful place.'},
       'successMessage': 'The Blue Star was hidden in the hat!',
       'transition': [
         'The Blue Star is safe again.',
+        "R. chose the hat of the key's owner on purpose:\nif the jewel was found, Carl would be blamed.",
         "But a raven is drawn on the back\nof Anna's name tag.",
         'And the card inside the hat\ngave a warning:',
         '"The jewel was never the prize."',
@@ -329,7 +330,7 @@ const Map<String, Object?> ep09Master = {
         'The timetable gives a starting hour and a steady rhythm. What are they?',
         'Begin at the first change and step forward two hours at a time, until you reach the third.',
       ],
-      'clue': {'note': "Twelve o'clock: the hour when Anna hid the jewel."},
+      'clue': {'note': "Twelve o'clock: the hour when Anna hid the jewel. Carl, the guard, had lent her his key."},
       'evidence': {'description': 'The hours at which the guards change.'},
       'successMessage': "Twelve o'clock, precisely!",
       'transition': [
@@ -343,7 +344,7 @@ const Map<String, Object?> ep09Master = {
         'Anna, Ben the gardener and Carl the guard wait in silence at the palace gate.',
         'Somewhere among their things, the Blue Star lies hidden.',
       ],
-      'letterIntro': "A folded note slips from Anna's pocket, signed with a single R.",
+      'letterIntro': "A folded note slips from Anna's pocket, signed with a single R. and meant for Anna alone.",
       // Puzzle data: R.'s rule and the notes, the same at every level.
       'letter': 'Hide it in the thing of the one whose key you used.\n'
           '— R.\n\n'
@@ -362,13 +363,14 @@ const Map<String, Object?> ep09Master = {
         'ANNA': 'Anna is a person. The note asks for a thing.',
       },
       'hints': [
-        'Using a key is not the same as owning it. But whose key was it? The Jewel Room remembers.',
-        'Your notebook holds the answer to whose key opened the jewel case. Match the owner to one of the three at the gate, then let your notes do the rest.',
+        "The note was written to Anna. Using a key is not the same as owning it. But whose key was it? The Jewel Room remembers.",
+        "Match the key's owner to one of the three at the gate. Ben's thing is known; Anna's cannot be black, so it can only be the umbrella. One thing remains.",
       ],
       'evidence': {'description': 'The royal jewel, at last returned to its proper place.'},
       'successMessage': 'The Blue Star lay hidden inside the hat all along!',
       'transition': [
         'The Blue Star is safe at last.',
+        "R. had chosen the key's owner on purpose:\nfound in Carl's hat, the jewel would condemn the guard, not Anna.",
         "Yet on the back of Anna's name tag,\na raven has been drawn.",
         'And the card tucked inside the hat\nbore a warning:',
         '"The jewel was never the prize."',

@@ -29,7 +29,7 @@ import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/game/game_providers.dart' show sharedPreferencesProvider;
 import 'package:world_mystery/widgets/letter_card.dart';
 
-import 'full_playthrough_test.dart' show reveal, tapText, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
 
 /// Presses [f] as a finger does: down, held a moment (the button draws its
@@ -117,6 +117,9 @@ class MissionPlay {
     await wait(t, const Duration(milliseconds: 300));
     ref.read(routerProvider).go(Routes.mission(missionId));
     await wait(t, const Duration(milliseconds: 1200));
+    // A person who says the letter first (Case 11's taxi driver): heard,
+    // then the puzzle.
+    await hearTalk(t);
     expect(
         find.text('CHECK ANSWER').evaluate().isNotEmpty ||
             find.text('UNLOCK').evaluate().isNotEmpty ||

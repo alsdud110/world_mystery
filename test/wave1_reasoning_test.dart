@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/app.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
 import 'package:world_mystery/core/router/app_router.dart';
+import 'package:world_mystery/data/models/case_talk.dart';
 import 'package:world_mystery/data/models/episode.dart';
 import 'package:world_mystery/data/models/game_progress.dart';
 import 'package:world_mystery/data/models/mission.dart';
@@ -124,7 +125,9 @@ void main() {
       final text = beforeFinal(e, except: {seal.inscription!});
       expect(word(text, 'ravens?'), isFalse);
       expect(e.missionById('ep04_m3')!.transition.join(' '), contains('same black seal'));
-      expect(e.finalMission.letter, isNot(contains('big black bird')));
+      // The letter describes the bird (a big black bird), never names it.
+      expect(e.finalMission.letter, contains('big black bird with dark feathers'));
+      expect(word(e.finalMission.letter, 'ravens?'), isFalse);
     });
 
     test('the tips point to the seal, not to the word', () {
@@ -294,8 +297,9 @@ void main() {
       }
     });
 
-    String progress(List<String> done, {bool solved = false}) => jsonEncode(GameProgress(
+    String progress(List<String> done, {bool solved = false, List<String> examined = const []}) => jsonEncode(GameProgress(
           detectiveName: 'MINYOUNG',
+          examined: examined,
           introSeen: true,
           completedMissionIds: done,
           startedAt: DateTime(2026, 10, 6, 10),
@@ -314,7 +318,12 @@ void main() {
         overrides: await testOverrides(prefs: {
           for (final x in earlier)
             AppConstants.progressKeyFor(x.id): progress([for (final m in x.allMissions) m.id], solved: true),
-          AppConstants.progressKeyFor(e.id): progress([for (final m in e.missions) m.id]),
+          // The talk before a final (Case 11's stranger) already heard: the
+          // puzzle's page is what is checked here.
+          AppConstants.progressKeyFor(e.id): progress(
+            [for (final m in e.missions) m.id],
+            examined: [TalkMission.beforeKey(e.finalMission.id)],
+          ),
           AppConstants.seasonStorageKey: jsonEncode(
             SeasonProgress(activeEpisodeId: e.id, solvedEpisodeIds: [for (final x in earlier) x.id]).toJson(),
           ),

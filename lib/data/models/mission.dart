@@ -130,6 +130,11 @@ enum Artwork {
   // (Case 02's first mission: the stopped time is its puzzle). Its picture,
   // else drawn as Big Ben.
   clockMechanism,
+  // The masked stranger on Platform 9 (Case 11's final): his picture, the
+  // white mask on, the long black cloak; once the case is solved, the mask
+  // in his hand and his face still hidden in the hood. Else drawn as
+  // King's Cross. Named by the presentation (`PlaceArt.missionScenes`).
+  maskedStranger,
 
   // Hyde Park paths (Case 07): the same park, a different spot marked X.
   parkMapA,

@@ -48,6 +48,7 @@ const Map<String, Object?> ep10Junior = {
   'caseSummary': "You put the raven's words in the right order and read the secret warning.",
   'hook': 'The Ravenmaster whispers: "Find the Shadow. He knows all of the plan."',
   'glossary': {
+    'caws': '까악 하고 울다',
     'wears': '(몸에) 하고 있다, 착용하다',
     'noise': '소음, 시끄러운 소리',
     'brought': '가져왔다',
@@ -176,6 +177,7 @@ const Map<String, Object?> ep10Junior = {
       'transition': [
         'Now the warning is clear.',
         'THE CLOCKMAKER WILL STOP\nBIG BEN AT MIDNIGHT.',
+        'Then Poppy, the quiet one, caws once:\nloud and long.',
         'The Ravenmaster says quietly:\n"The Clockmaker is watching me."',
         'There is very little time.',
         'Then you think of an old ticket:',
@@ -202,6 +204,8 @@ const Map<String, Object?> ep10Master = {
   'caseSummary': "You set the raven's words in order and uncovered the secret warning.",
   'hook': 'The Ravenmaster breathes: "Find the Shadow. He knows the plan from start to finish."',
   'glossary': {
+    'echo': '메아리치다',
+    'throws': '젖히다',
     'alights': '(새가) 내려앉다',
     'windowsill': '창턱',
     'scrap': '(종이) 조각',
@@ -360,6 +364,7 @@ const Map<String, Object?> ep10Master = {
       'transition': [
         'At last, the warning is plain.',
         'THE CLOCKMAKER WILL STOP\nBIG BEN AT MIDNIGHT.',
+        'Quiet Poppy throws back her head\nand caws once, loud enough to echo.',
         "The Ravenmaster's voice drops to a whisper:\n\"The Clockmaker is watching me.\"",
         'Time is running short.',
         'And then an old ticket comes back to you:',

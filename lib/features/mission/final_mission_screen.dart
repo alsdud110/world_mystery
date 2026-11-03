@@ -14,6 +14,7 @@ import '../../data/mock/season1/season1_sounds.dart';
 import '../../data/mock/season_catalog.dart';
 import '../../data/models/abbesses_puzzles.dart';
 import '../../data/models/case_talk.dart';
+import '../../data/models/difficulty.dart';
 import '../../data/models/clock_puzzle.dart';
 import '../../data/models/easy_steps.dart';
 import '../../data/models/game_progress.dart';
@@ -49,6 +50,7 @@ import 'widgets/canvas_choice.dart';
 import 'widgets/clock_question.dart';
 import 'widgets/case_talk.dart';
 import 'widgets/easy_steps.dart';
+import 'widgets/evidence_recall.dart';
 import 'widgets/clockwork_garden.dart';
 import 'widgets/star_records.dart';
 import 'widgets/evidence_board.dart';
@@ -594,6 +596,21 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
     super.dispose();
   }
 
+  /// Finals that bring a piece of evidence from the notebook beside the
+  /// puzzle, at the levels listed (null: every level): Case 03, the boot, to
+  /// tell the two clock towers apart; Case 11, at Rookie only, Case 01's Old
+  /// Letter, from the suitcase "at the very start" (the detective finds it
+  /// and reads its name: the card never names him). Only these: another
+  /// final's recall is not shown yet.
+  static const _recallFinals = <String, Set<Difficulty>?>{
+    'ep03_final': null,
+    'ep11_final': {Difficulty.rookie},
+  };
+
+  /// Whether [m]'s recall is shown at its level (see [_recallFinals]).
+  static bool _recallShown(Mission m) =>
+      _recallFinals.containsKey(m.id) && (_recallFinals[m.id]?.contains(m.difficulty) ?? true);
+
   /// Solved just now (not a revisit): the case's bell, if it has one, may ring.
   bool _solvedNow = false;
   bool _rung = false;
@@ -710,7 +727,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
           child: Column(
             children: [
               const PaperSheetTab(),
-              LetterCard(text: _mission.letter),
+              LetterCard(text: _mission.letter, sealPicture: ArtAssets.letterSeals[_mission.id]),
               const SizedBox(height: AppSpace.xl),
               GameButton(
                 label: 'BACK TO THE LOCKS',
@@ -852,6 +869,22 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
     );
   }
 
+  /// The talk before the final's puzzle, on the night page: saved as it
+  /// goes, and kept as heard (with the things looked at) once the detective
+  /// goes on; the final's page follows, its story already said.
+  Widget _talkBeforeFinal(Mission m, TalkScene talk, GameProgress progress) {
+    final key = TalkMission.beforeKey(m.id);
+    return _finalPage(
+      child: CaseTalk(
+        key: const ValueKey('final-talk-before'),
+        scene: talk,
+        progress: TalkProgress.decode(progress.puzzleStateOf(key), talk),
+        onProgress: (p) => ref.read(gameControllerProvider.notifier).recordPuzzleState(key, p.encode()),
+        onFinish: () => ref.read(gameControllerProvider.notifier).recordExamined(key),
+      ),
+    );
+  }
+
   /// The final played one small step at a time (Case 12's case board; the
   /// very-easy finals of Cases 04, 05 and 07), on the night desk; its last
   /// step answers the final (what the steps showed counted as looked at
@@ -928,6 +961,12 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
     final easy = SeasonCatalog.easySteps(m);
     final ending = SeasonCatalog.caseEnding(m);
     if (!solved && talkFinal != null) return _talkFinal(m, talkFinal, progress);
+    // A person who talks to the detective before the final's puzzle (Case 11:
+    // the stranger, then his card): heard once, then the final as always.
+    final talkBefore = ref.watch(talkMissionOfProvider)(m)?.before;
+    if (!solved && talkBefore != null && !progress.hasExamined(TalkMission.beforeKey(m.id))) {
+      return _talkBeforeFinal(m, talkBefore, progress);
+    }
     if (!solved && easy != null) return _easyFinal(m, easy, progress);
     if (ending != null && progress.isCompleted(m.id) && !progress.hasExamined(_endingKey)) return _endingPage(m, ending);
     final box = _box;
@@ -940,6 +979,10 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
     final hour = _tornHour;
     final tower = _tower;
     final record = _record;
+    // Evidence of earlier in the case brought from the notebook, on the
+    // page's foot until the case is solved (see [_recallFinals]).
+    final recall = _recallShown(m) ? m.recall : null;
+    final recalling = recall != null && !solved;
 
     return Scaffold(
       // The night page runs up under the app bar (no paper band on top).
@@ -962,7 +1005,12 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
       ),
       // The last evidence and papers, examined on the detective's desk.
       body: DeskBackground(
-        child: SafeArea(
+        child: _withRecall(
+          m,
+          recall,
+          recalling,
+          SafeArea(
+          bottom: !recalling,
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 560),
@@ -979,9 +1027,8 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     // The app bar already says FINAL MISSION: the page starts on the place.
-                    Text(
-                      m.location,
-                      style: AppText.logo(size: 28, color: AppColors.goldLight),
+                    Text.rich(
+                      AppText.liningDigits(m.location, AppText.logo(size: 28, color: AppColors.goldLight)),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: AppSpace.sm),
@@ -1155,9 +1202,22 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
             ),
           ),
         ),
+        ),
       ),
     );
   }
+
+  /// [page] with the [recall] card under it while [recalling]. The page
+  /// keeps one shape (the card only comes and goes under it), so the puzzle's
+  /// state is never rebuilt when the case is solved.
+  Widget _withRecall(Mission m, EvidenceRecall? recall, bool recalling, Widget page) => recall == null
+      ? page
+      : Column(
+          children: [
+            Expanded(child: page),
+            if (recalling) EvidenceRecallDock(mission: m, recall: recall),
+          ],
+        );
 
   Widget _sheetOrTable({required bool placed, required Widget child}) => placed
       ? KeyedSubtree(key: const ValueKey('light-table-sheet'), child: child)
@@ -1176,7 +1236,9 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
         )
       : Column(
     children: [
-      for (final line in m.story)
+      // The story said in the talk before (the stranger's greeting): only
+      // what hands the paper over is left.
+      for (final line in SeasonCatalog.speech(m)?.fromStory == true ? [m.letterIntro] : m.story)
         Padding(
           padding: const EdgeInsets.only(bottom: 8),
           child: GlossaryText(
@@ -1189,7 +1251,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
       // puzzle (Paris Case 07): not again.
       if (_letterMap == null && _lightTable == null) ...[
         const SizedBox(height: 12),
-        LetterCard(text: m.letter, tilt: 0.01),
+        LetterCard(text: m.letter, tilt: 0.01, sealPicture: ArtAssets.letterSeals[m.id]),
       ],
     ],
   );
@@ -1990,25 +2052,36 @@ class _SceneReveal extends StatelessWidget {
       animation: animation,
       builder: (context, _) {
         final t = Curves.easeOutCubic.transform(animation.value);
-        return Transform.scale(
+        final artwork = switch (scene) {
+          ArtworkScene(:final artwork) => artwork,
+          _ => null,
+        };
+        final label = artwork == null ? null : ArtAssets.sceneLabel(artwork, solved: animation.value);
+        // The picture changes with the solve (the Case 02 clock starts
+        // again): it times its own change over the reveal's progress.
+        final art = LandmarkArt.ofScene(
+          scene,
+          borderRadius: 2,
+          solved: animation.value,
+        );
+        final picture = Transform.scale(
           scale: 1 + 0.04 * t,
           child: Center(
             child: AspectRatio(
               aspectRatio: LandmarkArt.aspectOfScene(scene),
-              child: PaperSheet(
-                padding: const EdgeInsets.all(AppSpace.sm),
-                tilt: -0.01,
-                // The picture changes with the solve (the Case 02 clock starts
-                // again): it times its own change over the reveal's progress.
-                child: LandmarkArt.ofScene(
-                  scene,
-                  borderRadius: 2,
-                  solved: animation.value,
-                ),
-              ),
+              child: ArtAssets.ownPaperEdge.contains(artwork)
+                  // Its own paper edge: only a shadow under it on the desk.
+                  ? DecoratedBox(decoration: const BoxDecoration(boxShadow: AppShadow.paperLift), child: art)
+                  : PaperSheet(
+                      padding: const EdgeInsets.all(AppSpace.sm),
+                      tilt: -0.01,
+                      child: art,
+                    ),
             ),
           ),
         );
+        // A picture that changes with the solve says which state it shows.
+        return label == null ? picture : Semantics(image: true, label: label, child: picture);
       },
     );
   }

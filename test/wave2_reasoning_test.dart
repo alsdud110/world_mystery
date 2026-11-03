@@ -134,14 +134,19 @@ void main() {
       expect(m3.transition.join(' '), isNot(contains('station')));
     });
 
-    test('the letter alone fits two pictures; the boot decides', () {
+    test('the clock tower fits two pictures; the arches and the boot decide', () {
       expect(fin.letter, contains('north'));
       expect(
         fin.letter,
         contains('clock tower'),
         reason: 'Big Ben and King\'s Cross both have one',
       );
-      expect(fin.letter, isNot(contains('arches')));
+      // The base (Rookie) also reads the glass roof's two arches, which only
+      // King's Cross's picture has (S1 device feedback, 2026-11-03); the boot
+      // is brought beside the pictures. Master keeps the boot alone
+      // (difficulty_london_6a_test).
+      expect(fin.letter, contains('glass roof with two big arches'));
+      expect(fin.recall?.evidenceId, 'ep03_e3');
       expect(
         fin.hints.last,
         allOf(contains('footprint'), contains('notebook')),
@@ -502,6 +507,8 @@ void main() {
           for (final m in e.missions) m.id,
         ], Routes.finalMission);
         await capture(t, 'ep03_final_page_$tag');
+        // The boot is brought from the notebook at the page's foot.
+        expect(find.byKey(const ValueKey('evidence-recall')), findsOneWidget);
         await reveal(t, shown(e.finalMission.question));
         await capture(t, 'ep03_final_question_$tag');
         await reveal(t, find.text('CHECK ANSWER'));

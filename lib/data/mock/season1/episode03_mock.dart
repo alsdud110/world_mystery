@@ -243,22 +243,36 @@ const Map<String, dynamic> episode03Json = {
     'letter':
         'The lady said: "Take me north!"\n\n'
         'I stopped at a big building with a tall clock tower.\n'
+        'Next to the tower, there is a long glass roof with two big arches.\n'
+        'I heard loud whistles. I saw smoke.\n'
         'She ran inside with her parcel.',
     // Two pictures have a clock tower (Big Ben, King's Cross): the boot she
-    // left (Mission 03, "smells of trains and smoke") tells which one.
+    // left (Mission 03, "smells of trains and smoke"), brought from the
+    // notebook, tells which one; at Rookie and Junior the driver also saw
+    // the glass roof with its two arches (only King's Cross's picture has
+    // it) and the smoke the boot smells of. Master keeps the boot alone.
+    // Never "train" or "station" before the answer.
     'type': 'imageChoice',
     'question': 'Which picture shows where Miss Rose went?',
     'options': [
-      {'id': 'a', 'label': 'Big Ben', 'artwork': 'bigBen', 'feedback': 'Big Ben has a clock tower too. But what did her boot smell of?'},
+      {'id': 'a', 'label': 'Big Ben', 'artwork': 'bigBen', 'feedback': 'Big Ben has a clock tower too. But where are the two big glass arches? What did her boot smell of?'},
       {'id': 'b', 'label': 'Tower Bridge', 'artwork': 'towerBridge', 'feedback': "Read the driver's words: a big building with a tall clock tower. Is this one?"},
       {'id': 'c', 'label': 'Hyde Park', 'artwork': 'hydePark', 'feedback': "A park has no clock tower. Read the driver's words again."},
       {'id': 'd', 'label': "King's Cross", 'artwork': 'kingsCross'},
     ],
     'answer': 'd',
+    // The boot (Mission 03), brought beside the pictures: its words are read
+    // by looking closer at it.
+    'recall': {
+      'evidence': 'ep03_e3',
+      'title': 'Find a clue from today',
+      'prompt': 'Which clue tells you where she had been?',
+      'miss': 'This clue is from today, but it does not tell you where she had been. Try another one.',
+    },
     'hints': [
       // Never "train" or "station" in a tip: reading the boot is the deduction.
-      'Two pictures have a clock tower. Look at the evidence you found today, too.',
-      "Open your notebook and look closer at the footprint. 'Smells of …' tells you where she had been. Which clock tower fits?",
+      "Two pictures have a clock tower. Read the driver's note again: what else did he see next to the tower?",
+      "Bring the footprint from your notebook and look closer. 'Smells of …' tells you where she had been. Which picture fits the glass roof and the smoke?",
     ],
     'evidence': {
       'id': 'ep03_e4',
@@ -311,6 +325,8 @@ const Map<String, dynamic> episode03Json = {
     'step': '걸음',
     'north': '북쪽',
     'arches': '아치들',
+    'glass': '유리',
+    'whistles': '호루라기·기적 소리',
     'station': '기차역',
     'parcel': '꾸러미',
     'sewn': '바느질된',

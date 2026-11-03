@@ -44,7 +44,7 @@ void main() {
   // picture (the Boathouse is not Hyde Park).
   testWidgets('a place inside a landmark is drawn like its landmark when its picture is missing', (t) async {
     // Gallery 8 keeps its own drawing (the empty frame) as its fallback.
-    expect(LandmarkArt.standIns.keys.toSet(), {...PlaceArt.inside.difference({Artwork.gallery}), Artwork.oldSuitcase, Artwork.blackSuitcase, Artwork.clockMechanism});
+    expect(LandmarkArt.standIns.keys.toSet(), {...PlaceArt.inside.difference({Artwork.gallery}), Artwork.oldSuitcase, Artwork.blackSuitcase, Artwork.clockMechanism, Artwork.maskedStranger});
     for (final MapEntry(key: place, value: standIn) in LandmarkArt.standIns.entries) {
       expect(await draw(t, place, drawingOnly: true), await draw(t, standIn, drawingOnly: true), reason: '$place');
       expect(ArtAssets.scene(place), isNot(ArtAssets.scene(standIn)), reason: '$place does not borrow the $standIn picture');
@@ -95,6 +95,8 @@ void main() {
       // Case 02: Big Ben's clock stopped at 8:17, and the wheels behind it.
       Artwork.clockFace: 'assets/seasons/season_01_london/locations/big_ben/clock_face.webp',
       Artwork.clockMechanism: 'assets/seasons/season_01_london/locations/big_ben/clock_mechanism.webp',
+      // Case 11's final: the masked stranger himself (S1 dialogue feedback, 2026-11-03).
+      Artwork.maskedStranger: 'assets/seasons/season_01_london/characters/stranger_masked.webp',
     };
     expect(ArtAssets.objectScenes, objectScenes);
     // Season 2's places: Gare du Nord (Case 01), its own picture.
@@ -194,7 +196,8 @@ void main() {
     // Case 09's two in the Luxembourg Gardens, Case 10's two at the
     // Arc de Triomphe, Case 11's two at Saint-Sulpice and Case 12's two at
     // Arts et Métiers.
-    expect(ArtAssets.scenes, hasLength(73));
+    // + Case 11's masked stranger (S1 dialogue feedback, 2026-11-03).
+    expect(ArtAssets.scenes, hasLength(74));
     final all = {
       ...ArtAssets.scenes.values,
       ...ArtAssets.characters.values,
@@ -316,7 +319,15 @@ void main() {
     // The solved clock: its own picture (9:17).
     expect(ArtAssets.scene(Artwork.clockFace, solved: 1), ArtAssets.scene(Artwork.clockFace),
         reason: 'the same face before and after: only its drawn hands turn');
-    expect(ArtAssets.solvedScenes, isEmpty);
+    // Case 05's chest opens and Case 10's raven caws (S1 device feedback, 2026-11-03);
+    // Case 11's stranger takes his mask off (his face stays hidden) and
+    // Case 12's iron door opens (S1 dialogue feedback, 2026-11-03).
+    expect(ArtAssets.solvedScenes, {
+      Artwork.ironChest: 'assets/seasons/season_01_london/objects/iron_chest_open.webp',
+      Artwork.raven: 'assets/seasons/season_01_london/characters/raven_master_caw.webp',
+      Artwork.maskedStranger: 'assets/seasons/season_01_london/characters/stranger_unmasked.webp',
+      Artwork.ironDoor: 'assets/seasons/season_01_london/objects/small_iron_door_open.webp',
+    });
   });
 
   testWidgets('a listed file that is missing falls back to the drawing', (t) async {
@@ -377,7 +388,14 @@ void main() {
       'e05': ArtAssets.objects['crown'],
       'e06': ArtAssets.objects['crown'],
       'ep03_e1': 'assets/seasons/season_01_london/objects/red_button.webp',
-      'ep04_e1': ArtAssets.ravenMark,
+      // Case 04's seal is the black wax raven itself; Case 05 and 07's map
+      // pieces, joined and whole (S1 device feedback, 2026-11-03).
+      'ep04_e1': ArtAssets.blackWaxSeal,
+      'ep05_e4': 'assets/seasons/season_01_london/cases/case_07/map_piece_park.webp',
+      'ep07_e1': 'assets/seasons/season_01_london/cases/case_07/map_piece_river.webp',
+      'ep07_e2': 'assets/seasons/season_01_london/cases/case_07/map_piece_station.webp',
+      'ep07_e3': 'assets/seasons/season_01_london/cases/case_07/map_joined.webp',
+      'ep07_e4': 'assets/seasons/season_01_london/cases/case_07/old_london_map.webp',
       'ep05_e3': ArtAssets.objects['key'],
       'ep10_e3': ArtAssets.objects['letter'],
       'ep12_e4': ArtAssets.objects['pocketWatch'],

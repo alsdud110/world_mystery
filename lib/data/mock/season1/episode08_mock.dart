@@ -121,7 +121,9 @@ const Map<String, dynamic> episode08Json = {
         'symbol': 'bag',
         // Her coat is noted here too, so the final can be checked in the
         // notebook (the final page does not say it).
-        'note': 'Only Mrs Robin goes to Edinburgh alone. She wears a long red coat.',
+        // So is the button gone from it (the final names neither: the
+        // detective brings this note and Case 03's Red Button together).
+        'note': 'Only Mrs Robin goes to Edinburgh alone. She wears a long red coat. One shiny red button is missing from it.',
       },
       'evidence': {
         'id': 'ep08_e2',
@@ -133,6 +135,7 @@ const Map<String, dynamic> episode08Json = {
       'successMessage': 'It must be Mrs Robin!',
       'transition': [
         'Mrs Robin wears a long red coat and a blue scarf.',
+        'One shiny red button is missing from her coat.',
         'A robin is a bird... and so is a raven.',
         'The station guard helps you open the suitcase.',
       ],
@@ -234,7 +237,7 @@ const Map<String, dynamic> episode08Json = {
     'answer': 'c',
     'hints': [
       'Think back to an earlier case. Gallery 8 was in Case 03. Open your notebook, then the Case Archive, then Case 03: what was left in Gallery 8?',
-      'Open your notebook, then the Case Archive, then Case 03. Look closer at each thing: where was it found? Then think about what Mrs Robin is wearing.',
+      'Open your notebook, then the Case Archive, then Case 03. Look closer at each thing: where was it found? Then read your note on Mrs Robin in this case: what is missing?',
     ],
     'evidence': {
       'id': 'ep08_e4',

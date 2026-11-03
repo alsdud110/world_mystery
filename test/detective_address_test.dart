@@ -16,6 +16,7 @@ import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/game/game_controller.dart';
 import 'package:world_mystery/widgets/detective_character.dart';
 import 'package:world_mystery/widgets/letter_card.dart';
+import 'package:world_mystery/widgets/typewriter_text.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
@@ -316,8 +317,26 @@ void main() {
       app.read(routerProvider).go(Routes.finalMission);
       await wait(t, const Duration(milliseconds: 1500));
       expect(t.takeException(), isNull);
-      expect(findReadable('"Hello again, Detective Luna," he says. "Do you remember me?"'), findsOneWidget);
-      expect(findReadableContaining('Detective Luna'), findsOneWidget, reason: 'once on the page');
+      // He says it to you, in the talk before his card (S1 dialogue
+      // feedback PART B): the story's greeting, as said, the name filled in.
+      Finder said(String line) => find.byWidgetPredicate((w) => w is TypewriterText && w.text == line);
+      expect(find.byKey(const ValueKey('case-talk-line')), findsOneWidget);
+      await t.tap(find.byKey(const ValueKey('case-talk-next')));
+      await wait(t, const Duration(seconds: 3));
+      expect(said('"Hello again, Detective Luna."'), findsOneWidget);
+      expect(find.byWidgetPredicate((w) => w is TypewriterText && w.text.contains('Detective Luna')), findsOneWidget,
+          reason: 'once in the talk');
+      // Heard: the card's page names nobody again (his greeting is not
+      // repeated as story text).
+      for (var i = 0; i < 6 && find.byKey(const ValueKey('case-talk-next')).evaluate().isNotEmpty; i++) {
+        await t.tap(find.byKey(const ValueKey('case-talk-next')));
+        await wait(t, const Duration(seconds: 3));
+      }
+      await t.tap(find.byKey(const ValueKey('case-talk-finish')));
+      await wait(t, const Duration(milliseconds: 1500));
+      expect(find.byKey(const ValueKey('case-talk-line')), findsNothing);
+      expect(findReadableContaining('Detective Luna'), findsNothing);
+      expect(findReadable('He gives you a small card.'), findsOneWidget);
     });
 
     testWidgets('the case file names the detective once', (t) async {

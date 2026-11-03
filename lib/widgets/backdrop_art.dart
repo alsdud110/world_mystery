@@ -97,6 +97,10 @@ abstract final class BackdropArt {
     '$_objects/locked_door_gears.webp': _inPaper(1536, 1024, 430, 40, 1140, 970), // the dial and its gears
     '$_objects/small_iron_door.webp': _inPaper(1536, 1024, 520, 170, 1050, 880),
     '$_objects/iron_chest.webp': _inPaper(1536, 1024, 380, 290, 1290, 900),
+    // Open (Case 05 solved): the same view, its lid up over the map fragment.
+    '$_objects/iron_chest_open.webp': _inPaper(1536, 1024, 380, 120, 1290, 900),
+    // Open (Case 12 solved): the door swung in, the lit room behind it.
+    '$_objects/small_iron_door_open.webp': _inPaper(1536, 1024, 300, 120, 1060, 900),
     // Case 06's market hall, a portrait picture: it covers the screen,
     // inside its paper edge.
     ArtAssets.marketHall: const BackdropPicture(_tall, BackdropLook(fit: BackdropFit.cover, bounds: paperEdge)),

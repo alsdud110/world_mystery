@@ -232,10 +232,10 @@ class PageHeading extends StatelessWidget {
           Text(eyebrow!, textAlign: TextAlign.center, style: AppText.eyebrow(color: night ? AppColors.goldLight : AppColors.goldDeep)),
           const SizedBox(height: AppSpace.xs),
         ],
-        Text(
-          title,
+        // A number in the name ("PLATFORM 4") in lining figures.
+        Text.rich(
+          AppText.liningDigits(title, AppText.placeTitle(size: titleSize, color: night ? AppColors.paperLight : AppColors.navy)),
           textAlign: TextAlign.center,
-          style: AppText.placeTitle(size: titleSize, color: night ? AppColors.paperLight : AppColors.navy),
         ),
         const SizedBox(height: AppSpace.sm),
         OrnamentRule(color: night ? AppColors.goldLight : AppColors.gold),

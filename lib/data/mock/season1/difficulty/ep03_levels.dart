@@ -15,7 +15,10 @@ import 'level_words.dart';
 // a blue scarf, Mr Grey's red only a scarf; very wet → wet → a little wet →
 // almost dry (shop, stairs, café, north door); "Take me north" and a tall
 // clock tower, which fits Big Ben and King's Cross alike — only the boot's
-// "trains and smoke" (its evidence, the same words at every level) decides.
+// "trains and smoke" (its evidence, the same words at every level, brought
+// from the notebook beside the pictures) decides at Master; at Rookie and
+// Junior the driver also saw the glass roof with two big arches, the
+// whistles and the smoke (only King's Cross's picture has the arches).
 // So nothing before the final names a station, a train or King's Cross,
 // and its tips never do. The Red Button (Case 08) and the lost-property tag
 // (Case 04) are kept by name and words.
@@ -58,6 +61,7 @@ const Map<String, Object?> ep03Junior = {
   'caseSummary': 'You read each small clue and followed the thief out of the museum.',
   'hook': 'The stolen painting shows a tower full of ravens.',
   'glossary': {
+    'everywhere': '사방에, 어디에나',
     'famous': '유명한',
     'carefully': '주의 깊게',
     'noticed': '알아차렸다',
@@ -171,16 +175,23 @@ const Map<String, Object?> ep03Junior = {
       'letterIntro': 'He writes it all down for you.',
       'letter': 'The lady said: "Take me north, please!"\n\n'
           'I stopped outside a big building with a tall clock tower.\n'
+          'Beside the tower, there was a long glass roof with two big arches.\n'
+          'I could hear loud whistles, and there was smoke everywhere.\n'
           'She hurried inside with her parcel.',
       'question': 'Which picture shows where the taxi took Miss Rose?',
       'options': {
-        'a': {'feedback': 'Big Ben has a tall clock tower too. Check the clue from her boot.'},
+        'a': {'feedback': 'Big Ben has a tall clock tower too. But can you see two big glass arches? Check her boot, too.'},
         'b': {'feedback': 'The driver talked about a big building with a tall clock tower. Is this one?'},
         'c': {'feedback': 'A park does not have a clock tower. Read what the driver said again.'},
       },
+      'recall': {
+        'title': 'Find a clue from today',
+        'prompt': 'Which clue in your Notebook tells you where she had been?',
+        'miss': 'That is from today, but it does not say where she had been. Look at another clue.',
+      },
       'hints': [
-        "Two pictures have a tall clock tower. The driver's words cannot tell them apart. Look at today's evidence.",
-        'Open your notebook and read the wet footprint again. What did the boot smell of? Which place fits that smell?',
+        "Two pictures have a tall clock tower. Read the driver's note again: what else was beside the tower?",
+        'Bring the wet footprint from your notebook and look closer. What did the boot smell of? Which picture fits the glass roof and the smoke?',
       ],
       'evidence': {'description': 'It fell out of the taxi Miss Rose took.'},
       'successMessage': "The taxi took Miss Rose to King's Cross!",
@@ -376,6 +387,11 @@ const Map<String, Object?> ep03Master = {
         'b': {'feedback': 'Does this place have the tall clock tower the driver described?'},
         'c': {'feedback': "A park has no tall clock tower. Read the driver's words once more."},
       },
+      'recall': {
+        'title': 'Bring a clue from today',
+        'prompt': 'One thing you found today says where she had been.',
+        'miss': 'Found today, yes, but it says nothing of where she had been.',
+      },
       'hints': [
         "The driver's words fit more than one picture. Something you found earlier today can tell them apart.",
         'In your notebook, the footprint holds a clue about where she had been. Which clock tower does it point to?',
@@ -548,8 +564,8 @@ const Map<String, LearningObjective> ep03JuniorLearning = {
     dependency: LanguageDependency.essential,
     level: LearningLevel.recall,
     skill: LanguageSkill.sentenceMeaning,
-    objective: '택시 기사의 말과 앞에서 찾은 증거 글귀(기차 냄새)를 함께 읽어 장소를 정한다.',
-    expressions: ['Take me north', 'a tall clock tower', 'The boot smells of trains and smoke'],
+    objective: '택시 기사의 묘사(유리 지붕의 두 아치, 연기)와 앞에서 찾은 증거 글귀(기차 냄새)를 함께 읽어 장소를 정한다.',
+    expressions: ['Take me north', 'a long glass roof with two big arches', 'The boot smells of trains and smoke'],
     recallFrom: 'ep03_m3',
   ),
 };

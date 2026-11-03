@@ -155,10 +155,12 @@ const Map<String, dynamic> episode07Json = {
           'The station piece and the river piece do not touch.',
       'type': 'sequence',
       'question': 'Put the pieces in order, from the top to the bottom.',
+      // Each piece as it was found (its torn edges alike on every side: only
+      // the instructions give the order).
       'options': [
-        {'id': 'river', 'label': 'The river piece'},
-        {'id': 'park', 'label': 'The park piece'},
-        {'id': 'station', 'label': 'The station piece'},
+        {'id': 'river', 'label': 'The river piece', 'picture': 'assets/seasons/season_01_london/cases/case_07/map_piece_river.webp', 'altText': 'a torn map piece with a wide river and little boats'},
+        {'id': 'park', 'label': 'The park piece', 'picture': 'assets/seasons/season_01_london/cases/case_07/map_piece_park.webp', 'altText': 'a torn map piece with green trees, a lake and a small bridge'},
+        {'id': 'station', 'label': 'The station piece', 'picture': 'assets/seasons/season_01_london/cases/case_07/map_piece_station.webp', 'altText': 'a torn map piece with a big station and many railway lines'},
       ],
       'codeLength': 3,
       'answer': 'station,park,river',

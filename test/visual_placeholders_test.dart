@@ -75,14 +75,15 @@ void main() {
       }
     });
 
-    test("Case 04's suitcase is the old brown one; Case 08's black; Case 11's stays drawn", () {
+    test("Case 04's suitcase is the old brown one; Case 08's black; Case 11's final is the stranger", () {
       expect(PlaceArt.sceneOf(mission('ep04_m3')), Artwork.oldSuitcase);
       expect(PlaceArt.sceneOf(mission('ep04_final')), Artwork.oldSuitcase);
       for (final id in ['ep08_m1', 'ep08_m3']) {
         expect(PlaceArt.sceneOf(mission(id)), Artwork.blackSuitcase, reason: id);
       }
-      // Case 11 recalls Case 01's suitcase on Platform 9, not Mrs Robin's.
-      expect(PlaceArt.sceneOf(mission('ep11_final')), Artwork.suitcase);
+      // Case 11's final shows the stranger who talks to you on Platform 9
+      // (S1 dialogue feedback, 2026-11-03; was Case 01's drawn suitcase).
+      expect(PlaceArt.sceneOf(mission('ep11_final')), Artwork.maskedStranger);
       expect(ArtAssets.scene(Artwork.oldSuitcase), 'assets/shared/objects/suitcase.webp');
       expect(LandmarkArt.hasPicture(Artwork.suitcase), isFalse);
     });
@@ -105,7 +106,10 @@ void main() {
       for (final id in ['ep02_m3', 'ep02_final']) {
         expect(PlaceArt.sceneOf(mission(id)), Artwork.clockFace, reason: id);
       }
-      expect(ArtAssets.changesWhenSolved, {Artwork.clockFace});
+      // Case 05's chest and Case 10's raven change their picture (S1 device feedback, 2026-11-03);
+      // so do Case 11's stranger and Case 12's iron door (S1 dialogue feedback PART B).
+      expect(ArtAssets.changesWhenSolved,
+          {Artwork.clockFace, Artwork.ironChest, Artwork.raven, Artwork.maskedStranger, Artwork.ironDoor});
     });
   });
 
@@ -279,8 +283,15 @@ void main() {
       await settle(t, const Duration(milliseconds: 2500));
       expect(picture('assets/seasons/season_01_london/special/royal_box_open.webp'), findsOneWidget, reason: 'Case 01');
       expect(picture('assets/shared/objects/suitcase.webp'), findsOneWidget, reason: 'Case 04');
-      // Case 11's black suitcase (Platform 9) stays drawn.
-      expect(find.byWidgetPredicate((w) => w is LandmarkArt && w.artwork == Artwork.suitcase), findsOneWidget);
+      // Case 11: the stranger's picture, no drawn suitcase any more (S1
+      // dialogue feedback, 2026-11-03).
+      expect(find.byWidgetPredicate((w) => w is LandmarkArt && w.artwork == Artwork.suitcase), findsNothing);
+      expect(
+        picture('assets/seasons/season_01_london/characters/stranger_masked.webp').evaluate().length +
+            picture('assets/seasons/season_01_london/characters/stranger_unmasked.webp').evaluate().length,
+        1,
+        reason: 'Case 11',
+      );
       await capture(t, 'fix_board_$tag');
     });
 

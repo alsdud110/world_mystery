@@ -71,10 +71,15 @@ void main() {
         's2_ep08_m3': 's2_ep07_e3',
         'ep02_m3': 'ep02_e1',
         'ep03_m2': 'ep03_e1',
+        // The final's boot (S1 device feedback PART B, 2026-11-03).
+        'ep03_final': 'ep03_e3',
         'ep06_m2': 'ep06_e1',
         'ep06_m3': 'ep06_e1',
         'ep10_m3': 'ep10_e2',
         'ep12_m1': 'ep02_e2',
+        // Case 01's Old Letter beside the stranger's card (S1 dialogue
+        // feedback PART B, 2026-11-03; shown at Rookie only).
+        'ep11_final': 'e01',
       };
       // A season made from its plans recalls as its plans say (clueInputs):
       // only evidence of an earlier case, or of its own, of the same season.

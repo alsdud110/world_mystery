@@ -539,6 +539,468 @@
         "bytes": 773818
       }
     },
+    "assets/seasons/season_01_london/cases/case_07/map_joined.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_07/map_joined.png",
+        "sha256": "sha256:01ae097386a8bb56a9fbdc586f2636aab27bf26f8995080556b5387c68a4670c",
+        "bytes": 1695034
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 768,
+      "height": 1115,
+      "hasAlpha": true,
+      "tried": [
+        "-q 92 -sharp_yuv: PSNR 33.93 / SSIM 0.9967 under 35.0 / 0.99",
+        "-q 95 -sharp_yuv: PSNR 34.28 / SSIM 0.9981 under 35.0 / 0.99",
+        "-near_lossless 60: alpha changed (by up to 2)"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_07/map_joined.webp",
+        "sha256": "sha256:2fc1816d8c5ff91fb3d57d3eb86bd8fbc7f386a73d50e6973bd559cf52e826f1",
+        "bytes": 1079174
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_07/map_piece_park.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_07/map_piece_park.png",
+        "sha256": "sha256:5e0a1c4092fb1cbdaf51a65b85a9e1596d3d2eed9abf8d264ccfee8b06ddf7b7",
+        "bytes": 605940
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 37.77,
+        "ssim": 0.99642,
+        "alphaMaxDiff": 0
+      },
+      "width": 768,
+      "height": 512,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_07/map_piece_park.webp",
+        "sha256": "sha256:3874703ac2b066aa9f1d8acdf08f0cb59efa77aa408cc2611e4e2f2432cbc1f7",
+        "bytes": 163536
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_07/map_piece_river.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_07/map_piece_river.png",
+        "sha256": "sha256:6fd817b6de6c490c599db5929d043424b9a38baacddac43874e259a261e729f0",
+        "bytes": 739363
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 37.37,
+        "ssim": 0.99473,
+        "alphaMaxDiff": 0
+      },
+      "width": 768,
+      "height": 559,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_07/map_piece_river.webp",
+        "sha256": "sha256:5773604151c116a60cf5d0d94af5f3806cfb7d00d375cd5e1fbf44576693bd8f",
+        "bytes": 197294
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_07/map_piece_station.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_07/map_piece_station.png",
+        "sha256": "sha256:f96721720930201be7934d2d7816f819ecd7dba7d694f34cddc8375e80c3d45d",
+        "bytes": 686081
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 35.15,
+        "ssim": 0.9971,
+        "alphaMaxDiff": 0
+      },
+      "width": 768,
+      "height": 600,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_07/map_piece_station.webp",
+        "sha256": "sha256:725fd5254d23a9fe616c42eff9b99fe6ab9db3d27b93d33c7717bd05f163677f",
+        "bytes": 188816
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_07/old_london_map.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_07/old_london_map.png",
+        "sha256": "sha256:36dd563bd4208b657f39fb30e18201c1b0160cf6c30377e42ff42e58be11d245",
+        "bytes": 1639077
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 35.58,
+        "ssim": 0.99551,
+        "alphaMaxDiff": 0
+      },
+      "width": 768,
+      "height": 1091,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_07/old_london_map.webp",
+        "sha256": "sha256:8869f421726b1849079a80871d4bc40d9d55deb4f955166cc6cf61b3dbe53384",
+        "bytes": 428982
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_09/key_cook.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_09/key_cook.png",
+        "sha256": "sha256:9ac903bc332345f29b87c076ed29233100728f3ad05a35fa71f7dfe868b39a54",
+        "bytes": 115036
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 48.87,
+        "ssim": 0.9995,
+        "alphaMaxDiff": 0
+      },
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_09/key_cook.webp",
+        "sha256": "sha256:01424c779cbb39a0d48e03e7113a9dfe42f3d7271b2970e3305772c650521f23",
+        "bytes": 25694
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_09/key_guard.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_09/key_guard.png",
+        "sha256": "sha256:004a78e55411709c60713e1511e9ce69f5ec40f33b30dc486d125c82ff20305b",
+        "bytes": 174293
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 40.33,
+        "ssim": 0.9993,
+        "alphaMaxDiff": 0
+      },
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_09/key_guard.webp",
+        "sha256": "sha256:44c110997e5e5db510e37fbf7f76802d4f1c58dbd82e0e6d6a29c61f03d96727",
+        "bytes": 50784
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_09/key_king.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_09/key_king.png",
+        "sha256": "sha256:d2b892baae36e03c393d027dd152cd0b27a7322754bcc9467a7d3386de1ed0f9",
+        "bytes": 57389
+      },
+      "why": "twin of key_maid.png (likeness 0.892)",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "tried": [
+        "-near_lossless 60: alpha changed (by up to 2)"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_09/key_king.webp",
+        "sha256": "sha256:9f8a7015f6b4279cff89d549c608341d28d8ab2e88af211befc19b71751163de",
+        "bytes": 35824
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_09/key_maid.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_09/key_maid.png",
+        "sha256": "sha256:905cc290c1f005b6b3afdbe3b52f1bf4c4497758dea8b6cad02fed657c72edc3",
+        "bytes": 61599
+      },
+      "why": "twin of key_king.png (likeness 0.892)",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "tried": [
+        "-near_lossless 60: alpha changed (by up to 2)"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_09/key_maid.webp",
+        "sha256": "sha256:d7a406f44cd139e2a2874d6de904eee0e365fb6abe191c845059a9b2faffac39",
+        "bytes": 27462
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_10/raven_harris.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_10/raven_harris.png",
+        "sha256": "sha256:eff9c71ffb4af6bd70f928d6396d727383081bdd1433b7871cdbfef0ea473b05",
+        "bytes": 165989
+      },
+      "why": "twin of raven_merlin.png (likeness 0.855)",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 768,
+      "height": 768,
+      "hasAlpha": true,
+      "tried": [
+        "-near_lossless 60: alpha changed (by up to 2)"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_10/raven_harris.webp",
+        "sha256": "sha256:53a1836f4700c6ca54167a8cbaf00617d19a11cc3a02c3f1e24c0164ecb905b5",
+        "bytes": 99304
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_10/raven_jubilee.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_10/raven_jubilee.png",
+        "sha256": "sha256:0b09ce761fc180e0de67f76f4cb03e574642ea797b5d638e5bc5eef4a2230661",
+        "bytes": 241716
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 50.3,
+        "ssim": 0.99652,
+        "alphaMaxDiff": 0
+      },
+      "width": 768,
+      "height": 768,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_10/raven_jubilee.webp",
+        "sha256": "sha256:219d7f7edeede5a526abf662ea0daa5110369f5ddf9d143967678543e7b7ded2",
+        "bytes": 37300
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_10/raven_merlin.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_10/raven_merlin.png",
+        "sha256": "sha256:99822fd936b98d1b9685d67e635026cbfab05ff699b10bdfbf6d8c5106c4a563",
+        "bytes": 160006
+      },
+      "why": "twin of raven_harris.png (likeness 0.855)",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 768,
+      "height": 768,
+      "hasAlpha": true,
+      "tried": [
+        "-near_lossless 60: alpha changed (by up to 2)"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_10/raven_merlin.webp",
+        "sha256": "sha256:32937ced649569c548157d1df56d56f389340aae5582d4e8f4a5b121a00443da",
+        "bytes": 92914
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_10/raven_poppy.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_10/raven_poppy.png",
+        "sha256": "sha256:402f7c9970167df7d3916772c616a1adaffabdd169479b31cd8e932a1bb9f3e4",
+        "bytes": 116190
+      },
+      "why": "twin of raven_merlin.png (likeness 0.801)",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 768,
+      "height": 768,
+      "hasAlpha": true,
+      "tried": [
+        "-near_lossless 60: alpha changed (by up to 2)"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_10/raven_poppy.webp",
+        "sha256": "sha256:232e9cddb53a2195d3d8d1de6238c93e48c100a6950cb565c7da6aabb450cf2d",
+        "bytes": 65172
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_10/word_bridge.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_10/word_bridge.png",
+        "sha256": "sha256:9779b882512edd68e66abee0e983b3cd8872426eaac051bac5a8f305d92bed1c",
+        "bytes": 197347
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 35.28,
+        "ssim": 0.99817,
+        "alphaMaxDiff": 0
+      },
+      "width": 504,
+      "height": 228,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_10/word_bridge.webp",
+        "sha256": "sha256:c3cad7c670b8caaeb5b7cff06d2e1887d02d50734d31a1564ab900b9281d61af",
+        "bytes": 60832
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_10/word_north.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_10/word_north.png",
+        "sha256": "sha256:6526e01206d7b1256acb0d4aee7957ff656285d1d6536b24c19d711f170c2c8f",
+        "bytes": 302960
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 37.02,
+        "ssim": 0.9941,
+        "alphaMaxDiff": 0
+      },
+      "width": 418,
+      "height": 504,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_10/word_north.webp",
+        "sha256": "sha256:78055d126b17ac0aa8c5ebcb7a5854360c951b55e85472d008d567152ea8543a",
+        "bytes": 74934
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_10/word_three.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_10/word_three.png",
+        "sha256": "sha256:fdef8f7c8372bcd380fdf32558594262740112bb53a62bb2d0075acf65fac3ef",
+        "bytes": 361124
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 37.8,
+        "ssim": 0.99521,
+        "alphaMaxDiff": 0
+      },
+      "width": 453,
+      "height": 504,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_10/word_three.webp",
+        "sha256": "sha256:821bb4385b47049f9dc2d4a7645c6dae607e080582306c39197a72f9950adf50",
+        "bytes": 85578
+      }
+    },
+    "assets/seasons/season_01_london/cases/case_10/word_tower.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/cases/case_10/word_tower.png",
+        "sha256": "sha256:582e1554b6d4803136c3ee5b008511c7a5036b2cc152571f8dab7c1d02582170",
+        "bytes": 226939
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 37.83,
+        "ssim": 0.99592,
+        "alphaMaxDiff": 0
+      },
+      "width": 298,
+      "height": 504,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/cases/case_10/word_tower.webp",
+        "sha256": "sha256:4516cf214f374190abbc06d0abd1f630d29a9b469d25e1f265340b9280186388",
+        "bytes": 60404
+      }
+    },
     "assets/seasons/season_01_london/cases/case_12/gear_brass_6_stamp.webp": {
       "source": {
         "path": "assets/seasons/season_01_london/cases/case_12/gear_brass_6_stamp.png",
@@ -826,6 +1288,120 @@
         "path": "assets/seasons/season_01_london/characters/raven_master.webp",
         "sha256": "sha256:8f37eb3741941ae29656386d7d86fe4707166704175ecc18f71849ab9eba59c8",
         "bytes": 694766
+      }
+    },
+    "assets/seasons/season_01_london/characters/raven_master_caw.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/raven_master_caw.png",
+        "sha256": "sha256:952c6129769f239a5880082a6e64dd88aa1004eaa02095f8b65919f4f0d91ee7",
+        "bytes": 1608104
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-near_lossless 60",
+      "quality": {
+        "psnr": 49.69,
+        "ssim": 0.9959,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 90 -sharp_yuv: PSNR 41.96 / SSIM 0.9724 under 32.0 / 0.985",
+        "-q 94 -sharp_yuv: PSNR 43.65 / SSIM 0.9812 under 32.0 / 0.985"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/raven_master_caw.webp",
+        "sha256": "sha256:b56a0f055635315574c4e949ce90cc51ab37e6d5bed0e553e980cdcd8de130fc",
+        "bytes": 697902
+      }
+    },
+    "assets/seasons/season_01_london/characters/stranger_masked.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/stranger_masked.png",
+        "sha256": "sha256:7ef51688b33f10ee89d932d61fd6a20ba6ed7b286230cdd48e3d26f28150ca27",
+        "bytes": 3290710
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 94 -sharp_yuv",
+      "quality": {
+        "psnr": 41.17,
+        "ssim": 0.99038,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "tried": [
+        "-q 90 -sharp_yuv: PSNR 39.01 / SSIM 0.9808 under 32.0 / 0.985"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/stranger_masked.webp",
+        "sha256": "sha256:67dc99d2a6cd02a4dbdec093865fac7caedb0fa5b16b1de0418e358885de4588",
+        "bytes": 710394
+      }
+    },
+    "assets/seasons/season_01_london/characters/stranger_unmasked.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/stranger_unmasked.png",
+        "sha256": "sha256:820090df0e779052e1a0f491ef021926da9eda9aff0d1097bc50e55677ba2870",
+        "bytes": 3126631
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 94 -sharp_yuv",
+      "quality": {
+        "psnr": 41.8,
+        "ssim": 0.98888,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "tried": [
+        "-q 90 -sharp_yuv: PSNR 39.56 / SSIM 0.9771 under 32.0 / 0.985"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/stranger_unmasked.webp",
+        "sha256": "sha256:5dcc46adabc312e3bed5a9aa3f4220f4904d3df3d0fa1442918763525eb8615f",
+        "bytes": 652598
+      }
+    },
+    "assets/seasons/season_01_london/characters/taxi_driver.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/characters/taxi_driver.png",
+        "sha256": "sha256:a56183e2d20bac035b0b2cf1516c0538422cbf17fb6240d7a167223c72160830",
+        "bytes": 3744303
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 38.54,
+        "ssim": 0.98822,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/characters/taxi_driver.webp",
+        "sha256": "sha256:da4dfba618b96bfa57d44ca938733dd56d0980f582fbc72ece8348a1ba4b22b8",
+        "bytes": 641042
       }
     },
     "assets/seasons/season_01_london/cover/season1_cover_london_panorama.webp": {
@@ -1565,6 +2141,32 @@
         "bytes": 424186
       }
     },
+    "assets/seasons/season_01_london/objects/black_wax_seal_raven.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/objects/black_wax_seal_raven.png",
+        "sha256": "sha256:c4e8fbe926b0357f85c79dcca0ce4ce517e0f962ffe2348ae448c573cc3a3b16",
+        "bytes": 335536
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 44.78,
+        "ssim": 0.99373,
+        "alphaMaxDiff": 0
+      },
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/objects/black_wax_seal_raven.webp",
+        "sha256": "sha256:4ba7289551292184a2515d99a39527c066f5ad9099699fb2722dbb947a06a324",
+        "bytes": 61278
+      }
+    },
     "assets/seasons/season_01_london/objects/blue_cloth.webp": {
       "source": {
         "path": "assets/seasons/season_01_london/objects/blue_cloth.png",
@@ -1783,6 +2385,35 @@
         "bytes": 586878
       }
     },
+    "assets/seasons/season_01_london/objects/iron_chest_open.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/objects/iron_chest_open.png",
+        "sha256": "sha256:2ca6761498080a9b6d03f141bc712cb79bef2575ca00237ce15bb8b71384c583",
+        "bytes": 2758692
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 95 -sharp_yuv",
+      "quality": {
+        "psnr": 39.04,
+        "ssim": 0.99243,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 92 -sharp_yuv: PSNR 38.23 / SSIM 0.9896 under 35.0 / 0.99"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/objects/iron_chest_open.webp",
+        "sha256": "sha256:b749c3375bcfdb920672cc4e5c8b8550d7c3365abf87763148502e5a26a049e5",
+        "bytes": 595902
+      }
+    },
     "assets/seasons/season_01_london/objects/jewel_case.webp": {
       "source": {
         "path": "assets/seasons/season_01_london/objects/jewel_case.png",
@@ -1991,6 +2622,32 @@
         "bytes": 681986
       }
     },
+    "assets/seasons/season_01_london/objects/small_iron_door_open.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/objects/small_iron_door_open.png",
+        "sha256": "sha256:4d8699b0787036e32d2f38dd82dc138c1ebe8111cc23e6a86ec5b6db3cef1966",
+        "bytes": 3303267
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 92 -sharp_yuv",
+      "quality": {
+        "psnr": 39.49,
+        "ssim": 0.9903,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/objects/small_iron_door_open.webp",
+        "sha256": "sha256:9890240356e4b92827ff81cbaa94a0401c507a3890ca3e06ff1f235bacde8047",
+        "bytes": 630078
+      }
+    },
     "assets/seasons/season_01_london/objects/small_wooden_box.webp": {
       "source": {
         "path": "assets/seasons/season_01_london/objects/small_wooden_box.png",
@@ -2151,6 +2808,36 @@
         "path": "assets/seasons/season_01_london/objects/white_mask.webp",
         "sha256": "sha256:20579f5c535433cdf370b47e87da7511994e24fba01ce9a238430517e3ce77d2",
         "bytes": 25638
+      }
+    },
+    "assets/seasons/season_01_london/objects/white_mask_inside.webp": {
+      "source": {
+        "path": "assets/seasons/season_01_london/objects/white_mask_inside.png",
+        "sha256": "sha256:b97d2192b1d1bf70333b689f37abd9656cfeb7474194a595135c2c0cd0b7a0ff",
+        "bytes": 2119557
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-near_lossless 60",
+      "quality": {
+        "psnr": 46.63,
+        "ssim": 0.99451,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 92 -sharp_yuv: PSNR 41.21 / SSIM 0.9798 under 35.0 / 0.99",
+        "-q 95 -sharp_yuv: PSNR 43.08 / SSIM 0.9894 under 35.0 / 0.99"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_01_london/objects/white_mask_inside.webp",
+        "sha256": "sha256:00c83837d40de4e1fbfd05f81e1b5a364e173efe769a25e38e852cc7d4c57807",
+        "bytes": 652214
       }
     },
     "assets/seasons/season_01_london/special/royal_box.webp": {

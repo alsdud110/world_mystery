@@ -9,7 +9,9 @@ import '../../../models/learning.dart';
 // every level, and her coat in the clue note too) and Lily's "My dad and I";
 // seat forty-two, then the hour of the 9:30 (429, the order 942 and 930 keep
 // their lines); her lie "I was never in Gallery 8." (word for word at every
-// level). The final's page — story, letter, question, tips and the cards'
+// level). Her coat lacks one shiny red button (Mission 02's scene after
+// and its clue note, at every level: Case 03's Red Button is "A shiny red
+// coat button."). The final's page — story, letter, question, tips and the cards'
 // lines — names no button, no coat and nothing red at any level; its tips
 // lead to the Case Archive and Case 03 only. Miss Rose is named only after
 // the case is closed ("Miss Rose was Mrs Robin all along."), and
@@ -115,11 +117,12 @@ const Map<String, Object?> ep08Junior = {
         'Two passengers say they are going to Edinburgh. Now read the name tag again.',
         "'Alone' means with nobody else. 'My dad and I' means two people are travelling.",
       ],
-      'clue': {'note': 'Only Mrs Robin is going to Edinburgh alone. She is wearing a long red coat.'},
+      'clue': {'note': 'Only Mrs Robin is going to Edinburgh alone. She is wearing a long red coat. One shiny red button is missing from it.'},
       'evidence': {'description': 'Four passengers, four answers to one question.'},
       'successMessage': 'The owner must be Mrs Robin!',
       'transition': [
         'Mrs Robin is wearing a long red coat and a blue scarf.',
+        'You notice that one shiny red button is missing from her coat.',
         'A robin is a bird... and a raven is a bird too.',
         'A station guard comes to help you open the suitcase.',
       ],
@@ -169,7 +172,7 @@ const Map<String, Object?> ep08Junior = {
       },
       'hints': [
         'Think back to an earlier case. Gallery 8 was in Case 03. Open your notebook, then the Case Archive, then Case 03. What was found in Gallery 8?',
-        'In your notebook, open the Case Archive and then Case 03. Look closer at each thing: where was it found? Then look at what Mrs Robin is wearing.',
+        'In your notebook, open the Case Archive and then Case 03. Look closer at each thing: where was it found? Then read your note about Mrs Robin in this case: what is missing?',
       ],
       'evidence': {'description': 'Found at the very bottom of the suitcase.'},
       'successMessage': 'The red button links Mrs Robin to Gallery 8!',
@@ -280,11 +283,12 @@ const Map<String, Object?> ep08Master = {
         'Two of the four are bound for Edinburgh. What else does the name tag say about its owner?',
         "Compare 'alone' with 'My dad and I'. How many people does each one mean?",
       ],
-      'clue': {'note': 'Of the four, only Mrs Robin travels to Edinburgh alone. She wears a long red coat.'},
+      'clue': {'note': 'Of the four, only Mrs Robin travels to Edinburgh alone. She wears a long red coat, one shiny red button missing.'},
       'evidence': {'description': 'One question, four very different answers.'},
       'successMessage': 'The suitcase must belong to Mrs Robin!',
       'transition': [
         'Mrs Robin wears a long red coat, with a blue scarf at her throat.',
+        'A single shiny red button is missing from the coat.',
         'A robin is a bird... and so, of course, is a raven.',
         "With the station guard's help, you open the suitcase.",
       ],
@@ -333,7 +337,7 @@ const Map<String, Object?> ep08Master = {
       },
       'hints': [
         'Her lie names a room from an earlier case: Case 03. In the Case Archive, what was left behind in that gallery?',
-        'Notebook, Case Archive, Case 03: ask of each thing where it was found. Then study what Mrs Robin has on.',
+        'Notebook, Case Archive, Case 03: ask of each thing where it was found. Then consult your own note on Mrs Robin: what is missing?',
       ],
       'evidence': {'description': 'Hidden at the very bottom of the suitcase.'},
       'successMessage': 'The red button ties Mrs Robin to Gallery 8!',

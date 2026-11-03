@@ -34,7 +34,7 @@ void main() {
       ('ep03', 'The boot smells of trains and smoke.', 'smoke.'),
       (
         'ep03',
-        "Open your notebook and look closer at the footprint. 'Smells of …' tells you where she had been. Which clock tower fits?",
+        "Bring the footprint from your notebook and look closer. 'Smells of …' tells you where she had been. Which picture fits the glass roof and the smoke?",
         "'Smells",
       ),
       ('ep03', "KING'S CROSS — LOST PROPERTY", 'PROPERTY'),
@@ -213,11 +213,13 @@ void main() {
         // Asset optimization (2026-11-02): only the sketches' files, now WebP
         // (`.png` → `.webp`); with `.webp` read back as `.png` the hash is the
         // value before it, exactly (was 4015551375).
-        'ep03': 2052892534,
+        // S1 device feedback PART B (2026-11-03, approved; was 2052892534).
+        'ep03': 4212847944,
         // Puzzle wording (2026-10-23, approved): 04-M2's card says RED ·
         // SMALL · CLOCK · PLATFORM, not FOUR; tip 2 matches it (was
         // 3227171614).
-        'ep04': 4165157138,
+        // S1 device feedback PART B (2026-11-03, approved; was 4165157138).
+        'ep04': 2892871157,
         'ep05': 3809709994,
         // Mission links (2026-10-23, approved): 06-M3 asks which night the
         // market witnesses saw (Monday), not how many details differ (was
@@ -230,21 +232,27 @@ void main() {
         // (was 923859634). Then (same day, approved) the joined map gives
         // the arrow's direction only; 07-F tip 2 puts it with Grey's way
         // (was 246931138).
-        'ep07': 779074998,
+        'ep07': 2617957040, // S1 device feedback PART C, 2026-11-03 (was 779074998)
         // Cross-case tip paths (2026-10-23, approved): 08-F tip 1 leads to
         // Case 03 in the Case Archive (no answer; was 932948487).
-        'ep08': 1854545292,
+        // S1 device feedback PART B (2026-11-03, approved; was 1854545292).
+        'ep08': 3101612423,
         // Mission links (2026-10-23, approved): 09-M3's scene names Carl as
         // the guard who lent Anna his key (was 3984906767).
-        'ep09': 1856530826,
+        // S1 device feedback PART B (2026-11-03, approved; was 1856530826).
+        'ep09': 2935571933, // S1 device feedback PART C, 2026-11-03 (was 4264744070)
         // London gameplay upgrade (2026-10-30, requested): 10-M3 brings the
         // Raven Papers from the notebook (was 1240895729).
-        'ep10': 507417399,
+        'ep10': 2489463261, // S1 device feedback PART C, 2026-11-03 (was 507417399)
         // Cross-case tip paths (2026-10-23, approved): 11-F tip 1 leads to
         // Case 01 in the Case Archive (no answer; was 2763911661).
         // Puzzle wording (2026-10-23, approved): 11-M2's mask no longer says
         // how to read it; tip 1 does (was 1220913972).
-        'ep11': 2940818726,
+        // S1 dialogue feedback PART B (2026-11-03, approved): 11-M2's question
+        // says "written backwards" (Rookie), its clue note names Case 10's
+        // Raven's Warning; 11-F brings Case 01's Old Letter at Rookie
+        // (was 2940818726).
+        'ep11': 3224893254,
         // Time code fix (2026-10-21): 12-M2 reads as HH:MM ('codeFormat': 'time').
         // Case 12 M3 (2026-10-21): UNDER ___ ___, one blank per word of BIG BEN.
         // Evidence recall (2026-10-23, requested): 12-F tip 1 says where the

@@ -16,6 +16,12 @@ import '../../../models/learning.dart';
 // unlike the base's, leaves the door out at Junior and Master.
 // ROW R / SEAT 17 (Case 06 / 10) stays in the synopsis and the intro.
 //
+// ep11_m2's question says the word is written backwards at Rookie and
+// Junior (the puzzle page, not only the story); Master's leaves it to the
+// story. Its clue note ties MIDNIGHT to Case 10's Raven's Warning at every
+// level. The final's recall (Case 01's Old Letter) is Rookie's only: the
+// final page shows it at that level.
+//
 // Intentionally the same as the base at every level (puzzle data, kept so
 // the player reasons from the exact words):
 //   * ep11_m2.letter  'THGINDIM' (the backwards word itself)
@@ -101,7 +107,7 @@ const Map<String, Object?> ep11Junior = {
       'letterIntro': 'Written inside the mask:',
       // Puzzle data: the same at every level.
       'letter': 'THGINDIM',
-      'question': 'What word is written inside the mask?',
+      'question': 'The word inside the mask is written backwards. What does it say?',
       // The answer's blanks: the same at every level.
       'prompt': '________',
       'feedback': {
@@ -111,7 +117,7 @@ const Map<String, Object?> ep11Junior = {
         'Start with the last letter, M. Then keep going left: I, D, N...',
         "It is a time of day: twelve o'clock at night.",
       ],
-      'clue': {'note': 'The plan will happen at midnight.'},
+      'clue': {'note': "The plan will happen at midnight — the hour in the Raven's Warning from Case 10."},
       'evidence': {'description': 'Someone left it behind the stage.'},
       'successMessage': 'The word is MIDNIGHT!',
       'transition': [
@@ -281,7 +287,7 @@ const Map<String, Object?> ep11Master = {
         'Start with the last letter, M, and move leftwards: I, D, N...',
         "The word names an hour: twelve o'clock, in the dead of night.",
       ],
-      'clue': {'note': 'The plan is set for midnight.'},
+      'clue': {'note': "The plan is set for midnight — the very hour of the Raven's Warning (Case 10)."},
       'evidence': {'description': 'Abandoned behind the stage.'},
       'successMessage': 'MIDNIGHT — the hidden word!',
       'transition': [

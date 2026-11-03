@@ -458,11 +458,11 @@ const _otherCases = <String, int>{
   // Asset optimization (2026-11-02): only the sketches' files, now WebP
   // (`.png` → `.webp`); with `.webp` read back as `.png` the hash is the value
   // before it, exactly. Value before it: ep03 1141287210.
-  'ep03': 2584886525,
+  'ep03': 1990888441, // S1 device feedback PART B (King's Cross arches, the boot brought)
   // Audit fix D3 (2026-10-12): the postmark keeps only its picture.
   // Puzzle wording (2026-10-23, approved): 04-M2's card says RED · SMALL ·
   // CLOCK · PLATFORM, not FOUR; tip 2 matches it (was 1263118138).
-  'ep04': 3723578742,
+  'ep04': 3866990594, // S1 device feedback PART B (a big black bird)
   // Audit fix D2 (2026-10-12): 05-M3 shows the warning on the wall.
   'ep05': 1062733482,
   // Post-discovery small pass: one transition line each (07 M3, 10 M2).
@@ -473,20 +473,22 @@ const _otherCases = <String, int>{
   // in its glossary (was 1138937255). Then (same day, approved) the joined
   // map gives the arrow's direction only, and the final's tip 2 puts it with
   // Grey's way (was 3660302554).
-  'ep07': 2754950822,
+  'ep07': 1648693040, // S1 device feedback PART C: pictures on the choices (was 2754950822)
   // Mission links (2026-10-23, approved): 09-M3's scene names Carl as the
   // guard who lent Anna his key (was 660966236).
-  'ep09': 1140744217,
+  'ep09': 1920117374, // S1 device feedback PART C: pictures on the choices (was 412892549)
   // London gameplay upgrade (2026-10-30, requested): 10-M3's recall of the
   // Raven Papers. Value before it: ep10 1827099610.
-  'ep10': 905019164,
+  'ep10': 1155795128, // S1 device feedback PART C: pictures on the choices (was 905019164)
   // Phase 4 (approved 2026-10-12): 11-M3 tip 1 (never sleeps), 12-M2 board + after, 12-F whose.
   // Audit fix N1 (2026-10-12): 11-M2 tip 1 reads from the last letter, M.
   // Cross-case tip paths (2026-10-23, approved): 11-F tip 1 leads to Case
   // 01 in the Case Archive (no answer; was 4002299555).
   // Puzzle wording (2026-10-23, approved): 11-M2's mask no longer says how
   // to read it; tip 1 does (was 3504206302).
-  'ep11': 102824680,
+  // S1 dialogue feedback PART B (2026-11-03, approved): 11-M2's question
+  // and clue note, 11-F's Rookie recall of the Old Letter (was 102824680).
+  'ep11': 3921216648,
   // Time code fix (2026-10-21): 12-M2 reads as HH:MM ('codeFormat': 'time').
   // Case 12 M3 (2026-10-21): UNDER ___ ___, one blank per word of BIG BEN.
   // Evidence recall (2026-10-23, requested): 12-F tip 1 says where the

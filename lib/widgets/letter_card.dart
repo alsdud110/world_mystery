@@ -40,9 +40,13 @@ Path _deckledRect(Size s, math.Random rnd, {double amp = 1.6, double step = 12})
 /// A handwritten case letter: a sheet of aged paper with slightly uneven
 /// edges, faint fold creases and a small wax seal, lying on the desk.
 class LetterCard extends StatelessWidget {
-  const LetterCard({super.key, required this.text, this.tilt = -0.01, this.textOpacity = 1, this.textSize = 19, this.compact = false});
+  const LetterCard({super.key, required this.text, this.tilt = -0.01, this.textOpacity = 1, this.textSize = 19, this.compact = false, this.sealPicture});
 
   final String text;
+
+  /// A picture of the seal pressed on this letter (Case 04's black wax
+  /// raven, [ArtAssets.letterSeals]); null: the game's own wax seal.
+  final String? sealPicture;
   final double tilt;
 
   /// The handwriting's size (a long document handed over on a small screen
@@ -83,7 +87,11 @@ class LetterCard extends StatelessWidget {
           ),
           // Pressed into the bottom corner, as if it had sealed the fold
           // (inside the sheet, so it unfolds together with the paper).
-          const Positioned(right: 16, bottom: 10, child: WaxSeal(size: 32)),
+          Positioned(
+            right: sealPicture == null ? 16 : 10,
+            bottom: sealPicture == null ? 10 : 4,
+            child: sealPicture == null ? const WaxSeal(size: 32) : _PictureSeal(sealPicture!, size: 44, label: 'The seal: a raven pressed into black wax'),
+          ),
         ],
       ),
     );
@@ -173,6 +181,28 @@ class _LetterPaperPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
+/// A seal drawn as its picture (on transparency), at [size].
+class _PictureSeal extends StatelessWidget {
+  const _PictureSeal(this.picture, {required this.size, this.label});
+
+  final String picture;
+  final double size;
+
+  /// What it is, read out (the letter's seal); none for the envelope's
+  /// cracking halves.
+  final String? label;
+
+  @override
+  Widget build(BuildContext context) => Image.asset(
+        picture,
+        width: size,
+        height: size,
+        cacheWidth: (size * MediaQuery.devicePixelRatioOf(context)).round(),
+        semanticLabel: label,
+        excludeFromSemantics: label == null,
+      );
+}
+
 /// A flat wax seal: burgundy disc, pressed ring, monogram.
 class WaxSeal extends StatelessWidget {
   const WaxSeal({super.key, this.size = 48, this.letter = 'LM'});
@@ -223,9 +253,12 @@ class WaxSeal extends StatelessWidget {
 /// The envelope is drawn by separate painters (pocket, flap, seal) so each
 /// can later be swapped for a PNG/SVG illustration.
 class EnvelopeReveal extends StatefulWidget {
-  const EnvelopeReveal({super.key, required this.letterText, this.initiallyOpen = false, this.onOpen, this.onOpened});
+  const EnvelopeReveal({super.key, required this.letterText, this.initiallyOpen = false, this.onOpen, this.onOpened, this.sealPicture});
 
   final String letterText;
+
+  /// The seal's picture on the flap and the letter ([LetterCard.sealPicture]).
+  final String? sealPicture;
   final bool initiallyOpen;
   /// The envelope was tapped: the opening starts now (play its sound here).
   final VoidCallback? onOpen;
@@ -277,7 +310,7 @@ class _EnvelopeRevealState extends State<EnvelopeReveal> with SingleTickerProvid
 
   @override
   Widget build(BuildContext context) {
-    if (_open) return LetterCard(text: widget.letterText);
+    if (_open) return LetterCard(text: widget.letterText, sealPicture: widget.sealPicture);
 
     return Semantics(
       button: true,
@@ -366,7 +399,7 @@ class _EnvelopeRevealState extends State<EnvelopeReveal> with SingleTickerProvid
                           child: Align(
                             alignment: Alignment.topCenter,
                             heightFactor: 1 / 3 + (2 / 3) * unfold,
-                            child: LetterCard(text: widget.letterText, tilt: 0, textOpacity: ink),
+                            child: LetterCard(text: widget.letterText, tilt: 0, textOpacity: ink, sealPicture: widget.sealPicture),
                           ),
                         ),
                       ),
@@ -384,7 +417,7 @@ class _EnvelopeRevealState extends State<EnvelopeReveal> with SingleTickerProvid
                         left: 0,
                         right: 0,
                         top: _envelopeHeight * 0.56 - 24,
-                        child: Center(child: _CrackingSeal(progress: seal)),
+                        child: Center(child: _CrackingSeal(progress: seal, picture: widget.sealPicture)),
                       ),
                     ],
                   ),
@@ -521,9 +554,12 @@ class _FlapPainter extends CustomPainter {
 /// The wax seal on the flap. As [progress] goes 0 → 1 it cracks down the
 /// middle and the two halves part and fade.
 class _CrackingSeal extends StatelessWidget {
-  const _CrackingSeal({required this.progress});
+  const _CrackingSeal({required this.progress, this.picture});
 
   final double progress;
+
+  /// The seal's picture, cracked the same way; null: the game's wax.
+  final String? picture;
 
   static const _size = 48.0;
 
@@ -535,7 +571,9 @@ class _CrackingSeal extends StatelessWidget {
           child: Align(
             alignment: left ? Alignment.centerLeft : Alignment.centerRight,
             widthFactor: 0.5,
-            child: const CustomPaint(size: Size.square(_size), painter: _WaxBlobPainter()),
+            child: picture == null
+                ? const CustomPaint(size: Size.square(_size), painter: _WaxBlobPainter())
+                : _PictureSeal(picture!, size: _size),
           ),
         );
     return Opacity(

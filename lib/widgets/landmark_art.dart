@@ -88,6 +88,7 @@ class LandmarkArt extends StatelessWidget {
     Artwork.ironChest: Artwork.lockedDoor,
     Artwork.royalArchive: Artwork.buckinghamPalace,
     Artwork.clockMechanism: Artwork.bigBen,
+    Artwork.maskedStranger: Artwork.kingsCross,
   };
 
 
@@ -388,7 +389,8 @@ class _LandmarkPainter extends CustomPainter {
           Artwork.theatreDoor ||
           Artwork.ironChest ||
           Artwork.royalArchive ||
-          Artwork.clockMechanism:
+          Artwork.clockMechanism ||
+          Artwork.maskedStranger:
         break;
       // X beside the right bench / beside the left bench / under the tree /
       // at the old gate (see `_parkMap`).

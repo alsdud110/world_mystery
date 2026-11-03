@@ -381,9 +381,16 @@ void main() {
         expect(before, isNot(contains("King's Cross")));
         expect(boot.inscription, 'The boot smells of trains and smoke.');
         // The final: the driver's words fit two pictures; the boot decides.
+        // Rookie and Junior also read the glass roof's two arches (only King's
+        // Cross's picture has them); Master keeps the boot alone.
         expect(fin.letter, contains('north'));
         expect(fin.letter, contains('clock tower'));
-        expect(fin.letter, isNot(contains('arches')));
+        if (level == Difficulty.master) {
+          expect(fin.letter, isNot(contains('arches')));
+        } else {
+          expect(fin.letter, contains('glass roof with two big arches'));
+        }
+        expect(fin.recall?.evidenceId, boot.id, reason: 'the boot is brought beside the pictures');
         expect(fin.hints.last, allOf(contains('footprint'), contains('notebook')));
         for (final h in fin.hints) {
           expect(hasWord(h, 'stations?|trains?'), isFalse, reason: h);

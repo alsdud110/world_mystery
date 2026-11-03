@@ -17,7 +17,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/landmark_art.dart';
 import 'package:world_mystery/widgets/place_art.dart';
 
-import 'full_playthrough_test.dart' show reveal, tapText, wait;
+import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
 
@@ -62,13 +62,15 @@ void main() {
       expect(fileOf('ep06_m3'), theatreDoor);
     });
 
-    test("Case 08 is Mrs Robin's black suitcase; Case 04 stays brown; Case 11 stays drawn", () {
+    test("Case 08 is Mrs Robin's black suitcase; Case 04 stays brown; Case 11's final is the stranger", () {
       expect(fileOf('ep08_m1'), blackSuitcase);
       expect(fileOf('ep08_m3'), blackSuitcase);
       for (final id in ['m01', 'ep04_m1', 'ep04_m3', 'ep04_final']) {
         expect(fileOf(id), brownSuitcase, reason: id);
       }
-      expect(fileOf('ep11_final'), isNull, reason: "Case 01's suitcase on Platform 9, recalled: drawn");
+      // The stranger who talks to you on Platform 9 (S1 dialogue feedback,
+      // 2026-11-03; was Case 01's suitcase, drawn).
+      expect(fileOf('ep11_final'), 'assets/seasons/season_01_london/characters/stranger_masked.webp');
     });
 
     test('Case 09 finds the glass case empty: its own picture, never the tiara box', () {
@@ -229,7 +231,7 @@ void main() {
       expect(picture(blackSuitcase), findsNothing);
     });
 
-    testWidgets('Case 11 $tag: the auditorium, the dressing room, and the drawn Platform 9 suitcase', (t) async {
+    testWidgets('Case 11 $tag: the auditorium, the dressing room, and the stranger on Platform 9', (t) async {
       await openMission(t, size, 'ep11_m1');
       expect(picture(theatre), findsOneWidget);
       await capture(t, 'art_case11_theatre_$tag');
@@ -237,7 +239,11 @@ void main() {
       expect(picture('assets/seasons/season_01_london/locations/covent_garden/covent_garden_dressing_room.webp'), findsOneWidget);
       expect(picture(theatre), findsNothing);
       await openMission(t, size, 'ep11_final');
-      expect(drawn(Artwork.suitcase), findsOneWidget);
+      // He talks to you first, his mask on; then his card, under his picture.
+      expect(picture('assets/seasons/season_01_london/characters/stranger_masked.webp'), findsOneWidget);
+      await hearTalk(t);
+      expect(picture('assets/seasons/season_01_london/characters/stranger_masked.webp'), findsOneWidget);
+      expect(drawn(Artwork.suitcase), findsNothing);
       expect(picture(blackSuitcase), findsNothing);
     });
 
@@ -277,8 +283,12 @@ void main() {
         await settle(t, const Duration(milliseconds: 900));
         expect(picture(file), findsWidgets, reason: 'the story after $solvedId');
       }
-      // The case reports.
-      for (final (id, file) in const [('ep05', ironChest), ('ep12', ironDoor)]) {
+      // The case reports: the solved view of each (S1 device feedback PART C:
+      // the chest open; S1 dialogue feedback PART B: the iron door open).
+      for (final (id, file) in const [
+        ('ep05', 'assets/seasons/season_01_london/objects/iron_chest_open.webp'),
+        ('ep12', 'assets/seasons/season_01_london/objects/small_iron_door_open.webp'),
+      ]) {
         final router = await start(t, size, await prefsFor(id, solved: true));
         router.go(Routes.solved);
         await settle(t, const Duration(milliseconds: 3200));
@@ -289,8 +299,9 @@ void main() {
       final router = await start(t, size, await prefsFor('ep12', solved: true));
       router.go(Routes.season);
       await settle(t, const Duration(milliseconds: 2500));
-      expect(picture(ironChest), findsOneWidget, reason: 'Case 05');
-      expect(picture(ironDoor), findsOneWidget, reason: 'Case 12');
+      // Both solved: their solved views (the chest open, the door open).
+      expect(picture('assets/seasons/season_01_london/objects/iron_chest_open.webp'), findsOneWidget, reason: 'Case 05');
+      expect(picture('assets/seasons/season_01_london/objects/small_iron_door_open.webp'), findsOneWidget, reason: 'Case 12');
       expect(drawn(Artwork.lockedDoor), findsNothing);
       await capture(t, 'art2_board_$tag');
     });
@@ -344,8 +355,13 @@ void main() {
       Future<void> toPuzzle(String id) async {
         await openMission(t, size, id);
         await tapText(t, 'INVESTIGATE', after: const Duration(milliseconds: 700));
-        await tapText(t, 'TAP TO OPEN', after: const Duration(milliseconds: 1800));
-        await tapText(t, 'SOLVE THE PUZZLE', after: const Duration(milliseconds: 900));
+        if (find.byKey(const ValueKey('case-talk-line')).evaluate().isNotEmpty) {
+          // A person says it (Case 11's taxi driver): heard, then the puzzle.
+          await hearTalk(t);
+        } else {
+          await tapText(t, 'TAP TO OPEN', after: const Duration(milliseconds: 1800));
+          await tapText(t, 'SOLVE THE PUZZLE', after: const Duration(milliseconds: 900));
+        }
         expect(t.takeException(), isNull);
       }
 
