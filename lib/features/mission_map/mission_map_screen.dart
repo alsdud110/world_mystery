@@ -9,12 +9,12 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/utils/audio_service.dart';
-import '../../core/utils/formatters.dart';
 import '../../data/models/episode.dart';
 import '../../data/models/game_progress.dart';
 import '../../data/models/mission.dart';
 import '../../data/models/profile.dart';
 import '../../widgets/clue_card.dart';
+import '../../widgets/coin_balance.dart';
 import '../../widgets/game_button.dart';
 import '../../widgets/game_dialog.dart';
 import '../../widgets/game_toast.dart';
@@ -25,6 +25,7 @@ import '../../widgets/paper_menu.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import '../game/scoring.dart';
+import '../game/wallet_controller.dart';
 import '../onboarding/detective_form.dart';
 import 'map_camera.dart';
 import 'map_world.dart';
@@ -172,8 +173,15 @@ class _MissionMapScreenState extends ConsumerState<MissionMapScreen> with Single
         final progress = ref.watch(gameControllerProvider);
         final episode = ref.watch(currentEpisodeProvider);
         final avatar = ref.watch(detectiveProfileProvider).avatar;
-        final playTime = ref.read(gameControllerProvider.notifier).playTime;
         final xp = XpBreakdown.totalFor(episode, progress);
+        final coins = ref.watch(walletProvider.select((w) => w.balance));
+        // The same faint printed rule, in from the edges, under the status
+        // and above the settings.
+        final rule = Divider(
+          color: AppColors.inkBrown.withValues(alpha: 0.18),
+          indent: AppSpace.screen,
+          endIndent: AppSpace.screen,
+        );
 
         /// Closes the menu, then opens [route]: pushed over the map (back
         /// returns to it as it was), or with [replace], instead of it.
@@ -183,6 +191,9 @@ class _MissionMapScreenState extends ConsumerState<MissionMapScreen> with Single
           Navigator.of(sheetContext).pop();
           replace ? context.go(route) : context.push(route);
         }
+
+        final figures = AppText.caption(color: AppColors.goldDeep)
+            .copyWith(fontFeatures: const [FontFeature.tabularFigures()]);
 
         Widget item(InkGlyph glyph, String label, String route, {bool replace = false}) =>
             PaperMenuItem(glyph, label, onTap: () => open(route, replace: replace));
@@ -206,10 +217,17 @@ class _MissionMapScreenState extends ConsumerState<MissionMapScreen> with Single
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: AppSpace.xs),
-                      Text(
-                        '$xp XP  ·  ${Formatters.clock(playTime)}',
-                        style: AppText.caption(color: AppColors.goldDeep)
-                            .copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
+                      // XP and the wallet's coins on one line (a long number
+                      // wraps, never cut).
+                      Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        spacing: AppSpace.xs + 2,
+                        children: [
+                          Text('$xp XP', style: figures),
+                          Text('·', style: figures),
+                          const GameCoin(color: AppColors.goldDeep),
+                          Text('$coins ${coins == 1 ? 'Coin' : 'Coins'}', style: figures),
+                        ],
                       ),
                     ],
                   ),
@@ -219,8 +237,7 @@ class _MissionMapScreenState extends ConsumerState<MissionMapScreen> with Single
               ],
             ),
           ),
-          // A faint printed rule in the paper's own ink.
-          Divider(color: AppColors.inkBrown.withValues(alpha: 0.18)),
+          rule,
           item(InkGlyph.notebook, 'Detective Notebook', Routes.notebook),
           item(InkGlyph.folder, 'Case Files', Routes.episodes),
           // Out to the World Map: the case stays saved, and the
@@ -228,7 +245,7 @@ class _MissionMapScreenState extends ConsumerState<MissionMapScreen> with Single
           item(InkGlyph.map, 'World Map', Routes.worldMap, replace: true),
           // The detective's name and picture (progress stays).
           item(InkGlyph.pen, 'My Detective Profile', Routes.detective),
-          Divider(color: AppColors.inkBrown.withValues(alpha: 0.18), indent: AppSpace.screen, endIndent: AppSpace.screen),
+          rule,
           const SoundSwitchTile(),
           // The first-play guide again, over the map (back returns here).
           item(InkGlyph.hint, 'How to Play', Routes.howToPlayAgain),
@@ -952,16 +969,16 @@ class _ProgressMark extends StatelessWidget {
   }
 }
 
-/// The detective's picture in the corner of the map's menu, a small card
-/// of the profile's own portrait (the cap in ink while none is chosen):
-/// a tap opens the profile.
+/// The detective's picture in the corner of the map's menu, the profile's
+/// own portrait on the paper itself, whole and unframed (the cap in ink
+/// while none is chosen): a tap opens the profile.
 class _MenuPortrait extends StatelessWidget {
   const _MenuPortrait({required this.avatar, required this.onTap});
 
   final DetectiveAvatar? avatar;
   final VoidCallback onTap;
 
-  static const _size = 64.0;
+  static const _size = 80.0;
 
   @override
   Widget build(BuildContext context) {
@@ -974,26 +991,12 @@ class _MenuPortrait extends StatelessWidget {
         key: const ValueKey('menu-portrait'),
         behavior: HitTestBehavior.opaque,
         onTap: onTap,
-        child: Container(
-          width: _size,
-          height: _size,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppRadius.paper),
-            border: Border.all(color: AppColors.goldDeep.withValues(alpha: 0.6), width: AppLine.hairline),
-            // The same dusk as behind the portrait on the detective's form.
-            gradient: const LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [AppColors.royalBlueSoft, AppColors.paperLight],
-            ),
-          ),
+        child: SizedBox.square(
+          dimension: _size,
           child: avatar == null
-              ? const Center(child: InkIcon(InkGlyph.deerstalker, size: AppIconSize.small, color: AppColors.inkBrown))
-              : Padding(
-                  padding: const EdgeInsets.only(top: AppSpace.xs),
-                  child: DetectivePortrait(avatar: avatar, alignment: Alignment.bottomCenter),
-                ),
+              ? const Center(child: InkIcon(InkGlyph.deerstalker, size: AppIconSize.large, color: AppColors.inkBrown))
+              // The picture fills its own canvas: shown whole, at its own shape.
+              : DetectivePortrait(avatar: avatar, alignment: Alignment.bottomCenter),
         ),
       ),
     );

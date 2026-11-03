@@ -8,12 +8,16 @@ import 'package:world_mystery/app.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
 import 'package:world_mystery/core/router/app_router.dart';
 import 'package:world_mystery/core/theme/app_colors.dart';
+import 'package:world_mystery/data/models/detective_name.dart';
 import 'package:world_mystery/data/models/game_progress.dart';
 import 'package:world_mystery/data/models/profile.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/features/game/game_controller.dart';
 import 'package:world_mystery/features/mission_map/mission_map_screen.dart';
+import 'package:world_mystery/features/game/scoring.dart';
+import 'package:world_mystery/features/game/wallet_controller.dart';
 import 'package:world_mystery/widgets/art_assets.dart';
+import 'package:world_mystery/widgets/coin_balance.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
@@ -183,7 +187,13 @@ void main() {
       await open(t);
       expect(portraitAsset(t), ArtAssets.avatarBoy);
       final portrait = t.getRect(find.byKey(const ValueKey('menu-portrait')));
-      expect(portrait.size, const Size(64, 64));
+      expect(portrait.size, const Size(80, 80));
+      // The picture alone on the paper: no frame, card or shadow around it.
+      final frame = find.descendant(of: find.byKey(const ValueKey('menu-portrait')), matching: find.byWidgetPredicate((w) => w is Container || w is DecoratedBox || w is Material));
+      expect(frame, findsNothing);
+      // Whole, at its own shape (contain), as tall as the space.
+      final img = t.widget<Image>(inSheet(find.descendant(of: find.byKey(const ValueKey('menu-portrait')), matching: find.byType(Image))));
+      expect(img.fit, BoxFit.contain);
       expect(t.getRect(inSheet(find.text('Detective MINYOUNG'))).right, lessThanOrEqualTo(portrait.left));
       final semantics = t.ensureSemantics();
       expect(find.bySemanticsLabel('My Detective Profile'), findsWidgets);
@@ -196,6 +206,57 @@ void main() {
       await t.binding.handlePopRoute();
       await wait(t, const Duration(milliseconds: 1200));
       expect(path(), Routes.map);
+      await wait(t, const Duration(seconds: 3));
+    });
+
+    testWidgets('XP and the wallet\'s coins on one line, no play time; a new balance the next time it opens', (t) async {
+      await pumpMap(t);
+      final xp = XpBreakdown.totalFor(app.read(currentEpisodeProvider), app.read(gameControllerProvider));
+      final coins = app.read(walletProvider).balance;
+      await open(t);
+      expect(inSheet(find.text('$xp XP')), findsOneWidget);
+      expect(inSheet(find.text('$coins Coins')), findsOneWidget);
+      expect(inSheet(find.byType(GameCoin)), findsOneWidget);
+      expect(inSheet(find.textContaining(RegExp(r'\d+:\d\d'))), findsNothing, reason: 'no play time');
+      expect(t.getRect(inSheet(find.text('$xp XP'))).center.dy, closeTo(t.getRect(inSheet(find.text('$coins Coins'))).center.dy, 2));
+      await t.binding.handlePopRoute();
+      await wait(t, const Duration(milliseconds: 600));
+
+      app.read(walletProvider.notifier).rewardCompletedAd('menu-test');
+      await open(t);
+      expect(inSheet(find.text('${coins + 30} Coins')), findsOneWidget);
+      await wait(t, const Duration(seconds: 3));
+    });
+
+    testWidgets('the rule under the status is the settings\' rule: same ink, same margins', (t) async {
+      await pumpMap(t);
+      await open(t);
+      final rules = t.widgetList<Divider>(inSheet(find.byType(Divider))).toList();
+      expect(rules, hasLength(2));
+      for (final r in rules) {
+        expect((r.color, r.indent, r.endIndent, r.thickness, r.height), (rules.last.color, rules.last.indent, rules.last.endIndent, rules.last.thickness, rules.last.height));
+      }
+      expect(rules.first.indent, greaterThan(0));
+      final sheetRect = t.getRect(sheet);
+      final top = t.getRect(inSheet(find.byType(Divider)).first);
+      expect(top.width, sheetRect.width, reason: 'the box spans the sheet; the line is inset by indent');
+      await wait(t, const Duration(seconds: 3));
+    });
+
+    testWidgets('a small phone, a long name, large text: nothing overflows or overlaps', (t) async {
+      t.platformDispatcher.textScaleFactorTestValue = 1.3;
+      addTearDown(t.platformDispatcher.clearTextScaleFactorTestValue);
+      await pumpMap(t, avatar: DetectiveAvatar.girl);
+      t.view.physicalSize = const Size(320, 568) * 3;
+      // The longest name the form takes, in wide letters.
+      final longest = 'W' * DetectiveName.maxLength;
+      expect(app.read(gameControllerProvider.notifier).renameDetective(longest), isNull);
+      await wait(t, const Duration(milliseconds: 600));
+      await open(t);
+      expect(t.takeException(), isNull);
+      final name = t.getRect(inSheet(find.textContaining('WWW')));
+      final portrait = t.getRect(find.byKey(const ValueKey('menu-portrait')));
+      expect(name.right, lessThanOrEqualTo(portrait.left));
       await wait(t, const Duration(seconds: 3));
     });
 
