@@ -62,6 +62,7 @@ dart run tool/season_factory/season_factory.dart run <seasonDir> --budget <usd>
 | exit | what to do |
 |---|---|
 | 10 | fix the plans (`plan_season.dart check <seasonDir>`) |
+| 15 | a historical season (`mode: historical_fiction_mystery`): fix what the dossier's automatic checks report (sources, facts `source_checked`, puzzles linked, levels) and run again; no person's approval is asked |
 | 20 | **open the review sheet PNG with the Read tool and look at every picture**: style like the season's others, faces as the character's other portraits, every clue the plans name visible, no text, choices fair, nothing giving an answer away. Then `season_factory.dart reviewed <seasonDir> <assetId>...` for the good ones, and for a bad one fix its prompt in `assets.manifest.json` and `season_factory.dart reject <seasonDir> <assetId> --why "<what was wrong>"`. Never mark a picture reviewed without looking at it. |
 | 30 | open each grid sheet it names (Read tool), read the pixel positions off the grid and write them into the plans: the map's `art.map.landmarks` (each drawing's centre) with `measuredOn` = the sha256 it printed; a look round's `areas`, `mark`, `guideAt`, `opening` (every place's centre inside it), `picture.measuredOn`, and replace its `UNMEASURED` note with how it was measured. No two areas may overlap. If you cannot see a thing on the picture, do not guess: fix the prompt and reject the picture. |
 | 35 | not a stop for the user: write the Junior and Master English yourself right away (§ Levels below, its steps), then run again |

@@ -93,6 +93,9 @@ abstract final class PuzzleEngineDispatch {
     // The question's own place, its traces tapped in order in place of its
     // buttons (London Case 03 M3).
     EngineStep('trails', 'TrailOrderQuestion'),
+    // Puzzle Engine 2.0: a timeline put back together, in place of its
+    // buttons (a sequence's answer); after every engine before it.
+    EngineStep('timelines', 'TimelineBoard'),
   ];
 
   /// The final page's steps: a talk or steps take the whole page; then its

@@ -62,7 +62,9 @@ class ApprovalRecord {
 
   final ApprovalKind kind;
 
-  /// The season id, the case id, or the asset id (`s3_tokyo.asset.hall`).
+  /// The season id, the case id, the asset id (`s3_tokyo.asset.hall`), the
+  /// fact id (`s5_ep01_h1`, its case in it), the case id of a reveal, or the
+  /// mission id of a puzzle (`s5_ep01_m2`).
   final String id;
 
   /// The content's [ContentHash] when it was approved.

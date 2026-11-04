@@ -6,6 +6,7 @@ import 'clue_graph_check.dart';
 import 'content_approval.dart';
 import 'content_hash.dart';
 import 'dart_literal.dart';
+import 'history_dossier.dart';
 import 'json_schema_lite.dart';
 import 'play_check.dart';
 import 'plan_files.dart';
@@ -92,7 +93,7 @@ Future<void> main(List<String> args) async {
     }
   }
   final schemaDir = '${File.fromUri(Platform.script).parent.path}/schema';
-  exit(makeAndWrite(() => CaseGenerator.sandbox(seasonPath: seasonPath!, casePaths: cases, schemaDir: schemaDir, slice: slice),
+  exit(makeAndWrite(() => CaseGenerator.sandbox(seasonPath: seasonPath!, casePaths: cases, schemaDir: schemaDir, slice: slice, staticOnly: checkOnly),
       out: out, checkOnly: checkOnly, force: force));
 }
 
@@ -115,12 +116,18 @@ int makeAndWrite(Generated Function() make, {String? out, bool checkOnly = false
     stdout.writeln('note     $n');
   }
   if (checkOnly) {
+    if (!made.writable) stdout.writeln('blocked  $dir: checked only; a historical season is written once its approvals are given (approve.dart)');
     final stale = GeneratedFiles.stale(dir, made.files);
     for (final f in stale) {
       stdout.writeln('stale    $dir/$f');
     }
     stdout.writeln(stale.isEmpty ? 'ok       $dir: up to date (${made.files.length} files)' : '${stale.length} stale: run without --check');
     return stale.isEmpty ? 0 : 1;
+  }
+  if (!made.writable) {
+    stdout.writeln('  error    [history_blocked] ${made.seasonId}: its approvals are missing (made for a check only)');
+    stdout.writeln('nothing written');
+    return 1;
   }
   try {
     final warnings = GeneratedFiles.write(dir, made.files, force: force);
@@ -168,7 +175,7 @@ class GenerateFailure implements Exception {
 
 /// What the plans make: the files by name (the manifest last), not yet written.
 class Generated {
-  const Generated(this.seasonId, this.files, this.notes, {this.slice = false, this.target = 'sandbox'});
+  const Generated(this.seasonId, this.files, this.notes, {this.slice = false, this.target = 'sandbox', this.writable = true});
 
   final String seasonId;
   final Map<String, String> files;
@@ -182,6 +189,11 @@ class Generated {
   /// `sandbox` (played by the tests only) or `game` (the season in the app,
   /// `SeasonCatalog.all`, through [GameRegistry]).
   final String target;
+
+  /// False: made for a check only ([CaseGenerator.sandbox]'s `staticOnly`)
+  /// while a historical season's approvals are missing: compared, never
+  /// written ([makeAndWrite]).
+  final bool writable;
 
   String get defaultDir => target == 'game' ? '${GameRegistry.dir}/$seasonId' : 'test/sandbox/generated/$seasonId${slice ? '_slice' : ''}';
 }
@@ -210,6 +222,13 @@ abstract final class CaseGenerator {
   /// pictures), written under `lib/data/generated/<seasonId>/` and listed by
   /// [GameRegistry]. It needs the season's map planned and drawn (`art.map`):
   /// a season without its map can never be entered.
+  ///
+  /// A historical season (brief.json's `mode`) is made, for either target,
+  /// only once `HistoryGate` (game) finds nothing missing: every fact,
+  /// reveal and puzzle approved, every level written. With [staticOnly]
+  /// (a check that writes nothing: `--check`, `plan_season check`) a sandbox
+  /// season is made all the same, but marked not [Generated.writable] with
+  /// what stands in the way. The game is never made without its approvals.
   static Generated sandbox({
     required String seasonPath,
     required List<String> casePaths,
@@ -217,6 +236,7 @@ abstract final class CaseGenerator {
     String schemaDir = 'tool/season_gen/schema',
     bool slice = false,
     String target = 'sandbox',
+    bool staticOnly = false,
   }) {
     final schemas = SchemaSet.load(schemaDir);
     final lines = <String>[];
@@ -392,11 +412,31 @@ abstract final class CaseGenerator {
       }
     }
 
-    // 6. The files.
+    // 5b. A historical season (brief.json's `mode`): into the game only with
+    // its dossier's automatic checks passed and every level written
+    // (`HistoryGate`, game), its reveals made from it.
+    // Nothing in the standard mode.
+    // The sandbox too (Seoul Pilot): a historical season's content is never
+    // written while they fail; a check may still make it, unwritable.
+    Map<String, HistoryRevealData>? reveals;
+    final blockers = [for (final b in HistoryGate.blockers(seasonDir, game: true)) '[history_blocked] $b'];
+    final unwritable = blockers.isNotEmpty && staticOnly && target == 'sandbox';
+    if (unwritable) {
+      notes.add('history: ${blockers.length} blockers: checked in memory, never written (${blockers.first}${blockers.length > 1 ? ' …' : ''})');
+    } else {
+      failed(seasonPath, blockers);
+      if (lines.isNotEmpty) throw GenerateFailure(lines);
+      if (SeasonMode.of(seasonDir) == SeasonMode.historicalFictionMystery) {
+        reveals = HistoryDossier.check(seasonDir, season, {for (final (path, p) in plans) p.caseId: path}).reveals;
+      }
+    }
+
+    // 6. The files (Puzzle Engine 2.0's tables only for a season that plays them).
+    final scenes = scenesOf([for (final (_, p) in plans) p]);
     final seasonJson = PlanFiles.readJson(seasonPath);
     final files = <String, String>{
       '${season.seasonId}_season.g.dart': _seasonFile(season, ContentHash.ofJson(seasonJson), places),
-      for (final (path, p) in plans) '${p.caseId}.g.dart': _caseFile(p, season, relative[p.caseId]!, ContentHash.ofJson(PlanFiles.readJson(path)), onDisk),
+      for (final (path, p) in plans) '${p.caseId}.g.dart': _caseFile(p, season, relative[p.caseId]!, ContentHash.ofJson(PlanFiles.readJson(path)), onDisk, scenes: scenes),
       '${season.seasonId}_cases.g.dart': _casesFile(season, [for (final (_, p) in plans) p]),
       if (leveled) ...{
         for (final (path, p) in plans)
@@ -407,13 +447,16 @@ abstract final class CaseGenerator {
             'cases/${p.caseId}/${CaseLevels.fileName}',
             ContentHash.ofJson(PlanFiles.readJson(CaseLevels.pathFor(path))),
             onDisk,
+            scenes: scenes,
           ),
         '${season.seasonId}_levels.g.dart': _seasonLevelsFile(season, [for (final (_, p) in plans) p], {
           for (final l in PlanLevel.values) l: seasonLevels?.textAt(PlanFiles.readJson(seasonPath), l) ?? const {},
         }),
       },
+      // A historical season's reveals, approved (the sandbox's too: its tests play the Case Closed file).
+      if (reveals != null) '${season.seasonId}_history.g.dart': _historyFile(season, reveals),
       if (target == 'game') ...{
-        '${season.seasonId}_content.g.dart': _contentFile(season, leveled: leveled),
+        '${season.seasonId}_content.g.dart': _contentFile(season, leveled: leveled, history: reveals != null, scenes: scenes),
         '${season.seasonId}_art.g.dart': _artFile(
           season,
           [for (final (_, p) in plans) p],
@@ -433,6 +476,7 @@ abstract final class CaseGenerator {
       'inputs': {
         'season.plan.json': ContentHash.ofJson(seasonJson),
         if (seasonLevels != null) SeasonLevels.fileName: ContentHash.ofJson(PlanFiles.readJson(SeasonLevels.pathFor(seasonPath))),
+        if (reveals != null) HistoryDossier.path: ContentHash.ofJson(PlanFiles.readJson('$seasonDir/${HistoryDossier.path}')),
         for (final (path, p) in plans) ...{
           relative[p.caseId]!: ContentHash.ofJson(PlanFiles.readJson(path)),
           if (levels.containsKey(p.caseId))
@@ -442,19 +486,20 @@ abstract final class CaseGenerator {
       'outputs': {for (final MapEntry(:key, :value) in files.entries) key: ContentHash.ofBytes(utf8.encode(value))},
     };
     files[manifestName] = PlanFiles.encode(manifest);
-    return Generated(season.seasonId, files, notes, slice: slice, target: target);
+    return Generated(season.seasonId, files, notes, slice: slice, target: target, writable: !unwritable);
   }
 
   // ── The game: the season's content and art ─────────────────────────────
 
   /// The season as the app plays it (`SeasonCatalog.all`, by [GameRegistry]).
-  static String _contentFile(SeasonPlan s, {bool leveled = false}) {
+  static String _contentFile(SeasonPlan s, {bool leveled = false, bool history = false, Map<String, String> scenes = sceneTables}) {
     final name = constName(s.seasonId);
-    final tables = [...sceneTables.keys, ...storyTables.keys];
+    final tables = [...scenes.keys, ...storyTables.keys];
     return '$generatedHeader\n// source: season.plan.json and its cases (in play order)\n\n'
         "import 'package:world_mystery/data/mock/season_catalog.dart' show SeasonContent;\n"
         '\n'
         "import '${s.seasonId}_cases.g.dart';\n"
+        "${history ? "import '${s.seasonId}_history.g.dart';\n" : ''}"
         "${leveled ? "import '${s.seasonId}_levels.g.dart';\n" : ''}"
         "import '${s.seasonId}_season.g.dart';\n"
         '\n'
@@ -469,9 +514,29 @@ abstract final class CaseGenerator {
         '  languageTopics: ${name}LanguageTopics,\n'
         '  evidenceLinks: ${name}EvidenceLinks,\n'
         '${[for (final t in tables) '  $t: $name${_suffix(t)},\n'].join()}'
+        '${history ? '  historyReveals: ${name}HistoryReveals,\n' : ''}'
         '${leveled ? '  casePatches: ${name}CasePatches,\n  variants: ${name}Variants,\n  writtenLevels: ${name}WrittenLevels,\n  infoLevels: ${name}InfoLevels,\n' : ''}'
         ');\n';
   }
+
+  /// A historical season's reveals, by case in play order (`SeasonContent.historyReveals`).
+  static String _historyFile(SeasonPlan s, Map<String, HistoryRevealData> reveals) =>
+      '$generatedHeader\n// source: ${HistoryDossier.path} (every fact source-checked)\n\n'
+      "import 'package:world_mystery/data/models/history_reveal.dart';\n"
+      '\n'
+      "/// Each case's REAL HISTORY and IN THIS MYSTERY, after its solve.\n"
+      'const ${constName(s.seasonId)}HistoryReveals = <String, HistoryReveal>${DartLiteral.of({
+        for (final id in s.caseIds)
+          if (reveals[id] case final r?)
+            id: DartCall('HistoryReveal', named: {
+              'realHistory': [for (final l in r.realHistory) _historyLine(l)],
+              'inThisMystery': [for (final l in r.inThisMystery) _historyLine(l)],
+              'sources': [for (final x in r.sources) DartCall('HistorySource', named: x)],
+            }),
+      })};\n';
+
+  static DartCall _historyLine(Map<String, String> l) =>
+      DartCall('HistoryLine', named: {'rookie': l['rookie'], 'junior': l['junior'], 'master': l['master']});
 
   // ── The levels (Junior, Master) ────────────────────────────────────────
 
@@ -515,8 +580,9 @@ abstract final class CaseGenerator {
     SeasonPlan season,
     String source,
     String hash,
-    bool Function(String file) onDisk,
-  ) {
+    bool Function(String file) onDisk, {
+    Map<String, String> scenes = sceneTables,
+  }) {
     final name = constName(c.caseId);
     final b = StringBuffer();
     for (final l in PlanLevel.values) {
@@ -525,7 +591,7 @@ abstract final class CaseGenerator {
       b
         ..write('/// Case ${c.caseId} at ${_level(l)}: its words (`SeasonContent.casePatches`).\n')
         ..write('const ${prefix}Patch = <String, Object?>${DartLiteral.of(levelPatch(plan, at.$2[l] ?? const {}))};\n\n')
-        ..write(_tableDecls(plan, season, prefix, onDisk, doc: 'at ${_level(l)}'))
+        ..write(_tableDecls(plan, season, prefix, onDisk, doc: 'at ${_level(l)}', scenes: scenes))
         ..write('\n');
     }
     final body = b.toString().trimRight();
@@ -564,7 +630,7 @@ abstract final class CaseGenerator {
         ..write('    info: const {},\n')
         ..write('    episodes: const {},\n')
         ..write('    learning: ${spread('learning')},\n');
-      for (final t in [...sceneTables.keys, ...storyTables.keys]) {
+      for (final t in [...scenesOf(plans).keys, ...storyTables.keys]) {
         b.write('    $t: ${spread(t)},\n');
       }
       b.write('  ),\n');
@@ -738,9 +804,9 @@ abstract final class CaseGenerator {
         '/// Their evidence matched to earlier evidence (`SeasonContent.evidenceLinks`).\n'
         'const ${name}EvidenceLinks = <String, EvidenceLink>${spread('EvidenceLinks')};\n'
         '${[
-          for (final MapEntry(key: table, value: model) in sceneTables.entries)
+          for (final MapEntry(key: table, value: model) in scenesOf(plans).entries)
             '\n/// Their missions played on `$table` (`SeasonContent.$table`).\n'
-                'const $name${_suffix(table)} = <String, $model>${spread(_suffix(table))};\n',
+                '${_sceneKeyword(table)} $name${_suffix(table)} = <String, $model>${spread(_suffix(table))};\n',
         ].join()}'
         '${[
           for (final MapEntry(key: table, value: (model, doc)) in storyTables.entries)
@@ -756,8 +822,10 @@ abstract final class CaseGenerator {
 
   /// Where the game's types a generated file names are declared.
   static const _libraries = {
-    'dart:ui': ['Offset', 'Rect'],
-    'package:world_mystery/data/models/case_talk.dart': ['EndingLine', 'TalkLine', 'TalkMission', 'TalkScene', 'TalkSpeaker', 'TalkVoice'],
+    'dart:ui': ['Offset', 'Rect', 'Size'],
+    'package:world_mystery/data/models/case_talk.dart': [
+      'EndingLine', 'TalkLine', 'TalkMission', 'TalkPresent', 'TalkQuestion', 'TalkScene', 'TalkSpeaker', 'TalkVoice', //
+    ],
     'package:world_mystery/data/models/dialogue.dart': [
       'DialogueAnswer', 'DialogueDeduction', 'DialogueQuestion', 'DialogueScene', 'DialogueSpeaker', 'DialogueStatement', //
     ],
@@ -765,7 +833,11 @@ abstract final class CaseGenerator {
     'package:world_mystery/data/models/investigation.dart': ['InvestigationFind', 'InvestigationScene', 'InvestigationSpot'],
     'package:world_mystery/data/models/learning.dart': [],
     'package:world_mystery/data/models/scene_exhibit.dart': ['EvidenceLink'],
+    'package:world_mystery/data/models/scene_deduction.dart': ['DeductionClue', 'DeductionPlace', 'DeductionScene', 'TraceSketch'],
     'package:world_mystery/data/models/scene_explore.dart': ['ExploreKind', 'ExplorePicture', 'ExploreScene', 'ExploreSpot', 'ScenePixels'],
+    'package:world_mystery/data/models/scene_inspect.dart': ['InspectKind', 'InspectScene', 'InspectSpot'],
+    'package:world_mystery/data/models/tower_puzzles.dart': ['PaperQuad', 'RecordDoc', 'RecordLayout', 'RecordLine', 'RecordsScene'],
+    'package:world_mystery/puzzles_v2/core/timeline_rules.dart': ['TimelineCard', 'TimelineRelation', 'TimelineSpec'],
   };
 
   /// The imports of [body]: each library whose types it names, showing only
@@ -801,16 +873,16 @@ abstract final class CaseGenerator {
   /// [c]'s learning and its puzzle tables (scenes, then the story around
   /// them), each a constant named [prefix] and the table: what a level's
   /// `SeasonContent` holds of the case ([doc]: which level, for the comments).
-  static String _tableDecls(CasePlan c, SeasonPlan season, String prefix, bool Function(String file) onDisk, {required String doc}) {
+  static String _tableDecls(CasePlan c, SeasonPlan season, String prefix, bool Function(String file) onDisk, {required String doc, required Map<String, String> scenes}) {
     final all = c.allMissions;
     return "/// Its missions' learning design $doc.\n"
         'const ${prefix}Learning = <String, LearningObjective>${DartLiteral.of(_learning(c))};\n'
         '${[
-          for (final MapEntry(key: table, value: model) in sceneTables.entries)
+          for (final MapEntry(key: table, value: model) in scenes.entries)
             '\n/// Its missions played on `$table` $doc.\n'
-                'const $prefix${_suffix(table)} = <String, $model>${DartLiteral.of({
+                '${_sceneKeyword(table)} $prefix${_suffix(table)} = <String, $model>${DartLiteral.of({
                   for (final m in all)
-                    if (m.puzzle.engineTable == table) m.missionId: ?scene(m),
+                    if (m.puzzle.engineTable == table) m.missionId: ?scene(m, season),
                 })};\n',
         ].join()}'
         '${[
@@ -822,7 +894,7 @@ abstract final class CaseGenerator {
         ].join()}';
   }
 
-  static String _caseFile(CasePlan c, SeasonPlan season, String source, String hash, bool Function(String file) onDisk) {
+  static String _caseFile(CasePlan c, SeasonPlan season, String source, String hash, bool Function(String file) onDisk, {Map<String, String> scenes = sceneTables}) {
     final name = constName(c.caseId);
     final all = c.allMissions;
     final learning = _learning(c);
@@ -845,12 +917,12 @@ abstract final class CaseGenerator {
         '/// Its evidence matched to earlier evidence (`SeasonContent.evidenceLinks`).\n'
         'const ${name}EvidenceLinks = <String, EvidenceLink>${DartLiteral.of(links)};\n'
         '${[
-          for (final MapEntry(key: table, value: model) in sceneTables.entries)
+          for (final MapEntry(key: table, value: model) in scenes.entries)
             '\n/// Its missions played on `$table` (`SeasonContent.$table`): their scenes,\n'
                 '/// places on their pictures as the pictures\' pixels (fractions at run time).\n'
-                'const $name${_suffix(table)} = <String, $model>${DartLiteral.of({
+                '${_sceneKeyword(table)} $name${_suffix(table)} = <String, $model>${DartLiteral.of({
                   for (final m in all)
-                    if (m.puzzle.engineTable == table) m.missionId: ?scene(m),
+                    if (m.puzzle.engineTable == table) m.missionId: ?scene(m, season),
                 })};\n',
         ].join()}'
         '${[
@@ -935,20 +1007,224 @@ abstract final class CaseGenerator {
     'dialogues': 'DialogueScene',
   };
 
+  /// Puzzle Engine 2.0's tables, by the model each holds: written only for
+  /// a season one of whose missions is played on it, so a season made
+  /// before them (Rome, New York) is made byte for byte as before.
+  static const v2SceneTables = {
+    'timelines': 'TimelineSpec',
+    // STEP 1: engines the game already played, now made from plans.
+    'deductions': 'DeductionScene',
+    'inspections': 'InspectScene',
+    'records': 'RecordsScene',
+    'talks': 'TalkScene',
+  };
+
+  /// A talk cannot be a constant (`TalkScene` checks its steps when made):
+  /// its table is `final`, every other scene table `const`.
+  static String _sceneKeyword(String table) => table == 'talks' ? 'final' : 'const';
+
+  /// The scene tables a season of [plans] is written with.
+  static Map<String, String> scenesOf(Iterable<CasePlan> plans) => {
+    ...sceneTables,
+    for (final MapEntry(:key, :value) in v2SceneTables.entries)
+      if (plans.any((p) => p.allMissions.any((m) => m.puzzle.engineTable == key))) key: value,
+  };
+
   /// `explores` → `Explores` (a constant's suffix).
   static String _suffix(String table) => '${table[0].toUpperCase()}${table.substring(1)}';
 
   /// [m]'s scene as its engine's model, or null when it has none.
-  static DartCall? scene(MissionPlan m) {
+  static DartCall? scene(MissionPlan m, SeasonPlan season) {
     final w = m.play;
     if (w == null) return null;
     return switch (m.puzzle.engineTable) {
       'explores' => w.explore == null ? null : _explore(w.explore!),
       'investigations' => w.search == null ? null : _search(w.search!, m.puzzle.answerSpec.answer),
       'dialogues' => w.dialogue == null ? null : _dialogue(w.dialogue!, m.puzzle.answerSpec.answer),
+      'timelines' => w.timeline == null ? null : _timeline(w.timeline!, m.puzzle.answerSpec.answer),
+      'deductions' => w.traces == null ? null : _traces(w.traces!),
+      'inspections' => w.inspect == null ? null : _inspect(w.inspect!),
+      'records' => w.records == null ? null : _records(w.records!),
+      'talks' => w.interview == null ? null : _interview(m, w.interview!, season),
       _ => null,
     };
   }
+
+  /// A timeline as `TimelineSpec` (its order the puzzle's answer). Its cards'
+  /// sources (`factIds`, `fiction`) stay in the plans: the game shows the
+  /// approved history after the case (`historyReveals`).
+  static DartCall _timeline(TimelinePlan t, String answer) => DartCall('TimelineSpec', named: {
+    'cards': [
+      for (final c in t.cards)
+        DartCall('TimelineCard', named: {
+          'id': c.id,
+          'title': c.title,
+          'text': c.text,
+          'anchor': ?c.anchor,
+          if (c.discard) 'discard': true,
+          'evidence': ?c.evidence,
+        }),
+    ],
+    'order': [for (final id in answer.split(',')) id.trim()],
+    'relations': [
+      for (final r in t.relations) DartCall('TimelineRelation', named: {'earlier': r.earlier, 'later': r.later, 'line': r.line}),
+    ],
+  });
+
+  // ── Existing engines (Puzzle Engine 2.0 STEP 1) ─────────────────────────
+
+  static DartCall _traces(TracesPlan s) {
+    final (w, h) = (s.picture.width, s.picture.height);
+    return DartCall('DeductionScene', named: {
+      'picture': s.picture.file,
+      'pixels': DartCall('ScenePixels', positional: [w.toDouble(), h.toDouble()]),
+      'place': s.place,
+      'task': s.task,
+      'chooseTask': s.chooseTask,
+      'missLine': s.missLine,
+      'notPlaceLine': s.notPlaceLine,
+      'clues': [
+        for (final c in s.clues)
+          DartCall('DeductionClue', named: {
+            'id': c.id, 'label': c.label, 'areas': _rects(c.areas, w, h), 'mark': _point(c.mark, w, h), 'line': c.line, //
+            if (c.sketch case final k?) 'sketch': DartCode('TraceSketch.$k'),
+          }),
+      ],
+      'others': [for (final o in s.others) _empty(o, w, h)],
+      'places': [
+        for (final p in s.places) DartCall('DeductionPlace', named: {'optionId': p.optionId, 'areas': _rects(p.areas, w, h), 'mark': _point(p.mark, w, h)}),
+      ],
+      'guideAt': _point(s.guideAt, w, h),
+      if (s.inside case final r?) 'inside': _rect(r, w, h),
+      if (s.opening case final r?) 'opening': _rect(r, w, h),
+    });
+  }
+
+  static DartCall _inspect(InspectPlan s) {
+    final (w, h) = (s.picture.width, s.picture.height);
+    return DartCall('InspectScene', named: {
+      'picture': s.picture.file,
+      'pixels': DartCall('ScenePixels', positional: [w.toDouble(), h.toDouble()]),
+      'place': s.place,
+      'task': s.task,
+      'nextTask': s.nextTask,
+      'dragGuide': s.dragGuide,
+      'tapGuide': s.tapGuide,
+      'missLine': s.missLine,
+      'spots': [
+        for (final x in s.spots)
+          DartCall('InspectSpot', named: {
+            'id': x.id,
+            'kind': DartCode('InspectKind.${x.kind}'),
+            'title': x.title,
+            'label': x.label,
+            'areas': _rects(x.areas, w, h),
+            'line': x.line,
+            if (x.checks.isNotEmpty) 'checks': DartCode('{${x.checks.join(', ')}}'),
+            'requires': ?x.requires,
+            'lockedLine': ?x.lockedLine,
+          }),
+      ],
+      'labelTitle': s.labelTitle,
+      'labelRoom': s.labelRoom,
+      'labelWorn': s.labelWorn,
+      'taskLine': s.taskLine,
+      if (s.inside case final r?) 'inside': _rect(r, w, h),
+      'lensAt': _point(s.lensAt, w, h),
+    });
+  }
+
+  /// A record: its sheet's corners in the picture's pixels, its words laid
+  /// out face on in the sheet's own units (as `RecordDoc` keeps them).
+  static DartCall _recordDoc(RecordDocPlan d) {
+    final (w, h) = (d.picture.width, d.picture.height);
+    final sh = d.sheet;
+    DartCode at(ScenePoint p) => DartCode('Offset(${_n(p.x)}, ${_n(p.y)})');
+    return DartCall('RecordDoc', named: {
+      'id': d.id,
+      'name': d.name,
+      'file': d.picture.file,
+      'pixels': DartCall('ScenePixels', positional: [w.toDouble(), h.toDouble()]),
+      'crop': _rect(d.crop, w, h),
+      'sheet': DartCall('PaperQuad', named: {
+        'topLeft': at(sh.corners[0]),
+        'topRight': at(sh.corners[1]),
+        'bottomRight': at(sh.corners[2]),
+        'bottomLeft': at(sh.corners[3]),
+        'flat': DartCode('Size(${_n(sh.flat.$1)}, ${_n(sh.flat.$2)})'),
+      }),
+      'layout': DartCall('RecordLayout', named: {
+        'title': DartCode('Rect.fromLTRB(${_n(sh.title.left)}, ${_n(sh.title.top)}, ${_n(sh.title.right)}, ${_n(sh.title.bottom)})'),
+        'rows': [for (final r in sh.rows) DartCode(_n(r))],
+        'rowHeight': DartCode(_n(sh.rowHeight)),
+        'labelLeft': DartCode(_n(sh.labelLeft)),
+        'labelRight': DartCode(_n(sh.labelRight)),
+        'valueLeft': DartCode(_n(sh.valueLeft)),
+        'valueRight': DartCode(_n(sh.valueRight)),
+        if (sh.noteRow case final v?) 'noteRow': DartCode(_n(v)),
+        if (sh.noteLeft case final v?) 'noteLeft': DartCode(_n(v)),
+        if (sh.reach case final v?) 'reach': DartCode(_n(v)),
+        if (sh.ink case final v?) 'ink': DartCode('$v'),
+      }),
+      'title': d.title,
+      'lines': [for (final l in d.lines) DartCall('RecordLine', named: {'id': l.id, 'label': l.label, 'value': l.value})],
+      'note': ?d.note,
+      'label': d.label,
+    });
+  }
+
+  static DartCall _records(RecordsPlan s) => DartCall('RecordsScene', named: {
+    'first': _recordDoc(s.first),
+    'second': _recordDoc(s.second),
+    'readTask': s.readTask,
+    'compareTask': s.compareTask,
+    'checkLabel': s.checkLabel,
+  });
+
+  static DartCode _ids(List<String> ids) => DartCode('{${ids.map(DartLiteral.string).join(', ')}}');
+
+  /// A talk in which evidence is shown: its steps constant, the talk not
+  /// (`TalkScene` checks its steps when made). Its place and the picture
+  /// behind it are the mission's own; [InterviewPlan.portrait] the
+  /// person's face when on disk.
+  static DartCall _interview(MissionPlan m, InterviewPlan t, SeasonPlan season) => DartCall('TalkScene', named: {
+    'id': m.missionId,
+    'speaker': DartConst(DartCall('TalkSpeaker', named: {
+      'id': t.speaker,
+      'name': _nameOf(t.speaker, season),
+      if (t.portrait case final p?) 'portraits': {'base': p},
+    })),
+    'goal': t.goal,
+    'opening': DartConst([for (final l in t.opening) _talkLine(l)]),
+    if (t.questions.isNotEmpty)
+      'questions': DartConst([
+        for (final q in t.questions)
+          DartCall('TalkQuestion', named: {
+            'id': q.id,
+            'text': q.text,
+            'beat': [for (final l in q.lines) _talkLine(l)],
+            if (q.requires.isNotEmpty) 'requires': _ids(q.requires),
+          }),
+      ]),
+    'presents': DartConst([
+      for (final p in t.presents)
+        DartCall('TalkPresent', named: {
+          'id': p.id,
+          'prompt': p.prompt,
+          'accepted': _ids(p.accepted),
+          'beat': [for (final l in p.lines) _talkLine(l)],
+          'miss': DartCall('TalkLine', positional: [p.miss]),
+          if (p.requires.isNotEmpty) 'requires': _ids(p.requires),
+          if (p.offered.isNotEmpty) 'choices': p.offered,
+          'tell': ?p.tell,
+        }),
+    ]),
+    'finishWhen': DartCode('const ${_ids(t.finishWhen).source}'),
+    'place': m.play!.location!,
+    'background': _placeFile(m, season),
+    'finishLabel': ?t.finishLabel,
+    'answer': m.puzzle.answerSpec.answer,
+  });
 
   /// A number of a picture's pixels: written whole when it is.
   static String _n(double v) => v == v.truncateToDouble() ? '${v.toInt()}' : '$v';

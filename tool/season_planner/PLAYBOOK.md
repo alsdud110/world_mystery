@@ -105,6 +105,8 @@ picture beyond the place's):
 | `order_sequence` | `sequence` | mission, final | options, `answer` "a,b,c", `codeLength` (extra options are decoys) |
 | `letter_tile_lock` | `letterLock` | mission, final | one option per tile, the tiles spell the answer exactly |
 | `combo_dial_lock` | `finalCode` | final only | digits, `codeLength`, `dialSymbols` (GameSymbols) |
+| `number_entry` (STEP 1) | `numberCode` | mission, final | digits only, `codeLength` = their count (`codeFormat: time`: four, HHMM); no options. `play.orderFeedback` is said only for the right digits in the wrong order; `play.feedback` keyed by digits put in. The number is read in the words (never known beforehand) |
+| `timeline_board` (Puzzle Engine 2.0) | `sequence`, `engineTable: timelines` | mission | `play.timeline`: `cards` (id, title, text; `anchor` = the time written on a fixed card; `discard: true` = not part of it), `relations` (`earlier`, `later`, `line` — the letter's words, word for word); options = the cards (label = title), `answer` = the order of every card but the discards, `codeLength`, `orderFeedback`. 2–6 cards to place, 1–3 fixed, at most 2 aside; exactly one order (`TimelineRules`). In a historical season each card has `factIds` (approved facts, also in its dossier puzzle's `factIds`) or `fiction: true`, and the mission is a puzzle of the dossier |
 
 Puzzles played on pictures (STEP 3-13; `status: awaitingAssets`, their
 pictures in `assetNeeds` and in the manifest with `use: puzzle`). The worked
@@ -116,6 +118,24 @@ example is the sandbox's `s9_sandbox/cases/s9_ep03/case.plan.json`.
 | `dark_room_search` | `investigations` · `multipleChoice` (missions) | reads a report and finds each thing where its line says (under, on, next to…), zooms, drags | `play.search`: the room picture, finds (each `reportLine` a line of the letter word for word, its cut-out picture), empty places with a line that teaches the word |
 | `witness_compare` | `dialogues` · `multipleChoice` (missions) | chooses a witness, asks questions, compares two statements to find the two that agree (or the one that contradicts) | `play.dialogue`: the place, questions, witnesses (portrait, answers; an answer with a `thing` is a statement `<witness>.<question>`), the deduction (`topic`, the one `pair`, `then` still to hear) |
 | `picture_choice` | none · `imageChoice` (mission, final) | reads a description and looks at 3-4 pictures (names hidden with `play.hideOptionNames`) | each option's `picture` and `altText` (what it shows, for screen readers) |
+| `trace_deduction` (STEP 1) | `deductions` · `multipleChoice` (missions) | taps every trace at the place (each noted with its line), then taps the one place they all point to | `play.traces`: the measured picture, `clues` (2–5; each `line` a line of the letter word for word), `places` (one per option, `optionId`), `others`, `guideAt` (on no trace or place), `inside`/`opening` |
+| `lens_inspect_word` (STEP 1) | `inspections` · `wordInput` (missions) | drags a glass over exhibits; the one the letter describes leads to its label, where the missing word is typed | `play.inspect`: the measured picture, `spots` (one `match`, one `label` that `requires` it, `exhibit`s, `hidden`; `checks` = the letter's lines it confirms, index from 0, blank lines not counted), `taskLine` = the line the typed word answers (confirmed by nothing), `lensAt` on no spot |
+| `record_mismatch` (STEP 1) | `records` · `matchPairs` (missions) | reads two records of the same thing and picks the pair of lines that disagree | `play.records`: `first`/`second`, each its blank paper (measured), `crop`, `sheet` (four corners in pixels, `flat` size and the layout in its units), `lines` (`id`, `label`, `value` — the same at every level). Options = the lines both share, in the first's order; exactly one pair disagrees; answer `<id>:<id>` |
+| `evidence_talk` (STEP 1) | `talks` · `examine` (mission, final) | talks with one person of the case, asks questions, and shows the notebook evidence each prompt asks for (a miss is never wrong) | `play.interview`: `speaker` (a character), `portrait` (optional), `goal`, `opening`, `questions` (`lines`, `requires`), `presents` (`prompt`, `accepted` evidence ids held by then, `lines`, `miss`; `offered` = two cards to pick from, `tell` after a second miss), `finishWhen` (every present); the answer is the talk's |
+
+The worked example of the STEP 1 engines is the sandbox's
+`test/sandbox/plans/s8_timeline/cases/s8_ep02/case.plan.json`.
+
+**In a historical season** every mission is a puzzle of the dossier (on its
+approved facts, or `fiction: true`), and `plan_season check` writes
+`planning/puzzle_selection.json`: each mission's puzzle as the rules choose
+it (`PuzzleSelector`: the traits its words show → the puzzles the generator
+makes on that page, one kind once a case, a third of the season at most;
+never by chance), why, its facts, its checks and what a person still reads.
+Choose what the rules choose unless the story asks otherwise; where the plan
+differs it is said (`puzzle_selection_alternative`, `puzzle_selection_unmatched`),
+and a mission no puzzle fits is `puzzle_selection_none` (write the clue into
+the words, or choose by hand and say why).
 
 **Places on pictures** are written in the picture's own pixels (`[left, top,
 right, bottom]`, `[x, y]`), with the picture's size as its file has it. While

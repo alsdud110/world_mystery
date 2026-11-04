@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
+import '../season_gen/case_levels.dart';
 import '../season_gen/clue_graph_check.dart';
 import '../season_gen/generate_case.dart';
+import '../season_gen/history_dossier.dart';
 import '../season_gen/json_schema_lite.dart';
 import '../season_gen/plan_check.dart';
 import '../season_gen/plan_files.dart';
@@ -14,15 +16,21 @@ import '../season_gen/validate_plan.dart' show check;
 import 'asset_manifest.dart';
 import 'english_check.dart';
 import 'finding.dart';
+import 'puzzle_selection.dart';
 import 'story_bible.dart';
 
 /// What a season's plans are worth, once checked whole (STEP 3-11).
 class QualityReport {
-  QualityReport(this.seasonId, this.findings, this.summary);
+  QualityReport(this.seasonId, this.findings, this.summary, {this.selection});
 
   final String seasonId;
   final List<Finding> findings;
   final Map<String, Object?> summary;
+
+  /// A historical season's `planning/puzzle_selection.json` (Puzzle Engine
+  /// 2.0 STEP 1): each mission's puzzle as the rules choose it, why, and
+  /// what its checks found. Null in the standard mode.
+  final Map<String, Object?>? selection;
 
   int count(Level level) => findings.where((f) => f.level == level).length;
   bool get hasErrors => count(Level.error) > 0;
@@ -155,6 +163,17 @@ abstract final class SeasonQuality {
     _puzzles(plans, out);
     _play(plans, out);
     _story(plans, out);
+    // A timeline's one order is checked (PlayCheck: TimelineRules); whether a
+    // player reads their way to it is a person's reading.
+    for (final c in plans) {
+      for (final m in c.allMissions) {
+        if (m.puzzle.engineTable == 'timelines') {
+          out.info('timeline_reasoning_review', 'cases/${c.caseId} ${m.missionId}',
+              'its one order is checked; whether its words lead a player there is a person\'s reading (englishReview)',
+              source: Source.puzzle);
+        }
+      }
+    }
     EnglishCheck.check(plans, out);
 
     // 6. The story bible and the pictures.
@@ -173,13 +192,34 @@ abstract final class SeasonQuality {
             return null;
           })();
 
+    // 6b. A historical season's dossier (brief.json's `mode`; never in the standard mode).
+    Map<String, Object?>? selection;
+    try {
+      if (SeasonMode.of(dir) == SeasonMode.historicalFictionMystery) {
+        final history = HistoryDossier.check(dir, season, paths);
+        for (final i in history.issues) {
+          switch (i.level) {
+            case HistoryLevel.error:
+              out.error(i.code, i.where, i.message, source: Source.history);
+            case HistoryLevel.pending:
+              out.info(i.code, i.where, i.message, source: Source.history);
+          }
+        }
+        summary['history'] = history.summary;
+        // 6c. Each mission's puzzle as the rules choose it (STEP 1).
+        selection = _selection(dir, season, plans, paths, history, schemas, root, out);
+      }
+    } on FormatException catch (e) {
+      out.error('season_mode_unknown', SeasonMode.briefPath, e.message, source: Source.history);
+    }
+
     // 7. The real generator, in memory, once the plans hold.
     summary['generator'] = _generator(seasonPath, season, plans, paths, root, schemaDir ?? '$root/tool/season_gen/schema', out);
 
     summary.addAll(_counts(season, plans));
     summary['picturesPending'] = pendingPlaces.length;
     summary['apiCalls'] = 0;
-    return QualityReport(season.seasonId, out.all, summary);
+    return QualityReport(season.seasonId, out.all, summary, selection: selection);
   }
 
   static String _codeOf(String line, String fallback) => RegExp(r'\[([a-z_]+)\]').firstMatch(line)?[1] ?? fallback;
@@ -368,7 +408,7 @@ abstract final class SeasonQuality {
       }
     }
     try {
-      final made = CaseGenerator.sandbox(seasonPath: seasonPath, casePaths: [for (final id in season.caseIds) paths[id]!], root: root, schemaDir: schemaDir);
+      final made = CaseGenerator.sandbox(seasonPath: seasonPath, casePaths: [for (final id in season.caseIds) paths[id]!], root: root, schemaDir: schemaDir, staticOnly: true);
       out.info('generator_ok', 'generate_season', '${made.files.length} files made in memory (nothing written)', source: Source.generator);
       return {'run': true, 'compatible': true, 'files': made.files.length, 'blockedByPictures': 0};
     } on GenerateFailure catch (e) {
@@ -425,7 +465,108 @@ abstract final class SeasonQuality {
 
   /// Writes [report] to `<seasonDir>/planning/quality_report.json`, whole
   /// (beside it first, then moved over it).
+  /// The puzzle each mission of a historical season is played on, as
+  /// [PuzzleSelector] chooses it, against the plan's own; each with what its
+  /// checks found (`PlayCheck`: one answer, playable; the levels: the same
+  /// game at each) and what a person still reads. A mission no puzzle fits,
+  /// a choice its words do not call for, a kind past a third of the season
+  /// or a case played with no hands-on puzzle is said, never fixed here.
+  static Map<String, Object?> _selection(
+    String dir,
+    SeasonPlan season,
+    List<CasePlan> plans,
+    Map<String, String> paths,
+    HistoryReport history,
+    SchemaSet schemas,
+    String root,
+    Findings out,
+  ) {
+    final ordered = [for (final id in season.caseIds) ...plans.where((p) => p.caseId == id)];
+    final dossier = File('$dir/${HistoryDossier.path}');
+    Object? json;
+    try {
+      json = dossier.existsSync() ? jsonDecode(dossier.readAsStringSync()) : null;
+    } on FormatException {
+      json = null; // the dossier's own check says why
+    }
+    final statements = {for (final MapEntry(:key, :value) in HistoryDossier.factsOf(json).entries) key: '${value['statement'] ?? ''}'};
+    final facts = <String, Map<String, String>>{
+      if (json is Map && json['cases'] is List)
+        for (final c in (json['cases'] as List).whereType<Map>())
+          for (final p in (c['puzzles'] is List ? c['puzzles'] as List : const []).whereType<Map>())
+            if (p['puzzleId'] is String)
+              p['puzzleId'] as String: {
+                for (final id in (p['factIds'] is List ? p['factIds'] as List : const []).whereType<String>()) id: statements[id] ?? '',
+              },
+    };
+    final picks = PuzzleSelector.select(ordered, facts: facts);
+    final total = picks.length;
+    final cap = (total / 3).ceil();
+    final planned = <String, int>{};
+    for (final x in picks) {
+      if (x.planned case final id?) planned[id] = (planned[id] ?? 0) + 1;
+    }
+
+    final missions = <Map<String, Object?>>[];
+    for (final c in ordered) {
+      final play = PlayCheck.casePlan(c, season, root: root).where((i) => i.blocking && !i.inSeason).toList();
+      final levelsFile = File(CaseLevels.pathFor(paths[c.caseId]!));
+      final levels = levelsFile.existsSync() ? CaseLevels.checkCase(paths[c.caseId]!, season, schemas, root: root) : null;
+      final mine = picks.where((x) => x.caseId == c.caseId).toList();
+      if (!mine.any((x) => PuzzleSelector.handsOn.contains(x.planned))) {
+        out.warning('puzzle_case_no_hands_on', 'cases/${c.caseId}', 'no puzzle of the case is played with the hands (CLAUDE.md §20): ${mine.map((x) => x.planned).join(', ')}',
+            source: Source.puzzle);
+      }
+      for (final (i, x) in mine.indexed) {
+        final at = i == c.missions.length ? r'$.final' : '\$.missions[$i]';
+        final where = 'cases/${c.caseId} $at';
+        final ids = [for (final k in x.candidates) k.paletteId];
+        if (x.selected == null) {
+          out.warning('puzzle_selection_none', where, '${x.missionId}: ${x.reason}', source: Source.puzzle);
+        } else if (!ids.contains(x.planned)) {
+          out.warning('puzzle_selection_unmatched', where,
+              '${x.missionId} is planned as ${x.planned}, which its words do not call for (${ids.join(', ')}; chosen: ${x.selected})', source: Source.puzzle);
+        } else if (x.planned != x.selected) {
+          out.info('puzzle_selection_alternative', where, '${x.missionId}: planned ${x.planned}, the rules chose ${x.selected} (${x.reason})', source: Source.puzzle);
+        }
+        final problems = [for (final p in play) if (p.path.startsWith(at)) '$p'];
+        missions.add({
+          ...x.toJson(),
+          'checks': {
+            'answerAndPlay': problems.isEmpty ? 'pass' : problems,
+            'levels': levels == null ? 'not written' : (levels.isEmpty ? 'pass' : levels),
+          },
+          'personReview': [
+            PuzzleSelector.reviewOf(x.planned),
+            for (final i in history.issues)
+              if (i.target == x.missionId && i.level == HistoryLevel.pending) '[${i.code}] ${i.message}',
+          ],
+        });
+      }
+    }
+    for (final MapEntry(key: id, value: n) in planned.entries) {
+      if (n > cap) out.warning('puzzle_type_overused', 'season', '$id plays $n of $total puzzles: a third at most ($cap)', source: Source.puzzle);
+    }
+    return {
+      'schemaVersion': 1,
+      'seasonId': season.seasonId,
+      'tool': 'tool/season_planner/plan_season.dart check (PuzzleSelector)',
+      'rules': {
+        'byTrait': {for (final MapEntry(:key, :value) in PuzzleSelector.byTrait.entries) key.name: value},
+        'onlyGeneratable': PlayCheck.generatable.keys.toList(),
+        'atMostShare': '1/3',
+      },
+      'counts': {'planned': planned, 'selected': {for (final id in {for (final x in picks) ?x.selected}) id: picks.where((x) => x.selected == id).length}},
+      'missions': missions,
+    };
+  }
+
   static String write(String seasonDir, QualityReport report) {
+    if (report.selection case final s?) {
+      final part = File('$seasonDir/${PuzzleSelector.fileName}.part')..parent.createSync(recursive: true);
+      part.writeAsStringSync(PlanFiles.encode(s), flush: true);
+      part.renameSync('$seasonDir/${PuzzleSelector.fileName}');
+    }
     final path = '$seasonDir/planning/quality_report.json';
     final part = File('$path.part')..parent.createSync(recursive: true);
     part.writeAsStringSync(PlanFiles.encode(report.toJson()), flush: true);

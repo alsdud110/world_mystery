@@ -11,6 +11,8 @@ import '../../core/theme/app_tokens.dart';
 import '../../core/utils/audio_service.dart';
 import '../../core/utils/formatters.dart';
 import '../../data/mock/season_catalog.dart';
+import '../../data/models/difficulty.dart';
+import '../../data/models/history_reveal.dart';
 import '../../data/models/mission.dart';
 import '../../data/models/season.dart';
 import '../../widgets/art_assets.dart';
@@ -33,6 +35,10 @@ import '../season/season_actions.dart';
 import '../season/season_overview.dart';
 import 'detective_report.dart';
 import '../../data/models/detective_name.dart';
+
+/// A historical season's REAL HISTORY / IN THIS MYSTERY of a case, by case
+/// id: none in any other season, so their Case Closed file is as before.
+final historyRevealProvider = Provider.family<HistoryReveal?, String>((ref, episodeId) => SeasonCatalog.historyReveal(episodeId));
 
 /// Kid-facing result, designed as a detective's case file rather than a
 /// score sheet — pretty enough that parents want to share a screenshot.
@@ -181,6 +187,8 @@ class _CaseSolvedScreenState extends ConsumerState<CaseSolvedScreen> with Single
                           stamp: stamp.value,
                           xpShown: (report.xp * xp.value).round(),
                           badgePop: badge.value,
+                          history: ref.watch(historyRevealProvider(report.episode.id)),
+                          level: ref.watch(seasonDifficultyProvider(_seasonId)),
                         ),
                       ),
                     ),
@@ -452,9 +460,15 @@ class _CaseFile extends StatelessWidget {
     required this.stamp,
     required this.xpShown,
     required this.badgePop,
+    this.history,
+    this.level = Difficulty.standard,
   });
 
   final DetectiveReport report;
+
+  /// A historical case's reveal, told at the season's [level].
+  final HistoryReveal? history;
+  final Difficulty level;
 
   /// The case's city: its file says whose mystery it is.
   final String city;
@@ -690,9 +704,77 @@ class _CaseFile extends StatelessWidget {
                   const WaxSeal(size: 50),
                 ],
               ),
+              if (history case final h?) ...[
+                const _Rule(),
+                _HistoryReveal(reveal: h, level: level),
+              ],
             ],
           ),
         ),
+      ],
+    );
+  }
+}
+
+/// What really happened, apart from what the mystery made up: two parts of
+/// the file, never mixed — REAL HISTORY in the file's own type, with where
+/// it comes from; IN THIS MYSTERY in the case notes' hand, said to be made up.
+class _HistoryReveal extends StatelessWidget {
+  const _HistoryReveal({required this.reveal, required this.level});
+
+  final HistoryReveal reveal;
+  final Difficulty level;
+
+  void _sources(BuildContext context) => showDialog<void>(
+    context: context,
+    builder: (context) => GameDialog(
+      title: 'SOURCES',
+      scrollable: true,
+      content: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          for (final s in reveal.sources)
+            Padding(
+              padding: const EdgeInsets.only(bottom: AppSpace.md),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(s.publisher, style: AppText.bodyText(size: 16, weight: FontWeight.w600)),
+                  Text(s.title, style: AppText.bodyText(size: 15)),
+                  if (s.url ?? s.citation case final where?) SelectableText(where, style: AppText.caption(color: AppColors.inkBrown)),
+                ],
+              ),
+            ),
+        ],
+      ),
+      actions: [GameButton(label: 'CLOSE', onPressed: () => Navigator.of(context).pop())],
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      key: const ValueKey('history-reveal'),
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Semantics(header: true, child: Text('REAL HISTORY', style: AppText.mark(color: AppColors.navy))),
+        const SizedBox(height: AppSpace.sm),
+        for (final line in reveal.realHistory)
+          Padding(
+            padding: const EdgeInsets.only(bottom: AppSpace.sm),
+            child: Text(line.at(level), style: AppText.bodyText(size: 17)),
+          ),
+        if (reveal.sources.isNotEmpty)
+          InkTextButton(key: const ValueKey('history-sources'), label: 'SOURCES', color: AppColors.inkBrown, onPressed: () => _sources(context)),
+        const _Rule(),
+        Semantics(header: true, child: Text('IN THIS MYSTERY', style: AppText.mark(color: AppColors.inkBrown))),
+        Text('Made up for this game.', style: AppText.caption(color: AppColors.inkBrown)),
+        const SizedBox(height: AppSpace.sm),
+        for (final line in reveal.inThisMystery)
+          Padding(
+            padding: const EdgeInsets.only(bottom: AppSpace.sm),
+            child: Text(line.at(level), style: AppText.letter(size: 17)),
+          ),
       ],
     );
   }

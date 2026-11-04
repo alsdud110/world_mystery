@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "s7_seoulpilot",
+  "tool": "tool/season_planner/plan_season.dart check (PuzzleSelector)",
+  "rules": {
+    "byTrait": {
+      "chronology": [
+        "timeline_board",
+        "order_sequence"
+      ],
+      "documents": [
+        "record_mismatch",
+        "text_choice"
+      ],
+      "testimony": [
+        "witness_compare",
+        "evidence_talk"
+      ],
+      "scene": [
+        "trace_deduction",
+        "dark_room_search",
+        "scene_explore_choose"
+      ],
+      "inscription": [
+        "lens_inspect_word",
+        "word_entry"
+      ],
+      "relations": [
+        "evidence_talk",
+        "witness_compare"
+      ],
+      "number": [
+        "number_entry",
+        "combo_dial_lock"
+      ]
+    },
+    "onlyGeneratable": [
+      "text_choice",
+      "order_sequence",
+      "word_entry",
+      "letter_tile_lock",
+      "combo_dial_lock",
+      "picture_choice",
+      "scene_explore_choose",
+      "dark_room_search",
+      "witness_compare",
+      "timeline_board",
+      "number_entry",
+      "trace_deduction",
+      "lens_inspect_word",
+      "record_mismatch",
+      "evidence_talk"
+    ],
+    "atMostShare": "1/3"
+  },
+  "counts": {
+    "planned": {
+      "timeline_board": 1,
+      "record_mismatch": 1,
+      "trace_deduction": 1,
+      "evidence_talk": 1
+    },
+    "selected": {
+      "timeline_board": 1,
+      "record_mismatch": 1,
+      "trace_deduction": 1,
+      "evidence_talk": 1
+    }
+  },
+  "missions": [
+    {
+      "caseId": "s7_ep01",
+      "missionId": "s7_ep01_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1446",
+            "after",
+            "later",
+            "then"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        }
+      ],
+      "selected": "timeline_board",
+      "reason": "chronology",
+      "planned": "timeline_board",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the lines read put the cards in one order",
+        "[history_puzzle_unreviewed] s7_ep01_m1: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_m1)"
+      ]
+    },
+    {
+      "caseId": "s7_ep01",
+      "missionId": "s7_ep01_m2",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1443",
+            "before"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "documents",
+          "cues": [
+            "copy",
+            "does not match"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s7_ep01_h1",
+        "s7_ep01_h3",
+        "s7_ep01_h4",
+        "s7_ep01_h5",
+        "s7_ep01_h6"
+      ],
+      "candidates": [
+        {
+          "paletteId": "record_mismatch",
+          "score": 10,
+          "why": "documents"
+        },
+        {
+          "paletteId": "text_choice",
+          "score": 5,
+          "why": "documents (second choice); a plain choice"
+        }
+      ],
+      "selected": "record_mismatch",
+      "reason": "documents (not chosen on the facts alone: chronology)",
+      "planned": "record_mismatch",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the lines that differ are a contradiction worth finding",
+        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h1, not approved as it is (draft, draft)",
+        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h3, not approved as it is (draft, draft)",
+        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h4, not approved as it is (draft, draft)",
+        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h5, not approved as it is (draft, draft)",
+        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h6, not approved as it is (draft, draft)",
+        "[history_puzzle_unreviewed] s7_ep01_m2: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_m2)"
+      ]
+    },
+    {
+      "caseId": "s7_ep01",
+      "missionId": "s7_ep01_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "scene",
+          "cues": [
+            "hidden",
+            "marks"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "trace_deduction",
+          "score": 10,
+          "why": "scene"
+        },
+        {
+          "paletteId": "dark_room_search",
+          "score": 7,
+          "why": "scene (second choice)"
+        },
+        {
+          "paletteId": "scene_explore_choose",
+          "score": 4,
+          "why": "scene (second choice)"
+        }
+      ],
+      "selected": "trace_deduction",
+      "reason": "scene",
+      "planned": "trace_deduction",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether every trace points to the one place, and no other place fits",
+        "[history_puzzle_unreviewed] s7_ep01_m3: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_m3)"
+      ]
+    },
+    {
+      "caseId": "s7_ep01",
+      "missionId": "s7_ep01_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "testimony",
+          "cues": [
+            "claim",
+            "claims",
+            "says"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "evidence_talk",
+          "score": 10,
+          "why": "testimony"
+        }
+      ],
+      "selected": "evidence_talk",
+      "reason": "testimony",
+      "planned": "evidence_talk",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the evidence asked for is the only piece that answers each prompt",
+        "[history_puzzle_unreviewed] s7_ep01_final: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_final)"
+      ]
+    }
+  ]
+}

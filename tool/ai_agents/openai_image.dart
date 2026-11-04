@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import '../season_gen/history_dossier.dart';
 import '../season_gen/sha256.dart';
 import 'env_file.dart';
 import 'image_manifest.dart';
@@ -30,6 +31,10 @@ import 'png_check.dart';
 /// * The key is read from the environment's `OPENAI_API_KEY`, else `.env`
 ///   (never written); it is never printed or recorded, and any key-like text
 ///   in an API error is redacted.
+///
+/// * A picture of a historical season (its plans', work or asset folder) is
+///   sent only once the season's facts are approved as they are
+///   (`HistoryGate.forOutput`); any other picture as before.
 ///
 /// Exit codes: 0 made, already made or dry run; 1 the API or its picture
 /// failed; 2 the request was refused before anything was sent; 64 usage.
@@ -326,6 +331,17 @@ class ImageStudio {
       return 2;
     }
     final rel = r.output.replaceAll(r'\', '/');
+    // A picture of a historical season, whichever tool asks: its facts approved first (HistoryGate).
+    if (generate) {
+      final blockers = HistoryGate.forOutput(root, rel);
+      if (blockers.isNotEmpty) {
+        for (final b in blockers) {
+          log('history  $b');
+        }
+        log('error    $rel belongs to a historical season whose facts are not approved as they are: nothing sent');
+        return 2;
+      }
+    }
     final file = File('$root/$rel');
     final manifestRel = manifestPath ?? '${File(rel).parent.path.replaceAll(r'\', '/')}/${ImageManifest.fileName}';
     final ImageManifest manifest;

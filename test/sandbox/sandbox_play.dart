@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/data/models/mission.dart';
+import 'package:world_mystery/features/mission/widgets/question_widgets.dart' show PuzzleKey;
 
 import '../full_playthrough_test.dart' show reveal, tapText, wait;
 import '../helpers.dart';
@@ -101,6 +102,14 @@ class SandboxPlay {
           await t.pump(const Duration(milliseconds: 150));
         }
         await tapText(t, 'OPEN THE LOCK', after: Duration.zero);
+      case MissionType.numberCode:
+        for (final d in answer.split('')) {
+          final key = find.widgetWithText(PuzzleKey, d);
+          await reveal(t, key);
+          await t.tap(key);
+          await t.pump(const Duration(milliseconds: 100));
+        }
+        await tapText(t, 'UNLOCK', after: Duration.zero);
       case MissionType.finalCode:
         for (final (i, d) in answer.split('').map(int.parse).indexed) {
           final up = find.byTooltip('Lock ${i + 1} up');

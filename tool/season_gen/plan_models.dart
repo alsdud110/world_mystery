@@ -271,6 +271,28 @@ class _Reader {
     return [for (final (i, x) in _list(_required(key), at, 1, null).indexed) SceneRect._(_numbers(x, '$at[$i]', 4))];
   }
 
+  /// A rectangle, `[left, top, right, bottom]`.
+  SceneRect rect(String key) => SceneRect._(_numbers(_required(key), _at(key), 4));
+
+  /// A number (whole or not).
+  double number(String key, {double? min}) => optNum(key, min: min) ?? _fail(key, 'missing');
+
+  /// Numbers, at least one.
+  List<double> numbers(String key) {
+    final at = _at(key);
+    final list = _list(_required(key), at, 1, null);
+    return _numbers(list, at, list.length);
+  }
+
+  /// Whole numbers (none when not given), each once.
+  List<int> optInts(String key, {int min = 0}) {
+    if (!_has(key)) return const [];
+    final at = _at(key);
+    final out = [for (final (i, x) in _list(_map[key], at, null, null).indexed) _int(x, '$at[$i]', min: min)];
+    if (out.toSet().length != out.length) _fail(key, 'an item given twice');
+    return out;
+  }
+
   /// Rejects the keys no one asked for.
   void done() {
     final unknown = _map.keys.where((k) => !_read.contains(k)).toList();
@@ -2080,6 +2102,674 @@ class EndingLinePlan {
   }
 }
 
+/// A timeline's card (Puzzle Engine 2.0, `timeline_board`; `TimelineCard`).
+/// An [anchor] (its time, written on it) is fixed in its place; a [discard]
+/// is not part of what happened. In a historical season each card says
+/// where it comes from: [factIds] (approved facts of its dossier) or
+/// [fiction] (made up for the mystery).
+class TimelineCardPlan {
+  const TimelineCardPlan({required this.id, required this.title, required this.text, this.anchor, this.discard = false, this.evidence, this.factIds = const [], this.fiction = false});
+
+  final String id;
+  final String title;
+  final String text;
+  final String? anchor;
+  final bool discard;
+  final String? evidence;
+  final List<String> factIds;
+  final bool fiction;
+
+  static final _factId = RegExp(r'^s[1-9][0-9]*_ep[0-9]{2}_h[1-9][0-9]*$');
+
+  factory TimelineCardPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = TimelineCardPlan(
+      id: r.str('id', pattern: PlanIds.local),
+      title: r.str('title'),
+      text: r.str('text'),
+      anchor: r.optStr('anchor'),
+      discard: r.optBool('discard') ?? false,
+      evidence: r.optStr('evidence', pattern: PlanIds.evidence),
+      factIds: r.optStrings('factIds', pattern: _factId, unique: true),
+      fiction: r.optBool('fiction') ?? false,
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() {
+    final json = <String, Object?>{'id': id, 'title': title, 'text': text};
+    _putText(json, 'anchor', anchor);
+    if (discard) json['discard'] = true;
+    _putText(json, 'evidence', evidence);
+    _putList(json, 'factIds', factIds);
+    if (fiction) json['fiction'] = true;
+    return json;
+  }
+}
+
+/// What the case's words say of two cards: [earlier] came before [later].
+/// [line] is those words, read in the mission (its letter, word for word).
+class TimelineRelationPlan {
+  const TimelineRelationPlan({required this.earlier, required this.later, required this.line});
+
+  final String earlier;
+  final String later;
+  final String line;
+
+  factory TimelineRelationPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = TimelineRelationPlan(earlier: r.str('earlier', pattern: PlanIds.local), later: r.str('later', pattern: PlanIds.local), line: r.str('line'));
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {'earlier': earlier, 'later': later, 'line': line};
+}
+
+/// A timeline to put back together (`TimelineSpec`, table `timelines`): its
+/// cards and the words that order them. The order is the puzzle's answer
+/// (`answerSpec.answer`, a sequence's), its options the cards.
+class TimelinePlan {
+  const TimelinePlan({required this.cards, required this.relations});
+
+  final List<TimelineCardPlan> cards;
+  final List<TimelineRelationPlan> relations;
+
+  factory TimelinePlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = TimelinePlan(
+      cards: r.objs('cards', TimelineCardPlan.fromJson, min: 3, max: 11),
+      relations: r.objs('relations', TimelineRelationPlan.fromJson, min: 1),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {
+    'cards': [for (final c in cards) c.toJson()],
+    'relations': [for (final x in relations) x.toJson()],
+  };
+}
+
+// ── Existing engines made by the generator (Puzzle Engine 2.0 STEP 1) ────
+
+/// A trace in a [TracesPlan]'s picture (`DeductionClue`): its [line] is one
+/// line of the mission's letter, word for word.
+class TraceCluePlan {
+  const TraceCluePlan({required this.id, required this.label, required this.areas, required this.mark, required this.line, this.sketch});
+
+  /// `TraceSketch` names: a trace the app draws, the picture lacking it.
+  static const sketches = ['inkDrops', 'hair', 'paperCorner'];
+
+  final String id;
+  final String label;
+  final List<SceneRect> areas;
+  final ScenePoint mark;
+  final String line;
+  final String? sketch;
+
+  factory TraceCluePlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = TraceCluePlan(
+      id: r.str('id', pattern: PlanIds.local),
+      label: r.str('label'),
+      areas: r.rects('areas'),
+      mark: r.point('mark'),
+      line: r.str('line'),
+      sketch: r.optStr('sketch', oneOf: sketches),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() =>
+      {'id': id, 'label': label, 'areas': _rectsJson(areas), 'mark': mark.toJson(), 'line': line, 'sketch': ?sketch};
+}
+
+/// A place the thing could be (`DeductionPlace`), standing for an option.
+class TracePlacePlan {
+  const TracePlacePlan({required this.optionId, required this.areas, required this.mark});
+
+  final String optionId;
+  final List<SceneRect> areas;
+  final ScenePoint mark;
+
+  factory TracePlacePlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = TracePlacePlan(optionId: r.str('optionId'), areas: r.rects('areas'), mark: r.point('mark'));
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {'optionId': optionId, 'areas': _rectsJson(areas), 'mark': mark.toJson()};
+}
+
+/// A place read for its traces (`DeductionScene`, table `deductions`,
+/// `trace_deduction`): every trace noted, then the one place they all
+/// point to chosen in the picture — the puzzle's option.
+class TracesPlan {
+  const TracesPlan({
+    required this.picture,
+    required this.place,
+    required this.task,
+    required this.chooseTask,
+    required this.missLine,
+    required this.notPlaceLine,
+    required this.guideAt,
+    required this.clues,
+    required this.places,
+    this.others = const [],
+    this.inside,
+    this.opening,
+  });
+
+  final PicturePlan picture;
+  final String place;
+  final String task;
+  final String chooseTask;
+  final String missLine;
+  final String notPlaceLine;
+  final ScenePoint guideAt;
+  final List<TraceCluePlan> clues;
+  final List<TracePlacePlan> places;
+  final List<EmptySpotPlan> others;
+  final SceneRect? inside;
+  final SceneRect? opening;
+
+  factory TracesPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = TracesPlan(
+      picture: r.obj('picture', PicturePlan.fromJson),
+      place: r.str('place'),
+      task: r.str('task'),
+      chooseTask: r.str('chooseTask'),
+      missLine: r.str('missLine'),
+      notPlaceLine: r.str('notPlaceLine'),
+      guideAt: r.point('guideAt'),
+      clues: r.objs('clues', TraceCluePlan.fromJson, min: 1),
+      places: r.objs('places', TracePlacePlan.fromJson, min: 1),
+      others: r.optObjs('others', EmptySpotPlan.fromJson),
+      inside: r.optRect('inside'),
+      opening: r.optRect('opening'),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() {
+    final json = <String, Object?>{
+      'picture': picture.toJson(),
+      'place': place,
+      'task': task,
+      'chooseTask': chooseTask,
+      'missLine': missLine,
+      'notPlaceLine': notPlaceLine,
+      'guideAt': guideAt.toJson(),
+      'clues': [for (final c in clues) c.toJson()],
+      'places': [for (final p in places) p.toJson()],
+    };
+    _putList(json, 'others', [for (final o in others) o.toJson()]);
+    if (inside case final r?) json['inside'] = r.toJson();
+    if (opening case final r?) json['opening'] = r.toJson();
+    return json;
+  }
+}
+
+/// The kinds of `InspectKind`.
+const inspectKinds = ['exhibit', 'match', 'label', 'hidden'];
+
+/// A thing to look at under the glass (`InspectSpot`). [checks]: the lines
+/// of the mission's letter (their index, blank lines not counted) it confirms.
+class InspectSpotPlan {
+  const InspectSpotPlan({
+    required this.id,
+    required this.kind,
+    required this.title,
+    required this.label,
+    required this.areas,
+    required this.line,
+    this.checks = const [],
+    this.requires,
+    this.lockedLine,
+  });
+
+  final String id;
+  final String kind;
+  final String title;
+  final String label;
+  final List<SceneRect> areas;
+  final String line;
+  final List<int> checks;
+  final String? requires;
+  final String? lockedLine;
+
+  factory InspectSpotPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = InspectSpotPlan(
+      id: r.str('id', pattern: PlanIds.local),
+      kind: r.str('kind', oneOf: inspectKinds),
+      title: r.str('title'),
+      label: r.str('label'),
+      areas: r.rects('areas'),
+      line: r.str('line'),
+      checks: r.optInts('checks'),
+      requires: r.optStr('requires', pattern: PlanIds.local),
+      lockedLine: r.optStr('lockedLine'),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() {
+    final json = <String, Object?>{'id': id, 'kind': kind, 'title': title, 'label': label, 'areas': _rectsJson(areas), 'line': line};
+    _putList(json, 'checks', checks);
+    _putText(json, 'requires', requires);
+    _putText(json, 'lockedLine', lockedLine);
+    return json;
+  }
+}
+
+/// Exhibits examined under a magnifying glass (`InspectScene`, table
+/// `inspections`, `lens_inspect_word`): the one the letter describes leads
+/// to its label, where the word ([taskLine], the letter's line still to
+/// answer) is written — the puzzle's typed answer.
+class InspectPlan {
+  const InspectPlan({
+    required this.picture,
+    required this.place,
+    required this.task,
+    required this.nextTask,
+    required this.dragGuide,
+    required this.tapGuide,
+    required this.missLine,
+    required this.spots,
+    required this.labelTitle,
+    required this.labelRoom,
+    required this.labelWorn,
+    required this.taskLine,
+    required this.lensAt,
+    this.inside,
+  });
+
+  final PicturePlan picture;
+  final String place;
+  final String task;
+  final String nextTask;
+  final String dragGuide;
+  final String tapGuide;
+  final String missLine;
+  final List<InspectSpotPlan> spots;
+  final String labelTitle;
+  final String labelRoom;
+  final String labelWorn;
+  final int taskLine;
+  final ScenePoint lensAt;
+  final SceneRect? inside;
+
+  factory InspectPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = InspectPlan(
+      picture: r.obj('picture', PicturePlan.fromJson),
+      place: r.str('place'),
+      task: r.str('task'),
+      nextTask: r.str('nextTask'),
+      dragGuide: r.str('dragGuide'),
+      tapGuide: r.str('tapGuide'),
+      missLine: r.str('missLine'),
+      spots: r.objs('spots', InspectSpotPlan.fromJson, min: 2),
+      labelTitle: r.str('labelTitle'),
+      labelRoom: r.str('labelRoom'),
+      labelWorn: r.str('labelWorn'),
+      taskLine: r.integer('taskLine', min: 0),
+      lensAt: r.point('lensAt'),
+      inside: r.optRect('inside'),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() {
+    final json = <String, Object?>{
+      'picture': picture.toJson(),
+      'place': place,
+      'task': task,
+      'nextTask': nextTask,
+      'dragGuide': dragGuide,
+      'tapGuide': tapGuide,
+      'missLine': missLine,
+      'spots': [for (final s in spots) s.toJson()],
+      'labelTitle': labelTitle,
+      'labelRoom': labelRoom,
+      'labelWorn': labelWorn,
+      'taskLine': taskLine,
+      'lensAt': lensAt.toJson(),
+    };
+    if (inside case final r?) json['inside'] = r.toJson();
+    return json;
+  }
+}
+
+/// A line of a record (`RecordLine`): its [id] the option it stands for.
+/// Its [value] is the same at every level (what is compared).
+class RecordLinePlan {
+  const RecordLinePlan({required this.id, required this.label, required this.value});
+
+  final String id;
+  final String label;
+  final String value;
+
+  factory RecordLinePlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = RecordLinePlan(id: r.str('id', pattern: PlanIds.local), label: r.str('label'), value: r.str('value'));
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {'id': id, 'label': label, 'value': value};
+}
+
+/// Where a record's words go on its blank paper (`PaperQuad` and
+/// `RecordLayout`): the sheet's four corners on the picture (pixels,
+/// clockwise from the top left) and its own size face on ([flat]); the
+/// title box, each line's row and the columns in [flat]'s units.
+class RecordSheetPlan {
+  const RecordSheetPlan({
+    required this.corners,
+    required this.flat,
+    required this.title,
+    required this.rows,
+    required this.rowHeight,
+    required this.labelLeft,
+    required this.labelRight,
+    required this.valueLeft,
+    required this.valueRight,
+    this.noteRow,
+    this.noteLeft,
+    this.reach,
+    this.ink,
+  });
+
+  final List<ScenePoint> corners;
+  final (double, double) flat;
+  final SceneRect title;
+  final List<double> rows;
+  final double rowHeight;
+  final double labelLeft;
+  final double labelRight;
+  final double valueLeft;
+  final double valueRight;
+  final double? noteRow;
+  final double? noteLeft;
+  final double? reach;
+  final double? ink;
+
+  factory RecordSheetPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final at = r._at('corners');
+    final corners = [for (final (i, x) in r._list(r._required('corners'), at, 4, 4).indexed) ScenePoint._(r._numbers(x, '$at[$i]', 2))];
+    final flat = r._numbers(r._required('flat'), r._at('flat'), 2);
+    final out = RecordSheetPlan(
+      corners: corners,
+      flat: (flat[0], flat[1]),
+      title: r.rect('title'),
+      rows: r.numbers('rows'),
+      rowHeight: r.number('rowHeight', min: 1),
+      labelLeft: r.number('labelLeft', min: 0),
+      labelRight: r.number('labelRight', min: 0),
+      valueLeft: r.number('valueLeft', min: 0),
+      valueRight: r.number('valueRight', min: 0),
+      noteRow: r.optNum('noteRow', min: 0),
+      noteLeft: r.optNum('noteLeft', min: 0),
+      reach: r.optNum('reach', min: 0),
+      ink: r.optNum('ink', min: 0.1, max: 1),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {
+    'corners': [for (final c in corners) c.toJson()],
+    'flat': [_whole(flat.$1), _whole(flat.$2)],
+    'title': title.toJson(),
+    'rows': [for (final x in rows) _whole(x)],
+    'rowHeight': _whole(rowHeight),
+    'labelLeft': _whole(labelLeft),
+    'labelRight': _whole(labelRight),
+    'valueLeft': _whole(valueLeft),
+    'valueRight': _whole(valueRight),
+    if (noteRow case final v?) 'noteRow': _whole(v),
+    if (noteLeft case final v?) 'noteLeft': _whole(v),
+    if (reach case final v?) 'reach': _whole(v),
+    'ink': ?ink,
+  };
+}
+
+/// A record found at the place (`RecordDoc`): its blank paper [picture]
+/// (shown as [crop], pixels), and the words the app writes on it.
+class RecordDocPlan {
+  const RecordDocPlan({
+    required this.id,
+    required this.name,
+    required this.picture,
+    required this.crop,
+    required this.sheet,
+    required this.title,
+    required this.lines,
+    required this.label,
+    this.note,
+  });
+
+  final String id;
+  final String name;
+  final PicturePlan picture;
+  final SceneRect crop;
+  final RecordSheetPlan sheet;
+  final String title;
+  final List<RecordLinePlan> lines;
+  final String label;
+  final String? note;
+
+  factory RecordDocPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = RecordDocPlan(
+      id: r.str('id', pattern: PlanIds.local),
+      name: r.str('name'),
+      picture: r.obj('picture', PicturePlan.fromJson),
+      crop: r.rect('crop'),
+      sheet: r.obj('sheet', RecordSheetPlan.fromJson),
+      title: r.str('title'),
+      lines: r.objs('lines', RecordLinePlan.fromJson, min: 2),
+      label: r.str('label'),
+      note: r.optStr('note'),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() {
+    final json = <String, Object?>{
+      'id': id,
+      'name': name,
+      'picture': picture.toJson(),
+      'crop': crop.toJson(),
+      'sheet': sheet.toJson(),
+      'title': title,
+      'lines': [for (final l in lines) l.toJson()],
+      'label': label,
+    };
+    _putText(json, 'note', note);
+    return json;
+  }
+}
+
+/// Two records of the same thing (`RecordsScene`, table `records`,
+/// `record_mismatch`): the pair of lines that disagree is picked, as the
+/// puzzle's answer `<first line id>:<second line id>`.
+class RecordsPlan {
+  const RecordsPlan({required this.first, required this.second, required this.readTask, required this.compareTask, required this.checkLabel});
+
+  final RecordDocPlan first;
+  final RecordDocPlan second;
+  final String readTask;
+  final String compareTask;
+  final String checkLabel;
+
+  factory RecordsPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = RecordsPlan(
+      first: r.obj('first', RecordDocPlan.fromJson),
+      second: r.obj('second', RecordDocPlan.fromJson),
+      readTask: r.str('readTask'),
+      compareTask: r.str('compareTask'),
+      checkLabel: r.str('checkLabel'),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {
+    'first': first.toJson(),
+    'second': second.toJson(),
+    'readTask': readTask,
+    'compareTask': compareTask,
+    'checkLabel': checkLabel,
+  };
+}
+
+/// A question asked in an [InterviewPlan] (`TalkQuestion`): its [lines] the answer.
+class InterviewQuestionPlan {
+  const InterviewQuestionPlan({required this.id, required this.text, required this.lines, this.requires = const []});
+
+  final String id;
+  final String text;
+  final List<TalkLinePlan> lines;
+  final List<String> requires;
+
+  factory InterviewQuestionPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = InterviewQuestionPlan(
+      id: r.str('id', pattern: PlanIds.local),
+      text: r.str('text'),
+      lines: r.objs('lines', TalkLinePlan.fromJson, min: 1),
+      requires: r.optStrings('requires', pattern: PlanIds.local, unique: true),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() {
+    final json = <String, Object?>{'id': id, 'text': text, 'lines': [for (final l in lines) l.toJson()]};
+    _putList(json, 'requires', requires);
+    return json;
+  }
+}
+
+/// Evidence asked for in an [InterviewPlan] (`TalkPresent`): one of
+/// [accepted] (notebook evidence ids) plays [lines]; any other plays [miss]
+/// (never counted wrong). [offered]: two pieces shown as cards to pick
+/// from instead of the notebook, [tell] said after a second miss.
+class InterviewPresentPlan {
+  const InterviewPresentPlan({
+    required this.id,
+    required this.prompt,
+    required this.accepted,
+    required this.lines,
+    required this.miss,
+    this.offered = const [],
+    this.tell,
+    this.requires = const [],
+  });
+
+  final String id;
+  final String prompt;
+  final List<String> accepted;
+  final List<TalkLinePlan> lines;
+  final String miss;
+  final List<String> offered;
+  final String? tell;
+  final List<String> requires;
+
+  factory InterviewPresentPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = InterviewPresentPlan(
+      id: r.str('id', pattern: PlanIds.local),
+      prompt: r.str('prompt'),
+      accepted: r.strings('accepted', min: 1, pattern: PlanIds.evidence, unique: true),
+      lines: r.objs('lines', TalkLinePlan.fromJson, min: 1),
+      miss: r.str('miss'),
+      offered: r.optStrings('offered', pattern: PlanIds.evidence, unique: true),
+      tell: r.optStr('tell'),
+      requires: r.optStrings('requires', pattern: PlanIds.local, unique: true),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() {
+    final json = <String, Object?>{'id': id, 'prompt': prompt, 'accepted': accepted, 'lines': [for (final l in lines) l.toJson()], 'miss': miss};
+    _putList(json, 'offered', offered);
+    _putText(json, 'tell', tell);
+    _putList(json, 'requires', requires);
+    return json;
+  }
+}
+
+/// A talk with one person of the case in which evidence is shown
+/// (`TalkScene`, table `talks`, `evidence_talk`): questions asked, the
+/// evidence that answers each prompt shown; finished once every step of
+/// [finishWhen] is done, it gives the puzzle's answer.
+class InterviewPlan {
+  const InterviewPlan({
+    required this.speaker,
+    required this.goal,
+    required this.opening,
+    required this.presents,
+    required this.finishWhen,
+    this.portrait,
+    this.questions = const [],
+    this.finishLabel,
+  });
+
+  /// A charId of the case's characters.
+  final String speaker;
+  final String? portrait;
+  final String goal;
+  final List<TalkLinePlan> opening;
+  final List<InterviewQuestionPlan> questions;
+  final List<InterviewPresentPlan> presents;
+  final List<String> finishWhen;
+  final String? finishLabel;
+
+  factory InterviewPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = InterviewPlan(
+      speaker: r.str('speaker', pattern: PlanIds.local),
+      portrait: r.optStr('portrait', pattern: PlanIds.assetFile),
+      goal: r.str('goal'),
+      opening: r.objs('opening', TalkLinePlan.fromJson, min: 1),
+      questions: r.optObjs('questions', InterviewQuestionPlan.fromJson),
+      presents: r.objs('presents', InterviewPresentPlan.fromJson, min: 1),
+      finishWhen: r.strings('finishWhen', min: 1, pattern: PlanIds.local, unique: true),
+      finishLabel: r.optStr('finishLabel'),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() {
+    final json = <String, Object?>{'speaker': speaker};
+    _putText(json, 'portrait', portrait);
+    json['goal'] = goal;
+    json['opening'] = [for (final l in opening) l.toJson()];
+    _putList(json, 'questions', [for (final q in questions) q.toJson()]);
+    json['presents'] = [for (final p in presents) p.toJson()];
+    json['finishWhen'] = finishWhen;
+    _putText(json, 'finishLabel', finishLabel);
+    return json;
+  }
+}
+
 class MissionPlayPlan {
   const MissionPlayPlan({
     this.title,
@@ -2105,6 +2795,11 @@ class MissionPlayPlan {
     this.explore,
     this.search,
     this.dialogue,
+    this.timeline,
+    this.traces,
+    this.inspect,
+    this.records,
+    this.interview,
     this.talk,
     this.discovery,
     this.ending = const [],
@@ -2152,6 +2847,18 @@ class MissionPlayPlan {
   final SearchPlan? search;
   final DialoguePlan? dialogue;
 
+  /// A timeline to put back together (Puzzle Engine 2.0, table `timelines`).
+  final TimelinePlan? timeline;
+
+  /// Existing engines the generator makes (Puzzle Engine 2.0 STEP 1): a
+  /// place read for its traces (`deductions`), exhibits under the glass
+  /// (`inspections`), two records compared (`records`), a talk in which
+  /// evidence is shown (`talks`).
+  final TracesPlan? traces;
+  final InspectPlan? inspect;
+  final RecordsPlan? records;
+  final InterviewPlan? interview;
+
   /// The story around the puzzle (STEP 3-13B), each optional: without it the
   /// mission plays as it always did. A mission's talks before and after its
   /// puzzle (`talkMissions`) and its own Discovery Moment (`discoveries`); a
@@ -2165,6 +2872,11 @@ class MissionPlayPlan {
     'explores': ?explore,
     'investigations': ?search,
     'dialogues': ?dialogue,
+    'timelines': ?timeline,
+    'deductions': ?traces,
+    'inspections': ?inspect,
+    'records': ?records,
+    'talks': ?interview,
   };
 
   factory MissionPlayPlan.fromJson(Object? json, String path) {
@@ -2193,6 +2905,11 @@ class MissionPlayPlan {
       explore: r.optObj('explore', ExplorePlan.fromJson),
       search: r.optObj('search', SearchPlan.fromJson),
       dialogue: r.optObj('dialogue', DialoguePlan.fromJson),
+      timeline: r.optObj('timeline', TimelinePlan.fromJson),
+      traces: r.optObj('traces', TracesPlan.fromJson),
+      inspect: r.optObj('inspect', InspectPlan.fromJson),
+      records: r.optObj('records', RecordsPlan.fromJson),
+      interview: r.optObj('interview', InterviewPlan.fromJson),
       talk: r.optObj('talk', MissionTalkPlan.fromJson),
       discovery: r.optObj('discovery', DiscoveryPlan.fromJson),
       ending: r._has('ending') ? r.objs('ending', EndingLinePlan.fromJson, min: 1) : const [],
@@ -2226,6 +2943,11 @@ class MissionPlayPlan {
     if (explore case final s?) json['explore'] = s.toJson();
     if (search case final s?) json['search'] = s.toJson();
     if (dialogue case final s?) json['dialogue'] = s.toJson();
+    if (timeline case final s?) json['timeline'] = s.toJson();
+    if (traces case final s?) json['traces'] = s.toJson();
+    if (inspect case final s?) json['inspect'] = s.toJson();
+    if (records case final s?) json['records'] = s.toJson();
+    if (interview case final s?) json['interview'] = s.toJson();
     if (talk case final t?) json['talk'] = t.toJson();
     if (discovery case final d?) json['discovery'] = d.toJson();
     _putList(json, 'ending', [for (final l in ending) l.toJson()]);

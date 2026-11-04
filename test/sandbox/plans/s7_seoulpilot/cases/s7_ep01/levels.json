@@ -1,0 +1,794 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s7_ep01",
+  "lines": [
+    {
+      "rookie": "The Missing Royal Letter",
+      "junior": "The Missing Royal Letter",
+      "master": "The Missing Royal Letter"
+    },
+    {
+      "rookie": "A royal letter in the new letters is gone.",
+      "junior": "A royal letter written in the new letters has vanished.",
+      "master": "A royal letter written in the new letters has disappeared overnight."
+    },
+    {
+      "rookie": "A false page is in its place.",
+      "junior": "A false page has been left in its place.",
+      "master": "In its place lies a false page."
+    },
+    {
+      "rookie": "The royal letter must be delivered at sunrise.",
+      "junior": "The royal letter has to be delivered at sunrise.",
+      "master": "The royal letter is due to be delivered at sunrise."
+    },
+    {
+      "rookie": "Read the gate book.",
+      "junior": "Read the guard's gate book.",
+      "master": "Study the guard's gate book."
+    },
+    {
+      "rookie": "Compare the two papers.",
+      "junior": "Compare the two papers line by line.",
+      "master": "Compare the two papers, line by line."
+    },
+    {
+      "rookie": "Find the real letter.",
+      "junior": "Find where the real letter is.",
+      "master": "Track down the real letter."
+    },
+    {
+      "rookie": "Show Bae the evidence.",
+      "junior": "Show Bae your evidence.",
+      "master": "Confront Bae with your evidence."
+    },
+    {
+      "rookie": "Autumn, 1446. A royal letter is gone.",
+      "junior": "It is autumn, 1446, and a royal letter has vanished.",
+      "master": "Autumn, 1446: a royal letter has vanished from the palace."
+    },
+    {
+      "rookie": "It must be delivered at sunrise.",
+      "junior": "It has to be delivered at sunrise.",
+      "master": "It is due to be delivered at sunrise."
+    },
+    {
+      "rookie": "Copyist Bae swapped the royal letter. He feared losing his work as a writer.",
+      "junior": "Copyist Bae swapped the royal letter, afraid he would lose his work as a writer.",
+      "master": "Copyist Bae swapped the royal letter, fearing he would lose his living as a writer."
+    },
+    {
+      "rookie": "THE PALACE, HANYANG",
+      "junior": "THE PALACE, HANYANG",
+      "master": "THE PALACE, HANYANG"
+    },
+    {
+      "rookie": "THE BOX",
+      "junior": "THE BOX",
+      "master": "THE BOX"
+    },
+    {
+      "rookie": "MUN-SU",
+      "junior": "MUN-SU",
+      "master": "MUN-SU"
+    },
+    {
+      "rookie": "SORA",
+      "junior": "SORA",
+      "master": "SORA"
+    },
+    {
+      "rookie": "BAE",
+      "junior": "BAE",
+      "master": "BAE"
+    },
+    {
+      "rookie": "DAWN",
+      "junior": "DAWN",
+      "master": "DAWN"
+    },
+    {
+      "rookie": "LUNCH",
+      "junior": "LUNCH",
+      "master": "LUNCH"
+    },
+    {
+      "rookie": "Then he went home.",
+      "junior": "Then he went home.",
+      "master": "Then he went home for the night."
+    },
+    {
+      "rookie": "After Sora left, Copyist Bae came back for his brush.",
+      "junior": "After Sora left, Copyist Bae came back to fetch his brush.",
+      "master": "Once Sora left, Copyist Bae returned, saying he needed his brush."
+    },
+    {
+      "rookie": "The Gate Book",
+      "junior": "The Gate Book",
+      "master": "The Gate Book"
+    },
+    {
+      "rookie": "THE ROYAL SECRETARIAT",
+      "junior": "THE ROYAL SECRETARIAT",
+      "master": "THE ROYAL SECRETARIAT"
+    },
+    {
+      "rookie": "Autumn, 1446. The book of the new letters is finished.",
+      "junior": "It is autumn, 1446, and the book of the new letters has just been finished.",
+      "master": "Autumn, 1446: the book explaining the new letters has just been completed."
+    },
+    {
+      "rookie": "The Royal Secretariat carries the King's orders.",
+      "junior": "The Royal Secretariat is the office that carries the King's orders.",
+      "master": "The Royal Secretariat is the office through which the King's orders pass."
+    },
+    {
+      "rookie": "Last night, a royal letter in the new letters waited in a box here.",
+      "junior": "Last night, a royal letter written in the new letters was kept in a box here.",
+      "master": "Last night, a royal letter written in the new letters lay locked in a box here."
+    },
+    {
+      "rookie": "At sunrise, Clerk Mun-su must deliver it to the palace scholars.",
+      "junior": "At sunrise, Clerk Mun-su has to take it to the palace scholars.",
+      "master": "At sunrise, Clerk Mun-su is to deliver it to the palace scholars."
+    },
+    {
+      "rookie": "But at dawn, the letter is gone. A strange page is in the box.",
+      "junior": "But at dawn the letter has vanished, and a strange page lies in the box.",
+      "master": "Yet at dawn the letter is missing, and a strange page lies in its place."
+    },
+    {
+      "rookie": "Guard Taek's gate book says:",
+      "junior": "Guard Taek's gate book reads:",
+      "master": "Guard Taek's gate book records:"
+    },
+    {
+      "rookie": "At sunset, Mun-su locked the letter box.\nThen he went home.\nLater, Sora came in for the tea cups.\nAfter Sora left, Copyist Bae came back for his brush.\nNobody came in after Bae.\nAt dawn, Mun-su opened the box.",
+      "junior": "At sunset, Mun-su locked the letter box.\nThen he went home.\nSome time later, Sora came in to collect the tea cups.\nAfter Sora left, Copyist Bae came back to fetch his brush.\nNobody else came in after Bae.\nAt dawn, Mun-su opened the box again.",
+      "master": "At sunset, Mun-su locked the letter box.\nThen he went home for the night.\nSome while later, Sora slipped in to clear away the tea cups.\nOnce Sora left, Copyist Bae returned, saying he needed his brush.\nNo one entered after Bae.\nAt dawn, Mun-su unlocked the box once more."
+    },
+    {
+      "rookie": "Put the night in order. Who came in after the box was locked?",
+      "junior": "Put the night's events in order. Who came in after the box was locked?",
+      "master": "Rebuild the night in order. Who entered once the box was locked?"
+    },
+    {
+      "rookie": "Read the gate book. Look for then, later and after.",
+      "junior": "Read the gate book carefully. Look for the words then, later and after.",
+      "master": "Read the gate book closely, watching for then, later and once."
+    },
+    {
+      "rookie": "Mun-su ate lunch in the day, not at night. Set that card aside.",
+      "junior": "Mun-su had lunch during the day, not at night, so set that card aside.",
+      "master": "Lunch happened in daylight, not during the night: put that card aside."
+    },
+    {
+      "rookie": "Two people came in after the box was locked!",
+      "junior": "Two people entered after the box was locked!",
+      "master": "Two people slipped in after the box was locked!"
+    },
+    {
+      "rookie": "Two people came in after sunset: Sora and Bae.",
+      "junior": "Two people entered after sunset: Sora and Bae.",
+      "master": "Only two people entered after sunset: Sora and Bae."
+    },
+    {
+      "rookie": "\"Bae is the palace copyist,\" says Taek. \"He draws a little leaf on every page he copies.\"",
+      "junior": "\"Bae is the palace copyist,\" Taek explains. \"He draws a little leaf on every single page he copies.\"",
+      "master": "\"Bae is the palace copyist,\" Taek adds. \"He always draws a little leaf on each page he copies.\""
+    },
+    {
+      "rookie": "Mun-su shows you the strange page.",
+      "junior": "Mun-su hands you the strange page.",
+      "master": "Mun-su passes you the strange page."
+    },
+    {
+      "rookie": "Read the gate book again. Who came in after Sora?",
+      "junior": "Read the gate book once more. Who entered after Sora?",
+      "master": "Check the gate book again. Who entered once Sora had gone?"
+    },
+    {
+      "rookie": "After Sunset",
+      "junior": "After Sunset",
+      "master": "After Sunset"
+    },
+    {
+      "rookie": "After Mun-su locked the box, Sora came in, then Bae. Nobody came in after Bae.",
+      "junior": "After Mun-su locked the box, Sora came in, and then Bae. Nobody entered after Bae.",
+      "master": "Once Mun-su locked the box, Sora entered, then Bae. No one came after Bae."
+    },
+    {
+      "rookie": "Mun-su locks the letter box.",
+      "junior": "Mun-su locks up the letter box.",
+      "master": "Mun-su locks the letter box tight."
+    },
+    {
+      "rookie": "Mun-su goes home.",
+      "junior": "Mun-su heads home.",
+      "master": "Mun-su leaves for home."
+    },
+    {
+      "rookie": "Sora comes in for the tea cups.",
+      "junior": "Sora comes in to collect the tea cups.",
+      "master": "Sora slips in to clear the tea cups."
+    },
+    {
+      "rookie": "Bae comes back for his brush.",
+      "junior": "Bae returns to fetch his brush.",
+      "master": "Bae returns, saying he needs his brush."
+    },
+    {
+      "rookie": "Mun-su opens the box. The letter is gone.",
+      "junior": "Mun-su opens the box, and the letter has vanished.",
+      "master": "Mun-su opens the box to find the letter missing."
+    },
+    {
+      "rookie": "Mun-su eats lunch with the clerks.",
+      "junior": "Mun-su has lunch with the other clerks.",
+      "master": "Mun-su shares a midday meal with the clerks."
+    },
+    {
+      "rookie": "Later, Sora came in for the tea cups.",
+      "junior": "Some time later, Sora came in to collect the tea cups.",
+      "master": "Some while later, Sora slipped in to clear away the tea cups."
+    },
+    {
+      "rookie": "The LETTERS line",
+      "junior": "The LETTERS line",
+      "master": "The LETTERS line"
+    },
+    {
+      "rookie": "The DOT line",
+      "junior": "The DOT line",
+      "master": "The DOT line"
+    },
+    {
+      "rookie": "The FLAT line",
+      "junior": "The FLAT line",
+      "master": "The FLAT line"
+    },
+    {
+      "rookie": "The WHY line",
+      "junior": "The WHY line",
+      "master": "The WHY line"
+    },
+    {
+      "rookie": "EASY TO LEARN",
+      "junior": "EASY TO LEARN",
+      "master": "EASY TO LEARN"
+    },
+    {
+      "rookie": "SCHOLARS ONLY",
+      "junior": "SCHOLARS ONLY",
+      "master": "SCHOLARS ONLY"
+    },
+    {
+      "rookie": "Two Papers",
+      "junior": "Two Papers",
+      "master": "Two Papers"
+    },
+    {
+      "rookie": "The strange page looks like the royal letter.",
+      "junior": "The strange page looks just like the royal letter.",
+      "master": "At a glance, the strange page resembles the royal letter."
+    },
+    {
+      "rookie": "Mun-su also has the scholars' sheet about the new letters.",
+      "junior": "Mun-su also has the scholars' sheet explaining the new letters.",
+      "master": "Mun-su also keeps the scholars' sheet explaining the new letters."
+    },
+    {
+      "rookie": "\"The page should be a copy of the King's words,\" he whispers.",
+      "junior": "\"This page is supposed to be a copy of the King's words,\" he whispers.",
+      "master": "\"This page ought to be a faithful copy of the King's words,\" he murmurs."
+    },
+    {
+      "rookie": "The scholars' sheet explains:",
+      "junior": "The scholars' sheet says:",
+      "master": "The scholars' sheet sets out:"
+    },
+    {
+      "rookie": "There are 28 letters.\nFive main consonant letters copy the shapes we make to speak.\nThey show the tongue, the mouth, the teeth and the throat.\nThe dot is the round sky. The flat line is the flat earth. The standing line is a person.\nThe King made them so people can learn them easily and use them every day.\nThe book says a slow person can learn them in ten days.\nNow find the line on the page that does not match.",
+      "junior": "There are 28 letters in all.\nFive main consonant letters copy the shapes we make when we speak.\nThey show the tongue, the mouth, the teeth and the throat.\nThe dot stands for the round sky, the flat line for the flat earth, and the standing line for a person.\nThe King made them so that people can learn them easily and use them every day.\nThe book says that even a slow person can learn them in ten days.\nNow find the line on the page that does not match.",
+      "master": "The new script has 28 letters.\nFive main consonant letters are modelled on the shapes we form as we speak.\nThey picture the tongue, the mouth, the teeth and the throat.\nThe dot represents the round sky, the flat line the flat earth, and the standing line a person.\nThe King created them so that people could learn them with ease and use them each day.\nThe book claims that even a slow learner can learn them in ten days.\nNow find the one line on the page that does not match."
+    },
+    {
+      "rookie": "Which line does not match?",
+      "junior": "Which line is different?",
+      "master": "Which line differs?"
+    },
+    {
+      "rookie": "Read the WHY line on each paper.",
+      "junior": "Look at the WHY line on each paper.",
+      "master": "Compare the WHY line on each paper."
+    },
+    {
+      "rookie": "One says EASY TO LEARN. What does the other say?",
+      "junior": "One paper says EASY TO LEARN. What does the other one say?",
+      "master": "One reads EASY TO LEARN. What does the other claim?"
+    },
+    {
+      "rookie": "Someone changed the King's words!",
+      "junior": "Someone has changed the King's words!",
+      "master": "Someone has altered the King's words!"
+    },
+    {
+      "rookie": "The strange page is written in the new letters.",
+      "junior": "The strange page is written in the new letters, too.",
+      "master": "The strange page, too, is written in the new letters."
+    },
+    {
+      "rookie": "At the bottom of it, someone drew a small leaf.",
+      "junior": "At the bottom, someone has drawn a small leaf.",
+      "master": "At its foot, someone has drawn a small leaf."
+    },
+    {
+      "rookie": "You go to the copy room.",
+      "junior": "You head to the copy room.",
+      "master": "You make your way to the copy room."
+    },
+    {
+      "rookie": "The Changed Line",
+      "junior": "The Changed Line",
+      "master": "The Changed Line"
+    },
+    {
+      "rookie": "The page says SCHOLARS ONLY. The King's words say EASY TO LEARN.",
+      "junior": "The page reads SCHOLARS ONLY, but the King's words say EASY TO LEARN.",
+      "master": "The page claims SCHOLARS ONLY; the King's words say EASY TO LEARN."
+    },
+    {
+      "rookie": "THE SCHOLARS' SHEET",
+      "junior": "THE SCHOLARS' SHEET",
+      "master": "THE SCHOLARS' SHEET"
+    },
+    {
+      "rookie": "SCHOLARS' SHEET",
+      "junior": "SCHOLARS' SHEET",
+      "master": "SCHOLARS' SHEET"
+    },
+    {
+      "rookie": "LETTERS",
+      "junior": "LETTERS",
+      "master": "LETTERS"
+    },
+    {
+      "rookie": "DOT",
+      "junior": "DOT",
+      "master": "DOT"
+    },
+    {
+      "rookie": "FLAT",
+      "junior": "FLAT",
+      "master": "FLAT"
+    },
+    {
+      "rookie": "WHY",
+      "junior": "WHY",
+      "master": "WHY"
+    },
+    {
+      "rookie": "A ruled sheet of paper on a board (test picture)",
+      "junior": "A ruled sheet of paper on a board (test picture)",
+      "master": "A ruled sheet of paper on a board (test picture)"
+    },
+    {
+      "rookie": "THE PAGE IN THE BOX",
+      "junior": "THE PAGE IN THE BOX",
+      "master": "THE PAGE IN THE BOX"
+    },
+    {
+      "rookie": "A small leaf is drawn at the bottom.",
+      "junior": "A small leaf is drawn at the bottom.",
+      "master": "A small leaf is drawn at the bottom."
+    },
+    {
+      "rookie": "Tap each paper to read it.",
+      "junior": "Tap each paper to read it closely.",
+      "master": "Tap each paper to study it."
+    },
+    {
+      "rookie": "Tap the line on each paper that does not match.",
+      "junior": "Tap the line on each paper that is different.",
+      "master": "Tap the line on each paper that differs."
+    },
+    {
+      "rookie": "THESE DO NOT MATCH",
+      "junior": "THESE DO NOT MATCH",
+      "master": "THESE DO NOT MATCH"
+    },
+    {
+      "rookie": "The work table drawer",
+      "junior": "The drawer of the work table",
+      "master": "The work table's drawer"
+    },
+    {
+      "rookie": "The drawer has no lid, and the ink does not lead there. Read your three notes.",
+      "junior": "A drawer has no lid, and the ink does not lead to it. Read your three notes again.",
+      "master": "A drawer has no lid, and the ink trail never reaches it. Reread your three notes."
+    },
+    {
+      "rookie": "The small chest under the desk",
+      "junior": "The small chest under the desk",
+      "master": "The small chest beneath the desk"
+    },
+    {
+      "rookie": "The open crate",
+      "junior": "The open crate",
+      "master": "The open wooden crate"
+    },
+    {
+      "rookie": "The crate is open: no lid to catch a hair. Read your notes again.",
+      "junior": "The crate is open, so there is no lid to catch a hair. Read your notes again.",
+      "master": "The crate stands open, with no lid to trap a hair. Reread your notes."
+    },
+    {
+      "rookie": "A long brush hair is caught under a lid.",
+      "junior": "A long brush hair is stuck under a lid.",
+      "master": "A long brush hair is trapped beneath a lid."
+    },
+    {
+      "rookie": "Ink in the Copy Room",
+      "junior": "Ink in the Copy Room",
+      "master": "Ink in the Copy Room"
+    },
+    {
+      "rookie": "THE COPY ROOM",
+      "junior": "THE COPY ROOM",
+      "master": "THE COPY ROOM"
+    },
+    {
+      "rookie": "Sora and Bae came in after sunset.",
+      "junior": "Sora and Bae both came in after sunset.",
+      "master": "Both Sora and Bae entered after sunset."
+    },
+    {
+      "rookie": "Sora had a paper in her sleeve.",
+      "junior": "Sora was hiding a paper in her sleeve.",
+      "master": "Sora had a paper tucked into her sleeve."
+    },
+    {
+      "rookie": "Bae says he only took his brush.",
+      "junior": "Bae says he only came to take his brush.",
+      "master": "Bae insists he took nothing but his brush."
+    },
+    {
+      "rookie": "Your notes on the marks in the copy room:",
+      "junior": "Your notes on the marks you found in the copy room:",
+      "master": "Your notes on the marks left in the copy room:"
+    },
+    {
+      "rookie": "Drops of fresh black ink lead across the rug.\nA long brush hair is caught under a lid.\nA torn corner of thick paper sticks out of the same box.",
+      "junior": "Drops of fresh black ink lead over the rug.\nA long brush hair is stuck under a lid.\nA torn corner of thick paper pokes out of the same box.",
+      "master": "A trail of fresh black ink drops crosses the rug.\nA long brush hair is trapped beneath a lid.\nA torn corner of heavy paper juts out of that very box."
+    },
+    {
+      "rookie": "Where is the royal letter hidden?",
+      "junior": "Where has the royal letter been hidden?",
+      "master": "Where is the royal letter hidden away?"
+    },
+    {
+      "rookie": "Tap the ink, the brush hair and the paper corner.",
+      "junior": "Tap the ink drops, the brush hair and the paper corner.",
+      "master": "Examine the ink drops, the brush hair and the paper corner."
+    },
+    {
+      "rookie": "Which box has a lid and stands on the rug?",
+      "junior": "Which box has a lid and sits on the rug?",
+      "master": "Which box both has a lid and rests on the rug?"
+    },
+    {
+      "rookie": "The royal letter is in the small chest!",
+      "junior": "The royal letter was hidden in the small chest!",
+      "master": "The royal letter lay hidden in the small chest!"
+    },
+    {
+      "rookie": "It is Bae's chest. Inside, the letter is wrapped in a brush cloth. The name BAE is sewn on it.",
+      "junior": "It is Bae's chest. Inside, the letter is wrapped in a brush cloth with the name BAE sewn on it.",
+      "master": "The chest is Bae's. Inside, the letter lies wrapped in a brush cloth bearing the name BAE."
+    },
+    {
+      "rookie": "Sora is pale. She shows you the paper from her sleeve.",
+      "junior": "Sora turns pale and shows you the paper from her sleeve.",
+      "master": "Pale-faced, Sora draws the paper from her sleeve."
+    },
+    {
+      "rookie": "\"It is my practice page,\" she says. \"I learned the new letters in ten days.\"",
+      "junior": "\"It's my practice page,\" she explains. \"I learned the new letters in ten days.\"",
+      "master": "\"It is only my practice page,\" she says. \"I taught myself the new letters in ten days.\""
+    },
+    {
+      "rookie": "She is not the thief. Her page shows a dot, a flat line and a standing line, again and again.",
+      "junior": "She is not the thief. Her page is full of a dot, a flat line and a standing line, written again and again.",
+      "master": "She is no thief: her page repeats a dot, a flat line and a standing line, over and over."
+    },
+    {
+      "rookie": "The Small Chest",
+      "junior": "The Small Chest",
+      "master": "The Small Chest"
+    },
+    {
+      "rookie": "The royal letter was in Bae's chest, wrapped in his brush cloth.",
+      "junior": "The royal letter was in Bae's chest, wrapped in his own brush cloth.",
+      "master": "The royal letter lay in Bae's chest, wrapped in his own brush cloth."
+    },
+    {
+      "rookie": "The copy room at night",
+      "junior": "The copy room late at night",
+      "master": "The copy room in the dead of night"
+    },
+    {
+      "rookie": "Look for three marks.",
+      "junior": "Look for three marks in the room.",
+      "master": "Search the room for three marks."
+    },
+    {
+      "rookie": "Where is the royal letter hidden? Tap the place.",
+      "junior": "Where has the royal letter been hidden? Tap the place.",
+      "master": "Where is the royal letter hidden away? Tap the place."
+    },
+    {
+      "rookie": "Nothing here. Look for marks.",
+      "junior": "There is nothing here. Look for marks.",
+      "master": "Nothing of note here. Search for marks."
+    },
+    {
+      "rookie": "The letter is not there. Tap a place where it could be hidden.",
+      "junior": "The letter isn't there. Tap a place where it could be hidden.",
+      "master": "The letter is not there. Choose a place where it could be hidden."
+    },
+    {
+      "rookie": "Drops of black ink across the rug",
+      "junior": "Drops of black ink over the rug",
+      "master": "A trail of black ink drops across the rug"
+    },
+    {
+      "rookie": "Drops of fresh black ink lead across the rug.",
+      "junior": "Drops of fresh black ink lead over the rug.",
+      "master": "A trail of fresh black ink drops crosses the rug."
+    },
+    {
+      "rookie": "A long brush hair under a lid",
+      "junior": "A long brush hair stuck under a lid",
+      "master": "A long brush hair trapped beneath a lid"
+    },
+    {
+      "rookie": "A torn paper corner",
+      "junior": "A torn corner of paper",
+      "master": "A torn corner of heavy paper"
+    },
+    {
+      "rookie": "A torn corner of thick paper sticks out of the same box.",
+      "junior": "A torn corner of thick paper pokes out of the same box.",
+      "master": "A torn corner of heavy paper juts out of that very box."
+    },
+    {
+      "rookie": "A drawer of the work table",
+      "junior": "A drawer in the work table",
+      "master": "A drawer of the work table"
+    },
+    {
+      "rookie": "A drawer of the work table. No lid, no ink.",
+      "junior": "A drawer in the work table. It has no lid and no ink.",
+      "master": "A drawer of the work table, with neither a lid nor ink."
+    },
+    {
+      "rookie": "An open crate",
+      "junior": "An open crate",
+      "master": "An open wooden crate"
+    },
+    {
+      "rookie": "An open crate of old cloth. No lid at all.",
+      "junior": "An open crate full of old cloth. It has no lid at all.",
+      "master": "An open crate of old cloth, without any lid."
+    },
+    {
+      "rookie": "The writing desk",
+      "junior": "The writing desk",
+      "master": "The writing desk"
+    },
+    {
+      "rookie": "The writing desk. Clean and tidy.",
+      "junior": "The writing desk is clean and tidy.",
+      "master": "The writing desk, clean and neatly kept."
+    },
+    {
+      "rookie": "Bae claims he did nothing wrong.",
+      "junior": "Bae claims that he did nothing wrong.",
+      "master": "Bae claims he has done nothing wrong."
+    },
+    {
+      "rookie": "The Copyist Answers",
+      "junior": "The Copyist Answers",
+      "master": "The Copyist Answers"
+    },
+    {
+      "rookie": "THE PALACE YARD",
+      "junior": "THE PALACE YARD",
+      "master": "THE PALACE YARD"
+    },
+    {
+      "rookie": "The sun is coming up.",
+      "junior": "The sun is starting to rise.",
+      "master": "The sun is beginning to rise."
+    },
+    {
+      "rookie": "Bae waits in the palace yard.",
+      "junior": "Bae is waiting in the palace yard.",
+      "master": "Bae stands waiting in the palace yard."
+    },
+    {
+      "rookie": "Your notebook says:",
+      "junior": "Your notebook reads:",
+      "master": "Your notebook records:"
+    },
+    {
+      "rookie": "Bae came in last, after sunset.\nThe false page has a small leaf at the bottom.\nThe letter was wrapped in Bae's brush cloth.",
+      "junior": "Bae was the last to come in, after sunset.\nThe false page has a small leaf drawn at the bottom.\nThe letter was wrapped in Bae's own brush cloth.",
+      "master": "Bae was the last to enter, after sunset.\nA small leaf is drawn at the foot of the false page.\nThe letter was wrapped in Bae's own brush cloth."
+    },
+    {
+      "rookie": "Answer each claim with one piece of evidence.",
+      "junior": "Answer each of his claims with one piece of evidence.",
+      "master": "Counter each of his claims with a single piece of evidence."
+    },
+    {
+      "rookie": "Bae makes three claims. Answer each one with one piece of evidence.",
+      "junior": "Bae makes three claims. Answer every one with a single piece of evidence.",
+      "master": "Bae puts forward three claims. Counter each with a single piece of evidence."
+    },
+    {
+      "rookie": "Use the gate book, the false page and the wrapped letter.",
+      "junior": "You need the gate book, the false page and the wrapped letter.",
+      "master": "The gate book, the false page and the wrapped letter are all you need."
+    },
+    {
+      "rookie": "Bae tells the truth.",
+      "junior": "Bae finally tells the truth.",
+      "master": "At last, Bae tells the truth."
+    },
+    {
+      "rookie": "Bae looks down.",
+      "junior": "Bae looks at the ground.",
+      "master": "Bae lowers his eyes."
+    },
+    {
+      "rookie": "\"If everyone can write, who will pay me to write for them?\" he asks.",
+      "junior": "\"If everyone can write, who will pay me to write for them?\" he asks quietly.",
+      "master": "\"If everyone can write, who will ever pay me to write for them?\" he asks."
+    },
+    {
+      "rookie": "Mun-su hands him the scholars' sheet. \"Then teach them. You learned the new letters too.\"",
+      "junior": "Mun-su hands him the scholars' sheet. \"Then teach them. You learned the new letters as well.\"",
+      "master": "Mun-su offers him the scholars' sheet. \"Then teach them. You mastered the new letters too.\""
+    },
+    {
+      "rookie": "\"Seven days,\" Bae says quietly.",
+      "junior": "\"It took me seven days,\" Bae says quietly.",
+      "master": "\"Seven days,\" Bae admits under his breath."
+    },
+    {
+      "rookie": "The sun is up. Before Mun-su delivers the royal letter, Sora reads its first line with him.",
+      "junior": "The sun has risen. Before Mun-su delivers the royal letter, Sora reads its first line with him.",
+      "master": "The sun is up. Before Mun-su sets off with the royal letter, Sora reads its first line beside him."
+    },
+    {
+      "rookie": "Show that Bae swapped the royal letter.",
+      "junior": "Prove that Bae swapped the royal letter.",
+      "master": "Prove that it was Bae who swapped the royal letter."
+    },
+    {
+      "rookie": "I am only a copyist. I did nothing.",
+      "junior": "I'm just a copyist. I did nothing.",
+      "master": "I am merely a copyist. I have done nothing."
+    },
+    {
+      "rookie": "Then let us look at my notebook.",
+      "junior": "Then let's look at my notebook.",
+      "master": "Then let us see what my notebook says."
+    },
+    {
+      "rookie": "What is your work?",
+      "junior": "What work do you do?",
+      "master": "What exactly is your work?"
+    },
+    {
+      "rookie": "I write letters for people who cannot write. They pay me.",
+      "junior": "I write letters for people who can't write, and they pay me.",
+      "master": "I write letters for those who cannot write, and they pay me for it."
+    },
+    {
+      "rookie": "Bae says: \"I went home before sunset.\"",
+      "junior": "Bae says: \"I had gone home before sunset.\"",
+      "master": "Bae insists: \"I had left for home before sunset.\""
+    },
+    {
+      "rookie": "The gate book… Yes. I came back for my brush.",
+      "junior": "The gate book… Yes. I did come back for my brush.",
+      "master": "The gate book… Very well. I came back for my brush."
+    },
+    {
+      "rookie": "That does not show when I came in.",
+      "junior": "That doesn't show when I came in.",
+      "master": "That proves nothing about when I came in."
+    },
+    {
+      "rookie": "The gate book shows who came in after sunset.",
+      "junior": "The gate book shows who entered after sunset.",
+      "master": "The gate book records who entered after sunset."
+    },
+    {
+      "rookie": "Bae says: \"I cannot even write the new letters!\"",
+      "junior": "Bae says: \"I can't even write the new letters!\"",
+      "master": "Bae protests: \"I cannot even write the new letters!\""
+    },
+    {
+      "rookie": "This page is in the new letters. It has your little leaf.",
+      "junior": "This page is written in the new letters, and it has your little leaf.",
+      "master": "This page is written in the new letters, and it bears your little leaf."
+    },
+    {
+      "rookie": "I draw that leaf on every copy. I wrote it.",
+      "junior": "I draw that leaf on every copy I make. I wrote it.",
+      "master": "I mark every copy with that leaf. I wrote it."
+    },
+    {
+      "rookie": "That is not about writing.",
+      "junior": "That has nothing to do with writing.",
+      "master": "That says nothing about writing."
+    },
+    {
+      "rookie": "The false page is in the new letters, with a small leaf.",
+      "junior": "The false page is written in the new letters, with a small leaf.",
+      "master": "The false page is in the new letters and bears a small leaf."
+    },
+    {
+      "rookie": "Bae says: \"Anyone could put a letter in my chest!\"",
+      "junior": "Bae says: \"Anyone could have put a letter in my chest!\"",
+      "master": "Bae protests: \"Anyone at all could have put a letter in my chest!\""
+    },
+    {
+      "rookie": "The letter was wrapped in your brush cloth. Your name is sewn on it.",
+      "junior": "The letter was wrapped in your brush cloth, and your name is sewn on it.",
+      "master": "The letter was wrapped in your own brush cloth, with your name sewn on it."
+    },
+    {
+      "rookie": "Yes. I hid it there.",
+      "junior": "Yes. I hid it there myself.",
+      "master": "Yes. I hid it there myself."
+    },
+    {
+      "rookie": "That does not show who hid the letter.",
+      "junior": "That doesn't show who hid the letter.",
+      "master": "That proves nothing about who hid the letter."
+    },
+    {
+      "rookie": "The letter was wrapped in Bae's own brush cloth.",
+      "junior": "The letter was wrapped in Bae's own brush cloth, with his name on it.",
+      "master": "The letter lay wrapped in Bae's own brush cloth, his name sewn on it."
+    },
+    {
+      "rookie": "CLOSE THE CASE",
+      "junior": "CLOSE THE CASE",
+      "master": "CLOSE THE CASE"
+    },
+    {
+      "rookie": "Show one piece of evidence for each claim.",
+      "junior": "Show a single piece of evidence for each claim.",
+      "master": "Present one piece of evidence for every claim."
+    }
+  ],
+  "glossary": {
+    "junior": {
+      "copyist": "필사관",
+      "sleeve": "소매",
+      "fetch": "가져오다"
+    },
+    "master": {
+      "copyist": "필사관",
+      "juts": "튀어나오다",
+      "insists": "우기다",
+      "bears": "(표시가) 있다"
+    }
+  }
+}

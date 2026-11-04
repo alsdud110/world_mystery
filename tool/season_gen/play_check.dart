@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:world_mystery/puzzles_v2/core/timeline_rules.dart';
+
 import '../asset_optimizer/image_file.dart';
 import 'content_hash.dart';
 import 'palette_facts.dart';
@@ -65,17 +67,30 @@ abstract final class PlayCheck {
     'scene_explore_choose': 'explores',
     'dark_room_search': 'investigations',
     'witness_compare': 'dialogues',
+    'timeline_board': 'timelines',
+    // Puzzle Engine 2.0 STEP 1: engines the game already plays, now made from plans.
+    'number_entry': null,
+    'trace_deduction': 'deductions',
+    'lens_inspect_word': 'inspections',
+    'record_mismatch': 'records',
+    'evidence_talk': 'talks',
   };
 
   /// The generatable puzzles that need pictures beyond the place's.
-  static const pictured = {'picture_choice', 'scene_explore_choose', 'dark_room_search', 'witness_compare'};
+  static const pictured = {
+    'picture_choice', 'scene_explore_choose', 'dark_room_search', 'witness_compare', //
+    'trace_deduction', 'lens_inspect_word', 'record_mismatch', 'evidence_talk',
+  };
 
   /// A story picture (a talk's or an ending's face) not on disk: never
   /// blocking (STEP 3-15A).
   static const storyPictureMissing = 'story_picture_missing';
 
   /// The `play` key a table's scene is written under.
-  static const sceneKeys = {'explores': 'explore', 'investigations': 'search', 'dialogues': 'dialogue'};
+  static const sceneKeys = {
+    'explores': 'explore', 'investigations': 'search', 'dialogues': 'dialogue', 'timelines': 'timeline', //
+    'deductions': 'traces', 'inspections': 'inspect', 'records': 'records', 'talks': 'interview',
+  };
 
   static const _choiceTypes = {'multipleChoice', 'imageChoice', 'canvasChoice'};
 
@@ -197,6 +212,12 @@ abstract final class PlayCheck {
         issue('play_range', '$pa.hideOptionNames', 'a $type shows no pictures to name');
       }
       _pictures(m, at, root, out);
+      _timeline(m, at, out);
+      _numberCode(m, at, out);
+      _traces(m, at, root, out);
+      _inspect(m, at, root, out);
+      _records(m, at, root, out);
+      _interview(plan, m, at, root, out);
       _aroundPuzzle(plan, m, at, root, out);
 
       // The notebook evidence a mission recalls: one, found before (the clue graph's).
@@ -428,6 +449,370 @@ abstract final class PlayCheck {
     }
   }
 
+  /// Cards a timeline may hold (Puzzle Engine 2.0): to place, fixed by
+  /// their time, not part of it.
+  static const timelinePlaced = (2, 6), timelineAnchors = (1, 3), timelineAside = 2;
+
+  /// A timeline to put back together (`timeline_board`, table `timelines`):
+  /// its own rules (`TimelineRules.validate`, the game's: one order the words
+  /// and times allow, nothing that contradicts it), its size, its options
+  /// the cards, every card to place ordered by the case's words (never by
+  /// elimination alone), those words read in the mission, and the puzzle
+  /// played through move by move as the page plays it. Whether a player
+  /// reasons their way there is a person's reading, never this check's.
+  static void _timeline(MissionPlan m, String at, List<PlayIssue> out) {
+    final w = m.play;
+    final s = w?.timeline;
+    if (w == null || s == null || m.puzzle.engineTable != 'timelines') return;
+    void issue(String code, String path, String message) => out.add(PlayIssue(code, path, message));
+    final a = m.puzzle.answerSpec;
+    final sa = '$at.play.timeline';
+    final placed = [for (final c in s.cards) if (c.anchor == null && !c.discard) c];
+    final anchors = [for (final c in s.cards) if (c.anchor != null && !c.discard) c];
+    final aside = [for (final c in s.cards) if (c.discard) c];
+    if (placed.length < timelinePlaced.$1 || placed.length > timelinePlaced.$2) {
+      issue('timeline_size', '$sa.cards', '${placed.length} card(s) to place: ${timelinePlaced.$1} to ${timelinePlaced.$2}');
+    }
+    if (anchors.length < timelineAnchors.$1 || anchors.length > timelineAnchors.$2) {
+      issue('timeline_size', '$sa.cards', '${anchors.length} card(s) fixed by their time: ${timelineAnchors.$1} to ${timelineAnchors.$2}');
+    }
+    if (aside.length > timelineAside) issue('timeline_size', '$sa.cards', '${aside.length} cards not part of it: $timelineAside at most');
+
+    // The options are the cards, in their order, by their titles.
+    final sameOptions = a.options.length == s.cards.length &&
+        [for (var i = 0; i < s.cards.length; i++) a.options[i].id == s.cards[i].id && a.options[i].label == s.cards[i].title].every((x) => x);
+    if (!sameOptions) issue('timeline_options_mismatch', '$at.puzzle.answerSpec.options', 'one option per card, in the cards\' order, labelled with its title');
+    if (w.orderFeedback == null) issue('play_field_missing', '$at.play.orderFeedback', 'missing: what a wrong order is told');
+
+    final spec = TimelineSpec(
+      cards: [for (final c in s.cards) TimelineCard(id: c.id, title: c.title, text: c.text, anchor: c.anchor, discard: c.discard, evidence: c.evidence)],
+      order: [for (final id in a.answer.split(',')) id.trim()],
+      relations: [for (final r in s.relations) TimelineRelation(earlier: r.earlier, later: r.later, line: r.line)],
+    );
+    const rules = TimelineRules();
+    final problems = rules.validate(spec);
+    for (final i in problems) {
+      issue(i.code, '$sa ${i.path}', i.message);
+    }
+    if (a.codeLength case final n? when n != spec.order.length) issue('timeline_order_mismatch', '$at.puzzle.answerSpec.codeLength', '$n, but ${spec.order.length} cards are in the order');
+
+    // Each card to place is ordered by the case's words.
+    for (final c in placed) {
+      if (!s.relations.any((r) => r.earlier == c.id || r.later == c.id)) {
+        issue('timeline_card_unrelated', '$sa.cards', '${c.id}: no line of the case says what it came before or after (its place is never known from the words)');
+      }
+    }
+    // Those words are read in the mission: its letter or story, word for word.
+    final read = [w.letterIntro, w.letter, ...w.story, w.question, w.prompt].whereType<String>().join('\n');
+    String flat(String x) => x.replaceAll(RegExp(r'\s+'), ' ').trim();
+    for (final (i, r) in s.relations.indexed) {
+      if (!flat(read).contains(flat(r.line))) {
+        issue('timeline_line_unread', '$sa.relations[$i].line', '"${r.line}" is not in the mission\'s letter or story, word for word: the player never reads it');
+      }
+    }
+
+    // Played through, as the page plays it: every card put in its place, the rest set aside.
+    if (problems.isEmpty) {
+      var state = rules.initial(spec);
+      var played = true;
+      for (final (i, id) in spec.order.indexed) {
+        if (spec.anchors.containsKey(i)) continue;
+        final r = rules.apply(spec, state, PlaceCard(id, i));
+        played &= r.accepted;
+        state = r.state;
+      }
+      for (final c in aside) {
+        final r = rules.apply(spec, state, DiscardCard(c.id));
+        played &= r.accepted;
+        state = r.state;
+      }
+      if (!played || !rules.isComplete(spec, state) || rules.answerOf(spec, state) != rules.answer(spec)) {
+        issue('timeline_unplayable', sa, 'its order cannot be put together with the page\'s moves');
+      }
+    }
+  }
+
+  // ── Existing engines made from plans (Puzzle Engine 2.0 STEP 1) ────────
+
+  /// A picture a scene is played on: on disk at its size, its places
+  /// measured on that very file (as `_pictures` holds a look round's).
+  static void _scenePicture(String path, PicturePlan pic, String root, List<PlayIssue> out, {bool measured = true}) {
+    final disk = File('$root/${pic.file}');
+    if (!disk.existsSync()) {
+      out.add(PlayIssue('asset_file_missing', '$path.file', '${pic.file} is not on disk: a picture still to be made'));
+      return;
+    }
+    final got = imageSize(disk);
+    if (got == null) {
+      out.add(PlayIssue('asset_unreadable', '$path.file', '${pic.file} is not a picture the game can open (PNG, WebP or JPEG, read whole)'));
+    } else if (got != (pic.width, pic.height)) {
+      out.add(PlayIssue('asset_size_mismatch', '$path.file', '${pic.file} is ${got.$1}x${got.$2}, not ${pic.width}x${pic.height}: places on it are measured on the file'));
+    }
+    if (!measured) return;
+    if (pic.measuredOn == null) {
+      out.add(PlayIssue('coordinates_unmeasured', '$path.measuredOn', 'the places on ${pic.file} are not measured on the drawn picture: measure them, then write its sha256 here'));
+    } else if (ContentHash.ofBytes(disk.readAsBytesSync()) != pic.measuredOn) {
+      out.add(PlayIssue('coordinates_stale', '$path.measuredOn', '${pic.file} changed since its places were measured: measure them again'));
+    }
+  }
+
+  static bool _on(PicturePlan pic, double x, double y) => x >= 0 && y >= 0 && x <= pic.width && y <= pic.height;
+
+  static void _areas(String path, PicturePlan pic, List<SceneRect> rs, List<PlayIssue> out) {
+    for (final (i, r) in rs.indexed) {
+      if (!_on(pic, r.left, r.top) || !_on(pic, r.right, r.bottom) || r.left >= r.right || r.top >= r.bottom) {
+        out.add(PlayIssue('scene_area_invalid', '$path[$i]', '[${r.left}, ${r.top}, ${r.right}, ${r.bottom}] is no rectangle on the ${pic.width}x${pic.height} picture'));
+      }
+    }
+  }
+
+  static void _spot(String path, PicturePlan pic, ScenePoint p, List<PlayIssue> out) {
+    if (!_on(pic, p.x, p.y)) out.add(PlayIssue('scene_area_invalid', path, '(${p.x}, ${p.y}) is off the ${pic.width}x${pic.height} picture'));
+  }
+
+  static bool _inAny(ScenePoint p, Iterable<SceneRect> rs) => rs.any((r) => p.x >= r.left && p.x <= r.right && p.y >= r.top && p.y <= r.bottom);
+
+  static void _uniqueIds(String path, Iterable<String> ids, String what, List<PlayIssue> out) {
+    final seen = <String>{};
+    for (final id in ids) {
+      if (!seen.add(id)) out.add(PlayIssue('scene_invalid', path, '$what "$id" given twice'));
+    }
+  }
+
+  /// The letter's lines as the game reads a note (blank lines left out).
+  static List<String> letterLines(String? letter) => [
+    for (final l in (letter ?? '').split('\n'))
+      if (l.trim().isNotEmpty) l.trim(),
+  ];
+
+  /// A number put in on the keypad (`number_entry`, `numberCode`): digits
+  /// only, as many as its code's length; a time (`codeFormat: time`) four,
+  /// hours and minutes of a clock. Whether the number is read in the case is
+  /// the planner's (`english_check`) and, in a historical season, the
+  /// dossier's (`history_answer_unshown`).
+  static void _numberCode(MissionPlan m, String at, List<PlayIssue> out) {
+    final p = m.puzzle;
+    if (p.paletteId != 'number_entry') return;
+    final a = p.answerSpec;
+    final pa = '$at.puzzle.answerSpec';
+    if (p.missionType != 'numberCode') out.add(PlayIssue('play_range', '$at.puzzle.missionType', '${p.missionType}: a number on the keypad is a numberCode'));
+    if (!RegExp(r'^[0-9]+$').hasMatch(a.answer)) {
+      out.add(PlayIssue('number_answer_invalid', '$pa.answer', '"${a.answer}": the keypad puts in digits only'));
+      return;
+    }
+    if (a.codeLength == null) {
+      out.add(PlayIssue('play_field_missing', '$pa.codeLength', 'missing: how many digits the keypad takes'));
+    } else if (a.codeLength != a.answer.length) {
+      out.add(PlayIssue('number_answer_invalid', '$pa.codeLength', '${a.codeLength}, but the answer has ${a.answer.length} digits'));
+    }
+    if (a.codeFormat == 'time') {
+      final ok = a.answer.length == 4 && int.parse(a.answer.substring(0, 2)) < 24 && int.parse(a.answer.substring(2)) < 60;
+      if (!ok) out.add(PlayIssue('number_answer_invalid', '$pa.answer', '"${a.answer}": a time is four digits, HHMM'));
+    }
+    if (a.options.isNotEmpty) out.add(PlayIssue('play_range', '$pa.options', 'a keypad shows no options'));
+    for (final k in m.play?.feedback.keys ?? const <String>[]) {
+      if (!RegExp(r'^[0-9]+$').hasMatch(k)) out.add(PlayIssue('play_range', '$at.play.feedback.$k', 'a wrong number\'s line is keyed by the digits put in'));
+    }
+  }
+
+  /// A place read for its traces (`trace_deduction`, table `deductions`):
+  /// its picture measured; every trace's note a line of the letter, word for
+  /// word; its places the options, one each; the guide on no trace and no
+  /// place (it shows how to look, never where).
+  static void _traces(MissionPlan m, String at, String root, List<PlayIssue> out) {
+    final s = m.play?.traces;
+    if (s == null || m.puzzle.engineTable != 'deductions') return;
+    final sa = '$at.play.traces';
+    void issue(String code, String path, String message) => out.add(PlayIssue(code, path, message));
+    if (m.puzzle.missionType != 'multipleChoice') issue('play_range', '$at.puzzle.missionType', '${m.puzzle.missionType}: a place chosen is a multipleChoice');
+    _scenePicture('$sa.picture', s.picture, root, out);
+    _spot('$sa.guideAt', s.picture, s.guideAt, out);
+    for (final (k, r) in [('inside', s.inside), ('opening', s.opening)]) {
+      if (r != null) _areas('$sa.$k', s.picture, [r], out);
+    }
+    if (s.clues.length < 2 || s.clues.length > 5) issue('scene_invalid', '$sa.clues', '${s.clues.length} trace(s): 2 to 5, each pointing the same way');
+    _uniqueIds('$sa.clues', [for (final c in s.clues) c.id], 'trace', out);
+    final lines = letterLines(m.play!.letter);
+    for (final (i, c) in s.clues.indexed) {
+      _areas('$sa.clues[$i].areas', s.picture, c.areas, out);
+      _spot('$sa.clues[$i].mark', s.picture, c.mark, out);
+      if (!lines.contains(c.line.trim())) issue('scene_text_mismatch', '$sa.clues[$i].line', 'not a line of the letter, word for word: the traces are the detective\'s notes');
+    }
+    for (final (i, o) in s.others.indexed) {
+      _areas('$sa.others[$i].areas', s.picture, o.areas, out);
+    }
+    _uniqueIds('$sa.places', [for (final p in s.places) p.optionId], 'place', out);
+    final options = {for (final o in m.puzzle.answerSpec.options) o.id};
+    final chosen = {for (final p in s.places) p.optionId};
+    if (!(chosen.length == options.length && chosen.containsAll(options))) {
+      issue('scene_answer_mismatch', '$sa.places', 'places for ${chosen.join(', ')}, but the options are ${options.join(', ')}');
+    }
+    for (final (i, p) in s.places.indexed) {
+      _areas('$sa.places[$i].areas', s.picture, p.areas, out);
+      _spot('$sa.places[$i].mark', s.picture, p.mark, out);
+    }
+    if (_inAny(s.guideAt, [for (final c in s.clues) ...c.areas, for (final p in s.places) ...p.areas])) {
+      issue('scene_invalid', '$sa.guideAt', 'on a trace or a place: the first ripple shows how to look, never where');
+    }
+  }
+
+  /// Exhibits under the glass (`lens_inspect_word`, table `inspections`):
+  /// one exhibit the letter describes (`match`) and its label (`label`,
+  /// opened by the match); every line of the letter but the one to answer
+  /// ([InspectPlan.taskLine]) confirmed by something examined, that line
+  /// by nothing (the typed word answers it); the answer a word.
+  static void _inspect(MissionPlan m, String at, String root, List<PlayIssue> out) {
+    final s = m.play?.inspect;
+    if (s == null || m.puzzle.engineTable != 'inspections') return;
+    final sa = '$at.play.inspect';
+    void issue(String code, String path, String message) => out.add(PlayIssue(code, path, message));
+    if (m.puzzle.missionType != 'wordInput') issue('play_range', '$at.puzzle.missionType', '${m.puzzle.missionType}: the label\'s word is a wordInput');
+    _scenePicture('$sa.picture', s.picture, root, out);
+    _spot('$sa.lensAt', s.picture, s.lensAt, out);
+    if (s.inside case final r?) _areas('$sa.inside', s.picture, [r], out);
+    _uniqueIds('$sa.spots', [for (final x in s.spots) x.id], 'spot', out);
+    final ids = {for (final x in s.spots) x.id};
+    for (final kind in ['match', 'label']) {
+      final n = s.spots.where((x) => x.kind == kind).length;
+      if (n != 1) issue('scene_invalid', '$sa.spots', '$n spots of kind $kind: one ${kind == 'match' ? 'exhibit the letter describes' : 'label, where the word is written'}');
+    }
+    final lines = letterLines(m.play!.letter);
+    if (s.taskLine >= lines.length) issue('scene_invalid', '$sa.taskLine', 'line ${s.taskLine}, but the letter has ${lines.length} lines');
+    final confirmed = <int>{};
+    for (final (i, x) in s.spots.indexed) {
+      final xa = '$sa.spots[$i]';
+      _areas('$xa.areas', s.picture, x.areas, out);
+      for (final c in x.checks) {
+        if (c >= lines.length) issue('scene_invalid', '$xa.checks', 'line $c, but the letter has ${lines.length} lines');
+        if (c == s.taskLine) issue('scene_invalid', '$xa.checks', 'line $c is the one the typed word answers: nothing examined confirms it');
+      }
+      confirmed.addAll(x.checks);
+      if (x.requires case final need?) {
+        if (!ids.contains(need) || need == x.id) issue('scene_invalid', '$xa.requires', '"$need" is no other spot of the scene');
+        if (x.lockedLine == null) issue('play_field_missing', '$xa.lockedLine', 'missing: what the glass shows before "$need" is examined');
+      }
+      if (x.kind == 'label' && x.requires != s.spots.where((y) => y.kind == 'match').firstOrNull?.id) {
+        issue('scene_invalid', '$xa.requires', 'the label opens once its exhibit (the match) is examined');
+      }
+    }
+    for (var l = 0; l < lines.length; l++) {
+      if (l != s.taskLine && !confirmed.contains(l)) issue('scene_invalid', '$sa.spots', 'line $l of the letter ("${lines[l]}") is confirmed by nothing examined');
+    }
+    if (_inAny(s.lensAt, [for (final x in s.spots) ...x.areas])) issue('scene_invalid', '$sa.lensAt', 'over a spot: the glass waits on nothing');
+    if (!RegExp(r"^[A-Za-z][A-Za-z' -]*$").hasMatch(m.puzzle.answerSpec.answer)) {
+      issue('play_range', '$at.puzzle.answerSpec.answer', '"${m.puzzle.answerSpec.answer}": the label\'s missing word is a word');
+    }
+  }
+
+  /// Two records compared (`record_mismatch`, table `records`): both
+  /// pictures on disk, the sheets' corners and the parts shown on them,
+  /// every line a row; the options the lines the records share (by id, in
+  /// the first record's order), and exactly one of them disagreeing — the
+  /// answer `<id>:<id>`.
+  static void _records(MissionPlan m, String at, String root, List<PlayIssue> out) {
+    final s = m.play?.records;
+    if (s == null || m.puzzle.engineTable != 'records') return;
+    final sa = '$at.play.records';
+    void issue(String code, String path, String message) => out.add(PlayIssue(code, path, message));
+    if (m.puzzle.missionType != 'matchPairs') issue('play_range', '$at.puzzle.missionType', '${m.puzzle.missionType}: a pair of lines picked is a matchPairs');
+    if (s.first.id == s.second.id) issue('scene_invalid', '$sa.second.id', 'the two records share the id "${s.first.id}"');
+    for (final (k, d) in [('first', s.first), ('second', s.second)]) {
+      final da = '$sa.$k';
+      // The words are the app's, written on the blank: corners measured on the drawn file.
+      _scenePicture('$da.picture', d.picture, root, out);
+      _areas('$da.crop', d.picture, [d.crop], out);
+      for (final (i, c) in d.sheet.corners.indexed) {
+        _spot('$da.sheet.corners[$i]', d.picture, c, out);
+      }
+      final sh = d.sheet;
+      if (sh.rows.length < d.lines.length) issue('scene_invalid', '$da.sheet.rows', '${sh.rows.length} rows for ${d.lines.length} lines: a row each');
+      final (fw, fh) = sh.flat;
+      final inFlat = [sh.title.left, sh.title.right, sh.labelLeft, sh.labelRight, sh.valueLeft, sh.valueRight].every((x) => x <= fw) &&
+          [sh.title.top, sh.title.bottom, ...sh.rows.map((r) => r + sh.rowHeight)].every((y) => y <= fh);
+      if (!inFlat || sh.labelLeft >= sh.labelRight || sh.valueLeft >= sh.valueRight || sh.labelRight > sh.valueLeft) {
+        issue('scene_area_invalid', '$da.sheet', 'its title, rows and columns lie inside the sheet face on (${fw}x$fh), label before value');
+      }
+      _uniqueIds('$da.lines', [for (final l in d.lines) l.id], 'line', out);
+    }
+    final second = {for (final l in s.second.lines) l.id: l};
+    final shared = [for (final l in s.first.lines) if (second.containsKey(l.id)) l];
+    final options = [for (final o in m.puzzle.answerSpec.options) o.id];
+    if (options.join(',') != [for (final l in shared) l.id].join(',')) {
+      issue('scene_answer_mismatch', '$at.puzzle.answerSpec.options', 'one option per line both records have, in the first record\'s order (${[for (final l in shared) l.id].join(', ')})');
+    }
+    String norm(String v) => v.replaceAll(RegExp(r'\s+'), ' ').trim().toUpperCase();
+    final differ = [for (final l in shared) if (norm(l.value) != norm(second[l.id]!.value)) l.id];
+    if (differ.length != 1) {
+      issue('records_ambiguous', sa, '${differ.isEmpty ? 'no line' : differ.join(', ')} disagree${differ.length == 1 ? 's' : ''}: exactly one pair of lines answers it');
+    } else if (m.puzzle.answerSpec.answer != '${differ.single}:${differ.single}') {
+      issue('scene_answer_mismatch', '$at.puzzle.answerSpec.answer', '"${m.puzzle.answerSpec.answer}", but the lines that disagree are ${differ.single}:${differ.single}');
+    }
+  }
+
+  /// A talk in which evidence is shown (`evidence_talk`, table `talks`):
+  /// with a person of the case; its steps' ids its own and none the
+  /// opening's; what opens a step and what finishes it steps of the talk;
+  /// every piece asked for evidence the detective holds by then (of this
+  /// case before this mission, or of a case before it), a piece offered as
+  /// a card among them; the answer the talk's own (an examine).
+  static void _interview(CasePlan plan, MissionPlan m, String at, String root, List<PlayIssue> out) {
+    final s = m.play?.interview;
+    if (s == null || m.puzzle.engineTable != 'talks') return;
+    final sa = '$at.play.interview';
+    void issue(String code, String path, String message) => out.add(PlayIssue(code, path, message));
+    if (m.puzzle.missionType != 'examine') issue('play_range', '$at.puzzle.missionType', '${m.puzzle.missionType}: a talk is played as an examine');
+    if (!plan.characters.contains(s.speaker)) issue('play_story_person', '$sa.speaker', '"${s.speaker}" is not a character of the case (characters)');
+    if (s.portrait case final f? when !File('$root/$f').existsSync()) {
+      out.add(PlayIssue(storyPictureMissing, '$sa.portrait', '$f is not on disk: shown with no face until it is made', blocking: false));
+    }
+    final steps = [for (final q in s.questions) q.id, for (final p in s.presents) p.id];
+    _uniqueIds(sa, steps, 'step', out);
+    if (steps.contains('opening')) issue('scene_invalid', sa, '"opening" is the talk\'s opening, never a step');
+    for (final id in s.finishWhen) {
+      if (!steps.contains(id)) issue('scene_invalid', '$sa.finishWhen', '"$id" is no step of the talk');
+    }
+    for (final p in s.presents) {
+      if (!s.finishWhen.contains(p.id)) issue('scene_invalid', '$sa.finishWhen', '"${p.id}" is evidence asked for: the talk finishes once it is shown');
+    }
+    final held = <String>{};
+    final numbers = PlanIds.caseNumbers(plan.caseId);
+    for (final x in plan.allMissions) {
+      if (x.missionId == m.missionId) break;
+      held.add(x.clueOutputs.evidence);
+    }
+    bool holds(String e) {
+      if (held.contains(e)) return true;
+      final of = PlanIds.caseNumbers(PlanIds.caseOfChild(e) ?? '');
+      return numbers != null && of != null && of.$1 == numbers.$1 && of.$2 < numbers.$2;
+    }
+
+    void requires(String path, List<String> ids) {
+      for (final id in ids) {
+        if (!steps.contains(id)) issue('scene_invalid', path, '"$id" is no step of the talk');
+      }
+    }
+
+    for (final (i, q) in s.questions.indexed) {
+      requires('$sa.questions[$i].requires', q.requires);
+    }
+    for (final (i, p) in s.presents.indexed) {
+      final pa = '$sa.presents[$i]';
+      requires('$pa.requires', p.requires);
+      for (final e in p.accepted) {
+        if (!holds(e)) issue('talk_evidence_unheld', '$pa.accepted', '$e is not in the notebook by ${m.missionId}: evidence of an earlier mission or case');
+      }
+      if (p.offered.isNotEmpty) {
+        if (p.offered.length != 2) issue('scene_invalid', '$pa.offered', '${p.offered.length} card(s): two to pick from');
+        if (!p.offered.any(p.accepted.contains)) issue('scene_answer_mismatch', '$pa.offered', 'none of the cards is the evidence asked for');
+        for (final e in p.offered) {
+          if (!holds(e)) issue('talk_evidence_unheld', '$pa.offered', '$e is not in the notebook by ${m.missionId}');
+        }
+      } else if (p.tell != null) {
+        issue('play_range', '$pa.tell', 'said over the cards: a present with no cards (offered) has none');
+      }
+    }
+  }
+
   /// The story around [m]'s puzzle (STEP 3-13B), each part optional: the
   /// talks before and after a mission's puzzle with a person of the case,
   /// its own Discovery Moment (the game's timing rule: what was seen before
@@ -535,6 +920,12 @@ abstract final class PlayCheck {
         ('.play.dialogue.background', s.background),
         for (final (i, x) in s.witnesses.indexed) ('.play.dialogue.witnesses[$i].portrait', x.portrait),
       ],
+      if (w?.traces case final s? when m.puzzle.engineTable == 'deductions') ('.play.traces.picture.file', s.picture.file),
+      if (w?.inspect case final s? when m.puzzle.engineTable == 'inspections') ('.play.inspect.picture.file', s.picture.file),
+      if (w?.records case final s? when m.puzzle.engineTable == 'records') ...[
+        ('.play.records.first.picture.file', s.first.picture.file),
+        ('.play.records.second.picture.file', s.second.picture.file),
+      ],
     ];
   }
 
@@ -545,6 +936,7 @@ abstract final class PlayCheck {
     final w = m.play;
     return [
       if (w?.talk?.portrait case final f?) ('.play.talk.portrait', f),
+      if (w?.interview?.portrait case final f? when m.puzzle.engineTable == 'talks') ('.play.interview.portrait', f),
       for (final (i, l) in (w?.ending ?? const <EndingLinePlan>[]).indexed)
         if (l.portrait case final f?) ('.play.ending[$i].portrait', f),
     ];

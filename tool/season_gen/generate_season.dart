@@ -70,7 +70,7 @@ int generateSeason(String seasonPath,
     () {
       final cases = SeasonCases.of(seasonPath);
       stdout.writeln('season   $seasonPath: ${cases.length} case plans');
-      return made = CaseGenerator.sandbox(seasonPath: seasonPath, casePaths: cases, schemaDir: schemaDir, target: target);
+      return made = CaseGenerator.sandbox(seasonPath: seasonPath, casePaths: cases, schemaDir: schemaDir, target: target, staticOnly: checkOnly);
     },
     out: out,
     checkOnly: checkOnly,

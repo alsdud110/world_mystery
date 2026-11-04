@@ -8,6 +8,8 @@ import '../models/scene_place.dart';
 import 'difficulty_content.dart';
 import 'puzzle_engine_collisions.dart';
 import 'scene_place_check.dart';
+import '../../puzzles_v2/core/puzzle_rules.dart';
+import '../../puzzles_v2/core/timeline_rules.dart';
 
 /// One thing wrong in a season's content: where (season, case, mission),
 /// which kind of rule ([rule]) and why ([message]).
@@ -166,6 +168,7 @@ class _SeasonCheck {
     _references(missionIds, evidenceIds);
     _hintsAtEveryLevel();
     _levels();
+    _timelines();
     for (final p in _guard('place', () => ScenePlaceCheck.problemsOf(s))) {
       add('place', p);
     }
@@ -333,6 +336,30 @@ class _SeasonCheck {
   }
 
   // ── References ───────────────────────────────────────────────────────
+
+  /// Puzzle Engine 2.0's timelines: each a sequence mission's, its rules
+  /// kept ([TimelineRules.validate]), its order the mission's answer, the
+  /// same game at every level (a level's own timeline, or the base's), no
+  /// card named as a mission of the season.
+  void _timelines() {
+    const rules = TimelineRules();
+    final missions = {for (final e in cases) for (final m in e.allMissions) m.id: (e.id, m)};
+    s.timelines.forEach((id, spec) {
+      final found = missions[id];
+      if (found == null) return; // a table entry of no mission: 'reference'
+      final (caseId, m) = found;
+      if (m.type != MissionType.sequence) {
+        add('engine', 'timelines/$id: a timeline answers a sequence mission, not ${m.type.name}', caseId: caseId, missionId: id);
+      }
+      for (final i in PuzzleSpecCheck.mission(rules, spec, missionId: id, missionAnswer: m.answer)) {
+        add('answer', 'timelines/$i', caseId: caseId, missionId: id);
+      }
+      final levels = {for (final d in Difficulty.values) d: s.variants[d]?.timelines[id] ?? spec};
+      for (final i in PuzzleSpecCheck.levels(rules, levels, reserved: missions.keys.toSet())) {
+        add('engine', 'timelines/$id $i', caseId: caseId, missionId: id);
+      }
+    });
+  }
 
   void _references(Set<String> missionIds, Map<String, String> evidenceIds) {
     final caseIds = {for (final c in SeasonContentValidator._cases(s).keys) c};

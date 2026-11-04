@@ -33,6 +33,8 @@ void main() {
     'evidence_talk',
     'picture_choice',
     'dark_room_search',
+    // Puzzle Engine 2.0 (PART 3C).
+    'timeline_board',
   ];
   const conditionalIds = [
     'clock_set',
@@ -45,7 +47,7 @@ void main() {
   ];
 
   group('registry', () {
-    test('holds the 28 puzzles of STEP 2-4, each id once, none tied to a city', () {
+    test('holds the 28 puzzles of STEP 2-4 and the Puzzle Engine 2.0 timeline, each id once, none tied to a city', () {
       final ids = [for (final p in PuzzlePalette.all) p.id];
       expect(ids.toSet(), hasLength(ids.length));
       expect(ids, unorderedEquals([...readyIds, ...conditionalIds]));
@@ -71,7 +73,7 @@ void main() {
       expect(PuzzlePalette.contains(''), isFalse);
     });
 
-    test('grades: 21 ready, 7 conditional, no custom engine offered', () {
+    test('grades: 22 ready, 7 conditional, no custom engine offered', () {
       expect([for (final p in PuzzlePalette.ready) p.id], readyIds);
       expect([for (final p in PuzzlePalette.conditional) p.id], conditionalIds);
       expect(PuzzlePalette.ofGrade(PuzzleReuseGrade.custom), isEmpty);
@@ -83,7 +85,7 @@ void main() {
       for (final mode in PuzzleGenerationMode.values) {
         expect(PuzzlePalette.ofMode(mode).every((p) => p.generationMode == mode), isTrue);
       }
-      expect([for (final p in PuzzlePalette.textOnly) p.id], ['text_choice', 'word_entry', 'number_entry', 'combo_dial_lock', 'letter_tile_lock', 'order_sequence']);
+      expect([for (final p in PuzzlePalette.textOnly) p.id], ['text_choice', 'word_entry', 'number_entry', 'combo_dial_lock', 'letter_tile_lock', 'order_sequence', 'timeline_board']);
     });
 
     test('nothing that needs development is generatable; pictures to approve are said', () {
@@ -190,7 +192,9 @@ void main() {
               used++;
             }
           }
-          expect(used, greaterThan(0), reason: '${p.id}: nothing in the game is played on ${e.table}');
+          // Puzzle Engine 2.0's engines come before any season of the game
+          // plays them: played whole in the sandbox (test/sandbox/timeline_season_test.dart).
+          if (!_awaitingFirstSeason.contains(p.id)) expect(used, greaterThan(0), reason: '${p.id}: nothing in the game is played on ${e.table}');
         }
       }
     });
@@ -235,11 +239,17 @@ List<(SeasonContent, Map<String, Mission>)> _contents() => [
 ];
 
 /// Every class of the game's models, by name: its fields' names.
+/// Palette puzzles no season of the game plays yet (Puzzle Engine 2.0).
+const _awaitingFirstSeason = {'timeline_board'};
+
 Map<String, Set<String>> _dartClasses() {
   final out = <String, Set<String>>{};
   final header = RegExp(r'^(?:(?:final|sealed|abstract|base) )*class (\w+)\b[^\n]*\{\s*$', multiLine: true);
   final field = RegExp(r'^  final [^;=()]+? (\w+);', multiLine: true);
-  for (final file in Directory('lib/data/models').listSync().whereType<File>().where((f) => f.path.endsWith('.dart'))) {
+  // The game's models, and Puzzle Engine 2.0's (its rules' own specs).
+  for (final file in [
+    for (final dir in ['lib/data/models', 'lib/puzzles_v2/core']) ...Directory(dir).listSync().whereType<File>().where((f) => f.path.endsWith('.dart')),
+  ]) {
     final text = file.readAsStringSync();
     for (final c in header.allMatches(text)) {
       final end = text.indexOf('\n}', c.end);

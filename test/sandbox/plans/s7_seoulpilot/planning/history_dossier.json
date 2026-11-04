@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "s7_seoulpilot",
+  "cases": [
+    {
+      "caseId": "s7_ep01",
+      "subject": "The making of Hunminjeongeum, the new letters (1443-1446)",
+      "period": "1443-1446",
+      "location": "The palace in Hanyang (no palace building named: not established for autumn 1446)",
+      "facts": [
+        {
+          "factId": "s7_ep01_h1",
+          "statement": "In the twelfth month of 1443 (Sejong 25), King Sejong himself made 28 new letters and called them Hunminjeongeum.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 102권, 세종 25년 12월 30일 경술 2번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12512030_002",
+              "quote": "是月, 上親制諺文二十八字 … 是謂訓民正音。",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "UNESCO",
+              "title": "Memory of the World: Hunminjeongum Manuscript",
+              "url": "https://www.unesco.org/en/memory-world/hunminjeongum-manuscript",
+              "quote": "the development of which he completed in 1443",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "상설전시 훈민정음, 천년의 문자 계획",
+              "url": "https://www.hangeul.go.kr/exhi/dailyExhibition.do?curr_menu_cd=0102010000",
+              "quote": "1443년 세종은 우리의 문자 '훈민정음'을 만들었습니다.",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The day is not given (是月, this month): only the year is used."
+          ]
+        },
+        {
+          "factId": "s7_ep01_h2",
+          "statement": "The book Hunminjeongeum, which explains the new letters, was completed in the ninth month of 1446 (Sejong 28).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "是月, 訓民正音成。",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "UNESCO",
+              "title": "Memory of the World: Hunminjeongum Manuscript",
+              "url": "https://www.unesco.org/en/memory-world/hunminjeongum-manuscript",
+              "quote": "The manuscript published in the ninth lunar month of 1446",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "세계기록유산 한국위원회 (kmowkc.org)",
+              "title": "『훈민정음』[해례본] 개요",
+              "url": "https://www.kmowkc.org/front/heritage/detail.do?heritageId=U001&type=intro",
+              "quote": "1446년 음력 9월 상순에",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Annals' entry is dated the 29th of the ninth month ('this month'); Jeong In-ji's postface says the first ten days of the ninth month. The game says only 1446 and 'autumn'."
+          }
+        },
+        {
+          "factId": "s7_ep01_h3",
+          "statement": "The book's explanation of the letters (Jejahae) says the five basic consonant letters copy the shape of the speech organs: the tongue, the mouth, the teeth and the throat.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 사료로 본 한국사: 한글의 구성 원리 (제자해)",
+              "url": "https://contents.history.go.kr/id/hm_091_0030",
+              "quote": "어금닛소리 'ㄱ'은 혀뿌리가 목구멍을 닫는 꼴을 본뜬 것이요, 혓소리 'ㄴ'은 혀가 윗잇몸에 닿는 꼴을 본뜬 것이요, 입술소리 'ㅁ'은 입의 꼴을 본뜬 것이요, 잇소리 'ㅅ'은 이의 꼴을 본뜬 것이다",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 훈민정음28자모",
+              "url": "https://encykorea.aks.ac.kr/Article/E0074518",
+              "quote": "초성의 기본 문자인 'ㄱ, ㄴ, ㅁ, ㅅ, ㅇ'의 다섯 문자는 각 문자가 발음될 때의 발음 기관의 모양을 본떠 만든 것",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The 1443 Annals entry says the letters imitate the old seal script (倣古篆); the Jejahae says they copy the speech organs; modern accounts describe ㄱ differently. The game says, in the letter of Mission 2, that five main consonant letters copy the shapes we make to speak and show the tongue, the mouth, the teeth and the throat; never one letter's details."
+          }
+        },
+        {
+          "factId": "s7_ep01_h4",
+          "statement": "The book says the three basic vowel letters copy the round sky (a dot), the flat earth (a flat line) and a person standing (a standing line).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 사료로 본 한국사: 한글의 구성 원리 (제자해)",
+              "url": "https://contents.history.go.kr/id/hm_091_0030",
+              "quote": "꼴이 둥긂은 하늘을 본뜬 것이다 … 꼴이 평평함은 땅을 본뜬 것이다 … 꼴이 섬은 사람을 본뜬 것이다",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 초출자",
+              "url": "https://encykorea.aks.ac.kr/Article/E0078696",
+              "quote": "'ㆍ'는 하늘의 둥근 모양, 'ㅡ'는 '땅의 평평한 모양', 'ㅣ'는 '사람의 서 있는 모양'",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "한박웃음 2020년 10월 제86호",
+              "url": "https://www.hangeul.go.kr/webzine/202010/sub1_3.html",
+              "quote": "'ㆍ'의 둥근 모양은 하늘이 둥근 것을 본떴고, 'ㅡ'의 평평한 모양은 땅이 평평한 것을, 'ㅣ'는 사람이 서 있는 모양을 본뜬 것입니다",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s7_ep01_h5",
+          "statement": "In his preface the King wrote that he made 28 new letters only so that people could learn them easily and find them convenient for daily use.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "予爲此憫然, 新制二十八字, 欲使人(昜)〔易〕習, 便於日用耳。",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "상설전시 3부 스물여덟 자를 만드니",
+              "url": "https://www.hangeul.go.kr/exhi/dailyExhibition.do?curr_menu_cd=0102010000",
+              "quote": "그 어떤 백성이라도 누구나 쉽게 배워서 편히 쓸 수 있도록 만든 한글",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Annals print 欲使人易習 (one 人, 昜 corrected to 易); the Haerye edition is usually quoted 欲使人人易習 (everyone). The game says 'easy to learn, for daily use', true to both."
+          }
+        },
+        {
+          "factId": "s7_ep01_h6",
+          "statement": "Jeong In-ji's postface says a wise person can understand the letters before the morning is over, and a slow person can learn them within ten days.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "故智者不崇朝而會, 愚者可浹旬而學。",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "상설전시 3부 스물여덟 자를 만드니",
+              "url": "https://www.hangeul.go.kr/exhi/dailyExhibition.do?curr_menu_cd=0102010000",
+              "quote": "'슬기로운 사람은 아침나절에 깨우치고, 어리석은 사람이라도 열흘이면 배울 수 있는'",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "愚者 is 'the foolish'; the game, for children, says 'a slow person'. The Annals read 不崇朝; quotations of the Haerye edition often read 不終朝: the same meaning."
+          }
+        },
+        {
+          "factId": "s7_ep01_h7",
+          "statement": "The explanations and examples in the book were written by palace scholars: Jeong In-ji with Choe Hang, Bak Paeng-nyeon, Sin Suk-ju, Seong Sam-mun, Gang Hui-an, Yi Gae and Yi Seon-ro.",
+          "status": "draft",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "集賢殿應敎崔恒、副校理朴彭年ㆍ申叔舟、修撰成三問、敦寧注簿姜希顔、行集賢殿副修撰李塏ㆍ李善老等謹作諸解及例",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "UNESCO",
+              "title": "Memory of the World: Hunminjeongum Manuscript",
+              "url": "https://www.unesco.org/en/memory-world/hunminjeongum-manuscript",
+              "quote": "later explanations and examples by scholars of the Hall of Worthies",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Gang Hui-an was of the Donnyeongbu, not the Hall of Worthies: the game says only 'the palace scholars', never a number or a name."
+          },
+          "notes": [
+            "Not used by any puzzle or reveal line: the game never says who wrote the book. Kept for the record; no approval needed."
+          ]
+        },
+        {
+          "factId": "s7_ep01_h8",
+          "statement": "The Royal Secretariat (Seungjeongwon) was the office that carried the King's orders out and reports in to him.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 승정원",
+              "url": "https://encykorea.aks.ac.kr/Article/E0032242",
+              "quote": "승정원은 조선시대 왕명의 출납을 관장하던 관청이다.",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "승정원일기 소개",
+              "url": "https://sjw.history.go.kr/intro/intro.do",
+              "quote": "승정원은 조선시대 왕명의 출납을 관장하던 관청으로",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Accounts date its founding differently (1400 / 1405); it stood in Sejong's time either way."
+          }
+        }
+      ],
+      "fiction": [
+        "The night in autumn 1446, the royal letter, its delivery at sunrise and the false page are made up. No palace ceremony is shown or claimed.",
+        "Mun-su, Taek, Sora and Bae are made up; so are the gate book, the leaf mark, the brush cloth, the chest and the scholars' sheet.",
+        "The King is only named: he never speaks or acts in the case."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s7_ep01_m1",
+          "fiction": true,
+          "answer": "lock,home,cups,brush,dawn",
+          "clues": [
+            {
+              "text": "went home",
+              "missionId": "s7_ep01_m1"
+            },
+            {
+              "text": "Sora left",
+              "missionId": "s7_ep01_m1"
+            }
+          ],
+          "derivation": "Sunset and dawn are fixed. The gate book's then, later and after put Mun-su going home, then Sora, then Bae between them; lunch is in the day.",
+          "whyOnly": "Three relations chain the three cards between the fixed ones: no other order fits the gate book."
+        },
+        {
+          "puzzleId": "s7_ep01_m2",
+          "factIds": [
+            "s7_ep01_h1",
+            "s7_ep01_h3",
+            "s7_ep01_h4",
+            "s7_ep01_h5",
+            "s7_ep01_h6"
+          ],
+          "answer": "why:why",
+          "clues": [
+            {
+              "text": "EASY TO LEARN",
+              "missionId": "s7_ep01_m2"
+            },
+            {
+              "text": "SCHOLARS ONLY",
+              "missionId": "s7_ep01_m2"
+            }
+          ],
+          "derivation": "The letter gives the scholars' sheet whole: 28 letters (h1), the consonants' shapes (h3), the vowels' (h4), the King's reason (h5) and the book's ten days (h6). The two papers share four labels; only WHY differs: EASY TO LEARN against SCHOLARS ONLY.",
+          "whyOnly": "Every other row reads the same word for word on both papers; the player finds the line that differs and needs no history known beforehand."
+        },
+        {
+          "puzzleId": "s7_ep01_m3",
+          "fiction": true,
+          "answer": "b",
+          "clues": [
+            {
+              "text": "brush hair",
+              "missionId": "s7_ep01_m3"
+            },
+            {
+              "text": "lid",
+              "missionId": "s7_ep01_m3"
+            }
+          ],
+          "derivation": "The ink leads across the rug, a brush hair is caught under a lid and a paper corner sticks out of that box: the small chest under the desk, the one box with a lid on the rug.",
+          "whyNot": {
+            "a": "The work table drawer has no lid and the ink on the rug does not lead to it.",
+            "c": "The open crate has no lid to catch a hair."
+          }
+        },
+        {
+          "puzzleId": "s7_ep01_final",
+          "fiction": true,
+          "answer": "bae",
+          "clues": [
+            {
+              "text": "after sunset",
+              "missionId": "s7_ep01_final"
+            },
+            {
+              "text": "leaf",
+              "missionId": "s7_ep01_m1"
+            },
+            {
+              "text": "brush cloth",
+              "missionId": "s7_ep01_m3"
+            }
+          ],
+          "derivation": "Three proofs, one for each claim: the chance (the gate book: last in after sunset), knowing the new letters (the false page is in them and bears his leaf), the hidden letter (in his own brush cloth). Learning the letters alone convicts no one: Sora learned them too.",
+          "whyOnly": "Each claim is answered by one piece only: a time by the gate book, writing by the false page, hiding by the wrapped letter; a miss is never wrong."
+        }
+      ],
+      "learningObjectives": [
+        "Read order words (then, later, after) in a record.",
+        "Compare two papers line by line.",
+        "Answer a claim with evidence."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "King Sejong made 28 new letters in 1443.",
+            "junior": "In 1443, King Sejong created a set of 28 new letters.",
+            "master": "In 1443, King Sejong devised a new script of 28 letters.",
+            "factIds": [
+              "s7_ep01_h1"
+            ]
+          },
+          {
+            "text": "A book about them was finished in 1446. It says the dot is the sky, the flat line is the earth, and the standing line is a person.",
+            "junior": "The book explaining them was completed in 1446. It describes the dot as the sky, the flat line as the earth and the standing line as a person.",
+            "master": "Completed in 1446, the book explaining them likens the dot to the round sky, the flat line to the earth and the standing line to a person.",
+            "factIds": [
+              "s7_ep01_h2",
+              "s7_ep01_h4"
+            ]
+          },
+          {
+            "text": "The King wrote that he made them so people could learn them easily and use them every day.",
+            "junior": "The King wrote that he created them so that people could learn them easily and use them daily.",
+            "master": "The King wrote that his aim was to make it easier for people to learn them and use them each day.",
+            "factIds": [
+              "s7_ep01_h5"
+            ]
+          },
+          {
+            "text": "The Royal Secretariat carried the King's orders.",
+            "junior": "The Royal Secretariat was the office that passed on the King's orders.",
+            "master": "The Royal Secretariat was the office through which the King's orders passed.",
+            "factIds": [
+              "s7_ep01_h8"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Mun-su, Taek, Sora and Bae are made up.",
+            "junior": "Mun-su, Taek, Sora and Bae were invented for this case.",
+            "master": "Mun-su, Taek, Sora and Bae are inventions of this story."
+          },
+          {
+            "text": "The royal letter, the false page and that night are made up too.",
+            "junior": "The royal letter, the false page and that night were invented as well.",
+            "master": "So are the royal letter, the false page and the night it vanished."
+          }
+        ]
+      },
+      "notes": [
+        "Seoul Pilot Case 01. Every fact is a draft: a person checks each source, sets source_checked, and approves it (approve.dart). Nothing here is approved."
+      ]
+    }
+  ]
+}

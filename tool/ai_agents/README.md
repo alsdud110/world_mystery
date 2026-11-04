@@ -11,6 +11,7 @@ nothing here is imported by the game, and the API key never reaches the app.
 | `image_styles.dart` | The game's styles as prompt lines (`STYLE_GUIDE.md`) |
 | `png_check.dart` | A PNG read whole: signature, every chunk's CRC, IHDR, IEND, the pixels inflated to their size |
 | `env_file.dart` | `.env` read (never written); `ApiKey`, never shown, redacted from errors |
+| `history_guard.dart`, `history_guard_hook.sh` | A historical season's files (sounds from ElevenLabs, pictures from the image API by hand) made only once its facts are approved (`HistoryGate.forOutput`); the hook is a Claude Code PreToolUse hook in `.claude/settings.json`. `ImageStudio.run` holds the same gate for every picture it sends |
 
 Tests: `test/ai_agents/openai_image_test.dart` (no call to OpenAI).
 

@@ -16,8 +16,11 @@ import 'validate_plan.dart' as plans;
 ///
 /// `<seasonDir>` is `content_pipeline/seasons/<seasonId>`; an asset's
 /// `--path` is from the repository's root. `approve` checks a plan as
-/// `validate_plan.dart` does and refuses one with errors; then asks, at a
-/// terminal only, for the target's id to be typed. Who approves is `--by`,
+/// `validate_plan.dart` does and refuses one with errors. A historical
+/// season's dossier is checked automatically (`HistoryGate`), never
+/// approved here. Then it
+/// asks, at a terminal only, for the target's id to be typed: no script or
+/// factory run approves anything. Who approves is `--by`,
 /// or Git's `user.name <user.email>`.
 ///
 /// Exit codes: `status` 0 when every target shown is approved, else 1;
@@ -69,7 +72,7 @@ int run(
     case ['asset', final id]:
       target = (ApprovalKind.asset, id);
     default:
-      return _misuse(out, 'a target is season, case <caseId> or asset <assetId>');
+      return _misuse(out, 'a target is season, case <caseId>, or asset <assetId>');
   }
   if (target case (final kind, final id)) {
     final problem = SeasonApprovals.idProblem(kind, id, approvals.seasonId);

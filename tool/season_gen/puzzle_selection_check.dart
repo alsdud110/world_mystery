@@ -151,6 +151,10 @@ abstract final class PuzzleSelectionCheck {
     'ChoiceOption.label',
     'ChoiceOption.feedback',
     'ChoiceOption.altText',
+    // A timeline's (Puzzle Engine 2.0): its cards and relations in `play.timeline`, its order the answer.
+    'TimelineSpec.cards',
+    'TimelineSpec.order',
+    'TimelineSpec.relations',
   };
 
   /// The fields that are a level's words.

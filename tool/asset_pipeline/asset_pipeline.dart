@@ -15,6 +15,7 @@ import '../asset_optimizer/image_quality.dart';
 import '../asset_optimizer/optimized_ledger.dart';
 import '../asset_optimizer/webp_encoder.dart';
 import '../season_gen/content_approval.dart';
+import '../season_gen/history_dossier.dart';
 import '../season_gen/plan_files.dart';
 import '../season_gen/sha256.dart';
 import 'asset_budget.dart';
@@ -59,7 +60,8 @@ import 'asset_wiring.dart';
 ///   by the API) and nothing goes to the game.
 ///
 /// Exit codes: 0 done (or a dry run); 1 a call or a picture failed; 2
-/// refused before any call; 64 usage.
+/// refused before any call; 3 a historical season's facts not approved
+/// (`HistoryGate`), nothing sent; 64 usage.
 Future<void> main(List<String> args) async {
   final a = _Args.parse(args);
   if (a == null) {
@@ -224,6 +226,16 @@ class AssetPipeline {
     log('manifest ${plan.manifestPath}: ${plan.assets.length} pictures of ${plan.seasonId}, ${plan.model}, quality ${plan.quality}');
     log('work     $work (raw/, game/, ${PipelineState.fileName}, ${ImageManifest.fileName}); never assets/ or lib/');
     if (!generate) return _dryRun(state, queue, maxBudget: maxBudget, maxCalls: maxCalls, only: only);
+
+    // A historical season: its facts approved as they are before anything is paid for (none in the standard mode).
+    final blockers = HistoryGate.blockers('$root/${plan.seasonDir}');
+    if (blockers.isNotEmpty) {
+      for (final b in blockers) {
+        log('history  $b');
+      }
+      log('error    ${blockers.length} history blocker(s): nothing sent (fix planning/history_dossier.json: its automatic checks)');
+      return 3;
+    }
 
     // Generating: a budget, a call limit and a key before anything else.
     if (maxBudget == null || maxBudget <= 0) {

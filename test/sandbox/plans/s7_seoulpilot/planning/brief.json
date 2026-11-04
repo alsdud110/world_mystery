@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "s7_seoulpilot",
+  "number": 7,
+  "city": "Seoul",
+  "cases": 12,
+  "acts": 3,
+  "mode": "historical_fiction_mystery",
+  "playbook": "tool/season_planner/PLAYBOOK.md"
+}

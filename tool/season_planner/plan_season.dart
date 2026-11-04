@@ -3,6 +3,7 @@ import 'dart:io';
 
 import '../season_gen/generate_case.dart';
 import '../season_gen/generate_season.dart' show generateSeason;
+import '../season_gen/history_dossier.dart' show SeasonMode;
 import '../season_gen/plan_files.dart';
 import '../season_gen/plan_models.dart';
 import 'asset_manifest.dart';
@@ -14,7 +15,7 @@ import 'season_quality.dart';
 /// folder and checks them. It never writes a story, calls an API or makes a
 /// picture.
 ///
-///     dart run tool/season_planner/plan_season.dart init --season 3 --city Rome [--cases 12] [--acts 3] [--root content_pipeline/seasons]
+///     dart run tool/season_planner/plan_season.dart init --season 3 --city Rome [--cases 12] [--acts 3] [--root content_pipeline/seasons] [--mode historical_fiction_mystery]
 ///     dart run tool/season_planner/plan_season.dart check <seasonDir> [--no-report] [--all]
 ///     dart run tool/season_planner/plan_season.dart assets <seasonDir>
 ///     dart run tool/season_planner/plan_season.dart format <seasonDir>
@@ -48,7 +49,7 @@ void main(List<String> args) {
 
 Never _usage() {
   stderr.writeln('usage: dart run tool/season_planner/plan_season.dart\n'
-      '  init --season <n> --city <City> [--cases 12] [--acts 3] [--root content_pipeline/seasons]\n'
+      '  init --season <n> --city <City> [--cases 12] [--acts 3] [--root content_pipeline/seasons] [--mode historical_fiction_mystery]\n'
       '  check <seasonDir> [--no-report] [--all]\n'
       '  assets <seasonDir>\n'
       '  format <seasonDir>\n'
@@ -58,12 +59,15 @@ Never _usage() {
 
 /// What `init` makes of its arguments: the season's id and folder, or why not.
 class SeasonBrief {
-  const SeasonBrief(this.number, this.city, this.seasonId, this.dir);
+  const SeasonBrief(this.number, this.city, this.seasonId, this.dir, {this.mode});
 
   final int number;
   final String city;
   final String seasonId;
   final String dir;
+
+  /// `historical_fiction_mystery`, or null: the standard mode (no `mode` written).
+  final String? mode;
 
   /// `s3_rome` for season 3 in Rome: the city's letters, lower case.
   static String idFor(int number, String city) => 's${number}_${city.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]'), '')}';
@@ -73,7 +77,7 @@ class SeasonBrief {
   /// schema), its number and its folder its own.
   static SeasonBrief parse(List<String> args, {String root = 'content_pipeline/seasons'}) {
     int? number, cases = 12, acts = 3;
-    String? city;
+    String? city, mode;
     var dir = root;
     for (var i = 0; i < args.length; i++) {
       String next() => i + 1 < args.length ? args[++i] : throw FormatException('${args[i]} needs a value');
@@ -88,6 +92,9 @@ class SeasonBrief {
           acts = int.tryParse(next());
         case '--root':
           dir = next();
+        case '--mode':
+          mode = next();
+          if (mode != SeasonMode.historicalName) throw FormatException('--mode $mode: the one mode to ask for is ${SeasonMode.historicalName}');
         default:
           throw FormatException('unknown argument: ${args[i]}');
       }
@@ -107,7 +114,7 @@ class SeasonBrief {
         if (name.startsWith('s${number}_')) throw FormatException('season $number is planned already ($dir/$name)');
       }
     }
-    return SeasonBrief(number, city, id, folder);
+    return SeasonBrief(number, city, id, folder, mode: mode);
   }
 
   /// The folder with its brief, written whole or not at all.
@@ -121,6 +128,7 @@ class SeasonBrief {
       'acts': 3,
       'assetRoot': AssetManifest.rootFor(number, seasonId),
       'playbook': 'tool/season_planner/PLAYBOOK.md',
+      'mode': ?mode,
     };
     final tmp = Directory('$dir.part');
     if (tmp.existsSync()) tmp.deleteSync(recursive: true);

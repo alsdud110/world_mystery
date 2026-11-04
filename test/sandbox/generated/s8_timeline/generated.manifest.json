@@ -1,0 +1,22 @@
+{
+  "generator": "generate_case.dart",
+  "generatorVersion": 5,
+  "target": "sandbox",
+  "seasonId": "s8_timeline",
+  "cases": [
+    "s8_ep01",
+    "s8_ep02"
+  ],
+  "approved": false,
+  "inputs": {
+    "season.plan.json": "sha256:453b059b171a8a7cf7c9d0d3073d408d70035fa491ac0f24454a4cbd2c2007f5",
+    "cases/s8_ep01/case.plan.json": "sha256:ac22331a347eb6404e4ebc1e2ec5853e266034d2ee15b3d8f2b7f38705ce0f43",
+    "cases/s8_ep02/case.plan.json": "sha256:f6dc1b816b16623fd9443e6b87d262f215b7833213f7525a29d0bb2ff2ad9fa9"
+  },
+  "outputs": {
+    "s8_timeline_season.g.dart": "sha256:6c68de4ee9aecb7890d6637a3401f0f674b78cc887d794c47b2fc7893c1f52e6",
+    "s8_ep01.g.dart": "sha256:01eee49bf9d919192b49fb314e23ac4f4c2153584106f1f86c0653145a5fa647",
+    "s8_ep02.g.dart": "sha256:9aac5eed748cbbdf4a70b98290578668de6c145c416716305b1329c00c829632",
+    "s8_timeline_cases.g.dart": "sha256:1068334d0837c8e439b9324098ea82eb7574d28cac71997fc50cf234d12796d4"
+  }
+}

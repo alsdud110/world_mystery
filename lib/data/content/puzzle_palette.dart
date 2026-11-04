@@ -1099,6 +1099,36 @@ abstract final class PuzzlePalette {
         "The widget describes the paper with its case's words to screen readers.",
       ],
     ),
+    // Puzzle Engine 2.0 (PART 3C): the first puzzle of the new engines, its
+    // rules plain Dart (`lib/puzzles_v2/core/timeline_rules.dart`) the
+    // season tools run as the game does.
+    PuzzleDefinition(
+      id: 'timeline_board',
+      name: 'Put the timeline back together',
+      description: 'Cards of what happened are put in their places on a timeline, some fixed by the time written on them; cards that are not part of it are set aside.',
+      actions: [PuzzleAction.readDocument, PuzzleAction.orderItems],
+      reuseGrade: PuzzleReuseGrade.ready,
+      generationMode: PuzzleGenerationMode.textOnly,
+      engines: [
+        PuzzleEngineBinding(widget: 'TimelineBoard', source: '$_w/timeline_board.dart', table: 'timelines', model: 'TimelineSpec', missionTypes: {MissionType.sequence}, surfaces: _m),
+      ],
+      requiredData: [
+        PuzzleField('Mission', 'letter'),
+        PuzzleField('Mission', 'question'),
+        PuzzleField('Mission', 'options'),
+        PuzzleField('Mission', 'answer'),
+        PuzzleField('Mission', 'codeLength'),
+        PuzzleField('Mission', 'orderFeedback'),
+        PuzzleField('Mission', 'hints'),
+        PuzzleField('TimelineSpec', 'cards'),
+        PuzzleField('TimelineSpec', 'order'),
+        PuzzleField('TimelineSpec', 'relations'),
+      ],
+      constraints: [
+        'Missions only: 2 to 6 cards to place, 1 to 3 fixed by their time, at most 2 not part of it (PlayCheck).',
+        "The cards' order is the one their relations and times allow (TimelineRules.validate); every relation's line is read in the mission.",
+      ],
+    ),
   ];
 
   static final Map<String, PuzzleDefinition> _byId = _index(all);

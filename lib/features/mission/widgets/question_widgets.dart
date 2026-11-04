@@ -55,6 +55,10 @@ BoxDecoration _answerPaper(AnswerState state) {
   );
 }
 
+/// [_answerPaper] for puzzles drawn in other files (Puzzle Engine 2.0's
+/// `TimelineBoard`): one answer surface for every puzzle.
+BoxDecoration answerPaper(AnswerState state) => _answerPaper(state);
+
 /// Ink on an answer surface in [state].
 Color _answerInk(AnswerState state) => state == AnswerState.selected ? AppColors.paperLight : AppColors.ink;
 

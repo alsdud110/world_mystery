@@ -15,12 +15,14 @@ import '../season_gen/case_levels.dart';
 import '../season_gen/content_hash.dart';
 import '../season_gen/generate_case.dart';
 import '../season_gen/generate_season.dart';
+import '../season_gen/history_dossier.dart';
 import '../season_gen/json_schema_lite.dart';
 import '../season_gen/plan_files.dart';
 import '../season_gen/plan_ids.dart';
 import '../season_gen/plan_models.dart';
 import '../season_gen/season_cases.dart';
 import '../season_planner/finding.dart';
+import '../season_planner/puzzle_selection.dart';
 import '../season_planner/season_quality.dart';
 import 'sheets.dart';
 
@@ -39,6 +41,10 @@ import 'sheets.dart';
 ///
 ///  1. plans: every check (`SeasonQuality`, as `plan_season.dart check`);
 ///     an ERROR stops (exit 10).
+///  1b. history (a `historical_fiction_mystery` season only, brief.json's
+///     `mode`): its dossier whole and every fact its puzzles and reveals
+///     rest on approved as it is ([HistoryGate]); else exit 15, nothing paid
+///     for. The asset pipeline holds the same gate before any API call.
 ///  2. doctor: this machine's picture records against the game's files,
 ///     only what is safe fixed (`asset_pipeline.dart --doctor --fix`).
 ///  3. review: pictures made here and not yet looked at: a review sheet is
@@ -61,7 +67,9 @@ import 'sheets.dart';
 ///     missing lines get a skeleton (the lines written kept) and stop the
 ///     run (exit 35): Claude writes them (the create-season skill), then
 ///     runs again.
-///  7. generated: `generate_season.dart --target game`: the season in
+///  7. generated (a historical season: every reveal approved and every
+///     puzzle's reasoning reviewed by a person first, else exit 15):
+///     `generate_season.dart --target game`: the season in
 ///     `lib/data/generated/`, registered (catalog, map, cover, World Map
 ///     city, evidence pictures); a failure stops (exit 50).
 ///  8. checked: `flutter analyze` and `test/generated_seasons_test.dart` (the
@@ -72,7 +80,7 @@ import 'sheets.dart';
 Future<void> main(List<String> args) async => exit(await SeasonFactory.cli(args));
 
 abstract final class SeasonFactory {
-  static const exitPlans = 10, exitReview = 20, exitMeasure = 30, exitLevels = 35, exitBudget = 40, exitGenerate = 50, exitTests = 60;
+  static const exitPlans = 10, exitHistory = 15, exitReview = 20, exitMeasure = 30, exitLevels = 35, exitBudget = 40, exitGenerate = 50, exitTests = 60;
 
   static Future<int> cli(List<String> args) async {
     if (args.length < 2) return _usage();
@@ -417,7 +425,23 @@ abstract final class SeasonFactory {
       return exitPlans;
     }
     say('plans', 'no ERROR (${report.count(Level.warning)} WARNING)');
+    if (report.selection?['missions'] case final List<Object?> picks) {
+      final same = picks.whereType<Map>().where((m) => m['plannedIsSelected'] == true).length;
+      final none = picks.whereType<Map>().where((m) => m['selected'] == null).length;
+      say('puzzles', '${picks.length} chosen by rule: $same as planned, ${picks.length - same - none} planned otherwise, $none fitting none '
+          '(${PuzzleSelector.fileName}: why, facts, checks, what a person reads)');
+    }
     final seasonId = report.seasonId;
+
+    // 1b. A historical season's facts, approved before anything is paid for.
+    final blockers = HistoryGate.blockers(dir);
+    if (blockers.isNotEmpty) {
+      for (final b in blockers) {
+        stdout.writeln('  $b');
+      }
+      say('history', '${blockers.length} blocker(s): fix the dossier (planning/history_dossier.json) until its checks pass, then run again');
+      return exitHistory;
+    }
 
     // 2. This machine's records against the game's files.
     final plan = AssetPlan.load('$dir/assets.manifest.json');
@@ -470,6 +494,7 @@ abstract final class SeasonFactory {
       (r['runs'] as List).add({'at': DateTime.now().toUtc().toIso8601String(), 'calls': last?['apiCalls'] ?? 0, 'spentUsd': cost});
       _save(dir, r);
       final made = [for (final a in toMake) if (before[a.assetId] != AssetStatus.validated && state().statusOf(a.assetId) == AssetStatus.validated) a];
+      if (code == 3) return exitHistory;
       if (code == 2) {
         say('budget', 'the next picture passes what is left: nothing sent');
         if (made.isEmpty) return exitBudget;
@@ -517,7 +542,17 @@ abstract final class SeasonFactory {
     }
     say('levels', 'every case written at Rookie, Junior and Master');
 
-    // 7. Generated into the game, registered.
+    // 7. Generated into the game, registered. A historical season only with
+    // every reveal approved and every puzzle's reasoning reviewed by a person.
+    final beforeGame = HistoryGate.blockers(dir, game: true);
+    if (beforeGame.isNotEmpty) {
+      for (final b in beforeGame) {
+        stdout.writeln('  $b');
+      }
+      say('history', '${beforeGame.length} blocker(s) before the game: fix the dossier or the levels '
+          '(planning/history_dossier.json, levels.json) until its checks pass, then run again');
+      return exitHistory;
+    }
     final generated = generateSeason('$dir/season.plan.json', target: 'game');
     if (generated != 0) return exitGenerate;
     SeasonQuality.write(dir, SeasonQuality.run(dir));

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "s8_timeline",
+  "number": 8,
+  "city": "Sandbox",
+  "title": "Timeline Trial",
+  "tagline": "TRIAL CASES",
+  "plannedCases": 12,
+  "mainMystery": {
+    "truth": "Trial season for STEP 3-6 to 3-9. Cases 01 and 02 are written; they have no season mystery.",
+    "culprit": "No culprit: the key was borrowed, not stolen.",
+    "motive": "Mr. Bell needed the key to fix the lamp before story hour.",
+    "revealCase": "s8_ep01"
+  },
+  "characters": [
+    {
+      "charId": "ms_rosa",
+      "name": "Ms. Rosa",
+      "role": "The librarian",
+      "firstCase": "s8_ep01"
+    },
+    {
+      "charId": "mr_bell",
+      "name": "Mr. Bell",
+      "role": "The library's fix-it man",
+      "firstCase": "s8_ep01",
+      "revealCase": "s8_ep01"
+    }
+  ],
+  "locations": [
+    {
+      "locId": "town_library",
+      "name": "Town Library",
+      "landmarkKey": "townLibrary"
+    },
+    {
+      "locId": "night_station",
+      "name": "The Night Station",
+      "landmarkKey": "nightStation"
+    },
+    {
+      "locId": "city_museum",
+      "name": "The City Museum",
+      "landmarkKey": "cityMuseum"
+    },
+    {
+      "locId": "market_hall",
+      "name": "The Market Hall",
+      "landmarkKey": "marketHall"
+    }
+  ],
+  "acts": [
+    {
+      "actId": "act1",
+      "theme": "TRIAL",
+      "caseIds": [
+        "s8_ep01",
+        "s8_ep02",
+        "s8_ep03",
+        "s8_ep04"
+      ]
+    },
+    {
+      "actId": "act2",
+      "theme": "TRIAL",
+      "caseIds": [
+        "s8_ep05",
+        "s8_ep06",
+        "s8_ep07",
+        "s8_ep08"
+      ]
+    },
+    {
+      "actId": "act3",
+      "theme": "TRIAL",
+      "caseIds": [
+        "s8_ep09",
+        "s8_ep10",
+        "s8_ep11",
+        "s8_ep12"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "placeId": "s8_timeline.front_desk",
+      "file": "assets/seasons/season_02_paris/cases/case_11/annex_reading_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "placeId": "s8_timeline.window_shelf",
+      "file": "assets/seasons/season_02_paris/cases/case_11/annex_shelves.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "placeId": "s8_timeline.reading_room",
+      "file": "assets/seasons/season_02_paris/cases/case_11/annex_reading_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "placeId": "s8_timeline.station",
+      "file": "assets/seasons/season_01_london/cases/case_01/kings_cross_platform_night.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "placeId": "s8_timeline.gallery",
+      "file": "assets/seasons/season_01_london/locations/british_museum/british_museum_gallery_8.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "placeId": "s8_timeline.market",
+      "file": "assets/seasons/season_01_london/locations/covent_garden/covent_garden_market_hall.webp",
+      "pixels": {
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    {
+      "placeId": "s8_timeline.lost_property",
+      "file": "assets/seasons/season_01_london/locations/kings_cross/kings_cross_waiting_hall.webp",
+      "pixels": {
+        "width": 1273,
+        "height": 832
+      }
+    }
+  ],
+  "notes": [
+    "Test-only season (Puzzle Engine 2.0, PART 3C): sandbox Case 01 with its Mission 2 a timeline (timeline_board). Never in the game."
+  ]
+}

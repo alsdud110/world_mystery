@@ -35,13 +35,14 @@ Each is done only when it is not done yet: run it again after any stop.
 | # | Step | Stops with |
 |---|---|---|
 | 1 | Every plan check (`SeasonQuality`, the report written) | 10: an ERROR |
+| 1b | A `historical_fiction_mystery` season only (`planning/brief.json` `mode`): its history dossier whole, every fact its puzzles and reveals rest on `source_checked`, its automatic checks passed (`HistoryGate`, `tool/season_gen/history_dossier.dart`). The asset pipeline holds the same gate before any API call | 15: fix the dossier until its checks pass |
 | 2 | `--doctor --fix`: this machine's records against the game's files (below) | — |
 | 3 | Pictures made here and not looked at: a review sheet | 20: look, then `reviewed` / `reject` |
 | 4 | The next `--batch` pictures the game shows, within the budget | 20 (review), 40 (budget), 1 (API error) |
 | 5 | `--apply`: validated pictures (the game's WebP, made by kind: `tool/asset_optimizer`) into `assets/`, manifest, `pubspec.yaml`; then the season's size in the app and the size report's warnings about it (diagnostics) | 1: a conflict |
 | 6 | Anything not measured on the made pictures: a grid sheet | 30: measure, write into the plans |
 | 6b | Every case's `levels.json` (Junior and Master English of each Rookie line; the same game) written and checked (`case_levels.dart check`, a level copied from Rookie refused); a skeleton written for missing lines, the lines written kept | 35: Claude writes the levels (create-season § Levels), reads `case_levels.dart review`, runs again |
-| 7 | `generate_season.dart --target game` (content, art, the game's lists) | 50: generator errors |
+| 7 | (a historical season: every reveal approved and every puzzle's reasoning reviewed by a person first, else 15) `generate_season.dart --target game` (content, art, the game's lists) | 50: generator errors |
 | 8 | `flutter analyze`, `flutter test test/generated_seasons_test.dart` (`--full-tests`: all) | 60: a failure |
 
 **The budget** is the season's (`--budget`, US dollars at list prices; the

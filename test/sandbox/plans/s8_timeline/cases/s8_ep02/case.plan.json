@@ -1,0 +1,975 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s8_ep02",
+  "seasonId": "s8_timeline",
+  "number": 2,
+  "actId": "act1",
+  "title": "The Early Lamp Man",
+  "synopsis": [
+    "The lamp man says he came at four.",
+    "But the records do not agree."
+  ],
+  "goal": "Find out when the lamp man really came.",
+  "characters": [
+    "ms_rosa",
+    "mr_bell"
+  ],
+  "locations": [
+    "town_library"
+  ],
+  "missions": [
+    {
+      "missionId": "s8_ep02_m1",
+      "slot": "m1",
+      "placeId": "s8_timeline.front_desk",
+      "puzzle": {
+        "paletteId": "record_mismatch",
+        "surface": "mission",
+        "engineTable": "records",
+        "missionType": "matchPairs",
+        "answerSpec": {
+          "answer": "time:time",
+          "options": [
+            {
+              "id": "date",
+              "label": "The date"
+            },
+            {
+              "id": "job",
+              "label": "The job"
+            },
+            {
+              "id": "time",
+              "label": "The time"
+            }
+          ]
+        },
+        "assetNeeds": [
+          "s8_timeline.asset.records"
+        ],
+        "status": "awaitingAssets",
+        "notes": [
+          "Played as two records compared (RecordsScene): the notice and the log disagree on the time only.",
+          "Sandbox only: the two blank records and their measured sheets are Paris Case 03's."
+        ]
+      },
+      "clueInputs": [],
+      "clueOutputs": {
+        "clue": "s8_ep02_c1",
+        "evidence": "s8_ep02_e1"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "comprehension",
+        "objective": "두 기록의 DATE, JOB, TIME 줄을 읽고 서로 다른 줄을 찾는다.",
+        "skill": "sentenceMeaning",
+        "expressions": [
+          "3:00 PM",
+          "4:00 PM"
+        ]
+      },
+      "play": {
+        "title": "Two Records",
+        "location": "THE FRONT DESK",
+        "story": [
+          "Ms. Rosa has two papers about the lamp man.",
+          "\"They should say the same,\" she says. \"Do they?\""
+        ],
+        "letterIntro": "Ms. Rosa says:",
+        "letter": "One paper is the notice. One is the work log.\nRead both. Find the line that is not the same.",
+        "question": "Which line does not match?",
+        "hints": [
+          "Read the TIME line on each paper.",
+          "One says 4:00 PM. What does the other say?"
+        ],
+        "successMessage": "The times do not match!",
+        "mapX": 0.3,
+        "mapY": 0.6,
+        "clue": {
+          "title": "The Real Time",
+          "value": "3:00 PM",
+          "note": "The log says the lamp man came at 3:00 PM, not 4:00 PM.",
+          "symbol": "clock"
+        },
+        "evidence": {
+          "name": "The Work Log",
+          "icon": "letter",
+          "description": "The lamp man's log. His time is 3:00 PM."
+        },
+        "records": {
+          "first": {
+            "id": "notice",
+            "name": "THE VISITOR NOTICE",
+            "picture": {
+              "file": "assets/seasons/season_02_paris/cases/case_03/tower_notice_board.webp",
+              "pixels": {
+                "width": 1536,
+                "height": 1024
+              },
+              "measuredOn": "sha256:b82a63c80014c53c7a64b92c7d56b398bba036800ec2743ed27be5fdfd4bb839"
+            },
+            "crop": [
+              258,
+              316,
+              698,
+              702
+            ],
+            "sheet": {
+              "corners": [
+                [
+                  316,
+                  360
+                ],
+                [
+                  650,
+                  378
+                ],
+                [
+                  648,
+                  652
+                ],
+                [
+                  304,
+                  648
+                ]
+              ],
+              "flat": [
+                340,
+                282
+              ],
+              "title": [
+                24,
+                14,
+                316,
+                56
+              ],
+              "rows": [
+                70,
+                122,
+                174
+              ],
+              "rowHeight": 46,
+              "reach": 3,
+              "labelLeft": 26,
+              "labelRight": 100,
+              "valueLeft": 108,
+              "valueRight": 318,
+              "noteRow": 226,
+              "noteLeft": 26,
+              "ink": 0.62
+            },
+            "title": "VISITOR NOTICE",
+            "lines": [
+              {
+                "id": "date",
+                "label": "DATE",
+                "value": "12 MAY"
+              },
+              {
+                "id": "job",
+                "label": "JOB",
+                "value": "LAMP REPAIR"
+              },
+              {
+                "id": "time",
+                "label": "TIME",
+                "value": "4:00 PM"
+              }
+            ],
+            "note": "The Reading Room will close for a short time.",
+            "label": "The notice board at the front desk"
+          },
+          "second": {
+            "id": "log",
+            "name": "THE WORK LOG",
+            "picture": {
+              "file": "assets/seasons/season_02_paris/cases/case_03/inspection_log.webp",
+              "pixels": {
+                "width": 1254,
+                "height": 1254
+              },
+              "measuredOn": "sha256:a1e72e2a73c7613319b7d56b2e7062ee2feb8139c1421a3b71e8582413e4282a"
+            },
+            "crop": [
+              226,
+              236,
+              1046,
+              1146
+            ],
+            "sheet": {
+              "corners": [
+                [
+                  315,
+                  315
+                ],
+                [
+                  952,
+                  310
+                ],
+                [
+                  977,
+                  1064
+                ],
+                [
+                  299,
+                  1069
+                ]
+              ],
+              "flat": [
+                640,
+                738.8
+              ],
+              "title": [
+                80,
+                10,
+                542,
+                88
+              ],
+              "rows": [
+                133.6,
+                240.4,
+                347.2
+              ],
+              "rowHeight": 35.6,
+              "reach": 35.6,
+              "labelLeft": 80,
+              "labelRight": 166,
+              "valueLeft": 176,
+              "valueRight": 548,
+              "noteRow": 454.0
+            },
+            "title": "WORK LOG",
+            "lines": [
+              {
+                "id": "date",
+                "label": "DATE",
+                "value": "12 MAY"
+              },
+              {
+                "id": "job",
+                "label": "JOB",
+                "value": "LAMP REPAIR"
+              },
+              {
+                "id": "time",
+                "label": "TIME",
+                "value": "3:00 PM"
+              }
+            ],
+            "note": "CHECK THE LAMP LOG.",
+            "label": "The work log on a clipboard, a pencil beside it"
+          },
+          "readTask": "Tap each record to read it.",
+          "compareTask": "Tap the line on each record that does not match.",
+          "checkLabel": "THESE DO NOT MATCH"
+        }
+      }
+    },
+    {
+      "missionId": "s8_ep02_m2",
+      "slot": "m2",
+      "placeId": "s8_timeline.front_desk",
+      "puzzle": {
+        "paletteId": "number_entry",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "numberCode",
+        "answerSpec": {
+          "answer": "417",
+          "codeLength": 3
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "A number read in words, put in on the keypad."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s8_ep02_c1",
+          "use": "textMention",
+          "note": "The lamp man came at 3:00 PM."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s8_ep02_c2",
+        "evidence": "s8_ep02_e2"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "comprehension",
+        "objective": "\"four hundred and seventeen\"을 읽고 숫자 417로 바꾼다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "four hundred and seventeen"
+        ]
+      },
+      "play": {
+        "title": "The Locker Number",
+        "location": "THE FRONT DESK",
+        "story": [
+          "At 3:00 PM the lamp man left a message.",
+          "It is about a locker."
+        ],
+        "letterIntro": "The message says:",
+        "letter": "I left my tools in locker four hundred and seventeen.\n— The lamp man",
+        "question": "Put in the locker number.",
+        "hints": [
+          "Read the number words in the message.",
+          "Four hundred is 4. Then seventeen."
+        ],
+        "orderFeedback": "The right digits, in the wrong order. Read the number words again.",
+        "successMessage": "Locker 417 opens!",
+        "mapX": 0.4,
+        "mapY": 0.55,
+        "clue": {
+          "title": "Locker 417",
+          "value": "417",
+          "note": "The lamp man's tools are in locker 417.",
+          "symbol": "key"
+        },
+        "evidence": {
+          "name": "The Locker Tag",
+          "icon": "key",
+          "description": "A tag with the number 417."
+        }
+      }
+    },
+    {
+      "missionId": "s8_ep02_m3",
+      "slot": "m3",
+      "placeId": "s8_timeline.station",
+      "puzzle": {
+        "paletteId": "trace_deduction",
+        "surface": "mission",
+        "engineTable": "deductions",
+        "missionType": "multipleChoice",
+        "answerSpec": {
+          "answer": "b",
+          "options": [
+            {
+              "id": "a",
+              "label": "Under the bench",
+              "feedback": "Nobody sat on the bench. Where do the footprints go?"
+            },
+            {
+              "id": "b",
+              "label": "Behind the lit stone"
+            },
+            {
+              "id": "c",
+              "label": "Under the drain cover",
+              "feedback": "Nothing is on the drain cover. Read your three notes."
+            }
+          ]
+        },
+        "assetNeeds": [
+          "s8_timeline.asset.tower_base"
+        ],
+        "status": "awaitingAssets",
+        "notes": [
+          "Played as traces read (DeductionScene): footprints, the lamp's light and scratches all point to one stone.",
+          "Sandbox only: the picture and its measured areas are London Case 01's."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s8_ep02_c2",
+          "use": "textMention",
+          "note": "The locker was empty: the tools went outside."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s8_ep02_c3",
+        "evidence": "s8_ep02_e3"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "세 흔적의 문장(stop at, shines on, scratches around)을 읽고 모두 가리키는 곳을 고른다.",
+        "skill": "sentenceMeaning",
+        "expressions": [
+          "The footprints stop at the tower wall."
+        ]
+      },
+      "play": {
+        "title": "Marks in the Rain",
+        "location": "THE CLOCK TOWER",
+        "story": [
+          "The locker is empty.",
+          "Outside, the rain has stopped."
+        ],
+        "letterIntro": "Your notes say:",
+        "letter": "The footprints stop at the tower wall.\nThe lamp shines on one stone in the wall.\nThat stone has fresh scratches around it.",
+        "question": "Where is the toolbox hidden?",
+        "hints": [
+          "Tap the footprints, the lamp and the wall.",
+          "All three notes talk about one stone."
+        ],
+        "successMessage": "The toolbox is behind the stone!",
+        "mapX": 0.6,
+        "mapY": 0.4,
+        "clue": {
+          "title": "The Loose Stone",
+          "value": "BEHIND THE STONE",
+          "note": "The toolbox was behind a loose stone in the tower wall.",
+          "symbol": "footprint"
+        },
+        "evidence": {
+          "name": "The Toolbox",
+          "icon": "bag",
+          "description": "The lamp man's toolbox, a little wet."
+        },
+        "traces": {
+          "picture": {
+            "file": "assets/seasons/season_01_london/cases/case_01/big_ben_base_night.webp",
+            "pixels": {
+              "width": 1536,
+              "height": 1024
+            },
+            "measuredOn": "sha256:1bc7a9497db8394d4aa6c032c47c2ce1673bd7a56860b32476a75a271a5f9e98"
+          },
+          "place": "The foot of the clock tower, at night",
+          "task": "Look for three clues.",
+          "chooseTask": "Where is the toolbox hidden? Tap the place.",
+          "missLine": "Nothing here. Look for marks.",
+          "notPlaceLine": "The toolbox is not there. Tap a place where it could be hidden.",
+          "guideAt": [
+            330,
+            900
+          ],
+          "inside": [
+            36,
+            30,
+            1500,
+            992
+          ],
+          "opening": [
+            190,
+            90,
+            1290,
+            992
+          ],
+          "clues": [
+            {
+              "id": "footprints",
+              "label": "Muddy footprints on the wet stones",
+              "areas": [
+                [
+                  430,
+                  880,
+                  720,
+                  992
+                ],
+                [
+                  570,
+                  790,
+                  830,
+                  880
+                ],
+                [
+                  720,
+                  715,
+                  940,
+                  800
+                ]
+              ],
+              "mark": [
+                560,
+                860
+              ],
+              "line": "The footprints stop at the tower wall."
+            },
+            {
+              "id": "light",
+              "label": "The street lamp, and its light on the tower wall",
+              "areas": [
+                [
+                  215,
+                  115,
+                  345,
+                  600
+                ],
+                [
+                  840,
+                  380,
+                  1050,
+                  485
+                ]
+              ],
+              "mark": [
+                345,
+                200
+              ],
+              "line": "The lamp shines on one stone in the wall."
+            },
+            {
+              "id": "scratches",
+              "label": "Scratches on a stone low in the tower wall",
+              "areas": [
+                [
+                  840,
+                  492,
+                  1035,
+                  605
+                ]
+              ],
+              "mark": [
+                1020,
+                510
+              ],
+              "line": "That stone has fresh scratches around it."
+            }
+          ],
+          "places": [
+            {
+              "optionId": "a",
+              "areas": [
+                [
+                  60,
+                  600,
+                  335,
+                  820
+                ]
+              ],
+              "mark": [
+                285,
+                700
+              ]
+            },
+            {
+              "optionId": "b",
+              "areas": [
+                [
+                  840,
+                  492,
+                  1035,
+                  605
+                ],
+                [
+                  840,
+                  380,
+                  1050,
+                  492
+                ]
+              ],
+              "mark": [
+                938,
+                548
+              ]
+            },
+            {
+              "optionId": "c",
+              "areas": [
+                [
+                  915,
+                  860,
+                  1265,
+                  990
+                ]
+              ],
+              "mark": [
+                1090,
+                920
+              ]
+            }
+          ],
+          "others": [
+            {
+              "label": "A wet bench",
+              "areas": [
+                [
+                  60,
+                  600,
+                  335,
+                  820
+                ]
+              ],
+              "line": "A wet bench. Nobody sat here tonight."
+            },
+            {
+              "label": "A round drain cover",
+              "areas": [
+                [
+                  915,
+                  860,
+                  1265,
+                  990
+                ]
+              ],
+              "line": "A heavy iron drain cover. Nothing on it."
+            },
+            {
+              "label": "The tower wall",
+              "areas": [
+                [
+                  680,
+                  170,
+                  1230,
+                  720
+                ]
+              ],
+              "line": "Old stones of the tower. Look closely at them."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "missionId": "s8_ep02_m4",
+      "slot": "m4",
+      "placeId": "s8_timeline.gallery",
+      "puzzle": {
+        "paletteId": "lens_inspect_word",
+        "surface": "mission",
+        "engineTable": "inspections",
+        "missionType": "wordInput",
+        "answerSpec": {
+          "answer": "STONE",
+          "acceptedAnswers": [
+            "stone"
+          ]
+        },
+        "assetNeeds": [
+          "s8_timeline.asset.museum_room"
+        ],
+        "status": "awaitingAssets",
+        "notes": [
+          "Played under the glass (InspectScene): the slab the note describes, then its label with one word worn away.",
+          "Sandbox only: the room and its measured areas are London Case 01's."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s8_ep02_c3",
+          "use": "textMention",
+          "note": "A note in the toolbox sends the detective to the museum."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s8_ep02_c4",
+        "evidence": "s8_ep02_e4"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "쪽지 네 줄을 전시물과 대조해 라벨의 빠진 단어를 쓴다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "a hard piece of rock"
+        ]
+      },
+      "play": {
+        "title": "The Worn Label",
+        "location": "THE MUSEUM ROOM",
+        "story": [
+          "In the toolbox is a note.",
+          "\"Find the slab,\" it says. \"Its label is worn.\""
+        ],
+        "letterIntro": "The note says:",
+        "letter": "It helped people read old Egyptian writing.\nIts name has two words.\nThe first word is ROSETTA.\nThe second word means a hard piece of rock.",
+        "question": "Write the missing word.",
+        "prompt": "ROSETTA ____",
+        "hints": [
+          "Find the big grey slab with writing.",
+          "A hard piece of rock is a s____."
+        ],
+        "orderFeedback": "Not that word. What is a hard piece of rock?",
+        "successMessage": "The Rosetta Stone!",
+        "mapX": 0.5,
+        "mapY": 0.3,
+        "clue": {
+          "title": "The Slab",
+          "value": "ROSETTA STONE",
+          "note": "The note led to the Rosetta Stone.",
+          "symbol": "museum"
+        },
+        "evidence": {
+          "name": "The Museum Note",
+          "icon": "letter",
+          "description": "A note about the Rosetta Stone."
+        },
+        "inspect": {
+          "picture": {
+            "file": "assets/seasons/season_01_london/cases/case_01/british_museum_room4_night.webp",
+            "pixels": {
+              "width": 1536,
+              "height": 1024
+            },
+            "measuredOn": "sha256:009d1fca6a697f2ebb53a03f328235b0ad707730f272fda7919b1adecd14d15e"
+          },
+          "place": "A museum room at night",
+          "task": "Look closely at the exhibits. Which one matches the note?",
+          "nextTask": "Read its label. One word is missing.",
+          "dragGuide": "Drag the glass over the exhibits.",
+          "tapGuide": "Or tap an exhibit to look at it.",
+          "missLine": "Nothing here. Look at the exhibits.",
+          "labelTitle": "THE LABEL",
+          "labelRoom": "ROOM 4",
+          "labelWorn": "The second word is worn away.",
+          "taskLine": 3,
+          "lensAt": [
+            640,
+            930
+          ],
+          "inside": [
+            40,
+            34,
+            1496,
+            990
+          ],
+          "spots": [
+            {
+              "id": "mask",
+              "kind": "exhibit",
+              "title": "GOLDEN MASK",
+              "label": "The golden mask of a king, in a glass case",
+              "areas": [
+                [
+                  58,
+                  272,
+                  282,
+                  575
+                ]
+              ],
+              "line": "A king's face. Made of gold."
+            },
+            {
+              "id": "king",
+              "kind": "exhibit",
+              "title": "SITTING KING",
+              "label": "A statue of a king sitting on his throne",
+              "areas": [
+                [
+                  695,
+                  250,
+                  808,
+                  515
+                ]
+              ],
+              "line": "A king sitting on his throne. No writing on him."
+            },
+            {
+              "id": "slab",
+              "kind": "match",
+              "title": "STRANGE WRITING",
+              "label": "A big grey slab covered in writing",
+              "areas": [
+                [
+                  810,
+                  195,
+                  1218,
+                  664
+                ]
+              ],
+              "line": "Strange writing… big and grey.",
+              "checks": [
+                0
+              ]
+            },
+            {
+              "id": "label",
+              "kind": "label",
+              "title": "THE LABEL",
+              "label": "The small label in front of the slab",
+              "areas": [
+                [
+                  864,
+                  672,
+                  992,
+                  756
+                ]
+              ],
+              "line": "A label. One word is missing.",
+              "checks": [
+                1,
+                2
+              ],
+              "requires": "slab",
+              "lockedLine": "A small label. Which exhibit is it for?"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "final": {
+    "missionId": "s8_ep02_final",
+    "slot": "final",
+    "placeId": "s8_timeline.reading_room",
+    "puzzle": {
+      "paletteId": "evidence_talk",
+      "surface": "finalMission",
+      "engineTable": "talks",
+      "missionType": "examine",
+      "answerSpec": {
+        "answer": "bell"
+      },
+      "assetNeeds": [
+        "s8_timeline.asset.bell_portraits"
+      ],
+      "status": "awaitingAssets",
+      "notes": [
+        "Played as a talk in which evidence is shown (TalkScene): the log's time, then the toolbox, each picked from two cards.",
+        "No portrait: none is shown (never a stand-in)."
+      ]
+    },
+    "clueInputs": [
+      {
+        "ref": "s8_ep02_c1",
+        "use": "answerDerivation",
+        "note": "The log says 3:00 PM."
+      },
+      {
+        "ref": "s8_ep02_c3",
+        "use": "answerDerivation",
+        "note": "The toolbox was hidden behind the stone."
+      }
+    ],
+    "clueOutputs": {
+      "evidence": "s8_ep02_e5"
+    },
+    "learning": {
+      "dependency": "essential",
+      "level": "application",
+      "objective": "증거를 보여 주며 Mr. Bell의 말(4:00 PM)이 기록(3:00 PM)과 다름을 밝힌다.",
+      "skill": "sentenceMeaning",
+      "expressions": [
+        "You came at 3:00 PM."
+      ]
+    },
+    "play": {
+      "title": "Show the Evidence",
+      "location": "THE READING ROOM",
+      "story": [
+        "Mr. Bell is in the Reading Room.",
+        "He says he came at four, as the notice said."
+      ],
+      "letterIntro": "Your notebook says:",
+      "letter": "The log says 3:00 PM.\nThe toolbox was behind the stone.",
+      "question": "Show Mr. Bell what you found.",
+      "hints": [
+        "Show him the paper with the time.",
+        "Then show him what was behind the stone."
+      ],
+      "successMessage": "Mr. Bell tells the truth.",
+      "mapX": 0.7,
+      "mapY": 0.3,
+      "transition": [
+        "Mr. Bell smiles.",
+        "\"I came early to fix the lamp,\" he says. \"I hid my tools from the rain.\"",
+        "The lamp is fixed. Story hour can start!"
+      ],
+      "evidence": {
+        "name": "The Lamp Man's Story",
+        "icon": "letter",
+        "description": "Mr. Bell came at 3:00 PM to fix the lamp."
+      },
+      "interview": {
+        "speaker": "mr_bell",
+        "goal": "Find out when Mr. Bell really came.",
+        "opening": [
+          {
+            "by": "speaker",
+            "text": "I came at 4:00 PM, like the notice says."
+          },
+          {
+            "by": "detective",
+            "text": "Let me check my notebook."
+          }
+        ],
+        "questions": [
+          {
+            "id": "why",
+            "text": "Why did you come?",
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "To fix the lamp in the Reading Room."
+              }
+            ]
+          }
+        ],
+        "presents": [
+          {
+            "id": "time",
+            "prompt": "Show Mr. Bell the real time.",
+            "accepted": [
+              "s8_ep02_e1"
+            ],
+            "offered": [
+              "s8_ep02_e1",
+              "s8_ep02_e2"
+            ],
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "Oh! The log says 3:00 PM. You are right."
+              }
+            ],
+            "miss": "That does not show a time.",
+            "tell": "The work log has his time."
+          },
+          {
+            "id": "tools",
+            "prompt": "Show Mr. Bell where his tools were.",
+            "accepted": [
+              "s8_ep02_e3"
+            ],
+            "offered": [
+              "s8_ep02_e3",
+              "s8_ep02_e4"
+            ],
+            "requires": [
+              "time"
+            ],
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "Yes, I hid my toolbox behind the stone."
+              }
+            ],
+            "miss": "That is not about my tools.",
+            "tell": "The toolbox was behind the stone."
+          }
+        ],
+        "finishWhen": [
+          "time",
+          "tools"
+        ],
+        "finishLabel": "CLOSE THE CASE"
+      }
+    }
+  },
+  "hook": "The lamp is fixed. Story hour can start!",
+  "learningGoal": {
+    "title": "Reading records and numbers",
+    "titleKo": "기록과 숫자 읽기"
+  },
+  "play": {
+    "objectives": [
+      "Compare the two records.",
+      "Find the toolbox.",
+      "Show Mr. Bell the evidence."
+    ],
+    "intro": [
+      "The lamp man says he came at four.",
+      "But the records do not agree."
+    ],
+    "caseSummary": "Mr. Bell came at 3:00 PM, an hour early, and hid his tools from the rain.",
+    "place": "TOWN LIBRARY",
+    "keyWords": [
+      "record",
+      "locker",
+      "stone"
+    ],
+    "glossary": {
+      "locker": "사물함",
+      "scratches": "긁힌 자국"
+    }
+  },
+  "notes": [
+    "Puzzle Engine 2.0 STEP 1 trial case: each mission one engine the generator now makes (records, keypad, traces, magnifying glass, a talk with evidence).",
+    "Sandbox only: every picture and its measured areas are London Case 01's or Paris Case 03's."
+  ]
+}

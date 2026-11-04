@@ -5,6 +5,20 @@ import 'package:flutter/foundation.dart';
 import 'investigation.dart' show InvestigationSpot;
 import 'scene_explore.dart' show ScenePixels, hitArea;
 
+/// A trace the app draws on the picture over its area, when the picture
+/// itself does not show it (Seoul Pilot: a borrowed picture). None (the
+/// default): the picture shows the trace, as London's do.
+enum TraceSketch {
+  /// Drops of black ink in a short trail.
+  inkDrops,
+
+  /// One long brush hair, a fine curved stroke.
+  hair,
+
+  /// A torn corner of thick paper.
+  paperCorner,
+}
+
 /// A trace in a [DeductionScene]'s picture (footprints, a light, scratches):
 /// tapped, it is noted with its [line] — one line of the mission's letter,
 /// the detective's notes.
@@ -16,9 +30,13 @@ class DeductionClue {
     required this.areas,
     required this.mark,
     required this.line,
+    this.sketch,
   });
 
   final String id;
+
+  /// Drawn by the app over [areas] (the picture lacks it); null: in the picture.
+  final TraceSketch? sketch;
 
   /// What it is, for screen readers ("Muddy footprints on the wet stones").
   final String label;
@@ -34,7 +52,7 @@ class DeductionClue {
 
   /// The same trace with a level's note (its letter's line).
   DeductionClue copyWith({String? line}) =>
-      DeductionClue(id: id, label: label, areas: areas, mark: mark, line: line ?? this.line);
+      DeductionClue(id: id, label: label, areas: areas, mark: mark, line: line ?? this.line, sketch: sketch);
 }
 
 /// A place the box could be hidden, standing for the puzzle's option

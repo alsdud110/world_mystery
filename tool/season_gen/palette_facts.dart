@@ -377,6 +377,15 @@ abstract final class PaletteFacts {
       requiredData: ['Mission.options', 'Mission.answer', 'MakerMarksScene.pixels', 'MakerMarksScene.marks', 'NotebookMark.kind', 'NotebookMark.evidenceId', 'MakerMarksScene.paper', 'PaperMark.kind', 'PaperMark.markAt', 'MakerMarksScene.task'],
       requiredAssets: ['MakerMarksScene.file'],
     ),
+    PalettePuzzle(
+      'timeline_board',
+      PaletteGrade.ready,
+      PaletteMode.textOnly,
+      engines: [
+        PaletteEngine('TimelineBoard', 'timelines', {'sequence'}, {PlanSurface.mission}),
+      ],
+      requiredData: ['Mission.letter', 'Mission.question', 'Mission.options', 'Mission.answer', 'Mission.codeLength', 'Mission.orderFeedback', 'Mission.hints', 'TimelineSpec.cards', 'TimelineSpec.order', 'TimelineSpec.relations'],
+    ),
   ];
 
   /// The names a dial can show (`GameSymbol`).

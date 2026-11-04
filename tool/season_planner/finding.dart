@@ -9,7 +9,7 @@ enum Level { error, warning, info }
 /// Where a finding comes from: the season_gen checks run again, the
 /// planner's own checks, or a heuristic that only suggests a look (the
 /// English checks count words; they never judge a level by themselves).
-enum Source { plan, play, generator, season, bible, assets, puzzle, englishHeuristic, claudeReview }
+enum Source { plan, play, generator, season, bible, assets, puzzle, englishHeuristic, claudeReview, history }
 
 /// One thing the season planner found: its weight, its kind ([code]), where
 /// (a file and a JSON path, as `cases/s3_ep02 $.missions[1].play.hints`) and why.

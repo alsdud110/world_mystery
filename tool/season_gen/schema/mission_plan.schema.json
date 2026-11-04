@@ -46,9 +46,187 @@
         "explore": { "$ref": "#/$defs/explore" },
         "search": { "$ref": "#/$defs/search" },
         "dialogue": { "$ref": "#/$defs/dialogue" },
+        "timeline": { "$ref": "#/$defs/timeline" },
+        "traces": { "$ref": "#/$defs/traces" },
+        "inspect": { "$ref": "#/$defs/inspect" },
+        "records": { "$ref": "#/$defs/records" },
+        "interview": { "$ref": "#/$defs/interview" },
         "talk": { "$ref": "#/$defs/talk" },
         "discovery": { "$ref": "#/$defs/discovery" },
         "ending": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/endingLine" } }
+      }
+    },
+    "traces": {
+      "description": "A place read for its traces (DeductionScene, table deductions; trace_deduction): every trace noted (its line one line of the letter, word for word), then the one place they all point to chosen in the picture. Its places are the options.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["picture", "place", "task", "chooseTask", "missLine", "notPlaceLine", "guideAt", "clues", "places"],
+      "properties": {
+        "picture": { "$ref": "#/$defs/picture" },
+        "place": { "$ref": "common.schema.json#/$defs/text" },
+        "task": { "$ref": "common.schema.json#/$defs/text" },
+        "chooseTask": { "$ref": "common.schema.json#/$defs/text" },
+        "missLine": { "$ref": "common.schema.json#/$defs/text" },
+        "notPlaceLine": { "$ref": "common.schema.json#/$defs/text" },
+        "guideAt": { "$ref": "#/$defs/point" },
+        "inside": { "$ref": "#/$defs/rect" },
+        "opening": { "$ref": "#/$defs/rect" },
+        "clues": { "type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false, "required": ["id", "label", "areas", "mark", "line"],
+          "properties": { "id": { "$ref": "common.schema.json#/$defs/localId" }, "label": { "$ref": "common.schema.json#/$defs/text" }, "areas": { "$ref": "#/$defs/rects" }, "mark": { "$ref": "#/$defs/point" }, "line": { "$ref": "common.schema.json#/$defs/text" },
+            "sketch": { "description": "A trace the app draws over its areas, the picture lacking it (TraceSketch). None: the picture shows it.", "enum": ["inkDrops", "hair", "paperCorner"] } }
+        } },
+        "places": { "type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false, "required": ["optionId", "areas", "mark"],
+          "properties": { "optionId": { "type": "string", "minLength": 1 }, "areas": { "$ref": "#/$defs/rects" }, "mark": { "$ref": "#/$defs/point" } }
+        } },
+        "others": { "type": "array", "items": { "$ref": "#/$defs/emptySpot" } }
+      }
+    },
+    "inspect": {
+      "description": "Exhibits under a magnifying glass (InspectScene, table inspections; lens_inspect_word): the exhibit the letter describes leads to its label, where the word of the letter's line taskLine is typed. checks: the letter's lines (index, blank lines not counted) a spot confirms.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["picture", "place", "task", "nextTask", "dragGuide", "tapGuide", "missLine", "spots", "labelTitle", "labelRoom", "labelWorn", "taskLine", "lensAt"],
+      "properties": {
+        "picture": { "$ref": "#/$defs/picture" },
+        "place": { "$ref": "common.schema.json#/$defs/text" },
+        "task": { "$ref": "common.schema.json#/$defs/text" },
+        "nextTask": { "$ref": "common.schema.json#/$defs/text" },
+        "dragGuide": { "$ref": "common.schema.json#/$defs/text" },
+        "tapGuide": { "$ref": "common.schema.json#/$defs/text" },
+        "missLine": { "$ref": "common.schema.json#/$defs/text" },
+        "labelTitle": { "$ref": "common.schema.json#/$defs/text" },
+        "labelRoom": { "$ref": "common.schema.json#/$defs/text" },
+        "labelWorn": { "$ref": "common.schema.json#/$defs/text" },
+        "taskLine": { "type": "integer", "minimum": 0 },
+        "lensAt": { "$ref": "#/$defs/point" },
+        "inside": { "$ref": "#/$defs/rect" },
+        "spots": { "type": "array", "minItems": 2, "items": {
+          "type": "object", "additionalProperties": false, "required": ["id", "kind", "title", "label", "areas", "line"],
+          "properties": {
+            "id": { "$ref": "common.schema.json#/$defs/localId" },
+            "kind": { "type": "string", "enum": ["exhibit", "match", "label", "hidden"] },
+            "title": { "$ref": "common.schema.json#/$defs/text" }, "label": { "$ref": "common.schema.json#/$defs/text" }, "areas": { "$ref": "#/$defs/rects" }, "line": { "$ref": "common.schema.json#/$defs/text" },
+            "checks": { "type": "array", "uniqueItems": true, "items": { "type": "integer", "minimum": 0 } },
+            "requires": { "$ref": "common.schema.json#/$defs/localId" },
+            "lockedLine": { "$ref": "common.schema.json#/$defs/text" }
+          }
+        } }
+      }
+    },
+    "records": {
+      "description": "Two records of the same thing (RecordsScene, table records; record_mismatch): the pair of lines that disagree is picked, the answer <first line id>:<second line id>. Each record's words are written by the app on its blank paper (its corners measured).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["first", "second", "readTask", "compareTask", "checkLabel"],
+      "properties": {
+        "first": { "$ref": "#/$defs/recordDoc" },
+        "second": { "$ref": "#/$defs/recordDoc" },
+        "readTask": { "$ref": "common.schema.json#/$defs/text" },
+        "compareTask": { "$ref": "common.schema.json#/$defs/text" },
+        "checkLabel": { "$ref": "common.schema.json#/$defs/text" }
+      }
+    },
+    "recordDoc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "picture", "crop", "sheet", "title", "lines", "label"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/localId" },
+        "name": { "$ref": "common.schema.json#/$defs/text" },
+        "picture": { "$ref": "#/$defs/picture" },
+        "crop": { "$ref": "#/$defs/rect" },
+        "sheet": {
+          "type": "object", "additionalProperties": false,
+          "required": ["corners", "flat", "title", "rows", "rowHeight", "labelLeft", "labelRight", "valueLeft", "valueRight"],
+          "properties": {
+            "corners": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "$ref": "#/$defs/point" } },
+            "flat": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "number", "minimum": 1 } },
+            "title": { "$ref": "#/$defs/rect" },
+            "rows": { "type": "array", "minItems": 1, "items": { "type": "number", "minimum": 0 } },
+            "rowHeight": { "type": "number", "minimum": 1 },
+            "labelLeft": { "type": "number", "minimum": 0 }, "labelRight": { "type": "number", "minimum": 0 }, "valueLeft": { "type": "number", "minimum": 0 }, "valueRight": { "type": "number", "minimum": 0 },
+            "noteRow": { "type": "number", "minimum": 0 }, "noteLeft": { "type": "number", "minimum": 0 }, "reach": { "type": "number", "minimum": 0 },
+            "ink": { "type": "number", "minimum": 0.1, "maximum": 1 }
+          }
+        },
+        "title": { "$ref": "common.schema.json#/$defs/text" },
+        "lines": { "type": "array", "minItems": 2, "items": {
+          "type": "object", "additionalProperties": false, "required": ["id", "label", "value"],
+          "properties": { "id": { "$ref": "common.schema.json#/$defs/localId" }, "label": { "$ref": "common.schema.json#/$defs/text" }, "value": { "$ref": "common.schema.json#/$defs/text" } }
+        } },
+        "label": { "$ref": "common.schema.json#/$defs/text" },
+        "note": { "$ref": "common.schema.json#/$defs/text" }
+      }
+    },
+    "interview": {
+      "description": "A talk with one person of the case in which evidence is shown (TalkScene, table talks; evidence_talk): questions asked, the notebook evidence that answers each prompt shown (a miss is never wrong); finished once every step of finishWhen is done.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["speaker", "goal", "opening", "presents", "finishWhen"],
+      "properties": {
+        "speaker": { "$ref": "common.schema.json#/$defs/localId" },
+        "portrait": { "$ref": "common.schema.json#/$defs/assetFile" },
+        "goal": { "$ref": "common.schema.json#/$defs/text" },
+        "opening": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/talkLine" } },
+        "questions": { "type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["id", "text", "lines"],
+          "properties": {
+            "id": { "$ref": "common.schema.json#/$defs/localId" }, "text": { "$ref": "common.schema.json#/$defs/text" },
+            "lines": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/talkLine" } },
+            "requires": { "type": "array", "uniqueItems": true, "items": { "$ref": "common.schema.json#/$defs/localId" } }
+          }
+        } },
+        "presents": { "type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false, "required": ["id", "prompt", "accepted", "lines", "miss"],
+          "properties": {
+            "id": { "$ref": "common.schema.json#/$defs/localId" }, "prompt": { "$ref": "common.schema.json#/$defs/text" },
+            "accepted": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "common.schema.json#/$defs/evidenceId" } },
+            "lines": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/talkLine" } },
+            "miss": { "$ref": "common.schema.json#/$defs/text" },
+            "offered": { "type": "array", "uniqueItems": true, "items": { "$ref": "common.schema.json#/$defs/evidenceId" } },
+            "tell": { "$ref": "common.schema.json#/$defs/text" },
+            "requires": { "type": "array", "uniqueItems": true, "items": { "$ref": "common.schema.json#/$defs/localId" } }
+          }
+        } },
+        "finishWhen": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "common.schema.json#/$defs/localId" } },
+        "finishLabel": { "$ref": "common.schema.json#/$defs/text" }
+      }
+    },
+    "timeline": {
+      "description": "A timeline to put back together (TimelineSpec, table timelines; Puzzle Engine 2.0): its cards (fixed by their time, to place, or not part of it) and the words that order them. Its order is the puzzle's answer, its options the cards.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cards", "relations"],
+      "properties": {
+        "cards": { "type": "array", "minItems": 3, "maxItems": 11, "items": { "$ref": "#/$defs/timelineCard" } },
+        "relations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/timelineRelation" } }
+      }
+    },
+    "timelineCard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "text"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/localId" },
+        "title": { "$ref": "common.schema.json#/$defs/text" },
+        "text": { "$ref": "common.schema.json#/$defs/text" },
+        "anchor": { "$ref": "common.schema.json#/$defs/text" },
+        "discard": { "type": "boolean" },
+        "evidence": { "$ref": "common.schema.json#/$defs/evidenceId" },
+        "factIds": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^s[1-9][0-9]*_ep[0-9]{2}_h[1-9][0-9]*$" } },
+        "fiction": { "type": "boolean" }
+      }
+    },
+    "timelineRelation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["earlier", "later", "line"],
+      "properties": {
+        "earlier": { "$ref": "common.schema.json#/$defs/localId" },
+        "later": { "$ref": "common.schema.json#/$defs/localId" },
+        "line": { "$ref": "common.schema.json#/$defs/text" }
       }
     },
     "talk": {

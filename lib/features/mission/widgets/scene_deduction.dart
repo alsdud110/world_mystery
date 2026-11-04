@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -304,17 +306,33 @@ class _DeductionPicture extends StatelessWidget {
                         ),
                       ),
                     ),
+                  // A trace the picture lacks, drawn where it is.
                   for (final c in scene.clues)
-                    Positioned(
-                      left: c.mark.dx * size.width - markSize / 2,
-                      top: c.mark.dy * size.height - markSize / 2,
-                      child: AnimatedOpacity(
-                        duration: const Duration(milliseconds: 240),
-                        // Once choosing, the noted traces step back.
-                        opacity: choosing ? 0.55 : 1,
-                        child: LookMark(key: ValueKey('mark-${c.id}'), looked: progress.hasNoted(c.id)),
+                    if (c.sketch case final sketch?)
+                      Positioned.fromRect(
+                        key: ValueKey('sketch-${c.id}'),
+                        rect: place(c.areas.first),
+                        child: IgnorePointer(
+                          child: AnimatedOpacity(
+                            duration: const Duration(milliseconds: 240),
+                            opacity: choosing ? 0.7 : 1,
+                            child: CustomPaint(painter: _TraceSketchPainter(sketch)),
+                          ),
+                        ),
                       ),
-                    ),
+                  // A drawn trace is its own sign: its glass comes once noted (a tick).
+                  for (final c in scene.clues)
+                    if (c.sketch == null || progress.hasNoted(c.id))
+                      Positioned(
+                        left: c.mark.dx * size.width - markSize / 2,
+                        top: c.mark.dy * size.height - markSize / 2,
+                        child: AnimatedOpacity(
+                          duration: const Duration(milliseconds: 240),
+                          // Once choosing, the noted traces step back.
+                          opacity: choosing ? 0.55 : 1,
+                          child: LookMark(key: ValueKey('mark-${c.id}'), looked: progress.hasNoted(c.id)),
+                        ),
+                      ),
                   if (choosing)
                     for (final p in scene.places)
                       Positioned(
@@ -376,6 +394,76 @@ class _DeductionPicture extends StatelessWidget {
       },
     );
   }
+}
+
+/// A trace drawn in ink on the picture over its area (its [TraceSketch]),
+/// ringed in a faint paper glow so it reads on dark wood or cloth.
+class _TraceSketchPainter extends CustomPainter {
+  const _TraceSketchPainter(this.sketch);
+
+  final TraceSketch sketch;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final glow = Paint()
+      ..color = AppColors.paper.withValues(alpha: 0.75)
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2);
+    final ink = Paint()..color = AppColors.ink;
+    final (w, h) = (size.width, size.height);
+    final unit = math.min(w, h);
+    switch (sketch) {
+      case TraceSketch.inkDrops:
+        // A short trail, small to large, toward the right.
+        for (final (x, y, r) in const [
+          (0.12, 0.30, 0.10),
+          (0.33, 0.48, 0.13),
+          (0.55, 0.40, 0.16),
+          (0.80, 0.58, 0.20),
+        ]) {
+          final at = Offset(x * w, y * h);
+          canvas.drawCircle(at, r * unit + 2, glow);
+          canvas.drawCircle(at, r * unit, ink);
+        }
+      case TraceSketch.hair:
+        final path = Path()
+          ..moveTo(0.08 * w, 0.62 * h)
+          ..cubicTo(0.35 * w, 0.20 * h, 0.62 * w, 0.85 * h, 0.94 * w, 0.40 * h);
+        canvas.drawPath(
+          path,
+          glow
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = math.max(6, unit * 0.3),
+        );
+        canvas.drawPath(
+          path,
+          ink
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = math.max(2.5, unit * 0.12)
+            ..strokeCap = StrokeCap.round,
+        );
+      case TraceSketch.paperCorner:
+        // A torn triangle of thick paper, its torn edge jagged.
+        final path = Path()
+          ..moveTo(0.20 * w, 0.15 * h)
+          ..lineTo(0.88 * w, 0.30 * h)
+          ..lineTo(0.70 * w, 0.48 * h)
+          ..lineTo(0.78 * w, 0.62 * h)
+          ..lineTo(0.55 * w, 0.72 * h)
+          ..lineTo(0.60 * w, 0.88 * h)
+          ..close();
+        canvas.drawPath(path, glow);
+        canvas.drawPath(path, Paint()..color = AppColors.paper);
+        canvas.drawPath(
+          path,
+          ink
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = math.max(1, unit * 0.03),
+        );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_TraceSketchPainter old) => old.sketch != sketch;
 }
 
 class _InsideClip extends CustomClipper<Rect> {

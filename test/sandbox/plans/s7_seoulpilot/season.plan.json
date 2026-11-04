@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "s7_seoulpilot",
+  "number": 7,
+  "city": "Seoul",
+  "title": "Seoul Pilot",
+  "tagline": "PILOT CASE",
+  "plannedCases": 12,
+  "mainMystery": {
+    "truth": "Pilot of the Seoul historical season: only Case 01 (The Missing Royal Letter, 1446) is written; it has no season mystery.",
+    "culprit": "Copyist Bae swapped the royal letter for a false page.",
+    "motive": "Bae feared that if everyone could write, nobody would pay him to write for them.",
+    "revealCase": "s7_ep01"
+  },
+  "characters": [
+    {
+      "charId": "mun_su",
+      "name": "Mun-su",
+      "role": "A young clerk of the Royal Secretariat",
+      "firstCase": "s7_ep01"
+    },
+    {
+      "charId": "taek",
+      "name": "Taek",
+      "role": "The night guard at the gate",
+      "firstCase": "s7_ep01"
+    },
+    {
+      "charId": "sora",
+      "name": "Sora",
+      "role": "A palace maid",
+      "firstCase": "s7_ep01"
+    },
+    {
+      "charId": "bae",
+      "name": "Bae",
+      "role": "A copyist of the palace",
+      "firstCase": "s7_ep01",
+      "revealCase": "s7_ep01"
+    }
+  ],
+  "locations": [
+    {
+      "locId": "secretariat",
+      "name": "The Royal Secretariat",
+      "landmarkKey": "royalSecretariat"
+    },
+    {
+      "locId": "copy_room",
+      "name": "The Copy Room",
+      "landmarkKey": "copyRoom"
+    },
+    {
+      "locId": "palace_yard",
+      "name": "The Palace Yard",
+      "landmarkKey": "palaceYard"
+    }
+  ],
+  "acts": [
+    {
+      "actId": "act1",
+      "theme": "PILOT",
+      "caseIds": [
+        "s7_ep01",
+        "s7_ep02",
+        "s7_ep03",
+        "s7_ep04"
+      ]
+    },
+    {
+      "actId": "act2",
+      "theme": "PILOT",
+      "caseIds": [
+        "s7_ep05",
+        "s7_ep06",
+        "s7_ep07",
+        "s7_ep08"
+      ]
+    },
+    {
+      "actId": "act3",
+      "theme": "PILOT",
+      "caseIds": [
+        "s7_ep09",
+        "s7_ep10",
+        "s7_ep11",
+        "s7_ep12"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "placeId": "s7_seoulpilot.secretariat",
+      "file": "assets/seasons/season_02_paris/cases/case_11/annex_reading_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "placeId": "s7_seoulpilot.copy_room",
+      "file": "assets/seasons/season_02_paris/cases/case_05/workshop_interior.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "placeId": "s7_seoulpilot.palace_yard",
+      "file": "assets/seasons/season_01_london/cases/case_01/kings_cross_platform_night.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      }
+    }
+  ],
+  "notes": [
+    "Test-only pilot (Seoul Pilot Case 01, 2026-11-04). Never in the game, never the Seoul season (s5_seoul).",
+    "TEMPORARY PICTURES (test only, never the Seoul season's): every place and puzzle picture is a London or Paris picture borrowed for the checks. The copy room is Paris Case 05's workshop, its places named as they are drawn; the Royal Secretariat and the palace yard are stand-ins that show neither."
+  ]
+}

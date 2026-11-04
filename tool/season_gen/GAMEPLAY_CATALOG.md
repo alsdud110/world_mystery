@@ -72,24 +72,40 @@ Story Intro(타자기) → Map(핀) → 장소 도착 Story(INVESTIGATE)
 | `witness_compare` | 증인 선택 → 질문 → 진술이 노트에 기록 → 두 진술 비교(모순/일치 판정) → 남은 진술 확인 | L 06-M1 | `DialogueInvestigation` (`dialogue_investigation.dart`), 모델 `DialogueScene` | `play.dialogue`: background, questions, witnesses(초상화, greeting, answers{질문: line, thing?}), deduction(topic, pair, then, 대사 10+4줄) | 배경 1 + 증인 초상화 N | 비교한 두 진술이 pair면 deduction.answer 제출 | ✅ | ✅ | `s9_ep03_test` M3 |
 | `picture_choice` | (위 3.1) | | | `answerSpec.options[].picture`, `altText`, `play.hideOptionNames` | | | ✅ | ✅ | `s9_ep03_test` M4 (힌트, 오답, 재시도) |
 
+### 3.2b Puzzle Engine 2.0 — 생성 지원 (2026-11-04, PART 3A–3C)
+
+| Type ID | 설명 | Flutter 구현 | 입력 데이터(Plan `play.*`) | 이미지 | 정답 판정 | Gen | Plan | 테스트 |
+|---|---|---|---|---|---|---|---|---|
+| `timeline_board` | 사건 카드를 시간 순서로 재구성. 시간이 적힌 고정 카드, 무관 카드 제외, 탭만으로 조작 | `TimelineBoard` (`timeline_board.dart`), 규칙 `TimelineRules` (`lib/puzzles_v2/core`, 순수 Dart — 생성 도구도 같은 규칙) | `play.timeline`: cards(anchor, discard, factIds/fiction), relations(earlier, later, line). 배치 2–6, 고정 1–3, 제외 ≤2 | 장소만 | 카드 id 순서(`sequence`) | ✅ | ✅ | `test/sandbox/timeline_season_test.dart`, `test/season_gen/timeline_generation_test.dart` |
+
+### 3.2c 기존 엔진 생성 지원 (2026-11-04, Puzzle Engine 2.0 STEP 1)
+
+| Type ID | 설명 | Flutter 구현 | 입력 데이터(Plan `play.*`) | 이미지 | 정답 판정 | Gen | Plan | 테스트 |
+|---|---|---|---|---|---|---|---|---|
+| `number_entry` | 글로 읽은 숫자를 키패드로 입력 | `NumberCodeQuestion` | 없음(`answerSpec.answer` 숫자, `codeLength`, `codeFormat`) | 장소만 | 문자열(`numberCode`) | ✅ | ✅ | `test/sandbox/engines_season_test.dart`, `test/season_gen/engines_generation_test.dart` |
+| `trace_deduction` | 흔적을 모두 탭해 메모 → 모두 가리키는 곳 선택 | `SceneDeduction`, 모델 `DeductionScene` | `play.traces`: picture, clues(line = 편지 한 줄), places(옵션당 1), others, guideAt | 장소 그림 1(측정) | option id | ✅ | ✅ | 같음 |
+| `lens_inspect_word` | 돋보기로 전시물 확인 → 일치 전시물의 라벨에 빠진 단어 입력 | `LensInspect`, 모델 `InspectScene` | `play.inspect`: picture, spots(match 1·label 1·exhibit·hidden, checks), taskLine, lensAt | 장소 그림 1(측정) | 단어(`wordInput`) | ✅ | ✅ | 같음 |
+| `record_mismatch` | 두 기록을 읽고 다른 줄 한 쌍 선택 | `TowerRecords`, 모델 `RecordsScene` | `play.records`: first/second(빈 종이 그림, crop, sheet 네 모서리·레이아웃, lines) | 빈 기록 그림 2(측정) | `<id>:<id>`(`matchPairs`) | ✅ | ✅ | 같음 |
+| `evidence_talk` | 한 인물과 대화, 질문 후 요구된 증거 제시(오답 없음) | `CaseTalk`, 모델 `TalkScene` | `play.interview`: speaker, opening, questions, presents(accepted·offered·tell), finishWhen | 배경(장소) + 초상화(선택) | 대화 완료 시 answer(`examine`) | ✅ | ✅ | 같음 |
+
+`spot_difference`는 생성 지원하지 않는다: 같은 구도·크기로 정합된 그림 두 장과 차이 위치를 생성 도구가 보장할 수 없고(이미지 생성 결과의 픽셀 정합 불가), 영어가 정답에 거의 쓰이지 않는다.
+
 ### 3.3 그림 위 상호작용 — 엔진은 재사용 가능, 생성은 아직
+
+(`lens_inspect_word`, `trace_deduction`, `record_mismatch`, `evidence_talk`은 STEP 1에서 생성 지원으로 옮김: 위 3.2c.)
 
 모두 `PuzzleGenerationMode.requiresAssets`(그림 파일 기반)라 Plan 스키마만 추가하면 같은 방식으로 생성할 수 있다. 이번 단계 범위 밖.
 
 | Type ID | 설명 | 사용 Case | Flutter 구현 | 핵심 데이터 | 이미지 | 정답 판정 | Gen | Plan |
 |---|---|---|---|---|---|---|---|---|
-| `lens_inspect_word` | 돋보기를 끌어 전시물 확인 → 맞는 전시물 라벨의 빈칸 입력 | L 01-M2 | `LensInspect`, `InspectScene` | spots(exhibit/match/label/hidden, checks) | 방 1 | 입력 단어 | ❌ | 기획만(`awaitingAssets`) |
-| `trace_deduction` | 흔적을 모두 눌러 기록 → 흔적이 가리키는 장소를 그림에서 선택 | L 01-M3 | `SceneDeduction`, `DeductionScene` | clues(line = 편지 한 줄), places(optionId) | 장소 1 | 장소 option id | ❌ | 기획만 |
 | `object_decode` | 물건을 가까이 → 스캔 → 숨은 메시지 → 획득 | L 01-M5 | `SceneDecode`, `DecodeScene` | thing, code, cleared | 2(원본, 코드 지운 것) | 오답 없음 | ❌ | 기획만 |
 | `spot_difference` | 두 그림의 다른 곳 모두 찾기 | P 02-M1 | `SpotDifferences`, `CompareScene` | changes(rect) | 2(같은 구도) | 모두 찾으면 | ❌ | 기획만 |
 | `room_find_match` | 방에서 그림 찾기 → 메모와 짝짓기 | P 02-M2 | `StudioMatch` | paintings, order | 방 + 그림 N | 짝 | ❌ | 기획만 |
 | `layer_reveal` | 위 그림을 밀어 아래 스케치 표시 → 표시 찾기 | P 02-M3 | `RevealLayer` | marks | 2(정합) | 표시 | ❌ | 기획만 |
 | `clue_filter_choice` | 후보를 모두 보고 모든 단서에 맞는 것 선택(Final) | P 02-F | `CanvasPicker` | canvases, back, message | 후보 N + 뒷면 | option id | ❌ | 기획만 |
-| `record_mismatch` | 두 기록을 읽고 어긋난 줄 짝 | P 03-M1 | `TowerRecords` | 두 문서 lines | 빈 종이 | 줄 짝 | ❌ | 기획만 |
 | `symbol_dial_lock` | 그림 기호 다이얼 자물쇠 | P 03-M3 | `DialLock` | symbols, windows, angle | 자물쇠·다이얼 | 기호 순서 | ❌ | 기획만 |
 | `viewpoint_match` | 지도 위 지점마다 보이는 풍경 → 이전 증거 그림과 비교 | P 08-M1 | `PainterCornerPuzzle` | corners, recall | 지도 + 풍경 N | option id | ❌ | 기획만 |
 | `guided_steps` | 한 화면 한 단계(보기·누르기·문지르기·둘 중 하나) | P 04-F, 05-M3·F, 07-M1·M2·F, 11-M1~M3, 12-M1~F (13) | `EasyStepsPuzzle` | steps(say, panels, does, options) | 단계별 그림 | 단계 answer | ❌ | 기획만 |
-| `evidence_talk` | 한 인물과 대화, 질문 후 프롬프트마다 수첩 증거 제시 | P 11-F (+`talkMissions` 동반: P 11-M1·M2, 12-M1~M3) | `CaseTalk` | speaker(portraits 기분별), questions, presents | 초상화 N + 배경 | 증거 id | ❌ | 기획만 |
 | `scene_compare_report` | 역 시계들 확대 → 안내판 → 틀린 시계 신고 | P 01-M1 | `StationClocks` | 시계 시각·위치 | 역 홀 1 | option id | ❌ | 기획만(조건부: 역 전용 문구) |
 
 ### 3.4 코드 변경이 필요한 방식 (`requiresDevelopment`)
@@ -175,8 +191,8 @@ Story Intro(타자기) → Map(핀) → 장소 도착 Story(INVESTIGATE)
 
 지원하지 않는 것을 지원한다고 표시하지 않는다.
 
-1. **기본 질문 1종:** `number_entry`(키패드). 팔레트상 textOnly라 생성기 목록에 넣기만 하면 되지만 Sandbox 플레이 검증이 없어 이번에 넣지 않았다.
-2. **그림 엔진 13종(3.3):** `lens_inspect_word`, `trace_deduction`, `object_decode`, `spot_difference`, `room_find_match`, `layer_reveal`, `clue_filter_choice`, `record_mismatch`, `symbol_dial_lock`, `viewpoint_match`, `guided_steps`, `evidence_talk`, `scene_compare_report`. 엔진은 파일 기반이라 같은 방식(Plan 장면 객체 + PlayCheck + 생성기)으로 추가할 수 있다. 우선순위 제안: `trace_deduction`·`lens_inspect_word`(탐색과 구조가 거의 같음) → `evidence_talk`(인물 대화) → `guided_steps`.
+1. ~~**기본 질문 1종:** `number_entry`(키패드).~~ STEP 1(2026-11-04)에서 생성 지원과 Sandbox 플레이 검증을 마쳤다(3.2c).
+2. **그림 엔진(3.3)** — 이 중 `lens_inspect_word`, `trace_deduction`, `record_mismatch`, `evidence_talk`은 STEP 1에서 지원(3.2c). 당시 13종: `lens_inspect_word`, `trace_deduction`, `object_decode`, `spot_difference`, `room_find_match`, `layer_reveal`, `clue_filter_choice`, `record_mismatch`, `symbol_dial_lock`, `viewpoint_match`, `guided_steps`, `evidence_talk`, `scene_compare_report`. 엔진은 파일 기반이라 같은 방식(Plan 장면 객체 + PlayCheck + 생성기)으로 추가할 수 있다. 우선순위 제안: `trace_deduction`·`lens_inspect_word`(탐색과 구조가 거의 같음) → `evidence_talk`(인물 대화) → `guided_steps`.
 3. **코드 변경 필요 5종(3.4)** 과 **Paris 전용 23종(3.5)**.
 4. **동반 연출:** `exhibits`, `lockBoxes`, `storyScenes`, 난이도 변형. (`talkMissions`·`endings`·`discoveries`는 STEP 3-13B에서 지원: README "The story around the puzzles")
 5. **현장 탐색의 `note` 단서:** 화면에 메모로만 보이고 수첩 Clue로 저장되지는 않는다(London과 같음). 저장되는 단서는 미션의 `clue`다.

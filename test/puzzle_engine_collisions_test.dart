@@ -43,23 +43,27 @@ void main() {
       expect(
         missionPage,
         contains(
-          // The question's own clock, then its own trail (2026-10-30), in
-          // place of its keypad or buttons.
+          // The question's own clock, then its own trail (2026-10-30), then
+          // a timeline (Puzzle Engine 2.0, PART 3B), in place of its keypad
+          // or buttons.
           'child: clock != null\n'
           '                  ? _clockFor(m, clock)\n'
           '                  : trail != null\n'
           '                  ? _trailFor(m, trail)\n'
+          '                  : timeline != null\n'
+          '                  ? _timelineFor(m, timeline, progress)\n'
           '                  : _questionFor(m),',
         ),
       );
       expect(vars['clock'], 'clocks');
       expect(vars['trail'], 'trails');
+      expect(vars['timeline'], 'timelines');
       expect(
         [
           for (final s in PuzzleEngineDispatch.mission)
             s.kind == EngineStepKind.talkBefore ? '<talkBefore>' : s.table,
         ],
-        [...order, 'clocks', 'trails'],
+        [...order, 'clocks', 'trails', 'timelines'],
       );
     });
 

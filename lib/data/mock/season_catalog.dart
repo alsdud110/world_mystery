@@ -7,6 +7,8 @@ import '../models/dialogue.dart';
 import '../models/difficulty.dart';
 import '../models/discovery.dart';
 import '../models/easy_steps.dart';
+import '../models/history_reveal.dart';
+import '../../puzzles_v2/core/timeline_rules.dart';
 import '../models/episode.dart';
 import '../models/garden_puzzles.dart';
 import '../models/star_puzzles.dart';
@@ -89,6 +91,7 @@ class SeasonContent {
     this.endings = const {},
     this.clocks = const {},
     this.trails = const {},
+    this.timelines = const {},
     this.finalClocks = const {},
     this.stationClocks = const {},
     this.compares = const {},
@@ -138,6 +141,7 @@ class SeasonContent {
     this.discoveries = const {},
     this.storyEvidence = const {},
     this.learning = const {},
+    this.historyReveals = const {},
     this.languageTopics = const {},
     this.casePatches = const {},
     this.variants = const {},
@@ -215,6 +219,12 @@ class SeasonContent {
   /// Sequence puzzles played on their place: traces tapped in order (London
   /// Case 03 M3's footprints).
   final Map<String, TrailScene> trails;
+
+  /// Missions played as a timeline to put back together (Puzzle Engine 2.0,
+  /// `timeline_board`): their cards, by mission id. The mission is a
+  /// `sequence` whose answer is the cards' order; its page is
+  /// `TimelineBoard`, its rules `TimelineRules`. No season of the game has one yet.
+  final Map<String, TimelineSpec> timelines;
 
   /// Finals whose number lock is set on a clock's own hands (London Case 02's
   /// Great Clock): kept apart from [clocks], the missions' table the puzzle
@@ -332,6 +342,10 @@ class SeasonContent {
 
   final Map<String, LearningObjective> learning;
 
+  /// A historical season's REAL HISTORY / IN THIS MYSTERY, by case id (see
+  /// [HistoryReveal]); none in any other season. Shown on the Case Closed file.
+  final Map<String, HistoryReveal> historyReveals;
+
   /// By case id.
   final Map<String, CaseLanguageTopic> languageTopics;
 
@@ -387,6 +401,7 @@ class SeasonContent {
     'endings': endings,
     'clocks': clocks,
     'trails': trails,
+    'timelines': timelines,
     'finalClocks': finalClocks,
     'stationClocks': stationClocks,
     'compares': compares,
@@ -608,6 +623,10 @@ abstract final class SeasonCatalog {
   static int indexOf(String seasonId) =>
       all.indexWhere((s) => s.id == seasonId);
 
+  /// The REAL HISTORY / IN THIS MYSTERY of case [episodeId], when its season
+  /// is historical (see [SeasonContent.historyReveals]); else null.
+  static HistoryReveal? historyReveal(String episodeId) => ofEpisode(episodeId)?.historyReveals[episodeId];
+
   /// The season whose cases include [episodeId] (in the game or awaiting
   /// their pictures), or null.
   static SeasonContent? ofEpisode(String episodeId) {
@@ -726,6 +745,8 @@ abstract final class SeasonCatalog {
   static ClockPuzzle? clock(Mission m) => _pick(m, (s) => s.clocks);
 
   static TrailScene? trail(Mission m) => _pick(m, (s) => s.trails);
+
+  static TimelineSpec? timeline(Mission m) => _pick(m, (s) => s.timelines);
 
   static ClockPuzzle? finalClock(Mission m) => _pick(m, (s) => s.finalClocks);
 

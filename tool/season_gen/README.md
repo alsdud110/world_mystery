@@ -23,6 +23,7 @@ Flutter, so it runs with plain `dart run`.
 | `sha256.dart` | `Sha256`: SHA-256 in plain Dart (no package beyond the game's) |
 | `change_impact.dart` | `ChangeImpact`: what a change of an approved plan or picture touches |
 | `approve.dart` | Command line: `status`, `approve`, `impact` |
+| `history_dossier.dart` | Historical Fiction Mystery: `SeasonMode` (`planning/brief.json` `mode`), `HistoryDossier` (`planning/history_dossier.json`: facts, sources, puzzles' grounds, reveals), `HistoryGate` (before any paid step). No person approves facts, reveals or puzzles: the gate is the dossier's automatic checks (sources, schema, facts linked to puzzles, one answer, every level). It holds for `--target sandbox` too: a historical season is written only once they pass; `--check` (and `plan_season check`) still makes it in memory, marked unwritable (`docs/SEOUL_PILOT_CASE01_READY_REPORT.md`) |
 
 ```sh
 dart run tool/season_gen/validate_plan.dart \
