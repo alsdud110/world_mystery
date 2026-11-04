@@ -295,7 +295,10 @@ class _DeductionPicture extends StatelessWidget {
                   if (choosing && chosen != null)
                     Positioned.fromRect(
                       key: const ValueKey('deduction-chosen'),
-                      rect: place(chosen.areas.first).inflate(4),
+                      // Never smaller than the place's mark in it.
+                      rect: place(chosen.areas.first)
+                          .expandToInclude(Rect.fromCenter(center: Offset(chosen.mark.dx * size.width, chosen.mark.dy * size.height), width: placeSize, height: placeSize))
+                          .inflate(4),
                       child: IgnorePointer(
                         child: DecoratedBox(
                           decoration: BoxDecoration(
@@ -459,6 +462,49 @@ class _TraceSketchPainter extends CustomPainter {
             ..style = PaintingStyle.stroke
             ..strokeWidth = math.max(1, unit * 0.03),
         );
+      case TraceSketch.waterRing:
+        final ring = Rect.fromCenter(center: Offset(w / 2, h / 2), width: w * 0.86, height: h * 0.62);
+        canvas.drawOval(ring, Paint()..color = AppColors.navy.withValues(alpha: 0.18));
+        canvas.drawOval(
+          ring,
+          Paint()
+            ..color = AppColors.navy.withValues(alpha: 0.55)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = math.max(3, unit * 0.1),
+        );
+      case TraceSketch.waterDrops:
+        final wet = Paint()..color = AppColors.navy.withValues(alpha: 0.5);
+        for (final (x, y, r) in const [
+          (0.10, 0.62, 0.10),
+          (0.30, 0.45, 0.12),
+          (0.52, 0.58, 0.11),
+          (0.72, 0.40, 0.13),
+          (0.90, 0.52, 0.10),
+        ]) {
+          final at = Offset(x * w, y * h);
+          canvas.drawOval(Rect.fromCenter(center: at, width: r * unit * 2.6 + 2, height: r * unit * 1.8 + 2), glow);
+          canvas.drawOval(Rect.fromCenter(center: at, width: r * unit * 2.6, height: r * unit * 1.8), wet);
+        }
+      case TraceSketch.copiedScrap:
+        canvas.save();
+        canvas.translate(w / 2, h / 2);
+        canvas.rotate(-0.08);
+        final paper = Rect.fromCenter(center: Offset.zero, width: w * 0.9, height: h * 0.8);
+        canvas.drawRect(paper.inflate(2), glow);
+        canvas.drawRect(paper, Paint()..color = AppColors.paperLight);
+        // 門 three times, each a little less sure than the last.
+        for (final (i, tilt) in const [-0.05, 0.09, -0.14].indexed) {
+          final text = TextPainter(
+            text: TextSpan(text: '門', style: TextStyle(color: AppColors.ink, fontSize: math.min(paper.width / 3.6, paper.height * 0.7))),
+            textDirection: TextDirection.ltr,
+          )..layout();
+          canvas.save();
+          canvas.translate(paper.left + paper.width * (i * 2 + 1) / 6, 0);
+          canvas.rotate(tilt);
+          text.paint(canvas, Offset(-text.width / 2, -text.height / 2));
+          canvas.restore();
+        }
+        canvas.restore();
     }
   }
 

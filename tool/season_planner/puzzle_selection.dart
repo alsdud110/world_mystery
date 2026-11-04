@@ -122,7 +122,7 @@ abstract final class PuzzleSelector {
   /// Puzzles played with the hands (CLAUDE.md §20: one a case at least).
   static const handsOn = {
     'timeline_board', 'order_sequence', 'record_mismatch', 'trace_deduction', 'dark_room_search', 'scene_explore_choose', //
-    'lens_inspect_word', 'letter_tile_lock', 'combo_dial_lock', 'number_entry',
+    'lens_inspect_word', 'letter_tile_lock', 'combo_dial_lock', 'number_entry', 'syllable_compose',
   };
 
   static const plainChoice = 'text_choice';
@@ -270,6 +270,7 @@ abstract final class PuzzleSelector {
     'evidence_talk' => 'whether the evidence asked for is the only piece that answers each prompt',
     'number_entry' => 'whether the number is read in the words, never known beforehand',
     'witness_compare' => 'whether only the two statements agree on the thing',
+    'syllable_compose' => 'whether each group\'s words build one vowel only, and the note reads as words',
     _ => 'whether the words lead to the answer, and only to it',
   };
 }

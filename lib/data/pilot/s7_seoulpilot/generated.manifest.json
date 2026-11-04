@@ -1,0 +1,24 @@
+{
+  "generator": "generate_case.dart",
+  "generatorVersion": 5,
+  "target": "sandbox",
+  "seasonId": "s7_seoulpilot",
+  "cases": [
+    "s7_ep01"
+  ],
+  "approved": false,
+  "inputs": {
+    "season.plan.json": "sha256:b06d6a0fef0dcddbc68a33d51fd76e1cbb77456432661e348d7013dec4f65ece",
+    "planning/history_dossier.json": "sha256:42790faef172649d5bd95a5ec8f79bd71c2c3ffaf8c9d14e9ef962d9673e69f6",
+    "cases/s7_ep01/case.plan.json": "sha256:3cfa6d8a78711a6ca295c3f7da73b83d1f2975d1ae88629ea43f669d4487ece4",
+    "cases/s7_ep01/levels.json": "sha256:92dff87ac04cadb02ee52cab79cfa43d092f4e582d345a124ed4ba02afbfe599"
+  },
+  "outputs": {
+    "s7_seoulpilot_season.g.dart": "sha256:732c6cb89cc7b7ed1b897bf561953af7a4cad317eb05dc4ac8b60433652830c2",
+    "s7_ep01.g.dart": "sha256:de12d404b88483abd8023065f5158c1b25ed2162f6baa45586789ed18da32b28",
+    "s7_seoulpilot_cases.g.dart": "sha256:d46cf66de7c56628412a91d7403a62a7695b215643a2ecc735925449a3fdcc97",
+    "s7_ep01_levels.g.dart": "sha256:0fd21f38762369259199c5cd96d5672f3359ade4ea3f5650ac33cbcd88ec0bb5",
+    "s7_seoulpilot_levels.g.dart": "sha256:59f953ac5f3bcf6f3d5e5c58eb9c22ec3f718ddd4b6b540b29d94c9703ccfbed",
+    "s7_seoulpilot_history.g.dart": "sha256:66f8125da92d9903e2496ff000281dd8dc5d45cff807ac908d9dc218c1e94dbb"
+  }
+}

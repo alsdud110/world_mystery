@@ -2192,6 +2192,60 @@ class TimelinePlan {
   };
 }
 
+/// One written group of a note in the new letters (`SyllableBlock`): its
+/// first sound, the vowel to build, the sound under it, and the words that
+/// tell how its vowel looked ([line], read in the mission).
+class SyllableBlockPlan {
+  const SyllableBlockPlan({required this.id, required this.initial, required this.vowel, this.finalConsonant, required this.line});
+
+  final String id;
+  final String initial;
+  final String vowel;
+  final String? finalConsonant;
+  final String line;
+
+  factory SyllableBlockPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = SyllableBlockPlan(
+      id: r.str('id', pattern: PlanIds.local),
+      initial: r.str('initial'),
+      vowel: r.str('vowel'),
+      finalConsonant: r.optStr('final'),
+      line: r.str('line'),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() {
+    final json = <String, Object?>{'id': id, 'initial': initial, 'vowel': vowel};
+    _putText(json, 'final', finalConsonant);
+    json['line'] = line;
+    return json;
+  }
+}
+
+/// A note in the new letters to put back together (`SyllableSpec`, table
+/// `syllables`; Puzzle Engine 2.0): its groups in the note's order. The
+/// note they write is the puzzle's answer (a `wordInput`'s). In a
+/// historical season its sources are the puzzle's, in the dossier.
+class SyllablesPlan {
+  const SyllablesPlan({required this.blocks});
+
+  final List<SyllableBlockPlan> blocks;
+
+  factory SyllablesPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = SyllablesPlan(blocks: r.objs('blocks', SyllableBlockPlan.fromJson, min: 2, max: 6));
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {
+    'blocks': [for (final b in blocks) b.toJson()],
+  };
+}
+
 // ── Existing engines made by the generator (Puzzle Engine 2.0 STEP 1) ────
 
 /// A trace in a [TracesPlan]'s picture (`DeductionClue`): its [line] is one
@@ -2200,7 +2254,7 @@ class TraceCluePlan {
   const TraceCluePlan({required this.id, required this.label, required this.areas, required this.mark, required this.line, this.sketch});
 
   /// `TraceSketch` names: a trace the app draws, the picture lacking it.
-  static const sketches = ['inkDrops', 'hair', 'paperCorner'];
+  static const sketches = ['inkDrops', 'hair', 'paperCorner', 'waterRing', 'waterDrops', 'copiedScrap'];
 
   final String id;
   final String label;
@@ -2796,6 +2850,7 @@ class MissionPlayPlan {
     this.search,
     this.dialogue,
     this.timeline,
+    this.syllables,
     this.traces,
     this.inspect,
     this.records,
@@ -2850,6 +2905,9 @@ class MissionPlayPlan {
   /// A timeline to put back together (Puzzle Engine 2.0, table `timelines`).
   final TimelinePlan? timeline;
 
+  /// A note in the new letters to put back together (table `syllables`).
+  final SyllablesPlan? syllables;
+
   /// Existing engines the generator makes (Puzzle Engine 2.0 STEP 1): a
   /// place read for its traces (`deductions`), exhibits under the glass
   /// (`inspections`), two records compared (`records`), a talk in which
@@ -2873,6 +2931,7 @@ class MissionPlayPlan {
     'investigations': ?search,
     'dialogues': ?dialogue,
     'timelines': ?timeline,
+    'syllables': ?syllables,
     'deductions': ?traces,
     'inspections': ?inspect,
     'records': ?records,
@@ -2906,6 +2965,7 @@ class MissionPlayPlan {
       search: r.optObj('search', SearchPlan.fromJson),
       dialogue: r.optObj('dialogue', DialoguePlan.fromJson),
       timeline: r.optObj('timeline', TimelinePlan.fromJson),
+      syllables: r.optObj('syllables', SyllablesPlan.fromJson),
       traces: r.optObj('traces', TracesPlan.fromJson),
       inspect: r.optObj('inspect', InspectPlan.fromJson),
       records: r.optObj('records', RecordsPlan.fromJson),
@@ -2944,6 +3004,7 @@ class MissionPlayPlan {
     if (search case final s?) json['search'] = s.toJson();
     if (dialogue case final s?) json['dialogue'] = s.toJson();
     if (timeline case final s?) json['timeline'] = s.toJson();
+    if (syllables case final s?) json['syllables'] = s.toJson();
     if (traces case final s?) json['traces'] = s.toJson();
     if (inspect case final s?) json['inspect'] = s.toJson();
     if (records case final s?) json['records'] = s.toJson();

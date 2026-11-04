@@ -82,7 +82,7 @@
         },
         {
           "factId": "s7_ep01_h3",
-          "statement": "The book's explanation of the letters (Jejahae) says the five basic consonant letters copy the shape of the speech organs: the tongue, the mouth, the teeth and the throat.",
+          "statement": "The book's explanation of the letters (Jejahae) says the five basic consonant letters copy the speech organs: ㄱ the root of the tongue closing the throat, ㄴ the tongue touching the upper gums, ㅁ the mouth, ㅅ the teeth and ㅇ the throat.",
           "status": "source_checked",
           "sources": [
             {
@@ -90,7 +90,7 @@
               "publisher": "국사편찬위원회 (National Institute of Korean History)",
               "title": "우리역사넷 사료로 본 한국사: 한글의 구성 원리 (제자해)",
               "url": "https://contents.history.go.kr/id/hm_091_0030",
-              "quote": "어금닛소리 'ㄱ'은 혀뿌리가 목구멍을 닫는 꼴을 본뜬 것이요, 혓소리 'ㄴ'은 혀가 윗잇몸에 닿는 꼴을 본뜬 것이요, 입술소리 'ㅁ'은 입의 꼴을 본뜬 것이요, 잇소리 'ㅅ'은 이의 꼴을 본뜬 것이다",
+              "quote": "牙音ㄱ, 象舌根閉喉之形, 舌音ㄴ, 象舌附上腭之形, 脣音ㅁ, 象口形, 齒音ㅅ, 象齒形. 喉音ㅇ, 象喉形",
               "checkedAt": "2026-11-04"
             },
             {
@@ -100,12 +100,23 @@
               "url": "https://encykorea.aks.ac.kr/Article/E0074518",
               "quote": "초성의 기본 문자인 'ㄱ, ㄴ, ㅁ, ㅅ, ㅇ'의 다섯 문자는 각 문자가 발음될 때의 발음 기관의 모양을 본떠 만든 것",
               "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "한박웃음 2020년 10월 제86호",
+              "url": "https://www.hangeul.go.kr/webzine/202010/sub1_3.html",
+              "quote": "자음자의 큰 특징은 발음기관의 모양을 본 떠 만들었는데요",
+              "checkedAt": "2026-11-04"
             }
           ],
           "conflict": {
             "status": "resolved",
-            "note": "The 1443 Annals entry says the letters imitate the old seal script (倣古篆); the Jejahae says they copy the speech organs; modern accounts describe ㄱ differently. The game says, in the letter of Mission 2, that five main consonant letters copy the shapes we make to speak and show the tongue, the mouth, the teeth and the throat; never one letter's details."
-          }
+            "note": "The 1443 Annals entry says the letters imitate the old seal script (倣古篆); the Jejahae says they copy the speech organs. The game says what the book (the Jejahae) says, letter by letter as it gives them: the tongue's root for ㄱ, the tongue on the upper gums for ㄴ, the mouth, the teeth, the throat."
+          },
+          "notes": [
+            "Rewritten 2026-11-04 for the redesign: Mission 2 names each letter's organ, as the Jejahae does."
+          ]
         },
         {
           "factId": "s7_ep01_h4",
@@ -250,101 +261,258 @@
           "conflict": {
             "status": "resolved",
             "note": "Accounts date its founding differently (1400 / 1405); it stood in Sejong's time either way."
+          },
+          "notes": [
+            "Not used by the redesigned case (2026-11-04): kept for the record."
+          ]
+        },
+        {
+          "factId": "s7_ep01_h9",
+          "statement": "In his preface the King wrote that the speech of his country differed from China's and did not fit Chinese characters, so many common people who had something to say could not put it into writing.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "國之語音, 異乎中國, 與文字不相流通, 故愚民有所欲言, 而終不得伸其情者多矣。",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "상설전시 훈민정음, 천년의 문자 계획",
+              "url": "https://www.hangeul.go.kr/exhi/dailyExhibition.do?curr_menu_cd=0102010000",
+              "quote": "세종은 글자를 몰라 자신의 뜻을 제대로 전달하지 못하고 억울한 일을 당하는 백성들을 위해 한글을 만들었습니다.",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s7_ep01_h10",
+          "statement": "The book says letters for stronger sounds were made by adding strokes to the basic ones: ㅋ from ㄱ, ㄷ and ㅌ from ㄴ, ㅂ and ㅍ from ㅁ, ㅈ and ㅊ from ㅅ, ㆆ and ㅎ from ㅇ.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 사료로 본 한국사: 한글의 구성 원리 (제자해)",
+              "url": "https://contents.history.go.kr/id/hm_091_0030",
+              "quote": "ㅋ比ㄱ, 聲出稍厲, 故加畫 … ㄴ而ㄷ, ㄷ而ㅌ, ㅁ而ㅂ, ㅂ而ㅍ, ㅅ而ㅈ, ㅈ而ㅊ, ㅇ而ᅙ, ᅙ而ㅎ",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한글",
+              "url": "https://encykorea.aks.ac.kr/Article/E0061508",
+              "quote": "'ㄱ ㄴ ㅁ ㅅ ㅇ'의 다섯 글자를 만들어내고, 다음으로는 소리가 세어짐에 따라, 이 다섯 글자에다가 획을 하나씩 더하여 아홉 글자를 만들었다.",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s7_ep01_h11",
+          "statement": "The book says the vowels ㅗ, ㅏ, ㅜ and ㅓ are made by joining the dot (ㆍ) with the flat line (ㅡ) or the standing line (ㅣ).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 훈민정음28자모",
+              "url": "https://encykorea.aks.ac.kr/Article/E0074518",
+              "quote": "'ㅏ'는 'ㅣ'와 'ㆍ', 'ㅜ'는 'ㅡ'와 'ㆍ', 'ㅓ'는 'ㆍ'와 'ㅣ'가 어울려서 이루어진 것이다.",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 사료로 본 한국사: 한글의 구성 원리 (해설)",
+              "url": "https://contents.history.go.kr/id/hm_091_0030",
+              "quote": "이 셋을 기반으로 ㅏ,ㅗ,ㅜ,ㅢ 등의 다양한 모음을 만들 수 있었다.",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The dot sits above ㅡ for ㅗ, under it for ㅜ, right of ㅣ for ㅏ and left of it for ㅓ, as the letters themselves show; the game draws today's letters."
+          ]
+        },
+        {
+          "factId": "s7_ep01_h12",
+          "statement": "The book says letters are joined to make one written sound: ㆍ, ㅡ, ㅗ and ㅜ are written under the first sound, ㅣ, ㅏ and ㅓ on its right, and the last sound is written with the letters of the first sounds.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "終聲復用初聲 … ㆍㅡㅗㅜㅛㅠ附書初聲之下, ㅣㅓㅏㅑㅕ附書於右。凡字必合而成音",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한글",
+              "url": "https://encykorea.aks.ac.kr/Article/E0061508",
+              "quote": "' · '와 'ㅡ' 및 'ㅡ'를 가진 글자는 첫소리 글자의 밑에 쓰고, 'ㅣ'와 'ㅣ'를 가진 글자는 그 오른쪽에 쓰도록 하였다.",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s7_ep01_h13",
+          "statement": "Some letters of the fifteenth century, among them the dot ㆍ (arae-a), ㆆ, ㅿ and ㆁ, are not used today.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "기획 전시: 훈민정음과 한글 디자인",
+              "url": "https://hangeul.go.kr/exhibition/541",
+              "quote": "15세기 당시에는 있었지만 말소리가 사라지면서 현대에는 남아 있지 않은 'ㆆ(여린히읗)', 'ㅿ(반잇소리)', 'ㆁ(옛이응)', 'ㆍ(아래아)'와 같은 글자가 있다.",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한글",
+              "url": "https://encykorea.aks.ac.kr/Article/E0061508",
+              "quote": "'ㆆ, ㅿ, · (ᄋᆞ)'의 이름은 지어지지 않았고 … 지금 쓰이지 않는",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "ㆁ (yet-ieung) is counted differently: its sound lives on at the end of a syllable, written ㅇ. The game names only the dot ㆍ as a letter not used today."
           }
         }
       ],
       "fiction": [
-        "The night in autumn 1446, the royal letter, its delivery at sunrise and the false page are made up. No palace ceremony is shown or claimed.",
-        "Mun-su, Taek, Sora and Bae are made up; so are the gate book, the leaf mark, the brush cloth, the chest and the scholars' sheet.",
-        "The King is only named: he never speaks or acts in the case."
+        "The rainy night in autumn 1446, the burnt paper, the book hall and the hole in its roof are made up.",
+        "Bun-i, Sora and Taek are made up; so are the copied scrap, Sora's lesson box and board, and the King's ten-day test of ordinary people.",
+        "King Sejong is real, but everything he says and does in the case is made up. Two of his lines retell his real preface (h9, h5); none is a quotation of a record.",
+        "The note is written in today's spelling; the words 서고 and 지붕 are not claimed as fifteenth-century spellings."
       ],
       "puzzles": [
         {
           "puzzleId": "s7_ep01_m1",
-          "fiction": true,
-          "answer": "lock,home,cups,brush,dawn",
+          "factIds": [
+            "s7_ep01_h9"
+          ],
+          "answer": "c",
           "clues": [
             {
-              "text": "went home",
+              "text": "cannot write",
               "missionId": "s7_ep01_m1"
             },
             {
-              "text": "Sora left",
+              "text": "門",
+              "missionId": "s7_ep01_m1"
+            },
+            {
+              "text": "bucket",
               "missionId": "s7_ep01_m1"
             }
           ],
-          "derivation": "Sunset and dawn are fixed. The gate book's then, later and after put Mun-su going home, then Sora, then Bae between them; lunch is in the day.",
-          "whyOnly": "Three relations chain the three cards between the fixed ones: no other order fits the gate book."
+          "derivation": "The King's words (his preface, h9): many people could not write what they meant. The scrap shows a writer who could only copy 門 from the gate sign, a bucket ring and drops of water lead away from the gate: someone who carries water, from the kitchen well.",
+          "whyNot": {
+            "a": "Scholars write Chinese characters well: none copies the gate sign, and no water leads to their hall.",
+            "b": "No bucket stands at the guard post, and the drops lead away from it."
+          }
         },
         {
           "puzzleId": "s7_ep01_m2",
           "factIds": [
-            "s7_ep01_h1",
             "s7_ep01_h3",
-            "s7_ep01_h4",
-            "s7_ep01_h5",
-            "s7_ep01_h6"
+            "s7_ep01_h10"
           ],
-          "answer": "why:why",
+          "answer": "ㅅㄱㅈㅂㅇ",
           "clues": [
             {
-              "text": "EASY TO LEARN",
+              "text": "tooth",
               "missionId": "s7_ep01_m2"
-            },
-            {
-              "text": "SCHOLARS ONLY",
-              "missionId": "s7_ep01_m2"
-            }
-          ],
-          "derivation": "The letter gives the scholars' sheet whole: 28 letters (h1), the consonants' shapes (h3), the vowels' (h4), the King's reason (h5) and the book's ten days (h6). The two papers share four labels; only WHY differs: EASY TO LEARN against SCHOLARS ONLY.",
-          "whyOnly": "Every other row reads the same word for word on both papers; the player finds the line that differs and needs no history known beforehand."
-        },
-        {
-          "puzzleId": "s7_ep01_m3",
-          "fiction": true,
-          "answer": "b",
-          "clues": [
-            {
-              "text": "brush hair",
-              "missionId": "s7_ep01_m3"
             },
             {
               "text": "lid",
+              "missionId": "s7_ep01_m2"
+            },
+            {
+              "text": "mouth",
+              "missionId": "s7_ep01_m2"
+            }
+          ],
+          "derivation": "Taek's groups against Sora's board (the Jejahae's organs, h3): a tooth is ㅅ, the back of the tongue going up is ㄱ, the mouth is ㅁ, the throat's ring is ㅇ. The board shows the stronger sounds' rule with ㄴ ㄷ ㅌ only (h10): the tooth with a line is ㅈ, the mouth with lines is ㅂ.",
+          "whyOnly": "Each group matches one shape of the board only, and the five tiles are those five letters: one order follows Taek's groups."
+        },
+        {
+          "puzzleId": "s7_ep01_m3",
+          "factIds": [
+            "s7_ep01_h4",
+            "s7_ep01_h11",
+            "s7_ep01_h12"
+          ],
+          "answer": "서고지붕",
+          "clues": [
+            {
+              "text": "dot",
+              "missionId": "s7_ep01_m3"
+            },
+            {
+              "text": "standing line",
+              "missionId": "s7_ep01_m3"
+            },
+            {
+              "text": "flat line",
               "missionId": "s7_ep01_m3"
             }
           ],
-          "derivation": "The ink leads across the rug, a brush hair is caught under a lid and a paper corner sticks out of that box: the small chest under the desk, the one box with a lid on the rug.",
-          "whyNot": {
-            "a": "The work table drawer has no lid and the ink on the rug does not lead to it.",
-            "c": "The open crate has no lid to catch a hair."
-          }
+          "derivation": "The vowels are built from the dot, the flat line and the standing line (h4, h11); flat ones go under the first sound, standing ones on its right, and the ring at the bottom is the last sound (h12). Taek's words give ㅓ, ㅗ, ㅣ and ㅜ with the first sounds of Mission 2: 서고 지붕.",
+          "whyOnly": "Each group's words allow one line and one place of the dot only; the first sounds are Mission 2's, so the note writes one word only."
         },
         {
           "puzzleId": "s7_ep01_final",
-          "fiction": true,
-          "answer": "bae",
+          "factIds": [
+            "s7_ep01_h5",
+            "s7_ep01_h6",
+            "s7_ep01_h9"
+          ],
+          "answer": "open",
           "clues": [
             {
-              "text": "after sunset",
-              "missionId": "s7_ep01_final"
-            },
-            {
-              "text": "leaf",
+              "text": "門",
               "missionId": "s7_ep01_m1"
             },
             {
-              "text": "brush cloth",
+              "text": "tooth",
+              "missionId": "s7_ep01_m2"
+            },
+            {
+              "text": "서고 지붕",
               "missionId": "s7_ep01_m3"
             }
           ],
-          "derivation": "Three proofs, one for each claim: the chance (the gate book: last in after sunset), knowing the new letters (the false page is in them and bears his leaf), the hidden letter (in his own brush cloth). Learning the letters alone convicts no one: Sora learned them too.",
-          "whyOnly": "Each claim is answered by one piece only: a time by the gate book, writing by the false page, hiding by the wrapped letter; a miss is never wrong."
+          "derivation": "The King's three questions, each answered by one mission's evidence: who wrote it (the copied scrap: a writer who could not write Chinese characters, h9), how after ten days (Sora's board: letters made easy to learn, h5, h6), what it says (Bun-i's note, 서고 지붕).",
+          "whyOnly": "Each question accepts one piece of evidence only; a wrong one is answered, never a failure, and the talk ends when all three are shown."
         }
       ],
       "learningObjectives": [
-        "Read order words (then, later, after) in a record.",
-        "Compare two papers line by line.",
-        "Answer a claim with evidence."
+        "Read why the King made the letters, and use it as a clue.",
+        "Match words that describe a shape with the letters they describe.",
+        "Read place words (on its left, on top, under it) to build letters."
       ],
       "reveal": {
         "realHistory": [
@@ -357,46 +525,78 @@
             ]
           },
           {
-            "text": "A book about them was finished in 1446. It says the dot is the sky, the flat line is the earth, and the standing line is a person.",
-            "junior": "The book explaining them was completed in 1446. It describes the dot as the sky, the flat line as the earth and the standing line as a person.",
-            "master": "Completed in 1446, the book explaining them likens the dot to the round sky, the flat line to the earth and the standing line to a person.",
+            "text": "In 1446, the book Hunminjeongeum was finished. It explains the letters.",
+            "junior": "In 1446, the book Hunminjeongeum, which explains the letters, was completed.",
+            "master": "In 1446, Hunminjeongeum, the book that explains the letters, was completed.",
             "factIds": [
-              "s7_ep01_h2",
-              "s7_ep01_h4"
+              "s7_ep01_h2"
             ]
           },
           {
-            "text": "The King wrote that he made them so people could learn them easily and use them every day.",
-            "junior": "The King wrote that he created them so that people could learn them easily and use them daily.",
-            "master": "The King wrote that his aim was to make it easier for people to learn them and use them each day.",
+            "text": "The King wrote that our words were not like Chinese words, so many people could not write what they wanted to say. He made the letters easy to learn.",
+            "junior": "The King wrote that Korean was so different from Chinese that many people could not put their thoughts in writing. He made the letters easy to learn.",
+            "master": "The King wrote that Korean speech did not fit Chinese characters, leaving many unable to write what they meant; he made the letters easy to learn.",
             "factIds": [
+              "s7_ep01_h9",
               "s7_ep01_h5"
             ]
           },
           {
-            "text": "The Royal Secretariat carried the King's orders.",
-            "junior": "The Royal Secretariat was the office that passed on the King's orders.",
-            "master": "The Royal Secretariat was the office through which the King's orders passed.",
+            "text": "The book says ㄱ, ㄴ, ㅁ, ㅅ and ㅇ copy the tongue, the mouth, the teeth and the throat. A stronger sound adds a line.",
+            "junior": "The book explains that ㄱ, ㄴ, ㅁ, ㅅ and ㅇ copy the shapes of the tongue, the mouth, the teeth and the throat, and that a line is added for a stronger sound.",
+            "master": "According to the book, ㄱ, ㄴ, ㅁ, ㅅ and ㅇ are modelled on the tongue, the mouth, the teeth and the throat, with a stroke added for each stronger sound.",
             "factIds": [
-              "s7_ep01_h8"
+              "s7_ep01_h3",
+              "s7_ep01_h10"
+            ]
+          },
+          {
+            "text": "The dot is the sky, the flat line is the earth, and the standing line is a person. Joined, they make vowels, and letters join into one written sound.",
+            "junior": "The dot stands for the sky, the flat line for the earth and the standing line for a person. Together they form vowels, and letters are joined into one written sound.",
+            "master": "The dot stands for the sky, the flat line for the earth and the standing line for a person; combined, they form the vowels, and the letters of each sound are written together as one block.",
+            "factIds": [
+              "s7_ep01_h4",
+              "s7_ep01_h11",
+              "s7_ep01_h12"
+            ]
+          },
+          {
+            "text": "The book says a slow person can learn the letters in ten days.",
+            "junior": "The book says that even a slow learner can learn the letters in ten days.",
+            "master": "The book claims that even a slow learner can master the letters within ten days.",
+            "factIds": [
+              "s7_ep01_h6"
+            ]
+          },
+          {
+            "text": "Some letters of that time, like the dot ㆍ, are not used today.",
+            "junior": "Some letters of that time, such as the dot ㆍ, are no longer used today.",
+            "master": "A few letters of that age, the dot ㆍ among them, have since fallen out of use.",
+            "factIds": [
+              "s7_ep01_h13"
             ]
           }
         ],
         "inThisMystery": [
           {
-            "text": "Mun-su, Taek, Sora and Bae are made up.",
-            "junior": "Mun-su, Taek, Sora and Bae were invented for this case.",
-            "master": "Mun-su, Taek, Sora and Bae are inventions of this story."
+            "text": "Bun-i, Sora and Taek are made up. So are the burnt paper, the book hall and that rainy night.",
+            "junior": "Bun-i, Sora and Taek were invented for this case, and so were the burnt paper, the book hall and that rainy night.",
+            "master": "Bun-i, Sora and Taek are inventions of this story, as are the burnt paper, the book hall and that rainy night."
           },
           {
-            "text": "The royal letter, the false page and that night are made up too.",
-            "junior": "The royal letter, the false page and that night were invented as well.",
-            "master": "So are the royal letter, the false page and the night it vanished."
+            "text": "King Sejong was real, but his words in this story are made up. Some of them retell his real preface.",
+            "junior": "King Sejong was a real king, but his words in this story were invented. Some of them retell his real preface.",
+            "master": "King Sejong was real, yet every word he speaks here is invented; a few of them echo his real preface."
+          },
+          {
+            "text": "The King's ten-day test is made up too. The game writes the note the way we spell today.",
+            "junior": "The King's ten-day test was invented as well. The game writes the note in today's spelling.",
+            "master": "The King's ten-day test is invented too, and the note is written in modern spelling."
           }
         ]
       },
       "notes": [
-        "Seoul Pilot Case 01. Every fact is a draft: a person checks each source, sets source_checked, and approves it (approve.dart). Nothing here is approved."
+        "Seoul Pilot Case 01, redesigned 2026-11-04 (docs/SEOUL_CASE01_REDESIGN.md). Sources of h3 and h9-h13 opened and quoted by Claude on 2026-11-04; h1, h2, h4-h6 as checked before."
       ]
     }
   ]

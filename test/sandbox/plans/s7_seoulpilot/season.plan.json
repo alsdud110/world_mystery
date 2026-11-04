@@ -7,53 +7,57 @@
   "tagline": "PILOT CASE",
   "plannedCases": 12,
   "mainMystery": {
-    "truth": "Pilot of the Seoul historical season: only Case 01 (The Missing Royal Letter, 1446) is written; it has no season mystery.",
-    "culprit": "Copyist Bae swapped the royal letter for a false page.",
-    "motive": "Bae feared that if everyone could write, nobody would pay him to write for them.",
+    "truth": "Pilot of the Seoul historical season: only Case 01 (The Secret of the King's Letters, 1446) is written; it has no season mystery.",
+    "culprit": "No one: the mystery is a burnt note in the new letters and what it says.",
+    "motive": "Bun-i, who could not write Chinese characters, wrote her first letter to warn of a hole in the book hall roof.",
     "revealCase": "s7_ep01"
   },
   "characters": [
     {
-      "charId": "mun_su",
-      "name": "Mun-su",
-      "role": "A young clerk of the Royal Secretariat",
+      "charId": "sejong",
+      "name": "King Sejong",
+      "role": "The King of Joseon, who made the new letters (a real person; his words here are made up)",
       "firstCase": "s7_ep01"
     },
     {
       "charId": "taek",
       "name": "Taek",
-      "role": "The night guard at the gate",
+      "role": "The night guard at the inner gate",
       "firstCase": "s7_ep01"
     },
     {
       "charId": "sora",
       "name": "Sora",
-      "role": "A palace maid",
+      "role": "A palace maid who teaches the new letters",
       "firstCase": "s7_ep01"
     },
     {
-      "charId": "bae",
-      "name": "Bae",
-      "role": "A copyist of the palace",
-      "firstCase": "s7_ep01",
-      "revealCase": "s7_ep01"
+      "charId": "bun_i",
+      "name": "Bun-i",
+      "role": "A water-carrier girl who writes her first letter",
+      "firstCase": "s7_ep01"
     }
   ],
   "locations": [
     {
-      "locId": "secretariat",
-      "name": "The Royal Secretariat",
-      "landmarkKey": "royalSecretariat"
+      "locId": "inner_gate",
+      "name": "The Inner Gate",
+      "landmarkKey": "innerGate"
     },
     {
-      "locId": "copy_room",
-      "name": "The Copy Room",
-      "landmarkKey": "copyRoom"
+      "locId": "well_yard",
+      "name": "The Well Yard",
+      "landmarkKey": "wellYard"
     },
     {
-      "locId": "palace_yard",
-      "name": "The Palace Yard",
-      "landmarkKey": "palaceYard"
+      "locId": "writing_room",
+      "name": "The Writing Room",
+      "landmarkKey": "writingRoom"
+    },
+    {
+      "locId": "book_hall",
+      "name": "The Book Hall",
+      "landmarkKey": "bookHall"
     }
   ],
   "acts": [
@@ -90,24 +94,32 @@
   ],
   "places": [
     {
-      "placeId": "s7_seoulpilot.secretariat",
-      "file": "assets/seasons/season_02_paris/cases/case_11/annex_reading_room.webp",
+      "placeId": "s7_seoulpilot.inner_gate",
+      "file": "assets/seasons/season_07_seoulpilot/locations/gate_courtyard.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
       }
     },
     {
-      "placeId": "s7_seoulpilot.copy_room",
-      "file": "assets/seasons/season_02_paris/cases/case_05/workshop_interior.webp",
+      "placeId": "s7_seoulpilot.well_yard",
+      "file": "assets/seasons/season_07_seoulpilot/locations/well_yard.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
       }
     },
     {
-      "placeId": "s7_seoulpilot.palace_yard",
-      "file": "assets/seasons/season_01_london/cases/case_01/kings_cross_platform_night.webp",
+      "placeId": "s7_seoulpilot.writing_room",
+      "file": "assets/seasons/season_07_seoulpilot/locations/copy_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    {
+      "placeId": "s7_seoulpilot.book_hall",
+      "file": "assets/seasons/season_07_seoulpilot/locations/book_hall_rain.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -115,7 +127,7 @@
     }
   ],
   "notes": [
-    "Test-only pilot (Seoul Pilot Case 01, 2026-11-04). Never in the game, never the Seoul season (s5_seoul).",
-    "TEMPORARY PICTURES (test only, never the Seoul season's): every place and puzzle picture is a London or Paris picture borrowed for the checks. The copy room is Paris Case 05's workshop, its places named as they are drawn; the Royal Secretariat and the palace yard are stand-ins that show neither."
+    "Test-only pilot (Seoul Pilot Case 01, redesigned 2026-11-04: The Secret of the King's Letters). Never in the game, never the Seoul season (s5_seoul).",
+    "Pictures: the Seoul pilot's own, made by season_factory.dart run --pictures-only (assets.manifest.json); the writing room reuses copy_room."
   ]
 }

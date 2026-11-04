@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart' show visibleForTesting;
-
 import '../models/abbesses_puzzles.dart';
 import '../models/case_talk.dart';
 import '../models/clock_puzzle.dart';
@@ -8,6 +6,7 @@ import '../models/difficulty.dart';
 import '../models/discovery.dart';
 import '../models/easy_steps.dart';
 import '../models/history_reveal.dart';
+import '../../puzzles_v2/core/syllable_rules.dart';
 import '../../puzzles_v2/core/timeline_rules.dart';
 import '../models/episode.dart';
 import '../models/garden_puzzles.dart';
@@ -92,6 +91,7 @@ class SeasonContent {
     this.clocks = const {},
     this.trails = const {},
     this.timelines = const {},
+    this.syllables = const {},
     this.finalClocks = const {},
     this.stationClocks = const {},
     this.compares = const {},
@@ -131,6 +131,7 @@ class SeasonContent {
     this.shadowChecks = const {},
     this.hourRecords = const {},
     this.introPictures = const {},
+    this.introBackdrops = const {},
     this.introPlaques = const {},
     this.introPapers = const {},
     this.evidenceArt = const {},
@@ -226,6 +227,12 @@ class SeasonContent {
   /// `TimelineBoard`, its rules `TimelineRules`. No season of the game has one yet.
   final Map<String, TimelineSpec> timelines;
 
+  /// Missions played as a note in the new letters put back together
+  /// (Puzzle Engine 2.0, `syllable_compose`): its groups, by mission id. The
+  /// mission is a `wordInput`, its page `SyllableBoard`, its rules
+  /// `SyllableRules`. Only the Seoul pilot has one.
+  final Map<String, SyllableSpec> syllables;
+
   /// Finals whose number lock is set on a clock's own hands (London Case 02's
   /// Great Clock): kept apart from [clocks], the missions' table the puzzle
   /// palette offers, so the Season Factory's offer stays as it is.
@@ -312,6 +319,11 @@ class SeasonContent {
   /// By case id: a picture under the case's opening lines that turns into
   /// another (Case 09: P.'s drawing into the garden).
   final Map<String, IntroPicture> introPictures;
+
+  /// A case's own picture behind its opening's words, by case id (the
+  /// Seoul pilot's night palace); without one the opening shows its place,
+  /// else its season's map.
+  final Map<String, String> introBackdrops;
 
   /// By case id: a picture shown under the case's opening lines.
   final Map<String, IntroPlaque> introPlaques;
@@ -402,6 +414,7 @@ class SeasonContent {
     'clocks': clocks,
     'trails': trails,
     'timelines': timelines,
+    'syllables': syllables,
     'finalClocks': finalClocks,
     'stationClocks': stationClocks,
     'compares': compares,
@@ -654,9 +667,9 @@ abstract final class SeasonCatalog {
   static ScenePlace placeFor(String id) =>
       place(id) ?? (throw StateError('Season place $id is not registered (SeasonContent.places)'));
 
-  /// Places of a season that is not in the game, registered by a test only
-  /// (cleared by it): the game's own are its seasons'.
-  @visibleForTesting
+  /// Places of a season that is not in the game, registered by a test
+  /// (cleared by it) or by developer mode's pilot session: the game's own
+  /// are its seasons'.
   static final Map<String, ScenePlace> testPlaces = {};
 
   /// Mission id → its season and case, from the cases' own missions (the
@@ -674,11 +687,11 @@ abstract final class SeasonCatalog {
           m.id: (s, caseId),
   };
 
-  /// Seasons that are not in the game, registered by a test only (cleared
-  /// by it), so their missions find their puzzle tables as the game's do:
-  /// a generated sandbox season's scenes and talks (STEP 3-13). Looked at
-  /// only for a mission no season of the game has.
-  @visibleForTesting
+  /// Seasons that are not in the game, registered by a test (cleared by
+  /// it) or developer mode, so their missions find their puzzle tables as the game's do:
+  /// a generated sandbox season's scenes and talks (STEP 3-13), or the
+  /// Seoul pilot in developer mode. Looked at only for a mission no season
+  /// of the game has.
   static final List<SeasonContent> testSeasons = [];
 
   static (SeasonContent, String)? _testMission(String missionId) {
@@ -747,6 +760,8 @@ abstract final class SeasonCatalog {
   static TrailScene? trail(Mission m) => _pick(m, (s) => s.trails);
 
   static TimelineSpec? timeline(Mission m) => _pick(m, (s) => s.timelines);
+
+  static SyllableSpec? syllable(Mission m) => _pick(m, (s) => s.syllables);
 
   static ClockPuzzle? finalClock(Mission m) => _pick(m, (s) => s.finalClocks);
 
@@ -847,6 +862,10 @@ abstract final class SeasonCatalog {
   /// The picture under case [episodeId]'s opening lines that turns into
   /// another, if any.
   static IntroPicture? introPicture(String episodeId) => ofEpisode(episodeId)?.introPictures[episodeId];
+
+  /// Case [episodeId]'s picture behind its opening ([SeasonContent.introBackdrops]),
+  /// the game's seasons' or a registered pilot's ([testSeasons]); else null.
+  static String? introBackdrop(String episodeId) => [...all, ...testSeasons].map((s) => s.introBackdrops[episodeId]).nonNulls.firstOrNull;
 
   /// The paper under one of case [episodeId]'s opening lines, if any.
   static IntroPaper? introPaper(String episodeId) => ofEpisode(episodeId)?.introPapers[episodeId];

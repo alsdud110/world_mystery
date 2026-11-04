@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "s7_seoulpilot",
+  "tool": "tool/asset_pipeline/asset_pipeline.dart --wiring --write",
+  "checkedAgainst": "lib/ as of 2026-10-30 (SeasonContent.places, explores, investigations, dialogues, talkMissions, endings, ChoiceOption.picture, ArtAssets.seasonCovers, SeasonMap.bySeason, ArtAssets.evidencePictures, SeasonContent.storyScenes); wired: in assets/ now",
+  "counts": {
+    "wired": 8,
+    "wired_when_made": 0,
+    "ready_to_wire": 3,
+    "blocked": 0,
+    "not_supported": 0
+  },
+  "assets": [
+    {
+      "assetId": "s7_seoulpilot.asset.copy_room",
+      "type": "place",
+      "subject": "s7_seoulpilot.writing_room",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/copy_room.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s7_seoulpilot.writing_room].file → SeasonContent.places['s7_seoulpilot.writing_room'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s7_ep01_m3"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.sora",
+      "type": "character",
+      "subject": "sora",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/characters/sora.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s7_ep01_m2",
+        "s7_ep01_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.palace_map",
+      "type": "map",
+      "subject": "s7_seoulpilot.map",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/map/palace_map.webp",
+      "status": "ready_to_wire",
+      "screen": "Mission Map",
+      "field": "SeasonMap.bySeason['s7_seoulpilot'] (artwork, pixels, aspect, landmarks, caseLandmarks) in lib/features/mission_map/map_world.dart",
+      "via": "libEdit",
+      "note": "Its landmarks are measured on the drawn map and written in lib/. Without a SeasonMap the season's Mission Map shows \"not ready\", so a released season needs this one."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.prologue",
+      "type": "prologue",
+      "subject": "s7_seoulpilot.prologue",
+      "caseIds": [],
+      "outputPath": "assets/seasons/season_07_seoulpilot/cover/season7_prologue_night.webp",
+      "status": "ready_to_wire",
+      "screen": "The season's opening, its first scene (SeasonPrologueScreen, CityNightHero)",
+      "field": "season.plan.json prologue.hero (file, pixels) → SeasonPrologue.hero",
+      "via": "generator",
+      "note": "Not shown yet: once made, name it in season.plan.json prologue.hero (file, pixels 1024×1536) and generate the season; until then the season opens at its Case 01."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.sejong",
+      "type": "character",
+      "subject": "sejong",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/characters/sejong.webp",
+      "status": "wired",
+      "screen": "",
+      "field": "",
+      "via": "generator",
+      "missions": [
+        "s7_ep01_final"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.taek",
+      "type": "character",
+      "subject": "taek",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/characters/taek.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits",
+      "via": "generator",
+      "missions": [
+        "s7_ep01_m1",
+        "s7_ep01_m3"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.bun_i",
+      "type": "character",
+      "subject": "bun_i",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/characters/bun_i.webp",
+      "status": "wired",
+      "screen": "Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s7_ep01_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.gate_courtyard",
+      "type": "place",
+      "subject": "s7_seoulpilot.inner_gate",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/gate_courtyard.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s7_seoulpilot.inner_gate].file → SeasonContent.places['s7_seoulpilot.inner_gate'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s7_ep01_m1"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.well_yard",
+      "type": "place",
+      "subject": "s7_seoulpilot.well_yard",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/well_yard.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s7_seoulpilot.well_yard].file → SeasonContent.places['s7_seoulpilot.well_yard'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s7_ep01_m2"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.book_hall_rain",
+      "type": "place",
+      "subject": "s7_seoulpilot.book_hall",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/book_hall_rain.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s7_seoulpilot.book_hall].file → SeasonContent.places['s7_seoulpilot.book_hall'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s7_ep01_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.kings_study",
+      "type": "scene",
+      "subject": "s7_seoulpilot.kings_study",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "outputPath": "assets/seasons/season_07_seoulpilot/cover/kings_study.webp",
+      "status": "ready_to_wire",
+      "screen": "Story scene before or after a mission (StorySceneScreen)",
+      "field": "SeasonContent.storyScenes[<missionId>] (StoryScenes.place / after / next: StoryPicture)",
+      "via": "generatorExtension",
+      "note": "The table is a SeasonContent one, but the generator writes no storyScenes yet and the manifest names no mission for it (cases s7_ep01)."
+    }
+  ]
+}

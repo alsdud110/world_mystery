@@ -96,6 +96,9 @@ abstract final class PuzzleEngineDispatch {
     // Puzzle Engine 2.0: a timeline put back together, in place of its
     // buttons (a sequence's answer); after every engine before it.
     EngineStep('timelines', 'TimelineBoard'),
+    // A note in the new letters put back together, in place of its typed
+    // word (Seoul pilot); after every engine before it.
+    EngineStep('syllables', 'SyllableBoard'),
   ];
 
   /// The final page's steps: a talk or steps take the whole page; then its

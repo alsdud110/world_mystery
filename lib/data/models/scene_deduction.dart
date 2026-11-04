@@ -17,6 +17,16 @@ enum TraceSketch {
 
   /// A torn corner of thick paper.
   paperCorner,
+
+  /// The wet ring a water bucket leaves on stone.
+  waterRing,
+
+  /// Drops of water in a short trail.
+  waterDrops,
+
+  /// A scrap of paper with one Chinese character (門, "gate") copied on it
+  /// three times by an unsure hand: the app writes it, never a picture.
+  copiedScrap,
 }
 
 /// A trace in a [DeductionScene]'s picture (footprints, a light, scratches):

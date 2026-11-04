@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart';
 import 'package:world_mystery/puzzles_v2/core/timeline_rules.dart';
 
 import '../asset_optimizer/image_file.dart';
@@ -68,6 +69,7 @@ abstract final class PlayCheck {
     'dark_room_search': 'investigations',
     'witness_compare': 'dialogues',
     'timeline_board': 'timelines',
+    'syllable_compose': 'syllables',
     // Puzzle Engine 2.0 STEP 1: engines the game already plays, now made from plans.
     'number_entry': null,
     'trace_deduction': 'deductions',
@@ -88,7 +90,7 @@ abstract final class PlayCheck {
 
   /// The `play` key a table's scene is written under.
   static const sceneKeys = {
-    'explores': 'explore', 'investigations': 'search', 'dialogues': 'dialogue', 'timelines': 'timeline', //
+    'explores': 'explore', 'investigations': 'search', 'dialogues': 'dialogue', 'timelines': 'timeline', 'syllables': 'syllables', //
     'deductions': 'traces', 'inspections': 'inspect', 'records': 'records', 'talks': 'interview',
   };
 
@@ -213,6 +215,7 @@ abstract final class PlayCheck {
       }
       _pictures(m, at, root, out);
       _timeline(m, at, out);
+      _syllables(m, at, out);
       _numberCode(m, at, out);
       _traces(m, at, root, out);
       _inspect(m, at, root, out);
@@ -447,6 +450,28 @@ abstract final class PlayCheck {
         issue('scene_invalid', '$da.witnesses', '${d.witnesses} witnesses to hear, of ${s.witnesses.length}');
       }
     }
+  }
+
+  /// A note in the new letters (`syllable_compose`, table `syllables`): its
+  /// own rules (`SyllableRules.validate`, the game's), the note its answer,
+  /// and every group's words read where the player puts it together.
+  static void _syllables(MissionPlan m, String at, List<PlayIssue> out) {
+    final w = m.play;
+    final s = w?.syllables;
+    if (w == null || s == null || m.puzzle.engineTable != 'syllables') return;
+    void issue(String code, String path, String message) => out.add(PlayIssue(code, path, message));
+    final sa = '$at.play.syllables';
+    final spec = SyllableSpec(blocks: [
+      for (final b in s.blocks) SyllableBlock(id: b.id, initial: b.initial, vowel: b.vowel, finalConsonant: b.finalConsonant, line: b.line),
+    ]);
+    const rules = SyllableRules();
+    for (final i in rules.validate(spec)) {
+      issue(i.code, '$sa${i.path.substring(1)}', i.message);
+    }
+    if (rules.answer(spec) != m.puzzle.answerSpec.answer) {
+      issue('syllables_answer_mismatch', '$at.puzzle.answerSpec.answer', '"${m.puzzle.answerSpec.answer}", but the groups write "${rules.answer(spec)}"');
+    }
+    if (m.puzzle.missionType != 'wordInput') issue('syllables_type', '$at.puzzle.missionType', 'a note answers a wordInput, not ${m.puzzle.missionType}');
   }
 
   /// Cards a timeline may hold (Puzzle Engine 2.0): to place, fixed by

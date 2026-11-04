@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "s7_seoulpilot",
+  "assetRoot": "assets/seasons/season_07_seoulpilot",
+  "model": "gpt-image-2",
+  "quality": "medium",
+  "seasonStyles": [
+    {
+      "id": "seoul_scene",
+      "kind": "scene",
+      "size": "1536x1024",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: hand-drawn ink line drawing with soft watercolour washes on warm cream mulberry paper, lightly stylised rather than photographic; deep navy night tones with warm lantern-gold light, muted Joseon red and pine-green accents used sparingly; clear architectural perspective; full-bleed composition with no border. Setting: Hanyang, Joseon Korea, 1446 — Joseon-era clothing, wooden palace architecture, paper doors, low floor desks and floor cushions only; no modern objects, no Western furniture or decoration. When King Sejong appears he is a calm, warm, thoughtful man in his late forties with a neat dark beard, in a red royal robe with round gold dragon badges on the chest and shoulders and a black winged royal cap; never copied from any existing painted portrait."
+    },
+    {
+      "id": "seoul_character",
+      "kind": "character",
+      "size": "1024x1536",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: detailed ink linework with rich, slightly textured watercolour washes; one person, three-quarter view, from the head to below the waist, natural expression; plain warm cream mulberry-paper background with no scenery. Setting: Joseon Korea, 1446, Joseon-era palace clothing; no modern objects, no Western clothing."
+    },
+    {
+      "id": "seoul_object",
+      "kind": "object",
+      "size": "1536x1024",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: hand-drawn ink line drawing with soft watercolour washes on warm cream mulberry paper, lightly stylised rather than photographic; deep navy night tones with warm lantern-gold light, muted Joseon red and pine-green accents used sparingly; clear architectural perspective; full-bleed composition with no border. Setting: Hanyang, Joseon Korea, 1446 — Joseon-era clothing, wooden palace architecture, paper doors, low floor desks and floor cushions only; no modern objects, no Western furniture or decoration. When King Sejong appears he is a calm, warm, thoughtful man in his late forties with a neat dark beard, in a red royal robe with round gold dragon badges on the chest and shoulders and a black winged royal cap; never copied from any existing painted portrait."
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "s7_seoulpilot.asset.copy_room",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s7_seoulpilot.writing_room",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "Sora's writing room (M3): its picture reused from the first pilot design.",
+      "prompt": "A palace copyists' room of Joseon Korea at night, seen from the doorway: a long low writing desk across the back of the room with ink stones and rolled paper; on the left, a low wooden work table with one small closed drawer in its front; in the lower left middle, an open wooden crate holding rolled paper; in the centre right, a small wooden chest with a closed lid standing on a woven straw rug; floor cushions, lattice paper doors, warm lamp light. The floor, the rug and the chest are clean: no ink drops, no loose hairs, no scraps of paper. The three hiding places stand well apart, each fully visible.",
+      "stylePreset": "seoul_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/copy_room.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M3's place (the note put back together on SyllableBoard): no traces are read on it any more."
+      ]
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.sora",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "sora",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "Sora, a palace maid: M3's talk after the find.",
+      "prompt": "A young palace maid of Joseon Korea, about seventeen, in a simple palace maid's hanbok with a plain jacket and long skirt, hair braided and tied, holding a small folded practice paper in both hands, a kind and slightly nervous expression.",
+      "stylePreset": "seoul_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/characters/sora.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M3's talk after its puzzle (her practice page)."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.palace_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s7_seoulpilot.map",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "The pilot's Mission Map: the palace grounds of Hanyang, 1446, its three places drawn apart.",
+      "prompt": "An illustrated bird's-eye map of a royal palace compound of Joseon Korea in 1446, seen from high above at a slight angle, north at the top, on warm cream mulberry paper: curved grey-tiled roofs, red-pillared wooden halls, stone-paved courtyards, low stone walls, pine trees and a small pond. Three places stand clearly apart: in the lower middle, the main wooden gatehouse with a wide stone courtyard in front of it; in the left upper middle, a long records hall with its own small walled yard; in the right upper middle, a smaller workshop hall with paper doors. Soft dusk light, gentle shadows. No names, no labels, no pins, no writing, no numbers anywhere; nothing modern.",
+      "stylePreset": "seoul_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/map/palace_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The pilot's SeasonMap (lib/data/pilot/seoul_pilot.dart): the gatehouse is the inner gate, the right hall the well yard and the writing room, the left hall the book hall."
+      ]
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.prologue",
+      "type": "prologue",
+      "use": "notWired",
+      "subject": "s7_seoulpilot.prologue",
+      "caseIds": [],
+      "description": "The case's opening at night: the palace in Hanyang, 1446, one window still lit.",
+      "prompt": "A tall portrait view over a royal palace of Joseon Korea at night in autumn 1446: curved tiled roofs and red-pillared halls in the blue dark under a bright moon, pine trees, the mountains behind; one paper window in the upper middle of the picture glowing warm gold as if someone is still inside. Quiet and mysterious, never scary. Composition for a phone screen: the top eighth is quiet night sky; the glowing window between 15% and 55% of the height, within the central two-thirds of the width; the lower 40% is a calm, darker stone courtyard with no detail, where words will lie.",
+      "stylePreset": "seoul_scene",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/cover/season7_prologue_night.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The pilot's Story Intro backdrop (StoryIntroScreen, SeasonContent.introBackdrops)."
+      ]
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.sejong",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "sejong",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "King Sejong: the final talk's face.",
+      "prompt": "King Sejong of Joseon, about forty-eight, a calm, warm and thoughtful man with a neat dark beard and kind, searching eyes, in a red royal robe with round gold dragon badges on the chest and shoulders and a black winged royal cap, holding one sheet of blank paper in both hands; seated three-quarter view. A dignified king of the fifteenth century, never copied from any existing painted portrait.",
+      "stylePreset": "seoul_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/characters/sejong.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The final interview's portrait (TalkScene). A real person: his look is the game's own, never a copy of a portrait."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.taek",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "taek",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "Taek, the night guard: M1's and M3's talks.",
+      "prompt": "A palace night guard of Joseon Korea, about thirty, in a dark blue guard's coat with a wide black hat, holding an unlit paper lantern, an honest, slightly embarrassed expression.",
+      "stylePreset": "seoul_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/characters/taek.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M1's and M3's talks before their puzzles."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.bun_i",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "bun_i",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "Bun-i, the water-carrier: the ending's face.",
+      "prompt": "A water-carrier girl of Joseon Korea, about thirteen, in a plain undyed cotton hanbok with a white headcloth, a wooden water bucket at her side, a bright, shy and determined expression.",
+      "stylePreset": "seoul_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/characters/bun_i.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The final's ending (EndingLine portrait)."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.gate_courtyard",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s7_seoulpilot.inner_gate",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "The inner gate at night (M1): its three places read, its traces drawn by the app.",
+      "prompt": "A palace inner gate of Joseon Korea at night, seen from inside the courtyard: in the centre, a closed wooden gate with a curved tiled roof, a blank wooden signboard above it and three wide stone steps in front of it; on the left, the dark open doorway of a scholars' hall with a raised wooden floor; on the right middle, a small wooden guard post with a glowing iron brazier beside it; at the far right edge, a narrow stone path leading away toward a kitchen well with clay water jars. The lower third of the picture is plain, damp stone paving with open space in front of the steps. Rain clouds gather in a navy sky.",
+      "stylePreset": "seoul_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/gate_courtyard.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M1's traces (copiedScrap, waterRing, waterDrops) are drawn by the app over measured areas: nothing written is in the picture."
+      ]
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.well_yard",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s7_seoulpilot.well_yard",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "The servants' well yard at night (M2).",
+      "prompt": "A palace servants' yard of Joseon Korea at night beside a round stone well with a wooden lid and a rope bucket, clay water jars along a low wall; on the wall of a low building hangs a small plain wooden lesson board, completely blank; a paper lantern on a post gives soft warm light. The lower part of the picture is plain packed earth.",
+      "stylePreset": "seoul_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/well_yard.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M2's place (the letter lock is the app's)."
+      ]
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.book_hall_rain",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s7_seoulpilot.book_hall",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "The book hall in the rain (the final).",
+      "prompt": "A palace book hall of Joseon Korea at night in steady rain: a long wooden hall with a curved tiled roof, one small dark gap in the tiles, closed lattice doors with an iron lock, paper lanterns under the eaves reflecting on wet stone; a few palace servants hold up a large sheet of oiled paper beneath the eaves. Hopeful, never frightening. The hall sits in the upper 60% of the picture; the lower part is plain wet stone paving with open space.",
+      "stylePreset": "seoul_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/locations/book_hall_rain.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The final's place and talk background: its lower part stays plain for the talk."
+      ]
+    },
+    {
+      "assetId": "s7_seoulpilot.asset.kings_study",
+      "type": "scene",
+      "use": "notWired",
+      "subject": "s7_seoulpilot.kings_study",
+      "caseIds": [
+        "s7_ep01"
+      ],
+      "description": "The Story Intro: King Sejong in his study at night, showing the new letters.",
+      "prompt": "A king's private study in a Joseon palace at night, seen from behind the king: King Sejong sits at a low lacquered desk with his back to the viewer, only his black winged royal cap and the shoulders of his red royal robe with a round gold dragon badge seen, his face not shown; before him a few sheets of blank cream paper, a brush resting on an ink stone, a folding screen painted with pines, lattice paper doors, two candle lamps. Composition for a phone screen: the top eighth is quiet dark wall; the king and his desk between 15% and 55% of the height, within the central two-thirds of the width; the lower 40% is a calm, darker floor with no detail, where words will lie. No writing on any paper.",
+      "stylePreset": "seoul_scene",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_07_seoulpilot/cover/kings_study.webp",
+      "references": [],
+      "status": "planned",
+      "notes": [
+        "The pilot's Story Intro backdrop (SeasonContent.introBackdrops): the King meets the detective, seen from behind (no face to match the portrait; no reference picture, to stay within the $1.00 budget)."
+      ]
+    }
+  ],
+  "notes": [
+    "Seoul Pilot Case 01 redesigned (2026-11-04, The Secret of the King's Letters): seven new pictures made by season_factory.dart run --pictures-only within content_pipeline/image_budgets.json (s7_seoulpilot, $1.00 in all).",
+    "Kept on disk, no longer in this manifest (the first design's): royal_archive, scholar_papers, gate_ledger, letter_found, bae, bae_confrontation, case_solved_dawn, palace_night."
+  ]
+}

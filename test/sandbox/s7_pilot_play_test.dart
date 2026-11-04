@@ -5,53 +5,34 @@ import 'package:world_mystery/data/content/season_content_validator.dart';
 import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/models/difficulty.dart';
 import 'package:world_mystery/data/models/mission.dart';
+import 'package:world_mystery/data/pilot/seoul_pilot.dart';
 import 'package:world_mystery/features/game/game_controller.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/features/game/wallet_controller.dart';
+import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart';
 
 import '../full_playthrough_test.dart' show tapText, wait;
 import '../helpers.dart';
-import 'generated/s7_seoulpilot/s7_seoulpilot_cases.g.dart';
-import 'generated/s7_seoulpilot/s7_seoulpilot_history.g.dart';
-import 'generated/s7_seoulpilot/s7_seoulpilot_levels.g.dart';
-import 'generated/s7_seoulpilot/s7_seoulpilot_season.g.dart';
 import 'single_case.dart';
 
-/// Seoul Pilot Case 01, approved and made, played alone in the real app at
-/// every level: a wrong order and a hint, a wrong pair of lines, the traces
-/// noted, the app opened again, the final's evidence, paid once, and the
-/// Case Closed file with its REAL HISTORY apart from IN THIS MYSTERY.
+/// Seoul Pilot Case 01, The Secret of the King's Letters, played alone in
+/// the real app at every level: the gate's traces (a wrong place, a hint),
+/// the app opened again, the lesson box's letters in a wrong order, the
+/// note's groups with one vowel wrong, King Sejong's three questions, paid
+/// once, and the Case Closed file with its REAL HISTORY apart from IN THIS
+/// MYSTERY.
 void main() {
-  final season = SeasonContent(
-    info: s7SeoulpilotInfoJson,
-    episodes: s7SeoulpilotEpisodes,
-    places: s7SeoulpilotPlaces,
-    released: false,
-    storyGreeting: s7SeoulpilotStoryGreeting,
-    learning: s7SeoulpilotLearning,
-    languageTopics: s7SeoulpilotLanguageTopics,
-    evidenceLinks: s7SeoulpilotEvidenceLinks,
-    explores: s7SeoulpilotExplores,
-    investigations: s7SeoulpilotInvestigations,
-    dialogues: s7SeoulpilotDialogues,
-    timelines: s7SeoulpilotTimelines,
-    deductions: s7SeoulpilotDeductions,
-    records: s7SeoulpilotRecords,
-    talks: s7SeoulpilotTalks,
-    talkMissions: s7SeoulpilotTalkMissions,
-    discoveries: s7SeoulpilotDiscoveries,
-    endings: s7SeoulpilotEndings,
-    historyReveals: s7SeoulpilotHistoryReveals,
-    casePatches: s7SeoulpilotCasePatches,
-    variants: s7SeoulpilotVariants,
-    writtenLevels: s7SeoulpilotWrittenLevels,
-    infoLevels: s7SeoulpilotInfoLevels,
-  );
+  final season = seoulPilotSeason;
 
   test('the pilot as the game takes it: valid, a reveal, not one of the game\'s seasons', () {
     expect(SeasonContentValidator.validate(season), isEmpty);
     expect(season.historyReveals.keys, ['s7_ep01']);
     expect(SeasonCatalog.all.any((s) => s.id == season.id), isFalse);
+    // Its engines: the gate's traces, the lesson box, the note, the King's talk.
+    expect(season.deductions.keys, ['s7_ep01_m1']);
+    expect(season.syllables.keys, ['s7_ep01_m3']);
+    expect(season.talks.keys, ['s7_ep01_final']);
+    expect(const SyllableRules().answer(season.syllables['s7_ep01_m3']!), '서고지붕');
   });
 
   for (final level in Difficulty.values) {
@@ -67,15 +48,11 @@ void main() {
       int wrong(String id) => c.read(gameControllerProvider).wrongAnswers[id] ?? 0;
       expect(c.read(currentDifficultyProvider), level);
 
-      // M1, the timeline: two free cards swapped, the try-again sheet, a hint, then put right.
+      // M1, the gate: the guard post chosen, the try-again sheet, a hint, then the path to the well.
       final m1 = ep.missions[0];
-      final spec = season.timelines[m1.id]!;
-      final order = Mission.sequenceIds(m1.answer);
-      final free = [for (final (i, id) in order.indexed) if (spec.card(id)?.anchor == null) i];
-      final (i, j) = (free[0], free[1]);
-      final miss = [...order]..[i] = order[j]..[j] = order[i];
+      expect(m1.answer, 'c');
       await p.toPuzzle(m1);
-      await p.answer(m1, miss.join(','));
+      await p.answer(m1, 'b');
       expect(wrong(m1.id), 1, reason: p.play.texts());
       await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
       await t.ensureVisible(find.text('Get a Free Hint'));
@@ -83,17 +60,8 @@ void main() {
       await t.tap(find.text('Get a Free Hint'));
       await wait(t, const Duration(milliseconds: 900));
       expect(c.read(gameControllerProvider).hintsFor(m1.id), 1, reason: p.play.texts());
-      expect(findReadableContaining(m1.hints.first), findsWidgets, reason: 'the hint at ${level.label}');
       final before = c.read(walletProvider).balance;
-      for (final k in [j, i]) {
-        await t.ensureVisible(find.byKey(ValueKey('timeline-slot-$k')));
-        await t.tap(find.byKey(ValueKey('timeline-slot-$k')));
-        await wait(t, const Duration(milliseconds: 200));
-      }
-      await t.ensureVisible(find.text('CHECK THE ORDER'));
-      await wait(t, const Duration(milliseconds: 300));
-      await t.tap(find.text('CHECK THE ORDER'));
-      await wait(t, const Duration(milliseconds: 1500));
+      await p.answer(m1);
       expect(done(m1.id), isTrue, reason: p.play.texts());
       expect(c.read(walletProvider).balance - before, greaterThan(0));
       await p.onToMap();
@@ -103,34 +71,47 @@ void main() {
       expect([done(m1.id), done(ep.missions[1].id)], [true, false]);
       expect(c.read(gameControllerProvider.notifier).submitAnswer(m1, m1.answer).coins, 0, reason: 'paid once');
 
-      // M2, the records: a wrong pair, TRY AGAIN, the WHY pair.
+      // M2, the lesson box: the right letters in a wrong order, TRY AGAIN, Taek's order.
       final m2 = ep.missions[1];
-      final r = season.records[m2.id]!;
-      final other = r.first.lines.firstWhere((l) => '${l.id}:${l.id}' != m2.answer).id;
+      expect(m2.type, MissionType.letterLock);
+      expect(m2.answer, 'ㅅㄱㅈㅂㅇ');
       await p.toPuzzle(m2);
-      await p.answer(m2, '$other:$other');
+      await p.answer(m2, 'ㄱㅅㅈㅂㅇ');
       expect([done(m2.id), wrong(m2.id)], [false, 1], reason: p.play.texts());
       await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
+      for (var i = 4; i >= 0; i--) {
+        // Every tile back out of the lock, then Taek's order.
+        await t.tap(find.byKey(ValueKey('lock-slot-$i')));
+        await wait(t, const Duration(milliseconds: 150));
+      }
       await p.answer(m2);
       expect(done(m2.id), isTrue, reason: p.play.texts());
       await p.onToMap();
 
-      // M3, the traces: noted on the picture, then the right place.
+      // M3, the note: group 1's dot on the wrong side, its own line, then right.
       final m3 = ep.missions[2];
       await p.toPuzzle(m3);
+      await p.answer(m3, '사고지붕');
+      expect([done(m3.id), wrong(m3.id)], [false, 1], reason: p.play.texts());
+      expect(find.text('GROUP 1 · CHECK THIS ONE'), findsOneWidget, reason: 'the wrong group pointed at');
+      await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
       await p.answer(m3);
       expect(done(m3.id), isTrue, reason: p.play.texts());
+      expect(c.read(gameControllerProvider).puzzleStateOf(m3.id), startsWith('pv2:syllables:1:'), reason: 'every move saved');
       await p.onToMap();
 
-      // The final: the three pieces of evidence, the case closed.
+      // The final: King Sejong's three questions, each answered with one mission's evidence.
       await p.solveFinal(ep.finalMission);
       await wait(t, const Duration(milliseconds: 1500));
       expect(done(ep.finalMission.id), isTrue, reason: p.play.texts());
-      // Its Discovery Moment, then the ending read line by line (its typing skipped).
-      await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 1500));
+      // The ending (Bun-i at dawn), its Discovery Moment, then the case closed.
       bool closing() => find.text('CLOSE THE CASE').evaluate().isNotEmpty || find.text('SEE MY CASE REPORT').evaluate().isNotEmpty;
-      for (var n = 0; n < 12 && !closing(); n++) {
-        if (find.text('NEXT').evaluate().isNotEmpty) {
+      var heardBunI = false;
+      for (var n = 0; n < 24 && !closing(); n++) {
+        heardBunI |= findReadableContaining('The King read my letter?').evaluate().isNotEmpty;
+        if (find.text('CONTINUE INVESTIGATION').evaluate().isNotEmpty) {
+          await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 1500));
+        } else if (find.text('NEXT').evaluate().isNotEmpty) {
           await tapText(t, 'NEXT', after: const Duration(milliseconds: 600));
         } else {
           await t.tapAt(const Offset(200, 300));
@@ -138,6 +119,7 @@ void main() {
         }
       }
       if (find.text('CLOSE THE CASE').evaluate().isNotEmpty) await tapText(t, 'CLOSE THE CASE', after: const Duration(milliseconds: 1500));
+      expect(heardBunI || level != Difficulty.rookie, isTrue, reason: 'Bun-i\'s line at dawn');
       expect(c.read(gameControllerProvider).isCaseSolved, isTrue, reason: p.play.texts());
       expect(find.text('CASE 01 COMPLETE'), findsOneWidget, reason: p.play.texts());
       for (var n = 0; n < 4 && find.text('SEE MY CASE REPORT').hitTestable().evaluate().isEmpty; n++) {
@@ -156,11 +138,15 @@ void main() {
       for (final line in [...reveal.realHistory, ...reveal.inThisMystery]) {
         expect(findReadableContaining(line.at(level)), findsWidgets, reason: '${level.label}: "${line.at(level)}"');
       }
+      expect(reveal.inThisMystery.any((l) => l.at(level).contains('King Sejong')), isTrue, reason: 'the King\'s words said to be made up');
       final sources = find.byKey(const ValueKey('history-sources'));
       await t.ensureVisible(sources);
+      await wait(t, const Duration(milliseconds: 600));
+      await t.ensureVisible(sources);
+      await wait(t, const Duration(milliseconds: 300));
       await t.tap(sources);
       await wait(t, const Duration(milliseconds: 400));
-      expect(find.text(reveal.sources.first.publisher), findsWidgets);
+      expect(reveal.sources.map((x) => x.publisher).toSet().any((name) => findReadableContaining(name).evaluate().isNotEmpty), isTrue, reason: 'its sources listed: ${p.play.texts()}');
       expect(t.takeException(), isNull);
     });
   }

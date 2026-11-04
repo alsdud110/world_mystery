@@ -1129,6 +1129,30 @@ abstract final class PuzzlePalette {
         "The cards' order is the one their relations and times allow (TimelineRules.validate); every relation's line is read in the mission.",
       ],
     ),
+    // Puzzle Engine 2.0 (Seoul pilot): a note in the new letters put back
+    // together, its rules plain Dart (`lib/puzzles_v2/core/syllable_rules.dart`).
+    PuzzleDefinition(
+      id: 'syllable_compose',
+      name: 'Put a note in the new letters back together',
+      description: 'Each written group of a note knows its first sound; its vowel is built from a flat or a standing line and the sky\'s dot, and the group is written as one syllable.',
+      actions: [PuzzleAction.readDocument, PuzzleAction.orderItems],
+      reuseGrade: PuzzleReuseGrade.ready,
+      generationMode: PuzzleGenerationMode.textOnly,
+      engines: [
+        PuzzleEngineBinding(widget: 'SyllableBoard', source: '$_w/syllable_board.dart', table: 'syllables', model: 'SyllableSpec', missionTypes: {MissionType.wordInput}, surfaces: _m),
+      ],
+      requiredData: [
+        PuzzleField('Mission', 'letter'),
+        PuzzleField('Mission', 'question'),
+        PuzzleField('Mission', 'answer'),
+        PuzzleField('Mission', 'hints'),
+        PuzzleField('SyllableSpec', 'blocks'),
+      ],
+      constraints: [
+        'Missions only: 2 to 6 groups, each vowel one of ㅣ ㅏ ㅓ ㅡ ㅗ ㅜ (a line and at most one dot); the note is the mission\'s answer (SyllableRules.validate).',
+        'The letters are drawn by the app as text, never in a picture.',
+      ],
+    ),
   ];
 
   static final Map<String, PuzzleDefinition> _byId = _index(all);

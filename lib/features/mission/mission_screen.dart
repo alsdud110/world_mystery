@@ -100,7 +100,9 @@ import 'widgets/tip_shop.dart';
 import 'widgets/torn_slip.dart';
 import 'widgets/tower_records.dart';
 import '../../data/models/detective_name.dart';
+import '../../puzzles_v2/core/syllable_rules.dart';
 import '../../puzzles_v2/core/timeline_rules.dart';
+import 'widgets/syllable_board.dart';
 import 'widgets/timeline_board.dart';
 
 /// The three steps of a mission. Each screen offers one main action.
@@ -1442,6 +1444,16 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
     onSubmit: (a) => _submit(m, a),
   );
 
+  /// A note in the new letters put back together (Puzzle Engine 2.0): its
+  /// groups as they were left, every move saved, the note the answer.
+  Widget _syllablesFor(Mission m, SyllableSpec spec, GameProgress progress) => SyllableBoard(
+    key: ValueKey('syllables-${m.id}'),
+    spec: spec,
+    saved: progress.puzzleStateOf(m.id),
+    onSaved: (s) => ref.read(gameControllerProvider.notifier).recordPuzzleState(m.id, s),
+    onSubmit: (a) => _submit(m, a),
+  );
+
   /// A searched place's search (it answers the mission's puzzle).
   Widget _search(Mission m, InvestigationScene scene, int hintsShown) =>
       InvestigationSearch(
@@ -1476,6 +1488,7 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
     final clock = SeasonCatalog.clock(m);
     final trail = SeasonCatalog.trail(m);
     final timeline = SeasonCatalog.timeline(m);
+    final syllables = SeasonCatalog.syllable(m);
     final explore = SeasonCatalog.explore(m);
     final inspect = SeasonCatalog.inspection(m);
     final deduction = SeasonCatalog.deduction(m);
@@ -1713,6 +1726,8 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
                   ? _trailFor(m, trail)
                   : timeline != null
                   ? _timelineFor(m, timeline, progress)
+                  : syllables != null
+                  ? _syllablesFor(m, syllables, progress)
                   : _questionFor(m),
             ),
           };
@@ -2237,6 +2252,11 @@ class _SolvedStage extends ConsumerWidget {
         if (SeasonCatalog.timeline(m) case final spec?) ...[
           const SizedBox(height: AppSpace.lg),
           TimelineBoard(key: ValueKey('timeline-solved-${m.id}'), spec: spec, solved: true),
+        ],
+        // A note put back together: as it was written.
+        if (SeasonCatalog.syllable(m) case final spec?) ...[
+          const SizedBox(height: AppSpace.lg),
+          SyllableBoard(key: ValueKey('syllables-solved-${m.id}'), spec: spec, solved: true),
         ],
         if (m.clue != null) ...[
           const SizedBox(height: AppSpace.lg),

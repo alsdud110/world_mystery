@@ -9,8 +9,7 @@ import 'package:world_mystery/data/models/learning.dart';
 import 'package:world_mystery/data/models/scene_exhibit.dart' show EvidenceLink;
 import 'package:world_mystery/data/models/scene_deduction.dart' show DeductionScene;
 import 'package:world_mystery/data/models/scene_explore.dart' show ExploreScene;
-import 'package:world_mystery/data/models/tower_puzzles.dart' show RecordsScene;
-import 'package:world_mystery/puzzles_v2/core/timeline_rules.dart' show TimelineSpec;
+import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart' show SyllableSpec;
 
 import 's7_ep01.g.dart';
 
@@ -49,19 +48,14 @@ const s7SeoulpilotDialogues = <String, DialogueScene>{
   ...s7Ep01Dialogues,
 };
 
-/// Their missions played on `timelines` (`SeasonContent.timelines`).
-const s7SeoulpilotTimelines = <String, TimelineSpec>{
-  ...s7Ep01Timelines,
+/// Their missions played on `syllables` (`SeasonContent.syllables`).
+const s7SeoulpilotSyllables = <String, SyllableSpec>{
+  ...s7Ep01Syllables,
 };
 
 /// Their missions played on `deductions` (`SeasonContent.deductions`).
 const s7SeoulpilotDeductions = <String, DeductionScene>{
   ...s7Ep01Deductions,
-};
-
-/// Their missions played on `records` (`SeasonContent.records`).
-const s7SeoulpilotRecords = <String, RecordsScene>{
-  ...s7Ep01Records,
 };
 
 /// Their missions played on `talks` (`SeasonContent.talks`).
@@ -70,7 +64,7 @@ final s7SeoulpilotTalks = <String, TalkScene>{
 };
 
 /// Their missions' talks before and after their puzzles (`SeasonContent.talkMissions`).
-const s7SeoulpilotTalkMissions = <String, TalkMission>{
+final s7SeoulpilotTalkMissions = <String, TalkMission>{
   ...s7Ep01TalkMissions,
 };
 

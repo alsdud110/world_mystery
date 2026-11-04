@@ -305,6 +305,8 @@ class CaseLevels {
     'inscription', 'value', 'symbol', 'icon', 'symbols',
     // A timeline's (Puzzle Engine 2.0): a card's time and sources, a relation's cards.
     'anchor', 'factIds', 'earlier', 'later',
+    // A note in the new letters (Seoul pilot): its sounds, never words.
+    'initial', 'vowel', 'final',
     // A talk's evidence and steps (Puzzle Engine 2.0 STEP 1): notebook ids and step ids.
     'accepted', 'offered', 'finishWhen',
     // A trace the app draws (Seoul Pilot): a name, not words.

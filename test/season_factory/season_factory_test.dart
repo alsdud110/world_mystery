@@ -137,4 +137,45 @@ void main() {
     expect('${out.stdout}', contains('levels   every case at Rookie, Junior and Master'));
     expect('${out.stdout}', contains('generated into lib/data/generated/s3_rome'));
   }, timeout: const Timeout(Duration(minutes: 3)));
+
+  group('the image policy (2026-11-04): pictures made by default within the season\'s budget', () {
+    test('budgets are read from content_pipeline/image_budgets.json: Seoul Pilot Case 01 at \$1.00, a season not listed has none', () {
+      expect(ImageBudgets.of('s7_seoulpilot'), 1.00);
+      expect(ImageBudgets.of('s5_seoul'), isNull);
+      expect(ImageBudgets.of('s3_rome'), isNull, reason: 'Seasons 1–4 are made: none is listed');
+    });
+
+    test('a file missing, or a budget that is not a number, never gives a budget', () {
+      final tmp = Directory.systemTemp.createTempSync('budgets_');
+      addTearDown(() => tmp.deleteSync(recursive: true));
+      expect(ImageBudgets.of('s7_seoulpilot', path: '${tmp.path}/none.json'), isNull);
+      final bad = File('${tmp.path}/bad.json')..writeAsStringSync(jsonEncode({'seasons': {'x': {'usd': 'lots'}, 'y': {'usd': -1}}}));
+      expect(() => ImageBudgets.of('x', path: bad.path), throwsFormatException);
+      expect(() => ImageBudgets.of('y', path: bad.path), throwsFormatException);
+    });
+
+    (int, String)? stop({double? budget = 1.0, double spent = 0, double need = 0.72, bool key = true}) =>
+        SeasonFactory.pictureStop(seasonId: 's7_seoulpilot', budget: budget, spentUsd: spent, needUsd: need, hasKey: key);
+
+    test('within the budget, with a key: made without asking', () {
+      expect(stop(), isNull);
+      expect(stop(spent: 0.28, need: 0.72), isNull, reason: 'exactly what is left');
+    });
+
+    test('no budget set: stopped before any call, asked once, with what is needed', () {
+      final (code, why) = stop(budget: null)!;
+      expect(code, SeasonFactory.exitBudgetUnset);
+      expect(why, allOf(contains('Ask the user once'), contains(r'$0.7200'), contains(ImageBudgets.file)));
+    });
+
+    test('no API key: stopped before any call', () {
+      expect(stop(key: false)!.$1, SeasonFactory.exitAuth);
+    });
+
+    test('the pictures left passing what is left of the budget: stopped before any call, the amount said', () {
+      final (code, why) = stop(spent: 0.5, need: 0.72)!;
+      expect(code, SeasonFactory.exitBudget);
+      expect(why, allOf(contains(r'$0.7200'), contains(r'$0.5000 is left')));
+    });
+  });
 }

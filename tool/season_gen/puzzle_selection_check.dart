@@ -155,6 +155,8 @@ abstract final class PuzzleSelectionCheck {
     'TimelineSpec.cards',
     'TimelineSpec.order',
     'TimelineSpec.relations',
+    // A note's (Puzzle Engine 2.0, Seoul pilot): its groups in `play.syllables`, the note the answer.
+    'SyllableSpec.blocks',
   };
 
   /// The fields that are a level's words.
@@ -408,7 +410,8 @@ abstract final class PuzzleSelectionCheck {
   }
 
   /// As `AnswerChecker.normalize`: upper case, letters and digits only.
-  static String _normalize(String s) => s.toUpperCase().replaceAll(RegExp(r'[^A-Z0-9]'), '');
+  /// As `AnswerChecker.normalize` (Hangul kept).
+  static String _normalize(String s) => s.toUpperCase().replaceAll(RegExp(r'[^A-Z0-9\u3131-\u318E\uAC00-\uD7A3]'), '');
 
   /// As `Mission.sequenceIds`.
   static List<String> _ids(String answer) => answer.isEmpty ? const [] : answer.split(',').map((s) => s.trim()).toList();

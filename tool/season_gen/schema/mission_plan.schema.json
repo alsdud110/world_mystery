@@ -47,6 +47,7 @@
         "search": { "$ref": "#/$defs/search" },
         "dialogue": { "$ref": "#/$defs/dialogue" },
         "timeline": { "$ref": "#/$defs/timeline" },
+        "syllables": { "$ref": "#/$defs/syllables" },
         "traces": { "$ref": "#/$defs/traces" },
         "inspect": { "$ref": "#/$defs/inspect" },
         "records": { "$ref": "#/$defs/records" },
@@ -74,7 +75,7 @@
         "clues": { "type": "array", "minItems": 1, "items": {
           "type": "object", "additionalProperties": false, "required": ["id", "label", "areas", "mark", "line"],
           "properties": { "id": { "$ref": "common.schema.json#/$defs/localId" }, "label": { "$ref": "common.schema.json#/$defs/text" }, "areas": { "$ref": "#/$defs/rects" }, "mark": { "$ref": "#/$defs/point" }, "line": { "$ref": "common.schema.json#/$defs/text" },
-            "sketch": { "description": "A trace the app draws over its areas, the picture lacking it (TraceSketch). None: the picture shows it.", "enum": ["inkDrops", "hair", "paperCorner"] } }
+            "sketch": { "description": "A trace the app draws over its areas, the picture lacking it (TraceSketch). None: the picture shows it.", "enum": ["inkDrops", "hair", "paperCorner", "waterRing", "waterDrops", "copiedScrap"] } }
         } },
         "places": { "type": "array", "minItems": 1, "items": {
           "type": "object", "additionalProperties": false, "required": ["optionId", "areas", "mark"],
@@ -217,6 +218,27 @@
         "evidence": { "$ref": "common.schema.json#/$defs/evidenceId" },
         "factIds": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^s[1-9][0-9]*_ep[0-9]{2}_h[1-9][0-9]*$" } },
         "fiction": { "type": "boolean" }
+      }
+    },
+    "syllables": {
+      "description": "A note in the new letters to put back together (SyllableSpec, table syllables; Puzzle Engine 2.0): its written groups in order, each with its first sound, its vowel (built from a line and the sky's dot) and the sound under it. The note is the puzzle's answer (a wordInput's).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blocks"],
+      "properties": {
+        "blocks": { "type": "array", "minItems": 2, "maxItems": 6, "items": { "$ref": "#/$defs/syllableBlock" } }
+      }
+    },
+    "syllableBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "initial", "vowel", "line"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/localId" },
+        "initial": { "type": "string", "minLength": 1 },
+        "vowel": { "type": "string", "minLength": 1 },
+        "final": { "type": "string", "minLength": 1 },
+        "line": { "$ref": "common.schema.json#/$defs/text" }
       }
     },
     "timelineRelation": {

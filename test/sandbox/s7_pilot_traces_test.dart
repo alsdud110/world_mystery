@@ -15,16 +15,16 @@ import 'package:world_mystery/features/mission/widgets/scene_deduction.dart';
 import '../../tool/season_gen/generate_case.dart';
 import '../../tool/season_gen/plan_models.dart';
 
-/// Seoul Pilot Case 01, Mission 3 (`test/sandbox/plans/s7_seoulpilot`): its
-/// borrowed picture (Paris's workshop) lacks the three traces, so the app
-/// draws them (`TraceSketch`) over their areas: each where a tap notes it,
-/// seen on the smallest phone, named for screen readers. Only the engine: the
-/// pilot is never generated or played before its history is approved.
+/// Seoul Pilot Case 01, Mission 1 (`test/sandbox/plans/s7_seoulpilot`): the
+/// inner gate's picture holds no writing, so the app draws the three traces
+/// (`TraceSketch`: the scrap with 門 copied on it, the bucket's wet ring, the
+/// drops of water) over their measured areas: each where a tap notes it,
+/// seen on the smallest phone, named for screen readers.
 void main() {
   const plan = 'test/sandbox/plans/s7_seoulpilot/cases/s7_ep01/case.plan.json';
   final raw = jsonDecode(File(plan).readAsStringSync()) as Map<String, dynamic>;
   final casePlan = CasePlan.fromJson(raw);
-  final traces = casePlan.missions[2].play!.traces!;
+  final traces = casePlan.missions[0].play!.traces!;
   final (w, h) = (traces.picture.width.toDouble(), traces.picture.height.toDouble());
   Rect rect(SceneRect r) => Rect.fromLTRB(r.left / w, r.top / h, r.right / w, r.bottom / h);
   Offset point(ScenePoint p) => Offset(p.x / w, p.y / h);
@@ -54,7 +54,7 @@ void main() {
     inside: rect(traces.inside!),
     opening: rect(traces.opening!),
   );
-  final mission = Mission.fromJson((CaseGenerator.episodeJson(casePlan)['missions'] as List)[2] as Map<String, dynamic>);
+  final mission = Mission.fromJson((CaseGenerator.episodeJson(casePlan)['missions'] as List)[0] as Map<String, dynamic>);
 
   Future<DeductionProgress> open(WidgetTester t, DeductionScene s, {double text = 1}) async {
     t.view.physicalSize = const Size(320, 568);
@@ -88,14 +88,14 @@ void main() {
   }
 
   test('the plan names a sketch for each of its three traces, the picture lacking them', () {
-    expect({for (final c in traces.clues) c.id: c.sketch}, {'ink': 'inkDrops', 'hair': 'hair', 'corner': 'paperCorner'});
+    expect({for (final c in traces.clues) c.id: c.sketch}, {'scrap': 'copiedScrap', 'ring': 'waterRing', 'drops': 'waterDrops'});
   });
 
-  test('the generator writes the sketches (made in memory only: the pilot\'s history is not approved)', () {
+  test('the generator writes the sketches (made in memory only)', () {
     const seasonPath = 'test/sandbox/plans/s7_seoulpilot/season.plan.json';
     final made = CaseGenerator.sandbox(seasonPath: seasonPath, casePaths: const ['test/sandbox/plans/s7_seoulpilot/cases/s7_ep01/case.plan.json'], staticOnly: true);
     final code = made.files['s7_ep01.g.dart']!;
-    expect(code, allOf(contains('sketch: TraceSketch.inkDrops'), contains('sketch: TraceSketch.hair'), contains('sketch: TraceSketch.paperCorner')));
+    expect(code, allOf(contains('sketch: TraceSketch.copiedScrap'), contains('sketch: TraceSketch.waterRing'), contains('sketch: TraceSketch.waterDrops')));
     expect(code, contains('show DeductionClue, DeductionPlace, DeductionScene, TraceSketch'));
   });
 

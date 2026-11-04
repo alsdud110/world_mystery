@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import '../ai_agents/env_file.dart';
+import '../ai_agents/image_pricing.dart';
 import '../ai_agents/openai_image.dart';
 import '../asset_optimizer/asset_size_report.dart';
 import '../asset_optimizer/bundle_assets.dart';
@@ -32,7 +33,7 @@ import 'sheets.dart';
 /// needed. A thin layer: nothing here plans, draws or generates itself.
 ///
 ///     dart run tool/season_factory/season_factory.dart status <seasonDir>
-///     dart run tool/season_factory/season_factory.dart run <seasonDir> --budget <usd> [--batch 4] [--skip-tests] [--full-tests]
+///     dart run tool/season_factory/season_factory.dart run <seasonDir> [--budget <usd>] [--batch 4] [--skip-tests] [--full-tests] [--pictures-only]
 ///     dart run tool/season_factory/season_factory.dart reviewed <seasonDir> (--all | <assetId>...)
 ///     dart run tool/season_factory/season_factory.dart reject <seasonDir> <assetId> --why <text>
 ///
@@ -50,11 +51,17 @@ import 'sheets.dart';
 ///  3. review: pictures made here and not yet looked at: a review sheet is
 ///     written and the run stops (exit 20). Each is looked at, then
 ///     `reviewed` (or `reject`ed, its prompt fixed in the manifest).
-///  4. pictures: the next [--batch] the game shows (the asset pipeline,
-///     references first, one call each, never past the budget: the season's
-///     `--budget` minus what the factory spent before, kept in
-///     `planning/factory.json`); then step 3 (exit 20). The budget spent:
-///     exit 40, nothing sent. An API error: exit 1, nothing more sent.
+///  4. pictures: made by default, no question asked per picture: the next
+///     [--batch] the game shows (the asset pipeline, references first, one
+///     call each, never past the budget: the season's budget — `--budget`,
+///     else its line in [ImageBudgets.file] — minus what the factory spent
+///     before, kept in `planning/factory.json`); then step 3 (exit 20). A
+///     picture that fails its checks, or is `reject`ed at review, is made
+///     again by the next run, within the same budget. Stopped before any
+///     call ([pictureStop]): no budget set for the season (exit 45: asked
+///     once), no API key (exit 41), or every picture still to make, at its
+///     conservative cost, passing what is left (exit 40). An API error:
+///     exit 1, nothing more sent.
 ///  5. into the game: every validated picture copied into `assets/`
 ///     (`asset_pipeline.dart --apply`); the opening's city at night, once
 ///     in the game, named in the plan's `prologue.hero` ([nameOpening]).
@@ -76,11 +83,18 @@ import 'sheets.dart';
 ///     season played whole in the app, every look round on four screens);
 ///     `--full-tests` the whole suite; a failure stops (exit 60).
 ///
+/// `--pictures-only` (a pilot case, not a season: the Seoul pilot): step 1
+/// is its manifest's checks alone (a pilot has no twelve cases, opening or
+/// bible), every picture its manifest plans is made (steps 1b–4, the same
+/// gate, budget and review), only the ones a screen shows are applied
+/// (step 5), and the run ends there (exit 0): measuring and generating a
+/// pilot are its own (`generate_case.dart --out`).
+///
 /// Exit 0: the season is in the game, played through. 64: usage.
 Future<void> main(List<String> args) async => exit(await SeasonFactory.cli(args));
 
 abstract final class SeasonFactory {
-  static const exitPlans = 10, exitHistory = 15, exitReview = 20, exitMeasure = 30, exitLevels = 35, exitBudget = 40, exitGenerate = 50, exitTests = 60;
+  static const exitPlans = 10, exitHistory = 15, exitReview = 20, exitMeasure = 30, exitLevels = 35, exitBudget = 40, exitAuth = 41, exitBudgetUnset = 45, exitGenerate = 50, exitTests = 60;
 
   static Future<int> cli(List<String> args) async {
     if (args.length < 2) return _usage();
@@ -98,14 +112,16 @@ abstract final class SeasonFactory {
       case 'status':
         return status(dir);
       case 'run':
-        final budget = double.tryParse(opt('--budget') ?? '');
-        if (budget == null || budget < 0) return _usage('run needs --budget <usd> (0 makes no picture)');
+        final given = opt('--budget');
+        final budget = given == null ? null : double.tryParse(given);
+        if (given != null && (budget == null || budget < 0)) return _usage('--budget <usd>: a number, 0 or more (0 makes no picture)');
         return run(
           dir,
           budget: budget,
           batch: int.tryParse(opt('--batch') ?? '') ?? 4,
           tests: !args.contains('--skip-tests'),
           fullTests: args.contains('--full-tests'),
+          picturesOnly: args.contains('--pictures-only'),
         );
       case 'reviewed':
         final ids = [for (final a in args.skip(2)) if (!a.startsWith('--')) _assetId(dir, a)];
@@ -122,7 +138,7 @@ abstract final class SeasonFactory {
   static int _usage([String? why]) {
     if (why != null) stdout.writeln('error    $why');
     stdout.writeln('usage: dart run tool/season_factory/season_factory.dart '
-        '(status <seasonDir> | run <seasonDir> --budget <usd> [--batch 4] [--skip-tests] [--full-tests] | '
+        '(status <seasonDir> | run <seasonDir> [--budget <usd>] [--batch 4] [--skip-tests] [--full-tests] [--pictures-only] | '
         'reviewed <seasonDir> (--all | <assetId>...) | reject <seasonDir> <assetId> --why <text>)');
     return 64;
   }
@@ -341,7 +357,7 @@ abstract final class SeasonFactory {
         : toReview.isNotEmpty
         ? 'look at the pictures made, then: season_factory.dart reviewed $dir <assetId>... (or reject)'
         : toMake.isNotEmpty
-        ? 'season_factory.dart run $dir --budget <usd>'
+        ? 'season_factory.dart run $dir (its budget: ${ImageBudgets.of(seasonId)?.toStringAsFixed(2) ?? 'none set in ${ImageBudgets.file}: approve one'})'
         : measure.isNotEmpty
         ? 'measure (season_factory.dart run writes the grid sheets)'
         : levels.isNotEmpty
@@ -411,27 +427,44 @@ abstract final class SeasonFactory {
 
   // ── run ──────────────────────────────────────────────────────────────
 
-  static Future<int> run(String dir, {required double budget, int batch = 4, bool tests = true, bool fullTests = false}) async {
+  /// Why no picture may be sent now (its exit code and line), or null:
+  /// the image policy of 2026-11-04, checked before any call. [needUsd]:
+  /// every picture still to make, at its conservative cost.
+  static (int, String)? pictureStop({required String seasonId, required double? budget, required double spentUsd, required double needUsd, required bool hasKey}) {
+    if (budget == null) {
+      return (exitBudgetUnset, 'no image budget set for $seasonId: nothing sent. Ask the user once to approve one '
+          '(${ImagePricing.usd(needUsd)} needed at the conservative cost), then add it to ${ImageBudgets.file} (or run with --budget <usd>)');
+    }
+    if (!hasKey) return (exitAuth, 'no API key: OPENAI_API_KEY is in neither the environment nor .env; nothing sent');
+    final left = budget - spentUsd;
+    if (needUsd > left + 1e-9) {
+      return (exitBudget, 'the pictures to make need ${ImagePricing.usd(needUsd)} (conservative), '
+          '${ImagePricing.usd(left)} is left of ${ImagePricing.usd(budget)}: nothing sent; report it and ask for a larger budget');
+    }
+    return null;
+  }
+
+  static Future<int> run(String dir, {double? budget, int batch = 4, bool tests = true, bool fullTests = false, bool picturesOnly = false}) async {
     void say(String step, String line) => stdout.writeln('${step.padRight(9)}$line');
 
-    // 1. The plans.
-    final report = SeasonQuality.run(dir);
-    SeasonQuality.write(dir, report);
-    if (report.hasErrors) {
+    // 1. The plans (a pilot's: its manifest's checks, below).
+    final report = picturesOnly ? null : SeasonQuality.run(dir);
+    if (report != null) SeasonQuality.write(dir, report);
+    if (report != null && report.hasErrors) {
       for (final f in report.findings.where((f) => f.isError)) {
         stdout.writeln(f);
       }
       say('plans', '${report.count(Level.error)} ERROR: fix the plans, then run again');
       return exitPlans;
     }
-    say('plans', 'no ERROR (${report.count(Level.warning)} WARNING)');
-    if (report.selection?['missions'] case final List<Object?> picks) {
+    if (report != null) say('plans', 'no ERROR (${report.count(Level.warning)} WARNING)');
+    if (report?.selection?['missions'] case final List<Object?> picks) {
       final same = picks.whereType<Map>().where((m) => m['plannedIsSelected'] == true).length;
       final none = picks.whereType<Map>().where((m) => m['selected'] == null).length;
       say('puzzles', '${picks.length} chosen by rule: $same as planned, ${picks.length - same - none} planned otherwise, $none fitting none '
           '(${PuzzleSelector.fileName}: why, facts, checks, what a person reads)');
     }
-    final seasonId = report.seasonId;
+    final seasonId = report?.seasonId ?? (PlanFiles.readJson('$dir/season.plan.json') as Map)['seasonId'] as String;
 
     // 1b. A historical season's facts, approved before anything is paid for.
     final blockers = HistoryGate.blockers(dir);
@@ -445,14 +478,25 @@ abstract final class SeasonFactory {
 
     // 2. This machine's records against the game's files.
     final plan = AssetPlan.load('$dir/assets.manifest.json');
+    if (!plan.ok) {
+      plan.errors.forEach(stdout.writeln);
+      say('plans', 'its manifest has errors: fix assets.manifest.json, then run again');
+      return exitPlans;
+    }
     final pipeline = _pipeline(plan, log: (l) => stdout.writeln('  $l'));
     pipeline.doctor(fix: true);
 
     final work = AssetPlan.workDirFor(seasonId);
     PipelineState state() => PipelineState.load('$work/${PipelineState.fileName}', seasonId);
-    final record = _record(dir)..['budgetUsd'] = budget;
+    final budgetFrom = budget != null ? '--budget' : ImageBudgets.of(seasonId) != null ? ImageBudgets.file : null;
+    budget ??= ImageBudgets.of(seasonId);
+    final record = _record(dir)
+      ..['budgetUsd'] = budget
+      ..['budgetFrom'] = budgetFrom;
     _save(dir, record);
     final needed = neededPictures(plan);
+    // A pilot's manifest plans only what it asked for: all of it is made.
+    final toDraw = picturesOnly ? {for (final a in plan.assets) a.assetId} : needed;
     bool inGame(PipelineAsset a) => File(a.outputPath).existsSync();
 
     // 3. Pictures made here and not looked at.
@@ -475,15 +519,17 @@ abstract final class SeasonFactory {
     if (unreviewed.isNotEmpty) return review(unreviewed);
 
     // 4. The next pictures the game shows, within the budget.
-    final toMake = [for (final a in plan.assets) if (needed.contains(a.assetId) && !inGame(a) && state().statusOf(a.assetId) != AssetStatus.validated) a];
+    final toMake = [for (final a in plan.assets) if (toDraw.contains(a.assetId) && !inGame(a) && state().statusOf(a.assetId) != AssetStatus.validated) a];
     if (toMake.isNotEmpty) {
       final spent = (_record(dir)['spentUsd'] as num).toDouble();
-      final left = budget - spent;
-      say('pictures', '${toMake.length} to make; ${spent.toStringAsFixed(4)} of ${budget.toStringAsFixed(2)} spent, ${left.toStringAsFixed(4)} left');
-      if (left <= 0) {
-        say('budget', 'spent: nothing sent (run again with a larger --budget)');
-        return exitBudget;
+      final need = toMake.fold(0.0, (sum, a) => sum + plan.costOf(a).conservativeUsd);
+      say('pictures', '${toMake.length} to make, ${ImagePricing.usd(need)} at their conservative cost (dry run); '
+          '${ImagePricing.usd(spent)} of ${budget == null ? 'no budget' : ImagePricing.usd(budget)} spent');
+      if (pictureStop(seasonId: seasonId, budget: budget, spentUsd: spent, needUsd: need, hasKey: pipeline.studio.findKey() != null) case (final code, final why)) {
+        say('budget', why);
+        return code;
       }
+      final left = budget! - spent;
       final before = {for (final a in toMake) a.assetId: state().statusOf(a.assetId)};
       final code = await pipeline.run(generate: true, maxBudget: left, maxCalls: batch, only: {for (final a in toMake) a.assetId});
       final runs = state().runs;
@@ -510,6 +556,11 @@ abstract final class SeasonFactory {
     if (pipeline.apply(only: needed) != 0) {
       say('apply', 'a picture could not go into the game (see above)');
       return 1;
+    }
+    if (picturesOnly) {
+      pipeline.wiring(write: true);
+      say('done', 'every picture made and reviewed; the ones a screen shows are in the game. A pilot is measured and generated by hand');
+      return 0;
     }
     if (nameOpening(dir) case final named?) say('opening', 'its city at night named in season.plan.json prologue.hero: $named');
     pipeline.wiring(write: true);
@@ -576,5 +627,25 @@ abstract final class SeasonFactory {
     final r = _record(dir);
     say('done', '$seasonId is in the game (${GameRegistry.dir}/$seasonId); pictures ${(r['spentUsd'] as num).toStringAsFixed(4)} spent by the factory');
     return 0;
+  }
+}
+
+/// Each season's image budget in US dollars, kept in [file] (in Git): a
+/// season with a line is drawn by the factory within it without asking; a
+/// season without one is asked about once, before any paid call
+/// ([SeasonFactory.exitBudgetUnset]).
+abstract final class ImageBudgets {
+  static const file = 'content_pipeline/image_budgets.json';
+
+  /// [seasonId]'s budget, or null when none is set (or the file is missing).
+  static double? of(String seasonId, {String path = file}) {
+    final f = File(path);
+    if (!f.existsSync()) return null;
+    final seasons = (jsonDecode(f.readAsStringSync()) as Map)['seasons'];
+    final entry = seasons is Map ? seasons[seasonId] : null;
+    final usd = entry is Map ? entry['usd'] : null;
+    if (usd == null) return null;
+    if (usd is! num || usd < 0) throw FormatException('$path: $seasonId usd must be a number, 0 or more', usd);
+    return usd.toDouble();
   }
 }

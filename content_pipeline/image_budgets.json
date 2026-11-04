@@ -1,0 +1,10 @@
+{
+  "note": "Image budget per season, US dollars (season_factory.dart: ImageBudgets). A season listed here has its pictures made by the factory within this budget without asking; a season not listed is asked about once, before any paid call (exit 45). What was spent is kept in each season's planning/factory.json.",
+  "seasons": {
+    "s7_seoulpilot": {
+      "usd": 1.00,
+      "approvedOn": "2026-11-04",
+      "note": "Seoul Pilot Case 01 (The Missing Royal Letter): 10 pictures, approved by the user in chat."
+    }
+  }
+}

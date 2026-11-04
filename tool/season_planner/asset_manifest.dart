@@ -365,7 +365,9 @@ abstract final class AssetManifest {
     // picture it shows in the game or one of the manifest's (made with the
     // others).
     final openings = [for (final a in list) if (a is Map && a['type'] == 'prologue') a];
-    if (openings.length != 1) {
+    // A pilot case has no opening (no `prologue`); a season without one is
+    // refused by its plan's own check (`prologue_missing`).
+    if (openings.length > 1 || openings.isEmpty && season.prologue != null) {
       error('asset_prologue_missing', r'$.assets',
           '${openings.length} pictures of type prologue: the opening\'s first scene is one, its city at night ($coverSize, words over its bottom 40%)');
     }

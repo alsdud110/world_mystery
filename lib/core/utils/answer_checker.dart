@@ -7,7 +7,9 @@ import '../../data/models/mission.dart';
 /// Text answers are forgiving for kids: case, spaces and punctuation are
 /// ignored ("stone", " Stone! " and "STONE" all match).
 abstract final class AnswerChecker {
-  static final _nonAlphaNumeric = RegExp(r'[^A-Z0-9]');
+  /// Hangul (its letters and syllables) is kept: a Korean answer is never
+  /// read as nothing, and every Latin answer reads as before.
+  static final _nonAlphaNumeric = RegExp(r'[^A-Z0-9\u3131-\u318E\uAC00-\uD7A3]');
 
   static String normalize(String input) => input.toUpperCase().replaceAll(_nonAlphaNumeric, '');
 

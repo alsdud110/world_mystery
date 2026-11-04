@@ -35,6 +35,8 @@ void main() {
     'dark_room_search',
     // Puzzle Engine 2.0 (PART 3C).
     'timeline_board',
+    // Puzzle Engine 2.0 (the Seoul pilot's note in the new letters).
+    'syllable_compose',
   ];
   const conditionalIds = [
     'clock_set',
@@ -47,7 +49,7 @@ void main() {
   ];
 
   group('registry', () {
-    test('holds the 28 puzzles of STEP 2-4 and the Puzzle Engine 2.0 timeline, each id once, none tied to a city', () {
+    test('holds the 28 puzzles of STEP 2-4 and Puzzle Engine 2.0\'s timeline and syllables, each id once, none tied to a city', () {
       final ids = [for (final p in PuzzlePalette.all) p.id];
       expect(ids.toSet(), hasLength(ids.length));
       expect(ids, unorderedEquals([...readyIds, ...conditionalIds]));
@@ -73,7 +75,7 @@ void main() {
       expect(PuzzlePalette.contains(''), isFalse);
     });
 
-    test('grades: 22 ready, 7 conditional, no custom engine offered', () {
+    test('grades: 23 ready, 7 conditional, no custom engine offered', () {
       expect([for (final p in PuzzlePalette.ready) p.id], readyIds);
       expect([for (final p in PuzzlePalette.conditional) p.id], conditionalIds);
       expect(PuzzlePalette.ofGrade(PuzzleReuseGrade.custom), isEmpty);
@@ -85,7 +87,7 @@ void main() {
       for (final mode in PuzzleGenerationMode.values) {
         expect(PuzzlePalette.ofMode(mode).every((p) => p.generationMode == mode), isTrue);
       }
-      expect([for (final p in PuzzlePalette.textOnly) p.id], ['text_choice', 'word_entry', 'number_entry', 'combo_dial_lock', 'letter_tile_lock', 'order_sequence', 'timeline_board']);
+      expect([for (final p in PuzzlePalette.textOnly) p.id], ['text_choice', 'word_entry', 'number_entry', 'combo_dial_lock', 'letter_tile_lock', 'order_sequence', 'timeline_board', 'syllable_compose']);
     });
 
     test('nothing that needs development is generatable; pictures to approve are said', () {
@@ -240,7 +242,7 @@ List<(SeasonContent, Map<String, Mission>)> _contents() => [
 
 /// Every class of the game's models, by name: its fields' names.
 /// Palette puzzles no season of the game plays yet (Puzzle Engine 2.0).
-const _awaitingFirstSeason = {'timeline_board'};
+const _awaitingFirstSeason = {'timeline_board', 'syllable_compose'};
 
 Map<String, Set<String>> _dartClasses() {
   final out = <String, Set<String>>{};

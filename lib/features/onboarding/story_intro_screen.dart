@@ -164,10 +164,13 @@ class _StoryIntroScreenState extends ConsumerState<StoryIntroScreen> {
           // The place the case opens on, in the dark under the narration (the
           // London map while the place has no picture: Case 01's Royal
           // Archive), never so dark that the place is lost.
-          PlaceScenery(
-            ref.read(currentEpisodeProvider).introScene,
-            map: SeasonMap.forSeason(ref.read(currentEpisodeProvider).seasonId),
-          ),
+          if (SeasonCatalog.introBackdrop(ref.read(currentEpisodeProvider).id) case final own?)
+            PlaceScenery.file(own)
+          else
+            PlaceScenery(
+              ref.read(currentEpisodeProvider).introScene,
+              map: SeasonMap.forSeason(ref.read(currentEpisodeProvider).seasonId),
+            ),
           InkSurface(
             night: true,
             child: SafeArea(

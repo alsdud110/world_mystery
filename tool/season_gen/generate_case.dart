@@ -837,6 +837,7 @@ abstract final class CaseGenerator {
     'package:world_mystery/data/models/scene_explore.dart': ['ExploreKind', 'ExplorePicture', 'ExploreScene', 'ExploreSpot', 'ScenePixels'],
     'package:world_mystery/data/models/scene_inspect.dart': ['InspectKind', 'InspectScene', 'InspectSpot'],
     'package:world_mystery/data/models/tower_puzzles.dart': ['PaperQuad', 'RecordDoc', 'RecordLayout', 'RecordLine', 'RecordsScene'],
+    'package:world_mystery/puzzles_v2/core/syllable_rules.dart': ['SyllableBlock', 'SyllableSpec'],
     'package:world_mystery/puzzles_v2/core/timeline_rules.dart': ['TimelineCard', 'TimelineRelation', 'TimelineSpec'],
   };
 
@@ -1012,6 +1013,7 @@ abstract final class CaseGenerator {
   /// before them (Rome, New York) is made byte for byte as before.
   static const v2SceneTables = {
     'timelines': 'TimelineSpec',
+    'syllables': 'SyllableSpec',
     // STEP 1: engines the game already played, now made from plans.
     'deductions': 'DeductionScene',
     'inspections': 'InspectScene',
@@ -1042,6 +1044,7 @@ abstract final class CaseGenerator {
       'investigations' => w.search == null ? null : _search(w.search!, m.puzzle.answerSpec.answer),
       'dialogues' => w.dialogue == null ? null : _dialogue(w.dialogue!, m.puzzle.answerSpec.answer),
       'timelines' => w.timeline == null ? null : _timeline(w.timeline!, m.puzzle.answerSpec.answer),
+      'syllables' => w.syllables == null ? null : _syllables(w.syllables!),
       'deductions' => w.traces == null ? null : _traces(w.traces!),
       'inspections' => w.inspect == null ? null : _inspect(w.inspect!),
       'records' => w.records == null ? null : _records(w.records!),
@@ -1068,6 +1071,14 @@ abstract final class CaseGenerator {
     'order': [for (final id in answer.split(',')) id.trim()],
     'relations': [
       for (final r in t.relations) DartCall('TimelineRelation', named: {'earlier': r.earlier, 'later': r.later, 'line': r.line}),
+    ],
+  });
+
+  /// A note in the new letters as `SyllableSpec`.
+  static DartCall _syllables(SyllablesPlan s) => DartCall('SyllableSpec', named: {
+    'blocks': [
+      for (final b in s.blocks)
+        DartCall('SyllableBlock', named: {'id': b.id, 'initial': b.initial, 'vowel': b.vowel, 'finalConsonant': ?b.finalConsonant, 'line': b.line}),
     ],
   });
 

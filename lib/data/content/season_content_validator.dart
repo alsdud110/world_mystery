@@ -9,6 +9,7 @@ import 'difficulty_content.dart';
 import 'puzzle_engine_collisions.dart';
 import 'scene_place_check.dart';
 import '../../puzzles_v2/core/puzzle_rules.dart';
+import '../../puzzles_v2/core/syllable_rules.dart';
 import '../../puzzles_v2/core/timeline_rules.dart';
 
 /// One thing wrong in a season's content: where (season, case, mission),
@@ -169,6 +170,7 @@ class _SeasonCheck {
     _hintsAtEveryLevel();
     _levels();
     _timelines();
+    _syllables();
     for (final p in _guard('place', () => ScenePlaceCheck.problemsOf(s))) {
       add('place', p);
     }
@@ -357,6 +359,29 @@ class _SeasonCheck {
       final levels = {for (final d in Difficulty.values) d: s.variants[d]?.timelines[id] ?? spec};
       for (final i in PuzzleSpecCheck.levels(rules, levels, reserved: missions.keys.toSet())) {
         add('engine', 'timelines/$id $i', caseId: caseId, missionId: id);
+      }
+    });
+  }
+
+  /// Puzzle Engine 2.0's notes in the new letters: each a word mission's,
+  /// its rules kept ([SyllableRules.validate]), its note the mission's
+  /// answer, the same game at every level.
+  void _syllables() {
+    const rules = SyllableRules();
+    final missions = {for (final e in cases) for (final m in e.allMissions) m.id: (e.id, m)};
+    s.syllables.forEach((id, spec) {
+      final found = missions[id];
+      if (found == null) return;
+      final (caseId, m) = found;
+      if (m.type != MissionType.wordInput) {
+        add('engine', 'syllables/$id: a note answers a word mission, not ${m.type.name}', caseId: caseId, missionId: id);
+      }
+      for (final i in PuzzleSpecCheck.mission(rules, spec, missionId: id, missionAnswer: m.answer)) {
+        add('answer', 'syllables/$i', caseId: caseId, missionId: id);
+      }
+      final levels = {for (final d in Difficulty.values) d: s.variants[d]?.syllables[id] ?? spec};
+      for (final i in PuzzleSpecCheck.levels(rules, levels, reserved: missions.keys.toSet())) {
+        add('engine', 'syllables/$id $i', caseId: caseId, missionId: id);
       }
     });
   }

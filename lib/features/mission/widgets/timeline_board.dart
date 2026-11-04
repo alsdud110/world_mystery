@@ -32,7 +32,7 @@ class TimelineBoard extends StatefulWidget {
   State<TimelineBoard> createState() => _TimelineBoardState();
 }
 
-class _TimelineBoardState extends State<TimelineBoard> {
+class _TimelineBoardState extends State<TimelineBoard> with SingleTickerProviderStateMixin {
   static const _rules = TimelineRules();
 
   late PuzzleSession<TimelineSpec, TimelineState, TimelineAction> _session =
@@ -49,6 +49,26 @@ class _TimelineBoardState extends State<TimelineBoard> {
 
   /// Why the last tap did nothing (said under the board, and read out).
   String? _note;
+
+  /// The breath of the empty places while a card is picked: where it can go.
+  late final _pulse = AnimationController(vsync: this, duration: const Duration(milliseconds: 700));
+
+  @override
+  void dispose() {
+    _pulse.dispose();
+    super.dispose();
+  }
+
+  /// Breathes only while a card waits for its place (and motion is allowed).
+  void _syncPulse() {
+    if (_picked != null && !MediaQuery.disableAnimationsOf(context)) {
+      if (!_pulse.isAnimating) _pulse.repeat(reverse: true);
+    } else {
+      _pulse
+        ..stop()
+        ..value = 0;
+    }
+  }
 
   TimelineSpec get _spec => widget.spec;
   TimelineState get _state => _session.state;
@@ -123,6 +143,7 @@ class _TimelineBoardState extends State<TimelineBoard> {
     final slots = _state.slots;
     final table = [for (final c in _spec.cards) if (!_state.holds(c.id)) c];
     final picked = _picked == null ? null : _card(_picked!);
+    _syncPulse();
     return Column(
       key: const ValueKey('timeline-board'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -203,15 +224,25 @@ class _TimelineBoardState extends State<TimelineBoard> {
             : 'Pick a card first.',
         selected: chosen,
         onTap: () => _tapSlot(i),
-        child: (focused) => Container(
-          constraints: const BoxConstraints(minHeight: 56),
-          padding: const EdgeInsets.symmetric(horizontal: AppSpace.md, vertical: AppSpace.sm),
-          decoration: answerPaper(chosen ? AnswerState.selected : wrong ? AnswerState.wrong : card == null ? AnswerState.disabled : AnswerState.idle).copyWith(
-            border: Border.all(
-              color: focused || target ? AppColors.gold : fixed ? AppColors.goldDeep : AppLine.faint(0.22),
-              width: focused || target || fixed ? AppLine.ink : AppLine.hairline,
-            ),
-          ),
+        child: (focused) => AnimatedBuilder(
+          animation: _pulse,
+          // An empty place breathes gold while a card waits for it.
+          builder: (context, child) {
+            final glow = target && card == null ? _pulse.value : 0.0;
+            return Container(
+              constraints: const BoxConstraints(minHeight: 56),
+              padding: const EdgeInsets.symmetric(horizontal: AppSpace.md, vertical: AppSpace.sm),
+              decoration: answerPaper(chosen ? AnswerState.selected : wrong ? AnswerState.wrong : card == null ? AnswerState.disabled : AnswerState.idle).copyWith(
+                color: target && card == null ? Color.lerp(AppColors.paperLight, AppColors.goldLight, 0.15 + 0.35 * glow) : null,
+                border: Border.all(
+                  color: focused || target ? Color.lerp(AppColors.goldDeep, AppColors.gold, glow)! : fixed ? AppColors.goldDeep : AppLine.faint(0.22),
+                  width: focused || target || fixed ? AppLine.ink : AppLine.hairline,
+                ),
+                boxShadow: glow > 0 ? [BoxShadow(color: AppColors.gold.withValues(alpha: 0.45 * glow), blurRadius: 4 + 10 * glow)] : null,
+              ),
+              child: child,
+            );
+          },
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -221,7 +252,15 @@ class _TimelineBoardState extends State<TimelineBoard> {
                 child: card == null
                     ? Padding(
                         padding: const EdgeInsets.only(top: AppSpace.xs),
-                        child: Text(target ? 'Put it here' : 'Empty', style: AppText.aside(size: 15)),
+                        child: target
+                            ? Row(
+                                children: [
+                                  InkIcon(InkGlyph.arrow, size: AppIconSize.small, color: AppColors.goldDeep),
+                                  const SizedBox(width: AppSpace.xs),
+                                  Flexible(child: Text('Put it here', style: AppText.subtitle(color: AppColors.goldDeep))),
+                                ],
+                              )
+                            : Text('Empty', style: AppText.aside(size: 15)),
                       )
                     : _words(card, chosen: chosen, tag: fixed ? 'FIXED' : chosen ? 'PICKED' : wrong ? 'CHECK THIS ONE' : null,
                         line: wrong ? _problem!.line : null),

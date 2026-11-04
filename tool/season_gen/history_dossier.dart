@@ -714,27 +714,31 @@ abstract final class HistoryGate {
     var rel = output.replaceAll(r'\', '/');
     if (rel.startsWith('$base/')) rel = rel.substring(base.length + 1);
     rel = rel.replaceFirst(RegExp(r'^(\./)+'), '');
-    final seasons = Directory('$base/content_pipeline/seasons');
-    if (!seasons.existsSync()) return const [];
-    for (final d in seasons.listSync().whereType<Directory>()) {
-      final id = d.uri.pathSegments.where((s) => s.isNotEmpty).last;
-      final roots = <String>{'content_pipeline/seasons/$id', 'content_pipeline/asset_work/$id'};
-      try {
-        if (SeasonMode.of(d.path) == SeasonMode.standard) continue;
-        final brief = SeasonMode._brief(d.path);
-        if (brief?['assetRoot'] case final String r) roots.add(r);
-      } on FormatException {
-        // a mode that cannot be told: its own folders are stopped (blockers says why)
-      }
-      final manifest = File('${d.path}/assets.manifest.json');
-      if (manifest.existsSync()) {
+    // The game's seasons and the sandbox's (the Seoul pilot's plans live in
+    // test/sandbox/plans): a pilot's pictures are held as a season's are.
+    for (final plans in ['content_pipeline/seasons', 'test/sandbox/plans']) {
+      final seasons = Directory('$base/$plans');
+      if (!seasons.existsSync()) continue;
+      for (final d in seasons.listSync().whereType<Directory>()) {
+        final id = d.uri.pathSegments.where((s) => s.isNotEmpty).last;
+        final roots = <String>{'$plans/$id', 'content_pipeline/asset_work/$id'};
         try {
-          if (jsonDecode(manifest.readAsStringSync()) case {'assetRoot': final String r}) roots.add(r);
+          if (SeasonMode.of(d.path) == SeasonMode.standard) continue;
+          final brief = SeasonMode._brief(d.path);
+          if (brief?['assetRoot'] case final String r) roots.add(r);
         } on FormatException {
-          // the manifest's own checks say so
+          // a mode that cannot be told: its own folders are stopped (blockers says why)
         }
+        final manifest = File('${d.path}/assets.manifest.json');
+        if (manifest.existsSync()) {
+          try {
+            if (jsonDecode(manifest.readAsStringSync()) case {'assetRoot': final String r}) roots.add(r);
+          } on FormatException {
+            // the manifest's own checks say so
+          }
+        }
+        if (roots.any((r) => rel == r || rel.startsWith('${r.replaceAll(RegExp(r'/$'), '')}/'))) return blockers(d.path);
       }
-      if (roots.any((r) => rel == r || rel.startsWith('${r.replaceAll(RegExp(r'/$'), '')}/'))) return blockers(d.path);
     }
     return const [];
   }

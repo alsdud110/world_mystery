@@ -5,12 +5,25 @@ description: Make a whole new World Mystery season and put it in the game — pl
 
 # Create a season (plan → pictures → game)
 
-The user gives a season number, a city and maybe an image budget (default
-**$5.00** when none is given). Carry the season all the way into the game
-yourself; do not stop to ask for approval between steps. Stop and report
-only for: the budget would be passed, a user's save could be lost, an
-existing season would have to change, a core error you cannot fix, or a
-missing credential (`OPENAI_API_KEY` in `.env`).
+The user gives a season number, a city and maybe an image budget. Carry the
+season all the way into the game yourself; do not stop to ask for approval
+between steps.
+
+**Pictures are made by default** (image policy, 2026-11-04), historical and
+standard seasons alike, with the existing OpenAI pipeline: no question per
+picture. The season's budget is its line in `content_pipeline/image_budgets.json`
+(US dollars). A budget the user gives in the request is approved: write it
+there (`usd`, `approvedOn`, a `note`) before the first run. A season with no
+line is asked about **once**, before any paid call (exit 45 gives the amount
+needed). Within the budget, a picture that fails its checks or is rejected
+at review is made again without asking.
+
+Stop and report only for: the budget would be passed, no budget set (asked
+once), a user's save could be lost, an existing season would have to change,
+a historical season's checks failing (exit 15: no picture before HistoryGate
+passes), a core error you cannot fix, or a missing or refused credential
+(`OPENAI_API_KEY` in `.env`). Report every picture made and what the API
+cost (`planning/factory.json` `spentUsd`, the work folder's `image_manifest.json`).
 
 Read first: `CLAUDE.md` (§20 gameplay, §21 testing), `tool/season_factory/README.md`.
 Rome (`content_pipeline/seasons/s3_rome/`) is the worked example of every file.
@@ -54,8 +67,16 @@ macOS `brew install webp`). Without it a made picture waits `WAITING …`
 
 ```sh
 dart run tool/season_factory/season_factory.dart status <seasonDir>
-dart run tool/season_factory/season_factory.dart run <seasonDir> --budget <usd>
+dart run tool/season_factory/season_factory.dart run <seasonDir>   # budget from image_budgets.json (--budget <usd> overrides)
 ```
+
+The manifest (`assets.manifest.json`) is written in step 1 with the plans
+(plan-season, PLAYBOOK §3, the city's look as `seasonStyles`): there is no
+other manifest generator, and `run` refuses a season without one
+(`asset_manifest_missing`, exit 10). A single pilot case (not a season, e.g.
+`test/sandbox/plans/s7_seoulpilot`) is drawn with `run <dir> --pictures-only`:
+the same history gate, budget, review and apply, then it stops (measure and
+`generate_case.dart --out` by hand).
 
 `run` goes on from where it stopped; act on its exit code and run it again:
 
@@ -66,7 +87,9 @@ dart run tool/season_factory/season_factory.dart run <seasonDir> --budget <usd>
 | 20 | **open the review sheet PNG with the Read tool and look at every picture**: style like the season's others, faces as the character's other portraits, every clue the plans name visible, no text, choices fair, nothing giving an answer away. Then `season_factory.dart reviewed <seasonDir> <assetId>...` for the good ones, and for a bad one fix its prompt in `assets.manifest.json` and `season_factory.dart reject <seasonDir> <assetId> --why "<what was wrong>"`. Never mark a picture reviewed without looking at it. |
 | 30 | open each grid sheet it names (Read tool), read the pixel positions off the grid and write them into the plans: the map's `art.map.landmarks` (each drawing's centre) with `measuredOn` = the sha256 it printed; a look round's `areas`, `mark`, `guideAt`, `opening` (every place's centre inside it), `picture.measuredOn`, and replace its `UNMEASURED` note with how it was measured. No two areas may overlap. If you cannot see a thing on the picture, do not guess: fix the prompt and reject the picture. |
 | 35 | not a stop for the user: write the Junior and Master English yourself right away (§ Levels below, its steps), then run again |
-| 40 | the budget is spent: stop and report how much more the remaining pictures need (`asset_pipeline.dart --manifest … --only …` dry run shows it) |
+| 40 | the pictures left would pass the budget (checked before any call, at the conservative cost): stop and report the amount it printed |
+| 41 | no API key: stop and report (nothing sent) |
+| 45 | no budget set for the season: ask the user once to approve the amount it printed; once approved, write it into `content_pipeline/image_budgets.json` and run again |
 | 50 | read the generator's errors, fix the plans, run again |
 | 60 | read the failing test, fix the cause (never weaken the test), run again |
 | 1 | an API error or a copy problem: read it; retry once only when the cause is clear and fixed (a prompt the safety system refused: rewrite the part it names). Never loop. |

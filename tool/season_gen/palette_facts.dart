@@ -386,6 +386,15 @@ abstract final class PaletteFacts {
       ],
       requiredData: ['Mission.letter', 'Mission.question', 'Mission.options', 'Mission.answer', 'Mission.codeLength', 'Mission.orderFeedback', 'Mission.hints', 'TimelineSpec.cards', 'TimelineSpec.order', 'TimelineSpec.relations'],
     ),
+    PalettePuzzle(
+      'syllable_compose',
+      PaletteGrade.ready,
+      PaletteMode.textOnly,
+      engines: [
+        PaletteEngine('SyllableBoard', 'syllables', {'wordInput'}, {PlanSurface.mission}),
+      ],
+      requiredData: ['Mission.letter', 'Mission.question', 'Mission.answer', 'Mission.hints', 'SyllableSpec.blocks'],
+    ),
   ];
 
   /// The names a dial can show (`GameSymbol`).

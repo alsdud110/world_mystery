@@ -15,7 +15,7 @@ import '../../tool/season_gen/season_cases.dart';
 /// stay as its plans make it, to be played with `SingleCase`.
 void main() {
   const plans = 'test/sandbox/plans/s7_seoulpilot';
-  const out = 'test/sandbox/generated/s7_seoulpilot';
+  const out = 'lib/data/pilot/s7_seoulpilot'; // played in developer mode (SEOUL PILOT)
   final cases = SeasonCases.of('$plans/season.plan.json');
   List<String> blockers() => HistoryGate.blockers(plans, game: true);
 
@@ -56,7 +56,7 @@ void main() {
         expect(made.writable, isTrue);
         expect(made.files.keys, contains('s7_seoulpilot_history.g.dart'));
         expect(GeneratedFiles.stale(out, made.files), isEmpty,
-            reason: 'run: dart run tool/season_gen/generate_season.dart --season $plans/season.plan.json --target sandbox');
+            reason: 'run: dart run tool/season_gen/generate_season.dart --season $plans/season.plan.json --target sandbox --out $out');
       });
     });
   }

@@ -11,11 +11,10 @@ import 'package:world_mystery/data/models/difficulty.dart';
 import 'package:world_mystery/data/models/episode.dart';
 import 'package:world_mystery/data/models/mission.dart';
 import 'package:world_mystery/data/models/profile.dart';
-import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/game/game_controller.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
-import 'package:world_mystery/features/mission_map/map_world.dart';
-import 'package:world_mystery/features/result/case_solved_screen.dart' show historyRevealProvider;
+import 'package:world_mystery/features/game_master/dev_session.dart' show pilotOverrides;
+import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart';
 
 import '../full_playthrough_test.dart' show tapText, wait;
 import '../helpers.dart';
@@ -26,8 +25,8 @@ import 'sandbox_play.dart';
 /// tests only (Seoul Pilot Case 01): the season given beside the game's own
 /// with that one case (so it is the season's first, open), Paris's map lent
 /// for its pins, the game's own missions, puzzles, Case Closed file and
-/// `GameController`. Nothing of it is in `lib/` or the app as built; the
-/// saved data is the test's own (mock preferences).
+/// `GameController` — the overrides developer mode's pilot uses too
+/// (`pilotOverrides`); the saved data is the test's own (mock preferences).
 ///
 /// It takes content already made: a historical season's is made only once
 /// its history is approved (`HistoryGate`, the generator), so before that
@@ -49,13 +48,8 @@ class SingleCase {
   );
 
   List<Override> overrides() => [
-    seasonsProvider.overrideWithValue([for (final s in SeasonCatalog.all) s.season, season.season]),
-    allEpisodesProvider.overrideWithValue([...MockEpisodeRepository.bundled(), episode]),
-    seasonMapsProvider.overrideWithValue({...SeasonMap.bySeason, seasonId: SeasonMap.paris}),
-    seasonReleasedProvider.overrideWithValue((id) => id == seasonId || seasonReleased(id)),
+    ...pilotOverrides(season, caseId, level),
     operatorToolsAvailableProvider.overrideWithValue(true),
-    // The game finds a reveal by its own seasons only.
-    if (season.historyReveals[caseId] case final r?) historyRevealProvider(caseId).overrideWithValue(r),
   ];
 
   /// Its places and tables found as the game's own ([SeasonCatalog.testSeasons]); undone by [unregister].
@@ -118,6 +112,8 @@ class CasePlayer {
   Future<void> toPuzzle(Mission m) async {
     await play.toPlace(m);
     await tapText(t, 'INVESTIGATE', after: const Duration(milliseconds: 1200));
+    // The person's talk before the puzzle, heard to its finish.
+    if (SeasonCatalog.talkMission(m)?.before case final before?) await _heardTo(before.finishLabel);
     for (final step in ['TAP TO OPEN', 'SOLVE THE PUZZLE']) {
       if (find.text(step).evaluate().isNotEmpty) await tapText(t, step, after: const Duration(milliseconds: 1500));
     }
@@ -149,6 +145,15 @@ class CasePlayer {
     } else if (season.deductions[m.id] case final scene?) {
       await mp.noteClues(t, scene);
       await mp.chooseAndSearch(t, scene, a);
+    } else if (season.syllables[m.id] case final spec?) {
+      // Each group's vowel as the note [a] writes it: its line, then its dot.
+      for (final (i, b) in spec.blocks.indexed) {
+        final vowel = Hangul.vowels[(a.codeUnitAt(i) - 0xAC00) ~/ 28 % 21];
+        final (line, dot) = Hangul.partsOf(vowel)!;
+        await _tap(find.byKey(ValueKey('syllable-line-${b.id}-${line.name}')));
+        if (dot != VowelDot.none) await _tap(find.byKey(ValueKey('syllable-dot-${b.id}-${dot.name}')));
+      }
+      await _tap(find.byKey(const ValueKey('syllable-check')));
     } else if (season.inspections[m.id] case final scene?) {
       await mp.openInspectLabel(t, scene);
       await mp.writeOnLabel(t, a);
@@ -157,6 +162,22 @@ class CasePlayer {
       return;
     }
     await wait(t, const Duration(milliseconds: 1200));
+    // The person's talk after the find (its face), heard to its finish.
+    if (SeasonCatalog.talkMission(m)?.after case final after? when a == m.answer) await _heardTo(after.finishLabel);
+  }
+
+  /// A talk's lines heard (its typing skipped) to [finishLabel], tapped.
+  Future<void> _heardTo(String finishLabel) async {
+    for (var i = 0; i < 30 && find.text(finishLabel).evaluate().isEmpty; i++) {
+      if (find.text('NEXT').evaluate().isNotEmpty) {
+        await tapText(t, 'NEXT', after: const Duration(milliseconds: 400));
+      } else {
+        await t.tapAt(const Offset(160, 300)); // its typing skipped
+        await wait(t, const Duration(milliseconds: 600));
+      }
+    }
+    expect(find.text(finishLabel), findsWidgets, reason: 'the talk heard to $finishLabel: ${play.texts()}');
+    await tapText(t, finishLabel, after: const Duration(milliseconds: 1200));
   }
 
   /// The Discovery Moment, the scene after it (its typing skipped) when

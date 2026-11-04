@@ -267,7 +267,8 @@ abstract final class SeasonQuality {
 
   /// Each puzzle's answer, wrong answers and hints.
   static void _puzzles(List<CasePlan> plans, Findings out) {
-    String norm(String s) => s.toUpperCase().replaceAll(RegExp(r'[^A-Z0-9]'), '');
+    // As `AnswerChecker.normalize`: Hangul kept.
+    String norm(String s) => s.toUpperCase().replaceAll(RegExp(r'[^A-Z0-9\u3131-\u318E\uAC00-\uD7A3]'), '');
     for (final c in plans) {
       for (final (i, m) in c.allMissions.indexed) {
         final at = 'cases/${c.caseId} ${m.isFinal ? r'$.final' : '\$.missions[$i]'}';

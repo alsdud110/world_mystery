@@ -16,6 +16,7 @@ import '../models/scene_explore.dart';
 import '../models/scene_trail.dart';
 import '../models/scene_inspect.dart';
 import '../models/season.dart';
+import '../../puzzles_v2/core/syllable_rules.dart';
 import '../../puzzles_v2/core/timeline_rules.dart';
 
 /// The words of the game at each level (Rookie, Junior, Master).
@@ -428,6 +429,7 @@ abstract final class DifficultyContent {
         // Puzzle Engine 2.0's timeline: its rules' own structure (ids,
         // times, the order, which card goes with which) — every word may differ.
         final TimelineSpec s => jsonEncode(const TimelineRules().structure(s)),
+        final SyllableSpec s => jsonEncode(const SyllableRules().structure(s)),
         _ => null,
       };
 
