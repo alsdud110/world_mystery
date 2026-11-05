@@ -423,8 +423,8 @@ class _CaseShortcutsState extends ConsumerState<CaseShortcuts> {
   }
 }
 
-/// Seoul Pilot Case 01 at a level, in a test session of its own (see
-/// [DevSession.enterPilot]): not one of the game's seasons, never in a
+/// Seoul (Season 5) Case 01 at a level, in a test session of its own (see
+/// [DevSession.enterPilot]), whatever the player has solved: never in a
 /// release build.
 class _SeoulPilot extends StatelessWidget {
   const _SeoulPilot({required this.onLevel});
@@ -437,12 +437,12 @@ class _SeoulPilot extends StatelessWidget {
       key: const ValueKey('seoul-pilot'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text('SEOUL PILOT — CASE 01', style: AppText.title(size: 20)),
-        Text('The Missing Royal Letter · 1446', style: AppText.eyebrow()),
+        Text('SEOUL — CASE 01', style: AppText.title(size: 20)),
+        Text("The Secret of the King's Letters · 1446", style: AppText.eyebrow()),
         const SizedBox(height: 4),
         Text(
-          '서울 시범 사건을 고른 난이도로 새 테스트 세션에서 처음부터 플레이합니다. '
-          '기록은 메모리에만 있고, 이 기기의 진행 기록과 시즌 목록에는 나타나지 않습니다.',
+          '서울(Season 5) Case 01을 고른 난이도로 새 테스트 세션에서 처음부터 플레이합니다. '
+          '해금 조건과 상관없이 열리고, 기록은 메모리에만 있어 이 기기의 진행 기록은 바뀌지 않습니다.',
           style: AppText.caption(),
         ),
         const SizedBox(height: 12),

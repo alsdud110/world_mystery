@@ -159,8 +159,8 @@ void main() {
     });
 
     testWidgets('three seasons or more: the archives scroll to every file', (t) async {
-      // After New York (Season 4): a fifth.
-      const third = Season(id: 's5_test', number: 5, title: 'A Fifth City', tagline: 'ONE MORE', prologue: SeasonPrologue(), outro: [], figures: []);
+      // After Seoul (Season 5, in the game since 2026-11-05): a sixth.
+      const third = Season(id: 's6_test', number: 6, title: 'A Sixth City', tagline: 'ONE MORE', prologue: SeasonPrologue(), outro: [], figures: []);
       await pumpApp(t, seasonSaves(0), extra: [
         seasonsProvider.overrideWithValue([
           for (final s in SeasonCatalog.all) s.season,
@@ -168,14 +168,17 @@ void main() {
         ]),
       ]);
       await openArchive(t);
-      expect(file('s5_test').hitTestable(), findsNothing, reason: 'below the fold');
+      expect(file('s6_test').hitTestable(), findsNothing, reason: 'below the fold');
       await reveal(t, file(SeasonIds.rome));
       expect(find.text('SEASON THREE'), findsOneWidget);
       await reveal(t, file(SeasonIds.newyork));
       expect(find.text('SEASON FOUR'), findsOneWidget);
-      await reveal(t, file('s5_test'));
+      await reveal(t, file(SeasonIds.seoul));
+      expect(find.text('SEASON FIVE'), findsOneWidget);
+      expect(find.text("THE KING'S LETTERS OF SEOUL"), findsNothing, reason: 'sealed: New York is not solved');
+      await reveal(t, file('s6_test'));
       expect(find.text(third.label), findsOneWidget);
-      expect(find.text('A FIFTH CITY'), findsNothing, reason: 'sealed: its season before is not solved');
+      expect(find.text('A SIXTH CITY'), findsNothing, reason: 'sealed: its season before is not solved');
       expect(t.takeException(), isNull);
       await wait(t, const Duration(seconds: 3));
     });
@@ -419,20 +422,23 @@ void main() {
     final c = ProviderContainer(overrides: await testOverridesFor(await SharedPreferences.getInstance()));
     addTearDown(c.dispose);
     final files = c.read(seasonFilesProvider);
-    expect([for (final f in files) f.season.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork]);
+    expect([for (final f in files) f.season.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul]);
     // Rome, two files on, never names Paris while London is under way; New
-    // York, three on, never names Rome.
+    // York, three on, never names Rome; Seoul, four on, never New York.
     expect(files[2].unsealNote, 'Solve the season before it to unseal this file.');
+    expect(files[3].unsealNote, 'Solve the season before it to unseal this file.');
     expect(files.last.unsealNote, 'Solve the season before it to unseal this file.');
     expect(files[1].unsealNote, 'Solve Shadows over London to unseal this file.');
     expect(files.first.state, SeasonFileState.inProgress);
     expect(files.first.availability.solvedCount, 4);
     expect(files.first.current, isTrue);
     expect(files[2].state, SeasonFileState.sealed);
+    expect(files[3].state, SeasonFileState.sealed);
     expect(files.last.state, SeasonFileState.sealed);
     expect(files[1].before!.id, SeasonIds.london);
     expect(files[2].before!.id, SeasonIds.paris);
-    expect(files.last.before!.id, SeasonIds.rome);
+    expect(files[3].before!.id, SeasonIds.rome);
+    expect(files.last.before!.id, SeasonIds.newyork);
   });
 }
 

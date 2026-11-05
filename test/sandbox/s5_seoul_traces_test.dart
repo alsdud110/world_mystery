@@ -15,13 +15,13 @@ import 'package:world_mystery/features/mission/widgets/scene_deduction.dart';
 import '../../tool/season_gen/generate_case.dart';
 import '../../tool/season_gen/plan_models.dart';
 
-/// Seoul Pilot Case 01, Mission 1 (`test/sandbox/plans/s7_seoulpilot`): the
+/// Seoul (Season 5) Case 01, Mission 1 (`content_pipeline/seasons/s5_seoul`): the
 /// inner gate's picture holds no writing, so the app draws the three traces
 /// (`TraceSketch`: the scrap with 門 copied on it, the bucket's wet ring, the
 /// drops of water) over their measured areas: each where a tap notes it,
 /// seen on the smallest phone, named for screen readers.
 void main() {
-  const plan = 'test/sandbox/plans/s7_seoulpilot/cases/s7_ep01/case.plan.json';
+  const plan = 'content_pipeline/seasons/s5_seoul/cases/s5_ep01/case.plan.json';
   final raw = jsonDecode(File(plan).readAsStringSync()) as Map<String, dynamic>;
   final casePlan = CasePlan.fromJson(raw);
   final traces = casePlan.missions[0].play!.traces!;
@@ -92,9 +92,9 @@ void main() {
   });
 
   test('the generator writes the sketches (made in memory only)', () {
-    const seasonPath = 'test/sandbox/plans/s7_seoulpilot/season.plan.json';
-    final made = CaseGenerator.sandbox(seasonPath: seasonPath, casePaths: const ['test/sandbox/plans/s7_seoulpilot/cases/s7_ep01/case.plan.json'], staticOnly: true);
-    final code = made.files['s7_ep01.g.dart']!;
+    const seasonPath = 'content_pipeline/seasons/s5_seoul/season.plan.json';
+    final made = CaseGenerator.sandbox(seasonPath: seasonPath, casePaths: const ['content_pipeline/seasons/s5_seoul/cases/s5_ep01/case.plan.json'], staticOnly: true);
+    final code = made.files['s5_ep01.g.dart']!;
     expect(code, allOf(contains('sketch: TraceSketch.copiedScrap'), contains('sketch: TraceSketch.waterRing'), contains('sketch: TraceSketch.waterDrops')));
     expect(code, contains('show DeductionClue, DeductionPlace, DeductionScene, TraceSketch'));
   });

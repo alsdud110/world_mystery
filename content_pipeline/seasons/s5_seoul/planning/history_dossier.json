@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "seasonId": "s7_seoulpilot",
+  "seasonId": "s5_seoul",
   "cases": [
     {
-      "caseId": "s7_ep01",
+      "caseId": "s5_ep01",
       "subject": "The making of Hunminjeongeum, the new letters (1443-1446)",
       "period": "1443-1446",
       "location": "The palace in Hanyang (no palace building named: not established for autumn 1446)",
       "facts": [
         {
-          "factId": "s7_ep01_h1",
+          "factId": "s5_ep01_h1",
           "statement": "In the twelfth month of 1443 (Sejong 25), King Sejong himself made 28 new letters and called them Hunminjeongeum.",
           "status": "source_checked",
           "sources": [
@@ -46,7 +46,7 @@
           ]
         },
         {
-          "factId": "s7_ep01_h2",
+          "factId": "s5_ep01_h2",
           "statement": "The book Hunminjeongeum, which explains the new letters, was completed in the ninth month of 1446 (Sejong 28).",
           "status": "source_checked",
           "sources": [
@@ -81,7 +81,7 @@
           }
         },
         {
-          "factId": "s7_ep01_h3",
+          "factId": "s5_ep01_h3",
           "statement": "The book's explanation of the letters (Jejahae) says the five basic consonant letters copy the speech organs: ㄱ the root of the tongue closing the throat, ㄴ the tongue touching the upper gums, ㅁ the mouth, ㅅ the teeth and ㅇ the throat.",
           "status": "source_checked",
           "sources": [
@@ -119,7 +119,7 @@
           ]
         },
         {
-          "factId": "s7_ep01_h4",
+          "factId": "s5_ep01_h4",
           "statement": "The book says the three basic vowel letters copy the round sky (a dot), the flat earth (a flat line) and a person standing (a standing line).",
           "status": "source_checked",
           "sources": [
@@ -153,7 +153,7 @@
           }
         },
         {
-          "factId": "s7_ep01_h5",
+          "factId": "s5_ep01_h5",
           "statement": "In his preface the King wrote that he made 28 new letters only so that people could learn them easily and find them convenient for daily use.",
           "status": "source_checked",
           "sources": [
@@ -180,7 +180,7 @@
           }
         },
         {
-          "factId": "s7_ep01_h6",
+          "factId": "s5_ep01_h6",
           "statement": "Jeong In-ji's postface says a wise person can understand the letters before the morning is over, and a slow person can learn them within ten days.",
           "status": "source_checked",
           "sources": [
@@ -207,7 +207,7 @@
           }
         },
         {
-          "factId": "s7_ep01_h7",
+          "factId": "s5_ep01_h7",
           "statement": "The explanations and examples in the book were written by palace scholars: Jeong In-ji with Choe Hang, Bak Paeng-nyeon, Sin Suk-ju, Seong Sam-mun, Gang Hui-an, Yi Gae and Yi Seon-ro.",
           "status": "draft",
           "sources": [
@@ -237,7 +237,7 @@
           ]
         },
         {
-          "factId": "s7_ep01_h8",
+          "factId": "s5_ep01_h8",
           "statement": "The Royal Secretariat (Seungjeongwon) was the office that carried the King's orders out and reports in to him.",
           "status": "source_checked",
           "sources": [
@@ -267,7 +267,7 @@
           ]
         },
         {
-          "factId": "s7_ep01_h9",
+          "factId": "s5_ep01_h9",
           "statement": "In his preface the King wrote that the speech of his country differed from China's and did not fit Chinese characters, so many common people who had something to say could not put it into writing.",
           "status": "source_checked",
           "sources": [
@@ -293,7 +293,7 @@
           }
         },
         {
-          "factId": "s7_ep01_h10",
+          "factId": "s5_ep01_h10",
           "statement": "The book says letters for stronger sounds were made by adding strokes to the basic ones: ㅋ from ㄱ, ㄷ and ㅌ from ㄴ, ㅂ and ㅍ from ㅁ, ㅈ and ㅊ from ㅅ, ㆆ and ㅎ from ㅇ.",
           "status": "source_checked",
           "sources": [
@@ -319,7 +319,7 @@
           }
         },
         {
-          "factId": "s7_ep01_h11",
+          "factId": "s5_ep01_h11",
           "statement": "The book says the vowels ㅗ, ㅏ, ㅜ and ㅓ are made by joining the dot (ㆍ) with the flat line (ㅡ) or the standing line (ㅣ).",
           "status": "source_checked",
           "sources": [
@@ -348,7 +348,7 @@
           ]
         },
         {
-          "factId": "s7_ep01_h12",
+          "factId": "s5_ep01_h12",
           "statement": "The book says letters are joined to make one written sound: ㆍ, ㅡ, ㅗ and ㅜ are written under the first sound, ㅣ, ㅏ and ㅓ on its right, and the last sound is written with the letters of the first sounds.",
           "status": "source_checked",
           "sources": [
@@ -374,7 +374,7 @@
           }
         },
         {
-          "factId": "s7_ep01_h13",
+          "factId": "s5_ep01_h13",
           "statement": "Some letters of the fifteenth century, among them the dot ㆍ (arae-a), ㆆ, ㅿ and ㆁ, are not used today.",
           "status": "source_checked",
           "sources": [
@@ -410,23 +410,23 @@
       ],
       "puzzles": [
         {
-          "puzzleId": "s7_ep01_m1",
+          "puzzleId": "s5_ep01_m1",
           "factIds": [
-            "s7_ep01_h9"
+            "s5_ep01_h9"
           ],
           "answer": "c",
           "clues": [
             {
               "text": "cannot write",
-              "missionId": "s7_ep01_m1"
+              "missionId": "s5_ep01_m1"
             },
             {
               "text": "門",
-              "missionId": "s7_ep01_m1"
+              "missionId": "s5_ep01_m1"
             },
             {
               "text": "bucket",
-              "missionId": "s7_ep01_m1"
+              "missionId": "s5_ep01_m1"
             }
           ],
           "derivation": "The King's words (his preface, h9): many people could not write what they meant. The scrap shows a writer who could only copy 門 from the gate sign, a bucket ring and drops of water lead away from the gate: someone who carries water, from the kitchen well.",
@@ -436,74 +436,74 @@
           }
         },
         {
-          "puzzleId": "s7_ep01_m2",
+          "puzzleId": "s5_ep01_m2",
           "factIds": [
-            "s7_ep01_h3",
-            "s7_ep01_h10"
+            "s5_ep01_h3",
+            "s5_ep01_h10"
           ],
           "answer": "siot,giyeok,jieut,bieup,ieung",
           "clues": [
             {
               "text": "teeth",
-              "missionId": "s7_ep01_m2"
+              "missionId": "s5_ep01_m2"
             },
             {
               "text": "back of the tongue",
-              "missionId": "s7_ep01_m2"
+              "missionId": "s5_ep01_m2"
             },
             {
               "text": "stronger",
-              "missionId": "s7_ep01_m2"
+              "missionId": "s5_ep01_m2"
             }
           ],
           "derivation": "Taek names each group by the organ Sora's board gives it (the Jejahae's organs, h3): the teeth are ㅅ, the back of the tongue ㄱ (not ㄴ, the tongue on the gums), the mouth ㅁ, the throat ㅇ. 'One step stronger' is the board's rule, one line more (h10, shown with ㄴ ㄷ ㅌ only): the teeth one step stronger are ㅈ (not ㅊ, two lines more), the mouth one step stronger ㅂ (not ㅁ, nor ㅍ).",
           "whyOnly": "Nine tiles, five used: each group names one organ and one strength only, and four tiles (ㄴ ㅁ ㅊ ㅍ) answer a misread organ or a wrong number of lines. Taek's order is one order."
         },
         {
-          "puzzleId": "s7_ep01_m3",
+          "puzzleId": "s5_ep01_m3",
           "factIds": [
-            "s7_ep01_h4",
-            "s7_ep01_h11",
-            "s7_ep01_h12"
+            "s5_ep01_h4",
+            "s5_ep01_h11",
+            "s5_ep01_h12"
           ],
           "answer": "서고지붕",
           "clues": [
             {
               "text": "dot",
-              "missionId": "s7_ep01_m3"
+              "missionId": "s5_ep01_m3"
             },
             {
               "text": "standing line",
-              "missionId": "s7_ep01_m3"
+              "missionId": "s5_ep01_m3"
             },
             {
               "text": "first column is on the right",
-              "missionId": "s7_ep01_m3"
+              "missionId": "s5_ep01_m3"
             }
           ],
           "derivation": "Each group's first sound is chosen by its organ and strength (Mission 2's words); its vowel is built from the dot, the flat line and the standing line (h4, h11): flat ones under the first sound, standing ones on its right, the throat's ring at the bottom the last sound (h12). The paper's places come from Sora's lesson (fiction: the way she taught Bun-i): top to bottom, two groups to a column, the first column on the right. Group 1 at the top right, 2 under it, 3 at the top left, 4 under it: 서고 지붕.",
           "whyOnly": "Each group's words allow one sound, one line and one place of the dot only, and each place of the paper one group only. Knowing the words alone is not enough: written across the page they read 고붕서지, and from the left column 지붕서고."
         },
         {
-          "puzzleId": "s7_ep01_final",
+          "puzzleId": "s5_ep01_final",
           "factIds": [
-            "s7_ep01_h5",
-            "s7_ep01_h6",
-            "s7_ep01_h9"
+            "s5_ep01_h5",
+            "s5_ep01_h6",
+            "s5_ep01_h9"
           ],
           "answer": "open",
           "clues": [
             {
               "text": "門",
-              "missionId": "s7_ep01_m1"
+              "missionId": "s5_ep01_m1"
             },
             {
               "text": "stronger",
-              "missionId": "s7_ep01_m2"
+              "missionId": "s5_ep01_m2"
             },
             {
               "text": "book hall roof",
-              "missionId": "s7_ep01_m3"
+              "missionId": "s5_ep01_m3"
             }
           ],
           "derivation": "The King's three questions, each answered by one mission's evidence: who wrote it (the copied scrap: a writer who could not write Chinese characters, h9), how after ten days (Sora's board: letters made easy to learn, h5, h6), what it says (Bun-i's note: the book hall roof). Every line of the talk is English; the Hangul stays on the note itself.",
@@ -522,7 +522,7 @@
             "junior": "In 1443, King Sejong created a set of 28 new letters.",
             "master": "In 1443, King Sejong devised a new script of 28 letters.",
             "factIds": [
-              "s7_ep01_h1"
+              "s5_ep01_h1"
             ]
           },
           {
@@ -530,7 +530,7 @@
             "junior": "In 1446, the book Hunminjeongeum, which explains the letters, was completed.",
             "master": "In 1446, Hunminjeongeum, the book that explains the letters, was completed.",
             "factIds": [
-              "s7_ep01_h2"
+              "s5_ep01_h2"
             ]
           },
           {
@@ -538,8 +538,8 @@
             "junior": "The King wrote that Korean was so different from Chinese that many people could not put their thoughts in writing. He made the letters easy to learn.",
             "master": "The King wrote that Korean speech did not fit Chinese characters, leaving many unable to write what they meant; he made the letters easy to learn.",
             "factIds": [
-              "s7_ep01_h9",
-              "s7_ep01_h5"
+              "s5_ep01_h9",
+              "s5_ep01_h5"
             ]
           },
           {
@@ -547,8 +547,8 @@
             "junior": "The book explains that ㄱ, ㄴ, ㅁ, ㅅ and ㅇ copy the shapes of the tongue, the mouth, the teeth and the throat, and that a line is added for a stronger sound.",
             "master": "According to the book, ㄱ, ㄴ, ㅁ, ㅅ and ㅇ are modelled on the tongue, the mouth, the teeth and the throat, with a stroke added for each stronger sound.",
             "factIds": [
-              "s7_ep01_h3",
-              "s7_ep01_h10"
+              "s5_ep01_h3",
+              "s5_ep01_h10"
             ]
           },
           {
@@ -556,9 +556,9 @@
             "junior": "The dot stands for the sky, the flat line for the earth and the standing line for a person. Together they form vowels, and letters are joined into one written sound.",
             "master": "The dot stands for the sky, the flat line for the earth and the standing line for a person; combined, they form the vowels, and the letters of each sound are written together as one block.",
             "factIds": [
-              "s7_ep01_h4",
-              "s7_ep01_h11",
-              "s7_ep01_h12"
+              "s5_ep01_h4",
+              "s5_ep01_h11",
+              "s5_ep01_h12"
             ]
           },
           {
@@ -566,7 +566,7 @@
             "junior": "The book says that even a slow learner can learn the letters in ten days.",
             "master": "The book claims that even a slow learner can master the letters within ten days.",
             "factIds": [
-              "s7_ep01_h6"
+              "s5_ep01_h6"
             ]
           },
           {
@@ -574,7 +574,7 @@
             "junior": "Some letters of that time, such as the dot ㆍ, are no longer used today.",
             "master": "A few letters of that age, the dot ㆍ among them, have since fallen out of use.",
             "factIds": [
-              "s7_ep01_h13"
+              "s5_ep01_h13"
             ]
           }
         ],

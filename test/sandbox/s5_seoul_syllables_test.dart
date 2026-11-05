@@ -5,7 +5,7 @@ import 'package:world_mystery/data/content/difficulty_content.dart';
 import 'package:world_mystery/data/models/episode.dart';
 import 'package:world_mystery/data/models/mission.dart';
 import 'package:world_mystery/data/models/difficulty.dart';
-import 'package:world_mystery/data/pilot/seoul_pilot.dart';
+import 'package:world_mystery/data/season5/season5_content.dart';
 import 'package:world_mystery/features/mission/widgets/syllable_board.dart';
 import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart';
 
@@ -16,7 +16,7 @@ import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart';
 /// at every level. And the language rule (English is the tool): a player
 /// who reads Korean but not the English cannot write the note.
 void main() {
-  const m3 = 's7_ep01_m3', m2 = 's7_ep01_m2', fin = 's7_ep01_final';
+  const m3 = 's5_ep01_m3', m2 = 's5_ep01_m2', fin = 's5_ep01_final';
   const rules = SyllableRules();
 
   Future<List<String>> open(WidgetTester t, SyllableSpec spec, {double text = 1, bool solved = false, String? saved, ValueChanged<String>? onSubmit}) async {
@@ -68,7 +68,7 @@ void main() {
   }
 
   for (final level in Difficulty.values) {
-    final spec = level == Difficulty.rookie ? seoulPilotSeason.syllables[m3]! : seoulPilotSeason.variants[level]!.syllables[m3]!;
+    final spec = level == Difficulty.rookie ? season5Content.syllables[m3]! : season5Content.variants[level]!.syllables[m3]!;
     for (final text in [1.0, 1.6]) {
       testWidgets('${level.label}, 320×568, text ×$text: every piece on screen and 48 dp; built place by place into 서고 지붕', (t) async {
         String? sent;
@@ -106,7 +106,7 @@ void main() {
   }
 
   testWidgets('the paper: the first column on the right, places named by where they are; opened again as saved', (t) async {
-    final spec = seoulPilotSeason.syllables[m3]!;
+    final spec = season5Content.syllables[m3]!;
     final saves = await open(t, spec);
     final cell = {for (final b in spec.blocks) b.id: t.getCenter(find.byKey(ValueKey('syllable-cell-${b.id}')))};
     expect(cell['one']!.dx, greaterThan(cell['three']!.dx), reason: 'Group 1 is in the right column');
@@ -128,17 +128,17 @@ void main() {
   });
 
   testWidgets('solved: the note as it was written, nothing to play', (t) async {
-    await open(t, seoulPilotSeason.syllables[m3]!, solved: true);
+    await open(t, season5Content.syllables[m3]!, solved: true);
     expect(find.text('서고지붕'), findsOneWidget);
     expect(find.byKey(const ValueKey('syllable-check')), findsNothing);
   });
 
   group('a player who reads Korean, not the English', () {
-    final spec = seoulPilotSeason.syllables[m3]!;
+    final spec = season5Content.syllables[m3]!;
     Episode episode(Difficulty level) => DifficultyContent.episodeAt(
-      Episode.fromJson({...seoulPilotSeason.episodes['s7_ep01']!, 'seasonId': seoulPilotSeason.id}),
+      Episode.fromJson({...season5Content.episodes['s5_ep01']!, 'seasonId': season5Content.id}),
       level,
-      patches: seoulPilotSeason.casePatches,
+      patches: season5Content.casePatches,
     );
     Mission mission(String id, [Difficulty level = Difficulty.rookie]) => episode(level).allMissions.firstWhere((m) => m.id == id);
     final hangulWord = RegExp(r'[가-힣]');
@@ -189,7 +189,7 @@ void main() {
         }
       }
       // Every line of the King's talk, at every level (the plan's words and their levels).
-      final talk = seoulPilotSeason.talks[fin]!;
+      final talk = season5Content.talks[fin]!;
       final lines = [
         for (final q in talk.questions) ...[q.text, ...q.beat.map((l) => l.text)],
         for (final p in talk.presents) ...[p.prompt, ...p.beat.map((l) => l.text), p.miss.text, ?p.tell],

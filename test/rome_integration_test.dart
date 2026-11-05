@@ -55,7 +55,7 @@ void main() {
 
   group('in the game', () {
     test('Rome is Season 3 of the catalog: 12 cases, released, after London and Paris', () {
-      expect([for (final s in container.read(seasonsProvider)) s.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork]);
+      expect([for (final s in container.read(seasonsProvider)) s.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul]);
       final rome = SeasonCatalog.byId(SeasonIds.rome)!;
       expect(rome.released, isTrue);
       expect(rome.season.number, 3);

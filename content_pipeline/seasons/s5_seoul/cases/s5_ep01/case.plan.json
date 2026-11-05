@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "caseId": "s7_ep01",
-  "seasonId": "s7_seoulpilot",
+  "caseId": "s5_ep01",
+  "seasonId": "s5_seoul",
   "number": 1,
   "actId": "act1",
   "title": "The Secret of the King's Letters",
@@ -24,9 +24,9 @@
   ],
   "missions": [
     {
-      "missionId": "s7_ep01_m1",
+      "missionId": "s5_ep01_m1",
       "slot": "m1",
-      "placeId": "s7_seoulpilot.inner_gate",
+      "placeId": "s5_seoul.inner_gate",
       "puzzle": {
         "paletteId": "trace_deduction",
         "surface": "mission",
@@ -52,7 +52,7 @@
           ]
         },
         "assetNeeds": [
-          "s7_seoulpilot.asset.gate_courtyard"
+          "s5_seoul.asset.gate_courtyard"
         ],
         "status": "awaitingAssets",
         "notes": [
@@ -63,8 +63,8 @@
       },
       "clueInputs": [],
       "clueOutputs": {
-        "clue": "s7_ep01_c1",
-        "evidence": "s7_ep01_e1"
+        "clue": "s5_ep01_c1",
+        "evidence": "s5_ep01_e1"
       },
       "learning": {
         "dependency": "essential",
@@ -97,7 +97,7 @@
         ],
         "talk": {
           "speaker": "taek",
-          "portrait": "assets/seasons/season_07_seoulpilot/characters/taek.webp",
+          "portrait": "assets/seasons/season_05_seoul/characters/taek.webp",
           "goal": "Find out where Taek found the paper.",
           "before": {
             "lines": [
@@ -130,7 +130,7 @@
         },
         "traces": {
           "picture": {
-            "file": "assets/seasons/season_07_seoulpilot/locations/gate_courtyard.webp",
+            "file": "assets/seasons/season_05_seoul/locations/gate_courtyard.webp",
             "pixels": {
               "width": 1536,
               "height": 1024
@@ -279,9 +279,9 @@
       }
     },
     {
-      "missionId": "s7_ep01_m2",
+      "missionId": "s5_ep01_m2",
       "slot": "m2",
-      "placeId": "s7_seoulpilot.well_yard",
+      "placeId": "s5_seoul.well_yard",
       "puzzle": {
         "paletteId": "order_sequence",
         "surface": "mission",
@@ -339,14 +339,14 @@
       },
       "clueInputs": [
         {
-          "ref": "s7_ep01_c1",
+          "ref": "s5_ep01_c1",
           "use": "textMention",
           "note": "Bun-i wrote the paper; Sora teaches her."
         }
       ],
       "clueOutputs": {
-        "clue": "s7_ep01_c2",
-        "evidence": "s7_ep01_e2"
+        "clue": "s5_ep01_c2",
+        "evidence": "s5_ep01_e2"
       },
       "learning": {
         "dependency": "essential",
@@ -354,7 +354,7 @@
         "objective": "택이 말한 발음 기관(teeth, back of the tongue, mouth, throat)과 '한 단계 센 소리(one step stronger)'를 글자판의 영어 설명(copies the ..., a stronger sound adds one line)에 맞춰 방해 글자 사이에서 자음 다섯을 순서대로 고른다.",
         "skill": "vocabulary",
         "expressions": [
-          "A stronger sound adds a line."
+          "A stronger sound adds one line."
         ]
       },
       "play": {
@@ -388,7 +388,7 @@
         ],
         "talk": {
           "speaker": "sora",
-          "portrait": "assets/seasons/season_07_seoulpilot/characters/sora.webp",
+          "portrait": "assets/seasons/season_05_seoul/characters/sora.webp",
           "goal": "Find out how Bun-i learned to write.",
           "before": {
             "lines": [
@@ -422,9 +422,9 @@
       }
     },
     {
-      "missionId": "s7_ep01_m3",
+      "missionId": "s5_ep01_m3",
       "slot": "m3",
-      "placeId": "s7_seoulpilot.writing_room",
+      "placeId": "s5_seoul.writing_room",
       "puzzle": {
         "paletteId": "syllable_compose",
         "surface": "mission",
@@ -443,14 +443,14 @@
       },
       "clueInputs": [
         {
-          "ref": "s7_ep01_c2",
+          "ref": "s5_ep01_c2",
           "use": "answerDerivation",
           "note": "The first sounds of Bun-i's groups."
         }
       ],
       "clueOutputs": {
-        "clue": "s7_ep01_c3",
-        "evidence": "s7_ep01_e3"
+        "clue": "s5_ep01_c3",
+        "evidence": "s5_ep01_e3"
       },
       "learning": {
         "dependency": "essential",
@@ -491,7 +491,7 @@
         ],
         "talk": {
           "speaker": "taek",
-          "portrait": "assets/seasons/season_07_seoulpilot/characters/taek.webp",
+          "portrait": "assets/seasons/season_05_seoul/characters/taek.webp",
           "goal": "Find out what the lines and dots looked like.",
           "before": {
             "lines": [
@@ -559,9 +559,9 @@
     }
   ],
   "final": {
-    "missionId": "s7_ep01_final",
+    "missionId": "s5_ep01_final",
     "slot": "final",
-    "placeId": "s7_seoulpilot.book_hall",
+    "placeId": "s5_seoul.book_hall",
     "puzzle": {
       "paletteId": "evidence_talk",
       "surface": "finalMission",
@@ -571,8 +571,8 @@
         "answer": "open"
       },
       "assetNeeds": [
-        "s7_seoulpilot.asset.sejong",
-        "s7_seoulpilot.asset.book_hall_rain"
+        "s5_seoul.asset.sejong",
+        "s5_seoul.asset.book_hall_rain"
       ],
       "status": "awaitingAssets",
       "notes": [
@@ -581,23 +581,23 @@
     },
     "clueInputs": [
       {
-        "ref": "s7_ep01_c1",
+        "ref": "s5_ep01_c1",
         "use": "answerDerivation",
         "note": "Bun-i could not write Chinese characters."
       },
       {
-        "ref": "s7_ep01_c2",
+        "ref": "s5_ep01_c2",
         "use": "answerDerivation",
         "note": "The letters copy the mouth: easy to learn."
       },
       {
-        "ref": "s7_ep01_c3",
+        "ref": "s5_ep01_c3",
         "use": "answerDerivation",
         "note": "The note names the book hall roof."
       }
     ],
     "clueOutputs": {
-      "evidence": "s7_ep01_e4"
+      "evidence": "s5_ep01_e4"
     },
     "learning": {
       "dependency": "essential",
@@ -638,13 +638,13 @@
         {
           "by": "speaker",
           "speaker": "bun_i",
-          "portrait": "assets/seasons/season_07_seoulpilot/characters/bun_i.webp",
+          "portrait": "assets/seasons/season_05_seoul/characters/bun_i.webp",
           "text": "The King read my letter? My very first letter?"
         },
         {
           "by": "speaker",
           "speaker": "sora",
-          "portrait": "assets/seasons/season_07_seoulpilot/characters/sora.webp",
+          "portrait": "assets/seasons/season_05_seoul/characters/sora.webp",
           "text": "He did. And he says thank you."
         }
       ],
@@ -657,7 +657,7 @@
       },
       "interview": {
         "speaker": "sejong",
-        "portrait": "assets/seasons/season_07_seoulpilot/characters/sejong.webp",
+        "portrait": "assets/seasons/season_05_seoul/characters/sejong.webp",
         "goal": "Show the King who wrote the paper, and what it says.",
         "opening": [
           {
@@ -690,11 +690,11 @@
             "id": "who",
             "prompt": "The King asks: \"Who wrote this?\"",
             "accepted": [
-              "s7_ep01_e1"
+              "s5_ep01_e1"
             ],
             "offered": [
-              "s7_ep01_e1",
-              "s7_ep01_e2"
+              "s5_ep01_e1",
+              "s5_ep01_e2"
             ],
             "lines": [
               {
@@ -713,11 +713,11 @@
             "id": "how",
             "prompt": "The King asks: \"How can she write after only ten days?\"",
             "accepted": [
-              "s7_ep01_e2"
+              "s5_ep01_e2"
             ],
             "offered": [
-              "s7_ep01_e2",
-              "s7_ep01_e3"
+              "s5_ep01_e2",
+              "s5_ep01_e3"
             ],
             "requires": [
               "who"
@@ -739,11 +739,11 @@
             "id": "what",
             "prompt": "The King asks: \"And you read it in one night?\"",
             "accepted": [
-              "s7_ep01_e3"
+              "s5_ep01_e3"
             ],
             "offered": [
-              "s7_ep01_e3",
-              "s7_ep01_e1"
+              "s5_ep01_e3",
+              "s5_ep01_e1"
             ],
             "requires": [
               "how"

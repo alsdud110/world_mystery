@@ -13,7 +13,8 @@ import '../../data/models/difficulty.dart';
 import '../../data/models/episode.dart';
 import '../../data/models/game_progress.dart';
 import '../../data/models/profile.dart';
-import '../../data/pilot/seoul_pilot.dart';
+import '../../data/season5/season5_art.dart' show season5Map;
+import '../../data/season5/season5_content.dart';
 import '../../data/repositories/episode_repository.dart';
 import '../../data/repositories/memory_preferences.dart';
 import '../../data/repositories/profile_store.dart';
@@ -40,12 +41,12 @@ class DevSession {
   /// Ends the test session and returns to the player's own, as it was.
   final VoidCallback exit;
 
-  /// Starts a new test session playing Seoul Pilot Case 01 alone at the
-  /// level given ([seoulPilotSeason]), from its case file. Null: no pilot in
+  /// Starts a new test session playing Seoul (Season 5) Case 01 alone at the
+  /// level given ([season5Content]), from its case file. Null: no pilot in
   /// this game.
   final void Function(Difficulty level)? enterPilot;
 
-  /// This test session plays the Seoul pilot: its level is chosen by
+  /// This test session plays Seoul Case 01 alone: its level is chosen by
   /// starting it again ([enterPilot]).
   final bool pilot;
 }
@@ -137,7 +138,7 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
     });
   }
 
-  /// A new test session in place of any other, playing the Seoul pilot at
+  /// A new test session in place of any other, playing Seoul Case 01 at
   /// [level] (see [DevSession.enterPilot]).
   void _enterPilot(Difficulty level) {
     if (!_own.read(operatorToolsAvailableProvider)) return;
@@ -178,9 +179,9 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
         profileSessionProvider.overrideWithValue(ProfileSession(profile: tester)),
         // The same content, maps and build as the player's game.
         episodeRepositoryProvider.overrideWithValue(_own.read(episodeRepositoryProvider)),
-        // A pilot's are the same with its season beside them.
+        // Seoul Case 01's: the same (Seoul is a season of the game).
         if (pilotLevel != null)
-          ...pilotOverrides(seoulPilotSeason, seoulPilotCaseId, pilotLevel, own: _own)
+          ...pilotOverrides(season5Content, seoulCase01Id, pilotLevel, own: _own)
         else ...[
           allEpisodesProvider.overrideWithValue(_own.read(allEpisodesProvider)),
           seasonMapsProvider.overrideWithValue(_own.read(seasonMapsProvider)),
@@ -203,8 +204,8 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
     });
     // It opens on the Game Master's tools; a pilot on its case file.
     test.read(gameMasterAccessProvider.notifier).grant();
-    if (pilotLevel != null && openPilot(test, seoulPilotSeason, seoulPilotCaseId)) {
-      test.read(routerProvider).go(Routes.caseFile(seoulPilotCaseId));
+    if (pilotLevel != null && openPilot(test, season5Content, seoulCase01Id)) {
+      test.read(routerProvider).go(Routes.caseFile(seoulCase01Id));
     } else {
       test.read(routerProvider).go(Routes.gameMaster);
     }
@@ -246,13 +247,31 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
   }
 }
 
-/// What a session needs to play [caseId] of [season], a season not in the
-/// game, alone at [level]: the season beside the game's own with that one
-/// case (in its level's words), its own map, and its
-/// REAL HISTORY reveal. [own]: the player's session whose cases and maps
-/// are kept (null: the bundled ones). Registers the season's tables
-/// ([SeasonCatalog.testSeasons]) so its missions find their puzzles.
+/// What a session needs to play [caseId] of [season] alone at [level].
+/// [own]: the player's session whose cases, maps and releases are kept
+/// (null: the bundled ones).
+///
+/// A season of the game (Seoul, Season 5) is played as it is: the game's
+/// own cases and maps, never a second copy beside them; the session's
+/// detective gives the level, and the season preview opens it
+/// ([openPilot]).
+///
+/// A season not in the game (a sandbox season, in the tests): the season
+/// beside the game's own with that one case (in its level's words),
+/// Seoul's map lent for its pins, and its REAL HISTORY reveal. Registers
+/// the season's tables ([SeasonCatalog.testSeasons]) so its missions find
+/// their puzzles.
 List<Override> pilotOverrides(SeasonContent season, String caseId, Difficulty level, {ProviderContainer? own}) {
+  final episodes = own?.read(allEpisodesProvider) ?? MockEpisodeRepository.bundled();
+  final maps = own?.read(seasonMapsProvider) ?? SeasonMap.bySeason;
+  final released = own?.read(seasonReleasedProvider) ?? seasonReleased;
+  if (SeasonCatalog.byId(season.id) != null) {
+    return [
+      allEpisodesProvider.overrideWithValue(episodes),
+      seasonMapsProvider.overrideWithValue(maps),
+      seasonReleasedProvider.overrideWithValue(released),
+    ];
+  }
   if (!SeasonCatalog.testSeasons.any((s) => s.id == season.id)) {
     SeasonCatalog.testSeasons.add(season);
     SeasonCatalog.testPlaces.addAll(season.places);
@@ -262,11 +281,10 @@ List<Override> pilotOverrides(SeasonContent season, String caseId, Difficulty le
     level,
     patches: season.casePatches,
   );
-  final released = own?.read(seasonReleasedProvider) ?? seasonReleased;
   return [
     seasonsProvider.overrideWithValue([for (final s in SeasonCatalog.all) s.season, season.season]),
-    allEpisodesProvider.overrideWithValue([...own?.read(allEpisodesProvider) ?? MockEpisodeRepository.bundled(), episode]),
-    seasonMapsProvider.overrideWithValue({...own?.read(seasonMapsProvider) ?? SeasonMap.bySeason, season.id: seoulPilotMap}),
+    allEpisodesProvider.overrideWithValue([...episodes, episode]),
+    seasonMapsProvider.overrideWithValue({...maps, season.id: season5Map}),
     seasonReleasedProvider.overrideWithValue((id) => id == season.id || released(id)),
     // The game finds a reveal by its own seasons only.
     if (season.historyReveals[caseId] case final r?) historyRevealProvider(caseId).overrideWithValue(r),

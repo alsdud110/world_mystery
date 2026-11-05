@@ -188,11 +188,11 @@ flutter:
     - assets/seasons/season_04_newyork/locations/
     - assets/seasons/season_04_newyork/locations/map/
     - assets/seasons/season_04_newyork/objects/
-    - assets/seasons/season_07_seoulpilot/cases/case_01/
-    - assets/seasons/season_07_seoulpilot/characters/
-    - assets/seasons/season_07_seoulpilot/locations/
-    - assets/seasons/season_07_seoulpilot/cover/
-    - assets/seasons/season_07_seoulpilot/locations/map/
+    - assets/seasons/season_05_seoul/cases/case_01/
+    - assets/seasons/season_05_seoul/characters/
+    - assets/seasons/season_05_seoul/locations/
+    - assets/seasons/season_05_seoul/cover/
+    - assets/seasons/season_05_seoul/locations/map/
 
   # Bundled locally (SIL Open Font License) so the game works fully offline.
   fonts:

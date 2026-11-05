@@ -175,6 +175,10 @@ abstract final class SeasonIds {
 
   /// Season 4, made from its plans (`content_pipeline/seasons/s4_newyork`).
   static const newyork = 's4_newyork';
+
+  /// Season 5, Seoul: its Case 01 only so far, registered by hand
+  /// (`lib/data/season5/`, plans in `content_pipeline/seasons/s5_seoul`).
+  static const seoul = 's5_seoul';
 }
 
 /// A season: the bigger story the cases belong to. Its cases are the
@@ -236,7 +240,7 @@ class Season {
   /// "SEASON ONE".
   String get label => 'SEASON ${_words[number] ?? '$number'}';
 
-  static const _words = {1: 'ONE', 2: 'TWO', 3: 'THREE', 4: 'FOUR'};
+  static const _words = {1: 'ONE', 2: 'TWO', 3: 'THREE', 4: 'FOUR', 5: 'FIVE'};
 
   /// The last figure revealed by the [solved] cases, or null (still a "?").
   SeasonFigure? figureFor(bool Function(String caseId) solved) {

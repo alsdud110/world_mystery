@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:ui' show Offset, Size;
 
 import '../../data/generated/generated_season_art.g.dart';
+import '../../data/season5/season5_art.dart' show season5Map;
 import '../../data/mock/season_catalog.dart';
 import '../../data/models/episode.dart';
 import '../../data/models/mission.dart';
@@ -103,7 +104,13 @@ class SeasonMap {
   /// map ever stands in for it. A map alone opens no season: it needs its
   /// cases too. The seasons made from plans (Rome on) bring theirs
   /// ([generatedSeasonMaps], `generate_season.dart --target game`).
-  static const bySeason = <String, SeasonMap>{SeasonIds.london: london, SeasonIds.paris: paris, ...generatedSeasonMaps};
+  static const bySeason = <String, SeasonMap>{
+    SeasonIds.london: london,
+    SeasonIds.paris: paris,
+    ...generatedSeasonMaps,
+    // Season 5, Seoul: registered by hand (`lib/data/season5/season5_art.dart`).
+    SeasonIds.seoul: season5Map,
+  };
 
   /// The map of season [seasonId], or null while it has none.
   static SeasonMap? forSeason(String seasonId) => bySeason[seasonId];

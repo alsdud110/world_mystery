@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "seasonId": "s7_seoulpilot",
+  "seasonId": "s5_seoul",
   "tool": "tool/season_planner/plan_season.dart check",
   "counts": {
     "ERROR": 14,
@@ -55,77 +55,77 @@
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep02",
+      "where": "cases/s5_ep02",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep03",
+      "where": "cases/s5_ep03",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep04",
+      "where": "cases/s5_ep04",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep05",
+      "where": "cases/s5_ep05",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep06",
+      "where": "cases/s5_ep06",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep07",
+      "where": "cases/s5_ep07",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep08",
+      "where": "cases/s5_ep08",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep09",
+      "where": "cases/s5_ep09",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep10",
+      "where": "cases/s5_ep10",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep11",
+      "where": "cases/s5_ep11",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
     {
       "level": "ERROR",
       "code": "case_missing",
-      "where": "cases/s7_ep12",
+      "where": "cases/s5_ep12",
       "source": "season",
       "message": "no case.plan.json: the season has 12 cases"
     },
@@ -139,16 +139,16 @@
     {
       "level": "WARNING",
       "code": "feedback_missing",
-      "where": "cases/s7_ep01 $.missions[1].play",
+      "where": "cases/s5_ep01 $.missions[1].play",
       "source": "puzzle",
       "message": "no wrong-answer line (feedback, orderFeedback): only the game's own"
     },
     {
       "level": "INFO",
       "code": "timeline_reasoning_review",
-      "where": "cases/s7_ep01 s7_ep01_m1",
+      "where": "cases/s5_ep01 s5_ep01_m1",
       "source": "puzzle",
-      "message": "its one order is checked; whether its words lead a player there is a person's reading (englishReview; in a historical season, approve.dart … puzzle s7_ep01_m1)"
+      "message": "its one order is checked; whether its words lead a player there is a person's reading (englishReview; in a historical season, approve.dart … puzzle s5_ep01_m1)"
     },
     {
       "level": "ERROR",
@@ -169,161 +169,161 @@
       "code": "history_fact_draft",
       "where": "planning/history_dossier.json $.cases[0].facts[0]",
       "source": "history",
-      "message": "s7_ep01_h1 is a draft"
+      "message": "s5_ep01_h1 is a draft"
     },
     {
       "level": "INFO",
       "code": "history_fact_draft",
       "where": "planning/history_dossier.json $.cases[0].facts[1]",
       "source": "history",
-      "message": "s7_ep01_h2 is a draft"
+      "message": "s5_ep01_h2 is a draft"
     },
     {
       "level": "INFO",
       "code": "history_fact_draft",
       "where": "planning/history_dossier.json $.cases[0].facts[2]",
       "source": "history",
-      "message": "s7_ep01_h3 is a draft"
+      "message": "s5_ep01_h3 is a draft"
     },
     {
       "level": "INFO",
       "code": "history_fact_draft",
       "where": "planning/history_dossier.json $.cases[0].facts[3]",
       "source": "history",
-      "message": "s7_ep01_h4 is a draft"
+      "message": "s5_ep01_h4 is a draft"
     },
     {
       "level": "INFO",
       "code": "history_fact_draft",
       "where": "planning/history_dossier.json $.cases[0].facts[4]",
       "source": "history",
-      "message": "s7_ep01_h5 is a draft"
+      "message": "s5_ep01_h5 is a draft"
     },
     {
       "level": "INFO",
       "code": "history_fact_draft",
       "where": "planning/history_dossier.json $.cases[0].facts[5]",
       "source": "history",
-      "message": "s7_ep01_h6 is a draft"
+      "message": "s5_ep01_h6 is a draft"
     },
     {
       "level": "INFO",
       "code": "history_fact_draft",
       "where": "planning/history_dossier.json $.cases[0].facts[6]",
       "source": "history",
-      "message": "s7_ep01_h7 is a draft"
+      "message": "s5_ep01_h7 is a draft"
     },
     {
       "level": "INFO",
       "code": "history_fact_draft",
       "where": "planning/history_dossier.json $.cases[0].facts[7]",
       "source": "history",
-      "message": "s7_ep01_h8 is a draft"
+      "message": "s5_ep01_h8 is a draft"
     },
     {
       "level": "INFO",
       "code": "history_puzzle_unreviewed",
       "where": "planning/history_dossier.json $.cases[0].puzzles[0]",
       "source": "history",
-      "message": "s7_ep01_m1: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_m1)"
+      "message": "s5_ep01_m1: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m1)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
       "source": "history",
-      "message": "puzzle s7_ep01_m2 rests on s7_ep01_h1, not approved as it is (draft, draft)"
+      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h1, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
       "source": "history",
-      "message": "puzzle s7_ep01_m2 rests on s7_ep01_h3, not approved as it is (draft, draft)"
+      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h3, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
       "source": "history",
-      "message": "puzzle s7_ep01_m2 rests on s7_ep01_h4, not approved as it is (draft, draft)"
+      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h4, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
       "source": "history",
-      "message": "puzzle s7_ep01_m2 rests on s7_ep01_h5, not approved as it is (draft, draft)"
+      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h5, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
       "source": "history",
-      "message": "puzzle s7_ep01_m2 rests on s7_ep01_h6, not approved as it is (draft, draft)"
+      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h6, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_puzzle_unreviewed",
       "where": "planning/history_dossier.json $.cases[0].puzzles[1]",
       "source": "history",
-      "message": "s7_ep01_m2: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_m2)"
+      "message": "s5_ep01_m2: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m2)"
     },
     {
       "level": "INFO",
       "code": "history_puzzle_unreviewed",
       "where": "planning/history_dossier.json $.cases[0].puzzles[2]",
       "source": "history",
-      "message": "s7_ep01_m3: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_m3)"
+      "message": "s5_ep01_m3: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m3)"
     },
     {
       "level": "INFO",
       "code": "history_puzzle_unreviewed",
       "where": "planning/history_dossier.json $.cases[0].puzzles[3]",
       "source": "history",
-      "message": "s7_ep01_final: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_final)"
+      "message": "s5_ep01_final: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_final)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[0].factIds",
       "source": "history",
-      "message": "the REAL HISTORY line rests on s7_ep01_h1, not approved as it is (draft, draft)"
+      "message": "the REAL HISTORY line rests on s5_ep01_h1, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[1].factIds",
       "source": "history",
-      "message": "the REAL HISTORY line rests on s7_ep01_h2, not approved as it is (draft, draft)"
+      "message": "the REAL HISTORY line rests on s5_ep01_h2, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[1].factIds",
       "source": "history",
-      "message": "the REAL HISTORY line rests on s7_ep01_h4, not approved as it is (draft, draft)"
+      "message": "the REAL HISTORY line rests on s5_ep01_h4, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[2].factIds",
       "source": "history",
-      "message": "the REAL HISTORY line rests on s7_ep01_h5, not approved as it is (draft, draft)"
+      "message": "the REAL HISTORY line rests on s5_ep01_h5, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_fact_unapproved",
       "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[3].factIds",
       "source": "history",
-      "message": "the REAL HISTORY line rests on s7_ep01_h8, not approved as it is (draft, draft)"
+      "message": "the REAL HISTORY line rests on s5_ep01_h8, not approved as it is (draft, draft)"
     },
     {
       "level": "INFO",
       "code": "history_reveal_unapproved",
       "where": "planning/history_dossier.json $.cases[0].reveal",
       "source": "history",
-      "message": "s7_ep01's reveal is not approved as it is (draft): a person reads it against the checklist (approve.dart … reveal s7_ep01)"
+      "message": "s5_ep01's reveal is not approved as it is (draft): a person reads it against the checklist (approve.dart … reveal s5_ep01)"
     },
     {
       "level": "INFO",

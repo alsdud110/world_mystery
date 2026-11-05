@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "caseId": "s7_ep01",
+  "caseId": "s5_ep01",
   "lines": [
     {
       "rookie": "The Secret of the King's Letters",
@@ -313,9 +313,9 @@
       "master": "ㅅ"
     },
     {
-      "rookie": "A stronger sound adds a line.",
+      "rookie": "A stronger sound adds one line.",
       "junior": "A stronger sound adds one more line.",
-      "master": "A stronger sound earns one more line."
+      "master": "Each stronger sound earns exactly one more line."
     },
     {
       "rookie": "Sora's Lesson Box",

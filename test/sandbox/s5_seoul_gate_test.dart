@@ -6,7 +6,7 @@ import '../../tool/season_gen/generate_case.dart';
 import '../../tool/season_gen/history_dossier.dart';
 import '../../tool/season_gen/season_cases.dart';
 
-/// Seoul Pilot Case 01 (`test/sandbox/plans/s7_seoulpilot`) while its
+/// Seoul (Season 5) Case 01 (`content_pipeline/seasons/s5_seoul`) while its
 /// history's automatic checks fail and once they pass (no person approves
 /// it). While they fail: its content is never made to be played —
 /// the generator refuses it for the sandbox as for the game, a check makes it
@@ -14,14 +14,14 @@ import '../../tool/season_gen/season_cases.dart';
 /// they pass: it must be made (`generate_season.dart --season … --target sandbox`) and
 /// stay as its plans make it, to be played with `SingleCase`.
 void main() {
-  const plans = 'test/sandbox/plans/s7_seoulpilot';
-  const out = 'lib/data/pilot/s7_seoulpilot'; // played in developer mode (SEOUL PILOT)
+  const plans = 'content_pipeline/seasons/s5_seoul';
+  const out = 'lib/data/season5/s5_seoul'; // Season 5 in the game (season5_content.dart)
   final cases = SeasonCases.of('$plans/season.plan.json');
   List<String> blockers() => HistoryGate.blockers(plans, game: true);
 
   test('a historical season, its one case written', () {
     expect(SeasonMode.of(plans), SeasonMode.historicalFictionMystery);
-    expect(cases.map((c) => File(c).parent.uri.pathSegments.reversed.elementAt(1)), ['s7_ep01']);
+    expect(cases.map((c) => File(c).parent.uri.pathSegments.reversed.elementAt(1)), ['s5_ep01']);
   });
 
   if (blockers().isNotEmpty) {
@@ -42,7 +42,7 @@ void main() {
         final checked = CaseGenerator.sandbox(seasonPath: '$plans/season.plan.json', casePaths: cases, staticOnly: true);
         expect(checked.writable, isFalse, reason: 'its plans hold together (every check but history), yet nothing may be written');
         expect(checked.files.keys.where((k) => k.contains('history')), isEmpty);
-        expect(makeAndWrite(() => checked, out: '${Directory.systemTemp.createTempSync('s7_pilot_').path}/out'), 1);
+        expect(makeAndWrite(() => checked, out: '${Directory.systemTemp.createTempSync('s5_seoul_').path}/out'), 1);
       });
 
       test('nothing of it on disk to play', () {
@@ -54,7 +54,7 @@ void main() {
       test('made, and as its plans make it now', () {
         final made = CaseGenerator.sandbox(seasonPath: '$plans/season.plan.json', casePaths: cases);
         expect(made.writable, isTrue);
-        expect(made.files.keys, contains('s7_seoulpilot_history.g.dart'));
+        expect(made.files.keys, contains('s5_seoul_history.g.dart'));
         expect(GeneratedFiles.stale(out, made.files), isEmpty,
             reason: 'run: dart run tool/season_gen/generate_season.dart --season $plans/season.plan.json --target sandbox --out $out');
       });

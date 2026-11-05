@@ -73,10 +73,12 @@ dart run tool/season_factory/season_factory.dart run <seasonDir>   # budget from
 The manifest (`assets.manifest.json`) is written in step 1 with the plans
 (plan-season, PLAYBOOK §3, the city's look as `seasonStyles`): there is no
 other manifest generator, and `run` refuses a season without one
-(`asset_manifest_missing`, exit 10). A single pilot case (not a season, e.g.
-`test/sandbox/plans/s7_seoulpilot`) is drawn with `run <dir> --pictures-only`:
-the same history gate, budget, review and apply, then it stops (measure and
-`generate_case.dart --out` by hand).
+(`asset_manifest_missing`, exit 10). A season of only a few cases (not whole,
+e.g. Season 5 Seoul, `content_pipeline/seasons/s5_seoul`, its Case 01 only)
+is drawn with `run <dir> --pictures-only`: the same history gate, budget,
+review and apply, then it stops (measure, `generate_season.dart --target
+sandbox --out lib/data/season5/s5_seoul`, and its registration by hand in
+`lib/data/season5/`).
 
 `run` goes on from where it stopped; act on its exit code and run it again:
 

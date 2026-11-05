@@ -389,11 +389,14 @@ void main() {
           if (l == null) continue;
           final recalled = l.recallFrom == null ? null : missions[l.recallFrom];
           // Its scenes too: a season made from its plans (Rome on) says much
-          // of its English in its witnesses, talks and look rounds.
+          // of its English in its witnesses, talks and look rounds (Seoul:
+          // its King's talk and its note's groups too).
           final scenes = LearningCheck.sceneText(
             dialogue: SeasonCatalog.dialogue(m),
             talk: SeasonCatalog.talkMission(m),
             explore: SeasonCatalog.explore(m),
+            caseTalk: SeasonCatalog.caseTalk(m),
+            syllable: SeasonCatalog.syllable(m),
           );
           expect(LearningCheck.unmatched(l, m, recalled: recalled, scenes: scenes), isEmpty, reason: '${m.id} at ${level.name}');
         }

@@ -140,15 +140,16 @@ void main() {
   }
 
   group('the cities', () {
-    test('London, Paris and Rome have their seasons; Tokyo and Seoul none yet', () {
+    test('London, Paris, Rome, New York and Seoul have their seasons; Tokyo none yet', () {
       expect([for (final c in WorldCities.all) c.name], ['London', 'Paris', 'Rome', 'Tokyo', 'Seoul', 'New York']);
       expect(WorldCities.london.seasonId, SeasonIds.london);
       expect(WorldCities.paris.seasonId, SeasonIds.paris);
       expect(WorldCities.ofSeason(SeasonIds.rome)!.id, 'rome', reason: "Rome's pin takes its season (generatedWorldCities)");
       expect(WorldCities.ofSeason(SeasonIds.rome)!.mapAt, WorldCities.rome.mapAt, reason: 'where its pin always stood');
-      for (final c in [WorldCities.tokyo, WorldCities.seoul]) {
-        expect(c.seasonId, isNull, reason: c.name);
-      }
+      // Season 5 (by hand, 2026-11-05): Seoul's pin, where it always stood, takes its season.
+      expect(WorldCities.ofSeason(SeasonIds.seoul), same(WorldCities.seoul));
+      expect(WorldCities.seoul.mapAt, const Offset(1633 / 1983, 325 / 793));
+      expect(WorldCities.tokyo.seasonId, isNull);
       expect({for (final c in WorldCities.all) c.id}.length, WorldCities.all.length);
     });
 
@@ -205,7 +206,7 @@ void main() {
         'paris': WorldCityStatus.locked,
         'rome': WorldCityStatus.locked, // Season 3 since the Rome integration: sealed by Paris
         'tokyo': WorldCityStatus.comingSoon,
-        'seoul': WorldCityStatus.comingSoon,
+        'seoul': WorldCityStatus.locked, // Season 5: sealed by New York
         'newyork': WorldCityStatus.locked, // Season 4: sealed by Rome
       });
       // London at the middle of the map, Paris beside it, named.

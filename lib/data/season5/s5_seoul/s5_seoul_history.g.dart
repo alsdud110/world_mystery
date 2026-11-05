@@ -4,8 +4,8 @@
 import 'package:world_mystery/data/models/history_reveal.dart';
 
 /// Each case's REAL HISTORY and IN THIS MYSTERY, after its solve.
-const s7SeoulpilotHistoryReveals = <String, HistoryReveal>{
-  's7_ep01': HistoryReveal(
+const s5SeoulHistoryReveals = <String, HistoryReveal>{
+  's5_ep01': HistoryReveal(
     realHistory: [
       HistoryLine(
         rookie: 'King Sejong made 28 new letters in 1443.',

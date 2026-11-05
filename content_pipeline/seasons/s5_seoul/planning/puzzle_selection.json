@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "seasonId": "s7_seoulpilot",
+  "seasonId": "s5_seoul",
   "tool": "tool/season_planner/plan_season.dart check (PuzzleSelector)",
   "rules": {
     "byTrait": {
@@ -69,8 +69,8 @@
   },
   "missions": [
     {
-      "caseId": "s7_ep01",
-      "missionId": "s7_ep01_m1",
+      "caseId": "s5_ep01",
+      "missionId": "s5_ep01_m1",
       "surface": "mission",
       "traits": [
         {
@@ -107,12 +107,12 @@
       },
       "personReview": [
         "whether the lines read put the cards in one order",
-        "[history_puzzle_unreviewed] s7_ep01_m1: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_m1)"
+        "[history_puzzle_unreviewed] s5_ep01_m1: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m1)"
       ]
     },
     {
-      "caseId": "s7_ep01",
-      "missionId": "s7_ep01_m2",
+      "caseId": "s5_ep01",
+      "missionId": "s5_ep01_m2",
       "surface": "mission",
       "traits": [
         {
@@ -133,11 +133,11 @@
         }
       ],
       "factIds": [
-        "s7_ep01_h1",
-        "s7_ep01_h3",
-        "s7_ep01_h4",
-        "s7_ep01_h5",
-        "s7_ep01_h6"
+        "s5_ep01_h1",
+        "s5_ep01_h3",
+        "s5_ep01_h4",
+        "s5_ep01_h5",
+        "s5_ep01_h6"
       ],
       "candidates": [
         {
@@ -161,17 +161,17 @@
       },
       "personReview": [
         "whether the lines that differ are a contradiction worth finding",
-        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h1, not approved as it is (draft, draft)",
-        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h3, not approved as it is (draft, draft)",
-        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h4, not approved as it is (draft, draft)",
-        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h5, not approved as it is (draft, draft)",
-        "[history_fact_unapproved] puzzle s7_ep01_m2 rests on s7_ep01_h6, not approved as it is (draft, draft)",
-        "[history_puzzle_unreviewed] s7_ep01_m2: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_m2)"
+        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h1, not approved as it is (draft, draft)",
+        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h3, not approved as it is (draft, draft)",
+        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h4, not approved as it is (draft, draft)",
+        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h5, not approved as it is (draft, draft)",
+        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h6, not approved as it is (draft, draft)",
+        "[history_puzzle_unreviewed] s5_ep01_m2: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m2)"
       ]
     },
     {
-      "caseId": "s7_ep01",
-      "missionId": "s7_ep01_m3",
+      "caseId": "s5_ep01",
+      "missionId": "s5_ep01_m3",
       "surface": "mission",
       "traits": [
         {
@@ -211,12 +211,12 @@
       },
       "personReview": [
         "whether every trace points to the one place, and no other place fits",
-        "[history_puzzle_unreviewed] s7_ep01_m3: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_m3)"
+        "[history_puzzle_unreviewed] s5_ep01_m3: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m3)"
       ]
     },
     {
-      "caseId": "s7_ep01",
-      "missionId": "s7_ep01_final",
+      "caseId": "s5_ep01",
+      "missionId": "s5_ep01_final",
       "surface": "finalMission",
       "traits": [
         {
@@ -247,7 +247,7 @@
       },
       "personReview": [
         "whether the evidence asked for is the only piece that answers each prompt",
-        "[history_puzzle_unreviewed] s7_ep01_final: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s7_ep01_final)"
+        "[history_puzzle_unreviewed] s5_ep01_final: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_final)"
       ]
     }
   ]

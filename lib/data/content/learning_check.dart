@@ -3,6 +3,7 @@ import '../models/dialogue.dart';
 import '../models/learning.dart';
 import '../models/mission.dart';
 import '../models/scene_explore.dart';
+import '../../puzzles_v2/core/syllable_rules.dart' show SyllableSpec;
 
 /// Whether the English a learning design names (`LearningObjective
 /// .expressions`, shown in the parent report) is really on the mission's
@@ -51,8 +52,12 @@ abstract final class LearningCheck {
   /// What a mission's scenes put on screen besides its own words (a season
   /// made from its plans, Rome on, says much of its English there): its
   /// witnesses' greetings, questions and answers, the talks before and after
-  /// its puzzle, its look round's tasks and the lines of what is looked at.
-  static String sceneText({DialogueScene? dialogue, TalkMission? talk, ExploreScene? explore}) => words([
+  /// its puzzle, its look round's tasks and the lines of what is looked at,
+  /// a mission played as a talk (`CaseTalk`: its goal, opening, questions
+  /// and the asks evidence is shown for), and a note's groups
+  /// (`syllable_compose`, Seoul): the line under each group that tells how
+  /// it looked (`SyllableBoard`).
+  static String sceneText({DialogueScene? dialogue, TalkMission? talk, ExploreScene? explore, TalkScene? caseTalk, SyllableSpec? syllable}) => words([
         if (dialogue != null) ...[
           dialogue.goal,
           dialogue.how,
@@ -69,6 +74,14 @@ abstract final class LearningCheck {
           for (final s in explore.spots) ...[s.title, s.label, s.line, s.lockedLine],
           for (final o in explore.others) ...[o.label, o.line],
         ],
+        if (caseTalk != null) ...[
+          caseTalk.goal,
+          for (final l in caseTalk.opening) l.text,
+          for (final q in caseTalk.questions) q.text,
+          for (final p in caseTalk.presents) p.prompt,
+        ],
+        if (syllable != null)
+          for (final b in syllable.blocks) b.line,
       ].join(' \n '));
 
   /// The expressions of [objective] found neither on [own]'s pages (its

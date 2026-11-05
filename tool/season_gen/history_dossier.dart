@@ -714,8 +714,8 @@ abstract final class HistoryGate {
     var rel = output.replaceAll(r'\', '/');
     if (rel.startsWith('$base/')) rel = rel.substring(base.length + 1);
     rel = rel.replaceFirst(RegExp(r'^(\./)+'), '');
-    // The game's seasons and the sandbox's (the Seoul pilot's plans live in
-    // test/sandbox/plans): a pilot's pictures are held as a season's are.
+    // The game's seasons and the sandbox's (Seoul's plans, test-only until 2026-11-05, now
+    // in content_pipeline/seasons): a sandbox season's pictures are held as a season's are.
     for (final plans in ['content_pipeline/seasons', 'test/sandbox/plans']) {
       final seasons = Directory('$base/$plans');
       if (!seasons.existsSync()) continue;

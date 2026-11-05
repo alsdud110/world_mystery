@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/core/router/app_router.dart';
 import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/models/difficulty.dart';
-import 'package:world_mystery/data/pilot/seoul_pilot.dart';
+import 'package:world_mystery/data/season5/season5_content.dart';
 import 'package:world_mystery/features/game/game_controller.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/features/game_master/dev_session.dart';
@@ -16,11 +16,11 @@ import '../full_playthrough_test.dart' show tapText, wait;
 import '../helpers.dart';
 import 'single_case.dart';
 
-/// SEOUL PILOT — CASE 01 as a person reaches it: the Game Master's page,
-/// a level, a test session of its own on the case's file, then the case
-/// played through its own pages to the Case Closed file and its REAL
-/// HISTORY. The player's saves stay byte for byte, and the pilot is never
-/// one of the player's seasons.
+/// SEOUL — CASE 01 (Season 5) as a person reaches it in developer mode:
+/// the Game Master's page, a level, a test session of its own on the case's
+/// file, then the case played through its own pages to the Case Closed file
+/// and its REAL HISTORY. The player's saves stay byte for byte, and Seoul is
+/// in the player's game once, as one of its seasons (never a second copy).
 void main() {
   tearDown(() {
     SeasonCatalog.testSeasons.clear();
@@ -30,7 +30,7 @@ void main() {
   Future<void> enterPilot(WidgetTester t, Difficulty level) async {
     await tapKey(t, 'seoul-pilot-${level.storageId}');
     await wait(t, const Duration(milliseconds: 900));
-    expect(path(t), Routes.caseFile(seoulPilotCaseId));
+    expect(path(t), Routes.caseFile(seoulCase01Id));
     expect(find.byKey(const ValueKey('developer-mode-banner')), findsOneWidget);
     expect(session(t).read(devSessionProvider)!.pilot, isTrue);
     expect(session(t).read(detectiveProfileProvider).difficulty, level);
@@ -56,9 +56,9 @@ void main() {
       await wait(t, const Duration(milliseconds: 2500));
       expect(c.read(currentDifficultyProvider), level);
 
-      final p = CasePlayer(t, seoulPilotSeason);
+      final p = CasePlayer(t, season5Content);
       final ep = c.read(currentEpisodeProvider);
-      expect(ep.id, seoulPilotCaseId);
+      expect(ep.id, seoulCase01Id);
       for (final m in ep.missions) {
         await p.toPuzzle(m);
         await p.answer(m);
@@ -90,7 +90,7 @@ void main() {
       }
       await tapText(t, 'SEE MY CASE REPORT', after: const Duration(milliseconds: 3200));
       expect(find.text('CASE CLOSED'), findsOneWidget, reason: p.play.texts());
-      final reveal = seoulPilotSeason.historyReveals[seoulPilotCaseId]!;
+      final reveal = season5Content.historyReveals[seoulCase01Id]!;
       await t.ensureVisible(find.text('IN THIS MYSTERY'));
       await wait(t, const Duration(milliseconds: 300));
       for (final line in [...reveal.realHistory, ...reveal.inThisMystery]) {
@@ -99,25 +99,27 @@ void main() {
       final err = t.takeException();
       expect(err, isNull, reason: err is FlutterError ? err.diagnostics.map((d) => d.toString()).join('\n') : '$err');
 
-      // Out of developer mode: the player's game as it was, no pilot in it.
+      // Out of developer mode: the player's game as it was, Seoul in it once
+      // and the test session's solve nowhere in it.
       c.read(routerProvider).go(Routes.gameMaster);
       await wait(t, const Duration(milliseconds: 600));
       await tapText(t, 'EXIT DEVELOPER MODE', after: const Duration(milliseconds: 900));
       expect(snapshot(storage), before);
-      expect(session(t).read(seasonsProvider).map((s) => s.id), isNot(contains(seoulPilotSeason.id)));
-      expect(session(t).read(allEpisodesProvider).map((e) => e.id), isNot(contains(seoulPilotCaseId)));
+      expect(session(t).read(seasonsProvider).where((s) => s.id == season5Content.id), hasLength(1));
+      expect(session(t).read(allEpisodesProvider).where((e) => e.id == seoulCase01Id), hasLength(1));
+      expect(session(t).read(progressRepositoryProvider).loadSeason(season5Content.id).isSolved(seoulCase01Id), isFalse);
     });
   }
 
   test('the pilot\'s own pictures: no London or Paris picture; every one on disk, none with writing drawn by hand', () {
     String all(Object? o) => '$o';
     final made = [
-      for (final p in seoulPilotSeason.places.values) p.file,
-      for (final d in seoulPilotSeason.deductions.values) d.picture,
-      for (final t in seoulPilotSeason.talks.values) ...[all(t.background), ...t.speaker.portraits.values],
-      for (final t in seoulPilotSeason.talkMissions.values) for (final s in [?t.before, ?t.after]) ...s.speaker.portraits.values,
-      for (final e in seoulPilotSeason.endings.values) for (final l in e) ...[l.background, ?l.portrait],
-      ...seoulPilotSeason.introBackdrops.values,
+      for (final p in season5Content.places.values) p.file,
+      for (final d in season5Content.deductions.values) d.picture,
+      for (final t in season5Content.talks.values) ...[all(t.background), ...t.speaker.portraits.values],
+      for (final t in season5Content.talkMissions.values) for (final s in [?t.before, ?t.after]) ...s.speaker.portraits.values,
+      for (final e in season5Content.endings.values) for (final l in e) ...[l.background, ?l.portrait],
+      ...season5Content.introBackdrops.values,
     ];
     expect(made, isNotEmpty);
     for (final f in made) {
@@ -126,9 +128,9 @@ void main() {
     for (final f in made.where((f) => f.startsWith('assets/'))) {
       expect(File(f).existsSync(), isTrue, reason: f);
     }
-    expect(seoulPilotSeason.introBackdrops[seoulPilotCaseId], 'assets/seasons/season_07_seoulpilot/cover/kings_study.webp');
+    expect(season5Content.introBackdrops[seoulCase01Id], 'assets/seasons/season_05_seoul/cover/kings_study.webp');
     // The evidence of the case is drawn with its words (no picture of the first design is left wired).
-    expect(ArtAssets.evidencePictures.keys.where((id) => id.startsWith('s7_')), isEmpty);
+    expect(ArtAssets.evidencePictures.keys.where((id) => id.startsWith('s5_')), isEmpty);
   });
 
   testWidgets('another level from inside the pilot: a new session at that level, from the case\'s start', (t) async {
@@ -148,7 +150,7 @@ void main() {
     await openGameMaster(t);
     // TEST LEVEL inside the pilot starts it again at that level.
     await tapText(t, Difficulty.master.label, after: const Duration(milliseconds: 900));
-    expect(path(t), Routes.caseFile(seoulPilotCaseId));
+    expect(path(t), Routes.caseFile(seoulCase01Id));
     final again = session(t);
     expect(identical(again, first), isFalse);
     expect(again.read(detectiveProfileProvider).difficulty, Difficulty.master);

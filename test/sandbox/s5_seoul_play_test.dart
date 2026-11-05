@@ -5,7 +5,7 @@ import 'package:world_mystery/data/content/season_content_validator.dart';
 import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/models/difficulty.dart';
 import 'package:world_mystery/data/models/mission.dart';
-import 'package:world_mystery/data/pilot/seoul_pilot.dart';
+import 'package:world_mystery/data/season5/season5_content.dart';
 import 'package:world_mystery/features/game/game_controller.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/features/game/wallet_controller.dart';
@@ -15,29 +15,29 @@ import '../full_playthrough_test.dart' show tapText, wait;
 import '../helpers.dart';
 import 'single_case.dart';
 
-/// Seoul Pilot Case 01, The Secret of the King's Letters, played alone in
-/// the real app at every level: the gate's traces (a wrong place, a hint),
+/// Seoul (Season 5) Case 01, The Secret of the King's Letters, played alone
+/// in the real app at every level: the gate's traces (a wrong place, a hint),
 /// the app opened again, the lesson box's letters in a wrong order, the
 /// note's groups with one vowel wrong, King Sejong's three questions, paid
 /// once, and the Case Closed file with its REAL HISTORY apart from IN THIS
 /// MYSTERY.
 void main() {
-  final season = seoulPilotSeason;
+  final season = season5Content;
 
-  test('the pilot as the game takes it: valid, a reveal, not one of the game\'s seasons', () {
+  test('Season 5 as the game takes it: valid, a reveal, one of the game\'s seasons, once', () {
     expect(SeasonContentValidator.validate(season), isEmpty);
-    expect(season.historyReveals.keys, ['s7_ep01']);
-    expect(SeasonCatalog.all.any((s) => s.id == season.id), isFalse);
+    expect(season.historyReveals.keys, ['s5_ep01']);
+    expect([for (final s in SeasonCatalog.all) if (s.id == season.id) s], [same(season)]);
     // Its engines: the gate's traces, the lesson box, the note, the King's talk.
-    expect(season.deductions.keys, ['s7_ep01_m1']);
-    expect(season.syllables.keys, ['s7_ep01_m3']);
-    expect(season.talks.keys, ['s7_ep01_final']);
-    expect(const SyllableRules().answer(season.syllables['s7_ep01_m3']!), '서고지붕');
+    expect(season.deductions.keys, ['s5_ep01_m1']);
+    expect(season.syllables.keys, ['s5_ep01_m3']);
+    expect(season.talks.keys, ['s5_ep01_final']);
+    expect(const SyllableRules().answer(season.syllables['s5_ep01_m3']!), '서고지붕');
   });
 
   for (final level in Difficulty.values) {
-    testWidgets('s7_ep01 at ${level.label}: from its opening to the Case Closed file', (t) async {
-      final one = SingleCase(season, 's7_ep01', level: level)..register();
+    testWidgets('s5_ep01 at ${level.label}: from its opening to the Case Closed file', (t) async {
+      final one = SingleCase(season, 's5_ep01', level: level)..register();
       addTearDown(one.unregister);
       SharedPreferences.setMockInitialValues({});
       final prefs = await SharedPreferences.getInstance();
@@ -130,7 +130,7 @@ void main() {
       expect(find.text('CASE CLOSED'), findsOneWidget, reason: p.play.texts());
 
       // The reveal at the level: real history, then what this mystery made up.
-      final reveal = season.historyReveals['s7_ep01']!;
+      final reveal = season.historyReveals['s5_ep01']!;
       final real = find.text('REAL HISTORY'), made = find.text('IN THIS MYSTERY');
       await t.ensureVisible(made);
       await wait(t, const Duration(milliseconds: 300));

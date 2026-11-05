@@ -26,6 +26,7 @@ import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/features/game/wallet_controller.dart';
 import 'package:world_mystery/features/mission_map/map_world.dart';
 import 'package:world_mystery/features/mission_map/mission_map_screen.dart';
+import 'package:world_mystery/features/world_map/world_map_state.dart';
 import 'package:world_mystery/widgets/place_scenery.dart';
 import 'package:world_mystery/widgets/art_assets.dart';
 import 'package:world_mystery/widgets/place_art.dart';
@@ -121,7 +122,8 @@ void main() {
   group('season ids and content', () {
     test('Season 1 keeps its cases, ids and content; Season 2 has its Cases 01 to 03, released', () {
       final seasons = container.read(seasonsProvider);
-      expect([for (final s in seasons) s.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork], reason: 'Rome since the Rome integration');
+      expect([for (final s in seasons) s.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul],
+          reason: 'Rome since the Rome integration, Seoul (by hand) since 2026-11-05');
       expect(seasons.first.title, 'Shadows over London');
       expect(seasons.first.label, 'SEASON ONE');
       expect(seasons[1].title, 'Paris Stands Still');
@@ -129,8 +131,13 @@ void main() {
       expect(seasons[1].label, 'SEASON TWO');
       expect(seasons[2].title, 'The Broken Map of Rome');
       expect(seasons[2].label, 'SEASON THREE');
-      expect(seasons.last.title, 'The Silver Lark of New York');
-      expect(seasons.last.label, 'SEASON FOUR');
+      expect(seasons[3].title, 'The Silver Lark of New York');
+      expect(seasons[3].label, 'SEASON FOUR');
+      expect(seasons.last.title, "The King's Letters of Seoul");
+      expect(seasons.last.label, 'SEASON FIVE');
+      expect(seasons.last.plannedCases, 12);
+      expect(SeasonCatalog.byId(SeasonIds.seoul)!.episodes.keys, ['s5_ep01'], reason: 'its Case 01 only so far');
+      expect(SeasonCatalog.byId(SeasonIds.seoul)!.released, isTrue);
 
       // Season 1 is what is played; its catalog is the twelve cases as before.
       expect(container.read(selectedSeasonIdProvider), SeasonIds.london);
@@ -155,7 +162,7 @@ void main() {
 
     test('every season orders its own cases from 01, season by season', () {
       final ordered = MockEpisodeRepository.inPlayOrder([parisCase(13), ...MockEpisodeRepository.bundled()]);
-      expect([for (final e in ordered) e.id], [...season1Ids, 's2_ep01', 's2_ep02', 's2_ep03', 's2_ep04', 's2_ep05', 's2_ep06', 's2_ep07', 's2_ep08', 's2_ep09', 's2_ep10', 's2_ep11', 's2_ep12', 's2_ep13', for (var n = 1; n <= 12; n++) 's3_ep${n.toString().padLeft(2, '0')}', for (var n = 1; n <= 12; n++) 's4_ep${n.toString().padLeft(2, '0')}']);
+      expect([for (final e in ordered) e.id], [...season1Ids, 's2_ep01', 's2_ep02', 's2_ep03', 's2_ep04', 's2_ep05', 's2_ep06', 's2_ep07', 's2_ep08', 's2_ep09', 's2_ep10', 's2_ep11', 's2_ep12', 's2_ep13', for (var n = 1; n <= 12; n++) 's3_ep${n.toString().padLeft(2, '0')}', for (var n = 1; n <= 12; n++) 's4_ep${n.toString().padLeft(2, '0')}', 's5_ep01']);
     });
 
     test('mission ids are never shared between seasons, so no reward is paid twice', () {
@@ -413,6 +420,56 @@ void main() {
       expect(paris().status, SeasonStatus.open);
       expect(container.read(seasonAvailabilityProvider(SeasonIds.london))!.isCompleted, isTrue);
       expect(ctrl().openSeason(SeasonIds.paris), isTrue);
+    });
+
+    test('Season 5, Seoul: locked until New York\'s Case 12 is solved, then open at once with its one case', () async {
+      ctrl().createDetective('Kim', DetectiveAvatar.boy);
+      SeasonAvailability seoul() => container.read(seasonAvailabilityProvider(SeasonIds.seoul))!;
+      List<String> casesOf(String season, int n) => [for (var i = 1; i <= n; i++) '${season}_ep${i.toString().padLeft(2, '0')}'];
+      void save(String seasonId, SeasonProgress record) =>
+          prefs.setString(savedKey(prefs, AppConstants.seasonKeyFor(seasonId)), jsonEncode(record.toJson()));
+      saveSeason1(season1Finished);
+      save(SeasonIds.paris, SeasonProgress(activeEpisodeId: 's2_ep12', solvedEpisodeIds: casesOf('s2', 12)));
+      save(SeasonIds.rome, SeasonProgress(activeEpisodeId: 's3_ep12', solvedEpisodeIds: casesOf('s3', 12)));
+      // New York's Case 12 open, not solved.
+      save(SeasonIds.newyork, SeasonProgress(activeEpisodeId: 's4_ep12', solvedEpisodeIds: casesOf('s4', 11)));
+      container.dispose();
+      container = await open();
+      final newYork = container.read(seasonAvailabilityProvider(SeasonIds.newyork))!;
+      expect(newYork.status, SeasonStatus.open);
+      expect(newYork.isCompleted, isFalse);
+      expect(seoul().status, SeasonStatus.locked);
+      expect(ctrl().openSeason(SeasonIds.seoul), isFalse);
+      expect(ctrl().openEpisode('s5_ep01'), isFalse, reason: 'a locked season\'s case never opens');
+
+      // New York's Case 12 played to its end: Seoul opens at once.
+      expect(ctrl().openSeason(SeasonIds.newyork), isTrue);
+      expect(ctrl().openEpisode('s4_ep12'), isTrue);
+      solveCurrentCase();
+      // Its final ends with its case ending: the case closes once that is
+      // seen (FinalMissionScreen's last step), and not before.
+      final finale = current().finalMission;
+      expect(SeasonCatalog.closesAfterLastStep(finale), isTrue);
+      expect(seoul().status, SeasonStatus.locked, reason: 'the final answered, its ending not seen yet');
+      expect(ctrl().closeCase(GameProgress.examinedKey(finale.id, 'ending')), isTrue);
+      expect(container.read(seasonAvailabilityProvider(SeasonIds.newyork))!.isCompleted, isTrue);
+      expect(seoul().status, SeasonStatus.open);
+      expect((seoul().caseCount, seoul().plannedCount, seoul().solvedCount, seoul().isCompleted), (1, 12, 0, false));
+      // On the World Map: Seoul's pin is its season's, ready to begin, and
+      // the map opens on it (New York complete, Seoul not begun).
+      final cities = {for (final c in container.read(worldCityStatesProvider)) c.city.id: c};
+      expect(cities['seoul']!.status, WorldCityStatus.playable);
+      expect(cities['seoul']!.season!.id, SeasonIds.seoul);
+      expect(cities['seoul']!.canEnter, isTrue);
+      expect(cities['newyork']!.status, WorldCityStatus.completed);
+      expect(container.read(homeCityIdProvider), 'seoul');
+      expect(ctrl().openSeason(SeasonIds.seoul), isTrue);
+      expect(ctrl().openEpisode('s5_ep01'), isTrue);
+      expect(current().id, 's5_ep01');
+
+      // The seasons before it, as saved: nothing of theirs moved.
+      expect(container.read(progressRepositoryProvider).loadSeason(SeasonIds.rome).solvedEpisodeIds, casesOf('s3', 12));
+      expect(container.read(seasonAvailabilityProvider(SeasonIds.london))!.isCompleted, isTrue);
     });
 
     test('unlocked but not released, Season 2 is coming soon and is never entered, its Case 01 in the game or not', () async {

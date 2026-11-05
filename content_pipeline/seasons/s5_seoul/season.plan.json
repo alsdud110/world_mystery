@@ -1,41 +1,41 @@
 {
   "schemaVersion": 1,
-  "seasonId": "s7_seoulpilot",
-  "number": 7,
+  "seasonId": "s5_seoul",
+  "number": 5,
   "city": "Seoul",
-  "title": "Seoul Pilot",
-  "tagline": "PILOT CASE",
+  "title": "The King's Letters of Seoul",
+  "tagline": "READ THE NEW LETTERS",
   "plannedCases": 12,
   "mainMystery": {
     "truth": "Pilot of the Seoul historical season: only Case 01 (The Secret of the King's Letters, 1446) is written; it has no season mystery.",
     "culprit": "No one: the mystery is a burnt note in the new letters and what it says.",
     "motive": "Bun-i, who could not write Chinese characters, wrote her first letter to warn of a hole in the book hall roof.",
-    "revealCase": "s7_ep01"
+    "revealCase": "s5_ep01"
   },
   "characters": [
     {
       "charId": "sejong",
       "name": "King Sejong",
       "role": "The King of Joseon, who made the new letters (a real person; his words here are made up)",
-      "firstCase": "s7_ep01"
+      "firstCase": "s5_ep01"
     },
     {
       "charId": "taek",
       "name": "Taek",
       "role": "The night guard at the inner gate",
-      "firstCase": "s7_ep01"
+      "firstCase": "s5_ep01"
     },
     {
       "charId": "sora",
       "name": "Sora",
       "role": "A palace maid who teaches the new letters",
-      "firstCase": "s7_ep01"
+      "firstCase": "s5_ep01"
     },
     {
       "charId": "bun_i",
       "name": "Bun-i",
       "role": "A water-carrier girl who writes her first letter",
-      "firstCase": "s7_ep01"
+      "firstCase": "s5_ep01"
     }
   ],
   "locations": [
@@ -65,61 +65,61 @@
       "actId": "act1",
       "theme": "PILOT",
       "caseIds": [
-        "s7_ep01",
-        "s7_ep02",
-        "s7_ep03",
-        "s7_ep04"
+        "s5_ep01",
+        "s5_ep02",
+        "s5_ep03",
+        "s5_ep04"
       ]
     },
     {
       "actId": "act2",
       "theme": "PILOT",
       "caseIds": [
-        "s7_ep05",
-        "s7_ep06",
-        "s7_ep07",
-        "s7_ep08"
+        "s5_ep05",
+        "s5_ep06",
+        "s5_ep07",
+        "s5_ep08"
       ]
     },
     {
       "actId": "act3",
       "theme": "PILOT",
       "caseIds": [
-        "s7_ep09",
-        "s7_ep10",
-        "s7_ep11",
-        "s7_ep12"
+        "s5_ep09",
+        "s5_ep10",
+        "s5_ep11",
+        "s5_ep12"
       ]
     }
   ],
   "places": [
     {
-      "placeId": "s7_seoulpilot.inner_gate",
-      "file": "assets/seasons/season_07_seoulpilot/locations/gate_courtyard.webp",
+      "placeId": "s5_seoul.inner_gate",
+      "file": "assets/seasons/season_05_seoul/locations/gate_courtyard.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
       }
     },
     {
-      "placeId": "s7_seoulpilot.well_yard",
-      "file": "assets/seasons/season_07_seoulpilot/locations/well_yard.webp",
+      "placeId": "s5_seoul.well_yard",
+      "file": "assets/seasons/season_05_seoul/locations/well_yard.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
       }
     },
     {
-      "placeId": "s7_seoulpilot.writing_room",
-      "file": "assets/seasons/season_07_seoulpilot/locations/copy_room.webp",
+      "placeId": "s5_seoul.writing_room",
+      "file": "assets/seasons/season_05_seoul/locations/copy_room.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
       }
     },
     {
-      "placeId": "s7_seoulpilot.book_hall",
-      "file": "assets/seasons/season_07_seoulpilot/locations/book_hall_rain.webp",
+      "placeId": "s5_seoul.book_hall",
+      "file": "assets/seasons/season_05_seoul/locations/book_hall_rain.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -127,7 +127,7 @@
     }
   ],
   "notes": [
-    "Test-only pilot (Seoul Pilot Case 01, redesigned 2026-11-04: The Secret of the King's Letters). Never in the game, never the Seoul season (s5_seoul).",
+    "Season 5, Seoul (2026-11-05: the Seoul pilot, s7_seoulpilot, made the season): Case 01 only (The Secret of the King's Letters, redesigned 2026-11-04); Cases 02-12 not written. In the game by hand (lib/data/season5/season5_content.dart), made with generate_season.dart --target sandbox --out lib/data/season5/s5_seoul: the game target takes a season whole, with its opening.",
     "Pictures: the Seoul pilot's own, made by season_factory.dart run --pictures-only (assets.manifest.json); the writing room reuses copy_room."
   ]
 }

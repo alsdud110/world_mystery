@@ -35,7 +35,10 @@ void main() {
     ]..sort();
     expect([for (final s in generatedSeasons) s.id]..sort(), dirs);
     expect(SeasonCatalog.all.take(2).map((s) => s.id), ['s1_london', 's2_paris'], reason: 'London and Paris first, as ever');
-    expect(SeasonCatalog.all.skip(2), generatedSeasons);
+    // After them the generated seasons, in their order, with the ones in the
+    // game by hand (Seoul, Season 5) in their number's place.
+    expect(SeasonCatalog.all.skip(2).where((s) => !SeasonCatalog.partialSeasons.contains(s)), generatedSeasons);
+    expect(SeasonCatalog.all.skip(2).toSet(), {...generatedSeasons, ...SeasonCatalog.partialSeasons});
     final numbers = [for (final s in SeasonCatalog.all) s.season.number];
     expect(numbers, [for (var n = 1; n <= numbers.length; n++) n], reason: 'one season a number, in play order');
   });

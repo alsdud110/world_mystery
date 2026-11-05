@@ -12,6 +12,7 @@ import 'package:world_mystery/core/utils/ad_service.dart';
 import 'package:world_mystery/core/utils/audio_service.dart';
 import 'package:world_mystery/data/repositories/profile_store.dart';
 import 'package:world_mystery/data/generated/generated_seasons.g.dart';
+import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/mock/season1/episode01_mock.dart';
 import 'package:world_mystery/data/models/episode.dart';
 import 'package:world_mystery/data/models/scene_place.dart' show ScenePlace;
@@ -258,10 +259,12 @@ Future<void> takeTipFromSheet(WidgetTester t) async {
 }
 
 /// Whether [seasonId] is a season written by hand (London, Paris): not one
-/// made from its plans (the Rome integration on, `generatedSeasons`), whose
-/// pictures are its places' files, not `Artwork` scenes, and whose content is
-/// checked and played by `generated_seasons_test.dart`.
-bool handMadeSeason(String seasonId) => !generatedSeasons.any((s) => s.id == seasonId);
+/// made from its plans (the Rome integration on, `generatedSeasons`; Seoul,
+/// Season 5, `SeasonCatalog.partialSeasons`), whose pictures are its places'
+/// files, not `Artwork` scenes, and whose content is checked and played by
+/// `generated_seasons_test.dart` (Seoul: `test/sandbox/s5_seoul_*`).
+bool handMadeSeason(String seasonId) =>
+    !generatedSeasons.any((s) => s.id == seasonId) && !SeasonCatalog.partialSeasons.any((s) => s.id == seasonId);
 
 /// The bundled cases of the seasons written by hand ([handMadeSeason]).
 List<Episode> handMadeBundled() => [for (final e in MockEpisodeRepository.bundled()) if (handMadeSeason(e.seasonId)) e];

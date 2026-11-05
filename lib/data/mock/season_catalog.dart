@@ -61,6 +61,7 @@ import 'season2/season2_case12_scenes.dart';
 import 'season2/season2_learning.dart';
 import 'season2/season2_mock.dart';
 import 'season2/season2_scenes.dart';
+import '../season5/season5_content.dart';
 
 /// One season's bundled content: who the season is, its cases, and the
 /// tables that give some of its missions more than their question (a scene
@@ -230,7 +231,7 @@ class SeasonContent {
   /// Missions played as a note in the new letters put back together
   /// (Puzzle Engine 2.0, `syllable_compose`): its groups, by mission id. The
   /// mission is a `wordInput`, its page `SyllableBoard`, its rules
-  /// `SyllableRules`. Only the Seoul pilot has one.
+  /// `SyllableRules`. Only Seoul (Season 5) has one.
   final Map<String, SyllableSpec> syllables;
 
   /// Finals whose number lock is set on a clock's own hands (London Case 02's
@@ -321,7 +322,7 @@ class SeasonContent {
   final Map<String, IntroPicture> introPictures;
 
   /// A case's own picture behind its opening's words, by case id (the
-  /// Seoul pilot's night palace); without one the opening shows its place,
+  /// Seoul's King's study); without one the opening shows its place,
   /// else its season's map.
   final Map<String, String> introBackdrops;
 
@@ -621,8 +622,20 @@ bool seasonReleased(String seasonId) =>
 /// its own season only (mission ids are never shared between seasons).
 abstract final class SeasonCatalog {
   /// London, Paris, then the seasons made from their plans (Rome on:
-  /// `generate_season.dart --target game`, listed by [generatedSeasons]).
-  static final List<SeasonContent> all = [season1Content, season2Content, ...generatedSeasons];
+  /// `generate_season.dart --target game`, listed by [generatedSeasons])
+  /// with the seasons in the game before all their cases are written
+  /// ([partialSeasons]), by season number.
+  static final List<SeasonContent> all = [
+    season1Content,
+    season2Content,
+    ...[...generatedSeasons, ...partialSeasons]..sort((a, b) => a.season.number.compareTo(b.season.number)),
+  ];
+
+  /// Seasons made from their plans (generate_season.dart --target sandbox)
+  /// but registered by hand, because the game target takes a season only
+  /// whole, with its opening: Season 5, Seoul, its Case 01 only
+  /// (`lib/data/season5/`). Its places are its own, as a generated season's.
+  static final List<SeasonContent> partialSeasons = [season5Content];
 
   /// The season with [seasonId], or null when there is none.
   static SeasonContent? byId(String seasonId) {
@@ -668,7 +681,7 @@ abstract final class SeasonCatalog {
       place(id) ?? (throw StateError('Season place $id is not registered (SeasonContent.places)'));
 
   /// Places of a season that is not in the game, registered by a test
-  /// (cleared by it) or by developer mode's pilot session: the game's own
+  /// (cleared by it): the game's own
   /// are its seasons'.
   static final Map<String, ScenePlace> testPlaces = {};
 
@@ -688,9 +701,9 @@ abstract final class SeasonCatalog {
   };
 
   /// Seasons that are not in the game, registered by a test (cleared by
-  /// it) or developer mode, so their missions find their puzzle tables as the game's do:
+  /// it), so their missions find their puzzle tables as the game's do:
   /// a generated sandbox season's scenes and talks (STEP 3-13), or the
-  /// Seoul pilot in developer mode. Looked at only for a mission no season
+  /// sandbox season a test plays alone. Looked at only for a mission no season
   /// of the game has.
   static final List<SeasonContent> testSeasons = [];
 
