@@ -2230,19 +2230,31 @@ class SyllableBlockPlan {
 /// note they write is the puzzle's answer (a `wordInput`'s). In a
 /// historical season its sources are the puzzle's, in the dossier.
 class SyllablesPlan {
-  const SyllablesPlan({required this.blocks});
+  const SyllablesPlan({required this.blocks, this.sounds = const [], this.columnHeight});
 
   final List<SyllableBlockPlan> blocks;
 
+  /// The first sounds the player chooses from (empty: each group's is given).
+  final List<String> sounds;
+
+  /// Groups in a column, written down the page from the right (null: one row).
+  final int? columnHeight;
+
   factory SyllablesPlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
-    final out = SyllablesPlan(blocks: r.objs('blocks', SyllableBlockPlan.fromJson, min: 2, max: 6));
+    final out = SyllablesPlan(
+      blocks: r.objs('blocks', SyllableBlockPlan.fromJson, min: 2, max: 6),
+      sounds: r.optStrings('sounds', unique: true),
+      columnHeight: r.optInt('columnHeight', min: 1),
+    );
     r.done();
     return out;
   }
 
   Map<String, Object?> toJson() => {
     'blocks': [for (final b in blocks) b.toJson()],
+    if (sounds.isNotEmpty) 'sounds': sounds,
+    'columnHeight': ?columnHeight,
   };
 }
 

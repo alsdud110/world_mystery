@@ -147,11 +147,22 @@ class CasePlayer {
       await mp.chooseAndSearch(t, scene, a);
     } else if (season.syllables[m.id] case final spec?) {
       // Each group's vowel as the note [a] writes it: its line, then its dot.
+      // On a paper whose sounds are chosen, each place tapped first, then its
+      // first sound and the sound at its bottom too.
       for (final (i, b) in spec.blocks.indexed) {
-        final vowel = Hangul.vowels[(a.codeUnitAt(i) - 0xAC00) ~/ 28 % 21];
+        final code = a.codeUnitAt(i) - 0xAC00;
+        final vowel = Hangul.vowels[code ~/ 28 % 21];
         final (line, dot) = Hangul.partsOf(vowel)!;
+        if (spec.choosesSounds) {
+          await _tap(find.byKey(ValueKey('syllable-cell-${b.id}')));
+          await _tap(find.byKey(ValueKey('syllable-sound-${b.id}-${Hangul.initials[code ~/ 588]}')));
+        }
         await _tap(find.byKey(ValueKey('syllable-line-${b.id}-${line.name}')));
-        if (dot != VowelDot.none) await _tap(find.byKey(ValueKey('syllable-dot-${b.id}-${dot.name}')));
+        if (dot != VowelDot.none || spec.choosesSounds) await _tap(find.byKey(ValueKey('syllable-dot-${b.id}-${dot.name}')));
+        if (spec.choosesSounds && spec.bottoms.isNotEmpty) {
+          final bottom = Hangul.finals[code % 28];
+          await _tap(find.byKey(ValueKey('syllable-bottom-${b.id}-${bottom.isEmpty ? 'none' : bottom}')));
+        }
       }
       await _tap(find.byKey(const ValueKey('syllable-check')));
     } else if (season.inspections[m.id] case final scene?) {

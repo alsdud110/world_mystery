@@ -70,9 +70,17 @@ class _SyllableBoardState extends State<SyllableBoard> {
   static String _lineGlyph(VowelLine l) => l == VowelLine.flat ? 'ㅡ' : 'ㅣ';
   static String _dotName(VowelDot d) => d == VowelDot.none ? 'NO DOT' : d.name.toUpperCase();
 
+  /// The place on the paper being written (paper mode; null: none tapped yet).
+  int? _selected;
+
+  /// The groups sit on a paper by their places ([SyllableSpec.columnHeight]),
+  /// or their sounds are chosen ([SyllableSpec.sounds]).
+  bool get _onPaper => _spec.columnHeight != null || _spec.choosesSounds;
+
   @override
   Widget build(BuildContext context) {
     if (_session.readOnly) return _solvedNote();
+    if (_onPaper) return _paper();
     return Column(
       key: const ValueKey('syllable-board'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -173,6 +181,207 @@ class _SyllableBoardState extends State<SyllableBoard> {
               ],
             ),
           ],
+        ],
+      ),
+    );
+  }
+
+  /// The note on its paper: the words that tell each group, the paper with
+  /// its places (named by where they are, the first column on the right),
+  /// and the pieces of the place tapped.
+  Widget _paper() {
+    final h = _spec.columnHeight ?? _spec.blocks.length;
+    final selected = _selected;
+    return Column(
+      key: const ValueKey('syllable-board'),
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Semantics(header: true, child: Text('WHAT EACH GROUP LOOKED LIKE', style: AppText.eyebrow())),
+        const SizedBox(height: AppSpace.xs),
+        for (final b in _spec.blocks)
+          Padding(
+            padding: const EdgeInsets.only(bottom: AppSpace.xs),
+            child: Text(b.line, style: AppText.bodyText(size: 15, color: AppColors.inkBrown)),
+          ),
+        const SizedBox(height: AppSpace.sm),
+        Semantics(header: true, child: Text('THE PAPER', style: AppText.eyebrow())),
+        Padding(
+          padding: const EdgeInsets.only(top: AppSpace.xs, bottom: AppSpace.sm),
+          child: Text('Tap a place on the paper, then build what was written there.', style: AppText.aside(size: 15)),
+        ),
+        Center(
+          child: Container(
+            key: const ValueKey('syllable-paper'),
+            padding: const EdgeInsets.all(AppSpace.md),
+            decoration: answerPaper(AnswerState.idle),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              // The first column is on the right: the leftmost is the last.
+              children: [
+                for (var c = _spec.columns - 1; c >= 0; c--)
+                  Padding(
+                    padding: EdgeInsets.only(left: c == _spec.columns - 1 ? 0 : AppSpace.md),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        for (var r = 0; r < h; r++)
+                          if (c * h + r < _spec.blocks.length) _cell(c * h + r),
+                      ],
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: AppSpace.md),
+        if (selected == null)
+          Text('No place tapped yet.', key: const ValueKey('syllable-none-selected'), style: AppText.aside(size: 15))
+        else
+          _editor(selected),
+        if (_note != null)
+          Semantics(
+            liveRegion: true,
+            child: Text(_note!, key: const ValueKey('syllable-note'), style: AppText.aside(size: 15, color: AppColors.inkBrown)),
+          ),
+        const SizedBox(height: AppSpace.md),
+        GameButton(key: const ValueKey('syllable-check'), label: 'READ THE NOTE', onPressed: _session.complete ? _read : null),
+      ],
+    );
+  }
+
+  /// Place [i] on the paper: what is written there so far, and its name.
+  Widget _cell(int i) {
+    final b = _spec.blocks[i];
+    final written = _rules.written(_spec, _session.state, i);
+    final place = _spec.placeName(i);
+    final on = _selected == i;
+    final wrong = _problem == i;
+    return Semantics(
+      button: true,
+      selected: on,
+      label: '${place.toLowerCase()} of the paper: ${written.isEmpty ? 'empty' : 'written $written'}${wrong ? ', check this one' : ''}',
+      excludeSemantics: true,
+      onTap: () => setState(() => _selected = i),
+      child: GestureDetector(
+        key: ValueKey('syllable-cell-${b.id}'),
+        behavior: HitTestBehavior.opaque,
+        onTap: () => setState(() => _selected = i),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: AppSpace.sm),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 72,
+                height: 72,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: AppColors.paperLight,
+                  borderRadius: BorderRadius.circular(AppRadius.paper),
+                  border: Border.all(
+                    color: wrong ? AppColors.tryAgain : (on ? AppColors.gold : AppColors.goldDeep),
+                    width: on || wrong ? AppLine.ink : AppLine.rule,
+                  ),
+                ),
+                child: Text(written, style: AppText.title(size: 40, color: AppColors.navy)),
+              ),
+              const SizedBox(height: AppSpace.xs),
+              SizedBox(
+                width: 96,
+                child: Text(
+                  wrong ? '$place · CHECK' : place,
+                  textAlign: TextAlign.center,
+                  style: AppText.eyebrow(color: wrong ? AppColors.tryAgain : (on ? AppColors.ink : AppColors.goldDeep)),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// The pieces of place [i]: its first sound, its line, its dot, the sound at its bottom.
+  Widget _editor(int i) {
+    final b = _spec.blocks[i];
+    final piece = _session.state.pieces[i];
+    final place = _spec.placeName(i);
+    final name = place.toLowerCase();
+    Widget row(String title, List<Widget> pieces) => Padding(
+      padding: const EdgeInsets.only(top: AppSpace.sm),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(title, style: AppText.eyebrow(color: AppColors.goldDeep)),
+          const SizedBox(height: AppSpace.xs),
+          Wrap(spacing: AppSpace.sm, runSpacing: AppSpace.sm, children: pieces),
+        ],
+      ),
+    );
+    return Container(
+      key: ValueKey('syllable-editor-${b.id}'),
+      padding: const EdgeInsets.all(AppSpace.md),
+      decoration: answerPaper(_problem == i ? AnswerState.wrong : AnswerState.idle),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Semantics(header: true, child: Text('WRITING: $place', style: AppText.eyebrow())),
+          if (_spec.choosesSounds)
+            row('FIRST SOUND', [
+              for (final s in _spec.sounds)
+                _Piece(
+                  key: ValueKey('syllable-sound-${b.id}-$s'),
+                  glyph: s,
+                  label: '',
+                  semanticsLabel: '$name: first sound $s',
+                  selected: piece.initial == s,
+                  onTap: () => _play(SetFirstSound(i, s)),
+                ),
+            ]),
+          row('LINE', [
+            for (final l in VowelLine.values)
+              _Piece(
+                key: ValueKey('syllable-line-${b.id}-${l.name}'),
+                glyph: _lineGlyph(l),
+                label: _lineName(l),
+                semanticsLabel: '$name: a ${_lineName(l).toLowerCase()} line, ${_lineMeaning(l)}',
+                selected: piece.line == l,
+                onTap: () => _play(SetVowelLine(i, l)),
+              ),
+          ]),
+          if (piece.line case final line?)
+            row('DOT', [
+              for (final d in Hangul.dotsFor(line))
+                _Piece(
+                  key: ValueKey('syllable-dot-${b.id}-${d.name}'),
+                  glyph: d == VowelDot.none ? '' : Hangul.dot,
+                  label: _dotName(d),
+                  semanticsLabel: d == VowelDot.none ? '$name: no dot' : '$name: the sky\'s dot ${d.name} the line',
+                  selected: piece.dot == d,
+                  onTap: () => _play(SetVowelDot(i, d)),
+                ),
+            ]),
+          if (_spec.choosesSounds && _spec.bottoms.isNotEmpty)
+            row('AT THE BOTTOM', [
+              _Piece(
+                key: ValueKey('syllable-bottom-${b.id}-none'),
+                glyph: '',
+                label: 'NOTHING',
+                semanticsLabel: '$name: nothing at the bottom',
+                selected: piece.bottom == null,
+                onTap: () => _play(SetBottomSound(i, null)),
+              ),
+              for (final s in _spec.bottoms)
+                _Piece(
+                  key: ValueKey('syllable-bottom-${b.id}-$s'),
+                  glyph: s,
+                  label: '',
+                  semanticsLabel: '$name: $s at the bottom',
+                  selected: piece.bottom == s,
+                  onTap: () => _play(SetBottomSound(i, s)),
+                ),
+            ]),
         ],
       ),
     );

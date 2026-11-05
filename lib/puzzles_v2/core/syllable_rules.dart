@@ -7,9 +7,9 @@ enum VowelLine { flat, standing }
 enum VowelDot { none, above, below, left, right }
 
 /// One written group of a note (`syllable_compose`): its first sound
-/// ([initial], already known), the vowel to build ([vowel]), the sound
-/// under it ([finalConsonant], if any), and the words that tell how its
-/// vowel looked ([line]).
+/// ([initial]), the vowel to build ([vowel]), the sound under it
+/// ([finalConsonant], if any), and the words that tell how it looked
+/// ([line]).
 class SyllableBlock {
   const SyllableBlock({required this.id, required this.initial, required this.vowel, this.finalConsonant, required this.line});
 
@@ -24,12 +24,57 @@ class SyllableBlock {
 /// (Puzzle Engine 2.0, `syllable_compose`): each group's vowel is built from
 /// the three first shapes — the sky's dot, the flat earth, the standing
 /// person — and joined with its sounds into one written syllable.
+///
+/// With [sounds], the player also chooses each group's first sound among
+/// them, and the sound under it (one of the groups' [SyllableBlock.finalConsonant]s,
+/// or none): nothing of a group is given. With [columnHeight], the groups
+/// sit on the paper as the book wrote them — down the page, [columnHeight]
+/// to a column, the first column on the right — and each place on the
+/// paper is named by where it is, never by its group's number.
 class SyllableSpec {
-  const SyllableSpec({required this.blocks});
+  const SyllableSpec({required this.blocks, this.sounds = const [], this.columnHeight});
 
   final List<SyllableBlock> blocks;
 
+  /// The first sounds the player chooses from (empty: each group's is given).
+  final List<String> sounds;
+
+  /// Groups in a column, written down the page from the right (null: one row of groups).
+  final int? columnHeight;
+
   SyllableBlock? block(String id) => blocks.where((b) => b.id == id).firstOrNull;
+
+  /// Whether the player chooses each group's sounds (else they are given).
+  bool get choosesSounds => sounds.isNotEmpty;
+
+  /// The sounds that may sit under a group, in the note's order.
+  List<String> get bottoms => {for (final b in blocks) ?b.finalConsonant}.toList();
+
+  /// Columns on the paper ([columnHeight] set).
+  int get columns => columnHeight == null ? 1 : (blocks.length + columnHeight! - 1) ~/ columnHeight!;
+
+  /// Group [i]'s column counted from the right, and its row from the top.
+  (int column, int row) placeOf(int i) => columnHeight == null ? (0, i) : (i ~/ columnHeight!, i % columnHeight!);
+
+  /// Group [i]'s place on the paper in words ("TOP RIGHT"), never its number.
+  String placeName(int i) {
+    final (c, r) = placeOf(i);
+    final h = columnHeight ?? blocks.length;
+    final row = switch ((h, r)) {
+      (2, 0) || (3, 0) => 'TOP',
+      (2, 1) || (3, 2) => 'BOTTOM',
+      (3, 1) => 'MIDDLE',
+      _ => 'ROW ${r + 1}',
+    };
+    final column = switch ((columns, c)) {
+      (1, _) => '',
+      (_, 0) => ' RIGHT',
+      (2, 1) || (3, 2) => ' LEFT',
+      (3, 1) => ' MIDDLE',
+      _ => ' · COLUMN ${c + 1} FROM THE RIGHT',
+    };
+    return '$row$column';
+  }
 }
 
 /// Hangul as Unicode writes it: the jamo a syllable is joined from.
@@ -76,20 +121,26 @@ abstract final class Hangul {
       line == VowelLine.flat ? const [VowelDot.above, VowelDot.below, VowelDot.none] : const [VowelDot.left, VowelDot.right, VowelDot.none];
 }
 
-/// One group as it is built: its line (null: none chosen yet) and its dot.
+/// One group as it is built: its line (null: none chosen yet) and its dot,
+/// and — when the player chooses them ([SyllableSpec.sounds]) — its first
+/// sound ([initial]) and the sound under it ([bottom]).
 class SyllablePiece {
-  const SyllablePiece([this.line, this.dot = VowelDot.none]);
+  const SyllablePiece([this.line, this.dot = VowelDot.none, this.initial, this.bottom]);
 
   final VowelLine? line;
   final VowelDot dot;
+  final String? initial;
+  final String? bottom;
 
   String? get vowel => line == null ? null : Hangul.vowelOf(line!, dot);
 
-  @override
-  bool operator ==(Object other) => other is SyllablePiece && other.line == line && other.dot == dot;
+  SyllablePiece withVowel(VowelLine? line, [VowelDot dot = VowelDot.none]) => SyllablePiece(line, dot, initial, bottom);
 
   @override
-  int get hashCode => Object.hash(line, dot);
+  bool operator ==(Object other) => other is SyllablePiece && other.line == line && other.dot == dot && other.initial == initial && other.bottom == bottom;
+
+  @override
+  int get hashCode => Object.hash(line, dot, initial, bottom);
 }
 
 /// Every group of the note as it is built, in the note's order.
@@ -126,6 +177,22 @@ class SetVowelDot extends SyllableAction {
   final VowelDot dot;
 }
 
+/// Group [block]'s first sound chosen ([SyllableSpec.sounds] only).
+class SetFirstSound extends SyllableAction {
+  const SetFirstSound(this.block, this.sound);
+
+  final int block;
+  final String sound;
+}
+
+/// The sound under group [block] chosen, or taken away (null; [SyllableSpec.sounds] only).
+class SetBottomSound extends SyllableAction {
+  const SetBottomSound(this.block, this.sound);
+
+  final int block;
+  final String? sound;
+}
+
 /// Group [block] emptied again.
 class ClearVowel extends SyllableAction {
   const ClearVowel(this.block);
@@ -146,6 +213,9 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
   /// Groups a note may have.
   static const sizes = (2, 6);
 
+  /// First sounds a player may choose from.
+  static const soundChoices = (2, 9);
+
   @override
   List<SpecIssue> validate(SyllableSpec spec) {
     final out = <SpecIssue>[...PuzzleSpecCheck.ids(elementIds(spec))];
@@ -161,7 +231,22 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
       if (b.finalConsonant case final f? when f.isEmpty || !Hangul.finals.contains(f)) {
         out.add(SpecIssue('syllables_final', '$at.finalConsonant', '"$f" is no sound under a syllable'));
       }
-      if (b.line.trim().isEmpty) out.add(SpecIssue('field_missing', '$at.line', 'the words that tell how its vowel looked'));
+      if (b.line.trim().isEmpty) out.add(SpecIssue('field_missing', '$at.line', 'the words that tell how it looked'));
+      if (spec.choosesSounds && !spec.sounds.contains(b.initial)) {
+        out.add(SpecIssue('syllables_sound_missing', '$at.initial', '"${b.initial}" is not among the sounds to choose from'));
+      }
+    }
+    if (spec.choosesSounds) {
+      if (spec.sounds.length < soundChoices.$1 || spec.sounds.length > soundChoices.$2) {
+        out.add(SpecIssue('syllables_sounds_size', r'$.sounds', '${spec.sounds.length} sound(s): ${soundChoices.$1} to ${soundChoices.$2}'));
+      }
+      for (final (i, s) in spec.sounds.indexed) {
+        if (!Hangul.initials.contains(s)) out.add(SpecIssue('syllables_initial', '\$.sounds[$i]', '"$s" is no first sound of a syllable'));
+      }
+      if (spec.sounds.toSet().length != spec.sounds.length) out.add(const SpecIssue('syllables_sounds_duplicate', r'$.sounds', 'a sound is given twice'));
+    }
+    if (spec.columnHeight case final h? when h < 1 || h >= spec.blocks.length) {
+      out.add(SpecIssue('syllables_columns', r'$.columnHeight', '$h group(s) to a column: 1 to ${spec.blocks.length - 1}, so the paper has two columns at least'));
     }
     return out;
   }
@@ -174,35 +259,51 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
     Applied<SyllableState> no(String code, String why) => Applied.rejected(s, Rejection(code, why));
     Applied<SyllableState> put(int i, SyllablePiece p) => Applied.accepted(SyllableState([...s.pieces]..[i] = p));
     final i = switch (action) {
-      SetVowelLine(:final block) || SetVowelDot(:final block) || ClearVowel(:final block) => block,
+      SetVowelLine(:final block) || SetVowelDot(:final block) || SetFirstSound(:final block) || SetBottomSound(:final block) || ClearVowel(:final block) => block,
     };
     if (i < 0 || i >= s.pieces.length) return no('block_unknown', 'there is no group ${i + 1}');
     final now = s.pieces[i];
     switch (action) {
       case SetVowelLine(:final line):
         if (now.line == line) return no('no_change', 'the line is there already');
-        return put(i, SyllablePiece(line));
+        return put(i, now.withVowel(line));
       case SetVowelDot(:final dot):
         if (now.line == null) return no('dot_without_line', 'a dot sits on a line: lay the line first');
         if (Hangul.vowelOf(now.line!, dot) == null) return no('dot_misplaced', 'a dot never sits there on that line');
         if (now.dot == dot) return no('no_change', 'the dot is there already');
-        return put(i, SyllablePiece(now.line, dot));
+        return put(i, now.withVowel(now.line, dot));
+      case SetFirstSound(:final sound):
+        if (!spec.choosesSounds || !spec.sounds.contains(sound)) return no('sound_unknown', 'that sound is not one to choose');
+        if (now.initial == sound) return no('no_change', 'the sound is there already');
+        return put(i, SyllablePiece(now.line, now.dot, sound, now.bottom));
+      case SetBottomSound(:final sound):
+        if (!spec.choosesSounds || (sound != null && !spec.bottoms.contains(sound))) return no('sound_unknown', 'that sound is not one to choose');
+        if (now.bottom == sound) return no('no_change', 'the sound is there already');
+        return put(i, SyllablePiece(now.line, now.dot, now.initial, sound));
       case ClearVowel():
-        if (now.line == null) return no('no_change', 'the group is empty already');
+        if (now == const SyllablePiece()) return no('no_change', 'the group is empty already');
         return put(i, const SyllablePiece());
     }
   }
 
-  /// Group [i] as it is written now: its syllable once its vowel is built,
-  /// else its first sound alone.
+  /// Group [i]'s first sound now: chosen, or given.
+  String? firstSound(SyllableSpec spec, SyllableState s, int i) => spec.choosesSounds ? s.pieces[i].initial : spec.blocks[i].initial;
+
+  /// The sound under group [i] now: chosen, or given.
+  String? bottomSound(SyllableSpec spec, SyllableState s, int i) => spec.choosesSounds ? s.pieces[i].bottom : spec.blocks[i].finalConsonant;
+
+  /// Group [i] as it is written now: its syllable once its sound and vowel
+  /// are there, else what of it is (its first sound or its vowel alone; '' for nothing).
   String written(SyllableSpec spec, SyllableState s, int i) {
-    final b = spec.blocks[i];
+    final first = firstSound(spec, s, i);
     final v = s.pieces[i].vowel;
-    return v == null ? b.initial : Hangul.compose(b.initial, v, b.finalConsonant) ?? b.initial;
+    if (first == null) return v ?? '';
+    return v == null ? first : Hangul.compose(first, v, bottomSound(spec, s, i)) ?? first;
   }
 
   @override
-  bool isComplete(SyllableSpec spec, SyllableState s) => s.pieces.every((p) => p.vowel != null);
+  bool isComplete(SyllableSpec spec, SyllableState s) =>
+      [for (var i = 0; i < s.pieces.length; i++) s.pieces[i].vowel != null && firstSound(spec, s, i) != null].every((x) => x);
 
   @override
   String answerOf(SyllableSpec spec, SyllableState s) => [for (var i = 0; i < spec.blocks.length; i++) written(spec, s, i)].join();
@@ -210,10 +311,11 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
   @override
   String answer(SyllableSpec spec) => [for (final b in spec.blocks) Hangul.compose(b.initial, b.vowel, b.finalConsonant) ?? ''].join();
 
-  /// The first group whose vowel is not the one written (null: none).
+  /// The first group (in the note's order) not written as it was (null: none).
   int? firstProblem(SyllableSpec spec, SyllableState s) {
     for (var i = 0; i < spec.blocks.length; i++) {
-      if (s.pieces[i].vowel != spec.blocks[i].vowel) return i;
+      final b = spec.blocks[i];
+      if (s.pieces[i].vowel != b.vowel || firstSound(spec, s, i) != b.initial || bottomSound(spec, s, i) != b.finalConsonant) return i;
     }
     return null;
   }
@@ -221,12 +323,15 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
   @override
   SyllableState solved(SyllableSpec spec) => SyllableState([
     for (final b in spec.blocks)
-      if (Hangul.partsOf(b.vowel) case (final line, final dot)) SyllablePiece(line, dot) else const SyllablePiece(),
+      if (Hangul.partsOf(b.vowel) case (final line, final dot))
+        SyllablePiece(line, dot, spec.choosesSounds ? b.initial : null, spec.choosesSounds ? b.finalConsonant : null)
+      else
+        const SyllablePiece(),
   ]);
 
   @override
   Object? stateToJson(SyllableState s) => [
-    for (final p in s.pieces) [p.line?.name, p.dot.name],
+    for (final p in s.pieces) [p.line?.name, p.dot.name, if (p.initial != null || p.bottom != null) ...[p.initial, p.bottom]],
   ];
 
   @override
@@ -234,20 +339,32 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
     if (json is! List || json.length != spec.blocks.length) return null;
     final pieces = <SyllablePiece>[];
     for (final x in json) {
-      if (x is! List || x.length != 2) return null;
+      if (x is! List || (x.length != 2 && x.length != 4)) return null;
       final line = x[0] == null ? null : VowelLine.values.where((v) => v.name == x[0]).firstOrNull;
       final dot = VowelDot.values.where((v) => v.name == x[1]).firstOrNull;
       if ((x[0] != null && line == null) || dot == null) return null;
       if (line == null ? dot != VowelDot.none : Hangul.vowelOf(line, dot) == null) return null;
-      pieces.add(SyllablePiece(line, dot));
+      String? initial, bottom;
+      if (x.length == 4) {
+        if (!spec.choosesSounds || x[2] is! String? || x[3] is! String?) return null;
+        initial = x[2] as String?;
+        bottom = x[3] as String?;
+        if (initial != null && !spec.sounds.contains(initial)) return null;
+        if (bottom != null && !spec.bottoms.contains(bottom)) return null;
+      }
+      pieces.add(SyllablePiece(line, dot, initial, bottom));
     }
     return SyllableState(pieces);
   }
 
   @override
-  Object? structure(SyllableSpec spec) => [
-    for (final b in spec.blocks) {'id': b.id, 'initial': b.initial, 'vowel': b.vowel, 'final': b.finalConsonant},
-  ];
+  Object? structure(SyllableSpec spec) => {
+    'blocks': [
+      for (final b in spec.blocks) {'id': b.id, 'initial': b.initial, 'vowel': b.vowel, 'final': b.finalConsonant},
+    ],
+    'sounds': spec.sounds,
+    'columnHeight': spec.columnHeight,
+  };
 
   @override
   Map<String, String> texts(SyllableSpec spec) => {for (final (i, b) in spec.blocks.indexed) 'blocks[$i].line': b.line};

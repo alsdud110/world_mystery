@@ -226,7 +226,9 @@
       "additionalProperties": false,
       "required": ["blocks"],
       "properties": {
-        "blocks": { "type": "array", "minItems": 2, "maxItems": 6, "items": { "$ref": "#/$defs/syllableBlock" } }
+        "blocks": { "type": "array", "minItems": 2, "maxItems": 6, "items": { "$ref": "#/$defs/syllableBlock" } },
+        "sounds": { "description": "The first sounds the player chooses each group's from (and the sound under it, of the groups' finals): none given. Absent: each group's first sound is given.", "type": "array", "minItems": 2, "maxItems": 9, "items": { "type": "string", "minLength": 1 } },
+        "columnHeight": { "description": "Groups in a column: the paper holds them down the page, the first column on the right, each place named by where it is (TOP RIGHT …), never by its group's number. Absent: one row of groups.", "type": "integer", "minimum": 1 }
       }
     },
     "syllableBlock": {

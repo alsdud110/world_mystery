@@ -283,16 +283,16 @@
       "slot": "m2",
       "placeId": "s7_seoulpilot.well_yard",
       "puzzle": {
-        "paletteId": "letter_tile_lock",
+        "paletteId": "order_sequence",
         "surface": "mission",
         "engineTable": null,
-        "missionType": "letterLock",
+        "missionType": "sequence",
         "answerSpec": {
-          "answer": "ㅅㄱㅈㅂㅇ",
+          "answer": "siot,giyeok,jieut,bieup,ieung",
           "options": [
             {
-              "id": "ieung",
-              "label": "ㅇ"
+              "id": "mieum",
+              "label": "ㅁ"
             },
             {
               "id": "jieut",
@@ -303,19 +303,37 @@
               "label": "ㄱ"
             },
             {
+              "id": "chieut",
+              "label": "ㅊ"
+            },
+            {
+              "id": "ieung",
+              "label": "ㅇ"
+            },
+            {
+              "id": "nieun",
+              "label": "ㄴ"
+            },
+            {
               "id": "bieup",
               "label": "ㅂ"
+            },
+            {
+              "id": "pieup",
+              "label": "ㅍ"
             },
             {
               "id": "siot",
               "label": "ㅅ"
             }
-          ]
+          ],
+          "codeLength": 5
         },
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Taek's groups matched with Sora's board: a tooth ㅅ, the back of the tongue ㄱ, the tooth with one more line ㅈ, the mouth with more lines ㅂ, the throat's ring ㅇ under it. The board gives only ㄴ ㄷ ㅌ for the stronger sounds: the player finds the rule for ㅅ and ㅁ.",
+          "Taek names each group by the body part Sora's board gives it (teeth, back of the tongue, mouth, throat), never by its shape: the board's English decides the letter, a Korean reader's eye alone does not.",
+          "Four letters are not in the note (ㄴ ㅁ ㅊ ㅍ): 'one step stronger' is one more line (the board's rule, shown with ㄴ ㄷ ㅌ only), so ㅈ not ㅊ, ㅂ not ㅍ or ㅁ, and the back of the tongue ㄱ not ㄴ.",
           "Letters are tiles of the app (text): never in a picture."
         ]
       },
@@ -333,7 +351,7 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "택의 비유(tooth, corner, lid, mouth, ring)와 글자판의 설명(copies the teeth/mouth/throat, a stronger sound adds a line)을 짝지어 자음 다섯을 찾는다.",
+        "objective": "택이 말한 발음 기관(teeth, back of the tongue, mouth, throat)과 '한 단계 센 소리(one step stronger)'를 글자판의 영어 설명(copies the ..., a stronger sound adds one line)에 맞춰 방해 글자 사이에서 자음 다섯을 순서대로 고른다.",
         "skill": "vocabulary",
         "expressions": [
           "A stronger sound adds a line."
@@ -346,17 +364,23 @@
           "Sora comes to the well with a lamp.",
           "\"Bun-i learned the new letters in ten days,\" she says.",
           "\"My pupils lock their slates in my lesson box with a new word's sounds.\"",
-          "Taek remembers the marks he saw before the fire."
+          "Sora reads her board out loud. Taek listens, and he remembers the marks he saw."
         ],
-        "letterIntro": "Taek's memory, and Sora's lesson board:",
-        "letter": "Taek: \"Group 1 looked like a tooth.\"\n\"Group 2 was a corner, like the back of a tongue going up.\"\n\"Group 3 was the tooth again, with a flat lid on top.\"\n\"Group 4 was a little mouth with two horns, and a ring under it.\"\nSora's board: ㄱ copies the back of the tongue. ㄴ copies the tongue on the gums.\nㅁ copies the mouth. ㅅ copies the teeth. ㅇ copies the throat.\nA stronger sound adds a line: ㄴ, then ㄷ, then ㅌ.",
-        "question": "Which sounds did Bun-i write? Put them in the lock in Taek's order.",
+        "letterIntro": "Sora's lesson board, and Taek's memory:",
+        "letter": "Sora's board: ㄱ copies the back of the tongue. ㄴ copies the tongue on the gums.\nㅁ copies the mouth. ㅅ copies the teeth. ㅇ copies the throat.\nA stronger sound adds one line: ㄴ, then ㄷ, then ㅌ.\nTaek: \"Group 1 was the teeth.\"\n\"Group 2 was the back of the tongue.\"\n\"Group 3 was the teeth, one step stronger.\"\n\"Group 4 was the mouth, one step stronger. The throat was under it.\"",
+        "question": "Which letters did Bun-i write? Tap them in Taek's order.",
         "hints": [
-          "Find the tooth on the board first. Then find the mouth.",
-          "A tooth with a lid is the tooth letter with one more line."
+          "Find the teeth and the back of the tongue on Sora's board.",
+          "One step stronger is one more line: ㄴ becomes ㄷ, not ㅌ."
         ],
         "successMessage": "The lesson box opens!",
         "orderFeedback": "Those are the right letters. Read Taek's groups again, one by one.",
+        "feedback": {
+          "siot,giyeok,chieut,bieup,ieung": "Group 3 is the teeth one step stronger: one more line, not two.",
+          "siot,giyeok,jieut,pieup,ieung": "Group 4 is the mouth one step stronger: one more line, not two.",
+          "siot,giyeok,jieut,mieum,ieung": "Group 4 is the mouth one step stronger: it has one more line.",
+          "siot,nieun,jieut,bieup,ieung": "Group 2 is the back of the tongue, not the tongue on the gums."
+        },
         "transition": [
           "Inside is Bun-i's slate, with the same five sounds.",
           "But the lines and dots between them are wiped away.",
@@ -388,14 +412,13 @@
         "clue": {
           "title": "The Sounds",
           "value": "ㅅ ㄱ ㅈ ㅂ ㅇ",
-          "note": "A tooth, a tongue, a tooth with a lid, a mouth with horns, a ring."
+          "note": "The teeth, the back of the tongue, the teeth one step stronger, the mouth one step stronger, and the throat under it."
         },
         "evidence": {
           "name": "Sora's Lesson Board",
           "icon": "letter",
           "description": "The first letters copy the tongue, the mouth, the teeth and the throat. A stronger sound adds a line."
-        },
-        "lockTitle": "SORA'S LESSON BOX"
+        }
       }
     },
     {
@@ -413,7 +436,8 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Each group's vowel built from Taek's words: ㅓ (dot left of a standing line), ㅗ (dot on a flat line), ㅣ, ㅜ (dot under a flat line); the first sounds are M2's. The note reads 서고 지붕, the book hall roof.",
+          "Each group's vowel built from Taek's words: ㅓ (dot left of a standing line), ㅗ (dot on a flat line), ㅣ, ㅜ (dot under a flat line); each first sound is chosen from M2's by its body part. The note reads 서고 지붕, the book hall roof.",
+          "The paper holds the groups as Bun-i wrote them: down the page, two to a column, the first column on the right (columnHeight 2). Its places are named TOP RIGHT, BOTTOM RIGHT, TOP LEFT, BOTTOM LEFT, never by group number: knowing the words 서고 지붕 is not enough, Sora's English says where each group sits. Written across the page (서고 / 지붕 in rows) the note reads 고붕서지.",
           "Every letter is the app's text (SyllableBoard): never in a picture."
         ]
       },
@@ -431,10 +455,11 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "점(하늘)·누운 줄(땅)·선 줄(사람)과 위치 표현(on its left, on top, under it)을 읽고 모음을 만들어 네 글자를 완성한다.",
+        "objective": "점(하늘)·누운 줄(땅)·선 줄(사람)과 위치 표현(on its left, on top, under it), 세로쓰기 설명(top to bottom, the first column is on the right)을 읽고 종이 위 제자리에 네 글자를 완성한다.",
         "skill": "sentenceMeaning",
         "expressions": [
-          "a standing line, with a dot on its left"
+          "a standing line, with a dot on its left",
+          "The first column is on the right."
         ]
       },
       "play": {
@@ -443,19 +468,22 @@
         "story": [
           "Sora takes you to her writing room.",
           "\"Our vowels come from three shapes,\" she says.",
-          "\"A round dot is the sky. A flat line is the earth. A standing line is a person.\""
+          "\"A round dot is the sky. A flat line is the earth. A standing line is a person.\"",
+          "\"And we do not write across the page, as you do.\""
         ],
-        "letterIntro": "Sora's lesson, and Taek's memory:",
-        "letter": "A dot joins a line to make a vowel.\nFlat vowels go under the first sound. Standing vowels go on its right.\nThe sound at the bottom uses the same letters as the first sounds.\nGroup 1: a standing line, with a dot on its left.\nGroup 2: a flat line, with a dot on top.\nGroup 3: only a standing line.\nGroup 4: a flat line, with a dot under it. The ring sits at the bottom.",
-        "question": "Build each vowel. What did Bun-i write?",
+        "letterIntro": "Sora's lesson:",
+        "letter": "A dot joins a line to make a vowel.\nFlat vowels go under the first sound. Standing vowels go on its right.\nThe sound at the bottom uses the same letters as the first sounds.\nWe write from top to bottom. The first column is on the right.\nBun-i wrote two groups in each column.",
+        "question": "Build each group in its place on the paper. What did Bun-i write?",
         "hints": [
-          "Read each group in the letter. Lay its line first, then put the dot.",
-          "Read the four groups together. They make two words."
+          "Group 1 is at the top right. Group 2 is under it.",
+          "Group 3 is at the top of the left column. For each group, choose its sound, then lay its line and its dot."
         ],
         "feedback": {
+          "고붕서지": "Bun-i did not write across the page. Read Sora's lesson: from top to bottom, and the first column is on the right.",
+          "지붕서고": "Bun-i's first column is on the right, not on the left.",
           "사고지붕": "Group 1's dot is on the left of its line, not the right."
         },
-        "successMessage": "서고 지붕: the book hall roof!",
+        "successMessage": "The note is whole again. Sora reads it out: \"the book hall roof\"!",
         "transition": [
           "Sora goes pale. \"Bun-i saw a hole in the book hall roof!\"",
           "\"The rain will ruin the books. But the book hall is locked at night.\"",
@@ -488,7 +516,7 @@
         "evidence": {
           "name": "Bun-i's Note",
           "icon": "letter",
-          "description": "서고 지붕: the book hall roof. Put back together from Taek's memory."
+          "description": "Bun-i's note, put back together from Taek's memory. It names the book hall roof."
         },
         "syllables": {
           "blocks": [
@@ -496,28 +524,36 @@
               "id": "one",
               "initial": "ㅅ",
               "vowel": "ㅓ",
-              "line": "Group 1: a standing line, with a dot on its left."
+              "line": "Group 1: the teeth. A standing line, with a dot on its left."
             },
             {
               "id": "two",
               "initial": "ㄱ",
               "vowel": "ㅗ",
-              "line": "Group 2: a flat line, with a dot on top."
+              "line": "Group 2: the back of the tongue. A flat line, with a dot on top."
             },
             {
               "id": "three",
               "initial": "ㅈ",
               "vowel": "ㅣ",
-              "line": "Group 3: only a standing line."
+              "line": "Group 3: the teeth, one step stronger. Only a standing line."
             },
             {
               "id": "four",
               "initial": "ㅂ",
               "vowel": "ㅜ",
               "final": "ㅇ",
-              "line": "Group 4: a flat line, with a dot under it. The ring sits at the bottom."
+              "line": "Group 4: the mouth, one step stronger. A flat line, with a dot under it. The throat's ring sits at the bottom."
             }
-          ]
+          ],
+          "sounds": [
+            "ㅅ",
+            "ㄱ",
+            "ㅈ",
+            "ㅂ",
+            "ㅇ"
+          ],
+          "columnHeight": 2
         }
       }
     }
@@ -557,7 +593,7 @@
       {
         "ref": "s7_ep01_c3",
         "use": "answerDerivation",
-        "note": "The note says 서고 지붕."
+        "note": "The note names the book hall roof."
       }
     ],
     "clueOutputs": {
@@ -581,7 +617,7 @@
         "\"A paper in my letters?\" he asks. \"Show me.\""
       ],
       "letterIntro": "Your notebook says:",
-      "letter": "Bun-i could not write Chinese characters.\nThe first letters copy the mouth. A stronger sound adds a line.\nTaek's groups make 서고 지붕.",
+      "letter": "Bun-i could not write Chinese characters.\nThe first letters copy the mouth. A stronger sound adds a line.\nBun-i's note names the book hall roof.",
       "question": "Answer the King's three questions with your evidence.",
       "hints": [
         "Show one piece of evidence for each question.",
@@ -715,7 +751,7 @@
             "lines": [
               {
                 "by": "detective",
-                "text": "Taek's groups make 서고 지붕."
+                "text": "Bun-i wrote \"the book hall roof\". There is a hole in it."
               },
               {
                 "by": "speaker",
@@ -723,7 +759,7 @@
               }
             ],
             "miss": "That does not say what she wrote.",
-            "tell": "Bun-i's note says 서고 지붕."
+            "tell": "Bun-i's note names the book hall roof."
           }
         ],
         "finishWhen": [
@@ -772,7 +808,8 @@
       "vowel": "모음",
       "slate": "석판(글씨 연습판)",
       "characters": "(한자 같은) 글자",
-      "water-carriers": "물 긷는 사람들"
+      "water-carriers": "물 긷는 사람들",
+      "column": "세로줄"
     }
   },
   "notes": [

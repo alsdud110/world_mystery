@@ -463,7 +463,7 @@ abstract final class PlayCheck {
     final sa = '$at.play.syllables';
     final spec = SyllableSpec(blocks: [
       for (final b in s.blocks) SyllableBlock(id: b.id, initial: b.initial, vowel: b.vowel, finalConsonant: b.finalConsonant, line: b.line),
-    ]);
+    ], sounds: s.sounds, columnHeight: s.columnHeight);
     const rules = SyllableRules();
     for (final i in rules.validate(spec)) {
       issue(i.code, '$sa${i.path.substring(1)}', i.message);

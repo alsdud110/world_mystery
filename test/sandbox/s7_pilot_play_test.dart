@@ -71,29 +71,29 @@ void main() {
       expect([done(m1.id), done(ep.missions[1].id)], [true, false]);
       expect(c.read(gameControllerProvider.notifier).submitAnswer(m1, m1.answer).coins, 0, reason: 'paid once');
 
-      // M2, the lesson box: the right letters in a wrong order, TRY AGAIN, Taek's order.
+      // M2, the lesson box: nine letters, five in Taek's order; ㅊ for "one
+      // step stronger" (two lines more) is refused with its own line.
       final m2 = ep.missions[1];
-      expect(m2.type, MissionType.letterLock);
-      expect(m2.answer, 'ㅅㄱㅈㅂㅇ');
+      expect(m2.type, MissionType.sequence);
+      expect(m2.answer, 'siot,giyeok,jieut,bieup,ieung');
+      expect(m2.options, hasLength(9));
       await p.toPuzzle(m2);
-      await p.answer(m2, 'ㄱㅅㅈㅂㅇ');
+      await p.answer(m2, 'siot,giyeok,chieut,bieup,ieung');
       expect([done(m2.id), wrong(m2.id)], [false, 1], reason: p.play.texts());
+      expect(findReadableContaining('not two'), findsWidgets, reason: 'the wrong letter answered in English');
       await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
-      for (var i = 4; i >= 0; i--) {
-        // Every tile back out of the lock, then Taek's order.
-        await t.tap(find.byKey(ValueKey('lock-slot-$i')));
-        await wait(t, const Duration(milliseconds: 150));
-      }
+      await tapText(t, 'Start again', after: const Duration(milliseconds: 300));
       await p.answer(m2);
       expect(done(m2.id), isTrue, reason: p.play.texts());
       await p.onToMap();
 
-      // M3, the note: group 1's dot on the wrong side, its own line, then right.
+      // M3, the note: the right words written across the page (a Korean
+      // reader's habit, Sora's lesson unread) are refused; then down from the right.
       final m3 = ep.missions[2];
       await p.toPuzzle(m3);
-      await p.answer(m3, '사고지붕');
+      await p.answer(m3, '고붕서지');
       expect([done(m3.id), wrong(m3.id)], [false, 1], reason: p.play.texts());
-      expect(find.text('GROUP 1 · CHECK THIS ONE'), findsOneWidget, reason: 'the wrong group pointed at');
+      expect(find.text('TOP RIGHT · CHECK'), findsOneWidget, reason: 'the wrong place pointed at');
       await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
       await p.answer(m3);
       expect(done(m3.id), isTrue, reason: p.play.texts());

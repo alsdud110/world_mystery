@@ -1080,6 +1080,8 @@ abstract final class CaseGenerator {
       for (final b in s.blocks)
         DartCall('SyllableBlock', named: {'id': b.id, 'initial': b.initial, 'vowel': b.vowel, 'finalConsonant': ?b.finalConsonant, 'line': b.line}),
     ],
+    if (s.sounds.isNotEmpty) 'sounds': s.sounds,
+    'columnHeight': ?s.columnHeight,
   });
 
   // ── Existing engines (Puzzle Engine 2.0 STEP 1) ─────────────────────────

@@ -405,7 +405,8 @@
         "The rainy night in autumn 1446, the burnt paper, the book hall and the hole in its roof are made up.",
         "Bun-i, Sora and Taek are made up; so are the copied scrap, Sora's lesson box and board, and the King's ten-day test of ordinary people.",
         "King Sejong is real, but everything he says and does in the case is made up. Two of his lines retell his real preface (h9, h5); none is a quotation of a record.",
-        "The note is written in today's spelling; the words 서고 and 지붕 are not claimed as fifteenth-century spellings."
+        "The note is written in today's spelling; the words 서고 and 지붕 are not claimed as fifteenth-century spellings.",
+        "How Bun-i laid out her note follows Sora's lesson in the story (top to bottom, two groups to a column, the first column on the right); the game does not state it as a rule of the 1446 book. Writing in columns from the right is believed true of the time, but no public-institution source was opened for it (2026-11-05): a fact to add, checked, before any reveal says it."
       ],
       "puzzles": [
         {
@@ -440,23 +441,23 @@
             "s7_ep01_h3",
             "s7_ep01_h10"
           ],
-          "answer": "ㅅㄱㅈㅂㅇ",
+          "answer": "siot,giyeok,jieut,bieup,ieung",
           "clues": [
             {
-              "text": "tooth",
+              "text": "teeth",
               "missionId": "s7_ep01_m2"
             },
             {
-              "text": "lid",
+              "text": "back of the tongue",
               "missionId": "s7_ep01_m2"
             },
             {
-              "text": "mouth",
+              "text": "stronger",
               "missionId": "s7_ep01_m2"
             }
           ],
-          "derivation": "Taek's groups against Sora's board (the Jejahae's organs, h3): a tooth is ㅅ, the back of the tongue going up is ㄱ, the mouth is ㅁ, the throat's ring is ㅇ. The board shows the stronger sounds' rule with ㄴ ㄷ ㅌ only (h10): the tooth with a line is ㅈ, the mouth with lines is ㅂ.",
-          "whyOnly": "Each group matches one shape of the board only, and the five tiles are those five letters: one order follows Taek's groups."
+          "derivation": "Taek names each group by the organ Sora's board gives it (the Jejahae's organs, h3): the teeth are ㅅ, the back of the tongue ㄱ (not ㄴ, the tongue on the gums), the mouth ㅁ, the throat ㅇ. 'One step stronger' is the board's rule, one line more (h10, shown with ㄴ ㄷ ㅌ only): the teeth one step stronger are ㅈ (not ㅊ, two lines more), the mouth one step stronger ㅂ (not ㅁ, nor ㅍ).",
+          "whyOnly": "Nine tiles, five used: each group names one organ and one strength only, and four tiles (ㄴ ㅁ ㅊ ㅍ) answer a misread organ or a wrong number of lines. Taek's order is one order."
         },
         {
           "puzzleId": "s7_ep01_m3",
@@ -476,12 +477,12 @@
               "missionId": "s7_ep01_m3"
             },
             {
-              "text": "flat line",
+              "text": "first column is on the right",
               "missionId": "s7_ep01_m3"
             }
           ],
-          "derivation": "The vowels are built from the dot, the flat line and the standing line (h4, h11); flat ones go under the first sound, standing ones on its right, and the ring at the bottom is the last sound (h12). Taek's words give ㅓ, ㅗ, ㅣ and ㅜ with the first sounds of Mission 2: 서고 지붕.",
-          "whyOnly": "Each group's words allow one line and one place of the dot only; the first sounds are Mission 2's, so the note writes one word only."
+          "derivation": "Each group's first sound is chosen by its organ and strength (Mission 2's words); its vowel is built from the dot, the flat line and the standing line (h4, h11): flat ones under the first sound, standing ones on its right, the throat's ring at the bottom the last sound (h12). The paper's places come from Sora's lesson (fiction: the way she taught Bun-i): top to bottom, two groups to a column, the first column on the right. Group 1 at the top right, 2 under it, 3 at the top left, 4 under it: 서고 지붕.",
+          "whyOnly": "Each group's words allow one sound, one line and one place of the dot only, and each place of the paper one group only. Knowing the words alone is not enough: written across the page they read 고붕서지, and from the left column 지붕서고."
         },
         {
           "puzzleId": "s7_ep01_final",
@@ -497,22 +498,22 @@
               "missionId": "s7_ep01_m1"
             },
             {
-              "text": "tooth",
+              "text": "stronger",
               "missionId": "s7_ep01_m2"
             },
             {
-              "text": "서고 지붕",
+              "text": "book hall roof",
               "missionId": "s7_ep01_m3"
             }
           ],
-          "derivation": "The King's three questions, each answered by one mission's evidence: who wrote it (the copied scrap: a writer who could not write Chinese characters, h9), how after ten days (Sora's board: letters made easy to learn, h5, h6), what it says (Bun-i's note, 서고 지붕).",
+          "derivation": "The King's three questions, each answered by one mission's evidence: who wrote it (the copied scrap: a writer who could not write Chinese characters, h9), how after ten days (Sora's board: letters made easy to learn, h5, h6), what it says (Bun-i's note: the book hall roof). Every line of the talk is English; the Hangul stays on the note itself.",
           "whyOnly": "Each question accepts one piece of evidence only; a wrong one is answered, never a failure, and the talk ends when all three are shown."
         }
       ],
       "learningObjectives": [
         "Read why the King made the letters, and use it as a clue.",
-        "Match words that describe a shape with the letters they describe.",
-        "Read place words (on its left, on top, under it) to build letters."
+        "Match words for parts of the mouth, and for a stronger sound, with the letters they describe.",
+        "Read place words (on its left, on top, under it, the first column is on the right) to build letters where they were written."
       ],
       "reveal": {
         "realHistory": [
@@ -596,7 +597,8 @@
         ]
       },
       "notes": [
-        "Seoul Pilot Case 01, redesigned 2026-11-04 (docs/SEOUL_CASE01_REDESIGN.md). Sources of h3 and h9-h13 opened and quoted by Claude on 2026-11-04; h1, h2, h4-h6 as checked before."
+        "Seoul Pilot Case 01, redesigned 2026-11-04 (docs/SEOUL_CASE01_REDESIGN.md). Sources of h3 and h9-h13 opened and quoted by Claude on 2026-11-04; h1, h2, h4-h6 as checked before.",
+        "2026-11-05: language redesign (English is the tool). M2 decoy letters and organ words, M3 the paper written down from the right (Sora's lesson, in the fiction list), the final talk in English only. docs/SEOUL_CASE01_LANGUAGE_REPORT.md."
       ]
     }
   ]
