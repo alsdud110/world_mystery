@@ -18,6 +18,7 @@ import '../season_gen/content_approval.dart';
 import '../season_gen/history_dossier.dart';
 import '../season_gen/plan_files.dart';
 import '../season_gen/sha256.dart';
+import '../season_packs/season_manifests.dart' show shipsInApp;
 import 'asset_budget.dart';
 import 'asset_plan.dart';
 import 'asset_state.dart';
@@ -635,7 +636,7 @@ class AssetPipeline {
       log('${there ? 'CONFLICT' : 'copy    '} ${r!.game!.path} → ${a.outputPath} (approval: $approval)'
           '${there ? ': a file is there already, never written over' : ''}');
     }
-    final missing = [for (final f in folders.toList()..sort()) if (!listed.contains(f)) f];
+    final missing = [for (final f in folders.toList()..sort()) if (shipsInApp(f) && !listed.contains(f)) f];
     log('pubspec  ${missing.length} of ${folders.length} folders to list under flutter: assets:');
     for (final f in missing) {
       log('           - $f');
@@ -881,10 +882,13 @@ abstract final class AssetManifestFile {
 }
 
 /// `pubspec.yaml`'s `flutter: assets:` list: a folder added after the last
-/// one of its season (else after the last asset folder), never twice.
+/// one of its season (else after the last asset folder), never twice. A
+/// downloaded season's folders are never listed ([shipsInApp]): its pictures
+/// come from the bucket (tool/season_packs), only its cover ships.
 abstract final class PubspecAssets {
   /// [folders] (`assets/…/`) not listed yet, added; the folders added.
   static List<String> add(String path, Set<String> folders) {
+    folders = folders.where(shipsInApp).toSet();
     final file = File(path);
     if (!file.existsSync() || folders.isEmpty) return const [];
     final raw = file.readAsStringSync();

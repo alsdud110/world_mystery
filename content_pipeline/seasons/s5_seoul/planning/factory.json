@@ -62,5 +62,16 @@
     }
   ],
   "budgetUsd": 1.0,
-  "budgetFrom": "content_pipeline/image_budgets.json"
+  "budgetFrom": "content_pipeline/image_budgets.json",
+  "deploy": {
+    "folder": "season_05_seoul",
+    "version": "393b9e75a8389773",
+    "status": "deployed",
+    "files": 17,
+    "newPictures": 0,
+    "newBytes": 0,
+    "newManifest": false,
+    "stageDir": "build/season_packs/season_05_seoul/393b9e75a8389773",
+    "at": "2026-11-06T00:53:12.427237Z"
+  }
 }

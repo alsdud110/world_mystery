@@ -167,6 +167,15 @@ and set them so the city's landmarks, not the foreground, are framed
 
 ## 3. Finish
 
+- The season pack (the factory's step 9, exit 0 or 70): report per season
+  the pack's version, new pictures and bytes, and whether its manifest is
+  new (`status` shows it). **Never upload without the user's approval**: ask,
+  then `season_factory.dart upload <dir> --approved` (pictures first, the
+  manifest last, read back over HTTPS). Exit 70 leaves the season in the
+  game: report why and stop the deploy. Say in the report that the next app
+  update must carry `lib/data/generated/<seasonId>` and
+  `lib/core/assets/season_pack_manifests.g.dart`.
+
 - `flutter analyze`, `flutter test test/generated_seasons_test.dart` (the
   factory runs both), then the whole `flutter test` (a new season is a
   release milestone, CLAUDE.md §21).

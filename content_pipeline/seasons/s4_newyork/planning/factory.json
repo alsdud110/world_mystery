@@ -121,5 +121,16 @@
       "spentUsd": 0.061827
     }
   ],
-  "budgetUsd": 6.84
+  "budgetUsd": 6.84,
+  "deploy": {
+    "folder": "season_04_newyork",
+    "version": "ab063cbc1c01a5b3",
+    "status": "deployed",
+    "files": 68,
+    "newPictures": 0,
+    "newBytes": 0,
+    "newManifest": false,
+    "stageDir": "build/season_packs/season_04_newyork/ab063cbc1c01a5b3",
+    "at": "2026-11-06T00:52:55.313147Z"
+  }
 }

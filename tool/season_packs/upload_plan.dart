@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
 
+import 'package:crypto/crypto.dart';
 import 'package:world_mystery/core/assets/season_pack_manifest.dart';
 
 /// One object to put in the bucket.
@@ -59,8 +61,61 @@ UploadPlan planUpload(Iterable<SeasonPackManifest> packs, Set<String> known) {
   // Manifests last: a version is listed only once every file it names is up.
   for (final pack in packs) {
     if (known.contains(pack.objectKey)) continue;
-    final body = const JsonEncoder.withIndent('  ').convert(pack.toJson());
+    final body = manifestBody(pack);
     uploads.add(UploadItem(key: pack.objectKey, contentType: 'application/json', bytes: utf8.encode(body).length, body: body));
   }
   return UploadPlan(uploads: uploads, skippedObjects: skippedObjects, skippedBytes: skippedBytes);
 }
+
+/// [pack]'s manifest object, as the bucket holds it.
+String manifestBody(SeasonPackManifest pack) => const JsonEncoder.withIndent('  ').convert(pack.toJson());
+
+/// The file listing a staged folder's objects in upload order.
+const uploadListName = 'upload_list.tsv';
+
+/// [plan]'s objects laid out in [stageDir] as the bucket holds them, and
+/// [uploadListName] listing them in upload order (key, content type, bytes).
+void writeStage(UploadPlan plan, String stageDir) {
+  final list = StringBuffer('key\tcontent_type\tbytes\n');
+  for (final u in plan.uploads) {
+    final out = File('$stageDir/${u.key}')..parent.createSync(recursive: true);
+    if (u.source != null) {
+      File(u.source!).copySync(out.path);
+    } else {
+      out.writeAsStringSync(u.body!);
+    }
+    list.writeln('${u.key}\t${u.contentType}\t${u.bytes}');
+  }
+  File('$stageDir/$uploadListName').writeAsStringSync(list.toString());
+}
+
+/// A staged object, as [uploadListName] lists it.
+typedef StagedObject = ({String key, String contentType, int bytes});
+
+/// The objects [uploadListName] in [stageDir] lists, in upload order.
+List<StagedObject> readStage(String stageDir) => [
+  for (final line in File('$stageDir/$uploadListName').readAsLinesSync().skip(1))
+    if (line.split('\t') case [final key, final contentType, final bytes]) (key: key, contentType: contentType, bytes: int.parse(bytes)),
+];
+
+/// What is wrong with the objects staged in [stageDir] (empty: nothing):
+/// each listed, at its size; a file object's SHA-256 the one its key names.
+List<String> checkStage(String stageDir) {
+  final problems = <String>[];
+  for (final o in readStage(stageDir)) {
+    final f = File('$stageDir/${o.key}');
+    if (!f.existsSync()) {
+      problems.add('missing: ${o.key}');
+      continue;
+    }
+    final bytes = f.readAsBytesSync();
+    if (bytes.length != o.bytes) problems.add('wrong size: ${o.key} (${bytes.length}, listed ${o.bytes})');
+    if (objectSha256(o.key) case final want? when sha256.convert(bytes).toString() != want) problems.add('wrong SHA-256: ${o.key}');
+  }
+  return problems;
+}
+
+/// The SHA-256 a file object's key names (`objects/<sha256>.<ext>`), or
+/// null for a manifest.
+String? objectSha256(String key) =>
+    RegExp(r'^objects/([0-9a-f]{64})\.[a-z0-9]+$').firstMatch(key)?.group(1);

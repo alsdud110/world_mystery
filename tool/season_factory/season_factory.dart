@@ -25,6 +25,9 @@ import '../season_gen/season_cases.dart';
 import '../season_planner/finding.dart';
 import '../season_planner/puzzle_selection.dart';
 import '../season_planner/season_quality.dart';
+import '../season_packs/deploy.dart';
+import '../season_packs/season_manifests.dart';
+import '../season_packs/upload_plan.dart';
 import 'sheets.dart';
 
 /// The season factory (the Rome integration): a planned season carried
@@ -90,11 +93,21 @@ import 'sheets.dart';
 /// (step 5), and the run ends there (exit 0): measuring and generating a
 /// pilot are its own (`generate_case.dart --out`).
 ///
-/// Exit 0: the season is in the game, played through. 64: usage.
+///  9. season pack ([preparePack], also `packs <seasonDir>` alone): the
+///     app's pack manifests written again from the pictures, this season's
+///     pack checked and compared with the bucket (read-only), its new
+///     objects staged; nothing sent. Its state (`planning/factory.json`
+///     `deploy`) is kept apart: a failure here (exit 70) leaves the season
+///     in the game. `upload <seasonDir> --approved` (only once the user
+///     approves) sends the stage, pictures first and the manifest last, and
+///     reads every object back over HTTPS. Nothing in the bucket is removed.
+///
+/// Exit 0: the season is in the game, played through (and its pack staged,
+/// or held by the bucket already). 64: usage.
 Future<void> main(List<String> args) async => exit(await SeasonFactory.cli(args));
 
 abstract final class SeasonFactory {
-  static const exitPlans = 10, exitHistory = 15, exitReview = 20, exitMeasure = 30, exitLevels = 35, exitBudget = 40, exitAuth = 41, exitBudgetUnset = 45, exitGenerate = 50, exitTests = 60;
+  static const exitPlans = 10, exitHistory = 15, exitReview = 20, exitMeasure = 30, exitLevels = 35, exitBudget = 40, exitAuth = 41, exitBudgetUnset = 45, exitGenerate = 50, exitTests = 60, exitPacks = 70;
 
   static Future<int> cli(List<String> args) async {
     if (args.length < 2) return _usage();
@@ -126,6 +139,10 @@ abstract final class SeasonFactory {
       case 'reviewed':
         final ids = [for (final a in args.skip(2)) if (!a.startsWith('--')) _assetId(dir, a)];
         return reviewed(dir, ids, all: args.contains('--all'));
+      case 'packs':
+        return preparePack(dir);
+      case 'upload':
+        return upload(dir, approved: args.contains('--approved'));
       case 'reject':
         final why = opt('--why');
         if (args.length < 3 || why == null) return _usage('reject <seasonDir> <assetId> --why <text>');
@@ -139,7 +156,8 @@ abstract final class SeasonFactory {
     if (why != null) stdout.writeln('error    $why');
     stdout.writeln('usage: dart run tool/season_factory/season_factory.dart '
         '(status <seasonDir> | run <seasonDir> [--budget <usd>] [--batch 4] [--skip-tests] [--full-tests] [--pictures-only] | '
-        'reviewed <seasonDir> (--all | <assetId>...) | reject <seasonDir> <assetId> --why <text>)');
+        'reviewed <seasonDir> (--all | <assetId>...) | reject <seasonDir> <assetId> --why <text> | '
+        'packs <seasonDir> | upload <seasonDir> [--approved])');
     return 64;
   }
 
@@ -352,6 +370,10 @@ abstract final class SeasonFactory {
     final gameDir = '${GameRegistry.dir}/$seasonId';
     final inLib = File('$gameDir/$manifestName').existsSync();
     stdout.writeln('game     ${inLib ? 'generated into $gameDir' : 'not in the game yet'}');
+    final deploy = deployOf(dir);
+    stdout.writeln('bucket   ${deploy == null ? 'no pack prepared (season_factory.dart packs)' : '${deploy['status']}'
+        '${deploy['version'] == null ? '' : ' v${deploy['version']}'}'
+        '${deploy['status'] == 'staged' ? ': ${deploy['newPictures']} new pictures, ${deploy['newBytes']} bytes, awaiting approval to upload' : ''}'}');
     final next = report.hasErrors
         ? 'fix the plans: plan_season.dart check $dir'
         : toReview.isNotEmpty
@@ -626,6 +648,144 @@ abstract final class SeasonFactory {
     }
     final r = _record(dir);
     say('done', '$seasonId is in the game (${GameRegistry.dir}/$seasonId); pictures ${(r['spentUsd'] as num).toStringAsFixed(4)} spent by the factory');
+
+    // 9. Its season pack made ready for the bucket (a step of its own: the
+    // season stays in the game whatever happens to it).
+    return preparePack(dir);
+  }
+
+  // ── season packs: the bucket ─────────────────────────────────────────
+
+  /// `planning/factory.json` `deploy`: the season pack's way to the bucket,
+  /// kept apart from making the season (a season in the game may still be
+  /// `staged`, or have its upload fail, and stays in the game).
+  static Map<String, dynamic>? deployOf(String dir) => (_record(dir)['deploy'] as Map?)?.cast<String, dynamic>();
+
+  static void _deploy(String dir, Map<String, dynamic> deploy) {
+    final record = _record(dir)..['deploy'] = {...deploy, 'at': DateTime.now().toUtc().toIso8601String()};
+    _save(dir, record);
+  }
+
+  /// Step 9, or `packs <seasonDir>`: the app's season pack manifests written
+  /// again from the pictures on disk (when they changed), then this season's
+  /// pack checked (each picture readable, at its size and SHA-256), compared
+  /// with what the bucket holds (read-only, over HTTPS) and its new objects
+  /// staged in upload order under [stageRoot] (tool/season_packs/deploy.dart).
+  /// Nothing is sent: `upload` does that, once the user approves. London
+  /// ships in the app: nothing to stage. Exit 0, or [exitPacks] (the season
+  /// itself untouched) with why.
+  static Future<int> preparePack(
+    String dir, {
+    String stageRoot = 'build/season_packs',
+    Future<Set<String>> Function(Map<String, int> keys)? held,
+  }) async {
+    void say(String step, String line) => stdout.writeln('${step.padRight(9)}$line');
+    final folder = '${(PlanFiles.readJson('$dir/assets.manifest.json') as Map)['assetRoot']}'.split('/').last;
+    int blocked(List<String> why) {
+      why.take(20).forEach((w) => stdout.writeln('  $w'));
+      if (why.length > 20) stdout.writeln('  … ${why.length - 20} more');
+      _deploy(dir, {'folder': folder, 'status': 'blocked', 'why': why.take(20).toList()});
+      say('packs', 'not ready for the bucket (the season is still in the game): fix the above, then season_factory.dart packs $dir');
+      return exitPacks;
+    }
+
+    final packs = measureSeasonPacks();
+    final source = renderManifests(packs);
+    final generated = File(generatedPath);
+    if (!generated.existsSync() || generated.readAsStringSync().replaceAll('\r\n', '\n') != source) {
+      generated.writeAsStringSync(source);
+      say('manifest', 'updated $generatedPath (the app update must carry it)');
+    }
+    final pack = packs.where((p) => p.folder == folder).firstOrNull;
+    if (folder == bundledSeasonFolder) {
+      _deploy(dir, {'folder': folder, 'status': 'in_app', if (pack != null) 'version': pack.version});
+      say('packs', '$folder ships in the app: nothing for the bucket');
+      return 0;
+    }
+    if (pack == null) return blocked(['no pictures under assets/seasons/$folder']);
+    if (!File('lib/core/assets/season_pack_bundle.dart').readAsStringSync().contains("'$folder'")) {
+      return blocked(['the app has no SeasonPack for $folder: add it to SeasonPack.all (lib/core/assets/season_pack_bundle.dart)']);
+    }
+    final stage = await stagePack(pack, stageRoot: stageRoot, held: held);
+    if (!stage.ok) return blocked(stage.problems);
+    _deploy(dir, {
+      'folder': folder,
+      'version': pack.version,
+      'status': stage.nothingToSend ? 'deployed' : 'staged',
+      'files': pack.files.length,
+      'newPictures': stage.newPictures,
+      'newBytes': stage.newBytes,
+      'newManifest': stage.newManifest,
+      'stageDir': stage.stageDir,
+    });
+    say('packs', '$folder v${pack.version}: ${pack.files.length} pictures, ${stage.held} held by the bucket already');
+    if (stage.nothingToSend) {
+      say('packs', 'the bucket holds all of it: nothing to upload');
+    } else {
+      say('packs', 'to upload: ${stage.newPictures} new pictures (${stage.newBytes} bytes)'
+          '${stage.newManifest ? ' and its manifest ${pack.objectKey}' : ''}; staged in ${stage.stageDir}');
+      say('packs', 'nothing sent: ask the user to approve, then season_factory.dart upload $dir --approved');
+    }
+    say('app', 'the next app update must carry ${GameRegistry.dir}/${(PlanFiles.readJson('$dir/season.plan.json') as Map)['seasonId']} '
+        'and $generatedPath: the app downloads only the version it is built with');
+    return 0;
+  }
+
+  /// `upload <seasonDir> [--approved]`: the staged pack ([preparePack]) put
+  /// in the bucket, pictures first and the manifest last, each then read
+  /// back over HTTPS (200, size, SHA-256). Without [approved]: what would be
+  /// sent, nothing sent. Nothing in the bucket is ever removed. A failure
+  /// leaves the season in the game and the stage in place (run it again).
+  static Future<int> upload(
+    String dir, {
+    required bool approved,
+    PutObject put = wranglerPut,
+    Future<List<String>> Function(String stageDir)? verify,
+  }) async {
+    void say(String step, String line) => stdout.writeln('${step.padRight(9)}$line');
+    final d = deployOf(dir);
+    final status = d?['status'];
+    if (status == 'deployed' || status == 'in_app') {
+      say('upload', 'nothing to upload: ${d!['folder']} is $status');
+      return 0;
+    }
+    if (d == null || !const {'staged', 'upload_failed', 'verify_failed'}.contains(status)) {
+      say('upload', 'nothing staged (${status ?? 'no pack prepared'}): season_factory.dart packs $dir first');
+      return exitPacks;
+    }
+    final stageDir = d['stageDir'] as String;
+    final problems = Directory(stageDir).existsSync() ? checkStage(stageDir) : ['$stageDir is gone'];
+    if (problems.isNotEmpty) {
+      for (final p in problems) {
+        stdout.writeln('  $p');
+      }
+      say('upload', 'the stage is not as prepared: season_factory.dart packs $dir again');
+      return exitPacks;
+    }
+    final objects = readStage(stageDir);
+    say('upload', '${d['folder']} v${d['version']}: ${objects.length} objects, ${objects.fold(0, (s, o) => s + o.bytes)} bytes to $packBucket '
+        '(pictures first, the manifest last)');
+    if (!approved) {
+      say('upload', 'nothing sent: the user approves first, then season_factory.dart upload $dir --approved');
+      return 0;
+    }
+    _deploy(dir, {...d, 'status': 'uploading'});
+    final sent = await uploadStage(stageDir, put: put, skip: status == 'upload_failed' ? (d['sent'] as int? ?? 0) : 0);
+    if (sent.failed != null) {
+      _deploy(dir, {...d, 'status': 'upload_failed', 'sent': sent.sent, 'failedKey': sent.failed});
+      say('upload', '${sent.sent} sent, then ${sent.failed} failed: the season stays in the game; run upload again '
+          '(what is held already is not sent twice by packs)');
+      return exitPacks;
+    }
+    final wrong = await (verify ?? (s) => verifyLive(Uri.parse(packPublicUrl), s))(stageDir);
+    if (wrong.isNotEmpty) {
+      wrong.take(20).forEach((w) => stdout.writeln('  $w'));
+      _deploy(dir, {...d, 'status': 'verify_failed', 'sent': sent.sent, 'why': wrong.take(20).toList()});
+      say('verify', 'the bucket does not serve what was sent: run upload again');
+      return exitPacks;
+    }
+    _deploy(dir, {...d, 'status': 'deployed', 'sent': sent.sent, 'verified': 'HTTPS 200, size and SHA-256 of every object'});
+    say('upload', '${sent.sent} objects sent and read back over HTTPS: ${d['folder']} v${d['version']} deployed');
     return 0;
   }
 }

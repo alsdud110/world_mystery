@@ -389,7 +389,9 @@ void main() {
       log.clear();
       expect(pipeline().applyPlan(), 0);
       expect(all(), contains('copy     $work/game/cover/season3_cover_rome.webp → assets/seasons/season_03_rome/cover/season3_cover_rome.webp (approval: draft)'));
-      expect(all(), contains('assets/seasons/season_03_rome/locations/'));
+      expect(all(), contains('pubspec  1 of'), reason: 'only the cover is listed in the app; Rome\'s other pictures are its season pack');
+      expect(all(), contains('           - assets/seasons/season_03_rome/cover/'));
+      expect(all(), isNot(contains('           - assets/seasons/season_03_rome/locations/')));
       expect(_listing(tmp), before);
     });
   });
@@ -615,7 +617,7 @@ void intoTheGame() {
     expect(manifestOf('s3_rome.asset.prologue')['status'], 'planned', reason: 'not made: left as it was');
     final pubspec = File('${tmp.path}/pubspec.yaml').readAsStringSync();
     expect(pubspec, contains('    - assets/seasons/season_03_rome/cover/\n'));
-    expect(pubspec, contains('    - assets/seasons/season_03_rome/locations/map/\n'));
+    expect(pubspec, isNot(contains('season_03_rome/locations/map/')), reason: 'a downloaded season\'s map: its season pack, not the app');
     expect(pubspec.indexOf('season_03_rome/cover/'), greaterThan(pubspec.indexOf('season_03_rome/locations/')), reason: 'after its season\'s folders');
     expect(pubspec.indexOf('season_03_rome/cover/'), lessThan(pubspec.indexOf('# a note')));
     expect(File('${tmp.path}/$coverFile.part').existsSync(), isFalse);

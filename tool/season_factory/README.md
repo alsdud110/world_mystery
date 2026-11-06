@@ -14,11 +14,13 @@ plan_season.dart (plans, check)
   → case_levels.dart (each case's English at Junior and Master, checked)
   → generate_season.dart --target game (lib/data/generated/, registered)
   → flutter analyze, test/generated_seasons_test.dart
+  → season pack: manifest written again, checked, compared with R2, staged (nothing sent)
+  → upload --approved (only once the user approves): pictures first, manifest last, read back
 ```
 
 | File | What |
 |---|---|
-| `season_factory.dart` | `status`, `run`, `reviewed`, `reject` |
+| `season_factory.dart` | `status`, `run`, `reviewed`, `reject`, `packs`, `upload` |
 | `sheets.dart` | review sheets (a batch of pictures, numbered) and grid sheets (a line every 50 px) |
 
 ```sh
@@ -26,6 +28,8 @@ dart run tool/season_factory/season_factory.dart status   content_pipeline/seaso
 dart run tool/season_factory/season_factory.dart run      content_pipeline/seasons/s4_newyork [--budget 10] [--batch 4] [--full-tests]
 dart run tool/season_factory/season_factory.dart reviewed content_pipeline/seasons/s4_newyork ev_owl_card cover   # or --all
 dart run tool/season_factory/season_factory.dart reject   content_pipeline/seasons/s4_newyork ev_business_card --why "a bird, not a construction crane"
+dart run tool/season_factory/season_factory.dart packs    content_pipeline/seasons/s4_newyork               # step 9 alone (after a pilot, or again)
+dart run tool/season_factory/season_factory.dart upload   content_pipeline/seasons/s4_newyork [--approved]  # without it: what would be sent
 ```
 
 A pilot case (one case, not a season: the Seoul pilot) is drawn with
@@ -49,6 +53,23 @@ Each is done only when it is not done yet: run it again after any stop.
 | 6b | Every case's `levels.json` (Junior and Master English of each Rookie line; the same game) written and checked (`case_levels.dart check`, a level copied from Rookie refused); a skeleton written for missing lines, the lines written kept | 35: Claude writes the levels (create-season § Levels), reads `case_levels.dart review`, runs again |
 | 7 | (a historical season: every reveal approved and every puzzle's reasoning reviewed by a person first, else 15) `generate_season.dart --target game` (content, art, the game's lists) | 50: generator errors |
 | 8 | `flutter analyze`, `flutter test test/generated_seasons_test.dart` (`--full-tests`: all) | 60: a failure |
+| 9 | The season pack (`tool/season_packs/deploy.dart`): `lib/core/assets/season_pack_manifests.g.dart` written again from the pictures on disk when they changed; this season's pack checked (each picture readable, at its size and SHA-256), compared with what the bucket holds (HEAD over HTTPS, read-only), its new objects staged in `build/season_packs/<folder>/<version>/` with `upload_list.tsv` (pictures, then the manifest). London ships in the app: nothing staged. Nothing is sent. The state is `planning/factory.json` `deploy` (`staged`, `deployed`, `blocked`, `upload_failed`, `verify_failed`, `in_app`), kept apart from the season itself | 70: not ready for the bucket (the season stays in the game) |
+
+**The bucket.** `upload <dir>` shows what would be sent; `upload <dir>
+--approved`, only once the user approves, sends the stage with wrangler (its
+login on this machine: no key in the repo), pictures first and the manifest
+last, stops at the first failure (`upload_failed`: run it again, what was
+sent is not sent twice), then reads every object back over HTTPS (200, size,
+SHA-256) before `deployed`. Nothing in the bucket is ever removed: older
+manifests and pictures stay for apps not yet updated. The app downloads only
+the manifest version it was built with, so a season (or a changed picture)
+reaches players with the next app update carrying `lib/data/generated/<seasonId>`
+and `season_pack_manifests.g.dart`. The bucket URL (`deploy.dart`
+`packPublicUrl`, the app's `SeasonPackSetup.defaultUrl`) is the development
+r2.dev one: replace both with the custom domain before release. The asset
+pipeline never lists a downloaded season's pictures in `pubspec.yaml` (only
+its `cover/`; London whole). Paris has no season folder here (made by hand):
+its pack goes through `tool/season_packs/stage_packs.dart`.
 
 **The budget** is the season's (US dollars at list prices; the bill is
 OpenAI's): `--budget`, else its line in `content_pipeline/image_budgets.json`

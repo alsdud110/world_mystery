@@ -29,5 +29,16 @@
     }
   ],
   "note": "Rome was carried by hand through the same tools before the factory existed (the steps above); the factory now finds it whole: every picture the game shows is in the game, everything measured, generated and registered.",
-  "budgetUsd": 0.0
+  "budgetUsd": 0.0,
+  "deploy": {
+    "folder": "season_03_rome",
+    "version": "925831b811fc822c",
+    "status": "deployed",
+    "files": 66,
+    "newPictures": 0,
+    "newBytes": 0,
+    "newManifest": false,
+    "stageDir": "build/season_packs/season_03_rome/925831b811fc822c",
+    "at": "2026-11-06T00:52:38.839286Z"
+  }
 }

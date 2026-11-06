@@ -67,16 +67,6 @@ Future<void> main(List<String> args) async {
       'already held or duplicate: ${plan.skippedObjects} files, ${plan.skippedBytes} bytes.');
 
   if (stagePath == null) return stdout.writeln('Plan only (no --stage): nothing written.');
-  final list = StringBuffer('key\tcontent_type\tbytes\n');
-  for (final u in plan.uploads) {
-    final out = File('$stagePath/${u.key}')..parent.createSync(recursive: true);
-    if (u.source != null) {
-      File(u.source!).copySync(out.path);
-    } else {
-      out.writeAsStringSync(u.body!);
-    }
-    list.writeln('${u.key}\t${u.contentType}\t${u.bytes}');
-  }
-  File('$stagePath/upload_list.tsv').writeAsStringSync(list.toString());
+  writeStage(plan, stagePath);
   stdout.writeln('Staged in $stagePath (upload_list.tsv lists the objects in upload order).');
 }

@@ -6,6 +6,19 @@ import 'package:world_mystery/core/assets/season_pack_manifest.dart';
 /// The generated file the app is built with.
 const generatedPath = 'lib/core/assets/season_pack_manifests.g.dart';
 
+/// The season the app ships whole (`SeasonPack.london.folder`); every other
+/// season's pictures are downloaded (season packs), but its cover.
+const bundledSeasonFolder = 'season_01_london';
+
+/// Whether [path] (an asset file or `…/` folder) ships inside the app:
+/// anything but a downloaded season's pictures, which come from the bucket;
+/// a season's `cover/` (shown on the World Map and in the archives before any
+/// download) and London ship.
+bool shipsInApp(String path) => switch (path.split('/')) {
+  ['assets', 'seasons', final folder, final sub, ...] => folder == bundledSeasonFolder || sub == 'cover',
+  _ => true,
+};
+
 /// Every season pack: each file under `assets/seasons/<folder>/` on disk,
 /// measured and hashed. Read from disk, not `pubspec.yaml`: the downloaded
 /// seasons' pictures are no longer in the app.
