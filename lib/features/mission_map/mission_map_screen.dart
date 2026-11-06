@@ -264,8 +264,9 @@ class _MissionMapScreenState extends ConsumerState<MissionMapScreen> with Single
     final all = episode.allMissions;
     // The case's own season's map. A season without one is not entered (see
     // SeasonAvailability); should it ever be open, the page says its map is
-    // not ready rather than show another city's.
-    final seasonMap = ref.watch(seasonMapsProvider)[episode.seasonId];
+    // not ready rather than show another city's. A case with its own map is
+    // played on that.
+    final seasonMap = ref.watch(seasonMapsProvider)[episode.seasonId]?.forCase(episode.id);
     if (seasonMap == null) return const _MapNotReady();
     final places = MapWorld.places(episode, map: seasonMap);
     // Back from solving a place: the map opens on the place it unlocked.
@@ -777,6 +778,10 @@ class _MapWorldView extends StatelessWidget {
       for (final p in pins)
         p.id: current == null || p.pin.state != PinState.completed ? px(p.at) : clearOf(px(p.at), current, size),
     };
+    // A case's own map names only the places open so far (see
+    // [SeasonMap.missionPoints]).
+    final open = {for (final p in pins) map.missionLandmarks[p.id]};
+    final named = map.missionPoints.isEmpty ? map.landmarks : map.landmarks.where(open.contains);
     final ink = LondonMapPainter(
       route: [for (final r in route) drawnAt[r.id] == null ? r.at : Offset(drawnAt[r.id]!.dx / w, drawnAt[r.id]!.dy / h)],
       completedLegs: completedLegs,
@@ -802,7 +807,7 @@ class _MapWorldView extends StatelessWidget {
                 : const ColoredBox(key: ValueKey('map-artwork-missing'), color: AppColors.parchment),
           ),
         ),
-        for (final l in map.landmarks)
+        for (final l in named)
           if (l != hideName)
             if (landmarkNameAt(
                   l,

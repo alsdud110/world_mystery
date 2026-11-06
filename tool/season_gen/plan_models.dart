@@ -195,6 +195,13 @@ class _Reader {
     return {for (final e in _object(_map[key], at).entries) e.key: _text(e.value, '$at.${e.key}', null, null)};
   }
 
+  /// An optional object of objects, by key: empty when not given.
+  Map<String, T> optObjMap<T>(String key, T Function(Object? json, String path) parse) {
+    if (!_has(key)) return const {};
+    final at = _at(key);
+    return {for (final e in _object(_map[key], at).entries) e.key: parse(e.value, '$at.${e.key}')};
+  }
+
   static int _int(Object? json, String at, {int? min, int? max, int? only}) {
     // As JSON Schema reads it: 2.0 is the whole number 2.
     final v = json is double && json == json.truncateToDouble() && json.isFinite ? json.toInt() : json;
@@ -259,6 +266,12 @@ class _Reader {
 
   /// A point on a picture, `[x, y]` in its pixels.
   ScenePoint point(String key) => ScenePoint._(_numbers(_required(key), _at(key), 2));
+
+  /// Points on a picture, by key.
+  Map<String, ScenePoint> pointMap(String key) {
+    final at = _at(key);
+    return {for (final e in _object(_required(key), at).entries) e.key: ScenePoint._(_numbers(e.value, '$at.${e.key}', 2))};
+  }
 
   ScenePoint? optPoint(String key) => _has(key) ? ScenePoint._(_numbers(_map[key], _at(key), 2)) : null;
 
@@ -602,10 +615,14 @@ class PlacePlan {
 /// Each part is optional while the season is drawn; a season without its
 /// map cannot be entered (`SeasonAvailability`).
 class SeasonArtPlan {
-  const SeasonArtPlan({this.cover, this.map, this.worldCity, this.introBackdrops = const {}});
+  const SeasonArtPlan({this.cover, this.map, this.caseMaps = const {}, this.worldCity, this.introBackdrops = const {}});
 
   final CoverPlan? cover;
   final MapPlan? map;
+
+  /// A case's own Mission Map, by case id; a case without one is played on
+  /// [map], which stays the season's map on every other screen.
+  final Map<String, CaseMapPlan> caseMaps;
   final WorldCityPlan? worldCity;
 
   /// A case's picture behind its opening, by case id
@@ -617,6 +634,7 @@ class SeasonArtPlan {
     final out = SeasonArtPlan(
       cover: r.optObj('cover', CoverPlan.fromJson),
       map: r.optObj('map', MapPlan.fromJson),
+      caseMaps: r.optObjMap('caseMaps', CaseMapPlan.fromJson),
       worldCity: r.optObj('worldCity', WorldCityPlan.fromJson),
       introBackdrops: r.optTextMap('introBackdrops'),
     );
@@ -627,6 +645,7 @@ class SeasonArtPlan {
   Map<String, Object?> toJson() => {
     if (cover case final c?) 'cover': c.toJson(),
     if (map case final m?) 'map': m.toJson(),
+    if (caseMaps.isNotEmpty) 'caseMaps': {for (final e in caseMaps.entries) e.key: e.value.toJson()},
     if (worldCity case final w?) 'worldCity': w.toJson(),
     if (introBackdrops.isNotEmpty) 'introBackdrops': introBackdrops,
   };
@@ -732,6 +751,73 @@ class MapLandmarkPlan {
   }
 
   Map<String, Object?> toJson() => {'locId': locId, 'at': at.toJson()};
+}
+
+/// A case's own Mission Map: its artwork, the places of the case drawn on
+/// it, and where each mission stands, in its pixels, measured on the very
+/// file ([measuredOn]). One artwork may serve several cases.
+class CaseMapPlan {
+  const CaseMapPlan({required this.file, required this.width, required this.height, required this.measuredOn, required this.landmarks});
+
+  final String file;
+  final int width;
+  final int height;
+
+  /// `sha256:<hex>` of the file the places were measured on.
+  final String measuredOn;
+  final List<CaseMapLandmarkPlan> landmarks;
+
+  factory CaseMapPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final size = r.obj('pixels', _pixels);
+    final out = CaseMapPlan(
+      file: r.str('file', pattern: PlanIds.assetFile),
+      width: size.$1,
+      height: size.$2,
+      measuredOn: r.str('measuredOn', pattern: RegExp(r'^sha256:[0-9a-f]{64}$')),
+      landmarks: r.objs('landmarks', CaseMapLandmarkPlan.fromJson, min: 1),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {
+    'file': file,
+    'pixels': {'width': width, 'height': height},
+    'measuredOn': measuredOn,
+    'landmarks': [for (final l in landmarks) l.toJson()],
+  };
+}
+
+/// A place on a case's own map: [name] (its missions' `play.location`),
+/// lettered at [at] (a little below its spots: a solved mark at its point
+/// would leave no room for the name), and each of its [missions]' spots.
+class CaseMapLandmarkPlan {
+  const CaseMapLandmarkPlan({required this.spotId, required this.name, required this.at, required this.missions});
+
+  final String spotId;
+  final String name;
+  final ScenePoint at;
+  final Map<String, ScenePoint> missions;
+
+  factory CaseMapLandmarkPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = CaseMapLandmarkPlan(
+      spotId: r.str('spotId', pattern: PlanIds.local),
+      name: r.str('name'),
+      at: r.point('at'),
+      missions: r.pointMap('missions'),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {
+    'spotId': spotId,
+    'name': name,
+    'at': at.toJson(),
+    'missions': {for (final e in missions.entries) e.key: e.value.toJson()},
+  };
 }
 
 /// The season's city on the World Map (`WorldCity`): its id (one of

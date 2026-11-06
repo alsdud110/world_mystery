@@ -1,6 +1,6 @@
 # 서울 시즌 Case별 Mission Map 계획 (PART 0)
 
-작성일: 2026-11-06 · 기준 커밋: `58c75d5` · 상태: 조사와 계획만 완료. 코드와 이미지는 수정하지 않았다.
+작성일: 2026-11-06 · 기준 커밋: `58c75d5` · 상태: PART 0, PART 1 완료. 결과와 인계는 §11.
 
 ## 0. 결론
 
@@ -113,7 +113,7 @@
 | THE WRITING ROOM | (1280, 205) | (0.833, 0.200) | 북동 소전각. Well Yard와 분리 |
 | THE BOOK HALL | (265, 365) | (0.173, 0.356) | 서쪽 긴 전각. 파일럿 좌표 (0.17, 0.35)과 일치 |
 
-전체 이미지를 눈으로 보고 잡은 후보이며, PART 1에서 실제 화면으로 확정한다.
+PART 1에서 실제 화면으로 확인해 위 값을 미션 지점으로 확정했다. 이름 기준점(`at`)은 §11 참조.
 
 ## 3. 재사용 판단과 신규 제작 목록
 
@@ -334,3 +334,68 @@ PART 1은 다음 순서로 바로 시작한다.
 1. **고유 장소가 2~3곳인 Case 처리:** 이 계획은 없는 장소를 만들지 않고 같은 장소 안의 다른 지점에 핀을 둔다. 지도에 꼭 4곳이 보여야 한다면 스토리 데이터를 바꿔야 해서 작업 제한과 충돌한다.
 2. **PART 2 비용:** 지도 11장을 기존 `s5_seoul` 예산으로 제작해도 되는지. (PART 2 시작 전까지만 답하면 된다.)
 3. **Case 01 톤:** 야경 `palace_map`을 유지하는 것을 기본으로 한다. PART 1 화면 확인 뒤 다시 판단할 수 있다.
+
+## 11. PART 1 결과와 PART 2 인계
+
+### 구현 결과
+
+- `SeasonMap`에 `caseMaps`, `missionPoints`, `forCase()`를 추가했고, 지도 화면은 `forCase(episode.id)`로 Case 지도를 고른다.
+- Case 01은 `palace_map.webp`로 표시된다. Case 02~12는 Case 지도가 없어 `season_map.webp`를 그대로 쓴다.
+- 시즌 보드, `SeasonMap.forSeason`, `ofMission`, `landmarkOf`는 계속 `season_map.webp` 기준이다.
+- 원본은 `season.plan.json`의 `art.caseMaps`다. `.g.dart`는 `generate_season.dart`로만 만들었다.
+- `art.caseMaps`가 없는 시즌의 생성 결과는 그대로다. Rome, New York을 다시 생성해 내용 차이가 없음을 확인했다.
+- Case 지도에서는 핀이 열린 장소의 이름만 표시한다. 기존 지도는 이름을 전부 표시한다.
+
+### Case 01 확정 좌표 (1536×1024)
+
+| 장소 | 미션 지점 | 이름 기준점 `at` | 실제 지도 위 위치 |
+|---|---|---|---|
+| THE INNER GATE | (768, 760) | (768, 772) | 남쪽 문루 |
+| THE WELL YARD | (1310, 425) | (1310, 437) | 동쪽 전각 앞마당 |
+| THE WRITING ROOM | (1280, 205) | (1280, 217) | 북동 소전각 |
+| THE BOOK HALL | (265, 365) | (265, 377) | 서쪽 긴 전각 |
+
+**THE WELL YARD의 한계:** `palace_map.webp`에는 우물이 그려져 있지 않다. 이 좌표는 우물의 위치가 아니라 가장 자연스러운 영역이다. 근거는 `well_yard.webp` 장면의 건물, 담, 서쪽 정전 방향이 동쪽 전각 앞마당과 맞는다는 점이다. THE WRITING ROOM도 그림에 표시된 장소가 아니라, Well Yard와 구분하기 위해 고른 북동 소전각이다.
+
+### 계획과 달라진 점
+
+- **이름 기준점을 미션 지점보다 12px 아래로 둔다.** 같은 좌표를 쓰면 완료 표시(반지름 19px)와 이름(18px 아래)이 1px 겹쳐서, 기존 `namesClearOfCurrent` 규칙이 완료된 장소의 이름을 지운다. PART 3의 11장도 같은 규칙을 적용한다.
+- `assets.manifest.json`의 `palace_map` 항목은 수정하지 않아 `use: notWired`로 남아 있다. 동작에는 영향이 없다.
+
+### PART 2 인계
+
+제작할 지도는 11장이다. 경로는 `assets/seasons/season_05_seoul/locations/map/case_NN_map.webp`이고, 구도와 주의 사항은 §3 표를 따른다.
+
+| 파일 | Case | 그릴 장소 |
+|---|---|---|
+| `case_02_map.webp` | 1592 여수 | The Store Room, The Turtle Ship |
+| `case_03_map.webp` | 1795 화성 | The Stone Yard, The Drawing Room, The New Wall |
+| `case_04_map.webp` | 1866 경복궁 | The Timber Yard, The Yard Office, The Palace Site |
+| `case_05_map.webp` | 1895 건청궁 | The Lamp House, The Queen's Court, Jangandang |
+| `case_06_map.webp` | 1907 경운궁 | The Palace Garden, The West Lane, Yi Jun's House |
+| `case_07_map.webp` | 1909 하얼빈 | Mrs. Kang's Inn, The Station Tea Room |
+| `case_08_map.webp` | 1919 아우내 | Aunae Market, Gwan-sun's Home, Maebong Hill |
+| `case_09_map.webp` | 1920 상하이 | A Lane in Shanghai, The Government Office |
+| `case_10_map.webp` | 1932 상하이 | A Small House in Shanghai, Haesu's Room |
+| `case_11_map.webp` | 1941 연희전문 | Yun's Room, The College Hall, The College Gate |
+| `case_12_map.webp` | 1945 충칭 | The Government Office, Bitna's Room, The River Steps |
+
+주의 사항:
+
+1. 예산은 사용자가 승인했다. `s5_seoul` $12 범위 안에서 제작한다(사용액 $4.37).
+2. 실제 생성 전에 dry run으로 대상을 확인한다. `planned` 상태인 `kings_study`, `ham`, `gwak`, `pyo`가 함께 생성되면 안 된다.
+3. `art.caseMaps`는 파일과 `measuredOn`이 있어야 하므로 등록은 이미지 완성 후 PART 3에서 한다.
+4. 장소가 2곳뿐인 Case도 미션 4개를 넣을 수 있어야 한다. 미션 지점 간격은 이미지 폭의 6%(92px) 이상이고, 지점은 가로 8~92%, 세로 15~92% 안에 있어야 한다. 건물을 충분히 크게 그린다.
+5. R2 업로드는 PART 4 이후 별도 승인으로 진행한다. PART 1에서는 이미지 파일이 바뀌지 않아 R2 작업이 없다.
+
+### 남은 문제
+
+- 지도 이름이 기준점 중앙이 아니라 약 25px 왼쪽에 그려진다(화면에서 관찰). `MapLettering`이 이름 상자 안에서 왼쪽 정렬되는 것으로 보이며, 모든 시즌에 공통인 기존 동작이다. 고치면 다른 시즌의 표시가 바뀌므로 이번에는 두었다.
+- `palace_map`만 야경이라 PART 2 지도와 톤이 다르다. PART 3에서 12장을 나란히 보고 판단한다.
+
+### PART 1 테스트 결과
+
+- `flutter analyze`: 문제 없음
+- 신규 `test/seoul_case_maps_test.dart`: 13건 통과
+- 전체 `flutter test`: 통과 3,925건, 건너뜀 7건, 실패 17건
+- 실패 17건은 변경 전 코드(`2f1dd92`)에서 같은 파일을 실행한 결과와 목록이 일치한다. 이번 변경으로 새로 생긴 실패는 없다.

@@ -337,6 +337,13 @@ abstract final class CaseGenerator {
       } else if (map.measuredOn case final hash? when hash != ContentHash.ofBytes(File('$root/${map.file}').readAsBytesSync())) {
         failed(seasonPath, ['[map_remeasure] \$.art.map.measuredOn: ${map.file} is not the file its landmarks were measured on']);
       }
+      for (final MapEntry(key: caseId, value: c) in art?.caseMaps.entries ?? const <MapEntry<String, CaseMapPlan>>[]) {
+        if (!onDisk(c.file)) {
+          failed(seasonPath, ['[game_map_missing] \$.art.caseMaps.$caseId.file: ${c.file} is not on disk']);
+        } else if (c.measuredOn != ContentHash.ofBytes(File('$root/${c.file}').readAsBytesSync())) {
+          failed(seasonPath, ['[map_remeasure] \$.art.caseMaps.$caseId.measuredOn: ${c.file} is not the file its places were measured on']);
+        }
+      }
       if (art?.cover case final c? when !onDisk(c.file)) failed(seasonPath, ['[game_cover_missing] \$.art.cover.file: ${c.file} is not on disk']);
       // Its opening: every scene's words and pictures, its city at night
       // among them (the factory names it in prologue.hero once made). The
@@ -687,6 +694,39 @@ abstract final class CaseGenerator {
           'Offset(${_n(l.at.x)} / ${map.width}, ${_n(l.at.y)} / ${map.height}));\n');
     }
     final low = [for (final l in map.landmarks) if (l.at.y / map.height < _groupLow) l.locId];
+    for (final MapEntry(key: caseId, value: c) in art.caseMaps.entries) {
+      String place(CaseMapLandmarkPlan l) => '_${constName(caseId)}${constName('x_${l.spotId}').substring(1)}';
+      String offset(ScenePoint p) => 'Offset(${_n(p.x)} / ${c.width}, ${_n(p.y)} / ${c.height})';
+      b.write('\n// The places of $caseId on its own map, measured on ${c.file} (${c.measuredOn.substring(0, 23)}…).\n');
+      for (final l in c.landmarks) {
+        b.write("const ${place(l)} = SeasonLandmark('${l.spotId}', ${DartLiteral.of(l.name)}, ${offset(l.at)});\n");
+      }
+      b
+        ..write('\n/// The Mission Map of case $caseId.\n')
+        ..write('const _${constName(caseId)}Map = SeasonMap(\n')
+        ..write("  artwork: '${c.file}',\n")
+        ..write('  pixels: Size(${c.width}, ${c.height}),\n')
+        ..write('  aspect: ${c.width} / ${c.height},\n')
+        ..write('  landmarks: [${c.landmarks.map(place).join(', ')}],\n')
+        ..write('  missionLandmarks: <String, MapLandmark>{\n');
+      for (final l in c.landmarks) {
+        for (final id in l.missions.keys) {
+          b.write("    '$id': ${place(l)},\n");
+        }
+      }
+      b
+        ..write('  },\n')
+        ..write('  missionPoints: <String, Offset>{\n');
+      for (final l in c.landmarks) {
+        for (final MapEntry(key: id, value: p) in l.missions.entries) {
+          b.write("    '$id': ${offset(p)},\n");
+        }
+      }
+      b
+        ..write('  },\n')
+        ..write('  namesClearOfCurrent: true,\n')
+        ..write(');\n');
+    }
     b
       ..write('\n/// The Mission Map of season ${s.seasonId}: every mission at its place\'s landmark.\n')
       ..write('const ${name}Map = SeasonMap(\n')
@@ -704,6 +744,7 @@ abstract final class CaseGenerator {
       ..write('  },\n')
       ..write(low.isEmpty ? '' : '  groupHeights: <MapLandmark, double>{${[for (final l in low) '${landmark(l)}: 0.6'].join(', ')}},\n')
       ..write('  namesClearOfCurrent: true,\n')
+      ..write(art.caseMaps.isEmpty ? '' : '  caseMaps: <String, SeasonMap>{${[for (final id in art.caseMaps.keys) "'$id': _${constName(id)}Map"].join(', ')}},\n')
       ..write(');\n');
     if (art.cover case final c?) {
       String align(ScenePoint p) => 'Alignment(${_n(p.x)}, ${_n(p.y)})';

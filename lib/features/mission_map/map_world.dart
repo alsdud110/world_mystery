@@ -33,6 +33,8 @@ class SeasonMap {
     this.caseLandmarks = const {},
     this.groupHeights = const {},
     this.namesClearOfCurrent = false,
+    this.caseMaps = const {},
+    this.missionPoints = const {},
   });
 
   /// A landmark's name never lies under the current place's YOU'RE HERE
@@ -67,6 +69,18 @@ class SeasonMap {
   /// top margin, and a full-height group would be pushed far below the
   /// landmark. None on London's map.
   final Map<MapLandmark, double> groupHeights;
+
+  /// A case's own map, by case id: the Mission Map it is played on. This
+  /// map stays the season's on every other screen.
+  final Map<String, SeasonMap> caseMaps;
+
+  /// Each mission's own spot (fractions of the artwork), by mission id: a
+  /// case's own map, measured on it. Such a map names only the places open
+  /// so far, a place's name being the answer of the mission before it.
+  final Map<String, Offset> missionPoints;
+
+  /// The Mission Map of case [episodeId]: its own, else this one.
+  SeasonMap forCase(String episodeId) => caseMaps[episodeId] ?? this;
 
   /// Where mission [missionId] of case [episodeId] happens on this map: its
   /// own landmark, else its case's, else none.
@@ -338,7 +352,7 @@ abstract final class MapWorld {
     }
     final raw = {
       for (final m in missions)
-        m.id: switch (landmarkOf(m)) {
+        m.id: map.missionPoints[m.id] ?? switch (landmarkOf(m)) {
           null => Offset(m.mapX, m.mapY),
           final l => l.at + _inGroup(m, groups[l]!, map.aspect, height: map.groupHeights[l] ?? 1),
         },

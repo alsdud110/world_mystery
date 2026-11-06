@@ -20,6 +20,33 @@ const _harbin = SeasonLandmark('harbin', 'Harbin', Offset(870 / 1536, 110 / 1024
 const _shanghai = SeasonLandmark('shanghai', 'Shanghai', Offset(200 / 1536, 660 / 1024));
 const _chongqing = SeasonLandmark('chongqing', 'Chongqing', Offset(230 / 1536, 330 / 1024));
 
+// The places of s5_ep01 on its own map, measured on assets/seasons/season_05_seoul/locations/map/palace_map.webp (sha256:712f1c34f64518ca…).
+const _s5Ep01InnerGate = SeasonLandmark('inner_gate', 'The Inner Gate', Offset(768 / 1536, 772 / 1024));
+const _s5Ep01WellYard = SeasonLandmark('well_yard', 'The Well Yard', Offset(1310 / 1536, 437 / 1024));
+const _s5Ep01WritingRoom = SeasonLandmark('writing_room', 'The Writing Room', Offset(1280 / 1536, 217 / 1024));
+const _s5Ep01BookHall = SeasonLandmark('book_hall', 'The Book Hall', Offset(265 / 1536, 377 / 1024));
+
+/// The Mission Map of case s5_ep01.
+const _s5Ep01Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/palace_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep01InnerGate, _s5Ep01WellYard, _s5Ep01WritingRoom, _s5Ep01BookHall],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep01_m1': _s5Ep01InnerGate,
+    's5_ep01_m2': _s5Ep01WellYard,
+    's5_ep01_m3': _s5Ep01WritingRoom,
+    's5_ep01_final': _s5Ep01BookHall,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep01_m1': Offset(768 / 1536, 760 / 1024),
+    's5_ep01_m2': Offset(1310 / 1536, 425 / 1024),
+    's5_ep01_m3': Offset(1280 / 1536, 205 / 1024),
+    's5_ep01_final': Offset(265 / 1536, 365 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
 /// The Mission Map of season s5_seoul: every mission at its place's landmark.
 const s5SeoulMap = SeasonMap(
   artwork: 'assets/seasons/season_05_seoul/locations/map/season_map.webp',
@@ -78,6 +105,7 @@ const s5SeoulMap = SeasonMap(
   },
   groupHeights: <MapLandmark, double>{_royalPalace: 0.6, _harbin: 0.6},
   namesClearOfCurrent: true,
+  caseMaps: <String, SeasonMap>{'s5_ep01': _s5Ep01Map},
 );
 
 /// Its cover (portrait, no text) and how the screens frame it.

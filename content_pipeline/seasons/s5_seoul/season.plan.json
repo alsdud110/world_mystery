@@ -741,6 +741,19 @@
       ],
       "measuredOn": "sha256:c5879b75a31ba56e42221096a5fd5dc2313821d433919bedcab1357e5739d989"
     },
+    "caseMaps": {
+      "s5_ep01": {
+        "file": "assets/seasons/season_05_seoul/locations/map/palace_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:712f1c34f64518cad2db85c6ceaeebd5b639cc96ea5534a8b631ac33d22f588a",
+        "landmarks": [
+          { "spotId": "inner_gate", "name": "The Inner Gate", "at": [768, 772], "missions": { "s5_ep01_m1": [768, 760] } },
+          { "spotId": "well_yard", "name": "The Well Yard", "at": [1310, 437], "missions": { "s5_ep01_m2": [1310, 425] } },
+          { "spotId": "writing_room", "name": "The Writing Room", "at": [1280, 217], "missions": { "s5_ep01_m3": [1280, 205] } },
+          { "spotId": "book_hall", "name": "The Book Hall", "at": [265, 377], "missions": { "s5_ep01_final": [265, 365] } }
+        ]
+      }
+    },
     "worldCity": {
       "cityId": "seoul",
       "latitude": 37.57,

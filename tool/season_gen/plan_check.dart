@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'plan_ids.dart';
 import 'plan_models.dart';
 
@@ -98,8 +100,46 @@ abstract final class PlanCheck {
         }
       }
     }
+    // A case's own map: its marks stay inside the part of the map the pins
+    // and their notes fit in, its missions' spots apart from each other.
+    for (final MapEntry(key: caseId, value: map) in plan.art?.caseMaps.entries ?? const <MapEntry<String, CaseMapPlan>>[]) {
+      final at = '\$.art.caseMaps.$caseId';
+      inSeason(at, caseId);
+      void inside(String path, ScenePoint p) {
+        final (x, y) = (p.x / map.width, p.y / map.height);
+        if (x < _caseMapSide || x > 1 - _caseMapSide || y < _caseMapTop || y > 1 - _caseMapBottom) {
+          bad(path, '${p.toJson()} is outside the part of the ${map.width}x${map.height} map a pin fits in');
+        }
+      }
+
+      final spotIds = <String>{};
+      final spots = <String, ScenePoint>{};
+      for (final (i, l) in map.landmarks.indexed) {
+        final path = '$at.landmarks[$i]';
+        if (!spotIds.add(l.spotId)) bad('$path.spotId', '${l.spotId} given twice');
+        inside('$path.at', l.at);
+        for (final MapEntry(key: id, value: p) in l.missions.entries) {
+          inside('$path.missions.$id', p);
+          if (spots.containsKey(id)) bad('$path.missions.$id', '$id given twice');
+          for (final MapEntry(key: other, value: q) in spots.entries) {
+            final apart = math.sqrt(math.pow(p.x - q.x, 2) + math.pow(p.y - q.y, 2)) / map.width;
+            if (apart < _caseMapApart) bad('$path.missions.$id', 'too close to $other');
+          }
+          spots[id] = p;
+        }
+      }
+    }
     return out;
   }
+
+  /// The part of a case's own map a pin fits in, as shares of the artwork:
+  /// the top is `MapWorld.topMargin`, where the YOU'RE HERE note still fits.
+  static const _caseMapTop = 0.15;
+  static const _caseMapSide = 0.08;
+  static const _caseMapBottom = 0.08;
+
+  /// How far apart two missions' spots stay, as a share of the map's width.
+  static const _caseMapApart = 0.06;
 
   /// What is wrong in [plan]'s structure, or nothing. With its [season]:
   /// also its place in the season's acts and the people and places it names.
@@ -122,6 +162,23 @@ abstract final class PlanCheck {
         bad(r'$.caseId', '${plan.caseId} is in no act of ${season.seasonId}');
       } else if (inAct != plan.actId) {
         bad(r'$.actId', '${plan.actId}, but the season plan has ${plan.caseId} in $inAct');
+      }
+      // Its own map, if it has one: every mission on it once, at the place
+      // the mission names.
+      if (season.art?.caseMaps[plan.caseId] case final map?) {
+        final at = '(season plan) \$.art.caseMaps.${plan.caseId}';
+        final placeOf = {for (final l in map.landmarks) for (final id in l.missions.keys) id: l};
+        for (final m in plan.allMissions) {
+          final place = placeOf.remove(m.missionId);
+          if (place == null) {
+            bad(at, '${m.missionId} has no spot on the case\'s map');
+          } else if (place.name.toLowerCase() != m.play?.location?.toLowerCase()) {
+            bad(at, '${m.missionId} happens at ${m.play?.location}, not at ${place.name}');
+          }
+        }
+        for (final id in placeOf.keys) {
+          bad(at, '$id is not a mission of ${plan.caseId}');
+        }
       }
       final people = {for (final c in season.characters) c.charId};
       final places = {for (final l in season.locations) l.locId};

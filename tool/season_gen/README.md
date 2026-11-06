@@ -271,7 +271,9 @@ written over (`--force`); line endings are LF and read back CRLF-blind.
 season whole as the app plays it: the same files in
 `lib/data/generated/<seasonId>/`, with its `SeasonContent`
 (`<seasonId>_content.g.dart`) and its art (`<seasonId>_art.g.dart`: its map
-and landmarks from `art.map`, every mission at its place's `locId`; its
+and landmarks from `art.map`, every mission at its place's `locId`; a case's
+own Mission Map, if it has one, from `art.caseMaps` (the season map stays on
+every other screen); its
 cover from `art.cover`; its World Map city from `art.worldCity`; its evidence
 pictures from its asset manifest), then the game's two lists of generated
 seasons (`GameRegistry`: `generated_seasons.g.dart` read by
