@@ -209,12 +209,14 @@
   "deploy": {
     "folder": "season_05_seoul",
     "version": "1e59ba509f1d0291",
-    "status": "staged",
+    "status": "deployed",
     "files": 90,
     "newPictures": 73,
     "newBytes": 67691592,
     "newManifest": true,
     "stageDir": "build/season_packs/season_05_seoul/1e59ba509f1d0291",
-    "at": "2026-11-06T06:39:35.631848Z"
+    "at": "2026-11-06T07:04:23.268996Z",
+    "sent": 74,
+    "verified": "HTTPS 200, size and SHA-256 of every object"
   }
 }
