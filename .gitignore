@@ -94,3 +94,5 @@ skills-lock.json
 /content_pipeline/asset_originals/
 
 /config/ads.local.json
+# Cloudflare Wrangler local files
+.wrangler/
