@@ -544,7 +544,7 @@ void main() {
         ..failKey = null
         ..opened.clear();
       await tester.tap(find.text('TRY AGAIN'));
-      await settleIo(tester, () => answer != null);
+      await settleIo(tester, () => answer != null, tries: 4000); // the rest of the whole season's pack (90 pictures since 2026-11-06)
       expect(answer, isTrue);
       expect(source.opened.first, broken.objectKey, reason: 'the files already checked are kept');
       expect(source.opened, hasLength(SeasonPack.seoul.manifest.files.length - 3));
@@ -565,7 +565,7 @@ void main() {
 
       free = 1 << 40;
       await tester.tap(find.text('TRY AGAIN'));
-      await settleIo(tester, () => answer != null, tries: 1500); // the whole pack this time
+      await settleIo(tester, () => answer != null, tries: 4000); // the whole pack this time (90 pictures since 2026-11-06)
       expect(answer, isTrue);
       expect(container.read(seasonPacksProvider.notifier).needsDownload(SeasonIds.seoul), isFalse);
     });

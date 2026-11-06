@@ -602,11 +602,15 @@ class PlacePlan {
 /// Each part is optional while the season is drawn; a season without its
 /// map cannot be entered (`SeasonAvailability`).
 class SeasonArtPlan {
-  const SeasonArtPlan({this.cover, this.map, this.worldCity});
+  const SeasonArtPlan({this.cover, this.map, this.worldCity, this.introBackdrops = const {}});
 
   final CoverPlan? cover;
   final MapPlan? map;
   final WorldCityPlan? worldCity;
+
+  /// A case's picture behind its opening, by case id
+  /// (`SeasonContent.introBackdrops`); a case without one shows its place.
+  final Map<String, String> introBackdrops;
 
   factory SeasonArtPlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
@@ -614,6 +618,7 @@ class SeasonArtPlan {
       cover: r.optObj('cover', CoverPlan.fromJson),
       map: r.optObj('map', MapPlan.fromJson),
       worldCity: r.optObj('worldCity', WorldCityPlan.fromJson),
+      introBackdrops: r.optTextMap('introBackdrops'),
     );
     r.done();
     return out;
@@ -623,6 +628,7 @@ class SeasonArtPlan {
     if (cover case final c?) 'cover': c.toJson(),
     if (map case final m?) 'map': m.toJson(),
     if (worldCity case final w?) 'worldCity': w.toJson(),
+    if (introBackdrops.isNotEmpty) 'introBackdrops': introBackdrops,
   };
 }
 

@@ -45,6 +45,7 @@
       "dark_room_search",
       "witness_compare",
       "timeline_board",
+      "syllable_compose",
       "number_entry",
       "trace_deduction",
       "lens_inspect_word",
@@ -55,16 +56,33 @@
   },
   "counts": {
     "planned": {
-      "timeline_board": 1,
+      "trace_deduction": 2,
+      "order_sequence": 5,
+      "syllable_compose": 3,
+      "evidence_talk": 4,
+      "dark_room_search": 2,
+      "number_entry": 8,
+      "letter_tile_lock": 4,
+      "timeline_board": 5,
+      "picture_choice": 2,
+      "combo_dial_lock": 2,
+      "lens_inspect_word": 2,
+      "scene_explore_choose": 2,
+      "word_entry": 5,
       "record_mismatch": 1,
-      "trace_deduction": 1,
-      "evidence_talk": 1
+      "witness_compare": 1
     },
     "selected": {
-      "timeline_board": 1,
-      "record_mismatch": 1,
-      "trace_deduction": 1,
-      "evidence_talk": 1
+      "number_entry": 8,
+      "witness_compare": 5,
+      "trace_deduction": 3,
+      "record_mismatch": 2,
+      "timeline_board": 3,
+      "lens_inspect_word": 5,
+      "order_sequence": 3,
+      "evidence_talk": 5,
+      "word_entry": 4,
+      "dark_room_search": 1
     }
   },
   "missions": [
@@ -74,12 +92,2182 @@
       "surface": "mission",
       "traits": [
         {
+          "trait": "inscription",
+          "cues": [
+            "sign"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "relations",
+          "cues": [
+            "who",
+            "wrote"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "number",
+          "cues": [
+            "times"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep01_h9"
+      ],
+      "candidates": [
+        {
+          "paletteId": "number_entry",
+          "score": 10,
+          "why": "number"
+        },
+        {
+          "paletteId": "lens_inspect_word",
+          "score": 10,
+          "why": "inscription"
+        },
+        {
+          "paletteId": "word_entry",
+          "score": 7,
+          "why": "inscription (second choice)"
+        }
+      ],
+      "selected": "number_entry",
+      "reason": "number (not chosen on the facts alone: relations)",
+      "planned": "trace_deduction",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether every trace points to the one place, and no other place fits"
+      ]
+    },
+    {
+      "caseId": "s5_ep01",
+      "missionId": "s5_ep01_m2",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "testimony",
+          "cues": [
+            "saw",
+            "says"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep01_h10",
+        "s5_ep01_h3"
+      ],
+      "candidates": [
+        {
+          "paletteId": "witness_compare",
+          "score": 10,
+          "why": "testimony"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
+        }
+      ],
+      "selected": "witness_compare",
+      "reason": "testimony",
+      "planned": "order_sequence",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep01",
+      "missionId": "s5_ep01_m3",
+      "surface": "mission",
+      "traits": [],
+      "factIds": [
+        "s5_ep01_h11",
+        "s5_ep01_h12",
+        "s5_ep01_h4"
+      ],
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
+      "planned": "syllable_compose",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether each group's words build one vowel only, and the note reads as words"
+      ]
+    },
+    {
+      "caseId": "s5_ep01",
+      "missionId": "s5_ep01_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "relations",
+          "cues": [
+            "who",
+            "wrote"
+          ],
+          "from": "factsOnly"
+        }
+      ],
+      "factIds": [
+        "s5_ep01_h5",
+        "s5_ep01_h6",
+        "s5_ep01_h9"
+      ],
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show (the facts alone say relations: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why",
+      "planned": "evidence_talk",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the evidence asked for is the only piece that answers each prompt"
+      ]
+    },
+    {
+      "caseId": "s5_ep02",
+      "missionId": "s5_ep02_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "before",
+            "next"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "scene",
+          "cues": [
+            "marks",
+            "traces"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "trace_deduction",
+          "score": 10,
+          "why": "scene"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "dark_room_search",
+          "score": 7,
+          "why": "scene (second choice)"
+        },
+        {
+          "paletteId": "scene_explore_choose",
+          "score": 4,
+          "why": "scene (second choice)"
+        }
+      ],
+      "selected": "trace_deduction",
+      "reason": "scene",
+      "planned": "dark_room_search",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep02",
+      "missionId": "s5_ep02_m2",
+      "surface": "mission",
+      "traits": [],
+      "factIds": [
+        "s5_ep01_h10",
+        "s5_ep01_h11",
+        "s5_ep01_h12",
+        "s5_ep01_h3"
+      ],
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
+      "planned": "syllable_compose",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether each group's words build one vowel only, and the note reads as words"
+      ]
+    },
+    {
+      "caseId": "s5_ep02",
+      "missionId": "s5_ep02_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "number",
+          "cues": [
+            "how many",
+            "number",
+            "times"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "number_entry",
+          "score": 10,
+          "why": "number"
+        }
+      ],
+      "selected": "number_entry",
+      "reason": "number",
+      "planned": "number_entry",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the number is read in the words, never known beforehand"
+      ]
+    },
+    {
+      "caseId": "s5_ep02",
+      "missionId": "s5_ep02_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1592",
+            "after",
+            "before",
+            "first"
+          ],
+          "from": "factsOnly"
+        }
+      ],
+      "factIds": [
+        "s5_ep02_h1",
+        "s5_ep02_h3",
+        "s5_ep02_h4",
+        "s5_ep02_h5"
+      ],
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show (the facts alone say chronology: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why",
+      "planned": "letter_tile_lock",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep03",
+      "missionId": "s5_ep03_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1794",
+            "after",
+            "until"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "documents",
+          "cues": [
+            "different",
+            "log"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep03_h1"
+      ],
+      "candidates": [
+        {
+          "paletteId": "record_mismatch",
+          "score": 10,
+          "why": "documents"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "text_choice",
+          "score": 5,
+          "why": "documents (second choice); a plain choice"
+        }
+      ],
+      "selected": "record_mismatch",
+      "reason": "documents",
+      "planned": "timeline_board",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the lines read put the cards in one order"
+      ]
+    },
+    {
+      "caseId": "s5_ep03",
+      "missionId": "s5_ep03_m2",
+      "surface": "mission",
+      "traits": [],
+      "factIds": [],
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
+      "planned": "picture_choice",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep03",
+      "missionId": "s5_ep03_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "after",
+            "before",
+            "then"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        }
+      ],
+      "selected": "timeline_board",
+      "reason": "chronology",
+      "planned": "order_sequence",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep03",
+      "missionId": "s5_ep03_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1794",
+            "1796",
+            "first",
+            "later",
+            "the year"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "documents",
+          "cues": [
+            "record",
+            "records"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "relations",
+          "cues": [
+            "who",
+            "wrote"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "number",
+          "cues": [
+            "number"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep03_h1",
+        "s5_ep03_h2",
+        "s5_ep03_h3",
+        "s5_ep03_h4",
+        "s5_ep03_h5"
+      ],
+      "candidates": [
+        {
+          "paletteId": "number_entry",
+          "score": 10,
+          "why": "number"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "combo_dial_lock",
+          "score": 7,
+          "why": "number (second choice)"
+        }
+      ],
+      "selected": "number_entry",
+      "reason": "number (not chosen on the facts alone: documents, relations)",
+      "planned": "combo_dial_lock",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep04",
+      "missionId": "s5_ep04_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "before",
+            "then"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "documents",
+          "cues": [
+            "log",
+            "logs"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "inscription",
+          "cues": [
+            "carved"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep01_h10"
+      ],
+      "candidates": [
+        {
+          "paletteId": "lens_inspect_word",
+          "score": 10,
+          "why": "inscription"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "word_entry",
+          "score": 7,
+          "why": "inscription (second choice)"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "record_mismatch",
+          "score": 6,
+          "why": "documents; the same place of the case before"
+        },
+        {
+          "paletteId": "text_choice",
+          "score": 5,
+          "why": "documents (second choice); a plain choice"
+        }
+      ],
+      "selected": "lens_inspect_word",
+      "reason": "inscription",
+      "planned": "lens_inspect_word",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the letter describes one exhibit only, and the word is guessed from its meaning"
+      ]
+    },
+    {
+      "caseId": "s5_ep04",
+      "missionId": "s5_ep04_m2",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "documents",
+          "cues": [
+            "log",
+            "logs"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "number",
+          "cues": [
+            "how many",
+            "number"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "number_entry",
+          "score": 10,
+          "why": "number"
+        },
+        {
+          "paletteId": "record_mismatch",
+          "score": 10,
+          "why": "documents"
+        },
+        {
+          "paletteId": "text_choice",
+          "score": 5,
+          "why": "documents (second choice); a plain choice"
+        }
+      ],
+      "selected": "number_entry",
+      "reason": "number",
+      "planned": "number_entry",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the number is read in the words, never known beforehand"
+      ]
+    },
+    {
+      "caseId": "s5_ep04",
+      "missionId": "s5_ep04_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1592",
+            "1865",
+            "1866",
+            "after",
+            "first",
+            "then",
+            "until"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep04_h1",
+        "s5_ep04_h2",
+        "s5_ep04_h3",
+        "s5_ep04_h5"
+      ],
+      "candidates": [
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 6,
+          "why": "chronology; the same place of the case before"
+        }
+      ],
+      "selected": "order_sequence",
+      "reason": "chronology (second choice)",
+      "planned": "timeline_board",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the lines read put the cards in one order"
+      ]
+    },
+    {
+      "caseId": "s5_ep04",
+      "missionId": "s5_ep04_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1592",
+            "1795",
+            "1865",
+            "1866"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "relations",
+          "cues": [
+            "took",
+            "who",
+            "wrote"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep04_h2",
+        "s5_ep04_h3",
+        "s5_ep04_h4",
+        "s5_ep04_h5",
+        "s5_ep04_h6"
+      ],
+      "candidates": [
+        {
+          "paletteId": "evidence_talk",
+          "score": 10,
+          "why": "relations"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 2,
+          "why": "chronology; already in this case"
+        }
+      ],
+      "selected": "evidence_talk",
+      "reason": "relations",
+      "planned": "evidence_talk",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the evidence asked for is the only piece that answers each prompt"
+      ]
+    },
+    {
+      "caseId": "s5_ep05",
+      "missionId": "s5_ep05_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1887",
+            "first"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "scene",
+          "cues": [
+            "marks",
+            "muddy"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "relations",
+          "cues": [
+            "took",
+            "who"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep05_h1",
+        "s5_ep05_h2"
+      ],
+      "candidates": [
+        {
+          "paletteId": "trace_deduction",
+          "score": 10,
+          "why": "scene"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 10,
+          "why": "relations"
+        },
+        {
+          "paletteId": "dark_room_search",
+          "score": 7,
+          "why": "scene (second choice)"
+        },
+        {
+          "paletteId": "witness_compare",
+          "score": 7,
+          "why": "relations (second choice)"
+        },
+        {
+          "paletteId": "scene_explore_choose",
+          "score": 4,
+          "why": "scene (second choice)"
+        }
+      ],
+      "selected": "trace_deduction",
+      "reason": "scene (not chosen on the facts alone: chronology)",
+      "planned": "scene_explore_choose",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep05",
+      "missionId": "s5_ep05_m2",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "after",
+            "before",
+            "first",
+            "then"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "testimony",
+          "cues": [
+            "saw",
+            "says"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "witness_compare",
+          "score": 10,
+          "why": "testimony"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
+        }
+      ],
+      "selected": "witness_compare",
+      "reason": "testimony",
+      "planned": "timeline_board",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the lines read put the cards in one order"
+      ]
+    },
+    {
+      "caseId": "s5_ep05",
+      "missionId": "s5_ep05_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "number",
+          "cues": [
+            "count",
+            "how many"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "number_entry",
+          "score": 10,
+          "why": "number"
+        }
+      ],
+      "selected": "number_entry",
+      "reason": "number",
+      "planned": "number_entry",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the number is read in the words, never known beforehand"
+      ]
+    },
+    {
+      "caseId": "s5_ep05",
+      "missionId": "s5_ep05_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "inscription",
+          "cues": [
+            "written on"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep05_h4"
+      ],
+      "candidates": [
+        {
+          "paletteId": "word_entry",
+          "score": 10,
+          "why": "inscription"
+        }
+      ],
+      "selected": "word_entry",
+      "reason": "inscription",
+      "planned": "word_entry",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep06",
+      "missionId": "s5_ep06_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "scene",
+          "cues": [
+            "footprints",
+            "hidden"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "dark_room_search",
+          "score": 7,
+          "why": "scene (second choice)"
+        },
+        {
+          "paletteId": "trace_deduction",
+          "score": 6,
+          "why": "scene; the same place of the case before"
+        },
+        {
+          "paletteId": "scene_explore_choose",
+          "score": 4,
+          "why": "scene (second choice)"
+        }
+      ],
+      "selected": "dark_room_search",
+      "reason": "scene (second choice)",
+      "planned": "trace_deduction",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether every trace points to the one place, and no other place fits"
+      ]
+    },
+    {
+      "caseId": "s5_ep06",
+      "missionId": "s5_ep06_m2",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1895",
+            "after",
+            "first",
+            "then"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        }
+      ],
+      "selected": "timeline_board",
+      "reason": "chronology",
+      "planned": "order_sequence",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep06",
+      "missionId": "s5_ep06_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "next",
+            "until"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "number",
+          "cues": [
+            "times"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "number_entry",
+          "score": 6,
+          "why": "number; the same place of the case before"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 2,
+          "why": "chronology; already in this case"
+        }
+      ],
+      "selected": "order_sequence",
+      "reason": "chronology (second choice)",
+      "planned": "number_entry",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the number is read in the words, never known beforehand"
+      ]
+    },
+    {
+      "caseId": "s5_ep06",
+      "missionId": "s5_ep06_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1905",
+            "1907"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "inscription",
+          "cues": [
+            "sign"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep06_h1",
+        "s5_ep06_h2"
+      ],
+      "candidates": [
+        {
+          "paletteId": "word_entry",
+          "score": 6,
+          "why": "inscription; the same place of the case before"
+        }
+      ],
+      "selected": "word_entry",
+      "reason": "inscription; the same place of the case before (not chosen on the facts alone: chronology)",
+      "planned": "letter_tile_lock",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep07",
+      "missionId": "s5_ep07_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1909",
+            "after"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "documents",
+          "cues": [
+            "does not match",
+            "reports"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep07_h1",
+        "s5_ep07_h2"
+      ],
+      "candidates": [
+        {
+          "paletteId": "record_mismatch",
+          "score": 10,
+          "why": "documents"
+        },
+        {
+          "paletteId": "text_choice",
+          "score": 5,
+          "why": "documents (second choice); a plain choice"
+        }
+      ],
+      "selected": "record_mismatch",
+      "reason": "documents (not chosen on the facts alone: chronology)",
+      "planned": "record_mismatch",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the lines that differ are a contradiction worth finding"
+      ]
+    },
+    {
+      "caseId": "s5_ep07",
+      "missionId": "s5_ep07_m2",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "after",
+            "before",
+            "then"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "testimony",
+          "cues": [
+            "saw",
+            "says",
+            "told"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "witness_compare",
+          "score": 10,
+          "why": "testimony"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 6,
+          "why": "chronology; the same place of the case before"
+        }
+      ],
+      "selected": "witness_compare",
+      "reason": "testimony",
+      "planned": "timeline_board",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the lines read put the cards in one order"
+      ]
+    },
+    {
+      "caseId": "s5_ep07",
+      "missionId": "s5_ep07_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "testimony",
+          "cues": [
+            "heard",
+            "says"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "inscription",
+          "cues": [
+            "written on"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep07_h2"
+      ],
+      "candidates": [
+        {
+          "paletteId": "lens_inspect_word",
+          "score": 10,
+          "why": "inscription"
+        },
+        {
+          "paletteId": "word_entry",
+          "score": 7,
+          "why": "inscription (second choice)"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
+        },
+        {
+          "paletteId": "witness_compare",
+          "score": 2,
+          "why": "testimony; already in this case"
+        }
+      ],
+      "selected": "lens_inspect_word",
+      "reason": "inscription",
+      "planned": "word_entry",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep07",
+      "missionId": "s5_ep07_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1905",
+            "1910",
+            "after"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "testimony",
+          "cues": [
+            "heard",
+            "says",
+            "told"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep06_h1",
+        "s5_ep07_h2",
+        "s5_ep07_h3"
+      ],
+      "candidates": [
+        {
+          "paletteId": "evidence_talk",
+          "score": 10,
+          "why": "testimony"
+        }
+      ],
+      "selected": "evidence_talk",
+      "reason": "testimony (not chosen on the facts alone: chronology)",
+      "planned": "evidence_talk",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the evidence asked for is the only piece that answers each prompt"
+      ]
+    },
+    {
+      "caseId": "s5_ep08",
+      "missionId": "s5_ep08_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1919",
+            "first"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "testimony",
+          "cues": [
+            "heard",
+            "says",
+            "told"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep08_h2"
+      ],
+      "candidates": [
+        {
+          "paletteId": "witness_compare",
+          "score": 10,
+          "why": "testimony"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
+        }
+      ],
+      "selected": "witness_compare",
+      "reason": "testimony (not chosen on the facts alone: chronology)",
+      "planned": "witness_compare",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether only the two statements agree on the thing"
+      ]
+    },
+    {
+      "caseId": "s5_ep08",
+      "missionId": "s5_ep08_m2",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "before",
+            "first"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "testimony",
+          "cues": [
+            "saw",
+            "says"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "inscription",
+          "cues": [
+            "sign"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep08_h2",
+        "s5_ep08_h3"
+      ],
+      "candidates": [
+        {
+          "paletteId": "lens_inspect_word",
+          "score": 10,
+          "why": "inscription"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "word_entry",
+          "score": 7,
+          "why": "inscription (second choice)"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
+        },
+        {
+          "paletteId": "witness_compare",
+          "score": -2,
+          "why": "testimony; already in this case; the same place of the case before"
+        }
+      ],
+      "selected": "lens_inspect_word",
+      "reason": "inscription",
+      "planned": "order_sequence",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep08",
+      "missionId": "s5_ep08_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "inscription",
+          "cues": [
+            "label",
+            "written on"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "relations",
+          "cues": [
+            "who",
+            "wrote"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "evidence_talk",
+          "score": 10,
+          "why": "relations"
+        },
+        {
+          "paletteId": "word_entry",
+          "score": 7,
+          "why": "inscription (second choice)"
+        },
+        {
+          "paletteId": "witness_compare",
+          "score": -1,
+          "why": "relations (second choice); already in this case"
+        },
+        {
+          "paletteId": "lens_inspect_word",
+          "score": -2,
+          "why": "inscription; already in this case; the same place of the case before"
+        }
+      ],
+      "selected": "evidence_talk",
+      "reason": "relations",
+      "planned": "word_entry",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep08",
+      "missionId": "s5_ep08_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "before",
+            "first"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "inscription",
+          "cues": [
+            "sign"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "number",
+          "cues": [
+            "thirty"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep08_h2",
+        "s5_ep08_h3"
+      ],
+      "candidates": [
+        {
+          "paletteId": "word_entry",
+          "score": 10,
+          "why": "inscription"
+        },
+        {
+          "paletteId": "number_entry",
+          "score": 10,
+          "why": "number"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "combo_dial_lock",
+          "score": 7,
+          "why": "number (second choice)"
+        }
+      ],
+      "selected": "word_entry",
+      "reason": "inscription",
+      "planned": "combo_dial_lock",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep09",
+      "missionId": "s5_ep09_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "testimony",
+          "cues": [
+            "saw",
+            "says"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "number",
+          "cues": [
+            "count",
+            "number"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "number_entry",
+          "score": 10,
+          "why": "number"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
+        },
+        {
+          "paletteId": "witness_compare",
+          "score": 6,
+          "why": "testimony; the same place of the case before"
+        }
+      ],
+      "selected": "number_entry",
+      "reason": "number",
+      "planned": "number_entry",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the number is read in the words, never known beforehand"
+      ]
+    },
+    {
+      "caseId": "s5_ep09",
+      "missionId": "s5_ep09_m2",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "documents",
+          "cues": [
+            "list",
+            "report"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "scene",
+          "cues": [
+            "marks",
+            "traces"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep09_h3"
+      ],
+      "candidates": [
+        {
+          "paletteId": "trace_deduction",
+          "score": 10,
+          "why": "scene"
+        },
+        {
+          "paletteId": "record_mismatch",
+          "score": 10,
+          "why": "documents"
+        },
+        {
+          "paletteId": "dark_room_search",
+          "score": 7,
+          "why": "scene (second choice)"
+        },
+        {
+          "paletteId": "text_choice",
+          "score": 5,
+          "why": "documents (second choice); a plain choice"
+        },
+        {
+          "paletteId": "scene_explore_choose",
+          "score": 4,
+          "why": "scene (second choice)"
+        }
+      ],
+      "selected": "trace_deduction",
+      "reason": "scene",
+      "planned": "dark_room_search",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep09",
+      "missionId": "s5_ep09_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "inscription",
+          "cues": [
+            "sign"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "lens_inspect_word",
+          "score": 10,
+          "why": "inscription"
+        },
+        {
+          "paletteId": "word_entry",
+          "score": 7,
+          "why": "inscription (second choice)"
+        }
+      ],
+      "selected": "lens_inspect_word",
+      "reason": "inscription",
+      "planned": "word_entry",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep09",
+      "missionId": "s5_ep09_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1919",
+            "after",
+            "first"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "testimony",
+          "cues": [
+            "saw",
+            "says",
+            "told"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep09_h1",
+        "s5_ep09_h2",
+        "s5_ep09_h3"
+      ],
+      "candidates": [
+        {
+          "paletteId": "evidence_talk",
+          "score": 10,
+          "why": "testimony"
+        }
+      ],
+      "selected": "evidence_talk",
+      "reason": "testimony (not chosen on the facts alone: chronology)",
+      "planned": "evidence_talk",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the evidence asked for is the only piece that answers each prompt"
+      ]
+    },
+    {
+      "caseId": "s5_ep10",
+      "missionId": "s5_ep10_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "after",
+            "before",
+            "first"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "testimony",
+          "cues": [
+            "said",
+            "says"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "relations",
+          "cues": [
+            "gave",
+            "took"
+          ],
+          "from": "factsOnly"
+        }
+      ],
+      "factIds": [
+        "s5_ep10_h2"
+      ],
+      "candidates": [
+        {
+          "paletteId": "witness_compare",
+          "score": 10,
+          "why": "testimony"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
+        }
+      ],
+      "selected": "witness_compare",
+      "reason": "testimony (not chosen on the facts alone: relations)",
+      "planned": "order_sequence",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep10",
+      "missionId": "s5_ep10_m2",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "relations",
+          "cues": [
+            "gave",
+            "took"
+          ],
+          "from": "factsOnly"
+        }
+      ],
+      "factIds": [
+        "s5_ep10_h2"
+      ],
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show (the facts alone say relations: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why",
+      "planned": "picture_choice",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep10",
+      "missionId": "s5_ep10_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "testimony",
+          "cues": [
+            "saw",
+            "says"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
+        },
+        {
+          "paletteId": "witness_compare",
+          "score": 2,
+          "why": "testimony; already in this case"
+        }
+      ],
+      "selected": "evidence_talk",
+      "reason": "testimony (second choice)",
+      "planned": "letter_tile_lock",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep10",
+      "missionId": "s5_ep10_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "after",
+            "later",
+            "the year"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "testimony",
+          "cues": [
+            "saw",
+            "says"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "number",
+          "cues": [
+            "thirty",
+            "twenty"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep09_h1",
+        "s5_ep10_h1",
+        "s5_ep10_h4"
+      ],
+      "candidates": [
+        {
+          "paletteId": "number_entry",
+          "score": 10,
+          "why": "number"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "combo_dial_lock",
+          "score": 7,
+          "why": "number (second choice)"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": -2,
+          "why": "testimony; already in this case; the same place of the case before"
+        }
+      ],
+      "selected": "number_entry",
+      "reason": "number",
+      "planned": "number_entry",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the number is read in the words, never known beforehand"
+      ]
+    },
+    {
+      "caseId": "s5_ep11",
+      "missionId": "s5_ep11_m1",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "inscription",
+          "cues": [
+            "written on"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [],
+      "candidates": [
+        {
+          "paletteId": "lens_inspect_word",
+          "score": 10,
+          "why": "inscription"
+        },
+        {
+          "paletteId": "word_entry",
+          "score": 7,
+          "why": "inscription (second choice)"
+        }
+      ],
+      "selected": "lens_inspect_word",
+      "reason": "inscription",
+      "planned": "lens_inspect_word",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the letter describes one exhibit only, and the word is guessed from its meaning"
+      ]
+    },
+    {
+      "caseId": "s5_ep11",
+      "missionId": "s5_ep11_m2",
+      "surface": "mission",
+      "traits": [],
+      "factIds": [],
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
+      "planned": "syllable_compose",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether each group's words build one vowel only, and the note reads as words"
+      ]
+    },
+    {
+      "caseId": "s5_ep11",
+      "missionId": "s5_ep11_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "1941",
+            "then"
+          ],
+          "from": "factsOnly"
+        },
+        {
+          "trait": "documents",
+          "cues": [
+            "copies",
+            "copy"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "number",
+          "cues": [
+            "number"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep11_h2",
+        "s5_ep11_h3"
+      ],
+      "candidates": [
+        {
+          "paletteId": "number_entry",
+          "score": 10,
+          "why": "number"
+        },
+        {
+          "paletteId": "record_mismatch",
+          "score": 10,
+          "why": "documents"
+        },
+        {
+          "paletteId": "text_choice",
+          "score": 5,
+          "why": "documents (second choice); a plain choice"
+        }
+      ],
+      "selected": "number_entry",
+      "reason": "number (not chosen on the facts alone: chronology)",
+      "planned": "number_entry",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the number is read in the words, never known beforehand"
+      ]
+    },
+    {
+      "caseId": "s5_ep11",
+      "missionId": "s5_ep11_final",
+      "surface": "finalMission",
+      "traits": [
+        {
+          "trait": "inscription",
+          "cues": [
+            "written on"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep11_h4",
+        "s5_ep11_h5"
+      ],
+      "candidates": [
+        {
+          "paletteId": "word_entry",
+          "score": 10,
+          "why": "inscription"
+        }
+      ],
+      "selected": "word_entry",
+      "reason": "inscription",
+      "planned": "word_entry",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep12",
+      "missionId": "s5_ep12_m1",
+      "surface": "mission",
+      "traits": [],
+      "factIds": [],
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
+      "planned": "scene_explore_choose",
+      "plannedIsSelected": false,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the words lead to the answer, and only to it"
+      ]
+    },
+    {
+      "caseId": "s5_ep12",
+      "missionId": "s5_ep12_m2",
+      "surface": "mission",
+      "traits": [
+        {
           "trait": "chronology",
           "cues": [
             "1446",
+            "1941",
             "after",
-            "later",
-            "then"
+            "before"
           ],
           "from": "words"
         }
@@ -106,148 +2294,93 @@
         "levels": "pass"
       },
       "personReview": [
-        "whether the lines read put the cards in one order",
-        "[history_puzzle_unreviewed] s5_ep01_m1: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m1)"
+        "whether the lines read put the cards in one order"
       ]
     },
     {
-      "caseId": "s5_ep01",
-      "missionId": "s5_ep01_m2",
+      "caseId": "s5_ep12",
+      "missionId": "s5_ep12_m3",
       "surface": "mission",
       "traits": [
         {
           "trait": "chronology",
           "cues": [
-            "1443",
-            "before"
+            "before",
+            "then"
           ],
-          "from": "factsOnly"
+          "from": "words"
         },
         {
-          "trait": "documents",
+          "trait": "number",
           "cues": [
-            "copy",
-            "does not match"
+            "number"
           ],
           "from": "words"
         }
       ],
       "factIds": [
-        "s5_ep01_h1",
-        "s5_ep01_h3",
-        "s5_ep01_h4",
-        "s5_ep01_h5",
-        "s5_ep01_h6"
+        "s5_ep12_h3"
       ],
       "candidates": [
         {
-          "paletteId": "record_mismatch",
-          "score": 10,
-          "why": "documents"
-        },
-        {
-          "paletteId": "text_choice",
-          "score": 5,
-          "why": "documents (second choice); a plain choice"
-        }
-      ],
-      "selected": "record_mismatch",
-      "reason": "documents (not chosen on the facts alone: chronology)",
-      "planned": "record_mismatch",
-      "plannedIsSelected": true,
-      "checks": {
-        "answerAndPlay": "pass",
-        "levels": "pass"
-      },
-      "personReview": [
-        "whether the lines that differ are a contradiction worth finding",
-        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h1, not approved as it is (draft, draft)",
-        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h3, not approved as it is (draft, draft)",
-        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h4, not approved as it is (draft, draft)",
-        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h5, not approved as it is (draft, draft)",
-        "[history_fact_unapproved] puzzle s5_ep01_m2 rests on s5_ep01_h6, not approved as it is (draft, draft)",
-        "[history_puzzle_unreviewed] s5_ep01_m2: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m2)"
-      ]
-    },
-    {
-      "caseId": "s5_ep01",
-      "missionId": "s5_ep01_m3",
-      "surface": "mission",
-      "traits": [
-        {
-          "trait": "scene",
-          "cues": [
-            "hidden",
-            "marks"
-          ],
-          "from": "words"
-        }
-      ],
-      "factIds": [],
-      "candidates": [
-        {
-          "paletteId": "trace_deduction",
-          "score": 10,
-          "why": "scene"
-        },
-        {
-          "paletteId": "dark_room_search",
+          "paletteId": "order_sequence",
           "score": 7,
-          "why": "scene (second choice)"
+          "why": "chronology (second choice)"
         },
         {
-          "paletteId": "scene_explore_choose",
-          "score": 4,
-          "why": "scene (second choice)"
+          "paletteId": "number_entry",
+          "score": 6,
+          "why": "number; the same place of the case before"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 2,
+          "why": "chronology; already in this case"
         }
       ],
-      "selected": "trace_deduction",
-      "reason": "scene",
-      "planned": "trace_deduction",
-      "plannedIsSelected": true,
+      "selected": "order_sequence",
+      "reason": "chronology (second choice)",
+      "planned": "number_entry",
+      "plannedIsSelected": false,
       "checks": {
         "answerAndPlay": "pass",
         "levels": "pass"
       },
       "personReview": [
-        "whether every trace points to the one place, and no other place fits",
-        "[history_puzzle_unreviewed] s5_ep01_m3: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m3)"
+        "whether the number is read in the words, never known beforehand"
       ]
     },
     {
-      "caseId": "s5_ep01",
-      "missionId": "s5_ep01_final",
+      "caseId": "s5_ep12",
+      "missionId": "s5_ep12_final",
       "surface": "finalMission",
       "traits": [
         {
-          "trait": "testimony",
+          "trait": "chronology",
           "cues": [
-            "claim",
-            "claims",
-            "says"
+            "1919",
+            "1945"
           ],
-          "from": "words"
+          "from": "factsOnly"
         }
       ],
-      "factIds": [],
-      "candidates": [
-        {
-          "paletteId": "evidence_talk",
-          "score": 10,
-          "why": "testimony"
-        }
+      "factIds": [
+        "s5_ep12_h3",
+        "s5_ep12_h4",
+        "s5_ep12_h5",
+        "s5_ep12_h7"
       ],
-      "selected": "evidence_talk",
-      "reason": "testimony",
-      "planned": "evidence_talk",
-      "plannedIsSelected": true,
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show (the facts alone say chronology: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why",
+      "planned": "letter_tile_lock",
+      "plannedIsSelected": false,
       "checks": {
         "answerAndPlay": "pass",
         "levels": "pass"
       },
       "personReview": [
-        "whether the evidence asked for is the only piece that answers each prompt",
-        "[history_puzzle_unreviewed] s5_ep01_final: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_final)"
+        "whether the words lead to the answer, and only to it"
       ]
     }
   ]

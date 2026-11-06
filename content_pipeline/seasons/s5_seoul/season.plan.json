@@ -7,10 +7,10 @@
   "tagline": "READ THE NEW LETTERS",
   "plannedCases": 12,
   "mainMystery": {
-    "truth": "Pilot of the Seoul historical season: only Case 01 (The Secret of the King's Letters, 1446) is written; it has no season mystery.",
-    "culprit": "No one: the mystery is a burnt note in the new letters and what it says.",
-    "motive": "Bun-i, who could not write Chinese characters, wrote her first letter to warn of a hole in the book hall roof.",
-    "revealCase": "s5_ep01"
+    "truth": "Bun-i, the water-carrier who wrote the first letter in the new letters (Case 01), kept a small letter box. For five hundred years her family kept it: in every hard time a keeper wrote one short note in the King's letters, signed it with her water drop, and quietly helped. They never changed history; they kept the letters alive.",
+    "culprit": "No one: the season's mystery is a family of keepers, not a crime; each case has its own small, made-up wrongdoer or puzzle.",
+    "motive": "To keep the people's own letters alive, as Bun-i promised her teacher Sora.",
+    "revealCase": "s5_ep08"
   },
   "characters": [
     {
@@ -36,6 +36,186 @@
       "name": "Bun-i",
       "role": "A water-carrier girl who writes her first letter",
       "firstCase": "s5_ep01"
+    },
+    {
+      "charId": "yi_sunsin",
+      "name": "Admiral Yi Sun-sin",
+      "role": "Naval commander of Jeolla in 1592 (a real person; his words here are made up)",
+      "firstCase": "s5_ep02"
+    },
+    {
+      "charId": "ham",
+      "name": "Quartermaster Ham",
+      "role": "The navy store-room keeper at Yeosu (made up)",
+      "firstCase": "s5_ep02"
+    },
+    {
+      "charId": "seok",
+      "name": "Seok",
+      "role": "A young sailor of sixteen; the keeper of 1592 (made up)",
+      "firstCase": "s5_ep02"
+    },
+    {
+      "charId": "jeong_yakyong",
+      "name": "Jeong Yak-yong",
+      "role": "The scholar who designed the lifting machine for Hwaseong (a real person; his words here are made up)",
+      "firstCase": "s5_ep03"
+    },
+    {
+      "charId": "gwak",
+      "name": "Foreman Gwak",
+      "role": "A foreman of the builders at Hwaseong (made up)",
+      "firstCase": "s5_ep03"
+    },
+    {
+      "charId": "okbun",
+      "name": "Okbun",
+      "role": "A girl of twelve who carries water to the builders; the keeper of 1795 (made up)",
+      "firstCase": "s5_ep03"
+    },
+    {
+      "charId": "heungseon_daewongun",
+      "name": "Heungseon Daewongun",
+      "role": "He led the rebuilding of Gyeongbokgung (a real person; his words here are made up)",
+      "firstCase": "s5_ep04"
+    },
+    {
+      "charId": "duri",
+      "name": "Duri",
+      "role": "A carpenter's apprentice of fourteen; the keeper of 1866 (made up)",
+      "firstCase": "s5_ep04"
+    },
+    {
+      "charId": "pyo",
+      "name": "Mr. Pyo",
+      "role": "A timber dealer (made up)",
+      "firstCase": "s5_ep04"
+    },
+    {
+      "charId": "lady_han",
+      "name": "Court Lady Han",
+      "role": "A court lady who serves the Queen; the keeper of 1895 (made up)",
+      "firstCase": "s5_ep05"
+    },
+    {
+      "charId": "myeongseong",
+      "name": "Queen Myeongseong",
+      "role": "The Queen of Joseon (real; her words here are made up; never drawn with a detailed face)",
+      "firstCase": "s5_ep05"
+    },
+    {
+      "charId": "gojong",
+      "name": "King Gojong (Emperor from 1897)",
+      "role": "The King of Joseon, later Emperor of the Korean Empire (real; his words here are made up)",
+      "firstCase": "s5_ep05"
+    },
+    {
+      "charId": "bongsu",
+      "name": "Bongsu",
+      "role": "A palace errand boy; the keeper of 1907 (made up)",
+      "firstCase": "s5_ep06"
+    },
+    {
+      "charId": "yi_jun",
+      "name": "Yi Jun",
+      "role": "One of the three envoys to The Hague, 1907 (real; his words here are made up)",
+      "firstCase": "s5_ep06"
+    },
+    {
+      "charId": "mrs_kang",
+      "name": "Mrs. Kang",
+      "role": "She runs a Korean inn in Harbin; the keeper of 1909 (made up)",
+      "firstCase": "s5_ep07"
+    },
+    {
+      "charId": "porter_pak",
+      "name": "Mr. Pak",
+      "role": "A porter at Harbin Station (made up)",
+      "firstCase": "s5_ep07"
+    },
+    {
+      "charId": "sorin",
+      "name": "Mr. Sorin",
+      "role": "The writer of a small Harbin paper, the Evening Sheet, who printed a story he never checked (made up)",
+      "firstCase": "s5_ep07"
+    },
+    {
+      "charId": "an_junggeun",
+      "name": "An Jung-geun",
+      "role": "Korean independence fighter (real; spoken of only, never on stage)",
+      "firstCase": "s5_ep07"
+    },
+    {
+      "charId": "yu_gwansun",
+      "name": "Yu Gwan-sun",
+      "role": "An Ewha student who led the Aunae Market march of 1 April 1919 (a real person; her words here are made up)",
+      "firstCase": "s5_ep08"
+    },
+    {
+      "charId": "gyeongsun",
+      "name": "Gyeongsun",
+      "role": "Gwan-sun's school friend and the keeper of 1919 (made up)",
+      "firstCase": "s5_ep08"
+    },
+    {
+      "charId": "dong_il",
+      "name": "Dong-il",
+      "role": "A village messenger boy (made up)",
+      "firstCase": "s5_ep08"
+    },
+    {
+      "charId": "kim_gu",
+      "name": "Kim Gu",
+      "role": "The police chief of the Provisional Government in Shanghai, later its leader (a real person; his words here are made up)",
+      "firstCase": "s5_ep09"
+    },
+    {
+      "charId": "haesu",
+      "name": "Haesu",
+      "role": "A young clerk of the Provisional Government and the keeper of Shanghai (made up)",
+      "firstCase": "s5_ep09"
+    },
+    {
+      "charId": "nam_giho",
+      "name": "Nam Giho",
+      "role": "A new clerk who copies the secret list (made up)",
+      "firstCase": "s5_ep09"
+    },
+    {
+      "charId": "yun_bonggil",
+      "name": "Yun Bong-gil",
+      "role": "A young member of Kim Gu's Korean Patriotic Organization (a real person; his words here are made up)",
+      "firstCase": "s5_ep10"
+    },
+    {
+      "charId": "yun_dongju",
+      "name": "Yun Dong-ju",
+      "role": "A young poet at Yonhi College (a real person; his words here are made up)",
+      "firstCase": "s5_ep11"
+    },
+    {
+      "charId": "miri",
+      "name": "Miri",
+      "role": "A keeper, Haesu's cousin, who helps at Yonhi College (made up)",
+      "firstCase": "s5_ep11"
+    },
+    {
+      "charId": "kim_wonbong",
+      "name": "Kim Won-bong",
+      "role": "A minister of the Provisional Government in Chongqing (a real person; his words here are made up)",
+      "firstCase": "s5_ep12"
+    },
+    {
+      "charId": "bitna",
+      "name": "Bitna",
+      "role": "The last keeper, Haesu's daughter (made up)",
+      "firstCase": "s5_ep12"
+    },
+    {
+      "charId": "pyo_salt",
+      "name": "Mr. Pyo",
+      "role": "A salt seller paid by a stranger to ask questions (made up)",
+      "firstCase": "s5_ep08"
     }
   ],
   "locations": [
@@ -58,12 +238,57 @@
       "locId": "book_hall",
       "name": "The Book Hall",
       "landmarkKey": "bookHall"
+    },
+    {
+      "locId": "royal_palace",
+      "name": "The Royal Palace, Hanyang",
+      "landmarkKey": "royalPalace"
+    },
+    {
+      "locId": "gyeongun_palace",
+      "name": "Gyeongun Palace",
+      "landmarkKey": "gyeongunPalace"
+    },
+    {
+      "locId": "yonhi_college",
+      "name": "Yonhi College",
+      "landmarkKey": "yonhiCollege"
+    },
+    {
+      "locId": "hwaseong",
+      "name": "Hwaseong Fortress",
+      "landmarkKey": "hwaseong"
+    },
+    {
+      "locId": "aunae_market",
+      "name": "Aunae Market",
+      "landmarkKey": "aunaeMarket"
+    },
+    {
+      "locId": "yeosu_navy",
+      "name": "The Navy Base at Yeosu",
+      "landmarkKey": "yeosuNavy"
+    },
+    {
+      "locId": "harbin",
+      "name": "Harbin",
+      "landmarkKey": "harbin"
+    },
+    {
+      "locId": "shanghai",
+      "name": "Shanghai",
+      "landmarkKey": "shanghai"
+    },
+    {
+      "locId": "chongqing",
+      "name": "Chongqing",
+      "landmarkKey": "chongqing"
     }
   ],
   "acts": [
     {
       "actId": "act1",
-      "theme": "PILOT",
+      "theme": "THE WATER-DROP NOTES",
       "caseIds": [
         "s5_ep01",
         "s5_ep02",
@@ -73,7 +298,7 @@
     },
     {
       "actId": "act2",
-      "theme": "PILOT",
+      "theme": "LETTERS IN HARD TIMES",
       "caseIds": [
         "s5_ep05",
         "s5_ep06",
@@ -83,7 +308,7 @@
     },
     {
       "actId": "act3",
-      "theme": "PILOT",
+      "theme": "THE LIGHT RETURNS",
       "caseIds": [
         "s5_ep09",
         "s5_ep10",
@@ -92,6 +317,56 @@
       ]
     }
   ],
+  "prologue": {
+    "city": "Seoul is very old.\nIts story is full of secrets.",
+    "cases": [
+      "A wet note waits by a turtle ship.",
+      "A lifting machine will not lift.",
+      "Logs for the palace go missing.",
+      "And the palace lights go dark."
+    ],
+    "separate": [
+      "They look like different cases.",
+      "But a good detective\nputs the pieces together."
+    ],
+    "question": "Who keeps writing the notes?",
+    "bigger": "Every note has\nthe same small water drop.",
+    "promise": [
+      "Find the notes.",
+      "Read the letters.",
+      "Find the keepers."
+    ],
+    "firstCase": {
+      "picture": "assets/seasons/season_05_seoul/cover/kings_study.webp",
+      "line": "Your first case starts\nin old Hanyang."
+    },
+    "hero": {
+      "file": "assets/seasons/season_05_seoul/cover/season5_prologue_night.webp",
+      "pixels": {
+        "width": 1024,
+        "height": 1536
+      }
+    },
+    "pieces": [
+      "assets/seasons/season_05_seoul/cases/case_02/find_note.webp",
+      "assets/seasons/season_05_seoul/cases/case_03/drawing_gate_wheels.webp",
+      "assets/seasons/season_05_seoul/cases/case_04/timber_yard.webp",
+      "assets/seasons/season_05_seoul/cases/case_05/c05_belt_wheel.webp"
+    ]
+  },
+  "outro": [
+    "Bun-i's first note lies under all the others.",
+    "The letters she learned in 1446 are read freely again."
+  ],
+  "finale": [
+    "Seoul keeps its story in its letters.",
+    "This time, you read it note by note."
+  ],
+  "languageArc": [
+    "Act 1: how the letters are made, place words (under, next to, on), lunar months and years.",
+    "Act 2: before and after, times and dates, reading two reports side by side.",
+    "Act 3: numbers in notes, words that mean more than one thing, and the meaning of gwangbok."
+  ],
   "places": [
     {
       "placeId": "s5_seoul.inner_gate",
@@ -99,7 +374,8 @@
       "pixels": {
         "width": 1536,
         "height": 1024
-      }
+      },
+      "locId": "royal_palace"
     },
     {
       "placeId": "s5_seoul.well_yard",
@@ -107,7 +383,8 @@
       "pixels": {
         "width": 1536,
         "height": 1024
-      }
+      },
+      "locId": "royal_palace"
     },
     {
       "placeId": "s5_seoul.writing_room",
@@ -115,7 +392,8 @@
       "pixels": {
         "width": 1536,
         "height": 1024
-      }
+      },
+      "locId": "royal_palace"
     },
     {
       "placeId": "s5_seoul.book_hall",
@@ -123,11 +401,362 @@
       "pixels": {
         "width": 1536,
         "height": 1024
-      }
+      },
+      "locId": "royal_palace"
+    },
+    {
+      "placeId": "s5_seoul.c02_store_room",
+      "file": "assets/seasons/season_05_seoul/cases/case_02/store_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "yeosu_navy"
+    },
+    {
+      "placeId": "s5_seoul.c02_turtle_ship",
+      "file": "assets/seasons/season_05_seoul/cases/case_02/turtle_ship.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "yeosu_navy"
+    },
+    {
+      "placeId": "s5_seoul.c03_stone_yard",
+      "file": "assets/seasons/season_05_seoul/cases/case_03/stone_yard.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "hwaseong"
+    },
+    {
+      "placeId": "s5_seoul.c03_drawing_room",
+      "file": "assets/seasons/season_05_seoul/cases/case_03/drawing_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "hwaseong"
+    },
+    {
+      "placeId": "s5_seoul.c04_timber_yard",
+      "file": "assets/seasons/season_05_seoul/cases/case_04/timber_yard.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "royal_palace"
+    },
+    {
+      "placeId": "s5_seoul.c04_palace_site",
+      "file": "assets/seasons/season_05_seoul/cases/case_04/palace_site.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "royal_palace"
+    },
+    {
+      "placeId": "s5_seoul.lamp_house",
+      "file": "assets/seasons/season_05_seoul/cases/case_05/lamp_house.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "royal_palace"
+    },
+    {
+      "placeId": "s5_seoul.queen_court",
+      "file": "assets/seasons/season_05_seoul/cases/case_05/queen_court.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "royal_palace"
+    },
+    {
+      "placeId": "s5_seoul.king_hall",
+      "file": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "royal_palace"
+    },
+    {
+      "placeId": "s5_seoul.c06_palace_garden",
+      "file": "assets/seasons/season_05_seoul/cases/case_06/c06_palace_garden.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "gyeongun_palace"
+    },
+    {
+      "placeId": "s5_seoul.c06_west_lane",
+      "file": "assets/seasons/season_05_seoul/cases/case_06/c06_west_lane.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "gyeongun_palace"
+    },
+    {
+      "placeId": "s5_seoul.yi_jun_house",
+      "file": "assets/seasons/season_05_seoul/cases/case_06/yi_jun_house.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "gyeongun_palace"
+    },
+    {
+      "placeId": "s5_seoul.kang_inn",
+      "file": "assets/seasons/season_05_seoul/cases/case_07/kang_inn.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "harbin"
+    },
+    {
+      "placeId": "s5_seoul.harbin_tea_room",
+      "file": "assets/seasons/season_05_seoul/cases/case_07/harbin_tea_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "harbin"
+    },
+    {
+      "placeId": "s5_seoul.aunae_market",
+      "file": "assets/seasons/season_05_seoul/cases/case_08/aunae_market.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "aunae_market"
+    },
+    {
+      "placeId": "s5_seoul.gwansun_home",
+      "file": "assets/seasons/season_05_seoul/cases/case_08/village_home.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "aunae_market"
+    },
+    {
+      "placeId": "s5_seoul.maebong_hill",
+      "file": "assets/seasons/season_05_seoul/cases/case_08/maebong_hill.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "aunae_market"
+    },
+    {
+      "placeId": "s5_seoul.shanghai_lane",
+      "file": "assets/seasons/season_05_seoul/cases/case_09/shanghai_lane.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "shanghai"
+    },
+    {
+      "placeId": "s5_seoul.shanghai_office",
+      "file": "assets/seasons/season_05_seoul/cases/case_09/government_office.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "shanghai"
+    },
+    {
+      "placeId": "s5_seoul.breakfast_room",
+      "file": "assets/seasons/season_05_seoul/cases/case_10/breakfast_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "shanghai"
+    },
+    {
+      "placeId": "s5_seoul.haesu_room",
+      "file": "assets/seasons/season_05_seoul/cases/case_10/haesu_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "shanghai"
+    },
+    {
+      "placeId": "s5_seoul.c11_dorm_room",
+      "file": "assets/seasons/season_05_seoul/cases/case_11/dorm_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "yonhi_college"
+    },
+    {
+      "placeId": "s5_seoul.c11_college_hall",
+      "file": "assets/seasons/season_05_seoul/cases/case_11/college_hall.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "yonhi_college"
+    },
+    {
+      "placeId": "s5_seoul.c11_college_gate",
+      "file": "assets/seasons/season_05_seoul/cases/case_11/college_gate.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "yonhi_college"
+    },
+    {
+      "placeId": "s5_seoul.c12_office",
+      "file": "assets/seasons/season_05_seoul/cases/case_12/office.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "chongqing"
+    },
+    {
+      "placeId": "s5_seoul.c12_family_room",
+      "file": "assets/seasons/season_05_seoul/cases/case_12/family_room.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "chongqing"
+    },
+    {
+      "placeId": "s5_seoul.c12_river_steps",
+      "file": "assets/seasons/season_05_seoul/cases/case_12/river_steps.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "chongqing"
     }
   ],
+  "art": {
+    "cover": {
+      "file": "assets/seasons/season_05_seoul/cover/season5_prologue_night.webp",
+      "pixels": {
+        "width": 1024,
+        "height": 1536
+      },
+      "archiveLook": [
+        0,
+        -0.1
+      ],
+      "crop": [
+        0,
+        0
+      ],
+      "push": [
+        0,
+        -0.2
+      ]
+    },
+    "map": {
+      "file": "assets/seasons/season_05_seoul/locations/map/season_map.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "landmarks": [
+        {
+          "locId": "royal_palace",
+          "at": [
+            1055,
+            260
+          ]
+        },
+        {
+          "locId": "gyeongun_palace",
+          "at": [
+            1150,
+            400
+          ]
+        },
+        {
+          "locId": "yonhi_college",
+          "at": [
+            935,
+            400
+          ]
+        },
+        {
+          "locId": "hwaseong",
+          "at": [
+            1050,
+            560
+          ]
+        },
+        {
+          "locId": "aunae_market",
+          "at": [
+            980,
+            720
+          ]
+        },
+        {
+          "locId": "yeosu_navy",
+          "at": [
+            880,
+            915
+          ]
+        },
+        {
+          "locId": "harbin",
+          "at": [
+            870,
+            110
+          ]
+        },
+        {
+          "locId": "shanghai",
+          "at": [
+            200,
+            660
+          ]
+        },
+        {
+          "locId": "chongqing",
+          "at": [
+            230,
+            330
+          ]
+        }
+      ],
+      "measuredOn": "sha256:c5879b75a31ba56e42221096a5fd5dc2313821d433919bedcab1357e5739d989"
+    },
+    "worldCity": {
+      "cityId": "seoul",
+      "latitude": 37.57,
+      "longitude": 126.98,
+      "mapAt": [
+        1633,
+        325
+      ]
+    },
+    "introBackdrops": {
+      "s5_ep01": "assets/seasons/season_05_seoul/cover/kings_study.webp"
+    }
+  },
   "notes": [
-    "Season 5, Seoul (2026-11-05: the Seoul pilot, s7_seoulpilot, made the season): Case 01 only (The Secret of the King's Letters, redesigned 2026-11-04); Cases 02-12 not written. In the game by hand (lib/data/season5/season5_content.dart), made with generate_season.dart --target sandbox --out lib/data/season5/s5_seoul: the game target takes a season whole, with its opening.",
-    "Pictures: the Seoul pilot's own, made by season_factory.dart run --pictures-only (assets.manifest.json); the writing room reuses copy_room."
+    "Season 5, Seoul, whole (PART 10, 2026-11-06): Case 01 (The Secret of the King's Letters, the Seoul pilot, redesigned 2026-11-04) kept as it is; Cases 02-12 planned and made with the season factory.",
+    "The season map is a storybook map: Seoul large in the middle, every other place drawn in its direction, roughly where it really is (Yeosu, Suwon, Cheonan, Harbin, Shanghai, Chongqing). Landmarks are to be measured on the made map.",
+    "The cover is the season's night picture (as before, lib/data/season5/season5_art.dart)."
   ]
 }

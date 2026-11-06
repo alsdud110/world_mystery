@@ -25,6 +25,55 @@
       "size": "1536x1024",
       "background": "opaque",
       "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: hand-drawn ink line drawing with soft watercolour washes on warm cream mulberry paper, lightly stylised rather than photographic; deep navy night tones with warm lantern-gold light, muted Joseon red and pine-green accents used sparingly; clear architectural perspective; full-bleed composition with no border. Setting: Hanyang, Joseon Korea, 1446 — Joseon-era clothing, wooden palace architecture, paper doors, low floor desks and floor cushions only; no modern objects, no Western furniture or decoration. When King Sejong appears he is a calm, warm, thoughtful man in his late forties with a neat dark beard, in a red royal robe with round gold dragon badges on the chest and shoulders and a black winged royal cap; never copied from any existing painted portrait."
+    },
+    {
+      "id": "joseon_scene",
+      "kind": "scene",
+      "size": "1536x1024",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary; no weapons pointed at anyone, no blood, no injury, no fighting shown. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: hand-drawn ink line drawing with soft watercolour washes on warm cream mulberry paper, lightly stylised rather than photographic; deep navy night tones or soft daylight with warm lantern-gold light, muted Korean red and pine-green accents used sparingly; clear architectural perspective; full-bleed composition with no border. Setting: Joseon Korea between 1592 and 1895, as the asset prompt names the year and place: Joseon-era clothing (hanbok, gat hats, official robes, soldiers' and sailors' clothes of the time), wooden and stone Korean architecture, tiled and thatched roofs, paper doors; no modern objects, no Western furniture."
+    },
+    {
+      "id": "joseon_character",
+      "kind": "character",
+      "size": "1024x1536",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary; no weapons pointed at anyone, no blood, no injury, no fighting shown. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: detailed ink linework with rich, slightly textured watercolour washes; one person, three-quarter view, from the head to below the waist, natural expression; plain warm cream mulberry-paper background with no scenery. Setting: Joseon Korea between 1592 and 1895, as the asset prompt names the year and place: Joseon-era clothing (hanbok, gat hats, official robes, soldiers' and sailors' clothes of the time), wooden and stone Korean architecture, tiled and thatched roofs, paper doors; no modern objects, no Western furniture. A real person of history is drawn as a storybook character, never copied from a painted portrait or photograph."
+    },
+    {
+      "id": "joseon_object",
+      "kind": "object",
+      "size": "1536x1024",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary; no weapons pointed at anyone, no blood, no injury, no fighting shown. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: hand-drawn ink line drawing with soft watercolour washes on warm cream mulberry paper, lightly stylised; one object or a small group of objects, centred, clearly lit, on a plain warm paper background or a simple wooden surface; full-bleed with no border. Setting: Joseon Korea between 1592 and 1895, as the asset prompt names the year and place: Joseon-era clothing (hanbok, gat hats, official robes, soldiers' and sailors' clothes of the time), wooden and stone Korean architecture, tiled and thatched roofs, paper doors; no modern objects, no Western furniture."
+    },
+    {
+      "id": "modern_scene",
+      "kind": "scene",
+      "size": "1536x1024",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary; no weapons pointed at anyone, no blood, no injury, no fighting shown. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: hand-drawn ink line drawing with soft watercolour washes on warm cream mulberry paper, lightly stylised rather than photographic; deep navy night tones or soft daylight with warm lantern-gold light, muted Korean red and pine-green accents used sparingly; clear architectural perspective; full-bleed composition with no border. Setting: Korea and the Korean communities of China between 1907 and 1945, as the asset prompt names the year and place: early twentieth-century clothing (hanbok, school uniforms, plain Western suits and coats of the time), period buildings, trams, trains and oil lamps of the time; no flags of any country, no uniforms with insignia shown up close, nothing later than 1945."
+    },
+    {
+      "id": "modern_character",
+      "kind": "character",
+      "size": "1024x1536",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary; no weapons pointed at anyone, no blood, no injury, no fighting shown. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: detailed ink linework with rich, slightly textured watercolour washes; one person, three-quarter view, from the head to below the waist, natural expression; plain warm cream mulberry-paper background with no scenery. Setting: Korea and the Korean communities of China between 1907 and 1945, as the asset prompt names the year and place: early twentieth-century clothing (hanbok, school uniforms, plain Western suits and coats of the time), period buildings, trams, trains and oil lamps of the time; no flags of any country, no uniforms with insignia shown up close, nothing later than 1945. A real person of history is drawn as a storybook character, never copied from a photograph."
+    },
+    {
+      "id": "modern_object",
+      "kind": "object",
+      "size": "1536x1024",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary; no weapons pointed at anyone, no blood, no injury, no fighting shown. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: hand-drawn ink line drawing with soft watercolour washes on warm cream mulberry paper, lightly stylised; one object or a small group of objects, centred, clearly lit, on a plain warm paper background or a simple wooden surface; full-bleed with no border. Setting: Korea and the Korean communities of China between 1907 and 1945, as the asset prompt names the year and place: early twentieth-century clothing (hanbok, school uniforms, plain Western suits and coats of the time), period buildings, trams, trains and oil lamps of the time; no flags of any country, no uniforms with insignia shown up close, nothing later than 1945."
+    },
+    {
+      "id": "seoul_map",
+      "kind": "scene",
+      "size": "1536x1024",
+      "background": "opaque",
+      "text": "Storybook illustration for a children's detective mystery game: warm, inviting and gently mysterious, never scary; no weapons pointed at anyone, no blood, no injury, no fighting shown. No text, letters, numbers, signatures, watermarks or logos anywhere in the image. Style: an illustrated storybook picture map in hand-drawn ink with soft watercolour washes on warm cream mulberry paper, seen from high above at a slight angle, north at the top; land in soft greens and ochres, sea in pale blue-grey with small waves; places drawn as small detailed vignettes; full-bleed with no border."
     }
   ],
   "assets": [
@@ -260,6 +309,1582 @@
       "notes": [
         "The pilot's Story Intro backdrop (SeasonContent.introBackdrops): the King meets the detective, seen from behind (no face to match the portrait; no reference picture, to stay within the $1.00 budget)."
       ]
+    },
+    {
+      "assetId": "s5_seoul.asset.season_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [],
+      "description": "The season map for the mission pins: Seoul large in the middle, every other place of the season drawn in its direction.",
+      "prompt": "An illustrated storybook picture map of Korea and the nearby coast of China, north at the top, the Korean peninsula filling the right-centre of the sheet and the sea between Korea and China in the lower left. Nine places are drawn as small detailed vignettes, clearly apart from each other, roughly in their real directions: in the centre right, a large round inset circle of old Seoul with low mountains behind it, holding three drawings well apart: a grand royal palace with a wide stone courtyard and a two-storey throne hall at the top of the circle, a smaller palace with a Western-style stone hall beside Korean roofs in the lower right of the circle, and a red-brick college building among trees in the lower left of the circle; just below the circle, a stone fortress wall with a gate tower and a wooden lifting machine with ropes and pulleys; below that, a country market of thatched roofs with a small hill and a bonfire on top; at the very bottom of the peninsula on the south coast, a navy harbour with wooden warships and one round-roofed armoured boat with a dragon head; at the top centre, far to the north, a railway station with a long platform and a steam train in a wide plain; in the lower left, across the sea, a harbour city with stone buildings along a river and a park with trees; at the far left, a hill city of steep houses above two rivers meeting. Calm sea, a few small sailing boats, a compass rose in the top left corner. No labels, no pins, no flags, no letters or numbers of any kind.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/season_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The season plan art.map landmarks are where this prompt puts each place; measure them on the made map (exit 30).",
+        "The palace map of the pilot (palace_map.webp) stays in assets/ but is no longer the season map."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_store_room",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c02_store_room",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "description": "The navy store room at Yeosu before dawn (M1's search, M2).",
+      "prompt": "The inside of a wooden navy store room of Joseon Korea at Yeosu in spring 1592, before dawn, lit by one paper lantern. Seen from the middle of the room: left of centre, a small ragged hole in the plank roof with rain dripping through it, and on the floor right under it, about a sixth of the picture wide, an empty space of wet boards (the app places the bucket there); in the centre back, a long empty wooden shelf at chest height, clearly empty; on the left edge, a tall shelf of coiled ropes and folded sails; on the right, a wooden door open a little to the blue night, with an empty patch of floor at its foot. Wet boards, a few drag marks toward the door. No barrels anywhere, no people. Nothing written anywhere.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/store_room.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "UNMEASURED: areas to be measured on the made picture.",
+        "M1 search: the bucket, the straw and the paper are cut-outs laid by the app (finds); the roof hole, the empty shelf and the door must be where the plan says."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_find_bucket",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c02_find_bucket",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "description": "M1's find: a wooden bucket full of rain water.",
+      "prompt": "A plain wooden water bucket of Joseon Korea with an iron band, full to the brim with clear rain water, a few drops splashing on the surface, on a plain warm paper background.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_bucket.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_find_straw",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c02_find_straw",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "description": "M1's find: a heap of wet straw.",
+      "prompt": "A small loose heap of wet, dark golden rice straw, as used to pad barrels, glistening with water, on a plain warm paper background.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_straw.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_find_note",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_ep02_e1",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "description": "M1's find: the water-drop note of 1592 (blank paper with a small blue water drop).",
+      "prompt": "A small folded sheet of cream mulberry paper, slightly damp and wrinkled at one edge, completely blank with no writing, with one small blue water-drop shape drawn in the lower corner; on a plain warm paper background.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_note.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The words of the note are the app's: the paper is blank but for the water drop."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_turtle_ship",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c02_turtle_ship",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "description": "The turtle ship in the harbour at Yeosu at grey dawn (M3, the final).",
+      "prompt": "A Joseon navy harbour at Yeosu at grey dawn in spring 1592: in the middle of the picture a wooden turtle ship moored at a stone quay, its deck covered with a curved roof of planks like a turtle's back with rows of short iron spikes and a narrow cross-shaped path on top, a carved dragon's head at its front (its mouth a dark round opening), oars resting; a few wooden barrels stacked dry under the edge of the roof; other wooden warships further off on calm water; low green hills behind. No people aiming anything, no smoke, no fire. The lower third is a calm stone quay with open space, where words lie.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/turtle_ship.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The final's place and M3's: the dragon head and the plank roof follow the record of 1592 (s5_ep02_h1)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.yi_sunsin",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "yi_sunsin",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "description": "Admiral Yi Sun-sin: M1's talk, the final's ending.",
+      "prompt": "Admiral Yi Sun-sin of Joseon, in his late forties, a calm, serious and kind commander with a short dark beard, in a plain dark blue military official's robe with no badge, no dragon and no emblem on the chest or shoulders (a dragon is the king's alone) with a black hat with a red tassel, holding a folded blank paper in one hand, sword sheathed and at rest at his side; three-quarter view. A storybook character, never copied from any existing portrait or statue.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/yi_sunsin.webp",
+      "references": [],
+      "status": "generated",
+      "pose": "base",
+      "notes": [
+        "A real person: his look is the game's own."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.seok",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "seok",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "description": "Seok, the keeper of 1592: M3's talk, the final's ending.",
+      "prompt": "A young Joseon sailor of sixteen, lean and sunburnt, in a plain white sailor's cotton jacket and trousers soaked by rain, a cloth headband, a shy, honest smile; holding nothing.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/seok.webp",
+      "references": [],
+      "status": "generated",
+      "pose": "base",
+      "notes": [
+        "Made up."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_stone_yard",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c03_stone_yard",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "The stone yard below the new wall of Hwaseong, 1795 (M1, M3, the final).",
+      "prompt": "A building site of Joseon Korea at Suwon in soft spring daylight, 1795: a half-built stone fortress wall with a gate tower behind; in the middle, a tall wooden lifting machine shaped like a gate, with ropes and pulleys, standing over one large cut stone block on the ground; piles of cut granite blocks, wooden carts, a few workers in plain cotton clothes resting; a girl with a water bucket on a yoke at the far right. The lower third is open packed earth with no detail, where words lie. Nothing written anywhere.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/stone_yard.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "A place picture only (no areas on it): the talks and the timeline lie over it."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_drawing_room",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c03_drawing_room",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "Jeong's drawing room in the builders' office (M2).",
+      "prompt": "A plain wooden office room of Joseon Korea at the Hwaseong building site, 1795, daylight through paper doors: a low wide table with three large sheets of drawing paper laid side by side (their drawings too small and faint to see), ink stones, brushes, rulers, rolled papers on a shelf. No people. Nothing written anywhere.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/drawing_room.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_drawing_pole",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c03_drawing_pole",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "M2's option: a drawing of one tall pole with one pulley.",
+      "prompt": "An ink drawing on cream paper of a simple wooden lifting device: one tall upright wooden pole with a single pulley at its top and one rope hanging down to a stone block; no frame, no wheels. Clear simple lines, centred, no writing or labels.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/drawing_pole.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_drawing_gate_wheels",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c03_drawing_gate_wheels",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "M2's answer: a drawing of a gate-shaped frame with pulleys above and below and a big wheel on each side.",
+      "prompt": "An ink drawing on cream paper of a wooden lifting machine: a frame shaped like a gate with a beam across the top; a row of pulleys hanging under the beam and a second row of pulleys hanging below them over a stone block, ropes running up and down between the rows; one big upright turning wheel standing on each side of the frame. Clear simple lines, centred, no writing or labels.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/drawing_gate_wheels.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_drawing_gate_plain",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c03_drawing_gate_plain",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "M2's option: a drawing of a gate-shaped frame with pulleys only at the top and no wheels.",
+      "prompt": "An ink drawing on cream paper of a wooden frame shaped like a gate with a beam across the top; one row of pulleys hanging under the beam with ropes dropping straight down to a stone block; no second row of pulleys, no wheels at the sides. Clear simple lines, centred, no writing or labels.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/drawing_gate_plain.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.jeong_yakyong",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "jeong_yakyong",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "Jeong Yak-yong: M1's talk, the final's ending.",
+      "prompt": "Jeong Yak-yong, a Joseon scholar-official in his early thirties, thoughtful and lively, thin beard, in a light blue scholar's robe and black gat hat, holding a rolled blank drawing; three-quarter view. A storybook character, never copied from any existing portrait.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/jeong_yakyong.webp",
+      "references": [],
+      "status": "generated",
+      "pose": "base",
+      "notes": [
+        "A real person: his look is the game's own."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.okbun",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "okbun",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "Okbun, the keeper of 1795: the final's ending.",
+      "prompt": "A girl of twelve of Joseon Korea who carries water to builders, in a plain undyed cotton hanbok with sleeves tied back, a wooden water bucket on a yoke, a clever, quiet smile.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/okbun.webp",
+      "references": [],
+      "status": "generated",
+      "pose": "base",
+      "notes": [
+        "Made up."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c04_timber_yard",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c04_timber_yard",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "description": "The palace timber yard in winter 1866 (M1's lens, M2).",
+      "prompt": "A timber yard beside a palace building site in Hanyang, winter 1866, pale morning light, a little snow on the ground: stacks of huge pine logs in the upper half; in the lower half three single log ends facing the viewer, well apart: on the left, about a fifth of the width from the edge, the round end of a very thick pine log; in the centre, the end of a thin, bent log; on the right, about a sixth of the width from the right edge, the end of a tall, straight pine log with a small blank wooden tag tied to it with rope just to its right. Each log end has one small plain carved patch with no letters. A wooden post with a small blank paper nailed to it at the far left. Nothing written anywhere.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_04/timber_yard.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "UNMEASURED: areas to be measured on the made picture.",
+        "M1's lens scene: the marks are the app's words (each spot's line), never drawn."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c04_palace_site",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c04_palace_site",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "description": "Gyeongbokgung half-built, winter 1866 (M3, the final talk).",
+      "prompt": "The rebuilding of a great Joseon palace in Hanyang, winter 1866: a huge two-storey throne hall with its wooden frame and columns up but its roof half-tiled, scaffolding of poles and ropes, carpenters and labourers in winter cotton clothes carrying timber and earth, a stone courtyard, a palace gate under construction at the right; a wooden ox cart loaded with ten long pine logs by the gate; grey mountains behind. Calm, hard-working mood, never scary. The lower third is a plain stone courtyard with open space, where words lie. Nothing written anywhere.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_04/palace_site.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The final talk's background: its lower part stays plain."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.heungseon_daewongun",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "heungseon_daewongun",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "description": "The Heungseon Daewongun: the final talk.",
+      "prompt": "The Heungseon Daewongun of Joseon in 1866, a sharp-eyed, determined man in his mid-forties with a thin beard, in a plain dark jade-green scholar-official's robe with no badge, no dragon and no emblem on the chest (a dragon is the king's alone) and a tall black gat hat; three-quarter view. A storybook character, never copied from any existing portrait or photograph.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/heungseon_daewongun.webp",
+      "references": [],
+      "status": "generated",
+      "pose": "base",
+      "notes": [
+        "A real person: his look is the game's own."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.duri",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "duri",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "description": "Duri, the keeper of 1866: M1's and M3's talks, the ending.",
+      "prompt": "A carpenter's apprentice of fourteen in Hanyang, winter 1866, in a padded cotton jacket with a leather tool belt holding a small chisel and a wooden ruler, sawdust on his sleeves, a keen, honest face.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/duri.webp",
+      "references": [],
+      "status": "generated",
+      "pose": "base",
+      "notes": [
+        "Made up."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.ham",
+      "type": "character",
+      "use": "notWired",
+      "subject": "ham",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "description": "Quartermaster Ham, the store-room keeper.",
+      "prompt": "A Joseon navy quartermaster of about forty, round-faced and anxious, in a plain grey-blue officer's coat and black hat, holding a paper lantern and a rolled blank report.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/ham.webp",
+      "references": [],
+      "status": "planned",
+      "pose": "base",
+      "notes": [
+        "Made up. Base portrait (no talk shows it yet)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.gwak",
+      "type": "character",
+      "use": "notWired",
+      "subject": "gwak",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "Foreman Gwak of the Hwaseong builders.",
+      "prompt": "A Joseon building foreman of about forty-five at Suwon in 1795, broad-shouldered and loud but fair, in plain work clothes with sleeves rolled up and a straw hat, holding a blank folded work log.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/gwak.webp",
+      "references": [],
+      "status": "planned",
+      "pose": "base",
+      "notes": [
+        "Made up. Base portrait (no talk shows it yet)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.pyo",
+      "type": "character",
+      "use": "notWired",
+      "subject": "pyo",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "description": "Mr. Pyo, a timber dealer.",
+      "prompt": "A Joseon timber dealer of about fifty in Hanyang, winter 1866, smooth and well-fed, in a fine padded silk coat and black gat hat, a fat cloth money pouch at his belt, a smug smile.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/pyo.webp",
+      "references": [],
+      "status": "planned",
+      "pose": "base",
+      "notes": [
+        "Made up. Base portrait (no talk shows it yet)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.lamp_house",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.lamp_house",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "The lamp house south of the pond at Gyeongbokgung, 1895, at dawn (M1 look round).",
+      "prompt": "Inside a small brick-and-timber lamp house beside a palace pond in Joseon Korea, autumn 1895, at grey dawn. In the centre of the picture, filling about a third of the width, a big dark iron electric lamp machine of the 1880s: a steam engine with a large iron wheel and a long leather belt running to a smaller machine. On the left, a heap of black coal against the wall; in the lower left, an iron coal scoop lying on the floor with a small folded cream paper half under it, a tiny blue water-drop mark on the paper. In the upper right, a wooden lattice window looking out on the pond and a small hexagonal pavilion on its island. On the right, a plain wooden door standing ajar to a path. Across the top, a few cloth-wrapped wires run out through the wall. The lower part of the floor is plain packed earth with open space. No people anywhere: the room is empty. No writing on the paper or anywhere; quiet, never scary.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/lamp_house.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "UNMEASURED: areas to be measured on the made picture (M1 spots: the note under the coal scoop, the window, the lamp machine; others: the coal, the door, the wires).",
+        "The 1880s electric machine is the one Western object in a Joseon picture: the prompt names it."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c05_belt_wheel",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c05_belt_wheel",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "M1 choice (the answer): the big wheel and its leather belt, with a muddy hand mark.",
+      "prompt": "A close view of one part of an 1880s steam lamp machine: a big dark iron wheel with spokes and a long brown leather belt running over it; on the belt, one clear muddy hand mark. Plain dim brick wall behind. No fire, no coal in view.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/c05_belt_wheel.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M1 choice picture; told apart by the words (the belt on the big wheel), not by colour."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c05_fire_door",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c05_fire_door",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "M1 choice: the iron fire door of the machine.",
+      "prompt": "A close view of the small square iron fire door of an 1880s steam boiler, its door open a little, a low orange fire glowing inside; plain dim brick around it. No wheel, no belt, no coal box in view.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/c05_fire_door.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M1 choice picture (wrong: the note says he did not touch the fire)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c05_coal_box",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c05_coal_box",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "M1 choice: the coal box.",
+      "prompt": "A close view of a plain wooden box full of black coal lumps with a small iron shovel resting in it, on a packed-earth floor against a dim brick wall. No wheel, no belt, no fire in view.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/c05_coal_box.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M1 choice picture (wrong: the note says he did not touch the coal)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.queen_court",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.queen_court",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "The Queen's court in Geoncheonggung, 1895, early morning (M2, M3).",
+      "prompt": "A quiet inner court of a Joseon royal residence in autumn 1895, early morning: a plain wooden residential hall with an unpainted timber frame, paper lattice doors and a raised wooden veranda, in the style of a noble house rather than a painted palace hall; a small two-storey wing at its corner; a low tiled wall with a small east gate on the left; one tall electric lamp post with a glass lamp, unlit, in the court. Soft pale light, fallen leaves on the stone. The lower third is plain swept earth with open space. No people, no writing.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/queen_court.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M2 and M3 place (text puzzles): nothing on it is tapped."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.king_hall",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.king_hall",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "Jangandang, the King's hall in Geoncheonggung, 1895 (the final).",
+      "prompt": "Inside a Joseon king's private hall in autumn 1895: a wide room with plain wooden floors, paper lattice doors, a folding screen of mountains and pines, a low lacquered desk with one large blank board lying on it covered only in faint pencil lines of squares and paths, no writing; a glass electric lamp hanging from the ceiling, lit warm; lamplight and cinematic shadows. The lower part of the picture is calm, darker floor with no detail. No people.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The final's place (word entry): the board is drawn with lines only, no number and no writing (the game writes 37)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.lady_han",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "lady_han",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "Court Lady Han, the keeper of 1895: M1, M2 and the ending.",
+      "prompt": "A Joseon court lady of about thirty-five, autumn 1895, in a dark green court jacket and a long deep-blue skirt, hair in a neat low bun with a plain wooden pin, holding a small closed sewing box in both hands; a calm, watchful expression.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/lady_han.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Made up."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.myeongseong",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "myeongseong",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "Queen Myeongseong: the final's talk, seen from behind.",
+      "prompt": "A Joseon queen of 1895 seen from behind and slightly to one side, standing by a paper lattice door, her face turned away and not shown; a deep-red court robe with a gold-embroidered border, a formal braided hairpiece with a plain gold pin; dignified and still. Only her back, shoulders and hair are seen.",
+      "stylePreset": "joseon_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/myeongseong.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "A real person of whom no reliable photograph is known: never drawn with a face, never a likeness. Her words in the game are made up."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.c06_palace_garden",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c06_palace_garden",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "description": "A garden of Gyeongun Palace at dusk, spring 1907 (M1 traces, M2).",
+      "prompt": "A garden inside a Korean palace in Seoul in spring 1907, at dusk, seen from a little above: across the top sixth, a calm violet sky. On the left, a stone lantern on a short stone post beside a gravel path, about an eighth of the width. In the upper left middle, a closed wooden garden gate in a low tiled wall. In the centre right, a big old pine with rough red-brown bark and a dark hollow in its trunk at hand height, its trunk about a sixth of the width; one low branch reaches to the left toward the middle of the picture; at its foot, roots and soft green moss. On the far right, three large glazed flower pots by low stone steps. Across the lower part, the gravel path runs left to right, with plain open ground in front. Behind the wall, the roof of a Korean hall and, further off, a pale Western-style stone building. No people, no flags, no writing.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_06/c06_palace_garden.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "UNMEASURED: areas to be measured on the made picture (M1 traces: footprints off the path, the thread on the low branch, the moss by the root; places: the lantern, the pine, the pots; other: the gate).",
+        "The traces may be drawn by the app over their areas."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c06_west_lane",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c06_west_lane",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "description": "A narrow lane by a stone wall near Gyeongun Palace, before dawn, 1907 (M3).",
+      "prompt": "A narrow lane of Seoul in spring 1907 just before dawn: a long grey stone wall on the left, low tiled-roof houses on the right with closed wooden doors, a handcart standing by the wall, one oil lamp glowing at a door far down the lane. Blue early light. No people, no writing, no flags.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_06/c06_west_lane.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M3 place (number entry)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.yi_jun_house",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.yi_jun_house",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "description": "A plain room in Yi Jun's house, dawn, 1907 (the final).",
+      "prompt": "A plain room of a Korean house in Seoul in spring 1907 at dawn: paper doors glowing pale, a low wooden table, and on it a small leather travel box with brass corners and a small brass letter lock with six blank tiles on its front; a folded dark coat on a peg. The lower part is calm, darker floor with no detail. No people, no writing.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_06/yi_jun_house.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The final's place (letter tile lock): the lock's tiles are blank; the game writes the letters."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.gojong",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "gojong",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "description": "Emperor Gojong in 1907: M1's talk.",
+      "prompt": "An emperor of Korea in 1907, a man in his mid-fifties with a short dark moustache and small beard, in a yellow emperor's robe with round gold dragon badges on the chest and shoulders and a black winged cap; seated, holding nothing; a thoughtful, worried and determined expression. A dignified storybook figure, never copied from a photograph.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/gojong.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "A real person: the game's own look, never a copy of a photograph. Case 05 uses him without a portrait (no face shown in 1895)."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.bongsu",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "bongsu",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "description": "Bongsu, the keeper of 1907: the ending.",
+      "prompt": "A Korean palace errand boy of about thirteen in spring 1907, a plain white cotton jacket and baggy trousers tied at the ankle, a dark vest, short hair under a small cloth band, a cloth bag over one shoulder; a quick, cheerful, slightly secret smile.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/bongsu.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Made up."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.yi_jun",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "yi_jun",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "description": "Yi Jun, envoy to The Hague: the ending.",
+      "prompt": "A Korean man of about fifty in 1907, tall, in a plain dark Western coat over a white shirt, short hair and a small moustache, holding a small leather travel box with brass corners; steady and serious. A storybook figure, never copied from a photograph.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/yi_jun.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "A real person: never a copy of a photograph. His words in the game are made up."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.kang_inn",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.kang_inn",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "description": "Mrs. Kang's Korean inn in Harbin, late October 1909 (M1, M3, the final's talk).",
+      "prompt": "The warm main room of a small Korean inn in Harbin in late autumn 1909: a heated floor with cushions, a low table with a teapot and cups, a Russian-style tiled stove in the corner, frosted windows showing a grey northern street with a horse cart; paper lanterns. The lower part is calm, darker floor with no detail. No people, no writing, no flags.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_07/kang_inn.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M1 and M3 place; the final's talk background."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.harbin_tea_room",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.harbin_tea_room",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "description": "The station tea room at Harbin, late October 1909 (M2).",
+      "prompt": "A small tea room beside a railway station in Harbin in late autumn 1909: wooden tables, a brass samovar, a window looking out on an empty platform and a waiting steam train under a grey sky; coats on hooks. Calm and ordinary. No people, no writing, no flags, no uniforms.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_07/harbin_tea_room.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "M2 place (timeline): the platform outside is empty; nothing of 26 October is shown."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c07_paper_a",
+      "type": "document",
+      "use": "puzzle",
+      "subject": "s5_seoul.c07_paper_a",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "description": "M1 record: Paper A, the Evening Sheet, blank.",
+      "prompt": "A single folded-open newspaper page of 1909 lying flat on a dark wooden table, seen from straight above: thin cheap greyish paper with one torn corner, completely blank, no print, no letters, no pictures; the page fills the middle of the picture from about 28% to 72% of the width and from 15% to 86% of the height. A teacup at the lower right edge.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_07/c07_paper_a.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "UNMEASURED: the sheet's corners, crop and layout are where the prompt puts the page: measure them on the made picture.",
+        "The game writes every word on the blank page."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c07_paper_b",
+      "type": "document",
+      "use": "puzzle",
+      "subject": "s5_seoul.c07_paper_b",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "description": "M1 record: Paper B, the Morning News, blank, with Mrs. Kang's small note.",
+      "prompt": "A single newspaper page of 1909 lying flat on a dark wooden table, seen from straight above: thicker cream paper, neat edges, completely blank, no print, no letters, no pictures; the page fills the middle of the picture from about 28% to 72% of the width and from 15% to 86% of the height. Tucked under its lower right corner, outside the page, a small folded cream note with a tiny blue water-drop mark.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_07/c07_paper_b.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "UNMEASURED: the sheet's corners, crop and layout are where the prompt puts the page: measure them on the made picture.",
+        "The game writes every word on the blank page; the note is blank but for its water-drop mark."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.mrs_kang",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "mrs_kang",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "description": "Mrs. Kang, the keeper of 1909: M1's talk and the ending.",
+      "prompt": "A Korean woman of about fifty-five in Harbin in 1909, in a padded cotton hanbok jacket in dark plum, a white apron, grey-streaked hair in a low bun, holding a teapot; warm but sharp eyes.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/mrs_kang.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Made up."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.porter_pak",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "porter_pak",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "description": "Mr. Pak, a porter at Harbin Station: M2's talk.",
+      "prompt": "A Korean railway porter of about forty in Harbin in 1909, in a padded dark work coat and a fur-lined cap, a rope sling over one shoulder for carrying bags; quiet and honest.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/porter_pak.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Made up."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.sorin",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "sorin",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "description": "Mr. Sorin, the Evening Sheet's writer: the final's talk.",
+      "prompt": "A newspaper writer of about thirty-five in Harbin in 1909, in a plain grey Western suit and waistcoat, round glasses, ink on his fingers, a pencil behind one ear, holding a folded blank newspaper; proud but uneasy.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/sorin.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Made up: no real person."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.aunae_market",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.aunae_market",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "description": "Aunae Market near Cheonan, a spring morning in 1919 (M1: the background of the messengers' talk).",
+      "prompt": "A Korean country market in early spring 1919, near Cheonan: low thatched-roof stalls and a few tiled roofs under soft brown hills, villagers in white cotton hanbok with baskets of rice, sacks of salt and dried fish, a small noodle stall with a low table and a teacup in the lower left foreground. The centre and right of the picture are an open dirt square with space for people to stand. Soft morning daylight, calm and busy. No flags, no signs with writing, no police, no weapons.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_08/aunae_market.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The witnesses are drawn by their own portraits over this picture: leave the centre open."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c08_village_home",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.gwansun_home",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "description": "Gwan-sun's home in her village, an evening in late March 1919 (M2, M3).",
+      "prompt": "Inside a simple Korean village house in 1919 at evening: a warm ondol room with paper sliding doors, a low wooden table in the centre with three closed school notebooks on it (plain covers, one with a pressed flower, one with a blue ribbon, one plain brown), a small oil lamp, folded bedding against the wall, through the half-open door a dark hillside. Quiet, warm, secret. No writing anywhere, no flags.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_08/village_home.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The notebooks are blank on the outside: their names and marks are the game's words."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.maebong_hill",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.maebong_hill",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "description": "The top of Maebong hill at dusk on 31 March 1919 (the final: the keepers' box is opened).",
+      "prompt": "The grassy top of a low Korean hill at dusk in early spring, a small pile of dry pine branches ready for a signal fire (not yet lit) in the middle ground, a plain old wooden letter box with a small brass dial lock resting on a flat stone in the lower left foreground; below, a valley of dark village roofs and fields, far low hills fading into a deep blue sky with the first stars. Calm, hushed, hopeful. No people, no flags, no writing.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_08/maebong_hill.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "The box is drawn closed; the game shows its dials and notes."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.yu_gwansun",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "yu_gwansun",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "description": "Yu Gwan-sun (real): M2's talk.",
+      "prompt": "A Korean schoolgirl of 1919, about sixteen, in a white cotton jeogori and a long black skirt, her hair in one long braid tied with a dark ribbon, a calm, determined, kind face, hands folded in front of her. Not copied from any photograph.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/yu_gwansun.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "A real person: drawn freely, never copied from a photograph; no prison clothes, no flag."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.gyeongsun",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "gyeongsun",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "description": "Gyeongsun, the keeper of 1919 (made up): M1 witness, M3 talk, the final's ending.",
+      "prompt": "A Korean schoolgirl of 1919, sixteen, clearly different from her friend in the white jeogori: a pale blue jeogori and a dark navy skirt, her hair in two short braids looped up at the sides, a round friendly face with a few freckles and a quick, bright grin, holding a small plain brown notebook against her chest; a tiny blue water-drop shape is drawn on the notebook's corner.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/gyeongsun.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.dong_il",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "dong_il",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "description": "Dong-il, a messenger boy (made up): M1 witness.",
+      "prompt": "A Korean village boy of 1919, about ten, in a patched beige cotton jacket and trousers, straw sandals, a cloth bag over his shoulder, a proud, cheeky grin.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/dong_il.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_shanghai_lane",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.shanghai_lane",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "description": "A narrow Shanghai lane at dawn, autumn 1920 (M1: Haesu's note).",
+      "prompt": "A narrow lane of grey brick row houses with stone gate frames in Shanghai in 1920, early morning: washing on bamboo poles overhead, a few potted plants by black wooden doors, a small folded paper on the stone paving in the lower middle foreground, soft gold light at the far end of the lane. Calm and quiet. No signs with writing, no flags.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/shanghai_lane.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_government_office",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.shanghai_office",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "description": "The Provisional Government's small office in Shanghai, early morning, 1920 (M2: the search; the final's talk).",
+      "prompt": "A small, plain second-floor office in a Shanghai row house in 1920, early morning light, seen from the middle of the room: on the far left a dark wooden door to the stairs, standing tall; on the back wall, slightly left of centre, a wide bookshelf of files and books; in the lower left of centre, a heavy wooden desk with a closed drawer (the list desk), with clear open floor beneath it where a single sheet of thin pale paper lies; on the right, a tall window with a wide wooden sill at mid-height, a small dark ink bottle standing on the sill; in the lower right, a black iron stove, with a small brass key on the floor just to its left. Every object is clear and big enough to see. Calm, tidy, slightly tense. No writing on any paper, no flags, no weapons.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/government_office.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "UNMEASURED: areas to be measured on the made picture (M2's finds: under the desk, on the sill, next to the stove)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_desk_key",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_ep09_e2",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "description": "The desk key, a find of M2's search.",
+      "prompt": "A small old brass key with a round bow, lying alone on plain wooden floorboards, seen from above, clearly lit.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/desk_key.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_ink_bottle",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_ep09_e2",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "description": "The ink bottle, a find of M2's search.",
+      "prompt": "A small square glass bottle of dark blue-black ink with a cork stopper, standing alone, clearly lit, no label.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/ink_bottle.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_thin_paper",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_ep09_e2",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "description": "The thin copy paper, the answer of M2's search.",
+      "prompt": "A single sheet of very thin, pale, almost see-through paper lying flat, with faint pressed lines in it that are not ink and cannot be read, clearly lit from the side so the pressed lines show as soft shadows. No letters, no writing.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/thin_paper.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.kim_gu",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "kim_gu",
+      "caseIds": [
+        "s5_ep09",
+        "s5_ep10"
+      ],
+      "description": "Kim Gu (real): Case 09's final talk, Case 10's talk and ending.",
+      "prompt": "A broad-shouldered Korean man in his mid-forties in Shanghai in 1920, short cropped hair, round wire-rimmed glasses, a short moustache, in a dark three-piece Western suit of the 1920s with a high stiff white collar and a dark tie, a serious but warm face; clothing and look strictly of the 1920s, nothing modern. Not copied from any photograph.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/kim_gu.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "A real person: drawn freely, never copied from a photograph. One portrait for Cases 09 and 10."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.haesu",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "haesu",
+      "caseIds": [
+        "s5_ep09",
+        "s5_ep10"
+      ],
+      "description": "Haesu, the keeper of Shanghai (made up): Case 09 M3 talk and ending, Case 10 ending.",
+      "prompt": "A grown Korean woman clerk of about twenty-five in Shanghai in the 1920s, clearly a working adult, not a schoolgirl: chin-length bobbed hair of the 1920s, small round glasses, a dark grey Western-style jacket over a white blouse and a long dark skirt, a pencil behind her ear, a sharp, kind look, holding a small notebook; a tiny blue water-drop shape on the notebook's corner.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/haesu.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "One portrait for Cases 09 and 10 (she is older in 1932; the same picture serves)."
+      ],
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_breakfast_room",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.breakfast_room",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "description": "A small house in Shanghai, the morning of 29 April 1932 (M1-M3).",
+      "prompt": "A small simple room in a Shanghai house in spring 1932, morning light through a window: a round wooden table with two empty rice bowls, chopsticks and two teacups, a wooden chair pushed back, a plain old wooden letter box on a side shelf; quiet and still, as if someone has just left. No people, no writing, no flags, no weapons.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/breakfast_room.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_haesu_room",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.haesu_room",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "description": "Haesu's small room in Shanghai, some weeks later in 1932 (the final).",
+      "prompt": "A small rented room in Shanghai in 1932 at evening: a narrow desk under a window with an oil lamp, an open notebook with blank pages, the old wooden letter box beside it, a cup of tea, a curtain moving in a soft breeze, city roofs outside. Warm, thoughtful, quiet. No writing, no flags.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/haesu_room.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_old_watch",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c10_old_watch",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "description": "Kim Gu's old watch, a wrong picture of M2 (seen without its name).",
+      "prompt": "An old silver pocket watch lying alone on a plain wooden table, its case worn and dull with many small scratches all over it, a thin chain; the lid closed, no dial or numbers visible.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/old_watch.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Told apart from the new watch by the scratches (the words say so), not by colour."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_new_watch",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_ep10_e2",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "description": "Yun Bong-gil's new watch, the answer of M2 (seen without its name).",
+      "prompt": "A new silver pocket watch lying alone on a plain wooden table, its case smooth and shiny with no scratches at all, a short new chain; the lid closed, no dial or numbers visible.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/new_watch.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Same size, angle and light as the old watch: only the scratches differ."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_strap_watch",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c10_strap_watch",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "description": "Haesu's small watch on a strap, a wrong picture of M2.",
+      "prompt": "A small round wristwatch on a brown leather strap lying alone on a plain wooden table, its face turned away so no dial or numbers are visible.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/strap_watch.webp",
+      "references": [],
+      "status": "generated",
+      "notes": []
+    },
+    {
+      "assetId": "s5_seoul.asset.yun_bonggil",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "yun_bonggil",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "description": "Yun Bong-gil (real): the ending's evidence line; portrait for any later talk.",
+      "prompt": "A young Korean man of about twenty-four in Shanghai in 1932, neat short hair, a light grey Western suit and a soft hat in his hand, a calm, gentle, resolute face. Holding nothing else. Not copied from any photograph.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/yun_bonggil.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "A real person: drawn freely, never copied from a photograph; never shown with any weapon."
+      ],
+      "pose": "base"
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.c11_dorm_room",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c11_dorm_room",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "description": "Yun Dong-ju's student room at Yonhi College at night (M1 lens picture, M2 place).",
+      "prompt": "A small student room in a stone college dormitory in Seoul, late autumn 1941, at night, seen from the front over a wide wooden desk under a window. On the desk, from left to right, well apart and each fully visible: at the left a small glass bottle of blue ink; in the middle two thin hand-sewn paper books, each tied with brown string, side by side; right of the middle a thick book with a red spine lying a little crooked, with the corner of a small folded white paper peeking out under its lower right corner, a tiny blue drop on that paper; at the far right a desk lamp with a green shade giving warm light. Plain blank papers and pens; a dark window with bare tree branches. The lower part of the picture is the plain desk top. 1940s Korean student clothes on a hook; no text on any paper or book.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/dorm_room.webp",
+      "notes": [
+        "UNMEASURED: areas to be measured on the made picture (ink about x 160-330, two thin books x 380-890, the red-spined book x 930-1200, the folded paper about x 1130-1290 y 640-740, the lamp x 1300-1470)."
+      ]
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.c11_college_hall",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c11_college_hall",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "description": "The Yonhi College hall at night with an old upright piano by the stage (M3).",
+      "prompt": "The inside of a college assembly hall in Seoul, late autumn 1941, at night: rows of wooden benches, a low wooden stage at the back, tall arched windows with moonlight; at the right side of the stage an old upright wooden piano with its top lid slightly open; a warm lamp held by someone out of the picture lights the piano. Quiet, cold, gently mysterious; no text anywhere.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/college_hall.webp"
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.c11_college_gate",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c11_college_gate",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "description": "The stone college buildings of Yonhi College at dawn (final).",
+      "prompt": "Grey stone college buildings with a small tower among tall trees on a gentle hill in western Seoul, late autumn 1941, at dawn: pale pink and gold sky, fallen leaves on a stone path leading to a simple gate, mist between the trees. Calm and hopeful; no people in the near foreground, no text, no signs, no flags.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/college_gate.webp"
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.yun_dongju",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "yun_dongju",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "description": "Yun Dong-ju, the poet: M1 and final talks, the final ending.",
+      "prompt": "A gentle, thoughtful young Korean man of about twenty-four in 1941, slim, short neat black hair, a dark student uniform jacket with a high collar over a white shirt, holding a thin hand-sewn paper book tied with a white string in both hands, a quiet, kind, slightly shy expression; drawn freshly, never copied from any existing photograph.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "outputPath": "assets/seasons/season_05_seoul/characters/yun_dongju.webp",
+      "pose": "base",
+      "notes": [
+        "A real person: a respectful storybook likeness, not a copy of a photograph."
+      ]
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.miri",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "miri",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "description": "Miri, the keeper of 1941: M3 talk, the final ending.",
+      "prompt": "A brave, quick young Korean woman of nineteen in Seoul, 1941, in a simple dark skirt and a cream blouse with a knitted cardigan, hair in a short neat bob, holding a small worn wooden letter box with a brass number lock against her chest, a determined but kind expression.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "outputPath": "assets/seasons/season_05_seoul/characters/miri.webp",
+      "pose": "base"
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.c12_office",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c12_office",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "description": "The Provisional Government's office in Chongqing, August 1945 (M1 look round, M3 place).",
+      "prompt": "A modest, busy government office in a hill city of southwest China, a hot summer day in August 1945, seen from inside: at the lower left a wooden desk with a small folded blank paper lying on it, a tiny blue drop on the paper; at the left edge an open wooden door; upper left of middle a plain bookshelf with blank papers; in the upper middle a wooden table radio with a round dial on a shelf; at the upper right a tall window looking over steep streets and a wide river far below; along the lower right wall three closed travel trunks side by side, the same size, colour and view (left: two leather straps and a round brass lock; middle: one leather strap and a wooden peg, no lock; right: one leather strap and a round brass lock). Ceiling fan, warm light, 1940s clothes; no flags, no weapons, no text, no maps with writing.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/office.webp",
+      "notes": [
+        "UNMEASURED: areas to be measured on the made picture (note on the desk about x 180-440 y 600-740, radio x 620-830 y 260-440, window x 1080-1420 y 120-440, trunks x 960-1470 y 580-860, door x 20-170, bookshelf x 300-580)."
+      ]
+    },
+    {
+      "transparent": false,
+      "references": [
+        "s5_seoul.asset.c12_trunk_one_strap_lock"
+      ],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.c12_trunk_two_straps",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c12_trunk_two_straps",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "description": "A choice picture of Case 12 M1: the trunk with two straps and a round brass lock (a wrong answer).",
+      "prompt": "A closed brown leather-covered travel trunk of the 1940s on a plain wooden floor, seen from the front at a slight angle: two leather straps with buckles around it, and a round brass lock on the front. Same view, size and colour as the other trunks; no labels, no text.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/trunk_two_straps.webp"
+    },
+    {
+      "transparent": false,
+      "references": [
+        "s5_seoul.asset.c12_trunk_one_strap_lock"
+      ],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.c12_trunk_one_strap_peg",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c12_trunk_one_strap_peg",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "description": "A choice picture of Case 12 M1: the trunk with one strap and a wooden peg, no lock (a wrong answer).",
+      "prompt": "The same closed brown leather-covered travel trunk, floor, view and light as the reference, but with only one leather strap with a buckle around its middle, and a simple wooden peg through a loop on the front instead of a lock. No labels, no text.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/trunk_one_strap_peg.webp"
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.c12_trunk_one_strap_lock",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c12_trunk_one_strap_lock",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "description": "A choice picture of Case 12 M1: the trunk with one strap and a round brass lock (the answer).",
+      "prompt": "A closed brown leather-covered travel trunk of the 1940s on a plain wooden floor, seen from the front at a slight angle: only one leather strap with a buckle around its middle, and a round brass lock on the front. No labels, no text.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/trunk_one_strap_lock.webp"
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.c12_family_room",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c12_family_room",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "description": "Bitna's small family room in Chongqing (M2).",
+      "prompt": "A small, simple family room in a hill city of southwest China, August 1945, afternoon light through a paper window: a low table, a sleeping mat rolled up, a Korean bowl and spoon, a child's drawing pinned to the wall; on the floor an old small wooden letter box with its lid open and several folded blank papers spread around it on the floor. Warm, quiet and homely; no text on any paper.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/family_room.webp"
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.c12_river_steps",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c12_river_steps",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "description": "Stone steps above the two rivers of Chongqing at sunset (final).",
+      "prompt": "Long stone steps going down a steep hillside in Chongqing at sunset, August 1945, with a wide view over two rivers meeting far below, small boats and the hill city's houses; the sky full of warm golden light breaking through clouds. In the lower middle, small and from behind, a girl sits on a step with a little wooden box on her knees. Hopeful and calm; no flags, no text.",
+      "stylePreset": "modern_scene",
+      "width": 1536,
+      "height": 1024,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/river_steps.webp"
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.kim_wonbong",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "kim_wonbong",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "description": "Kim Won-bong, a minister of the Provisional Government: M1 and M3 talks, the final ending.",
+      "prompt": "A Korean man in his late forties in Chongqing, August 1945, short dark hair, a calm, serious and warm face, a plain dark Western suit with a white shirt and a dark tie, holding a folded blank paper; no uniform, no weapon, no badge; drawn freshly, never copied from any existing photograph.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "outputPath": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp",
+      "pose": "base",
+      "notes": [
+        "A real person: a respectful storybook likeness, not a copy of a photograph."
+      ]
+    },
+    {
+      "transparent": false,
+      "references": [],
+      "status": "generated",
+      "assetId": "s5_seoul.asset.bitna",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "bitna",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "description": "Bitna, the last keeper: M2 talk, the final ending.",
+      "prompt": "A cheerful, clever Korean girl of eleven in Chongqing, August 1945, a long single braid, a simple light summer hanbok jacket over a plain skirt, holding a small wooden letter tile in one hand and a pen in the other, a bright, proud smile.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "outputPath": "assets/seasons/season_05_seoul/characters/bitna.webp",
+      "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.pyo_salt",
+      "type": "character",
+      "use": "puzzle",
+      "subject": "pyo_salt",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "description": "Mr. Pyo, the salt seller (made up): M1 witness.",
+      "prompt": "A thin Korean man in his forties in 1919, in a worn grey cotton hanbok and a small black hat, a sack of salt on his back, a nervous, sheepish smile, eyes glancing sideways. Not frightening.",
+      "stylePreset": "modern_character",
+      "width": 1024,
+      "height": 1536,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/characters/pyo_salt.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [],
+      "pose": "base"
     }
   ],
   "notes": [

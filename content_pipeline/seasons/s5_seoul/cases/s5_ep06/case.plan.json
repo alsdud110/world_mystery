@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s5_ep06",
+  "seasonId": "s5_seoul",
+  "number": 6,
+  "actId": "act2",
+  "title": "The Emperor's Secret Letter",
+  "synopsis": [
+    "The Emperor's secret letter for The Hague is hidden in the palace.",
+    "Watchers stand at every gate. It must leave unseen."
+  ],
+  "goal": "Find the hidden letter, take it out unseen, and give it to the envoy Yi Jun.",
+  "characters": [
+    "gojong",
+    "bongsu",
+    "yi_jun"
+  ],
+  "locations": [
+    "gyeongun_palace"
+  ],
+  "missions": [
+    {
+      "missionId": "s5_ep06_m1",
+      "slot": "m1",
+      "placeId": "s5_seoul.c06_palace_garden",
+      "puzzle": {
+        "paletteId": "trace_deduction",
+        "surface": "mission",
+        "engineTable": "deductions",
+        "missionType": "multipleChoice",
+        "answerSpec": {
+          "answer": "b",
+          "options": [
+            {
+              "id": "a",
+              "label": "The stone lantern",
+              "feedback": "A lantern is stone. Bongsu's note says the thread was on rough bark."
+            },
+            {
+              "id": "b",
+              "label": "The hollow of the old pine"
+            },
+            {
+              "id": "c",
+              "label": "The flower pots by the steps",
+              "feedback": "The footprints go to the trees, not to the steps. Read your notes again."
+            }
+          ]
+        },
+        "assetNeeds": [
+          "s5_seoul.asset.c06_palace_garden"
+        ],
+        "status": "awaitingAssets",
+        "notes": [
+          "Traces read (DeductionScene): footprints off the path toward the trees, a yellow silk thread on bark, moss pushed aside by a root all point to the old pine's hollow.",
+          "Measured 2026-11-06 on the grid sheet of c06_palace_garden.webp (picture.measuredOn): the stone lantern on the left, the garden gate, the old pine with its hollow on the right of centre, the three pots by the steps; the marks (footprints off the path, the thread on the low branch, the moss by the roots) are where the game draws them; no two areas overlap.",
+          "The traces may be drawn by the app over their areas; the picture holds no writing.",
+          "Puzzle kind chosen by hand: the season spread assigns Case 06 a trace deduction (PART 10 brief); Bongsu's note is the list of traces, each a line of it."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep05_e1",
+          "use": "recall",
+          "note": "Lady Han's water-drop note of 1895: the same small water drop."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep06_c1",
+        "evidence": "s5_ep06_e1"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "comprehension",
+        "objective": "흔적 문장(to the trees, not to the steps / on rough bark / by a root)을 읽고 세 흔적이 모두 가리키는 숨긴 곳을 고른다.",
+        "skill": "sentenceMeaning",
+        "expressions": [
+          "They go to the trees, not to the steps.",
+          "caught on rough bark"
+        ]
+      },
+      "play": {
+        "title": "The Thread on the Bark",
+        "location": "THE PALACE GARDEN",
+        "story": [
+          "The Emperor's secretary hid the letter at dusk.",
+          "Then he had to leave the palace at once.",
+          "Bongsu, the errand boy, saw part of it. Where is it hidden?"
+        ],
+        "letterIntro": "A note in the King's letters, with a small water drop. Bongsu reads it to you:",
+        "letter": "The secretary had the Emperor's letter at dusk. Watchers came to the gate.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, at hand height.\nBy a root, the moss is pushed aside. Someone knelt there.\n— Bongsu",
+        "question": "Where did the secretary hide the letter? Tap the place.",
+        "hints": [
+          "Tap the footprints, the thread and the moss.",
+          "Which place has bark, roots, and stands among the trees?"
+        ],
+        "successMessage": "The letter is in the hollow of the old pine!",
+        "transition": [
+          "In the hollow is a roll of yellow silk.",
+          "Inside is the Emperor's letter, with his seal.",
+          "\"Now we must get it out,\" Bongsu whispers. \"Past the watchers.\""
+        ],
+        "mapX": 0.4,
+        "mapY": 0.5,
+        "clue": {
+          "title": "The Hiding Place",
+          "value": "THE OLD PINE",
+          "note": "The secretary hid the Emperor's letter in the hollow of the old pine.",
+          "symbol": "letter"
+        },
+        "evidence": {
+          "name": "The Water-Drop Note (1907)",
+          "icon": "letter",
+          "description": "Bongsu's note in the King's letters, with a small water drop. It led to the hidden letter."
+        },
+        "recall": {
+          "title": "A Drop Like Lady Han's",
+          "prompt": "Bongsu's note has a small water drop. Which note in your Notebook matches it?",
+          "miss": "Not that one. Find the court lady's note with its drop."
+        },
+        "traces": {
+          "picture": {
+            "file": "assets/seasons/season_05_seoul/cases/case_06/c06_palace_garden.webp",
+            "pixels": {
+              "width": 1536,
+              "height": 1024
+            },
+            "measuredOn": "sha256:2c384756fa75f5416491c33720130105b606d1469cf9f8e4baae0d110336da45"
+          },
+          "place": "The palace garden at dusk",
+          "task": "Look for three marks.",
+          "chooseTask": "Where did the secretary hide the letter? Tap the place.",
+          "missLine": "Nothing here. Look for marks.",
+          "notPlaceLine": "Tap a place where a letter could be hidden.",
+          "guideAt": [
+            700,
+            980
+          ],
+          "clues": [
+            {
+              "id": "steps",
+              "label": "Footprints off the path",
+              "areas": [
+                [
+                  560,
+                  740,
+                  900,
+                  840
+                ]
+              ],
+              "mark": [
+                730,
+                790
+              ],
+              "line": "Footprints leave the path. They go to the trees, not to the steps."
+            },
+            {
+              "id": "thread",
+              "label": "A yellow thread on a branch",
+              "areas": [
+                [
+                  780,
+                  300,
+                  960,
+                  400
+                ]
+              ],
+              "mark": [
+                870,
+                350
+              ],
+              "line": "A yellow silk thread is caught on rough bark, at hand height."
+            },
+            {
+              "id": "moss",
+              "label": "Moss pushed aside",
+              "areas": [
+                [
+                  940,
+                  650,
+                  1130,
+                  730
+                ]
+              ],
+              "mark": [
+                1035,
+                690
+              ],
+              "line": "By a root, the moss is pushed aside. Someone knelt there."
+            }
+          ],
+          "places": [
+            {
+              "optionId": "a",
+              "areas": [
+                [
+                  0,
+                  500,
+                  200,
+                  880
+                ]
+              ],
+              "mark": [
+                100,
+                690
+              ]
+            },
+            {
+              "optionId": "b",
+              "areas": [
+                [
+                  1090,
+                  330,
+                  1270,
+                  630
+                ]
+              ],
+              "mark": [
+                1180,
+                480
+              ]
+            },
+            {
+              "optionId": "c",
+              "areas": [
+                [
+                  1200,
+                  630,
+                  1510,
+                  770
+                ]
+              ],
+              "mark": [
+                1355,
+                700
+              ]
+            }
+          ],
+          "others": [
+            {
+              "label": "The gate",
+              "areas": [
+                [
+                  200,
+                  400,
+                  400,
+                  640
+                ]
+              ],
+              "line": "The garden gate. Watchers stand outside it."
+            }
+          ],
+          "inside": [
+            10,
+            150,
+            1526,
+            1014
+          ],
+          "opening": [
+            30,
+            160,
+            1510,
+            1000
+          ]
+        },
+        "talk": {
+          "speaker": "gojong",
+          "portrait": "assets/seasons/season_05_seoul/characters/gojong.webp",
+          "goal": "Find out why the letter matters.",
+          "before": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "My letter must reach The Hague."
+              },
+              {
+                "by": "speaker",
+                "text": "The world must hear Korea's side."
+              },
+              {
+                "by": "detective",
+                "text": "Then I will find it, Your Majesty."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep06_m2",
+      "slot": "m2",
+      "placeId": "s5_seoul.c06_palace_garden",
+      "puzzle": {
+        "paletteId": "order_sequence",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "sequence",
+        "answerSpec": {
+          "answer": "library,well,west_gate,lane",
+          "options": [
+            {
+              "id": "front_gate",
+              "label": "The big front gate"
+            },
+            {
+              "id": "library",
+              "label": "Behind the library hall"
+            },
+            {
+              "id": "throne",
+              "label": "The throne hall's yard"
+            },
+            {
+              "id": "well",
+              "label": "The garden by the old well"
+            },
+            {
+              "id": "west_gate",
+              "label": "The little west gate"
+            },
+            {
+              "id": "lane",
+              "label": "The lane by the stone wall"
+            }
+          ],
+          "codeLength": 4
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "Letter: Bongsu's way out, in first/after/then/last words. The front gate and the throne hall's yard are the decoys his words rule out (watched, everyone sees it).",
+          "Made up: the way, the gates and the watchers' places are the case's own (no building of Gyeongun Palace is named)."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep06_c1",
+          "use": "textMention",
+          "note": "The letter is found; now it must leave the palace."
+        },
+        {
+          "ref": "s5_ep05_e4",
+          "use": "textMention",
+          "note": "In 1895 strangers drew a map of a palace: the palace is watched."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep06_c2",
+        "evidence": "s5_ep06_e2"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "comprehension",
+        "objective": "First, After, Then, Last와 Do not 문장을 읽고 감시를 피하는 길을 순서대로 고른다.",
+        "skill": "sentenceMeaning",
+        "expressions": [
+          "Do not cross the throne hall's yard.",
+          "Last, walk down the lane."
+        ]
+      },
+      "play": {
+        "title": "The Way Past the Watchers",
+        "location": "THE PALACE GARDEN",
+        "story": [
+          "The letter is under your coat now.",
+          "You remember the strangers' map of 1895. Palace paths get counted.",
+          "Bongsu knows every path. He whispers the way."
+        ],
+        "letterIntro": "Bongsu whispers:",
+        "letter": "The watchers stand at the big front gate all day.\nFirst, walk behind the library hall.\nDo not cross the throne hall's yard: everyone sees it.\nAfter the library, cross the garden by the old well.\nThen go out by the little west gate. My uncle keeps it.\nLast, walk down the lane by the stone wall.",
+        "question": "Which way do you go? Tap the places in order.",
+        "hints": [
+          "Find the words First, After, Then and Last.",
+          "Two places are watched or seen by everyone. Leave them out."
+        ],
+        "successMessage": "You are out of the palace, unseen!",
+        "transition": [
+          "Bongsu's uncle shuts the little gate behind you.",
+          "The lane is quiet. Yi Jun lives at its end.",
+          "But watchers walk this lane too."
+        ],
+        "feedback": {
+          "throne,well,west_gate,lane": "Everyone sees the throne hall's yard. Bongsu says to walk behind the library.",
+          "library,well,front_gate,lane": "Watchers stand at the big front gate all day. Use the little west gate."
+        },
+        "orderFeedback": "Those are the right places. Read Bongsu's words again: which comes first?",
+        "mapX": 0.36,
+        "mapY": 0.56,
+        "clue": {
+          "title": "The Way Out",
+          "value": "LIBRARY → WELL → WEST GATE → LANE",
+          "note": "The letter left the palace by the little west gate, unseen.",
+          "symbol": "map"
+        },
+        "evidence": {
+          "name": "Bongsu's Way",
+          "icon": "map",
+          "description": "Behind the library, by the old well, out the west gate, down the lane."
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep06_m3",
+      "slot": "m3",
+      "placeId": "s5_seoul.c06_west_lane",
+      "puzzle": {
+        "paletteId": "number_entry",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "numberCode",
+        "answerSpec": {
+          "answer": "0650",
+          "codeLength": 4,
+          "codeFormat": "time"
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "A time read in words: the watchers' walks (6:00, 6:40, 7:20) each take ten minutes; the knock comes when the 6:40 walk has passed: 6:50 (HHMM 0650). Made up."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep06_c2",
+          "use": "textMention",
+          "note": "Out by the west gate, into the lane."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep06_c3",
+        "evidence": "s5_ep06_e3"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "Each walk takes ten minutes와 has passed를 읽고 문을 두드릴 시각을 계산해 넣는다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "Each walk takes ten minutes.",
+          "Knock when the 6:40 walk has passed."
+        ]
+      },
+      "play": {
+        "title": "The Watchers' Walks",
+        "location": "THE WEST LANE",
+        "story": [
+          "You wait in the dark behind a cart until dawn.",
+          "Bongsu's uncle knows the watchers' times. He gives you a paper."
+        ],
+        "letterIntro": "The uncle's paper says:",
+        "letter": "Yi Jun lives at the end of this lane.\nWatchers walk past his door at 6:00, 6:40 and 7:20.\nEach walk takes ten minutes.\nKnock when the 6:40 walk has passed.\nDo not wait for the next walk.",
+        "question": "At what time do you knock on Yi Jun's door?",
+        "hints": [
+          "Find the walk at 6:40.",
+          "How long does one walk take? Add it."
+        ],
+        "successMessage": "At 6:50 you knock. The door opens.",
+        "transition": [
+          "A tall man in a plain coat lets you in.",
+          "\"I am Yi Jun,\" he says. \"You have the Emperor's letter?\""
+        ],
+        "feedback": {
+          "0640": "At 6:40 the watchers are just walking past. Wait until the walk has passed.",
+          "0720": "That is the next walk. The paper says not to wait for it.",
+          "0610": "The 6:00 walk ends then. But the paper says the 6:40 walk."
+        },
+        "orderFeedback": "The right numbers, in the wrong order. Read the paper again.",
+        "mapX": 0.3,
+        "mapY": 0.6,
+        "clue": {
+          "title": "The Knock",
+          "value": "6:50",
+          "note": "You knocked at 6:50, when the watchers had passed.",
+          "symbol": "watch"
+        },
+        "evidence": {
+          "name": "The Watchers' Times",
+          "icon": "watch",
+          "description": "Watchers walk the lane at 6:00, 6:40 and 7:20. Each walk takes ten minutes."
+        }
+      }
+    }
+  ],
+  "final": {
+    "missionId": "s5_ep06_final",
+    "slot": "final",
+    "placeId": "s5_seoul.yi_jun_house",
+    "puzzle": {
+      "paletteId": "letter_tile_lock",
+      "surface": "finalMission",
+      "engineTable": null,
+      "missionType": "letterLock",
+      "answerSpec": {
+        "answer": "FORCED",
+        "options": [
+          {
+            "id": "c",
+            "label": "C"
+          },
+          {
+            "id": "o",
+            "label": "O"
+          },
+          {
+            "id": "e",
+            "label": "E"
+          },
+          {
+            "id": "f",
+            "label": "F"
+          },
+          {
+            "id": "d",
+            "label": "D"
+          },
+          {
+            "id": "r",
+            "label": "R"
+          }
+        ]
+      },
+      "assetNeeds": [],
+      "status": "ready",
+      "notes": [
+        "The answer is the case's key fact (h1, h2): the 1905 treaty was forced on Korea, and the envoys went to The Hague to tell the world so.",
+        "The travel box and its lock are made up; the Emperor's and Yi Jun's words are made up (dossier fiction).",
+        "Puzzle kind chosen by hand: the season spread assigns Case 06 a letter tile lock final; the lid's lines define the word, the tiles spell it."
+      ]
+    },
+    "clueInputs": [
+      {
+        "ref": "s5_ep06_c1",
+        "use": "answerDerivation",
+        "note": "The letter from the old pine is the one the envoys carry."
+      },
+      {
+        "ref": "s5_ep06_c3",
+        "use": "textMention",
+        "note": "You reached Yi Jun at 6:50."
+      }
+    ],
+    "clueOutputs": {
+      "evidence": "s5_ep06_e4"
+    },
+    "learning": {
+      "dependency": "essential",
+      "level": "application",
+      "objective": "made Korea sign it / did not choose it 문장을 읽고 1905년 조약이 어떠했는지를 나타내는 단어 forced를 글자 타일로 맞춘다.",
+      "skill": "vocabulary",
+      "expressions": [
+        "Japan made Korea sign it.",
+        "Korea did not choose it"
+      ]
+    },
+    "play": {
+      "title": "The Lock Word",
+      "location": "YI JUN'S HOUSE",
+      "story": [
+        "Yi Jun brings out a small travel box with a letter lock.",
+        "\"The Emperor chose its word,\" he says.",
+        "\"It is what we will tell the world.\""
+      ],
+      "letterIntro": "Inside the lid, Yi Jun reads:",
+      "letter": "THE LOCK WORD\nTell the world the truth about the 1905 treaty.\nJapan made Korea sign it. Korea did not choose it.\nIt was not signed freely.\nIt was ______ on Korea.",
+      "question": "What was the 1905 treaty? Spell the word to open the box.",
+      "hints": [
+        "Read the lines inside the lid. Did Korea choose the treaty?",
+        "The word means made to happen, with no free choice."
+      ],
+      "successMessage": "The box opens. The treaty was FORCED.",
+      "transition": [
+        "Yi Jun lays the Emperor's letter in the box and locks it again.",
+        "\"Thank you both,\" he says. \"Now the world will hear us.\"",
+        "Bongsu folds his note and keeps it."
+      ],
+      "orderFeedback": "All six letters fit. Japan made Korea sign it. It was ____ on Korea.",
+      "mapX": 0.28,
+      "mapY": 0.62,
+      "evidence": {
+        "name": "The Emperor's Letter, with Yi Jun",
+        "icon": "seal",
+        "description": "The Emperor's secret letter, left with the envoy Yi Jun. The envoys went to tell the world the 1905 treaty was forced."
+      },
+      "lockTitle": "YI JUN'S TRAVEL BOX",
+      "ending": [
+        {
+          "by": "speaker",
+          "text": "The letter is safe. We leave in secret.",
+          "speaker": "yi_jun",
+          "portrait": "assets/seasons/season_05_seoul/characters/yi_jun.webp"
+        },
+        {
+          "by": "detective",
+          "text": "The Emperor's letter, safe in your box.",
+          "evidence": "s5_ep06_e4"
+        },
+        {
+          "by": "narrator",
+          "text": "In 1907, Yi Jun, Yi Sang-seol and Yi Wi-jong went to The Hague."
+        },
+        {
+          "by": "narrator",
+          "text": "They went to tell the world the 1905 treaty was forced."
+        },
+        {
+          "by": "narrator",
+          "text": "They reached The Hague. But they were not let into the conference."
+        },
+        {
+          "by": "narrator",
+          "text": "Yi Jun died in The Hague that July."
+        },
+        {
+          "by": "narrator",
+          "text": "Japan used the envoys as an excuse."
+        },
+        {
+          "by": "narrator",
+          "text": "It forced the Emperor to give up his throne in 1907."
+        },
+        {
+          "by": "speaker",
+          "text": "I will keep my note. One day people will read the truth.",
+          "speaker": "bongsu",
+          "portrait": "assets/seasons/season_05_seoul/characters/bongsu.webp"
+        }
+      ]
+    }
+  },
+  "hook": "The world did not let the envoys in. Who will listen to Korea now?",
+  "learningGoal": {
+    "title": "Following traces, ways and times",
+    "titleKo": "흔적, 길, 시각을 따라 읽기"
+  },
+  "play": {
+    "objectives": [
+      "Find where the letter is hidden.",
+      "Take it out past the watchers.",
+      "Knock at the right time.",
+      "Open the envoy's box."
+    ],
+    "intro": [
+      "Spring, 1907. You are a guest of Emperor Gojong at Gyeongun Palace.",
+      "In 1905, Japan forced a treaty on Korea.",
+      "Korea lost the right to deal with other countries.",
+      "This year, many countries meet at The Hague for a peace conference.",
+      "The Emperor will send three envoys there in secret.",
+      "But his secret letter is hidden, and watchers stand at every gate."
+    ],
+    "caseSummary": "Bongsu's note led to the Emperor's letter in the old pine. It left the palace unseen and reached the envoy Yi Jun. In 1907 three envoys went to The Hague. They went to tell the world the 1905 treaty was forced. They were not let into the conference. Yi Jun died in The Hague. Japan used the envoys as an excuse to force the Emperor off his throne.",
+    "place": "GYEONGUN PALACE, SEOUL",
+    "keyWords": [
+      "envoy",
+      "treaty",
+      "watcher",
+      "forced",
+      "conference"
+    ],
+    "glossary": {
+      "envoy": "특사, 사절",
+      "treaty": "조약",
+      "watcher": "감시하는 사람",
+      "forced": "강요된, 강제로 한",
+      "conference": "회의",
+      "hollow": "(나무의) 구멍",
+      "bark": "나무껍질",
+      "secretary": "비서",
+      "footprints": "발자국",
+      "strangers'": "낯선 사람들의"
+    }
+  },
+  "notes": [
+    "Season 5 Case 06 (PART 10, 2026-11-06). the secretary, the hiding place, the way out, the watchers' times and the travel box are made up; the envoys' mission and its outcome follow the dossier's checked facts.",
+    "Emperor Gojong and Yi Jun speak made-up words (dossier fiction). Case 07 recalls s5_ep06_e4 and s5_ep06_e1."
+  ]
+}

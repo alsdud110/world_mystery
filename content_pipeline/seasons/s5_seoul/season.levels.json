@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "seasonId": "s5_seoul",
+  "lines": [
+    {
+      "rookie": "Seoul is very old.\nIts story is full of secrets.",
+      "junior": "Seoul is very, very old.\nIts history hides many secrets.",
+      "master": "Seoul is ancient.\nIts history is woven with secrets."
+    },
+    {
+      "rookie": "A wet note waits by a turtle ship.",
+      "junior": "A damp note is waiting beside a turtle ship.",
+      "master": "A rain-soaked note lies beside a turtle ship."
+    },
+    {
+      "rookie": "A lifting machine will not lift.",
+      "junior": "A lifting machine refuses to lift.",
+      "master": "A lifting machine stubbornly refuses to lift."
+    },
+    {
+      "rookie": "Logs for the palace go missing.",
+      "junior": "Logs meant for the palace disappear.",
+      "master": "Timber bound for the palace vanishes."
+    },
+    {
+      "rookie": "And the palace lights go dark.",
+      "junior": "Then the palace lights go out.",
+      "master": "And then the palace lamps fall dark."
+    },
+    {
+      "rookie": "They look like different cases.",
+      "junior": "They seem like separate cases.",
+      "master": "They appear to be unrelated cases."
+    },
+    {
+      "rookie": "But a good detective\nputs the pieces together.",
+      "junior": "But a good detective\nfits the pieces together.",
+      "master": "Yet a fine detective\njoins every piece together."
+    },
+    {
+      "rookie": "Who keeps writing the notes?",
+      "junior": "Who is writing all these notes?",
+      "master": "Who goes on writing these notes?"
+    },
+    {
+      "rookie": "Every note has\nthe same small water drop.",
+      "junior": "Each note carries\nthe same small water drop.",
+      "master": "Every note bears\nthe same tiny water drop."
+    },
+    {
+      "rookie": "Find the notes.",
+      "junior": "Look for the notes.",
+      "master": "Seek out the notes."
+    },
+    {
+      "rookie": "Read the letters.",
+      "junior": "Study the letters.",
+      "master": "Decipher the letters."
+    },
+    {
+      "rookie": "Find the keepers.",
+      "junior": "Track down the keepers.",
+      "master": "Uncover the keepers."
+    },
+    {
+      "rookie": "Your first case starts\nin old Hanyang.",
+      "junior": "Your first case begins\nin old Hanyang.",
+      "master": "Your first case awaits\nin old Hanyang."
+    },
+    {
+      "rookie": "Bun-i's first note lies under all the others.",
+      "junior": "Bun-i's first note rests beneath all the rest.",
+      "master": "Beneath every other note rests Bun-i's first."
+    },
+    {
+      "rookie": "The letters she learned in 1446 are read freely again.",
+      "junior": "People read the letters she learned in 1446 freely once more.",
+      "master": "Once again, the letters she learned in 1446 may be read freely."
+    },
+    {
+      "rookie": "Seoul keeps its story in its letters.",
+      "junior": "Seoul holds its story in its letters.",
+      "master": "Seoul preserves its story within its letters."
+    },
+    {
+      "rookie": "This time, you read it note by note.",
+      "junior": "This time, you have read it one note at a time.",
+      "master": "This time, you have pieced it together note by note."
+    }
+  ]
+}

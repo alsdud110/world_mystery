@@ -516,6 +516,7 @@ abstract final class CaseGenerator {
         '${[for (final t in tables) '  $t: $name${_suffix(t)},\n'].join()}'
         '${history ? '  historyReveals: ${name}HistoryReveals,\n' : ''}'
         '${leveled ? '  casePatches: ${name}CasePatches,\n  variants: ${name}Variants,\n  writtenLevels: ${name}WrittenLevels,\n  infoLevels: ${name}InfoLevels,\n' : ''}'
+        '${(s.art?.introBackdrops ?? const {}).isEmpty ? '' : '  introBackdrops: const ${DartLiteral.of(s.art!.introBackdrops)},\n'}'
         ');\n';
   }
 

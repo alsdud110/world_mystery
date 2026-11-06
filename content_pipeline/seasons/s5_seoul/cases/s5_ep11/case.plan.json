@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s5_ep11",
+  "seasonId": "s5_seoul",
+  "number": 11,
+  "actId": "act3",
+  "title": "The Poet's Three Copies",
+  "synopsis": [
+    "A young poet copied his book of poems by hand, three times.",
+    "Tonight the copy for his friend is gone from his desk."
+  ],
+  "goal": "Find the copy Yun Dong-ju made for his friend, and see why his poems matter.",
+  "characters": [
+    "yun_dongju",
+    "miri"
+  ],
+  "locations": [
+    "yonhi_college"
+  ],
+  "missions": [
+    {
+      "missionId": "s5_ep11_m1",
+      "slot": "m1",
+      "placeId": "s5_seoul.c11_dorm_room",
+      "puzzle": {
+        "paletteId": "lens_inspect_word",
+        "surface": "mission",
+        "engineTable": "inspections",
+        "missionType": "wordInput",
+        "answerSpec": {
+          "answer": "WATER",
+          "acceptedAnswers": [
+            "water"
+          ]
+        },
+        "assetNeeds": [
+          "s5_seoul.asset.c11_dorm_room"
+        ],
+        "status": "awaitingAssets",
+        "notes": [
+          "Played under the glass (InspectScene) on Yun's desk: the thick book with a red spine is the one his words describe; the folded note under it is the label, its last word worn.",
+          "The blue drop is the water-drop mark of every keeper's note (Haesu's of Case 10 the last one seen); the bottle of blue ink is the near miss the letter rules out ('not ink').",
+          "Measured 2026-11-06 on the grid sheet of dorm_room.webp (picture.measuredOn): the blue ink bottle on the left, the two string-tied copies, the thick red-spined book with the folded note under its corner, the desk lamp; no two areas overlap."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep10_e1",
+          "use": "textMention",
+          "note": "Haesu's water-drop note: the same small blue drop."
+        },
+        {
+          "ref": "s5_ep01_c1",
+          "use": "textMention",
+          "note": "Bun-i, the water-carrier: what her bucket held."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep11_c1",
+        "evidence": "s5_ep11_e1"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "윤동주의 말(the thick book with a red spine, not ink)을 책상 위 물건과 대조해 쪽지를 찾고, 빠진 단어 water를 쓴다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "the thick book with a red spine",
+          "It is not ink."
+        ]
+      },
+      "play": {
+        "title": "The Desk by the Window",
+        "location": "YUN'S ROOM",
+        "story": [
+          "Yun Dong-ju lights his lamp.",
+          "\"My friend's copy had a white string. Now it is gone,\" he says.",
+          "Nothing is written on the dictionary's cover. But someone moved it."
+        ],
+        "letterIntro": "Yun tells you:",
+        "letter": "My dictionary was moved. It is the thick book with a red spine.\nSomething small is under the dictionary now.\nThe blue spot on it is not ink. It is a drop of ____.",
+        "question": "Find the thing under the dictionary. Write the missing word.",
+        "prompt": "It is a drop of ____.",
+        "hints": [
+          "Find the thick book with a red spine, then look under it.",
+          "The blue spot is not ink. What did Bun-i carry in her bucket?"
+        ],
+        "successMessage": "A drop of water: the keepers' mark!",
+        "transition": [
+          "It is a note in the King's letters, with a small blue drop.",
+          "Haesu's notes had the same drop.",
+          "\"A keeper took the copy,\" you tell Yun. \"To keep it safe.\""
+        ],
+        "feedback": {
+          "INK": "Yun says the spot is not ink. Look at the note again.",
+          "RAIN": "Close! But the keepers' mark is what Bun-i carried in her bucket."
+        },
+        "orderFeedback": "Not that word. What did Bun-i carry from the well?",
+        "mapX": 0.42,
+        "mapY": 0.38,
+        "clue": {
+          "title": "The Keeper's Drop",
+          "value": "WATER",
+          "note": "A keeper's water-drop note was under the dictionary.",
+          "symbol": "letter"
+        },
+        "evidence": {
+          "name": "The Water-Drop Note (1941)",
+          "icon": "letter",
+          "description": "A folded note in the King's letters, with a small blue water drop. It was under Yun's dictionary."
+        },
+        "inspect": {
+          "picture": {
+            "file": "assets/seasons/season_05_seoul/cases/case_11/dorm_room.webp",
+            "pixels": {
+              "width": 1536,
+              "height": 1024
+            },
+            "measuredOn": "sha256:077eb3db5dc13ea5ab2835a155a27d9d4f4f511c26a71be02ad39270c3ed5201"
+          },
+          "place": "Yun's room at night",
+          "task": "Look closely at the desk. Which thing did Yun describe?",
+          "nextTask": "Look under it. One word of the note is worn.",
+          "dragGuide": "Drag the glass over the desk.",
+          "tapGuide": "Or tap a thing to look at it.",
+          "missLine": "Nothing here. Look at the things on the desk.",
+          "spots": [
+            {
+              "id": "ink",
+              "kind": "exhibit",
+              "title": "BLUE INK",
+              "label": "A small bottle of blue ink",
+              "areas": [
+                [
+                  175,
+                  695,
+                  295,
+                  835
+                ]
+              ],
+              "line": "Blue ink. Yun says the spot is not ink."
+            },
+            {
+              "id": "own_copy",
+              "kind": "exhibit",
+              "title": "A THIN BOOK",
+              "label": "A thin hand-sewn book tied with brown string",
+              "areas": [
+                [
+                  320,
+                  695,
+                  552,
+                  870
+                ]
+              ],
+              "line": "One of Yun's copies. Its string is brown."
+            },
+            {
+              "id": "teacher_copy",
+              "kind": "exhibit",
+              "title": "ANOTHER THIN BOOK",
+              "label": "A second thin hand-sewn book tied with brown string",
+              "areas": [
+                [
+                  552,
+                  700,
+                  752,
+                  878
+                ]
+              ],
+              "line": "His teacher's copy. Its string is brown too."
+            },
+            {
+              "id": "dictionary",
+              "kind": "match",
+              "title": "A THICK BOOK",
+              "label": "A thick book with a red spine",
+              "areas": [
+                [
+                  815,
+                  650,
+                  1105,
+                  812
+                ]
+              ],
+              "line": "A thick book with a red spine. It sits a little crooked.",
+              "checks": [
+                0
+              ]
+            },
+            {
+              "id": "note",
+              "kind": "label",
+              "title": "THE FOLDED NOTE",
+              "label": "A folded paper under the thick book",
+              "areas": [
+                [
+                  1015,
+                  814,
+                  1135,
+                  866
+                ]
+              ],
+              "line": "A small folded note with a blue spot.",
+              "checks": [
+                1
+              ],
+              "requires": "dictionary",
+              "lockedLine": "A corner of paper. Which book is it under?"
+            },
+            {
+              "id": "lamp",
+              "kind": "exhibit",
+              "title": "THE LAMP",
+              "label": "A desk lamp",
+              "areas": [
+                [
+                  1110,
+                  380,
+                  1350,
+                  750
+                ]
+              ],
+              "line": "Yun's lamp. Nothing under it."
+            }
+          ],
+          "labelTitle": "THE FOLDED NOTE",
+          "labelRoom": "UNDER THE DICTIONARY",
+          "labelWorn": "The last word is worn away.",
+          "taskLine": 2,
+          "lensAt": [
+            780,
+            940
+          ],
+          "inside": [
+            40,
+            140,
+            1496,
+            990
+          ]
+        },
+        "talk": {
+          "speaker": "yun_dongju",
+          "portrait": "assets/seasons/season_05_seoul/characters/yun_dongju.webp",
+          "goal": "Find out where the copy was.",
+          "before": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "I copied my book three times, by hand."
+              },
+              {
+                "by": "speaker",
+                "text": "One for my teacher, one for my friend, one for me."
+              },
+              {
+                "by": "detective",
+                "text": "Then let us look at your desk."
+              }
+            ]
+          }
+        },
+        "discovery": {
+          "type": "clueFound",
+          "title": "A WATER-DROP NOTE",
+          "detail": "A keeper has been here. The note is in the King's letters."
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep11_m2",
+      "slot": "m2",
+      "placeId": "s5_seoul.c11_dorm_room",
+      "puzzle": {
+        "paletteId": "syllable_compose",
+        "surface": "mission",
+        "engineTable": "syllables",
+        "missionType": "wordInput",
+        "answerSpec": {
+          "answer": "피아노안"
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "The keeper wrote the place as a riddle the old way (Sora's lesson, Case 01): each group by its body part and strength, its vowel by its line and dot, the paper read from the right (columnHeight 2). The note reads 피아노 안: inside the piano.",
+          "Two steps stronger is two more lines (Sora's rule, one line a step): the mouth ㅁ, then ㅂ, then ㅍ. ㅂ and ㅁ are the near misses; ㄷ ㅌ ㅅ are decoys of other body parts.",
+          "Every letter is the app's text (SyllableBoard): never in a picture."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep01_e2",
+          "use": "recall",
+          "note": "Sora's Lesson Board: the letters copy the mouth; a stronger sound adds a line."
+        },
+        {
+          "ref": "s5_ep11_c1",
+          "use": "textMention",
+          "note": "The water-drop note under the dictionary."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep11_c2",
+        "evidence": "s5_ep11_e2"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "소라의 규칙(a stronger sound adds a line)을 two steps stronger로 넓혀 읽고, 위치 표현(on its right, on top, at the bottom)대로 네 글자를 종이 제자리에 짓는다.",
+        "skill": "sentenceMeaning",
+        "expressions": [
+          "Two steps stronger adds two lines.",
+          "The first column is on the right."
+        ]
+      },
+      "play": {
+        "title": "A Riddle in the King's Letters",
+        "location": "YUN'S ROOM",
+        "story": [
+          "You unfold the note. The place is a riddle.",
+          "The keeper made it the old way, like Sora's lesson.",
+          "\"Only a person that knows how the letters are made can read it,\" Yun smiles."
+        ],
+        "letterIntro": "The water-drop note says:",
+        "letter": "The copy is safe. Read the place the old way.\nA stronger sound adds a line. Two steps stronger adds two lines.\nGroup 1: the mouth, two steps stronger. Only a standing line.\nGroup 2: the throat. A standing line, with a dot on its right.\nGroup 3: the tongue on the gums. A flat line, with a dot on top.\nGroup 4: the throat again, with the same vowel. The tongue on the gums sits at the bottom.\nRead from top to bottom. Two groups in each column. The first column is on the right.",
+        "question": "Build each group in its place on the paper. Where is the copy?",
+        "hints": [
+          "Look at Sora's board: which letter copies the mouth?",
+          "Two steps stronger is two more lines. Group 1 is at the top right."
+        ],
+        "successMessage": "The note reads 피아노 안: inside the piano!",
+        "transition": [
+          "\"Inside the piano?\" Yun laughs softly.",
+          "\"There is an old piano in the college hall.\"",
+          "You walk there together under the bare trees."
+        ],
+        "feedback": {
+          "비아노안": "Group 1 is two steps stronger: two more lines, not one.",
+          "미아노안": "Group 1 is two steps stronger than the mouth. Add two lines.",
+          "노안피아": "The first column is on the right, not on the left.",
+          "피어노안": "Group 2's dot is on the right of its line."
+        },
+        "mapX": 0.42,
+        "mapY": 0.38,
+        "clue": {
+          "title": "The Hiding Place",
+          "value": "피아노 안",
+          "note": "The note says: inside the piano.",
+          "symbol": "key"
+        },
+        "evidence": {
+          "name": "The Keeper's Riddle",
+          "icon": "letter",
+          "description": "The water-drop note, read the old way: 피아노 안, inside the piano."
+        },
+        "recall": {
+          "title": "How are the letters made?",
+          "prompt": "Which thing in your Notebook shows how the first letters were made?",
+          "miss": "Find Sora's lesson board from the King's palace."
+        },
+        "syllables": {
+          "blocks": [
+            {
+              "id": "one",
+              "initial": "ㅍ",
+              "vowel": "ㅣ",
+              "line": "Group 1: the mouth, two steps stronger. Only a standing line."
+            },
+            {
+              "id": "two",
+              "initial": "ㅇ",
+              "vowel": "ㅏ",
+              "line": "Group 2: the throat. A standing line, with a dot on its right."
+            },
+            {
+              "id": "three",
+              "initial": "ㄴ",
+              "vowel": "ㅗ",
+              "line": "Group 3: the tongue on the gums. A flat line, with a dot on top."
+            },
+            {
+              "id": "four",
+              "initial": "ㅇ",
+              "vowel": "ㅏ",
+              "final": "ㄴ",
+              "line": "Group 4: the throat again, with the same vowel. The tongue on the gums sits at the bottom."
+            }
+          ],
+          "sounds": [
+            "ㅁ",
+            "ㅂ",
+            "ㅍ",
+            "ㄴ",
+            "ㄷ",
+            "ㅌ",
+            "ㅅ",
+            "ㅇ"
+          ],
+          "columnHeight": 2
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep11_m3",
+      "slot": "m3",
+      "placeId": "s5_seoul.c11_college_hall",
+      "puzzle": {
+        "paletteId": "number_entry",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "numberCode",
+        "answerSpec": {
+          "answer": "319",
+          "codeLength": 3
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "The number is read in the words: three copies, then eighteen poems and one more to open the book (19). Both numbers are checked facts (h2, h3); the lock and its rule are made up."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep11_c2",
+          "use": "textMention",
+          "note": "Inside the piano in the college hall."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep11_c3",
+        "evidence": "s5_ep11_e3"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "숫자 말(three copies, eighteen poems and one more)을 읽고 계산해 자물쇠 번호 319를 넣는다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "eighteen poems, and one more",
+          "side by side"
+        ]
+      },
+      "play": {
+        "title": "The Box in the Piano",
+        "location": "THE COLLEGE HALL",
+        "story": [
+          "The hall is cold and dark. An old piano stands by the stage.",
+          "Inside it is a small wooden letter box with a brass number lock.",
+          "A young woman runs in. \"Wait! I am Miri, Haesu's cousin.\""
+        ],
+        "letterIntro": "Miri and Yun tell you:",
+        "letter": "Miri: \"I put the copy in our family's letter box.\"\n\"A man from the office is checking rooms tonight.\"\n\"The lock wants two numbers, side by side.\"\n\"The number of copies. Then the number of poems in each copy.\"\nYun: \"I made three copies by hand.\"\n\"Each has eighteen poems, and one more poem to open the book.\"",
+        "question": "Put in the lock's number.",
+        "hints": [
+          "Find the number of copies, then the poems in each copy.",
+          "Eighteen poems, and one more: add them."
+        ],
+        "successMessage": "Click! The letter box opens.",
+        "transition": [
+          "Under old notes with water drops lies a thin book.",
+          "Its white string is still tied. Its pages are in the King's letters.",
+          "\"My friend's copy,\" Yun whispers."
+        ],
+        "feedback": {
+          "119": "Count the copies again: three books, made by hand.",
+          "219": "Count the copies again: one for his teacher, one for his friend, one for him.",
+          "318": "Eighteen poems, and one more poem to open the book."
+        },
+        "orderFeedback": "The right numbers, in the wrong order. The copies come first.",
+        "mapX": 0.55,
+        "mapY": 0.3,
+        "clue": {
+          "title": "The Lock",
+          "value": "3 · 19",
+          "note": "Three copies; nineteen poems in each.",
+          "symbol": "key"
+        },
+        "evidence": {
+          "name": "The Friend's Copy",
+          "icon": "letter",
+          "description": "Yun Dong-ju's book of poems, copied by hand, tied with a white string. Its pages are in the King's letters."
+        },
+        "talk": {
+          "speaker": "miri",
+          "portrait": "assets/seasons/season_05_seoul/characters/miri.webp",
+          "goal": "Find out why Miri took the copy.",
+          "before": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "I wrote the note. I am sorry I scared you."
+              },
+              {
+                "by": "speaker",
+                "text": "Papers in Korean can get a student in trouble now."
+              },
+              {
+                "by": "detective",
+                "text": "So you hid it with your family's notes."
+              }
+            ]
+          }
+        },
+        "discovery": {
+          "type": "evidenceFound",
+          "title": "THE FRIEND'S COPY",
+          "detail": "The copy is safe. Now it must reach Yun's friend.",
+          "showEvidence": true
+        }
+      }
+    }
+  ],
+  "final": {
+    "missionId": "s5_ep11_final",
+    "slot": "final",
+    "placeId": "s5_seoul.c11_college_gate",
+    "puzzle": {
+      "paletteId": "word_entry",
+      "surface": "finalMission",
+      "engineTable": null,
+      "missionType": "wordInput",
+      "answerSpec": {
+        "answer": "KOREAN",
+        "acceptedAnswers": [
+          "korean",
+          "THE KOREAN LANGUAGE",
+          "KOREAN LANGUAGE"
+        ]
+      },
+      "assetNeeds": [],
+      "status": "ready",
+      "notes": [
+        "syllable_compose is played on missions only (PaletteFacts: SyllableBoard, mission): the final is word_entry, as the brief allows.",
+        "The answer is the case's key fact: Yun Dong-ju wrote his poems in Korean (h5) when Korean was pushed out of the schools (h4). It is read in the notebook lines and the copy's pages (Case 01's letters), never known beforehand."
+      ]
+    },
+    "clueInputs": [
+      {
+        "ref": "s5_ep11_c3",
+        "use": "answerDerivation",
+        "note": "The friend's copy: its pages are in the King's letters."
+      },
+      {
+        "ref": "s5_ep11_c2",
+        "use": "answerDerivation",
+        "note": "The keeper's note is in the same letters."
+      }
+    ],
+    "clueOutputs": {
+      "evidence": "s5_ep11_e4"
+    },
+    "learning": {
+      "dependency": "essential",
+      "level": "comprehension",
+      "objective": "1938년 학교에서 밀려난 언어, 세종의 글자가 적는 언어를 읽고, 윤동주의 시가 한국어로 쓰였다는 사실을 단어로 쓴다.",
+      "skill": "sentenceMeaning",
+      "expressions": [
+        "a choice subject",
+        "the people's own language"
+      ]
+    },
+    "play": {
+      "title": "In His Own Language",
+      "location": "THE COLLEGE GATE",
+      "story": [
+        "Dawn comes over the stone college buildings.",
+        "Yun holds the thin book in both hands. \"It could not be printed, so I copied every word.\"",
+        "\"My friend is coming to the gate,\" he says."
+      ],
+      "letterIntro": "Your notebook says:",
+      "letter": "In 1938, Korean became only a choice subject in the schools.\nThe schools teach in Japanese now.\nThe words written on Yun's pages are in the King's letters, like the keeper's note.\nKing Sejong made his letters for the people's own language.",
+      "question": "In which language are Yun's poems?",
+      "prompt": "Yun's poems are in ____.",
+      "hints": [
+        "Look at the pages of the copy. Which letters are written on them?",
+        "King Sejong's letters write the language of Korea."
+      ],
+      "successMessage": "Korean: Yun Dong-ju writes his poems in Korean!",
+      "transition": [
+        "Weeks later, Miri sends the old letter box far away.",
+        "It goes to Haesu's family, in Chongqing.",
+        "One more note will be written in it."
+      ],
+      "feedback": {
+        "JAPANESE": "The schools teach in Japanese. But Yun's pages are in the King's letters.",
+        "HANGEUL": "Hangeul is the name of the letters. Which language do they write?",
+        "CHINESE": "King Sejong made his letters because Korean is not like Chinese.",
+        "ENGLISH": "The pages are in the King's letters, not in English."
+      },
+      "orderFeedback": "Check your spelling. It is the language of Korea.",
+      "mapX": 0.5,
+      "mapY": 0.6,
+      "evidence": {
+        "name": "Poems in Korean",
+        "icon": "feather",
+        "description": "Yun Dong-ju's poems, in Korean, copied by hand. His friend kept the copy; in 1948 it became a book.",
+        "inscription": "Sky, Wind, Stars and Poems"
+      },
+      "ending": [
+        {
+          "by": "narrator",
+          "text": "Yun gives the copy to his young friend, Jeong Byeong-uk."
+        },
+        {
+          "by": "speaker",
+          "text": "Keep it safe. It is in our own words.",
+          "speaker": "yun_dongju",
+          "portrait": "assets/seasons/season_05_seoul/characters/yun_dongju.webp"
+        },
+        {
+          "by": "narrator",
+          "text": "Yun Dong-ju wrote in Korean when Korean was pushed out of schools.",
+          "evidence": "s5_ep11_e3"
+        },
+        {
+          "by": "narrator",
+          "text": "His friend's family hid the copy under their floor."
+        },
+        {
+          "by": "narrator",
+          "text": "In 1948, it became a book: Sky, Wind, Stars and Poems."
+        },
+        {
+          "by": "speaker",
+          "text": "Where will our old letter box go now?",
+          "speaker": "miri",
+          "portrait": "assets/seasons/season_05_seoul/characters/miri.webp"
+        }
+      ]
+    }
+  },
+  "hook": "A man from the office checks the rooms tonight.",
+  "learningGoal": {
+    "title": "Reading numbers, places and a language's story",
+    "titleKo": "숫자·위치·언어의 이야기 읽기"
+  },
+  "play": {
+    "objectives": [
+      "Search Yun's desk.",
+      "Read the keeper's riddle.",
+      "Open the letter box.",
+      "Find out what language Yun's poems are in."
+    ],
+    "intro": [
+      "Late autumn, 1941. You are a guest of a young poet, Yun Dong-ju.",
+      "He studies at Yonhi College in Seoul. He graduates this year.",
+      "He wanted to print a book of his poems. It could not be printed.",
+      "So he copied it by hand, three times.",
+      "Tonight the copy for his friend is gone."
+    ],
+    "caseSummary": "Miri, a keeper, hid Yun Dong-ju's copy for his friend inside the college piano. Yun wrote his poems in Korean. Korean was being pushed out of the schools. His friend's family hid the copy under their floor. In 1948 it became a book: Sky, Wind, Stars and Poems.",
+    "place": "YONHI COLLEGE, SEOUL",
+    "keyWords": [
+      "copy",
+      "poem",
+      "stronger",
+      "number",
+      "language"
+    ],
+    "glossary": {
+      "copy": "사본, 베껴 쓴 것",
+      "poem": "시",
+      "dictionary": "사전",
+      "spine": "책등",
+      "string": "끈",
+      "riddle": "수수께끼",
+      "subject": "과목",
+      "language": "언어",
+      "piano": "피아노",
+      "water-drop": "물방울 (표시)"
+    }
+  },
+  "notes": [
+    "Season 5 Case 11 (PART 10, 2026-11-06). Yun Dong-ju is real; everything he says and does in the case is made up. Miri, the office man checking rooms, the letter box's lock and the piano are made up.",
+    "Real outcome kept: three handwritten copies (teacher Lee Yang-ha, friend Jeong Byeong-uk, himself), the friend's copy hidden by his family and published in 1948; the case ends on the checked fact that Yun wrote his poems in Korean when Korean was pushed out of the schools.",
+    "No line of his poems is quoted or translated; only the book's title is given in English.",
+    "Yonhi College was, as far as known, a men's college in 1941: Miri is a student who helps in the college, not called a Yonhi student (not source-checked; to confirm)."
+  ]
+}

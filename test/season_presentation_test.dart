@@ -13,7 +13,7 @@ void main() {
     expect(SeasonMap.bySeason.keys, [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul], reason: 'Rome its own since the Rome integration, Seoul (by hand) since 2026-11-05');
     expect(SeasonMap.forSeason(SeasonIds.london)!.artwork, ArtAssets.londonMap);
     expect(SeasonMap.forSeason(SeasonIds.paris)!.artwork, ArtAssets.parisMap);
-    expect(SeasonMap.forSeason(SeasonIds.seoul)!.artwork, 'assets/seasons/season_05_seoul/locations/map/palace_map.webp');
+    expect(SeasonMap.forSeason(SeasonIds.seoul)!.artwork, 'assets/seasons/season_05_seoul/locations/map/season_map.webp');
     expect(SeasonMap.forSeason('s9_nowhere'), isNull);
   });
 

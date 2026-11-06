@@ -7,17 +7,20 @@ import 'package:world_mystery/widgets/art_assets.dart' show SeasonCover;
 
 import 's3_rome/s3_rome_art.g.dart';
 import 's4_newyork/s4_newyork_art.g.dart';
+import 's5_seoul/s5_seoul_art.g.dart';
 
 /// Their maps, by season id (`SeasonMap.bySeason`).
 const generatedSeasonMaps = <String, SeasonMap>{
   's3_rome': s3RomeMap,
   's4_newyork': s4NewyorkMap,
+  's5_seoul': s5SeoulMap,
 };
 
 /// Their covers, by season id (`ArtAssets.seasonCovers`).
 const generatedSeasonCovers = <String, SeasonCover>{
   's3_rome': s3RomeCover,
   's4_newyork': s4NewyorkCover,
+  's5_seoul': s5SeoulCover,
 };
 
 /// Their cities on the World Map (`WorldCities.all`): one already drawn
@@ -25,10 +28,12 @@ const generatedSeasonCovers = <String, SeasonCover>{
 const generatedWorldCities = <WorldCity>[
   s3RomeWorldCity,
   s4NewyorkWorldCity,
+  s5SeoulWorldCity,
 ];
 
 /// Their evidence pictures, by evidence id (`ArtAssets.evidencePictures`).
 const generatedEvidencePictures = <String, String>{
   ...s3RomeEvidencePictures,
   ...s4NewyorkEvidencePictures,
+  ...s5SeoulEvidencePictures,
 };

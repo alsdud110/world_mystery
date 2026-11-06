@@ -3,7 +3,6 @@ import 'dart:ui' show Offset, Rect, Size;
 import 'package:flutter/painting.dart' show Alignment;
 
 import '../data/generated/generated_season_art.g.dart';
-import '../data/season5/season5_art.dart' show season5Cover;
 import '../data/models/mission.dart';
 import '../data/models/profile.dart';
 import '../data/models/season.dart' show SeasonIds;
@@ -207,8 +206,6 @@ abstract final class ArtAssets {
     ),
     // The seasons made from plans (Rome on): their own (season plan `art.cover`).
     ...generatedSeasonCovers,
-    // Season 5, Seoul: registered by hand (`lib/data/season5/season5_art.dart`).
-    SeasonIds.seoul: season5Cover,
   };
 
   /// The first scene of the Season 1 opening: a warm London night on the

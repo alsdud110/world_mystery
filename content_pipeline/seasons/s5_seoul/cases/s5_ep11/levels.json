@@ -1,0 +1,792 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s5_ep11",
+  "lines": [
+    {
+      "rookie": "The Poet's Three Copies",
+      "junior": "The Poet's Three Copies",
+      "master": "The Poet's Three Copies"
+    },
+    {
+      "rookie": "A young poet copied his book of poems by hand, three times.",
+      "junior": "A young poet made three copies of his book of poems by hand.",
+      "master": "A young poet has copied out his book of poems by hand, three times over."
+    },
+    {
+      "rookie": "Tonight the copy for his friend is gone from his desk.",
+      "junior": "Tonight the copy meant for his friend has vanished from his desk.",
+      "master": "Tonight the copy intended for his friend has disappeared from his desk."
+    },
+    {
+      "rookie": "A man from the office checks the rooms tonight.",
+      "junior": "Tonight a man from the office is checking the rooms.",
+      "master": "This very night, a man from the office is inspecting the rooms."
+    },
+    {
+      "rookie": "Search Yun's desk.",
+      "junior": "Look through Yun's desk.",
+      "master": "Examine Yun's desk."
+    },
+    {
+      "rookie": "Read the keeper's riddle.",
+      "junior": "Solve the keeper's riddle.",
+      "master": "Unravel the keeper's riddle."
+    },
+    {
+      "rookie": "Open the letter box.",
+      "junior": "Get the letter box open.",
+      "master": "Unlock the letter box."
+    },
+    {
+      "rookie": "Find out what language Yun's poems are in.",
+      "junior": "Discover which language Yun's poems are written in.",
+      "master": "Determine the language in which Yun's poems are written."
+    },
+    {
+      "rookie": "Late autumn, 1941. You are a guest of a young poet, Yun Dong-ju.",
+      "junior": "It is late autumn, 1941, and you are the guest of a young poet, Yun Dong-ju.",
+      "master": "Late autumn, 1941: you are staying as the guest of a young poet, Yun Dong-ju."
+    },
+    {
+      "rookie": "He studies at Yonhi College in Seoul. He graduates this year.",
+      "junior": "He is a student at Yonhi College in Seoul, and he finishes his studies this year.",
+      "master": "He is a student at Yonhi College in Seoul, due to graduate this year."
+    },
+    {
+      "rookie": "He wanted to print a book of his poems. It could not be printed.",
+      "junior": "He hoped to print a book of his poems, but it could not be printed.",
+      "master": "He longed to publish a book of his poems, yet printing it proved impossible."
+    },
+    {
+      "rookie": "So he copied it by hand, three times.",
+      "junior": "So he made three copies of it by hand.",
+      "master": "So he wrote it out by hand instead, three times over."
+    },
+    {
+      "rookie": "Tonight the copy for his friend is gone.",
+      "junior": "Tonight the copy meant for his friend has vanished.",
+      "master": "Tonight the copy intended for his friend has disappeared."
+    },
+    {
+      "rookie": "Miri, a keeper, hid Yun Dong-ju's copy for his friend inside the college piano. Yun wrote his poems in Korean. Korean was being pushed out of the schools. His friend's family hid the copy under their floor. In 1948 it became a book: Sky, Wind, Stars and Poems.",
+      "junior": "Miri, a keeper, hid the copy Yun Dong-ju made for his friend inside the college piano. Yun wrote his poems in Korean, while Korean was being pushed out of the schools. His friend's family kept the copy hidden under their floor. In 1948 it became a book: Sky, Wind, Stars and Poems.",
+      "master": "Miri, a keeper, concealed the copy Yun Dong-ju had made for his friend inside the college piano. Yun composed his poems in Korean at a time when Korean was being pushed out of the schools. His friend's family kept the copy hidden beneath their floor, and in 1948 it became a book: Sky, Wind, Stars and Poems."
+    },
+    {
+      "rookie": "YONHI COLLEGE, SEOUL",
+      "junior": "YONHI COLLEGE, SEOUL",
+      "master": "YONHI COLLEGE, SEOUL"
+    },
+    {
+      "rookie": "the thick book with a red spine",
+      "junior": "the thick book with a red spine",
+      "master": "the thick book with a red spine"
+    },
+    {
+      "rookie": "It is not ink.",
+      "junior": "It is not ink.",
+      "master": "It is not ink."
+    },
+    {
+      "rookie": "The Desk by the Window",
+      "junior": "The Desk by the Window",
+      "master": "The Desk by the Window"
+    },
+    {
+      "rookie": "YUN'S ROOM",
+      "junior": "YUN'S ROOM",
+      "master": "YUN'S ROOM"
+    },
+    {
+      "rookie": "Yun Dong-ju lights his lamp.",
+      "junior": "Yun Dong-ju turns on his lamp.",
+      "master": "Yun Dong-ju switches on his desk lamp."
+    },
+    {
+      "rookie": "\"My friend's copy had a white string. Now it is gone,\" he says.",
+      "junior": "\"The copy for my friend was tied with a white string. Now it has gone,\" he says.",
+      "master": "\"My friend's copy was bound with a white string, and now it has vanished,\" he says quietly."
+    },
+    {
+      "rookie": "Nothing is written on the dictionary's cover. But someone moved it.",
+      "junior": "There is nothing written on the dictionary's cover, but someone has moved it.",
+      "master": "The dictionary's cover bears no writing, yet someone has clearly shifted it."
+    },
+    {
+      "rookie": "Yun tells you:",
+      "junior": "Yun explains:",
+      "master": "Yun explains:"
+    },
+    {
+      "rookie": "My dictionary was moved. It is the thick book with a red spine.\nSomething small is under the dictionary now.\nThe blue spot on it is not ink. It is a drop of ____.",
+      "junior": "Someone moved my dictionary. It is the thick book with a red spine.\nNow there is something small under the dictionary.\nThe blue spot on it? It is not ink. It is a drop of ____.",
+      "master": "Someone has moved my dictionary. It is the thick book with a red spine.\nSomething small has been tucked beneath the dictionary.\nThat blue spot on it? It is not ink. It is a drop of ____."
+    },
+    {
+      "rookie": "Find the thing under the dictionary. Write the missing word.",
+      "junior": "Look for the thing under the dictionary, then write the missing word.",
+      "master": "Locate whatever lies beneath the dictionary, then write the missing word."
+    },
+    {
+      "rookie": "It is a drop of ____.",
+      "junior": "It is a drop of ____.",
+      "master": "It is a drop of ____."
+    },
+    {
+      "rookie": "Find the thick book with a red spine, then look under it.",
+      "junior": "Look for the thick book with a red spine, and check under it.",
+      "master": "Seek out the thick book with a red spine, and peer beneath it."
+    },
+    {
+      "rookie": "The blue spot is not ink. What did Bun-i carry in her bucket?",
+      "junior": "The blue spot isn't ink. What did Bun-i carry in her bucket?",
+      "master": "The blue spot is no ink. Recall what Bun-i carried in her bucket."
+    },
+    {
+      "rookie": "A drop of water: the keepers' mark!",
+      "junior": "A drop of water: the mark of the keepers!",
+      "master": "A drop of water: the keepers' own mark!"
+    },
+    {
+      "rookie": "It is a note in the King's letters, with a small blue drop.",
+      "junior": "It is a note written in the King's letters, marked with a small blue drop.",
+      "master": "It is a note in the King's letters, bearing a tiny blue drop."
+    },
+    {
+      "rookie": "Haesu's notes had the same drop.",
+      "junior": "Haesu's notes carried the very same drop.",
+      "master": "Haesu's notes bore that very same drop."
+    },
+    {
+      "rookie": "\"A keeper took the copy,\" you tell Yun. \"To keep it safe.\"",
+      "junior": "\"A keeper has taken the copy,\" you explain to Yun. \"To keep it from harm.\"",
+      "master": "\"A keeper took the copy,\" you assure Yun, \"to protect it.\""
+    },
+    {
+      "rookie": "Yun says the spot is not ink. Look at the note again.",
+      "junior": "Yun said the spot isn't ink. Read the note once more.",
+      "master": "Yun was clear that the spot is no ink. Study the note again."
+    },
+    {
+      "rookie": "Close! But the keepers' mark is what Bun-i carried in her bucket.",
+      "junior": "Nearly! But the keepers' mark is the thing Bun-i carried in her bucket.",
+      "master": "Almost! Yet the keepers' mark is whatever Bun-i carried in her bucket."
+    },
+    {
+      "rookie": "Not that word. What did Bun-i carry from the well?",
+      "junior": "That's not the word. What did Bun-i bring from the well?",
+      "master": "Not the right word. What did Bun-i haul from the well?"
+    },
+    {
+      "rookie": "The Keeper's Drop",
+      "junior": "The Keeper's Drop",
+      "master": "The Keeper's Drop"
+    },
+    {
+      "rookie": "A keeper's water-drop note was under the dictionary.",
+      "junior": "A water-drop note from a keeper was lying under the dictionary.",
+      "master": "A keeper's water-drop note lay hidden beneath the dictionary."
+    },
+    {
+      "rookie": "Yun's room at night",
+      "junior": "Yun's room at night",
+      "master": "Yun's room by night"
+    },
+    {
+      "rookie": "Look closely at the desk. Which thing did Yun describe?",
+      "junior": "Look carefully at the desk. Which thing was Yun talking about?",
+      "master": "Scan the desk with care. Which object did Yun describe?"
+    },
+    {
+      "rookie": "Look under it. One word of the note is worn.",
+      "junior": "Check under it. One word on the note has worn away.",
+      "master": "Peer beneath it. One word of the note has faded."
+    },
+    {
+      "rookie": "Drag the glass over the desk.",
+      "junior": "Drag the glass across the desk.",
+      "master": "Drag the glass across the desk."
+    },
+    {
+      "rookie": "Or tap a thing to look at it.",
+      "junior": "Or tap a thing to look at it.",
+      "master": "Or tap an object to examine it."
+    },
+    {
+      "rookie": "Nothing here. Look at the things on the desk.",
+      "junior": "Nothing here. Check the things on the desk.",
+      "master": "Nothing here. Examine the objects on the desk."
+    },
+    {
+      "rookie": "BLUE INK",
+      "junior": "BLUE INK",
+      "master": "BLUE INK"
+    },
+    {
+      "rookie": "A small bottle of blue ink",
+      "junior": "A little bottle of blue ink",
+      "master": "A little bottle of blue ink"
+    },
+    {
+      "rookie": "Blue ink. Yun says the spot is not ink.",
+      "junior": "Blue ink. But Yun says the spot isn't ink.",
+      "master": "Blue ink, though Yun insists the spot is no ink."
+    },
+    {
+      "rookie": "A THIN BOOK",
+      "junior": "A THIN BOOK",
+      "master": "A THIN BOOK"
+    },
+    {
+      "rookie": "A thin hand-sewn book tied with brown string",
+      "junior": "A thin hand-sewn book tied with brown string",
+      "master": "A slim hand-sewn book bound with brown string"
+    },
+    {
+      "rookie": "One of Yun's copies. Its string is brown.",
+      "junior": "One of the copies Yun made. Its string is brown.",
+      "master": "One of Yun's copies, bound with brown string."
+    },
+    {
+      "rookie": "ANOTHER THIN BOOK",
+      "junior": "ANOTHER THIN BOOK",
+      "master": "ANOTHER THIN BOOK"
+    },
+    {
+      "rookie": "A second thin hand-sewn book tied with brown string",
+      "junior": "Another thin hand-sewn book tied with brown string",
+      "master": "A second slim hand-sewn book bound with brown string"
+    },
+    {
+      "rookie": "His teacher's copy. Its string is brown too.",
+      "junior": "The copy for his teacher. This string is brown as well.",
+      "master": "His teacher's copy, its string likewise brown."
+    },
+    {
+      "rookie": "A THICK BOOK",
+      "junior": "A THICK BOOK",
+      "master": "A THICK BOOK"
+    },
+    {
+      "rookie": "A thick book with a red spine",
+      "junior": "A thick book with a red spine",
+      "master": "A thick book with a red spine"
+    },
+    {
+      "rookie": "A thick book with a red spine. It sits a little crooked.",
+      "junior": "A thick book with a red spine. It is sitting slightly crooked.",
+      "master": "A thick book with a red spine, resting slightly askew."
+    },
+    {
+      "rookie": "THE FOLDED NOTE",
+      "junior": "THE FOLDED NOTE",
+      "master": "THE FOLDED NOTE"
+    },
+    {
+      "rookie": "A folded paper under the thick book",
+      "junior": "A folded paper beneath the thick book",
+      "master": "A folded paper tucked beneath the thick book"
+    },
+    {
+      "rookie": "A small folded note with a blue spot.",
+      "junior": "A little folded note with a blue spot.",
+      "master": "A small folded note marked with a blue spot."
+    },
+    {
+      "rookie": "A corner of paper. Which book is it under?",
+      "junior": "A corner of paper sticks out. Which book is it under?",
+      "master": "A corner of paper peeks out. Beneath which book?"
+    },
+    {
+      "rookie": "THE LAMP",
+      "junior": "THE LAMP",
+      "master": "THE LAMP"
+    },
+    {
+      "rookie": "A desk lamp",
+      "junior": "A lamp on the desk",
+      "master": "A desk lamp"
+    },
+    {
+      "rookie": "Yun's lamp. Nothing under it.",
+      "junior": "Yun's lamp. There is nothing under it.",
+      "master": "Yun's lamp. Nothing lies beneath it."
+    },
+    {
+      "rookie": "UNDER THE DICTIONARY",
+      "junior": "UNDER THE DICTIONARY",
+      "master": "UNDER THE DICTIONARY"
+    },
+    {
+      "rookie": "The last word is worn away.",
+      "junior": "The final word has worn away.",
+      "master": "The final word has faded away."
+    },
+    {
+      "rookie": "Find out where the copy was.",
+      "junior": "Discover where the copy was kept.",
+      "master": "Learn where the copy was kept."
+    },
+    {
+      "rookie": "I copied my book three times, by hand.",
+      "junior": "I made three copies of my book by hand.",
+      "master": "I wrote out my book by hand, three times over."
+    },
+    {
+      "rookie": "One for my teacher, one for my friend, one for me.",
+      "junior": "My teacher got one, my friend got one, and I kept one.",
+      "master": "One went to my teacher, one to my friend, and one I kept."
+    },
+    {
+      "rookie": "Then let us look at your desk.",
+      "junior": "Then let's have a look at your desk.",
+      "master": "In that case, let us examine your desk."
+    },
+    {
+      "rookie": "A WATER-DROP NOTE",
+      "junior": "A WATER-DROP NOTE",
+      "master": "A WATER-DROP NOTE"
+    },
+    {
+      "rookie": "A keeper has been here. The note is in the King's letters.",
+      "junior": "A keeper was here. The note is written in the King's letters.",
+      "master": "A keeper has visited. The note is written in the King's letters."
+    },
+    {
+      "rookie": "Two steps stronger adds two lines.",
+      "junior": "Two steps stronger adds two lines.",
+      "master": "Two steps stronger adds two lines."
+    },
+    {
+      "rookie": "The first column is on the right.",
+      "junior": "The first column is on the right.",
+      "master": "The first column is on the right."
+    },
+    {
+      "rookie": "A Riddle in the King's Letters",
+      "junior": "A Riddle in the King's Letters",
+      "master": "A Riddle in the King's Letters"
+    },
+    {
+      "rookie": "You unfold the note. The place is a riddle.",
+      "junior": "You open the note. The place is hidden in a riddle.",
+      "master": "You unfold the note. The hiding place is written as a riddle."
+    },
+    {
+      "rookie": "The keeper made it the old way, like Sora's lesson.",
+      "junior": "The keeper built it the old way, just like Sora's lesson.",
+      "master": "The keeper composed it the old way, in the manner of Sora's lesson."
+    },
+    {
+      "rookie": "\"Only a person that knows how the letters are made can read it,\" Yun smiles.",
+      "junior": "\"Only someone who knows how the letters are made can read it,\" Yun says with a smile.",
+      "master": "\"Only one who understands how the letters are built could read this,\" Yun remarks with a smile."
+    },
+    {
+      "rookie": "The water-drop note says:",
+      "junior": "The water-drop note says:",
+      "master": "The water-drop note reads:"
+    },
+    {
+      "rookie": "The copy is safe. Read the place the old way.\nA stronger sound adds a line. Two steps stronger adds two lines.\nGroup 1: the mouth, two steps stronger. Only a standing line.\nGroup 2: the throat. A standing line, with a dot on its right.\nGroup 3: the tongue on the gums. A flat line, with a dot on top.\nGroup 4: the throat again, with the same vowel. The tongue on the gums sits at the bottom.\nRead from top to bottom. Two groups in each column. The first column is on the right.",
+      "junior": "The copy is safe. Read the place in the old way.\nA stronger sound adds a line. Two steps stronger adds two lines.\nGroup 1: the mouth sound, two steps stronger. Just a standing line.\nGroup 2: the throat sound. A standing line with a dot to its right.\nGroup 3: the tongue on the gums. A flat line with a dot on top.\nGroup 4: the throat sound again, with the same vowel. The tongue on the gums sits at the bottom.\nRead from top to bottom, two groups in each column. The first column is on the right.",
+      "master": "The copy is safe. Read the place in the old manner.\nA stronger sound adds a line. Two steps stronger adds two lines.\nGroup 1: the mouth sound, made two steps stronger, paired with a lone standing line.\nGroup 2: the throat sound, paired with a standing line that carries a dot on its right.\nGroup 3: the tongue on the gums, paired with a flat line that carries a dot on top.\nGroup 4: the throat sound once more, with the same vowel, and the tongue on the gums sits at the bottom.\nRead each column from top to bottom, two groups apiece. The first column is on the right."
+    },
+    {
+      "rookie": "Build each group in its place on the paper. Where is the copy?",
+      "junior": "Build every group in its spot on the paper. Where is the copy?",
+      "master": "Assemble each group in its proper place on the paper. Where is the copy?"
+    },
+    {
+      "rookie": "Look at Sora's board: which letter copies the mouth?",
+      "junior": "Check Sora's board: which letter is shaped like the mouth?",
+      "master": "Consult Sora's board: which letter imitates the mouth?"
+    },
+    {
+      "rookie": "Two steps stronger is two more lines. Group 1 is at the top right.",
+      "junior": "Two steps stronger means two extra lines. Group 1 goes at the top right.",
+      "master": "Two steps stronger calls for two extra lines. Group 1 belongs at the top right."
+    },
+    {
+      "rookie": "The note reads 피아노 안: inside the piano!",
+      "junior": "The note says 피아노 안: inside the piano!",
+      "master": "The note spells 피아노 안: inside the piano!"
+    },
+    {
+      "rookie": "\"Inside the piano?\" Yun laughs softly.",
+      "junior": "\"In the piano?\" Yun laughs quietly.",
+      "master": "\"In the piano?\" Yun gives a soft laugh."
+    },
+    {
+      "rookie": "\"There is an old piano in the college hall.\"",
+      "junior": "\"The college hall has an old piano.\"",
+      "master": "\"An old piano stands in the college hall.\""
+    },
+    {
+      "rookie": "You walk there together under the bare trees.",
+      "junior": "Together you walk there beneath the bare trees.",
+      "master": "Together you make your way there beneath the leafless trees."
+    },
+    {
+      "rookie": "Group 1 is two steps stronger: two more lines, not one.",
+      "junior": "Group 1 is two steps stronger, so it needs two more lines, not one.",
+      "master": "Group 1 is two steps stronger: that means two extra lines, not a single one."
+    },
+    {
+      "rookie": "Group 1 is two steps stronger than the mouth. Add two lines.",
+      "junior": "Group 1 is two steps stronger than the mouth sound. Add two lines.",
+      "master": "Group 1 is the mouth sound made two steps stronger. It needs two added lines."
+    },
+    {
+      "rookie": "The first column is on the right, not on the left.",
+      "junior": "The first column goes on the right, not the left.",
+      "master": "The first column sits on the right, not the left."
+    },
+    {
+      "rookie": "Group 2's dot is on the right of its line.",
+      "junior": "The dot in Group 2 goes on the right side of its line.",
+      "master": "In Group 2, the dot belongs on the right of its line."
+    },
+    {
+      "rookie": "The Hiding Place",
+      "junior": "The Hiding Place",
+      "master": "The Hiding Place"
+    },
+    {
+      "rookie": "The note says: inside the piano.",
+      "junior": "The note reads: inside the piano.",
+      "master": "According to the note: inside the piano."
+    },
+    {
+      "rookie": "How are the letters made?",
+      "junior": "How were the letters made?",
+      "master": "How were the letters built?"
+    },
+    {
+      "rookie": "Which thing in your Notebook shows how the first letters were made?",
+      "junior": "What in your Notebook shows how the first letters were made?",
+      "master": "Which item in your Notebook reveals how the first letters were made?"
+    },
+    {
+      "rookie": "Find Sora's lesson board from the King's palace.",
+      "junior": "Look for Sora's lesson board from the King's palace.",
+      "master": "Seek out Sora's lesson board from the King's palace."
+    },
+    {
+      "rookie": "Group 1: the mouth, two steps stronger. Only a standing line.",
+      "junior": "Group 1: the mouth sound, two steps stronger. Just a standing line.",
+      "master": "Group 1: the mouth sound, made two steps stronger, paired with a lone standing line."
+    },
+    {
+      "rookie": "Group 2: the throat. A standing line, with a dot on its right.",
+      "junior": "Group 2: the throat sound. A standing line with a dot to its right.",
+      "master": "Group 2: the throat sound, paired with a standing line that carries a dot on its right."
+    },
+    {
+      "rookie": "Group 3: the tongue on the gums. A flat line, with a dot on top.",
+      "junior": "Group 3: the tongue on the gums. A flat line with a dot on top.",
+      "master": "Group 3: the tongue on the gums, paired with a flat line that carries a dot on top."
+    },
+    {
+      "rookie": "Group 4: the throat again, with the same vowel. The tongue on the gums sits at the bottom.",
+      "junior": "Group 4: the throat sound again, with the same vowel. The tongue on the gums sits at the bottom.",
+      "master": "Group 4: the throat sound once more, with the same vowel, and the tongue on the gums sits at the bottom."
+    },
+    {
+      "rookie": "eighteen poems, and one more",
+      "junior": "eighteen poems, and one more",
+      "master": "eighteen poems, and one more"
+    },
+    {
+      "rookie": "side by side",
+      "junior": "side by side",
+      "master": "side by side"
+    },
+    {
+      "rookie": "The Box in the Piano",
+      "junior": "The Box in the Piano",
+      "master": "The Box in the Piano"
+    },
+    {
+      "rookie": "THE COLLEGE HALL",
+      "junior": "THE COLLEGE HALL",
+      "master": "THE COLLEGE HALL"
+    },
+    {
+      "rookie": "The hall is cold and dark. An old piano stands by the stage.",
+      "junior": "The hall is dark and cold. By the stage stands an old piano.",
+      "master": "The hall is chilly and dim. An old piano waits beside the stage."
+    },
+    {
+      "rookie": "Inside it is a small wooden letter box with a brass number lock.",
+      "junior": "Inside the piano is a little wooden letter box with a brass number lock.",
+      "master": "Within it rests a small wooden letter box fitted with a brass number lock."
+    },
+    {
+      "rookie": "A young woman runs in. \"Wait! I am Miri, Haesu's cousin.\"",
+      "junior": "A young woman hurries in. \"Wait! I'm Miri, Haesu's cousin.\"",
+      "master": "A young woman rushes in. \"Wait! My name is Miri. I am Haesu's cousin.\""
+    },
+    {
+      "rookie": "Miri and Yun tell you:",
+      "junior": "Miri and Yun explain:",
+      "master": "Miri and Yun explain:"
+    },
+    {
+      "rookie": "Miri: \"I put the copy in our family's letter box.\"\n\"A man from the office is checking rooms tonight.\"\n\"The lock wants two numbers, side by side.\"\n\"The number of copies. Then the number of poems in each copy.\"\nYun: \"I made three copies by hand.\"\n\"Each has eighteen poems, and one more poem to open the book.\"",
+      "junior": "Miri: \"I hid the copy in our family's letter box.\"\n\"Tonight a man from the office is checking the rooms.\"\n\"The lock needs two numbers, side by side.\"\n\"First the number of copies. Next, how many poems are in each copy.\"\nYun: \"I made three copies by hand.\"\n\"In each one there are eighteen poems, and one more poem to open the book.\"",
+      "master": "Miri: \"I hid the copy in our family's letter box.\"\n\"A man from the office is inspecting the rooms tonight.\"\n\"The lock demands two numbers, side by side.\"\n\"First, how many copies there are. After that, how many poems each copy holds.\"\nYun: \"I wrote out three copies by hand.\"\n\"Each holds eighteen poems, and one more poem that opens the book.\""
+    },
+    {
+      "rookie": "Put in the lock's number.",
+      "junior": "Enter the number for the lock.",
+      "master": "Enter the lock's number."
+    },
+    {
+      "rookie": "Find the number of copies, then the poems in each copy.",
+      "junior": "Work out how many copies there are, then how many poems each copy has.",
+      "master": "Determine the number of copies first, then the number of poems in each copy."
+    },
+    {
+      "rookie": "Eighteen poems, and one more: add them.",
+      "junior": "Eighteen poems, and one more: add them together.",
+      "master": "Eighteen poems, and one more: total them."
+    },
+    {
+      "rookie": "Click! The letter box opens.",
+      "junior": "Click! The letter box comes open.",
+      "master": "Click! The letter box swings open."
+    },
+    {
+      "rookie": "Under old notes with water drops lies a thin book.",
+      "junior": "A thin book lies under old notes marked with water drops.",
+      "master": "Beneath old notes marked with water drops rests a slim book."
+    },
+    {
+      "rookie": "Its white string is still tied. Its pages are in the King's letters.",
+      "junior": "Its white string is still tied, and its pages are written in the King's letters.",
+      "master": "Its white string remains tied, and its pages are written in the King's letters."
+    },
+    {
+      "rookie": "\"My friend's copy,\" Yun whispers.",
+      "junior": "\"The copy for my friend,\" Yun says in a whisper.",
+      "master": "\"My friend's copy,\" Yun breathes."
+    },
+    {
+      "rookie": "Count the copies again: three books, made by hand.",
+      "junior": "Count the copies once more: three books, all made by hand.",
+      "master": "Recount the copies: three books, each made by hand."
+    },
+    {
+      "rookie": "Count the copies again: one for his teacher, one for his friend, one for him.",
+      "junior": "Count the copies once more: his teacher's, his friend's and his own.",
+      "master": "Recount the copies: one for his teacher, another for his friend, a third for himself."
+    },
+    {
+      "rookie": "Eighteen poems, and one more poem to open the book.",
+      "junior": "Eighteen poems, plus one more poem that opens the book.",
+      "master": "Eighteen poems, together with one more poem that opens the book."
+    },
+    {
+      "rookie": "The right numbers, in the wrong order. The copies come first.",
+      "junior": "Right numbers, wrong order. The copies go first.",
+      "master": "Correct numbers, but reversed. The copies come first."
+    },
+    {
+      "rookie": "The Lock",
+      "junior": "The Lock",
+      "master": "The Lock"
+    },
+    {
+      "rookie": "Three copies; nineteen poems in each.",
+      "junior": "Three copies, with nineteen poems in each.",
+      "master": "Three copies, each containing nineteen poems."
+    },
+    {
+      "rookie": "Find out why Miri took the copy.",
+      "junior": "Discover why Miri took the copy.",
+      "master": "Learn why Miri took the copy."
+    },
+    {
+      "rookie": "I wrote the note. I am sorry I scared you.",
+      "junior": "The note was mine. I'm sorry I frightened you.",
+      "master": "The note was mine. Forgive me for frightening you."
+    },
+    {
+      "rookie": "Papers in Korean can get a student in trouble now.",
+      "junior": "These days, papers in Korean can get a student into trouble.",
+      "master": "At present, papers in Korean can bring a student serious trouble."
+    },
+    {
+      "rookie": "So you hid it with your family's notes.",
+      "junior": "So you hid it among your family's notes.",
+      "master": "So you concealed it among your family's notes."
+    },
+    {
+      "rookie": "THE FRIEND'S COPY",
+      "junior": "THE FRIEND'S COPY",
+      "master": "THE FRIEND'S COPY"
+    },
+    {
+      "rookie": "The copy is safe. Now it must reach Yun's friend.",
+      "junior": "The copy is safe. Next it has to reach Yun's friend.",
+      "master": "The copy is safe. It must now find its way to Yun's friend."
+    },
+    {
+      "rookie": "a choice subject",
+      "junior": "a choice subject",
+      "master": "a choice subject"
+    },
+    {
+      "rookie": "the people's own language",
+      "junior": "the people's own language",
+      "master": "the people's own language"
+    },
+    {
+      "rookie": "In His Own Language",
+      "junior": "In His Own Language",
+      "master": "In His Own Language"
+    },
+    {
+      "rookie": "THE COLLEGE GATE",
+      "junior": "THE COLLEGE GATE",
+      "master": "THE COLLEGE GATE"
+    },
+    {
+      "rookie": "Dawn comes over the stone college buildings.",
+      "junior": "Dawn rises over the stone buildings of the college.",
+      "master": "Dawn breaks over the college's stone buildings."
+    },
+    {
+      "rookie": "Yun holds the thin book in both hands. \"It could not be printed, so I copied every word.\"",
+      "junior": "Yun holds the thin book with both hands. \"It couldn't be printed, so I copied out every word.\"",
+      "master": "Yun cradles the slim book in both hands. \"Printing it was impossible, so I copied every single word.\""
+    },
+    {
+      "rookie": "\"My friend is coming to the gate,\" he says.",
+      "junior": "\"My friend is on his way to the gate,\" he says.",
+      "master": "\"My friend is on his way to the gate,\" he tells you."
+    },
+    {
+      "rookie": "Your notebook says:",
+      "junior": "Your notebook reads:",
+      "master": "Your notebook records:"
+    },
+    {
+      "rookie": "In 1938, Korean became only a choice subject in the schools.\nThe schools teach in Japanese now.\nThe words written on Yun's pages are in the King's letters, like the keeper's note.\nKing Sejong made his letters for the people's own language.",
+      "junior": "In 1938, Korean became only a choice subject in the schools.\nNow the schools teach in Japanese.\nThe words on Yun's pages are written in the King's letters, just like the keeper's note.\nKing Sejong made his letters for the people's own language.",
+      "master": "In 1938, Korean was reduced to only a choice subject in the schools.\nThe schools now teach in Japanese.\nThe words on Yun's pages are written in the King's letters, exactly like the keeper's note.\nKing Sejong created his letters for the people's own language."
+    },
+    {
+      "rookie": "In which language are Yun's poems?",
+      "junior": "Which language are Yun's poems written in?",
+      "master": "In which language did Yun write his poems?"
+    },
+    {
+      "rookie": "Yun's poems are in ____.",
+      "junior": "Yun's poems are in ____.",
+      "master": "Yun's poems are in ____."
+    },
+    {
+      "rookie": "Look at the pages of the copy. Which letters are written on them?",
+      "junior": "Look at the copy's pages. Which letters are on them?",
+      "master": "Study the copy's pages. In which letters are they written?"
+    },
+    {
+      "rookie": "King Sejong's letters write the language of Korea.",
+      "junior": "King Sejong's letters are used to write the language of Korea.",
+      "master": "King Sejong's letters were made to write the language of Korea."
+    },
+    {
+      "rookie": "Korean: Yun Dong-ju writes his poems in Korean!",
+      "junior": "Korean: Yun Dong-ju writes his poems in Korean!",
+      "master": "Korean: Yun Dong-ju composes his poems in Korean!"
+    },
+    {
+      "rookie": "Weeks later, Miri sends the old letter box far away.",
+      "junior": "A few weeks later, Miri sends the old letter box far away.",
+      "master": "Some weeks afterwards, Miri sends the old letter box on a long journey."
+    },
+    {
+      "rookie": "It goes to Haesu's family, in Chongqing.",
+      "junior": "It travels to Haesu's family, in Chongqing.",
+      "master": "Its destination is Haesu's family, in Chongqing."
+    },
+    {
+      "rookie": "One more note will be written in it.",
+      "junior": "One last note will be written in it.",
+      "master": "One final note is yet to be written in it."
+    },
+    {
+      "rookie": "The schools teach in Japanese. But Yun's pages are in the King's letters.",
+      "junior": "The schools teach in Japanese, but Yun's pages are written in the King's letters.",
+      "master": "The schools teach in Japanese, yet Yun's pages are filled with the King's letters."
+    },
+    {
+      "rookie": "Hangeul is the name of the letters. Which language do they write?",
+      "junior": "The letters are called Hangeul. Which language are they used for?",
+      "master": "Hangeul is the name of the letters. Which language do they record?"
+    },
+    {
+      "rookie": "King Sejong made his letters because Korean is not like Chinese.",
+      "junior": "King Sejong made his letters because Korean is different from Chinese.",
+      "master": "King Sejong devised his letters because Korean is unlike Chinese."
+    },
+    {
+      "rookie": "The pages are in the King's letters, not in English.",
+      "junior": "The pages are written in the King's letters, not in English.",
+      "master": "The pages bear the King's letters, not English ones."
+    },
+    {
+      "rookie": "Check your spelling. It is the language of Korea.",
+      "junior": "Check how you spelled it. It is the language of Korea.",
+      "master": "Check your spelling: it is the language of Korea."
+    },
+    {
+      "rookie": "Yun gives the copy to his young friend, Jeong Byeong-uk.",
+      "junior": "Yun hands the copy to his young friend, Jeong Byeong-uk.",
+      "master": "Yun entrusts the copy to his young friend, Jeong Byeong-uk."
+    },
+    {
+      "rookie": "Keep it safe. It is in our own words.",
+      "junior": "Keep it safe. It is written in our own words.",
+      "master": "Guard it well. It is written in our own words."
+    },
+    {
+      "rookie": "Yun Dong-ju wrote in Korean when Korean was pushed out of schools.",
+      "junior": "Yun Dong-ju kept writing in Korean while Korean was being pushed out of schools.",
+      "master": "Yun Dong-ju went on writing in Korean even as Korean was being pushed out of schools."
+    },
+    {
+      "rookie": "His friend's family hid the copy under their floor.",
+      "junior": "His friend's family kept the copy hidden under their floor.",
+      "master": "His friend's family kept the copy concealed beneath their floor."
+    },
+    {
+      "rookie": "In 1948, it became a book: Sky, Wind, Stars and Poems.",
+      "junior": "In 1948, the copy was made into a book: Sky, Wind, Stars and Poems.",
+      "master": "In 1948, it was finally published as a book: Sky, Wind, Stars and Poems."
+    },
+    {
+      "rookie": "Where will our old letter box go now?",
+      "junior": "Where will our old letter box travel next?",
+      "master": "Where will our old letter box journey now?"
+    }
+  ],
+  "glossary": {
+    "junior": {
+      "vanished": "사라졌다",
+      "crooked": "비뚤어진",
+      "frightened": "겁을 준",
+      "extra": "추가의"
+    },
+    "master": {
+      "concealed": "숨겼다",
+      "askew": "비스듬히",
+      "entrusts": "맡기다",
+      "devised": "고안했다",
+      "composes": "짓다(시를)",
+      "inspecting": "조사하는"
+    }
+  }
+}

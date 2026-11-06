@@ -26,6 +26,7 @@ import '../helpers.dart';
 import '../mission_play.dart';
 import 's9_ep03_test.dart' show hearAndCompare;
 import 'sandbox_play.dart';
+import 'single_case.dart' show CasePlayer;
 
 /// The screens every look round is played on again.
 const screens = [
@@ -269,6 +270,17 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
       }
     }
 
+    /// Whether [m] is played on an engine of its own (a timeline, two
+    /// records, traces, letters to build, exhibits under the glass), not on
+    /// the mission page's puzzle.
+    bool playedOnItsEngine(Mission m) => [
+          content.timelines,
+          content.records,
+          content.deductions,
+          content.syllables,
+          content.inspections,
+        ].any((table) => table.containsKey(m.id));
+
     /// [m] from the map to its Discovery Moment, as its plan plays it, on
     /// its own place's picture. With [hint], the puzzle's first hint is
     /// opened before it is answered.
@@ -278,6 +290,29 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
       expect(File(place).existsSync(), isTrue, reason: '${m.id}: $place');
       if (content.explores.containsKey(m.id)) {
         await lookRound(t, c, play, m);
+      } else if (content.investigations[m.id] case final search?) {
+        // A search (Seoul): each thing found where its report line says.
+        final engine = MissionPlay();
+        await play.toPlace(m);
+        expect(shown(place), findsWidgets, reason: '${m.id}: its place\'s picture');
+        await tapText(t, 'INVESTIGATE', after: const Duration(milliseconds: 3000));
+        if (talk?.before case final before?) {
+          await hear(t, play, before);
+          await wait(t, const Duration(milliseconds: 2500)); // the report fades in after the talk
+        }
+        await tapText(t, search.startLabel, after: const Duration(milliseconds: 900));
+        for (final f in search.finds) {
+          await engine.tapInPicture(t, f.areas.first.center);
+          await engine.closeFindCard(t);
+        }
+        await wait(t, const Duration(milliseconds: 1200));
+        if (talk?.after case final after?) await hear(t, play, after);
+      } else if (playedOnItsEngine(m)) {
+        // A puzzle of Puzzle Engine 2.0 or STEP 1 (Seoul): played with its own
+        // controls, as each case's own test plays it ([CasePlayer]).
+        final engine = CasePlayer(t, content);
+        await engine.toPuzzle(m);
+        await engine.answer(m);
       } else if (content.dialogues.containsKey(m.id)) {
         final witnesses = SeasonCatalog.dialogue(m)!;
         await play.toPlace(m);
@@ -343,7 +378,13 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
     /// The final, its ending, the case closed, its report.
     Future<void> playFinal(WidgetTester t, ProviderContainer c, SandboxPlay play, Episode e, {required bool last}) async {
       final fin = e.finalMission;
-      await play.toFinal(fin);
+      if (content.talks.containsKey(fin.id)) {
+        // A talk with the evidence shown (Seoul): each step answered with
+        // the evidence it accepts ([CasePlayer.solveFinal]).
+        await CasePlayer(t, content).solveFinal(fin);
+      } else {
+        await play.toFinal(fin);
+      }
       if (fin.type == MissionType.imageChoice) {
         // A final can be a picture choice too: its right picture first seen here.
         for (final o in fin.options) {
@@ -351,7 +392,7 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
         }
         unrevealed.remove(fin.options.firstWhere((o) => o.id == fin.answer).picture);
       }
-      await play.answer(fin, fin.answer);
+      if (!content.talks.containsKey(fin.id)) await play.answer(fin, fin.answer);
       await wait(t, const Duration(milliseconds: 1500));
       expect(find.byKey(const ValueKey('final-ending')), findsOneWidget, reason: '${e.id}: ${play.texts()}');
       final ending = SeasonCatalog.caseEnding(fin)!;
@@ -390,7 +431,7 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
         expect(c.read(gameControllerProvider.notifier).openEpisode(e.id), isTrue, reason: e.id);
         await throughIntro(t, c, play, e);
         // A hint in every case: in its look round, else on its first puzzle page.
-        final hintAt = e.missions.where((m) => !content.dialogues.containsKey(m.id)).first;
+        final hintAt = e.missions.where((m) => !content.dialogues.containsKey(m.id) && !content.investigations.containsKey(m.id) && !playedOnItsEngine(m)).first;
         for (final (i, m) in e.missions.indexed) {
           await playMission(t, c, play, m, hint: m == hintAt && !content.explores.containsKey(m.id));
           await play.onToMap(m);

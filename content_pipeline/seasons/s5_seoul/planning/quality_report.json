@@ -3,208 +3,587 @@
   "seasonId": "s5_seoul",
   "tool": "tool/season_planner/plan_season.dart check",
   "counts": {
-    "ERROR": 14,
-    "WARNING": 1,
-    "INFO": 25
+    "ERROR": 0,
+    "WARNING": 65,
+    "INFO": 43
   },
   "summary": {
-    "bible": null,
-    "assets": null,
+    "bible": {
+      "characters": 34,
+      "locations": 13,
+      "mysteryQuestions": 5,
+      "clueThreads": 38,
+      "longRangeThreads": 8,
+      "englishReviews": 12
+    },
+    "assets": {
+      "total": 87,
+      "byType": {
+        "map": 2,
+        "prologue": 1,
+        "place": 31,
+        "scene": 1,
+        "character": 32,
+        "object": 18,
+        "document": 2
+      },
+      "backgrounds": 35,
+      "characters": 32,
+      "objects": 20,
+      "reusedAcrossCases": 2,
+      "planned": 4,
+      "generated": 83,
+      "shownBySeasonPlaces": 31,
+      "model": "gpt-image-2",
+      "quality": "medium",
+      "estimatedUsd": 4.37541,
+      "estimateNote": "List prices of 2026-10-29 (image_pricing.dart), an estimate before any call, each reference picture priced as 8000 image input tokens; nothing was sent."
+    },
     "history": {
-      "facts": 8,
-      "draft": 8,
-      "source_checked": 0,
-      "approved": 0,
+      "facts": 78,
+      "draft": 5,
+      "source_checked": 73,
       "rejected": 0,
-      "stale": 0,
-      "puzzles": 4,
-      "puzzlesReviewedByPerson": 0,
-      "reveals": 1,
-      "revealsApproved": 0,
+      "puzzles": 48,
+      "reveals": 12,
       "errors": 0,
-      "pending": 23
+      "pending": 5
     },
     "generator": {
-      "run": false
+      "run": true,
+      "compatible": true,
+      "files": 29,
+      "blockedByPictures": 0
     },
-    "cases": 1,
+    "cases": 12,
     "plannedCases": 12,
     "acts": 3,
-    "missions": 3,
-    "finals": 1,
+    "missions": 36,
+    "finals": 12,
     "puzzlesByKind": {
-      "timeline_board": 1,
+      "trace_deduction": 2,
+      "order_sequence": 5,
+      "syllable_compose": 3,
+      "evidence_talk": 4,
+      "dark_room_search": 2,
+      "number_entry": 8,
+      "letter_tile_lock": 4,
+      "timeline_board": 5,
+      "picture_choice": 2,
+      "combo_dial_lock": 2,
+      "lens_inspect_word": 2,
+      "scene_explore_choose": 2,
+      "word_entry": 5,
       "record_mismatch": 1,
-      "trace_deduction": 1,
-      "evidence_talk": 1
+      "witness_compare": 1
     },
-    "puzzlesOnPictures": 3,
+    "puzzlesOnPictures": 16,
     "finalsByKind": {
-      "evidence_talk": 1
+      "evidence_talk": 4,
+      "letter_tile_lock": 3,
+      "combo_dial_lock": 2,
+      "word_entry": 2,
+      "number_entry": 1
     },
-    "crossCaseClueInputs": 0,
-    "recallSteps": 0,
-    "evidenceLinks": 0,
-    "characters": 4,
-    "locations": 3,
-    "places": 3,
+    "crossCaseClueInputs": 23,
+    "recallSteps": 11,
+    "evidenceLinks": 1,
+    "characters": 34,
+    "locations": 13,
+    "places": 31,
     "picturesPending": 0,
     "apiCalls": 0
   },
   "findings": [
     {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep02",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep03",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep04",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep05",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep06",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep07",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep08",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep09",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep10",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep11",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "case_missing",
-      "where": "cases/s5_ep12",
-      "source": "season",
-      "message": "no case.plan.json: the season has 12 cases"
-    },
-    {
-      "level": "ERROR",
-      "code": "prologue_missing",
-      "where": "season.plan.json $.prologue",
-      "source": "season",
-      "message": "the season opens with its opening: city, four cases, separate, question, bigger, promise, firstCase {picture, line} and four pieces (pictures of the manifest)"
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep01 $.missions[0].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep01_e1 is left, but no mission is given it"
     },
     {
       "level": "WARNING",
-      "code": "feedback_missing",
-      "where": "cases/s5_ep01 $.missions[1].play",
-      "source": "puzzle",
-      "message": "no wrong-answer line (feedback, orderFeedback): only the game's own"
+      "code": "clue_never_used",
+      "where": "cases/s5_ep01 $.final.clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep01_e4 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep02 $.missions[0].clueOutputs.clue",
+      "source": "plan",
+      "message": "s5_ep02_c1 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep02 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep02_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep02 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep02_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep02 $.final.clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep02_e4 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep03 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep03_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep03 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep03_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep03 $.final.clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep03_e4 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep04 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep04_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep04 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep04_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep04 $.final.clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep04_e4 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep05 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep05_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep05 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep05_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep06 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep06_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep06 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep06_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep07 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep07_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep07 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep07_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep07 $.final.clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep07_e4 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep08 $.missions[0].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep08_e1 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep08 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep08_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep08 $.missions[2].clueOutputs.clue",
+      "source": "plan",
+      "message": "s5_ep08_c3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep08 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep08_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep09 $.missions[0].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep09_e1 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep09 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep09_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep09 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep09_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep10 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep10_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep10 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep10_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep10 $.final.clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep10_e4 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep11 $.missions[0].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep11_e1 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep11 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep11_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep11 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep11_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep12 $.missions[0].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep12_e1 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep12 $.missions[1].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep12_e2 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "clue_never_used",
+      "where": "cases/s5_ep12 $.missions[2].clueOutputs.evidence",
+      "source": "plan",
+      "message": "s5_ep12_e3 is left, but no mission is given it"
+    },
+    {
+      "level": "WARNING",
+      "code": "story_unknown_name",
+      "where": "cases/s5_ep09 $.missions[2].play.letter",
+      "source": "season",
+      "message": "\"Mr. Seo\" is no character of season.plan.json"
+    },
+    {
+      "level": "WARNING",
+      "code": "story_unknown_name",
+      "where": "cases/s5_ep09 $.missions[2].play.feedback.SEO",
+      "source": "season",
+      "message": "\"Mr. Seo\" is no character of season.plan.json"
     },
     {
       "level": "INFO",
       "code": "timeline_reasoning_review",
-      "where": "cases/s5_ep01 s5_ep01_m1",
+      "where": "cases/s5_ep03 s5_ep03_m1",
       "source": "puzzle",
-      "message": "its one order is checked; whether its words lead a player there is a person's reading (englishReview; in a historical season, approve.dart … puzzle s5_ep01_m1)"
+      "message": "its one order is checked; whether its words lead a player there is a person's reading (englishReview)"
     },
     {
-      "level": "ERROR",
-      "code": "bible_missing",
-      "where": "planning/story_bible.json",
+      "level": "INFO",
+      "code": "timeline_reasoning_review",
+      "where": "cases/s5_ep04 s5_ep04_m3",
+      "source": "puzzle",
+      "message": "its one order is checked; whether its words lead a player there is a person's reading (englishReview)"
+    },
+    {
+      "level": "INFO",
+      "code": "timeline_reasoning_review",
+      "where": "cases/s5_ep05 s5_ep05_m2",
+      "source": "puzzle",
+      "message": "its one order is checked; whether its words lead a player there is a person's reading (englishReview)"
+    },
+    {
+      "level": "INFO",
+      "code": "timeline_reasoning_review",
+      "where": "cases/s5_ep07 s5_ep07_m2",
+      "source": "puzzle",
+      "message": "its one order is checked; whether its words lead a player there is a person's reading (englishReview)"
+    },
+    {
+      "level": "INFO",
+      "code": "timeline_reasoning_review",
+      "where": "cases/s5_ep12 s5_ep12_m2",
+      "source": "puzzle",
+      "message": "its one order is checked; whether its words lead a player there is a person's reading (englishReview)"
+    },
+    {
+      "level": "WARNING",
+      "code": "en_long_sentence",
+      "where": "cases/s5_ep01 $.missions[1].play.clue.note",
+      "source": "englishHeuristic",
+      "message": "22 words: \"The teeth, the back of the tongue, the teeth one step str...\" (at most 15 for ages 8-12)"
+    },
+    {
+      "level": "WARNING",
+      "code": "en_repeated",
+      "where": "cases/s5_ep01 $.missions[1].play.evidence.description",
+      "source": "englishHeuristic",
+      "message": "\"a stronger sound adds a line.\" 3 times in the season (cases/s5_ep01 $.final.play.letter; cases/s5_ep11 $.missions[1].play.letter…)"
+    },
+    {
+      "level": "WARNING",
+      "code": "en_repeated",
+      "where": "cases/s5_ep01 $.final.play.hints[0]",
+      "source": "englishHeuristic",
+      "message": "\"show one piece of evidence for each question.\" 4 times in the season (cases/s5_ep01 $.final.play.orderFeedback; cases/s5_ep09 $.final.play.hints[0]; cases/s5_ep09 $.final.play.orderFeedback…)"
+    },
+    {
+      "level": "WARNING",
+      "code": "en_repeated",
+      "where": "cases/s5_ep02 $.missions[2].play.orderFeedback",
+      "source": "englishHeuristic",
+      "message": "\"the right digits, in the wrong order.\" 3 times in the season (cases/s5_ep04 $.missions[1].play.orderFeedback; cases/s5_ep10 $.final.play.orderFeedback…)"
+    },
+    {
+      "level": "WARNING",
+      "code": "en_repeated",
+      "where": "cases/s5_ep03 $.missions[2].play.orderFeedback",
+      "source": "englishHeuristic",
+      "message": "\"those are the right steps.\" 3 times in the season (cases/s5_ep08 $.missions[1].play.orderFeedback; cases/s5_ep10 $.missions[0].play.orderFeedback…)"
+    },
+    {
+      "level": "WARNING",
+      "code": "en_repeated",
+      "where": "cases/s5_ep03 $.final.play.ending[4]",
+      "source": "englishHeuristic",
+      "message": "\"i wrote the note.\" 3 times in the season (cases/s5_ep04 $.final.play.ending[3]; cases/s5_ep11 $.missions[2].play.talk.before.lines[0]…)"
+    },
+    {
+      "level": "WARNING",
+      "code": "en_repeated",
+      "where": "cases/s5_ep05 $.missions[2].play.orderFeedback",
+      "source": "englishHeuristic",
+      "message": "\"the right numbers, in the wrong order.\" 5 times in the season (cases/s5_ep06 $.missions[2].play.orderFeedback; cases/s5_ep09 $.missions[0].play.orderFeedback; cases/s5_ep11 $.missions[2].play.orderFeedback…)"
+    },
+    {
+      "level": "WARNING",
+      "code": "en_repeated",
+      "where": "cases/s5_ep08 $.missions[0].play.letterIntro",
+      "source": "englishHeuristic",
+      "message": "\"the water-drop note says:\" 5 times in the season (cases/s5_ep09 $.missions[0].play.letterIntro; cases/s5_ep10 $.missions[0].play.letterIntro; cases/s5_ep11 $.missions[1].play.letterIntro…)"
+    },
+    {
+      "level": "WARNING",
+      "code": "en_repeated",
+      "where": "cases/s5_ep08 $.missions[0].play.letter",
+      "source": "englishHeuristic",
+      "message": "\"— a small water drop\" 3 times in the season (cases/s5_ep09 $.missions[0].play.letter; cases/s5_ep10 $.missions[0].play.letter…)"
+    },
+    {
+      "level": "WARNING",
+      "code": "mystery_early",
+      "where": "planning/story_bible.json $.coreMystery.revealCase",
       "source": "bible",
-      "message": "no story bible"
+      "message": "s5_ep08: the culprit is shown before Act 3"
     },
     {
-      "level": "ERROR",
-      "code": "asset_manifest_missing",
-      "where": "assets.manifest.json",
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep01",
+      "source": "claudeReview",
+      "message": "A1-A2 (ages 8-10): Fits (written and checked in the Seoul pilot, kept as it is)."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep02",
+      "source": "claudeReview",
+      "message": "Rookie, A1-A2 (ages 8-10): Fits."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep03",
+      "source": "claudeReview",
+      "message": "Rookie, A1-A2 (ages 8-10): Fits."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep04",
+      "source": "claudeReview",
+      "message": "Rookie, A1-A2 (ages 8-10): Fits."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep05",
+      "source": "claudeReview",
+      "message": "A1-A2 (ages 8-12): Fits."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep06",
+      "source": "claudeReview",
+      "message": "A1-A2 (ages 8-12): Fits."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep07",
+      "source": "claudeReview",
+      "message": "A2 (ages 9-12): Fits, with care."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep08",
+      "source": "claudeReview",
+      "message": "A1-A2 (ages 8-10): Fits."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep09",
+      "source": "claudeReview",
+      "message": "A2 (ages 9-12): Fits, with one stretch."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep10",
+      "source": "claudeReview",
+      "message": "A1-A2 (ages 8-10): Fits."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep11",
+      "source": "claudeReview",
+      "message": "A1-A2 (ages 8-11): Fits, with one stretch."
+    },
+    {
+      "level": "INFO",
+      "code": "english_review",
+      "where": "planning/story_bible.json s5_ep12",
+      "source": "claudeReview",
+      "message": "A1-A2 (ages 8-11): Fits."
+    },
+    {
+      "level": "WARNING",
+      "code": "asset_size_unusual",
+      "where": "assets.manifest.json $.assets[10].width",
       "source": "assets",
-      "message": "no asset manifest"
+      "message": "1024x1536, seoul_scene is made at 1536x1024"
+    },
+    {
+      "level": "WARNING",
+      "code": "asset_status_stale",
+      "where": "assets.manifest.json $.assets[10].status",
+      "source": "assets",
+      "message": "planned, but assets/seasons/season_05_seoul/cover/kings_study.webp is on disk: mark it generated once checked"
+    },
+    {
+      "level": "WARNING",
+      "code": "asset_portrait_missing",
+      "where": "assets.manifest.json an_junggeun",
+      "source": "assets",
+      "message": "no base portrait planned for An Jung-geun"
+    },
+    {
+      "level": "WARNING",
+      "code": "asset_portrait_missing",
+      "where": "assets.manifest.json nam_giho",
+      "source": "assets",
+      "message": "no base portrait planned for Nam Giho"
+    },
+    {
+      "level": "WARNING",
+      "code": "asset_cover_missing",
+      "where": "assets.manifest.json $.assets",
+      "source": "assets",
+      "message": "no season cover planned"
     },
     {
       "level": "INFO",
-      "code": "history_fact_draft",
-      "where": "planning/history_dossier.json $.cases[0].facts[0]",
-      "source": "history",
-      "message": "s5_ep01_h1 is a draft"
-    },
-    {
-      "level": "INFO",
-      "code": "history_fact_draft",
-      "where": "planning/history_dossier.json $.cases[0].facts[1]",
-      "source": "history",
-      "message": "s5_ep01_h2 is a draft"
-    },
-    {
-      "level": "INFO",
-      "code": "history_fact_draft",
-      "where": "planning/history_dossier.json $.cases[0].facts[2]",
-      "source": "history",
-      "message": "s5_ep01_h3 is a draft"
-    },
-    {
-      "level": "INFO",
-      "code": "history_fact_draft",
-      "where": "planning/history_dossier.json $.cases[0].facts[3]",
-      "source": "history",
-      "message": "s5_ep01_h4 is a draft"
-    },
-    {
-      "level": "INFO",
-      "code": "history_fact_draft",
-      "where": "planning/history_dossier.json $.cases[0].facts[4]",
-      "source": "history",
-      "message": "s5_ep01_h5 is a draft"
-    },
-    {
-      "level": "INFO",
-      "code": "history_fact_draft",
-      "where": "planning/history_dossier.json $.cases[0].facts[5]",
-      "source": "history",
-      "message": "s5_ep01_h6 is a draft"
+      "code": "asset_pending",
+      "where": "assets.manifest.json $.assets",
+      "source": "assets",
+      "message": "4 of 87 pictures planned, not made yet (no API was called)"
     },
     {
       "level": "INFO",
@@ -216,121 +595,261 @@
     {
       "level": "INFO",
       "code": "history_fact_draft",
-      "where": "planning/history_dossier.json $.cases[0].facts[7]",
+      "where": "planning/history_dossier.json $.cases[2].facts[5]",
       "source": "history",
-      "message": "s5_ep01_h8 is a draft"
+      "message": "s5_ep03_h6 is a draft: 1 source(s): two independent sources at least; no source is primary or public_institution (a record of the time, or a state or public body); the sources disagree and it is unresolved: No public or primary source opened: the case never states the real machine's parts. Its three drawings are the game's own."
     },
     {
       "level": "INFO",
-      "code": "history_puzzle_unreviewed",
-      "where": "planning/history_dossier.json $.cases[0].puzzles[0]",
+      "code": "history_fact_draft",
+      "where": "planning/history_dossier.json $.cases[3].facts[6]",
       "source": "history",
-      "message": "s5_ep01_m1: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m1)"
+      "message": "s5_ep04_h7 is a draft: 1 source(s): two independent sources at least; the sources disagree and it is unresolved: One source only; not said whether timber burned."
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
+      "code": "history_fact_draft",
+      "where": "planning/history_dossier.json $.cases[5].facts[6]",
       "source": "history",
-      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h1, not approved as it is (draft, draft)"
+      "message": "s5_ep06_h4 is a draft: 1 source(s): two independent sources at least"
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
+      "code": "history_fact_draft",
+      "where": "planning/history_dossier.json $.cases[6].facts[3]",
       "source": "history",
-      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h3, not approved as it is (draft, draft)"
+      "message": "s5_ep07_h4 is a draft: 1 source(s): two independent sources at least; no source is primary or public_institution (a record of the time, or a state or public body)"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_unmatched",
+      "where": "cases/s5_ep01 $.missions[0]",
+      "source": "puzzle",
+      "message": "s5_ep01_m1 is planned as trace_deduction, which its words do not call for (number_entry, lens_inspect_word, word_entry; chosen: number_entry)"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_unmatched",
+      "where": "cases/s5_ep01 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep01_m2 is planned as order_sequence, which its words do not call for (witness_compare, evidence_talk; chosen: witness_compare)"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep01 $.missions[2]",
+      "source": "puzzle",
+      "message": "s5_ep01_m3: no trait its words show: write the clue into the case, or choose by hand and say why"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep01 $.final",
+      "source": "puzzle",
+      "message": "s5_ep01_final: no trait its words show (the facts alone say relations: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why"
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
-      "source": "history",
-      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h4, not approved as it is (draft, draft)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep02 $.missions[0]",
+      "source": "puzzle",
+      "message": "s5_ep02_m1: planned dark_room_search, the rules chose trace_deduction (scene)"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep02 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep02_m2: no trait its words show: write the clue into the case, or choose by hand and say why"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep02 $.final",
+      "source": "puzzle",
+      "message": "s5_ep02_final: no trait its words show (the facts alone say chronology: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why"
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
-      "source": "history",
-      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h5, not approved as it is (draft, draft)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep03 $.missions[0]",
+      "source": "puzzle",
+      "message": "s5_ep03_m1: planned timeline_board, the rules chose record_mismatch (documents)"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep03 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep03_m2: no trait its words show: write the clue into the case, or choose by hand and say why"
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].puzzles[1].factIds",
-      "source": "history",
-      "message": "puzzle s5_ep01_m2 rests on s5_ep01_h6, not approved as it is (draft, draft)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep03 $.missions[2]",
+      "source": "puzzle",
+      "message": "s5_ep03_m3: planned order_sequence, the rules chose timeline_board (chronology)"
     },
     {
       "level": "INFO",
-      "code": "history_puzzle_unreviewed",
-      "where": "planning/history_dossier.json $.cases[0].puzzles[1]",
-      "source": "history",
-      "message": "s5_ep01_m2: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m2)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep03 $.final",
+      "source": "puzzle",
+      "message": "s5_ep03_final: planned combo_dial_lock, the rules chose number_entry (number (not chosen on the facts alone: documents, relations))"
     },
     {
       "level": "INFO",
-      "code": "history_puzzle_unreviewed",
-      "where": "planning/history_dossier.json $.cases[0].puzzles[2]",
-      "source": "history",
-      "message": "s5_ep01_m3: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_m3)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep04 $.missions[2]",
+      "source": "puzzle",
+      "message": "s5_ep04_m3: planned timeline_board, the rules chose order_sequence (chronology (second choice))"
     },
     {
       "level": "INFO",
-      "code": "history_puzzle_unreviewed",
-      "where": "planning/history_dossier.json $.cases[0].puzzles[3]",
-      "source": "history",
-      "message": "s5_ep01_final: the automatic checks are not a review — a person reads it at each level against the checklist (approve.dart … puzzle s5_ep01_final)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep05 $.missions[0]",
+      "source": "puzzle",
+      "message": "s5_ep05_m1: planned scene_explore_choose, the rules chose trace_deduction (scene (not chosen on the facts alone: chronology))"
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[0].factIds",
-      "source": "history",
-      "message": "the REAL HISTORY line rests on s5_ep01_h1, not approved as it is (draft, draft)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep05 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep05_m2: planned timeline_board, the rules chose witness_compare (testimony)"
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[1].factIds",
-      "source": "history",
-      "message": "the REAL HISTORY line rests on s5_ep01_h2, not approved as it is (draft, draft)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep06 $.missions[0]",
+      "source": "puzzle",
+      "message": "s5_ep06_m1: planned trace_deduction, the rules chose dark_room_search (scene (second choice))"
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[1].factIds",
-      "source": "history",
-      "message": "the REAL HISTORY line rests on s5_ep01_h4, not approved as it is (draft, draft)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep06 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep06_m2: planned order_sequence, the rules chose timeline_board (chronology)"
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[2].factIds",
-      "source": "history",
-      "message": "the REAL HISTORY line rests on s5_ep01_h5, not approved as it is (draft, draft)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep06 $.missions[2]",
+      "source": "puzzle",
+      "message": "s5_ep06_m3: planned number_entry, the rules chose order_sequence (chronology (second choice))"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_unmatched",
+      "where": "cases/s5_ep06 $.final",
+      "source": "puzzle",
+      "message": "s5_ep06_final is planned as letter_tile_lock, which its words do not call for (word_entry; chosen: word_entry)"
     },
     {
       "level": "INFO",
-      "code": "history_fact_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].reveal.realHistory[3].factIds",
-      "source": "history",
-      "message": "the REAL HISTORY line rests on s5_ep01_h8, not approved as it is (draft, draft)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep07 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep07_m2: planned timeline_board, the rules chose witness_compare (testimony)"
     },
     {
       "level": "INFO",
-      "code": "history_reveal_unapproved",
-      "where": "planning/history_dossier.json $.cases[0].reveal",
-      "source": "history",
-      "message": "s5_ep01's reveal is not approved as it is (draft): a person reads it against the checklist (approve.dart … reveal s5_ep01)"
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep07 $.missions[2]",
+      "source": "puzzle",
+      "message": "s5_ep07_m3: planned word_entry, the rules chose lens_inspect_word (inscription)"
     },
     {
       "level": "INFO",
-      "code": "generator_skipped",
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep08 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep08_m2: planned order_sequence, the rules chose lens_inspect_word (inscription)"
+    },
+    {
+      "level": "INFO",
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep08 $.missions[2]",
+      "source": "puzzle",
+      "message": "s5_ep08_m3: planned word_entry, the rules chose evidence_talk (relations)"
+    },
+    {
+      "level": "INFO",
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep08 $.final",
+      "source": "puzzle",
+      "message": "s5_ep08_final: planned combo_dial_lock, the rules chose word_entry (inscription)"
+    },
+    {
+      "level": "INFO",
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep09 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep09_m2: planned dark_room_search, the rules chose trace_deduction (scene)"
+    },
+    {
+      "level": "INFO",
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep09 $.missions[2]",
+      "source": "puzzle",
+      "message": "s5_ep09_m3: planned word_entry, the rules chose lens_inspect_word (inscription)"
+    },
+    {
+      "level": "INFO",
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep10 $.missions[0]",
+      "source": "puzzle",
+      "message": "s5_ep10_m1: planned order_sequence, the rules chose witness_compare (testimony (not chosen on the facts alone: relations))"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep10 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep10_m2: no trait its words show (the facts alone say relations: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_unmatched",
+      "where": "cases/s5_ep10 $.missions[2]",
+      "source": "puzzle",
+      "message": "s5_ep10_m3 is planned as letter_tile_lock, which its words do not call for (evidence_talk, witness_compare; chosen: evidence_talk)"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep11 $.missions[1]",
+      "source": "puzzle",
+      "message": "s5_ep11_m2: no trait its words show: write the clue into the case, or choose by hand and say why"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep12 $.missions[0]",
+      "source": "puzzle",
+      "message": "s5_ep12_m1: no trait its words show: write the clue into the case, or choose by hand and say why"
+    },
+    {
+      "level": "INFO",
+      "code": "puzzle_selection_alternative",
+      "where": "cases/s5_ep12 $.missions[2]",
+      "source": "puzzle",
+      "message": "s5_ep12_m3: planned number_entry, the rules chose order_sequence (chronology (second choice))"
+    },
+    {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep12 $.final",
+      "source": "puzzle",
+      "message": "s5_ep12_final: no trait its words show (the facts alone say chronology: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why"
+    },
+    {
+      "level": "INFO",
+      "code": "generator_ok",
       "where": "generate_season",
       "source": "generator",
-      "message": "not run: the plans have errors to fix first"
+      "message": "29 files made in memory (nothing written)"
     }
   ]
 }

@@ -4,11 +4,11 @@
   "tool": "tool/asset_pipeline/asset_pipeline.dart --wiring --write",
   "checkedAgainst": "lib/ as of 2026-10-30 (SeasonContent.places, explores, investigations, dialogues, talkMissions, endings, ChoiceOption.picture, ArtAssets.seasonCovers, SeasonMap.bySeason, ArtAssets.evidencePictures, SeasonContent.storyScenes); wired: in assets/ now",
   "counts": {
-    "wired": 8,
+    "wired": 81,
     "wired_when_made": 0,
     "ready_to_wire": 3,
     "blocked": 0,
-    "not_supported": 0
+    "not_supported": 3
   },
   "assets": [
     {
@@ -66,11 +66,11 @@
       "subject": "s5_seoul.prologue",
       "caseIds": [],
       "outputPath": "assets/seasons/season_05_seoul/cover/season5_prologue_night.webp",
-      "status": "ready_to_wire",
+      "status": "wired",
       "screen": "The season's opening, its first scene (SeasonPrologueScreen, CityNightHero)",
       "field": "season.plan.json prologue.hero (file, pixels) → SeasonPrologue.hero",
       "via": "generator",
-      "note": "Not shown yet: once made, name it in season.plan.json prologue.hero (file, pixels 1024×1536) and generate the season; until then the season opens at its Case 01."
+      "note": "Shown by the generated content: the opening plays once it has this picture (Season.playsPrologue)."
     },
     {
       "assetId": "s5_seoul.asset.sejong",
@@ -188,6 +188,1322 @@
       "field": "SeasonContent.storyScenes[<missionId>] (StoryScenes.place / after / next: StoryPicture)",
       "via": "generatorExtension",
       "note": "The table is a SeasonContent one, but the generator writes no storyScenes yet and the manifest names no mission for it (cases s5_ep01)."
+    },
+    {
+      "assetId": "s5_seoul.asset.season_map",
+      "type": "map",
+      "subject": "s5_seoul.map",
+      "caseIds": [],
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/season_map.webp",
+      "status": "ready_to_wire",
+      "screen": "Mission Map",
+      "field": "SeasonMap.bySeason['s5_seoul'] (artwork, pixels, aspect, landmarks, caseLandmarks) in lib/features/mission_map/map_world.dart",
+      "via": "libEdit",
+      "note": "Its landmarks are measured on the drawn map and written in lib/. Without a SeasonMap the season's Mission Map shows \"not ready\", so a released season needs this one."
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_store_room",
+      "type": "place",
+      "subject": "s5_seoul.c02_store_room",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/store_room.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c02_store_room].file → SeasonContent.places['s5_seoul.c02_store_room'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep02_m1",
+        "s5_ep02_m2"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_find_bucket",
+      "type": "object",
+      "subject": "s5_seoul.c02_find_bucket",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_bucket.webp",
+      "status": "wired",
+      "screen": "Search, a find laid over the scene (InvestigationSearch)",
+      "field": "SeasonContent.investigations → InvestigationFind",
+      "via": "generator",
+      "missions": [
+        "s5_ep02_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_find_straw",
+      "type": "object",
+      "subject": "s5_seoul.c02_find_straw",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_straw.webp",
+      "status": "wired",
+      "screen": "Search, a find laid over the scene (InvestigationSearch)",
+      "field": "SeasonContent.investigations → InvestigationFind",
+      "via": "generator",
+      "missions": [
+        "s5_ep02_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_find_note",
+      "type": "object",
+      "subject": "s5_ep02_e1",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_note.webp",
+      "status": "wired",
+      "screen": "Search, a find laid over the scene (InvestigationSearch)",
+      "field": "SeasonContent.investigations → InvestigationFind",
+      "via": "generator",
+      "missions": [
+        "s5_ep02_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing). As evidence s5_ep02_e1, its notebook card still needs one lib/ line (ArtAssets.evidencePictures)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c02_turtle_ship",
+      "type": "place",
+      "subject": "s5_seoul.c02_turtle_ship",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/turtle_ship.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c02_turtle_ship].file → SeasonContent.places['s5_seoul.c02_turtle_ship'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep02_m3",
+        "s5_ep02_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.yi_sunsin",
+      "type": "character",
+      "subject": "yi_sunsin",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/yi_sunsin.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep02_m1",
+        "s5_ep02_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.seok",
+      "type": "character",
+      "subject": "seok",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/seok.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep02_m3",
+        "s5_ep02_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_stone_yard",
+      "type": "place",
+      "subject": "s5_seoul.c03_stone_yard",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/stone_yard.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c03_stone_yard].file → SeasonContent.places['s5_seoul.c03_stone_yard'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep03_m1",
+        "s5_ep03_m3",
+        "s5_ep03_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_drawing_room",
+      "type": "place",
+      "subject": "s5_seoul.c03_drawing_room",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/drawing_room.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c03_drawing_room].file → SeasonContent.places['s5_seoul.c03_drawing_room'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep03_m2"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_drawing_pole",
+      "type": "object",
+      "subject": "s5_seoul.c03_drawing_pole",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/drawing_pole.webp",
+      "status": "wired",
+      "screen": "Picture choice (question_widgets.dart)",
+      "field": "case JSON → ChoiceOption.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep03_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_drawing_gate_wheels",
+      "type": "object",
+      "subject": "s5_seoul.c03_drawing_gate_wheels",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/drawing_gate_wheels.webp",
+      "status": "wired",
+      "screen": "Picture choice (question_widgets.dart)",
+      "field": "case JSON → ChoiceOption.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep03_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c03_drawing_gate_plain",
+      "type": "object",
+      "subject": "s5_seoul.c03_drawing_gate_plain",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/drawing_gate_plain.webp",
+      "status": "wired",
+      "screen": "Picture choice (question_widgets.dart)",
+      "field": "case JSON → ChoiceOption.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep03_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.jeong_yakyong",
+      "type": "character",
+      "subject": "jeong_yakyong",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/jeong_yakyong.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep03_m1",
+        "s5_ep03_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.okbun",
+      "type": "character",
+      "subject": "okbun",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/okbun.webp",
+      "status": "wired",
+      "screen": "Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep03_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.c04_timber_yard",
+      "type": "place",
+      "subject": "s5_seoul.c04_timber_yard",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_04/timber_yard.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c04_timber_yard].file → SeasonContent.places['s5_seoul.c04_timber_yard'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep04_m1",
+        "s5_ep04_m2"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c04_palace_site",
+      "type": "place",
+      "subject": "s5_seoul.c04_palace_site",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_04/palace_site.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c04_palace_site].file → SeasonContent.places['s5_seoul.c04_palace_site'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep04_m3",
+        "s5_ep04_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.heungseon_daewongun",
+      "type": "character",
+      "subject": "heungseon_daewongun",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/heungseon_daewongun.webp",
+      "status": "wired",
+      "screen": "",
+      "field": "",
+      "via": "generator",
+      "missions": [
+        "s5_ep04_final"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.duri",
+      "type": "character",
+      "subject": "duri",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/duri.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep04_m1",
+        "s5_ep04_m3",
+        "s5_ep04_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.ham",
+      "type": "character",
+      "subject": "ham",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/ham.webp",
+      "status": "not_supported",
+      "screen": null,
+      "field": null,
+      "via": null,
+      "note": "No case plan names it: no talk, ending or witness of a generated mission shows this face."
+    },
+    {
+      "assetId": "s5_seoul.asset.gwak",
+      "type": "character",
+      "subject": "gwak",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/gwak.webp",
+      "status": "not_supported",
+      "screen": null,
+      "field": null,
+      "via": null,
+      "note": "No case plan names it: no talk, ending or witness of a generated mission shows this face."
+    },
+    {
+      "assetId": "s5_seoul.asset.pyo",
+      "type": "character",
+      "subject": "pyo",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/pyo.webp",
+      "status": "not_supported",
+      "screen": null,
+      "field": null,
+      "via": null,
+      "note": "No case plan names it: no talk, ending or witness of a generated mission shows this face."
+    },
+    {
+      "assetId": "s5_seoul.asset.lamp_house",
+      "type": "place",
+      "subject": "s5_seoul.lamp_house",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/lamp_house.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.lamp_house].file → SeasonContent.places['s5_seoul.lamp_house'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep05_m1"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c05_belt_wheel",
+      "type": "object",
+      "subject": "s5_seoul.c05_belt_wheel",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/c05_belt_wheel.webp",
+      "status": "wired",
+      "screen": "Look round, its choice page (SceneExplore)",
+      "field": "SeasonContent.explores → ExplorePicture.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep05_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c05_fire_door",
+      "type": "object",
+      "subject": "s5_seoul.c05_fire_door",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/c05_fire_door.webp",
+      "status": "wired",
+      "screen": "Look round, its choice page (SceneExplore)",
+      "field": "SeasonContent.explores → ExplorePicture.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep05_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c05_coal_box",
+      "type": "object",
+      "subject": "s5_seoul.c05_coal_box",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/c05_coal_box.webp",
+      "status": "wired",
+      "screen": "Look round, its choice page (SceneExplore)",
+      "field": "SeasonContent.explores → ExplorePicture.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep05_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.queen_court",
+      "type": "place",
+      "subject": "s5_seoul.queen_court",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/queen_court.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.queen_court].file → SeasonContent.places['s5_seoul.queen_court'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep05_m2",
+        "s5_ep05_m3"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.king_hall",
+      "type": "place",
+      "subject": "s5_seoul.king_hall",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.king_hall].file → SeasonContent.places['s5_seoul.king_hall'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep05_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.lady_han",
+      "type": "character",
+      "subject": "lady_han",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/lady_han.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep05_m1",
+        "s5_ep05_m2",
+        "s5_ep05_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.myeongseong",
+      "type": "character",
+      "subject": "myeongseong",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/myeongseong.webp",
+      "status": "wired",
+      "screen": "Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep05_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.c06_palace_garden",
+      "type": "place",
+      "subject": "s5_seoul.c06_palace_garden",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_06/c06_palace_garden.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c06_palace_garden].file → SeasonContent.places['s5_seoul.c06_palace_garden'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep06_m1",
+        "s5_ep06_m2"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c06_west_lane",
+      "type": "place",
+      "subject": "s5_seoul.c06_west_lane",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_06/c06_west_lane.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c06_west_lane].file → SeasonContent.places['s5_seoul.c06_west_lane'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep06_m3"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.yi_jun_house",
+      "type": "place",
+      "subject": "s5_seoul.yi_jun_house",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_06/yi_jun_house.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.yi_jun_house].file → SeasonContent.places['s5_seoul.yi_jun_house'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep06_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.gojong",
+      "type": "character",
+      "subject": "gojong",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/gojong.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits",
+      "via": "generator",
+      "missions": [
+        "s5_ep06_m1"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.bongsu",
+      "type": "character",
+      "subject": "bongsu",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/bongsu.webp",
+      "status": "wired",
+      "screen": "Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep06_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.yi_jun",
+      "type": "character",
+      "subject": "yi_jun",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/yi_jun.webp",
+      "status": "wired",
+      "screen": "Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep06_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.kang_inn",
+      "type": "place",
+      "subject": "s5_seoul.kang_inn",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_07/kang_inn.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.kang_inn].file → SeasonContent.places['s5_seoul.kang_inn'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep07_m1",
+        "s5_ep07_m3",
+        "s5_ep07_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.harbin_tea_room",
+      "type": "place",
+      "subject": "s5_seoul.harbin_tea_room",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_07/harbin_tea_room.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.harbin_tea_room].file → SeasonContent.places['s5_seoul.harbin_tea_room'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep07_m2"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c07_paper_a",
+      "type": "document",
+      "subject": "s5_seoul.c07_paper_a",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_07/c07_paper_a.webp",
+      "status": "wired",
+      "screen": "",
+      "field": "",
+      "via": "generator",
+      "missions": [
+        "s5_ep07_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c07_paper_b",
+      "type": "document",
+      "subject": "s5_seoul.c07_paper_b",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_07/c07_paper_b.webp",
+      "status": "wired",
+      "screen": "",
+      "field": "",
+      "via": "generator",
+      "missions": [
+        "s5_ep07_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.mrs_kang",
+      "type": "character",
+      "subject": "mrs_kang",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/mrs_kang.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep07_m1",
+        "s5_ep07_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.porter_pak",
+      "type": "character",
+      "subject": "porter_pak",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/porter_pak.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits",
+      "via": "generator",
+      "missions": [
+        "s5_ep07_m2"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.sorin",
+      "type": "character",
+      "subject": "sorin",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/sorin.webp",
+      "status": "wired",
+      "screen": "Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep07_final"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.aunae_market",
+      "type": "place",
+      "subject": "s5_seoul.aunae_market",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_08/aunae_market.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.aunae_market].file → SeasonContent.places['s5_seoul.aunae_market'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep08_m1"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c08_village_home",
+      "type": "place",
+      "subject": "s5_seoul.gwansun_home",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_08/village_home.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.gwansun_home].file → SeasonContent.places['s5_seoul.gwansun_home'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep08_m2",
+        "s5_ep08_m3"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.maebong_hill",
+      "type": "place",
+      "subject": "s5_seoul.maebong_hill",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_08/maebong_hill.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.maebong_hill].file → SeasonContent.places['s5_seoul.maebong_hill'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep08_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.yu_gwansun",
+      "type": "character",
+      "subject": "yu_gwansun",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/yu_gwansun.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits",
+      "via": "generator",
+      "missions": [
+        "s5_ep08_m2"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.gyeongsun",
+      "type": "character",
+      "subject": "gyeongsun",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/gyeongsun.webp",
+      "status": "wired",
+      "screen": "Talk with witnesses (DialogueInvestigation, dialogue_investigation.dart); Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.dialogues → DialogueSpeaker.portrait; SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep08_m1",
+        "s5_ep08_m3",
+        "s5_ep08_final"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.dong_il",
+      "type": "character",
+      "subject": "dong_il",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/dong_il.webp",
+      "status": "wired",
+      "screen": "Talk with witnesses (DialogueInvestigation, dialogue_investigation.dart)",
+      "field": "SeasonContent.dialogues → DialogueSpeaker.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep08_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_shanghai_lane",
+      "type": "place",
+      "subject": "s5_seoul.shanghai_lane",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/shanghai_lane.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.shanghai_lane].file → SeasonContent.places['s5_seoul.shanghai_lane'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep09_m1"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_government_office",
+      "type": "place",
+      "subject": "s5_seoul.shanghai_office",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/government_office.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.shanghai_office].file → SeasonContent.places['s5_seoul.shanghai_office'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep09_m2",
+        "s5_ep09_m3",
+        "s5_ep09_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_desk_key",
+      "type": "object",
+      "subject": "s5_ep09_e2",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/desk_key.webp",
+      "status": "wired",
+      "screen": "Search, a find laid over the scene (InvestigationSearch)",
+      "field": "SeasonContent.investigations → InvestigationFind",
+      "via": "generator",
+      "missions": [
+        "s5_ep09_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing). As evidence s5_ep09_e2, its notebook card still needs one lib/ line (ArtAssets.evidencePictures)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_ink_bottle",
+      "type": "object",
+      "subject": "s5_ep09_e2",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/ink_bottle.webp",
+      "status": "wired",
+      "screen": "Search, a find laid over the scene (InvestigationSearch)",
+      "field": "SeasonContent.investigations → InvestigationFind",
+      "via": "generator",
+      "missions": [
+        "s5_ep09_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing). As evidence s5_ep09_e2, its notebook card still needs one lib/ line (ArtAssets.evidencePictures)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_thin_paper",
+      "type": "object",
+      "subject": "s5_ep09_e2",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/thin_paper.webp",
+      "status": "wired",
+      "screen": "Search, a find laid over the scene (InvestigationSearch)",
+      "field": "SeasonContent.investigations → InvestigationFind",
+      "via": "generator",
+      "missions": [
+        "s5_ep09_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing). As evidence s5_ep09_e2, its notebook card still needs one lib/ line (ArtAssets.evidencePictures)."
+    },
+    {
+      "assetId": "s5_seoul.asset.kim_gu",
+      "type": "character",
+      "subject": "kim_gu",
+      "caseIds": [
+        "s5_ep09",
+        "s5_ep10"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/kim_gu.webp",
+      "status": "wired",
+      "screen": "Final ending (CaseTalk, case_talk.dart); Talk before or after a mission (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.endings → EndingLine.portrait; SeasonContent.talkMissions → TalkSpeaker.portraits",
+      "via": "generator",
+      "missions": [
+        "s5_ep09_final",
+        "s5_ep10_final",
+        "s5_ep10_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.haesu",
+      "type": "character",
+      "subject": "haesu",
+      "caseIds": [
+        "s5_ep09",
+        "s5_ep10"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/haesu.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep09_m3",
+        "s5_ep09_final",
+        "s5_ep10_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_breakfast_room",
+      "type": "place",
+      "subject": "s5_seoul.breakfast_room",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/breakfast_room.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.breakfast_room].file → SeasonContent.places['s5_seoul.breakfast_room'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep10_m1",
+        "s5_ep10_m2",
+        "s5_ep10_m3"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_haesu_room",
+      "type": "place",
+      "subject": "s5_seoul.haesu_room",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/haesu_room.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.haesu_room].file → SeasonContent.places['s5_seoul.haesu_room'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep10_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_old_watch",
+      "type": "object",
+      "subject": "s5_seoul.c10_old_watch",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/old_watch.webp",
+      "status": "wired",
+      "screen": "Picture choice (question_widgets.dart)",
+      "field": "case JSON → ChoiceOption.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep10_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_new_watch",
+      "type": "object",
+      "subject": "s5_ep10_e2",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/new_watch.webp",
+      "status": "wired",
+      "screen": "Picture choice (question_widgets.dart)",
+      "field": "case JSON → ChoiceOption.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep10_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing). As evidence s5_ep10_e2, its notebook card still needs one lib/ line (ArtAssets.evidencePictures)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c10_strap_watch",
+      "type": "object",
+      "subject": "s5_seoul.c10_strap_watch",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_10/strap_watch.webp",
+      "status": "wired",
+      "screen": "Picture choice (question_widgets.dart)",
+      "field": "case JSON → ChoiceOption.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep10_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.yun_bonggil",
+      "type": "character",
+      "subject": "yun_bonggil",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/yun_bonggil.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits",
+      "via": "generator",
+      "missions": [
+        "s5_ep10_m1"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.c11_dorm_room",
+      "type": "place",
+      "subject": "s5_seoul.c11_dorm_room",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/dorm_room.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c11_dorm_room].file → SeasonContent.places['s5_seoul.c11_dorm_room'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep11_m1",
+        "s5_ep11_m2"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c11_college_hall",
+      "type": "place",
+      "subject": "s5_seoul.c11_college_hall",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/college_hall.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c11_college_hall].file → SeasonContent.places['s5_seoul.c11_college_hall'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep11_m3"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c11_college_gate",
+      "type": "place",
+      "subject": "s5_seoul.c11_college_gate",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/college_gate.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c11_college_gate].file → SeasonContent.places['s5_seoul.c11_college_gate'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep11_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.yun_dongju",
+      "type": "character",
+      "subject": "yun_dongju",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/yun_dongju.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep11_m1",
+        "s5_ep11_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.miri",
+      "type": "character",
+      "subject": "miri",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/miri.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep11_m3",
+        "s5_ep11_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.c12_office",
+      "type": "place",
+      "subject": "s5_seoul.c12_office",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/office.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c12_office].file → SeasonContent.places['s5_seoul.c12_office'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep12_m1",
+        "s5_ep12_m3"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c12_trunk_two_straps",
+      "type": "object",
+      "subject": "s5_seoul.c12_trunk_two_straps",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/trunk_two_straps.webp",
+      "status": "wired",
+      "screen": "Look round, its choice page (SceneExplore)",
+      "field": "SeasonContent.explores → ExplorePicture.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep12_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c12_trunk_one_strap_peg",
+      "type": "object",
+      "subject": "s5_seoul.c12_trunk_one_strap_peg",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/trunk_one_strap_peg.webp",
+      "status": "wired",
+      "screen": "Look round, its choice page (SceneExplore)",
+      "field": "SeasonContent.explores → ExplorePicture.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep12_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c12_trunk_one_strap_lock",
+      "type": "object",
+      "subject": "s5_seoul.c12_trunk_one_strap_lock",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/trunk_one_strap_lock.webp",
+      "status": "wired",
+      "screen": "Look round, its choice page (SceneExplore)",
+      "field": "SeasonContent.explores → ExplorePicture.picture",
+      "via": "generator",
+      "missions": [
+        "s5_ep12_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c12_family_room",
+      "type": "place",
+      "subject": "s5_seoul.c12_family_room",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/family_room.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c12_family_room].file → SeasonContent.places['s5_seoul.c12_family_room'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep12_m2"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c12_river_steps",
+      "type": "place",
+      "subject": "s5_seoul.c12_river_steps",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_12/river_steps.webp",
+      "status": "wired",
+      "screen": "Mission scene: the place picture of its missions (PlaceArt, LandmarkArt.ofScene, PlaceScenery.scene)",
+      "field": "season.plan.json places[s5_seoul.c12_river_steps].file → SeasonContent.places['s5_seoul.c12_river_steps'] (ScenePlace); missions name it by sceneKey",
+      "via": "generator",
+      "missions": [
+        "s5_ep12_final"
+      ],
+      "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.kim_wonbong",
+      "type": "character",
+      "subject": "kim_wonbong",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep12_m1",
+        "s5_ep12_m3",
+        "s5_ep12_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.bitna",
+      "type": "character",
+      "subject": "bitna",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/bitna.webp",
+      "status": "wired",
+      "screen": "Talk before or after a mission (CaseTalk, case_talk.dart); Final ending (CaseTalk, case_talk.dart)",
+      "field": "SeasonContent.talkMissions → TalkSpeaker.portraits; SeasonContent.endings → EndingLine.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep12_m2",
+        "s5_ep12_final"
+      ],
+      "note": "A face of the story (talk, ending): the mission plays without it, the line shows no face until it is made."
+    },
+    {
+      "assetId": "s5_seoul.asset.pyo_salt",
+      "type": "character",
+      "subject": "pyo_salt",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/characters/pyo_salt.webp",
+      "status": "wired",
+      "screen": "Talk with witnesses (DialogueInvestigation, dialogue_investigation.dart)",
+      "field": "SeasonContent.dialogues → DialogueSpeaker.portrait",
+      "via": "generator",
+      "missions": [
+        "s5_ep08_m1"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
     }
   ]
 }

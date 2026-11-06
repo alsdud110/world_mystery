@@ -15,13 +15,14 @@ import '../../tool/season_gen/season_cases.dart';
 /// stay as its plans make it, to be played with `SingleCase`.
 void main() {
   const plans = 'content_pipeline/seasons/s5_seoul';
-  const out = 'lib/data/season5/s5_seoul'; // Season 5 in the game (season5_content.dart)
+  const out = 'lib/data/generated/s5_seoul'; // Season 5 in the game (generate_season.dart --target game)
   final cases = SeasonCases.of('$plans/season.plan.json');
   List<String> blockers() => HistoryGate.blockers(plans, game: true);
 
-  test('a historical season, its one case written', () {
+  test('a historical season, its twelve cases written', () {
     expect(SeasonMode.of(plans), SeasonMode.historicalFictionMystery);
-    expect(cases.map((c) => File(c).parent.uri.pathSegments.reversed.elementAt(1)), ['s5_ep01']);
+    expect(cases.map((c) => File(c).parent.uri.pathSegments.reversed.elementAt(1)),
+        [for (var i = 1; i <= 12; i++) 's5_ep${i.toString().padLeft(2, '0')}']);
   });
 
   if (blockers().isNotEmpty) {
@@ -55,8 +56,11 @@ void main() {
         final made = CaseGenerator.sandbox(seasonPath: '$plans/season.plan.json', casePaths: cases);
         expect(made.writable, isTrue);
         expect(made.files.keys, contains('s5_seoul_history.g.dart'));
-        expect(GeneratedFiles.stale(out, made.files), isEmpty,
-            reason: 'run: dart run tool/season_gen/generate_season.dart --season $plans/season.plan.json --target sandbox --out $out');
+        // In the game whole, made fresh (test/generated_seasons_test.dart);
+        // no hand-registered sandbox copy of it is left.
+        expect(File('$out/s5_seoul_history.g.dart').existsSync(), isTrue,
+            reason: 'run: dart run tool/season_factory/season_factory.dart run $plans');
+        expect(Directory('lib/data/season5/s5_seoul').existsSync(), isFalse);
       });
     });
   }

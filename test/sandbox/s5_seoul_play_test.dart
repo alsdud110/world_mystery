@@ -26,12 +26,13 @@ void main() {
 
   test('Season 5 as the game takes it: valid, a reveal, one of the game\'s seasons, once', () {
     expect(SeasonContentValidator.validate(season), isEmpty);
-    expect(season.historyReveals.keys, ['s5_ep01']);
+    // A reveal for every case (the season whole since 2026-11-06).
+    expect(season.historyReveals.keys, [for (var n = 1; n <= 12; n++) 's5_ep${n.toString().padLeft(2, '0')}']);
     expect([for (final s in SeasonCatalog.all) if (s.id == season.id) s], [same(season)]);
-    // Its engines: the gate's traces, the lesson box, the note, the King's talk.
-    expect(season.deductions.keys, ['s5_ep01_m1']);
-    expect(season.syllables.keys, ['s5_ep01_m3']);
-    expect(season.talks.keys, ['s5_ep01_final']);
+    // Case 01's engines: the gate's traces, the lesson box, the note, the King's talk.
+    expect(season.deductions.keys.where((id) => id.startsWith('s5_ep01_')), ['s5_ep01_m1']);
+    expect(season.syllables.keys.where((id) => id.startsWith('s5_ep01_')), ['s5_ep01_m3']);
+    expect(season.talks.keys.where((id) => id.startsWith('s5_ep01_')), ['s5_ep01_final']);
     expect(const SyllableRules().answer(season.syllables['s5_ep01_m3']!), '서고지붕');
   });
 

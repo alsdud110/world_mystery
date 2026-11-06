@@ -1,0 +1,726 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s5_ep02",
+  "seasonId": "s5_seoul",
+  "number": 2,
+  "actId": "act1",
+  "title": "The Turtle Ship Before Dawn",
+  "synopsis": [
+    "The gunpowder for the turtle ship is gone from the store room.",
+    "A note with a small water drop is waiting on the empty shelf."
+  ],
+  "goal": "Find out who moved the gunpowder, and where, before dawn.",
+  "characters": [
+    "yi_sunsin",
+    "ham",
+    "seok"
+  ],
+  "locations": [
+    "yeosu_navy"
+  ],
+  "missions": [
+    {
+      "missionId": "s5_ep02_m1",
+      "slot": "m1",
+      "placeId": "s5_seoul.c02_store_room",
+      "puzzle": {
+        "paletteId": "dark_room_search",
+        "surface": "mission",
+        "engineTable": "investigations",
+        "missionType": "multipleChoice",
+        "answerSpec": {
+          "answer": "bucket",
+          "options": [
+            {
+              "id": "bucket",
+              "label": "The bucket of rain"
+            },
+            {
+              "id": "straw",
+              "label": "The wet straw",
+              "feedback": "The straw was next to the door. It shows the way out, not the danger."
+            },
+            {
+              "id": "note",
+              "label": "The small paper",
+              "feedback": "The paper was on the shelf. Read Ham's report: what came through the roof?"
+            }
+          ]
+        },
+        "assetNeeds": [
+          "s5_seoul.asset.c02_store_room",
+          "s5_seoul.asset.c02_find_bucket",
+          "s5_seoul.asset.c02_find_straw",
+          "s5_seoul.asset.c02_find_note"
+        ],
+        "status": "awaitingAssets",
+        "notes": [
+          "Played as a search (InvestigationScene): Ham's three report lines say where each thing is (under, next to, on). The question asks which find shows the danger: the Admiral's words say wet powder will not fire, and the bucket is full of rain under the roof hole.",
+          "Measured 2026-11-06 on the grid sheet of store_room.webp (picture.measuredOn): the roof hole upper left of centre with its wet patch below (the bucket placed there), the long empty shelf across the back, the door on the right with the straw at its foot, the rope shelves on the left; no two areas overlap.",
+          "The note is drawn as a blank folded paper with a small blue water drop: no writing in any picture."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep01_c1",
+          "use": "textMention",
+          "note": "The water drop on the paper: Bun-i, the water-carrier of 1446, left water drops by her note."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep02_c1",
+        "evidence": "s5_ep02_e1"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "함의 보고서에서 under, next to, on을 읽고 창고 그림에서 세 물건을 찾은 뒤, '젖은 화약은 터지지 않는다'는 말과 맞춰 위험을 보여 주는 물건을 고른다.",
+        "skill": "grammarInContext",
+        "expressions": [
+          "under the hole in the roof",
+          "next to the door",
+          "Wet powder will not fire."
+        ]
+      },
+      "play": {
+        "title": "The Empty Store Room",
+        "location": "THE STORE ROOM",
+        "story": [
+          "Before dawn, Quartermaster Ham runs to the store room.",
+          "\"Twelve barrels of gunpowder were here at sunset. Now they are gone!\"",
+          "He holds up his lamp. There are wet marks and traces on the floor."
+        ],
+        "letterIntro": "Ham's night report says:",
+        "letter": "Store room, before dawn:\nA bucket is under the hole in the roof. It is full of rain.\nWet straw is next to the door.\nA small paper is on the empty shelf. A water drop is drawn on it.\n— Quartermaster Ham",
+        "question": "Find the three things. Which one shows the danger to the powder?",
+        "hints": [
+          "Read each line of the report. Each one says where a thing is.",
+          "The Admiral says wet powder will not fire. What came through the roof?"
+        ],
+        "successMessage": "Rain came through the roof, right over the powder!",
+        "transition": [
+          "Someone moved the barrels away from the rain.",
+          "The small paper is written in the King's letters.",
+          "But the rain has blurred it."
+        ],
+        "mapX": 0.42,
+        "mapY": 0.58,
+        "clue": {
+          "title": "The Danger",
+          "value": "RAIN THROUGH THE ROOF",
+          "note": "Rain came in over the barrels. Wet powder will not fire."
+        },
+        "evidence": {
+          "name": "The Water-Drop Note (1592)",
+          "icon": "letter",
+          "description": "A short note in the King's letters, marked with a small water drop. The rain has blurred it."
+        },
+        "search": {
+          "picture": {
+            "file": "assets/seasons/season_05_seoul/cases/case_02/store_room.webp",
+            "pixels": {
+              "width": 1536,
+              "height": 1024
+            },
+            "measuredOn": "sha256:2e1512f3be80ba66455d252f30cb50cf919bc56ef5e09a678d0f286b4f1978f6"
+          },
+          "task": "Find the three things in Ham's report.",
+          "documentTitle": "HAM'S REPORT",
+          "missLine": "Nothing here. Read the report: where is each thing?",
+          "doneLine": "All three things are found!",
+          "arrival": [
+            "The store room smells of wet wood.",
+            "Ham hands you his report about three things."
+          ],
+          "guideAt": [
+            800,
+            700
+          ],
+          "finds": [
+            {
+              "id": "bucket",
+              "name": "The bucket of rain",
+              "title": "BUCKET OF RAIN",
+              "reportLine": "A bucket is under the hole in the roof. It is full of rain.",
+              "spot": "Under the hole in the roof",
+              "areas": [
+                [
+                  380,
+                  660,
+                  580,
+                  850
+                ]
+              ],
+              "foundLine": "A bucket full of rain, right under the hole!",
+              "picture": {
+                "file": "assets/seasons/season_05_seoul/cases/case_02/find_bucket.webp",
+                "pixels": {
+                  "width": 1536,
+                  "height": 1024
+                }
+              },
+              "at": [
+                470,
+                750
+              ],
+              "width": 150
+            },
+            {
+              "id": "straw",
+              "name": "The wet straw",
+              "title": "WET STRAW",
+              "reportLine": "Wet straw is next to the door.",
+              "spot": "Next to the door",
+              "areas": [
+                [
+                  1150,
+                  700,
+                  1320,
+                  850
+                ]
+              ],
+              "foundLine": "Wet straw next to the door. Barrels were dragged out here.",
+              "picture": {
+                "file": "assets/seasons/season_05_seoul/cases/case_02/find_straw.webp",
+                "pixels": {
+                  "width": 1536,
+                  "height": 1024
+                }
+              },
+              "at": [
+                1235,
+                775
+              ],
+              "width": 140
+            },
+            {
+              "id": "note",
+              "name": "The small paper",
+              "title": "SMALL PAPER",
+              "reportLine": "A small paper is on the empty shelf. A water drop is drawn on it.",
+              "spot": "On the empty shelf",
+              "areas": [
+                [
+                  600,
+                  400,
+                  900,
+                  520
+                ]
+              ],
+              "foundLine": "A folded paper, with a small blue water drop.",
+              "picture": {
+                "file": "assets/seasons/season_05_seoul/cases/case_02/find_note.webp",
+                "pixels": {
+                  "width": 1536,
+                  "height": 1024
+                }
+              },
+              "at": [
+                750,
+                470
+              ],
+              "width": 90
+            }
+          ],
+          "spots": [
+            {
+              "label": "The hole in the roof",
+              "areas": [
+                [
+                  340,
+                  40,
+                  520,
+                  140
+                ]
+              ],
+              "line": "Rain drips through here. The report says the bucket is UNDER it."
+            },
+            {
+              "label": "The door",
+              "areas": [
+                [
+                  1160,
+                  200,
+                  1450,
+                  690
+                ]
+              ],
+              "line": "The door is open a little. The report says the straw is NEXT TO it."
+            },
+            {
+              "label": "A shelf of ropes",
+              "areas": [
+                [
+                  0,
+                  100,
+                  370,
+                  650
+                ]
+              ],
+              "line": "Ropes and folded sails. No powder here."
+            },
+            {
+              "label": "The floor",
+              "areas": [
+                [
+                  600,
+                  860,
+                  1000,
+                  1000
+                ]
+              ],
+              "line": "Wet boards. The report says the paper is ON the shelf."
+            }
+          ],
+          "opening": [
+            60,
+            40,
+            1480,
+            1000
+          ],
+          "inside": [
+            20,
+            20,
+            1516,
+            1004
+          ],
+          "startLabel": "SEARCH THE STORE ROOM"
+        },
+        "talk": {
+          "speaker": "yi_sunsin",
+          "portrait": "assets/seasons/season_05_seoul/characters/yi_sunsin.webp",
+          "goal": "Find out why the gunpowder matters today.",
+          "before": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "At dawn we try the turtle ship's cannons."
+              },
+              {
+                "by": "speaker",
+                "text": "Wet powder will not fire. Find it, and keep it dry."
+              },
+              {
+                "by": "detective",
+                "text": "Then I will start where it was."
+              }
+            ]
+          }
+        },
+        "discovery": {
+          "type": "newLead",
+          "title": "A WATER DROP",
+          "detail": "Bun-i, the girl who carried water, wrote the first note in 1446. Who draws her water drop now?"
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep02_m2",
+      "slot": "m2",
+      "placeId": "s5_seoul.c02_store_room",
+      "puzzle": {
+        "paletteId": "syllable_compose",
+        "surface": "mission",
+        "engineTable": "syllables",
+        "missionType": "wordInput",
+        "answerSpec": {
+          "answer": "거북선"
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "The rain blurred the note's lines and dots; what is left names each group's sounds by the body part on Sora's board (Case 01) and its vowel by the dot and line. The groups sit side by side, left to right (one row). The note reads 거북선, the turtle ship.",
+          "Two first sounds are not used (ㅁ, ㅈ): 'the mouth, one step stronger' is ㅂ, not ㅁ; 'the teeth' is ㅅ, not ㅈ.",
+          "Every letter is the app's text (SyllableBoard): never in a picture."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep01_e2",
+          "use": "recall",
+          "note": "Sora's Lesson Board: the letters copy the tongue, the mouth, the teeth and the throat; a stronger sound adds a line."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep02_c2",
+        "evidence": "s5_ep02_e2"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "Sora의 글자판 설명(copies the teeth, a stronger sound adds one line)과 위치 표현(a dot on its left, under it, at the bottom)을 읽고 번진 쪽지의 세 글자를 세로로 다시 만든다.",
+        "skill": "sentenceMeaning",
+        "expressions": [
+          "a standing line, with a dot on its left",
+          "at the bottom"
+        ]
+      },
+      "play": {
+        "title": "The Blurred Note",
+        "location": "THE STORE ROOM",
+        "story": [
+          "You hold the wet note under Ham's lamp.",
+          "Three groups of letters, side by side. The rain blurred their lines and dots.",
+          "\"I cannot read the King's letters,\" says Ham. \"Can you?\""
+        ],
+        "letterIntro": "Sora's board, and what you can still see:",
+        "letter": "Sora's board: ㄱ copies the back of the tongue. ㄴ copies the tongue on the gums.\nㅁ copies the mouth. ㅅ copies the teeth. A stronger sound adds one line.\nFlat vowels go under the first sound. Standing vowels go on its right.\nGroup 1: the back of the tongue. A standing line, with a dot on its left.\nGroup 2: the mouth, one step stronger. A flat line, with a dot under it. The back of the tongue at the bottom.\nGroup 3: the teeth. A standing line, with a dot on its left. The tongue on the gums at the bottom.",
+        "question": "Build the three groups, from left to right. What does the note say?",
+        "hints": [
+          "Group 1 is on the left. Find the back of the tongue on Sora's board.",
+          "One step stronger is one more line. For each group, choose its sound, then its line and dot."
+        ],
+        "successMessage": "The note is whole again: 거북선, the turtle ship!",
+        "transition": [
+          "거북선 means the turtle ship.",
+          "Someone carried the powder to the turtle ship!",
+          "You and Ham hurry down to the harbour."
+        ],
+        "feedback": {
+          "거묵선": "Group 2 is the mouth one step stronger: one more line than ㅁ.",
+          "거북서": "Group 3 has a sound at the bottom: the tongue on the gums.",
+          "가북선": "Group 1's dot is on the left of its line, not the right.",
+          "거북전": "Group 3 is the teeth, not the teeth one step stronger."
+        },
+        "mapX": 0.42,
+        "mapY": 0.56,
+        "clue": {
+          "title": "The Note's Word",
+          "value": "거북선 · THE TURTLE SHIP",
+          "note": "The blurred note says 거북선: the turtle ship."
+        },
+        "evidence": {
+          "name": "The Note, Read Again",
+          "icon": "letter",
+          "description": "The note, rebuilt with Sora's board. It says 거북선: the turtle ship."
+        },
+        "recall": {
+          "title": "Read the Blurred Note",
+          "prompt": "Which page of your notebook shows how the letters are made?",
+          "miss": "That does not explain the letters. Look for a lesson board."
+        },
+        "syllables": {
+          "blocks": [
+            {
+              "id": "one",
+              "initial": "ㄱ",
+              "vowel": "ㅓ",
+              "line": "Group 1: the back of the tongue. A standing line, with a dot on its left."
+            },
+            {
+              "id": "two",
+              "initial": "ㅂ",
+              "vowel": "ㅜ",
+              "final": "ㄱ",
+              "line": "Group 2: the mouth, one step stronger. A flat line, with a dot under it. The back of the tongue at the bottom."
+            },
+            {
+              "id": "three",
+              "initial": "ㅅ",
+              "vowel": "ㅓ",
+              "final": "ㄴ",
+              "line": "Group 3: the teeth. A standing line, with a dot on its left. The tongue on the gums at the bottom."
+            }
+          ],
+          "sounds": [
+            "ㄱ",
+            "ㄴ",
+            "ㅁ",
+            "ㅂ",
+            "ㅅ",
+            "ㅈ"
+          ]
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep02_m3",
+      "slot": "m3",
+      "placeId": "s5_seoul.c02_turtle_ship",
+      "puzzle": {
+        "paletteId": "number_entry",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "numberCode",
+        "answerSpec": {
+          "answer": "12",
+          "codeLength": 2
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "Seok's words give two numbers (four barrels each time, three times): twelve, the number in Ham's words at sunset (M1). All the powder is safe."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep02_c2",
+          "use": "textMention",
+          "note": "The note said 거북선: the powder is on the turtle ship."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep02_c3",
+        "evidence": "s5_ep02_e3"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "comprehension",
+        "objective": "석의 말(four barrels each time, three times)을 읽고 옮긴 화약 통의 수를 숫자로 넣는다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "four barrels each time",
+          "three times"
+        ]
+      },
+      "play": {
+        "title": "Under the Turtle's Back",
+        "location": "THE TURTLE SHIP",
+        "story": [
+          "The turtle ship has a roof of planks over its deck.",
+          "Under the roof, you find barrels of gunpowder, dry.",
+          "A young sailor stands up, his clothes wet. \"I am Seok. I carried them here.\""
+        ],
+        "letterIntro": "Seok tells you:",
+        "letter": "\"Rain fell on the barrels after midnight.\"\n\"I took four barrels each time, in a hand cart.\"\n\"I went from the store room to the ship three times.\"\n\"The ship's roof keeps the rain off.\"",
+        "question": "How many barrels did Seok carry to the ship? Put in the number.",
+        "hints": [
+          "Find the two numbers in Seok's words.",
+          "Four barrels each time. How many times did he go?"
+        ],
+        "successMessage": "Twelve barrels: all the powder is safe and dry!",
+        "transition": [
+          "Ham counts the barrels: twelve, just as at sunset.",
+          "\"You saved the test, boy,\" he says.",
+          "The sky turns grey. The Admiral is coming aboard."
+        ],
+        "feedback": {
+          "04": "That is one trip. How many times did Seok go?",
+          "03": "That is how many times he went. He took four barrels each time.",
+          "07": "Four and three make seven. But he took four barrels, three times."
+        },
+        "orderFeedback": "The right digits, in the wrong order. Read Seok's words again.",
+        "mapX": 0.6,
+        "mapY": 0.7,
+        "clue": {
+          "title": "The Dry Barrels",
+          "value": "12 BARRELS · DRY",
+          "note": "Seok carried twelve barrels to the turtle ship, out of the rain."
+        },
+        "evidence": {
+          "name": "The Dry Barrels",
+          "icon": "bag",
+          "description": "Twelve barrels of gunpowder, dry under the turtle ship's roof. Seok carried them there in three trips."
+        },
+        "talk": {
+          "speaker": "seok",
+          "portrait": "assets/seasons/season_05_seoul/characters/seok.webp",
+          "goal": "Find out why Seok moved the powder.",
+          "after": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "I left a note. Did you read it?"
+              },
+              {
+                "by": "detective",
+                "text": "I did. And the water drop on it."
+              },
+              {
+                "by": "speaker",
+                "text": "My grandmother taught me that mark."
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "final": {
+    "missionId": "s5_ep02_final",
+    "slot": "final",
+    "placeId": "s5_seoul.c02_turtle_ship",
+    "puzzle": {
+      "paletteId": "letter_tile_lock",
+      "surface": "finalMission",
+      "engineTable": null,
+      "missionType": "letterLock",
+      "answerSpec": {
+        "answer": "DRAGON",
+        "options": [
+          {
+            "id": "o",
+            "label": "O"
+          },
+          {
+            "id": "g",
+            "label": "G"
+          },
+          {
+            "id": "d",
+            "label": "D"
+          },
+          {
+            "id": "n",
+            "label": "N"
+          },
+          {
+            "id": "a",
+            "label": "A"
+          },
+          {
+            "id": "r",
+            "label": "R"
+          }
+        ]
+      },
+      "assetNeeds": [],
+      "status": "ready",
+      "notes": [
+        "The answer is the real design of the turtle ship (s5_ep02_h1): a roof of planks like a turtle's back with knives and spikes on it, a turtle's tail at the back, and at the front a dragon's head whose mouth is a hole for a cannon. The Admiral's words retell the 1592 record; they are made up, never a quotation.",
+        "The head is named only by the Admiral's fourth line (not a turtle's, a dragon's); the six tiles make one word only. No picture: the tiles are the app's."
+      ]
+    },
+    "clueInputs": [
+      {
+        "ref": "s5_ep02_c3",
+        "use": "textMention",
+        "note": "The powder is dry on the turtle ship: the ship is ready."
+      },
+      {
+        "ref": "s5_ep01_c1",
+        "use": "answerDerivation",
+        "note": "Seok's water drop is Bun-i's mark: the ending names it."
+      }
+    ],
+    "clueOutputs": {
+      "evidence": "s5_ep02_e4"
+    },
+    "learning": {
+      "dependency": "essential",
+      "level": "application",
+      "objective": "이순신의 설명(a roof like a turtle's back, at the front, its mouth is a hole for a cannon)을 읽고 거북선 앞머리의 동물을 글자 타일로 맞춘다.",
+      "skill": "sentenceMeaning",
+      "expressions": [
+        "like a turtle's back",
+        "At the front is a dragon's head."
+      ]
+    },
+    "play": {
+      "title": "The Ship That Was Ready",
+      "location": "THE TURTLE SHIP",
+      "story": [
+        "Dawn comes. Admiral Yi Sun-sin walks along his turtle ship.",
+        "\"The powder is dry,\" he says. \"Now look at my ship.\"",
+        "\"Tell me what is at its front, and you know how it fights.\""
+      ],
+      "letterIntro": "The Admiral tells you about his ship:",
+      "letter": "\"Its roof is made of planks, like a turtle's back.\"\n\"Knives and spikes stand on the roof, with a narrow path for my men.\"\n\"At the back is a turtle's tail.\"\n\"At the front is a dragon's head, not a turtle's head.\"\n\"Its mouth is a hole for a cannon.\"",
+      "question": "What head is at the front of the turtle ship? Spell it.",
+      "hints": [
+        "Read the Admiral's fourth line: what is at the front?",
+        "It is not a turtle. Spell the animal he names."
+      ],
+      "successMessage": "A dragon's head, with a cannon in its mouth!",
+      "transition": [
+        "The cannon test goes ahead that morning.",
+        "The next day, Japanese ships cover the sea at Busan.",
+        "The war has begun. Seok's note goes into your notebook."
+      ],
+      "orderFeedback": "All six letters fit. Read the Admiral's words about the front.",
+      "mapX": 0.62,
+      "mapY": 0.72,
+      "evidence": {
+        "name": "The Turtle Ship",
+        "icon": "seal",
+        "description": "A roof like a turtle's back, with spikes. A dragon's head at the front, its mouth a hole for a cannon. Ready the day before the war."
+      },
+      "lockTitle": "THE TURTLE SHIP",
+      "ending": [
+        {
+          "by": "speaker",
+          "text": "My turtle ship is ready. So is my navy.",
+          "speaker": "yi_sunsin",
+          "portrait": "assets/seasons/season_05_seoul/characters/yi_sunsin.webp"
+        },
+        {
+          "by": "narrator",
+          "text": "That day, the twelfth of the fourth month, the cannons were tested."
+        },
+        {
+          "by": "narrator",
+          "text": "Yi Sun-sin wrote it down in his war diary."
+        },
+        {
+          "by": "narrator",
+          "text": "The next day, Japanese ships covered the sea at Busan."
+        },
+        {
+          "by": "narrator",
+          "text": "The war had begun. Yi Sun-sin had prepared for it."
+        },
+        {
+          "by": "narrator",
+          "text": "In the fifth month, his navy won its first victory at sea, at Okpo."
+        },
+        {
+          "by": "detective",
+          "text": "Seok's water drop is just like Bun-i's.",
+          "evidence": "s5_ep02_e1"
+        },
+        {
+          "by": "speaker",
+          "text": "Who taught my grandmother? I never asked.",
+          "speaker": "seok",
+          "portrait": "assets/seasons/season_05_seoul/characters/seok.webp"
+        }
+      ]
+    }
+  },
+  "hook": "The cannon test is at dawn.",
+  "learningGoal": {
+    "title": "Reading where things are, and how a ship is made",
+    "titleKo": "위치 표현과 거북선의 생김새 읽기"
+  },
+  "play": {
+    "objectives": [
+      "Search the empty store room.",
+      "Read the blurred note.",
+      "Count the barrels on the ship.",
+      "Tell the Admiral what is at the front."
+    ],
+    "intro": [
+      "Spring, 1592: the fourth month of the moon calendar.",
+      "You are a guest of Admiral Yi Sun-sin at Yeosu.",
+      "He commands the navy of Jeolla, on the south coast.",
+      "Before the war, he built a turtle ship, with a roof over its deck.",
+      "\"Today we test its cannons,\" he says. \"We must be ready.\"",
+      "Before dawn, a bell rings at the store room."
+    ],
+    "caseSummary": "Rain came through the roof of the store room. Seok, a young sailor, carried the gunpowder to the turtle ship. Yi Sun-sin had built the turtle ship before the war. Its front was a dragon's head. On the twelfth day of the fourth month of 1592, its cannons were tested. His war diary records it. The next day, Japanese ships came to Busan, and the war began. In the fifth month, his navy won its first victory at sea, at Okpo.",
+    "place": "THE NAVY BASE, YEOSU",
+    "keyWords": [
+      "under",
+      "next to",
+      "gunpowder",
+      "roof",
+      "dragon"
+    ],
+    "glossary": {
+      "gunpowder": "화약",
+      "barrel": "통",
+      "barrels": "통들",
+      "quartermaster": "보급 담당 군관",
+      "straw": "짚",
+      "planks": "널빤지들",
+      "harbour": "항구",
+      "spikes": "뾰족한 쇠못",
+      "navy": "수군",
+      "cannon": "대포"
+    }
+  },
+  "notes": [
+    "PART 10 (2026-11-06), Case 02. Admiral Yi Sun-sin is real; his words here are made up (two lines of the final retell the 1592 record of the turtle ship, s5_ep02_h1). Seok and Quartermaster Ham are made up; so are the store room, the rain and the night's test.",
+    "Ends on checked facts: the final's answer DRAGON is the turtle ship's real dragon head with a cannon hole (h1); the ending tells the real cannon test of the 12th day of the 4th lunar month, 1592, in Yi's diary (h5), the war's start at Busan the next day (h3, lunar 13th) and the first victory at sea at Okpo in the 5th lunar month (h4). All dates are of the lunar calendar; no solar date is given."
+  ]
+}

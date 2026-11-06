@@ -141,7 +141,8 @@ void main() {
   group('the image policy (2026-11-04): pictures made by default within the season\'s budget', () {
     test('budgets are read from content_pipeline/image_budgets.json: Seoul Pilot Case 01 at \$1.00, a season not listed has none', () {
       expect(ImageBudgets.of('s7_seoulpilot'), 1.00);
-      expect(ImageBudgets.of('s5_seoul'), isNull);
+      expect(ImageBudgets.of('s5_seoul'), 12.00, reason: 'Season 5 whole, approved 2026-11-06');
+      expect(ImageBudgets.of('s6_unlisted'), isNull);
       expect(ImageBudgets.of('s3_rome'), isNull, reason: 'Seasons 1–4 are made: none is listed');
     });
 

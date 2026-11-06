@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s5_ep10",
+  "seasonId": "s5_seoul",
+  "number": 10,
+  "actId": "act3",
+  "title": "The Two Watches",
+  "synopsis": [
+    "Shanghai, the morning of 29 April 1932.",
+    "Kim Gu and a young man named Yun Bong-gil ate breakfast together.",
+    "Then they swapped their watches. Which watch is which?"
+  ],
+  "goal": "Find out which watch Kim Gu holds, and what that morning meant.",
+  "characters": [
+    "yun_bonggil",
+    "kim_gu",
+    "haesu"
+  ],
+  "locations": [
+    "shanghai"
+  ],
+  "missions": [
+    {
+      "missionId": "s5_ep10_m1",
+      "slot": "m1",
+      "placeId": "s5_seoul.breakfast_room",
+      "puzzle": {
+        "paletteId": "order_sequence",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "sequence",
+        "answerSpec": {
+          "answer": "eat,swap,goodbye,alone",
+          "options": [
+            {
+              "id": "alone",
+              "label": "Mr. Kim sits alone with a watch"
+            },
+            {
+              "id": "buy",
+              "label": "Mr. Yun buys a watch"
+            },
+            {
+              "id": "swap",
+              "label": "They swap their watches"
+            },
+            {
+              "id": "eat",
+              "label": "They eat breakfast"
+            },
+            {
+              "id": "goodbye",
+              "label": "Mr. Yun says goodbye"
+            }
+          ],
+          "codeLength": 4
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "Haesu's note, read out of order with first, after, before that and at the end. Buying the watch is a decoy her note rules out (not this morning).",
+          "Breakfast, then the swap, is history (h2); Haesu, her note and the room are made up."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep09_e4",
+          "use": "recall",
+          "note": "Kim Gu's case note: he trusts Haesu."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep10_c1",
+        "evidence": "s5_ep10_e1"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "comprehension",
+        "objective": "first, after breakfast, before that, at the end를 읽고 그날 아침의 네 장면을 순서대로 놓는다.",
+        "skill": "grammarInContext",
+        "expressions": [
+          "After breakfast, they swapped their watches.",
+          "Before that, Mr. Yun said goodbye."
+        ]
+      },
+      "play": {
+        "title": "Breakfast for Two",
+        "location": "A SMALL HOUSE IN SHANGHAI",
+        "story": [
+          "At the door, a young man in a grey suit passes you.",
+          "Inside, two rice bowls are empty on the table.",
+          "Under one bowl is a note with a small water drop."
+        ],
+        "letterIntro": "The water-drop note says:",
+        "letter": "At the end, Mr. Kim sat alone at the table, holding a watch.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, quietly.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new. He did not buy it this morning.\n— a small water drop",
+        "question": "Put the morning in order, from first to last.",
+        "hints": [
+          "One line says what they did first.",
+          "At the end means the last step. Before that means just before it."
+        ],
+        "successMessage": "You put the morning in order!",
+        "transition": [
+          "Breakfast, the swap, goodbye, and Mr. Kim alone.",
+          "Haesu comes in from the kitchen with tea.",
+          "\"Mr. Kim is still holding the watch. He has not said a word.\""
+        ],
+        "orderFeedback": "Those are the right steps. Read first, after, before that and at the end again.",
+        "mapX": 0.4,
+        "mapY": 0.6,
+        "clue": {
+          "title": "The Swap",
+          "value": "BREAKFAST · SWAP · GOODBYE",
+          "note": "After breakfast, Mr. Yun and Mr. Kim swapped their watches.",
+          "symbol": "watch"
+        },
+        "evidence": {
+          "name": "The Water-Drop Note (1932)",
+          "icon": "letter",
+          "description": "Haesu's note in Hangeul, with a small water drop. After breakfast, the two men swapped watches.",
+          "inscription": "After breakfast, they swapped their watches."
+        },
+        "recall": {
+          "title": "Who is Haesu?",
+          "prompt": "Which thing in your Notebook shows that Kim Gu trusts Haesu?",
+          "miss": "Find the police chief's note from the Shanghai office."
+        },
+        "talk": {
+          "speaker": "yun_bonggil",
+          "portrait": "assets/seasons/season_05_seoul/characters/yun_bonggil.webp",
+          "goal": "Find out what happened at breakfast.",
+          "before": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "Good morning. Mr. Kim is inside."
+              },
+              {
+                "by": "speaker",
+                "text": "Please sit with him a while."
+              },
+              {
+                "by": "detective",
+                "text": "I will. Good morning, Mr. Yun."
+              }
+            ]
+          }
+        },
+        "discovery": {
+          "type": "clueFound",
+          "title": "TWO WATCHES SWAPPED",
+          "detail": "Mr. Kim holds a watch now. But whose watch is it?"
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep10_m2",
+      "slot": "m2",
+      "placeId": "s5_seoul.breakfast_room",
+      "puzzle": {
+        "paletteId": "picture_choice",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "imageChoice",
+        "answerSpec": {
+          "answer": "new_watch",
+          "options": [
+            {
+              "id": "old_watch",
+              "label": "The worn watch with many scratches",
+              "feedback": "That is Mr. Kim's old watch. After the swap, who has it?",
+              "altText": "a worn silver pocket watch with many small scratches on its case and a thin chain",
+              "picture": "assets/seasons/season_05_seoul/cases/case_10/old_watch.webp"
+            },
+            {
+              "id": "new_watch",
+              "label": "The smooth watch with no scratches",
+              "altText": "a smooth, shiny silver pocket watch with no scratches and a short new chain",
+              "picture": "assets/seasons/season_05_seoul/cases/case_10/new_watch.webp"
+            },
+            {
+              "id": "strap_watch",
+              "label": "The small watch on a leather strap",
+              "feedback": "That is Haesu's watch, on a strap. Mr. Kim holds a pocket watch.",
+              "altText": "a small round wristwatch on a brown leather strap",
+              "picture": "assets/seasons/season_05_seoul/cases/case_10/strap_watch.webp"
+            }
+          ]
+        },
+        "assetNeeds": [
+          "s5_seoul.asset.c10_old_watch",
+          "s5_seoul.asset.c10_new_watch",
+          "s5_seoul.asset.c10_strap_watch"
+        ],
+        "status": "awaitingAssets",
+        "notes": [
+          "A picture choice with the names hidden (hideOptionNames), two steps: they swapped, so Mr. Kim now holds Mr. Yun's watch; Mr. Yun's watch was new, so smooth with no scratches. Told apart by the words (scratches, strap), never by colour alone.",
+          "The three watches are drawn plainly, no hands pointing at any readable time, no text."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep10_c1",
+          "use": "answerDerivation",
+          "note": "They swapped their watches after breakfast."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep10_c2",
+        "evidence": "s5_ep10_e2"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "worn, many small scratches, smooth, no scratches, on a leather strap를 읽고, 시계를 바꾼 뒤 김구가 든 시계 그림을 고른다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "a worn case with many small scratches",
+          "no scratches"
+        ]
+      },
+      "play": {
+        "title": "Which Watch?",
+        "location": "A SMALL HOUSE IN SHANGHAI",
+        "story": [
+          "Mr. Kim lays the watch in his hand on the table.",
+          "Haesu lays two more next to it: his old case and her own watch.",
+          "\"Which one is his now?\" she whispers."
+        ],
+        "letterIntro": "Haesu tells you:",
+        "letter": "Mr. Kim's old watch has a worn case with many small scratches.\nMr. Yun's watch is new. Its case is smooth, with no scratches.\nMy own watch is small, on a leather strap.\nThey swapped. Each man took the other's watch.",
+        "question": "Which watch does Mr. Kim hold now?",
+        "hints": [
+          "Read your first clue: what did the two men do after breakfast?",
+          "After the swap, Mr. Kim has Mr. Yun's watch. Is it old or new?"
+        ],
+        "successMessage": "Mr. Kim holds Mr. Yun's new watch!",
+        "transition": [
+          "Mr. Yun took Mr. Kim's old, scratched watch.",
+          "He left his new one with Mr. Kim.",
+          "Mr. Kim closes his hand around it very gently."
+        ],
+        "mapX": 0.4,
+        "mapY": 0.6,
+        "clue": {
+          "title": "The New Watch",
+          "value": "MR. YUN'S NEW WATCH · WITH KIM GU",
+          "note": "Mr. Yun left his new watch with Mr. Kim, and took the old one."
+        },
+        "evidence": {
+          "name": "Yun's New Watch",
+          "icon": "watch",
+          "description": "A smooth new pocket watch with no scratches. Yun Bong-gil left it with Kim Gu.",
+          "inscription": "Its case is smooth, with no scratches."
+        },
+        "hideOptionNames": true,
+        "talk": {
+          "speaker": "kim_gu",
+          "portrait": "assets/seasons/season_05_seoul/characters/kim_gu.webp",
+          "goal": "Find out whose watch Mr. Kim holds.",
+          "after": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "I gave him money for a good watch."
+              },
+              {
+                "by": "speaker",
+                "text": "And he gave the new watch to me."
+              },
+              {
+                "by": "detective",
+                "text": "He left you his new watch, and took your old one."
+              }
+            ]
+          }
+        },
+        "discovery": {
+          "type": "deduction",
+          "title": "WHAT YUN LEFT BEHIND",
+          "detail": "His new watch stays in Shanghai. Haesu wants to keep this morning safe."
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep10_m3",
+      "slot": "m3",
+      "placeId": "s5_seoul.breakfast_room",
+      "puzzle": {
+        "paletteId": "letter_tile_lock",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "letterLock",
+        "answerSpec": {
+          "answer": "DROP",
+          "options": [
+            {
+              "id": "p",
+              "label": "P"
+            },
+            {
+              "id": "o",
+              "label": "O"
+            },
+            {
+              "id": "d",
+              "label": "D"
+            },
+            {
+              "id": "r",
+              "label": "R"
+            }
+          ]
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "The keepers' box (made up) has a new letter lock: its word is the mark on every note inside, a small water DROP, as every water-drop note of the season shows."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep10_e1",
+          "use": "textMention",
+          "note": "Haesu's note carries the small water drop."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep10_c3",
+        "evidence": "s5_ep10_e3"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "comprehension",
+        "objective": "every note in it has the same small mark를 읽고 그 표시(water drop)의 단어 DROP을 타일로 맞춘다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "the same small mark",
+          "a small water drop"
+        ]
+      },
+      "play": {
+        "title": "The Box's New Lock",
+        "location": "A SMALL HOUSE IN SHANGHAI",
+        "story": [
+          "Haesu writes down what she saw this morning.",
+          "She brings out the old wooden box from Aunae.",
+          "It has a new lock with four letter tiles."
+        ],
+        "letterIntro": "Haesu says:",
+        "letter": "In Shanghai, I put a letter lock on our box.\nIts word is our mark.\nEvery note in this box has the same small mark:\na small water drop. The lock wants the last word.",
+        "question": "Spell the word that opens the box.",
+        "hints": [
+          "Read Haesu's last two lines.",
+          "A small water ... The lock wants the last word."
+        ],
+        "successMessage": "The box opens!",
+        "transition": [
+          "Haesu lays her note of this morning on top of the others.",
+          "\"Someone must remember how this morning really was,\" she says.",
+          "Mr. Kim looks at the watch, then out of the window."
+        ],
+        "orderFeedback": "Those are the right letters. Read the last word of Haesu's line again.",
+        "mapX": 0.4,
+        "mapY": 0.6,
+        "clue": {
+          "title": "The Keepers' Mark",
+          "value": "DROP",
+          "note": "The box opens with the keepers' mark: a small water drop."
+        },
+        "evidence": {
+          "name": "Haesu's Morning Note",
+          "icon": "letter",
+          "description": "Haesu's own record of the morning of 29 April 1932, kept in the keepers' box.",
+          "inscription": "They swapped. Each man took the other's watch."
+        },
+        "discovery": {
+          "type": "storyDiscovery",
+          "title": "ONE MORE NOTE IN THE BOX",
+          "detail": "The morning is kept. But what will this day mean for the government?"
+        }
+      }
+    }
+  ],
+  "final": {
+    "missionId": "s5_ep10_final",
+    "slot": "final",
+    "placeId": "s5_seoul.haesu_room",
+    "puzzle": {
+      "paletteId": "number_entry",
+      "surface": "finalMission",
+      "engineTable": null,
+      "missionType": "numberCode",
+      "answerSpec": {
+        "answer": "1932",
+        "codeLength": 4
+      },
+      "assetNeeds": [],
+      "status": "ready",
+      "notes": [
+        "A year read in words in Haesu's later note: the government began in 1919 (a year the letter also names); after Yun's day in 1932, Chinese leaders began to help the Provisional Government strongly (h4). The answer is that history.",
+        "Yun's act is told in one plain line, without detail; the player never takes part in it."
+      ]
+    },
+    "clueInputs": [
+      {
+        "ref": "s5_ep10_c2",
+        "use": "textMention",
+        "note": "Kim Gu keeps Yun's new watch."
+      },
+      {
+        "ref": "s5_ep10_c3",
+        "use": "textMention",
+        "note": "Haesu keeps her note in the box."
+      }
+    ],
+    "clueOutputs": {
+      "evidence": "s5_ep10_e4"
+    },
+    "learning": {
+      "dependency": "essential",
+      "level": "comprehension",
+      "objective": "nineteen nineteen, nineteen thirty-two를 숫자로 읽고, After that day 문장으로 중국 지도자들이 임시정부를 적극 돕기 시작한 해를 찾는다.",
+      "skill": "sentenceMeaning",
+      "expressions": [
+        "nineteen thirty-two",
+        "Chinese leaders began to help our government strongly"
+      ]
+    },
+    "play": {
+      "title": "After That Day",
+      "location": "HAESU'S ROOM",
+      "story": [
+        "Some weeks later, Haesu reads you a new page in her note.",
+        "Mr. Kim still keeps the new watch in his pocket.",
+        "\"Everything changed after that morning,\" she says."
+      ],
+      "letterIntro": "Haesu's page says:",
+      "letter": "Our government began in Shanghai in nineteen nineteen.\nOn the twenty-ninth of April, nineteen thirty-two, Mr. Yun went to Hongkou Park.\nHe attacked a Japanese army ceremony there. He was arrested at once.\nAfter that day, many Chinese people saw our fight in a new way.\nChinese leaders began to help our government strongly.",
+      "question": "In which year did Chinese leaders begin to help the government strongly? Put in the year.",
+      "hints": [
+        "Two years are written in words. Which one is Mr. Yun's day?",
+        "Find the year of Mr. Yun's day. Write it with four numbers."
+      ],
+      "successMessage": "That is the year everything changed!",
+      "transition": [
+        "Haesu closes the box with its small water-drop lock.",
+        "\"Bitna will read this one day,\" she says. \"My daughter.\"",
+        "\"My cousin Miri will take the box home to Seoul.\""
+      ],
+      "feedback": {
+        "1919": "In 1919 the government began. Read what happened after Mr. Yun's day.",
+        "0429": "That is the day and month. The question asks for the year."
+      },
+      "orderFeedback": "The right digits, in the wrong order. Read the year words again.",
+      "mapX": 0.34,
+      "mapY": 0.52,
+      "evidence": {
+        "name": "Haesu's Page: After That Day",
+        "icon": "letter",
+        "description": "After 29 April 1932, Chinese leaders began to help the Provisional Government strongly.",
+        "inscription": "Chinese leaders began to help our government strongly."
+      },
+      "ending": [
+        {
+          "by": "speaker",
+          "text": "His watch still ticks, Haesu. I will not forget him.",
+          "speaker": "kim_gu",
+          "portrait": "assets/seasons/season_05_seoul/characters/kim_gu.webp"
+        },
+        {
+          "by": "speaker",
+          "text": "Our box will not forget him either.",
+          "speaker": "haesu",
+          "portrait": "assets/seasons/season_05_seoul/characters/haesu.webp"
+        },
+        {
+          "by": "narrator",
+          "text": "On 29 April 1932, Yun Bong-gil acted at Hongkou Park.",
+          "evidence": "s5_ep10_e2"
+        },
+        {
+          "by": "narrator",
+          "text": "After that day, Chinese leaders helped the Provisional Government strongly."
+        }
+      ]
+    }
+  },
+  "hook": "The box goes home to Seoul. Who will keep it there?",
+  "learningGoal": {
+    "title": "Order and years: first, before that, nineteen thirty-two",
+    "titleKo": "순서와 연도: first, before that, nineteen thirty-two"
+  },
+  "play": {
+    "objectives": [
+      "Put the morning in order.",
+      "Find the watch Mr. Kim holds.",
+      "Open the keepers' box.",
+      "Find the year everything changed."
+    ],
+    "intro": [
+      "Spring, 1932. You are a guest of Kim Gu in Shanghai again.",
+      "Haesu, the young clerk, now works close to him.",
+      "Early on 29 April, he asks you to come to a small house.",
+      "\"A young man named Yun Bong-gil eats breakfast with me,\" he says."
+    ],
+    "caseSummary": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu ate breakfast, then swapped watches. Yun left his new watch with Kim Gu and took the old one. Haesu kept the story in the keepers' box. That day Yun acted at Hongkou Park and was arrested. After it, Chinese leaders helped the Provisional Government strongly.",
+    "place": "SHANGHAI",
+    "keyWords": [
+      "watch",
+      "swap",
+      "scratch",
+      "year",
+      "government"
+    ],
+    "glossary": {
+      "swap": "서로 바꾸다",
+      "scratches": "긁힌 자국",
+      "worn": "낡은",
+      "smooth": "매끈한",
+      "strap": "(시계) 줄",
+      "ceremony": "기념식",
+      "arrested": "체포된",
+      "government": "정부",
+      "water-drop": "물방울 표시",
+      "twenty-ninth": "29일",
+      "thirty-two": "32"
+    }
+  },
+  "notes": [
+    "PART 10 Case 10: set on the morning of 29 April 1932, around Yun Bong-gil's act, never in it. Haesu is the same keeper as Case 09 (one portrait, reused); Kim Gu's portrait is Case 09's.",
+    "Yun Bong-gil and Kim Gu are real; their words are made up (dossier fiction). Haesu, her notes, the strap watch and the box's lock are made up. The case ends on history: Chinese support for the Provisional Government after 29 April 1932 (h4); Yun's arrest and death are told once in the reveal."
+  ]
+}

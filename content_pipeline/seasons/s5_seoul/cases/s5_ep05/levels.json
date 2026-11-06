@@ -1,0 +1,826 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s5_ep05",
+  "lines": [
+    {
+      "rookie": "The Lights of Geoncheonggung",
+      "junior": "The Lights of Geoncheonggung",
+      "master": "The Lights of Geoncheonggung"
+    },
+    {
+      "rookie": "The first electric lamps of Korea go dark for an hour.",
+      "junior": "Korea's first electric lamps go dark for a whole hour.",
+      "master": "Korea's very first electric lamps fall dark for an entire hour."
+    },
+    {
+      "rookie": "In the dark, two strangers walk through the Queen's court.",
+      "junior": "In the darkness, two strangers walk through the Queen's court.",
+      "master": "Under cover of darkness, two strangers pass through the Queen's court."
+    },
+    {
+      "rookie": "Who will keep the next note safe?",
+      "junior": "Who will guard the next note?",
+      "master": "Who will keep the next note out of harm's way?"
+    },
+    {
+      "rookie": "Find out why the lamps went dark.",
+      "junior": "Discover why the lamps went dark.",
+      "master": "Uncover why the lamps went dark."
+    },
+    {
+      "rookie": "Put the night in order.",
+      "junior": "Put the events of the night in order.",
+      "master": "Arrange the night's events in order."
+    },
+    {
+      "rookie": "Count the steps on the rope.",
+      "junior": "Count the steps marked on the rope.",
+      "master": "Reckon the steps knotted into the rope."
+    },
+    {
+      "rookie": "Tell the King why the Queen is watched.",
+      "junior": "Tell the King why someone is watching the Queen.",
+      "master": "Explain to the King why the Queen is being watched."
+    },
+    {
+      "rookie": "Autumn, 1895. You are a guest at Geoncheonggung, inside Gyeongbokgung.",
+      "junior": "It is autumn, 1895, and you are a guest at Geoncheonggung, inside Gyeongbokgung.",
+      "master": "Autumn, 1895: you are staying as a guest at Geoncheonggung, within Gyeongbokgung."
+    },
+    {
+      "rookie": "Here the King lives in Jangandang, and the Queen in Gonnyeonhap.",
+      "junior": "The King lives here in Jangandang, and the Queen lives in Gonnyeonhap.",
+      "master": "Here the King resides in Jangandang, and the Queen in Gonnyeonhap."
+    },
+    {
+      "rookie": "In 1887, the first electric lamps in Korea were lit here.",
+      "junior": "Korea's first electric lamps were lit here in 1887.",
+      "master": "It was here, in 1887, that the first electric lamps in Korea were lit."
+    },
+    {
+      "rookie": "They often blink on and off. People call them the good-for-nothing lights.",
+      "junior": "They often flicker on and off, so people call them the good-for-nothing lights.",
+      "master": "They flicker on and off so often that people call them the good-for-nothing lights."
+    },
+    {
+      "rookie": "Last night they went dark for an hour.",
+      "junior": "Last night they went out for an hour.",
+      "master": "Last night they stayed dark for a full hour."
+    },
+    {
+      "rookie": "And two strangers were seen in the Queen's court.",
+      "junior": "Two strangers were also seen in the Queen's court.",
+      "master": "And in the Queen's court, two strangers were glimpsed."
+    },
+    {
+      "rookie": "Strangers made the lamps go dark and measured the way to the Queen's door. Court Lady Han found their map first. In 1895 the Queen worked with Russia to hold back Japan's power. On 8 October 1895, men sent by Japan's minister attacked the palace, and the Queen was killed.",
+      "junior": "Strangers darkened the lamps and measured the path to the Queen's door, but Court Lady Han found their map first. In 1895 the Queen worked with Russia to hold back Japan's power. On 8 October 1895, men sent by Japan's minister attacked the palace, and the Queen was killed.",
+      "master": "Strangers plunged the lamps into darkness and measured the route to the Queen's door; Court Lady Han found their map before anyone else. In 1895 the Queen worked with Russia to hold back Japan's power. On 8 October 1895, men sent by Japan's minister attacked the palace, and the Queen was killed."
+    },
+    {
+      "rookie": "GEONCHEONGGUNG, GYEONGBOKGUNG",
+      "junior": "GEONCHEONGGUNG, GYEONGBOKGUNG",
+      "master": "GEONCHEONGGUNG, GYEONGBOKGUNG"
+    },
+    {
+      "rookie": "The fire door",
+      "junior": "The fire door",
+      "master": "The fire door"
+    },
+    {
+      "rookie": "Lady Han says he did not touch the fire. Read her note again.",
+      "junior": "Lady Han writes that he did not touch the fire. Read her note again.",
+      "master": "Lady Han's note says plainly that he left the fire alone. Read it once more."
+    },
+    {
+      "rookie": "The belt on the big wheel",
+      "junior": "The belt on the big wheel",
+      "master": "The belt on the big wheel"
+    },
+    {
+      "rookie": "The coal box",
+      "junior": "The coal box",
+      "master": "The coal box"
+    },
+    {
+      "rookie": "Lady Han says he did not touch the coal. What did he take off?",
+      "junior": "Lady Han writes that he did not touch the coal. What did he take off?",
+      "master": "According to Lady Han, the coal was never touched. What did he remove?"
+    },
+    {
+      "rookie": "He did not touch the fire.",
+      "junior": "He did not touch the fire.",
+      "master": "He did not touch the fire."
+    },
+    {
+      "rookie": "He took off the long leather belt.",
+      "junior": "He took off the long leather belt.",
+      "master": "He took off the long leather belt."
+    },
+    {
+      "rookie": "The Lamp House",
+      "junior": "The Lamp House",
+      "master": "The Lamp House"
+    },
+    {
+      "rookie": "THE LAMP HOUSE",
+      "junior": "THE LAMP HOUSE",
+      "master": "THE LAMP HOUSE"
+    },
+    {
+      "rookie": "South of the pond stands the lamp house.",
+      "junior": "The lamp house stands south of the pond.",
+      "master": "To the south of the pond stands the lamp house."
+    },
+    {
+      "rookie": "Its machine makes the light for the King's and the Queen's halls.",
+      "junior": "Its machine makes the light for the halls of the King and the Queen.",
+      "master": "Its machine powers the lights of both the King's and the Queen's halls."
+    },
+    {
+      "rookie": "Last night it stopped for an hour. Who stopped it? Look for marks.",
+      "junior": "Last night it stopped for an hour. Who stopped it? Search for marks.",
+      "master": "Last night it fell silent for an hour. Who silenced it? Search for marks."
+    },
+    {
+      "rookie": "Under the coal scoop, a note in the King's letters, with a small water drop:",
+      "junior": "Under the coal scoop is a note in the King's letters, marked with a small water drop:",
+      "master": "Beneath the coal scoop lies a note in the King's letters, bearing a small water drop:"
+    },
+    {
+      "rookie": "Detective,\nLast night the lamps did not go out on their own.\nA stranger came into the lamp house.\nHe did not touch the fire. He did not touch the coal.\nHe took off the long leather belt that turns the big wheel.\nI put it back at dawn. His muddy hand is still on it.\n— Han",
+      "junior": "Detective,\nThe lamps did not go out by themselves last night.\nA stranger slipped into the lamp house.\nHe did not touch the fire. He did not touch the coal either.\nHe took off the long leather belt that turns the big wheel.\nI put it back at dawn. His muddy handprint is still on it.\n— Han",
+      "master": "Detective,\nLast night's darkness was no accident of the lamps.\nA stranger crept into the lamp house.\nHe did not touch the fire. He did not touch the coal.\nHe took off the long leather belt that drives the big wheel.\nI fitted it back at dawn. The print of his muddy hand remains on it.\n— Han"
+    },
+    {
+      "rookie": "What did the stranger touch? Tap one picture.",
+      "junior": "What did the stranger touch? Tap a picture.",
+      "master": "Which thing did the stranger handle? Tap one picture."
+    },
+    {
+      "rookie": "Find the note under the coal scoop first. Then look at the machine.",
+      "junior": "First find the note under the coal scoop. Then examine the machine.",
+      "master": "Begin with the note beneath the coal scoop, then turn to the machine."
+    },
+    {
+      "rookie": "Two things in the note are things he did NOT touch.",
+      "junior": "The note names two things he did NOT touch.",
+      "master": "Two of the things in the note were left untouched by him."
+    },
+    {
+      "rookie": "A muddy hand mark on the belt!",
+      "junior": "There's a muddy handprint on the belt!",
+      "master": "A muddy handprint, right there on the belt!"
+    },
+    {
+      "rookie": "The lamps often blink on and off. Everyone thought it was that again.",
+      "junior": "The lamps flicker on and off all the time. Everyone assumed it was the same again.",
+      "master": "The lamps flicker so often that everyone took this for just another flicker."
+    },
+    {
+      "rookie": "But this dark was made on purpose.",
+      "junior": "But this darkness was made on purpose.",
+      "master": "Yet this darkness was deliberate."
+    },
+    {
+      "rookie": "The note is signed Han. You go to find her.",
+      "junior": "The note is signed Han, so you go to look for her.",
+      "master": "The note bears the name Han. You set out to find her."
+    },
+    {
+      "rookie": "The Dark Was Made",
+      "junior": "The Dark Was Made",
+      "master": "The Dark Was Made"
+    },
+    {
+      "rookie": "The lamps did not fail. A stranger took the belt off the big wheel on purpose.",
+      "junior": "The lamps did not fail. A stranger deliberately took the belt off the big wheel.",
+      "master": "No fault of the lamps: a stranger deliberately removed the belt from the big wheel."
+    },
+    {
+      "rookie": "A Drop Like Duri's",
+      "junior": "A Drop Like Duri's",
+      "master": "A Drop Like Duri's"
+    },
+    {
+      "rookie": "This note has a small water drop. Which note in your Notebook has one too?",
+      "junior": "This note carries a small water drop. Which note in your Notebook has one as well?",
+      "master": "A small water drop marks this note. Which note in your Notebook bears the same?"
+    },
+    {
+      "rookie": "That one has no drop. Look for a note from the rebuilt palace.",
+      "junior": "That note has no drop. Look for one from the rebuilt palace.",
+      "master": "No drop marks that one. Seek a note from the rebuilt palace."
+    },
+    {
+      "rookie": "The lamp house at dawn",
+      "junior": "The lamp house at dawn",
+      "master": "The lamp house at first light"
+    },
+    {
+      "rookie": "Look around the lamp house. What did someone leave?",
+      "junior": "Search the lamp house. What did someone leave behind?",
+      "master": "Search the lamp house. What has someone left behind?"
+    },
+    {
+      "rookie": "What did the stranger touch? Look at the lamp machine.",
+      "junior": "What did the stranger touch? Examine the lamp machine.",
+      "master": "What did the stranger handle? Inspect the lamp machine."
+    },
+    {
+      "rookie": "Nothing here. Look for a note.",
+      "junior": "Nothing here. Look for a note.",
+      "master": "Nothing here. Search for a note."
+    },
+    {
+      "rookie": "LADY HAN'S NOTE",
+      "junior": "LADY HAN'S NOTE",
+      "master": "LADY HAN'S NOTE"
+    },
+    {
+      "rookie": "A folded paper under the coal scoop",
+      "junior": "A folded paper under the coal scoop",
+      "master": "A folded paper beneath the coal scoop"
+    },
+    {
+      "rookie": "THE POND",
+      "junior": "THE POND",
+      "master": "THE POND"
+    },
+    {
+      "rookie": "A window over the pond",
+      "junior": "A window over the pond",
+      "master": "A window over the pond"
+    },
+    {
+      "rookie": "Through the window: the pond, and the little pavilion on its island.",
+      "junior": "Through the window you see the pond, and the little pavilion on its island.",
+      "master": "Beyond the window lie the pond and the little pavilion on its island."
+    },
+    {
+      "rookie": "THE LAMP MACHINE",
+      "junior": "THE LAMP MACHINE",
+      "master": "THE LAMP MACHINE"
+    },
+    {
+      "rookie": "The big lamp machine",
+      "junior": "The big lamp machine",
+      "master": "The big lamp machine"
+    },
+    {
+      "rookie": "The lamp machine. But what was touched? Find a clue first.",
+      "junior": "The lamp machine. But which part was touched? Find a clue first.",
+      "master": "The lamp machine — yet what was touched? You need a clue first."
+    },
+    {
+      "rookie": "Read the note under the coal scoop first.",
+      "junior": "First read the note under the coal scoop.",
+      "master": "Read the note beneath the coal scoop before anything else."
+    },
+    {
+      "rookie": "A pile of coal",
+      "junior": "A pile of coal",
+      "master": "A pile of coal"
+    },
+    {
+      "rookie": "Coal for the fire. Nothing is hidden in it.",
+      "junior": "Coal for the fire. There is nothing hidden in it.",
+      "master": "Fuel for the fire. Nothing lies hidden in it."
+    },
+    {
+      "rookie": "The door",
+      "junior": "The door",
+      "master": "The door"
+    },
+    {
+      "rookie": "The door to the path. It was not locked last night.",
+      "junior": "This door leads to the path. It was left unlocked last night.",
+      "master": "The door opens onto the path. Last night it stood unlocked."
+    },
+    {
+      "rookie": "The wires",
+      "junior": "The wires",
+      "master": "The wires"
+    },
+    {
+      "rookie": "Wires run out to the lamps of the halls.",
+      "junior": "Wires run from here to the lamps of the halls.",
+      "master": "Wires stretch out to the lamps of the halls."
+    },
+    {
+      "rookie": "Which part did the stranger touch? Tap one picture.",
+      "junior": "Which part did the stranger touch? Tap a picture.",
+      "master": "Which part did the stranger tamper with? Tap one picture."
+    },
+    {
+      "rookie": "an iron fire door with a low fire glowing inside",
+      "junior": "an iron fire door with a low fire glowing inside",
+      "master": "an iron fire door with a low fire glowing inside"
+    },
+    {
+      "rookie": "a big iron wheel with a long leather belt and a muddy hand mark on the belt",
+      "junior": "a big iron wheel with a long leather belt and a muddy hand mark on the belt",
+      "master": "a big iron wheel with a long leather belt and a muddy hand mark on the belt"
+    },
+    {
+      "rookie": "a wooden box of black coal with a small shovel",
+      "junior": "a wooden box of black coal with a small shovel",
+      "master": "a wooden box of black coal with a small shovel"
+    },
+    {
+      "rookie": "Find out why the dark matters.",
+      "junior": "Find out why the darkness matters.",
+      "master": "Discover why the darkness matters."
+    },
+    {
+      "rookie": "You found my note. Good.",
+      "junior": "You found my note. Well done.",
+      "master": "So my note reached you. Good."
+    },
+    {
+      "rookie": "The lamps blink every week. Nobody looks twice.",
+      "junior": "The lamps flicker every week, so nobody pays attention.",
+      "master": "The lamps flicker every week; no one gives it a second glance."
+    },
+    {
+      "rookie": "So the strangers hid in a dark that seemed normal.",
+      "junior": "So the strangers hid in a darkness that looked normal.",
+      "master": "So the strangers hid inside a darkness that seemed ordinary."
+    },
+    {
+      "rookie": "THE DARK WAS MADE",
+      "junior": "THE DARK WAS MADE",
+      "master": "THE DARK WAS MADE"
+    },
+    {
+      "rookie": "Someone took the belt off on purpose. The strangers needed the dark.",
+      "junior": "Someone removed the belt on purpose. The strangers needed darkness.",
+      "master": "The belt was removed deliberately. The strangers needed the dark."
+    },
+    {
+      "rookie": "THE LAMPS ARE LIT",
+      "junior": "THE LAMPS ARE LIT",
+      "master": "THE LAMPS ARE LIT"
+    },
+    {
+      "rookie": "THE DARK",
+      "junior": "THE DARK",
+      "master": "THE DARK"
+    },
+    {
+      "rookie": "THE EAST GATE",
+      "junior": "THE EAST GATE",
+      "master": "THE EAST GATE"
+    },
+    {
+      "rookie": "THE QUEEN'S HALL",
+      "junior": "THE QUEEN'S HALL",
+      "master": "THE QUEEN'S HALL"
+    },
+    {
+      "rookie": "THE LAMP MAN RETURNS",
+      "junior": "THE LAMP MAN RETURNS",
+      "master": "THE LAMP MAN RETURNS"
+    },
+    {
+      "rookie": "THE MAIN GATE",
+      "junior": "THE MAIN GATE",
+      "master": "THE MAIN GATE"
+    },
+    {
+      "rookie": "after the strangers came",
+      "junior": "after the strangers came",
+      "master": "after the strangers came"
+    },
+    {
+      "rookie": "They left before the lamp man came back.",
+      "junior": "They left before the lamp man came back.",
+      "master": "They left before the lamp man came back."
+    },
+    {
+      "rookie": "One Hour in the Dark",
+      "junior": "One Hour in the Dark",
+      "master": "One Hour in the Dark"
+    },
+    {
+      "rookie": "THE QUEEN'S COURT",
+      "junior": "THE QUEEN'S COURT",
+      "master": "THE QUEEN'S COURT"
+    },
+    {
+      "rookie": "Lady Han meets you in the Queen's court.",
+      "junior": "Lady Han is waiting for you in the Queen's court.",
+      "master": "Lady Han receives you in the Queen's court."
+    },
+    {
+      "rookie": "She was awake last night. She saw where the strangers went.",
+      "junior": "She was awake last night and saw where the strangers went.",
+      "master": "She lay awake last night and watched where the strangers went."
+    },
+    {
+      "rookie": "\"Put my words in order,\" she says. \"Then you will see.\"",
+      "junior": "\"Put my words in the right order,\" she says. \"Then you will understand.\"",
+      "master": "\"Set my words in order,\" she says, \"and you will understand.\""
+    },
+    {
+      "rookie": "Lady Han tells you:",
+      "junior": "Lady Han explains:",
+      "master": "Lady Han recounts:"
+    },
+    {
+      "rookie": "The lamp man lit the lamps at 8:00.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate of the court first.\nAfter the gate, they stood by the Queen's hall and counted.\nThey left before the lamp man came back.\nThe lamp man came back at 9:00.\nThe guards at the main gate saw nothing. They are far away.",
+      "junior": "The lamp man lit the lamps at 8:00.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate of the court first.\nAfter the gate, they stood by the Queen's hall and counted.\nThey left before the lamp man came back.\nThe lamp man returned at 9:00.\nThe guards at the main gate saw nothing, because they are a long way off.",
+      "master": "At 8:00 the lamp man lit the lamps.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate of the court first.\nAfter the gate, they stood by the Queen's hall and counted.\nThey left before the lamp man came back.\nAt 9:00 the lamp man returned.\nThe guards at the main gate saw nothing; they stand much too far away."
+    },
+    {
+      "rookie": "Put the night in order, from 8:00 to 9:00.",
+      "junior": "Arrange the night in order, from 8:00 to 9:00.",
+      "master": "Set the night's events in order, from 8:00 until 9:00."
+    },
+    {
+      "rookie": "Look for the words first, after and before in Lady Han's account.",
+      "junior": "Look for first, after and before in what Lady Han tells you.",
+      "master": "Lady Han's words first, after and before hold the order."
+    },
+    {
+      "rookie": "The main gate is far away. Is it part of that night?",
+      "junior": "The main gate is a long way off. Does it belong to that night?",
+      "master": "The main gate lies far from here. Does it truly belong to that night?"
+    },
+    {
+      "rookie": "The strangers walked straight to the Queen's hall!",
+      "junior": "The strangers went straight to the Queen's hall!",
+      "master": "The strangers made straight for the Queen's hall!"
+    },
+    {
+      "rookie": "From the east gate to the Queen's hall, in one hour of dark.",
+      "junior": "In one hour of darkness, from the east gate to the Queen's hall.",
+      "master": "From the east gate to the Queen's hall, all within one hour of darkness."
+    },
+    {
+      "rookie": "\"They counted,\" Lady Han says. \"Counted what?\"",
+      "junior": "\"They were counting,\" Lady Han says. \"But counting what?\"",
+      "master": "\"They were counting,\" Lady Han murmurs. \"But counting what?\""
+    },
+    {
+      "rookie": "She opens her sewing box. Inside is a long rope with knots.",
+      "junior": "She opens her sewing box. Inside lies a long knotted rope.",
+      "master": "She opens her sewing box to reveal a long rope tied with knots."
+    },
+    {
+      "rookie": "Read Lady Han's words again. Where did the men go first?",
+      "junior": "Read Lady Han's account again. Where did the men go first?",
+      "master": "Return to Lady Han's account. Where did the men go first?"
+    },
+    {
+      "rookie": "The Strangers' Way",
+      "junior": "The Strangers' Way",
+      "master": "The Strangers' Way"
+    },
+    {
+      "rookie": "In the dark, the strangers walked from the east gate to the Queen's hall.",
+      "junior": "In the darkness, the strangers walked from the east gate to the Queen's hall.",
+      "master": "Under cover of dark, the strangers walked from the east gate to the Queen's hall."
+    },
+    {
+      "rookie": "The lamp man lights the lamps.",
+      "junior": "The lamp man lights the lamps.",
+      "master": "The lamp man lights the lamps."
+    },
+    {
+      "rookie": "The strangers come into the lamp house.",
+      "junior": "The strangers come into the lamp house.",
+      "master": "The strangers come into the lamp house."
+    },
+    {
+      "rookie": "The lamps go dark.",
+      "junior": "The lamps go dark.",
+      "master": "The lamps go dark."
+    },
+    {
+      "rookie": "Two men stand at the east gate of the court.",
+      "junior": "Two men wait at the east gate of the court.",
+      "master": "Two men stand waiting at the court's east gate."
+    },
+    {
+      "rookie": "The men stand by the Queen's hall and count.",
+      "junior": "The men stop by the Queen's hall and count.",
+      "master": "By the Queen's hall, the men stand and count."
+    },
+    {
+      "rookie": "The lamp man comes back.",
+      "junior": "The lamp man comes back.",
+      "master": "The lamp man comes back."
+    },
+    {
+      "rookie": "The guards at the main gate see nothing.",
+      "junior": "The main-gate guards see nothing.",
+      "master": "At the main gate, the guards notice nothing."
+    },
+    {
+      "rookie": "The lamps went dark after the strangers came into the lamp house.",
+      "junior": "The lamps went dark after the strangers came into the lamp house.",
+      "master": "The lamps went dark after the strangers came into the lamp house."
+    },
+    {
+      "rookie": "In the dark, the men went to the east gate of the court first.",
+      "junior": "In the dark, the men went to the east gate of the court first.",
+      "master": "In the dark, the men went to the east gate of the court first."
+    },
+    {
+      "rookie": "After the gate, they stood by the Queen's hall and counted.",
+      "junior": "After the gate, they stood by the Queen's hall and counted.",
+      "master": "After the gate, they stood by the Queen's hall and counted."
+    },
+    {
+      "rookie": "Find out what Lady Han saw.",
+      "junior": "Find out what Lady Han witnessed.",
+      "master": "Learn what Lady Han witnessed."
+    },
+    {
+      "rookie": "I serve the Queen. I sleep near her rooms.",
+      "junior": "I serve the Queen, and I sleep near her rooms.",
+      "master": "I attend the Queen and sleep close to her rooms."
+    },
+    {
+      "rookie": "Last night I heard steps in the dark.",
+      "junior": "Last night I heard footsteps in the dark.",
+      "master": "Last night I heard footsteps in the darkness."
+    },
+    {
+      "rookie": "Then tell me everything, in order.",
+      "junior": "Then tell me everything, in the right order.",
+      "master": "Then tell me everything, exactly in order."
+    },
+    {
+      "rookie": "A big knot is ten steps.",
+      "junior": "A big knot is ten steps.",
+      "master": "A big knot is ten steps."
+    },
+    {
+      "rookie": "three big knots, then seven small knots",
+      "junior": "three big knots, then seven small knots",
+      "master": "three big knots, then seven small knots"
+    },
+    {
+      "rookie": "The Knotted Rope",
+      "junior": "The Knotted Rope",
+      "master": "The Knotted Rope"
+    },
+    {
+      "rookie": "Lady Han found the rope by the Queen's hall at dawn.",
+      "junior": "At dawn, Lady Han found the rope by the Queen's hall.",
+      "master": "At first light Lady Han discovered the rope beside the Queen's hall."
+    },
+    {
+      "rookie": "One stranger dropped it as the lamps came back.",
+      "junior": "A stranger dropped it when the lamps came back on.",
+      "master": "One of the strangers let it fall as the lamps returned."
+    },
+    {
+      "rookie": "It is a measuring rope. Its knots count steps.",
+      "junior": "It is a measuring rope, and its knots count steps.",
+      "master": "It is a measuring rope: its knots keep count of steps."
+    },
+    {
+      "rookie": "Lady Han shows you the rope and says:",
+      "junior": "Lady Han shows you the rope and explains:",
+      "master": "Lady Han holds out the rope and explains:"
+    },
+    {
+      "rookie": "Builders measure with ropes like this.\nA big knot is ten steps. A small knot is one step.\nThe rope starts at the east gate.\nIt ends at the Queen's door.\nOn it are three big knots, then seven small knots.",
+      "junior": "Builders use ropes like this to measure.\nA big knot is ten steps. A small knot is one step.\nThe rope begins at the east gate.\nIt finishes at the Queen's door.\nOn it are three big knots, then seven small knots.",
+      "master": "Builders take their measurements with ropes such as this.\nA big knot is ten steps. A small knot is one step.\nThe rope begins at the east gate\nand ends at the Queen's door.\nOn it are three big knots, then seven small knots."
+    },
+    {
+      "rookie": "How many steps is it from the east gate to the Queen's door?",
+      "junior": "How many steps lie between the east gate and the Queen's door?",
+      "master": "How many steps separate the east gate from the Queen's door?"
+    },
+    {
+      "rookie": "Read what one big knot means, and what one small knot means.",
+      "junior": "Read what a big knot means and what a small knot means.",
+      "master": "Recall the worth of one big knot, and of one small knot."
+    },
+    {
+      "rookie": "Count the big knots in tens. Then add the small knots.",
+      "junior": "Count the big knots as tens, then add the small knots.",
+      "master": "The big knots give the tens; the small knots are added on."
+    },
+    {
+      "rookie": "Thirty-seven steps, from the east gate to the Queen's door!",
+      "junior": "Thirty-seven steps from the east gate to the Queen's door!",
+      "master": "Thirty-seven steps separate the east gate from the Queen's door!"
+    },
+    {
+      "rookie": "Lady Han goes white.",
+      "junior": "Lady Han turns pale.",
+      "master": "The colour drains from Lady Han's face."
+    },
+    {
+      "rookie": "\"Last night they dropped a board too. I hid it before anyone saw.\"",
+      "junior": "\"They dropped a board last night as well. I hid it before anyone noticed.\"",
+      "master": "\"Last night they let a board fall too. I hid it before a soul saw.\""
+    },
+    {
+      "rookie": "\"It has a number on it. The King must see it now.\"",
+      "junior": "\"There is a number on it. The King must see it at once.\"",
+      "master": "\"A number is written on it. The King must see it without delay.\""
+    },
+    {
+      "rookie": "That counts every knot as one step. A big knot is ten steps.",
+      "junior": "That counts each knot as one step. But a big knot is ten steps.",
+      "master": "You have counted every knot as a single step, yet a big knot is ten steps."
+    },
+    {
+      "rookie": "You counted the big knots. Now add the small ones.",
+      "junior": "You counted the big knots. Now add the small ones too.",
+      "master": "The big knots are counted; the small ones still need adding."
+    },
+    {
+      "rookie": "The big knots are tens, not ones. Read Lady Han's rule again.",
+      "junior": "The big knots are the tens, not the ones. Read Lady Han's rule again.",
+      "master": "The big knots stand for tens, not ones. Revisit Lady Han's rule."
+    },
+    {
+      "rookie": "The right numbers, in the wrong order. Big knots are the tens.",
+      "junior": "Right numbers, wrong order. The big knots are the tens.",
+      "master": "The digits are right but reversed: the big knots give the tens."
+    },
+    {
+      "rookie": "Thirty-Seven Steps",
+      "junior": "Thirty-Seven Steps",
+      "master": "Thirty-Seven Steps"
+    },
+    {
+      "rookie": "The rope measures 37 steps from the east gate to the Queen's door.",
+      "junior": "The rope measures 37 steps between the east gate and the Queen's door.",
+      "master": "By the rope's count, 37 steps lie between the east gate and the Queen's door."
+    },
+    {
+      "rookie": "THEY MEASURED THE WAY",
+      "junior": "THEY MEASURED THE WAY",
+      "master": "THEY MEASURED THE WAY"
+    },
+    {
+      "rookie": "Nobody measures a path for no reason. What were they making?",
+      "junior": "No one measures a path without a reason. What were they making?",
+      "master": "No one measures a path idly. What were they preparing?"
+    },
+    {
+      "rookie": "hold back Japan's power",
+      "junior": "hold back Japan's power",
+      "master": "hold back Japan's power"
+    },
+    {
+      "rookie": "The Board with No Names",
+      "junior": "The Board with No Names",
+      "master": "The Board with No Names"
+    },
+    {
+      "rookie": "JANGANDANG, THE KING'S HALL",
+      "junior": "JANGANDANG, THE KING'S HALL",
+      "master": "JANGANDANG, THE KING'S HALL"
+    },
+    {
+      "rookie": "Lady Han brings the strangers' board to the King's hall.",
+      "junior": "Lady Han carries the strangers' board to the King's hall.",
+      "master": "Lady Han bears the strangers' board to the King's hall."
+    },
+    {
+      "rookie": "On it are lines for halls and doors, and a path from the east gate.",
+      "junior": "It shows lines for halls and doors, and a path from the east gate.",
+      "master": "Lines mark its halls and doors, and a path runs from the east gate."
+    },
+    {
+      "rookie": "By one door, 37 is written on the board. It is a map of the Queen's rooms.",
+      "junior": "Next to one door, the number 37 is written. It is a map of the Queen's rooms.",
+      "master": "Beside one door is written 37. The board is a map of the Queen's rooms."
+    },
+    {
+      "rookie": "The Queen looks at it in silence. \"Someone is afraid of me,\" she says.",
+      "junior": "The Queen studies it silently. \"Someone is afraid of me,\" she says.",
+      "master": "The Queen regards it without a word. \"Someone fears me,\" she says at last."
+    },
+    {
+      "rookie": "Your notes, and Lady Han's words to the King:",
+      "junior": "Your notes, plus Lady Han's words to the King:",
+      "master": "Your notes, together with what Lady Han tells the King:"
+    },
+    {
+      "rookie": "The dark was made on purpose.\nThe strangers walked from the east gate to the Queen's hall.\nThe rope and the map both say 37 steps to the Queen's door.\nLady Han says: \"Japan's power in Korea is growing.\nThe Queen works with Russia to hold back Japan's power.\nSome men want her out of the way.\"",
+      "junior": "The darkness was made on purpose.\nThe strangers walked from the east gate to the Queen's hall.\nBoth the rope and the map say 37 steps to the Queen's door.\nLady Han says: \"Japan's power in Korea is getting stronger.\nThe Queen works with Russia to hold back Japan's power.\nSome men want her out of the way.\"",
+      "master": "The darkness was deliberate.\nThe strangers crossed from the east gate to the Queen's hall.\nRope and map agree: 37 steps to the Queen's door.\nLady Han says: \"Japan's power in Korea grows by the day.\nThe Queen works with Russia to hold back Japan's power.\nCertain men wish her out of the way.\""
+    },
+    {
+      "rookie": "Whose power is the Queen trying to hold back?",
+      "junior": "Whose power does the Queen want to hold back?",
+      "master": "Whose power is the Queen striving to hold back?"
+    },
+    {
+      "rookie": "The Queen holds back ____'s power.",
+      "junior": "The Queen holds back ____'s power.",
+      "master": "The Queen holds back ____'s power."
+    },
+    {
+      "rookie": "Read Lady Han's words. Two countries are named.",
+      "junior": "Read Lady Han's words. She names two countries.",
+      "master": "Lady Han's words name two countries."
+    },
+    {
+      "rookie": "One country works WITH the Queen. Which one does she hold back?",
+      "junior": "The Queen works WITH one country. Which one is she holding back?",
+      "master": "One country stands WITH the Queen. Which does she hold back?"
+    },
+    {
+      "rookie": "The Queen holds back Japan's power. That is why she is watched.",
+      "junior": "The Queen is holding back Japan's power. That is why she is being watched.",
+      "master": "It is Japan's power the Queen holds back — and that is why she is watched."
+    },
+    {
+      "rookie": "The King folds the map slowly.",
+      "junior": "The King slowly folds the map.",
+      "master": "Slowly, the King folds the map."
+    },
+    {
+      "rookie": "Every path of this palace has been counted in steps.",
+      "junior": "Every path in this palace has been measured in steps.",
+      "master": "Every path within this palace has been counted out in steps."
+    },
+    {
+      "rookie": "Lady Han puts her note in a small wooden box.",
+      "junior": "Lady Han places her note in a small wooden box.",
+      "master": "Lady Han lays her note in a small wooden box."
+    },
+    {
+      "rookie": "The Queen works WITH Russia. Read Lady Han's words again.",
+      "junior": "The Queen works WITH Russia. Read Lady Han's words once more.",
+      "master": "Russia stands with the Queen, not against her. Read Lady Han's words again."
+    },
+    {
+      "rookie": "China is not in Lady Han's words. Which two countries does she name?",
+      "junior": "Lady Han never mentions China. Which two countries does she name?",
+      "master": "China appears nowhere in Lady Han's words. Which two countries does she name?"
+    },
+    {
+      "rookie": "The Queen is Korea's Queen. Whose power is growing in Korea?",
+      "junior": "She is Korea's own Queen. Whose power is growing in Korea?",
+      "master": "She is the Queen of Korea itself. Whose power is swelling in Korea?"
+    },
+    {
+      "rookie": "Thank you, Detective. I will keep this map.",
+      "junior": "Thank you, Detective. I will keep this map safe.",
+      "master": "You have my thanks, Detective. This map stays with me."
+    },
+    {
+      "rookie": "Korea must choose its own way. I will not stop.",
+      "junior": "Korea must choose its own path. I will not give up.",
+      "master": "Korea must choose its own way. I shall not stop."
+    },
+    {
+      "rookie": "The map shows the way to the Queen's door.",
+      "junior": "The map leads to the Queen's door.",
+      "master": "The map traces the way to the Queen's door."
+    },
+    {
+      "rookie": "In 1895, the Queen worked with Russia to hold back Japan's power.",
+      "junior": "In 1895, the Queen worked together with Russia to hold back Japan's power.",
+      "master": "In 1895, the Queen was working with Russia to hold back Japan's power."
+    },
+    {
+      "rookie": "On 8 October 1895, men sent by Japan's minister attacked the palace.",
+      "junior": "On 8 October 1895, the palace was attacked by men sent by Japan's minister.",
+      "master": "On 8 October 1895, men dispatched by Japan's minister attacked the palace."
+    },
+    {
+      "rookie": "The Queen was killed in that attack.",
+      "junior": "The Queen was killed during that attack.",
+      "master": "The Queen lost her life in that attack."
+    },
+    {
+      "rookie": "I will keep our letters, and the truth of these days.",
+      "junior": "I will keep our letters, and the truth about these days.",
+      "master": "I will guard our letters, and the truth of these days."
+    }
+  ],
+  "glossary": {
+    "junior": {
+      "flicker": "깜빡이다",
+      "handprint": "손자국",
+      "pale": "창백한",
+      "darkness": "어둠",
+      "examine": "살펴보다",
+      "witnessed": "목격했다"
+    },
+    "master": {
+      "deliberate": "의도적인",
+      "deliberately": "일부러",
+      "recounts": "자세히 이야기하다",
+      "dispatched": "파견된",
+      "reckon": "세다",
+      "tamper": "함부로 손대다",
+      "swelling": "부풀어 커지는",
+      "untouched": "손대지 않은"
+    }
+  }
+}

@@ -376,7 +376,7 @@ void main() {
   test('evidence shows its real picture only where the picture agrees with it', () {
     // London's and Paris's (the seasons made from plans are checked in
     // generated_seasons_test.dart and their own tests).
-    bool planned(String id) => id.startsWith('s3_') || id.startsWith('s4_');
+    bool planned(String id) => id.startsWith('s3_') || id.startsWith('s4_') || id.startsWith('s5_');
     expect(generatedEvidencePictures.keys.every(planned), isTrue);
     expect({for (final MapEntry(:key, :value) in ArtAssets.evidencePictures.entries) if (!planned(key)) key: value}, {
       'e01': ArtAssets.objects['letter'],

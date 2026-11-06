@@ -61,7 +61,6 @@ import 'season2/season2_case12_scenes.dart';
 import 'season2/season2_learning.dart';
 import 'season2/season2_mock.dart';
 import 'season2/season2_scenes.dart';
-import '../season5/season5_content.dart';
 
 /// One season's bundled content: who the season is, its cases, and the
 /// tables that give some of its missions more than their question (a scene
@@ -631,11 +630,10 @@ abstract final class SeasonCatalog {
     ...[...generatedSeasons, ...partialSeasons]..sort((a, b) => a.season.number.compareTo(b.season.number)),
   ];
 
-  /// Seasons made from their plans (generate_season.dart --target sandbox)
-  /// but registered by hand, because the game target takes a season only
-  /// whole, with its opening: Season 5, Seoul, its Case 01 only
-  /// (`lib/data/season5/`). Its places are its own, as a generated season's.
-  static final List<SeasonContent> partialSeasons = [season5Content];
+  /// Seasons in the game before all their cases are written, registered by
+  /// hand (made with `generate_season.dart --target sandbox`). None now:
+  /// Season 5, Seoul, is made whole by the season factory (2026-11-06).
+  static final List<SeasonContent> partialSeasons = [];
 
   /// The season with [seasonId], or null when there is none.
   static SeasonContent? byId(String seasonId) {

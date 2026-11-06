@@ -107,6 +107,10 @@
             "longitude": { "type": "number", "minimum": -180, "maximum": 180 },
             "mapAt": { "$ref": "#/$defs/point" }
           }
+        },
+        "introBackdrops": {
+          "type": "object",
+          "additionalProperties": { "type": "string", "pattern": "^assets/.+\\.(png|webp|jpg)$" }
         }
       }
     },

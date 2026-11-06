@@ -1,0 +1,702 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s5_ep03",
+  "lines": [
+    {
+      "rookie": "The Crane That Lifts Stones",
+      "junior": "The Crane That Lifts Stones",
+      "master": "The Crane That Lifts Stones"
+    },
+    {
+      "rookie": "Jeong Yak-yong's lifting machine will not lift a stone.",
+      "junior": "Jeong Yak-yong's lifting machine won't lift a stone.",
+      "master": "Jeong Yak-yong's lifting machine refuses to raise a single stone."
+    },
+    {
+      "rookie": "A note with a small water drop is tied to its rope.",
+      "junior": "A note marked with a small water drop is tied to its rope.",
+      "master": "Tied to its rope is a note bearing a tiny water drop."
+    },
+    {
+      "rookie": "A stone waits under a machine that will not lift.",
+      "junior": "A stone sits under a machine that won't lift.",
+      "master": "A stone lies waiting beneath a machine that will not lift."
+    },
+    {
+      "rookie": "Put the work log in order.",
+      "junior": "Put the work log in the right order.",
+      "master": "Arrange the work log in its proper order."
+    },
+    {
+      "rookie": "Find Jeong's own drawing.",
+      "junior": "Find the drawing Jeong made himself.",
+      "master": "Identify Jeong's own drawing."
+    },
+    {
+      "rookie": "Lift the stone in the right order.",
+      "junior": "Lift the stone, step by step, in the right order.",
+      "master": "Raise the stone, following the correct order."
+    },
+    {
+      "rookie": "Open the record chest.",
+      "junior": "Open the chest of records.",
+      "master": "Unlock the record chest."
+    },
+    {
+      "rookie": "Spring, 1795. You are a guest of Jeong Yak-yong at Hwaseong Fortress in Suwon.",
+      "junior": "It is spring, 1795, and you are a guest of Jeong Yak-yong at Hwaseong Fortress in Suwon.",
+      "master": "Spring, 1795: you are Jeong Yak-yong's guest at Hwaseong Fortress in Suwon."
+    },
+    {
+      "rookie": "A long stone wall is rising around the new town.",
+      "junior": "A long stone wall is growing around the new town.",
+      "master": "A long stone wall is climbing around the new town."
+    },
+    {
+      "rookie": "Jeong designed a lifting machine, the geojunggi. It lifts heavy stones with ropes and pulleys.",
+      "junior": "Jeong designed a lifting machine called the geojunggi. It uses ropes and pulleys to lift heavy stones.",
+      "master": "Jeong designed a lifting machine, the geojunggi, which raises heavy stones by means of ropes and pulleys."
+    },
+    {
+      "rookie": "But this morning, Foreman Gwak shouts across the stone yard.",
+      "junior": "But this morning, Foreman Gwak is shouting across the stone yard.",
+      "master": "Yet this morning, Foreman Gwak's voice rings out across the stone yard."
+    },
+    {
+      "rookie": "\"Your machine is broken! It cannot lift one stone!\"",
+      "junior": "\"Your machine is broken! It can't lift a single stone!\"",
+      "master": "\"Your machine is broken! It cannot raise a single stone!\""
+    },
+    {
+      "rookie": "The lifting machine was not broken. A new carpenter had rebuilt it from a copied drawing. Okbun, who carries water to the builders, saw it and wrote the note. Rebuilt from Jeong Yak-yong's drawing, it lifted the stone. Hwaseong Fortress was finished in 1796. Machines like Jeong's geojunggi helped lift big stones. A record book lists the workers and their pay.",
+      "junior": "The lifting machine was not broken. A new carpenter had rebuilt it using a copied drawing. Okbun, who carries water to the builders, saw this and wrote the note. Once it was rebuilt from Jeong Yak-yong's drawing, it lifted the stone. Hwaseong Fortress was finished in 1796. Machines like Jeong's geojunggi helped lift big stones. A record book lists the workers and their pay.",
+      "master": "The lifting machine had never been broken: a new carpenter had rebuilt it from a copied drawing. Okbun, who carries water to the builders, witnessed it and wrote the note. Rebuilt from Jeong Yak-yong's own drawing, it raised the stone. Hwaseong Fortress was finished in 1796, and machines like Jeong's geojunggi helped lift its big stones. A record book lists the workers and the pay they received."
+    },
+    {
+      "rookie": "HWASEONG FORTRESS, SUWON",
+      "junior": "HWASEONG FORTRESS, SUWON",
+      "master": "HWASEONG FORTRESS, SUWON"
+    },
+    {
+      "rookie": "THE WALL BEGINS",
+      "junior": "THE WALL BEGINS",
+      "master": "THE WALL BEGINS"
+    },
+    {
+      "rookie": "THE MACHINE WORKS",
+      "junior": "THE MACHINE WORKS",
+      "master": "THE MACHINE WORKS"
+    },
+    {
+      "rookie": "THE NEW CARPENTER",
+      "junior": "THE NEW CARPENTER",
+      "master": "THE NEW CARPENTER"
+    },
+    {
+      "rookie": "THE NOTE",
+      "junior": "THE NOTE",
+      "master": "THE NOTE"
+    },
+    {
+      "rookie": "THE MACHINE STOPS",
+      "junior": "THE MACHINE STOPS",
+      "master": "THE MACHINE STOPS"
+    },
+    {
+      "rookie": "THE RICE",
+      "junior": "THE RICE",
+      "master": "THE RICE"
+    },
+    {
+      "rookie": "until the new carpenter came",
+      "junior": "until the new carpenter came",
+      "master": "until the new carpenter came"
+    },
+    {
+      "rookie": "after the carpenter's work",
+      "junior": "after the carpenter's work",
+      "master": "after the carpenter's work"
+    },
+    {
+      "rookie": "Broken, or Changed?",
+      "junior": "Broken, or Changed?",
+      "master": "Broken, or Changed?"
+    },
+    {
+      "rookie": "THE STONE YARD",
+      "junior": "THE STONE YARD",
+      "master": "THE STONE YARD"
+    },
+    {
+      "rookie": "A big stone lies under the machine. Its ropes hang loose.",
+      "junior": "A big stone lies under the machine, and its ropes hang loose.",
+      "master": "A great stone rests beneath the machine, its ropes hanging slack."
+    },
+    {
+      "rookie": "A note with a small water drop is tied to the rope.",
+      "junior": "A note marked with a small water drop is tied to the rope.",
+      "master": "Tied to the rope is a note bearing a tiny water drop."
+    },
+    {
+      "rookie": "Jeong reads its King's letters out: \"The drawing is different.\"",
+      "junior": "Jeong reads the King's letters on it aloud: \"The drawing is different.\"",
+      "master": "Jeong reads its King's letters aloud: \"The drawing is different.\""
+    },
+    {
+      "rookie": "Foreman Gwak's work log:",
+      "junior": "Here is Foreman Gwak's work log:",
+      "master": "Foreman Gwak's work log reads:"
+    },
+    {
+      "rookie": "The King's builders began the wall in 1794.\nThe machine lifted big stones every day, until the new carpenter came.\nThe new carpenter rebuilt the top from a copied drawing.\nThe note was on the rope after the carpenter's work.\nThis morning, the machine could not lift a stone.",
+      "junior": "The King's builders started the wall in 1794.\nEvery day the machine lifted big stones, until the new carpenter came.\nThe new carpenter rebuilt the top using a copied drawing.\nAfter the carpenter's work, the note was found on the rope.\nThis morning, the machine was unable to lift a stone.",
+      "master": "The King's builders commenced the wall in 1794.\nDay after day the machine raised big stones, until the new carpenter came.\nThe new carpenter rebuilt the top from a copied drawing.\nThe note appeared on the rope after the carpenter's work.\nThis morning, the machine failed to lift a single stone."
+    },
+    {
+      "rookie": "Put the log in order. Was the machine broken, or changed?",
+      "junior": "Put the log in order. Was the machine broken, or was it changed?",
+      "master": "Set the log in order. Was the machine broken, or altered?"
+    },
+    {
+      "rookie": "Look for the words 'until' and 'after' in the log.",
+      "junior": "Look for 'until' and 'after' in the log.",
+      "master": "Watch for the words 'until' and 'after' in the log."
+    },
+    {
+      "rookie": "What happened before the new carpenter came? What came after his work?",
+      "junior": "What happened before the new carpenter arrived? What came after his work?",
+      "master": "What took place before the new carpenter arrived? What followed his work?"
+    },
+    {
+      "rookie": "The machine worked until someone changed it!",
+      "junior": "The machine worked until somebody changed it!",
+      "master": "The machine worked perfectly until someone altered it!"
+    },
+    {
+      "rookie": "The machine is not broken. It was changed.",
+      "junior": "The machine isn't broken. Someone changed it.",
+      "master": "The machine is not broken; it has been altered."
+    },
+    {
+      "rookie": "\"A copied drawing?\" says Jeong. \"Then which drawing is mine?\"",
+      "junior": "\"A copied drawing?\" Jeong says. \"Then which drawing is my own?\"",
+      "master": "\"A copied drawing?\" Jeong frowns. \"Then which drawing is truly mine?\""
+    },
+    {
+      "rookie": "He takes you to the drawing room.",
+      "junior": "He leads you to the drawing room.",
+      "master": "He escorts you to the drawing room."
+    },
+    {
+      "rookie": "Read the log again: what came after the carpenter's work?",
+      "junior": "Read the log again: what happened after the carpenter's work?",
+      "master": "Return to the log: what followed the carpenter's work?"
+    },
+    {
+      "rookie": "Changed, Not Broken",
+      "junior": "Changed, Not Broken",
+      "master": "Changed, Not Broken"
+    },
+    {
+      "rookie": "The machine worked until a new carpenter rebuilt its top from a copied drawing.",
+      "junior": "The machine worked until a new carpenter used a copied drawing to rebuild its top.",
+      "master": "The machine kept working until a new carpenter rebuilt its top from a copied drawing."
+    },
+    {
+      "rookie": "The Same Mark?",
+      "junior": "The Same Mark?",
+      "master": "The Same Mark?"
+    },
+    {
+      "rookie": "A water drop is drawn on this note. Which note in your notebook has the same mark?",
+      "junior": "This note has a water drop drawn on it. Which note in your notebook has the same mark?",
+      "master": "A water drop is drawn on this note. Which note in your notebook bears the same mark?"
+    },
+    {
+      "rookie": "That has no water drop. Look for a note from 1592.",
+      "junior": "That one has no water drop. Look for a note from 1592.",
+      "master": "No water drop there. Seek a note from 1592."
+    },
+    {
+      "rookie": "The King's builders begin the wall.",
+      "junior": "The King's builders start the wall.",
+      "master": "The King's builders commence the wall."
+    },
+    {
+      "rookie": "The machine lifts big stones every day.",
+      "junior": "Every day the machine lifts big stones.",
+      "master": "Day after day the machine raises big stones."
+    },
+    {
+      "rookie": "A new carpenter rebuilds the top from a copied drawing.",
+      "junior": "A new carpenter uses a copied drawing to rebuild the top.",
+      "master": "A new carpenter takes a copied drawing and rebuilds the top from it."
+    },
+    {
+      "rookie": "A note with a water drop is tied to the rope.",
+      "junior": "A note marked with a water drop is tied to the rope.",
+      "master": "A note bearing a water drop is tied to the rope."
+    },
+    {
+      "rookie": "The machine cannot lift a stone.",
+      "junior": "The machine is unable to lift a stone.",
+      "master": "The machine fails to raise a single stone."
+    },
+    {
+      "rookie": "Workers eat rice in the shade.",
+      "junior": "Workers eat their rice in the shade.",
+      "master": "Workers share their rice in the shade."
+    },
+    {
+      "rookie": "The machine lifted big stones every day, until the new carpenter came.",
+      "junior": "Every day the machine lifted big stones, until the new carpenter came.",
+      "master": "Day after day the machine raised big stones, until the new carpenter came."
+    },
+    {
+      "rookie": "The note was on the rope after the carpenter's work.",
+      "junior": "After the carpenter's work, the note was found on the rope.",
+      "master": "The note appeared on the rope after the carpenter's work."
+    },
+    {
+      "rookie": "Find out what the machine should do.",
+      "junior": "Find out what the machine is supposed to do.",
+      "master": "Learn what the machine was built to do."
+    },
+    {
+      "rookie": "My machine lifts heavy stones with ropes and pulleys.",
+      "junior": "My machine uses ropes and pulleys to lift heavy stones.",
+      "master": "My machine raises heavy stones by means of ropes and pulleys."
+    },
+    {
+      "rookie": "Gwak says it is broken. I do not believe it.",
+      "junior": "Gwak says it's broken. I don't believe him.",
+      "master": "Gwak claims it is broken. I refuse to believe it."
+    },
+    {
+      "rookie": "Then let us read his log.",
+      "junior": "Then let's read his log.",
+      "master": "Then let us study his log."
+    },
+    {
+      "rookie": "THE SAME WATER DROP",
+      "junior": "THE SAME WATER DROP",
+      "master": "THE SAME WATER DROP"
+    },
+    {
+      "rookie": "Seok drew it in 1592. Two hundred years later, it is here again.",
+      "junior": "Seok drew it in 1592. Two hundred years later, here it is again.",
+      "master": "Seok drew it in 1592. Two hundred years on, it has returned."
+    },
+    {
+      "rookie": "The tall pole",
+      "junior": "The tall pole",
+      "master": "The tall pole"
+    },
+    {
+      "rookie": "This has one pole, not a frame like a gate. Read Jeong's first line.",
+      "junior": "This one has one pole, not a frame like a gate. Read Jeong's first line.",
+      "master": "A single pole, not a frame like a gate. Reread Jeong's first line."
+    },
+    {
+      "rookie": "a drawing of one tall wooden pole with one pulley at its top and one rope",
+      "junior": "a drawing of a single tall wooden pole with one pulley at its top and one rope",
+      "master": "a drawing of one tall wooden pole, with a single pulley at its top and a single rope"
+    },
+    {
+      "rookie": "The gate with two wheels",
+      "junior": "The gate with two wheels",
+      "master": "The gate with two wheels"
+    },
+    {
+      "rookie": "a drawing of a wooden frame like a gate, pulleys under the top beam and more pulleys below them, and a big wheel on each side",
+      "junior": "a drawing of a wooden frame like a gate, with pulleys under the top beam, more pulleys below them, and a big wheel on each side",
+      "master": "a drawing of a gate-like wooden frame: pulleys under the top beam, further pulleys below them, and a big wheel on each side"
+    },
+    {
+      "rookie": "The gate with no wheels",
+      "junior": "The gate with no wheels",
+      "master": "The gate with no wheels"
+    },
+    {
+      "rookie": "Are there pulleys over the stone too? Is there a wheel on each side?",
+      "junior": "Are there pulleys above the stone as well? Is there a wheel on each side?",
+      "master": "Do pulleys hang above the stone as well? Does a wheel stand on each side?"
+    },
+    {
+      "rookie": "a drawing of a wooden frame like a gate, pulleys only under the top beam, and no wheels",
+      "junior": "a drawing of a wooden frame like a gate, with pulleys only under the top beam and no wheels",
+      "master": "a drawing of a gate-like wooden frame, with pulleys only under the top beam and no wheels at all"
+    },
+    {
+      "rookie": "a beam across the top",
+      "junior": "a beam across the top",
+      "master": "a beam across the top"
+    },
+    {
+      "rookie": "A big wheel stands on each side.",
+      "junior": "A big wheel stands on each side.",
+      "master": "A big wheel stands on each side."
+    },
+    {
+      "rookie": "Which Drawing Is Mine?",
+      "junior": "Which Drawing Is Mine?",
+      "master": "Which Drawing Is Mine?"
+    },
+    {
+      "rookie": "THE DRAWING ROOM",
+      "junior": "THE DRAWING ROOM",
+      "master": "THE DRAWING ROOM"
+    },
+    {
+      "rookie": "Three drawings of lifting machines lie on the table.",
+      "junior": "On the table lie three drawings of lifting machines.",
+      "master": "Three drawings of lifting machines are spread across the table."
+    },
+    {
+      "rookie": "\"One is mine,\" Jeong says. \"The carpenter took the wrong one.\"",
+      "junior": "\"One of these is mine,\" says Jeong. \"The carpenter took the wrong one.\"",
+      "master": "\"Only one is mine,\" Jeong says. \"The carpenter took the wrong one.\""
+    },
+    {
+      "rookie": "\"Read my words, and find my drawing.\"",
+      "junior": "\"Read what I say, and find my drawing.\"",
+      "master": "\"Read my description, and pick out my drawing.\""
+    },
+    {
+      "rookie": "Jeong's words about his machine:",
+      "junior": "What Jeong says about his machine:",
+      "master": "Jeong's description of his machine:"
+    },
+    {
+      "rookie": "\"My machine stands like a gate, with a beam across the top.\"\n\"Pulleys hang from the beam. More pulleys hang under them, over the stone.\"\n\"Ropes run between the pulleys, up and down.\"\n\"A big wheel stands on each side. Workers turn the wheels.\"",
+      "junior": "\"My machine is shaped like a gate, with a beam across the top.\"\n\"From the beam hang pulleys. More pulleys hang under them, just over the stone.\"\n\"Ropes run up and down between the pulleys.\"\n\"A big wheel stands on each side. Workers turn the wheels.\"",
+      "master": "\"My machine is built like a gate, with a beam across the top.\"\n\"Pulleys are slung from the beam. More pulleys hang under them, directly above the stone.\"\n\"Ropes run up and down from pulley to pulley.\"\n\"A big wheel stands on each side, and workers turn the wheels.\""
+    },
+    {
+      "rookie": "Which drawing is Jeong's?",
+      "junior": "Which one is Jeong's drawing?",
+      "master": "Which of these drawings belongs to Jeong?"
+    },
+    {
+      "rookie": "Read Jeong's first line. What shape does his machine have?",
+      "junior": "Read Jeong's first line. What shape is his machine?",
+      "master": "Consider Jeong's first line. What shape does his machine take?"
+    },
+    {
+      "rookie": "Look for pulleys in two places, and a wheel on each side.",
+      "junior": "Look for pulleys in two places, and for a wheel on each side.",
+      "master": "Seek pulleys in two places, and a wheel on either side."
+    },
+    {
+      "rookie": "That is Jeong's drawing!",
+      "junior": "That's Jeong's drawing!",
+      "master": "That is Jeong's very own drawing!"
+    },
+    {
+      "rookie": "The machine in the yard has pulleys only at the top, and no wheels.",
+      "junior": "The machine in the yard has pulleys only at the top, and it has no wheels.",
+      "master": "The machine in the yard has pulleys only at the top, and no wheels whatsoever."
+    },
+    {
+      "rookie": "\"The carpenter copied the wrong drawing,\" says Jeong.",
+      "junior": "\"The carpenter copied the wrong drawing,\" Jeong says.",
+      "master": "\"The carpenter copied the wrong drawing,\" Jeong declares."
+    },
+    {
+      "rookie": "\"Let us rebuild it, and lift that stone.\"",
+      "junior": "\"Let's rebuild it and lift that stone.\"",
+      "master": "\"Let us rebuild it, and raise that stone.\""
+    },
+    {
+      "rookie": "Jeong's Drawing",
+      "junior": "Jeong's Drawing",
+      "master": "Jeong's Drawing"
+    },
+    {
+      "rookie": "Jeong's machine is like a gate. It has pulleys in two places and two wheels.",
+      "junior": "Jeong's machine is shaped like a gate. It has pulleys in two places and two wheels.",
+      "master": "Jeong's machine resembles a gate, with pulleys in two places and two wheels."
+    },
+    {
+      "rookie": "Turn the two wheels",
+      "junior": "Turn the two wheels",
+      "master": "Turn the two wheels"
+    },
+    {
+      "rookie": "Pull the rope by hand",
+      "junior": "Pull the rope by hand",
+      "master": "Pull the rope by hand"
+    },
+    {
+      "rookie": "Tie the ropes around the stone",
+      "junior": "Tie the ropes around the stone",
+      "master": "Tie the ropes around the stone"
+    },
+    {
+      "rookie": "The stone rises",
+      "junior": "The stone rises",
+      "master": "The stone rises"
+    },
+    {
+      "rookie": "Push the stone up a slope",
+      "junior": "Push the stone up a slope",
+      "master": "Push the stone up a slope"
+    },
+    {
+      "rookie": "Hook the stone to the lower pulleys",
+      "junior": "Hook the stone to the lower pulleys",
+      "master": "Hook the stone to the lower pulleys"
+    },
+    {
+      "rookie": "Before you hook the stone, tie the ropes around it.",
+      "junior": "Before you hook the stone, tie the ropes around it.",
+      "master": "Before you hook the stone, tie the ropes around it."
+    },
+    {
+      "rookie": "only after the stone is hooked",
+      "junior": "only after the stone is hooked",
+      "master": "only after the stone is hooked"
+    },
+    {
+      "rookie": "The Stone Rises",
+      "junior": "The Stone Rises",
+      "master": "The Stone Rises"
+    },
+    {
+      "rookie": "The builders rebuild the machine from Jeong's drawing.",
+      "junior": "The builders use Jeong's drawing to rebuild the machine.",
+      "master": "Following Jeong's drawing, the builders reconstruct the machine."
+    },
+    {
+      "rookie": "Now the big stone must go up onto the wall.",
+      "junior": "Now the big stone has to go up onto the wall.",
+      "master": "Now the great stone must be raised onto the wall."
+    },
+    {
+      "rookie": "\"Read my steps,\" says Jeong. \"Then do them in order.\"",
+      "junior": "\"Read my steps,\" Jeong says. \"Then follow them in order.\"",
+      "master": "\"Study my steps,\" says Jeong, \"and carry them out in order.\""
+    },
+    {
+      "rookie": "Jeong's steps for lifting:",
+      "junior": "Jeong's lifting steps:",
+      "master": "Jeong's instructions for lifting:"
+    },
+    {
+      "rookie": "\"Turn the two wheels only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last.\"\n\"Nobody pulls the rope by hand, and nobody pushes the stone.\"",
+      "junior": "\"Turn the two wheels, but only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last of all.\"\n\"No one pulls the rope by hand, and no one pushes the stone.\"",
+      "master": "\"The two wheels are turned only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last, once all else is done.\"\n\"No one hauls the rope by hand, and no one shoves the stone.\""
+    },
+    {
+      "rookie": "Tap the four steps in order.",
+      "junior": "Tap the four steps in the right order.",
+      "master": "Tap the four steps in their proper order."
+    },
+    {
+      "rookie": "Find the step that comes before the hook.",
+      "junior": "Find the step that comes before the hook.",
+      "master": "Identify the step that precedes the hook."
+    },
+    {
+      "rookie": "The wheels turn only after the hook. What happens last?",
+      "junior": "The wheels turn only after the hook. What happens at the end?",
+      "master": "The wheels turn only once the stone is hooked. What comes last of all?"
+    },
+    {
+      "rookie": "The wheels turn, and the stone rises!",
+      "junior": "The wheels turn and the stone rises!",
+      "master": "The wheels turn, and up rises the stone!"
+    },
+    {
+      "rookie": "The ropes go tight. Slowly, the big stone rises onto the wall.",
+      "junior": "The ropes pull tight. Slowly, the big stone rises onto the wall.",
+      "master": "The ropes go taut, and slowly the great stone rises onto the wall."
+    },
+    {
+      "rookie": "Gwak takes off his hat. \"It was never broken,\" he says.",
+      "junior": "Gwak removes his hat. \"It was never broken,\" he admits.",
+      "master": "Gwak doffs his hat. \"It was never broken after all,\" he concedes."
+    },
+    {
+      "rookie": "Below, a girl with a water bucket watches and smiles.",
+      "junior": "Down below, a girl with a water bucket watches and smiles.",
+      "master": "Far below, a girl with a water bucket watches, smiling."
+    },
+    {
+      "rookie": "Read again: what do you do before you hook the stone?",
+      "junior": "Read it again: what do you do before you hook the stone?",
+      "master": "Look again: what must you do before you hook the stone?"
+    },
+    {
+      "rookie": "The wheels turn only after the stone is hooked.",
+      "junior": "Only after the stone is hooked do the wheels turn.",
+      "master": "The wheels may turn only after the stone is hooked, not before."
+    },
+    {
+      "rookie": "Those are the right steps. Read Jeong's 'before' and 'after' again.",
+      "junior": "You have the right steps. Read Jeong's 'before' and 'after' once more.",
+      "master": "The steps are right, the order is not. Revisit Jeong's 'before' and 'after'."
+    },
+    {
+      "rookie": "Rebuilt from Jeong's drawing, the machine lifts the stone onto the wall.",
+      "junior": "Once it is rebuilt from Jeong's drawing, the machine lifts the stone onto the wall.",
+      "master": "Reconstructed from Jeong's drawing, the machine raises the stone onto the wall."
+    },
+    {
+      "rookie": "two years and eight months later",
+      "junior": "two years and eight months later",
+      "master": "two years and eight months later"
+    },
+    {
+      "rookie": "the year we finished",
+      "junior": "the year we finished",
+      "master": "the year we finished"
+    },
+    {
+      "rookie": "The Record Chest",
+      "junior": "The Record Chest",
+      "master": "The Record Chest"
+    },
+    {
+      "rookie": "THE NEW WALL",
+      "junior": "THE NEW WALL",
+      "master": "THE NEW WALL"
+    },
+    {
+      "rookie": "Autumn, 1796. Jeong invites you back to Suwon.",
+      "junior": "It is autumn, 1796. Jeong invites you back to Suwon.",
+      "master": "Autumn, 1796: Jeong invites you to return to Suwon."
+    },
+    {
+      "rookie": "The last stone is on the wall.",
+      "junior": "The last stone is in place on the wall.",
+      "master": "The final stone has been set on the wall."
+    },
+    {
+      "rookie": "A clerk locks a thick record book in a chest. Its lock has four number dials.",
+      "junior": "A clerk locks a thick record book inside a chest. The lock has four number dials.",
+      "master": "A clerk locks a thick record book away in a chest, secured by a lock with four number dials."
+    },
+    {
+      "rookie": "The clerk says:",
+      "junior": "The clerk tells you:",
+      "master": "The clerk explains:"
+    },
+    {
+      "rookie": "\"This book holds every worker's name, and his pay.\"\n\"We began the wall in the first month of 1794.\"\n\"Today the work is done, two years and eight months later.\"\n\"The chest opens on the year we finished.\"",
+      "junior": "\"This book holds the name of every worker, and his pay.\"\n\"We started the wall in the first month of 1794.\"\n\"Today, two years and eight months later, the work is done.\"\n\"The chest opens on the year we finished.\"",
+      "master": "\"This book records every worker's name, together with his pay.\"\n\"We commenced the wall in the first month of 1794.\"\n\"Today, two years and eight months later, the work stands complete.\"\n\"The chest opens on the year we finished.\""
+    },
+    {
+      "rookie": "Turn the dials to the year Hwaseong Fortress was finished.",
+      "junior": "Turn the dials to the year when Hwaseong Fortress was finished.",
+      "master": "Set the dials to the year Hwaseong Fortress was completed."
+    },
+    {
+      "rookie": "Find the year the work began.",
+      "junior": "Find the year when the work started.",
+      "master": "Locate the year the work commenced."
+    },
+    {
+      "rookie": "Count on two years from the first month. Then eight more months: is it still that year?",
+      "junior": "Add two years to the first month. Then add eight more months: is it still the same year?",
+      "master": "Count two years on from the first month, then eight months more: does that year still hold?"
+    },
+    {
+      "rookie": "1796! The record chest opens.",
+      "junior": "1796! The record chest swings open.",
+      "master": "1796! The lid of the record chest lifts."
+    },
+    {
+      "rookie": "Inside the book are thousands of names, each with its pay.",
+      "junior": "The book holds thousands of names, each one with its pay.",
+      "master": "Within the book lie thousands of names, each paired with its pay."
+    },
+    {
+      "rookie": "\"Even the water girl is in it,\" laughs the clerk.",
+      "junior": "\"The water girl is in it too,\" the clerk laughs.",
+      "master": "\"Even the water girl has her place in it,\" the clerk chuckles."
+    },
+    {
+      "rookie": "But who is she?",
+      "junior": "But who is she?",
+      "master": "Yet who is she?"
+    },
+    {
+      "rookie": "That is the year the work began. Count on two years and eight months.",
+      "junior": "That is the year the work started. Count on two years and eight months.",
+      "master": "That is when the work commenced. Count on two years and eight months."
+    },
+    {
+      "rookie": "That was the year of the stopped machine. Count on from the first month of 1794.",
+      "junior": "That was the year the machine stopped. Count on from the first month of 1794.",
+      "master": "That was the year of the halted machine. Count on from the first month of 1794."
+    },
+    {
+      "rookie": "Count again: two years and eight months after the first month of 1794.",
+      "junior": "Count once more: two years and eight months after the first month of 1794.",
+      "master": "Recount: two years and eight months on from the first month of 1794."
+    },
+    {
+      "rookie": "Those digits fit, but not in that order. Count on from 1794.",
+      "junior": "The digits are right, but the order is wrong. Count on from 1794.",
+      "master": "Those digits belong, but not in that order. Count on from 1794."
+    },
+    {
+      "rookie": "In the ninth month of 1796, Hwaseong Fortress was finished.",
+      "junior": "Hwaseong Fortress was finished in the ninth month of 1796.",
+      "master": "In the ninth month of 1796, Hwaseong Fortress stood complete."
+    },
+    {
+      "rookie": "Machines like mine helped lift the big stones.",
+      "junior": "Machines like mine helped to lift the big stones.",
+      "master": "Machines such as mine helped to raise the great stones."
+    },
+    {
+      "rookie": "A record book tells how the fortress was built.",
+      "junior": "A record book explains how the fortress was built.",
+      "master": "A record book recounts how the fortress was built."
+    },
+    {
+      "rookie": "It lists the workers, and the pay they were given.",
+      "junior": "It lists the workers and the pay they received.",
+      "master": "It names the workers, and the pay each one received."
+    },
+    {
+      "rookie": "I carry water here. I wrote the note.",
+      "junior": "I bring water here. I'm the one who wrote the note.",
+      "master": "I carry water for the builders. The note was mine."
+    },
+    {
+      "rookie": "Your water drop is just like Seok's, in 1592.",
+      "junior": "Your water drop looks just like Seok's, from 1592.",
+      "master": "Your water drop is the very image of Seok's, from 1592."
+    },
+    {
+      "rookie": "Seok? My mother told me that name.",
+      "junior": "Seok? My mother told me about that name.",
+      "master": "Seok? My mother spoke that name to me."
+    }
+  ],
+  "glossary": {
+    "junior": {
+      "foreman": "작업 반장",
+      "pulleys": "도르래들",
+      "carpenter": "목수",
+      "clerk": "서기",
+      "dials": "다이얼들"
+    },
+    "master": {
+      "commenced": "시작했다",
+      "altered": "바꾸었다",
+      "slack": "느슨한",
+      "taut": "팽팽한",
+      "doffs": "벗다",
+      "concedes": "인정하다",
+      "precedes": "앞서다",
+      "witnessed": "목격했다",
+      "reconstruct": "다시 짓다",
+      "escorts": "안내하다"
+    }
+  }
+}

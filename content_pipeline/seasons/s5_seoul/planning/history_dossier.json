@@ -600,6 +600,3683 @@
         "Seoul Pilot Case 01, redesigned 2026-11-04 (docs/SEOUL_CASE01_REDESIGN.md). Sources of h3 and h9-h13 opened and quoted by Claude on 2026-11-04; h1, h2, h4-h6 as checked before.",
         "2026-11-05: language redesign (English is the tool). M2 decoy letters and organ words, M3 the paper written down from the right (Sora's lesson, in the fiction list), the final talk in English only. docs/SEOUL_CASE01_LANGUAGE_REPORT.md."
       ]
+    },
+    {
+      "caseId": "s5_ep02",
+      "subject": "Yi Sun-sin's navy at Yeosu and the turtle ship, on the eve of the Imjin War (1592)",
+      "period": "1591-1592 (lunar calendar)",
+      "location": "The Jeolla Left Navy base at Yeosu",
+      "facts": [
+        {
+          "factId": "s5_ep02_h1",
+          "statement": "The turtle ship had a roof of planks like a turtle's back, with a narrow cross-shaped path and knives and spikes set on it; at the front was a dragon's head whose mouth was a hole for firing guns, and at the back a turtle's tail.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "선조수정실록 26권, 선조 25년 5월 1일 경신 20번째 기사 (전라 수군 절도사 이순신이 거제 앞 나루에서 왜적을 격파하다)",
+              "url": "https://sillok.history.go.kr/id/knb_12505001_020",
+              "quote": "其制船上鋪板如龜, 背上有十字細路, 纔容我人通行, 餘皆列揷刀、錐。前作龍頭, 口爲銃穴, 後爲龜尾, 尾下有銃穴。",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "여수시 (Yeosu City)",
+              "title": "여수의 거북선 이야기",
+              "url": "https://www.yeosu.go.kr/www/yeosu/past/story/ship/screen_print.pdf?page%3D1",
+              "quote": "배의 앞에는 용두(龍斗)를 달고 그 용의 입을 통하여 대포알을 쏘았다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 거북선",
+              "url": "https://encykorea.aks.ac.kr/Article/E0001833",
+              "quote": "앞은 용의 머리를 만들어 입은 총구멍으로 활용하였으며",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Annals write 銃穴 (a gun hole); the translation and the Yeosu page say a hole for cannon (대포). The game says \"a hole for a cannon\", as the translation does."
+          }
+        },
+        {
+          "factId": "s5_ep02_h2",
+          "statement": "Yi Sun-sin's turtle ships are known to have been built at shipyards in Yeosu, where his navy (the Jeolla Left Navy) was based; at the start of the war that navy had turtle ships.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국가유산청 (Korea Heritage Service)",
+              "title": "국가유산포털: 여수 선소 유적",
+              "url": "https://www.heritage.go.kr/DATA1/heritage/hub_img/html/cul_1333603920000.html",
+              "quote": "거북선은 이곳 선소와 중앙동 ‘본영 선소’, 돌산읍 ‘방답진 선소’ 세곳에서 건조되었다고 알려져 있다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "여수시 (Yeosu City)",
+              "title": "여수의 거북선 이야기",
+              "url": "https://www.yeosu.go.kr/www/yeosu/past/story/ship/screen_print.pdf?page%3D1",
+              "quote": "1592년 임진왜란 초기에는 전라좌수영에 영(營) 거북선, 순천 거북선, 방답 거북선 등 세 척이 있었으나",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The heritage page says \"known to have been built\" (알려져 있다): the game says only that turtle ships were built at Yeosu, never which yard, and gives no number of ships."
+          }
+        },
+        {
+          "factId": "s5_ep02_h3",
+          "statement": "On the 13th day of the 4th month of 1592 (lunar calendar), Japanese ships covering the sea arrived at Busan: the Imjin War began.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "선조실록 26권, 선조 25년 4월 13일 임인 1번째 기사 (왜구가 쳐들어와, 동래 부사 송상현 등이 죽다)",
+              "url": "https://sillok.history.go.kr/id/kna_12504013_001",
+              "quote": "賊船蔽海而來, 釜山僉使鄭撥, 方獵於絶影島, 謂爲朝倭, 不設備, 未及還鎭, 而賊已登城。",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 부산포성 (정발 관련 서술)",
+              "url": "https://encykorea.aks.ac.kr/Article/E0024275",
+              "quote": "1592년(선조 25) 음력 4월 13일 일본의 조선원정군 제1진 1만 8700여 명이 부산 앞바다에 쳐들어오자 정발은 부산진성을 굳게 지켰다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Both give the lunar date; accounts differ on whether the landing and the fall of the Busan fort were on the 13th or the 14th. The game says only that on the 13th (lunar) Japanese ships covered the sea at Busan and the war began; it gives no solar date and never says when Yi learned of it (not checked)."
+          }
+        },
+        {
+          "factId": "s5_ep02_h4",
+          "statement": "In the 5th month of 1592 (lunar), the Joseon navy led by Yi Sun-sin, naval commander of Jeolla, defeated a Japanese fleet off Okpo (Geoje): the first victory at sea of the Imjin War.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "선조수정실록 26권, 선조 25년 5월 1일 경신 20번째 기사",
+              "url": "https://sillok.history.go.kr/id/knb_12505001_020",
+              "quote": "全羅水軍節度使李舜臣赴援慶尙道, 大敗倭兵于巨濟之前津。… 到玉浦遇倭船三十隻, 進擊大破之",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 옥포해전",
+              "url": "https://encykorea.aks.ac.kr/Article/E0038825",
+              "quote": "그리고 왜적에게 포로로 잡힌 3명을 구출해 임진왜란 중 해전에서 첫 승리를 거두었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Revised Annals file the month's events under the 1st day; the encyclopedia puts the fleet off Okpo on the 7th. The game says only \"the fifth month\" and gives no number of ships (30 met, 26 destroyed: the sources count differently)."
+          }
+        },
+        {
+          "factId": "s5_ep02_h5",
+          "statement": "Before the war, after finishing the turtle ship, Yi Sun-sin tested firing the Jija and Hyeonja cannons on board; his diary (Nanjung Ilgi) records it on the 12th day of the 4th month of 1592 (lunar), the day before the war began.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government)",
+              "title": "내 손안에 서울: '난중일기'로 살펴본 장군 이순신 VS 인간 이순신",
+              "url": "https://mediahub.seoul.go.kr/archives/2016775",
+              "quote": "거북선을 완성한 후에는 선상에서 지자포(地字砲)와 현자포(玄字砲)를 시험 발사하는 등 왜란 전부터 만일에 있을 전투에 대비해 나갔다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "경기일보 (Kyeonggi Ilbo)",
+              "title": "난중일기 속 거북선 기록 (2021-01-05)",
+              "url": "https://www.kyeonggi.com/article/202101051151835",
+              "quote": "1592년 4월 12일 기록: “식후에 배를 타고 거북선의 지자포(地字砲), 현자포(玄字砲)를 쏘았다”",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "브라보마이라이프 (etoday)",
+              "title": "이순신과 거북선 기사",
+              "url": "https://bravo.etoday.co.kr/view/atc_view/7692",
+              "quote": "때맞추어 거북선을 건조하고 포격실험을 마친 것이 왜적 침입 하루 전날이었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "주간경향 (Weekly Kyunghyang)",
+              "title": "거북선이 세계 최초의 잠수함?…오역이 부른 가짜뉴스가 신화를 쌓았다",
+              "url": "https://weekly.khan.co.kr/article/202608141447001",
+              "quote": "\"거북선에서 지자·현자포를 쏘아보았다\"(4월12일)는 따위의 일기가 보인다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The public source (Seoul) says the test was before the war but gives no day; the day (the 12th, lunar) is from two press articles quoting the diary. The diary's own page was not opened (2026-11-06). The game says the cannons were tested on the 12th day of the 4th month and that his diary records it; it never quotes the diary."
+          },
+          "notes": [
+            "2026-11-06 (lead check): the day (lunar 4.12) is quoted from the diary by three press sources; the public source (Seoul) says only that the cannons were test-fired before the war. The Encyclopedia of Korean Culture turtle ship article does not give the day. Nanjung Ilgi itself was not opened online."
+          ]
+        },
+        {
+          "factId": "s5_ep02_h6",
+          "statement": "Yi Sun-sin was appointed naval commander of Jeolla Left Province in the 2nd month of 1591, a year and two months before the war, and held that post when the war began.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government)",
+              "title": "내 손안에 서울: '난중일기'로 살펴본 장군 이순신 VS 인간 이순신",
+              "url": "https://mediahub.seoul.go.kr/archives/2016775",
+              "quote": "임진왜란이 일어나기 1년 2개월 전인 1591년 2월 전라좌수사로 임명된 이순신은",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "선조수정실록 26권, 선조 25년 5월 1일 경신 20번째 기사",
+              "url": "https://sillok.history.go.kr/id/knb_12505001_020",
+              "quote": "全羅水軍節度使李舜臣赴援慶尙道",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Annals entry of 1592 shows him in the post; the appointment month is from the Seoul page. The game says only that he commands the navy of Jeolla."
+          }
+        }
+      ],
+      "fiction": [
+        "Spring 1592: the night of the 11th to the 12th day of the 4th month in the store room, the rain, the leaking roof and the missing gunpowder are made up.",
+        "Seok, Quartermaster Ham, Ham's report, the twelve barrels and the water-drop note are made up.",
+        "Admiral Yi Sun-sin is real, but everything he says in the case is made up; his description of the turtle ship retells the 1592 record (h1) and is never a quotation.",
+        "The note 거북선 is written in today's spelling."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep02_m1",
+          "fiction": true,
+          "answer": "bucket",
+          "clues": [
+            {
+              "text": "under the hole in the roof",
+              "missionId": "s5_ep02_m1"
+            },
+            {
+              "text": "Wet powder will not fire",
+              "missionId": "s5_ep02_m1"
+            }
+          ],
+          "derivation": "Made up (no history in it): the Admiral's words (wet powder will not fire) and Ham's report (a bucket full of rain under the roof hole) show the danger: rain over the powder.",
+          "whyNot": {
+            "straw": "The straw was next to the door: it shows the way out, not the danger.",
+            "note": "The paper on the shelf is the note, not the danger; the report says the rain came through the roof."
+          }
+        },
+        {
+          "puzzleId": "s5_ep02_m2",
+          "factIds": [
+            "s5_ep01_h3",
+            "s5_ep01_h10",
+            "s5_ep01_h11",
+            "s5_ep01_h12"
+          ],
+          "answer": "거북선",
+          "clues": [
+            {
+              "text": "back of the tongue",
+              "missionId": "s5_ep02_m2"
+            },
+            {
+              "text": "one step stronger",
+              "missionId": "s5_ep02_m2"
+            },
+            {
+              "text": "a dot on its left",
+              "missionId": "s5_ep02_m2"
+            }
+          ],
+          "derivation": "Sora's board (Case 01, the book's organ letters h3 and the added stroke h10): the back of the tongue ㄱ, the mouth one step stronger ㅂ, the teeth ㅅ; the vowels from the dot and lines (h11, h12): a dot left of a standing line ㅓ, under a flat line ㅜ; the sounds at the bottom ㄱ and ㄴ. 거 북 선: the turtle ship. The note itself is made up.",
+          "whyOnly": "Each group's words allow one first sound, one vowel and one last sound: ㅁ is the mouth not one step stronger, ㅈ the teeth one step stronger; the dot on the left gives ㅓ not ㅏ."
+        },
+        {
+          "puzzleId": "s5_ep02_m3",
+          "fiction": true,
+          "answer": "12",
+          "clues": [
+            {
+              "text": "four barrels each time",
+              "missionId": "s5_ep02_m3"
+            },
+            {
+              "text": "three times",
+              "missionId": "s5_ep02_m3"
+            }
+          ],
+          "derivation": "Made up: four barrels each time, three times: twelve, the number Ham gave at sunset.",
+          "whyOnly": "Seok gives two numbers only; 4, 3 and 7 are each answered as a misreading."
+        },
+        {
+          "puzzleId": "s5_ep02_final",
+          "factIds": [
+            "s5_ep02_h1",
+            "s5_ep02_h3",
+            "s5_ep02_h4",
+            "s5_ep02_h5"
+          ],
+          "answer": "DRAGON",
+          "clues": [
+            {
+              "text": "like a turtle's back",
+              "missionId": "s5_ep02_final"
+            },
+            {
+              "text": "dragon's head",
+              "missionId": "s5_ep02_final"
+            },
+            {
+              "text": "hole for a cannon",
+              "missionId": "s5_ep02_final"
+            }
+          ],
+          "derivation": "The Admiral's words retell the record of the turtle ship (h1): a plank roof like a turtle's back with knives and spikes, a turtle's tail at the back, and at the front not a turtle's head but a dragon's, its mouth a hole for a cannon. The ending rests on the real cannon test of the 12th (h5), the war's start the next day at Busan (h3) and the first victory at Okpo (h4).",
+          "whyOnly": "Six tiles, one word: DRAGON, the head the Admiral names."
+        }
+      ],
+      "learningObjectives": [
+        "Read place words (under, next to, on) to find things in a room.",
+        "Use Sora's board to rebuild blurred letters.",
+        "Read how a ship is made and name its parts."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "Yi Sun-sin commanded the navy of Jeolla. Turtle ships were built at Yeosu.",
+            "junior": "Yi Sun-sin was the naval commander of Jeolla, and turtle ships were built at Yeosu.",
+            "master": "Yi Sun-sin commanded the Jeolla navy, and turtle ships were built in its yards at Yeosu.",
+            "factIds": [
+              "s5_ep02_h2",
+              "s5_ep02_h6"
+            ]
+          },
+          {
+            "text": "The turtle ship had a roof of planks like a turtle's back, with knives and spikes. At the front was a dragon's head. Its mouth was a hole for a cannon.",
+            "junior": "The turtle ship had a plank roof like a turtle's back, covered with knives and spikes, and a dragon's head at the front whose mouth was a hole for a cannon.",
+            "master": "The turtle ship was roofed with planks like a turtle's back and studded with knives and spikes; its dragon's head at the front had a cannon hole for a mouth.",
+            "factIds": [
+              "s5_ep02_h1"
+            ]
+          },
+          {
+            "text": "On the 12th day of the 4th month of 1592 (moon calendar), its cannons were tested. His war diary records it.",
+            "junior": "On the 12th day of the 4th month of 1592 (moon calendar), its cannons were test-fired, as his war diary records.",
+            "master": "On the 12th day of the 4th month of 1592 (lunar calendar), its cannons were test-fired, an event recorded in his war diary.",
+            "factIds": [
+              "s5_ep02_h5"
+            ]
+          },
+          {
+            "text": "The next day, the 13th, Japanese ships covered the sea at Busan. The war began.",
+            "junior": "The next day, the 13th, Japanese ships filled the sea off Busan, and the war began.",
+            "master": "The following day, the 13th, a Japanese fleet covered the sea off Busan, and the war began.",
+            "factIds": [
+              "s5_ep02_h3"
+            ]
+          },
+          {
+            "text": "In the 5th month of 1592, Yi Sun-sin's navy won at Okpo. It was the first victory at sea in the war.",
+            "junior": "In the 5th month of 1592, Yi Sun-sin's navy won at Okpo, its first victory at sea in the war.",
+            "master": "In the 5th month of 1592, Yi Sun-sin's navy won at Okpo, the war's first victory at sea.",
+            "factIds": [
+              "s5_ep02_h4"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Seok, Quartermaster Ham, the rain and the missing gunpowder are made up.",
+            "junior": "Seok, Quartermaster Ham, the rain and the missing gunpowder were invented for this case.",
+            "master": "Seok, Quartermaster Ham, the rain and the missing gunpowder are inventions of this story."
+          },
+          {
+            "text": "Yi Sun-sin was real, but his words in this story are made up.",
+            "junior": "Yi Sun-sin was real, but his words in this story were invented.",
+            "master": "Yi Sun-sin was real, yet every word he speaks here is invented."
+          },
+          {
+            "text": "All the dates are of the old moon calendar.",
+            "junior": "All the dates in this case follow the old moon calendar.",
+            "master": "All dates in this case are given in the lunar calendar."
+          }
+        ]
+      },
+      "notes": [
+        "PART 10 (2026-11-06): sources opened and quoted by Claude on 2026-11-06. Dates are lunar throughout; no solar date is stated anywhere."
+      ]
+    },
+    {
+      "caseId": "s5_ep03",
+      "subject": "The building of Hwaseong Fortress and Jeong Yak-yong's lifting machine (1794-1796)",
+      "period": "1794-1796 (case set in 1795, final in autumn 1796)",
+      "location": "Hwaseong Fortress, Suwon",
+      "facts": [
+        {
+          "factId": "s5_ep03_h1",
+          "statement": "Hwaseong Fortress was begun in the first month of 1794 and finished in the ninth month of 1796.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국가유산청 (Korea Heritage Service)",
+              "title": "국가유산포털: 세계유산 수원 화성",
+              "url": "https://www.heritage.go.kr/heri/html/HtmlPage.do?pg=%2Funesco%2FHeritage%2FHeritage_05.jsp&pageNo=5_2_2_0",
+              "quote": "1794년 1월에 착공에 들어가 1796년 9월에 완공하였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 한국사 연대기: 화성",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300890&code=kc_age_30",
+              "quote": "축성이 시작된 때는 1794년(정조 18) 1월이었다. … 9월 10일 성역이 종료되었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The chronicle's summary says the work began in the second month, its text (and the heritage page) the first month. The game says the first month of 1794 and the ninth month of 1796: two years and eight months."
+          }
+        },
+        {
+          "factId": "s5_ep03_h2",
+          "statement": "Jeong Yak-yong wrote Gijung doseol and devised the lifting machine geojunggi, which lifts things with pulleys.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 한국사 연대기: 화성",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300890&code=kc_age_30",
+              "quote": "정약용은 별도로 「기중도설(起重圖說)」을 써서 거중기(擧重機)를 고안하기도 했다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 거중기",
+              "url": "https://encykorea.aks.ac.kr/Article/E0001891",
+              "quote": "정약용(丁若鏞)의 ≪기중도설 起重圖說≫에는 그림과 함께 설명되어 있는데 도르래를 이용하여 물체를 들어올리게끔 되어 있다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The encyclopedia says it was probably influenced by Western machine books of 1627 (기기도설): the game says only that Jeong designed it."
+          }
+        },
+        {
+          "factId": "s5_ep03_h3",
+          "statement": "In building Hwaseong, new machines such as the geojunggi and the rokro were devised and used to move and lay the great stones.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국가유산청 (Korea Heritage Service)",
+              "title": "국가유산포털: 세계유산 수원 화성",
+              "url": "https://www.heritage.go.kr/heri/html/HtmlPage.do?pg=%2Funesco%2FHeritage%2FHeritage_05.jsp&pageNo=5_2_2_0",
+              "quote": "축성시에 거중기, 녹로 등 신기재를 특수하게 고안·사용하여 장대한 석재 등을 옮기며 쌓는데 이용하였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 거중기",
+              "url": "https://encykorea.aks.ac.kr/Article/E0001891",
+              "quote": "조선시대 정조 때에 수원성곽을 쌓는 데 사용되었으며",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Some writers question how much the geojunggi was actually used (press, not checked). The game says only that machines like it helped lift the big stones, never that they made the work faster or how many were used."
+          }
+        },
+        {
+          "factId": "s5_ep03_h4",
+          "statement": "The Hwaseong Seongyeok Uigwe, published in 1801 after the building, records the whole work: plans, the people who worked and their details, materials, budget and wage calculations, machines and the work diary.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국가유산청 (Korea Heritage Service)",
+              "title": "국가유산포털: 세계유산 수원 화성",
+              "url": "https://www.heritage.go.kr/heri/html/HtmlPage.do?pg=%2Funesco%2FHeritage%2FHeritage_05.jsp&pageNo=5_2_2_0",
+              "quote": "축성 후 1801년에 발간된 「화성성역의궤」에는 축성계획, 제도, 법식뿐 아니라 동원된 인력의 인적사항, 재료의 출처 및 용도, 예산 및 임금계산, 시공기계, 재료가공법, 공사일지 등이 상세히 기록되어 있어",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 한국사 연대기: 화성",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300890&code=kc_age_30",
+              "quote": "『화성성역의궤』는 화성 건설의 모든 과정을 기록한 의궤이다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep03_h5",
+          "statement": "The craftsmen and hired workers who built Hwaseong were paid wages, and the wages were reckoned in its record.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 한국사 연대기: 화성",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300890&code=kc_age_30",
+              "quote": "한편, 장인과 모군(募軍) 등에게 품삯을 주었다는 점도 그들의 기술력과 노동력 향상에 도움이 되었을 것이라는 분석이 있다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국가유산청 (Korea Heritage Service)",
+              "title": "국가유산포털: 세계유산 수원 화성",
+              "url": "https://www.heritage.go.kr/heri/html/HtmlPage.do?pg=%2Funesco%2FHeritage%2FHeritage_05.jsp&pageNo=5_2_2_0",
+              "quote": "동원된 인력의 인적사항 … 예산 및 임금계산",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The two sources are of two public bodies; the game says only that the record lists the workers and their pay, never how many or how much."
+          }
+        },
+        {
+          "factId": "s5_ep03_h6",
+          "statement": "The geojunggi had four pulleys above and four below, turned by a windlass on each side.",
+          "status": "draft",
+          "sources": [
+            {
+              "kind": "press",
+              "publisher": "매일신문",
+              "title": "거중기 기사 (1997-04-23)",
+              "url": "https://www.imaeil.com/page/view/1997042300264449335",
+              "quote": "Not opened: seen only in a search summary (2026-11-06).",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "unresolved",
+            "note": "No public or primary source opened: the case never states the real machine's parts. Its three drawings are the game's own."
+          },
+          "notes": [
+            "Not used by any puzzle or reveal line."
+          ]
+        }
+      ],
+      "fiction": [
+        "Spring 1795: the stopped machine, the new carpenter, the copied drawing and the three drawings are made up; so are Foreman Gwak, his log, the clerk, the record chest and Okbun.",
+        "Jeong Yak-yong is real, but everything he says in the case is made up; the steps for lifting are the game's, not his writing.",
+        "The final is set in autumn 1796, when the fortress was finished (h1)."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep03_m1",
+          "factIds": [
+            "s5_ep03_h1"
+          ],
+          "answer": "start,lift,copy,note,fail",
+          "clues": [
+            {
+              "text": "in 1794",
+              "missionId": "s5_ep03_m1"
+            },
+            {
+              "text": "until the new carpenter came",
+              "missionId": "s5_ep03_m1"
+            },
+            {
+              "text": "after the carpenter's work",
+              "missionId": "s5_ep03_m1"
+            }
+          ],
+          "derivation": "The wall began in 1794 (h1: its fixed first card). The rest is made up: the machine lifted stones until the carpenter came; the note came after his work; the failure is this morning (fixed last).",
+          "whyOnly": "Two fixed cards, three to place: until puts the working machine before the carpenter, after puts the note after him. The rice card is in no line."
+        },
+        {
+          "puzzleId": "s5_ep03_m2",
+          "fiction": true,
+          "answer": "gate_wheels",
+          "clues": [
+            {
+              "text": "like a gate",
+              "missionId": "s5_ep03_m2"
+            },
+            {
+              "text": "More pulleys hang under them",
+              "missionId": "s5_ep03_m2"
+            },
+            {
+              "text": "A big wheel stands on each side",
+              "missionId": "s5_ep03_m2"
+            }
+          ],
+          "derivation": "Made up: the drawings are the game's own (h6 is not checked). Jeong's words: a frame like a gate, pulleys in two rows, a wheel on each side: only the second drawing.",
+          "whyNot": {
+            "pole": "One tall pole, not a frame like a gate.",
+            "gate_plain": "Pulleys in one row only and no wheels."
+          }
+        },
+        {
+          "puzzleId": "s5_ep03_m3",
+          "fiction": true,
+          "answer": "tie,hook,turn,rise",
+          "clues": [
+            {
+              "text": "Before you hook the stone",
+              "missionId": "s5_ep03_m3"
+            },
+            {
+              "text": "only after the stone is hooked",
+              "missionId": "s5_ep03_m3"
+            },
+            {
+              "text": "The stone rises last",
+              "missionId": "s5_ep03_m3"
+            }
+          ],
+          "derivation": "Made up steps: tie before hook, turn only after hook, rise last; nobody pulls by hand or pushes.",
+          "whyOnly": "Each before/after fixes one pair, and the last step is named: one order of four; the two decoys are ruled out by the last line."
+        },
+        {
+          "puzzleId": "s5_ep03_final",
+          "factIds": [
+            "s5_ep03_h1",
+            "s5_ep03_h2",
+            "s5_ep03_h3",
+            "s5_ep03_h4",
+            "s5_ep03_h5"
+          ],
+          "answer": "1796",
+          "clues": [
+            {
+              "text": "first month of 1794",
+              "missionId": "s5_ep03_final"
+            },
+            {
+              "text": "two years and eight months later",
+              "missionId": "s5_ep03_final"
+            }
+          ],
+          "derivation": "The real start and end of the building (h1): the first month of 1794 plus two years and eight months is the ninth month of 1796. The ending rests on h2, h3 (the machines helped lift the stones), h4 and h5 (the record of the workers and their pay).",
+          "whyOnly": "One year only: 1794 is the start, 1795 the case's year, 1797 one year too many; each is answered."
+        }
+      ],
+      "learningObjectives": [
+        "Read until and after to put events in order.",
+        "Match a description (like a gate, under them, on each side) with a drawing.",
+        "Count on from a start year with years and months."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "Hwaseong Fortress in Suwon was built from the first month of 1794 to the ninth month of 1796.",
+            "junior": "Hwaseong Fortress in Suwon was built between the first month of 1794 and the ninth month of 1796.",
+            "master": "Hwaseong Fortress in Suwon was built from the first month of 1794 until the ninth month of 1796.",
+            "factIds": [
+              "s5_ep03_h1"
+            ]
+          },
+          {
+            "text": "Jeong Yak-yong wrote about a lifting machine with pulleys, the geojunggi, and designed it.",
+            "junior": "Jeong Yak-yong designed a lifting machine with pulleys, the geojunggi, and wrote about it.",
+            "master": "Jeong Yak-yong devised the geojunggi, a pulley-driven lifting machine, and described it in writing.",
+            "factIds": [
+              "s5_ep03_h2"
+            ]
+          },
+          {
+            "text": "New machines like the geojunggi helped the builders move and lay big stones.",
+            "junior": "New machines such as the geojunggi helped the builders move and lay the huge stones.",
+            "master": "Newly devised machines such as the geojunggi were used to move and lay the massive stones.",
+            "factIds": [
+              "s5_ep03_h3"
+            ]
+          },
+          {
+            "text": "A record book, printed in 1801, tells how it was built. It lists the workers and their pay.",
+            "junior": "A record book printed in 1801 explains how it was built, listing the workers and their pay.",
+            "master": "A record printed in 1801 documents the whole building, down to the workers and their wages.",
+            "factIds": [
+              "s5_ep03_h4",
+              "s5_ep03_h5"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Okbun, Foreman Gwak, the copied drawing and the stopped machine are made up.",
+            "junior": "Okbun, Foreman Gwak, the copied drawing and the stopped machine were invented for this case.",
+            "master": "Okbun, Foreman Gwak, the copied drawing and the stalled machine are inventions of this story."
+          },
+          {
+            "text": "Jeong Yak-yong was real, but his words and steps in this story are made up.",
+            "junior": "Jeong Yak-yong was real, but his words and steps in this story were invented.",
+            "master": "Jeong Yak-yong was real, yet his words and steps here are invented."
+          },
+          {
+            "text": "The three drawings are the game's own, not copies of the real ones.",
+            "junior": "The three drawings were drawn for the game, not copied from the real ones.",
+            "master": "The three drawings are the game's own, not reproductions of historical plans."
+          }
+        ]
+      },
+      "notes": [
+        "PART 10 (2026-11-06): sources opened and quoted by Claude on 2026-11-06."
+      ]
+    },
+    {
+      "caseId": "s5_ep04",
+      "subject": "The rebuilding of Gyeongbokgung under the Heungseon Daewongun (1865-1868) and its cost to the people",
+      "period": "1865-1868 (case set in winter 1866)",
+      "location": "Gyeongbokgung, Hanyang",
+      "facts": [
+        {
+          "factId": "s5_ep04_h1",
+          "statement": "Gyeongbokgung burned down in 1592, in the Imjin War, and lay in ruins for a long time until it was rebuilt in the 1860s.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 경복궁",
+              "url": "https://encykorea.aks.ac.kr/Article/E0002434",
+              "quote": "1592년 임진왜란으로 궁은 전소되고 말았다. … 오랫동안 폐허로 남아 있다가",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "신편 한국사 37: 2) 서원 철폐와 경복궁 중건",
+              "url": "https://db.history.go.kr/id/nh_037_0040_0020_0020",
+              "quote": "임진왜란 당시에 화재로 소진되고 말았다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep04_h2",
+          "statement": "The rebuilding of Gyeongbokgung began in the 4th month of 1865 (Gojong 2), when an office for it was set up; the Heungseon Daewongun led the work himself.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "신편 한국사 37: 2) 서원 철폐와 경복궁 중건",
+              "url": "https://db.history.go.kr/id/nh_037_0040_0020_0020",
+              "quote": "대원군은 고종 2년(1865) 4월에 營建都監을 설치하였으며, 스스로 진두에서 사업을 지휘하였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government)",
+              "title": "내 손안에 서울: 우여곡절 끝에 완공…궁(宮)금한 '경복궁 중건' 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008034",
+              "quote": "경복궁의 중건 사업의 시작은 1865년(고종 2) 4월 2일 조대비의 하교에서 비롯되었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The order came from the Queen Dowager (조대비); the Daewongun set up the office and led the work. The game says the rebuilding began in 1865 and the Daewongun led it."
+          }
+        },
+        {
+          "factId": "s5_ep04_h3",
+          "statement": "The rebuilt Gyeongbokgung was finished in 1868, and the King moved into it that year.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government)",
+              "title": "내 손안에 서울: 우여곡절 끝에 완공…궁(宮)금한 '경복궁 중건' 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008034",
+              "quote": "1868년 7월 2일 드디어 경복궁이 완성되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "신편 한국사 37: 2) 서원 철폐와 경복궁 중건",
+              "url": "https://db.history.go.kr/id/nh_037_0040_0020_0020",
+              "quote": "그리하여 마침내 착공 3년되던 해인 고종 5년(1868)에 경복궁은 완공되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 경복궁",
+              "url": "https://encykorea.aks.ac.kr/Article/E0002434",
+              "quote": "궁이 완성되고 나서 1868년에 왕은 경복궁으로 옮겼다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The encyclopedia dates the end of the work to late 1867 and the King's move to 1868; the other two say it was finished in 1868. The game says finished in 1868, and the King moved in."
+          }
+        },
+        {
+          "factId": "s5_ep04_h4",
+          "statement": "For the rebuilding, money called wonnapjeon (\"money given willingly\") was collected; in fact it was taken by force from every household, rich or poor, and people called it \"money paid in resentment\".",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "신편 한국사 37: 2) 서원 철폐와 경복궁 중건",
+              "url": "https://db.history.go.kr/id/nh_037_0040_0020_0020",
+              "quote": "원납전은 말 그대로 자원해서 바치는 돈은 아니었고, 오히려 빈부의 구분없이 매호마다 강징되는 ‘怨納錢’이었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government)",
+              "title": "내 손안에 서울: 우여곡절 끝에 완공…궁(宮)금한 '경복궁 중건' 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008034",
+              "quote": "원납전은 말이 원해서 납부한 돈이지, 실제로는 강제 기부금의 성격이 커서 ‘원망하며 납부한 돈’이란 뜻으로 원납전(怨納錢)으로도 불렸다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep04_h5",
+          "statement": "From the 11th month of 1866, a new high-value coin, the dangbaekjeon, was made to pay for the work; it brought a fall in the money's value and a sharp rise in prices.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "신편 한국사 37: 2) 서원 철폐와 경복궁 중건",
+              "url": "https://db.history.go.kr/id/nh_037_0040_0020_0020",
+              "quote": "이 화폐는 고종 3년(1866) 11월부터 호조의 전관 아래 금위영에서 주조하였다. … 이 때문에 유통시장에 혼란을 가져와 인플레이션을 유발한 것은 당연한 일이었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government)",
+              "title": "내 손안에 서울: 우여곡절 끝에 완공…궁(宮)금한 '경복궁 중건' 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008034",
+              "quote": "공사에 따르는 비용을 충당하기 위해 1866년 11월부터 고액 화폐인 당백전(當百錢:일종의 국채)을 발행하였으나, 화폐 가치의 폭락과 물가의 폭등을 초래하였다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Its face value against its real value is given differently by different writers; the game never gives a number, only that a new coin came in 1866 and prices went up."
+          }
+        },
+        {
+          "factId": "s5_ep04_h6",
+          "statement": "Farmers were called up to labour on the rebuilding, a great hardship for them, and craftsmen were also called up by force.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "신편 한국사 37: 2) 서원 철폐와 경복궁 중건",
+              "url": "https://db.history.go.kr/id/nh_037_0040_0020_0020",
+              "quote": "또한 경기지역 농민들에게는 경복궁 중건 사업에 동원되는 부역이 큰 고통이었다. … 나아가 자금부족이 심화되자 민간인 工匠도 강제 동원되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government)",
+              "title": "내 손안에 서울: 우여곡절 끝에 완공…궁(宮)금한 '경복궁 중건' 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008034",
+              "quote": "부역에 동원된 백성들은 공사 중단을 기대했지만 흥선대원군은 중건 사업을 더욱 독려하였다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep04_h7",
+          "statement": "On the 6th day of the 3rd month of 1866, a fire burned some 800 kan of temporary buildings at the works.",
+          "status": "draft",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government)",
+              "title": "내 손안에 서울: 우여곡절 끝에 완공…궁(宮)금한 '경복궁 중건' 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008034",
+              "quote": "1866년 3월 6일에는 동십자각에 있는 훈련도감 가건물의 화재로 건물 800여 칸이 불탔다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "unresolved",
+            "note": "One source only; not said whether timber burned."
+          },
+          "notes": [
+            "Not used by any puzzle or reveal line."
+          ]
+        }
+      ],
+      "fiction": [
+        "Winter 1866: the timber yard, the yard board and its marks 가 나 다, the missing logs, the yard book and the new cuts are made up.",
+        "Duri, Mr. Pyo and the clerk are made up; Mr. Pyo's reason (the new coin buys less) is his own, made up.",
+        "The Heungseon Daewongun is real, but everything he says in the case is made up; none of it quotes a record."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep04_m1",
+          "factIds": [
+            "s5_ep01_h10"
+          ],
+          "answer": "GATES",
+          "clues": [
+            {
+              "text": "One mark has a new line",
+              "missionId": "s5_ep04_m1"
+            },
+            {
+              "text": "a stronger sound adds one line",
+              "missionId": "s5_ep04_m1"
+            },
+            {
+              "text": "good logs, for the palace gates",
+              "missionId": "s5_ep04_m1"
+            }
+          ],
+          "derivation": "Sora's rule (the book's added stroke, h10 of Case 01): ㄴ then ㄷ. The made-up yard board names 나 for the palace gates; the log with one pale new cut is marked 다: take the new line away and it was 나, for the palace GATES.",
+          "whyOnly": "Only one log has a new cut; one line less on 다 is 나 only, and 나 names the gates only."
+        },
+        {
+          "puzzleId": "s5_ep04_m2",
+          "fiction": true,
+          "answer": "10",
+          "clues": [
+            {
+              "text": "다 logs: six",
+              "missionId": "s5_ep04_m2"
+            },
+            {
+              "text": "다 logs: sixteen",
+              "missionId": "s5_ep04_m2"
+            }
+          ],
+          "derivation": "Made up: six 다 logs last night, sixteen this morning, and the ten 나 logs gone: ten changed.",
+          "whyOnly": "Sixteen less six is ten; 16 and 6 are answered as misreadings."
+        },
+        {
+          "puzzleId": "s5_ep04_m3",
+          "factIds": [
+            "s5_ep04_h1",
+            "s5_ep04_h2",
+            "s5_ep04_h3",
+            "s5_ep04_h5"
+          ],
+          "answer": "burn,ruins,begin,coin,logs",
+          "clues": [
+            {
+              "text": "After it burned",
+              "missionId": "s5_ep04_m3"
+            },
+            {
+              "text": "until 1865",
+              "missionId": "s5_ep04_m3"
+            },
+            {
+              "text": "after the work began",
+              "missionId": "s5_ep04_m3"
+            }
+          ],
+          "derivation": "The fire of 1592 (h1) is fixed first, last night's new lines (made up) last. After the fire, the ruins (h1); the ruins until 1865, then the rebuilding (h2); the new coin of 1866 after the work began (h5). The King moving in (1868, h3) has not happened yet: set aside.",
+          "whyOnly": "Three relations chain the three cards between the two fixed ones: one order; the King moving in is in no line and the palace is half-built."
+        },
+        {
+          "puzzleId": "s5_ep04_final",
+          "factIds": [
+            "s5_ep04_h2",
+            "s5_ep04_h3",
+            "s5_ep04_h4",
+            "s5_ep04_h5",
+            "s5_ep04_h6"
+          ],
+          "answer": "rebuilt",
+          "clues": [
+            {
+              "text": "One new cut turned 나 into 다",
+              "missionId": "s5_ep04_final"
+            },
+            {
+              "text": "Ten palace logs",
+              "missionId": "s5_ep04_final"
+            },
+            {
+              "text": "The same water drop",
+              "missionId": "s5_ep04_final"
+            },
+            {
+              "text": "A new coin came in 1866",
+              "missionId": "s5_ep04_final"
+            }
+          ],
+          "derivation": "Four questions, each answered by one evidence: the note (the new cut), the yard book (ten), an older water-drop note (1592 or 1795: a family, not one person) and the palace's story (the real cost: money given by force h4, the new coin and rising prices h5, people called to work h6). The ending states the real rebuilding: begun in 1865 under the Daewongun (h2), finished in 1868 (h3).",
+          "whyOnly": "Each question accepts its own evidence only (the note question either older water-drop note); a wrong one is answered, never a failure."
+        }
+      ],
+      "learningObjectives": [
+        "Use a rule (a stronger sound adds one line) to see a changed mark.",
+        "Compare two counts to find a difference.",
+        "Read after, until and then to put a palace's story in order."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "Gyeongbokgung burned in the war of 1592. It lay in ruins for a long time.",
+            "junior": "Gyeongbokgung burned down in the war of 1592 and lay in ruins for a long time.",
+            "master": "Gyeongbokgung burned down in the war of 1592 and long lay in ruins.",
+            "factIds": [
+              "s5_ep04_h1"
+            ]
+          },
+          {
+            "text": "In the 4th month of 1865, the rebuilding began. The Heungseon Daewongun led the work.",
+            "junior": "The rebuilding began in the 4th month of 1865, led by the Heungseon Daewongun.",
+            "master": "Rebuilding began in the 4th month of 1865, with the Heungseon Daewongun directing the work himself.",
+            "factIds": [
+              "s5_ep04_h2"
+            ]
+          },
+          {
+            "text": "People had to give money for it. It was called a gift, but most had no choice.",
+            "junior": "People had to hand over money for it; it was called a gift, but most had no choice.",
+            "master": "Households were made to pay money for it, a so-called gift that few could refuse.",
+            "factIds": [
+              "s5_ep04_h4"
+            ]
+          },
+          {
+            "text": "From the 11th month of 1866, a new coin was made to pay for the work. Prices went up sharply.",
+            "junior": "From the 11th month of 1866, a new coin was issued to pay for the work, and prices rose sharply.",
+            "master": "From the 11th month of 1866, a new high-value coin was issued to fund the work, and prices soared.",
+            "factIds": [
+              "s5_ep04_h5"
+            ]
+          },
+          {
+            "text": "Many farmers were called to work on it, and it was hard for them. In 1868 the palace was finished.",
+            "junior": "Many farmers were called up to work on it, a great hardship. The palace was finished in 1868.",
+            "master": "Many farmers were conscripted to labour on it, a heavy burden; the palace was completed in 1868.",
+            "factIds": [
+              "s5_ep04_h6",
+              "s5_ep04_h3"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Duri, Mr. Pyo, the missing logs and the marks on them are made up.",
+            "junior": "Duri, Mr. Pyo, the missing logs and their marks were invented for this case.",
+            "master": "Duri, Mr. Pyo, the missing logs and their marks are inventions of this story."
+          },
+          {
+            "text": "The Heungseon Daewongun was real, but his words in this story are made up.",
+            "junior": "The Heungseon Daewongun was real, but his words in this story were invented.",
+            "master": "The Heungseon Daewongun was real, yet every word he speaks here is invented."
+          }
+        ]
+      },
+      "notes": [
+        "PART 10 (2026-11-06): sources opened and quoted by Claude on 2026-11-06."
+      ]
+    },
+    {
+      "caseId": "s5_ep05",
+      "subject": "Geoncheonggung in 1895: the first electric lamps, the Queen's quarters, the Queen and Russia, the Eulmi incident",
+      "period": "1887-1895",
+      "location": "Geoncheonggung, inside Gyeongbokgung, Seoul (Hanyang)",
+      "facts": [
+        {
+          "factId": "s5_ep05_h1",
+          "statement": "In 1887 the electric light plant in Gyeongbokgung was finished, the first electricity in Korea; it lit the halls and front courts of Jangandang and Gonnyeonhap in Geoncheonggung and the lamps around Hyangwonjeong.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "문화체육관광부 대한민국 정책브리핑 (korea.kr)",
+              "title": "경복궁 향원정·건청궁 관련 정책기자 기사",
+              "url": "https://www.korea.kr/news/reporterView.do?newsId=148942310",
+              "quote": "1887년 경복궁 내 전등소가 완공돼 건청궁 내 장안당과 곤녕합의 대청과 앞뜰, 향원정 주변의 등을 밝혔다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "최초의 점등식, 명성황후 시해…경복궁 구중궁궐 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008140",
+              "quote": "1887년 3월 6일 우리나라 최초로 전기를 들여온 것이 대표적이다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "Korea JoongAng Daily",
+              "title": "Findings shine light on historical plant",
+              "url": "https://www.koreajoongangdaily.com/lifestyle/findings-shine-light-on-historical-plant/10508129",
+              "quote": "the lights were turned on at Gyeongbok Palace for the first time at some point between January and March 1887",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Seoul gives 6 March 1887; the JoongAng Daily says between January and March 1887. The game says only 1887."
+          },
+          "notes": [
+            "korea.kr is the government's policy portal (a citizen reporter's article published there)."
+          ]
+        },
+        {
+          "factId": "s5_ep05_h2",
+          "statement": "Because the early generating system was unstable, the palace lamps often went on and off by themselves, and people nicknamed them geondalbul (the good-for-nothing lights).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "문화체육관광부 대한민국 정책브리핑 (korea.kr)",
+              "title": "경복궁 향원정·건청궁 관련 정책기자 기사",
+              "url": "https://www.korea.kr/news/reporterView.do?newsId=148942310",
+              "quote": "당시에는 불안정한 발전 시스템 탓에 건달꾼처럼 제멋대로 켜졌다 꺼졌다 한다고 해서 '건달불'이라고 불렸다고 한다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "The Korea Herald",
+              "title": "(2015) report on the first electricity plant site at Gyeongbokgung",
+              "url": "https://www.koreaherald.com/article/502870",
+              "quote": "It was also nicknamed \"bum light\" because the light went on and off frequently due to the unstable system.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Herald translates the nickname \"bum light\"; the game says \"the good-for-nothing lights\", true to 건달불."
+          }
+        },
+        {
+          "factId": "s5_ep05_h3",
+          "statement": "Geoncheonggung was the residence of King Gojong and the Queen: the King lived in Jangandang and the Queen in Gonnyeonhap.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "최초의 점등식, 명성황후 시해…경복궁 구중궁궐 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008140",
+              "quote": "사랑채인 장안당(長安堂)에는 고종이, 안채인 곤녕합(坤寧閤)에는 명성후가 거처했다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "Korea JoongAng Daily",
+              "title": "Findings shine light on historical plant",
+              "url": "https://www.koreajoongangdaily.com/lifestyle/findings-shine-light-on-historical-plant/10508129",
+              "quote": "Geoncheonggung ... was the residence of King Gojong and Queen Min (1851-95).",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep05_h4",
+          "statement": "In 1895 the Queen worked with Russia to hold back Japan's power in Korea, and Japan saw her as the centre of the forces against it.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 을미사변",
+              "url": "https://encykorea.aks.ac.kr/Article/E0042948",
+              "quote": "러시아세력과 손을 잡고 일본세력을 축출(引俄拒日)하려고 했던 것이다. … 조선에서 반일세력의 핵심이자 러시아와의 연결고리인 왕후를 제거하는 것이었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "을미사변과 아관파천으로 이어진 긴박했던 그날의 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008739",
+              "quote": "외교적 역량을 갖추고 있던 왕비는 러시아와의 협력을 통하여 일본의 견제에 나섰다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep05_h5",
+          "statement": "On 8 October 1895 (the 20th day of the 8th lunar month), at dawn, a group acting under the direct orders of Miura, Japan's minister in Korea, broke into Gyeongbokgung with Japanese troops and killed the Queen: the Eulmi incident.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 을미사변",
+              "url": "https://encykorea.aks.ac.kr/Article/E0042948",
+              "quote": "1895년 10월 8일(음력 8월 20일) 새벽 일본의 공권력 집단이 서울에서 자행한 조선왕후(명성황후) 살해사건. … 이들은 미우라의 직접 지시하에 조선의 정궁인 경복궁을 기습하여",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "을미사변과 아관파천으로 이어진 긴박했던 그날의 이야기",
+              "url": "https://mediahub.seoul.go.kr/archives/2008739",
+              "quote": "1895년 8월 20일(양력 10월 8일) 일본 공사 미우라와 전임 공사 이노우에는 일본인 수비대와 경찰, 기자 등을 합류시켜",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Seoul names the former minister Inoue too; the encyclopedia names Miura as the highest Japanese in command on the spot. The game says only \"men sent by Japan's minister\", true to both, and gives no detail of the attack."
+          }
+        }
+      ],
+      "fiction": [
+        "The night the lamps went dark in autumn 1895, the strangers, the leather belt, the knotted rope, the 37 steps and the strangers' map are made up.",
+        "Court Lady Han is made up; so is her water-drop note. The lamp man is made up.",
+        "Queen Myeongseong and King Gojong are real, but every word they say in the case is made up. Lady Han's last words to the King retell h4 only.",
+        "Duri's note of 1866 (Case 04) is recalled for its water drop only."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep05_m1",
+          "factIds": [
+            "s5_ep05_h1",
+            "s5_ep05_h2"
+          ],
+          "answer": "belt",
+          "clues": [
+            {
+              "text": "did not touch the fire",
+              "missionId": "s5_ep05_m1"
+            },
+            {
+              "text": "did not touch the coal",
+              "missionId": "s5_ep05_m1"
+            },
+            {
+              "text": "leather belt",
+              "missionId": "s5_ep05_m1"
+            }
+          ],
+          "derivation": "The lamp house made the light for the King's and the Queen's halls (h1); the lamps often blinked (h2), so a dark hour seemed normal. Lady Han's note rules out the fire and the coal and names the leather belt on the big wheel: the picture of the wheel with its belt and a muddy hand mark.",
+          "whyNot": {
+            "fire": "The note says: He did not touch the fire.",
+            "coal": "The note says: He did not touch the coal."
+          }
+        },
+        {
+          "puzzleId": "s5_ep05_m2",
+          "fiction": true,
+          "answer": "lit,lamphouse,dark,gate,hall,back",
+          "clues": [
+            {
+              "text": "after the strangers came into the lamp house",
+              "missionId": "s5_ep05_m2"
+            },
+            {
+              "text": "east gate",
+              "missionId": "s5_ep05_m2"
+            },
+            {
+              "text": "before the lamp man came back",
+              "missionId": "s5_ep05_m2"
+            }
+          ],
+          "derivation": "Made up (the case's night). 8:00 and 9:00 are fixed; the lamp house before the dark, the dark before the east gate, the gate before the Queen's hall, the hall before the lamp man returns. The main gate is not part of it.",
+          "whyOnly": "Each card but the anchors is tied by one before/after line to the next, from 8:00 to 9:00: one order only. The guards at the main gate saw nothing and are far away: set aside."
+        },
+        {
+          "puzzleId": "s5_ep05_m3",
+          "fiction": true,
+          "answer": "37",
+          "clues": [
+            {
+              "text": "A big knot is ten steps",
+              "missionId": "s5_ep05_m3"
+            },
+            {
+              "text": "three big knots, then seven small knots",
+              "missionId": "s5_ep05_m3"
+            }
+          ],
+          "derivation": "Made up: three big knots are thirty steps, seven small knots seven: 37.",
+          "whyOnly": "The rule gives each knot one value; 10 (every knot one), 73 (tens and ones swapped) and 30 (small knots left out) each break a line of the rule."
+        },
+        {
+          "puzzleId": "s5_ep05_final",
+          "factIds": [
+            "s5_ep05_h4"
+          ],
+          "answer": "JAPAN",
+          "clues": [
+            {
+              "text": "hold back Japan's power",
+              "missionId": "s5_ep05_final"
+            },
+            {
+              "text": "37 steps",
+              "missionId": "s5_ep05_final"
+            }
+          ],
+          "derivation": "The map shows the strangers measured the way to the Queen's door. Lady Han's words retell h4: the Queen works WITH Russia to hold back Japan's power. The country whose power she holds back is Japan.",
+          "whyOnly": "Two countries are named: Russia is the one she works with, Japan the one she holds back. China and Korea are not what the sentence holds back."
+        }
+      ],
+      "learningObjectives": [
+        "Read what someone did and did not do, and match it to a picture.",
+        "Put a night in order from before/after words.",
+        "Turn a rule (a big knot is ten steps) into a number.",
+        "Tell apart the country the Queen worked with and the power she held back."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "In 1887, the first electric lamps in Korea were lit at Gyeongbokgung. They lit the King's and the Queen's halls in Geoncheonggung.",
+            "junior": "In 1887, Korea's first electric lamps were lit at Gyeongbokgung, shining on the King's and the Queen's halls in Geoncheonggung.",
+            "master": "In 1887, Korea's first electric lights came on at Gyeongbokgung, illuminating the King's and the Queen's halls in Geoncheonggung.",
+            "factIds": [
+              "s5_ep05_h1",
+              "s5_ep05_h3"
+            ]
+          },
+          {
+            "text": "The lamps often went on and off by themselves. People called them geondalbul, the good-for-nothing lights.",
+            "junior": "Because the machine was unstable, the lamps often flickered on and off, so people called them geondalbul, the good-for-nothing lights.",
+            "master": "The unstable system made the lamps flicker so often that people nicknamed them geondalbul, the good-for-nothing lights.",
+            "factIds": [
+              "s5_ep05_h2"
+            ]
+          },
+          {
+            "text": "In 1895, the Queen worked with Russia to hold back Japan's power in Korea.",
+            "junior": "In 1895, the Queen worked with Russia to hold back Japan's growing power in Korea.",
+            "master": "In 1895, the Queen turned to Russia to check Japan's power in Korea.",
+            "factIds": [
+              "s5_ep05_h4"
+            ]
+          },
+          {
+            "text": "On 8 October 1895, men sent by Japan's minister Miura attacked Gyeongbokgung. The Queen was killed.",
+            "junior": "On 8 October 1895, men acting on the orders of Miura, Japan's minister, attacked Gyeongbokgung, and the Queen was killed.",
+            "master": "On 8 October 1895, a group under the orders of Miura, Japan's minister, attacked Gyeongbokgung and killed the Queen.",
+            "factIds": [
+              "s5_ep05_h5"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Court Lady Han, the lamp man and the strangers are made up. So are the dark night, the rope and the map.",
+            "junior": "Court Lady Han, the lamp man and the strangers were invented, and so were the dark night, the rope and the map.",
+            "master": "Court Lady Han, the lamp man and the strangers are inventions, as are the dark night, the rope and the map."
+          },
+          {
+            "text": "The Queen and the King were real, but their words in this story are made up.",
+            "junior": "The Queen and the King were real people, but their words in this story were invented.",
+            "master": "The Queen and the King were real, yet every word they speak here is invented."
+          },
+          {
+            "text": "No photograph is surely the Queen, so the game never shows her face.",
+            "junior": "No photograph is known for certain to show the Queen, so the game never draws her face.",
+            "master": "No photograph is reliably known to show the Queen, so the game never depicts her face."
+          }
+        ]
+      },
+      "notes": [
+        "Sources opened and quoted by Claude (writer B) on 2026-11-06. The Queen's death is told once in the final's ending and once in the reveal, plainly, without detail.",
+        "The pond water used by the 1887 plant (Korea Herald, JoongAng Daily) was not found in a public-institution source: not used.",
+        "The line about photographs in inThisMystery is the game's own choice (no fact claimed); no source was opened for it."
+      ]
+    },
+    {
+      "caseId": "s5_ep06",
+      "subject": "Emperor Gojong's secret envoys to The Hague (1907) and the forced treaty of 1905",
+      "period": "1905-1907",
+      "location": "Gyeongun Palace, Seoul (no building named)",
+      "facts": [
+        {
+          "factId": "s5_ep06_h1",
+          "statement": "In 1905 Japan forced the Eulsa treaty on Korea; Korea lost its diplomatic rights, and with them its sovereignty.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 을사조약반대운동",
+              "url": "https://encykorea.aks.ac.kr/Article/E0042959",
+              "quote": "1905년 일제에 의해 강제체결된 을사조약을 파기하고 국권을 회복하기 위해 일어난 거국적 항일운동. … 일제에 의해 외교권을 박탈당함으로써 한국은 주권을 상실하게 되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "서울신문",
+              "title": "“내가 살해돼도 특명 다하라”…헤이그특사단에 내린 고종의 밀명 (2019-03-14)",
+              "url": "https://m.seoul.co.kr/news/2019/03/14/20190314500011",
+              "quote": "일본에 대한제국의 외교권을 빼앗긴 고종은 1907년 네덜란드 수도 헤이그에서 열리는 제2회 만국평화회의에 이상설, 이준, 이위종을 특사로 파견했다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "[사진] 을사늑약의 비운이 서린 곳, 덕수궁 중명전",
+              "url": "https://mediahub.seoul.go.kr/archives/1504110",
+              "quote": "1905년 11월 17일 경운궁(현 덕수궁) 중명전은 무장한 일본 군대와 경찰에 둘러싸여 공포 분위기에 잠겨 있었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep06_h2",
+          "statement": "In 1907 Emperor Gojong secretly sent three envoys, Yi Sang-seol, Yi Jun and Yi Wi-jong, to the Second Peace Conference at The Hague, to tell the world that the 1905 treaty had been forced on Korea and was unjust, and to appeal for Korea's sovereignty.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "이준 열사 (내 손안에 서울)",
+              "url": "https://mediahub.seoul.go.kr/archives/2008780",
+              "quote": "1907년 네덜란드 헤이그에서 열리는 만국평화회의에 비밀 특사 3명이 파견된다. … 이준, 이상설, 이위종이 바로 3인의 비밀 특사였다. … 일본의 부당한 침략을 폭로하고 대한제국의 주권 회복을 호소하기 위해서였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "서울신문",
+              "title": "“내가 살해돼도 특명 다하라”…헤이그특사단에 내린 고종의 밀명 (2019-03-14)",
+              "url": "https://m.seoul.co.kr/news/2019/03/14/20190314500011",
+              "quote": "1905년 일본에 의해 강제로 체결된 을사늑약의 부당함을 알리기 위해서였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "primary",
+              "publisher": "국가기록원 (National Archives of Korea)",
+              "title": "기록으로 만나는 대한민국: 덕수궁",
+              "url": "https://theme.archives.go.kr/next/koreaOfRecord/DeoksuPal.do",
+              "quote": "1907년 네덜란드 헤이그에서 열리는 만국평화회의에 이준, 이상설, 이위종을 밀사로 파견",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Seoul says \"to expose Japan's unjust aggression and appeal for the Empire's sovereignty\"; the Seoul Shinmun says \"to make known the injustice of the 1905 treaty forced by Japan\". The game says \"to tell the world the 1905 treaty was forced\", true to both."
+          }
+        },
+        {
+          "factId": "s5_ep06_h3",
+          "statement": "The envoys reached The Hague but were refused a place at the conference.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "이준 열사 (내 손안에 서울)",
+              "url": "https://mediahub.seoul.go.kr/archives/2008780",
+              "quote": "머나먼 여정 끝에 6월 25일 헤이그에 도착했지만 회의 참석이 거부된다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "서울신문",
+              "title": "“내가 살해돼도 특명 다하라”…헤이그특사단에 내린 고종의 밀명 (2019-03-14)",
+              "url": "https://m.seoul.co.kr/news/2019/03/14/20190314500011",
+              "quote": "헤이그 특사가 만국평화회의에 들어가지 못해 실패했다는 게 일반적인 역사 인식이지만",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Only Seoul gives the day (25 June): the game names no day or month."
+          }
+        },
+        {
+          "factId": "s5_ep06_h5",
+          "statement": "From 20 February 1897 Gojong lived at Gyeongun Palace (today's Deoksugung); after the palace fire of 1904 he worked and stayed in its Jungmyeongjeon hall until 1907.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국가기록원 (National Archives of Korea)",
+              "title": "기록으로 만나는 대한민국: 덕수궁",
+              "url": "https://theme.archives.go.kr/next/koreaOfRecord/DeoksuPal.do",
+              "quote": "1년 만인 1897년 2월 20일, 경운궁으로 들어오면서 사실상 새 궁전이 됐다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "[사진] 을사늑약의 비운이 서린 곳, 덕수궁 중명전",
+              "url": "https://mediahub.seoul.go.kr/archives/1504110",
+              "quote": "1904년~1907년까지 고종의 편전으로 사용되면서 역사의 중심에 섰던 건축물이다. … 당시 중명전에는 경운궁 대화재 이후 고종이 머물고 있었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The case is set in \"Gyeongun Palace\" only; no building is named."
+          ]
+        },
+        {
+          "factId": "s5_ep06_h6",
+          "statement": "Using the Hague envoys as an excuse, Japan forced Emperor Gojong to give up his throne in 1907.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국가기록원 (National Archives of Korea)",
+              "title": "기록으로 만나는 대한민국: 덕수궁",
+              "url": "https://theme.archives.go.kr/next/koreaOfRecord/DeoksuPal.do",
+              "quote": "헤이그 특사 사건을 빌미로 일본 정부는 한국 측이 을사보호조약을 위반했다며 고종을 강제 퇴위시켰다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "[사진] 을사늑약의 비운이 서린 곳, 덕수궁 중명전",
+              "url": "https://mediahub.seoul.go.kr/archives/1504110",
+              "quote": "1907년에는 헤이그 만국평화회의에 이준, 이상설, 이위종을 비밀리에 특사로 파견하였다. 이 일로 인해 고종은 일제에 의해 강제 퇴위를 당하여",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep06_h7",
+          "statement": "Yi Jun died in The Hague on 14 July 1907, having been kept out of the conference by Japan.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "“헤이그특사 아세요?”...이준 열사 순국 110주년 집터표석",
+              "url": "https://mediahub.seoul.go.kr/archives/1097715",
+              "quote": "일본 방해로 참석하지 못하고 순국했다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "세계일보",
+              "title": "이준 열사 순국 102주년 (2009-07-13)",
+              "url": "https://www.segye.com/newsView/20090713003734",
+              "quote": "전 세계에 을사조약의 부당함을 알리기 위해 고종황제 밀명을 받고 헤이그를 찾은 이준 열사가 102년 전인 1907년 7월14일 순국한 바로 그 건물이다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Only the Segye Ilbo gives the day; how he died is told differently in different accounts. The game says only that he died in The Hague that July, never how."
+          }
+        },
+        {
+          "factId": "s5_ep06_h4",
+          "statement": "Yi Jun was named envoy on 20 April 1907, met Yi Sang-seol in Vladivostok on 9 May, and Yi Wi-jong joined them in St Petersburg on 4 June.",
+          "status": "draft",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "이준 열사 (내 손안에 서울)",
+              "url": "https://mediahub.seoul.go.kr/archives/2008780",
+              "quote": "1907년 4월 20일 고종황제로부터 헤이그 제2차 만국평화회의 특사로 임명되어 … 5월 9일 블라디보스토크에서 함께 특사로 임명된 이상설을 만나고 … 6월 4일 페테르부르크에서 마지막 특사 이위종이 합류하게 된다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "One source only: a draft. No puzzle or reveal line rests on it; the case says only that Yi Jun leaves in secret and the others meet him on the way."
+          ]
+        }
+      ],
+      "fiction": [
+        "Mr. Seo the secretary, the hollow pine, the yellow silk, the way past the watchers, the watchers' times and Yi Jun's travel box with its lock are made up.",
+        "Bongsu and his uncle are made up; so is Bongsu's water-drop note of 1907.",
+        "Emperor Gojong and Yi Jun are real, but every word they say in the case is made up. The lock word's lines retell h1 and h2; they are not a quotation of any document.",
+        "No building of Gyeongun Palace is named; the garden, the gates and the lane are the case's own."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep06_m1",
+          "fiction": true,
+          "answer": "b",
+          "clues": [
+            {
+              "text": "not to the steps",
+              "missionId": "s5_ep06_m1"
+            },
+            {
+              "text": "rough bark",
+              "missionId": "s5_ep06_m1"
+            },
+            {
+              "text": "By a root",
+              "missionId": "s5_ep06_m1"
+            }
+          ],
+          "derivation": "Made up: the footprints go to the trees, not to the steps (not the pots); the thread is on rough bark (not the stone lantern); the moss is pushed aside by a root: the old pine's hollow.",
+          "whyNot": {
+            "a": "A lantern is stone; the thread is on rough bark, and no root is by it.",
+            "c": "The footprints go to the trees, not to the steps."
+          }
+        },
+        {
+          "puzzleId": "s5_ep06_m2",
+          "fiction": true,
+          "answer": "library,well,west_gate,lane",
+          "clues": [
+            {
+              "text": "Do not cross the throne hall",
+              "missionId": "s5_ep06_m2"
+            },
+            {
+              "text": "big front gate all day",
+              "missionId": "s5_ep06_m2"
+            },
+            {
+              "text": "Last, walk down the lane",
+              "missionId": "s5_ep06_m2"
+            }
+          ],
+          "derivation": "Made up: First behind the library, after it the garden by the well, then the little west gate, last the lane. The throne hall's yard and the front gate are ruled out by Bongsu's words.",
+          "whyOnly": "Four places are given First/After/Then/Last; the two others are named as watched or seen by everyone: one way only."
+        },
+        {
+          "puzzleId": "s5_ep06_m3",
+          "fiction": true,
+          "answer": "0650",
+          "clues": [
+            {
+              "text": "Each walk takes ten minutes",
+              "missionId": "s5_ep06_m3"
+            },
+            {
+              "text": "Knock when the 6:40 walk has passed",
+              "missionId": "s5_ep06_m3"
+            }
+          ],
+          "derivation": "Made up: the 6:40 walk takes ten minutes, so it has passed at 6:50.",
+          "whyOnly": "Only the 6:40 walk is named for the knock, and one walk takes ten minutes: 6:50. 6:40 is during the walk, 7:20 is the next walk the paper forbids."
+        },
+        {
+          "puzzleId": "s5_ep06_final",
+          "factIds": [
+            "s5_ep06_h1",
+            "s5_ep06_h2"
+          ],
+          "answer": "FORCED",
+          "clues": [
+            {
+              "text": "Japan made Korea sign it",
+              "missionId": "s5_ep06_final"
+            },
+            {
+              "text": "Korea did not choose it",
+              "missionId": "s5_ep06_final"
+            }
+          ],
+          "derivation": "The lock word is what the envoys went to tell the world (h2): the 1905 treaty was forced on Korea (h1). The lid's lines say Japan made Korea sign it and Korea did not choose it.",
+          "whyOnly": "Six tiles, each used once: F O R C E D. The lid's last line needs a word for made to happen with no free choice: forced."
+        }
+      ],
+      "learningObjectives": [
+        "Read traces in words (not to, on, by) and find the one place they all point to.",
+        "Follow a way in First/After/Then/Last order, leaving out what is ruled out.",
+        "Work out a time from a schedule (each walk takes ten minutes).",
+        "Read what the 1905 treaty was, and spell the word for it."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "In 1905, Japan forced a treaty on Korea. Korea lost the right to deal with other countries.",
+            "junior": "In 1905, Japan forced a treaty on Korea, and Korea lost the right to deal with other countries.",
+            "master": "In 1905, Japan forced a treaty upon Korea, stripping it of its diplomatic rights.",
+            "factIds": [
+              "s5_ep06_h1"
+            ]
+          },
+          {
+            "text": "In 1907, Emperor Gojong sent Yi Sang-seol, Yi Jun and Yi Wi-jong in secret to the peace conference at The Hague.",
+            "junior": "In 1907, Emperor Gojong secretly sent Yi Sang-seol, Yi Jun and Yi Wi-jong to the peace conference at The Hague.",
+            "master": "In 1907, Emperor Gojong secretly dispatched Yi Sang-seol, Yi Jun and Yi Wi-jong to the peace conference at The Hague.",
+            "factIds": [
+              "s5_ep06_h2"
+            ]
+          },
+          {
+            "text": "They went to tell the world the 1905 treaty was forced and unjust.",
+            "junior": "Their mission was to tell the world that the 1905 treaty had been forced on Korea and was unjust.",
+            "master": "Their mission was to make the world see that the 1905 treaty had been forced on Korea and was unjust.",
+            "factIds": [
+              "s5_ep06_h2"
+            ]
+          },
+          {
+            "text": "They reached The Hague, but they were not let into the conference.",
+            "junior": "They reached The Hague, but they were refused a place at the conference.",
+            "master": "They reached The Hague, only to be refused a seat at the conference.",
+            "factIds": [
+              "s5_ep06_h3"
+            ]
+          },
+          {
+            "text": "Yi Jun died in The Hague in July 1907.",
+            "junior": "Yi Jun died in The Hague in July 1907, far from home.",
+            "master": "Yi Jun died in The Hague in July 1907, far from home.",
+            "factIds": [
+              "s5_ep06_h7"
+            ]
+          },
+          {
+            "text": "Japan used the envoys as an excuse. In 1907 it forced Emperor Gojong to give up his throne.",
+            "junior": "Japan used the envoys as an excuse, and in 1907 it forced Emperor Gojong to give up his throne.",
+            "master": "Seizing on the envoys as a pretext, Japan forced Emperor Gojong to abdicate in 1907.",
+            "factIds": [
+              "s5_ep06_h6"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Bongsu, Mr. Seo and the watchers are made up. So are the hollow pine and the travel box.",
+            "junior": "Bongsu, Mr. Seo and the watchers were invented, and so were the hollow pine and the travel box.",
+            "master": "Bongsu, Mr. Seo and the watchers are inventions, as are the hollow pine and the travel box."
+          },
+          {
+            "text": "Emperor Gojong and Yi Jun were real, but their words in this story are made up.",
+            "junior": "Emperor Gojong and Yi Jun were real people, but their words in this story were invented.",
+            "master": "Emperor Gojong and Yi Jun were real, yet every word they speak here is invented."
+          }
+        ]
+      },
+      "notes": [
+        "Sources opened and quoted by Claude (writer B) on 2026-11-06.",
+        "The envoys' route (Vladivostok, St Petersburg) is a draft on one source: the case never says it."
+      ]
+    },
+    {
+      "caseId": "s5_ep07",
+      "subject": "An Jung-geun at Harbin (26 October 1909), what he called out, and his writing on Korea's independence and peace in East Asia",
+      "period": "1909-1910",
+      "location": "Harbin (the inn and the tea room are made up)",
+      "facts": [
+        {
+          "factId": "s5_ep07_h1",
+          "statement": "On 26 October 1909, at Harbin Station, An Jung-geun killed Itō Hirobumi of Japan.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "인천광역시 (Incheon Metropolitan City)",
+              "title": "인천 역사 이야기: 안중근",
+              "url": "https://www.incheon.go.kr/IC020501/1904250",
+              "quote": "안중근은 1909년 10월 26일 일본의 이등박문(이토 히로부미)을 죽이고",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "경기도 (Gyeonggi Province), 나의 경기도",
+              "title": "안중근 의사 유묵",
+              "url": "https://www.gg.go.kr/myggd/vol194/4_1.php",
+              "quote": "1909년 10월 26일 하얼빈역에서 이토 히로부미를 처단했습니다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep07_h2",
+          "statement": "Right after, An Jung-geun called out \"Korea, hurrah!\" (Korea, long live).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "인천광역시 (Incheon Metropolitan City)",
+              "title": "인천 역사 이야기: 안중근",
+              "url": "https://www.incheon.go.kr/IC020501/1904250",
+              "quote": "코레아 우라 !, 코레아 우라 !, 코레아 우라 ! (한국 만세)",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "전북일보 (jjan.kr)",
+              "title": "안중근 관련 칼럼 (2023-10-25)",
+              "url": "https://jjan.kr/article/20231025580148",
+              "quote": "안중근은 세 발의 총알로 이토를 쓰러뜨린 후 “코레아 후라”를 외치고 체포되었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Incheon writes 코레아 우라 (usually called Russian); the column writes 코레아 후라 and says it was Esperanto. Both give \"Korea, hurrah!\" The game says only \"Korea, hurrah!\", naming no language and no count."
+          }
+        },
+        {
+          "factId": "s5_ep07_h3",
+          "statement": "An Jung-geun resisted Japan's rule for his country's independence; in prison he began writing On Peace in East Asia in mid-March 1910, a work on Korea's independence and peace in East Asia, which was left unfinished.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "경기도 (Gyeonggi Province), 나의 경기도",
+              "title": "안중근 의사 유묵",
+              "url": "https://www.gg.go.kr/myggd/vol194/4_1.php",
+              "quote": "조국의 독립을 위해 일제에 항거한 대표적인 독립운동가 … 수감 중에도 독립과 동양 평화를 주제로 하는 『동양평화론』 초안을 집필하는 등",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "세계일보",
+              "title": "공용화폐·공동군대 등 담아… 당시로선 혁명적 (2010-03-25)",
+              "url": "https://www.segye.com/newsView/20100325004464",
+              "quote": "3월 중순 뤼순감옥에서 ‘동양평화론’을 집필하기 시작하였다. … ‘동양평화론’은 미완성이 되고 말았다. … \"동양평화론은 한국 독립과 동양평화 유지를 위한 구체적인 실천 방안\"",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep07_h4",
+          "statement": "An Jung-geun's last words began by saying his act was done for peace in East Asia.",
+          "status": "draft",
+          "sources": [
+            {
+              "kind": "press",
+              "publisher": "세계일보",
+              "title": "공용화폐·공동군대 등 담아… 당시로선 혁명적 (2010-03-25)",
+              "url": "https://www.segye.com/newsView/20100325004464",
+              "quote": "나의 거사는 동양평화를 위하여 결행한 것이므로",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "One press source only: a draft, used by no puzzle or reveal line."
+          ]
+        }
+      ],
+      "fiction": [
+        "Mrs. Kang, her inn, Mr. Pak the porter, Mr. Sorin and the two newspapers (the Evening Sheet, the Morning News) are made up; so are their words and the noon train.",
+        "Mrs. Kang's water-drop note of 1909 is made up.",
+        "An Jung-geun never appears; the papers' lines about him follow h1 and h2, and his aims follow h3 only."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep07_m1",
+          "factIds": [
+            "s5_ep07_h1",
+            "s5_ep07_h2"
+          ],
+          "answer": "called:called",
+          "clues": [
+            {
+              "text": "One line is not the same",
+              "missionId": "s5_ep07_m1"
+            },
+            {
+              "text": "Only one writer was on the platform",
+              "missionId": "s5_ep07_m1"
+            }
+          ],
+          "derivation": "Both papers give the date, the place and the name of h1. Only the HE CALLED line differs: NOTHING against KOREA, HURRAH! (h2).",
+          "whyOnly": "Four lines are shared; the date, place and name are word for word the same, and only HE CALLED differs."
+        },
+        {
+          "puzzleId": "s5_ep07_m2",
+          "fiction": true,
+          "answer": "open,platform,noon,tea,write,print",
+          "clues": [
+            {
+              "text": "before the noon train",
+              "missionId": "s5_ep07_m2"
+            },
+            {
+              "text": "After the noon train",
+              "missionId": "s5_ep07_m2"
+            },
+            {
+              "text": "after the story",
+              "missionId": "s5_ep07_m2"
+            }
+          ],
+          "derivation": "Made up: 7:00, 12:00 and 5:00 PM are fixed; Mr. Pak on the platform before the noon train; the story over tea after it; the report written after the story. The goods train is not part of it.",
+          "whyOnly": "Each card to place has one before/after line tying it between two fixed times: one order only."
+        },
+        {
+          "puzzleId": "s5_ep07_m3",
+          "factIds": [
+            "s5_ep07_h2"
+          ],
+          "answer": "KOREA",
+          "clues": [
+            {
+              "text": "Korea, hurrah!",
+              "missionId": "s5_ep07_m3"
+            },
+            {
+              "text": "not for himself",
+              "missionId": "s5_ep07_m3"
+            }
+          ],
+          "derivation": "Mr. Pak (made up) retells what was called out (h2): \"Korea, hurrah!\" He called out for his country, not for money or himself: Korea.",
+          "whyOnly": "The only country named in what he called out is Korea; money and himself are ruled out by Mr. Pak's words."
+        },
+        {
+          "puzzleId": "s5_ep07_final",
+          "factIds": [
+            "s5_ep07_h2",
+            "s5_ep07_h3",
+            "s5_ep06_h1"
+          ],
+          "answer": "for_korea",
+          "clues": [
+            {
+              "text": "noon train",
+              "missionId": "s5_ep07_final"
+            },
+            {
+              "text": "Korea, hurrah!",
+              "missionId": "s5_ep07_final"
+            },
+            {
+              "text": "Japan forced a treaty on Korea",
+              "missionId": "s5_ep07_final"
+            }
+          ],
+          "derivation": "Three questions, one evidence each: where Paper A's story came from (Mr. Pak's day), what was called out (Mr. Pak's words, h2), what Korea had lost (the Emperor's letter: the 1905 treaty was forced, s5_ep06_h1). The talk ends on the key fact: he called out for Korea, not for money; the ending gives his own aims from his writing (h3).",
+          "whyOnly": "Each question accepts one evidence only; a wrong one is answered, never a failure, and the talk ends when all three are shown."
+        }
+      ],
+      "learningObjectives": [
+        "Compare two reports line by line and find the one that disagrees.",
+        "Put a day in order from before/after words, and see who was really there.",
+        "Read not ... but sentences to say who someone acted for.",
+        "Answer questions with evidence, not with a story told over tea."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "On 26 October 1909, at Harbin Station, An Jung-geun killed Itō Hirobumi of Japan.",
+            "junior": "On 26 October 1909, An Jung-geun killed Itō Hirobumi of Japan at Harbin Station.",
+            "master": "At Harbin Station on 26 October 1909, An Jung-geun killed Itō Hirobumi of Japan.",
+            "factIds": [
+              "s5_ep07_h1"
+            ]
+          },
+          {
+            "text": "Then he called out, \"Korea, hurrah!\"",
+            "junior": "Right after, he called out, \"Korea, hurrah!\"",
+            "master": "He then cried out, \"Korea, hurrah!\"",
+            "factIds": [
+              "s5_ep07_h2"
+            ]
+          },
+          {
+            "text": "An Jung-geun fought Japan's rule for Korea's independence.",
+            "junior": "An Jung-geun resisted Japan's rule, working for Korea's independence.",
+            "master": "An Jung-geun resisted Japan's rule for the sake of Korea's independence.",
+            "factIds": [
+              "s5_ep07_h3"
+            ]
+          },
+          {
+            "text": "In prison, in March 1910, he began \"On Peace in East Asia\", about Korea's independence and peace in East Asia. He could not finish it.",
+            "junior": "In prison, in March 1910, he began writing \"On Peace in East Asia\", about Korea's independence and peace in East Asia, but he could not finish it.",
+            "master": "In prison, in March 1910, he began \"On Peace in East Asia\", a work on Korea's independence and peace in East Asia, which he left unfinished.",
+            "factIds": [
+              "s5_ep07_h3"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Mrs. Kang, Mr. Pak and Mr. Sorin are made up. So are the two newspapers and the noon train.",
+            "junior": "Mrs. Kang, Mr. Pak and Mr. Sorin were invented, and so were the two newspapers and the noon train.",
+            "master": "Mrs. Kang, Mr. Pak and Mr. Sorin are inventions, as are the two newspapers and the noon train."
+          },
+          {
+            "text": "An Jung-geun was real. He never speaks in this story.",
+            "junior": "An Jung-geun was a real person, but he never speaks in this story.",
+            "master": "An Jung-geun was real, yet he never speaks in this story."
+          }
+        ]
+      },
+      "notes": [
+        "Sources opened and quoted by Claude (writer B) on 2026-11-06. The act is told once, plainly, in the intro and in the reveal; the player never sees or helps with it.",
+        "Whether \"Korea, hurrah!\" was Russian or Esperanto is disputed (h2): the game names no language."
+      ]
+    },
+    {
+      "caseId": "s5_ep08",
+      "subject": "Yu Gwan-sun and the Aunae Market march for independence (March-April 1919)",
+      "period": "March-April 1919",
+      "location": "Aunae (Byeongcheon) Market and Maebong hill, near Cheonan",
+      "facts": [
+        {
+          "factId": "s5_ep08_h1",
+          "statement": "Yu Gwan-sun was a student at Ewha Haktang in Seoul; after student demonstrations, the schools were closed by order on 10 March 1919, and she went home on 13 March 1919.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 유관순",
+              "url": "https://encykorea.aks.ac.kr/Article/E0041268",
+              "quote": "학생들의 시위가 극심해지자 일제는 3월 10일 전국적으로 휴교령을 내렸고, 학교로 갈 수 없게 된 유관순은 13일 기차를 통해 고향으로 돌아왔다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "뉴시스 (Newsis)",
+              "title": "유관순 열사 (2019-02-28)",
+              "url": "https://www.newsis.com/view/NISX20190228_0000572361",
+              "quote": "1916년 지령리 교회의 샤프 선교사 추천으로 이화학당 보통과에 편입했으며 … 3월13일 고향으로 돌아왔다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep08_h2",
+          "statement": "On 1 April 1919 (the first day of the third lunar month, the Aunae market day), Yu Gwan-sun and others led a march for independence of thousands of people at the Byeongcheon (Aunae) market.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 유관순",
+              "url": "https://encykorea.aks.ac.kr/Article/E0041268",
+              "quote": "1919년 4월 1일, 조인원 · 유중권 · 유중무 등과 함께 병천 시장에서 수천 명이 참여한 만세시위를 주도하였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "뉴시스 (Newsis)",
+              "title": "아우내 장터 독립 만세 운동 기념 (2019-02-28)",
+              "url": "https://www.newsis.com/view/NISX20190228_0000573036",
+              "quote": "'아우내 장터 독립 만세 운동'은 1919년 4월 1일(음력 3월 1일) 유 열사와 김구응 선생 등이 주도해 펼친 비폭력 만세운동으로",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "other",
+              "publisher": "K-TRIP TIPS (text credited to 국가유산청)",
+              "title": "천안 유관순 열사 유적",
+              "url": "https://www.ktriptips.com/kor/tourspot/125926",
+              "quote": "음력 3월 1일 아우내 장날에 시위운동을 벌여",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Crowd sizes differ by source (about 3,000 to over 6,000); the game says only 'thousands', as the Academy of Korean Studies does."
+          }
+        },
+        {
+          "factId": "s5_ep08_h3",
+          "statement": "A signal fire on Maebong hill gave the sign for the march: Yu Gwan-sun lit it on the night of the last day of March 1919, the night before the 1 April march.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 천안 유관순 열사 유적",
+              "url": "https://encykorea.aks.ac.kr/Article/E0041269",
+              "quote": "유관순이 3·1독립만세 당시 봉화로 거사신호를 알렸던 매봉의 봉화대까지 … 매년 3월 마지막 날에 봉화를 올려 유관순 열사를 기념하고 있다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "서울신문 (Seoul Shinmun)",
+              "title": "움켜 쥔 시신의 손엔 독립선언서… 아우내 만세운동 '진짜 주역' (2019-02-12)",
+              "url": "https://www.seoul.co.kr/news/2019/02/12/20190212027002",
+              "quote": "1919년 3월 그믐날 밤 유관순은 매봉산에 올라 봉화를 올렸다. … 거사 일로 정한 4월 1일 아침 아우내장터에는 전날 밤 타오른 횃불을 보고 장꾼을 가장한 군중 3000여명이 모여들었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Academy of Korean Studies names the fire on Maebong as the sign but gives no date; the date (the last night of March, the night before 1 April) is the press account's and agrees with the yearly fire on the last day of March. The 24 other hills are in press only: the game shows 'more lights' in a made-up transition, never as a fact."
+          }
+        },
+        {
+          "factId": "s5_ep08_h4",
+          "statement": "At the market that day, Yu Gwan-sun's father Yu Jung-gwon and her mother Lee So-je were killed.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 이소제",
+              "url": "https://encykorea.aks.ac.kr/Article/E0075732",
+              "quote": "남편 유중권의 순국에 항의하던 이소제도 총격을 받아 현장에서 순국하였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "뉴시스 (Newsis)",
+              "title": "유관순 열사 (2019-02-28)",
+              "url": "https://www.newsis.com/view/NISX20190228_0000572361",
+              "quote": "이날 일제 헌병의 총칼에 부모를 잃고 체포돼",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The number of dead differs by source (19 in press and the heritage text; '60여 명의 사상자' killed and wounded in the Academy entry): the game gives no number."
+          }
+        },
+        {
+          "factId": "s5_ep08_h5",
+          "statement": "Yu Gwan-sun was arrested as a leader of the march, held in Seodaemun Prison, and died in prison on 28 September 1920.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 유관순",
+              "url": "https://encykorea.aks.ac.kr/Article/E0041268",
+              "quote": "유관순은 주도자로 체포되어 공주교도소에 수감되었고 … 서대문형무소에 수감된 유관순은 … 1920년 9월 28일 오전 8시 20분, 유관순은 18세의 나이로 순국하였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "뉴시스 (Newsis)",
+              "title": "유관순 열사 (2019-02-28)",
+              "url": "https://www.newsis.com/view/NISX20190228_0000572361",
+              "quote": "유관순은 서울 서대문형무소 8호 감방에 수감됐다. … 1920년 9월28일 18세의 나이로 순국했다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The sentence differs (the Academy: five years, then three on appeal; Newsis: seven): the game gives no sentence. The age '18' is a Korean-count age; the game gives no age."
+          }
+        }
+      ],
+      "fiction": [
+        "Gyeongsun, Dong-il, Mr. Pyo, the stranger with the coin, the three school notebooks and the girls Sunja and Okhui are made up.",
+        "Yu Gwan-sun is real, but every word she says and writes in the case (her mixed-up plan, the 'no bell' line) is made up; none is a quotation of a record.",
+        "The wrong day going round the villages, the messengers' talk and the keepers' letter box with its dial lock are made up.",
+        "People walking to the market 'like shoppers' follows a press account, not a checked fact: it is said only inside Gwan-sun's made-up plan.",
+        "The keepers' notes in the box (Bun-i's of 1446, Mrs. Kang's of 1909) are the season's made-up story."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep08_m1",
+          "factIds": [
+            "s5_ep08_h2"
+          ],
+          "answer": "april_first",
+          "clues": [
+            {
+              "text": "Two of them say the same day.",
+              "missionId": "s5_ep08_m1"
+            },
+            {
+              "text": "Someone paid him to ask.",
+              "missionId": "s5_ep08_m1"
+            }
+          ],
+          "derivation": "The note says two of the three messengers agree. Gyeongsun and Dong-il both say the first of April (the real day of the march, h2); Mr. Pyo, paid by a stranger, says the second.",
+          "whyNot": {
+            "april_second": "Only Mr. Pyo, the man the note warns about, says the second of April.",
+            "march_tenth": "No messenger says March."
+          }
+        },
+        {
+          "puzzleId": "s5_ep08_m2",
+          "factIds": [
+            "s5_ep08_h3",
+            "s5_ep08_h2"
+          ],
+          "answer": "fire,walk,full,march",
+          "clues": [
+            {
+              "text": "the night before",
+              "missionId": "s5_ep08_m2"
+            },
+            {
+              "text": "In the morning",
+              "missionId": "s5_ep08_m2"
+            },
+            {
+              "text": "When the market is full",
+              "missionId": "s5_ep08_m2"
+            }
+          ],
+          "derivation": "The plan's lines, read for time words: the sign (a fire on Maebong hill, h3) the night before; people walk to the market in the morning; when the market is full, the march starts (h2).",
+          "whyOnly": "Each step's time word allows one place only (the night before, in the morning, when full, then the march), and the plan rules out the bell ('No bell. A bell is too loud.')."
+        },
+        {
+          "puzzleId": "s5_ep08_m3",
+          "fiction": true,
+          "answer": "GYEONGSUN",
+          "clues": [
+            {
+              "text": "A small water drop sits by her name.",
+              "missionId": "s5_ep08_m3"
+            },
+            {
+              "text": "only in Hangeul",
+              "missionId": "s5_ep08_m3"
+            }
+          ],
+          "derivation": "The note is in Hangeul only and has a small water drop. Sunja writes in Chinese characters; Okhui draws stars; only Gyeongsun's notebook has the water drop by her name. Made up: no history in this puzzle.",
+          "whyOnly": "Only one notebook on the table has the water drop; Gwan-sun's notebook is not among them."
+        },
+        {
+          "puzzleId": "s5_ep08_final",
+          "factIds": [
+            "s5_ep08_h3",
+            "s5_ep08_h2"
+          ],
+          "answer": "311",
+          "clues": [
+            {
+              "text": "the night before",
+              "missionId": "s5_ep08_m2"
+            },
+            {
+              "text": "the first of April",
+              "missionId": "s5_ep08_m1"
+            },
+            {
+              "text": "March has thirty-one days.",
+              "missionId": "s5_ep08_final"
+            }
+          ],
+          "derivation": "The lock is set to the plan's two real days: the night of the sign, the night before 1 April (h3), is the last night of March, 31 (the letter says March has thirty-one days); the day of the march is the first of April (h2), 1. Code 311. The ending then states the history: the fire that night and the march of thousands on 1 April 1919, led by Gwan-sun.",
+          "whyOnly": "The night before the first of April can only be 31 March; Mr. Pyo's day would give 012, and the lock reads the night first."
+        }
+      ],
+      "learningObjectives": [
+        "Ask the same question of three people and find the two answers that agree.",
+        "Read time words (the night before, in the morning, when) to put a plan in order.",
+        "Work out a date from 'the night before' and the length of a month."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "Yu Gwan-sun was a student at Ewha in Seoul. In March 1919, the schools were closed, and she went home.",
+            "junior": "Yu Gwan-sun was a student at Ewha in Seoul. When the schools were closed in March 1919, she went home.",
+            "master": "Yu Gwan-sun studied at Ewha in Seoul; when the schools were closed in March 1919, she returned home.",
+            "factIds": [
+              "s5_ep08_h1"
+            ]
+          },
+          {
+            "text": "The night before the march, a signal fire burned on Maebong hill. It was the sign.",
+            "junior": "On the night before the march, a signal fire was lit on Maebong hill as the sign.",
+            "master": "On the eve of the march, a signal fire on Maebong hill gave the sign.",
+            "factIds": [
+              "s5_ep08_h3"
+            ]
+          },
+          {
+            "text": "On 1 April 1919, market day, thousands of people marched at Aunae Market for independence. Gwan-sun was one of the leaders.",
+            "junior": "On 1 April 1919, a market day, thousands of people marched for independence at Aunae Market, and Gwan-sun was one of the leaders.",
+            "master": "On 1 April 1919, a market day, Gwan-sun helped lead thousands of people in a march for independence at Aunae Market.",
+            "factIds": [
+              "s5_ep08_h2"
+            ]
+          },
+          {
+            "text": "Gwan-sun's father and mother died at the market that day.",
+            "junior": "Gwan-sun's father and mother were killed at the market that day.",
+            "master": "That day, Gwan-sun's father and mother were killed at the market.",
+            "factIds": [
+              "s5_ep08_h4"
+            ]
+          },
+          {
+            "text": "Gwan-sun was arrested. She died in Seodaemun Prison in 1920.",
+            "junior": "Gwan-sun was arrested, and she died in Seodaemun Prison in 1920.",
+            "master": "Gwan-sun was arrested and died in Seodaemun Prison in 1920.",
+            "factIds": [
+              "s5_ep08_h5"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Gyeongsun, Dong-il and Mr. Pyo are made up. So are the wrong day and the stranger.",
+            "junior": "Gyeongsun, Dong-il and Mr. Pyo were invented for this case, and so were the wrong day and the stranger.",
+            "master": "Gyeongsun, Dong-il and Mr. Pyo are inventions of this story, as are the wrong day and the stranger."
+          },
+          {
+            "text": "Yu Gwan-sun was real, but her words in this story are made up.",
+            "junior": "Yu Gwan-sun was a real person, but her words in this story were invented.",
+            "master": "Yu Gwan-sun was real, yet every word she speaks here is invented."
+          },
+          {
+            "text": "The keepers' letter box and the water-drop notes are part of this season's story.",
+            "junior": "The keepers' letter box and the water-drop notes were invented for this season's story.",
+            "master": "The keepers' letter box and the water-drop notes belong to this season's invented story."
+          }
+        ]
+      },
+      "notes": [
+        "Sources opened and quoted by Claude (writer C, PART 10) on 2026-11-06. The Ewha school, the signal fire, the date and the march rest on h1-h3; the deaths (h4, h5) are told once, in the reveal only, without detail.",
+        "Case 08's final ends on h2/h3: the dial code is the night of the sign and the day of the march; the ending's last lines state the march of 1 April 1919."
+      ]
+    },
+    {
+      "caseId": "s5_ep09",
+      "subject": "The Provisional Government of the Republic of Korea in Shanghai and Kim Gu, its police chief",
+      "period": "1919-1920 (Kim Gu's later role: 1940)",
+      "location": "Shanghai (no office building named)",
+      "facts": [
+        {
+          "factId": "s5_ep09_h1",
+          "statement": "After the March First Movement, the Provisional Government of the Republic of Korea was founded in Shanghai in April 1919: on 10 April 1919 a Provisional Assembly met and named the country Daehan Minguk (the Republic of Korea).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "대한민국 임시정부 1919",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_o400800&code=kc_age_40",
+              "quote": "1919년 4월 10일 29명의 대표자들이 모여 '대한민국임시의정원(大韓民國臨時議政院)'을 결성하였다. … 임시의정원은 첫 회의에서 국호를 '대한민국'으로 결정하는 한편",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국 정책브리핑 (korea.kr)",
+              "title": "임시정부 경무국과 김구 (기자 기사)",
+              "url": "https://www.korea.kr/news/reporterView.do?newsId=148973712",
+              "quote": "3·1 운동 이후 중국 상하이에 대한민국 임시정부가 수립되면서 정부 조직 안에는 내무부 산하의 '경무국'도 설치됐다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The government in Shanghai began in April 1919 and was joined with the other provisional governments in September 1919 (우리역사넷). The game says only 'in April 1919', not a day."
+          }
+        },
+        {
+          "factId": "s5_ep09_h2",
+          "statement": "Kim Gu reached Shanghai in April 1919; in August 1919 he asked to serve as the Provisional Government's gatekeeper and was made its police chief (gyeongmu gukjang), the first to hold the post.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "김구 1876 ~ 1949",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n400245&code=kc_age_40",
+              "quote": "8월에는 내무총장 안창호에게 대한민국임시정부(이하 임시정부)의 문지기를 자청하였으나 경무국장에 임명되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국 정책브리핑 (korea.kr)",
+              "title": "임시정부 경무국과 김구 (기자 기사)",
+              "url": "https://www.korea.kr/news/reporterView.do?newsId=148973712",
+              "quote": "1919년 8월 12일 김구 선생은 이 경무국의 초대 경무국장에 임명됐다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Some press says April 1919; both public sources say August 1919. The game says August 1919."
+          }
+        },
+        {
+          "factId": "s5_ep09_h3",
+          "statement": "The Provisional Government's police guarded the government, its leaders and its office, protected the Korean community in Shanghai, and watched for Japanese spies.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국 정책브리핑 (korea.kr)",
+              "title": "임시정부 경무국과 김구 (기자 기사)",
+              "url": "https://www.korea.kr/news/reporterView.do?newsId=148973712",
+              "quote": "임시정부 요인과 청사를 보호하고 일제의 밀정 활동을 감시하는 한편, 상하이 한인 사회의 치안과 안전을 살피는 일도 맡았다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "이데일리 (Edaily)",
+              "title": "김구는 경찰이었다?…임정서 초대 경무국장 맡아",
+              "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01164406619306664",
+              "quote": "임시정부 경찰은 대한민국 임시정부 내 경찰 조직으로 일제 강점기 때 정부 수호와 교민 보호, 밀정(간첩)·반민족 행위자 등을 처단하는 임무를 수행했다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Edaily also names punishing spies; the game says only 'watched for spies', as the public source does."
+          }
+        },
+        {
+          "factId": "s5_ep09_h4",
+          "statement": "Kim Gu later led the Provisional Government: he was elected its head (gungmuryeong) in December 1926, and from 1940 he was its chairman (jusuk).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "김구 1876 ~ 1949",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n400245&code=kc_age_40",
+              "quote": "1926년 12월 이동녕의 추천으로 김구가 국무령에 선출되었다. … 주석제로 개편하면서, 김구가 주석으로 선출되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 주석",
+              "url": "https://encykorea.aks.ac.kr/Article/E0053308",
+              "quote": "1940년 10월 임시약헌(臨時約憲)을 만들어 주석의 권한을 대폭 강화 … 이때부터 김구(金九)가 주석을 맡았다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Press puts his election as chairman in May or October 1940; the game says only 1940."
+          }
+        }
+      ],
+      "fiction": [
+        "The autumn of 1920 case, the secret list, the candle, the police report, the sign-out book and the spy Nam Giho are made up; so are the clerks Mr. Pak and Mr. Seo.",
+        "Haesu is made up; she brings the keepers' box from Aunae (the season's story).",
+        "Kim Gu is real, but every word he says in the case is made up; his lines retell checked facts (h1-h3) and are never quotations of a record."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep09_m1",
+          "fiction": true,
+          "answer": "0100",
+          "clues": [
+            {
+              "text": "at eleven",
+              "missionId": "s5_ep09_m1"
+            },
+            {
+              "text": "A new candle burns for four hours.",
+              "missionId": "s5_ep09_m1"
+            },
+            {
+              "text": "half of it was gone",
+              "missionId": "s5_ep09_m1"
+            }
+          ],
+          "derivation": "The light went on at eleven; half of a four-hour candle burned, two hours; so it went out at one in the night, 01:00. Made up: no history in this puzzle.",
+          "whyOnly": "Eleven plus two hours is one o'clock in the night; 2300 is when it went on, 0300 is the whole candle, 1300 is the afternoon."
+        },
+        {
+          "puzzleId": "s5_ep09_m2",
+          "factIds": [
+            "s5_ep09_h3"
+          ],
+          "answer": "paper",
+          "clues": [
+            {
+              "text": "Names are pressed into it.",
+              "missionId": "s5_ep09_m2"
+            },
+            {
+              "text": "under the list desk",
+              "missionId": "s5_ep09_m2"
+            }
+          ],
+          "derivation": "The police report (made up; the police's real work of watching for spies is h3) says where each thing is; only the thin paper has names pressed into it, which shows copying.",
+          "whyNot": {
+            "key": "The report says the key only opens the desk: it shows no copying.",
+            "ink": "The report says it is common office ink: it shows no copying."
+          }
+        },
+        {
+          "puzzleId": "s5_ep09_m3",
+          "fiction": true,
+          "answer": "NAM GIHO",
+          "clues": [
+            {
+              "text": "a quarter past one",
+              "missionId": "s5_ep09_m3"
+            },
+            {
+              "text": "The light went out at one in the night!",
+              "missionId": "s5_ep09_m1"
+            }
+          ],
+          "derivation": "The light went out at one (Mission 1). In the sign-out book, only Mr. Nam Giho left after one, at a quarter past one. Made up: no history in this puzzle.",
+          "whyOnly": "Haesu left at nine, Mr. Pak at ten, Mr. Seo at half past eleven: all before the light went out; the guard stayed at the front door."
+        },
+        {
+          "puzzleId": "s5_ep09_final",
+          "factIds": [
+            "s5_ep09_h1",
+            "s5_ep09_h2",
+            "s5_ep09_h3"
+          ],
+          "answer": "protect",
+          "clues": [
+            {
+              "text": "The police guard the government and watch for spies.",
+              "missionId": "s5_ep09_final"
+            },
+            {
+              "text": "Names are pressed into it.",
+              "missionId": "s5_ep09_m2"
+            }
+          ],
+          "derivation": "Kim Gu's four questions are answered by the case's evidence: when (Haesu's note), how (the police report), who (the sign-out book). The last, and the talk's answer, is history: his police guarded the government and watched for spies (h3); he was its police chief from August 1919 (h2), in the government founded in Shanghai in April 1919 (h1).",
+          "whyOnly": "Each question accepts one piece of evidence only; a wrong one is answered, never a failure, and the talk ends when all four are shown."
+        }
+      ],
+      "learningObjectives": [
+        "Work out a time from 'at eleven', 'four hours' and 'half'.",
+        "Read place words (under, on, next to) to find things in a room.",
+        "Read clock times (half past, a quarter past) and compare them."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "After the March First Movement, Koreans founded the Provisional Government of the Republic of Korea in Shanghai in April 1919.",
+            "junior": "After the March First Movement, Koreans set up the Provisional Government of the Republic of Korea in Shanghai in April 1919.",
+            "master": "In April 1919, after the March First Movement, Koreans founded the Provisional Government of the Republic of Korea in Shanghai, far from home.",
+            "factIds": [
+              "s5_ep09_h1"
+            ]
+          },
+          {
+            "text": "In August 1919, Kim Gu asked to guard its door. He was made its police chief.",
+            "junior": "In August 1919, Kim Gu offered to be the government's gatekeeper, but he was made its police chief.",
+            "master": "In August 1919, Kim Gu volunteered as the government's gatekeeper and was appointed its police chief instead.",
+            "factIds": [
+              "s5_ep09_h2"
+            ]
+          },
+          {
+            "text": "His police guarded the government and its people, and watched for Japanese spies.",
+            "junior": "His police protected the government and the Koreans in Shanghai, and watched for Japanese spies.",
+            "master": "His police protected the government and Shanghai's Korean community and kept watch for Japanese spies.",
+            "factIds": [
+              "s5_ep09_h3"
+            ]
+          },
+          {
+            "text": "Later, Kim Gu led the government. In 1940 he became its chairman.",
+            "junior": "Later Kim Gu led the government himself, and in 1940 he became its chairman.",
+            "master": "Kim Gu went on to lead the government, becoming its chairman in 1940.",
+            "factIds": [
+              "s5_ep09_h4"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Haesu, Nam Giho and the secret list are made up. So are the candle and the sign-out book.",
+            "junior": "Haesu, Nam Giho and the secret list were invented for this case, and so were the candle and the sign-out book.",
+            "master": "Haesu, Nam Giho and the secret list are inventions of this story, as are the candle and the sign-out book."
+          },
+          {
+            "text": "Kim Gu was real, but his words in this story are made up.",
+            "junior": "Kim Gu was a real person, but his words in this story were invented.",
+            "master": "Kim Gu was real, yet every word he speaks here is invented."
+          }
+        ]
+      },
+      "notes": [
+        "Sources opened and quoted by Claude (writer C, PART 10) on 2026-11-06.",
+        "The case ends on history (the user's policy): the made-up spy is found, but the final's answer and the ending's last lines are the government's founding in Shanghai in April 1919 and Kim Gu's real role (police chief from August 1919, head from 1940)."
+      ]
+    },
+    {
+      "caseId": "s5_ep10",
+      "subject": "Yun Bong-gil and Kim Gu on 29 April 1932, and what that day meant for the Provisional Government",
+      "period": "29 April 1932",
+      "location": "Shanghai (the house of the breakfast is not named)",
+      "facts": [
+        {
+          "factId": "s5_ep10_h1",
+          "statement": "On 29 April 1932, at a Japanese ceremony in Hongkou Park, Shanghai, Yun Bong-gil, a member of the Korean Patriotic Organization, carried out an attack on the Japanese army leaders there.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 훙커우공원 의거",
+              "url": "https://encykorea.aks.ac.kr/Article/E0065823",
+              "quote": "1932년 4월 29일 일본은 상해사변(上海事變)을 일으켜 상해를 점령한 뒤 전승기념 및 천장절(天長節) 기념식을 상해 훙커우공원(虹口公园)에서 거행하였다. … 한인애국단(韓人愛國團) 단원인 윤봉길이 사열대 위에 폭탄을 투척하여",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 내 손안에 서울 (Seoul Metropolitan Government)",
+              "title": "4월의 끝자락, 매헌 윤봉길 의사를 만나다",
+              "url": "https://mediahub.seoul.go.kr/archives/2001465",
+              "quote": "1932년 4월 29일, 일왕 생일 및 일본군의 상하이 전승 축하 기념행사가 열리는 중국 상하이 훙커우 공원에서 투탄 의거를 결행",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep10_h2",
+          "statement": "On the morning of that day, after a last breakfast, Yun Bong-gil swapped watches with Kim Gu: he gave Kim Gu his new watch, bought with money Kim Gu had given him, and took Kim Gu's old watch.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "윤봉길",
+              "url": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_n0890_0010&code=eh_age_40",
+              "quote": "김구 선생님, 주신 돈으로 새로 산 시계와 오래된 선생님의 시계를 바꾸시지요.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 내 손안에 서울 (Seoul Metropolitan Government)",
+              "title": "광복 81주년, 독립운동가 윤봉길·김구·박자혜를 만나는 역사 여행",
+              "url": "https://mediahub.seoul.go.kr/archives/2019020",
+              "quote": "상하이 의거 당일 아침, 윤봉길 의사와 백범 김구 선생이 최후의 식사 후 서로 교환한 시계",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "YTN",
+              "title": "[재미있는역사이야기] 김구와 윤봉길의 시계",
+              "url": "https://www.ytn.co.kr/_ln/0484_201609190859052548",
+              "quote": "이 시계는 6원을 주고 산 것인데 선생님의 시계는 2원 짜리이니 저와 바꾸시지요.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "His words are retold differently by each source ('몇 시간', 'one hour'); the game quotes none of them, and keeps the prices (6 and 2 won, press only) out of every line."
+          }
+        },
+        {
+          "factId": "s5_ep10_h3",
+          "statement": "Yun Bong-gil was arrested at once after the attack; he was taken to Japan and died there in December 1932.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 훙커우공원 의거",
+              "url": "https://encykorea.aks.ac.kr/Article/E0065823",
+              "quote": "일본군에 붙잡혀서 일본 대판(大阪)에 이송되어 12월 18일 총살형이 집행되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "윤봉길",
+              "url": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_n0890_0010&code=eh_age_40",
+              "quote": "윤봉길은 의거 후 현장에서 일본 군인들에게 바로 체포되었어요. … 결국 윤봉길은 이시카와현 가나자와에서 죽음을 맞이했어요.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Sources differ on the place in Japan (Osaka transfer; Kanazawa) and the day (18 or 19 December): the game says only 'in Japan, in December 1932'."
+          }
+        },
+        {
+          "factId": "s5_ep10_h4",
+          "statement": "Yun Bong-gil's act moved the Chinese people to see the Korean independence movement anew, and afterwards Chinese leaders, Chiang Kai-shek among them, actively supported the Provisional Government.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 훙커우공원 의거",
+              "url": "https://encykorea.aks.ac.kr/Article/E0065823",
+              "quote": "특히 일제의 침략을 받아오던 중국인들을 열광시켰고, 그들에게 한국독립운동을 새롭게 인식시켜 이후 대한민국임시정부를 적극 후원하게 하였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "윤봉길",
+              "url": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_n0890_0010&code=eh_age_40",
+              "quote": "특히 중국의 한 지도자인 장제스는 이 일을 계기로 임시 정부의 활동을 적극적으로 지원해 주었어요.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "한교닷컴 (Hangyo)",
+              "title": "[라이프&역사] 윤봉길이라는 길을 걷다",
+              "url": "https://hangyo.com/news/article.html?no=103359",
+              "quote": "중국인 100만 대군과 4억 중국인이 해내지 못한 일을 조선인 청년 한 명이 해냈다",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Some writers note the support came with conditions and grew in steps (secret at first, open later): the game says only that Chinese leaders began to help strongly after that day, as both public sources do. Chiang's famous words are not quoted."
+          }
+        }
+      ],
+      "fiction": [
+        "Haesu, her notes, the strap watch, the small house and the keepers' box with its letter lock are made up.",
+        "Yun Bong-gil and Kim Gu are real, but every word they say in the case is made up; Kim Gu's 'I gave him money for a good watch' retells h2 and is not a quotation.",
+        "The detective is not at the breakfast and takes no part in what happens at Hongkou Park; that is told once, plainly, in Haesu's made-up page and in the reveal."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep10_m1",
+          "factIds": [
+            "s5_ep10_h2"
+          ],
+          "answer": "eat,swap,goodbye,alone",
+          "clues": [
+            {
+              "text": "They ate breakfast first",
+              "missionId": "s5_ep10_m1"
+            },
+            {
+              "text": "After breakfast, they swapped their watches.",
+              "missionId": "s5_ep10_m1"
+            },
+            {
+              "text": "Before that",
+              "missionId": "s5_ep10_m1"
+            }
+          ],
+          "derivation": "Haesu's note (made up) read for its order words: breakfast first, then the swap after breakfast (h2), then goodbye ('before that' = before the end), and at the end Kim Gu alone. The watch was not bought this morning.",
+          "whyOnly": "Each line's order word fixes one place; buying the watch is ruled out ('He did not buy it this morning')."
+        },
+        {
+          "puzzleId": "s5_ep10_m2",
+          "factIds": [
+            "s5_ep10_h2"
+          ],
+          "answer": "new_watch",
+          "clues": [
+            {
+              "text": "Each man took the other's watch.",
+              "missionId": "s5_ep10_m2"
+            },
+            {
+              "text": "Its case is smooth, with no scratches.",
+              "missionId": "s5_ep10_m2"
+            }
+          ],
+          "derivation": "They swapped (h2), so Kim Gu now holds Yun's watch; Yun's watch was new (h2), drawn smooth with no scratches.",
+          "whyNot": {
+            "old_watch": "The worn, scratched watch is Kim Gu's old one, which Yun took.",
+            "strap_watch": "The watch on a strap is Haesu's; Kim Gu holds a pocket watch."
+          }
+        },
+        {
+          "puzzleId": "s5_ep10_m3",
+          "fiction": true,
+          "answer": "DROP",
+          "clues": [
+            {
+              "text": "a small water drop",
+              "missionId": "s5_ep10_m3"
+            },
+            {
+              "text": "The lock wants the last word.",
+              "missionId": "s5_ep10_m3"
+            }
+          ],
+          "derivation": "The keepers' mark is a small water drop; the lock wants the last word, DROP. Made up: no history in this puzzle.",
+          "whyOnly": "Four tiles, one word: the last word of 'a small water drop'."
+        },
+        {
+          "puzzleId": "s5_ep10_final",
+          "factIds": [
+            "s5_ep10_h4",
+            "s5_ep10_h1",
+            "s5_ep09_h1"
+          ],
+          "answer": "1932",
+          "clues": [
+            {
+              "text": "nineteen thirty-two",
+              "missionId": "s5_ep10_final"
+            },
+            {
+              "text": "After that day",
+              "missionId": "s5_ep10_final"
+            },
+            {
+              "text": "Chinese leaders began to help our government strongly.",
+              "missionId": "s5_ep10_final"
+            }
+          ],
+          "derivation": "Haesu's page names two years in words: the government began in 1919 (s5_ep09_h1); Yun's day was 29 April 1932 (h1); after that day Chinese leaders began to help the government strongly (h4). The answer, 1932, is that history.",
+          "whyOnly": "Only two years are written; 1919 is the government's beginning, before Yun's day; 0429 is the day and month, not a year."
+        }
+      ],
+      "learningObjectives": [
+        "Read order words (first, after, before that, at the end) to put a morning in order.",
+        "Match describing words (worn, scratches, smooth, strap) to pictures.",
+        "Read years written in words and find the one a sentence points to."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu swapped watches. Yun took Kim Gu's old watch and left him his new one.",
+            "junior": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu exchanged watches: Yun took Kim Gu's old one and left him his new one.",
+            "master": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu exchanged watches, Yun taking Kim Gu's old one and leaving him his new one.",
+            "factIds": [
+              "s5_ep10_h2",
+              "s5_ep10_h1"
+            ]
+          },
+          {
+            "text": "That day, Yun Bong-gil attacked a Japanese army ceremony at Hongkou Park in Shanghai.",
+            "junior": "That day, Yun Bong-gil carried out an attack on a Japanese army ceremony at Hongkou Park in Shanghai.",
+            "master": "That day, Yun Bong-gil attacked a Japanese army ceremony in Shanghai's Hongkou Park.",
+            "factIds": [
+              "s5_ep10_h1"
+            ]
+          },
+          {
+            "text": "He was arrested at once. He died in Japan in December 1932.",
+            "junior": "He was arrested at once, and he died in Japan in December 1932.",
+            "master": "He was arrested on the spot and died in Japan in December 1932.",
+            "factIds": [
+              "s5_ep10_h3"
+            ]
+          },
+          {
+            "text": "After that day, many Chinese people saw Korea's fight in a new way. Chinese leaders began to help the Provisional Government strongly.",
+            "junior": "After that day, many Chinese people saw Korea's independence movement in a new way, and Chinese leaders began to support the Provisional Government strongly.",
+            "master": "The day changed how many Chinese saw Korea's independence movement, and Chinese leaders went on to support the Provisional Government strongly.",
+            "factIds": [
+              "s5_ep10_h4"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Haesu, her notes and the keepers' box are made up.",
+            "junior": "Haesu, her notes and the keepers' box were invented for this case.",
+            "master": "Haesu, her notes and the keepers' box are inventions of this story."
+          },
+          {
+            "text": "Yun Bong-gil and Kim Gu were real, but their words in this story are made up.",
+            "junior": "Yun Bong-gil and Kim Gu were real people, but their words in this story were invented.",
+            "master": "Yun Bong-gil and Kim Gu were real, yet every word they speak here is invented."
+          }
+        ]
+      },
+      "notes": [
+        "Sources opened and quoted by Claude (writer C, PART 10) on 2026-11-06. The watch prices (6 and 2 won) and Yun's letter to his two sons were found in press and blogs only: left out of the case, not added as facts.",
+        "The case ends on history (the user's policy): the final's answer is the year after which Chinese leaders supported the Provisional Government (h4); the act is told in one plain line, without detail."
+      ]
+    },
+    {
+      "caseId": "s5_ep11",
+      "subject": "Yun Dong-ju's handwritten book of poems at Yonhi College (1941), and Korean pushed out of the schools",
+      "period": "1938-1948",
+      "location": "Yonhi College, Seoul (rooms, hall and piano made up)",
+      "facts": [
+        {
+          "factId": "s5_ep11_h1",
+          "statement": "Yun Dong-ju went on to Yonhi College in 1938 and graduated from its literature department in 1941.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국가보훈부 나라사랑배움터 (Ministry of Patriots and Veterans Affairs)",
+              "title": "독립운동가: 윤동주",
+              "url": "https://edu.mpva.go.kr/notice/human/independentDetail.do?bsrlNo=521",
+              "quote": "1938년, 연희전문학교에 진학한 후 송몽규 선생님 등과 함께 민족정신과 조국의 독립에 대하여 토론하였으며",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 윤동주",
+              "url": "https://encykorea.aks.ac.kr/Article/E0042294",
+              "quote": "1941년 연희전문학교 문과를 졸업하였다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep11_h2",
+          "statement": "For his graduation in 1941, Yun Dong-ju chose 19 poems (18 poems and a preface poem) for a book, Sky, Wind, Stars and Poems (하늘과 바람과 별과 시), but it could not be printed then.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 하늘과 바람과 별과 시",
+              "url": "https://encykorea.aks.ac.kr/Article/E0060561",
+              "quote": "이 시집은 원래 윤동주가 연희전문학교 문과졸업기념(1941)으로 자신이 고른 시 19편을 77부 한정판으로 출판하기 위하여,",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국가보훈부 나라사랑배움터 (Ministry of Patriots and Veterans Affairs)",
+              "title": "하늘과 바람과 별과 詩, 그리고 윤동주",
+              "url": "https://edu.mpva.go.kr/contpopup/contDetail.do?contNo=130",
+              "quote": "1941년 시집, 하늘과바람과별과시를 출판하려다 무산",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "광양시 (Gwangyang City)",
+              "title": "제80주년 광복절에 더욱 빛나는 윤동주의 '하늘과 바람과 별과 시'",
+              "url": "https://gwangyang.go.kr/tour/board.es?mid=a31601000000&bid=0230&tag=&act=view&list_no=188323",
+              "quote": "윤동주는 자화상, 별헤는 밤 등 18편의 시를 원고지에 옮겨 적고 시집의 서문 격인 '서시'를 덧붙인 후 '하늘과 바람과 별과 시'라는 제목으로 친필시집 3부를 손수 제본했다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "Encykorea says 19 poems; Gwangyang City says 18 poems and the preface poem: the same 19. The 1948 book has 31 poems (h7), with poems added later; the game says 19 only of the 1941 copies."
+          }
+        },
+        {
+          "factId": "s5_ep11_h3",
+          "statement": "He made three copies by hand: one for his teacher Lee Yang-ha, one for his younger friend Jeong Byeong-uk, and one he kept himself.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 하늘과 바람과 별과 시",
+              "url": "https://encykorea.aks.ac.kr/Article/E0060561",
+              "quote": "우선 자필로 3부를 만들어 이양하(李敭河)와 후배 정병욱(鄭炳昱)에게 각각 한 부씩 주고 한 부는 자신이 간직하였다고 한다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "광양시 (Gwangyang City)",
+              "title": "제80주년 광복절에 더욱 빛나는 윤동주의 '하늘과 바람과 별과 시'",
+              "url": "https://gwangyang.go.kr/tour/board.es?mid=a31601000000&bid=0230&tag=&act=view&list_no=188323",
+              "quote": "그중 한 부는 윤동주 자신이 갖고 나머지 2부는 이양하 지도교수와 진중하고 성미가 비슷해 각별히 의지 삼은 연희전문 2년 후배 정병욱에게 주었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep11_h4",
+          "statement": "Under the Third Joseon Education Ordinance of 1938, the Korean language subject in the schools was made only an optional (choice) subject, with far fewer hours.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "제3차 조선 교육령(1938∼1942)",
+              "url": "https://contents.history.go.kr/mobile/km/view.do?levelId=km_002_0060_0010_0030",
+              "quote": "그나마 있던 조선어 교과는 수의 과목으로 격하되고, 수업 시수도 대폭 줄여 조선어 교육은 교육 과정에서 배제된 것이나 다름없었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "한국교육신문 (Hangyo)",
+              "title": "日 황국신민 전략으로 비틀린 교육과정",
+              "url": "https://hangyo.com/mobile/article.html?no=37107",
+              "quote": "심지어 1938년 이후에는 수의과목(隨意科目·오늘날의 선택과목)으로 전락했고 1941년에 폐지됐다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The game says 'only a choice subject' and 'pushed out of the schools'; it does not claim a total ban in 1941 at Yonhi College."
+          ]
+        },
+        {
+          "factId": "s5_ep11_h5",
+          "statement": "Yun Dong-ju wrote his poems in Korean, in Hangeul.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "웹진 2024년 8월: 문화의 힘으로 이룬 광복, 한글로 풀어낸 독립운동 이야기",
+              "url": "https://www.hangeul.go.kr/webzine/202408/sub1_2.html",
+              "quote": "한글로 섬세한 감정을 담은 청년 시인 윤동주",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "Japan Press Weekly",
+              "title": "Japan Press Weekly, 2018 May 23-29",
+              "url": "https://www.japan-press.co.jp/modules/news/index.php?id=11491",
+              "quote": "A number of poems he had written in the Korean language were confiscated by the Tokko police at the time of his arrest.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep11_h6",
+          "statement": "Jeong Byeong-uk left his copy with his mother in Gwangyang; his family kept it hidden in a jar under the wooden floor of their house, and it survived.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "광양시 (Gwangyang City)",
+              "title": "제80주년 광복절에 더욱 빛나는 윤동주의 '하늘과 바람과 별과 시'",
+              "url": "https://gwangyang.go.kr/tour/board.es?mid=a31601000000&bid=0230&tag=&act=view&list_no=188323",
+              "quote": "정병욱과 그의 가족이 가옥 마루 아래 항아리에 숨겨 지켜낸 시고는 1948년 1월, '하늘과 바람과 별과 시'로 출간돼 무명의 윤동주를 마침내 시인으로 부활시켰다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "서울신문 (Seoul Shinmun)",
+              "title": "2월 16일은 윤동주 순국 80주기···친필 유고 보존한 광양 '정병욱 가옥'",
+              "url": "https://m.go.seoul.co.kr/news/2025/02/14/20250214500057",
+              "quote": "이후 학도병으로 징집된 정병욱은 윤동주에게 받은 시집을 광양의 어머니께 맡기며 잘 보관할 것을 당부했고, 시고는 명주보자기에 곱게 싸여 망덕포구에서 살아 숨 쉬었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The house is a registered national heritage (국가등록문화유산, Jeong Byeong-uk's House, Former Location of Yun Dong-ju's Manuscripts), seen on heritage.go.kr 2026-11-06 (title and registration only)."
+          ]
+        },
+        {
+          "factId": "s5_ep11_h7",
+          "statement": "In January 1948 the copy, with other poems, was published as the book Sky, Wind, Stars and Poems (Jeongeumsa), 31 poems in all.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 하늘과 바람과 별과 시",
+              "url": "https://encykorea.aks.ac.kr/Article/E0060561",
+              "quote": "정음사에서 윤동주의 시 「서시」·「자화상」·「별헤는 밤」등을 수록하여 1948년에 간행한 시집.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국가보훈부 나라사랑배움터 (Ministry of Patriots and Veterans Affairs)",
+              "title": "하늘과 바람과 별과 詩, 그리고 윤동주",
+              "url": "https://edu.mpva.go.kr/contpopup/contDetail.do?contNo=130",
+              "quote": "1948년 1월 <하늘과 바람과 별과 시> 시집 출간",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep11_h8",
+          "statement": "In 1943 Yun Dong-ju was arrested by the Japanese police, accused of working for independence; he died in Fukuoka Prison in Japan in February 1945.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 윤동주",
+              "url": "https://encykorea.aks.ac.kr/Article/E0042294",
+              "quote": "1943년 7월 귀향 직전에 항일운동의 혐의를 받고 송몽규와 함께 일경에 검거되어 2년형을 선고받았다. … 광복을 앞둔 1945년 2월 28세의 젊은 나이로 일본의 후쿠오카형무소[福岡刑務所]에서 생을 마쳤다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국가보훈부 나라사랑배움터 (Ministry of Patriots and Veterans Affairs)",
+              "title": "하늘과 바람과 별과 詩, 그리고 윤동주",
+              "url": "https://edu.mpva.go.kr/contpopup/contDetail.do?contNo=130",
+              "quote": "1943년 송몽규와 함께 독립운동 혐의로 체포 … 1945년 2월 16일, 옥중 순국",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "Told once, plainly, in the reveal only; the cause of death is not told."
+          ]
+        }
+      ],
+      "fiction": [
+        "The night in late autumn 1941, the missing copy, the dictionary, the white string, the man from the office checking rooms, the piano and the number lock are made up.",
+        "Miri is made up; so are her water-drop note and its riddle. Yonhi College is believed to have been a men's college then: Miri helps at the college and is never called its student.",
+        "Yun Dong-ju is real, but everything he says and does in the case is made up; none of his lines is a quotation, and no line of his poems is quoted or translated (only the book's title).",
+        "That Yun handed the copy to Jeong Byeong-uk at the college gate at dawn is made up; that the friend received a copy is fact (h3).",
+        "The keepers' letter box and its old notes (from 1446 on) are the season's fiction."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep11_m1",
+          "fiction": true,
+          "answer": "WATER",
+          "clues": [
+            {
+              "text": "red spine",
+              "missionId": "s5_ep11_m1"
+            },
+            {
+              "text": "not ink",
+              "missionId": "s5_ep11_m1"
+            }
+          ],
+          "derivation": "Yun's words describe one thing on the desk: the thick book with a red spine. Under it is the folded note; its blue spot is 'not ink' but a drop of what Bun-i carried (Case 01): water, the keepers' mark.",
+          "whyOnly": "Only one thick book has a red spine; the ink is ruled out by 'not ink', and Bun-i's bucket held water. RAIN and INK have their own feedback."
+        },
+        {
+          "puzzleId": "s5_ep11_m2",
+          "fiction": true,
+          "answer": "피아노안",
+          "clues": [
+            {
+              "text": "two steps stronger",
+              "missionId": "s5_ep11_m2"
+            },
+            {
+              "text": "first column is on the right",
+              "missionId": "s5_ep11_m2"
+            }
+          ],
+          "derivation": "Sora's board (Case 01, built on Hunminjeongeum's facts there) gives the body parts; one step stronger adds a line, so two steps add two: the mouth ㅁ, ㅂ, ㅍ. Each vowel is one line and one dot as the note says; the last sound of group 4 is ㄴ. Read top to bottom from the right: 피아 / 노안, 피아노 안, inside the piano.",
+          "whyOnly": "Each group's words allow one first sound, one vowel and one place on the paper; ㅂ or ㅁ for group 1 is one or no step, and reading from the left gives 노안피아."
+        },
+        {
+          "puzzleId": "s5_ep11_m3",
+          "factIds": [
+            "s5_ep11_h2",
+            "s5_ep11_h3"
+          ],
+          "answer": "319",
+          "clues": [
+            {
+              "text": "three copies",
+              "missionId": "s5_ep11_m3"
+            },
+            {
+              "text": "eighteen poems, and one more poem",
+              "missionId": "s5_ep11_m3"
+            }
+          ],
+          "derivation": "The lock's rule (made up) puts two numbers side by side: the copies (three, h3), then the poems in each copy (eighteen and one more to open the book: 19, h2). 3 and 19: 319.",
+          "whyOnly": "Three copies only, and 18 + 1 = 19: no other number fits. 318 forgets the preface poem; 193 swaps the order (order feedback)."
+        },
+        {
+          "puzzleId": "s5_ep11_final",
+          "factIds": [
+            "s5_ep11_h4",
+            "s5_ep11_h5"
+          ],
+          "answer": "KOREAN",
+          "clues": [
+            {
+              "text": "choice subject",
+              "missionId": "s5_ep11_final"
+            },
+            {
+              "text": "in the King's letters",
+              "missionId": "s5_ep11_m3"
+            },
+            {
+              "text": "the people's own language",
+              "missionId": "s5_ep11_final"
+            }
+          ],
+          "derivation": "The copy's pages are in the King's letters (M3), which King Sejong made for the people's own language (Case 01); the schools now teach in Japanese and Korean became only a choice subject in 1938 (h4). Yun's poems are in Korean (h5): the case's key fact, said again in the ending with the friend's family keeping the copy (h6) and the 1948 book (h7).",
+          "whyOnly": "JAPANESE is what the schools push, HANGEUL names the letters not the language, CHINESE is ruled out by King Sejong's reason, ENGLISH by the pages: each has its own feedback."
+        }
+      ],
+      "learningObjectives": [
+        "Match a description (a thick book with a red spine, not ink) with a thing on a desk.",
+        "Read 'two steps stronger' and place words to build Hangeul groups where they were written.",
+        "Read number words and add them (eighteen and one more).",
+        "Read why a language was pushed out of the schools, and name the language of Yun Dong-ju's poems."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "Yun Dong-ju went to Yonhi College in 1938. He graduated in 1941.",
+            "junior": "Yun Dong-ju entered Yonhi College in 1938 and graduated in 1941.",
+            "master": "Yun Dong-ju entered Yonhi College in 1938 and graduated from its literature department in 1941.",
+            "factIds": [
+              "s5_ep11_h1"
+            ]
+          },
+          {
+            "text": "In 1938, Korean became only a choice subject in the schools. Yun wrote his poems in Korean.",
+            "junior": "In 1938, Korean was made only an optional subject in the schools, yet Yun wrote his poems in Korean.",
+            "master": "In 1938, Korean was reduced to an optional subject in the schools; Yun nevertheless wrote his poems in Korean.",
+            "factIds": [
+              "s5_ep11_h4",
+              "s5_ep11_h5"
+            ]
+          },
+          {
+            "text": "In 1941 he chose 19 poems for a book. It could not be printed, so he made three copies by hand.",
+            "junior": "In 1941 he chose 19 poems for a book. It could not be printed, so he copied it by hand three times.",
+            "master": "In 1941 he selected 19 poems for a book; unable to print it, he made three handwritten copies.",
+            "factIds": [
+              "s5_ep11_h2",
+              "s5_ep11_h3"
+            ]
+          },
+          {
+            "text": "One copy went to his friend Jeong Byeong-uk. His family hid it under their floor. In 1948 it became a book.",
+            "junior": "One copy went to his friend Jeong Byeong-uk, whose family hid it under the floor. In 1948 it was published as a book.",
+            "master": "The copy given to his friend Jeong Byeong-uk survived, hidden under the floor of the family home, and was published in 1948.",
+            "factIds": [
+              "s5_ep11_h3",
+              "s5_ep11_h6",
+              "s5_ep11_h7"
+            ]
+          },
+          {
+            "text": "In 1943 Yun Dong-ju was arrested by the Japanese police. He died in a prison in Japan in 1945.",
+            "junior": "In 1943 Yun Dong-ju was arrested by the Japanese police, and in 1945 he died in a prison in Japan.",
+            "master": "Arrested by the Japanese police in 1943, Yun Dong-ju died in a prison in Japan in 1945.",
+            "factIds": [
+              "s5_ep11_h8"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Miri, the piano, the lock and that night are made up.",
+            "junior": "Miri, the piano, the lock and that night were invented for this case.",
+            "master": "Miri, the piano, the lock and that night are inventions of this story."
+          },
+          {
+            "text": "Yun Dong-ju was real, but his words in this story are made up.",
+            "junior": "Yun Dong-ju was a real poet, but his words in this story were invented.",
+            "master": "Yun Dong-ju was real, yet every word he speaks here is invented."
+          }
+        ]
+      },
+      "notes": [
+        "Sources opened and quoted by Claude on 2026-11-06 (WebFetch). Yun's dormitory, the exact day of the gift and his lines are not claimed.",
+        "The final ends on the checked fact (h4, h5): he wrote his poems in Korean when Korean was pushed out of the schools; the ending adds h6 and h7."
+      ]
+    },
+    {
+      "caseId": "s5_ep12",
+      "subject": "15 August 1945: Japan's surrender and Korea's liberation (gwangbok), seen from the Provisional Government in Chongqing",
+      "period": "1940-1945",
+      "location": "Chongqing, China (the office, the room and the river steps made up)",
+      "facts": [
+        {
+          "factId": "s5_ep12_h1",
+          "statement": "The Provisional Government of the Republic of Korea moved to Chongqing in 1940 and founded the Korean Liberation Army there.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국역사박물관 (National Museum of Korean Contemporary History)",
+              "title": "1945년의 대한민국 임시 정부",
+              "url": "https://archive.much.go.kr/1945/storytelling_2",
+              "quote": "1919년 3.1운동 이후 상하이에 수립된 대한민국 임시 정부는 일본의 탄압을 피해 1940년 충칭으로 이동하여 한국광복군을 창설했다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한국광복군",
+              "url": "https://encykorea.aks.ac.kr/Article/E0005134",
+              "quote": "비로소 1940년 9월 17일 중국의 임시 수도였던 충칭에 정착하면서 광복군 총사령부의 성립을 보게 되었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep12_h2",
+          "statement": "In 1944 Kim Won-bong became the minister of military affairs (군무부장) of the Provisional Government.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "조선 민족 혁명당",
+              "url": "https://contents.history.go.kr/mobile/tg/view.do?subjectCode=tg_ty_020&tabId=02&levelId=tg_004_2750&pageUnit=10",
+              "quote": "1944년 4월 임시 정부의 조직과 체제가 개편되면서 김규식이 부주석에, 김원봉이 군무부장에 선임되었고",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 김원봉",
+              "url": "https://encykorea.aks.ac.kr/Article/E0010036",
+              "quote": "1944년에는 임시정부의 군무부장에 취임하고, 광복군 제1지대장 및 부사령관 등을 역임하였으며,",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The game calls him 'a minister of the government' only. His life after 1945 is outside the case."
+          ]
+        },
+        {
+          "factId": "s5_ep12_h3",
+          "statement": "On 15 August 1945 Japan surrendered to the Allies; the Second World War ended with the Allies' victory, and Korea was liberated from Japanese rule.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "광복을 맞이하다",
+              "url": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0110_0010_0010_0010",
+              "quote": "1945년 8월 15일, 일본의 항복으로 제2차 세계 대전이 연합국의 승리로 끝나자, 우리 민족은 일제의 가혹한 식민 통치에서 벗어나 꿈에도 그리던 광복을 맞이하게 되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국 정책브리핑 (Korea.kr, Ministry of Culture, Sports and Tourism)",
+              "title": "8월 15일 제79주년 광복절, 광복의 의미를 되새겨보다",
+              "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148932667",
+              "quote": "1945년 8월 15일 일본이 연합군에 항복하면서 제 2차 세계대전에 종전되었고, 그 결과로 한국은 일본으로부터 독립을 쟁취할 수 있었습니다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep12_h4",
+          "statement": "Liberation came from the Allies' victory, and also from the long independence movement of Koreans at home and abroad: it was not a gift received by people who only waited.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "광복을 맞이하다",
+              "url": "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0110_0010_0010_0010",
+              "quote": "우리가 광복을 맞이할 수 있었던 것은 미국과 소련을 비롯한 연합국의 승리가 가져다 준 결과이기도 하지만, 그 동안 우리 민족이 온갖 희생을 무릅쓰고 일제에 항거하여 꾸준히 전개해 왔던 독립 운동의 결실이기도 하였다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 8·15광복",
+              "url": "https://encykorea.aks.ac.kr/Article/E0059769",
+              "quote": "이것은 다만 우리 민족이 앉아서 연합국측으로부터 광복을 선물로 받은 것이 아님을 말하는 것이다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep12_h5",
+          "statement": "Gwangbok (광복, 光復) means regaining the light: 光 (gwang) is light and 復 (bok) is to come back; it names the regaining of the country's sovereignty in 1945.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국 정책브리핑 (Korea.kr, Ministry of Culture, Sports and Tourism)",
+              "title": "8월 15일 제79주년 광복절, 광복의 의미를 되새겨보다",
+              "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148932667",
+              "quote": "'광복절(光復節)'은 빛을 회복한다는 의미로 빼앗긴 주권을 다시 찾은 날이라는 뜻을 가지고 있습니다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 광복절",
+              "url": "https://encykorea.aks.ac.kr/Article/E0005138",
+              "quote": "1945년 8월 15일 일본으로부터 국권을 되찾은 날과 1948년 8월 15일 대한민국정부가 수립된 날을 기념하는 날.",
+              "location": "The entry's hanja gloss: 光 빛, 復 돌아오다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep12_h6",
+          "statement": "In 1945 the Korean Liberation Army prepared an operation into Korea with the American OSS, but it was called off because Japan surrendered.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국역사박물관 (National Museum of Korean Contemporary History)",
+              "title": "1945년의 대한민국 임시 정부",
+              "url": "https://archive.much.go.kr/1945/storytelling_2",
+              "quote": "1945년 한국광복군은 중국에 주둔하고 있던 미국 전략첩보국(OSS)과 합작하여 국내 진공 작전을 준비하였으나 광복으로 인해 계획이 실행되지 못했다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한국광복군",
+              "url": "https://encykorea.aks.ac.kr/Article/E0005134",
+              "quote": "그러나 국내진공작전은 일본의 무조건 항복으로 실행에 옮기기 직전에 취소되어 계획이 무산되고 말았다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep12_h7",
+          "statement": "In 1919 Kim Won-bong formed the Uiyoldan (의열단), an independence group, and was chosen as its leader.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "김원봉, 의열단을 이끌며 독립 투쟁을 벌이다",
+              "url": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_n0830_0010&code=eh_age_40",
+              "checkedAt": "2026-11-06",
+              "quote": "1919년 11월, 그는 신흥무관학교 출신 사람들과 뜻을 모아 만주 땅에서 의열단을 조직했어요."
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 김원봉",
+              "url": "https://encykorea.aks.ac.kr/Article/E0010036",
+              "quote": "1919년 12월 윤세주(尹世胄) · 이성우(李成宇) · 곽경(郭敬) · 강세우(姜世宇) 등과 의열단(義烈團)을 조직하고 의백(義伯: 단장)에 피선되었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The month differs (November or December 1919): the game says the year only. What the group did is not told."
+          }
+        },
+        {
+          "factId": "s5_ep12_h8",
+          "statement": "In 1938 Kim Won-bong formed the Korean Volunteer Corps (조선의용대) in China and became its leader.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 조선의용대",
+              "url": "https://encykorea.aks.ac.kr/Article/E0052178",
+              "quote": "1938년 김원봉(金元鳳)에 의해 창설되어 항일운동에 다대한 공적을 쌓았다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "김원봉, 의열단을 이끌며 독립 투쟁을 벌이다",
+              "url": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_n0830_0010&code=eh_age_40",
+              "checkedAt": "2026-11-06",
+              "quote": "김원봉은 다음 해 조선의용대를 만들었어요.",
+              "location": "The sentence before names the war of 1937 (중일전쟁): the next year is 1938."
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep12_h9",
+          "statement": "In 1942 the Korean Volunteer Corps joined the Korean Liberation Army, and Kim Won-bong became its vice-commander.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 조선의용대",
+              "url": "https://encykorea.aks.ac.kr/Article/E0052178",
+              "quote": "같은 해 5월 제30차 국무회의에서 광복군에 부사령직의 증설에 따라 의용대 총대장 김원봉이 광복군 부사령관에 취임하고, 의용대는 5월 18일자로 광복군 제1지대에 편입되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "김원봉, 의열단을 이끌며 독립 투쟁을 벌이다",
+              "url": "https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_n0830_0010&code=eh_age_40",
+              "checkedAt": "2026-11-06",
+              "quote": "김원봉은 대한민국 임시 정부의 군무부장(지금의 국방부 장관)과 한국광복군 부사령관이 되었어요."
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한국광복군",
+              "url": "https://encykorea.aks.ac.kr/Article/E0005134",
+              "quote": "1942년 5월 김원봉(金元鳳)이 주도하던 조선의용대의 광복군 편입이 결정되었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The year 1942 is from the Academy of Korean Studies; the National Institute of Korean History names the posts without the year."
+          ]
+        }
+      ],
+      "fiction": [
+        "The keepers' notes of 1446 to 1941 in the box, Haesu's lines in its lid, Bitna's drawing and tiles are the season's fiction.",
+        "Bitna, the trunks, the month card, the radio's words, the office, the family room and the river steps are made up; how the news reached the office that day is not claimed.",
+        "Kim Won-bong is real, but everything he says and does in the case is made up; none of his lines is a quotation. His life after 1945 is outside the case.",
+        "Bitna's note dated 8.15 and the word 광복 on it are made up; what gwangbok means is fact (h5)."
+      ],
+      "puzzles": [
+        {
+          "puzzleId": "s5_ep12_m1",
+          "fiction": true,
+          "answer": "one_strap_lock",
+          "clues": [
+            {
+              "text": "ONE leather strap",
+              "missionId": "s5_ep12_m1"
+            },
+            {
+              "text": "round brass lock",
+              "missionId": "s5_ep12_m1"
+            }
+          ],
+          "derivation": "The note names two things together: one leather strap, and a round brass lock. Only one trunk has both.",
+          "whyNot": {
+            "two_straps": "It has the round brass lock, but two straps: the note says ONE strap.",
+            "one_strap_peg": "It has one strap, but a wooden peg: the note says a round brass lock."
+          }
+        },
+        {
+          "puzzleId": "s5_ep12_m2",
+          "fiction": true,
+          "answer": "bun_i,seok,okbun,duri,gyeongsun,miri",
+          "clues": [
+            {
+              "text": "Seok wrote before Okbun.",
+              "missionId": "s5_ep12_m2"
+            },
+            {
+              "text": "Duri wrote after Okbun.",
+              "missionId": "s5_ep12_m2"
+            },
+            {
+              "text": "Gyeongsun wrote after Duri.",
+              "missionId": "s5_ep12_m2"
+            }
+          ],
+          "derivation": "Bun-i's note (1446) is fixed at the bottom and Miri's (1941) on top; the lid's three lines chain the rest: Seok, Okbun, Duri, Gyeongsun. The drawing has no water drop and is set aside.",
+          "whyOnly": "The three relations make one chain between the two fixed notes; no two cards can swap."
+        },
+        {
+          "puzzleId": "s5_ep12_m3",
+          "factIds": [
+            "s5_ep12_h3"
+          ],
+          "answer": "815",
+          "clues": [
+            {
+              "text": "the fifteenth of August",
+              "missionId": "s5_ep12_m3"
+            },
+            {
+              "text": "August is month eight",
+              "missionId": "s5_ep12_m3"
+            }
+          ],
+          "derivation": "The day of Japan's surrender is the fifteenth of August (h3). Bitna's card gives August as month eight; the month goes before the day: 8 then 15, 815.",
+          "whyOnly": "Only August is the month said; the day is the fifteenth; the month comes first: 158 or 581 are the right digits in the wrong order (order feedback)."
+        },
+        {
+          "puzzleId": "s5_ep12_final",
+          "factIds": [
+            "s5_ep12_h5",
+            "s5_ep12_h3",
+            "s5_ep12_h4",
+            "s5_ep12_h7"
+          ],
+          "answer": "LIGHT",
+          "clues": [
+            {
+              "text": "one English letter: H",
+              "missionId": "s5_ep12_m1"
+            },
+            {
+              "text": "T and I",
+              "missionId": "s5_ep12_m2"
+            },
+            {
+              "text": "G and L",
+              "missionId": "s5_ep12_m3"
+            },
+            {
+              "text": "the opposite of dark",
+              "missionId": "s5_ep12_final"
+            }
+          ],
+          "derivation": "Gwangbok is 光 light and 復 to come back (h5): gwang, the opposite of dark, is LIGHT, spelled with the five tiles found in the missions. It is the day of Japan's surrender (h3), and the ending says liberation was the work of many: the Allies' victory and Koreans at home and far away (h4).",
+          "whyOnly": "The five tiles make one English word meaning the opposite of dark; the tiles are listed H, T, I, G, L so the letter never spells it."
+        }
+      ],
+      "learningObjectives": [
+        "Read a description with two features (one strap, a round brass lock) and choose the thing that has both.",
+        "Put events in order from before, after, the oldest and on top.",
+        "Read a date in words (the fifteenth of August) and write it as numbers, the month first.",
+        "Read what gwangbok means and spell it in English: LIGHT."
+      ],
+      "reveal": {
+        "realHistory": [
+          {
+            "text": "Korea's government in exile moved to Chongqing in 1940. There it made the Korean Liberation Army.",
+            "junior": "In 1940, Korea's Provisional Government moved to Chongqing, where it founded the Korean Liberation Army.",
+            "master": "In 1940 the Provisional Government relocated to Chongqing and founded the Korean Liberation Army there.",
+            "factIds": [
+              "s5_ep12_h1"
+            ]
+          },
+          {
+            "text": "Kim Won-bong worked for independence from 1919. In 1938 he formed the Korean Volunteer Corps in China.",
+            "junior": "Kim Won-bong worked for independence from 1919, and in 1938 he formed the Korean Volunteer Corps in China.",
+            "master": "Kim Won-bong worked for independence from 1919 and, in 1938, formed the Korean Volunteer Corps in China.",
+            "factIds": [
+              "s5_ep12_h7",
+              "s5_ep12_h8"
+            ]
+          },
+          {
+            "text": "In 1942 he joined the Korean Liberation Army. In 1944 he became a minister of the government.",
+            "junior": "In 1942 he became vice-commander of the Korean Liberation Army, and in 1944 a minister of the government.",
+            "master": "He became vice-commander of the Korean Liberation Army in 1942 and the government's minister of military affairs in 1944.",
+            "factIds": [
+              "s5_ep12_h9",
+              "s5_ep12_h2"
+            ]
+          },
+          {
+            "text": "On 15 August 1945, Japan surrendered to the Allies. The war ended, and Korea was free again.",
+            "junior": "On 15 August 1945, Japan surrendered to the Allies; the war ended and Korea was liberated.",
+            "master": "On 15 August 1945 Japan surrendered to the Allies, ending the war and liberating Korea.",
+            "factIds": [
+              "s5_ep12_h3"
+            ]
+          },
+          {
+            "text": "Gwangbok means the light comes back. Gwang is light; bok is to come back.",
+            "junior": "Gwangbok means the return of the light: gwang is light, and bok means to come back.",
+            "master": "Gwangbok means the light restored: gwang is light, and bok is to return.",
+            "factIds": [
+              "s5_ep12_h5"
+            ]
+          },
+          {
+            "text": "Liberation came from the Allies' victory and from many Koreans at home and far away. The Liberation Army was getting ready too, but Japan surrendered first.",
+            "junior": "Liberation came from the Allies' victory and from the long struggle of many Koreans at home and abroad. The Liberation Army was preparing an operation, but Japan surrendered first.",
+            "master": "Liberation owed much to the Allies' victory and to the long independence movement of Koreans at home and abroad; the Liberation Army's planned operation was called off when Japan surrendered.",
+            "factIds": [
+              "s5_ep12_h4",
+              "s5_ep12_h6"
+            ]
+          }
+        ],
+        "inThisMystery": [
+          {
+            "text": "Bitna, the tiles, the trunks and the letter box are made up.",
+            "junior": "Bitna, the tiles, the trunks and the letter box were invented for this story.",
+            "master": "Bitna, the tiles, the trunks and the letter box are inventions of this story."
+          },
+          {
+            "text": "Kim Won-bong was real, but his words in this story are made up.",
+            "junior": "Kim Won-bong was a real person, but his words in this story were invented.",
+            "master": "Kim Won-bong was real, yet every word he speaks here is invented."
+          }
+        ]
+      },
+      "notes": [
+        "Sources opened and quoted by Claude on 2026-11-06 (WebFetch).",
+        "The final ends on the checked facts: gwangbok means the light returns (h5), on 15 August 1945 when Japan surrendered to the Allies (h3); liberation the work of many (h4)."
+      ]
     }
   ]
 }

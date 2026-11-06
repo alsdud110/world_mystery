@@ -1,6 +1,11 @@
 {
   "note": "Image budget per season, US dollars (season_factory.dart: ImageBudgets). A season listed here has its pictures made by the factory within this budget without asking; a season not listed is asked about once, before any paid call (exit 45). What was spent is kept in each season's planning/factory.json.",
   "seasons": {
+    "s5_seoul": {
+      "usd": 12.00,
+      "approvedOn": "2026-11-06",
+      "note": "Season 5 Seoul whole (Case 01 kept, Cases 02-12 made by the factory): approved by the user in chat; the 0.90 the pilot spent is taken off it."
+    },
     "s7_seoulpilot": {
       "usd": 1.00,
       "approvedOn": "2026-11-04",

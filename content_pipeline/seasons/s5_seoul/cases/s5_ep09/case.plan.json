@@ -1,0 +1,835 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s5_ep09",
+  "seasonId": "s5_seoul",
+  "number": 9,
+  "actId": "act3",
+  "title": "The Spy in the Shanghai Office",
+  "synopsis": [
+    "Shanghai, 1920: Korea's government in exile works in a small office.",
+    "At night, someone sits at the desk with the secret list.",
+    "Kim Gu, the police chief, needs proof."
+  ],
+  "goal": "Find out who copied the secret list, and show the police chief the proof.",
+  "characters": [
+    "kim_gu",
+    "haesu",
+    "nam_giho"
+  ],
+  "locations": [
+    "shanghai"
+  ],
+  "missions": [
+    {
+      "missionId": "s5_ep09_m1",
+      "slot": "m1",
+      "placeId": "s5_seoul.shanghai_lane",
+      "puzzle": {
+        "paletteId": "number_entry",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "numberCode",
+        "answerSpec": {
+          "answer": "0100",
+          "codeLength": 4,
+          "codeFormat": "time"
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "A time worked out from Haesu's note: the light went on at eleven; half of a four-hour candle burned, two hours; the light went out at one in the night, 01:00.",
+          "Haesu, the candle and the light are made up."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep08_e4",
+          "use": "recall",
+          "note": "The keepers' letter box came to Shanghai with Haesu."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep09_c1",
+        "evidence": "s5_ep09_e1"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "at eleven, burns for four hours, half of it was gone을 읽고 불이 꺼진 시각(01:00)을 계산한다.",
+        "skill": "sentenceMeaning",
+        "expressions": [
+          "A new candle burns for four hours.",
+          "This morning, half of it was gone."
+        ]
+      },
+      "play": {
+        "title": "Half a Candle",
+        "location": "A LANE IN SHANGHAI",
+        "story": [
+          "Early morning in a narrow Shanghai lane.",
+          "A young clerk hurries past you and drops a folded note.",
+          "It is in Hangeul, with a small water drop in the corner."
+        ],
+        "letterIntro": "The water-drop note says:",
+        "letter": "Detective, someone used the list desk last night.\nThe guard saw a light in the office window at eleven.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a small water drop",
+        "question": "What time did the light go out? Count the hours, then put in the time as a number.",
+        "hints": [
+          "Find when the light went on, and how much of the candle burned.",
+          "Half of four hours is two hours. Count on from eleven at night."
+        ],
+        "successMessage": "The light went out at one in the night!",
+        "transition": [
+          "Someone sat at the list desk from eleven until one.",
+          "The young clerk comes back. \"I am Haesu. I wrote that note.\"",
+          "\"Gyeongsun of Aunae is my cousin. She gave me the old box.\""
+        ],
+        "feedback": {
+          "1300": "It was night, not the afternoon. One in the night is 01:00.",
+          "2300": "Eleven is when the light went ON. When did it go out?",
+          "0300": "Only half of the candle burned, not all of it."
+        },
+        "orderFeedback": "The right numbers, in the wrong order. Hours first, then minutes.",
+        "mapX": 0.38,
+        "mapY": 0.55,
+        "clue": {
+          "title": "The Late Light",
+          "value": "11:00 TO 01:00 · THE LIST DESK",
+          "note": "Someone sat at the list desk from eleven until one in the night.",
+          "symbol": "clock"
+        },
+        "evidence": {
+          "name": "The Water-Drop Note (1920)",
+          "icon": "letter",
+          "description": "Haesu's note in Hangeul, with a small water drop. A light burned at the list desk from eleven.",
+          "inscription": "This morning, half of it was gone."
+        },
+        "recall": {
+          "title": "The box from Aunae",
+          "prompt": "Which thing in your Notebook holds notes with this water drop?",
+          "miss": "Find the old wooden box from Maebong hill."
+        },
+        "discovery": {
+          "type": "clueFound",
+          "title": "TWO HOURS AT THE LIST DESK",
+          "detail": "Someone stayed late at the secret list. What did they leave behind?"
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep09_m2",
+      "slot": "m2",
+      "placeId": "s5_seoul.shanghai_office",
+      "puzzle": {
+        "paletteId": "dark_room_search",
+        "surface": "mission",
+        "engineTable": "investigations",
+        "missionType": "multipleChoice",
+        "answerSpec": {
+          "answer": "paper",
+          "options": [
+            {
+              "id": "key",
+              "label": "The desk key",
+              "feedback": "The key opens the desk. But which thing shows names were copied?"
+            },
+            {
+              "id": "ink",
+              "label": "The ink bottle",
+              "feedback": "The report says it is common office ink. Which thing has names pressed into it?"
+            },
+            {
+              "id": "paper",
+              "label": "The thin paper"
+            }
+          ]
+        },
+        "assetNeeds": [
+          "s5_seoul.asset.c09_government_office",
+          "s5_seoul.asset.c09_desk_key",
+          "s5_seoul.asset.c09_ink_bottle",
+          "s5_seoul.asset.c09_thin_paper"
+        ],
+        "status": "awaitingAssets",
+        "notes": [
+          "Played as a search (InvestigationScene with a picture file): the police report's three lines say where each thing is (next to, on, under); the thin paper, with names pressed into it, shows the list was copied.",
+          "Measured 2026-11-06 on the grid sheet of government_office.webp (picture.measuredOn): the list desk in the middle with the thin paper drawn under it, the window and its sill (the ink bottle drawn on it) on the right, the iron stove lower right with the key drawn beside it, the door on the left, the bookshelf behind the desk; each find's place is where the picture draws it; no two areas overlap.",
+          "The police report is made up; that the police bureau watched for spies is history (h3)."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep09_c1",
+          "use": "textMention",
+          "note": "Someone sat at the list desk from eleven until one."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep09_c2",
+        "evidence": "s5_ep09_e2"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "경찰 보고서의 next to, on, under를 읽고 사무실 그림에서 세 물건을 찾은 뒤, 베낀 흔적(names pressed into it)이 있는 물건을 고른다.",
+        "skill": "grammarInContext",
+        "expressions": [
+          "next to the stove",
+          "on the window sill",
+          "under the list desk"
+        ]
+      },
+      "play": {
+        "title": "The Police Report",
+        "location": "THE GOVERNMENT OFFICE",
+        "story": [
+          "The office of the Provisional Government is on the second floor.",
+          "Kim Gu's police searched it at dawn for marks and traces.",
+          "They wrote down three things, but they did not move them."
+        ],
+        "letterIntro": "The police report says:",
+        "letter": "Three things in the office this morning:\nThe key is next to the stove. It opens the list desk.\nThe ink bottle is on the window sill. It is common office ink.\nThe thin paper is under the list desk. Names are pressed into it.\n— The Police Bureau",
+        "question": "Which thing shows that someone copied the secret list?",
+        "hints": [
+          "Read each line of the report. Each one says where a thing is.",
+          "Copying presses names through the paper. Which thing has names pressed into it?"
+        ],
+        "successMessage": "You found all three things!",
+        "transition": [
+          "Someone laid thin paper on the list and wrote over it.",
+          "The names are pressed into the paper, but not inked.",
+          "Haesu frowns. \"Only clerks can come in at night.\""
+        ],
+        "mapX": 0.44,
+        "mapY": 0.5,
+        "clue": {
+          "title": "The Copy Paper",
+          "value": "THIN PAPER · NAMES PRESSED INTO IT",
+          "note": "Someone copied the secret list onto thin paper.",
+          "symbol": "letter"
+        },
+        "evidence": {
+          "name": "The Police Bureau's Report",
+          "icon": "seal",
+          "description": "The report of Kim Gu's police, who guard the government and watch for spies. Names are pressed into thin paper.",
+          "inscription": "The thin paper is under the list desk."
+        },
+        "search": {
+          "picture": {
+            "file": "assets/seasons/season_05_seoul/cases/case_09/government_office.webp",
+            "pixels": {
+              "width": 1536,
+              "height": 1024
+            },
+            "measuredOn": "sha256:4e5eb65ee989daaa915dd67529a7de82cb690d40463936ebd5ede9c25911cb0c"
+          },
+          "task": "Find the three things in the report.",
+          "documentTitle": "POLICE REPORT",
+          "missLine": "Nothing here. Read the report: where is each thing?",
+          "doneLine": "All three things are found!",
+          "arrival": [
+            "The office is quiet. Nothing has been moved.",
+            "A police officer hands you the morning report."
+          ],
+          "guideAt": [
+            820,
+            960
+          ],
+          "finds": [
+            {
+              "id": "key",
+              "name": "The desk key",
+              "title": "DESK KEY",
+              "reportLine": "The key is next to the stove. It opens the list desk.",
+              "spot": "Next to the stove",
+              "areas": [
+                [
+                  1020,
+                  890,
+                  1200,
+                  990
+                ]
+              ],
+              "foundLine": "A small brass key lies next to the stove.",
+              "picture": {
+                "file": "assets/seasons/season_05_seoul/cases/case_09/desk_key.webp",
+                "pixels": {
+                  "width": 1536,
+                  "height": 1024
+                }
+              },
+              "at": [
+                1095,
+                945
+              ],
+              "width": 80
+            },
+            {
+              "id": "ink",
+              "name": "The ink bottle",
+              "title": "INK BOTTLE",
+              "reportLine": "The ink bottle is on the window sill. It is common office ink.",
+              "spot": "On the window sill",
+              "areas": [
+                [
+                  1200,
+                  510,
+                  1420,
+                  610
+                ]
+              ],
+              "foundLine": "A small ink bottle stands on the window sill.",
+              "picture": {
+                "file": "assets/seasons/season_05_seoul/cases/case_09/ink_bottle.webp",
+                "pixels": {
+                  "width": 1536,
+                  "height": 1024
+                }
+              },
+              "at": [
+                1300,
+                555
+              ],
+              "width": 80
+            },
+            {
+              "id": "paper",
+              "name": "The thin paper",
+              "title": "THIN PAPER",
+              "reportLine": "The thin paper is under the list desk. Names are pressed into it.",
+              "spot": "Under the list desk",
+              "areas": [
+                [
+                  480,
+                  820,
+                  740,
+                  930
+                ]
+              ],
+              "foundLine": "A sheet of thin paper lies under the list desk.",
+              "picture": {
+                "file": "assets/seasons/season_05_seoul/cases/case_09/thin_paper.webp",
+                "pixels": {
+                  "width": 1536,
+                  "height": 1024
+                }
+              },
+              "at": [
+                612,
+                878
+              ],
+              "width": 130
+            }
+          ],
+          "spots": [
+            {
+              "label": "On the list desk",
+              "areas": [
+                [
+                  330,
+                  500,
+                  860,
+                  700
+                ]
+              ],
+              "line": "Nothing on the desk. The report says UNDER it."
+            },
+            {
+              "label": "The iron stove",
+              "areas": [
+                [
+                  1250,
+                  630,
+                  1500,
+                  990
+                ]
+              ],
+              "line": "The stove is cold. The report says NEXT TO it."
+            },
+            {
+              "label": "The window",
+              "areas": [
+                [
+                  1150,
+                  80,
+                  1420,
+                  505
+                ]
+              ],
+              "line": "The window is shut. The report says ON the sill."
+            },
+            {
+              "label": "The door",
+              "areas": [
+                [
+                  40,
+                  40,
+                  240,
+                  860
+                ]
+              ],
+              "line": "The door to the stairs. Nothing is hidden here."
+            },
+            {
+              "label": "The bookshelf",
+              "areas": [
+                [
+                  340,
+                  140,
+                  850,
+                  495
+                ]
+              ],
+              "line": "Only books and files. Nothing strange here."
+            }
+          ],
+          "opening": [
+            60,
+            100,
+            1476,
+            990
+          ],
+          "inside": [
+            20,
+            40,
+            1516,
+            1004
+          ],
+          "startLabel": "SEARCH THE OFFICE"
+        },
+        "discovery": {
+          "type": "evidenceFound",
+          "title": "A COPY OF THE LIST",
+          "detail": "The names went onto thin paper. Who was at the desk until one?",
+          "showEvidence": true
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep09_m3",
+      "slot": "m3",
+      "placeId": "s5_seoul.shanghai_office",
+      "puzzle": {
+        "paletteId": "word_entry",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "wordInput",
+        "answerSpec": {
+          "answer": "NAM GIHO",
+          "acceptedAnswers": [
+            "NAM GIHO",
+            "NAM GI-HO",
+            "NAM",
+            "GIHO",
+            "MR NAM",
+            "MR. NAM"
+          ]
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "The sign-out book: only one clerk left after the light went out at one (Mission 1). The clerks and the book are made up."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep09_c1",
+          "use": "answerDerivation",
+          "note": "The light went out at one in the night."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep09_c3",
+        "evidence": "s5_ep09_e3"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "퇴근 장부의 시각(at nine, at half past eleven, at a quarter past one)을 읽고, 불이 꺼진 뒤(01:00)에 나간 사람을 찾는다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "half past eleven",
+          "a quarter past one"
+        ]
+      },
+      "play": {
+        "title": "The Sign-Out Book",
+        "location": "THE GOVERNMENT OFFICE",
+        "story": [
+          "By the door hangs the clerks' sign-out book.",
+          "Every clerk writes the time they go home.",
+          "Haesu reads it with you."
+        ],
+        "letterIntro": "The sign-out book, last night:",
+        "letter": "Haesu: left at nine.\nMr. Pak: left at ten.\nMr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nThe night guard: here all night, at the front door.",
+        "question": "Who was still in the office when the light went out? Type his name.",
+        "hints": [
+          "Your first clue says when the light went out.",
+          "Find the clerk who left after one o'clock."
+        ],
+        "successMessage": "Only one clerk left after one!",
+        "transition": [
+          "Mr. Nam Giho came to the office only last month.",
+          "His desk is empty this morning.",
+          "Haesu runs to find the police chief."
+        ],
+        "feedback": {
+          "SEO": "Mr. Seo left at half past eleven. The light burned until one.",
+          "PAK": "Mr. Pak left at ten, before the light went on.",
+          "HAESU": "Haesu left at nine. Read the times again."
+        },
+        "mapX": 0.44,
+        "mapY": 0.5,
+        "clue": {
+          "title": "The Last Clerk",
+          "value": "NAM GIHO · LEFT AT 1:15",
+          "note": "Mr. Nam Giho left the office after the light went out."
+        },
+        "evidence": {
+          "name": "The Sign-Out Book",
+          "icon": "letter",
+          "description": "The clerks' sign-out book. Mr. Nam Giho left at a quarter past one.",
+          "inscription": "Mr. Nam Giho: left at a quarter past one."
+        },
+        "talk": {
+          "speaker": "haesu",
+          "portrait": "assets/seasons/season_05_seoul/characters/haesu.webp",
+          "goal": "Find out who stayed late.",
+          "before": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "Four clerks work here, and me."
+              },
+              {
+                "by": "speaker",
+                "text": "Nobody gets in at night. The guard sits at the front door."
+              },
+              {
+                "by": "detective",
+                "text": "Then the copier signed out last night."
+              }
+            ]
+          }
+        },
+        "discovery": {
+          "type": "newLead",
+          "title": "THE NEW CLERK",
+          "detail": "Mr. Nam Giho stayed until a quarter past one. Now tell the police chief."
+        }
+      }
+    }
+  ],
+  "final": {
+    "missionId": "s5_ep09_final",
+    "slot": "final",
+    "placeId": "s5_seoul.shanghai_office",
+    "puzzle": {
+      "paletteId": "evidence_talk",
+      "surface": "finalMission",
+      "engineTable": "talks",
+      "missionType": "examine",
+      "answerSpec": {
+        "answer": "protect"
+      },
+      "assetNeeds": [
+        "s5_seoul.asset.kim_gu",
+        "s5_seoul.asset.c09_government_office"
+      ],
+      "status": "awaitingAssets",
+      "notes": [
+        "Kim Gu's four questions, each answered by one mission's evidence: when (Haesu's note), how (the police report), who (the sign-out book), and what his police are for (the police report again: guarding the government and watching for spies, h3). The talk ends on that history: the answer 'protect'.",
+        "Kim Gu is real; every word he says is made up (dossier fiction), resting on h1-h3. The spy, the list and the clerks are made up."
+      ]
+    },
+    "clueInputs": [
+      {
+        "ref": "s5_ep09_c1",
+        "use": "answerDerivation",
+        "note": "The light burned from eleven until one."
+      },
+      {
+        "ref": "s5_ep09_c2",
+        "use": "answerDerivation",
+        "note": "The list was copied onto thin paper."
+      },
+      {
+        "ref": "s5_ep09_c3",
+        "use": "answerDerivation",
+        "note": "Mr. Nam Giho left at a quarter past one."
+      }
+    ],
+    "clueOutputs": {
+      "evidence": "s5_ep09_e4"
+    },
+    "learning": {
+      "dependency": "essential",
+      "level": "application",
+      "objective": "김구의 질문(When? How? Who? Why do we need police?)을 읽고 각 질문에 맞는 증거를 보여 준다. 마지막 질문으로 임시정부 경무국의 역할(지도자 보호, 밀정 감시)을 확인한다.",
+      "skill": "sentenceMeaning",
+      "expressions": [
+        "guard the government and watch for spies"
+      ]
+    },
+    "play": {
+      "title": "The Police Chief",
+      "location": "THE GOVERNMENT OFFICE",
+      "story": [
+        "A broad man in a plain dark suit comes up the stairs.",
+        "\"I am Kim Gu,\" he says. \"I am the police chief here.\"",
+        "\"Haesu told me what she saw. Show me your proof.\""
+      ],
+      "letterIntro": "Your notebook says:",
+      "letter": "The light burned at the list desk from eleven until one.\nThin paper under the desk: names pressed into it.\nMr. Nam Giho left at a quarter past one.\nThe police guard the government and watch for spies.",
+      "question": "Answer the police chief's questions with your evidence.",
+      "hints": [
+        "Show one piece of evidence for each question.",
+        "Use Haesu's note, the police report and the sign-out book."
+      ],
+      "successMessage": "The police chief believes you!",
+      "transition": [
+        "Kim Gu locks the real list in an iron box.",
+        "\"Haesu,\" he says, \"you saw the first clue. Thank you.\"",
+        "Haesu puts her note in the old wooden box. One more water drop."
+      ],
+      "orderFeedback": "Show one piece of evidence for each question.",
+      "mapX": 0.44,
+      "mapY": 0.5,
+      "evidence": {
+        "name": "Kim Gu's Case Note",
+        "icon": "seal",
+        "description": "The police chief's note: the list was copied. Haesu saw the first clue.",
+        "inscription": "Haesu saw the first clue."
+      },
+      "interview": {
+        "speaker": "kim_gu",
+        "portrait": "assets/seasons/season_05_seoul/characters/kim_gu.webp",
+        "goal": "Show Kim Gu who copied the list, and why his police matter.",
+        "opening": [
+          {
+            "by": "speaker",
+            "text": "That list has the names of our friends."
+          },
+          {
+            "by": "detective",
+            "text": "Then let me show you what happened, Chief Kim."
+          }
+        ],
+        "questions": [
+          {
+            "id": "begin",
+            "text": "When did this government begin?",
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "In April 1919, here in Shanghai."
+              },
+              {
+                "by": "speaker",
+                "text": "It began after the March First Movement at home."
+              }
+            ]
+          },
+          {
+            "id": "work",
+            "text": "What is your work here?",
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "I became the police chief in August 1919."
+              },
+              {
+                "by": "speaker",
+                "text": "I asked only to guard the door. They gave me more."
+              }
+            ]
+          }
+        ],
+        "presents": [
+          {
+            "id": "when",
+            "prompt": "Kim Gu asks: \"When was someone at my list desk?\"",
+            "accepted": [
+              "s5_ep09_e1"
+            ],
+            "lines": [
+              {
+                "by": "detective",
+                "text": "From eleven until one. Half of a new candle burned."
+              },
+              {
+                "by": "speaker",
+                "text": "Two hours with our list. That is long."
+              }
+            ],
+            "miss": "That does not show when.",
+            "offered": [
+              "s5_ep09_e1",
+              "s5_ep09_e3"
+            ],
+            "tell": "Haesu's note tells when the light burned."
+          },
+          {
+            "id": "how",
+            "prompt": "Kim Gu asks: \"How do you know the list was copied?\"",
+            "accepted": [
+              "s5_ep09_e2"
+            ],
+            "lines": [
+              {
+                "by": "detective",
+                "text": "Your report found thin paper with names pressed into it."
+              },
+              {
+                "by": "speaker",
+                "text": "He wrote over the list. An old trick."
+              }
+            ],
+            "miss": "That does not show copying.",
+            "offered": [
+              "s5_ep09_e2",
+              "s5_ep09_e1"
+            ],
+            "tell": "The police report found the thin paper.",
+            "requires": [
+              "when"
+            ]
+          },
+          {
+            "id": "who",
+            "prompt": "Kim Gu asks: \"Who was here when the light went out?\"",
+            "accepted": [
+              "s5_ep09_e3"
+            ],
+            "lines": [
+              {
+                "by": "detective",
+                "text": "Mr. Nam Giho. He signed out at a quarter past one."
+              },
+              {
+                "by": "speaker",
+                "text": "The new clerk. He was asking too many questions."
+              }
+            ],
+            "miss": "That does not show who.",
+            "offered": [
+              "s5_ep09_e3",
+              "s5_ep09_e2"
+            ],
+            "tell": "The sign-out book shows who left last.",
+            "requires": [
+              "how"
+            ]
+          },
+          {
+            "id": "protect",
+            "prompt": "Kim Gu asks: \"So why does a government in exile need police?\"",
+            "accepted": [
+              "s5_ep09_e2"
+            ],
+            "lines": [
+              {
+                "by": "detective",
+                "text": "Your police guard the government and watch for spies."
+              },
+              {
+                "by": "speaker",
+                "text": "Yes. Far from home, our government must be kept safe."
+              }
+            ],
+            "miss": "That does not say what the police do.",
+            "offered": [
+              "s5_ep09_e2",
+              "s5_ep09_e3"
+            ],
+            "tell": "The police report says what Kim Gu's police do.",
+            "requires": [
+              "who"
+            ]
+          }
+        ],
+        "finishWhen": [
+          "when",
+          "how",
+          "who",
+          "protect"
+        ],
+        "finishLabel": "CLOSE THE CASE"
+      },
+      "ending": [
+        {
+          "by": "narrator",
+          "text": "By noon, Mr. Nam Giho has left Shanghai. The real list is safe."
+        },
+        {
+          "by": "speaker",
+          "text": "I only counted a candle, sir.",
+          "speaker": "haesu",
+          "portrait": "assets/seasons/season_05_seoul/characters/haesu.webp"
+        },
+        {
+          "by": "speaker",
+          "text": "Small things keep big things safe, Haesu.",
+          "speaker": "kim_gu",
+          "portrait": "assets/seasons/season_05_seoul/characters/kim_gu.webp"
+        },
+        {
+          "by": "narrator",
+          "text": "Korea's Provisional Government began in Shanghai in April 1919."
+        },
+        {
+          "by": "narrator",
+          "text": "Kim Gu was its police chief. His police guarded it and watched for spies.",
+          "evidence": "s5_ep09_e2"
+        },
+        {
+          "by": "narrator",
+          "text": "Later, in 1940, Kim Gu became the head of that government."
+        }
+      ]
+    }
+  },
+  "hook": "Kim Gu trusts Haesu now. What will he ask of her next?",
+  "learningGoal": {
+    "title": "Times and places: half past, a quarter past, under, next to",
+    "titleKo": "시각과 위치: half past, a quarter past, under, next to"
+  },
+  "play": {
+    "objectives": [
+      "Find when the light went out.",
+      "Search the office.",
+      "Read the sign-out book.",
+      "Show the police chief your proof."
+    ],
+    "intro": [
+      "Autumn, 1920. You are a guest of Kim Gu in Shanghai.",
+      "After the March First Movement, Koreans began a government here in April 1919.",
+      "It is the Provisional Government of the Republic of Korea.",
+      "Kim Gu is its police chief. He keeps it safe from spies.",
+      "This morning, he is worried. \"Someone was at our secret list,\" he says."
+    ],
+    "caseSummary": "A light burned at the list desk from eleven until one. Thin paper showed the list was copied. Mr. Nam Giho, a new clerk, left last. Haesu, a keeper, saw the first clue. The Provisional Government began in Shanghai in April 1919, and Kim Gu was its police chief. His police guarded it and watched for spies. Later, in 1940, Kim Gu became its head.",
+    "place": "SHANGHAI",
+    "keyWords": [
+      "government",
+      "police",
+      "spy",
+      "candle",
+      "copy"
+    ],
+    "glossary": {
+      "government": "정부",
+      "provisional": "임시의",
+      "exile": "망명",
+      "spy": "첩자, 밀정",
+      "clerk": "사무원",
+      "sill": "창턱",
+      "chief": "우두머리, 장",
+      "proof": "증거",
+      "water-drop": "물방울 표시"
+    }
+  },
+  "notes": [
+    "PART 10 Case 09 (Act 3 opens): Haesu, a young clerk and keeper, brings the keepers' box (s5_ep08_e4) to Shanghai; her portrait and Kim Gu's are planned here once and reused in Case 10.",
+    "Kim Gu is real; his words are made up (dossier fiction). The spy Nam Giho, the list, the clerks, the candle and the police report are made up. The case ends on history: the Provisional Government founded in Shanghai in April 1919 and Kim Gu's police (h1-h3)."
+  ]
+}

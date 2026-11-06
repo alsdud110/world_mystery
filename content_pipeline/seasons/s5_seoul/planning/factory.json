@@ -1,26 +1,99 @@
 {
   "schemaVersion": 1,
-  "spentUsd": 0.9018179999999999,
+  "spentUsd": 4.3651740000000006,
   "reviewed": [
+    "s5_seoul.asset.aunae_market",
     "s5_seoul.asset.bae",
     "s5_seoul.asset.bae_confrontation",
+    "s5_seoul.asset.bitna",
+    "s5_seoul.asset.bongsu",
     "s5_seoul.asset.book_hall_rain",
     "s5_seoul.asset.bun_i",
+    "s5_seoul.asset.c02_find_bucket",
+    "s5_seoul.asset.c02_find_note",
+    "s5_seoul.asset.c02_find_straw",
+    "s5_seoul.asset.c02_store_room",
+    "s5_seoul.asset.c02_turtle_ship",
+    "s5_seoul.asset.c03_drawing_gate_plain",
+    "s5_seoul.asset.c03_drawing_gate_wheels",
+    "s5_seoul.asset.c03_drawing_pole",
+    "s5_seoul.asset.c03_drawing_room",
+    "s5_seoul.asset.c03_stone_yard",
+    "s5_seoul.asset.c04_palace_site",
+    "s5_seoul.asset.c04_timber_yard",
+    "s5_seoul.asset.c05_belt_wheel",
+    "s5_seoul.asset.c05_coal_box",
+    "s5_seoul.asset.c05_fire_door",
+    "s5_seoul.asset.c06_palace_garden",
+    "s5_seoul.asset.c06_west_lane",
+    "s5_seoul.asset.c07_paper_a",
+    "s5_seoul.asset.c07_paper_b",
+    "s5_seoul.asset.c08_village_home",
+    "s5_seoul.asset.c09_desk_key",
+    "s5_seoul.asset.c09_government_office",
+    "s5_seoul.asset.c09_ink_bottle",
+    "s5_seoul.asset.c09_shanghai_lane",
+    "s5_seoul.asset.c09_thin_paper",
+    "s5_seoul.asset.c10_breakfast_room",
+    "s5_seoul.asset.c10_haesu_room",
+    "s5_seoul.asset.c10_new_watch",
+    "s5_seoul.asset.c10_old_watch",
+    "s5_seoul.asset.c10_strap_watch",
+    "s5_seoul.asset.c11_college_gate",
+    "s5_seoul.asset.c11_college_hall",
+    "s5_seoul.asset.c11_dorm_room",
+    "s5_seoul.asset.c12_family_room",
+    "s5_seoul.asset.c12_office",
+    "s5_seoul.asset.c12_river_steps",
+    "s5_seoul.asset.c12_trunk_one_strap_lock",
+    "s5_seoul.asset.c12_trunk_one_strap_peg",
+    "s5_seoul.asset.c12_trunk_two_straps",
     "s5_seoul.asset.case_solved_dawn",
     "s5_seoul.asset.copy_room",
+    "s5_seoul.asset.dong_il",
+    "s5_seoul.asset.duri",
     "s5_seoul.asset.gate_courtyard",
     "s5_seoul.asset.gate_ledger",
+    "s5_seoul.asset.gojong",
+    "s5_seoul.asset.gyeongsun",
+    "s5_seoul.asset.haesu",
+    "s5_seoul.asset.harbin_tea_room",
+    "s5_seoul.asset.heungseon_daewongun",
+    "s5_seoul.asset.jeong_yakyong",
+    "s5_seoul.asset.kang_inn",
+    "s5_seoul.asset.kim_gu",
+    "s5_seoul.asset.kim_wonbong",
+    "s5_seoul.asset.king_hall",
     "s5_seoul.asset.kings_study",
+    "s5_seoul.asset.lady_han",
+    "s5_seoul.asset.lamp_house",
     "s5_seoul.asset.letter_found",
+    "s5_seoul.asset.maebong_hill",
+    "s5_seoul.asset.miri",
+    "s5_seoul.asset.mrs_kang",
+    "s5_seoul.asset.myeongseong",
+    "s5_seoul.asset.okbun",
     "s5_seoul.asset.palace_map",
     "s5_seoul.asset.palace_night",
+    "s5_seoul.asset.porter_pak",
     "s5_seoul.asset.prologue",
+    "s5_seoul.asset.pyo_salt",
+    "s5_seoul.asset.queen_court",
     "s5_seoul.asset.royal_archive",
     "s5_seoul.asset.scholar_papers",
+    "s5_seoul.asset.season_map",
     "s5_seoul.asset.sejong",
+    "s5_seoul.asset.seok",
     "s5_seoul.asset.sora",
+    "s5_seoul.asset.sorin",
     "s5_seoul.asset.taek",
-    "s5_seoul.asset.well_yard"
+    "s5_seoul.asset.well_yard",
+    "s5_seoul.asset.yi_jun",
+    "s5_seoul.asset.yi_jun_house",
+    "s5_seoul.asset.yi_sunsin",
+    "s5_seoul.asset.yu_gwansun",
+    "s5_seoul.asset.yun_bonggil",
+    "s5_seoul.asset.yun_dongju"
   ],
   "rejected": [
     {
@@ -32,6 +105,36 @@
       "assetId": "s5_seoul.asset.bae_confrontation",
       "sha256": "sha256:fc7eeb28a843047a653d77cade3e58d952e468783e59f7af1047230f0dd2ba84",
       "why": "Bae's face differs from his portrait (young, no beard): drawn from the portrait"
+    },
+    {
+      "assetId": "s5_seoul.asset.yi_sunsin",
+      "sha256": "sha256:314814ebd21415fb4561cb55055c009edcb8928a867e477227d273b639547ec3",
+      "why": "a gold dragon roundel on the chest: the king's alone, not a naval commander's"
+    },
+    {
+      "assetId": "s5_seoul.asset.heungseon_daewongun",
+      "sha256": "sha256:c17adcf4cdf7d5d99ffe7e2f648d57fdae234c8f04b96daebadc413af9a71618",
+      "why": "a gold dragon roundel on the chest: the king's alone, not the regent's"
+    },
+    {
+      "assetId": "s5_seoul.asset.lamp_house",
+      "sha256": "sha256:f9ce93076e5f2227816707f9689eadfdee1e6be1a64212ae5a46bc9c272e7f58",
+      "why": "five people stand in the lamp house and hide the door: the look round needs an empty room"
+    },
+    {
+      "assetId": "s5_seoul.asset.gyeongsun",
+      "sha256": "sha256:9ce9d99868fe565a6cec5e080109d7c8b31495b747833dc616457d52ef251f0d",
+      "why": "looks the same as Yu Gwan-sun (same clothes, braid, face): players must tell the two friends apart"
+    },
+    {
+      "assetId": "s5_seoul.asset.haesu",
+      "sha256": "sha256:f58df2138e778ee02e0a57dec9b0fc551fe6aca1275229240dbde868a7b6c391",
+      "why": "a schoolgirl like the 1919 girls; Haesu is a grown clerk in 1920s Shanghai"
+    },
+    {
+      "assetId": "s5_seoul.asset.kim_gu",
+      "sha256": "sha256:3ef153493d3d2f9a8382713da0a87de1c293ce5cce244b64a89202270901653d",
+      "why": "modern open-collar jacket: looks present-day, not 1920"
     }
   ],
   "runs": [
@@ -59,19 +162,59 @@
       "at": "2026-11-04T15:07:37.176528Z",
       "calls": 3,
       "spentUsd": 0.125995
+    },
+    {
+      "at": "2026-11-06T04:42:53.284839Z",
+      "calls": 1,
+      "spentUsd": 0.074505
+    },
+    {
+      "at": "2026-11-06T04:57:14.595771Z",
+      "calls": 10,
+      "spentUsd": 0.42631
+    },
+    {
+      "at": "2026-11-06T05:03:36.330730Z",
+      "calls": 10,
+      "spentUsd": 0.42537
+    },
+    {
+      "at": "2026-11-06T05:10:33.083513Z",
+      "calls": 12,
+      "spentUsd": 0.511485
+    },
+    {
+      "at": "2026-11-06T05:17:30.079676Z",
+      "calls": 12,
+      "spentUsd": 0.51118
+    },
+    {
+      "at": "2026-11-06T05:24:08.886995Z",
+      "calls": 12,
+      "spentUsd": 0.510445
+    },
+    {
+      "at": "2026-11-06T05:32:24.350495Z",
+      "calls": 14,
+      "spentUsd": 0.59591
+    },
+    {
+      "at": "2026-11-06T05:38:02.964157Z",
+      "calls": 9,
+      "spentUsd": 0.408151
     }
   ],
-  "budgetUsd": 1.0,
+  "budgetUsd": 12.0,
   "budgetFrom": "content_pipeline/image_budgets.json",
   "deploy": {
     "folder": "season_05_seoul",
-    "version": "393b9e75a8389773",
-    "status": "deployed",
-    "files": 17,
-    "newPictures": 0,
-    "newBytes": 0,
-    "newManifest": false,
-    "stageDir": "build/season_packs/season_05_seoul/393b9e75a8389773",
-    "at": "2026-11-06T00:53:12.427237Z"
+    "version": "1e59ba509f1d0291",
+    "status": "staged",
+    "files": 90,
+    "newPictures": 73,
+    "newBytes": 67691592,
+    "newManifest": true,
+    "stageDir": "build/season_packs/season_05_seoul/1e59ba509f1d0291",
+    "at": "2026-11-06T06:39:35.631848Z"
   }
 }

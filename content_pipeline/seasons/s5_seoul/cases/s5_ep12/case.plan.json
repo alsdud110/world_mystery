@@ -1,0 +1,809 @@
+{
+  "schemaVersion": 1,
+  "caseId": "s5_ep12",
+  "seasonId": "s5_seoul",
+  "number": 12,
+  "actId": "act3",
+  "title": "The Day the Light Returned",
+  "synopsis": [
+    "The old letter box has come to Chongqing.",
+    "Today a keeper will write the last water-drop note."
+  ],
+  "goal": "Find the letter box, put its notes in order, and read the last note on the day the light returns.",
+  "characters": [
+    "kim_wonbong",
+    "bitna"
+  ],
+  "locations": [
+    "chongqing"
+  ],
+  "missions": [
+    {
+      "missionId": "s5_ep12_m1",
+      "slot": "m1",
+      "placeId": "s5_seoul.c12_office",
+      "puzzle": {
+        "paletteId": "scene_explore_choose",
+        "surface": "mission",
+        "engineTable": "explores",
+        "missionType": "multipleChoice",
+        "answerSpec": {
+          "answer": "one_strap_lock",
+          "options": [
+            {
+              "id": "two_straps",
+              "label": "The trunk with two leather straps and a round brass lock",
+              "feedback": "This trunk has two straps. The note says ONE strap."
+            },
+            {
+              "id": "one_strap_peg",
+              "label": "The trunk with one leather strap and a wooden peg",
+              "feedback": "One strap, yes. But the note says it has a round brass lock."
+            },
+            {
+              "id": "one_strap_lock",
+              "label": "The trunk with one leather strap and a round brass lock"
+            }
+          ]
+        },
+        "assetNeeds": [
+          "s5_seoul.asset.c12_office",
+          "s5_seoul.asset.c12_trunk_two_straps",
+          "s5_seoul.asset.c12_trunk_one_strap_peg",
+          "s5_seoul.asset.c12_trunk_one_strap_lock"
+        ],
+        "status": "awaitingAssets",
+        "notes": [
+          "Played as a look round (ExploreScene) of the government office: the water-drop note on the desk is read first, then the three trunks by the wall. Each wrong trunk shares one thing with the right one (a round brass lock, or one strap): the strap count and the lock together decide.",
+          "The three trunks are drawn the same size, colour and view; only the straps and the fastening differ (never colour alone).",
+          "Measured 2026-11-06 on the grid sheet of office.webp (picture.measuredOn): the note on the near desk lower left, the radio on its shelf, the window over the river, the three trunks along the right wall, the open door, the bookshelf; no two areas overlap."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep11_e4",
+          "use": "textMention",
+          "note": "Miri sent the letter box from Seoul after the poet's copy was safe."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep12_c1",
+        "evidence": "s5_ep12_e1"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "쪽지의 one leather strap, a round brass lock을 읽고 두 조건을 모두 갖춘 트렁크를 그림에서 고른다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "the trunk with ONE leather strap",
+          "It has a round brass lock, too."
+        ]
+      },
+      "play": {
+        "title": "The Trunk by the Wall",
+        "location": "THE GOVERNMENT OFFICE",
+        "story": [
+          "The office is hot and busy. People wait by the radio.",
+          "Miri's box came from Seoul. But where is it now?",
+          "On the desk lies a small note with a blue water drop."
+        ],
+        "letterIntro": "The water-drop note says:",
+        "letter": "The box from Seoul is in a trunk by the wall.\nLook for the trunk with ONE leather strap.\nIt has a round brass lock, too.\nUnder the box is a small wooden tile.",
+        "question": "Which trunk holds the box from Seoul?",
+        "hints": [
+          "Read the note on the desk first. Then look at the trunks.",
+          "Count the straps. Then look at the lock."
+        ],
+        "successMessage": "You found the trunk with the letter box!",
+        "transition": [
+          "Inside is the old wooden letter box from Seoul.",
+          "Under it lies a small wooden tile with one English letter: H.",
+          "Who left this note?"
+        ],
+        "mapX": 0.35,
+        "mapY": 0.45,
+        "clue": {
+          "title": "The First Tile",
+          "value": "TILE: H",
+          "note": "A wooden tile, H, was under the letter box.",
+          "symbol": "key"
+        },
+        "evidence": {
+          "name": "The Water-Drop Note (1945)",
+          "icon": "letter",
+          "description": "A note in the King's letters with a small blue water drop. It shows the trunk with the letter box."
+        },
+        "explore": {
+          "picture": {
+            "file": "assets/seasons/season_05_seoul/cases/case_12/office.webp",
+            "pixels": {
+              "width": 1536,
+              "height": 1024
+            },
+            "measuredOn": "sha256:66d364e37a3fef9810770e8c0c7bc6230fa3e55442a49919a692d51822c3ef67"
+          },
+          "place": "The government office in Chongqing",
+          "task": "Look around the office. Find the water-drop note.",
+          "nextTask": "Which trunk holds the box? Look at the trunks.",
+          "missLine": "Nothing here. Look for the note.",
+          "guideAt": [
+            720,
+            960
+          ],
+          "spots": [
+            {
+              "id": "note",
+              "kind": "document",
+              "title": "THE WATER-DROP NOTE",
+              "label": "A small note on the desk",
+              "areas": [
+                [
+                  340,
+                  830,
+                  560,
+                  950
+                ]
+              ],
+              "mark": [
+                450,
+                835
+              ]
+            },
+            {
+              "id": "radio",
+              "kind": "note",
+              "title": "THE RADIO",
+              "label": "A wooden radio on a shelf",
+              "areas": [
+                [
+                  690,
+                  200,
+                  870,
+                  310
+                ]
+              ],
+              "mark": [
+                780,
+                205
+              ],
+              "line": "The radio hums. Everyone is waiting for news."
+            },
+            {
+              "id": "window",
+              "kind": "note",
+              "title": "THE WINDOW",
+              "label": "A window over the hill city",
+              "areas": [
+                [
+                  1090,
+                  90,
+                  1460,
+                  590
+                ]
+              ],
+              "mark": [
+                1270,
+                100
+              ],
+              "line": "Steep streets go down to the river."
+            },
+            {
+              "id": "trunks",
+              "kind": "choice",
+              "title": "THE TRUNKS",
+              "label": "Three trunks by the wall",
+              "areas": [
+                [
+                  900,
+                  610,
+                  1530,
+                  990
+                ]
+              ],
+              "mark": [
+                1215,
+                640
+              ],
+              "requires": "note",
+              "lockedLine": "Three trunks. Which one matters? Read something first.",
+              "unreadLine": "Read the note on the desk first."
+            }
+          ],
+          "others": [
+            {
+              "label": "The door",
+              "areas": [
+                [
+                  0,
+                  100,
+                  270,
+                  680
+                ]
+              ],
+              "line": "The door is open. People come and go."
+            },
+            {
+              "label": "The bookshelf",
+              "areas": [
+                [
+                  290,
+                  110,
+                  620,
+                  400
+                ]
+              ],
+              "line": "Books and papers. No water drop here."
+            }
+          ],
+          "choiceTitle": "THE TRUNKS",
+          "choiceHow": "Which trunk holds the box? Tap one trunk.",
+          "choicePixels": {
+            "width": 1536,
+            "height": 1024
+          },
+          "choices": [
+            {
+              "optionId": "two_straps",
+              "picture": "assets/seasons/season_05_seoul/cases/case_12/trunk_two_straps.webp",
+              "description": "a travel trunk with two leather straps and a round brass lock"
+            },
+            {
+              "optionId": "one_strap_peg",
+              "picture": "assets/seasons/season_05_seoul/cases/case_12/trunk_one_strap_peg.webp",
+              "description": "a travel trunk with one leather strap and a wooden peg, no lock"
+            },
+            {
+              "optionId": "one_strap_lock",
+              "picture": "assets/seasons/season_05_seoul/cases/case_12/trunk_one_strap_lock.webp",
+              "description": "a travel trunk with one leather strap and a round brass lock"
+            }
+          ],
+          "opening": [
+            0,
+            100,
+            1536,
+            1000
+          ]
+        },
+        "talk": {
+          "speaker": "kim_wonbong",
+          "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp",
+          "goal": "Find out what the office is waiting for.",
+          "before": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "Welcome, Detective. Everyone here is waiting for news."
+              },
+              {
+                "by": "speaker",
+                "text": "A box came for you from Seoul. A girl knows where."
+              },
+              {
+                "by": "detective",
+                "text": "Then I will look around."
+              }
+            ],
+            "finishLabel": "LOOK AROUND"
+          }
+        },
+        "discovery": {
+          "type": "newLead",
+          "title": "THE FIRST TILE",
+          "detail": "An H, with a water drop. Someone is leaving tiles for you."
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep12_m2",
+      "slot": "m2",
+      "placeId": "s5_seoul.c12_family_room",
+      "puzzle": {
+        "paletteId": "timeline_board",
+        "surface": "mission",
+        "engineTable": "timelines",
+        "missionType": "sequence",
+        "answerSpec": {
+          "answer": "bun_i,seok,okbun,duri,gyeongsun,miri",
+          "options": [
+            {
+              "id": "bun_i",
+              "label": "BUN-I"
+            },
+            {
+              "id": "seok",
+              "label": "SEOK"
+            },
+            {
+              "id": "okbun",
+              "label": "OKBUN"
+            },
+            {
+              "id": "duri",
+              "label": "DURI"
+            },
+            {
+              "id": "gyeongsun",
+              "label": "GYEONGSUN"
+            },
+            {
+              "id": "miri",
+              "label": "MIRI"
+            },
+            {
+              "id": "drawing",
+              "label": "A DRAWING"
+            }
+          ],
+          "codeLength": 6
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "The lid's lines (made up) put the four notes in one order: Seok before Okbun, Duri after Okbun, Gyeongsun after Duri. Bun-i's (1446) and Miri's (1941) are fixed. The drawing has no water drop: not a keeper's note.",
+          "Every card is made up (the keepers and their notes are the season's fiction); their years are declared in the dossier's fiction lines."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep08_e4",
+          "use": "recall",
+          "note": "The letter box Gyeongsun showed in 1919."
+        },
+        {
+          "ref": "s5_ep12_c1",
+          "use": "textMention",
+          "note": "The box was in the trunk."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep12_c2",
+        "evidence": "s5_ep12_e2"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "comprehension",
+        "objective": "뚜껑 안쪽 글의 before, after, oldest, on top을 읽고 쪽지들을 시간순으로 놓는다.",
+        "skill": "sentenceMeaning",
+        "expressions": [
+          "Seok wrote before Okbun.",
+          "It is the oldest."
+        ]
+      },
+      "play": {
+        "title": "Eleven Notes and One Box",
+        "location": "BITNA'S ROOM",
+        "story": [
+          "A girl with a long braid takes you to a small room.",
+          "\"I am Bitna. My mother Haesu keeps this box,\" she says.",
+          "She opens it. Six notes slide out onto the floor."
+        ],
+        "letterIntro": "Inside the lid, Haesu wrote:",
+        "letter": "Bun-i's note of 1446 lies at the bottom. It is the oldest.\nSeok wrote before Okbun.\nDuri wrote after Okbun.\nGyeongsun wrote after Duri.\nMiri's note of 1941 lies on top.\nOnly notes with a water drop go in the box.",
+        "question": "Put the notes back in order, from the oldest.",
+        "hints": [
+          "Bun-i and Miri are fixed. Read the lines with before and after.",
+          "The drawing has no water drop. Set it aside."
+        ],
+        "successMessage": "The notes are back in order!",
+        "transition": [
+          "Under the last note lie two more tiles: T and I.",
+          "Each has a tiny water drop painted on it.",
+          "Then shouts come from the office down the hall."
+        ],
+        "orderFeedback": "Read the lid again. Who wrote after Okbun?",
+        "mapX": 0.6,
+        "mapY": 0.55,
+        "clue": {
+          "title": "Two More Tiles",
+          "value": "TILES: T · I",
+          "note": "Two tiles, T and I, were under the last note.",
+          "symbol": "letter"
+        },
+        "evidence": {
+          "name": "Haesu's Lid",
+          "icon": "letter",
+          "description": "Haesu's lines inside the lid of the letter box: every keeper's note, from the oldest."
+        },
+        "recall": {
+          "title": "Is this the box?",
+          "prompt": "Which thing in your Notebook shows this old letter box?",
+          "miss": "Find the old letter box Gyeongsun showed you."
+        },
+        "timeline": {
+          "cards": [
+            {
+              "id": "bun_i",
+              "title": "BUN-I",
+              "text": "The first note, about a book hall roof.",
+              "anchor": "1446",
+              "fiction": true
+            },
+            {
+              "id": "seok",
+              "title": "SEOK",
+              "text": "A note from the navy base by the sea.",
+              "fiction": true
+            },
+            {
+              "id": "okbun",
+              "title": "OKBUN",
+              "text": "A note from the new fortress wall.",
+              "fiction": true
+            },
+            {
+              "id": "duri",
+              "title": "DURI",
+              "text": "A note from the palace timber yard.",
+              "fiction": true
+            },
+            {
+              "id": "gyeongsun",
+              "title": "GYEONGSUN",
+              "text": "A note from the market by the hill.",
+              "fiction": true
+            },
+            {
+              "id": "miri",
+              "title": "MIRI",
+              "text": "A note about a poet's copy.",
+              "anchor": "1941",
+              "fiction": true
+            },
+            {
+              "id": "drawing",
+              "title": "A DRAWING",
+              "text": "Bitna's drawing of a cat. No water drop.",
+              "discard": true,
+              "fiction": true
+            }
+          ],
+          "relations": [
+            {
+              "earlier": "seok",
+              "later": "okbun",
+              "line": "Seok wrote before Okbun."
+            },
+            {
+              "earlier": "okbun",
+              "later": "duri",
+              "line": "Duri wrote after Okbun."
+            },
+            {
+              "earlier": "duri",
+              "later": "gyeongsun",
+              "line": "Gyeongsun wrote after Duri."
+            }
+          ]
+        },
+        "talk": {
+          "speaker": "bitna",
+          "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp",
+          "goal": "Find out about the box.",
+          "before": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "Every note in here has a water drop."
+              },
+              {
+                "by": "speaker",
+                "text": "The first one is very, very old."
+              },
+              {
+                "by": "detective",
+                "text": "Let us put them back the right way."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "missionId": "s5_ep12_m3",
+      "slot": "m3",
+      "placeId": "s5_seoul.c12_office",
+      "puzzle": {
+        "paletteId": "number_entry",
+        "surface": "mission",
+        "engineTable": null,
+        "missionType": "numberCode",
+        "answerSpec": {
+          "answer": "815",
+          "codeLength": 3
+        },
+        "assetNeeds": [],
+        "status": "ready",
+        "notes": [
+          "The number is read in the words: the radio's 'the fifteenth of August' and Bitna's month card (August is month eight), written month before day: 815. The date is a checked fact (h3); the radio's words and the card are made up."
+        ]
+      },
+      "clueInputs": [
+        {
+          "ref": "s5_ep12_c2",
+          "use": "textMention",
+          "note": "The notes are in order; one more is to be written."
+        }
+      ],
+      "clueOutputs": {
+        "clue": "s5_ep12_c3",
+        "evidence": "s5_ep12_e3"
+      },
+      "learning": {
+        "dependency": "essential",
+        "level": "application",
+        "objective": "the fifteenth of August와 달 이름 카드(August is month eight)를 읽고, 달을 먼저 쓰는 한국식 날짜 815를 넣는다.",
+        "skill": "vocabulary",
+        "expressions": [
+          "the fifteenth of August",
+          "August is month eight."
+        ]
+      },
+      "play": {
+        "title": "News on the Radio",
+        "location": "THE GOVERNMENT OFFICE",
+        "story": [
+          "Everyone stands around the radio. A voice speaks in English.",
+          "People hold their breath. Then some of them cry.",
+          "Bitna takes out a new paper and her pen."
+        ],
+        "letterIntro": "The radio, and Bitna's month card:",
+        "letter": "Radio: \"Japan has surrendered to the Allies. Today is the fifteenth of August.\"\nBitna's card: June is month six. July is month seven.\nAugust is month eight. September is month nine.\nBitna: \"Korean dates put the month before the day.\"\n\"Write today's number on my note.\"",
+        "question": "What number goes on Bitna's note? Put it in.",
+        "hints": [
+          "Find August on Bitna's card. Then find the day on the radio.",
+          "Write the month, then the day of the month."
+        ],
+        "successMessage": "8.15: the fifteenth of August!",
+        "transition": [
+          "Bitna writes 8.15 at the top of her new note.",
+          "By the radio lie two more tiles: G and L.",
+          "\"Come to the river steps,\" Bitna says. \"I will show you.\""
+        ],
+        "feedback": {
+          "715": "July is month seven. The radio says August.",
+          "814": "Listen again: the fifteenth of August.",
+          "915": "September is month nine. The radio says August."
+        },
+        "orderFeedback": "The right numbers, in the wrong order. The month goes before the day.",
+        "mapX": 0.35,
+        "mapY": 0.45,
+        "clue": {
+          "title": "The Last Tiles",
+          "value": "TILES: G · L",
+          "note": "Two tiles, G and L, were by the radio.",
+          "symbol": "key"
+        },
+        "evidence": {
+          "name": "Bitna's Month Card",
+          "icon": "letter",
+          "description": "Bitna's card of month names. Today is 8.15: the fifteenth of August."
+        },
+        "talk": {
+          "speaker": "kim_wonbong",
+          "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp",
+          "goal": "Hear the news.",
+          "before": {
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "Quiet, everyone. The radio has news."
+              },
+              {
+                "by": "speaker",
+                "text": "We have waited a very long time for this."
+              }
+            ]
+          }
+        },
+        "discovery": {
+          "type": "storyDiscovery",
+          "title": "THE WAR IS OVER",
+          "detail": "Japan has surrendered. Bitna writes the date on the last note."
+        }
+      }
+    }
+  ],
+  "final": {
+    "missionId": "s5_ep12_final",
+    "slot": "final",
+    "placeId": "s5_seoul.c12_river_steps",
+    "puzzle": {
+      "paletteId": "letter_tile_lock",
+      "surface": "finalMission",
+      "engineTable": null,
+      "missionType": "letterLock",
+      "answerSpec": {
+        "answer": "LIGHT",
+        "options": [
+          {
+            "id": "h",
+            "label": "H"
+          },
+          {
+            "id": "t",
+            "label": "T"
+          },
+          {
+            "id": "i",
+            "label": "I"
+          },
+          {
+            "id": "g",
+            "label": "G"
+          },
+          {
+            "id": "l",
+            "label": "L"
+          }
+        ]
+      },
+      "assetNeeds": [],
+      "status": "ready",
+      "notes": [
+        "The season's letter-collecting final: the five tiles found in this case's missions (H; T, I; G, L, listed in that order so the letter never spells the answer) spell LIGHT, what gwang (光) means in gwangbok: the light returns (h5), on the day of Japan's surrender, 15 August 1945 (h3).",
+        "Liberation is never one person's work: the ending says the Allies won the war and many Koreans, at home and far away, worked for it (h3, h4)."
+      ]
+    },
+    "clueInputs": [
+      {
+        "ref": "s5_ep12_c1",
+        "use": "answerDerivation",
+        "note": "Tile H."
+      },
+      {
+        "ref": "s5_ep12_c2",
+        "use": "answerDerivation",
+        "note": "Tiles T and I."
+      },
+      {
+        "ref": "s5_ep12_c3",
+        "use": "answerDerivation",
+        "note": "Tiles G and L."
+      },
+      {
+        "ref": "s5_ep01_e3",
+        "use": "evidenceLink",
+        "note": "Bun-i's first note lies at the bottom of the box."
+      }
+    ],
+    "clueOutputs": {
+      "evidence": "s5_ep12_e4"
+    },
+    "learning": {
+      "dependency": "essential",
+      "level": "recall",
+      "objective": "광복의 뜻풀이(gwang = the opposite of dark, bok = it comes back)를 읽고 모은 다섯 타일로 LIGHT를 만든다.",
+      "skill": "vocabulary",
+      "expressions": [
+        "the opposite of dark",
+        "it comes back"
+      ],
+      "recallFrom": "s5_ep12_m3"
+    },
+    "play": {
+      "title": "The Last Water-Drop Note",
+      "location": "THE RIVER STEPS",
+      "story": [
+        "The sun goes down over the two rivers.",
+        "Bitna sits on the steps with the letter box.",
+        "\"The tiles were mine,\" she says. \"I am the keeper now.\""
+      ],
+      "letterIntro": "Bitna's new note, and what she tells you:",
+      "letter": "The note says one word: 광복 (gwangbok).\n\"Gwang (광) is the opposite of dark.\"\n\"Bok (복) means it comes back.\"\n\"You have five tiles: H, T, I, G, L.\"\n\"Spell what gwang means, in English.\"",
+      "question": "Spell the word with your five tiles.",
+      "hints": [
+        "Gwang is the opposite of dark.",
+        "Day is full of it; night has very little."
+      ],
+      "successMessage": "LIGHT. The light returns!",
+      "transition": [
+        "Bitna lays her note on top of the others.",
+        "Bun-i's first note lies under eleven more.",
+        "The box is full of light now. The season ends."
+      ],
+      "orderFeedback": "All five tiles are right. What is the opposite of dark?",
+      "mapX": 0.7,
+      "mapY": 0.75,
+      "evidence": {
+        "name": "The Last Note",
+        "icon": "seal",
+        "description": "Bitna's note of 8.15, 1945, with a water drop. One word: 광복, the light returns.",
+        "inscription": "광복: the light returns."
+      },
+      "evidenceLinkLine": "Bun-i's first note, from 1446, at the bottom of the box.",
+      "lockTitle": "THE KEEPERS' LAST LOCK",
+      "ending": [
+        {
+          "by": "narrator",
+          "text": "On 15 August 1945, Japan surrendered to the Allies."
+        },
+        {
+          "by": "narrator",
+          "text": "The war ended, and Korea's light returned: gwangbok."
+        },
+        {
+          "by": "narrator",
+          "text": "Kim Won-bong had worked for independence since 1919."
+        },
+        {
+          "by": "speaker",
+          "text": "No one person brought this day.",
+          "speaker": "kim_wonbong",
+          "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp"
+        },
+        {
+          "by": "speaker",
+          "text": "The Allies won the war, and many Koreans worked for it.",
+          "speaker": "kim_wonbong",
+          "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp"
+        },
+        {
+          "by": "speaker",
+          "text": "At home and far away. Most of their names are unknown.",
+          "speaker": "bitna",
+          "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp"
+        },
+        {
+          "by": "detective",
+          "text": "Bun-i's first note started it all.",
+          "evidence": "s5_ep01_e3"
+        },
+        {
+          "by": "speaker",
+          "text": "Gwangbok. The light returns.",
+          "speaker": "bitna",
+          "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp"
+        }
+      ]
+    }
+  },
+  "hook": "The radio in the office is on all day.",
+  "learningGoal": {
+    "title": "Reading dates, order and the meaning of gwangbok",
+    "titleKo": "날짜·순서·광복의 뜻 읽기"
+  },
+  "play": {
+    "objectives": [
+      "Find the letter box.",
+      "Put the keepers' notes in order.",
+      "Write the date of the news.",
+      "Read the last water-drop note."
+    ],
+    "intro": [
+      "August, 1945. You are a guest of the Provisional Government in Chongqing.",
+      "It is Korea's government in exile, far from home.",
+      "Kim Won-bong, a minister of the government, meets you at the door.",
+      "Miri sent the old letter box here from Seoul.",
+      "On your chair lies a small note with a water drop."
+    ],
+    "caseSummary": "Bitna, Haesu's daughter, was the last keeper. On 15 August 1945, Japan surrendered to the Allies and the war ended. Korea's light returned: gwangbok means the light comes back. The Allies won the war. Many Koreans, at home and far away, worked for this day too. Bitna's last note lies on top of Bun-i's first note.",
+    "place": "CHONGQING",
+    "keyWords": [
+      "trunk",
+      "before",
+      "after",
+      "date",
+      "light"
+    ],
+    "glossary": {
+      "trunk": "여행용 큰 상자, 트렁크",
+      "strap": "가죽 끈",
+      "brass": "놋쇠",
+      "surrendered": "항복했다",
+      "allies": "연합국",
+      "government": "정부",
+      "exile": "망명",
+      "minister": "장관(부장)",
+      "oldest": "가장 오래된",
+      "water-drop": "물방울 (표시)",
+      "independence": "독립"
+    }
+  },
+  "notes": [
+    "Season 5 Case 12, the season's end (PART 10, 2026-11-06). Kim Won-bong is real (minister of military affairs of the Provisional Government from 1944); everything he says and does here is made up. His life after 1945 is outside the case and never told.",
+    "Bitna, the trunks, the tiles, the radio's words, the month card and the river steps are made up. Haesu (Case 09-10) is named only, never shown: her portrait is planned by the Case 09 writer.",
+    "The case ends on checked facts: Japan's surrender on 15 August 1945, liberation from the Allied victory and many Koreans' work, and gwangbok meaning 'the light returns' (LIGHT)."
+  ]
+}

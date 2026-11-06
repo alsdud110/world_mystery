@@ -81,7 +81,7 @@ abstract final class WorldCities {
     name: 'Seoul',
     latitude: 37.57,
     longitude: 126.98,
-    // Season 5 (registered by hand, `lib/data/season5/`).
+    // Season 5 (made from its plans: its own place in [generatedWorldCities]).
     seasonId: SeasonIds.seoul,
     mapAt: Offset(1633 / 1983, 325 / 793),
   );

@@ -129,8 +129,9 @@ void main() {
       expect(File(f).existsSync(), isTrue, reason: f);
     }
     expect(season5Content.introBackdrops[seoulCase01Id], 'assets/seasons/season_05_seoul/cover/kings_study.webp');
-    // The evidence of the case is drawn with its words (no picture of the first design is left wired).
-    expect(ArtAssets.evidencePictures.keys.where((id) => id.startsWith('s5_')), isEmpty);
+    // Case 01's evidence is drawn with its words (no picture of the first
+    // design is left wired); the later cases' evidence pictures are their own.
+    expect(ArtAssets.evidencePictures.keys.where((id) => id.startsWith('s5_ep01_')), isEmpty);
   });
 
   testWidgets('another level from inside the pilot: a new session at that level, from the case\'s start', (t) async {
