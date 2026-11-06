@@ -227,6 +227,70 @@ void main() {
       expect(onDevice(), isEmpty);
       expect(prefs.getString('progress.case'), 'kept');
     });
+
+    test('a file gone from the device (its record kept): not intact; the next install fetches only it', () async {
+      _publish(bucket, {fa: a, fb: b});
+      final pack = _pack([fa, fb]);
+      await storage.install(pack, _Counting(bucket));
+      expect(storage.isIntact(pack), isTrue);
+
+      storage.fileOf(pack, fb).deleteSync();
+      expect(storage.isInstalled(pack), isTrue, reason: 'the record alone');
+      expect(storage.isIntact(pack), isFalse);
+      storage.fileOf(pack, fa).writeAsBytesSync([1]); // a's file cut short
+      expect(storage.isIntact(pack), isFalse);
+
+      final source = _Counting(bucket);
+      await storage.install(pack, source);
+      expect(source.opened, [fa.objectKey, fb.objectKey]);
+      expect(storage.isIntact(pack), isTrue);
+      expect(prefs.getString('progress.case'), 'kept');
+    });
+
+    test('not enough free space: nothing is downloaded; with room, it is', () async {
+      _publish(bucket, {fa: a, fb: b});
+      final pack = _pack([fa, fb]);
+      var free = SeasonPackStorage.spare; // 9 bytes short of the pack and its spare room
+      final tight = SeasonPackStorage(device, prefs, freeSpace: () async => free);
+      final source = _Counting(bucket);
+      await expectLater(tight.install(pack, source), throwsA(isA<SeasonPackNoSpace>().having((e) => e.needed, 'needed', 9)));
+      expect(source.opened, isEmpty);
+      expect(tight.isInstalled(pack), isFalse);
+
+      free = SeasonPackStorage.spare + 9;
+      await tight.install(pack, source);
+      expect(tight.isIntact(pack), isTrue);
+      // Installed: nothing to download, the free space is not asked again.
+      free = 0;
+      await tight.install(pack, source);
+    });
+
+    test('a write refused because the device is full is told apart from other file errors', () {
+      final full = Platform.isWindows ? 112 : 28;
+      expect(isNoSpace(FileSystemException('write', 'x', OSError('full', full))), isTrue);
+      expect(isNoSpace(const FileSystemException('write', 'x', OSError('denied', 13))), isFalse);
+      expect(isNoSpace(const FileSystemException('write', 'x')), isFalse);
+    });
+  });
+
+  group('the device', () {
+    test('iOS: the packs\' folder is excluded from backup; the free space is asked for the same folder', () async {
+      final calls = <MethodCall>[];
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(seasonPackChannel, (call) async {
+        calls.add(call);
+        return call.method == 'freeBytes' ? 123456789 : null;
+      });
+      addTearDown(() => TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(seasonPackChannel, null));
+      await excludeFromBackup(device);
+      expect(await freeBytes(device), 123456789);
+      expect([for (final c in calls) (c.method, c.arguments)], [('excludeFromBackup', device.path), ('freeBytes', device.path)]);
+    });
+
+    test('a device that cannot say: no exclusion, free space unknown, no error', () async {
+      // No handler: MissingPluginException, as on a platform without it.
+      await excludeFromBackup(device);
+      expect(await freeBytes(device), isNull);
+    });
   });
 
   group('reading the pictures', () {
@@ -333,6 +397,33 @@ void main() {
       expect(prefs.getString('progress.case'), 'kept');
     });
 
+    test('a pack whose files are gone: not installed at start, or once looked at again; its progress kept', () async {
+      _publishPack(bucket, SeasonPack.seoul);
+      await storage.install(SeasonPack.seoul.manifest, DirectorySeasonPackSource(bucket));
+      final setup = SeasonPackSetup(storage, DirectorySeasonPackSource(bucket));
+
+      // Gone while the app was running: seen when the season is entered.
+      final running = containerWith(setup);
+      addTearDown(running.dispose);
+      final packs = running.read(seasonPacksProvider.notifier);
+      expect(packs.needsDownload(SeasonIds.seoul), isFalse);
+      storage.fileOf(SeasonPack.seoul.manifest, SeasonPack.seoul.manifest.files[5]).deleteSync();
+      packs.recheck(SeasonIds.seoul);
+      expect(packs.needsDownload(SeasonIds.seoul), isTrue);
+
+      // Gone before the app started.
+      final again = containerWith(setup);
+      addTearDown(again.dispose);
+      expect(again.read(seasonPacksProvider.notifier).needsDownload(SeasonIds.seoul), isTrue);
+
+      final source = _Counting(bucket);
+      await again.read(seasonPacksProvider.notifier).download(SeasonIds.seoul);
+      expect(again.read(seasonPacksProvider.notifier).needsDownload(SeasonIds.seoul), isFalse);
+      await storage.install(SeasonPack.seoul.manifest, source);
+      expect(source.opened, isEmpty, reason: 'whole again');
+      expect(prefs.getString('progress.case'), 'kept');
+    });
+
     test('a pack installed earlier is ready when the app starts again', () async {
       _publishPack(bucket, SeasonPack.seoul);
       await storage.install(SeasonPack.seoul.manifest, DirectorySeasonPackSource(bucket));
@@ -415,8 +506,8 @@ void main() {
     }
 
     /// Lets the file reads run until [done] (or a few seconds).
-    Future<void> settleIo(WidgetTester tester, bool Function() done) async {
-      for (var i = 0; i < 300 && !done(); i++) {
+    Future<void> settleIo(WidgetTester tester, bool Function() done, {int tries = 300}) async {
+      for (var i = 0; i < tries && !done(); i++) {
         await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 20)));
         await tester.pump();
       }
@@ -429,6 +520,7 @@ void main() {
       await openDialog(tester);
       expect(find.text('Download Seoul?'), findsOneWidget);
       expect(find.textContaining(size), findsWidgets);
+      expect(find.textContaining('On mobile data, this download uses your data plan.'), findsOneWidget);
       await tester.tap(find.text('Not now'));
       await tester.pumpAndSettle();
       expect(answer, isFalse);
@@ -456,6 +548,25 @@ void main() {
       expect(answer, isTrue);
       expect(source.opened.first, broken.objectKey, reason: 'the files already checked are kept');
       expect(source.opened, hasLength(SeasonPack.seoul.manifest.files.length - 3));
+      expect(container.read(seasonPacksProvider.notifier).needsDownload(SeasonIds.seoul), isFalse);
+    });
+
+    testWidgets('a full device: "Not enough space", not the connection; with room, TRY AGAIN finishes', (tester) async {
+      await tester.runAsync(() async => _publishPack(bucket, SeasonPack.seoul));
+      var free = 0;
+      storage = SeasonPackStorage(device, prefs, freeSpace: () async => free);
+      await openDialog(tester);
+      await tester.tap(find.byKey(const ValueKey('season-download-go')));
+      await settleIo(tester, () => find.text('TRY AGAIN').evaluate().isNotEmpty);
+      expect(find.text('Not enough space'), findsOneWidget);
+      expect(find.textContaining('free space'), findsOneWidget);
+      expect(find.text('The download stopped'), findsNothing);
+      expect(source.opened, isEmpty);
+
+      free = 1 << 40;
+      await tester.tap(find.text('TRY AGAIN'));
+      await settleIo(tester, () => answer != null, tries: 1500); // the whole pack this time
+      expect(answer, isTrue);
       expect(container.read(seasonPacksProvider.notifier).needsDownload(SeasonIds.seoul), isFalse);
     });
 

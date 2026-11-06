@@ -64,6 +64,21 @@ class SeasonPackCorrupt implements Exception {
   String toString() => 'SeasonPackCorrupt(${check.name}: $path)';
 }
 
+/// The device has no room for the rest of a pack ([needed] bytes still to
+/// download): nothing more is written; what was checked before is kept.
+class SeasonPackNoSpace implements Exception {
+  const SeasonPackNoSpace(this.needed);
+  final int needed;
+
+  @override
+  String toString() => 'SeasonPackNoSpace($needed bytes)';
+}
+
+/// Whether [e] failed because the device is full: ENOSPC on Android and iOS,
+/// ERROR_HANDLE_DISK_FULL / ERROR_DISK_FULL on Windows.
+bool isNoSpace(FileSystemException e) =>
+    (Platform.isWindows ? const {39, 112} : const {28}).contains(e.osError?.errorCode);
+
 /// Asks a running [SeasonPackStorage.install] to stop.
 class SeasonPackCancel {
   bool _cancelled = false;
@@ -79,14 +94,32 @@ class SeasonPackCancel {
 /// failed or outdated download is never read; a retry keeps the files
 /// already checked. Nothing here touches the game's progress or rewards.
 class SeasonPackStorage {
-  SeasonPackStorage(this.root, this.prefs);
+  SeasonPackStorage(this.root, this.prefs, {this.freeSpace});
 
   final Directory root;
   final SharedPreferences prefs;
 
+  /// The bytes free where the packs are kept, or null when the device does
+  /// not say (checked before a download starts).
+  final Future<int?> Function()? freeSpace;
+
+  /// Room left free beyond a pack's own bytes.
+  static const spare = 20 * 1000 * 1000;
+
   static String _key(String folder) => 'season_pack.installed.$folder';
 
   bool isInstalled(SeasonPackManifest pack) => prefs.getString(_key(pack.folder)) == pack.version;
+
+  /// [isInstalled], and every file still on the device at its size (the
+  /// system or a restore may have removed them); not hashed again.
+  bool isIntact(SeasonPackManifest pack) =>
+      isInstalled(pack) && pack.files.every((f) => _has(pack, f));
+
+  /// [file] on the device at its size (renamed into place only after its check).
+  bool _has(SeasonPackManifest pack, SeasonPackFile file) {
+    final e = fileOf(pack, file);
+    return e.existsSync() && e.lengthSync() == file.bytes;
+  }
 
   Directory _dirOf(SeasonPackManifest pack) => Directory('${root.path}/${pack.folder}');
 
@@ -95,8 +128,9 @@ class SeasonPackStorage {
 
   /// Downloads what [pack] still lacks from [source], checks every file, then
   /// records it installed. [onProgress]: bytes in place so far of the
-  /// pack's total. Throws [SeasonPackCancelled], [SeasonPackCorrupt] or the
-  /// source's error; the files checked so far stay for the next try.
+  /// pack's total. Throws [SeasonPackCancelled], [SeasonPackCorrupt],
+  /// [SeasonPackNoSpace] or the source's error; the files checked so far
+  /// stay for the next try.
   Future<void> install(
     SeasonPackManifest pack,
     SeasonPackSource source, {
@@ -105,11 +139,17 @@ class SeasonPackStorage {
   }) async {
     final dir = _dirOf(pack)..createSync(recursive: true);
     final total = pack.totalBytes;
+    final missing = [
+      for (final f in pack.files)
+        if (!_has(pack, f)) f.bytes,
+    ].fold(0, (a, b) => a + b);
+    final free = missing == 0 ? null : await freeSpace?.call();
+    if (free != null && free < missing + spare) throw SeasonPackNoSpace(missing);
     var done = 0;
     for (final f in pack.files) {
       final target = fileOf(pack, f);
       // Renamed into place only after its check: the right size is enough.
-      if (target.existsSync() && target.lengthSync() == f.bytes) {
+      if (_has(pack, f)) {
         done += f.bytes;
         onProgress?.call(done, total);
         continue;
@@ -119,15 +159,22 @@ class SeasonPackStorage {
       final sink = part.openWrite();
       var got = 0;
       try {
-        await for (final chunk in source.open(f.objectKey)) {
-          if (cancel?.isCancelled ?? false) throw const SeasonPackCancelled();
-          sink.add(chunk);
-          got += chunk.length;
-          onProgress?.call(done + got, total);
+        try {
+          await for (final chunk in source.open(f.objectKey)) {
+            if (cancel?.isCancelled ?? false) throw const SeasonPackCancelled();
+            sink.add(chunk);
+            got += chunk.length;
+            onProgress?.call(done + got, total);
+          }
+          await sink.flush();
+        } finally {
+          await sink.close();
         }
-        await sink.flush();
-      } finally {
-        await sink.close();
+      } on FileSystemException catch (e) {
+        if (!isNoSpace(e)) rethrow;
+        if (part.existsSync()) part.deleteSync();
+        onProgress?.call(done, total);
+        throw SeasonPackNoSpace(total - done);
       }
       final check = await PackFileVerifier.checkStream(f, part.openRead());
       if (check != PackFileCheck.ok) {

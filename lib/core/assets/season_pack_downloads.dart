@@ -27,8 +27,14 @@ class SeasonPackSetup {
     const url = String.fromEnvironment('SEASON_PACK_URL', defaultValue: defaultUrl);
     final base = Uri.tryParse(url);
     if (kIsWeb || base == null || base.scheme != 'https' || !base.path.endsWith('/')) return null;
-    final dir = Directory('${(await getApplicationSupportDirectory()).path}/season_packs');
-    return SeasonPackSetup(SeasonPackStorage(dir, prefs), HttpSeasonPackSource(base));
+    final dir = Directory('${(await getApplicationSupportDirectory()).path}/season_packs')..createSync(recursive: true);
+    // Downloaded again whenever needed: kept out of iCloud backups (the
+    // game's progress and profile, elsewhere, are still backed up).
+    if (Platform.isIOS) await excludeFromBackup(dir);
+    return SeasonPackSetup(
+      SeasonPackStorage(dir, prefs, freeSpace: () => freeBytes(dir)),
+      HttpSeasonPackSource(base),
+    );
   }
 
   /// The R2 bucket's public URL. shortcut: an r2.dev URL is for development
@@ -37,6 +43,28 @@ class SeasonPackSetup {
 }
 
 final seasonPackSetupProvider = Provider<SeasonPackSetup?>((ref) => null);
+
+/// The app's own code for the packs' folder (MainActivity.kt, AppDelegate.swift).
+const seasonPackChannel = MethodChannel('world_mystery/season_packs');
+
+/// [dir] (and everything in it) left out of the device's backups (iOS).
+Future<void> excludeFromBackup(Directory dir) async {
+  try {
+    await seasonPackChannel.invokeMethod<void>('excludeFromBackup', dir.path);
+  } on Object catch (e) {
+    debugPrint('Season packs not excluded from backup: $e');
+  }
+}
+
+/// The bytes free on [dir]'s volume, or null when the device does not say.
+Future<int?> freeBytes(Directory dir) async {
+  try {
+    return await seasonPackChannel.invokeMethod<int>('freeBytes', dir.path);
+  } on Object catch (e) {
+    debugPrint('Free space unknown: $e');
+    return null;
+  }
+}
 
 /// Whether every season's pictures are inside the app (the default: tests,
 /// builds from before season packs). The app sets it from its asset list
@@ -54,12 +82,22 @@ Future<bool> seasonPacksInApp(AssetBundle bundle) async {
 /// downloads. London is always in the app; a season's unlock and its
 /// download are separate (nothing here reads or writes progress).
 class SeasonPacksNotifier extends Notifier<Set<String>> {
-  /// The folders of the packs installed at the app's manifest version.
+  /// The folders of the packs installed at the app's manifest version, with
+  /// all their files still on the device.
   @override
   Set<String> build() {
     final setup = ref.watch(seasonPackSetupProvider);
     if (setup == null) return const {};
-    return {for (final p in SeasonPack.all) if (setup.storage.isInstalled(p.manifest)) p.folder};
+    return {for (final p in SeasonPack.all) if (setup.storage.isIntact(p.manifest)) p.folder};
+  }
+
+  /// Season [seasonId]'s pack looked at again (before it is entered): a pack
+  /// whose files are gone from the device is downloaded again (only those
+  /// files; its progress and rewards are not touched).
+  void recheck(String seasonId) {
+    final pack = downloadOf(seasonId);
+    if (pack == null || !state.contains(pack.folder)) return;
+    if (!ref.read(seasonPackSetupProvider)!.storage.isIntact(pack.manifest)) state = {...state}..remove(pack.folder);
   }
 
   /// The pack season [seasonId] downloads, or null: it plays from the app.

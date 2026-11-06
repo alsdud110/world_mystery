@@ -3,6 +3,7 @@ package com.worldmystery.app
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.os.StatFs
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -63,6 +64,20 @@ class MainActivity : FlutterActivity() {
                 else -> result.notImplemented()
             }
         }
+        // The season packs' folder (season_pack_downloads.dart): the space
+        // free on its volume, checked before a download. Android's backups
+        // are off (allowBackup="false"): nothing to exclude here.
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "world_mystery/season_packs")
+            .setMethodCallHandler { call, result ->
+                when (call.method) {
+                    "freeBytes" -> try {
+                        result.success(StatFs(call.arguments as String).availableBytes)
+                    } catch (e: Exception) {
+                        result.error("freeBytes", e.message, null)
+                    }
+                    else -> result.notImplemented()
+                }
+            }
     }
 
     private companion object {

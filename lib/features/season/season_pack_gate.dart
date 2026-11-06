@@ -19,12 +19,13 @@ import '../game/game_providers.dart';
 /// are not touched here.
 abstract final class SeasonPackGate {
   /// True once season [seasonId] can be played (at once when nothing must be
-  /// downloaded); false when the detective said not now or stopped.
+  /// downloaded); false when the detective said not now or stopped. A pack
+  /// whose files are gone from the device is asked for again.
   static Future<bool> ensure(BuildContext context, WidgetRef ref, String seasonId) async {
     // A season that cannot be entered (locked, not ready) is refused by
     // `GameController.openSeason` with its own reason, never downloaded.
     final enterable = ref.read(seasonAvailabilityProvider(seasonId))?.canEnter ?? false;
-    final packs = ref.read(seasonPacksProvider.notifier);
+    final packs = ref.read(seasonPacksProvider.notifier)..recheck(seasonId);
     if (!enterable || !packs.needsDownload(seasonId)) return true;
     if (packs.isMissing(seasonId)) {
       showGameToast(context, 'This file is not in this version of the game.', glyph: InkGlyph.seal);
@@ -43,7 +44,7 @@ abstract final class SeasonPackGate {
 /// "150.8 MB".
 String megabytes(int bytes) => '${(bytes / 1000000).toStringAsFixed(1)} MB';
 
-enum _Phase { ask, downloading, failed }
+enum _Phase { ask, downloading, failed, noSpace }
 
 class SeasonDownloadDialog extends ConsumerStatefulWidget {
   const SeasonDownloadDialog({super.key, required this.seasonId});
@@ -75,6 +76,9 @@ class _SeasonDownloadDialogState extends ConsumerState<SeasonDownloadDialog> {
       if (mounted && !cancel.isCancelled) Navigator.of(context).pop(true);
     } on SeasonPackCancelled {
       // Closed already by STOP.
+    } on SeasonPackNoSpace catch (e) {
+      debugPrint('Season pack download failed: $e');
+      if (mounted && !cancel.isCancelled) setState(() => _phase = _Phase.noSpace);
     } catch (e) {
       debugPrint('Season pack download failed: $e');
       if (mounted && !cancel.isCancelled) setState(() => _phase = _Phase.failed);
@@ -95,12 +99,18 @@ class _SeasonDownloadDialogState extends ConsumerState<SeasonDownloadDialog> {
       _Phase.ask => (
         'Download $name?',
         '${season == null ? '' : '${season.label} · ${season.title}\n'}'
-            'The case pictures for $name: $size.\nOnce they are here, the season plays without the internet.',
+            'The case pictures for $name: $size.\nOnce they are here, the season plays without the internet.\n'
+            'On mobile data, this download uses your data plan.',
       ),
       _Phase.downloading => ('Downloading $name', '${megabytes(_done)} of $size'),
       _Phase.failed => (
         'The download stopped',
         'Check the connection and try again. What was already downloaded is kept, and your cases and rewards are safe.',
+      ),
+      _Phase.noSpace => (
+        'Not enough space',
+        '$name needs about $size of free space on this device. Free up some space and try again. '
+            'What was already downloaded is kept, and your cases and rewards are safe.',
       ),
     };
     return PopScope(

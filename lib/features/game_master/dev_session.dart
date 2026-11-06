@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 
+import '../../core/assets/season_pack_downloads.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/router/app_router.dart';
 import '../../core/theme/app_colors.dart';
@@ -179,6 +180,9 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
         profileSessionProvider.overrideWithValue(ProfileSession(profile: tester)),
         // The same content, maps and build as the player's game.
         episodeRepositoryProvider.overrideWithValue(_own.read(episodeRepositoryProvider)),
+        // The device's season packs: the ones downloaded, and where from.
+        seasonPackSetupProvider.overrideWithValue(_own.read(seasonPackSetupProvider)),
+        seasonPacksInAppProvider.overrideWithValue(_own.read(seasonPacksInAppProvider)),
         // Seoul Case 01's: the same (Seoul is a season of the game).
         if (pilotLevel != null)
           ...pilotOverrides(season5Content, seoulCase01Id, pilotLevel, own: _own)
