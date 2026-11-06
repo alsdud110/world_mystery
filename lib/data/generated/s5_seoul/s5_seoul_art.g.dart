@@ -47,6 +47,109 @@ const _s5Ep01Map = SeasonMap(
   namesClearOfCurrent: true,
 );
 
+// The places of s5_ep02 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_02_map.webp (sha256:904d42e43f703821…).
+const _s5Ep02StoreRoom = SeasonLandmark('store_room', 'The Store Room', Offset(335 / 1536, 662 / 1024));
+const _s5Ep02TurtleShip = SeasonLandmark('turtle_ship', 'The Turtle Ship', Offset(1240 / 1536, 582 / 1024));
+
+/// The Mission Map of case s5_ep02.
+const _s5Ep02Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_02_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep02StoreRoom, _s5Ep02TurtleShip],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep02_m1': _s5Ep02StoreRoom,
+    's5_ep02_m2': _s5Ep02StoreRoom,
+    's5_ep02_m3': _s5Ep02TurtleShip,
+    's5_ep02_final': _s5Ep02TurtleShip,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep02_m1': Offset(335 / 1536, 650 / 1024),
+    's5_ep02_m2': Offset(430 / 1536, 400 / 1024),
+    's5_ep02_m3': Offset(1240 / 1536, 570 / 1024),
+    's5_ep02_final': Offset(1030 / 1536, 625 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
+// The places of s5_ep03 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_03_map.webp (sha256:745d1292a1cec003…).
+const _s5Ep03StoneYard = SeasonLandmark('stone_yard', 'The Stone Yard', Offset(715 / 1536, 632 / 1024));
+const _s5Ep03DrawingRoom = SeasonLandmark('drawing_room', 'The Drawing Room', Offset(255 / 1536, 297 / 1024));
+const _s5Ep03NewWall = SeasonLandmark('new_wall', 'The New Wall', Offset(1190 / 1536, 297 / 1024));
+
+/// The Mission Map of case s5_ep03.
+const _s5Ep03Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_03_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep03StoneYard, _s5Ep03DrawingRoom, _s5Ep03NewWall],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep03_m1': _s5Ep03StoneYard,
+    's5_ep03_m3': _s5Ep03StoneYard,
+    's5_ep03_m2': _s5Ep03DrawingRoom,
+    's5_ep03_final': _s5Ep03NewWall,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep03_m1': Offset(715 / 1536, 620 / 1024),
+    's5_ep03_m3': Offset(930 / 1536, 730 / 1024),
+    's5_ep03_m2': Offset(255 / 1536, 285 / 1024),
+    's5_ep03_final': Offset(1190 / 1536, 285 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
+// The places of s5_ep04 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_04_map.webp (sha256:46d2ef3949663c0a…).
+const _s5Ep04TimberYard = SeasonLandmark('timber_yard', 'The Timber Yard', Offset(290 / 1536, 672 / 1024));
+const _s5Ep04YardOffice = SeasonLandmark('yard_office', 'The Yard Office', Offset(810 / 1536, 802 / 1024));
+const _s5Ep04PalaceSite = SeasonLandmark('palace_site', 'The Palace Site', Offset(960 / 1536, 472 / 1024));
+
+/// The Mission Map of case s5_ep04.
+const _s5Ep04Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_04_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep04TimberYard, _s5Ep04YardOffice, _s5Ep04PalaceSite],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep04_m1': _s5Ep04TimberYard,
+    's5_ep04_m2': _s5Ep04YardOffice,
+    's5_ep04_m3': _s5Ep04PalaceSite,
+    's5_ep04_final': _s5Ep04PalaceSite,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep04_m1': Offset(290 / 1536, 660 / 1024),
+    's5_ep04_m2': Offset(810 / 1536, 790 / 1024),
+    's5_ep04_m3': Offset(960 / 1536, 460 / 1024),
+    's5_ep04_final': Offset(1160 / 1536, 300 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
+// The places of s5_ep05 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_05_map.webp (sha256:0fdc2f37e44a6b9e…).
+const _s5Ep05LampHouse = SeasonLandmark('lamp_house', 'The Lamp House', Offset(705 / 1536, 917 / 1024));
+const _s5Ep05QueenCourt = SeasonLandmark('queen_court', 'The Queen\'s Court', Offset(1047 / 1536, 372 / 1024));
+const _s5Ep05KingHall = SeasonLandmark('king_hall', 'Jangandang, The King\'s Hall', Offset(345 / 1536, 357 / 1024));
+
+/// The Mission Map of case s5_ep05.
+const _s5Ep05Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_05_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep05LampHouse, _s5Ep05QueenCourt, _s5Ep05KingHall],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep05_m1': _s5Ep05LampHouse,
+    's5_ep05_m2': _s5Ep05QueenCourt,
+    's5_ep05_m3': _s5Ep05QueenCourt,
+    's5_ep05_final': _s5Ep05KingHall,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep05_m1': Offset(705 / 1536, 905 / 1024),
+    's5_ep05_m2': Offset(1047 / 1536, 360 / 1024),
+    's5_ep05_m3': Offset(1175 / 1536, 265 / 1024),
+    's5_ep05_final': Offset(345 / 1536, 345 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
 /// The Mission Map of season s5_seoul: every mission at its place's landmark.
 const s5SeoulMap = SeasonMap(
   artwork: 'assets/seasons/season_05_seoul/locations/map/season_map.webp',
@@ -105,7 +208,7 @@ const s5SeoulMap = SeasonMap(
   },
   groupHeights: <MapLandmark, double>{_royalPalace: 0.6, _harbin: 0.6},
   namesClearOfCurrent: true,
-  caseMaps: <String, SeasonMap>{'s5_ep01': _s5Ep01Map},
+  caseMaps: <String, SeasonMap>{'s5_ep01': _s5Ep01Map, 's5_ep02': _s5Ep02Map, 's5_ep03': _s5Ep03Map, 's5_ep04': _s5Ep04Map, 's5_ep05': _s5Ep05Map},
 );
 
 /// Its cover (portrait, no text) and how the screens frame it.

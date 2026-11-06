@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "spentUsd": 4.3651740000000006,
+  "spentUsd": 4.537564000000001,
   "reviewed": [
     "s5_seoul.asset.aunae_market",
     "s5_seoul.asset.bae",
@@ -48,6 +48,10 @@
     "s5_seoul.asset.c12_trunk_one_strap_lock",
     "s5_seoul.asset.c12_trunk_one_strap_peg",
     "s5_seoul.asset.c12_trunk_two_straps",
+    "s5_seoul.asset.case_02_map",
+    "s5_seoul.asset.case_03_map",
+    "s5_seoul.asset.case_04_map",
+    "s5_seoul.asset.case_05_map",
     "s5_seoul.asset.case_solved_dawn",
     "s5_seoul.asset.copy_room",
     "s5_seoul.asset.dong_il",
@@ -202,9 +206,14 @@
       "at": "2026-11-06T05:38:02.964157Z",
       "calls": 9,
       "spentUsd": 0.408151
+    },
+    {
+      "at": "2026-11-06T09:02:41.851Z",
+      "calls": 4,
+      "spentUsd": 0.17239
     }
   ],
-  "budgetUsd": 12.0,
+  "budgetUsd": 12,
   "budgetFrom": "content_pipeline/image_budgets.json",
   "deploy": {
     "folder": "season_05_seoul",

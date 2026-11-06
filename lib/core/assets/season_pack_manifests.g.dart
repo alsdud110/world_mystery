@@ -443,7 +443,7 @@ const seasonPackManifests = <String, SeasonPackManifest>{
   ),
   'season_05_seoul': SeasonPackManifest(
     folder: 'season_05_seoul',
-    version: '1e59ba509f1d0291',
+    version: '663effa47b5614d8',
     files: [
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_01/gate_ledger.webp', 1103188, '9135e8f1a8b534bf3f458bd20eb79124cb3233b6f8c8635f9629365f4beab7ec'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_01/letter_found.webp', 652722, '418292363bb313141934f39a5f804bda24805ccdce332f71e51d28fdedc0a4d3'),
@@ -530,6 +530,10 @@ const seasonPackManifests = <String, SeasonPackManifest>{
       SeasonPackFile('assets/seasons/season_05_seoul/locations/book_hall_rain.webp', 597796, '9801627171848c590e80e7ae907d3bff144e9f5a8c4c11232a78ff7a8d6b0066'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/copy_room.webp', 518196, '252de85bcb4c029b41a3d3ec91cc1663ab49cdff867cbce6f5ee0076d0bed109'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/gate_courtyard.webp', 561612, '08021fd107cd4e1b6d5e16074b3ea79d215bc73193d9907e74e09a52197fa5e6'),
+      SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_02_map.webp', 551654, '904d42e43f703821c6538ed09a9fb22a238737386ee9c0e4105d05781d050c72'),
+      SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_03_map.webp', 632016, '745d1292a1cec0036b68aece9765fe1d8b878bdcbc02578e67d445fb20e5c5df'),
+      SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_04_map.webp', 612580, '46d2ef3949663c0af3c430a87893f4b546c08a10916b2c429d5e78ecfe3245c0'),
+      SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_05_map.webp', 569350, '0fdc2f37e44a6b9e472f7c24c88bc9658d3e2c19eef41c786b9343348a74956b'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/map/palace_map.webp', 579298, '712f1c34f64518cad2db85c6ceaeebd5b639cc96ea5534a8b631ac33d22f588a'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/map/season_map.webp', 616188, 'c5879b75a31ba56e42221096a5fd5dc2313821d433919bedcab1357e5739d989'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/palace_night.webp', 528334, '2f9b1fc801ce56bdf79cfca8bbc53994dfa1a7c449e3509e2ebc2242c16ba174'),

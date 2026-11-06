@@ -35,6 +35,36 @@ const case01Spots = <String, (String, Offset)>{
   's5_ep01_final': ('The Book Hall', Offset(265 / 1536, 365 / 1024)),
 };
 
+/// Cases 02-05 on their own maps: each mission's place and spot, in pixels.
+const ownMaps = <String, Map<String, (String, double, double)>>{
+  's5_ep02': {
+    's5_ep02_m1': ('The Store Room', 335, 650),
+    's5_ep02_m2': ('The Store Room', 430, 400),
+    's5_ep02_m3': ('The Turtle Ship', 1240, 570),
+    's5_ep02_final': ('The Turtle Ship', 1030, 625),
+  },
+  's5_ep03': {
+    's5_ep03_m1': ('The Stone Yard', 715, 620),
+    's5_ep03_m2': ('The Drawing Room', 255, 285),
+    's5_ep03_m3': ('The Stone Yard', 930, 730),
+    's5_ep03_final': ('The New Wall', 1190, 285),
+  },
+  's5_ep04': {
+    's5_ep04_m1': ('The Timber Yard', 290, 660),
+    's5_ep04_m2': ('The Yard Office', 810, 790),
+    's5_ep04_m3': ('The Palace Site', 960, 460),
+    's5_ep04_final': ('The Palace Site', 1160, 300),
+  },
+  's5_ep05': {
+    's5_ep05_m1': ('The Lamp House', 705, 905),
+    's5_ep05_m2': ("The Queen's Court", 1047, 360),
+    's5_ep05_m3': ("The Queen's Court", 1175, 265),
+    's5_ep05_final': ("Jangandang, The King's Hall", 345, 345),
+  },
+};
+
+String mapFile(String caseId) => 'assets/seasons/season_05_seoul/locations/map/case_${caseId.substring(5)}_map.webp';
+
 void main() {
   final seoul = SeasonMap.forSeason(SeasonIds.seoul)!;
   Episode seoulCase(String id) => MockEpisodeRepository.bundled().firstWhere((e) => e.id == id);
@@ -50,7 +80,7 @@ void main() {
     });
 
     test('a case without its own map stays on the season map', () {
-      for (var n = 2; n <= 12; n++) {
+      for (var n = 6; n <= 12; n++) {
         final id = 's5_ep${n.toString().padLeft(2, '0')}';
         expect(seoul.forCase(id), same(seoul), reason: id);
       }
@@ -75,6 +105,25 @@ void main() {
       }
       expect({for (final p in places.values) p}, hasLength(4));
     });
+
+    for (final MapEntry(key: caseId, value: spots) in ownMaps.entries) {
+      test('$caseId is played on its own map, each mission at its spot, on the file it was measured on', () {
+        final episode = seoulCase(caseId);
+        final map = seoul.forCase(caseId);
+        expect(map.artwork, mapFile(caseId));
+        expect(map.pixels, const Size(1536, 1024));
+        final planned = PlanFiles.loadSeasonPlan(seasonPlan).art!.caseMaps[caseId]!;
+        expect(planned.measuredOn, ContentHash.ofBytes(File(map.artwork).readAsBytesSync()));
+        final places = MapWorld.places(episode, map: map);
+        expect(places.keys, unorderedEquals(spots.keys));
+        for (final MapEntry(key: id, value: (name, x, y)) in spots.entries) {
+          expect(places[id], Offset(x / 1536, y / 1024), reason: id);
+          expect(map.landmarkFor(id, caseId)!.name, name, reason: id);
+          expect(episode.allMissions.firstWhere((m) => m.id == id).location.toLowerCase(), name.toLowerCase(), reason: id);
+        }
+        expect({for (final p in places.values) p}, hasLength(4), reason: 'four missions, four pins, even at two places');
+      });
+    }
 
     test('the other seasons have none: their places are as they were', () {
       for (final id in [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork]) {
@@ -201,8 +250,24 @@ void main() {
       await t.pump(const Duration(seconds: 3));
     });
 
+    for (final caseId in ownMaps.keys) {
+      testWidgets('$caseId opens on its own map, the places not open yet not named', (t) async {
+        final c = await playSeoul(caseId);
+        addTearDown(c.dispose);
+        await pumpMap(t, c);
+        expect(shows(mapFile(caseId)), isTrue);
+        expect(shows(seasonMapFile), isFalse);
+        expect(shows(palaceMap), isFalse);
+        for (final (name, _, _) in ownMaps[caseId]!.values) {
+          expect(named(name), findsNothing, reason: name);
+        }
+        expect(t.takeException(), isNull);
+        await t.pump(const Duration(seconds: 3));
+      });
+    }
+
     testWidgets('moving to a case without its own map brings back the season map and its names', (t) async {
-      final c = await playSeoul('s5_ep02');
+      final c = await playSeoul('s5_ep06');
       addTearDown(c.dispose);
       await pumpMap(t, c);
       expect(shows(seasonMapFile), isTrue);

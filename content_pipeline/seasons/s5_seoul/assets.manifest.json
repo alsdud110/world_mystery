@@ -331,6 +331,90 @@
       ]
     },
     {
+      "assetId": "s5_seoul.asset.case_02_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep02"
+      ],
+      "description": "The Mission Map of Case 02: the navy base at Yeosu, 1592, its store room and its turtle ship.",
+      "prompt": "An illustrated storybook picture map of a Joseon navy base at Yeosu on the south coast of Korea, spring 1592, just before dawn. In the left half of the picture, on the shore, one long wooden navy store house with a plank roof, drawn large, about a third of the picture wide, with barrels and coils of rope stacked at its door. In the right half, moored at a long stone quay, one single large wooden turtle ship, about a third of the picture wide: its deck covered with a curved roof of planks like a turtle's back with rows of short iron spikes, a carved dragon's head at its front, its oars resting. Calm harbour water between and below them, low green hills along the top. No other large ship, no battle. Warm low amber light of dawn or dusk over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_02_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.case_03_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "The Mission Map of Case 03: the Hwaseong building site, 1795, its stone yard, its drawing room and its new wall.",
+      "prompt": "An illustrated storybook picture map of the Hwaseong fortress building site at Suwon, Joseon Korea, spring 1795, in the early morning. In the lower middle, drawn large and about two fifths of the picture wide, an open stone yard of bare earth with piles of cut granite blocks, wooden carts, and one tall wooden lifting machine shaped like a gate with ropes and pulleys. In the upper left, well apart from the yard, one plain wooden builders' office with a tiled roof and paper doors. In the upper right, well apart from both, a new stone fortress wall, half built, running across the picture with a gate tower. Low green hills along the top edge. Warm low amber light of dawn or dusk over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_03_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.case_04_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "description": "The Mission Map of Case 04: Gyeongbokgung being rebuilt, winter 1866, its timber yard, its yard office and its palace site.",
+      "prompt": "An illustrated storybook picture map of the rebuilding of the great Joseon palace Gyeongbokgung in Hanyang, winter 1866, in pale early morning, a little snow on the ground. In the lower left, drawn large and about a third of the picture wide, an open timber yard with long stacks of huge pine logs. In the lower middle, at the right edge of the yard and clearly separate from the log stacks, one small wooden yard office hut with a tiled roof. In the upper right, drawn large and about two fifths of the picture wide, the palace site: a huge two-storey throne hall with its wooden frame up, its roof half tiled, wrapped in scaffolding of poles and ropes, standing on a wide stone courtyard. Grey mountains along the top edge. Warm low amber light of dawn or dusk over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_04_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.case_05_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "The Mission Map of Case 05: Geoncheonggung at the back of Gyeongbokgung, 1895, its lamp house, the Queen's court and Jangandang.",
+      "prompt": "An illustrated storybook picture map of Geoncheonggung, the quiet residence at the back of the Joseon palace in Hanyang, autumn 1895, at grey dawn, with no people at all. In the lower middle, a palace pond with a small round-roofed pavilion on an island and a little wooden bridge; on the south bank of the pond, at the bottom of the picture, one small brick-and-timber lamp house with a short iron chimney, clearly apart from the pond. In the upper left, a plain unpainted wooden residential hall with paper doors and a raised veranda, in the style of a noble house, with its own walled yard: the King's hall. In the upper right, well apart from it behind a low tiled wall, a larger walled inner court with a plain wooden residential hall, a small two-storey wing at its corner, a small gate in its wall and a wide open court in front of it, with one tall electric lamp post. Autumn trees, low mountains along the top edge. Warm low amber light of dawn or dusk over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_05_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
       "assetId": "s5_seoul.asset.c02_store_room",
       "type": "place",
       "use": "seasonPlace",

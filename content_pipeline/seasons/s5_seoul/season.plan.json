@@ -752,6 +752,45 @@
           { "spotId": "writing_room", "name": "The Writing Room", "at": [1280, 217], "missions": { "s5_ep01_m3": [1280, 205] } },
           { "spotId": "book_hall", "name": "The Book Hall", "at": [265, 377], "missions": { "s5_ep01_final": [265, 365] } }
         ]
+      },
+      "s5_ep02": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_02_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:904d42e43f703821c6538ed09a9fb22a238737386ee9c0e4105d05781d050c72",
+        "landmarks": [
+          { "spotId": "store_room", "name": "The Store Room", "at": [335, 662], "missions": { "s5_ep02_m1": [335, 650], "s5_ep02_m2": [430, 400] } },
+          { "spotId": "turtle_ship", "name": "The Turtle Ship", "at": [1240, 582], "missions": { "s5_ep02_m3": [1240, 570], "s5_ep02_final": [1030, 625] } }
+        ]
+      },
+      "s5_ep03": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_03_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:745d1292a1cec0036b68aece9765fe1d8b878bdcbc02578e67d445fb20e5c5df",
+        "landmarks": [
+          { "spotId": "stone_yard", "name": "The Stone Yard", "at": [715, 632], "missions": { "s5_ep03_m1": [715, 620], "s5_ep03_m3": [930, 730] } },
+          { "spotId": "drawing_room", "name": "The Drawing Room", "at": [255, 297], "missions": { "s5_ep03_m2": [255, 285] } },
+          { "spotId": "new_wall", "name": "The New Wall", "at": [1190, 297], "missions": { "s5_ep03_final": [1190, 285] } }
+        ]
+      },
+      "s5_ep04": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_04_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:46d2ef3949663c0af3c430a87893f4b546c08a10916b2c429d5e78ecfe3245c0",
+        "landmarks": [
+          { "spotId": "timber_yard", "name": "The Timber Yard", "at": [290, 672], "missions": { "s5_ep04_m1": [290, 660] } },
+          { "spotId": "yard_office", "name": "The Yard Office", "at": [810, 802], "missions": { "s5_ep04_m2": [810, 790] } },
+          { "spotId": "palace_site", "name": "The Palace Site", "at": [960, 472], "missions": { "s5_ep04_m3": [960, 460], "s5_ep04_final": [1160, 300] } }
+        ]
+      },
+      "s5_ep05": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_05_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:0fdc2f37e44a6b9e472f7c24c88bc9658d3e2c19eef41c786b9343348a74956b",
+        "landmarks": [
+          { "spotId": "lamp_house", "name": "The Lamp House", "at": [705, 917], "missions": { "s5_ep05_m1": [705, 905] } },
+          { "spotId": "queen_court", "name": "The Queen's Court", "at": [1047, 372], "missions": { "s5_ep05_m2": [1047, 360], "s5_ep05_m3": [1175, 265] } },
+          { "spotId": "king_hall", "name": "Jangandang, The King's Hall", "at": [345, 357], "missions": { "s5_ep05_final": [345, 345] } }
+        ]
       }
     },
     "worldCity": {
