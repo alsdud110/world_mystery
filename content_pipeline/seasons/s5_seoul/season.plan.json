@@ -791,6 +791,44 @@
           { "spotId": "queen_court", "name": "The Queen's Court", "at": [1047, 372], "missions": { "s5_ep05_m2": [1047, 360], "s5_ep05_m3": [1175, 265] } },
           { "spotId": "king_hall", "name": "Jangandang, The King's Hall", "at": [345, 357], "missions": { "s5_ep05_final": [345, 345] } }
         ]
+      },
+      "s5_ep06": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_06_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:78f04bcc80ae13843261f40348bd3439551865069edd199cd16763e8fbe83fa0",
+        "landmarks": [
+          { "spotId": "palace_garden", "name": "The Palace Garden", "at": [1027, 412], "missions": { "s5_ep06_m1": [1027, 400], "s5_ep06_m2": [1100, 853] } },
+          { "spotId": "west_lane", "name": "The West Lane", "at": [640, 652], "missions": { "s5_ep06_m3": [640, 640] } },
+          { "spotId": "yi_jun_house", "name": "Yi Jun's House", "at": [287, 652], "missions": { "s5_ep06_final": [287, 640] } }
+        ]
+      },
+      "s5_ep07": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_07_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:ed2f35cca546e810f7994176aff43966f37146b024f9641f7b57745dc8ffd631",
+        "landmarks": [
+          { "spotId": "kang_inn", "name": "Mrs. Kang's Inn", "at": [215, 852], "missions": { "s5_ep07_m1": [215, 840], "s5_ep07_m3": [427, 667], "s5_ep07_final": [820, 587] } },
+          { "spotId": "tea_room", "name": "The Station Tea Room", "at": [1013, 445], "missions": { "s5_ep07_m2": [1013, 433] } }
+        ]
+      },
+      "s5_ep08": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_08_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:e4fa3f01f017d44f93b70ba5d9cd875b38e29e82d5b7e19712097c5eb9fec0c4",
+        "landmarks": [
+          { "spotId": "aunae_market", "name": "Aunae Market", "at": [360, 652], "missions": { "s5_ep08_m1": [360, 640] } },
+          { "spotId": "gwansun_home", "name": "Gwan-sun's Home", "at": [1130, 737], "missions": { "s5_ep08_m2": [1130, 725], "s5_ep08_m3": [1240, 660] } },
+          { "spotId": "maebong_hill", "name": "Maebong Hill", "at": [833, 172], "missions": { "s5_ep08_final": [833, 160] } }
+        ]
+      },
+      "s5_ep09": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_09_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:22548a3970c28c901800d90c647914316a1c481bc89fe52f972a9775fbd331ec",
+        "landmarks": [
+          { "spotId": "shanghai_lane", "name": "A Lane in Shanghai", "at": [360, 705], "missions": { "s5_ep09_m1": [360, 693] } },
+          { "spotId": "government_office", "name": "The Government Office", "at": [967, 342], "missions": { "s5_ep09_m2": [967, 330], "s5_ep09_m3": [1150, 350], "s5_ep09_final": [1345, 400] } }
+        ]
       }
     },
     "worldCity": {

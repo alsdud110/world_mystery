@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,6 +14,7 @@ import 'package:world_mystery/features/game/game_controller.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/features/mission_map/map_world.dart';
 import 'package:world_mystery/features/mission_map/mission_map_screen.dart';
+import 'package:world_mystery/features/mission_map/widgets/map_pin.dart';
 import 'package:world_mystery/features/season/widgets/season_props.dart';
 
 import '../tool/season_gen/content_hash.dart';
@@ -35,7 +37,7 @@ const case01Spots = <String, (String, Offset)>{
   's5_ep01_final': ('The Book Hall', Offset(265 / 1536, 365 / 1024)),
 };
 
-/// Cases 02-05 on their own maps: each mission's place and spot, in pixels.
+/// Cases 02-09 on their own maps: each mission's place and spot, in pixels.
 const ownMaps = <String, Map<String, (String, double, double)>>{
   's5_ep02': {
     's5_ep02_m1': ('The Store Room', 335, 650),
@@ -61,6 +63,30 @@ const ownMaps = <String, Map<String, (String, double, double)>>{
     's5_ep05_m3': ("The Queen's Court", 1175, 265),
     's5_ep05_final': ("Jangandang, The King's Hall", 345, 345),
   },
+  's5_ep06': {
+    's5_ep06_m1': ('The Palace Garden', 1027, 400),
+    's5_ep06_m2': ('The Palace Garden', 1100, 853),
+    's5_ep06_m3': ('The West Lane', 640, 640),
+    's5_ep06_final': ("Yi Jun's House", 287, 640),
+  },
+  's5_ep07': {
+    's5_ep07_m1': ("Mrs. Kang's Inn", 215, 840),
+    's5_ep07_m2': ('The Station Tea Room', 1013, 433),
+    's5_ep07_m3': ("Mrs. Kang's Inn", 427, 667),
+    's5_ep07_final': ("Mrs. Kang's Inn", 820, 587),
+  },
+  's5_ep08': {
+    's5_ep08_m1': ('Aunae Market', 360, 640),
+    's5_ep08_m2': ("Gwan-sun's Home", 1130, 725),
+    's5_ep08_m3': ("Gwan-sun's Home", 1240, 660),
+    's5_ep08_final': ('Maebong Hill', 833, 160),
+  },
+  's5_ep09': {
+    's5_ep09_m1': ('A Lane in Shanghai', 360, 693),
+    's5_ep09_m2': ('The Government Office', 967, 330),
+    's5_ep09_m3': ('The Government Office', 1150, 350),
+    's5_ep09_final': ('The Government Office', 1345, 400),
+  },
 };
 
 String mapFile(String caseId) => 'assets/seasons/season_05_seoul/locations/map/case_${caseId.substring(5)}_map.webp';
@@ -80,7 +106,7 @@ void main() {
     });
 
     test('a case without its own map stays on the season map', () {
-      for (var n = 6; n <= 12; n++) {
+      for (var n = 10; n <= 12; n++) {
         final id = 's5_ep${n.toString().padLeft(2, '0')}';
         expect(seoul.forCase(id), same(seoul), reason: id);
       }
@@ -179,6 +205,17 @@ void main() {
   });
 
   group('on the map page', () {
+    // The game's letters: whether a name fits is a question of their widths.
+    setUpAll(() async {
+      for (final (family, file) in [
+        ('Sentient', 'Sentient-Variable.ttf'),
+        ('IMFellEnglishSC', 'IMFellEnglishSC-Regular.ttf'),
+        ('LibreBaskerville', 'LibreBaskerville.ttf'),
+      ]) {
+        await (FontLoader(family)..addFont(rootBundle.load('assets/fonts/$file'))).load();
+      }
+    });
+
     Future<ProviderContainer> playSeoul(String caseId) async {
       SharedPreferences.setMockInitialValues({});
       final c = ProviderContainer(overrides: await testOverridesFor(await SharedPreferences.getInstance()));
@@ -266,8 +303,26 @@ void main() {
       });
     }
 
+    testWidgets('a long place name under the pin loses no word', (t) async {
+      final c = await playSeoul('s5_ep09');
+      addTearDown(c.dispose);
+      solve(c, 's5_ep09_m1');
+      await pumpMap(t, c);
+      await t.pump(const Duration(seconds: 3)); // the pin opens first
+      final lettering = t.widget<MapLettering>(find.byWidgetPredicate((w) => w is MapLettering && w.text == 'THE GOVERNMENT OFFICE'));
+      final painter = TextPainter(
+        text: TextSpan(text: lettering.text, style: lettering.style),
+        maxLines: lettering.maxLines,
+        textDirection: TextDirection.ltr,
+      )..layout(maxWidth: MapPin.width);
+      expect(painter.didExceedMaxLines, isFalse);
+      painter.dispose();
+      expect(t.takeException(), isNull);
+      await t.pump(const Duration(seconds: 3));
+    });
+
     testWidgets('moving to a case without its own map brings back the season map and its names', (t) async {
-      final c = await playSeoul('s5_ep06');
+      final c = await playSeoul('s5_ep10');
       addTearDown(c.dispose);
       await pumpMap(t, c);
       expect(shows(seasonMapFile), isTrue);

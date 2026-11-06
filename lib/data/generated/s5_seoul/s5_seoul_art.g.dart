@@ -150,6 +150,108 @@ const _s5Ep05Map = SeasonMap(
   namesClearOfCurrent: true,
 );
 
+// The places of s5_ep06 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_06_map.webp (sha256:78f04bcc80ae1384…).
+const _s5Ep06PalaceGarden = SeasonLandmark('palace_garden', 'The Palace Garden', Offset(1027 / 1536, 412 / 1024));
+const _s5Ep06WestLane = SeasonLandmark('west_lane', 'The West Lane', Offset(640 / 1536, 652 / 1024));
+const _s5Ep06YiJunHouse = SeasonLandmark('yi_jun_house', 'Yi Jun\'s House', Offset(287 / 1536, 652 / 1024));
+
+/// The Mission Map of case s5_ep06.
+const _s5Ep06Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_06_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep06PalaceGarden, _s5Ep06WestLane, _s5Ep06YiJunHouse],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep06_m1': _s5Ep06PalaceGarden,
+    's5_ep06_m2': _s5Ep06PalaceGarden,
+    's5_ep06_m3': _s5Ep06WestLane,
+    's5_ep06_final': _s5Ep06YiJunHouse,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep06_m1': Offset(1027 / 1536, 400 / 1024),
+    's5_ep06_m2': Offset(1100 / 1536, 853 / 1024),
+    's5_ep06_m3': Offset(640 / 1536, 640 / 1024),
+    's5_ep06_final': Offset(287 / 1536, 640 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
+// The places of s5_ep07 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_07_map.webp (sha256:ed2f35cca546e810…).
+const _s5Ep07KangInn = SeasonLandmark('kang_inn', 'Mrs. Kang\'s Inn', Offset(215 / 1536, 852 / 1024));
+const _s5Ep07TeaRoom = SeasonLandmark('tea_room', 'The Station Tea Room', Offset(1013 / 1536, 445 / 1024));
+
+/// The Mission Map of case s5_ep07.
+const _s5Ep07Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_07_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep07KangInn, _s5Ep07TeaRoom],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep07_m1': _s5Ep07KangInn,
+    's5_ep07_m3': _s5Ep07KangInn,
+    's5_ep07_final': _s5Ep07KangInn,
+    's5_ep07_m2': _s5Ep07TeaRoom,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep07_m1': Offset(215 / 1536, 840 / 1024),
+    's5_ep07_m3': Offset(427 / 1536, 667 / 1024),
+    's5_ep07_final': Offset(820 / 1536, 587 / 1024),
+    's5_ep07_m2': Offset(1013 / 1536, 433 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
+// The places of s5_ep08 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_08_map.webp (sha256:e4fa3f01f017d44f…).
+const _s5Ep08AunaeMarket = SeasonLandmark('aunae_market', 'Aunae Market', Offset(360 / 1536, 652 / 1024));
+const _s5Ep08GwansunHome = SeasonLandmark('gwansun_home', 'Gwan-sun\'s Home', Offset(1130 / 1536, 737 / 1024));
+const _s5Ep08MaebongHill = SeasonLandmark('maebong_hill', 'Maebong Hill', Offset(833 / 1536, 172 / 1024));
+
+/// The Mission Map of case s5_ep08.
+const _s5Ep08Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_08_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep08AunaeMarket, _s5Ep08GwansunHome, _s5Ep08MaebongHill],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep08_m1': _s5Ep08AunaeMarket,
+    's5_ep08_m2': _s5Ep08GwansunHome,
+    's5_ep08_m3': _s5Ep08GwansunHome,
+    's5_ep08_final': _s5Ep08MaebongHill,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep08_m1': Offset(360 / 1536, 640 / 1024),
+    's5_ep08_m2': Offset(1130 / 1536, 725 / 1024),
+    's5_ep08_m3': Offset(1240 / 1536, 660 / 1024),
+    's5_ep08_final': Offset(833 / 1536, 160 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
+// The places of s5_ep09 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_09_map.webp (sha256:22548a3970c28c90…).
+const _s5Ep09ShanghaiLane = SeasonLandmark('shanghai_lane', 'A Lane in Shanghai', Offset(360 / 1536, 705 / 1024));
+const _s5Ep09GovernmentOffice = SeasonLandmark('government_office', 'The Government Office', Offset(967 / 1536, 342 / 1024));
+
+/// The Mission Map of case s5_ep09.
+const _s5Ep09Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_09_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep09ShanghaiLane, _s5Ep09GovernmentOffice],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep09_m1': _s5Ep09ShanghaiLane,
+    's5_ep09_m2': _s5Ep09GovernmentOffice,
+    's5_ep09_m3': _s5Ep09GovernmentOffice,
+    's5_ep09_final': _s5Ep09GovernmentOffice,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep09_m1': Offset(360 / 1536, 693 / 1024),
+    's5_ep09_m2': Offset(967 / 1536, 330 / 1024),
+    's5_ep09_m3': Offset(1150 / 1536, 350 / 1024),
+    's5_ep09_final': Offset(1345 / 1536, 400 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
 /// The Mission Map of season s5_seoul: every mission at its place's landmark.
 const s5SeoulMap = SeasonMap(
   artwork: 'assets/seasons/season_05_seoul/locations/map/season_map.webp',
@@ -208,7 +310,7 @@ const s5SeoulMap = SeasonMap(
   },
   groupHeights: <MapLandmark, double>{_royalPalace: 0.6, _harbin: 0.6},
   namesClearOfCurrent: true,
-  caseMaps: <String, SeasonMap>{'s5_ep01': _s5Ep01Map, 's5_ep02': _s5Ep02Map, 's5_ep03': _s5Ep03Map, 's5_ep04': _s5Ep04Map, 's5_ep05': _s5Ep05Map},
+  caseMaps: <String, SeasonMap>{'s5_ep01': _s5Ep01Map, 's5_ep02': _s5Ep02Map, 's5_ep03': _s5Ep03Map, 's5_ep04': _s5Ep04Map, 's5_ep05': _s5Ep05Map, 's5_ep06': _s5Ep06Map, 's5_ep07': _s5Ep07Map, 's5_ep08': _s5Ep08Map, 's5_ep09': _s5Ep09Map},
 );
 
 /// Its cover (portrait, no text) and how the screens frame it.

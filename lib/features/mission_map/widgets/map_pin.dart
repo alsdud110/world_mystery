@@ -299,14 +299,35 @@ class _PlaceName extends StatelessWidget {
 
   final String text;
 
+  static const _size = 13.5;
+  static const _smallest = 11.5;
+
+  static TextStyle _style(double size) =>
+      AppText.style(AppText.heading, size: size, weight: FontWeight.w700, color: AppColors.navy, height: 1.15, letterSpacing: 0.3);
+
+  /// Its usual size; a little smaller only for a name that would otherwise
+  /// lose a word off its two lines (THE GOVERNMENT OFFICE).
+  TextStyle _fitted(BuildContext context) {
+    final scaler = MediaQuery.textScalerOf(context);
+    for (var size = _size; size > _smallest; size -= 0.5) {
+      final painter = TextPainter(
+        text: TextSpan(text: text, style: _style(size)),
+        maxLines: 2,
+        textDirection: TextDirection.ltr,
+        textScaler: scaler,
+      )..layout(maxWidth: MapPin.width);
+      final fits = !painter.didExceedMaxLines;
+      painter.dispose();
+      if (fits) return _style(size);
+    }
+    return _style(_smallest);
+  }
+
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: MapPin.width),
-      child: MapLettering(
-        text,
-        style: AppText.style(AppText.heading, size: 13.5, weight: FontWeight.w700, color: AppColors.navy, height: 1.15, letterSpacing: 0.3),
-      ),
+      child: MapLettering(text, style: _fitted(context)),
     );
   }
 }

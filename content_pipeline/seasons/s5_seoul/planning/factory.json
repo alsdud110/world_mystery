@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "spentUsd": 4.537564000000001,
+  "spentUsd": 4.712094,
   "reviewed": [
     "s5_seoul.asset.aunae_market",
     "s5_seoul.asset.bae",
@@ -52,6 +52,10 @@
     "s5_seoul.asset.case_03_map",
     "s5_seoul.asset.case_04_map",
     "s5_seoul.asset.case_05_map",
+    "s5_seoul.asset.case_06_map",
+    "s5_seoul.asset.case_07_map",
+    "s5_seoul.asset.case_08_map",
+    "s5_seoul.asset.case_09_map",
     "s5_seoul.asset.case_solved_dawn",
     "s5_seoul.asset.copy_room",
     "s5_seoul.asset.dong_il",
@@ -211,6 +215,11 @@
       "at": "2026-11-06T09:02:41.851Z",
       "calls": 4,
       "spentUsd": 0.17239
+    },
+    {
+      "at": "2026-11-06T09:28:58.382Z",
+      "calls": 4,
+      "spentUsd": 0.17453
     }
   ],
   "budgetUsd": 12,

@@ -415,6 +415,90 @@
       ]
     },
     {
+      "assetId": "s5_seoul.asset.case_06_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "description": "The Mission Map of Case 06: around Gyeongun Palace, Seoul, 1907, the palace garden, the west lane and Yi Jun's house.",
+      "prompt": "An illustrated storybook picture map of the west side of Gyeongun Palace in Seoul, Korea, spring 1907, in the evening. In the right half, drawn large and about two fifths of the picture wide, a walled palace garden inside a low tiled wall: gravel paths, a stone lantern, one big old pine tree with rough red-brown bark standing out in the upper part of the garden, and one closed wooden garden gate in the west wall at the lower part of the garden, with a palace hall roof at the far right edge. Down the middle of the picture, from top to bottom, one long narrow lane beside a long grey stone wall, with a small wooden handcart standing by the wall. In the left part, well apart from the lane, one plain tiled-roof Korean house with paper doors around its own small walled yard, drawn large. A few low tiled roofs and one small red-brick Western-style house between them, as Seoul was in 1907. The ground runs on past all four edges of the picture, seen from high above: no sky, no horizon, no sun, no sunset; the land and roofs simply continue off the top edge. This is an inland place: no sea, no coast, no lake, no river, no pond, no water of any kind. Warm low amber side light over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_06_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.case_07_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "description": "The Mission Map of Case 07: a street of Harbin, 1909, Mrs. Kang's inn and the station tea room.",
+      "prompt": "An illustrated storybook picture map of a quarter of Harbin in northeast China, late autumn 1909, on a cold grey-gold afternoon, with no people at all. In the lower left, drawn very large and about two fifths of the picture wide, one long low Korean inn on a wide unpaved street: a tiled roof, paper lanterns at its street door at the lower left end, a short brick stove chimney with a little smoke in the middle of the long roof, and at its far right end a fenced back yard with stacked firewood. In the upper right, well apart from it, a long Russian-style railway station building of pale stone with a steep metal roof, an empty platform and a few straight railway tracks with one waiting steam train running off the right edge, and at the near end of the platform, in front of the station, one small separate wooden tea house with a warm window and a stove pipe, clearly its own building. Bare birch trees, a horse cart, wooden fences and a few small Russian-style log houses between them, a little frost on the ground. No soldiers, no uniforms, no crowd. The ground runs on past all four edges of the picture, seen from high above: no sky, no horizon, no sun, no sunset; the land and roofs simply continue off the top edge. This is an inland place: no sea, no coast, no lake, no river, no pond, no water of any kind. Warm low amber side light over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_07_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.case_08_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep08"
+      ],
+      "description": "The Mission Map of Case 08: Aunae, near Cheonan, 1919, the market, Gwan-sun's home and Maebong Hill.",
+      "prompt": "An illustrated storybook picture map of the Aunae countryside near Cheonan, Korea, early spring 1919, in the soft evening, with bare brown fields. Across the lower left and middle, drawn large and about half of the picture wide, a country market: low thatched-roof stalls and a few tiled roofs around an open dirt square, baskets, sacks and one small noodle stall with a low table. In the right middle, well apart from the market, one simple thatched Korean farmhouse, drawn large, about a quarter of the picture wide, with a wide raised wooden veranda and a broad swept dirt yard inside a low stone wall. In the upper middle, one low round grassy hill with a bare flat top and a small pile of dry pine branches on it, not lit; the top of the hill is about a quarter of the way down from the top edge of the picture, with more fields and low brown ridges behind it running off the top edge. One footpath joins the three places. No police, no weapons, no crowd. The ground runs on past all four edges of the picture, seen from high above: no sky, no horizon, no sun, no sunset; the land and roofs simply continue off the top edge. This is an inland place: no sea, no coast, no lake, no river, no pond, no water of any kind. Warm low amber side light over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_08_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.case_09_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "description": "The Mission Map of Case 09: a quarter of Shanghai, 1920, the lane and the government office.",
+      "prompt": "An illustrated storybook picture map of a quarter of the French Concession in Shanghai, China, in 1920, in the early morning, with no people at all. In the lower left, drawn large and about two fifths of the picture wide, one narrow straight lane between two rows of grey brick row houses with stone gate frames and black wooden doors, washing on bamboo poles overhead, potted plants by the doors. In the upper right, well apart from the lane across an open paved crossing, one plain two-storey grey brick row house standing by itself, drawn very large and about two fifths of the picture wide: it is wide and low with three equal bays side by side, a black door and an outside stair at its left bay, three plain windows on the upper floor, a long tiled roof; plain and modest, not grand. Plane trees, low walls and small grey roofs around them, kept small. No signs, no shop boards, no cars. The ground runs on past all four edges of the picture, seen from high above: no sky, no horizon, no sun, no sunset; the land and roofs simply continue off the top edge. This is an inland place: no sea, no coast, no lake, no river, no pond, no water of any kind. Warm low amber side light over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_09_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
       "assetId": "s5_seoul.asset.c02_store_room",
       "type": "place",
       "use": "seasonPlace",
