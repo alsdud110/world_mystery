@@ -829,6 +829,35 @@
           { "spotId": "shanghai_lane", "name": "A Lane in Shanghai", "at": [360, 705], "missions": { "s5_ep09_m1": [360, 693] } },
           { "spotId": "government_office", "name": "The Government Office", "at": [967, 342], "missions": { "s5_ep09_m2": [967, 330], "s5_ep09_m3": [1150, 350], "s5_ep09_final": [1345, 400] } }
         ]
+      },
+      "s5_ep10": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_10_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:c42c1e7ff7a345929f2140f860f074ebbb4cb63f85d3af8ee4330c2b65fc192e",
+        "landmarks": [
+          { "spotId": "small_house", "name": "A Small House in Shanghai", "at": [237, 780], "missions": { "s5_ep10_m1": [237, 768], "s5_ep10_m2": [554, 782], "s5_ep10_m3": [963, 824] } },
+          { "spotId": "haesu_room", "name": "Haesu's Room", "at": [1236, 222], "missions": { "s5_ep10_final": [1236, 210] } }
+        ]
+      },
+      "s5_ep11": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_11_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:ecd2a6666c0ed07c5af1e1647d5f1149eb828499e58de913bfe8ea3543e4a185",
+        "landmarks": [
+          { "spotId": "yun_room", "name": "Yun's Room", "at": [196, 354], "missions": { "s5_ep11_m1": [196, 342], "s5_ep11_m2": [680, 230] } },
+          { "spotId": "college_hall", "name": "The College Hall", "at": [1257, 333], "missions": { "s5_ep11_m3": [1257, 321] } },
+          { "spotId": "college_gate", "name": "The College Gate", "at": [691, 836], "missions": { "s5_ep11_final": [691, 824] } }
+        ]
+      },
+      "s5_ep12": {
+        "file": "assets/seasons/season_05_seoul/locations/map/case_12_map.webp",
+        "pixels": { "width": 1536, "height": 1024 },
+        "measuredOn": "sha256:b74203ce3103fa42b5bca3ca7b3cd5e51f6be3ea6f1f687519a688ec489a6b42",
+        "landmarks": [
+          { "spotId": "government_office", "name": "The Government Office", "at": [335, 291], "missions": { "s5_ep12_m1": [335, 279], "s5_ep12_m3": [691, 237] } },
+          { "spotId": "bitna_room", "name": "Bitna's Room", "at": [1131, 410], "missions": { "s5_ep12_m2": [1131, 398] } },
+          { "spotId": "river_steps", "name": "The River Steps", "at": [1145, 836], "missions": { "s5_ep12_final": [1145, 824] } }
+        ]
       }
     },
     "worldCity": {

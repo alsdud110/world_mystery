@@ -252,6 +252,83 @@ const _s5Ep09Map = SeasonMap(
   namesClearOfCurrent: true,
 );
 
+// The places of s5_ep10 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_10_map.webp (sha256:c42c1e7ff7a34592…).
+const _s5Ep10SmallHouse = SeasonLandmark('small_house', 'A Small House in Shanghai', Offset(237 / 1536, 780 / 1024));
+const _s5Ep10HaesuRoom = SeasonLandmark('haesu_room', 'Haesu\'s Room', Offset(1236 / 1536, 222 / 1024));
+
+/// The Mission Map of case s5_ep10.
+const _s5Ep10Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_10_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep10SmallHouse, _s5Ep10HaesuRoom],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep10_m1': _s5Ep10SmallHouse,
+    's5_ep10_m2': _s5Ep10SmallHouse,
+    's5_ep10_m3': _s5Ep10SmallHouse,
+    's5_ep10_final': _s5Ep10HaesuRoom,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep10_m1': Offset(237 / 1536, 768 / 1024),
+    's5_ep10_m2': Offset(554 / 1536, 782 / 1024),
+    's5_ep10_m3': Offset(963 / 1536, 824 / 1024),
+    's5_ep10_final': Offset(1236 / 1536, 210 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
+// The places of s5_ep11 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_11_map.webp (sha256:ecd2a6666c0ed07c…).
+const _s5Ep11YunRoom = SeasonLandmark('yun_room', 'Yun\'s Room', Offset(196 / 1536, 354 / 1024));
+const _s5Ep11CollegeHall = SeasonLandmark('college_hall', 'The College Hall', Offset(1257 / 1536, 333 / 1024));
+const _s5Ep11CollegeGate = SeasonLandmark('college_gate', 'The College Gate', Offset(691 / 1536, 836 / 1024));
+
+/// The Mission Map of case s5_ep11.
+const _s5Ep11Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_11_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep11YunRoom, _s5Ep11CollegeHall, _s5Ep11CollegeGate],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep11_m1': _s5Ep11YunRoom,
+    's5_ep11_m2': _s5Ep11YunRoom,
+    's5_ep11_m3': _s5Ep11CollegeHall,
+    's5_ep11_final': _s5Ep11CollegeGate,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep11_m1': Offset(196 / 1536, 342 / 1024),
+    's5_ep11_m2': Offset(680 / 1536, 230 / 1024),
+    's5_ep11_m3': Offset(1257 / 1536, 321 / 1024),
+    's5_ep11_final': Offset(691 / 1536, 824 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
+// The places of s5_ep12 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_12_map.webp (sha256:b74203ce3103fa42…).
+const _s5Ep12GovernmentOffice = SeasonLandmark('government_office', 'The Government Office', Offset(335 / 1536, 291 / 1024));
+const _s5Ep12BitnaRoom = SeasonLandmark('bitna_room', 'Bitna\'s Room', Offset(1131 / 1536, 410 / 1024));
+const _s5Ep12RiverSteps = SeasonLandmark('river_steps', 'The River Steps', Offset(1145 / 1536, 836 / 1024));
+
+/// The Mission Map of case s5_ep12.
+const _s5Ep12Map = SeasonMap(
+  artwork: 'assets/seasons/season_05_seoul/locations/map/case_12_map.webp',
+  pixels: Size(1536, 1024),
+  aspect: 1536 / 1024,
+  landmarks: [_s5Ep12GovernmentOffice, _s5Ep12BitnaRoom, _s5Ep12RiverSteps],
+  missionLandmarks: <String, MapLandmark>{
+    's5_ep12_m1': _s5Ep12GovernmentOffice,
+    's5_ep12_m3': _s5Ep12GovernmentOffice,
+    's5_ep12_m2': _s5Ep12BitnaRoom,
+    's5_ep12_final': _s5Ep12RiverSteps,
+  },
+  missionPoints: <String, Offset>{
+    's5_ep12_m1': Offset(335 / 1536, 279 / 1024),
+    's5_ep12_m3': Offset(691 / 1536, 237 / 1024),
+    's5_ep12_m2': Offset(1131 / 1536, 398 / 1024),
+    's5_ep12_final': Offset(1145 / 1536, 824 / 1024),
+  },
+  namesClearOfCurrent: true,
+);
+
 /// The Mission Map of season s5_seoul: every mission at its place's landmark.
 const s5SeoulMap = SeasonMap(
   artwork: 'assets/seasons/season_05_seoul/locations/map/season_map.webp',
@@ -310,7 +387,7 @@ const s5SeoulMap = SeasonMap(
   },
   groupHeights: <MapLandmark, double>{_royalPalace: 0.6, _harbin: 0.6},
   namesClearOfCurrent: true,
-  caseMaps: <String, SeasonMap>{'s5_ep01': _s5Ep01Map, 's5_ep02': _s5Ep02Map, 's5_ep03': _s5Ep03Map, 's5_ep04': _s5Ep04Map, 's5_ep05': _s5Ep05Map, 's5_ep06': _s5Ep06Map, 's5_ep07': _s5Ep07Map, 's5_ep08': _s5Ep08Map, 's5_ep09': _s5Ep09Map},
+  caseMaps: <String, SeasonMap>{'s5_ep01': _s5Ep01Map, 's5_ep02': _s5Ep02Map, 's5_ep03': _s5Ep03Map, 's5_ep04': _s5Ep04Map, 's5_ep05': _s5Ep05Map, 's5_ep06': _s5Ep06Map, 's5_ep07': _s5Ep07Map, 's5_ep08': _s5Ep08Map, 's5_ep09': _s5Ep09Map, 's5_ep10': _s5Ep10Map, 's5_ep11': _s5Ep11Map, 's5_ep12': _s5Ep12Map},
 );
 
 /// Its cover (portrait, no text) and how the screens frame it.

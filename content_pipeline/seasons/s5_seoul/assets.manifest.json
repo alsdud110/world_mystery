@@ -499,6 +499,69 @@
       ]
     },
     {
+      "assetId": "s5_seoul.asset.case_10_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep10"
+      ],
+      "description": "The Mission Map of Case 10: a quarter of Shanghai, 1932, a small house and Haesu's room.",
+      "prompt": "An illustrated storybook picture map of a quiet quarter of the French Concession in Shanghai, China, on a spring morning in 1932, with no people at all. Across the lower part of the picture, from the left edge to past the middle, drawn very large and about three fifths of the picture wide, one long low two-storey grey brick row house, wide and plain, with three clearly separate parts side by side along its front: at its left end a black wooden door in a stone gate frame with a tiny front court and a potted plant; in its middle a wide ground-floor window with open green wooden shutters and a small table seen inside; at its right end a small walled back yard with a stove chimney, a water jar and washing on a bamboo pole. In the upper right, well apart from it across an open paved lane, one narrow taller three-storey brick row house standing by itself, drawn large, with one small top-floor window under its tiled roof, a curtain at it and a little lamp glowing inside. Plane trees with fresh green leaves, low walls and small grey roofs around them, kept small. No park, no crowd, no soldiers, no signs, no shop boards, no cars. The ground runs on past all four edges of the picture, seen from high above: no sky, no horizon, no sun, no sunset; the land and roofs simply continue off the top edge. This is an inland place: no sea, no coast, no lake, no river, no pond, no water of any kind. Warm low amber side light over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_10_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.case_11_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "description": "The Mission Map of Case 11: Yonhi College, Seoul, 1941, Yun's room, the college hall and the college gate.",
+      "prompt": "An illustrated storybook picture map of the hillside campus of Yonhi College in Seoul, Korea, in late autumn 1941, in the evening, with no people at all. In the upper left, drawn large and about two fifths of the picture wide, one long three-storey dormitory of rough grey stone with a slate roof and a long row of small lit windows, wide and plain, with a separate small entrance porch at each of its two ends. In the upper right, well apart from it across a lawn, one Gothic college hall of grey stone with a square stone tower at its left end and tall arched windows, drawn large. In the lower middle, well below both, the college gate: two square stone gate pillars with an open black iron gate in a long low stone wall, one old iron lamp post glowing beside it, and a cobbled path winding up the hill from the gate to the two buildings. Red and orange maple trees, tall pines and fallen leaves, a few small stone buildings far off, kept small. No soldiers, no flags, no signs. The ground runs on past all four edges of the picture, seen from high above: no sky, no horizon, no sun, no sunset; the land and roofs simply continue off the top edge. This is an inland place: no sea, no coast, no lake, no river, no pond, no water of any kind. Warm low amber side light over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_11_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.case_12_map",
+      "type": "map",
+      "use": "notWired",
+      "subject": "s5_seoul.map",
+      "caseIds": [
+        "s5_ep12"
+      ],
+      "description": "The Mission Map of Case 12: Chongqing, 1945, the government office, Bitna's room and the river steps.",
+      "prompt": "An illustrated storybook picture map of a steep hillside quarter of Chongqing, China, on a summer afternoon in August 1945, with no people at all. In the upper left, drawn large and about two fifths of the picture wide, one plain three-storey grey brick office building on a stone terrace cut into the hillside, wide and low with long wooden balconies and many shuttered windows, with a small yard gate at its left end and a row of wooden trunks stacked under the balcony at its right end. In the right middle, well apart from it, one small old house with a dark tiled roof, white plaster walls and one wide wooden lattice window, inside its own little walled yard, drawn large. In the lower right, below that house, one long steep stone stairway with stone lamp posts running down to a stone landing at the edge of a broad river, where a second river joins it, with a few small wooden sampans tied at the landing; the water fills only the lower right corner of the picture. Narrow stone lanes, stepped roofs, banyan trees and small grey houses packed on the slope between them, kept small. No soldiers, no flags, no signs. The ground runs on past all four edges of the picture, seen from high above: no sky, no horizon, no sun, no sunset; the land and roofs simply continue off the top edge. The only water is the two rivers in the lower right corner: no sea, no lake, no pond, no other water. Warm low amber side light over muted, slightly deep colours, a few small lanterns glowing; aged cream mulberry paper showing through. Every place is drawn large and clearly apart from the others, with open ground between them. No people larger than a tiny distant figure. No labels, no pins, no route lines, no compass, no flags, no letters or numbers of any kind; nothing modern.",
+      "stylePreset": "seoul_map",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/locations/map/case_12_map.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured in season.plan.json art.caseMaps."
+      ]
+    },
+    {
       "assetId": "s5_seoul.asset.c02_store_room",
       "type": "place",
       "use": "seasonPlace",

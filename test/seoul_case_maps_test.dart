@@ -37,7 +37,7 @@ const case01Spots = <String, (String, Offset)>{
   's5_ep01_final': ('The Book Hall', Offset(265 / 1536, 365 / 1024)),
 };
 
-/// Cases 02-09 on their own maps: each mission's place and spot, in pixels.
+/// Cases 02-12 on their own maps: each mission's place and spot, in pixels.
 const ownMaps = <String, Map<String, (String, double, double)>>{
   's5_ep02': {
     's5_ep02_m1': ('The Store Room', 335, 650),
@@ -87,6 +87,24 @@ const ownMaps = <String, Map<String, (String, double, double)>>{
     's5_ep09_m3': ('The Government Office', 1150, 350),
     's5_ep09_final': ('The Government Office', 1345, 400),
   },
+  's5_ep10': {
+    's5_ep10_m1': ('A Small House in Shanghai', 237, 768),
+    's5_ep10_m2': ('A Small House in Shanghai', 554, 782),
+    's5_ep10_m3': ('A Small House in Shanghai', 963, 824),
+    's5_ep10_final': ("Haesu's Room", 1236, 210),
+  },
+  's5_ep11': {
+    's5_ep11_m1': ("Yun's Room", 196, 342),
+    's5_ep11_m2': ("Yun's Room", 680, 230),
+    's5_ep11_m3': ('The College Hall', 1257, 321),
+    's5_ep11_final': ('The College Gate', 691, 824),
+  },
+  's5_ep12': {
+    's5_ep12_m1': ('The Government Office', 335, 279),
+    's5_ep12_m2': ("Bitna's Room", 1131, 398),
+    's5_ep12_m3': ('The Government Office', 691, 237),
+    's5_ep12_final': ('The River Steps', 1145, 824),
+  },
 };
 
 String mapFile(String caseId) => 'assets/seasons/season_05_seoul/locations/map/case_${caseId.substring(5)}_map.webp';
@@ -105,11 +123,11 @@ void main() {
       expect(planned.measuredOn, ContentHash.ofBytes(File(palaceMap).readAsBytesSync()));
     });
 
-    test('a case without its own map stays on the season map', () {
-      for (var n = 10; n <= 12; n++) {
-        final id = 's5_ep${n.toString().padLeft(2, '0')}';
-        expect(seoul.forCase(id), same(seoul), reason: id);
-      }
+    test('every Seoul case has its own map, each on its own file', () {
+      final files = {for (var n = 1; n <= 12; n++) seoul.forCase('s5_ep${n.toString().padLeft(2, '0')}').artwork};
+      expect(files, hasLength(12));
+      expect(files, isNot(contains(seasonMapFile)));
+      expect(files.every((f) => File(f).existsSync()), isTrue);
     });
 
     test('the season keeps its map on every other screen', () {
@@ -216,19 +234,20 @@ void main() {
       }
     });
 
-    Future<ProviderContainer> playSeoul(String caseId) async {
+    Future<ProviderContainer> play(String caseId, {String season = SeasonIds.seoul}) async {
       SharedPreferences.setMockInitialValues({});
       final c = ProviderContainer(overrides: await testOverridesFor(await SharedPreferences.getInstance()));
       final ctrl = c.read(gameControllerProvider.notifier);
       ctrl.createDetective('Kim', DetectiveAvatar.boy);
       // The seasons before it finished: Seoul is open.
       final repo = c.read(progressRepositoryProvider);
-      for (final (season, prefix) in [(SeasonIds.london, 'ep'), (SeasonIds.paris, 's2_ep'), (SeasonIds.rome, 's3_ep'), (SeasonIds.newyork, 's4_ep')]) {
+      for (final (before, prefix) in [(SeasonIds.london, 'ep'), (SeasonIds.paris, 's2_ep'), (SeasonIds.rome, 's3_ep'), (SeasonIds.newyork, 's4_ep')]) {
+        if (before == season) break;
         final ids = [for (var n = 1; n <= 12; n++) '$prefix${n.toString().padLeft(2, '0')}'];
-        repo.saveSeason(SeasonProgress(activeEpisodeId: ids.last, solvedEpisodeIds: ids), season);
+        repo.saveSeason(SeasonProgress(activeEpisodeId: ids.last, solvedEpisodeIds: ids), before);
       }
       c.invalidate(seasonProvider);
-      expect(ctrl.openSeason(SeasonIds.seoul), isTrue);
+      expect(ctrl.openSeason(season), isTrue);
       if (caseId != 's5_ep01') c.read(operatorAccessSwitchProvider.notifier).set(true); // open a later case
       expect(c.read(gameControllerProvider.notifier).openEpisode(caseId), isTrue);
       c.read(gameControllerProvider.notifier).startInvestigation();
@@ -255,7 +274,7 @@ void main() {
     Finder named(String name) => find.byKey(ValueKey('landmark-name-$name'));
 
     testWidgets('Case 01 opens on the palace map, no place named before it is open', (t) async {
-      final c = await playSeoul('s5_ep01');
+      final c = await play('s5_ep01');
       addTearDown(c.dispose);
       await pumpMap(t, c);
       expect(shows(palaceMap), isTrue);
@@ -272,7 +291,7 @@ void main() {
     });
 
     testWidgets('a solved place keeps its name, the next one is named by its pin, the rest stay hidden', (t) async {
-      final c = await playSeoul('s5_ep01');
+      final c = await play('s5_ep01');
       addTearDown(c.dispose);
       solve(c, 's5_ep01_m1');
       await pumpMap(t, c);
@@ -289,7 +308,7 @@ void main() {
 
     for (final caseId in ownMaps.keys) {
       testWidgets('$caseId opens on its own map, the places not open yet not named', (t) async {
-        final c = await playSeoul(caseId);
+        final c = await play(caseId);
         addTearDown(c.dispose);
         await pumpMap(t, c);
         expect(shows(mapFile(caseId)), isTrue);
@@ -303,31 +322,38 @@ void main() {
       });
     }
 
-    testWidgets('a long place name under the pin loses no word', (t) async {
-      final c = await playSeoul('s5_ep09');
-      addTearDown(c.dispose);
-      solve(c, 's5_ep09_m1');
-      await pumpMap(t, c);
-      await t.pump(const Duration(seconds: 3)); // the pin opens first
-      final lettering = t.widget<MapLettering>(find.byWidgetPredicate((w) => w is MapLettering && w.text == 'THE GOVERNMENT OFFICE'));
-      final painter = TextPainter(
-        text: TextSpan(text: lettering.text, style: lettering.style),
-        maxLines: lettering.maxLines,
-        textDirection: TextDirection.ltr,
-      )..layout(maxWidth: MapPin.width);
-      expect(painter.didExceedMaxLines, isFalse);
-      painter.dispose();
-      expect(t.takeException(), isNull);
-      await t.pump(const Duration(seconds: 3));
-    });
+    for (final (caseId, name) in [('s5_ep09', 'THE GOVERNMENT OFFICE'), ('s5_ep10', 'A SMALL HOUSE IN SHANGHAI')]) {
+      testWidgets('a long place name under the pin loses no word: $name', (t) async {
+        final c = await play(caseId);
+        addTearDown(c.dispose);
+        solve(c, '${caseId}_m1');
+        await pumpMap(t, c);
+        await t.pump(const Duration(seconds: 3)); // the pin opens first
+        final lettering = t.widget<MapLettering>(find.byWidgetPredicate((w) => w is MapLettering && w.text == name));
+        final painter = TextPainter(
+          text: TextSpan(text: lettering.text, style: lettering.style),
+          maxLines: lettering.maxLines,
+          textDirection: TextDirection.ltr,
+        )..layout(maxWidth: MapPin.width);
+        expect(painter.didExceedMaxLines, isFalse);
+        painter.dispose();
+        expect(t.takeException(), isNull);
+        await t.pump(const Duration(seconds: 3));
+      });
+    }
 
-    testWidgets('moving to a case without its own map brings back the season map and its names', (t) async {
-      final c = await playSeoul('s5_ep10');
+    testWidgets('a season without case maps still plays on its season map, every place named', (t) async {
+      final newYork = SeasonMap.forSeason(SeasonIds.newyork)!;
+      final c = await play('s4_ep03', season: SeasonIds.newyork);
       addTearDown(c.dispose);
       await pumpMap(t, c);
-      expect(shows(seasonMapFile), isTrue);
-      expect(shows(palaceMap), isFalse);
-      expect(named('Harbin'), findsOneWidget, reason: 'the season map names every place, as it always did');
+      expect(shows(newYork.artwork), isTrue);
+      expect(shows(seasonMapFile), isFalse);
+      // The current pin names its own place; the season map names every other one, as it always did.
+      final here = SeasonMap.landmarkOf(seoulCase('s4_ep03').allMissions.first.id)!;
+      for (final l in newYork.landmarks) {
+        expect(named(l.name), l == here ? findsNothing : findsOneWidget, reason: l.name);
+      }
       expect(t.takeException(), isNull);
       await t.pump(const Duration(seconds: 3));
     });

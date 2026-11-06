@@ -443,7 +443,7 @@ const seasonPackManifests = <String, SeasonPackManifest>{
   ),
   'season_05_seoul': SeasonPackManifest(
     folder: 'season_05_seoul',
-    version: 'c51d3d21afe0d3e5',
+    version: 'f4a5c1af27a2bdfb',
     files: [
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_01/gate_ledger.webp', 1103188, '9135e8f1a8b534bf3f458bd20eb79124cb3233b6f8c8635f9629365f4beab7ec'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_01/letter_found.webp', 652722, '418292363bb313141934f39a5f804bda24805ccdce332f71e51d28fdedc0a4d3'),
@@ -538,6 +538,9 @@ const seasonPackManifests = <String, SeasonPackManifest>{
       SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_07_map.webp', 726408, 'ed2f35cca546e810f7994176aff43966f37146b024f9641f7b57745dc8ffd631'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_08_map.webp', 644652, 'e4fa3f01f017d44f93b70ba5d9cd875b38e29e82d5b7e19712097c5eb9fec0c4'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_09_map.webp', 666176, '22548a3970c28c901800d90c647914316a1c481bc89fe52f972a9775fbd331ec'),
+      SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_10_map.webp', 668046, 'c42c1e7ff7a345929f2140f860f074ebbb4cb63f85d3af8ee4330c2b65fc192e'),
+      SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_11_map.webp', 678770, 'ecd2a6666c0ed07c5af1e1647d5f1149eb828499e58de913bfe8ea3543e4a185'),
+      SeasonPackFile('assets/seasons/season_05_seoul/locations/map/case_12_map.webp', 773716, 'b74203ce3103fa42b5bca3ca7b3cd5e51f6be3ea6f1f687519a688ec489a6b42'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/map/palace_map.webp', 579298, '712f1c34f64518cad2db85c6ceaeebd5b639cc96ea5534a8b631ac33d22f588a'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/map/season_map.webp', 616188, 'c5879b75a31ba56e42221096a5fd5dc2313821d433919bedcab1357e5739d989'),
       SeasonPackFile('assets/seasons/season_05_seoul/locations/palace_night.webp', 528334, '2f9b1fc801ce56bdf79cfca8bbc53994dfa1a7c449e3509e2ebc2242c16ba174'),
