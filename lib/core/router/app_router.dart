@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../data/models/season.dart' show SeasonIds;
+import '../assets/season_pack_downloads.dart';
 import '../../features/game/game_controller.dart';
 import '../../features/game/game_providers.dart';
 import '../../features/game_master/game_master_screen.dart';
@@ -104,6 +105,16 @@ CustomTransitionPage<void> _fade(GoRouterState state, Widget child) => CustomTra
 Widget _backTo(BuildContext context, String location, Widget page) =>
     BackTo(onBack: () => GoRouter.of(context).go(location), child: page);
 
+/// A season whose pack must be downloaded is not played without it (it was
+/// deleted, or a link skipped the download): every page of the season goes
+/// back to the World Map, where entering it offers the download. Its
+/// progress is untouched. Null: [path] may open.
+String? seasonPackRedirect(Ref ref, String path) {
+  const hubs = {Routes.start, Routes.register, Routes.gameMaster, Routes.detective, Routes.howToPlay, Routes.seasons, Routes.worldMap};
+  if (hubs.contains(path)) return null;
+  return ref.read(seasonPacksProvider.notifier).needsDownload(ref.read(selectedSeasonIdProvider)) ? Routes.worldMap : null;
+}
+
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     initialLocation: Routes.start,
@@ -131,6 +142,9 @@ final routerProvider = Provider<GoRouter>((ref) {
       if (path == Routes.register) return progress.hasDetective ? Routes.start : null;
 
       if (!progress.hasDetective) return Routes.register;
+
+      final noPack = seasonPackRedirect(ref, path);
+      if (noPack != null) return noPack;
 
       if (path == Routes.prologue) {
         // The opening page is London's and that of each season made from its

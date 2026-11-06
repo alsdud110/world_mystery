@@ -8,6 +8,7 @@ import '../../widgets/ink_icon.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import 'season_overview.dart';
+import 'season_pack_gate.dart';
 
 /// What the season pages do with a case. They decide no progress
 /// themselves: cases open through [GameController.openEpisode] and the
@@ -35,7 +36,9 @@ abstract final class SeasonActions {
   /// cover and opening when it has not begun, its board when it has), as the
   /// archives would open it. Refused while it cannot be entered (locked, not
   /// released, no cases): the controller checks, not only the button.
-  static void goToSeason(BuildContext context, WidgetRef ref, SeasonAvailability next) {
+  static Future<void> goToSeason(BuildContext context, WidgetRef ref, SeasonAvailability next) async {
+    // Its pictures first (downloaded once, when they are not in the app).
+    if (!await SeasonPackGate.ensure(context, ref, next.season.id) || !context.mounted) return;
     if (!ref.read(gameControllerProvider.notifier).openSeason(next.season.id)) {
       showGameToast(context, 'This file is still being prepared.', glyph: InkGlyph.seal);
       return;

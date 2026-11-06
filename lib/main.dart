@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app.dart';
+import 'core/assets/season_pack_downloads.dart';
 import 'data/repositories/episode_repository.dart';
 import 'data/repositories/profile_store.dart';
 import 'features/game/game_providers.dart';
@@ -36,6 +37,10 @@ Future<void> main() async {
   // The launch screen's glass, ready for the title's first frame (not when
   // the detective must be chosen first: that page comes before the title).
   await LaunchReveal.prepare(armed: start is ProfileSession);
+  // Season packs are downloaded from the bucket (unless a build sets no URL);
+  // whether the app still carries their pictures, from its own asset list.
+  final packs = await SeasonPackSetup.fromEnvironment(prefs);
+  final packsInApp = await seasonPacksInApp(rootBundle);
 
   runApp(
     DeviceDetectiveGate(
@@ -45,6 +50,8 @@ Future<void> main() async {
         sharedPreferencesProvider.overrideWithValue(prefs),
         episodeRepositoryProvider.overrideWithValue(episodes),
         allEpisodesProvider.overrideWithValue(catalog),
+        seasonPackSetupProvider.overrideWithValue(packs),
+        seasonPacksInAppProvider.overrideWithValue(packsInApp),
       ],
       child: const WorldMysteryApp(),
     ),

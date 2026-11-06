@@ -18,6 +18,7 @@ import '../../widgets/paper_menu.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import '../onboarding/detective_form.dart' show DetectivePortrait;
+import '../season/season_pack_gate.dart';
 import 'widgets/world_map_view.dart';
 import 'world_map_state.dart';
 
@@ -48,9 +49,14 @@ class _WorldMapScreenState extends ConsumerState<WorldMapScreen> {
   /// The card's height before it is first laid out.
   static const _cardGuess = 164.0;
 
-  void _enter(WorldCityState city) {
+  Future<void> _enter(WorldCityState city) async {
     final seasonId = city.city.seasonId;
     if (_opening || seasonId == null || !city.canEnter) return;
+    // Its pictures first (downloaded once, when they are not in the app).
+    _opening = true;
+    final ready = await SeasonPackGate.ensure(context, ref, seasonId);
+    _opening = false;
+    if (!ready || !mounted) return;
     if (!ref.read(gameControllerProvider.notifier).openSeason(seasonId)) {
       showGameToast(context, 'This file is still being prepared.', glyph: InkGlyph.seal);
       return;

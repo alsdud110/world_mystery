@@ -17,6 +17,7 @@ import '../tool/season_gen/content_hash.dart';
 import '../tool/season_gen/generate_case.dart';
 import '../tool/season_gen/plan_files.dart';
 import '../tool/season_gen/season_cases.dart';
+import 'helpers.dart';
 import 'sandbox/season_playthrough.dart';
 
 /// Every season of the game made from its plans (the Rome integration:
@@ -48,8 +49,7 @@ void main() {
     final seasonDir = 'content_pipeline/seasons/$id';
     final seasonPath = '$seasonDir/season.plan.json';
     final episodes = [for (final json in content.episodes.values) Episode.fromJson({...json, 'seasonId': id})];
-    final pubspec = File('pubspec.yaml').readAsStringSync();
-    final folders = [for (final m in RegExp(r'^\s+- (assets/\S+/)\s*$', multiLine: true).allMatches(pubspec)) m[1]!];
+    final folders = shippedAssets().where((a) => a.endsWith('/')).toList();
     bool bundled(String f) => File(f).existsSync() && folders.any((d) => f.startsWith(d) && !f.substring(d.length).contains('/'));
 
     group('$id, generated', () {
@@ -72,7 +72,7 @@ void main() {
           for (final e in episodes) for (final m in e.allMissions) for (final o in m.options) ?o.picture,
         };
         for (final f in files) {
-          expect(bundled(f), isTrue, reason: '$f: on disk and in a pubspec assets folder');
+          expect(bundled(f), isTrue, reason: '$f: on disk and in a shipped assets folder (pubspec or season pack)');
         }
       });
 
@@ -81,7 +81,7 @@ void main() {
         expect(season.playsPrologue, isTrue, reason: 'its words, its city at night and four pieces (prologue.hero named by the factory)');
         final p = season.prologue;
         for (final f in [p.hero, ...p.pieces, p.firstCasePicture]) {
-          expect(bundled(f), isTrue, reason: '$f: on disk and in a pubspec assets folder');
+          expect(bundled(f), isTrue, reason: '$f: on disk and in a shipped assets folder (pubspec or season pack)');
         }
         final rookie = SeasonPrologue.linesOf(content.info['prologue']);
         for (final level in [Difficulty.junior, Difficulty.master]) {

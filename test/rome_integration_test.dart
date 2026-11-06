@@ -98,8 +98,7 @@ void main() {
     });
 
     test('its cover, its city on the World Map and its evidence pictures are registered, each on disk and bundled', () {
-      final pubspec = File('pubspec.yaml').readAsStringSync();
-      final folders = [for (final m in RegExp(r'^\s+- (assets/\S+/)\s*$', multiLine: true).allMatches(pubspec)) m[1]!];
+      final folders = shippedAssets().where((a) => a.endsWith('/')).toList();
       bool bundled(String f) => File(f).existsSync() && folders.any((d) => f.startsWith(d) && !f.substring(d.length).contains('/'));
 
       final cover = ArtAssets.seasonCovers[SeasonIds.rome]!;

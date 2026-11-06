@@ -147,7 +147,7 @@ void main() {
     }
 
     test('all six are in, listed in pubspec, at their sizes; no frame is borrowed', () {
-      expect(pubspecAssets(), contains('$folder/'));
+      expect(shippedAssets(), contains('$folder/'));
       expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 6);
       expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, alpha)) in pictures.entries) {

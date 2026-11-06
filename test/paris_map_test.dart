@@ -85,7 +85,7 @@ void main() {
       expect(imageSize(file.path), (1536.0, 1024.0));
       expect(SeasonMap.paris.pixels.width, 1536);
       expect(SeasonMap.paris.pixels.height, 1024);
-      expect(File('pubspec.yaml').readAsStringSync(), contains('- assets/seasons/season_02_paris/locations/map/'));
+      expect(shippedAssets(), contains('assets/seasons/season_02_paris/locations/map/'));
       expect(SeasonMap.paris.artwork, isNot(ArtAssets.londonMap));
     });
 

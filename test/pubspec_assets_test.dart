@@ -63,9 +63,10 @@ flutter_launcher_icons:
     expect(assets, isNotEmpty);
     expect(pubspecAssetsOf(text.replaceAll('\r\n', '\n')), assets);
     expect(pubspecAssetsOf(text.replaceAll('\r\n', '\n').replaceAll('\n', '\r\n')), assets);
-    for (var n = 1; n <= 7; n++) {
-      expect(assets, contains('assets/seasons/season_02_paris/cases/case_0$n/'));
+    for (final n in ['01', '02', '03', '04', '07', '09', '10', '12']) {
+      expect(assets, contains('assets/seasons/season_01_london/cases/case_$n/'));
     }
+    expect(assets, contains('assets/seasons/season_02_paris/cover/'));
     expect(missingAssets(assets), isEmpty, reason: 'every listed folder and file exists');
     expect(assets.toSet(), hasLength(assets.length), reason: 'nothing listed twice');
   });

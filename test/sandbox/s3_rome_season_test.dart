@@ -14,6 +14,7 @@ import '../../tool/season_gen/plan_files.dart';
 import '../../tool/season_gen/plan_models.dart';
 import '../../tool/season_gen/play_check.dart';
 import '../../tool/season_gen/season_cases.dart';
+import '../helpers.dart';
 import 'rome_season.dart';
 
 /// STEP 3-15B B3, the Rome integration: Rome, Season 3, from its plans to
@@ -69,8 +70,7 @@ void main() {
         expect(engines[id], 'SceneExplore', reason: id);
       }
       expect(content.dialogues.keys, ['s3_ep01_m1', 's3_ep11_m2'], reason: 'the witnesses of Case 01 and Case 11');
-      final pubspec = File('pubspec.yaml').readAsStringSync();
-      final folders = [for (final m in RegExp(r'^\s+- (assets/\S+/)\s*$', multiLine: true).allMatches(pubspec)) m[1]!];
+      final folders = shippedAssets().where((a) => a.endsWith('/')).toList();
       final files = {
         for (final p in content.places.values) p.file,
         for (final s in content.explores.values) ...[s.picture, for (final c in s.choices) c.picture],

@@ -127,7 +127,7 @@ void main() {
     }
 
     test('all thirteen are in, listed in pubspec, at their sizes, cut out where they are papers or parts', () {
-      expect(pubspecAssets(), contains('$folder/'), reason: 'its folder, exactly, in flutter: assets:');
+      expect(shippedAssets(), contains('$folder/'), reason: 'its folder, exactly, shipped (a season pack)');
       for (final MapEntry(key: name, value: (w, h, cutOut)) in pictures.entries) {
         final file = File('$folder/$name');
         expect(file.existsSync(), isTrue, reason: name);

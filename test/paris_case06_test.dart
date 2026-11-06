@@ -147,7 +147,7 @@ void main() {
     int alphaAt(ByteData d, int w, int x, int y) => d.getUint8((y * w + x) * 4 + 3);
 
     test('all fifteen are in, listed in pubspec, at their sizes', () {
-      expect(pubspecAssets(), contains('$folder/'), reason: 'its folder, exactly, in flutter: assets:');
+      expect(shippedAssets(), contains('$folder/'), reason: 'its folder, exactly, shipped (a season pack)');
       expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 15);
       expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, alpha)) in pictures.entries) {

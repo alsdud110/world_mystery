@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'core/assets/season_pack_bundle.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/app_tokens.dart';
@@ -115,6 +116,9 @@ class _WorldMysteryAppState extends ConsumerState<WorldMysteryApp> {
         if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
           child = EdgeSwipeBack(onBack: () => _router.routerDelegate.popRoute(), child: child!);
         }
+        // Every page reads its pictures through the season packs' bundle
+        // (today all of them from the app bundle, as before).
+        child = DefaultAssetBundle(bundle: ref.watch(seasonPackBundleProvider), child: child!);
         return MediaQuery(
           data: media.copyWith(textScaler: media.textScaler.clamp(maxScaleFactor: AppTextScale.page)),
           // The page annotation can be absent during route setup, or outside
@@ -133,9 +137,9 @@ class _WorldMysteryAppState extends ConsumerState<WorldMysteryApp> {
                       child: child!,
                     );
                   },
-                  child: child!,
+                  child: child,
                 )
-              : child!,
+              : child,
         );
       },
     );

@@ -121,8 +121,7 @@ void main() {
     });
 
     test('every picture it shows is bundled (pubspec folders)', () {
-      final pubspec = File('pubspec.yaml').readAsStringSync();
-      final folders = [for (final m in RegExp(r'^\s+- (assets/\S+/)\s*$', multiLine: true).allMatches(pubspec)) m[1]!];
+      final folders = shippedAssets().where((a) => a.endsWith('/')).toList();
       final files = <String>{
         for (final s in s9Ep03Explores.values) ...[s.picture, for (final c in s.choices) c.picture],
         for (final s in s9Ep03Investigations.values) ...[s.picture!, for (final f in s.finds) f.picture],

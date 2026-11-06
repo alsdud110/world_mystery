@@ -291,8 +291,7 @@ void main() {
     }
   });
 
-  test('every listed file exists and its folder is bundled in pubspec.yaml', () {
-    final pubspec = File('pubspec.yaml').readAsStringSync();
+  test('every listed file exists and its folder is shipped (pubspec.yaml or a season pack)', () {
     final files = [
       ...ArtAssets.scenes.values,
       ...ArtAssets.solvedScenes.values,
@@ -301,7 +300,7 @@ void main() {
     ];
     for (final path in files) {
       expect(File(path).existsSync(), isTrue, reason: path);
-      expect(pubspec, contains('- ${path.substring(0, path.lastIndexOf('/') + 1)}'), reason: path);
+      expect(shippedAssets(), contains(path.substring(0, path.lastIndexOf('/') + 1)), reason: path);
       expect(path, matches(RegExp(r'\.(png|webp|jpe?g)$')), reason: 'no SVG: it needs a new package');
     }
     // Keys are real: symbols the game uses, badges that exist.

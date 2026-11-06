@@ -103,9 +103,8 @@ void main() {
     });
 
     test('its pictures are in the game at the sizes they are measured on', () {
-      final pubspec = File('pubspec.yaml').readAsStringSync();
       for (final folder in ['cases/case_11/', 'cases/case_12/', 'characters/']) {
-        expect(pubspec, contains('    - assets/seasons/season_02_paris/$folder'));
+        expect(shippedAssets(), contains('assets/seasons/season_02_paris/$folder'));
       }
       final panels = [
         for (final m in case11.missions)

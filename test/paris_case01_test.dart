@@ -229,8 +229,7 @@ void main() {
     }
 
     test('the six pictures are in the game, at the sizes their scenes are measured on', () {
-      final pubspec = File('pubspec.yaml').readAsStringSync();
-      expect(pubspec, contains('    - $folder/'));
+      expect(shippedAssets(), contains('$folder/'));
       final hall = SeasonCatalog.stationClocks(m1)!;
       final ticket = SeasonCatalog.exhibit(m2)!;
       final box = SeasonCatalog.lockBox(fin)!;

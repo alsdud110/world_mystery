@@ -18,6 +18,7 @@ import '../../widgets/ink_icon.dart';
 import '../../widgets/paper.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
+import 'season_pack_gate.dart';
 import 'widgets/season_props.dart';
 
 /// Where the detective stands with one season's file in the archives.
@@ -144,8 +145,13 @@ class _WorldArchiveScreenState extends ConsumerState<WorldArchiveScreen> with Si
   }
 
   /// A file's button: its season, played from its board.
-  void _open(SeasonFile file) {
+  Future<void> _open(SeasonFile file) async {
     if (_opening) return;
+    // Its pictures first (downloaded once, when they are not in the app).
+    _opening = true;
+    final ready = await SeasonPackGate.ensure(context, ref, file.season.id);
+    _opening = false;
+    if (!ready || !mounted) return;
     if (!ref.read(gameControllerProvider.notifier).openSeason(file.season.id)) {
       _explain(file);
       return;

@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:flutter_riverpod/misc.dart';
+import 'package:world_mystery/core/assets/season_pack_manifests.g.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
 import 'package:world_mystery/core/utils/ad_consent.dart';
 import 'package:world_mystery/core/utils/ad_service.dart';
@@ -151,6 +152,16 @@ List<String> pubspecAssetsOf(String text) {
 /// The app's own `flutter: assets:` entries (see [pubspecAssetsOf]).
 List<String> pubspecAssets() => pubspecAssetsOf(File('pubspec.yaml').readAsStringSync());
 
+/// Every asset entry the game ships: [pubspecAssets], and the folders of the
+/// downloaded seasons' pictures (their season packs, not in the app).
+List<String> shippedAssets() => [
+  ...pubspecAssets(),
+  ...{
+    for (final p in seasonPackManifests.values)
+      for (final f in p.files) f.path.substring(0, f.path.lastIndexOf('/') + 1),
+  },
+];
+
 /// The entries of [assets] that name nothing on disk (a folder entry ends
 /// in `/` and must be a folder; any other, a file).
 List<String> missingAssets(Iterable<String> assets) => [
@@ -173,11 +184,11 @@ List<String> missingAssets(Iterable<String> assets) => [
 }
 
 /// Why each of [places]' pictures cannot be bundled: missing on disk, in
-/// no folder (nor as a file) of pubspec.yaml's asset list, or of another
-/// pixel size than the place says (`SeasonContentValidator` leaves the
-/// files to the tests).
+/// no folder (nor as a file) of [shippedAssets], or of another pixel size
+/// than the place says (`SeasonContentValidator` leaves the files to the
+/// tests).
 List<String> placeAssetProblems(Map<String, ScenePlace> places) {
-  final listed = pubspecAssets();
+  final listed = shippedAssets();
   return [
     for (final MapEntry(key: id, value: p) in places.entries)
       if (!File(p.file).existsSync())

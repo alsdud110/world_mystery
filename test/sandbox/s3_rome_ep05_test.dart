@@ -105,8 +105,7 @@ void main() {
       ]);
       final engines = {for (final s in PuzzleEngineCollisionCheck.slotsOf(romeSliceContent)) s.mission.id: s.active?.engine};
       expect(engines['s3_ep05_m1'], 'SceneExplore');
-      final pubspec = File('pubspec.yaml').readAsStringSync();
-      final folders = [for (final m in RegExp(r'^\s+- (assets/\S+/)\s*$', multiLine: true).allMatches(pubspec)) m[1]!];
+      final folders = shippedAssets().where((a) => a.endsWith('/')).toList();
       final files = {
         for (final p in romeSliceContent.places.values) p.file,
         for (final s in s3Ep05Explores.values) ...[s.picture, for (final c in s.choices) c.picture],

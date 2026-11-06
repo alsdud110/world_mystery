@@ -137,7 +137,7 @@ void main() {
     }
 
     test('all eighteen are in, listed in pubspec, at their sizes, cut out where they are papers or parts', () {
-      expect(pubspecAssets(), contains('$folder/'), reason: 'its folder, exactly, in flutter: assets:');
+      expect(shippedAssets(), contains('$folder/'), reason: 'its folder, exactly, shipped (a season pack)');
       expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.webp')).length, 18);
       expect(Directory(folder).listSync().whereType<File>().where((f) => f.path.endsWith('.png')), isEmpty, reason: 'the game ships WebP only');
       for (final MapEntry(key: name, value: (w, h, cutOut)) in pictures.entries) {

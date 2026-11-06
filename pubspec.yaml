@@ -17,6 +17,10 @@ dependencies:
   shared_preferences: ^2.5.5
   # Sound effects
   audioplayers: ^6.8.1
+  # SHA-256 of downloaded season pack files (season_pack_manifest.dart).
+  crypto: ^3.0.7
+  # The app's own storage for downloaded season packs.
+  path_provider: ^2.1.6
   google_mobile_ads: ^9.2.0
 
 dev_dependencies:
@@ -86,40 +90,14 @@ flutter:
     - assets/sounds/processed/ui_tap_02.wav
     - assets/sounds/processed/ui_tap_03.wav
     - assets/seasons/season_01_london/locations/map/
-    # Season 2 Paris: its Mission Map and its cover pictures.
-    - assets/seasons/season_02_paris/locations/map/
+    # Seasons 2-5 (Paris, Rome, New York, Seoul): only their covers, shown on
+    # the World Map and in the archives before any download. Their other
+    # pictures are season packs downloaded from the bucket (season_pack_*.dart,
+    # tool/season_packs/).
     - assets/seasons/season_02_paris/cover/
-    # Case 01 (Gare du Nord): the station hall and its three clocks (no
-    # hands: drawn by the app), the old clock's face, the lost ticket, the
-    # brass box shut and open, and the Montmartre painting.
-    - assets/seasons/season_02_paris/cases/case_01/
-    - assets/seasons/season_02_paris/cases/case_02/
-    - assets/seasons/season_02_paris/cases/case_03/
-    - assets/seasons/season_02_paris/cases/case_04/
-    - assets/seasons/season_02_paris/cases/case_05/
-    - assets/seasons/season_02_paris/cases/case_06/
-    - assets/seasons/season_02_paris/cases/case_07/
-    - assets/seasons/season_02_paris/cases/case_08/
-    - assets/seasons/season_02_paris/cases/case_09/
-    - assets/seasons/season_02_paris/cases/case_10/
-    - assets/seasons/season_02_paris/cases/case_11/
-    - assets/seasons/season_02_paris/cases/case_12/
-    - assets/seasons/season_02_paris/characters/
-    # Season 3 Rome (not in SeasonCatalog yet): the pictures made by the
-    # asset pipeline, played by the sandbox tests of Cases 01–08 (STEP 3-15A, 3-15B B1, B2).
-    - assets/seasons/season_03_rome/locations/
-    - assets/seasons/season_03_rome/characters/
-    - assets/seasons/season_03_rome/cases/case_01/
-    - assets/seasons/season_03_rome/cases/case_04/
-    - assets/seasons/season_03_rome/cases/case_05/
-    - assets/seasons/season_03_rome/cases/case_06/
-    - assets/seasons/season_03_rome/cases/case_08/
-    - assets/seasons/season_03_rome/cases/case_09/
-    - assets/seasons/season_03_rome/cases/case_10/
-    - assets/seasons/season_03_rome/cases/case_11/
-    - assets/seasons/season_03_rome/objects/
     - assets/seasons/season_03_rome/cover/
-    - assets/seasons/season_03_rome/locations/map/
+    - assets/seasons/season_04_newyork/cover/
+    - assets/seasons/season_05_seoul/cover/
     # The title screen (the detective's office).
     - assets/shared/title/
     # The launch screen's glass, grown into the title on launch (launch_reveal.dart).
@@ -173,26 +151,6 @@ flutter:
     # (`ArtAssets.detective`, `DetectiveExpression`).
     - assets/shared/detectives/expressions/boy/
     - assets/shared/detectives/expressions/girl/
-    - assets/seasons/season_04_newyork/cases/case_01/
-    - assets/seasons/season_04_newyork/cases/case_02/
-    - assets/seasons/season_04_newyork/cases/case_03/
-    - assets/seasons/season_04_newyork/cases/case_04/
-    - assets/seasons/season_04_newyork/cases/case_05/
-    - assets/seasons/season_04_newyork/cases/case_07/
-    - assets/seasons/season_04_newyork/cases/case_08/
-    - assets/seasons/season_04_newyork/cases/case_09/
-    - assets/seasons/season_04_newyork/cases/case_10/
-    - assets/seasons/season_04_newyork/cases/case_12/
-    - assets/seasons/season_04_newyork/characters/
-    - assets/seasons/season_04_newyork/cover/
-    - assets/seasons/season_04_newyork/locations/
-    - assets/seasons/season_04_newyork/locations/map/
-    - assets/seasons/season_04_newyork/objects/
-    - assets/seasons/season_05_seoul/cases/case_01/
-    - assets/seasons/season_05_seoul/characters/
-    - assets/seasons/season_05_seoul/locations/
-    - assets/seasons/season_05_seoul/cover/
-    - assets/seasons/season_05_seoul/locations/map/
 
   # Bundled locally (SIL Open Font License) so the game works fully offline.
   fonts:
