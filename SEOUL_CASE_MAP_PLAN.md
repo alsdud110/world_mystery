@@ -615,3 +615,42 @@ Case 01 `palace_map.webp`, Case 02~12 `case_02_map.webp`~`case_12_map.webp`. 시
 
 - Case 02~05의 물가와 해, `palace_map`의 야경 톤 차이, §11의 이름 왼쪽 치우침은 그대로다.
 - Case 12는 물이 오른쪽 아래 구석보다 조금 넓게(아래 가운데까지) 그려졌다. 실제 장소가 강변이라 재생성하지 않았다.
+
+## 15. PART 5 결과 (2026-11-06)
+
+### 무결성
+
+- `assets/` 아래 `.DS_Store` 없음(루트·`lib/`·`qa/`·`docs/`에만 있고 팩 대상 아님).
+- `build_manifest.dart` 재실행: `season_pack_manifests.g.dart` 변경 없음. 버전 Paris `a9018c0d12941172`, Rome `925831b811fc822c`, New York `ab063cbc1c01a5b3`, Seoul `f4a5c1af27a2bdfb`(101파일, 86,991,040 B).
+- 12개 지도(`palace_map` + `case_02`~`case_12`)와 `season_map.webp` 존재. 48개 미션 좌표, plan↔Dart 일치, 다른 시즌 무변경은 `seoul_case_maps_test`가 검증.
+- `season_factory.dart packs`: 101파일 크기·SHA-256 확인, 버킷이 90개 보유, 신규 11장(7,266,044 B) + 매니페스트 1개(19,975 B) 스테이징. `palace_map`은 기존 객체 재사용.
+
+### 테스트
+
+- `flutter analyze`: 문제 없음
+- `seoul_case_maps_test`: 37건 통과
+- 지도 회귀 묶음: 595건 통과, 1건 실패(`world_map_test` 지갑 저장 키, 기존)
+- 전체 `flutter test -j 2`: 통과 3,952 / 건너뜀 7 / 실패 14, 15분 35초, 메모리 중단 없음
+- 실패 14건을 변경 전 `2f1dd92`에서 같은 파일로 다시 실행: 같은 14건 실패. **신규 실패 0건.** (기준선 17건 중 3건은 현재 통과)
+
+### R2 업로드: 완료
+
+- 첫 시도(10:23 UTC)는 wrangler 미로그인으로 첫 객체에서 실패, 전송 0건. 사용자 `wrangler login` 뒤 다시 실행.
+- `season_factory.dart upload … --approved`: 12객체 전송(신규 지도 11장 7,266,044 B + 매니페스트 19,975 B, 합계 7,286,019 B). 파이프라인이 HTTPS 200·크기·SHA-256을 모두 다시 읽어 확인. `factory.json` deploy `deployed`, sent 12.
+- 별도 HTTPS 확인(curl): `manifests/season_05_seoul/f4a5c1af27a2bdfb.json` 200, version `f4a5c1af27a2bdfb`. Case 지도 12개(`palace_map` 포함) 객체 모두 크기·SHA-256이 매니페스트 및 로컬 파일과 일치.
+- 앱이 참조하는 버전(`season_pack_manifests.g.dart`)도 `f4a5c1af27a2bdfb`.
+- 기존 객체 삭제 없음, 다른 시즌 매니페스트 변경 없음.
+- `SEASON_PACK_LIVE_URL=… flutter test test/season_pack_live_r2_test.dart`: 7건 모두 통과(앱 다운로드 코드로 실제 버킷에서 팩 다운로드·검증, 10분 이상 소요). 전체 `flutter test`는 재실행하지 않음(위 결과 유지).
+
+### 실기기 체크리스트 (업로드 뒤)
+
+- [ ] 서울 시즌팩 다운로드 완료
+- [ ] Case 01~12가 각자 전용 지도로 열림(01은 궁궐 지도)
+- [ ] 지도 확대·이동
+- [ ] 미션별 핀 위치가 §11~§14 좌표의 장소에 있음
+- [ ] 잠긴 장소 이름 숨김
+- [ ] 다운로드 완료 후 비행기 모드에서 실행
+
+### 남은 문제
+
+- §14 남은 문제 그대로
