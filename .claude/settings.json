@@ -342,6 +342,18 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "c=$(jq -r \".tool_input.command // \\\"\\\"\"); case \"$c\" in *\"git push\"*) sh \"$CLAUDE_PROJECT_DIR/tool/git/sync_worktrees.sh\" 2>&1 | jq -Rs \"{systemMessage: .}\";; esac",
+            "timeout": 60
+          }
+        ]
+      }
     ]
   }
 }
