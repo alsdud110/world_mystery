@@ -593,12 +593,12 @@
       "master": "Inside the lid, Yi Jun reads aloud:"
     },
     {
-      "rookie": "THE LOCK WORD\nTell the world the truth about the 1905 treaty.\nJapan made Korea sign it. Korea did not choose it.\nIt was not signed freely.\nIt was ______ on Korea.",
+      "rookie": "THE LOCK WORD\nTell the world the truth about the 1905 treaty.\nJapan made Korea sign it. Korea did not choose it.\nJapan ______ Korea to sign it.",
       "junior": "THE LOCK WORD\nTell the world the truth about the 1905 treaty.\nJapan made Korea sign it. Korea did not choose it.\nKorea did not sign it freely.\nIt was ______ on Korea.",
       "master": "THE LOCK WORD\nTell the world the truth of the 1905 treaty.\nJapan made Korea sign it. Korea did not choose it.\nIt was not signed of Korea's free will.\nIt was ______ on Korea."
     },
     {
-      "rookie": "What was the 1905 treaty? Spell the word to open the box.",
+      "rookie": "What did Japan do to Korea? Spell the word to open the box.",
       "junior": "What was the 1905 treaty? Spell out the word to open the box.",
       "master": "What was the 1905 treaty? Spell the word that opens the box."
     },
@@ -608,12 +608,12 @@
       "master": "Study the lines inside the lid. Was the treaty Korea's choice?"
     },
     {
-      "rookie": "The word means made to happen, with no free choice.",
+      "rookie": "It starts with F. It means \"made someone do it\".",
       "junior": "The word means made to happen without any free choice.",
       "master": "The word describes something made to happen, with no free choice at all."
     },
     {
-      "rookie": "The box opens. The treaty was FORCED.",
+      "rookie": "The box opens. Japan FORCED Korea to sign it.",
       "junior": "The box clicks open. The treaty was FORCED.",
       "master": "The lock gives way. The treaty was FORCED."
     },
@@ -633,7 +633,7 @@
       "master": "Bongsu folds his note and tucks it away."
     },
     {
-      "rookie": "All six letters fit. Japan made Korea sign it. It was ____ on Korea.",
+      "rookie": "All six letters fit. Japan made Korea sign it: Japan ____ Korea to sign it.",
       "junior": "All six letters are right. Japan made Korea sign it. It was ____ on Korea.",
       "master": "All six letters belong. Japan made Korea sign it. It was ____ on Korea."
     },

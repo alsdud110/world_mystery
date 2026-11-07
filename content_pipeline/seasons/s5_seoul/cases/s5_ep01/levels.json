@@ -28,7 +28,7 @@
       "master": "Discover who wrote the burnt paper."
     },
     {
-      "rookie": "Find the sounds Taek saw.",
+      "rookie": "Find the letters Taek saw.",
       "junior": "Work out the sounds Taek saw.",
       "master": "Work out the sounds Taek remembers."
     },
@@ -43,32 +43,32 @@
       "master": "Prove to the King what the note says."
     },
     {
-      "rookie": "Autumn, 1446. You are a guest of King Sejong in Hanyang.",
+      "rookie": "Autumn, 1446. You visit King Sejong in Hanyang.",
       "junior": "It is autumn, 1446, and you are a guest of King Sejong in Hanyang.",
       "master": "Autumn, 1446: you are King Sejong's guest at his palace in Hanyang."
     },
     {
-      "rookie": "He shows you 28 new letters. \"I made them in 1443,\" he says.",
+      "rookie": "He shows you 28 new letters.",
       "junior": "He shows you 28 new letters. \"I created them in 1443,\" he says.",
       "master": "He shows you 28 new letters. \"I devised them in 1443,\" he explains."
     },
     {
-      "rookie": "\"Our words are not like Chinese words. Many people cannot write what they want to say.\"",
+      "rookie": "\"Many people cannot write what they want to say.\"",
       "junior": "\"Our language is different from Chinese. Many people cannot write what they want to say.\"",
       "master": "\"Our speech is unlike Chinese. Many of my people cannot write what they want to say.\""
     },
     {
-      "rookie": "\"My scholar says a wise person can learn them in one morning. Can you read them by dawn?\"",
+      "rookie": "\"Can you read my letters by dawn?\"",
       "junior": "\"My scholar writes that a wise person can learn them in one morning. Can you read them by dawn?\"",
       "master": "\"My scholar claims a wise mind can grasp them in a single morning. Shall we see whether you can read them by dawn?\""
     },
     {
-      "rookie": "Later, at the inner gate, Guard Taek lights his lantern with a strange paper.",
+      "rookie": "At the gate, Guard Taek burns a strange paper.",
       "junior": "Later, at the inner gate, Guard Taek uses a strange paper to light his lantern.",
       "master": "Later, at the inner gate, Guard Taek lights his lantern with a strange scrap of paper."
     },
     {
-      "rookie": "You pull it out of the fire. Rain clouds are coming.",
+      "rookie": "You pull it out of the fire. Rain is coming!",
       "junior": "You pull it out of the flame. Rain clouds are gathering.",
       "master": "You snatch it from the flame. Rain clouds are gathering overhead."
     },
@@ -123,12 +123,12 @@
       "master": "THE INNER GATE"
     },
     {
-      "rookie": "The paper is half burnt. Only one mark is left on it: a small ring.",
+      "rookie": "The paper is half burnt.",
       "junior": "The paper is half burnt. Only one mark is left on it: a small ring.",
       "master": "Half the paper is ash. A single mark survives: a small ring."
     },
     {
-      "rookie": "Who left a paper under the gate at night?",
+      "rookie": "Who left it at the gate?",
       "junior": "Who left a paper under the gate at night?",
       "master": "Who slipped a paper under the gate after dark?"
     },
@@ -138,7 +138,7 @@
       "master": "Your notes at the gate:"
     },
     {
-      "rookie": "The King said: \"Many people cannot write what they want to say.\"\nSomeone copied 門 from the gate sign, three times.\nA wet ring: a water bucket stood here.\nDrops of water lead away from the gate.",
+      "rookie": "The King said: \"Many people cannot write what they want to say.\"\nSomeone copied 門 from the gate sign, three times.\nA wet ring: a water bucket stood here.\nDrops of water lead away from the gate, past the guard post.",
       "junior": "The King said: \"Many people cannot write what they want to say.\"\nSomeone copied the character 門 from the gate sign three times.\nA wet ring shows that a water bucket stood here.\nDrops of water lead away from the gate.",
       "master": "The King said: \"Many of my people cannot write what they want to say.\"\nSomeone has copied the character 門 from the sign above the gate, three times over.\nA damp ring on the stone: a water bucket once stood here.\nA trail of water drops leads away from the gate."
     },
@@ -188,7 +188,7 @@
       "master": "It was lying under the inner gate after sunset."
     },
     {
-      "rookie": "Strange little marks. Boxes, rings, a tooth or two. I thought it was a game.",
+      "rookie": "Strange little marks. I thought it was a game.",
       "junior": "It had strange little marks: boxes, rings, a tooth or two. I thought it was a game.",
       "master": "Odd little marks: boxes, rings, a tooth or two. I took it for a child's game."
     },
@@ -213,12 +213,17 @@
       "master": "The inner gate by night"
     },
     {
-      "rookie": "Look for three marks.",
+      "rookie": "Tap 3 marks on the ground. Then tap a place.",
       "junior": "Look for three marks.",
       "master": "Look for three marks."
     },
     {
-      "rookie": "Nothing here. Look for marks.",
+      "rookie": "3 marks found! Now tap where the writer came from.",
+      "junior": "Where did the writer come from? Tap the place.",
+      "master": "Where did the writer come from? Tap the place."
+    },
+    {
+      "rookie": "Nothing here. Look on the ground.",
       "junior": "Nothing here. Look for marks.",
       "master": "Nothing here. Look for marks."
     },
@@ -253,7 +258,7 @@
       "master": "A trail of water"
     },
     {
-      "rookie": "Drops of water lead away from the gate.",
+      "rookie": "Drops of water lead away from the gate, past the guard post.",
       "junior": "Drops of water lead away from the gate.",
       "master": "A trail of water drops leads away from the gate."
     },
@@ -338,12 +343,12 @@
       "master": "\"Bun-i mastered the new letters in ten days,\" she says."
     },
     {
-      "rookie": "\"My pupils lock their slates in my lesson box with a new word's sounds.\"",
+      "rookie": "\"My pupils lock their slates in my lesson box.\"",
       "junior": "\"My pupils lock their slates in my lesson box with the sounds of a new word.\"",
       "master": "\"Each pupil locks a slate in my lesson box, using the sounds of a new word.\""
     },
     {
-      "rookie": "Sora reads her board out loud. Taek listens, and he remembers the marks he saw.",
+      "rookie": "Sora reads her board. Taek remembers the marks he saw.",
       "junior": "Sora reads her board out loud. Taek listens and remembers the marks he saw.",
       "master": "Sora reads her board aloud. As Taek listens, the marks he saw come back to him."
     },
@@ -353,12 +358,12 @@
       "master": "Sora's lesson board, and Taek's memory:"
     },
     {
-      "rookie": "Sora's board: ㄱ copies the back of the tongue. ㄴ copies the tongue on the gums.\nㅁ copies the mouth. ㅅ copies the teeth. ㅇ copies the throat.\nA stronger sound adds one line: ㄴ, then ㄷ, then ㅌ.\nTaek: \"Group 1 was the teeth.\"\n\"Group 2 was the back of the tongue.\"\n\"Group 3 was the teeth, one step stronger.\"\n\"Group 4 was the mouth, one step stronger. The throat was under it.\"",
-      "junior": "Sora's board: ㄱ copies the back of the tongue. ㄴ copies the tongue touching the gums.\nㅁ copies the mouth, ㅅ copies the teeth and ㅇ copies the throat.\nA stronger sound adds one more line: ㄴ, then ㄷ, then ㅌ.\nTaek: \"The first group was the teeth.\"\n\"The second was the back of the tongue.\"\n\"The third was the teeth again, but one step stronger.\"\n\"The fourth was the mouth, one step stronger, with the throat below it.\"",
-      "master": "Sora's board: ㄱ copies the back of the tongue rising; ㄴ, the tongue against the gums.\nㅁ copies the mouth, ㅅ the teeth and ㅇ the throat.\nEach stronger sound earns exactly one more line: ㄴ, then ㄷ, then ㅌ.\nTaek: \"The first group was the teeth.\"\n\"The second, the back of the tongue.\"\n\"The third was the teeth once more, a single step stronger.\"\n\"The fourth was the mouth, a single step stronger, with the throat beneath it.\""
+      "rookie": "SORA'S BOARD\nThese letters copy shapes:\nㄱ = the back of the tongue\nㄴ = the tongue on the gums\nㅁ = the mouth\nㅅ = the teeth\nㅇ = the throat\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nㄴ + 2 lines = ㅌ\nㅁ + 1 line = ㅂ\n\nTAEK REMEMBERS\n1. The teeth.\n2. The back of the tongue.\n3. The teeth + 1 line.\n4. The mouth + 1 line, and the throat under it.",
+      "junior": "SORA'S BOARD\nㄱ copies the back of the tongue.\nㄴ copies the tongue touching the gums.\nㅁ copies the mouth.\nㅅ copies the teeth.\nㅇ copies the throat.\nA stronger sound adds one more line: ㄴ, then ㄷ, then ㅌ.\n\nTAEK REMEMBERS\n\"The first group was the teeth.\"\n\"The second was the back of the tongue.\"\n\"The third was the teeth again, but one step stronger.\"\n\"The fourth was the mouth, one step stronger, with the throat below it.\"",
+      "master": "SORA'S BOARD\nㄱ copies the back of the tongue rising.\nㄴ copies the tongue against the gums.\nㅁ copies the mouth.\nㅅ copies the teeth.\nㅇ copies the throat.\nEach stronger sound earns exactly one more line: ㄴ, then ㄷ, then ㅌ.\n\nTAEK REMEMBERS\n\"The first group was the teeth.\"\n\"The second, the back of the tongue.\"\n\"The third was the teeth once more, a single step stronger.\"\n\"The fourth was the mouth, a single step stronger, with the throat beneath it.\""
     },
     {
-      "rookie": "Which letters did Bun-i write? Tap them in Taek's order.",
+      "rookie": "Which 5 letters did Bun-i write? Tap them in Taek's order.",
       "junior": "Which letters did Bun-i write? Tap them in Taek's order.",
       "master": "Which letters did Bun-i write? Tap them in the order Taek gives."
     },
@@ -368,7 +373,7 @@
       "master": "Look for the teeth and the back of the tongue on Sora's board."
     },
     {
-      "rookie": "One step stronger is one more line: ㄴ becomes ㄷ, not ㅌ.",
+      "rookie": "The teeth + 1 line: add one line to ㅅ, not two.",
       "junior": "One step stronger means one more line: ㄴ becomes ㄷ, not ㅌ.",
       "master": "A single step stronger is a single extra line: ㄴ becomes ㄷ, never ㅌ."
     },
@@ -383,22 +388,22 @@
       "master": "The letters are right, but not their order. Go through Taek's groups again."
     },
     {
-      "rookie": "Group 3 is the teeth one step stronger: one more line, not two.",
+      "rookie": "Group 3 is the teeth + 1 line, not two.",
       "junior": "Group 3 is the teeth one step stronger: one more line, not two.",
       "master": "Group 3 is the teeth a single step stronger: one extra line, not two."
     },
     {
-      "rookie": "Group 4 is the mouth one step stronger: one more line, not two.",
+      "rookie": "Group 4 is the mouth + 1 line, not two.",
       "junior": "Group 4 is the mouth one step stronger: one more line, not two.",
       "master": "Group 4 is the mouth a single step stronger: one extra line, not two."
     },
     {
-      "rookie": "Group 4 is the mouth one step stronger: it has one more line.",
+      "rookie": "Group 4 is the mouth + 1 line.",
       "junior": "Group 4 is the mouth one step stronger, so it has one more line.",
       "master": "Group 4 is the mouth a single step stronger: it carries one extra line."
     },
     {
-      "rookie": "Group 2 is the back of the tongue, not the tongue on the gums.",
+      "rookie": "Group 2 is the back of the tongue: ㄱ, not ㄴ.",
       "junior": "Group 2 is the back of the tongue, not the tongue touching the gums.",
       "master": "Group 2 is the back of the tongue, not the tongue against the gums."
     },
@@ -423,7 +428,7 @@
       "master": "Learn how Bun-i came to write."
     },
     {
-      "rookie": "The King asked me a question: can ordinary people learn his letters in ten days?",
+      "rookie": "The King asked me: can people learn his letters in ten days?",
       "junior": "The King asked me whether ordinary people can learn his letters in ten days.",
       "master": "The King set me a question: can ordinary people learn his letters in ten days?"
     },
@@ -443,12 +448,12 @@
       "master": "The Sounds"
     },
     {
-      "rookie": "The teeth, the back of the tongue, the teeth one step stronger, the mouth one step stronger, and the throat under it.",
+      "rookie": "The teeth, the back of the tongue, the teeth + 1 line, the mouth + 1 line, and the throat under it.",
       "junior": "The teeth, the back of the tongue, the teeth one step stronger, the mouth one step stronger and the throat below it.",
       "master": "The teeth, the back of the tongue, the teeth a step stronger, the mouth a step stronger, and the throat beneath."
     },
     {
-      "rookie": "a standing line, with a dot on its left",
+      "rookie": "a standing line, a dot on its left",
       "junior": "a standing line, with a dot on its left",
       "master": "a standing line, with a dot on its left side"
     },
@@ -468,24 +473,19 @@
       "master": "THE WRITING ROOM"
     },
     {
-      "rookie": "Sora takes you to her writing room.",
+      "rookie": "You go to Sora's writing room.",
       "junior": "Sora leads you to her writing room.",
       "master": "Sora leads you into her writing room."
     },
     {
-      "rookie": "\"Our vowels come from three shapes,\" she says.",
+      "rookie": "\"Vowels have three shapes.\"",
       "junior": "\"All our vowels come from three shapes,\" she says.",
       "master": "\"Every vowel grows from three shapes,\" she explains."
     },
     {
-      "rookie": "\"A round dot is the sky. A flat line is the earth. A standing line is a person.\"",
+      "rookie": "\"Dot = sky. Flat line = earth. Standing line = person.\"",
       "junior": "\"A round dot is the sky, a flat line is the earth and a standing line is a person.\"",
       "master": "\"The round dot is the sky, the flat line the earth, the standing line a person.\""
-    },
-    {
-      "rookie": "\"And we do not write across the page, as you do.\"",
-      "junior": "\"And we do not write across the page, the way you do.\"",
-      "master": "\"And unlike you, we do not write across the page.\""
     },
     {
       "rookie": "Sora's lesson:",
@@ -493,12 +493,12 @@
       "master": "Sora's lesson:"
     },
     {
-      "rookie": "A dot joins a line to make a vowel.\nFlat vowels go under the first sound. Standing vowels go on its right.\nThe sound at the bottom uses the same letters as the first sounds.\nWe write from top to bottom. The first column is on the right.\nBun-i wrote two groups in each column.",
+      "rookie": "Flat vowels go under.\nStanding vowels go on the right.\nWrite top to bottom.\nThe first column is on the right.\nTwo groups in each column.",
       "junior": "A dot joins a line to make a vowel.\nFlat vowels sit under the first sound; standing vowels sit on its right.\nThe sound at the bottom is written with the same letters as the first sounds.\nWe write from the top of the page to the bottom. The first column is on the right.\nBun-i wrote two groups in each column.",
       "master": "A vowel is a line with a dot joined to it.\nA flat vowel tucks beneath the first sound; a standing one keeps to its right.\nA sound at the bottom borrows the letters of the first sounds.\nWe write downwards, from top to bottom, and the first column is on the right.\nBun-i set two groups in each column."
     },
     {
-      "rookie": "Build each group in its place on the paper. What did Bun-i write?",
+      "rookie": "Tap a place. Choose its sound, then its line and dot.",
       "junior": "Build each group in its place on the paper. What did Bun-i write?",
       "master": "Build every group in its own place on the paper. What did Bun-i write?"
     },
@@ -508,12 +508,12 @@
       "master": "Group 1 sits at the top right; Group 2 sits beneath it."
     },
     {
-      "rookie": "Group 3 is at the top of the left column. For each group, choose its sound, then lay its line and its dot.",
+      "rookie": "Group 3 is at the top left. Group 4 is under it.",
       "junior": "Group 3 is at the top of the left column. For each group, choose its sound, then lay its line and place its dot.",
       "master": "Group 3 heads the left column. For each group, choose its sound first, then its line and its dot."
     },
     {
-      "rookie": "Bun-i did not write across the page. Read Sora's lesson: from top to bottom, and the first column is on the right.",
+      "rookie": "Not across the page! Go top to bottom, from the right.",
       "junior": "Bun-i did not write across the page. Read Sora's lesson again: top to bottom, and the first column is on the right.",
       "master": "Bun-i never wrote across the page. Read Sora's lesson again: downwards, the first column on the right."
     },
@@ -548,17 +548,17 @@
       "master": "\"Only the King can have it opened now.\" The first raindrops begin to fall."
     },
     {
-      "rookie": "Find out what the lines and dots looked like.",
+      "rookie": "Ask Taek what he saw.",
       "junior": "Find out what the lines and dots looked like.",
       "master": "Learn how the lines and dots looked."
     },
     {
-      "rookie": "Each group had lines and dots too. I looked at that paper for a long time.",
+      "rookie": "Each group had lines and dots.",
       "junior": "Each group had lines and dots as well. I stared at that paper for a long time.",
       "master": "Every group had its lines and dots. I studied that paper for a long while."
     },
     {
-      "rookie": "And the ring on the burnt corner was at the bottom of the last group.",
+      "rookie": "The ring was under the last group.",
       "junior": "And the ring on the burnt corner was at the bottom of the last group.",
       "master": "And the ring on the burnt corner sat at the foot of the last group."
     },
@@ -568,27 +568,27 @@
       "master": "Bun-i's Note"
     },
     {
-      "rookie": "Bun-i wrote: the book hall roof. She saw a hole in it.",
-      "junior": "Bun-i wrote \"the book hall roof\": she saw a hole in it.",
-      "master": "Bun-i wrote \"the book hall roof\": she had seen a hole in it."
+      "rookie": "서고 = a place for books. Bun-i saw a hole in the book hall roof.",
+      "junior": "서고 means a place for books. Bun-i saw a hole in the roof of the book hall.",
+      "master": "서고 is a place for books: Bun-i had seen a hole in the roof of the book hall."
     },
     {
-      "rookie": "Group 1: the teeth. A standing line, with a dot on its left.",
+      "rookie": "Group 1: ㅅ. A standing line, a dot on its left.",
       "junior": "Group 1: the teeth. A standing line, with a dot on its left.",
       "master": "Group 1: the teeth. A standing line, with a dot on its left side."
     },
     {
-      "rookie": "Group 2: the back of the tongue. A flat line, with a dot on top.",
+      "rookie": "Group 2: ㄱ. A flat line, a dot on top.",
       "junior": "Group 2: the back of the tongue. A flat line, with a dot above it.",
       "master": "Group 2: the back of the tongue. A flat line, a dot sitting above it."
     },
     {
-      "rookie": "Group 3: the teeth, one step stronger. Only a standing line.",
+      "rookie": "Group 3: ㅈ. Only a standing line.",
       "junior": "Group 3: the teeth, one step stronger. Just a standing line, nothing else.",
       "master": "Group 3: the teeth, a single step stronger. A lone standing line."
     },
     {
-      "rookie": "Group 4: the mouth, one step stronger. A flat line, with a dot under it. The throat's ring sits at the bottom.",
+      "rookie": "Group 4: ㅂ. A flat line, a dot under it. ㅇ at the bottom.",
       "junior": "Group 4: the mouth, one step stronger. A flat line, with a dot below it. The throat's ring sits at the bottom.",
       "master": "Group 4: the mouth, a single step stronger. A flat line with a dot beneath it, and the throat's ring at the very bottom."
     },

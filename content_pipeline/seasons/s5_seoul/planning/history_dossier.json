@@ -839,7 +839,7 @@
               "missionId": "s5_ep02_m2"
             },
             {
-              "text": "one step stronger",
+              "text": "stronger",
               "missionId": "s5_ep02_m2"
             },
             {
@@ -847,7 +847,7 @@
               "missionId": "s5_ep02_m2"
             }
           ],
-          "derivation": "Sora's board (Case 01, the book's organ letters h3 and the added stroke h10): the back of the tongue ㄱ, the mouth one step stronger ㅂ, the teeth ㅅ; the vowels from the dot and lines (h11, h12): a dot left of a standing line ㅓ, under a flat line ㅜ; the sounds at the bottom ㄱ and ㄴ. 거 북 선: the turtle ship. The note itself is made up.",
+          "derivation": "Sora's board (Case 01, the book's organ letters h3 and the added stroke h10): the back of the tongue ㄱ, the mouth one step stronger (Rookie: the mouth + 1 line) ㅂ, the teeth ㅅ; the vowels from the dot and lines (h11, h12): a dot left of a standing line ㅓ, under a flat line ㅜ; the sounds at the bottom ㄱ and ㄴ. 거 북 선: the turtle ship. The note itself is made up.",
           "whyOnly": "Each group's words allow one first sound, one vowel and one last sound: ㅁ is the mouth not one step stronger, ㅈ the teeth one step stronger; the dot on the left gives ㅓ not ㅏ."
         },
         {
@@ -3688,7 +3688,7 @@
       ],
       "fiction": [
         "The night in late autumn 1941, the missing copy, the dictionary, the white string, the man from the office checking rooms, the piano and the number lock are made up.",
-        "Miri is made up; so are her water-drop note and its riddle. Yonhi College is believed to have been a men's college then: Miri helps at the college and is never called its student.",
+        "Miri is made up; so are her water-drop card, Yun's list of his copies and the card's untrue line. Yonhi College is believed to have been a men's college then: Miri helps at the college and is never called its student.",
         "Yun Dong-ju is real, but everything he says and does in the case is made up; none of his lines is a quotation, and no line of his poems is quoted or translated (only the book's title).",
         "That Yun handed the copy to Jeong Byeong-uk at the college gate at dawn is made up; that the friend received a copy is fact (h3).",
         "The keepers' letter box and its old notes (from 1446 on) are the season's fiction."
@@ -3713,20 +3713,27 @@
         },
         {
           "puzzleId": "s5_ep11_m2",
-          "fiction": true,
-          "answer": "피아노안",
+          "factIds": [
+            "s5_ep11_h2",
+            "s5_ep11_h3"
+          ],
+          "answer": "string:string",
           "clues": [
             {
-              "text": "two steps stronger",
+              "text": "line by line",
               "missionId": "s5_ep11_m2"
             },
             {
-              "text": "first column is on the right",
+              "text": "not true",
               "missionId": "s5_ep11_m2"
+            },
+            {
+              "text": "white string",
+              "missionId": "s5_ep11_m1"
             }
           ],
-          "derivation": "Sora's board (Case 01, built on Hunminjeongeum's facts there) gives the body parts; one step stronger adds a line, so two steps add two: the mouth ㅁ, ㅂ, ㅍ. Each vowel is one line and one dot as the note says; the last sound of group 4 is ㄴ. Read top to bottom from the right: 피아 / 노안, 피아노 안, inside the piano.",
-          "whyOnly": "Each group's words allow one first sound, one vowel and one place on the paper; ㅂ or ㅁ for group 1 is one or no step, and reading from the left gives 노안피아."
+          "derivation": "Yun's list (made up) and the keeper's card (made up) give the same copy (2 of 3: three copies, h3), the same friend (Jeong Byeong-uk, h3) and the same poems (18 + 1 opening poem: 19, h2); only the string differs, WHITE on the list and BLACK AND WHITE on the card. Yun said in M1 that his friend's copy had a white string, so the card's line is the untrue one; read with the card's last words (keys of these colours) it gives black and white keys, which M3 shows to be the hall's piano.",
+          "whyOnly": "Three of the four lines are word for word the same on both papers; only the string line differs, and its pair is the answer. Each agreeing pair has its own feedback, which repeats the fact it holds."
         },
         {
           "puzzleId": "s5_ep11_m3",
@@ -3737,16 +3744,16 @@
           "answer": "319",
           "clues": [
             {
-              "text": "three copies",
+              "text": "2 of 3",
               "missionId": "s5_ep11_m3"
             },
             {
-              "text": "eighteen poems, and one more poem",
+              "text": "18 + 1 opening poem",
               "missionId": "s5_ep11_m3"
             }
           ],
-          "derivation": "The lock's rule (made up) puts two numbers side by side: the copies (three, h3), then the poems in each copy (eighteen and one more to open the book: 19, h2). 3 and 19: 319.",
-          "whyOnly": "Three copies only, and 18 + 1 = 19: no other number fits. 318 forgets the preface poem; 193 swaps the order (order feedback)."
+          "derivation": "The lock's rule (made up) puts two numbers side by side: the copies, then the poems in each copy, both read on Yun's list (M2, recalled here): copy 2 of 3, so three copies (h3); 18 poems and 1 opening poem, so 19 (h2). 3 and 19: 319.",
+          "whyOnly": "Three copies only (2 is the friend's copy's number, refused with its own feedback), and 18 + 1 = 19: no other number fits. 318 forgets the opening poem; 193 swaps the order (order feedback)."
         },
         {
           "puzzleId": "s5_ep11_final",
@@ -3775,7 +3782,7 @@
       ],
       "learningObjectives": [
         "Match a description (a thick book with a red spine, not ink) with a thing on a desk.",
-        "Read 'two steps stronger' and place words to build Hangeul groups where they were written.",
+        "Compare two records line by line, find the line that is not true, and read its message (black and white keys).",
         "Read number words and add them (eighteen and one more).",
         "Read why a language was pushed out of the schools, and name the language of Yun Dong-ju's poems."
       ],
@@ -3828,9 +3835,9 @@
         ],
         "inThisMystery": [
           {
-            "text": "Miri, the piano, the lock and that night are made up.",
-            "junior": "Miri, the piano, the lock and that night were invented for this case.",
-            "master": "Miri, the piano, the lock and that night are inventions of this story."
+            "text": "Miri, her card, Yun's list, the piano, the lock and that night are made up.",
+            "junior": "Miri, her card, Yun's list, the piano, the lock and that night were invented for this case.",
+            "master": "Miri, her card, Yun's list, the piano, the lock and that night are inventions of this story."
           },
           {
             "text": "Yun Dong-ju was real, but his words in this story are made up.",

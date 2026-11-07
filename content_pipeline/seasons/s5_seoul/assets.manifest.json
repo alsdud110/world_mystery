@@ -592,12 +592,12 @@
         "s5_ep02"
       ],
       "description": "M1's find: a wooden bucket full of rain water.",
-      "prompt": "A plain wooden water bucket of Joseon Korea with an iron band, full to the brim with clear rain water, a few drops splashing on the surface, on a plain warm paper background.",
+      "prompt": "A plain old wooden water bucket of Joseon Korea with a dark iron band, full to the brim with clear rain water, lit by a warm lantern, cut out on transparency with a soft contact shadow, to sit on the store room floor.",
       "stylePreset": "joseon_object",
-      "width": 1536,
-      "height": 1024,
-      "transparent": false,
-      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_bucket.webp",
+      "width": 640,
+      "height": 673,
+      "transparent": true,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_bucket_room.webp",
       "references": [],
       "status": "generated",
       "notes": []
@@ -611,12 +611,12 @@
         "s5_ep02"
       ],
       "description": "M1's find: a heap of wet straw.",
-      "prompt": "A small loose heap of wet, dark golden rice straw, as used to pad barrels, glistening with water, on a plain warm paper background.",
+      "prompt": "A low loose heap of wet rice straw lying flat, lit by a warm lantern, cut out on transparency with a soft contact shadow, to sit on the store room floor.",
       "stylePreset": "joseon_object",
-      "width": 1536,
-      "height": 1024,
-      "transparent": false,
-      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_straw.webp",
+      "width": 760,
+      "height": 438,
+      "transparent": true,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_straw_room.webp",
       "references": [],
       "status": "generated",
       "notes": []
@@ -630,12 +630,12 @@
         "s5_ep02"
       ],
       "description": "M1's find: the water-drop note of 1592 (blank paper with a small blue water drop).",
-      "prompt": "A small folded sheet of cream mulberry paper, slightly damp and wrinkled at one edge, completely blank with no writing, with one small blue water-drop shape drawn in the lower corner; on a plain warm paper background.",
+      "prompt": "A small folded sheet of pale hanji paper, blank, with one small blue water drop near its corner, lit by a warm lantern, cut out on transparency, to lie on the store room shelf.",
       "stylePreset": "joseon_object",
-      "width": 1536,
-      "height": 1024,
-      "transparent": false,
-      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_note.webp",
+      "width": 640,
+      "height": 578,
+      "transparent": true,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp",
       "references": [],
       "status": "generated",
       "notes": [
@@ -1899,6 +1899,52 @@
       "width": 1536,
       "height": 1024,
       "outputPath": "assets/seasons/season_05_seoul/cases/case_11/college_gate.webp"
+    },
+    {
+      "assetId": "s5_seoul.asset.c11_copy_list",
+      "type": "document",
+      "use": "puzzle",
+      "subject": "s5_seoul.c11_copy_list",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "description": "M2 record: Yun's list of his three copies, blank (the game writes the list).",
+      "prompt": "A single sheet of plain cream writing paper lying flat on a dark wooden student desk at night in a stone college dormitory in Seoul, late autumn 1941, seen from straight above: the sheet is completely blank, no ruled lines, no grid, no print, no letters, no numbers, nothing lying on it; it fills the middle of the picture from about 30% to 70% of the width and from 10% to 90% of the height, its edges straight and fully visible. At the far left edge, partly outside the picture, the corner of a thin hand-sewn paper book tied with brown string. Warm light from a desk lamp with a green shade just outside the top right edge.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/c11_copy_list.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured 2026-11-07 on the made picture: corners, crop and layout in s5_ep11 M2 play.records.",
+        "The game writes every word on the blank page.",
+        "Shipped in the app (pubspec.yaml), not in the Seoul season pack, until the next pack upload (user, 2026-11-07: no R2 upload)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c11_drop_card",
+      "type": "document",
+      "use": "puzzle",
+      "subject": "s5_seoul.c11_drop_card",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "description": "M2 record: the keeper's water-drop card, blank but for its drop (the game writes the card).",
+      "prompt": "A small unfolded cream card lying flat on a dark wooden student desk at night in a stone college dormitory in Seoul, late autumn 1941, seen from straight above: the card is completely blank, no print, no letters, no numbers, with two soft fold creases; it fills the middle of the picture from about 32% to 68% of the width and from 14% to 86% of the height, its edges fully visible. One tiny pale blue water drop is the only mark on it, in the card's lower right corner close to the edge. At the far right edge, partly outside the picture, the corner of a thick book with a red spine. Warm light from a desk lamp with a green shade just outside the top right edge.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/c11_drop_card.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured 2026-11-07 on the made picture: corners, crop and layout in s5_ep11 M2 play.records.",
+        "The game writes every word on the blank card; its only mark is the keepers' water drop.",
+        "Shipped in the app (pubspec.yaml), not in the Seoul season pack, until the next pack upload (user, 2026-11-07: no R2 upload)."
+      ]
     },
     {
       "transparent": false,

@@ -4,7 +4,7 @@
   "tool": "tool/asset_pipeline/asset_pipeline.dart --wiring --write",
   "checkedAgainst": "lib/ as of 2026-10-30 (SeasonContent.places, explores, investigations, dialogues, talkMissions, endings, ChoiceOption.picture, ArtAssets.seasonCovers, SeasonMap.bySeason, ArtAssets.evidencePictures, SeasonContent.storyScenes); wired: in assets/ now",
   "counts": {
-    "wired": 81,
+    "wired": 83,
     "wired_when_made": 0,
     "ready_to_wire": 3,
     "blocked": 0,
@@ -226,7 +226,7 @@
       "caseIds": [
         "s5_ep02"
       ],
-      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_bucket.webp",
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_bucket_room.webp",
       "status": "wired",
       "screen": "Search, a find laid over the scene (InvestigationSearch)",
       "field": "SeasonContent.investigations → InvestigationFind",
@@ -243,7 +243,7 @@
       "caseIds": [
         "s5_ep02"
       ],
-      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_straw.webp",
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_straw_room.webp",
       "status": "wired",
       "screen": "Search, a find laid over the scene (InvestigationSearch)",
       "field": "SeasonContent.investigations → InvestigationFind",
@@ -260,7 +260,7 @@
       "caseIds": [
         "s5_ep02"
       ],
-      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_note.webp",
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp",
       "status": "wired",
       "screen": "Search, a find laid over the scene (InvestigationSearch)",
       "field": "SeasonContent.investigations → InvestigationFind",
@@ -1311,6 +1311,40 @@
         "s5_ep11_final"
       ],
       "note": "Shown by the generated content (generate_season.dart); the season itself is not in SeasonCatalog."
+    },
+    {
+      "assetId": "s5_seoul.asset.c11_copy_list",
+      "type": "document",
+      "subject": "s5_seoul.c11_copy_list",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/c11_copy_list.webp",
+      "status": "wired",
+      "screen": "",
+      "field": "",
+      "via": "generator",
+      "missions": [
+        "s5_ep11_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
+    },
+    {
+      "assetId": "s5_seoul.asset.c11_drop_card",
+      "type": "document",
+      "subject": "s5_seoul.c11_drop_card",
+      "caseIds": [
+        "s5_ep11"
+      ],
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_11/c11_drop_card.webp",
+      "status": "wired",
+      "screen": "",
+      "field": "",
+      "via": "generator",
+      "missions": [
+        "s5_ep11_m2"
+      ],
+      "note": "Needed to play: the generator stops without it (asset_file_missing)."
     },
     {
       "assetId": "s5_seoul.asset.yun_dongju",

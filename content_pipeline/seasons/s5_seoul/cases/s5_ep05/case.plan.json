@@ -376,14 +376,14 @@
         "location": "THE QUEEN'S COURT",
         "story": [
           "Lady Han meets you in the Queen's court.",
-          "She was awake last night. She saw where the strangers went.",
-          "\"Put my words in order,\" she says. \"Then you will see.\""
+          "She saw where the strangers went.",
+          "\"Put my words in order,\" she says."
         ],
         "letterIntro": "Lady Han tells you:",
-        "letter": "The lamp man lit the lamps at 8:00.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate of the court first.\nAfter the gate, they stood by the Queen's hall and counted.\nThey left before the lamp man came back.\nThe lamp man came back at 9:00.\nThe guards at the main gate saw nothing. They are far away.",
+        "letter": "The lamp man lit the lamps at 8:00.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate first.\nAfter the gate, they stood by the Queen's hall.\nThey left before the lamp man came back.\nThe lamp man came back at 9:00.\nThe guards at the main gate saw nothing. They are far away.",
         "question": "Put the night in order, from 8:00 to 9:00.",
         "hints": [
-          "Look for the words first, after and before in Lady Han's account.",
+          "Find first, after and before in Lady Han's words.",
           "The main gate is far away. Is it part of that night?"
         ],
         "successMessage": "The strangers walked straight to the Queen's hall!",
@@ -463,12 +463,12 @@
             {
               "earlier": "dark",
               "later": "gate",
-              "line": "In the dark, the men went to the east gate of the court first."
+              "line": "In the dark, the men went to the east gate first."
             },
             {
               "earlier": "gate",
               "later": "hall",
-              "line": "After the gate, they stood by the Queen's hall and counted."
+              "line": "After the gate, they stood by the Queen's hall."
             },
             {
               "earlier": "hall",
@@ -485,7 +485,7 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "I serve the Queen. I sleep near her rooms."
+                "text": "I sleep near the Queen's rooms."
               },
               {
                 "by": "speaker",
@@ -493,7 +493,7 @@
               },
               {
                 "by": "detective",
-                "text": "Then tell me everything, in order."
+                "text": "Tell me, in order."
               }
             ]
           }
@@ -650,13 +650,13 @@
       "title": "The Board with No Names",
       "location": "JANGANDANG, THE KING'S HALL",
       "story": [
-        "Lady Han brings the strangers' board to the King's hall.",
-        "On it are lines for halls and doors, and a path from the east gate.",
-        "By one door, 37 is written on the board. It is a map of the Queen's rooms.",
-        "The Queen looks at it in silence. \"Someone is afraid of me,\" she says."
+        "Lady Han brings the strangers' board to the King.",
+        "It shows halls, doors and a path.",
+        "It is a map of the Queen's rooms.",
+        "The Queen says, \"Someone is afraid of me.\""
       ],
-      "letterIntro": "Your notes, and Lady Han's words to the King:",
-      "letter": "The dark was made on purpose.\nThe strangers walked from the east gate to the Queen's hall.\nThe rope and the map both say 37 steps to the Queen's door.\nLady Han says: \"Japan's power in Korea is growing.\nThe Queen works with Russia to hold back Japan's power.\nSome men want her out of the way.\"",
+      "letterIntro": "Your notes, and Lady Han's words:",
+      "letter": "The dark was made on purpose.\nThe rope and the map say 37 steps to the Queen's door.\nLady Han says: \"Japan wants more power in Korea.\nThe Queen works with Russia to hold back Japan's power.\nSome men want to stop her.\"\n(To hold back = to stop something from growing.)",
       "question": "Whose power is the Queen trying to hold back?",
       "prompt": "The Queen holds back ____'s power.",
       "hints": [
@@ -672,7 +672,7 @@
       "feedback": {
         "RUSSIA": "The Queen works WITH Russia. Read Lady Han's words again.",
         "CHINA": "China is not in Lady Han's words. Which two countries does she name?",
-        "KOREA": "The Queen is Korea's Queen. Whose power is growing in Korea?"
+        "KOREA": "The Queen is Korea's Queen. Who wants more power in Korea?"
       },
       "mapX": 0.5,
       "mapY": 0.24,

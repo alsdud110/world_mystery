@@ -28,9 +28,9 @@
       "master": "Examine Yun's desk."
     },
     {
-      "rookie": "Read the keeper's riddle.",
-      "junior": "Solve the keeper's riddle.",
-      "master": "Unravel the keeper's riddle."
+      "rookie": "Compare the card with Yun's list.",
+      "junior": "Compare the card with Yun's own list.",
+      "master": "Set the card beside Yun's own list."
     },
     {
       "rookie": "Open the letter box.",
@@ -148,9 +148,9 @@
       "master": "A drop of water: the keepers' own mark!"
     },
     {
-      "rookie": "It is a note in the King's letters, with a small blue drop.",
-      "junior": "It is a note written in the King's letters, marked with a small blue drop.",
-      "master": "It is a note in the King's letters, bearing a tiny blue drop."
+      "rookie": "It is a folded card in the King's letters, with a small blue drop.",
+      "junior": "It is a folded card written in the King's letters, marked with a small blue drop.",
+      "master": "It is a folded card in the King's letters, bearing a tiny blue drop."
     },
     {
       "rookie": "Haesu's notes had the same drop.",
@@ -158,9 +158,9 @@
       "master": "Haesu's notes bore that very same drop."
     },
     {
-      "rookie": "\"A keeper took the copy,\" you tell Yun. \"To keep it safe.\"",
-      "junior": "\"A keeper has taken the copy,\" you explain to Yun. \"To keep it from harm.\"",
-      "master": "\"A keeper took the copy,\" you assure Yun, \"to protect it.\""
+      "rookie": "\"A keeper took the copy,\" you tell Yun. \"This card tells us where.\"",
+      "junior": "\"A keeper has taken the copy,\" you explain to Yun. \"This card will tell us where.\"",
+      "master": "\"A keeper took the copy,\" you assure Yun, \"and this card will lead us to it.\""
     },
     {
       "rookie": "Yun says the spot is not ink. Look at the note again.",
@@ -353,149 +353,204 @@
       "master": "A keeper has visited. The note is written in the King's letters."
     },
     {
-      "rookie": "Two steps stronger adds two lines.",
-      "junior": "Two steps stronger adds two lines.",
-      "master": "Two steps stronger adds two lines."
+      "rookie": "The copy",
+      "junior": "Which copy",
+      "master": "Which copy it is"
     },
     {
-      "rookie": "The first column is on the right.",
-      "junior": "The first column is on the right.",
-      "master": "The first column is on the right."
+      "rookie": "Who it is for",
+      "junior": "Who the copy is for",
+      "master": "The copy's owner"
     },
     {
-      "rookie": "A Riddle in the King's Letters",
-      "junior": "A Riddle in the King's Letters",
-      "master": "A Riddle in the King's Letters"
+      "rookie": "The poems",
+      "junior": "The poems in it",
+      "master": "The poems it holds"
     },
     {
-      "rookie": "You unfold the note. The place is a riddle.",
-      "junior": "You open the note. The place is hidden in a riddle.",
-      "master": "You unfold the note. The hiding place is written as a riddle."
+      "rookie": "The string",
+      "junior": "The string's colour",
+      "master": "The colour of its string"
     },
     {
-      "rookie": "The keeper made it the old way, like Sora's lesson.",
-      "junior": "The keeper built it the old way, just like Sora's lesson.",
-      "master": "The keeper composed it the old way, in the manner of Sora's lesson."
+      "rookie": "line by line",
+      "junior": "line by line",
+      "master": "line by line"
     },
     {
-      "rookie": "\"Only a person that knows how the letters are made can read it,\" Yun smiles.",
-      "junior": "\"Only someone who knows how the letters are made can read it,\" Yun says with a smile.",
-      "master": "\"Only one who understands how the letters are built could read this,\" Yun remarks with a smile."
+      "rookie": "not true",
+      "junior": "not true",
+      "master": "not true"
     },
     {
-      "rookie": "The water-drop note says:",
-      "junior": "The water-drop note says:",
-      "master": "The water-drop note reads:"
+      "rookie": "Yun's List",
+      "junior": "Yun's List",
+      "master": "Yun's List"
     },
     {
-      "rookie": "The copy is safe. Read the place the old way.\nA stronger sound adds a line. Two steps stronger adds two lines.\nGroup 1: the mouth, two steps stronger. Only a standing line.\nGroup 2: the throat. A standing line, with a dot on its right.\nGroup 3: the tongue on the gums. A flat line, with a dot on top.\nGroup 4: the throat again, with the same vowel. The tongue on the gums sits at the bottom.\nRead from top to bottom. Two groups in each column. The first column is on the right.",
-      "junior": "The copy is safe. Read the place in the old way.\nA stronger sound adds a line. Two steps stronger adds two lines.\nGroup 1: the mouth sound, two steps stronger. Just a standing line.\nGroup 2: the throat sound. A standing line with a dot to its right.\nGroup 3: the tongue on the gums. A flat line with a dot on top.\nGroup 4: the throat sound again, with the same vowel. The tongue on the gums sits at the bottom.\nRead from top to bottom, two groups in each column. The first column is on the right.",
-      "master": "The copy is safe. Read the place in the old manner.\nA stronger sound adds a line. Two steps stronger adds two lines.\nGroup 1: the mouth sound, made two steps stronger, paired with a lone standing line.\nGroup 2: the throat sound, paired with a standing line that carries a dot on its right.\nGroup 3: the tongue on the gums, paired with a flat line that carries a dot on top.\nGroup 4: the throat sound once more, with the same vowel, and the tongue on the gums sits at the bottom.\nRead each column from top to bottom, two groups apiece. The first column is on the right."
+      "rookie": "You open the water-drop note. It is a small card.",
+      "junior": "You unfold the water-drop note. It turns out to be a small card.",
+      "master": "You unfold the water-drop note: it is a small, carefully folded card."
     },
     {
-      "rookie": "Build each group in its place on the paper. Where is the copy?",
-      "junior": "Build every group in its spot on the paper. Where is the copy?",
-      "master": "Assemble each group in its proper place on the paper. Where is the copy?"
+      "rookie": "Yun takes a paper from his drawer. \"This is my list of the copies.\"",
+      "junior": "Yun pulls a paper out of his drawer. \"Here is my list of the copies.\"",
+      "master": "Yun draws a sheet from his drawer. \"This is the list I keep of my copies.\""
     },
     {
-      "rookie": "Look at Sora's board: which letter copies the mouth?",
-      "junior": "Check Sora's board: which letter is shaped like the mouth?",
-      "master": "Consult Sora's board: which letter imitates the mouth?"
+      "rookie": "\"The card looks just like my list,\" he says. \"Why?\"",
+      "junior": "\"The card looks exactly like my list,\" he says. \"But why?\"",
+      "master": "\"The card is laid out precisely like my list,\" he murmurs. \"Why would anyone do that?\""
     },
     {
-      "rookie": "Two steps stronger is two more lines. Group 1 is at the top right.",
-      "junior": "Two steps stronger means two extra lines. Group 1 goes at the top right.",
-      "master": "Two steps stronger calls for two extra lines. Group 1 belongs at the top right."
+      "rookie": "Yun says:",
+      "junior": "Yun explains:",
+      "master": "Yun explains:"
     },
     {
-      "rookie": "The note reads 피아노 안: inside the piano!",
-      "junior": "The note says 피아노 안: inside the piano!",
-      "master": "The note spells 피아노 안: inside the piano!"
+      "rookie": "This list is for my friend's copy.\nThe card says the same things, line by line.\nBut one line on the card is not true.\nMaybe that line is a message.\nRead the card's last words too.",
+      "junior": "My list is about the copy for my friend.\nThe card repeats it, line by line.\nYet one line on the card is not true.\nPerhaps that line is a message for us.\nDon't forget to read the card's last words.",
+      "master": "My list describes the copy I made for my friend.\nThe card repeats it, line by line.\nYet one of its lines is not true.\nPerhaps that line is no mistake but a message.\nRead the card's closing words as well."
     },
     {
-      "rookie": "\"Inside the piano?\" Yun laughs softly.",
-      "junior": "\"In the piano?\" Yun laughs quietly.",
-      "master": "\"In the piano?\" Yun gives a soft laugh."
+      "rookie": "Which line on the card is not true?",
+      "junior": "Which line on the card is not true?",
+      "master": "Which of the card's lines is not true?"
     },
     {
-      "rookie": "\"There is an old piano in the college hall.\"",
-      "junior": "\"The college hall has an old piano.\"",
-      "master": "\"An old piano stands in the college hall.\""
+      "rookie": "Read the four lines of each paper, one by one.",
+      "junior": "Go through the four lines on each paper, one at a time.",
+      "master": "Compare the four lines of each paper, one pair at a time."
     },
     {
-      "rookie": "You walk there together under the bare trees.",
-      "junior": "Together you walk there beneath the bare trees.",
-      "master": "Together you make your way there beneath the leafless trees."
+      "rookie": "What colour is the string on his friend's copy? Yun told you in his room.",
+      "junior": "What colour is the string on the friend's copy? Yun told you when you arrived.",
+      "master": "Recall the colour of the string on the friend's copy: Yun mentioned it when you arrived."
     },
     {
-      "rookie": "Group 1 is two steps stronger: two more lines, not one.",
-      "junior": "Group 1 is two steps stronger, so it needs two more lines, not one.",
-      "master": "Group 1 is two steps stronger: that means two extra lines, not a single one."
+      "rookie": "The card says BLACK AND WHITE. But the string is white!",
+      "junior": "The card says BLACK AND WHITE, but the string is only white!",
+      "master": "The card claims BLACK AND WHITE, yet the string is plain white!"
     },
     {
-      "rookie": "Group 1 is two steps stronger than the mouth. Add two lines.",
-      "junior": "Group 1 is two steps stronger than the mouth sound. Add two lines.",
-      "master": "Group 1 is the mouth sound made two steps stronger. It needs two added lines."
+      "rookie": "\"My friend's string is white, not black and white,\" Yun says.",
+      "junior": "\"My friend's string is white, not black and white,\" Yun says slowly.",
+      "master": "\"The string on my friend's copy is white, not black and white,\" Yun says slowly."
     },
     {
-      "rookie": "The first column is on the right, not on the left.",
-      "junior": "The first column goes on the right, not the left.",
-      "master": "The first column sits on the right, not the left."
+      "rookie": "The card's last words: keys of these colours. Black and white keys!",
+      "junior": "The card ends with: keys of these colours. So, black and white keys!",
+      "master": "The card closes with: keys of these colours. Black and white keys, then!"
     },
     {
-      "rookie": "Group 2's dot is on the right of its line.",
-      "junior": "The dot in Group 2 goes on the right side of its line.",
-      "master": "In Group 2, the dot belongs on the right of its line."
+      "rookie": "\"Something in the college hall has keys like that,\" Yun says. You go there.",
+      "junior": "\"Something in the college hall has keys like that,\" Yun says. You hurry there together.",
+      "master": "\"There is something in the college hall with keys like those,\" Yun says. You set off at once."
     },
     {
-      "rookie": "The Hiding Place",
-      "junior": "The Hiding Place",
-      "master": "The Hiding Place"
+      "rookie": "Both papers say 2 OF 3: the second of Yun's three copies.",
+      "junior": "Both papers say 2 OF 3, the second of Yun's three copies.",
+      "master": "The two papers agree on 2 OF 3: the second of Yun's three copies."
     },
     {
-      "rookie": "The note says: inside the piano.",
-      "junior": "The note reads: inside the piano.",
-      "master": "According to the note: inside the piano."
+      "rookie": "Both name Jeong Byeong-uk, Yun's young friend.",
+      "junior": "Both papers name Jeong Byeong-uk, Yun's young friend.",
+      "master": "Both papers name the same person: Jeong Byeong-uk, Yun's young friend."
     },
     {
-      "rookie": "How are the letters made?",
-      "junior": "How were the letters made?",
-      "master": "How were the letters built?"
+      "rookie": "Both say 18 + 1: eighteen poems and one opening poem.",
+      "junior": "Both papers say 18 + 1: eighteen poems plus one opening poem.",
+      "master": "Both read 18 + 1: eighteen poems and a single opening poem."
     },
     {
-      "rookie": "Which thing in your Notebook shows how the first letters were made?",
-      "junior": "What in your Notebook shows how the first letters were made?",
-      "master": "Which item in your Notebook reveals how the first letters were made?"
+      "rookie": "The Card's Message",
+      "junior": "The Card's Message",
+      "master": "The Card's Message"
     },
     {
-      "rookie": "Find Sora's lesson board from the King's palace.",
-      "junior": "Look for Sora's lesson board from the King's palace.",
-      "master": "Seek out Sora's lesson board from the King's palace."
+      "rookie": "The card's untrue line says black and white. Its last words: keys of these colours.",
+      "junior": "The line on the card that is not true says black and white. It ends: keys of these colours.",
+      "master": "The card's one untrue line reads black and white; its closing words are: keys of these colours."
     },
     {
-      "rookie": "Group 1: the mouth, two steps stronger. Only a standing line.",
-      "junior": "Group 1: the mouth sound, two steps stronger. Just a standing line.",
-      "master": "Group 1: the mouth sound, made two steps stronger, paired with a lone standing line."
+      "rookie": "YUN'S LIST",
+      "junior": "YUN'S LIST",
+      "master": "YUN'S LIST"
     },
     {
-      "rookie": "Group 2: the throat. A standing line, with a dot on its right.",
-      "junior": "Group 2: the throat sound. A standing line with a dot to its right.",
-      "master": "Group 2: the throat sound, paired with a standing line that carries a dot on its right."
+      "rookie": "MY FRIEND'S COPY",
+      "junior": "MY FRIEND'S COPY",
+      "master": "MY FRIEND'S COPY"
     },
     {
-      "rookie": "Group 3: the tongue on the gums. A flat line, with a dot on top.",
-      "junior": "Group 3: the tongue on the gums. A flat line with a dot on top.",
-      "master": "Group 3: the tongue on the gums, paired with a flat line that carries a dot on top."
+      "rookie": "Yun's list on his desk, in his own hand",
+      "junior": "Yun's list on his desk, written in his own hand",
+      "master": "Yun's list on his desk, in his own handwriting"
     },
     {
-      "rookie": "Group 4: the throat again, with the same vowel. The tongue on the gums sits at the bottom.",
-      "junior": "Group 4: the throat sound again, with the same vowel. The tongue on the gums sits at the bottom.",
-      "master": "Group 4: the throat sound once more, with the same vowel, and the tongue on the gums sits at the bottom."
+      "rookie": "Copied by hand, 1941.",
+      "junior": "Copied by hand, 1941.",
+      "master": "Copied by hand, 1941."
     },
     {
-      "rookie": "eighteen poems, and one more",
-      "junior": "eighteen poems, and one more",
-      "master": "eighteen poems, and one more"
+      "rookie": "COPY",
+      "junior": "COPY",
+      "master": "COPY"
+    },
+    {
+      "rookie": "FOR",
+      "junior": "FOR",
+      "master": "FOR"
+    },
+    {
+      "rookie": "POEMS",
+      "junior": "POEMS",
+      "master": "POEMS"
+    },
+    {
+      "rookie": "STRING",
+      "junior": "STRING",
+      "master": "STRING"
+    },
+    {
+      "rookie": "THE WATER-DROP CARD",
+      "junior": "THE WATER-DROP CARD",
+      "master": "THE WATER-DROP CARD"
+    },
+    {
+      "rookie": "YOUR FRIEND'S COPY",
+      "junior": "YOUR FRIEND'S COPY",
+      "master": "YOUR FRIEND'S COPY"
+    },
+    {
+      "rookie": "The keeper's card, with a small blue water drop in its corner",
+      "junior": "The keeper's card, marked with a small blue water drop in one corner",
+      "master": "The keeper's card, a tiny blue water drop in its corner"
+    },
+    {
+      "rookie": "It is safe under keys of these colours.",
+      "junior": "It is safe under keys of these colours.",
+      "master": "It is safe under keys of these colours."
+    },
+    {
+      "rookie": "Tap each paper to read it.",
+      "junior": "Tap each paper to read it.",
+      "master": "Tap each paper to read it through."
+    },
+    {
+      "rookie": "Tap the line on each paper that does not match.",
+      "junior": "Tap the line on each paper that doesn't match.",
+      "master": "Tap the line on each paper that does not agree."
+    },
+    {
+      "rookie": "THESE DO NOT MATCH",
+      "junior": "THESE DO NOT MATCH",
+      "master": "THESE DO NOT MATCH"
+    },
+    {
+      "rookie": "opening poem",
+      "junior": "opening poem",
+      "master": "opening poem"
     },
     {
       "rookie": "side by side",
@@ -513,14 +568,14 @@
       "master": "THE COLLEGE HALL"
     },
     {
-      "rookie": "The hall is cold and dark. An old piano stands by the stage.",
-      "junior": "The hall is dark and cold. By the stage stands an old piano.",
-      "master": "The hall is chilly and dim. An old piano waits beside the stage."
+      "rookie": "The college hall is dark. An old piano stands by the wall.",
+      "junior": "The college hall is dark and cold. An old piano stands by the wall.",
+      "master": "The college hall is chilly and dim. An old piano waits against the wall."
     },
     {
-      "rookie": "Inside it is a small wooden letter box with a brass number lock.",
-      "junior": "Inside the piano is a little wooden letter box with a brass number lock.",
-      "master": "Within it rests a small wooden letter box fitted with a brass number lock."
+      "rookie": "Its keys are black and white. Under its lid is a letter box with a number lock.",
+      "junior": "Its keys are black and white. Under the lid sits a little wooden letter box with a brass number lock.",
+      "master": "Its keys gleam black and white. Beneath the lid rests a small wooden letter box fitted with a brass number lock."
     },
     {
       "rookie": "A young woman runs in. \"Wait! I am Miri, Haesu's cousin.\"",
@@ -533,9 +588,9 @@
       "master": "Miri and Yun explain:"
     },
     {
-      "rookie": "Miri: \"I put the copy in our family's letter box.\"\n\"A man from the office is checking rooms tonight.\"\n\"The lock wants two numbers, side by side.\"\n\"The number of copies. Then the number of poems in each copy.\"\nYun: \"I made three copies by hand.\"\n\"Each has eighteen poems, and one more poem to open the book.\"",
-      "junior": "Miri: \"I hid the copy in our family's letter box.\"\n\"Tonight a man from the office is checking the rooms.\"\n\"The lock needs two numbers, side by side.\"\n\"First the number of copies. Next, how many poems are in each copy.\"\nYun: \"I made three copies by hand.\"\n\"In each one there are eighteen poems, and one more poem to open the book.\"",
-      "master": "Miri: \"I hid the copy in our family's letter box.\"\n\"A man from the office is inspecting the rooms tonight.\"\n\"The lock demands two numbers, side by side.\"\n\"First, how many copies there are. After that, how many poems each copy holds.\"\nYun: \"I wrote out three copies by hand.\"\n\"Each holds eighteen poems, and one more poem that opens the book.\""
+      "rookie": "Miri: \"The lock wants two numbers, side by side.\"\n\"First: the number of copies.\"\n\"Then: the number of poems in each copy.\"\n\"Like this: 2 copies and 15 poems is 215.\"\nYun: \"Look at my list again.\"\n\"It says copy 2 of 3, and 18 + 1 opening poem.\"",
+      "junior": "Miri: \"I hid the copy in our family's letter box.\"\n\"Tonight a man from the office is checking the rooms.\"\n\"The lock needs two numbers, side by side.\"\n\"First the number of copies. Next, how many poems are in each copy.\"\nYun: \"My list has both. Look at it again.\"\n\"It says copy 2 of 3, and 18 + 1 opening poem.\"",
+      "master": "Miri: \"I hid the copy in our family's letter box.\"\n\"A man from the office is inspecting the rooms tonight.\"\n\"The lock demands two numbers, side by side.\"\n\"First, how many copies there are. After that, how many poems each copy holds.\"\nYun: \"My list holds both. Read it once more.\"\n\"It says copy 2 of 3, and 18 + 1 opening poem.\""
     },
     {
       "rookie": "Put in the lock's number.",
@@ -543,14 +598,14 @@
       "master": "Enter the lock's number."
     },
     {
-      "rookie": "Find the number of copies, then the poems in each copy.",
-      "junior": "Work out how many copies there are, then how many poems each copy has.",
-      "master": "Determine the number of copies first, then the number of poems in each copy."
+      "rookie": "Find the number of copies in all, then the poems in each copy.",
+      "junior": "Work out how many copies there are in all, then how many poems each copy has.",
+      "master": "Determine the total number of copies first, then the number of poems in each copy."
     },
     {
-      "rookie": "Eighteen poems, and one more: add them.",
-      "junior": "Eighteen poems, and one more: add them together.",
-      "master": "Eighteen poems, and one more: total them."
+      "rookie": "18 poems + 1 opening poem: add them.",
+      "junior": "18 poems plus 1 opening poem: add them together.",
+      "master": "Eighteen poems and one opening poem: add the two."
     },
     {
       "rookie": "Click! The letter box opens.",
@@ -573,19 +628,14 @@
       "master": "\"My friend's copy,\" Yun breathes."
     },
     {
-      "rookie": "Count the copies again: three books, made by hand.",
-      "junior": "Count the copies once more: three books, all made by hand.",
-      "master": "Recount the copies: three books, each made by hand."
+      "rookie": "Count the copies again: Yun made more than one.",
+      "junior": "Count the copies once more: Yun made more than one.",
+      "master": "Recount the copies: Yun made more than one."
     },
     {
-      "rookie": "Count the copies again: one for his teacher, one for his friend, one for him.",
-      "junior": "Count the copies once more: his teacher's, his friend's and his own.",
-      "master": "Recount the copies: one for his teacher, another for his friend, a third for himself."
-    },
-    {
-      "rookie": "Eighteen poems, and one more poem to open the book.",
-      "junior": "Eighteen poems, plus one more poem that opens the book.",
-      "master": "Eighteen poems, together with one more poem that opens the book."
+      "rookie": "Copy 2 is the friend's copy. How many copies are there in all?",
+      "junior": "Copy 2 is the friend's copy. How many copies did Yun make in all?",
+      "master": "Copy 2 is merely the friend's copy. How many did Yun make altogether?"
     },
     {
       "rookie": "The right numbers, in the wrong order. The copies come first.",
@@ -608,9 +658,9 @@
       "master": "Learn why Miri took the copy."
     },
     {
-      "rookie": "I wrote the note. I am sorry I scared you.",
-      "junior": "The note was mine. I'm sorry I frightened you.",
-      "master": "The note was mine. Forgive me for frightening you."
+      "rookie": "I wrote the card. I am sorry I scared you.",
+      "junior": "The card was mine. I'm sorry I frightened you.",
+      "master": "The card was mine. Forgive me for frightening you."
     },
     {
       "rookie": "Papers in Korean can get a student in trouble now.",
@@ -631,6 +681,16 @@
       "rookie": "The copy is safe. Now it must reach Yun's friend.",
       "junior": "The copy is safe. Next it has to reach Yun's friend.",
       "master": "The copy is safe. It must now find its way to Yun's friend."
+    },
+    {
+      "rookie": "Which thing in your Notebook shows the copies and the poems?",
+      "junior": "Which item in your Notebook lists the copies and the poems?",
+      "master": "Which record in your Notebook gives the copies and the poems?"
+    },
+    {
+      "rookie": "Find Yun's list from his room.",
+      "junior": "Look for Yun's list from his room.",
+      "master": "Seek out Yun's list from his room."
     },
     {
       "rookie": "a choice subject",
@@ -658,7 +718,7 @@
       "master": "Dawn breaks over the college's stone buildings."
     },
     {
-      "rookie": "Yun holds the thin book in both hands. \"It could not be printed, so I copied every word.\"",
+      "rookie": "Yun holds the thin book. \"It could not be printed, so I copied it.\"",
       "junior": "Yun holds the thin book with both hands. \"It couldn't be printed, so I copied out every word.\"",
       "master": "Yun cradles the slim book in both hands. \"Printing it was impossible, so I copied every single word.\""
     },
@@ -673,7 +733,7 @@
       "master": "Your notebook records:"
     },
     {
-      "rookie": "In 1938, Korean became only a choice subject in the schools.\nThe schools teach in Japanese now.\nThe words written on Yun's pages are in the King's letters, like the keeper's note.\nKing Sejong made his letters for the people's own language.",
+      "rookie": "In 1938, Korean became only a choice subject in the schools.\nMany schools stopped teaching it.\nThe schools teach in Japanese now.\nYun's pages are written in the King's letters.\nKing Sejong made his letters for the people's own language.",
       "junior": "In 1938, Korean became only a choice subject in the schools.\nNow the schools teach in Japanese.\nThe words on Yun's pages are written in the King's letters, just like the keeper's note.\nKing Sejong made his letters for the people's own language.",
       "master": "In 1938, Korean was reduced to only a choice subject in the schools.\nThe schools now teach in Japanese.\nThe words on Yun's pages are written in the King's letters, exactly like the keeper's note.\nKing Sejong created his letters for the people's own language."
     },
@@ -778,7 +838,8 @@
       "vanished": "사라졌다",
       "crooked": "비뚤어진",
       "frightened": "겁을 준",
-      "extra": "추가의"
+      "extra": "추가의",
+      "repeats": "되풀이하다"
     },
     "master": {
       "concealed": "숨겼다",
@@ -786,7 +847,8 @@
       "entrusts": "맡기다",
       "devised": "고안했다",
       "composes": "짓다(시를)",
-      "inspecting": "조사하는"
+      "inspecting": "조사하는",
+      "murmurs": "중얼거리다"
     }
   }
 }

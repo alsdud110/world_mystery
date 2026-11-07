@@ -435,8 +435,8 @@
         "\"Everything changed after that morning,\" she says."
       ],
       "letterIntro": "Haesu's page says:",
-      "letter": "Our government began in Shanghai in nineteen nineteen.\nOn the twenty-ninth of April, nineteen thirty-two, Mr. Yun went to Hongkou Park.\nHe attacked a Japanese army ceremony there. He was arrested at once.\nAfter that day, many Chinese people saw our fight in a new way.\nChinese leaders began to help our government strongly.",
-      "question": "In which year did Chinese leaders begin to help the government strongly? Put in the year.",
+      "letter": "Our government began in Shanghai in nineteen nineteen.\nMr. Yun's day: the twenty-ninth of April, nineteen thirty-two.\nIn Hongkou Park, he attacked a Japanese army event.\nHe was caught at once.\nAfter that day, many Chinese people saw how hard we fought.\nChinese leaders began to help our government strongly.",
+      "question": "In which year did Chinese leaders begin to help strongly?",
       "hints": [
         "Two years are written in words. Which one is Mr. Yun's day?",
         "Find the year of Mr. Yun's day. Write it with four numbers."
@@ -523,7 +523,8 @@
       "government": "정부",
       "water-drop": "물방울 표시",
       "twenty-ninth": "29일",
-      "thirty-two": "32"
+      "thirty-two": "32",
+      "attacked": "공격했다"
     }
   },
   "notes": [

@@ -15,8 +15,21 @@ const bundledSeasonFolder = 'season_01_london';
 /// a season's `cover/` (shown on the World Map and in the archives before any
 /// download) and London ship.
 bool shipsInApp(String path) => switch (path.split('/')) {
+  _ when appOnlySeasonFiles.contains(path) => true,
   ['assets', 'seasons', final folder, final sub, ...] => folder == bundledSeasonFolder || sub == 'cover',
   _ => true,
+};
+
+/// A downloaded season's pictures that ship in the app (listed one by one in
+/// `pubspec.yaml`) and are kept out of its pack: added after the pack went
+/// to the bucket.
+// shortcut: Seoul Case 11 M2's papers and Case 02 M1's room finds (2026-11-07, no R2 upload yet); move them into the pack at its next upload.
+const appOnlySeasonFiles = {
+  'assets/seasons/season_05_seoul/cases/case_11/c11_copy_list.webp',
+  'assets/seasons/season_05_seoul/cases/case_11/c11_drop_card.webp',
+  'assets/seasons/season_05_seoul/cases/case_02/find_bucket_room.webp',
+  'assets/seasons/season_05_seoul/cases/case_02/find_straw_room.webp',
+  'assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp',
 };
 
 /// Every season pack: each file under `assets/seasons/<folder>/` on disk,
@@ -26,6 +39,7 @@ List<SeasonPackManifest> measureSeasonPacks({String root = '.'}) {
   final byFolder = <String, List<SeasonPackFile>>{};
   for (final e in Directory('$root/assets/seasons').listSync(recursive: true).whereType<File>()) {
     final path = e.path.substring(root.length + 1).replaceAll(r'\', '/');
+    if (appOnlySeasonFiles.contains(path)) continue;
     final bytes = e.readAsBytesSync();
     byFolder.putIfAbsent(path.split('/')[2], () => []).add(SeasonPackFile(path, bytes.length, sha256.convert(bytes).toString()));
   }

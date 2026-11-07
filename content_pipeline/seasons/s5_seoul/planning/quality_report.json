@@ -4,39 +4,39 @@
   "tool": "tool/season_planner/plan_season.dart check",
   "counts": {
     "ERROR": 0,
-    "WARNING": 65,
-    "INFO": 43
+    "WARNING": 66,
+    "INFO": 41
   },
   "summary": {
     "bible": {
       "characters": 34,
       "locations": 13,
       "mysteryQuestions": 5,
-      "clueThreads": 38,
-      "longRangeThreads": 8,
+      "clueThreads": 39,
+      "longRangeThreads": 7,
       "englishReviews": 12
     },
     "assets": {
-      "total": 87,
+      "total": 100,
       "byType": {
-        "map": 2,
+        "map": 13,
         "prologue": 1,
         "place": 31,
         "scene": 1,
         "character": 32,
         "object": 18,
-        "document": 2
+        "document": 4
       },
-      "backgrounds": 35,
+      "backgrounds": 46,
       "characters": 32,
-      "objects": 20,
+      "objects": 22,
       "reusedAcrossCases": 2,
       "planned": 4,
-      "generated": 83,
+      "generated": 96,
       "shownBySeasonPlaces": 31,
       "model": "gpt-image-2",
       "quality": "medium",
-      "estimatedUsd": 4.37541,
+      "estimatedUsd": 5.01907,
       "estimateNote": "List prices of 2026-10-29 (image_pricing.dart), an estimate before any call, each reference picture priced as 8000 image input tokens; nothing was sent."
     },
     "history": {
@@ -63,7 +63,7 @@
     "puzzlesByKind": {
       "trace_deduction": 2,
       "order_sequence": 5,
-      "syllable_compose": 3,
+      "syllable_compose": 2,
       "evidence_talk": 4,
       "dark_room_search": 2,
       "number_entry": 8,
@@ -74,10 +74,10 @@
       "lens_inspect_word": 2,
       "scene_explore_choose": 2,
       "word_entry": 5,
-      "record_mismatch": 1,
+      "record_mismatch": 2,
       "witness_compare": 1
     },
-    "puzzlesOnPictures": 16,
+    "puzzlesOnPictures": 17,
     "finalsByKind": {
       "evidence_talk": 4,
       "letter_tile_lock": 3,
@@ -85,7 +85,7 @@
       "word_entry": 2,
       "number_entry": 1
     },
-    "crossCaseClueInputs": 23,
+    "crossCaseClueInputs": 22,
     "recallSteps": 11,
     "evidenceLinks": 1,
     "characters": 34,
@@ -308,13 +308,6 @@
     {
       "level": "WARNING",
       "code": "clue_never_used",
-      "where": "cases/s5_ep11 $.missions[1].clueOutputs.evidence",
-      "source": "plan",
-      "message": "s5_ep11_e2 is left, but no mission is given it"
-    },
-    {
-      "level": "WARNING",
-      "code": "clue_never_used",
       "where": "cases/s5_ep11 $.missions[2].clueOutputs.evidence",
       "source": "plan",
       "message": "s5_ep11_e3 is left, but no mission is given it"
@@ -394,14 +387,14 @@
       "code": "en_long_sentence",
       "where": "cases/s5_ep01 $.missions[1].play.clue.note",
       "source": "englishHeuristic",
-      "message": "22 words: \"The teeth, the back of the tongue, the teeth one step str...\" (at most 15 for ages 8-12)"
+      "message": "18 words: \"The teeth, the back of the tongue, the teeth + 1 line, th...\" (at most 15 for ages 8-12)"
     },
     {
       "level": "WARNING",
-      "code": "en_repeated",
-      "where": "cases/s5_ep01 $.missions[1].play.evidence.description",
+      "code": "en_long_sentence",
+      "where": "cases/s5_ep11 $.missions[1].play.evidence.description",
       "source": "englishHeuristic",
-      "message": "\"a stronger sound adds a line.\" 3 times in the season (cases/s5_ep01 $.final.play.letter; cases/s5_ep11 $.missions[1].play.letter…)"
+      "message": "17 words: \"Yun's list for his friend's copy: copy 2 of 3, for Jeong ...\" (at most 15 for ages 8-12)"
     },
     {
       "level": "WARNING",
@@ -427,13 +420,6 @@
     {
       "level": "WARNING",
       "code": "en_repeated",
-      "where": "cases/s5_ep03 $.final.play.ending[4]",
-      "source": "englishHeuristic",
-      "message": "\"i wrote the note.\" 3 times in the season (cases/s5_ep04 $.final.play.ending[3]; cases/s5_ep11 $.missions[2].play.talk.before.lines[0]…)"
-    },
-    {
-      "level": "WARNING",
-      "code": "en_repeated",
       "where": "cases/s5_ep05 $.missions[2].play.orderFeedback",
       "source": "englishHeuristic",
       "message": "\"the right numbers, in the wrong order.\" 5 times in the season (cases/s5_ep06 $.missions[2].play.orderFeedback; cases/s5_ep09 $.missions[0].play.orderFeedback; cases/s5_ep11 $.missions[2].play.orderFeedback…)"
@@ -443,7 +429,7 @@
       "code": "en_repeated",
       "where": "cases/s5_ep08 $.missions[0].play.letterIntro",
       "source": "englishHeuristic",
-      "message": "\"the water-drop note says:\" 5 times in the season (cases/s5_ep09 $.missions[0].play.letterIntro; cases/s5_ep10 $.missions[0].play.letterIntro; cases/s5_ep11 $.missions[1].play.letterIntro…)"
+      "message": "\"the water-drop note says:\" 4 times in the season (cases/s5_ep09 $.missions[0].play.letterIntro; cases/s5_ep10 $.missions[0].play.letterIntro; cases/s5_ep12 $.missions[0].play.letterIntro…)"
     },
     {
       "level": "WARNING",
@@ -583,7 +569,7 @@
       "code": "asset_pending",
       "where": "assets.manifest.json $.assets",
       "source": "assets",
-      "message": "4 of 87 pictures planned, not made yet (no API was called)"
+      "message": "4 of 100 pictures planned, not made yet (no API was called)"
     },
     {
       "level": "INFO",
@@ -636,10 +622,10 @@
     },
     {
       "level": "WARNING",
-      "code": "puzzle_selection_none",
+      "code": "puzzle_selection_unmatched",
       "where": "cases/s5_ep01 $.missions[2]",
       "source": "puzzle",
-      "message": "s5_ep01_m3: no trait its words show: write the clue into the case, or choose by hand and say why"
+      "message": "s5_ep01_m3 is planned as syllable_compose, which its words do not call for (timeline_board, order_sequence; chosen: timeline_board)"
     },
     {
       "level": "WARNING",
@@ -649,11 +635,11 @@
       "message": "s5_ep01_final: no trait its words show (the facts alone say relations: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why"
     },
     {
-      "level": "INFO",
-      "code": "puzzle_selection_alternative",
+      "level": "WARNING",
+      "code": "puzzle_selection_unmatched",
       "where": "cases/s5_ep02 $.missions[0]",
       "source": "puzzle",
-      "message": "s5_ep02_m1: planned dark_room_search, the rules chose trace_deduction (scene)"
+      "message": "s5_ep02_m1 is planned as dark_room_search, which its words do not call for (timeline_board, order_sequence; chosen: timeline_board)"
     },
     {
       "level": "WARNING",
@@ -719,6 +705,13 @@
       "message": "s5_ep05_m2: planned timeline_board, the rules chose witness_compare (testimony)"
     },
     {
+      "level": "WARNING",
+      "code": "puzzle_selection_none",
+      "where": "cases/s5_ep05 $.final",
+      "source": "puzzle",
+      "message": "s5_ep05_final: no trait its words show: write the clue into the case, or choose by hand and say why"
+    },
+    {
       "level": "INFO",
       "code": "puzzle_selection_alternative",
       "where": "cases/s5_ep06 $.missions[0]",
@@ -782,11 +775,11 @@
       "message": "s5_ep08_final: planned combo_dial_lock, the rules chose word_entry (inscription)"
     },
     {
-      "level": "INFO",
-      "code": "puzzle_selection_alternative",
+      "level": "WARNING",
+      "code": "puzzle_selection_unmatched",
       "where": "cases/s5_ep09 $.missions[1]",
       "source": "puzzle",
-      "message": "s5_ep09_m2: planned dark_room_search, the rules chose trace_deduction (scene)"
+      "message": "s5_ep09_m2 is planned as dark_room_search, which its words do not call for (record_mismatch, text_choice; chosen: record_mismatch)"
     },
     {
       "level": "INFO",
@@ -819,9 +812,9 @@
     {
       "level": "WARNING",
       "code": "puzzle_selection_none",
-      "where": "cases/s5_ep11 $.missions[1]",
+      "where": "cases/s5_ep11 $.final",
       "source": "puzzle",
-      "message": "s5_ep11_m2: no trait its words show: write the clue into the case, or choose by hand and say why"
+      "message": "s5_ep11_final: no trait its words show: write the clue into the case, or choose by hand and say why"
     },
     {
       "level": "WARNING",

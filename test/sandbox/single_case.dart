@@ -145,11 +145,12 @@ class CasePlayer {
     } else if (season.deductions[m.id] case final scene?) {
       await mp.noteClues(t, scene);
       await mp.chooseAndSearch(t, scene, a);
-    } else if (season.syllables[m.id] case final spec?) {
+    } else if (season.variants[m.difficulty]?.syllables[m.id] ?? season.syllables[m.id] case final spec?) {
       // Each group's vowel as the note [a] writes it: its line, then its dot.
       // On a paper whose sounds are chosen, each place tapped first, then its
       // first sound and the sound at its bottom too.
       for (final (i, b) in spec.blocks.indexed) {
+        if (b.given) continue;
         final code = a.codeUnitAt(i) - 0xAC00;
         final vowel = Hangul.vowels[code ~/ 28 % 21];
         final (line, dot) = Hangul.partsOf(vowel)!;

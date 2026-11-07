@@ -233,7 +233,7 @@
       "master": "The ink bottle"
     },
     {
-      "rookie": "The report says it is common office ink. Which thing has names pressed into it?",
+      "rookie": "The report says it is normal office ink. Which thing has names pressed into it?",
       "junior": "The report calls it common office ink. Which thing has names pressed into it?",
       "master": "The report calls it ordinary office ink. Which thing has names pressed into it?"
     },
@@ -268,17 +268,17 @@
       "master": "THE GOVERNMENT OFFICE"
     },
     {
-      "rookie": "The office of the Provisional Government is on the second floor.",
+      "rookie": "The government office is upstairs.",
       "junior": "The Provisional Government's office is on the second floor.",
       "master": "The Provisional Government keeps its office on the second floor."
     },
     {
-      "rookie": "Kim Gu's police searched it at dawn for marks and traces.",
+      "rookie": "Kim Gu's police searched it at dawn.",
       "junior": "At dawn, Kim Gu's police searched it for marks and traces.",
       "master": "At dawn, Kim Gu's police combed it for marks and traces."
     },
     {
-      "rookie": "They wrote down three things, but they did not move them.",
+      "rookie": "They found three things.",
       "junior": "They noted three things, but they left them where they were.",
       "master": "They recorded three things but left each one exactly where it lay."
     },
@@ -288,12 +288,12 @@
       "master": "The police report says:"
     },
     {
-      "rookie": "Three things in the office this morning:\nThe key is next to the stove. It opens the list desk.\nThe ink bottle is on the window sill. It is common office ink.\nThe thin paper is under the list desk. Names are pressed into it.\n— The Police Bureau",
+      "rookie": "The key is next to the stove. It opens the list desk.\nThe ink bottle is on the window sill. It is normal office ink.\nThe thin paper is under the list desk. Names are pressed into it.\n— Kim Gu's police",
       "junior": "This morning, three things in the office:\nThe key is next to the stove. It opens the list desk.\nThe ink bottle is on the window sill. It is common office ink.\nThe thin paper is under the list desk. Names are pressed into it.\n— The Police Bureau",
       "master": "Three things found in the office this morning:\nThe key is next to the stove. It opens the list desk.\nThe ink bottle is on the window sill. It is common office ink.\nThe thin paper is under the list desk. Names are pressed into it.\n— The Police Bureau"
     },
     {
-      "rookie": "Which thing shows that someone copied the secret list?",
+      "rookie": "Which thing shows that the list was copied?",
       "junior": "Which thing proves that someone copied the secret list?",
       "master": "Which of these things reveals that the secret list was copied?"
     },
@@ -358,12 +358,12 @@
       "master": "All three things are accounted for!"
     },
     {
-      "rookie": "The office is quiet. Nothing has been moved.",
+      "rookie": "Nothing has been moved.",
       "junior": "The office is silent. Nobody has moved anything.",
       "master": "The office is hushed. Nothing has been disturbed."
     },
     {
-      "rookie": "A police officer hands you the morning report.",
+      "rookie": "A police officer gives you the report.",
       "junior": "A police officer gives you the morning report.",
       "master": "A police officer passes you the morning report."
     },
@@ -393,7 +393,7 @@
       "master": "INK BOTTLE"
     },
     {
-      "rookie": "The ink bottle is on the window sill. It is common office ink.",
+      "rookie": "The ink bottle is on the window sill. It is normal office ink.",
       "junior": "The ink bottle is on the window sill. It is common office ink.",
       "master": "The ink bottle is on the window sill. It is common office ink."
     },
@@ -633,7 +633,7 @@
       "master": "The Police Chief"
     },
     {
-      "rookie": "A broad man in a plain dark suit comes up the stairs.",
+      "rookie": "A big man in a dark suit comes up the stairs.",
       "junior": "A broad man in a simple dark suit walks up the stairs.",
       "master": "A broad-shouldered man in a plain dark suit climbs the stairs."
     },
@@ -668,7 +668,7 @@
       "master": "Each question needs one piece of evidence."
     },
     {
-      "rookie": "Use Haesu's note, the police report and the sign-out book.",
+      "rookie": "Use Haesu's note, the police report and the sign-out book. One of them is used twice.",
       "junior": "Use Haesu's note, the police report and the sign-out book.",
       "master": "You hold Haesu's note, the police report and the sign-out book."
     },
@@ -813,7 +813,7 @@
       "master": "The sign-out book reveals who left last."
     },
     {
-      "rookie": "Kim Gu asks: \"So why does a government in exile need police?\"",
+      "rookie": "Kim Gu asks: \"Why does our government need police, so far from home?\"",
       "junior": "Kim Gu asks: \"Then why does a government in exile need police?\"",
       "master": "Kim Gu asks: \"So what need has a government in exile for police?\""
     },

@@ -58,7 +58,7 @@
     "planned": {
       "trace_deduction": 2,
       "order_sequence": 5,
-      "syllable_compose": 3,
+      "syllable_compose": 2,
       "evidence_talk": 4,
       "dark_room_search": 2,
       "number_entry": 8,
@@ -69,20 +69,20 @@
       "lens_inspect_word": 2,
       "scene_explore_choose": 2,
       "word_entry": 5,
-      "record_mismatch": 1,
+      "record_mismatch": 2,
       "witness_compare": 1
     },
     "selected": {
       "number_entry": 8,
       "witness_compare": 5,
-      "trace_deduction": 3,
-      "record_mismatch": 2,
-      "timeline_board": 3,
+      "timeline_board": 5,
+      "record_mismatch": 4,
       "lens_inspect_word": 5,
       "order_sequence": 3,
       "evidence_talk": 5,
-      "word_entry": 4,
-      "dark_room_search": 1
+      "trace_deduction": 1,
+      "dark_room_search": 1,
+      "word_entry": 2
     }
   },
   "missions": [
@@ -192,15 +192,35 @@
       "caseId": "s5_ep01",
       "missionId": "s5_ep01_m3",
       "surface": "mission",
-      "traits": [],
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "first",
+            "then"
+          ],
+          "from": "words"
+        }
+      ],
       "factIds": [
         "s5_ep01_h11",
         "s5_ep01_h12",
         "s5_ep01_h4"
       ],
-      "candidates": [],
-      "selected": null,
-      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
+      "candidates": [
+        {
+          "paletteId": "timeline_board",
+          "score": 10,
+          "why": "chronology"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
+        }
+      ],
+      "selected": "timeline_board",
+      "reason": "chronology",
       "planned": "syllable_compose",
       "plannedIsSelected": false,
       "checks": {
@@ -255,23 +275,10 @@
             "next"
           ],
           "from": "words"
-        },
-        {
-          "trait": "scene",
-          "cues": [
-            "marks",
-            "traces"
-          ],
-          "from": "words"
         }
       ],
       "factIds": [],
       "candidates": [
-        {
-          "paletteId": "trace_deduction",
-          "score": 10,
-          "why": "scene"
-        },
         {
           "paletteId": "timeline_board",
           "score": 10,
@@ -281,20 +288,10 @@
           "paletteId": "order_sequence",
           "score": 7,
           "why": "chronology (second choice)"
-        },
-        {
-          "paletteId": "dark_room_search",
-          "score": 7,
-          "why": "scene (second choice)"
-        },
-        {
-          "paletteId": "scene_explore_choose",
-          "score": 4,
-          "why": "scene (second choice)"
         }
       ],
-      "selected": "trace_deduction",
-      "reason": "scene",
+      "selected": "timeline_board",
+      "reason": "chronology",
       "planned": "dark_room_search",
       "plannedIsSelected": false,
       "checks": {
@@ -432,14 +429,14 @@
           "why": "documents"
         },
         {
-          "paletteId": "timeline_board",
-          "score": 10,
-          "why": "chronology"
-        },
-        {
           "paletteId": "order_sequence",
           "score": 7,
           "why": "chronology (second choice)"
+        },
+        {
+          "paletteId": "timeline_board",
+          "score": 6,
+          "why": "chronology; the same place of the case before"
         },
         {
           "paletteId": "text_choice",
@@ -910,8 +907,7 @@
           "cues": [
             "after",
             "before",
-            "first",
-            "then"
+            "first"
           ],
           "from": "words"
         },
@@ -997,29 +993,15 @@
       "caseId": "s5_ep05",
       "missionId": "s5_ep05_final",
       "surface": "finalMission",
-      "traits": [
-        {
-          "trait": "inscription",
-          "cues": [
-            "written on"
-          ],
-          "from": "words"
-        }
-      ],
+      "traits": [],
       "factIds": [
         "s5_ep05_h4"
       ],
-      "candidates": [
-        {
-          "paletteId": "word_entry",
-          "score": 10,
-          "why": "inscription"
-        }
-      ],
-      "selected": "word_entry",
-      "reason": "inscription",
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
       "planned": "word_entry",
-      "plannedIsSelected": true,
+      "plannedIsSelected": false,
       "checks": {
         "answerAndPlay": "pass",
         "levels": "pass"
@@ -1192,12 +1174,12 @@
       "candidates": [
         {
           "paletteId": "word_entry",
-          "score": 6,
-          "why": "inscription; the same place of the case before"
+          "score": 10,
+          "why": "inscription"
         }
       ],
       "selected": "word_entry",
-      "reason": "inscription; the same place of the case before (not chosen on the facts alone: chronology)",
+      "reason": "inscription (not chosen on the facts alone: chronology)",
       "planned": "letter_tile_lock",
       "plannedIsSelected": false,
       "checks": {
@@ -1267,8 +1249,7 @@
           "trait": "chronology",
           "cues": [
             "after",
-            "before",
-            "then"
+            "before"
           ],
           "from": "words"
         },
@@ -1737,14 +1718,6 @@
             "report"
           ],
           "from": "words"
-        },
-        {
-          "trait": "scene",
-          "cues": [
-            "marks",
-            "traces"
-          ],
-          "from": "words"
         }
       ],
       "factIds": [
@@ -1752,33 +1725,18 @@
       ],
       "candidates": [
         {
-          "paletteId": "trace_deduction",
-          "score": 10,
-          "why": "scene"
-        },
-        {
           "paletteId": "record_mismatch",
           "score": 10,
           "why": "documents"
         },
         {
-          "paletteId": "dark_room_search",
-          "score": 7,
-          "why": "scene (second choice)"
-        },
-        {
           "paletteId": "text_choice",
           "score": 5,
           "why": "documents (second choice); a plain choice"
-        },
-        {
-          "paletteId": "scene_explore_choose",
-          "score": 4,
-          "why": "scene (second choice)"
         }
       ],
-      "selected": "trace_deduction",
-      "reason": "scene",
+      "selected": "record_mismatch",
+      "reason": "documents",
       "planned": "dark_room_search",
       "plannedIsSelected": false,
       "checks": {
@@ -2021,8 +1979,7 @@
           "trait": "chronology",
           "cues": [
             "after",
-            "later",
-            "the year"
+            "later"
           ],
           "from": "words"
         },
@@ -2124,25 +2081,6 @@
       "caseId": "s5_ep11",
       "missionId": "s5_ep11_m2",
       "surface": "mission",
-      "traits": [],
-      "factIds": [],
-      "candidates": [],
-      "selected": null,
-      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
-      "planned": "syllable_compose",
-      "plannedIsSelected": false,
-      "checks": {
-        "answerAndPlay": "pass",
-        "levels": "pass"
-      },
-      "personReview": [
-        "whether each group's words build one vowel only, and the note reads as words"
-      ]
-    },
-    {
-      "caseId": "s5_ep11",
-      "missionId": "s5_ep11_m3",
-      "surface": "mission",
       "traits": [
         {
           "trait": "chronology",
@@ -2156,7 +2094,59 @@
           "trait": "documents",
           "cues": [
             "copies",
-            "copy"
+            "copy",
+            "list"
+          ],
+          "from": "words"
+        }
+      ],
+      "factIds": [
+        "s5_ep11_h2",
+        "s5_ep11_h3"
+      ],
+      "candidates": [
+        {
+          "paletteId": "record_mismatch",
+          "score": 10,
+          "why": "documents"
+        },
+        {
+          "paletteId": "text_choice",
+          "score": 5,
+          "why": "documents (second choice); a plain choice"
+        }
+      ],
+      "selected": "record_mismatch",
+      "reason": "documents (not chosen on the facts alone: chronology)",
+      "planned": "record_mismatch",
+      "plannedIsSelected": true,
+      "checks": {
+        "answerAndPlay": "pass",
+        "levels": "pass"
+      },
+      "personReview": [
+        "whether the lines that differ are a contradiction worth finding"
+      ]
+    },
+    {
+      "caseId": "s5_ep11",
+      "missionId": "s5_ep11_m3",
+      "surface": "mission",
+      "traits": [
+        {
+          "trait": "chronology",
+          "cues": [
+            "first",
+            "then"
+          ],
+          "from": "words"
+        },
+        {
+          "trait": "documents",
+          "cues": [
+            "copies",
+            "copy",
+            "list"
           ],
           "from": "words"
         },
@@ -2179,18 +2169,28 @@
           "why": "number"
         },
         {
-          "paletteId": "record_mismatch",
+          "paletteId": "timeline_board",
           "score": 10,
-          "why": "documents"
+          "why": "chronology"
+        },
+        {
+          "paletteId": "order_sequence",
+          "score": 7,
+          "why": "chronology (second choice)"
         },
         {
           "paletteId": "text_choice",
           "score": 5,
           "why": "documents (second choice); a plain choice"
+        },
+        {
+          "paletteId": "record_mismatch",
+          "score": 2,
+          "why": "documents; already in this case"
         }
       ],
       "selected": "number_entry",
-      "reason": "number (not chosen on the facts alone: chronology)",
+      "reason": "number",
       "planned": "number_entry",
       "plannedIsSelected": true,
       "checks": {
@@ -2205,30 +2205,16 @@
       "caseId": "s5_ep11",
       "missionId": "s5_ep11_final",
       "surface": "finalMission",
-      "traits": [
-        {
-          "trait": "inscription",
-          "cues": [
-            "written on"
-          ],
-          "from": "words"
-        }
-      ],
+      "traits": [],
       "factIds": [
         "s5_ep11_h4",
         "s5_ep11_h5"
       ],
-      "candidates": [
-        {
-          "paletteId": "word_entry",
-          "score": 10,
-          "why": "inscription"
-        }
-      ],
-      "selected": "word_entry",
-      "reason": "inscription",
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
       "planned": "word_entry",
-      "plannedIsSelected": true,
+      "plannedIsSelected": false,
       "checks": {
         "answerAndPlay": "pass",
         "levels": "pass"

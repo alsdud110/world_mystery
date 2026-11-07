@@ -240,7 +240,8 @@
         "initial": { "type": "string", "minLength": 1 },
         "vowel": { "type": "string", "minLength": 1 },
         "final": { "type": "string", "minLength": 1 },
-        "line": { "$ref": "common.schema.json#/$defs/text" }
+        "line": { "$ref": "common.schema.json#/$defs/text" },
+        "given": { "type": "boolean" }
       }
     },
     "timelineRelation": {

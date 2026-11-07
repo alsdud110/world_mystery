@@ -332,10 +332,24 @@ class CaseLevels {
       _visit(_copy(plan), (s) => words(s) ?? s);
 
   /// [plan] read at [level].
-  Object? apply(Object? plan, PlanLevel level) => applyWords(plan, (s) {
-    final w = lines[s]?[level];
-    return w == null || w.trim().isEmpty ? null : w;
-  });
+  Object? apply(Object? plan, PlanLevel level) {
+    final out = applyWords(plan, (s) {
+      final w = lines[s]?[level];
+      return w == null || w.trim().isEmpty ? null : w;
+    });
+    if (level == PlanLevel.master) _dropGiven(out);
+    return out;
+  }
+
+  /// Master gives no example: every group of a note is the player's to write.
+  static void _dropGiven(Object? v) {
+    if (v is Map) {
+      v.remove('given');
+      v.values.forEach(_dropGiven);
+    } else if (v is List) {
+      v.forEach(_dropGiven);
+    }
+  }
 
   static Object? _copy(Object? v) => switch (v) {
     final Map<dynamic, dynamic> m => <String, Object?>{for (final e in m.entries) '${e.key}': _copy(e.value)},
@@ -616,6 +630,8 @@ class CaseLevels {
   static List<String> sameGame(CasePlan base, CasePlan level) {
     final a = applyWords(base.toJson(), (_) => '');
     final b = applyWords(level.toJson(), (_) => '');
+    _dropGiven(a);
+    _dropGiven(b);
     final out = <String>[];
     void diff(Object? x, Object? y, String at) {
       if (x is Map && y is Map) {

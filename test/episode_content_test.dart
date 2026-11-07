@@ -82,6 +82,7 @@ void main() {
     expect(e.meaningOf('Queen'), '여왕');
     expect(e.meaningOf('museum.'), '박물관');
     expect(e.meaningOf('thief\'s'), '도둑');
+    expect(e.meaningOf('Queens'), '여왕');
     expect(e.meaningOf('the'), isNull);
   });
 

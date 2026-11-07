@@ -76,11 +76,13 @@ class Episode {
   List<Evidence> get allEvidence => [for (final m in allMissions) ?m.evidence];
 
   static final _nonWord = RegExp(r"[^a-z']");
+  static final _endingS = RegExp(r"'?s$");
 
-  /// Looks up [word] ignoring case and surrounding punctuation.
+  /// Looks up [word] ignoring case and surrounding punctuation; a plural or
+  /// possessive falls back to the glossary's base word (vowels, thief's).
   String? meaningOf(String word) {
     final key = word.toLowerCase().replaceAll(_nonWord, '');
-    return glossary[key] ?? (key.endsWith("'s") ? glossary[key.substring(0, key.length - 2)] : null);
+    return glossary[key] ?? glossary[key.replaceFirst(_endingS, '')];
   }
 
   Mission? missionById(String id) {

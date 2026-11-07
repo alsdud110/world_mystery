@@ -944,7 +944,7 @@
       "title": "The Poet's Three Copies",
       "question": "Late 1941, Yonhi College, Seoul: Yun Dong-ju's handwritten book of poems cannot be printed. Where is the copy he made for his friend?",
       "solution": "Made up: Miri, who helps at the college, keeps the copy for one night. History (the answer KOREAN): in 1941 Yun Dong-ju copied his nineteen poems by hand in three copies, written in Korean while Korean was being pushed out of the schools; his friend Jeong Byeong-uk's copy was hidden under the floor of the family house in Gwangyang and became a book in 1948.",
-      "fromPrevious": "The letters themselves (s5_ep01_e2): Hangeul is taught less and less in the schools.",
+      "fromPrevious": "Haesu's water-drop note (s5_ep10_e1) and the letters themselves (s5_ep01): Korean is taught less and less in the schools.",
       "toNext": "Miri sends the box to the family in Chongqing."
     },
     {
@@ -1192,11 +1192,11 @@
       "meaning": "They swapped: so Kim Gu holds Yun's new watch."
     },
     {
-      "from": "s5_ep01_e2",
+      "from": "s5_ep11_c1",
       "to": [
         "s5_ep11_m2"
       ],
-      "meaning": "Sora's Lesson Board reads Miri's riddle: two steps stronger is two more lines."
+      "meaning": "The water-drop note is a card that copies Yun's list: one line on it is not true."
     },
     {
       "from": "s5_ep10_e1",
@@ -1217,7 +1217,14 @@
       "to": [
         "s5_ep11_m3"
       ],
-      "meaning": "Inside the piano: the letter box in the college hall."
+      "meaning": "Black and white keys: the piano in the college hall."
+    },
+    {
+      "from": "s5_ep11_e2",
+      "to": [
+        "s5_ep11_m3"
+      ],
+      "meaning": "Yun's list gives the lock its numbers: copy 2 of 3, 18 + 1 opening poem."
     },
     {
       "from": "s5_ep11_c3",
@@ -1423,9 +1430,9 @@
       "level": "A1-A2 (ages 8-11)",
       "verdict": "Fits, with one stretch.",
       "notes": [
-        "Lines are short; the hard words (spine, riddle, subject, dictionary) are in the glossary.",
-        "M2 is the hardest page of the case: \"two steps stronger adds two lines\" extends Sora's rule from Case 01; the hint says it again plainly.",
-        "M3 adds eighteen and one: a small sum read in words, never a number given as digits.",
+        "Lines are short; the hard words (spine, subject, dictionary, list) are in the glossary.",
+        "M2 compares two short records line by line: three lines agree word for word, one is not true, and the card's last words turn it into black and white keys.",
+        "M3 reads its numbers on Yun's list (copy 2 of 3, 18 + 1 opening poem): a small sum, with 2 of 3 its own trap.",
         "The final answer KOREAN follows from the copy's pages (the King's letters) and Case 01's reason for the letters; wrong words get their own feedback."
       ]
     },

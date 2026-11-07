@@ -58,7 +58,9 @@
         "notes": [
           "Picture gate_courtyard (2026-11-04): the scholars' hall doorway (left), the guard post with its brazier (right middle) and the path to the kitchen well with its jars (far right) are drawn in it and measured on this file (grid sheet). The three traces lie on the plain paving in front of the steps.",
           "Traces read (DeductionScene): 門 copied from the gate sign (the writer could not write Chinese characters), a bucket ring and water drops all point to the path to the kitchen well.",
-          "The three traces are drawn by the app over their areas (copiedScrap, waterRing, waterDrops): no writing is ever in a picture."
+          "The three traces are drawn by the app over their areas (copiedScrap, waterRing, waterDrops): no writing is ever in a picture.",
+          "2026-11-06: each trace is reached through a second, larger area (its first area is where the app draws it); the tap guide stands just under the copied scrap, on bare paving in the marks' row (never on a trace: it shows how to look, not where).",
+          "2026-11-06: the opening view is the row of marks with the guard post and the kitchen well path (x 520–1536, y 700–920): the picture opens about 1.5× larger on a phone; the scholars' hall is a swipe to the left. The drops are a longer trail (1000–1420), curving past the guard post into the well path."
         ]
       },
       "clueInputs": [],
@@ -79,11 +81,11 @@
         "title": "The Paper Under the Gate",
         "location": "THE INNER GATE",
         "story": [
-          "The paper is half burnt. Only one mark is left on it: a small ring.",
-          "Who left a paper under the gate at night?"
+          "The paper is half burnt.",
+          "Who left it at the gate?"
         ],
         "letterIntro": "Your notes at the gate:",
-        "letter": "The King said: \"Many people cannot write what they want to say.\"\nSomeone copied 門 from the gate sign, three times.\nA wet ring: a water bucket stood here.\nDrops of water lead away from the gate.",
+        "letter": "The King said: \"Many people cannot write what they want to say.\"\nSomeone copied 門 from the gate sign, three times.\nA wet ring: a water bucket stood here.\nDrops of water lead away from the gate, past the guard post.",
         "question": "Where did the writer come from? Tap the place.",
         "hints": [
           "Tap the paper scrap, the wet ring and the drops of water.",
@@ -107,7 +109,7 @@
               },
               {
                 "by": "speaker",
-                "text": "Strange little marks. Boxes, rings, a tooth or two. I thought it was a game."
+                "text": "Strange little marks. I thought it was a game."
               },
               {
                 "by": "detective",
@@ -138,12 +140,12 @@
             "measuredOn": "sha256:08021fd107cd4e1b6d5e16074b3ea79d215bc73193d9907e74e09a52197fa5e6"
           },
           "place": "The inner gate at night",
-          "task": "Look for three marks.",
-          "chooseTask": "Where did the writer come from? Tap the place.",
-          "missLine": "Nothing here. Look for marks.",
+          "task": "Tap 3 marks on the ground. Then tap a place.",
+          "chooseTask": "3 marks found! Now tap where the writer came from.",
+          "missLine": "Nothing here. Look on the ground.",
           "notPlaceLine": "Tap a place the writer could have come from.",
           "guideAt": [
-            1330,
+            730,
             960
           ],
           "inside": [
@@ -153,10 +155,10 @@
             1014
           ],
           "opening": [
-            60,
-            280,
-            1530,
-            980
+            520,
+            700,
+            1536,
+            920
           ],
           "clues": [
             {
@@ -168,6 +170,12 @@
                   770,
                   800,
                   840
+                ],
+                [
+                  610,
+                  730,
+                  845,
+                  890
                 ]
               ],
               "mark": [
@@ -186,6 +194,12 @@
                   800,
                   990,
                   870
+                ],
+                [
+                  850,
+                  765,
+                  1000,
+                  905
                 ]
               ],
               "mark": [
@@ -200,17 +214,23 @@
               "label": "Drops of water",
               "areas": [
                 [
-                  1010,
-                  840,
-                  1300,
-                  900
+                  1000,
+                  740,
+                  1420,
+                  910
+                ],
+                [
+                  1003,
+                  730,
+                  1430,
+                  940
                 ]
               ],
               "mark": [
-                1155,
-                870
+                1210,
+                860
               ],
-              "line": "Drops of water lead away from the gate.",
+              "line": "Drops of water lead away from the gate, past the guard post.",
               "sketch": "waterDrops"
             }
           ],
@@ -363,23 +383,23 @@
         "story": [
           "Sora comes to the well with a lamp.",
           "\"Bun-i learned the new letters in ten days,\" she says.",
-          "\"My pupils lock their slates in my lesson box with a new word's sounds.\"",
-          "Sora reads her board out loud. Taek listens, and he remembers the marks he saw."
+          "\"My pupils lock their slates in my lesson box.\"",
+          "Sora reads her board. Taek remembers the marks he saw."
         ],
         "letterIntro": "Sora's lesson board, and Taek's memory:",
-        "letter": "Sora's board: ㄱ copies the back of the tongue. ㄴ copies the tongue on the gums.\nㅁ copies the mouth. ㅅ copies the teeth. ㅇ copies the throat.\nA stronger sound adds one line: ㄴ, then ㄷ, then ㅌ.\nTaek: \"Group 1 was the teeth.\"\n\"Group 2 was the back of the tongue.\"\n\"Group 3 was the teeth, one step stronger.\"\n\"Group 4 was the mouth, one step stronger. The throat was under it.\"",
-        "question": "Which letters did Bun-i write? Tap them in Taek's order.",
+        "letter": "SORA'S BOARD\nThese letters copy shapes:\nㄱ = the back of the tongue\nㄴ = the tongue on the gums\nㅁ = the mouth\nㅅ = the teeth\nㅇ = the throat\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nㄴ + 2 lines = ㅌ\nㅁ + 1 line = ㅂ\n\nTAEK REMEMBERS\n1. The teeth.\n2. The back of the tongue.\n3. The teeth + 1 line.\n4. The mouth + 1 line, and the throat under it.",
+        "question": "Which 5 letters did Bun-i write? Tap them in Taek's order.",
         "hints": [
           "Find the teeth and the back of the tongue on Sora's board.",
-          "One step stronger is one more line: ㄴ becomes ㄷ, not ㅌ."
+          "The teeth + 1 line: add one line to ㅅ, not two."
         ],
         "successMessage": "The lesson box opens!",
         "orderFeedback": "Those are the right letters. Read Taek's groups again, one by one.",
         "feedback": {
-          "siot,giyeok,chieut,bieup,ieung": "Group 3 is the teeth one step stronger: one more line, not two.",
-          "siot,giyeok,jieut,pieup,ieung": "Group 4 is the mouth one step stronger: one more line, not two.",
-          "siot,giyeok,jieut,mieum,ieung": "Group 4 is the mouth one step stronger: it has one more line.",
-          "siot,nieun,jieut,bieup,ieung": "Group 2 is the back of the tongue, not the tongue on the gums."
+          "siot,giyeok,chieut,bieup,ieung": "Group 3 is the teeth + 1 line, not two.",
+          "siot,giyeok,jieut,pieup,ieung": "Group 4 is the mouth + 1 line, not two.",
+          "siot,giyeok,jieut,mieum,ieung": "Group 4 is the mouth + 1 line.",
+          "siot,nieun,jieut,bieup,ieung": "Group 2 is the back of the tongue: ㄱ, not ㄴ."
         },
         "transition": [
           "Inside is Bun-i's slate, with the same five sounds.",
@@ -394,7 +414,7 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "The King asked me a question: can ordinary people learn his letters in ten days?"
+                "text": "The King asked me: can people learn his letters in ten days?"
               },
               {
                 "by": "speaker",
@@ -412,7 +432,7 @@
         "clue": {
           "title": "The Sounds",
           "value": "ㅅ ㄱ ㅈ ㅂ ㅇ",
-          "note": "The teeth, the back of the tongue, the teeth one step stronger, the mouth one step stronger, and the throat under it."
+          "note": "The teeth, the back of the tongue, the teeth + 1 line, the mouth + 1 line, and the throat under it."
         },
         "evidence": {
           "name": "Sora's Lesson Board",
@@ -458,7 +478,7 @@
         "objective": "점(하늘)·누운 줄(땅)·선 줄(사람)과 위치 표현(on its left, on top, under it), 세로쓰기 설명(top to bottom, the first column is on the right)을 읽고 종이 위 제자리에 네 글자를 완성한다.",
         "skill": "sentenceMeaning",
         "expressions": [
-          "a standing line, with a dot on its left",
+          "a standing line, a dot on its left",
           "The first column is on the right."
         ]
       },
@@ -466,20 +486,19 @@
         "title": "Four Little Groups",
         "location": "THE WRITING ROOM",
         "story": [
-          "Sora takes you to her writing room.",
-          "\"Our vowels come from three shapes,\" she says.",
-          "\"A round dot is the sky. A flat line is the earth. A standing line is a person.\"",
-          "\"And we do not write across the page, as you do.\""
+          "You go to Sora's writing room.",
+          "\"Vowels have three shapes.\"",
+          "\"Dot = sky. Flat line = earth. Standing line = person.\""
         ],
         "letterIntro": "Sora's lesson:",
-        "letter": "A dot joins a line to make a vowel.\nFlat vowels go under the first sound. Standing vowels go on its right.\nThe sound at the bottom uses the same letters as the first sounds.\nWe write from top to bottom. The first column is on the right.\nBun-i wrote two groups in each column.",
-        "question": "Build each group in its place on the paper. What did Bun-i write?",
+        "letter": "Flat vowels go under.\nStanding vowels go on the right.\nWrite top to bottom.\nThe first column is on the right.\nTwo groups in each column.",
+        "question": "Tap a place. Choose its sound, then its line and dot.",
         "hints": [
           "Group 1 is at the top right. Group 2 is under it.",
-          "Group 3 is at the top of the left column. For each group, choose its sound, then lay its line and its dot."
+          "Group 3 is at the top left. Group 4 is under it."
         ],
         "feedback": {
-          "고붕서지": "Bun-i did not write across the page. Read Sora's lesson: from top to bottom, and the first column is on the right.",
+          "고붕서지": "Not across the page! Go top to bottom, from the right.",
           "지붕서고": "Bun-i's first column is on the right, not on the left.",
           "사고지붕": "Group 1's dot is on the left of its line, not the right."
         },
@@ -492,16 +511,16 @@
         "talk": {
           "speaker": "taek",
           "portrait": "assets/seasons/season_05_seoul/characters/taek.webp",
-          "goal": "Find out what the lines and dots looked like.",
+          "goal": "Ask Taek what he saw.",
           "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "Each group had lines and dots too. I looked at that paper for a long time."
+                "text": "Each group had lines and dots."
               },
               {
                 "by": "speaker",
-                "text": "And the ring on the burnt corner was at the bottom of the last group."
+                "text": "The ring was under the last group."
               }
             ]
           }
@@ -511,7 +530,7 @@
         "clue": {
           "title": "Bun-i's Note",
           "value": "서고 지붕",
-          "note": "Bun-i wrote: the book hall roof. She saw a hole in it."
+          "note": "서고 = a place for books. Bun-i saw a hole in the book hall roof."
         },
         "evidence": {
           "name": "Bun-i's Note",
@@ -524,26 +543,26 @@
               "id": "one",
               "initial": "ㅅ",
               "vowel": "ㅓ",
-              "line": "Group 1: the teeth. A standing line, with a dot on its left."
+              "line": "Group 1: ㅅ. A standing line, a dot on its left."
             },
             {
               "id": "two",
               "initial": "ㄱ",
               "vowel": "ㅗ",
-              "line": "Group 2: the back of the tongue. A flat line, with a dot on top."
+              "line": "Group 2: ㄱ. A flat line, a dot on top."
             },
             {
               "id": "three",
               "initial": "ㅈ",
               "vowel": "ㅣ",
-              "line": "Group 3: the teeth, one step stronger. Only a standing line."
+              "line": "Group 3: ㅈ. Only a standing line."
             },
             {
               "id": "four",
               "initial": "ㅂ",
               "vowel": "ㅜ",
               "final": "ㅇ",
-              "line": "Group 4: the mouth, one step stronger. A flat line, with a dot under it. The throat's ring sits at the bottom."
+              "line": "Group 4: ㅂ. A flat line, a dot under it. ㅇ at the bottom."
             }
           ],
           "sounds": [
@@ -780,17 +799,17 @@
   "play": {
     "objectives": [
       "Find out who wrote the paper.",
-      "Find the sounds Taek saw.",
+      "Find the letters Taek saw.",
       "Put the note back together.",
       "Show the King what it says."
     ],
     "intro": [
-      "Autumn, 1446. You are a guest of King Sejong in Hanyang.",
-      "He shows you 28 new letters. \"I made them in 1443,\" he says.",
-      "\"Our words are not like Chinese words. Many people cannot write what they want to say.\"",
-      "\"My scholar says a wise person can learn them in one morning. Can you read them by dawn?\"",
-      "Later, at the inner gate, Guard Taek lights his lantern with a strange paper.",
-      "You pull it out of the fire. Rain clouds are coming."
+      "Autumn, 1446. You visit King Sejong in Hanyang.",
+      "He shows you 28 new letters.",
+      "\"Many people cannot write what they want to say.\"",
+      "\"Can you read my letters by dawn?\"",
+      "At the gate, Guard Taek burns a strange paper.",
+      "You pull it out of the fire. Rain is coming!"
     ],
     "caseSummary": "Bun-i wrote her first letter in the new letters. The book hall roof had a hole. King Sejong read it and saved the books.",
     "place": "THE PALACE, HANYANG",
@@ -809,7 +828,9 @@
       "slate": "석판(글씨 연습판)",
       "characters": "(한자 같은) 글자",
       "water-carriers": "물 긷는 사람들",
-      "column": "세로줄"
+      "column": "세로줄",
+      "tongue": "혀",
+      "gums": "잇몸"
     }
   },
   "notes": [

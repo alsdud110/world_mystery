@@ -194,9 +194,11 @@ class _SceneDeductionState extends State<SceneDeduction> {
                           minScale: frame.minScale(viewport),
                           maxScale: maxScale,
                           boundaryMargin: EdgeInsets.zero,
-                          onInteractionStart: (_) {
-                            _moved = true;
-                            _guideDone();
+                          onInteractionStart: (_) => _guideDone(),
+                          // Moved only by a drag or a pinch: a tap on a trace keeps the
+                          // opening view, so it is set again when the notes grow.
+                          onInteractionUpdate: (d) {
+                            if (d.focalPointDelta != Offset.zero || d.scale != 1) _moved = true;
                           },
                           child: SizedBox.fromSize(
                             size: frame.content,
@@ -473,17 +475,32 @@ class _TraceSketchPainter extends CustomPainter {
             ..strokeWidth = math.max(3, unit * 0.1),
         );
       case TraceSketch.waterDrops:
-        final wet = Paint()..color = AppColors.navy.withValues(alpha: 0.5);
+        // A trail of small puddles from the near corner (bottom left) away to
+        // the far one (top right), smaller as they go: each wet, with a rim
+        // and a glint, so it reads as water on stone.
+        final wet = Paint()..color = AppColors.navy.withValues(alpha: 0.45);
+        final rim = Paint()
+          ..color = AppColors.paperLight.withValues(alpha: 0.4)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = math.max(1, unit * 0.02);
+        final glint = Paint()..color = Colors.white.withValues(alpha: 0.85);
         for (final (x, y, r) in const [
-          (0.10, 0.62, 0.10),
-          (0.30, 0.45, 0.12),
-          (0.52, 0.58, 0.11),
-          (0.72, 0.40, 0.13),
-          (0.90, 0.52, 0.10),
+          (0.04, 0.90, 0.10),
+          (0.14, 0.86, 0.09),
+          (0.25, 0.85, 0.10),
+          (0.36, 0.81, 0.08),
+          (0.47, 0.80, 0.09),
+          (0.58, 0.75, 0.08),
+          (0.68, 0.67, 0.07),
+          (0.78, 0.55, 0.07),
+          (0.88, 0.40, 0.06),
+          (0.97, 0.24, 0.05),
         ]) {
-          final at = Offset(x * w, y * h);
-          canvas.drawOval(Rect.fromCenter(center: at, width: r * unit * 2.6 + 2, height: r * unit * 1.8 + 2), glow);
-          canvas.drawOval(Rect.fromCenter(center: at, width: r * unit * 2.6, height: r * unit * 1.8), wet);
+          final drop = Rect.fromCenter(center: Offset(x * w, y * h), width: r * unit * 2.6, height: r * unit * 1.2);
+          canvas.drawOval(drop.inflate(1.5), glow);
+          canvas.drawOval(drop, wet);
+          canvas.drawOval(drop, rim);
+          canvas.drawOval(Rect.fromCenter(center: drop.center + Offset(-drop.width * 0.18, -drop.height * 0.18), width: drop.width * 0.3, height: drop.height * 0.28), glint);
         }
       case TraceSketch.copiedScrap:
         canvas.save();

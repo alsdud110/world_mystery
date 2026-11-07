@@ -1120,7 +1120,7 @@ abstract final class CaseGenerator {
   static DartCall _syllables(SyllablesPlan s) => DartCall('SyllableSpec', named: {
     'blocks': [
       for (final b in s.blocks)
-        DartCall('SyllableBlock', named: {'id': b.id, 'initial': b.initial, 'vowel': b.vowel, 'finalConsonant': ?b.finalConsonant, 'line': b.line}),
+        DartCall('SyllableBlock', named: {'id': b.id, 'initial': b.initial, 'vowel': b.vowel, 'finalConsonant': ?b.finalConsonant, 'line': b.line, if (b.given) 'given': true}),
     ],
     if (s.sounds.isNotEmpty) 'sounds': s.sounds,
     'columnHeight': ?s.columnHeight,

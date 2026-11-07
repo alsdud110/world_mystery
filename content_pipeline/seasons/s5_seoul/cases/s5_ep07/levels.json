@@ -373,7 +373,7 @@
       "master": "That day, the Evening Sheet's writer crossed his path."
     },
     {
-      "rookie": "\"Put my day in order,\" he says. \"Then you will see.\"",
+      "rookie": "\"Put my day in order,\" he says.",
       "junior": "\"Put my day in the right order,\" he says. \"Then you will understand.\"",
       "master": "\"Set my day in order,\" he says, \"and you will understand.\""
     },
@@ -383,7 +383,7 @@
       "master": "Mr. Pak recounts:"
     },
     {
-      "rookie": "The tea room opened at 7:00.\nThat morning, before the noon train, I was on the platform with the bags.\nThe Evening Sheet's writer came on the noon train, at 12:00.\nAfter the noon train, a traveller told him a story over tea.\nHe wrote his report at this table, after the story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. It does not matter.",
+      "rookie": "The tea room opened at 7:00.\nThat morning, before the noon train, I was on the platform.\nThe Evening Sheet's writer came on the noon train, at 12:00.\nAfter the noon train, a traveller told him a story over tea.\nHe wrote his report after the story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. Leave it out.",
       "junior": "The tea room opened at 7:00.\nThat morning, before the noon train, I was on the platform with the bags.\nThe Evening Sheet's writer came on the noon train, at 12:00.\nAfter the noon train, a traveller told him a story over tea.\nHe wrote his report at this table, after the story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came in too, but it does not matter.",
       "master": "The tea room opened its doors at 7:00.\nThat morning, before the noon train, I was on the platform with the bags.\nThe Evening Sheet's writer came on the noon train, at 12:00.\nAfter the noon train, a traveller told him a story over tea.\nHe wrote his report at this table, after the story.\nAt 5:00 PM the Evening Sheet was printed.\nA goods train came through as well; pay it no mind."
     },
@@ -398,7 +398,7 @@
       "master": "Mr. Pak's words before and after hold the order."
     },
     {
-      "rookie": "The goods train does not matter. Set it aside.",
+      "rookie": "Leave the goods train out.",
       "junior": "The goods train is not important. Leave it out.",
       "master": "The goods train is beside the point. Set it apart."
     },
@@ -473,7 +473,7 @@
       "master": "A goods train pulls in."
     },
     {
-      "rookie": "That morning, before the noon train, I was on the platform with the bags.",
+      "rookie": "That morning, before the noon train, I was on the platform.",
       "junior": "That morning, before the noon train, I was on the platform with the bags.",
       "master": "That morning, before the noon train, I was on the platform with the bags."
     },
@@ -483,7 +483,7 @@
       "master": "After the noon train, a traveller told him a story over tea."
     },
     {
-      "rookie": "He wrote his report at this table, after the story.",
+      "rookie": "He wrote his report after the story.",
       "junior": "He wrote his report at this table, after the story.",
       "master": "He wrote his report at this table, after the story."
     },
@@ -498,7 +498,7 @@
       "master": "Every day I carry bags at this station."
     },
     {
-      "rookie": "I know every train, and every face.",
+      "rookie": "I know every train.",
       "junior": "I know every train and every face.",
       "master": "I know each train, and each face."
     },

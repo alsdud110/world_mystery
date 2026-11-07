@@ -98,6 +98,14 @@ flutter:
     - assets/seasons/season_03_rome/cover/
     - assets/seasons/season_04_newyork/cover/
     - assets/seasons/season_05_seoul/cover/
+    # Seoul Case 11 M2's two blank papers: in the app, out of the Seoul pack
+    # until its next upload (appOnlySeasonFiles, tool/season_packs/season_manifests.dart).
+    - assets/seasons/season_05_seoul/cases/case_11/c11_copy_list.webp
+    - assets/seasons/season_05_seoul/cases/case_11/c11_drop_card.webp
+    # Seoul Case 02 M1's finds, cut out for the store room: same rule.
+    - assets/seasons/season_05_seoul/cases/case_02/find_bucket_room.webp
+    - assets/seasons/season_05_seoul/cases/case_02/find_straw_room.webp
+    - assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp
     # The title screen (the detective's office).
     - assets/shared/title/
     # The launch screen's glass, grown into the title on launch (launch_reveal.dart).

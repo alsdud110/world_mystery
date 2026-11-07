@@ -413,12 +413,12 @@
       "master": "Lady Han receives you in the Queen's court."
     },
     {
-      "rookie": "She was awake last night. She saw where the strangers went.",
+      "rookie": "She saw where the strangers went.",
       "junior": "She was awake last night and saw where the strangers went.",
       "master": "She lay awake last night and watched where the strangers went."
     },
     {
-      "rookie": "\"Put my words in order,\" she says. \"Then you will see.\"",
+      "rookie": "\"Put my words in order,\" she says.",
       "junior": "\"Put my words in the right order,\" she says. \"Then you will understand.\"",
       "master": "\"Set my words in order,\" she says, \"and you will understand.\""
     },
@@ -428,7 +428,7 @@
       "master": "Lady Han recounts:"
     },
     {
-      "rookie": "The lamp man lit the lamps at 8:00.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate of the court first.\nAfter the gate, they stood by the Queen's hall and counted.\nThey left before the lamp man came back.\nThe lamp man came back at 9:00.\nThe guards at the main gate saw nothing. They are far away.",
+      "rookie": "The lamp man lit the lamps at 8:00.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate first.\nAfter the gate, they stood by the Queen's hall.\nThey left before the lamp man came back.\nThe lamp man came back at 9:00.\nThe guards at the main gate saw nothing. They are far away.",
       "junior": "The lamp man lit the lamps at 8:00.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate of the court first.\nAfter the gate, they stood by the Queen's hall and counted.\nThey left before the lamp man came back.\nThe lamp man returned at 9:00.\nThe guards at the main gate saw nothing, because they are a long way off.",
       "master": "At 8:00 the lamp man lit the lamps.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate of the court first.\nAfter the gate, they stood by the Queen's hall and counted.\nThey left before the lamp man came back.\nAt 9:00 the lamp man returned.\nThe guards at the main gate saw nothing; they stand much too far away."
     },
@@ -438,7 +438,7 @@
       "master": "Set the night's events in order, from 8:00 until 9:00."
     },
     {
-      "rookie": "Look for the words first, after and before in Lady Han's account.",
+      "rookie": "Find first, after and before in Lady Han's words.",
       "junior": "Look for first, after and before in what Lady Han tells you.",
       "master": "Lady Han's words first, after and before hold the order."
     },
@@ -523,12 +523,12 @@
       "master": "The lamps went dark after the strangers came into the lamp house."
     },
     {
-      "rookie": "In the dark, the men went to the east gate of the court first.",
+      "rookie": "In the dark, the men went to the east gate first.",
       "junior": "In the dark, the men went to the east gate of the court first.",
       "master": "In the dark, the men went to the east gate of the court first."
     },
     {
-      "rookie": "After the gate, they stood by the Queen's hall and counted.",
+      "rookie": "After the gate, they stood by the Queen's hall.",
       "junior": "After the gate, they stood by the Queen's hall and counted.",
       "master": "After the gate, they stood by the Queen's hall and counted."
     },
@@ -538,7 +538,7 @@
       "master": "Learn what Lady Han witnessed."
     },
     {
-      "rookie": "I serve the Queen. I sleep near her rooms.",
+      "rookie": "I sleep near the Queen's rooms.",
       "junior": "I serve the Queen, and I sleep near her rooms.",
       "master": "I attend the Queen and sleep close to her rooms."
     },
@@ -548,7 +548,7 @@
       "master": "Last night I heard footsteps in the darkness."
     },
     {
-      "rookie": "Then tell me everything, in order.",
+      "rookie": "Tell me, in order.",
       "junior": "Then tell me everything, in the right order.",
       "master": "Then tell me everything, exactly in order."
     },
@@ -683,32 +683,32 @@
       "master": "JANGANDANG, THE KING'S HALL"
     },
     {
-      "rookie": "Lady Han brings the strangers' board to the King's hall.",
+      "rookie": "Lady Han brings the strangers' board to the King.",
       "junior": "Lady Han carries the strangers' board to the King's hall.",
       "master": "Lady Han bears the strangers' board to the King's hall."
     },
     {
-      "rookie": "On it are lines for halls and doors, and a path from the east gate.",
+      "rookie": "It shows halls, doors and a path.",
       "junior": "It shows lines for halls and doors, and a path from the east gate.",
       "master": "Lines mark its halls and doors, and a path runs from the east gate."
     },
     {
-      "rookie": "By one door, 37 is written on the board. It is a map of the Queen's rooms.",
+      "rookie": "It is a map of the Queen's rooms.",
       "junior": "Next to one door, the number 37 is written. It is a map of the Queen's rooms.",
       "master": "Beside one door is written 37. The board is a map of the Queen's rooms."
     },
     {
-      "rookie": "The Queen looks at it in silence. \"Someone is afraid of me,\" she says.",
+      "rookie": "The Queen says, \"Someone is afraid of me.\"",
       "junior": "The Queen studies it silently. \"Someone is afraid of me,\" she says.",
       "master": "The Queen regards it without a word. \"Someone fears me,\" she says at last."
     },
     {
-      "rookie": "Your notes, and Lady Han's words to the King:",
+      "rookie": "Your notes, and Lady Han's words:",
       "junior": "Your notes, plus Lady Han's words to the King:",
       "master": "Your notes, together with what Lady Han tells the King:"
     },
     {
-      "rookie": "The dark was made on purpose.\nThe strangers walked from the east gate to the Queen's hall.\nThe rope and the map both say 37 steps to the Queen's door.\nLady Han says: \"Japan's power in Korea is growing.\nThe Queen works with Russia to hold back Japan's power.\nSome men want her out of the way.\"",
+      "rookie": "The dark was made on purpose.\nThe rope and the map say 37 steps to the Queen's door.\nLady Han says: \"Japan wants more power in Korea.\nThe Queen works with Russia to hold back Japan's power.\nSome men want to stop her.\"\n(To hold back = to stop something from growing.)",
       "junior": "The darkness was made on purpose.\nThe strangers walked from the east gate to the Queen's hall.\nBoth the rope and the map say 37 steps to the Queen's door.\nLady Han says: \"Japan's power in Korea is getting stronger.\nThe Queen works with Russia to hold back Japan's power.\nSome men want her out of the way.\"",
       "master": "The darkness was deliberate.\nThe strangers crossed from the east gate to the Queen's hall.\nRope and map agree: 37 steps to the Queen's door.\nLady Han says: \"Japan's power in Korea grows by the day.\nThe Queen works with Russia to hold back Japan's power.\nCertain men wish her out of the way.\""
     },
@@ -763,7 +763,7 @@
       "master": "China appears nowhere in Lady Han's words. Which two countries does she name?"
     },
     {
-      "rookie": "The Queen is Korea's Queen. Whose power is growing in Korea?",
+      "rookie": "The Queen is Korea's Queen. Who wants more power in Korea?",
       "junior": "She is Korea's own Queen. Whose power is growing in Korea?",
       "master": "She is the Queen of Korea itself. Whose power is swelling in Korea?"
     },

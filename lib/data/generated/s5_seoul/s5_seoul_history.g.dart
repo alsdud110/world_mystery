@@ -810,9 +810,9 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     inThisMystery: [
       HistoryLine(
-        rookie: 'Miri, the piano, the lock and that night are made up.',
-        junior: 'Miri, the piano, the lock and that night were invented for this case.',
-        master: 'Miri, the piano, the lock and that night are inventions of this story.',
+        rookie: 'Miri, her card, Yun\'s list, the piano, the lock and that night are made up.',
+        junior: 'Miri, her card, Yun\'s list, the piano, the lock and that night were invented for this case.',
+        master: 'Miri, her card, Yun\'s list, the piano, the lock and that night are inventions of this story.',
       ),
       HistoryLine(
         rookie: 'Yun Dong-ju was real, but his words in this story are made up.',

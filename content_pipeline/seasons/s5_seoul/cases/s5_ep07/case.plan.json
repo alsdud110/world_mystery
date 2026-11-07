@@ -416,14 +416,14 @@
         "story": [
           "Mr. Pak drinks his tea by the window.",
           "He saw the Evening Sheet's writer that day.",
-          "\"Put my day in order,\" he says. \"Then you will see.\""
+          "\"Put my day in order,\" he says."
         ],
         "letterIntro": "Mr. Pak tells you:",
-        "letter": "The tea room opened at 7:00.\nThat morning, before the noon train, I was on the platform with the bags.\nThe Evening Sheet's writer came on the noon train, at 12:00.\nAfter the noon train, a traveller told him a story over tea.\nHe wrote his report at this table, after the story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. It does not matter.",
+        "letter": "The tea room opened at 7:00.\nThat morning, before the noon train, I was on the platform.\nThe Evening Sheet's writer came on the noon train, at 12:00.\nAfter the noon train, a traveller told him a story over tea.\nHe wrote his report after the story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. Leave it out.",
         "question": "Put Mr. Pak's day in order.",
         "hints": [
           "Find the words before and after in Mr. Pak's day.",
-          "The goods train does not matter. Set it aside."
+          "Leave the goods train out."
         ],
         "successMessage": "The writer came at noon. He was never on the platform!",
         "transition": [
@@ -498,7 +498,7 @@
             {
               "earlier": "platform",
               "later": "noon",
-              "line": "That morning, before the noon train, I was on the platform with the bags."
+              "line": "That morning, before the noon train, I was on the platform."
             },
             {
               "earlier": "noon",
@@ -508,7 +508,7 @@
             {
               "earlier": "tea",
               "later": "write",
-              "line": "He wrote his report at this table, after the story."
+              "line": "He wrote his report after the story."
             }
           ]
         },
@@ -524,7 +524,7 @@
               },
               {
                 "by": "speaker",
-                "text": "I know every train, and every face."
+                "text": "I know every train."
               }
             ]
           }

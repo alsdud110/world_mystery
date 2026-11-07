@@ -156,7 +156,7 @@ void main() {
         await tapText(t, 'TAP TO OPEN', after: const Duration(milliseconds: 1800));
         expect(findReadableContaining(m.letter.split('\n').first), findsWidgets, reason: '${m.id} letter: ${texts()}');
         await tapText(t, 'SOLVE THE PUZZLE', after: const Duration(milliseconds: 900));
-        expect(find.text(m.question), findsOneWidget, reason: '${m.id}: ${texts()}');
+        expect(findReadable(m.question), findsOneWidget, reason: '${m.id}: ${texts()}');
       }
 
       /// The answer's Discovery Moment, the story after it (over the next

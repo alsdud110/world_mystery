@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:world_mystery/core/theme/app_colors.dart';
 import 'package:world_mystery/core/utils/answer_checker.dart';
 import 'package:world_mystery/data/content/difficulty_content.dart';
 import 'package:world_mystery/data/models/episode.dart';
@@ -199,5 +200,97 @@ void main() {
         expect(hangulWord.hasMatch(l), isFalse, reason: 'the King\'s talk: "$l"');
       }
     });
+  });
+
+  // Rookie R1 (docs/SEOUL_ROOKIE_AUDIT.md): Cases 01 and 02 read the
+  // King's letters the same way. (Case 11's riddle was replaced by Yun's
+  // list on 2026-11-07: test/sandbox/s5_seoul_case11_test.dart.)
+  group('Sora\'s board in Cases 01 and 02', () {
+    Episode episode(String caseId, Difficulty level) => DifficultyContent.episodeAt(
+      Episode.fromJson({...season5Content.episodes[caseId]!, 'seasonId': season5Content.id}),
+      level,
+      patches: season5Content.casePatches,
+    );
+    Mission mission(String caseId, String id, Difficulty level) => episode(caseId, level).allMissions.firstWhere((m) => m.id == id);
+    SyllableSpec? syllables(String id, Difficulty level) =>
+        level == Difficulty.rookie ? season5Content.syllables[id] : season5Content.variants[level]!.syllables[id];
+
+    test('Rookie says "+ 1 line" in both, never "step stronger"; tongue and gums in each glossary', () {
+      for (final (caseId, ids) in [('s5_ep01', ['s5_ep01_m2', m3]), ('s5_ep02', ['s5_ep02_m2'])]) {
+        final ep = episode(caseId, Difficulty.rookie);
+        for (final id in ids) {
+          final m = ep.allMissions.firstWhere((m) => m.id == id);
+          final words = [m.letter, m.question, ...m.hints, ...m.feedback.values, ?m.orderFeedback, ...?syllables(id, Difficulty.rookie)?.blocks.map((b) => b.line)];
+          for (final w in words) {
+            expect(w.contains('step stronger') || w.contains('steps stronger'), isFalse, reason: '$id: "$w"');
+          }
+        }
+        expect(ep.glossary.keys, containsAll(['tongue', 'gums']), reason: caseId);
+      }
+      expect(mission('s5_ep01', 's5_ep01_m2', Difficulty.rookie).question, contains('5 letters'), reason: 'four groups, five letters');
+    });
+  });
+
+  group('Case 02 M2: the first group is an example, up to Junior', () {
+    SyllableSpec note(Difficulty level) =>
+        level == Difficulty.rookie ? season5Content.syllables['s5_ep02_m2']! : season5Content.variants[level]!.syllables['s5_ep02_m2']!;
+
+    for (final level in [Difficulty.rookie, Difficulty.junior]) {
+      testWidgets('${level.label}: 거 is written and stays; the others build 거북선', (t) async {
+        final spec = note(level);
+        String? sent;
+        await open(t, spec, onSubmit: (a) => sent = a);
+        expect(find.text('거'), findsOneWidget);
+        expect(find.text('TOP · EXAMPLE'), findsOneWidget);
+        await tap(t, 'syllable-cell-one');
+        expect(find.byKey(const ValueKey('syllable-editor-one')), findsNothing, reason: 'an example has no pieces');
+        for (final b in spec.blocks.where((b) => !b.given)) {
+          await tap(t, 'syllable-cell-${b.id}');
+          await tap(t, 'syllable-sound-${b.id}-${b.initial}');
+          final (line, dot) = Hangul.partsOf(b.vowel)!;
+          await tap(t, 'syllable-line-${b.id}-${line.name}');
+          await tap(t, 'syllable-dot-${b.id}-${dot.name}');
+          await tap(t, 'syllable-bottom-${b.id}-${b.finalConsonant}');
+        }
+        await tap(t, 'syllable-check');
+        expect(sent, '거북선');
+      });
+    }
+
+    testWidgets('Master: every place is blank', (t) async {
+      final spec = note(Difficulty.master);
+      expect(spec.blocks.where((b) => b.given), isEmpty);
+      await open(t, spec);
+      expect(find.text('거'), findsNothing);
+      await tap(t, 'syllable-cell-one');
+      expect(find.byKey(const ValueKey('syllable-editor-one')), findsOneWidget);
+    });
+
+    test('a save from before the example still shows it written', () {
+      final spec = note(Difficulty.rookie);
+      final old = rules.stateFromJson(spec, [for (final _ in spec.blocks) [null, 'none']])!;
+      expect(rules.written(spec, old, 0), '거');
+      expect(rules.written(spec, old, 1), isEmpty);
+      expect(rules.apply(spec, old, const ClearVowel(0)).rejection?.code, 'block_given');
+    });
+
+    for (final text in [1.0, 1.6]) {
+      testWidgets('320×568, text ×$text: a place taken up blinks, settles tinted, and its pieces come on screen', (t) async {
+        await open(t, note(Difficulty.rookie), text: text);
+        final cell = find.byKey(const ValueKey('syllable-cell-three'));
+        await t.ensureVisible(cell);
+        await t.pumpAndSettle();
+        await t.tap(cell);
+        await t.pump();
+        await t.pump(const Duration(milliseconds: 200));
+        Color fill() => (t.widget<Container>(find.byKey(const ValueKey('syllable-cell-writing'))).decoration! as BoxDecoration).color!;
+        final blinking = fill();
+        await t.pumpAndSettle();
+        expect(blinking, isNot(fill()));
+        expect(fill(), isNot(AppColors.paperLight));
+        final first = t.getRect(find.byKey(const ValueKey('syllable-sound-three-ㄱ')));
+        expect(first.top >= 0 && first.bottom <= 568, isTrue, reason: 'FIRST SOUND on screen: $first');
+      });
+    }
   });
 }

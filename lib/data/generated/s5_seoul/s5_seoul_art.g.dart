@@ -412,7 +412,7 @@ const s5SeoulWorldCity = WorldCity(
 /// Its evidence shown by a picture (`ArtAssets.evidencePictures`), by evidence id:
 /// each picture made for it (assets.manifest.json, on disk).
 const s5SeoulEvidencePictures = <String, String>{
-  's5_ep02_e1': 'assets/seasons/season_05_seoul/cases/case_02/find_note.webp',
+  's5_ep02_e1': 'assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp',
   's5_ep09_e2': 'assets/seasons/season_05_seoul/cases/case_09/desk_key.webp',
   's5_ep10_e2': 'assets/seasons/season_05_seoul/cases/case_10/new_watch.webp',
 };

@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
@@ -47,7 +49,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
 
   void _play(SyllableAction action) {
     final (next, why) = _session.play(action);
-    if (why?.code == 'no_change') return;
+    if (why?.code == 'no_change' || why?.code == 'block_given') return;
     setState(() {
       if (why != null) {
         _note = why.code == 'dot_without_line' ? 'Lay a line first: the dot sits on it.' : 'The dot cannot sit there on that line.';
@@ -57,7 +59,35 @@ class _SyllableBoardState extends State<SyllableBoard> {
       _problem = null;
       _session = next;
     });
-    if (why == null) widget.onSaved?.call(_session.saved);
+    if (why == null) {
+      widget.onSaved?.call(_session.saved);
+      _revealEditor(); // a line laid opens the dots under it
+    }
+  }
+
+  /// Place [i] taken up: it blinks, and its pieces come on screen.
+  void _select(int i) {
+    setState(() {
+      _selected = i;
+      _note = null;
+      _blinks++;
+    });
+    _revealEditor();
+  }
+
+  /// Scrolls the pieces on screen, the paper above kept in sight when they fit.
+  void _revealEditor() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final pieces = _editorKey.currentContext;
+      if (pieces == null || !pieces.mounted) return;
+      final view = Scrollable.maybeOf(pieces)?.position.viewportDimension ?? double.infinity;
+      Scrollable.ensureVisible(
+        pieces,
+        duration: MediaQuery.disableAnimationsOf(context) ? Duration.zero : const Duration(milliseconds: 320),
+        curve: Curves.easeOutCubic,
+        alignmentPolicy: pieces.size!.height < view ? ScrollPositionAlignmentPolicy.keepVisibleAtEnd : ScrollPositionAlignmentPolicy.explicit,
+      );
+    });
   }
 
   void _read() {
@@ -72,6 +102,11 @@ class _SyllableBoardState extends State<SyllableBoard> {
 
   /// The place on the paper being written (paper mode; null: none tapped yet).
   int? _selected;
+
+  /// Places taken up so far: each one starts its cell's blink again.
+  int _blinks = 0;
+
+  final _editorKey = GlobalKey();
 
   /// The groups sit on a paper by their places ([SyllableSpec.columnHeight]),
   /// or their sounds are chosen ([SyllableSpec.sounds]).
@@ -238,7 +273,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
         if (selected == null)
           Text('No place tapped yet.', key: const ValueKey('syllable-none-selected'), style: AppText.aside(size: 15))
         else
-          _editor(selected),
+          KeyedSubtree(key: _editorKey, child: _editor(selected)),
         if (_note != null)
           Semantics(
             liveRegion: true,
@@ -257,40 +292,52 @@ class _SyllableBoardState extends State<SyllableBoard> {
     final place = _spec.placeName(i);
     final on = _selected == i;
     final wrong = _problem == i;
+    void tapped() => b.given ? setState(() => _note = 'This one is your example. Build the others the same way.') : _select(i);
     return Semantics(
-      button: true,
+      button: !b.given,
       selected: on,
-      label: '${place.toLowerCase()} of the paper: ${written.isEmpty ? 'empty' : 'written $written'}${wrong ? ', check this one' : ''}',
+      label: '${place.toLowerCase()} of the paper: ${b.given ? 'an example, ' : ''}${written.isEmpty ? 'empty' : 'written $written'}${wrong ? ', check this one' : ''}',
       excludeSemantics: true,
-      onTap: () => setState(() => _selected = i),
+      onTap: tapped,
       child: GestureDetector(
         key: ValueKey('syllable-cell-${b.id}'),
         behavior: HitTestBehavior.opaque,
-        onTap: () => setState(() => _selected = i),
+        onTap: tapped,
         child: Padding(
           padding: const EdgeInsets.only(bottom: AppSpace.sm),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                width: 72,
-                height: 72,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: AppColors.paperLight,
-                  borderRadius: BorderRadius.circular(AppRadius.paper),
-                  border: Border.all(
-                    color: wrong ? AppColors.tryAgain : (on ? AppColors.gold : AppColors.goldDeep),
-                    width: on || wrong ? AppLine.ink : AppLine.rule,
-                  ),
-                ),
+              // Three blinks when taken up, then a steady tint while it is the one written.
+              TweenAnimationBuilder<double>(
+                key: ValueKey('syllable-blink-${on ? _blinks : 0}'),
+                tween: Tween(begin: on ? 0 : 1, end: 1),
+                duration: MediaQuery.disableAnimationsOf(context) ? Duration.zero : const Duration(milliseconds: 1200),
+                builder: (context, t, child) {
+                  final blink = math.pow(math.sin(3 * math.pi * t), 2).toDouble();
+                  return Container(
+                    key: on ? const ValueKey('syllable-cell-writing') : null,
+                    width: 72,
+                    height: 72,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Color.lerp(AppColors.paperLight, AppColors.gold, on ? 0.18 + 0.42 * blink : 0),
+                      borderRadius: BorderRadius.circular(AppRadius.paper),
+                      border: Border.all(
+                        color: wrong ? AppColors.tryAgain : (on ? AppColors.gold : AppColors.goldDeep),
+                        width: on || wrong ? AppLine.ink : AppLine.rule,
+                      ),
+                    ),
+                    child: child,
+                  );
+                },
                 child: Text(written, style: AppText.title(size: 40, color: AppColors.navy)),
               ),
               const SizedBox(height: AppSpace.xs),
               SizedBox(
                 width: 96,
                 child: Text(
-                  wrong ? '$place · CHECK' : place,
+                  wrong ? '$place · CHECK' : (b.given ? '$place · EXAMPLE' : place),
                   textAlign: TextAlign.center,
                   style: AppText.eyebrow(color: wrong ? AppColors.tryAgain : (on ? AppColors.ink : AppColors.goldDeep)),
                 ),

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "spentUsd": 4.843369,
+  "spentUsd": 5.066434,
   "reviewed": [
     "s5_seoul.asset.aunae_market",
     "s5_seoul.asset.bae",
@@ -41,7 +41,9 @@
     "s5_seoul.asset.c10_strap_watch",
     "s5_seoul.asset.c11_college_gate",
     "s5_seoul.asset.c11_college_hall",
+    "s5_seoul.asset.c11_copy_list",
     "s5_seoul.asset.c11_dorm_room",
+    "s5_seoul.asset.c11_drop_card",
     "s5_seoul.asset.c12_family_room",
     "s5_seoul.asset.c12_office",
     "s5_seoul.asset.c12_river_steps",
@@ -228,6 +230,11 @@
       "at": "2026-11-06T09:51:00.000Z",
       "calls": 3,
       "spentUsd": 0.131275
+    },
+    {
+      "at": "2026-11-07T00:00:00.000Z",
+      "calls": 2,
+      "spentUsd": 0.085865
     }
   ],
   "budgetUsd": 12,

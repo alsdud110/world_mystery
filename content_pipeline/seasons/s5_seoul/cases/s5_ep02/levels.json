@@ -93,7 +93,7 @@
       "master": "The wet straw"
     },
     {
-      "rookie": "The straw was next to the door. It shows the way out, not the danger.",
+      "rookie": "The straw was next to the door. It shows the way out. It cannot ruin the powder.",
       "junior": "The straw lay next to the door. It shows the way out, but not the danger.",
       "master": "The straw lay next to the door: it marks the way out, not the danger."
     },
@@ -133,32 +133,32 @@
       "master": "THE STORE ROOM"
     },
     {
-      "rookie": "Before dawn, Quartermaster Ham runs to the store room.",
+      "rookie": "Before dawn, Ham runs to the store room.",
       "junior": "Before dawn, Quartermaster Ham rushes to the store room.",
       "master": "Before dawn, Quartermaster Ham hurries breathlessly to the store room."
     },
     {
-      "rookie": "\"Twelve barrels of gunpowder were here at sunset. Now they are gone!\"",
+      "rookie": "\"Twelve barrels of gunpowder are gone!\"",
       "junior": "\"There were twelve barrels of gunpowder here at sunset. Now they have gone!\"",
       "master": "\"Twelve barrels of gunpowder stood here at sunset. Now every one has vanished!\""
     },
     {
-      "rookie": "He holds up his lamp. There are wet marks and traces on the floor.",
+      "rookie": "The floor is wet.",
       "junior": "He raises his lamp. The floor shows wet marks and traces.",
       "master": "He lifts his lamp high. Damp marks and traces streak the floor."
     },
     {
-      "rookie": "Ham's night report says:",
+      "rookie": "Ham's report:",
       "junior": "Ham's report from the night reads:",
       "master": "Ham's night report reads as follows:"
     },
     {
-      "rookie": "Store room, before dawn:\nA bucket is under the hole in the roof. It is full of rain.\nWet straw is next to the door.\nA small paper is on the empty shelf. A water drop is drawn on it.\n— Quartermaster Ham",
+      "rookie": "A bucket is under the hole in the roof. It is full of rain.\nWet straw is next to the door.\nA small paper is on the empty shelf. A water drop is drawn on it.\n— Ham",
       "junior": "Store room, before dawn:\nA bucket stands under the hole in the roof, and it is full of rain.\nSome wet straw lies next to the door.\nA small paper lies on the empty shelf, with a water drop drawn on it.\n— Quartermaster Ham",
       "master": "Store room, before dawn:\nA bucket stands under the hole in the roof, brimming with rain.\nA heap of soaked straw lies next to the door.\nOn the empty shelf rests a small paper, marked with a drawn water drop.\n— Quartermaster Ham"
     },
     {
-      "rookie": "Find the three things. Which one shows the danger to the powder?",
+      "rookie": "Which thing can ruin the powder?",
       "junior": "Find all three things. Which one shows the danger to the powder?",
       "master": "Locate all three things. Which one reveals the threat to the powder?"
     },
@@ -228,7 +228,7 @@
       "master": "The store room reeks of damp timber."
     },
     {
-      "rookie": "Ham hands you his report about three things.",
+      "rookie": "Ham gives you his report.",
       "junior": "Ham gives you his report about three things.",
       "master": "Ham passes you his report on three things."
     },
@@ -338,12 +338,12 @@
       "master": "SEARCH THE STORE ROOM"
     },
     {
-      "rookie": "Find out why the gunpowder matters today.",
+      "rookie": "Find out why the powder matters.",
       "junior": "Find out why the gunpowder is important today.",
       "master": "Learn why the gunpowder matters so much today."
     },
     {
-      "rookie": "At dawn we try the turtle ship's cannons.",
+      "rookie": "At dawn our cannons must fire.",
       "junior": "At dawn we test the turtle ship's cannons.",
       "master": "At dawn the turtle ship's cannons face their trial."
     },
@@ -353,7 +353,7 @@
       "master": "Wet powder will not fire. Find it, and see that it stays dry."
     },
     {
-      "rookie": "Then I will start where it was.",
+      "rookie": "I will look in the store room.",
       "junior": "Then I will begin where it was kept.",
       "master": "Then I shall begin where it was stored."
     },
@@ -398,12 +398,12 @@
       "master": "\"The King's letters are beyond me,\" Ham admits. \"Can you read them?\""
     },
     {
-      "rookie": "Sora's board, and what you can still see:",
+      "rookie": "Sora's board:",
       "junior": "Sora's board, and what is still visible:",
       "master": "Sora's board, and what remains legible:"
     },
     {
-      "rookie": "Sora's board: ㄱ copies the back of the tongue. ㄴ copies the tongue on the gums.\nㅁ copies the mouth. ㅅ copies the teeth. A stronger sound adds one line.\nFlat vowels go under the first sound. Standing vowels go on its right.\nGroup 1: the back of the tongue. A standing line, with a dot on its left.\nGroup 2: the mouth, one step stronger. A flat line, with a dot under it. The back of the tongue at the bottom.\nGroup 3: the teeth. A standing line, with a dot on its left. The tongue on the gums at the bottom.",
+      "rookie": "SORA'S BOARD\nThese letters copy shapes:\nㄱ = the back of the tongue\nㄴ = the tongue on the gums\nㅁ = the mouth\nㅅ = the teeth\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nFlat vowels go under.\nStanding vowels go on the right.",
       "junior": "Sora's board: ㄱ copies the back of the tongue. ㄴ copies the tongue touching the gums.\nㅁ copies the mouth, and ㅅ copies the teeth. A stronger sound adds one more line.\nFlat vowels sit under the first sound; standing vowels sit on its right.\nGroup 1: the back of the tongue, then a standing line, with a dot on its left.\nGroup 2: the mouth, one step stronger. A flat line, with a dot below it. The back of the tongue sits at the bottom.\nGroup 3: the teeth, then a standing line, with a dot on its left. The tongue touching the gums sits at the bottom.",
       "master": "Sora's board: ㄱ copies the back of the tongue; ㄴ, the tongue against the gums.\nㅁ copies the mouth, ㅅ the teeth. Each stronger sound earns exactly one more line.\nA flat vowel tucks beneath the first sound; a standing one keeps to its right.\nGroup 1: the back of the tongue, followed by a standing line, with a dot on its left.\nGroup 2: the mouth, one step stronger; a flat line with a dot beneath it, and the back of the tongue at the bottom.\nGroup 3: the teeth, followed by a standing line, with a dot on its left; the tongue against the gums rests at the bottom."
     },
@@ -418,7 +418,7 @@
       "master": "Group 1 sits on the left. Seek the back of the tongue on Sora's board."
     },
     {
-      "rookie": "One step stronger is one more line. For each group, choose its sound, then its line and dot.",
+      "rookie": "The mouth + 1 line is ㅁ with one more line. Choose each sound, then its line and dot.",
       "junior": "One step stronger means one more line. For each group, pick its sound, then its line and dot.",
       "master": "A single step stronger is a single extra line. For each group, choose its sound first, then its line and dot."
     },
@@ -443,7 +443,7 @@
       "master": "You and Ham hasten down to the harbour."
     },
     {
-      "rookie": "Group 2 is the mouth one step stronger: one more line than ㅁ.",
+      "rookie": "Group 2 is the mouth + 1 line: one more line than ㅁ.",
       "junior": "Group 2 is the mouth one step stronger, so it has one more line than ㅁ.",
       "master": "Group 2 is the mouth one step stronger: one line more than ㅁ."
     },
@@ -458,7 +458,7 @@
       "master": "In Group 1 the dot sits left of the line, not right."
     },
     {
-      "rookie": "Group 3 is the teeth, not the teeth one step stronger.",
+      "rookie": "Group 3 is the teeth, not the teeth + 1 line.",
       "junior": "Group 3 is the teeth, not the teeth made one step stronger.",
       "master": "Group 3 is simply the teeth, not the teeth a step stronger."
     },
@@ -493,7 +493,7 @@
       "master": "Group 1: the back of the tongue, followed by a standing line, with a dot on its left."
     },
     {
-      "rookie": "Group 2: the mouth, one step stronger. A flat line, with a dot under it. The back of the tongue at the bottom.",
+      "rookie": "Group 2: the mouth + 1 line. A flat line, with a dot under it. The back of the tongue at the bottom.",
       "junior": "Group 2: the mouth, one step stronger. A flat line, with a dot below it. The back of the tongue sits at the bottom.",
       "master": "Group 2: the mouth, one step stronger; a flat line with a dot beneath it, and the back of the tongue at the bottom."
     },

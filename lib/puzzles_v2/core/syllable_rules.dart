@@ -8,16 +8,17 @@ enum VowelDot { none, above, below, left, right }
 
 /// One written group of a note (`syllable_compose`): its first sound
 /// ([initial]), the vowel to build ([vowel]), the sound under it
-/// ([finalConsonant], if any), and the words that tell how it looked
-/// ([line]).
+/// ([finalConsonant], if any), the words that tell how it looked ([line]),
+/// and whether it comes already written, as the player's example ([given]).
 class SyllableBlock {
-  const SyllableBlock({required this.id, required this.initial, required this.vowel, this.finalConsonant, required this.line});
+  const SyllableBlock({required this.id, required this.initial, required this.vowel, this.finalConsonant, required this.line, this.given = false});
 
   final String id;
   final String initial;
   final String vowel;
   final String? finalConsonant;
   final String line;
+  final bool given;
 }
 
 /// A note written in the new letters, put back together group by group
@@ -252,7 +253,14 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
   }
 
   @override
-  SyllableState initial(SyllableSpec spec) => SyllableState([for (final _ in spec.blocks) const SyllablePiece()]);
+  SyllableState initial(SyllableSpec spec) => SyllableState([for (final b in spec.blocks) b.given ? _built(spec, b) : const SyllablePiece()]);
+
+  /// [b] as it was written.
+  SyllablePiece _built(SyllableSpec spec, SyllableBlock b) {
+    final parts = Hangul.partsOf(b.vowel);
+    if (parts == null) return const SyllablePiece();
+    return SyllablePiece(parts.$1, parts.$2, spec.choosesSounds ? b.initial : null, spec.choosesSounds ? b.finalConsonant : null);
+  }
 
   @override
   Applied<SyllableState> apply(SyllableSpec spec, SyllableState s, SyllableAction action) {
@@ -262,6 +270,7 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
       SetVowelLine(:final block) || SetVowelDot(:final block) || SetFirstSound(:final block) || SetBottomSound(:final block) || ClearVowel(:final block) => block,
     };
     if (i < 0 || i >= s.pieces.length) return no('block_unknown', 'there is no group ${i + 1}');
+    if (spec.blocks[i].given) return no('block_given', 'this group comes written');
     final now = s.pieces[i];
     switch (action) {
       case SetVowelLine(:final line):
@@ -321,13 +330,7 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
   }
 
   @override
-  SyllableState solved(SyllableSpec spec) => SyllableState([
-    for (final b in spec.blocks)
-      if (Hangul.partsOf(b.vowel) case (final line, final dot))
-        SyllablePiece(line, dot, spec.choosesSounds ? b.initial : null, spec.choosesSounds ? b.finalConsonant : null)
-      else
-        const SyllablePiece(),
-  ]);
+  SyllableState solved(SyllableSpec spec) => SyllableState([for (final b in spec.blocks) _built(spec, b)]);
 
   @override
   Object? stateToJson(SyllableState s) => [
@@ -352,11 +355,14 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
         if (initial != null && !spec.sounds.contains(initial)) return null;
         if (bottom != null && !spec.bottoms.contains(bottom)) return null;
       }
-      pieces.add(SyllablePiece(line, dot, initial, bottom));
+      // A save from before a group was given still shows it written.
+      final b = spec.blocks[pieces.length];
+      pieces.add(b.given ? _built(spec, b) : SyllablePiece(line, dot, initial, bottom));
     }
     return SyllableState(pieces);
   }
 
+  /// [SyllableBlock.given] is left out: a level may give less, the game is the same.
   @override
   Object? structure(SyllableSpec spec) => {
     'blocks': [

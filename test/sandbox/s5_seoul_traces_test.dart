@@ -106,6 +106,9 @@ void main() {
       expect(t.takeException(), isNull);
       final semantics = t.ensureSemantics();
       for (final c in s.clues) {
+        // The notes grown by the last trace make the picture shorter; its view
+        // is set again a frame later, on the row of traces (the opening view).
+        await t.pump(const Duration(milliseconds: 100));
         final drawn = find.byKey(ValueKey('sketch-${c.id}'));
         expect(drawn, findsOneWidget, reason: c.id);
         final r = t.getRect(drawn);

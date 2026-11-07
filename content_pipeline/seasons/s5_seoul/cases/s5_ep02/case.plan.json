@@ -38,7 +38,7 @@
             {
               "id": "straw",
               "label": "The wet straw",
-              "feedback": "The straw was next to the door. It shows the way out, not the danger."
+              "feedback": "The straw was next to the door. It shows the way out. It cannot ruin the powder."
             },
             {
               "id": "note",
@@ -86,13 +86,13 @@
         "title": "The Empty Store Room",
         "location": "THE STORE ROOM",
         "story": [
-          "Before dawn, Quartermaster Ham runs to the store room.",
-          "\"Twelve barrels of gunpowder were here at sunset. Now they are gone!\"",
-          "He holds up his lamp. There are wet marks and traces on the floor."
+          "Before dawn, Ham runs to the store room.",
+          "\"Twelve barrels of gunpowder are gone!\"",
+          "The floor is wet."
         ],
-        "letterIntro": "Ham's night report says:",
-        "letter": "Store room, before dawn:\nA bucket is under the hole in the roof. It is full of rain.\nWet straw is next to the door.\nA small paper is on the empty shelf. A water drop is drawn on it.\n— Quartermaster Ham",
-        "question": "Find the three things. Which one shows the danger to the powder?",
+        "letterIntro": "Ham's report:",
+        "letter": "A bucket is under the hole in the roof. It is full of rain.\nWet straw is next to the door.\nA small paper is on the empty shelf. A water drop is drawn on it.\n— Ham",
+        "question": "Which thing can ruin the powder?",
         "hints": [
           "Read each line of the report. Each one says where a thing is.",
           "The Admiral says wet powder will not fire. What came through the roof?"
@@ -130,7 +130,7 @@
           "doneLine": "All three things are found!",
           "arrival": [
             "The store room smells of wet wood.",
-            "Ham hands you his report about three things."
+            "Ham gives you his report."
           ],
           "guideAt": [
             800,
@@ -153,17 +153,17 @@
               ],
               "foundLine": "A bucket full of rain, right under the hole!",
               "picture": {
-                "file": "assets/seasons/season_05_seoul/cases/case_02/find_bucket.webp",
+                "file": "assets/seasons/season_05_seoul/cases/case_02/find_bucket_room.webp",
                 "pixels": {
-                  "width": 1536,
-                  "height": 1024
+                  "width": 640,
+                  "height": 673
                 }
               },
               "at": [
-                470,
-                750
+                465,
+                760
               ],
-              "width": 150
+              "width": 228
             },
             {
               "id": "straw",
@@ -181,17 +181,17 @@
               ],
               "foundLine": "Wet straw next to the door. Barrels were dragged out here.",
               "picture": {
-                "file": "assets/seasons/season_05_seoul/cases/case_02/find_straw.webp",
+                "file": "assets/seasons/season_05_seoul/cases/case_02/find_straw_room.webp",
                 "pixels": {
-                  "width": 1536,
-                  "height": 1024
+                  "width": 760,
+                  "height": 438
                 }
               },
               "at": [
-                1235,
-                775
+                1225,
+                790
               ],
-              "width": 140
+              "width": 228
             },
             {
               "id": "note",
@@ -209,17 +209,18 @@
               ],
               "foundLine": "A folded paper, with a small blue water drop.",
               "picture": {
-                "file": "assets/seasons/season_05_seoul/cases/case_02/find_note.webp",
+                "file": "assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp",
                 "pixels": {
-                  "width": 1536,
-                  "height": 1024
+                  "width": 640,
+                  "height": 578
                 }
               },
               "at": [
                 750,
-                470
+                485
               ],
-              "width": 90
+              "width": 144,
+              "squash": 0.26
             }
           ],
           "spots": [
@@ -289,12 +290,12 @@
         "talk": {
           "speaker": "yi_sunsin",
           "portrait": "assets/seasons/season_05_seoul/characters/yi_sunsin.webp",
-          "goal": "Find out why the gunpowder matters today.",
+          "goal": "Find out why the powder matters.",
           "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "At dawn we try the turtle ship's cannons."
+                "text": "At dawn our cannons must fire."
               },
               {
                 "by": "speaker",
@@ -302,7 +303,7 @@
               },
               {
                 "by": "detective",
-                "text": "Then I will start where it was."
+                "text": "I will look in the store room."
               }
             ]
           }
@@ -330,8 +331,9 @@
         "status": "ready",
         "notes": [
           "The rain blurred the note's lines and dots; what is left names each group's sounds by the body part on Sora's board (Case 01) and its vowel by the dot and line. The groups sit side by side, left to right (one row). The note reads 거북선, the turtle ship.",
-          "Two first sounds are not used (ㅁ, ㅈ): 'the mouth, one step stronger' is ㅂ, not ㅁ; 'the teeth' is ㅅ, not ㅈ.",
-          "Every letter is the app's text (SyllableBoard): never in a picture."
+          "Two first sounds are not used (ㅁ, ㅈ): 'the mouth + 1 line' is ㅂ, not ㅁ; 'the teeth' is ㅅ, not ㅈ.",
+          "Every letter is the app's text (SyllableBoard): never in a picture.",
+          "2026-11-06 (Rookie R1): Rookie's letter is Sora's board only (the board's five-shape list and its ㄴ + 1 line = ㄷ example); the three groups are read on the puzzle itself. Rookie says '+ 1 line' as Case 01 and Case 11 do; Junior and Master keep 'one step stronger'."
         ]
       },
       "clueInputs": [
@@ -363,12 +365,12 @@
           "Three groups of letters, side by side. The rain blurred their lines and dots.",
           "\"I cannot read the King's letters,\" says Ham. \"Can you?\""
         ],
-        "letterIntro": "Sora's board, and what you can still see:",
-        "letter": "Sora's board: ㄱ copies the back of the tongue. ㄴ copies the tongue on the gums.\nㅁ copies the mouth. ㅅ copies the teeth. A stronger sound adds one line.\nFlat vowels go under the first sound. Standing vowels go on its right.\nGroup 1: the back of the tongue. A standing line, with a dot on its left.\nGroup 2: the mouth, one step stronger. A flat line, with a dot under it. The back of the tongue at the bottom.\nGroup 3: the teeth. A standing line, with a dot on its left. The tongue on the gums at the bottom.",
+        "letterIntro": "Sora's board:",
+        "letter": "SORA'S BOARD\nThese letters copy shapes:\nㄱ = the back of the tongue\nㄴ = the tongue on the gums\nㅁ = the mouth\nㅅ = the teeth\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nFlat vowels go under.\nStanding vowels go on the right.",
         "question": "Build the three groups, from left to right. What does the note say?",
         "hints": [
           "Group 1 is on the left. Find the back of the tongue on Sora's board.",
-          "One step stronger is one more line. For each group, choose its sound, then its line and dot."
+          "The mouth + 1 line is ㅁ with one more line. Choose each sound, then its line and dot."
         ],
         "successMessage": "The note is whole again: 거북선, the turtle ship!",
         "transition": [
@@ -377,10 +379,10 @@
           "You and Ham hurry down to the harbour."
         ],
         "feedback": {
-          "거묵선": "Group 2 is the mouth one step stronger: one more line than ㅁ.",
+          "거묵선": "Group 2 is the mouth + 1 line: one more line than ㅁ.",
           "거북서": "Group 3 has a sound at the bottom: the tongue on the gums.",
           "가북선": "Group 1's dot is on the left of its line, not the right.",
-          "거북전": "Group 3 is the teeth, not the teeth one step stronger."
+          "거북전": "Group 3 is the teeth, not the teeth + 1 line."
         },
         "mapX": 0.42,
         "mapY": 0.56,
@@ -405,14 +407,15 @@
               "id": "one",
               "initial": "ㄱ",
               "vowel": "ㅓ",
-              "line": "Group 1: the back of the tongue. A standing line, with a dot on its left."
+              "line": "Group 1: the back of the tongue. A standing line, with a dot on its left.",
+                "given": true
             },
             {
               "id": "two",
               "initial": "ㅂ",
               "vowel": "ㅜ",
               "final": "ㄱ",
-              "line": "Group 2: the mouth, one step stronger. A flat line, with a dot under it. The back of the tongue at the bottom."
+              "line": "Group 2: the mouth + 1 line. A flat line, with a dot under it. The back of the tongue at the bottom."
             },
             {
               "id": "three",
@@ -716,7 +719,9 @@
       "harbour": "항구",
       "spikes": "뾰족한 쇠못",
       "navy": "수군",
-      "cannon": "대포"
+      "cannon": "대포",
+      "tongue": "혀",
+      "gums": "잇몸"
     }
   },
   "notes": [

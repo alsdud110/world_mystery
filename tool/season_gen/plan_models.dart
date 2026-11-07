@@ -2286,15 +2286,17 @@ class TimelinePlan {
 
 /// One written group of a note in the new letters (`SyllableBlock`): its
 /// first sound, the vowel to build, the sound under it, and the words that
-/// tell how its vowel looked ([line], read in the mission).
+/// tell how its vowel looked ([line], read in the mission). [given]: it comes
+/// already written, as an example (at Rookie and Junior, never at Master).
 class SyllableBlockPlan {
-  const SyllableBlockPlan({required this.id, required this.initial, required this.vowel, this.finalConsonant, required this.line});
+  const SyllableBlockPlan({required this.id, required this.initial, required this.vowel, this.finalConsonant, required this.line, this.given = false});
 
   final String id;
   final String initial;
   final String vowel;
   final String? finalConsonant;
   final String line;
+  final bool given;
 
   factory SyllableBlockPlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
@@ -2304,6 +2306,7 @@ class SyllableBlockPlan {
       vowel: r.str('vowel'),
       finalConsonant: r.optStr('final'),
       line: r.str('line'),
+      given: r.optBool('given') ?? false,
     );
     r.done();
     return out;
@@ -2313,6 +2316,7 @@ class SyllableBlockPlan {
     final json = <String, Object?>{'id': id, 'initial': initial, 'vowel': vowel};
     _putText(json, 'final', finalConsonant);
     json['line'] = line;
+    if (given) json['given'] = true;
     return json;
   }
 }

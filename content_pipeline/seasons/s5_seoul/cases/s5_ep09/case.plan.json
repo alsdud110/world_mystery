@@ -135,7 +135,7 @@
             {
               "id": "ink",
               "label": "The ink bottle",
-              "feedback": "The report says it is common office ink. Which thing has names pressed into it?"
+              "feedback": "The report says it is normal office ink. Which thing has names pressed into it?"
             },
             {
               "id": "paper",
@@ -182,13 +182,13 @@
         "title": "The Police Report",
         "location": "THE GOVERNMENT OFFICE",
         "story": [
-          "The office of the Provisional Government is on the second floor.",
-          "Kim Gu's police searched it at dawn for marks and traces.",
-          "They wrote down three things, but they did not move them."
+          "The government office is upstairs.",
+          "Kim Gu's police searched it at dawn.",
+          "They found three things."
         ],
         "letterIntro": "The police report says:",
-        "letter": "Three things in the office this morning:\nThe key is next to the stove. It opens the list desk.\nThe ink bottle is on the window sill. It is common office ink.\nThe thin paper is under the list desk. Names are pressed into it.\n— The Police Bureau",
-        "question": "Which thing shows that someone copied the secret list?",
+        "letter": "The key is next to the stove. It opens the list desk.\nThe ink bottle is on the window sill. It is normal office ink.\nThe thin paper is under the list desk. Names are pressed into it.\n— Kim Gu's police",
+        "question": "Which thing shows that the list was copied?",
         "hints": [
           "Read each line of the report. Each one says where a thing is.",
           "Copying presses names through the paper. Which thing has names pressed into it?"
@@ -227,8 +227,8 @@
           "missLine": "Nothing here. Read the report: where is each thing?",
           "doneLine": "All three things are found!",
           "arrival": [
-            "The office is quiet. Nothing has been moved.",
-            "A police officer hands you the morning report."
+            "Nothing has been moved.",
+            "A police officer gives you the report."
           ],
           "guideAt": [
             820,
@@ -267,7 +267,7 @@
               "id": "ink",
               "name": "The ink bottle",
               "title": "INK BOTTLE",
-              "reportLine": "The ink bottle is on the window sill. It is common office ink.",
+              "reportLine": "The ink bottle is on the window sill. It is normal office ink.",
               "spot": "On the window sill",
               "areas": [
                 [
@@ -574,7 +574,7 @@
       "title": "The Police Chief",
       "location": "THE GOVERNMENT OFFICE",
       "story": [
-        "A broad man in a plain dark suit comes up the stairs.",
+        "A big man in a dark suit comes up the stairs.",
         "\"I am Kim Gu,\" he says. \"I am the police chief here.\"",
         "\"Haesu told me what she saw. Show me your proof.\""
       ],
@@ -583,7 +583,7 @@
       "question": "Answer the police chief's questions with your evidence.",
       "hints": [
         "Show one piece of evidence for each question.",
-        "Use Haesu's note, the police report and the sign-out book."
+        "Use Haesu's note, the police report and the sign-out book. One of them is used twice."
       ],
       "successMessage": "The police chief believes you!",
       "transition": [
@@ -722,7 +722,7 @@
           },
           {
             "id": "protect",
-            "prompt": "Kim Gu asks: \"So why does a government in exile need police?\"",
+            "prompt": "Kim Gu asks: \"Why does our government need police, so far from home?\"",
             "accepted": [
               "s5_ep09_e2"
             ],
@@ -825,7 +825,9 @@
       "sill": "창턱",
       "chief": "우두머리, 장",
       "proof": "증거",
-      "water-drop": "물방울 표시"
+      "water-drop": "물방울 표시",
+      "bureau": "(관청의) 국, 부서",
+      "pressed": "눌려 자국이 난"
     }
   },
   "notes": [

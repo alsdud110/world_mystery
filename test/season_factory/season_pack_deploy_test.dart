@@ -39,6 +39,7 @@ void main() {
       expect(shipsInApp('assets/seasons/season_06_tokyo/cover/a.webp'), isTrue, reason: 'a new season too');
       expect(shipsInApp('assets/seasons/season_02_paris/cases/case_01/'), isFalse);
       expect(shipsInApp('assets/seasons/season_05_seoul/locations/map/'), isFalse);
+      expect(shipsInApp('assets/seasons/season_05_seoul/cases/case_11/c11_copy_list.webp'), isTrue, reason: 'in the app until the next Seoul upload');
       expect(shipsInApp('assets/shared/ui/'), isTrue);
     });
 

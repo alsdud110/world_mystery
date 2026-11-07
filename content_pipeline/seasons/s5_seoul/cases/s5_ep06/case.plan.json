@@ -561,19 +561,19 @@
         "\"It is what we will tell the world.\""
       ],
       "letterIntro": "Inside the lid, Yi Jun reads:",
-      "letter": "THE LOCK WORD\nTell the world the truth about the 1905 treaty.\nJapan made Korea sign it. Korea did not choose it.\nIt was not signed freely.\nIt was ______ on Korea.",
-      "question": "What was the 1905 treaty? Spell the word to open the box.",
+      "letter": "THE LOCK WORD\nTell the world the truth about the 1905 treaty.\nJapan made Korea sign it. Korea did not choose it.\nJapan ______ Korea to sign it.",
+      "question": "What did Japan do to Korea? Spell the word to open the box.",
       "hints": [
         "Read the lines inside the lid. Did Korea choose the treaty?",
-        "The word means made to happen, with no free choice."
+        "It starts with F. It means \"made someone do it\"."
       ],
-      "successMessage": "The box opens. The treaty was FORCED.",
+      "successMessage": "The box opens. Japan FORCED Korea to sign it.",
       "transition": [
         "Yi Jun lays the Emperor's letter in the box and locks it again.",
         "\"Thank you both,\" he says. \"Now the world will hear us.\"",
         "Bongsu folds his note and keeps it."
       ],
-      "orderFeedback": "All six letters fit. Japan made Korea sign it. It was ____ on Korea.",
+      "orderFeedback": "All six letters fit. Japan made Korea sign it: Japan ____ Korea to sign it.",
       "mapX": 0.28,
       "mapY": 0.62,
       "evidence": {
@@ -666,7 +666,11 @@
       "bark": "나무껍질",
       "secretary": "비서",
       "footprints": "발자국",
-      "strangers'": "낯선 사람들의"
+      "strangers'": "낯선 사람들의",
+      "moss": "이끼",
+      "knelt": "무릎을 꿇었다",
+      "dusk": "해 질 녘",
+      "silk": "비단"
     }
   },
   "notes": [
