@@ -10,8 +10,8 @@ import 'package:world_mystery/data/season5/season5_content.dart';
 import 'package:world_mystery/features/mission/widgets/syllable_board.dart';
 import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart';
 
-/// Seoul Pilot Case 01, Mission 3: the note put back together on its paper
-/// (`SyllableBoard`, down the page from the right) at the smallest phone
+/// Seoul Case 01, Mission 3: Bun-i's last paper put back together
+/// (`SyllableBoard`, one group above the other) at the smallest phone
 /// (320×568), text ×1 and ×1.6 — every piece a 48 dp target on screen, the
 /// letters the app's own text, each move saved, the solved note read-only —
 /// at every level. And the language rule (English is the tool): a player
@@ -71,7 +71,7 @@ void main() {
   for (final level in Difficulty.values) {
     final spec = level == Difficulty.rookie ? season5Content.syllables[m3]! : season5Content.variants[level]!.syllables[m3]!;
     for (final text in [1.0, 1.6]) {
-      testWidgets('${level.label}, 320×568, text ×$text: every piece on screen and 48 dp; built place by place into 서고 지붕', (t) async {
+      testWidgets('${level.label}, 320×568, text ×$text: every piece on screen and 48 dp; built place by place into 정음', (t) async {
         String? sent;
         final saves = await open(t, spec, text: text, onSubmit: (a) => sent = a);
         expect(t.takeException(), isNull);
@@ -100,37 +100,36 @@ void main() {
         }
         expect(saves.last, startsWith('pv2:syllables:1:'));
         await tap(t, 'syllable-check');
-        expect(sent, '서고지붕');
+        expect(sent, '정음');
         expect(t.takeException(), isNull);
       });
     }
   }
 
-  testWidgets('the paper: the first column on the right, places named by where they are; opened again as saved', (t) async {
+  testWidgets('the paper: one group above the other, places named by where they are; opened again as saved', (t) async {
     final spec = season5Content.syllables[m3]!;
     final saves = await open(t, spec);
     final cell = {for (final b in spec.blocks) b.id: t.getCenter(find.byKey(ValueKey('syllable-cell-${b.id}')))};
-    expect(cell['one']!.dx, greaterThan(cell['three']!.dx), reason: 'Group 1 is in the right column');
-    expect(cell['one']!.dy, lessThan(cell['two']!.dy), reason: 'Group 2 is under Group 1');
-    expect([for (var i = 0; i < 4; i++) spec.placeName(i)], ['TOP RIGHT', 'BOTTOM RIGHT', 'TOP LEFT', 'BOTTOM LEFT']);
+    expect(cell['one']!.dy, lessThan(cell['two']!.dy), reason: 'Group 1 is at the top, as Sora\'s lesson says');
+    expect([for (var i = 0; i < 2; i++) spec.placeName(i)], ['TOP', 'BOTTOM']);
     expect(find.textContaining(RegExp(r'^GROUP \d')), findsNothing, reason: 'no place is named by its group\'s number');
     await tap(t, 'syllable-cell-one');
-    await tap(t, 'syllable-sound-one-ㅅ');
+    await tap(t, 'syllable-sound-one-ㅈ');
     await tap(t, 'syllable-line-one-standing');
     expect(find.byKey(const ValueKey('syllable-dot-one-above')), findsNothing, reason: 'a standing line takes its dot left or right');
     await tap(t, 'syllable-dot-one-left');
-    expect(find.text('서'), findsWidgets);
+    expect(find.text('저'), findsWidgets);
     final again = await open(t, spec, saved: saves.last);
     expect(again, isEmpty);
-    expect(find.text('서'), findsWidgets, reason: 'the saved group back');
+    expect(find.text('저'), findsWidgets, reason: 'the saved group back');
     final semantics = t.ensureSemantics();
-    expect(find.bySemanticsLabel(RegExp(r'^top right of the paper: written 서')), findsOneWidget);
+    expect(find.bySemanticsLabel(RegExp(r'^top of the paper: written 저')), findsOneWidget);
     semantics.dispose();
   });
 
   testWidgets('solved: the note as it was written, nothing to play', (t) async {
     await open(t, season5Content.syllables[m3]!, solved: true);
-    expect(find.text('서고지붕'), findsOneWidget);
+    expect(find.text('정음'), findsOneWidget);
     expect(find.byKey(const ValueKey('syllable-check')), findsNothing);
   });
 
@@ -146,31 +145,40 @@ void main() {
 
     test('M3: nothing of a group is given, and no place names its group', () {
       final s = rules.initial(spec);
-      expect([for (var i = 0; i < 4; i++) rules.written(spec, s, i)], ['', '', '', ''], reason: 'no first sound written in: the words are not shown');
-      expect(spec.sounds.toSet(), containsAll(['ㅅ', 'ㄱ', 'ㅈ', 'ㅂ', 'ㅇ']));
+      expect([for (var i = 0; i < 2; i++) rules.written(spec, s, i)], ['', ''], reason: 'no first sound written in: the words are not shown');
+      expect(spec.sounds.toSet(), containsAll(['ㅈ', 'ㅅ', 'ㅊ', 'ㅇ', 'ㅁ', 'ㄴ']));
+      expect(spec.blocks.where((b) => b.given), isEmpty);
     });
 
-    test('M3: 서고 지붕 known and written across the page, or from the left, is not the note', () {
+    test('M3: Group 2 has no words of its own: only the slate of Mission 2 fills it', () {
+      for (final level in Difficulty.values) {
+        final blocks = (level == Difficulty.rookie ? spec : season5Content.variants[level]!.syllables[m3]!).blocks;
+        expect(blocks[1].line, contains('slate'), reason: level.label);
+        for (final w in ['throat', 'mouth', 'flat line', 'ㅇ', 'ㅁ', 'ㅡ']) {
+          expect(blocks[1].line.contains(w), isFalse, reason: '${level.label}: "$w"');
+        }
+      }
+      expect(season5Content.episodes['s5_ep01']!['missions'], isNotNull);
+    });
+
+    test('M3: a wrong group is refused and answered in English', () {
       final m = mission(m3);
-      // Rows, left to right: 서 고 / 지 붕 (top left, top right, bottom left, bottom right).
-      final across = written(spec, {2: '서', 0: '고', 3: '지', 1: '붕'});
-      expect(rules.isComplete(spec, across), isTrue);
-      expect(rules.answerOf(spec, across), '고붕서지');
-      expect(AnswerChecker.isCorrect(m, '고붕서지'), isFalse);
-      expect(AnswerChecker.feedbackFor(m, '고붕서지'), contains('across the page'));
-      // Columns from the left: 서 지 / 고 붕.
-      expect(rules.answerOf(spec, written(spec, {2: '서', 3: '고', 0: '지', 1: '붕'})), '지붕서고');
-      expect(AnswerChecker.isCorrect(m, '지붕서고'), isFalse);
-      // Down from the right, as Sora's English says.
-      expect(AnswerChecker.isCorrect(m, rules.answerOf(spec, written(spec, {0: '서', 1: '고', 2: '지', 3: '붕'}))), isTrue);
+      expect(m.answer, '정음');
+      for (final wrong in ['성음', '청음', '장음', '정응', '음정']) {
+        final (a, b) = (wrong[0], wrong[1]);
+        expect(rules.answerOf(spec, written(spec, {0: a, 1: b})), wrong);
+        expect(AnswerChecker.isCorrect(m, wrong), isFalse, reason: wrong);
+        expect(AnswerChecker.feedbackFor(m, wrong), isNotNull, reason: wrong);
+      }
+      expect(AnswerChecker.isCorrect(m, rules.answerOf(spec, written(spec, {0: '정', 1: '음'}))), isTrue);
     });
 
     test('M2: the board\'s English decides each letter, among letters a glance would take', () {
       for (final level in Difficulty.values) {
         final m = mission(m2, level);
-        expect(m.options.length, 9, reason: 'four tiles that are not in the note');
-        expect(m.answer, 'siot,giyeok,jieut,bieup,ieung');
-        for (final wrong in ['siot,giyeok,chieut,bieup,ieung', 'siot,giyeok,jieut,pieup,ieung', 'siot,giyeok,jieut,mieum,ieung', 'siot,nieun,jieut,bieup,ieung']) {
+        expect(m.options.length, 9, reason: 'six tiles that are not in the group');
+        expect(m.answer, 'ieung,eu,mieum');
+        for (final wrong in ['ieung,eu,bieup', 'ieung,o,mieum', 'ieung,i,mieum', 'siot,eu,mieum', 'nieun,eu,mieum']) {
           expect(AnswerChecker.isCorrect(m, wrong), isFalse, reason: wrong);
           expect(AnswerChecker.feedbackFor(m, wrong), isNotNull, reason: '${level.label} $wrong answered in English');
         }
@@ -190,9 +198,9 @@ void main() {
         }
       }
       // Every line of the King's talk, at every level (the plan's words and their levels).
-      final talk = season5Content.talks[fin]!;
+      final talk = season5Content.talkMissions[fin]!.before!;
       final lines = [
-        for (final q in talk.questions) ...[q.text, ...q.beat.map((l) => l.text)],
+        for (final l in talk.opening) l.text,
         for (final p in talk.presents) ...[p.prompt, ...p.beat.map((l) => l.text), p.miss.text, ?p.tell],
       ];
       expect(lines, isNotEmpty);
@@ -227,7 +235,7 @@ void main() {
         }
         expect(ep.glossary.keys, containsAll(['tongue', 'gums']), reason: caseId);
       }
-      expect(mission('s5_ep01', 's5_ep01_m2', Difficulty.rookie).question, contains('5 letters'), reason: 'four groups, five letters');
+      expect(mission('s5_ep01', 's5_ep01_m2', Difficulty.rookie).question, contains('3 letters'), reason: 'one group, three letters');
     });
   });
 

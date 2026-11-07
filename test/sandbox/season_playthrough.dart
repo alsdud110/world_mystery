@@ -378,9 +378,11 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
     /// The final, its ending, the case closed, its report.
     Future<void> playFinal(WidgetTester t, ProviderContainer c, SandboxPlay play, Episode e, {required bool last}) async {
       final fin = e.finalMission;
-      if (content.talks.containsKey(fin.id)) {
+      final talkFirst = content.talks.containsKey(fin.id) || (content.talkMissions[fin.id]?.before?.presents.isNotEmpty ?? false);
+      if (talkFirst) {
         // A talk with the evidence shown (Seoul): each step answered with
-        // the evidence it accepts ([CasePlayer.solveFinal]).
+        // the evidence it accepts, then (a talk before the final's puzzle,
+        // Case 01) the puzzle ([CasePlayer.solveFinal]).
         await CasePlayer(t, content).solveFinal(fin);
       } else {
         await play.toFinal(fin);
@@ -392,7 +394,7 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
         }
         unrevealed.remove(fin.options.firstWhere((o) => o.id == fin.answer).picture);
       }
-      if (!content.talks.containsKey(fin.id)) await play.answer(fin, fin.answer);
+      if (!talkFirst) await play.answer(fin, fin.answer);
       await wait(t, const Duration(milliseconds: 1500));
       expect(find.byKey(const ValueKey('final-ending')), findsOneWidget, reason: '${e.id}: ${play.texts()}');
       final ending = SeasonCatalog.caseEnding(fin)!;

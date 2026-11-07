@@ -45,7 +45,7 @@
       "name": "Taek",
       "role": "The night guard at the inner gate (made up)",
       "personality": "Gruff, honest, a good memory for shapes.",
-      "purpose": "Case 01: he saw the burnt paper before the fire.",
+      "purpose": "Case 01: he saw the burnt paper before the fire, and remembers its shapes.",
       "appearance": "Forties, guard's uniform, lantern.",
       "relationships": [
         {
@@ -79,7 +79,7 @@
       "name": "Bun-i",
       "role": "A water-carrier girl who writes her first letter; the first keeper (made up)",
       "personality": "Brave, practical, proud of her first letter.",
-      "purpose": "Case 01: her note saves the books; her water drop marks every keeper's note after her.",
+      "purpose": "Case 01: her paper holds the name of the letters; her water drop marks every keeper's note after her.",
       "appearance": "About twelve, plain cotton clothes, a water bucket on a yoke.",
       "relationships": [
         {
@@ -862,8 +862,8 @@
     {
       "caseId": "s5_ep01",
       "title": "The Secret of the King's Letters",
-      "question": "Who wrote the half-burnt paper in the new letters, and what does it say?",
-      "solution": "Bun-i, a water-carrier who could not write Chinese characters, wrote her first letter to warn of a hole in the book hall roof; the King opened the hall and saved the books.",
+      "question": "Who wrote the half-burnt paper in the new letters, and what were its four groups?",
+      "solution": "Bun-i, a water-carrier who could not write Chinese characters, wrote the name of the King's letters on her tenth day. The groups are found as 훈, 음, 정, 민 and built by their meanings: Hunminjeongeum, the right sounds to teach the people.",
       "fromPrevious": "The season opens.",
       "toNext": "Bun-i's water drops: the mark every later note carries."
     },
@@ -995,7 +995,7 @@
         "s5_ep01_m2",
         "s5_ep01_final"
       ],
-      "meaning": "Bun-i, who could not write Chinese characters, wrote the paper: Sora teaches her, and the King hears it."
+      "meaning": "Bun-i's group: what Sora does for her. Sora teaches her, and the King hears it."
     },
     {
       "from": "s5_ep01_c2",
@@ -1003,14 +1003,14 @@
         "s5_ep01_m3",
         "s5_ep01_final"
       ],
-      "meaning": "The first sounds of Bun-i's groups, built by the mouth rule."
+      "meaning": "음, the group on Bun-i's slate: Group 2 of her last paper, and the sound in the name."
     },
     {
       "from": "s5_ep01_c3",
       "to": [
         "s5_ep01_final"
       ],
-      "meaning": "The note names the book hall roof."
+      "meaning": "정음, the right sounds: the last two tiles of the name."
     },
     {
       "from": "s5_ep01_c1",
@@ -1144,7 +1144,7 @@
       "to": [
         "s5_ep08_final"
       ],
-      "meaning": "Bun-i's note of 1446 (서고 지붕, the burnt corner) lies at the bottom of the keepers' box: Act 2's reveal, seven cases later."
+      "meaning": "Bun-i's note of 1446 (훈민정음, the burnt corner) lies at the bottom of the keepers' box: Act 2's reveal, seven cases later."
     },
     {
       "from": "s5_ep08_e4",
@@ -1332,8 +1332,8 @@
       "level": "A1-A2 (ages 8-10)",
       "verdict": "Fits (written and checked in the Seoul pilot, kept as it is).",
       "notes": [
-        "The mouth words (teeth, throat, the back of the tongue) are taught on Sora's board before they are used.",
-        "One clue note is 22 words (Mission 2): kept, as Case 01 is not changed."
+        "The mouth words (throat, the mouth, the back of the tongue) are taught on Sora's board before they are used.",
+        "Redesigned 2026-11-07: the name read by its meanings."
       ]
     },
     {

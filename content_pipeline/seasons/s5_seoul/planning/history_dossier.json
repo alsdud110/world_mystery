@@ -399,14 +399,79 @@
             "status": "resolved",
             "note": "ㆁ (yet-ieung) is counted differently: its sound lives on at the end of a syllable, written ㅇ. The game names only the dot ㆍ as a letter not used today."
           }
+        },
+        {
+          "factId": "s5_ep01_h14",
+          "statement": "The name Hunminjeongeum (訓民正音) means the right sounds to teach the people; the sounds here stand for the letters.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "세종어제훈민정음",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300900",
+              "quote": "이 책에서 ‘훈민정음’의 뜻을 주석하기를 … 즉 ‘백성을 가르치는 바른 소리’라는 의미이다.",
+              "checkedAt": "2026-11-07"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한글",
+              "url": "https://encykorea.aks.ac.kr/Article/E0061508",
+              "quote": "세종이 한글을 만들 당시에는 ‘훈민정음’이라 불렀는데, 이는 ‘백성을 가르치는 바른 소리’라는 뜻이다. 이 때의 소리는 글자와 통한다.",
+              "checkedAt": "2026-11-07"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국립국어원 (National Institute of Korean Language)",
+              "title": "한글의 명칭",
+              "url": "https://www.korean.go.kr/hangeul/another/001.html",
+              "quote": "“백성을 가르치는 데 사용할 바른 소리(글자)”라는 뜻이다.",
+              "checkedAt": "2026-11-07"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The oldest gloss quoted is the 1459 Worin Seokbo note. The meanings are those of the Chinese characters, not of the Hangul syllables.",
+            "English order for the game: 'the right sounds, to teach the people'. 'Teach the people the right sounds' is not used as the meaning."
+          ]
+        },
+        {
+          "factId": "s5_ep01_h15",
+          "statement": "The name Hunminjeongeum was also shortened to Jeongeum; Jeong In-ji's postface to the book already uses it.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "癸亥冬, 我殿下創制正音二十八字, 略揭例義以示之, 名曰訓民正音。",
+              "checkedAt": "2026-11-07"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한글",
+              "url": "https://encykorea.aks.ac.kr/Article/E0061508",
+              "quote": "‘훈민정음’을 줄여 ‘정음’이라고도 하였는데, 이 이름은 훈민정음 해례의 끝에 있는 정인지의 글에 이미 나타나 있다.",
+              "checkedAt": "2026-11-07"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
         }
       ],
       "fiction": [
-        "The rainy night in autumn 1446, the burnt paper, the book hall and the hole in its roof are made up.",
-        "Bun-i, Sora and Taek are made up; so are the copied scrap, Sora's lesson box and board, and the King's ten-day test of ordinary people.",
+        "The rainy night in autumn 1446, the burnt paper, the book hall and the servants' cloth are made up.",
+        "Bun-i, Sora and Taek are made up; so are the copied scrap, the groups drawn in charcoal, Sora's lesson box, board and slate, and the King's ten-day test of ordinary people.",
         "King Sejong is real, but everything he says and does in the case is made up. Two of his lines retell his real preface (h9, h5); none is a quotation of a record.",
-        "The note is written in today's spelling; the words 서고 and 지붕 are not claimed as fifteenth-century spellings.",
-        "How Bun-i laid out her note follows Sora's lesson in the story (top to bottom, two groups to a column, the first column on the right); the game does not state it as a rule of the 1446 book. Writing in columns from the right is believed true of the time, but no public-institution source was opened for it (2026-11-05): a fact to add, checked, before any reveal says it."
+        "The four groups of the name were never lost: losing and finding them is this story's own event, and only Bun-i's paper is made up.",
+        "The name is written in today's spelling. The game claims no fifteenth-century Hangul spelling of it: the book's title is in Chinese characters, 訓民正音.",
+        "Bun-i's two groups sit one above the other on her paper: that is how her paper looks in the story, not a rule of the 1446 book."
       ],
       "puzzles": [
         {
@@ -429,26 +494,27 @@
               "missionId": "s5_ep01_m1"
             }
           ],
-          "derivation": "The King's words (his preface, h9): many people could not write what they meant. The scrap shows a writer who could only copy 門 from the gate sign, a bucket ring and drops of water lead away from the gate: someone who carries water, from the kitchen well.",
+          "derivation": "The King's words (his preface, h9): many people could not write what they meant. The scrap shows a writer who could only copy 門 from the gate sign, a bucket ring and drops of water lead away from the gate: someone who carries water, from the kitchen well. Taek's shape words pick the same place's group (훈; 혼 has its dot on top, 운 no lines on top; made up: the groups by the places).",
           "whyNot": {
-            "a": "Scholars write Chinese characters well: none copies the gate sign, and no water leads to their hall.",
-            "b": "No bucket stands at the guard post, and the drops lead away from it."
+            "a": "Scholars write Chinese characters well: none copies the gate sign, and that group has its dot on top.",
+            "b": "No bucket stands at the guard post, and that group has no lines on top."
           }
         },
         {
           "puzzleId": "s5_ep01_m2",
           "factIds": [
             "s5_ep01_h3",
+            "s5_ep01_h4",
             "s5_ep01_h10"
           ],
-          "answer": "siot,giyeok,jieut,bieup,ieung",
+          "answer": "ieung,eu,mieum",
           "clues": [
             {
-              "text": "teeth",
+              "text": "throat",
               "missionId": "s5_ep01_m2"
             },
             {
-              "text": "back of the tongue",
+              "text": "mouth",
               "missionId": "s5_ep01_m2"
             },
             {
@@ -456,17 +522,18 @@
               "missionId": "s5_ep01_m2"
             }
           ],
-          "derivation": "Taek names each group by the organ Sora's board gives it (the Jejahae's organs, h3): the teeth are ㅅ, the back of the tongue ㄱ (not ㄴ, the tongue on the gums), the mouth ㅁ, the throat ㅇ. 'One step stronger' is the board's rule, one line more (h10, shown with ㄴ ㄷ ㅌ only): the teeth one step stronger are ㅈ (not ㅊ, two lines more), the mouth one step stronger ㅂ (not ㅁ, nor ㅍ).",
-          "whyOnly": "Nine tiles, five used: each group names one organ and one strength only, and four tiles (ㄴ ㅁ ㅊ ㅍ) answer a misread organ or a wrong number of lines. Taek's order is one order."
+          "derivation": "Taek names the group by the organs on Sora's board (the Jejahae's organs, h3): the throat ㅇ, the mouth ㅁ; the flat line is the earth (h4), with no dot ㅡ; no added line keeps ㅁ, not ㅂ (h10). Together they write 음, sound.",
+          "whyOnly": "Nine tiles, three used: each line of Taek's names one letter only, and the six others answer a misread organ, a dot, a standing line or an added line. Taek's order is one order."
         },
         {
           "puzzleId": "s5_ep01_m3",
           "factIds": [
             "s5_ep01_h4",
             "s5_ep01_h11",
-            "s5_ep01_h12"
+            "s5_ep01_h12",
+            "s5_ep01_h10"
           ],
-          "answer": "서고지붕",
+          "answer": "정음",
           "clues": [
             {
               "text": "dot",
@@ -477,43 +544,46 @@
               "missionId": "s5_ep01_m3"
             },
             {
-              "text": "first column is on the right",
+              "text": "one above the other",
               "missionId": "s5_ep01_m3"
             }
           ],
-          "derivation": "Each group's first sound is chosen by its organ and strength (Mission 2's words); its vowel is built from the dot, the flat line and the standing line (h4, h11): flat ones under the first sound, standing ones on its right, the throat's ring at the bottom the last sound (h12). The paper's places come from Sora's lesson (fiction: the way she taught Bun-i): top to bottom, two groups to a column, the first column on the right. Group 1 at the top right, 2 under it, 3 at the top left, 4 under it: 서고 지붕.",
-          "whyOnly": "Each group's words allow one sound, one line and one place of the dot only, and each place of the paper one group only. Knowing the words alone is not enough: written across the page they read 고붕서지, and from the left column 지붕서고."
+          "derivation": "Group 1 is built from Sora's words: the teeth + 1 line ㅈ (h10), a standing line with a dot on its left ㅓ (h4, h11), the throat's ㅇ at the bottom (h12). Group 2 has no words of its own: it is the group on Bun-i's slate, Mission 2's clue (음). The paper reads 정음.",
+          "whyOnly": "Group 1's words allow one sound, one line and one place of the dot only; Group 2 is only what the slate held. Group 1 is at the top."
         },
         {
           "puzzleId": "s5_ep01_final",
           "factIds": [
+            "s5_ep01_h14",
             "s5_ep01_h5",
             "s5_ep01_h6",
-            "s5_ep01_h9"
+            "s5_ep01_h9",
+            "s5_ep01_h3"
           ],
-          "answer": "open",
+          "answer": "teach,min,right,sound",
           "clues": [
             {
-              "text": "門",
+              "text": "what Sora does",
               "missionId": "s5_ep01_m1"
             },
             {
-              "text": "stronger",
+              "text": "sound",
               "missionId": "s5_ep01_m2"
             },
             {
-              "text": "book hall roof",
-              "missionId": "s5_ep01_m3"
+              "text": "right sounds",
+              "missionId": "s5_ep01_final"
             }
           ],
-          "derivation": "The King's three questions, each answered by one mission's evidence: who wrote it (the copied scrap: a writer who could not write Chinese characters, h9), how after ten days (Sora's board: letters made easy to learn, h5, h6), what it says (Bun-i's note: the book hall roof). Every line of the talk is English; the Hangul stays on the note itself.",
-          "whyOnly": "Each question accepts one piece of evidence only; a wrong one is answered, never a failure, and the talk ends when all three are shown."
+          "derivation": "Stage A: the King's three questions, shown evidence in turn: who wrote it, how after ten days (h5, h6), who the letters are for (h9): the copied scrap, so the people. Stage B: the name read by its meanings (h14): what the King wants to do is what Sora does for Bun-i, teach; the group for the people is the one Taek describes, 민 (mouth, standing line, tongue on the gums, h3); what he gives them is the right sounds, Bun-i's note.",
+          "whyOnly": "Nine tiles, four used: LEARN is Bun-i's part, not Sora's; GATE is the copied sign; 문 has a flat line, 만 a dot, 빈 an added line. The three questions give one order."
         }
       ],
       "learningObjectives": [
         "Read why the King made the letters, and use it as a clue.",
         "Match words for parts of the mouth, and for a stronger sound, with the letters they describe.",
-        "Read place words (on its left, on top, under it, the first column is on the right) to build letters where they were written."
+        "Read place words (on its left, at the bottom, one above the other) to build letters.",
+        "Read what each group means, and build the name by its meaning."
       ],
       "reveal": {
         "realHistory": [
@@ -531,6 +601,23 @@
             "master": "In 1446, Hunminjeongeum, the book that explains the letters, was completed.",
             "factIds": [
               "s5_ep01_h2"
+            ]
+          },
+          {
+            "text": "The name Hunminjeongeum means the right sounds, to teach the people.",
+            "junior": "The name Hunminjeongeum means the right sounds for teaching the people.",
+            "master": "The name Hunminjeongeum signifies the right sounds with which to teach the people.",
+            "factIds": [
+              "s5_ep01_h14"
+            ]
+          },
+          {
+            "text": "Its four groups read the Chinese characters 訓民正音. People also said Jeongeum for short.",
+            "junior": "Its four groups read the Chinese characters 訓民正音, and it was also shortened to Jeongeum.",
+            "master": "Its four groups read the Chinese characters 訓民正音, and the name was also shortened to Jeongeum.",
+            "factIds": [
+              "s5_ep01_h1",
+              "s5_ep01_h15"
             ]
           },
           {
@@ -580,9 +667,9 @@
         ],
         "inThisMystery": [
           {
-            "text": "Bun-i, Sora and Taek are made up. So are the burnt paper, the book hall and that rainy night.",
-            "junior": "Bun-i, Sora and Taek were invented for this case, and so were the burnt paper, the book hall and that rainy night.",
-            "master": "Bun-i, Sora and Taek are inventions of this story, as are the burnt paper, the book hall and that rainy night."
+            "text": "Bun-i, Sora and Taek are made up. So are the burnt paper, the lesson box and that rainy night.",
+            "junior": "Bun-i, Sora and Taek were invented for this story. So were the burnt paper, the lesson box and that rainy night.",
+            "master": "Bun-i, Sora and Taek are inventions of this story, as are the burnt paper, the lesson box and that rainy night."
           },
           {
             "text": "King Sejong was real, but his words in this story are made up. Some of them retell his real preface.",
@@ -590,15 +677,16 @@
             "master": "King Sejong was real, yet every word he speaks here is invented; a few of them echo his real preface."
           },
           {
-            "text": "The King's ten-day test is made up too. The game writes the note the way we spell today.",
-            "junior": "The King's ten-day test was invented as well. The game writes the note in today's spelling.",
-            "master": "The King's ten-day test is invented too, and the note is written in modern spelling."
+            "text": "The four groups were never lost: that event is made up, and so is the King's ten-day test. The game writes the name the way we spell today.",
+            "junior": "The four groups of the name were never lost: that event was invented, and so was the King's ten-day test. The game writes the name in today's spelling.",
+            "master": "The four groups of the name were never lost: that event is invented, as is the King's ten-day test. The game writes the name in today's spelling."
           }
         ]
       },
       "notes": [
         "Seoul Pilot Case 01, redesigned 2026-11-04 (docs/SEOUL_CASE01_REDESIGN.md). Sources of h3 and h9-h13 opened and quoted by Claude on 2026-11-04; h1, h2, h4-h6 as checked before.",
-        "2026-11-05: language redesign (English is the tool). M2 decoy letters and organ words, M3 the paper written down from the right (Sora's lesson, in the fiction list), the final talk in English only. docs/SEOUL_CASE01_LANGUAGE_REPORT.md."
+        "2026-11-05: language redesign (English is the tool). M2 decoy letters and organ words, M3 the paper written down from the right (Sora's lesson, in the fiction list), the final talk in English only. docs/SEOUL_CASE01_LANGUAGE_REPORT.md.",
+        "2026-11-07: redesigned again (docs/SEOUL_CASE01_REDESIGN_PLAN.md): the four groups of the name. h14 and h15 opened and quoted on 2026-11-07 (the page text; the 1459 note's old letters are images there, so its Hangul is not copied). No fifteenth-century spelling is claimed."
       ]
     },
     {

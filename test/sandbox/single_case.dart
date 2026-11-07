@@ -218,6 +218,16 @@ class CasePlayer {
         await heard();
       }
       await mp.tapKey(t, 'case-talk-finish', after: const Duration(milliseconds: 1500));
+    } else if (SeasonCatalog.talkMission(fin)?.before case final before? when before.presents.isNotEmpty) {
+      // Evidence shown in turn, then the final's puzzle on its page.
+      await tapText(t, 'OPEN THE FINAL CASE', after: const Duration(milliseconds: 2800));
+      await heard();
+      for (final p in before.presents) {
+        await mp.tapKey(t, 'case-talk-choice-${p.accepted.first}', after: const Duration(milliseconds: 600));
+        await heard();
+      }
+      await mp.tapKey(t, 'case-talk-finish', after: const Duration(milliseconds: 1500));
+      await answer(fin);
     } else {
       await play.toFinal(fin);
       await play.answer(fin, fin.answer);

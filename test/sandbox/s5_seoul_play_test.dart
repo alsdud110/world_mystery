@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:world_mystery/core/utils/answer_checker.dart';
 import 'package:world_mystery/data/content/season_content_validator.dart';
 import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/models/difficulty.dart';
@@ -17,10 +18,10 @@ import 'single_case.dart';
 
 /// Seoul (Season 5) Case 01, The Secret of the King's Letters, played alone
 /// in the real app at every level: the gate's traces (a wrong place, a hint),
-/// the app opened again, the lesson box's letters in a wrong order, the
-/// note's groups with one vowel wrong, King Sejong's three questions, paid
-/// once, and the Case Closed file with its REAL HISTORY apart from IN THIS
-/// MYSTERY.
+/// the app opened again, the lesson box's letters with a wrong one, the last
+/// paper's first group wrong, King Sejong's three questions and the name's
+/// tiles, paid once, and the Case Closed file with its REAL HISTORY apart
+/// from IN THIS MYSTERY.
 void main() {
   final season = season5Content;
 
@@ -29,11 +30,12 @@ void main() {
     // A reveal for every case (the season whole since 2026-11-06).
     expect(season.historyReveals.keys, [for (var n = 1; n <= 12; n++) 's5_ep${n.toString().padLeft(2, '0')}']);
     expect([for (final s in SeasonCatalog.all) if (s.id == season.id) s], [same(season)]);
-    // Case 01's engines: the gate's traces, the lesson box, the note, the King's talk.
+    // Case 01's engines: the gate's traces, the lesson box, the note, the King's talk before the name's tiles.
     expect(season.deductions.keys.where((id) => id.startsWith('s5_ep01_')), ['s5_ep01_m1']);
     expect(season.syllables.keys.where((id) => id.startsWith('s5_ep01_')), ['s5_ep01_m3']);
-    expect(season.talks.keys.where((id) => id.startsWith('s5_ep01_')), ['s5_ep01_final']);
-    expect(const SyllableRules().answer(season.syllables['s5_ep01_m3']!), '서고지붕');
+    expect(season.talks.keys.where((id) => id.startsWith('s5_ep01_')), isEmpty);
+    expect(season.talkMissions['s5_ep01_final']!.before!.presents.map((p) => p.id), ['who', 'how', 'people']);
+    expect(const SyllableRules().answer(season.syllables['s5_ep01_m3']!), '정음');
   });
 
   for (final level in Difficulty.values) {
@@ -72,36 +74,36 @@ void main() {
       expect([done(m1.id), done(ep.missions[1].id)], [true, false]);
       expect(c.read(gameControllerProvider.notifier).submitAnswer(m1, m1.answer).coins, 0, reason: 'paid once');
 
-      // M2, the lesson box: nine letters, five in Taek's order; ㅊ for "one
-      // step stronger" (two lines more) is refused with its own line.
+      // M2, the lesson box: nine letters, three in Taek's order; ㅂ for "no
+      // added line" is refused with its own line.
       final m2 = ep.missions[1];
       expect(m2.type, MissionType.sequence);
-      expect(m2.answer, 'siot,giyeok,jieut,bieup,ieung');
+      expect(m2.answer, 'ieung,eu,mieum');
       expect(m2.options, hasLength(9));
       await p.toPuzzle(m2);
-      await p.answer(m2, 'siot,giyeok,chieut,bieup,ieung');
+      await p.answer(m2, 'ieung,eu,bieup');
       expect([done(m2.id), wrong(m2.id)], [false, 1], reason: p.play.texts());
-      expect(findReadableContaining('not two'), findsWidgets, reason: 'the wrong letter answered in English');
+      expect(findReadableContaining(AnswerChecker.feedbackFor(m2, 'ieung,eu,bieup')!), findsWidgets, reason: 'the wrong letter answered in English');
       await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
       await tapText(t, 'Start again', after: const Duration(milliseconds: 300));
       await p.answer(m2);
       expect(done(m2.id), isTrue, reason: p.play.texts());
       await p.onToMap();
 
-      // M3, the note: the right words written across the page (a Korean
-      // reader's habit, Sora's lesson unread) are refused; then down from the right.
+      // M3, the last paper: the teeth with no added line refused, the wrong
+      // group pointed at; then Group 1 built and Group 2 from the slate.
       final m3 = ep.missions[2];
       await p.toPuzzle(m3);
-      await p.answer(m3, '고붕서지');
+      await p.answer(m3, '성음');
       expect([done(m3.id), wrong(m3.id)], [false, 1], reason: p.play.texts());
-      expect(find.text('TOP RIGHT · CHECK'), findsOneWidget, reason: 'the wrong place pointed at');
+      expect(find.text('TOP · CHECK'), findsOneWidget, reason: 'the wrong place pointed at');
       await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
       await p.answer(m3);
       expect(done(m3.id), isTrue, reason: p.play.texts());
       expect(c.read(gameControllerProvider).puzzleStateOf(m3.id), startsWith('pv2:syllables:1:'), reason: 'every move saved');
       await p.onToMap();
 
-      // The final: King Sejong's three questions, each answered with one mission's evidence.
+      // The final: King Sejong's three questions, then the name's four tiles.
       await p.solveFinal(ep.finalMission);
       await wait(t, const Duration(milliseconds: 1500));
       expect(done(ep.finalMission.id), isTrue, reason: p.play.texts());

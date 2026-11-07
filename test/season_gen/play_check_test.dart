@@ -238,6 +238,77 @@ void main() {
       expect(on((c) => talk(c, 0).remove('before')), ['[play_field_missing] \$.missions[0].play.talk']);
     });
 
+    group('a talk before a final\'s puzzle', () {
+      String held(Map<String, Object?> c, int i) => ((c['missions'] as List)[i] as Map)['clueOutputs']['evidence'] as String;
+      Map<String, Object?> shown(String id, String evidence, {List<String>? requires, List<String>? offered}) => {
+        'id': id,
+        'prompt': 'Show it.',
+        'accepted': [evidence],
+        'lines': [
+          {'by': 'detective', 'text': 'Here it is.'},
+        ],
+        'miss': 'Not that.',
+        'requires': ?requires,
+        'offered': ?offered,
+      };
+      Map<String, Object?> before(Map<String, Object?> c) => (fin(c)['talk'] as Map<String, Object?>)['before'] as Map<String, Object?>;
+      void finalTalk(Map<String, Object?> c, [List<Map<String, Object?>>? presents]) {
+        final person = talk(c, 0);
+        fin(c)['talk'] = {
+          'speaker': person['speaker'],
+          'goal': 'Show it.',
+          'before': {
+            'lines': [
+              {'by': 'speaker', 'text': 'Show me.'},
+            ],
+            'presents': presents ?? [shown('one', held(c, 0)), shown('two', held(c, 1), requires: ['one']), shown('three', held(c, 0), requires: ['two'])],
+          },
+        };
+      }
+
+      test('evidence shown, each piece held, the same piece asked for twice in turn', () {
+        expect(on(finalTalk), isEmpty);
+        final c = copy(storyJson)..let(finalTalk);
+        expect(CasePlan.fromJson(CasePlan.fromJson(c).toJson()).toJson(), CasePlan.fromJson(c).toJson(), reason: 'read back as it is written');
+      });
+
+      test('a talk only listened to, or after the puzzle, stays refused', () {
+        expect(on((c) {
+          finalTalk(c);
+          before(c).remove('presents');
+        }), ['[play_range] \$.final.play.talk']);
+        expect(on((c) {
+          finalTalk(c);
+          (fin(c)['talk'] as Map<String, Object?>)['after'] = {
+            'lines': [
+              {'by': 'speaker', 'text': 'Thank you.'},
+            ],
+          };
+        }), ['[play_range] \$.final.play.talk']);
+      });
+
+      test('on a mission a talk is listened to: evidence shown there, or after a puzzle, is refused', () {
+        expect(on((c) => (talk(c, 0)['before'] as Map<String, Object?>)['presents'] = [shown('one', held(c, 0))]), ['[play_range] \$.missions[0].play.talk.before.presents']);
+        expect(on((c) => talk(c, 0)['after'] = {
+          'lines': [
+            {'by': 'speaker', 'text': 'Thank you.'},
+          ],
+          'presents': [shown('one', held(c, 0))],
+        }), ['[play_range] \$.missions[0].play.talk.after.presents']);
+      });
+
+      test('evidence not held, a step unknown or given twice, one card, are refused as in a talk played alone', () {
+        expect(on((c) => finalTalk(c, [shown('one', 's9_ep03_e1')])), ['[talk_evidence_unheld] \$.final.play.talk.before.presents[0].accepted']);
+        expect(on((c) => finalTalk(c, [shown('one', held(c, 0), requires: ['nobody'])])), ['[scene_invalid] \$.final.play.talk.before.presents[0].requires']);
+        expect(on((c) => finalTalk(c, [shown('one', held(c, 0), offered: [held(c, 0)])])), ['[scene_invalid] \$.final.play.talk.before.presents[0].offered']);
+        expect(on((c) => finalTalk(c, [shown('one', held(c, 0)), shown('one', held(c, 1))])), hasLength(1));
+      });
+
+      test('the same piece asked for twice without an order: the second step could never be reached', () {
+        expect(on((c) => finalTalk(c, [shown('one', held(c, 0)), shown('two', held(c, 0))])), ['[scene_invalid] \$.final.play.talk.before.presents[1].requires']);
+      });
+    });
+
     test('the people are the case\'s, a speaker\'s line names one, the evidence is held by then', () {
       expect(on((c) => talk(c, 0)['speaker'] = 'mrs_lee'), ['[play_story_person] \$.missions[0].play.talk.speaker']);
       expect(on((c) => line(c, 0).remove('speaker')), ['[play_field_missing] \$.final.play.ending[0].speaker']);

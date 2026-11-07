@@ -126,9 +126,10 @@ abstract final class PuzzleEngineDispatch {
   /// thing handed over with its letter (`Exhibit`).
   static const missionCompanions = {'talkMissions', 'exhibits'};
 
-  /// Played with the final's puzzle: the box of its letter lock and the
+  /// Played with the final's puzzle: the box of its letter lock, the talk
+  /// before it (Seoul Case 01: evidence shown, then the puzzle) and the
   /// ending after the answer.
-  static const finalCompanions = {'lockBoxes', 'endings'};
+  static const finalCompanions = {'lockBoxes', 'talkMissions', 'endings'};
 
   /// Tables of a mission that are no engine (its story, its Discovery
   /// Moment, its learning note).

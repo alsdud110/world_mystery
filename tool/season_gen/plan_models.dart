@@ -2038,14 +2038,22 @@ class TalkLinePlan {
 /// The talk before or after a puzzle: its lines, and the button that goes
 /// on from it (the game's CONTINUE when not given).
 class TalkPartPlan {
-  const TalkPartPlan({required this.lines, this.finishLabel});
+  const TalkPartPlan({required this.lines, this.finishLabel, this.presents = const []});
 
   final List<TalkLinePlan> lines;
   final String? finishLabel;
 
+  /// The evidence to show, each once, before the talk goes on (the talk
+  /// before a final's puzzle only: `PlayCheck`). Empty: only listened to.
+  final List<InterviewPresentPlan> presents;
+
   factory TalkPartPlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
-    final out = TalkPartPlan(lines: r.objs('lines', TalkLinePlan.fromJson, min: 1), finishLabel: r.optStr('finishLabel'));
+    final out = TalkPartPlan(
+      lines: r.objs('lines', TalkLinePlan.fromJson, min: 1),
+      finishLabel: r.optStr('finishLabel'),
+      presents: r._has('presents') ? r.objs('presents', InterviewPresentPlan.fromJson, min: 1) : const [],
+    );
     r.done();
     return out;
   }
@@ -2053,6 +2061,7 @@ class TalkPartPlan {
   Map<String, Object?> toJson() {
     final json = <String, Object?>{'lines': [for (final l in lines) l.toJson()]};
     _putText(json, 'finishLabel', finishLabel);
+    if (presents.isNotEmpty) json['presents'] = [for (final p in presents) p.toJson()];
     return json;
   }
 }

@@ -1261,25 +1261,27 @@ abstract final class CaseGenerator {
             if (q.requires.isNotEmpty) 'requires': _ids(q.requires),
           }),
       ]),
-    'presents': DartConst([
-      for (final p in t.presents)
-        DartCall('TalkPresent', named: {
-          'id': p.id,
-          'prompt': p.prompt,
-          'accepted': _ids(p.accepted),
-          'beat': [for (final l in p.lines) _talkLine(l)],
-          'miss': DartCall('TalkLine', positional: [p.miss]),
-          if (p.requires.isNotEmpty) 'requires': _ids(p.requires),
-          if (p.offered.isNotEmpty) 'choices': p.offered,
-          'tell': ?p.tell,
-        }),
-    ]),
+    'presents': _presents(t.presents),
     'finishWhen': DartCode('const ${_ids(t.finishWhen).source}'),
     'place': m.play!.location!,
     'background': _placeFile(m, season),
     'finishLabel': ?t.finishLabel,
     'answer': m.puzzle.answerSpec.answer,
   });
+
+  static DartConst _presents(List<InterviewPresentPlan> presents) => DartConst([
+    for (final p in presents)
+      DartCall('TalkPresent', named: {
+        'id': p.id,
+        'prompt': p.prompt,
+        'accepted': _ids(p.accepted),
+        'beat': [for (final l in p.lines) _talkLine(l)],
+        'miss': DartCall('TalkLine', positional: [p.miss]),
+        if (p.requires.isNotEmpty) 'requires': _ids(p.requires),
+        if (p.offered.isNotEmpty) 'choices': p.offered,
+        'tell': ?p.tell,
+      }),
+  ]);
 
   /// A number of a picture's pixels: written whole when it is.
   static String _n(double v) => v == v.truncateToDouble() ? '${v.toInt()}' : '$v';
@@ -1464,13 +1466,15 @@ abstract final class CaseGenerator {
       'name': _nameOf(t.speaker, season),
       if (portrait case final p?) 'portraits': {'base': p},
     }));
-    // Only listened to: finished once its lines are heard.
+    // Only listened to, finished once its lines are heard; or (before a
+    // final's puzzle) finished once all its evidence is shown.
     DartCall scene(String part, TalkPartPlan p) => DartCall('TalkScene', named: {
       'id': '${m.missionId}:$part',
       'speaker': speaker,
       'goal': t.goal,
       'opening': DartConst([for (final l in p.lines) _talkLine(l)]),
-      'finishWhen': const DartCode('const {}'),
+      if (p.presents.isNotEmpty) 'presents': _presents(p.presents),
+      'finishWhen': p.presents.isEmpty ? const DartCode('const {}') : DartCode('const ${_ids([for (final x in p.presents) x.id]).source}'),
       'place': m.play!.location!,
       'background': _placeFile(m, season),
       'finishLabel': ?p.finishLabel,

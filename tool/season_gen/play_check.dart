@@ -799,6 +799,47 @@ abstract final class PlayCheck {
     for (final p in s.presents) {
       if (!s.finishWhen.contains(p.id)) issue('scene_invalid', '$sa.finishWhen', '"${p.id}" is evidence asked for: the talk finishes once it is shown');
     }
+    for (final (i, q) in s.questions.indexed) {
+      for (final id in q.requires) {
+        if (!steps.contains(id)) issue('scene_invalid', '$sa.questions[$i].requires', '"$id" is no step of the talk');
+      }
+    }
+    _shownEvidence(plan, m, sa, steps, s.presents, out);
+  }
+
+  /// The evidence of a talk before a final's puzzle: its steps its own, each
+  /// [_shownEvidence]; and a piece asked for twice asked in turn, a later
+  /// step opened by the earlier (shown, a piece answers the first step open).
+  static void _talkEvidence(CasePlan plan, MissionPlan m, String sa, List<InterviewPresentPlan> presents, List<PlayIssue> out) {
+    final steps = [for (final p in presents) p.id];
+    _uniqueIds(sa, steps, 'step', out);
+    if (steps.contains('opening')) out.add(PlayIssue('scene_invalid', sa, '"opening" is the talk\'s opening, never a step'));
+    _shownEvidence(plan, m, sa, steps, presents, out);
+    final byId = {for (final p in presents) p.id: p};
+    Set<String> before(String id, [Set<String>? seen]) {
+      final out = seen ?? <String>{};
+      for (final r in byId[id]?.requires ?? const <String>[]) {
+        if (out.add(r)) before(r, out);
+      }
+      return out;
+    }
+
+    for (final (i, a) in presents.indexed) {
+      for (final (j, b) in presents.indexed) {
+        if (j <= i || !a.accepted.any(b.accepted.contains)) continue;
+        if (!before(b.id).contains(a.id)) {
+          out.add(PlayIssue('scene_invalid', '$sa.presents[$j].requires', '"${b.id}" asks for what "${a.id}" asks for: it must require it'));
+        }
+      }
+    }
+  }
+
+  /// A talk's [presents]: what opens each a step of the talk ([steps]), and
+  /// every piece asked for evidence the detective holds by then (of this
+  /// case before this mission, or of a case before it), a piece offered as a
+  /// card among them.
+  static void _shownEvidence(CasePlan plan, MissionPlan m, String sa, List<String> steps, List<InterviewPresentPlan> presents, List<PlayIssue> out) {
+    void issue(String code, String path, String message) => out.add(PlayIssue(code, path, message));
     final held = <String>{};
     final numbers = PlanIds.caseNumbers(plan.caseId);
     for (final x in plan.allMissions) {
@@ -811,18 +852,11 @@ abstract final class PlayCheck {
       return numbers != null && of != null && of.$1 == numbers.$1 && of.$2 < numbers.$2;
     }
 
-    void requires(String path, List<String> ids) {
-      for (final id in ids) {
-        if (!steps.contains(id)) issue('scene_invalid', path, '"$id" is no step of the talk');
-      }
-    }
-
-    for (final (i, q) in s.questions.indexed) {
-      requires('$sa.questions[$i].requires', q.requires);
-    }
-    for (final (i, p) in s.presents.indexed) {
+    for (final (i, p) in presents.indexed) {
       final pa = '$sa.presents[$i]';
-      requires('$pa.requires', p.requires);
+      for (final id in p.requires) {
+        if (!steps.contains(id)) issue('scene_invalid', '$pa.requires', '"$id" is no step of the talk');
+      }
       for (final e in p.accepted) {
         if (!holds(e)) issue('talk_evidence_unheld', '$pa.accepted', '$e is not in the notebook by ${m.missionId}: evidence of an earlier mission or case');
       }
@@ -864,10 +898,18 @@ abstract final class PlayCheck {
     if (w.talk case final t?) {
       final ta = '$pa.talk';
       if (m.isFinal) {
-        issue('play_range', ta, "a final's page has no talk around its puzzle (its words after the answer are its ending)");
+        // The one talk a final has: evidence shown before its puzzle, the puzzle then played on its page.
+        if (t.after != null || (t.before?.presents ?? const []).isEmpty) {
+          issue('play_range', ta, "a final's page has no talk around its puzzle but one before it in which evidence is shown (its words after the answer are its ending)");
+        }
+        if (m.puzzle.engineTable == 'talks') issue('play_range', ta, 'a final played as a talk has no other talk before it');
       } else if (t.before == null && t.after == null) {
         issue('play_field_missing', ta, 'missing: a talk before the puzzle, after it, or both');
+      } else if ((t.before?.presents ?? const []).isNotEmpty) {
+        issue('play_range', '$ta.before.presents', "evidence is shown only in the talk before a final's puzzle");
       }
+      if ((t.after?.presents ?? const []).isNotEmpty) issue('play_range', '$ta.after.presents', 'evidence is never shown in a talk after a puzzle');
+      if (m.isFinal) _talkEvidence(plan, m, '$ta.before', t.before?.presents ?? const [], out);
       person('$ta.speaker', t.speaker);
       portrait('$ta.portrait', t.portrait);
     }

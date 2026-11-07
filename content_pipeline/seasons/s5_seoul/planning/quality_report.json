@@ -3,8 +3,8 @@
   "seasonId": "s5_seoul",
   "tool": "tool/season_planner/plan_season.dart check",
   "counts": {
-    "ERROR": 0,
-    "WARNING": 66,
+    "ERROR": 3,
+    "WARNING": 67,
     "INFO": 41
   },
   "summary": {
@@ -36,13 +36,13 @@
       "shownBySeasonPlaces": 31,
       "model": "gpt-image-2",
       "quality": "medium",
-      "estimatedUsd": 5.01907,
+      "estimatedUsd": 4.874145,
       "estimateNote": "List prices of 2026-10-29 (image_pricing.dart), an estimate before any call, each reference picture priced as 8000 image input tokens; nothing was sent."
     },
     "history": {
-      "facts": 78,
+      "facts": 80,
       "draft": 5,
-      "source_checked": 73,
+      "source_checked": 75,
       "rejected": 0,
       "puzzles": 48,
       "reveals": 12,
@@ -50,10 +50,7 @@
       "pending": 5
     },
     "generator": {
-      "run": true,
-      "compatible": true,
-      "files": 29,
-      "blockedByPictures": 0
+      "run": false
     },
     "cases": 12,
     "plannedCases": 12,
@@ -62,9 +59,8 @@
     "finals": 12,
     "puzzlesByKind": {
       "trace_deduction": 2,
-      "order_sequence": 5,
+      "order_sequence": 6,
       "syllable_compose": 2,
-      "evidence_talk": 4,
       "dark_room_search": 2,
       "number_entry": 8,
       "letter_tile_lock": 4,
@@ -72,16 +68,18 @@
       "picture_choice": 2,
       "combo_dial_lock": 2,
       "lens_inspect_word": 2,
+      "evidence_talk": 3,
       "scene_explore_choose": 2,
       "word_entry": 5,
       "record_mismatch": 2,
       "witness_compare": 1
     },
-    "puzzlesOnPictures": 17,
+    "puzzlesOnPictures": 16,
     "finalsByKind": {
-      "evidence_talk": 4,
+      "order_sequence": 1,
       "letter_tile_lock": 3,
       "combo_dial_lock": 2,
+      "evidence_talk": 3,
       "word_entry": 2,
       "number_entry": 1
     },
@@ -95,6 +93,13 @@
     "apiCalls": 0
   },
   "findings": [
+    {
+      "level": "WARNING",
+      "code": "repeated_in_case",
+      "where": "cases/s5_ep01",
+      "source": "plan",
+      "message": "puzzles [repeated_in_case] $.final.puzzle.paletteId: order_sequence again (also at $.missions[1].puzzle)"
+    },
     {
       "level": "WARNING",
       "code": "clue_never_used",
@@ -384,27 +389,6 @@
     },
     {
       "level": "WARNING",
-      "code": "en_long_sentence",
-      "where": "cases/s5_ep01 $.missions[1].play.clue.note",
-      "source": "englishHeuristic",
-      "message": "18 words: \"The teeth, the back of the tongue, the teeth + 1 line, th...\" (at most 15 for ages 8-12)"
-    },
-    {
-      "level": "WARNING",
-      "code": "en_long_sentence",
-      "where": "cases/s5_ep11 $.missions[1].play.evidence.description",
-      "source": "englishHeuristic",
-      "message": "17 words: \"Yun's list for his friend's copy: copy 2 of 3, for Jeong ...\" (at most 15 for ages 8-12)"
-    },
-    {
-      "level": "WARNING",
-      "code": "en_repeated",
-      "where": "cases/s5_ep01 $.final.play.hints[0]",
-      "source": "englishHeuristic",
-      "message": "\"show one piece of evidence for each question.\" 4 times in the season (cases/s5_ep01 $.final.play.orderFeedback; cases/s5_ep09 $.final.play.hints[0]; cases/s5_ep09 $.final.play.orderFeedback…)"
-    },
-    {
-      "level": "WARNING",
       "code": "en_repeated",
       "where": "cases/s5_ep02 $.missions[2].play.orderFeedback",
       "source": "englishHeuristic",
@@ -544,6 +528,48 @@
       "message": "planned, but assets/seasons/season_05_seoul/cover/kings_study.webp is on disk: mark it generated once checked"
     },
     {
+      "level": "ERROR",
+      "code": "asset_size_unsupported",
+      "where": "assets.manifest.json $.assets[24].width",
+      "source": "assets",
+      "message": "640x673 (1536x1024, 1024x1536, 1024x1024: the image models' and the game's sizes)"
+    },
+    {
+      "level": "WARNING",
+      "code": "asset_transparency_unchecked",
+      "where": "assets.manifest.json $.assets[24].transparent",
+      "source": "assets",
+      "message": "whether gpt-image-2 makes transparent pictures is not checked yet (tool/ai_agents)"
+    },
+    {
+      "level": "ERROR",
+      "code": "asset_size_unsupported",
+      "where": "assets.manifest.json $.assets[25].width",
+      "source": "assets",
+      "message": "760x438 (1536x1024, 1024x1536, 1024x1024: the image models' and the game's sizes)"
+    },
+    {
+      "level": "WARNING",
+      "code": "asset_transparency_unchecked",
+      "where": "assets.manifest.json $.assets[25].transparent",
+      "source": "assets",
+      "message": "whether gpt-image-2 makes transparent pictures is not checked yet (tool/ai_agents)"
+    },
+    {
+      "level": "ERROR",
+      "code": "asset_size_unsupported",
+      "where": "assets.manifest.json $.assets[26].width",
+      "source": "assets",
+      "message": "640x578 (1536x1024, 1024x1536, 1024x1024: the image models' and the game's sizes)"
+    },
+    {
+      "level": "WARNING",
+      "code": "asset_transparency_unchecked",
+      "where": "assets.manifest.json $.assets[26].transparent",
+      "source": "assets",
+      "message": "whether gpt-image-2 makes transparent pictures is not checked yet (tool/ai_agents)"
+    },
+    {
       "level": "WARNING",
       "code": "asset_portrait_missing",
       "where": "assets.manifest.json an_junggeun",
@@ -611,7 +637,7 @@
       "code": "puzzle_selection_unmatched",
       "where": "cases/s5_ep01 $.missions[0]",
       "source": "puzzle",
-      "message": "s5_ep01_m1 is planned as trace_deduction, which its words do not call for (number_entry, lens_inspect_word, word_entry; chosen: number_entry)"
+      "message": "s5_ep01_m1 is planned as trace_deduction, which its words do not call for (number_entry, lens_inspect_word, witness_compare, word_entry, evidence_talk; chosen: number_entry)"
     },
     {
       "level": "WARNING",
@@ -622,10 +648,10 @@
     },
     {
       "level": "WARNING",
-      "code": "puzzle_selection_unmatched",
+      "code": "puzzle_selection_none",
       "where": "cases/s5_ep01 $.missions[2]",
       "source": "puzzle",
-      "message": "s5_ep01_m3 is planned as syllable_compose, which its words do not call for (timeline_board, order_sequence; chosen: timeline_board)"
+      "message": "s5_ep01_m3: no trait its words show: write the clue into the case, or choose by hand and say why"
     },
     {
       "level": "WARNING",
@@ -839,10 +865,10 @@
     },
     {
       "level": "INFO",
-      "code": "generator_ok",
+      "code": "generator_skipped",
       "where": "generate_season",
       "source": "generator",
-      "message": "29 files made in memory (nothing written)"
+      "message": "not run: the plans have errors to fix first"
     }
   ]
 }

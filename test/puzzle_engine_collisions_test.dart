@@ -161,6 +161,7 @@ void main() {
         ).allMatches(finalPage))
           accessors[m[1]!]!,
         'talks',
+        'talkMissions',
         'easySteps',
         'endings',
       };
@@ -407,11 +408,11 @@ void main() {
     test("a table on the other page's slot is never read", () {
       final s = _season(
         canvases: {'s3_ep01_m1': _canvas},
-        talkMissions: {'s3_ep01_final': _talk},
+        exhibits: {'s3_ep01_final': _exhibit},
       );
       expect(_found(s), [
         '[wrong_surface] s3_test s3_ep01 s3_ep01_m1: canvases is never read on a mission page (read on the final page only)',
-        '[wrong_surface] s3_test s3_ep01 s3_ep01_final: talkMissions is never read on a final page (read on the mission page only)',
+        '[wrong_surface] s3_test s3_ep01 s3_ep01_final: exhibits is never read on a final page (read on the mission page only)',
       ]);
     });
 

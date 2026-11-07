@@ -18,6 +18,16 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         master: 'In 1446, Hunminjeongeum, the book that explains the letters, was completed.',
       ),
       HistoryLine(
+        rookie: 'The name Hunminjeongeum means the right sounds, to teach the people.',
+        junior: 'The name Hunminjeongeum means the right sounds for teaching the people.',
+        master: 'The name Hunminjeongeum signifies the right sounds with which to teach the people.',
+      ),
+      HistoryLine(
+        rookie: 'Its four groups read the Chinese characters 訓民正音. People also said Jeongeum for short.',
+        junior: 'Its four groups read the Chinese characters 訓民正音, and it was also shortened to Jeongeum.',
+        master: 'Its four groups read the Chinese characters 訓民正音, and the name was also shortened to Jeongeum.',
+      ),
+      HistoryLine(
         rookie: 'The King wrote that our words were not like Chinese words, so many people could not write what they wanted to say. He made the letters easy to learn.',
         junior: 'The King wrote that Korean was so different from Chinese that many people could not put their thoughts in writing. He made the letters easy to learn.',
         master: 'The King wrote that Korean speech did not fit Chinese characters, leaving many unable to write what they meant; he made the letters easy to learn.',
@@ -45,9 +55,9 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     inThisMystery: [
       HistoryLine(
-        rookie: 'Bun-i, Sora and Taek are made up. So are the burnt paper, the book hall and that rainy night.',
-        junior: 'Bun-i, Sora and Taek were invented for this case, and so were the burnt paper, the book hall and that rainy night.',
-        master: 'Bun-i, Sora and Taek are inventions of this story, as are the burnt paper, the book hall and that rainy night.',
+        rookie: 'Bun-i, Sora and Taek are made up. So are the burnt paper, the lesson box and that rainy night.',
+        junior: 'Bun-i, Sora and Taek were invented for this story. So were the burnt paper, the lesson box and that rainy night.',
+        master: 'Bun-i, Sora and Taek are inventions of this story, as are the burnt paper, the lesson box and that rainy night.',
       ),
       HistoryLine(
         rookie: 'King Sejong was real, but his words in this story are made up. Some of them retell his real preface.',
@@ -55,9 +65,9 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         master: 'King Sejong was real, yet every word he speaks here is invented; a few of them echo his real preface.',
       ),
       HistoryLine(
-        rookie: 'The King\'s ten-day test is made up too. The game writes the note the way we spell today.',
-        junior: 'The King\'s ten-day test was invented as well. The game writes the note in today\'s spelling.',
-        master: 'The King\'s ten-day test is invented too, and the note is written in modern spelling.',
+        rookie: 'The four groups were never lost: that event is made up, and so is the King\'s ten-day test. The game writes the name the way we spell today.',
+        junior: 'The four groups of the name were never lost: that event was invented, and so was the King\'s ten-day test. The game writes the name in today\'s spelling.',
+        master: 'The four groups of the name were never lost: that event is invented, as is the King\'s ten-day test. The game writes the name in today\'s spelling.',
       ),
     ],
     sources: [
@@ -65,6 +75,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         publisher: 'UNESCO',
         title: 'Memory of the World: Hunminjeongum Manuscript',
         url: 'https://www.unesco.org/en/memory-world/hunminjeongum-manuscript',
+      ),
+      HistorySource(
+        publisher: '국립국어원 (National Institute of Korean Language)',
+        title: '한글의 명칭',
+        url: 'https://www.korean.go.kr/hangeul/another/001.html',
       ),
       HistorySource(
         publisher: '국립한글박물관 (National Hangeul Museum)',
@@ -105,6 +120,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         publisher: '국사편찬위원회 (National Institute of Korean History)',
         title: '우리역사넷 사료로 본 한국사: 한글의 구성 원리 (해설)',
         url: 'https://contents.history.go.kr/id/hm_091_0030',
+      ),
+      HistorySource(
+        publisher: '국사편찬위원회 우리역사넷 (National Institute of Korean History)',
+        title: '세종어제훈민정음',
+        url: 'https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300900',
       ),
       HistorySource(
         publisher: '세계기록유산 한국위원회 (kmowkc.org)',

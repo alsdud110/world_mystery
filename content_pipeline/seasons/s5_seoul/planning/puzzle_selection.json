@@ -57,9 +57,8 @@
   "counts": {
     "planned": {
       "trace_deduction": 2,
-      "order_sequence": 5,
+      "order_sequence": 6,
       "syllable_compose": 2,
-      "evidence_talk": 4,
       "dark_room_search": 2,
       "number_entry": 8,
       "letter_tile_lock": 4,
@@ -67,6 +66,7 @@
       "picture_choice": 2,
       "combo_dial_lock": 2,
       "lens_inspect_word": 2,
+      "evidence_talk": 3,
       "scene_explore_choose": 2,
       "word_entry": 5,
       "record_mismatch": 2,
@@ -75,7 +75,7 @@
     "selected": {
       "number_entry": 8,
       "witness_compare": 5,
-      "timeline_board": 5,
+      "timeline_board": 4,
       "record_mismatch": 4,
       "lens_inspect_word": 5,
       "order_sequence": 3,
@@ -91,6 +91,14 @@
       "missionId": "s5_ep01_m1",
       "surface": "mission",
       "traits": [
+        {
+          "trait": "testimony",
+          "cues": [
+            "said",
+            "saw"
+          ],
+          "from": "words"
+        },
         {
           "trait": "inscription",
           "cues": [
@@ -129,9 +137,19 @@
           "why": "inscription"
         },
         {
+          "paletteId": "witness_compare",
+          "score": 10,
+          "why": "testimony"
+        },
+        {
           "paletteId": "word_entry",
           "score": 7,
           "why": "inscription (second choice)"
+        },
+        {
+          "paletteId": "evidence_talk",
+          "score": 7,
+          "why": "testimony (second choice)"
         }
       ],
       "selected": "number_entry",
@@ -162,7 +180,8 @@
       ],
       "factIds": [
         "s5_ep01_h10",
-        "s5_ep01_h3"
+        "s5_ep01_h3",
+        "s5_ep01_h4"
       ],
       "candidates": [
         {
@@ -192,35 +211,16 @@
       "caseId": "s5_ep01",
       "missionId": "s5_ep01_m3",
       "surface": "mission",
-      "traits": [
-        {
-          "trait": "chronology",
-          "cues": [
-            "first",
-            "then"
-          ],
-          "from": "words"
-        }
-      ],
+      "traits": [],
       "factIds": [
+        "s5_ep01_h10",
         "s5_ep01_h11",
         "s5_ep01_h12",
         "s5_ep01_h4"
       ],
-      "candidates": [
-        {
-          "paletteId": "timeline_board",
-          "score": 10,
-          "why": "chronology"
-        },
-        {
-          "paletteId": "order_sequence",
-          "score": 7,
-          "why": "chronology (second choice)"
-        }
-      ],
-      "selected": "timeline_board",
-      "reason": "chronology",
+      "candidates": [],
+      "selected": null,
+      "reason": "no trait its words show: write the clue into the case, or choose by hand and say why",
       "planned": "syllable_compose",
       "plannedIsSelected": false,
       "checks": {
@@ -246,6 +246,8 @@
         }
       ],
       "factIds": [
+        "s5_ep01_h14",
+        "s5_ep01_h3",
         "s5_ep01_h5",
         "s5_ep01_h6",
         "s5_ep01_h9"
@@ -253,14 +255,14 @@
       "candidates": [],
       "selected": null,
       "reason": "no trait its words show (the facts alone say relations: never chosen on what the player is not told): write the clue into the case, or choose by hand and say why",
-      "planned": "evidence_talk",
+      "planned": "order_sequence",
       "plannedIsSelected": false,
       "checks": {
         "answerAndPlay": "pass",
         "levels": "pass"
       },
       "personReview": [
-        "whether the evidence asked for is the only piece that answers each prompt"
+        "whether the words lead to the answer, and only to it"
       ]
     },
     {

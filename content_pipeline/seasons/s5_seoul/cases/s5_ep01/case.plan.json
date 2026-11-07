@@ -7,9 +7,9 @@
   "title": "The Secret of the King's Letters",
   "synopsis": [
     "A paper in the King's new letters is half burnt.",
-    "Only the night guard saw what was on it."
+    "Four little groups are lost. Only the night guard saw them."
   ],
-  "goal": "Find out who wrote the burnt paper, and what it says, before the rain.",
+  "goal": "Find the four groups and what they mean, before the rain.",
   "characters": [
     "sejong",
     "taek",
@@ -37,17 +37,17 @@
           "options": [
             {
               "id": "a",
-              "label": "The scholars' hall",
-              "feedback": "Scholars write Chinese characters well. They never copy a sign. Read your notes again."
+              "label": "The scholars' hall: 혼",
+              "feedback": "Scholars write Chinese characters well. And Taek saw the dot below the line."
             },
             {
               "id": "b",
-              "label": "The guard post",
-              "feedback": "No bucket stands at the guard post, and the drops lead away from it."
+              "label": "The guard post: 운",
+              "feedback": "No bucket stands here. And Taek saw 2 short lines on top."
             },
             {
               "id": "c",
-              "label": "The path to the kitchen well"
+              "label": "The path to the kitchen well: 훈"
             }
           ]
         },
@@ -57,10 +57,11 @@
         "status": "awaitingAssets",
         "notes": [
           "Picture gate_courtyard (2026-11-04): the scholars' hall doorway (left), the guard post with its brazier (right middle) and the path to the kitchen well with its jars (far right) are drawn in it and measured on this file (grid sheet). The three traces lie on the plain paving in front of the steps.",
-          "Traces read (DeductionScene): 門 copied from the gate sign (the writer could not write Chinese characters), a bucket ring and water drops all point to the path to the kitchen well.",
+          "Traces read (DeductionScene): 門 copied from the gate sign (the writer could not write Chinese characters), a bucket ring and water drops all point to the path to the kitchen well. Each place's chip shows the group drawn there; Taek's shape words pick the same one (훈: not 혼, its dot on top; not 운, no lines on top).",
           "The three traces are drawn by the app over their areas (copiedScrap, waterRing, waterDrops): no writing is ever in a picture.",
           "2026-11-06: each trace is reached through a second, larger area (its first area is where the app draws it); the tap guide stands just under the copied scrap, on bare paving in the marks' row (never on a trace: it shows how to look, not where).",
-          "2026-11-06: the opening view is the row of marks with the guard post and the kitchen well path (x 520–1536, y 700–920): the picture opens about 1.5× larger on a phone; the scholars' hall is a swipe to the left. The drops are a longer trail (1000–1420), curving past the guard post into the well path."
+          "2026-11-06: the opening view is the row of marks with the guard post and the kitchen well path (x 520–1536, y 700–920): the picture opens about 1.5× larger on a phone; the scholars' hall is a swipe to the left. The drops are a longer trail (1000–1420), curving past the guard post into the well path.",
+          "2026-11-07: the groups are the options' words (chips): none is drawn in the picture. 훈's meaning is never said: the talk after says it is what Sora does for Bun-i, and Sora teaches her; Final B asks for it (TEACH, not LEARN)."
         ]
       },
       "clueInputs": [],
@@ -71,7 +72,7 @@
       "learning": {
         "dependency": "essential",
         "level": "comprehension",
-        "objective": "세종의 말(\"많은 사람이 하고 싶은 말을 쓰지 못한다\")과 흔적 문장을 읽고, 한자를 쓰지 못한 사람이 어디서 왔는지 추리한다.",
+        "objective": "세종의 말과 흔적 문장, 택의 모양 설명을 읽고 글쓴이가 어디서 왔는지, 어떤 글자가 그 사람의 것인지 추리한다.",
         "skill": "sentenceMeaning",
         "expressions": [
           "Many people cannot write what they want to say."
@@ -85,16 +86,17 @@
           "Who left it at the gate?"
         ],
         "letterIntro": "Your notes at the gate:",
-        "letter": "The King said: \"Many people cannot write what they want to say.\"\nSomeone copied 門 from the gate sign, three times.\nA wet ring: a water bucket stood here.\nDrops of water lead away from the gate, past the guard post.",
-        "question": "Where did the writer come from? Tap the place.",
+        "letter": "The King said: \"Many people cannot write what they want to say.\"\nSomeone copied 門 from the gate sign, three times.\nA wet ring: a water bucket stood here.\nDrops of water lead away from the gate, past the guard post.\nSora's 3 pupils each drew one group in charcoal by their place.\nTaek saw a ring with 2 short lines on top. Under it: a flat line, a dot below it, then a corner.",
+        "question": "Which place has the writer's group? Tap the place.",
         "hints": [
           "Tap the paper scrap, the wet ring and the drops of water.",
-          "Who carries water in the palace?"
+          "Who carries water? Then read Taek's shapes again."
         ],
         "successMessage": "The writer carries water from the kitchen well!",
         "transition": [
           "At the well, the water-carriers know the hand at once.",
-          "\"That is Bun-i,\" says one. \"She went home at sunset.\"",
+          "\"That is Bun-i's group,\" says one. \"She went home at sunset.\"",
+          "\"She says it is what Sora does for her every night.\"",
           "\"Sora, the palace maid, teaches her the new letters.\""
         ],
         "talk": {
@@ -109,11 +111,11 @@
               },
               {
                 "by": "speaker",
-                "text": "Strange little marks. I thought it was a game."
+                "text": "It had four little groups. I know the shapes, not the order."
               },
               {
                 "by": "detective",
-                "text": "Then someone wrote it before the gate closed."
+                "text": "Then we can build them again."
               }
             ]
           }
@@ -121,9 +123,9 @@
         "mapX": 0.5,
         "mapY": 0.7,
         "clue": {
-          "title": "The Writer",
-          "value": "BUN-I",
-          "note": "Bun-i carries water. She could not write Chinese characters, so she tried the new letters."
+          "title": "The First Group",
+          "value": "훈",
+          "note": "Bun-i's group: what Sora does for her. Bun-i carries water. She could not write Chinese characters."
         },
         "evidence": {
           "name": "The Copied Scrap",
@@ -141,7 +143,7 @@
           },
           "place": "The inner gate at night",
           "task": "Tap 3 marks on the ground. Then tap a place.",
-          "chooseTask": "3 marks found! Now tap where the writer came from.",
+          "chooseTask": "3 marks found! Now tap the writer's place.",
           "missLine": "Nothing here. Look on the ground.",
           "notPlaceLine": "Tap a place the writer could have come from.",
           "guideAt": [
@@ -308,52 +310,52 @@
         "engineTable": null,
         "missionType": "sequence",
         "answerSpec": {
-          "answer": "siot,giyeok,jieut,bieup,ieung",
+          "answer": "ieung,eu,mieum",
           "options": [
             {
               "id": "mieum",
               "label": "ㅁ"
             },
             {
-              "id": "jieut",
-              "label": "ㅈ"
+              "id": "siot",
+              "label": "ㅅ"
+            },
+            {
+              "id": "eu",
+              "label": "ㅡ"
             },
             {
               "id": "giyeok",
               "label": "ㄱ"
             },
             {
-              "id": "chieut",
-              "label": "ㅊ"
+              "id": "i",
+              "label": "ㅣ"
             },
             {
               "id": "ieung",
               "label": "ㅇ"
             },
             {
-              "id": "nieun",
-              "label": "ㄴ"
-            },
-            {
               "id": "bieup",
               "label": "ㅂ"
             },
             {
-              "id": "pieup",
-              "label": "ㅍ"
+              "id": "nieun",
+              "label": "ㄴ"
             },
             {
-              "id": "siot",
-              "label": "ㅅ"
+              "id": "o",
+              "label": "ㅗ"
             }
           ],
-          "codeLength": 5
+          "codeLength": 3
         },
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Taek names each group by the body part Sora's board gives it (teeth, back of the tongue, mouth, throat), never by its shape: the board's English decides the letter, a Korean reader's eye alone does not.",
-          "Four letters are not in the note (ㄴ ㅁ ㅊ ㅍ): 'one step stronger' is one more line (the board's rule, shown with ㄴ ㄷ ㅌ only), so ㅈ not ㅊ, ㅂ not ㅍ or ㅁ, and the back of the tongue ㄱ not ㄴ.",
+          "Taek names the group by the body part Sora's board gives it, and its line: the board's English decides each letter, a Korean reader's eye alone does not.",
+          "Six tiles are not in the group: ㅂ answers 'no added line' (the board's rule, ㅁ + 1 line = ㅂ), ㅗ 'no dot', ㅣ 'flat', ㅅ ㄴ ㄱ a misread body part.",
           "Letters are tiles of the app (text): never in a picture."
         ]
       },
@@ -371,7 +373,7 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "택이 말한 발음 기관(teeth, back of the tongue, mouth, throat)과 '한 단계 센 소리(one step stronger)'를 글자판의 영어 설명(copies the ..., a stronger sound adds one line)에 맞춰 방해 글자 사이에서 자음 다섯을 순서대로 고른다.",
+        "objective": "택이 말한 발음 기관(the throat, the mouth)과 선(a flat line), 획 규칙(no added line)을 소라의 판에 맞춰 방해 글자 사이에서 세 글자를 순서대로 고르고, 목구멍과 입이 만드는 '소리'의 글자임을 안다.",
         "skill": "vocabulary",
         "expressions": [
           "A stronger sound adds one line."
@@ -387,24 +389,25 @@
           "Sora reads her board. Taek remembers the marks he saw."
         ],
         "letterIntro": "Sora's lesson board, and Taek's memory:",
-        "letter": "SORA'S BOARD\nThese letters copy shapes:\nㄱ = the back of the tongue\nㄴ = the tongue on the gums\nㅁ = the mouth\nㅅ = the teeth\nㅇ = the throat\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nㄴ + 2 lines = ㅌ\nㅁ + 1 line = ㅂ\n\nTAEK REMEMBERS\n1. The teeth.\n2. The back of the tongue.\n3. The teeth + 1 line.\n4. The mouth + 1 line, and the throat under it.",
-        "question": "Which 5 letters did Bun-i write? Tap them in Taek's order.",
+        "letter": "SORA'S BOARD\nThese letters copy shapes:\nㄱ = the back of the tongue\nㄴ = the tongue on the gums\nㅁ = the mouth\nㅅ = the teeth\nㅇ = the throat\nA flat line = the earth.\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nㄴ + 2 lines = ㅌ\nㅁ + 1 line = ㅂ\n\nTAEK REMEMBERS\n1. The throat.\n2. A flat line, no dot.\n3. The mouth at the bottom. No added line.",
+        "question": "Which 3 letters open the box? Tap them in Taek's order.",
         "hints": [
-          "Find the teeth and the back of the tongue on Sora's board.",
-          "The teeth + 1 line: add one line to ㅅ, not two."
+          "Find the throat and the mouth on Sora's board.",
+          "Read Taek's last line again: is a line added?"
         ],
         "successMessage": "The lesson box opens!",
-        "orderFeedback": "Those are the right letters. Read Taek's groups again, one by one.",
+        "orderFeedback": "Those are the right letters. Read Taek's lines in order.",
         "feedback": {
-          "siot,giyeok,chieut,bieup,ieung": "Group 3 is the teeth + 1 line, not two.",
-          "siot,giyeok,jieut,pieup,ieung": "Group 4 is the mouth + 1 line, not two.",
-          "siot,giyeok,jieut,mieum,ieung": "Group 4 is the mouth + 1 line.",
-          "siot,nieun,jieut,bieup,ieung": "Group 2 is the back of the tongue: ㄱ, not ㄴ."
+          "ieung,eu,bieup": "Taek says no added line.",
+          "ieung,o,mieum": "Taek says no dot.",
+          "ieung,i,mieum": "The line is flat, not standing.",
+          "siot,eu,mieum": "Line 1 is the throat, not the teeth.",
+          "nieun,eu,mieum": "Line 1 is the throat, not the tongue."
         },
         "transition": [
-          "Inside is Bun-i's slate, with the same five sounds.",
-          "But the lines and dots between them are wiped away.",
-          "\"Taek, what did the rest look like?\" Sora asks."
+          "Inside is Bun-i's slate. It shows one group: 음.",
+          "\"The throat and the mouth,\" says Sora. \"This group means sound.\"",
+          "\"She used one more paper in my writing room.\""
         ],
         "talk": {
           "speaker": "sora",
@@ -421,6 +424,10 @@
                 "text": "Bun-i could not write one Chinese character. Today was her tenth day."
               },
               {
+                "by": "speaker",
+                "text": "Her last test: write the name of the King's letters."
+              },
+              {
                 "by": "detective",
                 "text": "Then the marks Taek saw are her letters."
               }
@@ -430,9 +437,9 @@
         "mapX": 0.86,
         "mapY": 0.32,
         "clue": {
-          "title": "The Sounds",
-          "value": "ㅅ ㄱ ㅈ ㅂ ㅇ",
-          "note": "The teeth, the back of the tongue, the teeth + 1 line, the mouth + 1 line, and the throat under it."
+          "title": "The Second Group",
+          "value": "음",
+          "note": "음 = SOUND. The throat, a flat line, the mouth."
         },
         "evidence": {
           "name": "Sora's Lesson Board",
@@ -451,13 +458,13 @@
         "engineTable": "syllables",
         "missionType": "wordInput",
         "answerSpec": {
-          "answer": "서고지붕"
+          "answer": "정음"
         },
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Each group's vowel built from Taek's words: ㅓ (dot left of a standing line), ㅗ (dot on a flat line), ㅣ, ㅜ (dot under a flat line); each first sound is chosen from M2's by its body part. The note reads 서고 지붕, the book hall roof.",
-          "The paper holds the groups as Bun-i wrote them: down the page, two to a column, the first column on the right (columnHeight 2). Its places are named TOP RIGHT, BOTTOM RIGHT, TOP LEFT, BOTTOM LEFT, never by group number: knowing the words 서고 지붕 is not enough, Sora's English says where each group sits. Written across the page (서고 / 지붕 in rows) the note reads 고붕서지.",
+          "Group 1 is built from Sora's words: ㅈ (the teeth + 1 line), ㅓ (dot left of a standing line), ㅇ at the bottom. Group 2 has no words of its own: it is the group of Bun-i's slate, the clue of Mission 2.",
+          "The two groups sit one above the other on Bun-i's paper (the board's TOP and BOTTOM). No writing rule is claimed for 1446.",
           "Every letter is the app's text (SyllableBoard): never in a picture."
         ]
       },
@@ -465,7 +472,7 @@
         {
           "ref": "s5_ep01_c2",
           "use": "answerDerivation",
-          "note": "The first sounds of Bun-i's groups."
+          "note": "Group 2 is the group on Bun-i's slate."
         }
       ],
       "clueOutputs": {
@@ -475,15 +482,15 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "점(하늘)·누운 줄(땅)·선 줄(사람)과 위치 표현(on its left, on top, under it), 세로쓰기 설명(top to bottom, the first column is on the right)을 읽고 종이 위 제자리에 네 글자를 완성한다.",
+        "objective": "점(하늘)·누운 줄(땅)·선 줄(사람)과 위치 표현(on its left, at the bottom, at the top)을 읽어 첫 묶음을 만들고, 둘째 묶음은 앞 미션의 단서로 채운 뒤, '바른 소리'의 뜻을 안다.",
         "skill": "sentenceMeaning",
         "expressions": [
           "a standing line, a dot on its left",
-          "The first column is on the right."
+          "Group 1 is at the top."
         ]
       },
       "play": {
-        "title": "Four Little Groups",
+        "title": "Bun-i's Last Paper",
         "location": "THE WRITING ROOM",
         "story": [
           "You go to Sora's writing room.",
@@ -491,22 +498,24 @@
           "\"Dot = sky. Flat line = earth. Standing line = person.\""
         ],
         "letterIntro": "Sora's lesson:",
-        "letter": "Flat vowels go under.\nStanding vowels go on the right.\nWrite top to bottom.\nThe first column is on the right.\nTwo groups in each column.",
-        "question": "Tap a place. Choose its sound, then its line and dot.",
+        "letter": "Flat vowels go under.\nStanding vowels go on the right.\nBun-i's 2 groups sit one above the other.\nGroup 1 is at the top.",
+        "question": "Tap a group. Choose its sound, then its line and dot.",
         "hints": [
-          "Group 1 is at the top right. Group 2 is under it.",
-          "Group 3 is at the top left. Group 4 is under it."
+          "Group 2 is in your notebook. Read your clue from the well.",
+          "Group 1: add one line to the teeth, not two."
         ],
         "feedback": {
-          "고붕서지": "Not across the page! Go top to bottom, from the right.",
-          "지붕서고": "Bun-i's first column is on the right, not on the left.",
-          "사고지붕": "Group 1's dot is on the left of its line, not the right."
+          "성음": "Group 1 is the teeth + 1 line.",
+          "청음": "Group 1 has 1 added line, not 2.",
+          "장음": "Group 1's dot is on the left of its line, not the right.",
+          "정응": "Group 2 is not right. Read your clue from the well.",
+          "음정": "Group 1 goes at the top."
         },
-        "successMessage": "The note is whole again. Sora reads it out: \"the book hall roof\"!",
+        "successMessage": "The paper is whole again. Sora reads it out: \"the right sounds\"!",
         "transition": [
-          "Sora goes pale. \"Bun-i saw a hole in the book hall roof!\"",
-          "\"The rain will ruin the books. But the book hall is locked at night.\"",
-          "\"Only the King can open it now.\" The first drops of rain fall."
+          "\"You know one group: sound. So this one means right.\"",
+          "\"That is three groups,\" says Sora. \"One is still lost.\"",
+          "\"The King is at the book hall.\" The first drops of rain fall."
         ],
         "talk": {
           "speaker": "taek",
@@ -520,7 +529,7 @@
               },
               {
                 "by": "speaker",
-                "text": "The ring was under the last group."
+                "text": "This paper had two groups, one above the other."
               }
             ]
           }
@@ -528,51 +537,40 @@
         "mapX": 0.86,
         "mapY": 0.36,
         "clue": {
-          "title": "Bun-i's Note",
-          "value": "서고 지붕",
-          "note": "서고 = a place for books. Bun-i saw a hole in the book hall roof."
+          "title": "The Third Group",
+          "value": "정",
+          "note": "정음 = the right sounds. 음 is sound, so 정 is right."
         },
         "evidence": {
           "name": "Bun-i's Note",
           "icon": "letter",
-          "description": "Bun-i's note, put back together from Taek's memory. It names the book hall roof."
+          "description": "Bun-i's note, put back together from Taek's memory. Two of its groups say: the right sounds."
         },
         "syllables": {
           "blocks": [
             {
               "id": "one",
-              "initial": "ㅅ",
+              "initial": "ㅈ",
               "vowel": "ㅓ",
-              "line": "Group 1: ㅅ. A standing line, a dot on its left."
+              "final": "ㅇ",
+              "line": "Group 1: the teeth + 1 line. A standing line, a dot on its left. The throat at the bottom."
             },
             {
               "id": "two",
-              "initial": "ㄱ",
-              "vowel": "ㅗ",
-              "line": "Group 2: ㄱ. A flat line, a dot on top."
-            },
-            {
-              "id": "three",
-              "initial": "ㅈ",
-              "vowel": "ㅣ",
-              "line": "Group 3: ㅈ. Only a standing line."
-            },
-            {
-              "id": "four",
-              "initial": "ㅂ",
-              "vowel": "ㅜ",
-              "final": "ㅇ",
-              "line": "Group 4: ㅂ. A flat line, a dot under it. ㅇ at the bottom."
+              "initial": "ㅇ",
+              "vowel": "ㅡ",
+              "final": "ㅁ",
+              "line": "Group 2: the group on Bun-i's slate."
             }
           ],
           "sounds": [
             "ㅅ",
-            "ㄱ",
             "ㅈ",
-            "ㅂ",
-            "ㅇ"
-          ],
-          "columnHeight": 2
+            "ㅊ",
+            "ㅇ",
+            "ㅁ",
+            "ㄴ"
+          ]
         }
       }
     }
@@ -582,37 +580,75 @@
     "slot": "final",
     "placeId": "s5_seoul.book_hall",
     "puzzle": {
-      "paletteId": "evidence_talk",
+      "paletteId": "order_sequence",
       "surface": "finalMission",
-      "engineTable": "talks",
-      "missionType": "examine",
+      "engineTable": null,
+      "missionType": "sequence",
       "answerSpec": {
-        "answer": "open"
+        "answer": "teach,min,right,sound",
+        "options": [
+          {
+            "id": "gate",
+            "label": "GATE"
+          },
+          {
+            "id": "min",
+            "label": "민"
+          },
+          {
+            "id": "sound",
+            "label": "SOUND"
+          },
+          {
+            "id": "man",
+            "label": "만"
+          },
+          {
+            "id": "teach",
+            "label": "TEACH"
+          },
+          {
+            "id": "bin",
+            "label": "빈"
+          },
+          {
+            "id": "right",
+            "label": "RIGHT"
+          },
+          {
+            "id": "mun",
+            "label": "문"
+          },
+          {
+            "id": "learn",
+            "label": "LEARN"
+          }
+        ],
+        "codeLength": 4
       },
-      "assetNeeds": [
-        "s5_seoul.asset.sejong",
-        "s5_seoul.asset.book_hall_rain"
-      ],
-      "status": "awaitingAssets",
+      "assetNeeds": [],
+      "status": "ready",
       "notes": [
-        "King Sejong's three questions, each answered by one mission's evidence: who wrote it (the copied scrap), how she could after ten days (Sora's board), what it says (Bun-i's note). His words are made up (dossier fiction)."
+        "Stage A: King Sejong's three questions, shown evidence in turn (play.talk.before): the last says who the letters are for, the people. Stage B: this puzzle, on the final's page.",
+        "The groups already found are tiles of their meanings: a player who knows the name must still read the clues (TEACH, not LEARN: what Sora does for Bun-i). The fourth is a group: Taek's shape words choose 민 among 문 만 빈.",
+        "Every letter is the app's text: never in a picture. His words are made up (dossier fiction)."
       ]
     },
     "clueInputs": [
       {
         "ref": "s5_ep01_c1",
         "use": "answerDerivation",
-        "note": "Bun-i could not write Chinese characters."
+        "note": "What Sora does for Bun-i: she teaches her."
       },
       {
         "ref": "s5_ep01_c2",
         "use": "answerDerivation",
-        "note": "The letters copy the mouth: easy to learn."
+        "note": "음 is sound."
       },
       {
         "ref": "s5_ep01_c3",
         "use": "answerDerivation",
-        "note": "The note names the book hall roof."
+        "note": "정음 is the right sounds."
       }
     ],
     "clueOutputs": {
@@ -621,31 +657,31 @@
     "learning": {
       "dependency": "essential",
       "level": "application",
-      "objective": "세종의 세 질문(Who wrote this? How? What does it say?)을 읽고 각 질문에 맞는 증거를 하나씩 보여 준다.",
+      "objective": "세종의 질문을 증거로 답해 새 글자가 누구를 위한 것인지 밝히고, 단서의 뜻과 영어 질문(What does the King want to do? Who is it for?)을 읽어 이름을 완성한다.",
       "skill": "sentenceMeaning",
       "expressions": [
-        "Who wrote this?"
+        "Who is it for?"
       ]
     },
     "play": {
       "title": "The King's Letters",
       "location": "THE BOOK HALL",
       "story": [
-        "Rain is falling. Sora sends word to the King.",
-        "King Sejong comes to the locked book hall under a paper umbrella.",
+        "Rain is falling. Servants hold cloth over the book hall.",
+        "King Sejong is there, watching over his new books.",
         "\"A paper in my letters?\" he asks. \"Show me.\""
       ],
-      "letterIntro": "Your notebook says:",
-      "letter": "Bun-i could not write Chinese characters.\nThe first letters copy the mouth. A stronger sound adds a line.\nBun-i's note names the book hall roof.",
-      "question": "Answer the King's three questions with your evidence.",
+      "letterIntro": "Taek's memory, and the name:",
+      "letter": "Taek remembers the last group:\nThe mouth. A standing line, no dot.\nThe tongue on the gums at the bottom.\n\nThe name reads like this:\n1. What does the King want to do?\n2. Who is it for?\n3 and 4. What does he give them? (Bun-i's note: the right sounds.)",
+      "question": "Build the name: tap 4 tiles in order.",
       "hints": [
-        "Show one piece of evidence for each question.",
-        "Use the copied scrap, Sora's board and Bun-i's note."
+        "Read your first clue. What does Sora do for Bun-i?",
+        "The last group: find the mouth, then a standing line."
       ],
-      "successMessage": "The King believes you!",
+      "successMessage": "The name is whole!",
       "transition": [
-        "Guards open the book hall. Servants hold oiled paper over the hole.",
-        "Everyone carries the books out of the rain.",
+        "The tiles turn over, one by one: 훈민정음 (訓民正音).",
+        "\"The right sounds, to teach the people,\" says the King.",
         "\"You learned my letters in one night,\" says the King. \"And Bun-i spoke to me with them.\"",
         "\"That is why I made them.\""
       ],
@@ -665,143 +701,138 @@
           "speaker": "sora",
           "portrait": "assets/seasons/season_05_seoul/characters/sora.webp",
           "text": "He did. And he says thank you."
+        },
+        {
+          "by": "narrator",
+          "text": "Bun-i writes the four groups again on the burnt paper."
         }
       ],
       "mapX": 0.17,
       "mapY": 0.35,
       "evidence": {
-        "name": "The King's Order",
+        "name": "The Name of the Letters",
         "icon": "seal",
-        "description": "The King opened the book hall at night. The books were saved from the rain."
+        "description": "Teach, the people, right, sounds: the King's name for his letters."
       },
-      "interview": {
+      "orderFeedback": "Those are the right tiles. Read the 3 questions again.",
+      "feedback": {
+        "learn,min,right,sound": "Sora does not learn. What does she do for Bun-i?",
+        "gate,min,right,sound": "That is the sign on the gate. What does the King want to do?",
+        "teach,mun,right,sound": "Taek saw a standing line, not a flat one.",
+        "teach,man,right,sound": "Taek saw no dot.",
+        "teach,bin,right,sound": "The mouth has no added line here."
+      },
+      "talk": {
         "speaker": "sejong",
         "portrait": "assets/seasons/season_05_seoul/characters/sejong.webp",
-        "goal": "Show the King who wrote the paper, and what it says.",
-        "opening": [
-          {
-            "by": "speaker",
-            "text": "Only a few people in the palace know my letters."
-          },
-          {
-            "by": "detective",
-            "text": "Then let me show you, Your Majesty."
-          }
-        ],
-        "questions": [
-          {
-            "id": "why",
-            "text": "Why did you make the letters?",
-            "lines": [
-              {
-                "by": "speaker",
-                "text": "Many people could not write what they meant."
-              },
-              {
-                "by": "speaker",
-                "text": "I want everyone to learn them easily."
-              }
-            ]
-          }
-        ],
-        "presents": [
-          {
-            "id": "who",
-            "prompt": "The King asks: \"Who wrote this?\"",
-            "accepted": [
-              "s5_ep01_e1"
-            ],
-            "offered": [
-              "s5_ep01_e1",
-              "s5_ep01_e2"
-            ],
-            "lines": [
-              {
-                "by": "detective",
-                "text": "Bun-i, a water-carrier. She cannot write Chinese characters."
-              },
-              {
-                "by": "speaker",
-                "text": "She tried the characters on my gate first."
-              }
-            ],
-            "miss": "That does not show who wrote it.",
-            "tell": "The copied scrap shows the writer could not write Chinese characters."
-          },
-          {
-            "id": "how",
-            "prompt": "The King asks: \"How can she write after only ten days?\"",
-            "accepted": [
-              "s5_ep01_e2"
-            ],
-            "offered": [
-              "s5_ep01_e2",
-              "s5_ep01_e3"
-            ],
-            "requires": [
-              "who"
-            ],
-            "lines": [
-              {
-                "by": "detective",
-                "text": "Your letters copy the mouth. They are easy to learn."
-              },
-              {
-                "by": "speaker",
-                "text": "Then my scholar was right. Ten days are enough."
-              }
-            ],
-            "miss": "That does not show how she learned.",
-            "tell": "Sora's board shows how the letters are made."
-          },
-          {
-            "id": "what",
-            "prompt": "The King asks: \"And you read it in one night?\"",
-            "accepted": [
-              "s5_ep01_e3"
-            ],
-            "offered": [
-              "s5_ep01_e3",
-              "s5_ep01_e1"
-            ],
-            "requires": [
-              "how"
-            ],
-            "lines": [
-              {
-                "by": "detective",
-                "text": "Bun-i wrote \"the book hall roof\". There is a hole in it."
-              },
-              {
-                "by": "speaker",
-                "text": "The book hall roof! Open the book hall!"
-              }
-            ],
-            "miss": "That does not say what she wrote.",
-            "tell": "Bun-i's note names the book hall roof."
-          }
-        ],
-        "finishWhen": [
-          "who",
-          "how",
-          "what"
-        ],
-        "finishLabel": "CLOSE THE CASE"
-      },
-      "orderFeedback": "Show one piece of evidence for each question."
+        "goal": "Show the King who his letters are for.",
+        "before": {
+          "lines": [
+            {
+              "by": "speaker",
+              "text": "Only a few people in the palace know my letters."
+            },
+            {
+              "by": "detective",
+              "text": "Then let me show you, Your Majesty."
+            }
+          ],
+          "presents": [
+            {
+              "id": "who",
+              "prompt": "The King asks: \"Who wrote this?\"",
+              "accepted": [
+                "s5_ep01_e1"
+              ],
+              "offered": [
+                "s5_ep01_e1",
+                "s5_ep01_e2"
+              ],
+              "lines": [
+                {
+                  "by": "detective",
+                  "text": "Bun-i, a water-carrier. She cannot write Chinese characters."
+                },
+                {
+                  "by": "speaker",
+                  "text": "She tried the characters on my gate first."
+                }
+              ],
+              "miss": "That does not show who wrote it.",
+              "tell": "The copied scrap shows the writer could not write Chinese characters."
+            },
+            {
+              "id": "how",
+              "prompt": "The King asks: \"How can she write after only ten days?\"",
+              "accepted": [
+                "s5_ep01_e2"
+              ],
+              "offered": [
+                "s5_ep01_e2",
+                "s5_ep01_e3"
+              ],
+              "requires": [
+                "who"
+              ],
+              "lines": [
+                {
+                  "by": "detective",
+                  "text": "Your letters copy the mouth. They are easy to learn."
+                },
+                {
+                  "by": "speaker",
+                  "text": "Then my scholar was right. Ten days are enough."
+                }
+              ],
+              "miss": "That does not show how she learned.",
+              "tell": "Sora's board shows how the letters are made."
+            },
+            {
+              "id": "people",
+              "prompt": "The King asks: \"Who are my letters for?\"",
+              "accepted": [
+                "s5_ep01_e1"
+              ],
+              "offered": [
+                "s5_ep01_e1",
+                "s5_ep01_e3"
+              ],
+              "requires": [
+                "how"
+              ],
+              "lines": [
+                {
+                  "by": "detective",
+                  "text": "For people like Bun-i. For the people!"
+                },
+                {
+                  "by": "speaker",
+                  "text": "Many people could not write what they meant."
+                },
+                {
+                  "by": "speaker",
+                  "text": "Yes. The last group is for them."
+                }
+              ],
+              "miss": "That does not show who the letters are for.",
+              "tell": "The copied scrap shows someone who could not write."
+            }
+          ]
+        }
+      }
     }
   },
   "hook": "Rain is coming before dawn.",
   "learningGoal": {
-    "title": "Reading how the new letters are made",
-    "titleKo": "새 글자의 원리 읽기"
+    "title": "Reading how the new letters are made, and what their name means",
+    "titleKo": "새 글자의 원리와 이름의 뜻 읽기"
   },
   "play": {
     "objectives": [
       "Find out who wrote the paper.",
-      "Find the letters Taek saw.",
-      "Put the note back together.",
-      "Show the King what it says."
+      "Open Sora's lesson box.",
+      "Rebuild Bun-i's last paper.",
+      "Build the name with the King."
     ],
     "intro": [
       "Autumn, 1446. You visit King Sejong in Hanyang.",
@@ -811,12 +842,12 @@
       "At the gate, Guard Taek burns a strange paper.",
       "You pull it out of the fire. Rain is coming!"
     ],
-    "caseSummary": "Bun-i wrote her first letter in the new letters. The book hall roof had a hole. King Sejong read it and saved the books.",
+    "caseSummary": "Bun-i wrote the name of the King's letters on her tenth day. The paper burnt, so you found its four groups. The name means the right sounds, to teach the people.",
     "place": "THE PALACE, HANYANG",
     "keyWords": [
       "letter",
       "sound",
-      "tooth",
+      "teach",
       "vowel",
       "evidence"
     ],
@@ -830,11 +861,15 @@
       "water-carriers": "물 긷는 사람들",
       "column": "세로줄",
       "tongue": "혀",
-      "gums": "잇몸"
+      "gums": "잇몸",
+      "charcoal": "숯",
+      "pupils": "제자들",
+      "groups": "묶음",
+      "tiles": "타일(글자 패)"
     }
   },
   "notes": [
-    "Seoul Pilot Case 01, redesigned (docs/SEOUL_CASE01_REDESIGN.md, approved 2026-11-04). Test-only: never in the game's season list.",
-    "King Sejong appears and speaks: every word of his is made up (dossier fiction), two lines retell his preface (h9, h5). Bun-i, Sora and Taek are made up."
+    "Seoul Case 01, redesigned 2026-11-07 (docs/SEOUL_CASE01_REDESIGN_PLAN.md): the four groups of Hunminjeongeum, found in the order 훈, 음, 정, 민 and built by their meanings.",
+    "King Sejong appears and speaks: every word of his is made up (dossier fiction), two lines retell his preface (h9, h5). Bun-i, Sora and Taek are made up. The four groups were never lost in history: only Bun-i's paper is."
   ]
 }
