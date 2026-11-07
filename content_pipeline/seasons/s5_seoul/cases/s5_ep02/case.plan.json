@@ -330,7 +330,7 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "The rain blurred the note's lines and dots; what is left names each group's sounds by the body part on Sora's board (Case 01) and its vowel by the dot and line. The groups sit side by side, left to right (one row). The note reads 거북선, the turtle ship.",
+          "The rain blurred the note's lines and dots; what is left names each group's sounds by the body part on Sora's board (Case 01) and its vowel by the dot and line. The groups sit one under another, top to bottom (one column). The note reads 거북선, the turtle ship.",
           "Two first sounds are not used (ㅁ, ㅈ): 'the mouth + 1 line' is ㅂ, not ㅁ; 'the teeth' is ㅅ, not ㅈ.",
           "Every letter is the app's text (SyllableBoard): never in a picture.",
           "2026-11-06 (Rookie R1): Rookie's letter is Sora's board only (the board's five-shape list and its ㄴ + 1 line = ㄷ example); the three groups are read on the puzzle itself. Rookie says '+ 1 line' as Case 01 and Case 11 do; Junior and Master keep 'one step stronger'."
@@ -362,14 +362,14 @@
         "location": "THE STORE ROOM",
         "story": [
           "You hold the wet note under Ham's lamp.",
-          "Three groups of letters, side by side. The rain blurred their lines and dots.",
+          "Three groups of letters, one under another. The rain blurred their lines and dots.",
           "\"I cannot read the King's letters,\" says Ham. \"Can you?\""
         ],
         "letterIntro": "Sora's board:",
         "letter": "SORA'S BOARD\nThese letters copy shapes:\nㄱ = the back of the tongue\nㄴ = the tongue on the gums\nㅁ = the mouth\nㅅ = the teeth\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nFlat vowels go under.\nStanding vowels go on the right.",
-        "question": "Build the three groups, from left to right. What does the note say?",
+        "question": "Build the three groups, from top to bottom. What does the note say?",
         "hints": [
-          "Group 1 is on the left. Find the back of the tongue on Sora's board.",
+          "Group 1 is at the top. Find the back of the tongue on Sora's board.",
           "The mouth + 1 line is ㅁ with one more line. Choose each sound, then its line and dot."
         ],
         "successMessage": "The note is whole again: 거북선, the turtle ship!",

@@ -388,9 +388,9 @@
       "master": "You raise the damp note to the light of Ham's lamp."
     },
     {
-      "rookie": "Three groups of letters, side by side. The rain blurred their lines and dots.",
-      "junior": "Three groups of letters sit side by side. The rain has blurred their lines and dots.",
-      "master": "Three groups of letters sit side by side, their lines and dots smudged by the rain."
+      "rookie": "Three groups of letters, one under another. The rain blurred their lines and dots.",
+      "junior": "Three groups of letters sit one under another. The rain has blurred their lines and dots.",
+      "master": "Three groups of letters sit one beneath another, their lines and dots smudged by the rain."
     },
     {
       "rookie": "\"I cannot read the King's letters,\" says Ham. \"Can you?\"",
@@ -408,14 +408,14 @@
       "master": "Sora's board: ㄱ copies the back of the tongue; ㄴ, the tongue against the gums.\nㅁ copies the mouth, ㅅ the teeth. Each stronger sound earns exactly one more line.\nA flat vowel tucks beneath the first sound; a standing one keeps to its right.\nGroup 1: the back of the tongue, followed by a standing line, with a dot on its left.\nGroup 2: the mouth, one step stronger; a flat line with a dot beneath it, and the back of the tongue at the bottom.\nGroup 3: the teeth, followed by a standing line, with a dot on its left; the tongue against the gums rests at the bottom."
     },
     {
-      "rookie": "Build the three groups, from left to right. What does the note say?",
-      "junior": "Build the three groups from left to right. What does the note say?",
-      "master": "Build the three groups, left to right. What message does the note hold?"
+      "rookie": "Build the three groups, from top to bottom. What does the note say?",
+      "junior": "Build the three groups from top to bottom. What does the note say?",
+      "master": "Build the three groups, top to bottom. What message does the note hold?"
     },
     {
-      "rookie": "Group 1 is on the left. Find the back of the tongue on Sora's board.",
-      "junior": "Group 1 is on the left. Look for the back of the tongue on Sora's board.",
-      "master": "Group 1 sits on the left. Seek the back of the tongue on Sora's board."
+      "rookie": "Group 1 is at the top. Find the back of the tongue on Sora's board.",
+      "junior": "Group 1 is at the top. Look for the back of the tongue on Sora's board.",
+      "master": "Group 1 sits at the top. Seek the back of the tongue on Sora's board."
     },
     {
       "rookie": "The mouth + 1 line is ㅁ with one more line. Choose each sound, then its line and dot.",
