@@ -45,7 +45,7 @@ void main() {
   /// False would let Android send the app away on the next back.
   late List<bool> handlesBack;
 
-  Future<void> start(WidgetTester t, {bool introSeen = true, String at = Routes.map}) async {
+  Future<void> start(WidgetTester t, {bool introSeen = true, String at = Routes.map, List<String> completed = const []}) async {
     t.view.physicalSize = const Size(1080, 1920);
     t.view.devicePixelRatio = 3;
     addTearDown(t.view.reset);
@@ -56,7 +56,7 @@ void main() {
     });
     addTearDown(() => t.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, null));
     t.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
-    final progress = GameProgress(detectiveName: 'KIM', introSeen: introSeen, startedAt: DateTime(2026, 10, 1, 10), playMillis: 0);
+    final progress = GameProgress(detectiveName: 'KIM', introSeen: introSeen, completedMissionIds: completed, startedAt: DateTime(2026, 10, 1, 10), playMillis: 0);
     await t.pumpWidget(ProviderScope(
       overrides: await testOverrides(prefs: {AppConstants.progressStorageKey: jsonEncode(progress.toJson())}),
       child: Consumer(builder: (context, ref, _) {
@@ -174,6 +174,22 @@ void main() {
         expectMapBack(t);
         await wait(t, const Duration(seconds: 3));
       });
+    });
+  }
+
+  // The map pushes the final: back pops it, so OPEN THE FINAL CASE opens it
+  // again at once (going to the map instead left that button dead).
+  for (final via in [BackVia.appBar, BackVia.systemBack, BackVia.backGesture]) {
+    testWidgets('${via.name}: map → the final → back → the map → the final again', (t) async {
+      await start(t, completed: [for (final m in MockEpisodeRepository.bundled().first.missions) m.id]);
+      for (var i = 0; i < 2; i++) {
+        await tapText(t, 'OPEN THE FINAL CASE', after: goToTime);
+        expect(path(), Routes.finalMission, reason: 'entry ${i + 1}');
+        await back(t, via);
+        expect(path(), Routes.map);
+        expect(t.widget<FadeTransition>(find.byKey(const ValueKey('map-page'))).opacity.value, 1, reason: 'the map is visible again');
+      }
+      await wait(t, const Duration(seconds: 3));
     });
   }
 

@@ -654,6 +654,10 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
     }
   }
 
+  /// Back to the map the way the map opened this page (pushed): popped, so the
+  /// map's push returns and its pins take taps again (Android back pops too).
+  void _backToMap() => context.canPop() ? context.pop() : context.go(Routes.map);
+
   Future<void> _tryOpen() => _submit(_digits.join());
 
   Future<void> _submit(String answer) async {
@@ -663,7 +667,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
         .submitAnswer(_mission, answer);
     switch (outcome.result) {
       case SubmitResult.locked:
-        context.go(Routes.map);
+        _backToMap();
       case SubmitResult.tryAgain:
         // With the shake (it starts on this setState).
         audio.play(GameSound.puzzleWrong);
@@ -946,7 +950,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
             leading: IconButton(
               tooltip: 'Back to map',
               icon: const InkIcon(InkGlyph.back),
-              onPressed: () => context.go(Routes.map),
+              onPressed: _backToMap,
             ),
           )
         : null,
@@ -1000,7 +1004,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
         leading: IconButton(
           tooltip: 'Back to map',
           icon: const InkIcon(InkGlyph.back),
-          onPressed: () => context.go(Routes.map),
+          onPressed: _backToMap,
         ),
         // The coins in hand (to read only): a hint here may cost some.
         actions: const [
