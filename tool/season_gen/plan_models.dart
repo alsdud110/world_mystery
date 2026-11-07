@@ -2400,20 +2400,24 @@ class TraceCluePlan {
 
 /// A place the thing could be (`DeductionPlace`), standing for an option.
 class TracePlacePlan {
-  const TracePlacePlan({required this.optionId, required this.areas, required this.mark});
+  const TracePlacePlan({required this.optionId, required this.areas, required this.mark, this.chip});
 
   final String optionId;
   final List<SceneRect> areas;
   final ScenePoint mark;
 
+  /// Letters shown by its marker while choosing (`DeductionPlace.chip`):
+  /// part of its option's label.
+  final String? chip;
+
   factory TracePlacePlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
-    final out = TracePlacePlan(optionId: r.str('optionId'), areas: r.rects('areas'), mark: r.point('mark'));
+    final out = TracePlacePlan(optionId: r.str('optionId'), areas: r.rects('areas'), mark: r.point('mark'), chip: r.optStr('chip'));
     r.done();
     return out;
   }
 
-  Map<String, Object?> toJson() => {'optionId': optionId, 'areas': _rectsJson(areas), 'mark': mark.toJson()};
+  Map<String, Object?> toJson() => {'optionId': optionId, 'areas': _rectsJson(areas), 'mark': mark.toJson(), 'chip': ?chip};
 }
 
 /// A place read for its traces (`DeductionScene`, table `deductions`,
@@ -2433,6 +2437,8 @@ class TracesPlan {
     this.others = const [],
     this.inside,
     this.opening,
+    this.choosing,
+    this.rereadLetter = false,
   });
 
   final PicturePlan picture;
@@ -2447,6 +2453,13 @@ class TracesPlan {
   final List<EmptySpotPlan> others;
   final SceneRect? inside;
   final SceneRect? opening;
+
+  /// What is shown whole once choosing (`DeductionScene.choosing`), when
+  /// the places lie outside [opening].
+  final SceneRect? choosing;
+
+  /// The letter one tap away while reading (`DeductionScene.rereadLetter`).
+  final bool rereadLetter;
 
   factory TracesPlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
@@ -2463,6 +2476,8 @@ class TracesPlan {
       others: r.optObjs('others', EmptySpotPlan.fromJson),
       inside: r.optRect('inside'),
       opening: r.optRect('opening'),
+      choosing: r.optRect('choosing'),
+      rereadLetter: r.optBool('rereadLetter') ?? false,
     );
     r.done();
     return out;
@@ -2483,6 +2498,8 @@ class TracesPlan {
     _putList(json, 'others', [for (final o in others) o.toJson()]);
     if (inside case final r?) json['inside'] = r.toJson();
     if (opening case final r?) json['opening'] = r.toJson();
+    if (choosing case final r?) json['choosing'] = r.toJson();
+    if (rereadLetter) json['rereadLetter'] = true;
     return json;
   }
 }

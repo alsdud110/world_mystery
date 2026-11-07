@@ -72,6 +72,8 @@
         "guideAt": { "$ref": "#/$defs/point" },
         "inside": { "$ref": "#/$defs/rect" },
         "opening": { "$ref": "#/$defs/rect" },
+        "choosing": { "description": "Shown whole once choosing (DeductionScene.choosing), when the places lie outside opening. None: the view stays.", "$ref": "#/$defs/rect" },
+        "rereadLetter": { "description": "A link to read the letter again under the picture (DeductionScene.rereadLetter), for a letter that says more than its traces.", "type": "boolean" },
         "clues": { "type": "array", "minItems": 1, "items": {
           "type": "object", "additionalProperties": false, "required": ["id", "label", "areas", "mark", "line"],
           "properties": { "id": { "$ref": "common.schema.json#/$defs/localId" }, "label": { "$ref": "common.schema.json#/$defs/text" }, "areas": { "$ref": "#/$defs/rects" }, "mark": { "$ref": "#/$defs/point" }, "line": { "$ref": "common.schema.json#/$defs/text" },
@@ -79,7 +81,8 @@
         } },
         "places": { "type": "array", "minItems": 1, "items": {
           "type": "object", "additionalProperties": false, "required": ["optionId", "areas", "mark"],
-          "properties": { "optionId": { "type": "string", "minLength": 1 }, "areas": { "$ref": "#/$defs/rects" }, "mark": { "$ref": "#/$defs/point" } }
+          "properties": { "optionId": { "type": "string", "minLength": 1 }, "areas": { "$ref": "#/$defs/rects" }, "mark": { "$ref": "#/$defs/point" },
+            "chip": { "description": "Letters shown by the marker while choosing (DeductionPlace.chip): part of its option's label.", "type": "string", "minLength": 1 } }
         } },
         "others": { "type": "array", "items": { "$ref": "#/$defs/emptySpot" } }
       }

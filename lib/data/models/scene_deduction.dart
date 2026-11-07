@@ -69,7 +69,7 @@ class DeductionClue {
 /// [optionId] (its name is the option's label).
 @immutable
 class DeductionPlace {
-  const DeductionPlace({required this.optionId, required this.areas, required this.mark});
+  const DeductionPlace({required this.optionId, required this.areas, required this.mark, this.chip});
 
   final String optionId;
 
@@ -78,6 +78,11 @@ class DeductionPlace {
 
   /// Where its marker sits once places can be chosen (fractions).
   final Offset mark;
+
+  /// A few letters shown by its marker while choosing (Seoul Case 01: the
+  /// group drawn there), so the places can be compared before one is
+  /// tapped. None: the marker alone.
+  final String? chip;
 }
 
 /// A mission played by reading its place (the presentation of the mission's
@@ -102,6 +107,8 @@ class DeductionScene {
     required this.guideAt,
     this.inside = const Rect.fromLTRB(0, 0, 1, 1),
     this.opening = const Rect.fromLTRB(0, 0, 1, 1),
+    this.choosing,
+    this.rereadLetter = false,
     this.tapGuide = 'Tap the picture to investigate.',
     this.action = 'SEARCH HERE',
   });
@@ -139,6 +146,14 @@ class DeductionScene {
   final Rect inside;
   final Rect opening;
 
+  /// The part shown whole once choosing, when the places lie outside
+  /// [opening]; none: the view stays as it is.
+  final Rect? choosing;
+
+  /// A link to read the letter again under the picture, for a letter that
+  /// says more than its traces (Seoul Case 01: Taek's shapes).
+  final bool rereadLetter;
+
   final String tapGuide;
 
   /// The button that searches the chosen place.
@@ -168,6 +183,8 @@ class DeductionScene {
         guideAt: guideAt,
         inside: inside,
         opening: opening,
+        choosing: choosing,
+        rereadLetter: rereadLetter,
         tapGuide: tapGuide,
         action: action,
       );

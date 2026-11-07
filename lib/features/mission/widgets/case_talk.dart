@@ -256,7 +256,8 @@ class _GoalStrip extends StatelessWidget {
           Flexible(
             child: Text(
               goal,
-              maxLines: 1,
+              // Two lines on a small phone rather than the goal cut short.
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textScaler: MediaQuery.textScalerOf(context).clamp(maxScaleFactor: 1.1),
               textAlign: TextAlign.center,
@@ -333,14 +334,19 @@ class _Speech extends StatelessWidget {
           children: [
             if (name != null)
               Padding(
-                padding: const EdgeInsets.only(bottom: AppSpace.xs),
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    name!,
-                    key: const ValueKey('case-talk-name'),
-                    maxLines: 1,
-                    style: AppText.mark(color: AppColors.goldLight, size: 15),
+                padding: const EdgeInsets.fromLTRB(AppSpace.sm, 0, AppSpace.sm, AppSpace.xs),
+                // On the line's own edge, never under the portrait as its
+                // caption: the person's name on the left, YOU on the right.
+                child: Align(
+                  alignment: line.voice == TalkVoice.detective ? Alignment.centerRight : Alignment.centerLeft,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      name!,
+                      key: const ValueKey('case-talk-name'),
+                      maxLines: 1,
+                      style: AppText.mark(color: AppColors.goldLight, size: 15),
+                    ),
                   ),
                 ),
               ),

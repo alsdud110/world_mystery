@@ -886,7 +886,7 @@ class _SequenceQuestionState extends ConsumerState<SequenceQuestion> {
                       semanticsLabel: i < _picked.length
                           ? 'Step ${i + 1}: ${_label(_picked[i])}'
                           : 'Step ${i + 1}: empty',
-                      style: AppText.subtitle(),
+                      style: i < _picked.length ? _sequenceLabelStyle(_label(_picked[i]), AppColors.ink) : AppText.subtitle(),
                     ),
                   ),
                 ],
@@ -958,6 +958,15 @@ class _TilePicture extends StatelessWidget {
       );
 }
 
+/// An order puzzle's step in words; a lone Hangul letter (Seoul: ㅇ, ㅡ, ㅁ)
+/// large and heavy, its strokes told apart at a glance.
+TextStyle _sequenceLabelStyle(String label, Color color) {
+  final r = label.runes;
+  final jamo = r.length == 1 && r.first >= 0x3131 && r.first <= 0x318E;
+  final base = AppText.subtitle(color: color);
+  return jamo ? base.copyWith(fontSize: 30, height: 1.1, fontWeight: FontWeight.w700) : base;
+}
+
 class _SequenceTile extends StatelessWidget {
   const _SequenceTile({
     required this.label,
@@ -996,7 +1005,7 @@ class _SequenceTile extends StatelessWidget {
                 ? Text(
                     label,
                     textAlign: TextAlign.center,
-                    style: AppText.subtitle(color: AppColors.navy),
+                    style: _sequenceLabelStyle(label, AppColors.navy),
                   )
                 : Column(
                     mainAxisSize: MainAxisSize.min,

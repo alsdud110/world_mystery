@@ -652,7 +652,7 @@ abstract final class PlayCheck {
     if (m.puzzle.missionType != 'multipleChoice') issue('play_range', '$at.puzzle.missionType', '${m.puzzle.missionType}: a place chosen is a multipleChoice');
     _scenePicture('$sa.picture', s.picture, root, out);
     _spot('$sa.guideAt', s.picture, s.guideAt, out);
-    for (final (k, r) in [('inside', s.inside), ('opening', s.opening)]) {
+    for (final (k, r) in [('inside', s.inside), ('opening', s.opening), ('choosing', s.choosing)]) {
       if (r != null) _areas('$sa.$k', s.picture, [r], out);
     }
     if (s.clues.length < 2 || s.clues.length > 5) issue('scene_invalid', '$sa.clues', '${s.clues.length} trace(s): 2 to 5, each pointing the same way');
@@ -672,9 +672,14 @@ abstract final class PlayCheck {
     if (!(chosen.length == options.length && chosen.containsAll(options))) {
       issue('scene_answer_mismatch', '$sa.places', 'places for ${chosen.join(', ')}, but the options are ${options.join(', ')}');
     }
+    final labels = {for (final o in m.puzzle.answerSpec.options) o.id: o.label};
     for (final (i, p) in s.places.indexed) {
       _areas('$sa.places[$i].areas', s.picture, p.areas, out);
       _spot('$sa.places[$i].mark', s.picture, p.mark, out);
+      // The chip says nothing its option does not: it is the label's own letters.
+      if (p.chip case final chip? when !(labels[p.optionId] ?? '').contains(chip)) {
+        issue('scene_text_mismatch', '$sa.places[$i].chip', '"$chip" is not in its option\'s label');
+      }
     }
     if (_inAny(s.guideAt, [for (final c in s.clues) ...c.areas, for (final p in s.places) ...p.areas])) {
       issue('scene_invalid', '$sa.guideAt', 'on a trace or a place: the first ripple shows how to look, never where');

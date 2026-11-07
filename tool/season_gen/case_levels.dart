@@ -311,6 +311,8 @@ class CaseLevels {
     'accepted', 'offered', 'finishWhen',
     // A trace the app draws (Seoul Pilot): a name, not words.
     'sketch',
+    // A place's letters by its marker: its option label's own letters.
+    'chip',
   };
 
   /// A choice's words (`answerSpec.options[]`).

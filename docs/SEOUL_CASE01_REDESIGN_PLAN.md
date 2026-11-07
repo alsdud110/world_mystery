@@ -587,6 +587,25 @@
 - 이름을 이미 아는 아이는 민을 바로 고를 수 있다. 수용한 한계다
 - 품질 보고서의 ERROR 3건(C02)이 남아 있는 한 `plan_season generate`는 막힌다. `generate_season`은 영향받지 않는다
 
+## 14. 화면 UX 수정 (2026-11-07)
+
+6가지 화면 조건(320×568, 375×667, 390×844, 430×932, ROOKIE·MASTER 글자 1.3배) 검증 결과에 따른 수정. 정답·퍼즐 엔진·이미지 변경 없음.
+
+| 문제 | 수정 |
+|---|---|
+| M1 장소 선택 때 혼(학자들의 집)이 화면 밖, 우물 마커가 가장자리에서 잘림 | 새 선택 필드 `traces.choosing`(=`DeductionScene.choosing`): 마지막 흔적을 적으면 화면이 세 장소 범위로 다시 맞춰지고, 그 위의 연필 메모를 지운다. `opening`은 그대로(흔적 찾기 구도 유지). 필드가 없는 장면(London m03·ep04_m2, Seoul C06)은 동작이 같다 |
+| M1 마커가 "?"뿐이라 탭해야 혼/운/훈을 알 수 있음 | `places[].chip`(=`DeductionPlace.chip`): 마커 안에 "?" 대신 그 장소의 묶음을 표시. 선택하면 남색 바탕의 금색 글자. 칩은 선택지 라벨에 있는 글자만 쓸 수 있다(`play_check`) |
+| M1 추리 화면에 편지 다시 읽기가 없음 | `traces.rereadLetter`(=`DeductionScene.rereadLetter`): 하단에 Reread Letter. Case 01만 켬(London C04는 작은 화면에서 구도가 바뀌어 제외) |
+| M2 자모가 작아 ㅡ/ㅗ, ㅇ/ㅁ 구분이 약함 | `SequenceQuestion`: 라벨이 한글 자모 한 글자(U+3131–318E)일 때만 30pt 굵게. 다른 시즌의 순서 타일은 해당 없음 |
+| M3 질문("Tap a group")과 종이 안내("Tap a place"), 받침 단계 누락, 단서 "at the bottom"이 BOTTOM 칸과 겹침 | 질문과 단서가 화면 라벨을 그대로 부른다: "Tap TOP or BOTTOM. Then choose FIRST SOUND, LINE, DOT and AT THE BOTTOM.", "Group 1 (TOP): … AT THE BOTTOM: the throat.", "Group 2 (BOTTOM): …". J/M도 같은 방식. 받침은 C02와 엔진 줄 이름("AT THE BOTTOM")에 맞춰 "at the bottom"으로 유지(C02에서 "under it"은 모음의 점을 뜻함) |
+| Final A 목표 줄이 320폭에서 잘림, YOU가 세종 초상화의 설명처럼 보임 | `CaseTalk`: 목표 줄 최대 2줄. 말한 사람 이름이 말풍선 가장자리에 붙는다(상대는 왼쪽, YOU는 오른쪽) |
+| 정답 직후 새벽 에필로그가 먼저 나오고 이름은 Case Complete에서야 공개 | 엔딩 첫 줄 "The tiles turn over, one by one: 훈민정음 (訓民正音)." 뒤에 새벽 에필로그. Case Complete의 첫 줄은 "훈민정음 (訓民正音): the name of the King's letters."로 바꿔 같은 문장이 두 번 나오지 않게 했다 |
+
+확인만 한 것:
+- Final B 상단의 검은 영역은 테스트에서 이미지 디코딩이 끝나기 전이었다(실제 비동기 대기 후 촬영하면 책의 전당 그림이 나온다). 이미지 파일은 바꾸지 않았다.
+- Final B 첫 타일까지의 거리: 320×568에서 약 1,470pt(화면 2.6개), 글자 1.3배에서 약 2,010pt. 위에 장소 그림, 이야기 3줄, 택의 쪽지, 질문, 빈 칸 4개가 있다. 기존 레이아웃 안에서 줄일 곳이 없어 그대로 두었다.
+- 증거 카드 3장(The Copied Scrap, Sora's Lesson Board, Bun-i's Note)은 이름으로 구분된다. 아이콘은 모두 편지 봉투로 같다.
+
 ## 출처
 
 - [국립국어원, 한글의 명칭](https://www.korean.go.kr/hangeul/another/001.html)

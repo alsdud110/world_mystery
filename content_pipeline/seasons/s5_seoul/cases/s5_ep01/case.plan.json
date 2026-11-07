@@ -162,6 +162,13 @@
             1536,
             920
           ],
+          "choosing": [
+            60,
+            380,
+            1526,
+            770
+          ],
+          "rereadLetter": true,
           "clues": [
             {
               "id": "scrap",
@@ -250,7 +257,8 @@
               "mark": [
                 205,
                 490
-              ]
+              ],
+              "chip": "혼"
             },
             {
               "optionId": "b",
@@ -265,7 +273,8 @@
               "mark": [
                 1190,
                 600
-              ]
+              ],
+              "chip": "운"
             },
             {
               "optionId": "c",
@@ -280,7 +289,8 @@
               "mark": [
                 1415,
                 650
-              ]
+              ],
+              "chip": "훈"
             }
           ],
           "others": [
@@ -499,7 +509,7 @@
         ],
         "letterIntro": "Sora's lesson:",
         "letter": "Flat vowels go under.\nStanding vowels go on the right.\nBun-i's 2 groups sit one above the other.\nGroup 1 is at the top.",
-        "question": "Tap a group. Choose its sound, then its line and dot.",
+        "question": "Tap TOP or BOTTOM. Then choose FIRST SOUND, LINE, DOT and AT THE BOTTOM.",
         "hints": [
           "Group 2 is in your notebook. Read your clue from the well.",
           "Group 1: add one line to the teeth, not two."
@@ -553,14 +563,14 @@
               "initial": "ㅈ",
               "vowel": "ㅓ",
               "final": "ㅇ",
-              "line": "Group 1: the teeth + 1 line. A standing line, a dot on its left. The throat at the bottom."
+              "line": "Group 1 (TOP): the teeth + 1 line. A standing line, a dot on its left. AT THE BOTTOM: the throat."
             },
             {
               "id": "two",
               "initial": "ㅇ",
               "vowel": "ㅡ",
               "final": "ㅁ",
-              "line": "Group 2: the group on Bun-i's slate."
+              "line": "Group 2 (BOTTOM): the group on Bun-i's slate."
             }
           ],
           "sounds": [
@@ -680,12 +690,16 @@
       ],
       "successMessage": "The name is whole!",
       "transition": [
-        "The tiles turn over, one by one: 훈민정음 (訓民正音).",
+        "훈민정음 (訓民正音): the name of the King's letters.",
         "\"The right sounds, to teach the people,\" says the King.",
         "\"You learned my letters in one night,\" says the King. \"And Bun-i spoke to me with them.\"",
         "\"That is why I made them.\""
       ],
       "ending": [
+        {
+          "by": "narrator",
+          "text": "The tiles turn over, one by one: 훈민정음 (訓民正音)."
+        },
         {
           "by": "narrator",
           "text": "At dawn, Bun-i comes back with her water bucket."

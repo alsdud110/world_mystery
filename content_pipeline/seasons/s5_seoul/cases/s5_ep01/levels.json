@@ -513,9 +513,9 @@
       "master": "A vowel is a line with a dot joined to it.\nA flat vowel tucks beneath the first sound; a standing one keeps to its right.\nA sound at the bottom borrows the letters of the first sounds.\nBun-i's two groups sit one above the other.\nGroup 1 is at the top."
     },
     {
-      "rookie": "Tap a group. Choose its sound, then its line and dot.",
-      "junior": "Build each group on the paper. What did Bun-i write?",
-      "master": "Build each group on the paper. What did Bun-i write?"
+      "rookie": "Tap TOP or BOTTOM. Then choose FIRST SOUND, LINE, DOT and AT THE BOTTOM.",
+      "junior": "Tap TOP or BOTTOM, then build its group: FIRST SOUND, LINE, DOT and AT THE BOTTOM.",
+      "master": "Choose TOP or BOTTOM and rebuild its group: FIRST SOUND, LINE, DOT and AT THE BOTTOM."
     },
     {
       "rookie": "Group 2 is in your notebook. Read your clue from the well.",
@@ -598,14 +598,14 @@
       "master": "정음 means the right sounds: 음 is sound, so 정 is right."
     },
     {
-      "rookie": "Group 1: the teeth + 1 line. A standing line, a dot on its left. The throat at the bottom.",
-      "junior": "Group 1: the teeth, one step stronger. A standing line, with a dot on its left. The throat at the bottom.",
-      "master": "Group 1: the teeth, a single step stronger. A standing line, with a dot on its left side. The throat at the foot."
+      "rookie": "Group 1 (TOP): the teeth + 1 line. A standing line, a dot on its left. AT THE BOTTOM: the throat.",
+      "junior": "Group 1 (TOP): the teeth, one step stronger. A standing line, with a dot on its left. AT THE BOTTOM: the throat.",
+      "master": "Group 1 (TOP): the teeth, a single step stronger. A standing line, with a dot on its left side. AT THE BOTTOM: the throat."
     },
     {
-      "rookie": "Group 2: the group on Bun-i's slate.",
-      "junior": "Group 2: the same group as on Bun-i's slate.",
-      "master": "Group 2: the very group on Bun-i's slate."
+      "rookie": "Group 2 (BOTTOM): the group on Bun-i's slate.",
+      "junior": "Group 2 (BOTTOM): the same group as on Bun-i's slate.",
+      "master": "Group 2 (BOTTOM): the very group on Bun-i's slate."
     },
     {
       "rookie": "GATE",
@@ -713,9 +713,9 @@
       "master": "The name stands complete!"
     },
     {
-      "rookie": "The tiles turn over, one by one: 훈민정음 (訓民正音).",
-      "junior": "The tiles turn over one by one: 훈민정음 (訓民正音).",
-      "master": "One by one the tiles turn over: 훈민정음 (訓民正音)."
+      "rookie": "훈민정음 (訓民正音): the name of the King's letters.",
+      "junior": "훈민정음 (訓民正音): the name of the King's letters.",
+      "master": "훈민정음 (訓民正音): the name the King gave his letters."
     },
     {
       "rookie": "\"The right sounds, to teach the people,\" says the King.",
@@ -731,6 +731,11 @@
       "rookie": "\"That is why I made them.\"",
       "junior": "\"That is why I created them.\"",
       "master": "\"That is the very reason I made them.\""
+    },
+    {
+      "rookie": "The tiles turn over, one by one: 훈민정음 (訓民正音).",
+      "junior": "The tiles turn over one by one: 훈민정음 (訓民正音).",
+      "master": "One by one the tiles turn over: 훈민정음 (訓民正音)."
     },
     {
       "rookie": "At dawn, Bun-i comes back with her water bucket.",

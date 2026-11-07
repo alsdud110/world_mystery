@@ -414,6 +414,7 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
         hintsShown: hintsShown,
         onHint: () => _showHint(m),
         wrongPulse: _wrongPulse,
+        onReread: scene.rereadLetter ? () => _rereadLetter(m) : null,
       );
 
   /// Exhibits examined under the glass (the word on the label answers the

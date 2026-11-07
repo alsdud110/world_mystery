@@ -1147,11 +1147,13 @@ abstract final class CaseGenerator {
       ],
       'others': [for (final o in s.others) _empty(o, w, h)],
       'places': [
-        for (final p in s.places) DartCall('DeductionPlace', named: {'optionId': p.optionId, 'areas': _rects(p.areas, w, h), 'mark': _point(p.mark, w, h)}),
+        for (final p in s.places) DartCall('DeductionPlace', named: {'optionId': p.optionId, 'areas': _rects(p.areas, w, h), 'mark': _point(p.mark, w, h), 'chip': ?p.chip}),
       ],
       'guideAt': _point(s.guideAt, w, h),
       if (s.inside case final r?) 'inside': _rect(r, w, h),
       if (s.opening case final r?) 'opening': _rect(r, w, h),
+      if (s.choosing case final r?) 'choosing': _rect(r, w, h),
+      if (s.rereadLetter) 'rereadLetter': true,
     });
   }
 

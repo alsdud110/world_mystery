@@ -39,6 +39,7 @@ class SceneDeduction extends StatefulWidget {
     required this.hintsShown,
     required this.onHint,
     required this.wrongPulse,
+    this.onReread,
   });
 
   final DeductionScene scene;
@@ -54,6 +55,9 @@ class SceneDeduction extends StatefulWidget {
 
   /// Bumped by the page on a wrong answer: the picture shakes.
   final int wrongPulse;
+
+  /// The letter again (its lines are the traces); none: no link.
+  final VoidCallback? onReread;
 
   @override
   State<SceneDeduction> createState() => _SceneDeductionState();
@@ -110,6 +114,15 @@ class _SceneDeductionState extends State<SceneDeduction> {
         if (!_p.hasNoted(c.id)) {
           HapticFeedback.selectionClick();
           _p.noted.add(c.id);
+          // The last trace noted: the view opens again, on the places, with
+          // no slip over them (the line is in the notes).
+          if (_choosing && _scene.choosing != null) {
+            _moved = false;
+            _homeViewport = null;
+            _line = null;
+            widget.onChanged();
+            return;
+          }
         }
         _line = c.line;
         widget.onChanged();
@@ -141,7 +154,8 @@ class _SceneDeductionState extends State<SceneDeduction> {
     width: width,
     aspect: _scene.pixels.aspect,
     inside: _scene.inside,
-    focus: _scene.opening,
+    // Once choosing, the places whole when they lie outside the opening.
+    focus: _choosing ? (_scene.choosing ?? _scene.opening) : _scene.opening,
     maxScale: maxScale,
   );
 
@@ -164,6 +178,7 @@ class _SceneDeductionState extends State<SceneDeduction> {
         hints: widget.mission.hints,
         hintsShown: widget.hintsShown,
         onTip: widget.onHint,
+        onReread: widget.onReread,
         onSearch: chosen == null ? null : () => widget.onChoose(chosen),
       ),
       picture: (context, viewport) {
@@ -343,7 +358,7 @@ class _DeductionPicture extends StatelessWidget {
                       Positioned(
                         left: p.mark.dx * size.width - placeSize / 2,
                         top: p.mark.dy * size.height - placeSize / 2,
-                        child: _PlaceMark(key: ValueKey('place-${p.optionId}'), chosen: progress.chosen == p.optionId),
+                        child: _PlaceMark(key: ValueKey('place-${p.optionId}'), chosen: progress.chosen == p.optionId, chip: p.chip),
                       ),
                   if (tapAt != null)
                     Positioned(
@@ -544,9 +559,13 @@ class _InsideClip extends CustomClipper<Rect> {
 /// A place the box could be: a paper disc with a question mark; chosen, it
 /// is filled in navy ink with a gold tick, like a chosen answer.
 class _PlaceMark extends StatelessWidget {
-  const _PlaceMark({super.key, required this.chosen});
+  const _PlaceMark({super.key, required this.chosen, this.chip});
 
   final bool chosen;
+
+  /// Its letters in place of the question mark, chosen or not, so the
+  /// places are compared before one is tapped (see [DeductionPlace.chip]).
+  final String? chip;
 
   @override
   Widget build(BuildContext context) {
@@ -564,7 +583,16 @@ class _PlaceMark extends StatelessWidget {
             BoxShadow(color: AppColors.navyDeep.withValues(alpha: 0.5), blurRadius: 6, offset: const Offset(0, 1)),
           ],
         ),
-        child: chosen
+        child: chip != null
+            ? ExcludeSemantics(
+                child: Text(
+                  chip!,
+                  key: const ValueKey('place-chip'),
+                  textScaler: TextScaler.noScaling,
+                  style: AppText.title(size: 19, color: chosen ? AppColors.goldLight : AppColors.navy),
+                ),
+              )
+            : chosen
             ? const InkIcon(InkGlyph.check, size: AppIconSize.small, color: AppColors.goldLight)
             : ExcludeSemantics(
                 child: Text(
@@ -707,6 +735,7 @@ class _DeductionActions extends StatelessWidget {
     required this.hints,
     required this.hintsShown,
     required this.onTip,
+    required this.onReread,
     required this.onSearch,
   });
 
@@ -715,6 +744,7 @@ class _DeductionActions extends StatelessWidget {
   final List<String> hints;
   final int hintsShown;
   final VoidCallback onTip;
+  final VoidCallback? onReread;
   final VoidCallback? onSearch;
 
   @override
@@ -740,9 +770,14 @@ class _DeductionActions extends StatelessWidget {
                 child: DetectiveTipNotes(hints: hints, revealed: hintsShown, compact: true),
               ),
             ),
-            if (tipLabel != null)
-              Center(
-                child: InkTextButton(label: tipLabel, glyph: InkGlyph.hint, color: tipLinkColor, onPressed: onTip),
+            if (tipLabel != null || onReread != null)
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: AppSpace.sm,
+                children: [
+                  if (onReread case final reread?) InkTextButton(label: 'Reread Letter', glyph: InkGlyph.letter, onPressed: reread),
+                  if (tipLabel != null) InkTextButton(label: tipLabel, glyph: InkGlyph.hint, color: tipLinkColor, onPressed: onTip),
+                ],
               ),
           ],
         ),
