@@ -8,19 +8,19 @@
       "master": "The Turtle Ship Before Dawn"
     },
     {
-      "rookie": "The gunpowder for the turtle ship is gone from the store room.",
-      "junior": "The turtle ship's gunpowder has vanished from the store room.",
-      "master": "The turtle ship's gunpowder has disappeared from the store room overnight."
+      "rookie": "The gunpowder is gone!",
+      "junior": "The gunpowder is gone from the store room!",
+      "master": "The turtle ship's gunpowder has disappeared from the store room in the night!"
     },
     {
-      "rookie": "A note with a small water drop is waiting on the empty shelf.",
-      "junior": "On the empty shelf, a note marked with a small water drop is waiting.",
-      "master": "On the bare shelf lies a note, marked with a tiny water drop."
+      "rookie": "A water-drop note is on the shelf.",
+      "junior": "A note with a water drop is on the shelf.",
+      "master": "A note marked with a water drop lies on the shelf."
     },
     {
-      "rookie": "The cannon test is at dawn.",
-      "junior": "The cannons will be tested at dawn.",
-      "master": "At first light, the cannons face their test."
+      "rookie": "The cannon test is today.",
+      "junior": "The cannon test is today, at dawn.",
+      "master": "The cannons will be tested today, at dawn."
     },
     {
       "rookie": "Search the empty store room.",
@@ -28,54 +28,54 @@
       "master": "Comb through the empty store room."
     },
     {
-      "rookie": "Read the blurred note.",
-      "junior": "Read the note the rain blurred.",
-      "master": "Decipher the rain-blurred note."
+      "rookie": "Read the wet note.",
+      "junior": "Read the wet, blurry note.",
+      "master": "Read the note the rain blurred."
     },
     {
-      "rookie": "Count the barrels on the ship.",
-      "junior": "Count the barrels aboard the ship.",
-      "master": "Tally the barrels aboard the ship."
+      "rookie": "Count the barrels.",
+      "junior": "Count the barrels on the ship.",
+      "master": "Count the barrels on the ship carefully."
     },
     {
-      "rookie": "Show the Admiral what really happened.",
+      "rookie": "Show the Admiral what happened.",
       "junior": "Show the Admiral what really happened to his powder.",
       "master": "Prove to the Admiral what truly became of his powder."
     },
     {
-      "rookie": "Spring, 1592: the fourth month of the moon calendar.",
-      "junior": "It is spring, 1592: the fourth month of the moon calendar.",
-      "master": "Spring, 1592, in the fourth month of the moon calendar."
+      "rookie": "Spring, 1592.",
+      "junior": "It is spring, 1592.",
+      "master": "It is spring, 1592. It is the fourth month of the moon calendar."
     },
     {
-      "rookie": "You are a guest of Admiral Yi Sun-sin at Yeosu, on the south coast.",
-      "junior": "You are staying at Yeosu, on the south coast, as a guest of Admiral Yi Sun-sin.",
-      "master": "At Yeosu, on the south coast, you are the guest of Admiral Yi Sun-sin."
+      "rookie": "You visit Admiral Yi Sun-sin.",
+      "junior": "You visit Admiral Yi Sun-sin at Yeosu.",
+      "master": "You visit Admiral Yi Sun-sin at Yeosu, on the south coast."
     },
     {
-      "rookie": "He commands the navy here. War with Japan may come soon.",
-      "junior": "He commands the navy here, because a war with Japan may come soon.",
-      "master": "He commands the navy on this coast, for war with Japan may come at any time."
+      "rookie": "He leads the ships. War may come.",
+      "junior": "He leads the ships. A war may come soon.",
+      "master": "He commands the navy on this coast. War with Japan may come at any time."
     },
     {
-      "rookie": "Before the war, he built a turtle ship, with a roof over its deck.",
-      "junior": "Before the war, he built a turtle ship with a roof over its deck.",
-      "master": "Before the war, he had a turtle ship built, its deck covered by a roof."
+      "rookie": "He built a turtle ship with a roof.",
+      "junior": "He built a turtle ship with a roof on top.",
+      "master": "He built a turtle ship with a roof over its deck."
     },
     {
-      "rookie": "\"Today we test its cannons,\" he says. \"We must be ready.\"",
-      "junior": "\"Today we will test its cannons,\" he says. \"We have to be ready.\"",
-      "master": "\"Today its cannons face their test,\" he declares. \"We must be ready.\""
+      "rookie": "\"Cannon test today!\" he says.",
+      "junior": "\"The cannon test is today!\" he says.",
+      "master": "\"Today we test the cannons!\" he says. \"We must be ready.\""
     },
     {
-      "rookie": "Before dawn, a bell rings at the store room.",
-      "junior": "Before dawn, a bell starts ringing at the store room.",
-      "master": "In the dark before dawn, a bell clangs at the store room."
+      "rookie": "A bell rings.",
+      "junior": "Before dawn, a bell rings.",
+      "master": "Before dawn, a bell rings at the store room."
     },
     {
       "rookie": "Rain came through the store room roof. Seok, a young sailor, carried all twelve barrels of gunpowder to the turtle ship. He left a note in the King's letters, with a water drop for the rain. The detective showed the Admiral that nothing was stolen. Yi Sun-sin had built the turtle ship before the war. Its front was a dragon's head. On the twelfth day of the fourth month of 1592, its cannons were tested. His war diary records it. The next day, Japanese ships came to Busan, and the war began. In the fifth month, his navy won its first victory at sea, at Okpo.",
-      "junior": "Rain leaked through the store room roof, so Seok, a young sailor, carried all twelve barrels of gunpowder to the turtle ship. He left a note in the King's letters, with a water drop drawn for the rain. The detective proved to the Admiral that nothing had been stolen. Yi Sun-sin had built the turtle ship before the war, with a dragon's head at its front. On the twelfth day of the fourth month of 1592, its cannons were tested, as his war diary records. The next day, Japanese ships reached Busan and the war began. In the fifth month, his navy won its first victory at sea, at Okpo.",
-      "master": "When rain leaked through the store room roof, Seok, a young sailor, moved all twelve barrels of gunpowder to the turtle ship, leaving a note in the King's letters marked with a water drop for the rain. The detective proved to the Admiral that nothing had been stolen. Yi Sun-sin had built the turtle ship before the war, crowned at its front with a dragon's head. On the twelfth day of the fourth month of 1592, its cannons were tested, an event his war diary records. The following day, Japanese ships reached Busan and the war began; in the fifth month, his navy won its first victory at sea, at Okpo."
+      "junior": "Rain came through the store room roof. Seok, a young sailor, carried all twelve barrels of gunpowder to the turtle ship. He left a note in the King's letters, with a water drop for the rain. The detective showed the Admiral that nothing was stolen. Yi Sun-sin had built the turtle ship before the war. Its front was a dragon's head. On the twelfth day of the fourth month of 1592, its cannons were tested. His war diary records it. The next day, Japanese ships came to Busan, and the war began. In the fifth month, his navy won its first victory at sea, at Okpo.",
+      "master": "Rain came through the store room roof. Seok, a young sailor, carried all twelve barrels of gunpowder to the turtle ship. He left a note in the King's letters, with a water drop for the rain. The detective proved to the Admiral that nothing was stolen. Yi Sun-sin had built the turtle ship before the war. Its front was a dragon's head. On the twelfth day of the fourth month of 1592, its cannons were tested. His war diary records it. The next day, Japanese ships reached Busan, and the war began. In the fifth month, his navy won its first victory at sea, at Okpo."
     },
     {
       "rookie": "THE NAVY BASE, YEOSU",
@@ -93,9 +93,9 @@
       "master": "The wet straw"
     },
     {
-      "rookie": "The straw is wet, but it is next to the door. It shows the way the barrels went out.",
-      "junior": "The straw is wet, but it lies next to the door. It shows the way the barrels went out.",
-      "master": "The straw is damp, yet it lies next to the door: it marks the route the barrels took out."
+      "rookie": "Wet straw next to the door: the way out.",
+      "junior": "Wet straw next to the door. It shows the way out.",
+      "master": "Wet straw next to the door. It shows the way out."
     },
     {
       "rookie": "The small paper",
@@ -104,8 +104,8 @@
     },
     {
       "rookie": "The water drop on the paper is drawn, not rain. What is under the hole in the roof?",
-      "junior": "The water drop on the paper was drawn, not rained. What is under the hole in the roof?",
-      "master": "That water drop was drawn by a hand, not left by the rain. What lies under the hole in the roof?"
+      "junior": "The water drop on the paper is drawn, not rain. What is under the hole in the roof?",
+      "master": "The water drop on the paper was drawn, not left by rain. What is under the hole in the roof?"
     },
     {
       "rookie": "under the hole in the roof",
@@ -133,49 +133,49 @@
       "master": "THE STORE ROOM"
     },
     {
-      "rookie": "Before dawn, Ham runs to the store room.",
-      "junior": "Before dawn, Quartermaster Ham rushes to the store room.",
-      "master": "Before dawn, Quartermaster Ham hurries breathlessly to the store room."
+      "rookie": "Ham runs to the store room.",
+      "junior": "Quartermaster Ham runs to the store room.",
+      "master": "Before dawn, Quartermaster Ham runs to the store room."
     },
     {
-      "rookie": "\"All the gunpowder is gone!\" Ham shouts. \"A thief took it!\"",
-      "junior": "\"All the gunpowder has gone!\" Ham shouts. \"A thief must have taken it!\"",
-      "master": "\"Every barrel of gunpowder has vanished!\" Ham cries. \"A thief has taken it!\""
+      "rookie": "\"A thief took the powder!\" Ham shouts.",
+      "junior": "\"A thief took my powder!\" Ham shouts.",
+      "master": "\"Every barrel of powder is gone!\" Ham shouts. \"A thief took it!\""
     },
     {
       "rookie": "The floor is wet.",
-      "junior": "He raises his lamp. The floor shows wet marks and traces.",
-      "master": "He lifts his lamp high. Damp marks and traces streak the floor."
+      "junior": "The floor is wet and dirty.",
+      "master": "Ham lifts his lamp. The floor is wet, with marks all across it."
     },
     {
       "rookie": "Ham's report:",
-      "junior": "Ham's report from the night reads:",
-      "master": "Ham's night report reads as follows:"
+      "junior": "Ham's report:",
+      "master": "Ham's night report:"
     },
     {
       "rookie": "A bucket is under the hole in the roof. It is full of rain.\nWet straw is next to the door.\nA small paper is on the empty shelf. A water drop is drawn on it.\n— Ham",
-      "junior": "Store room, before dawn:\nA bucket stands under the hole in the roof, and it is full of rain.\nSome wet straw lies next to the door.\nA small paper lies on the empty shelf, with a water drop drawn on it.\n— Quartermaster Ham",
-      "master": "Store room, before dawn:\nA bucket stands under the hole in the roof, brimming with rain.\nA heap of soaked straw lies next to the door.\nOn the empty shelf rests a small paper, marked with a drawn water drop.\n— Quartermaster Ham"
+      "junior": "A bucket is under the hole in the roof. It is full of rain.\nWet straw is next to the door.\nA small paper is on the empty shelf. A water drop is drawn on it.\n— Quartermaster Ham",
+      "master": "A bucket stands under the hole in the roof. It is full of rain.\nWet straw lies next to the door.\nA small paper lies on the empty shelf. A water drop is drawn on it.\n— Quartermaster Ham"
     },
     {
       "rookie": "Which thing shows that rain came in over the powder?",
-      "junior": "Find all three things. Which one shows that rain came in over the powder?",
-      "master": "Locate all three things. Which one proves that rain came in over the powder?"
+      "junior": "Which thing shows the rain came in over the powder?",
+      "master": "Which thing proves that rain came in over the powder?"
     },
     {
-      "rookie": "Read each line of the report. Each one says where a thing is.",
-      "junior": "Read the report line by line. Each line tells you where a thing is.",
-      "master": "Take the report line by line; each one places a single thing."
+      "rookie": "Each line says where a thing is.",
+      "junior": "Each line says where one thing is.",
+      "master": "Each line says where one thing is."
     },
     {
-      "rookie": "The Admiral says wet powder will not fire. What came through the roof?",
-      "junior": "The Admiral says wet powder will not fire. What came in through the roof?",
-      "master": "Recall the Admiral's warning that wet powder will not fire. What entered through the roof?"
+      "rookie": "But wet powder will not fire. What came through the roof?",
+      "junior": "But wet powder will not fire. What came in through the roof?",
+      "master": "Remember the Admiral's warning: wet powder will not fire. What came in through the roof?"
     },
     {
-      "rookie": "Rain came through the roof, right over the powder!",
-      "junior": "Rain came in through the roof, right above the powder!",
-      "master": "Rain had come through the roof, directly above the powder!"
+      "rookie": "Rain came in, onto the powder!",
+      "junior": "Rain came in, right onto the powder!",
+      "master": "Rain came in through the roof, onto the powder!"
     },
     {
       "rookie": "Someone moved the barrels away from the rain.",
@@ -183,14 +183,14 @@
       "master": "Someone carried the barrels clear of the rain."
     },
     {
-      "rookie": "The small paper is written in the King's letters.",
-      "junior": "The small paper is in the King's letters.",
-      "master": "The small paper bears the King's letters."
+      "rookie": "The paper uses the King's letters.",
+      "junior": "The small paper uses the King's letters.",
+      "master": "The small paper uses the King's letters."
     },
     {
       "rookie": "But the rain has blurred it.",
-      "junior": "But the rain has made it blurry.",
-      "master": "Yet the rain has smudged it."
+      "junior": "But the rain has blurred it badly.",
+      "master": "But the rain has blurred it badly."
     },
     {
       "rookie": "The Danger",
@@ -204,8 +204,8 @@
     },
     {
       "rookie": "Find the three things in Ham's report.",
-      "junior": "Find the three things Ham lists in his report.",
-      "master": "Track down the three things Ham's report describes."
+      "junior": "Find the three things in Ham's report.",
+      "master": "Find the three things in Ham's report."
     },
     {
       "rookie": "HAM'S REPORT",
@@ -213,24 +213,24 @@
       "master": "HAM'S REPORT"
     },
     {
-      "rookie": "Nothing here. Read the report: where is each thing?",
-      "junior": "There is nothing here. Check the report: where is each thing?",
-      "master": "Nothing here. Consult the report: where does each thing lie?"
+      "rookie": "Nothing here. Where is each thing?",
+      "junior": "Nothing here. Where is each thing?",
+      "master": "Nothing here. Where is each thing?"
     },
     {
       "rookie": "All three things are found!",
-      "junior": "You have found all three things!",
-      "master": "Every one of the three things is found!"
+      "junior": "All three things are found!",
+      "master": "You found all three things!"
     },
     {
-      "rookie": "The store room smells of wet wood.",
-      "junior": "The store room smells of damp wood.",
-      "master": "The store room reeks of damp timber."
+      "rookie": "It smells of wet wood.",
+      "junior": "It smells of wet wood here.",
+      "master": "The store room smells of wet wood."
     },
     {
       "rookie": "Ham gives you his report.",
-      "junior": "Ham gives you his report about three things.",
-      "master": "Ham passes you his report on three things."
+      "junior": "Ham gives you his report.",
+      "master": "Ham gives you his report on three things."
     },
     {
       "rookie": "BUCKET OF RAIN",
@@ -239,8 +239,8 @@
     },
     {
       "rookie": "A bucket is under the hole in the roof. It is full of rain.",
-      "junior": "A bucket stands under the hole in the roof, and it is full of rain.",
-      "master": "A bucket stands under the hole in the roof, brimming with rain."
+      "junior": "A bucket is under the hole in the roof. It is full of rain.",
+      "master": "A bucket stands under the hole in the roof. It is full of rain."
     },
     {
       "rookie": "Under the hole in the roof",
@@ -259,8 +259,8 @@
     },
     {
       "rookie": "Wet straw is next to the door.",
-      "junior": "Some wet straw lies next to the door.",
-      "master": "A heap of soaked straw lies next to the door."
+      "junior": "Wet straw is next to the door.",
+      "master": "Wet straw lies next to the door."
     },
     {
       "rookie": "Next to the door",
@@ -268,9 +268,9 @@
       "master": "Next to the door"
     },
     {
-      "rookie": "Wet straw next to the door. Barrels were dragged out here.",
-      "junior": "Wet straw next to the door. Barrels were pulled out this way.",
-      "master": "Soaked straw next to the door: barrels were dragged out this way."
+      "rookie": "Wet straw next to the door.",
+      "junior": "Wet straw next to the door. The way out.",
+      "master": "Wet straw next to the door. Barrels went out this way."
     },
     {
       "rookie": "SMALL PAPER",
@@ -279,8 +279,8 @@
     },
     {
       "rookie": "A small paper is on the empty shelf. A water drop is drawn on it.",
-      "junior": "A small paper lies on the empty shelf, with a water drop drawn on it.",
-      "master": "On the empty shelf rests a small paper, marked with a drawn water drop."
+      "junior": "A small paper is on the empty shelf. A water drop is drawn on it.",
+      "master": "A small paper lies on the empty shelf. A water drop is drawn on it."
     },
     {
       "rookie": "On the empty shelf",
@@ -288,9 +288,9 @@
       "master": "On the empty shelf"
     },
     {
-      "rookie": "A folded paper, with a small blue water drop.",
-      "junior": "A folded paper, marked with a small blue water drop.",
-      "master": "A folded paper, bearing a tiny blue water drop."
+      "rookie": "A small paper. A blue water drop.",
+      "junior": "A small paper with a blue water drop.",
+      "master": "A folded paper, marked with a blue water drop."
     },
     {
       "rookie": "The hole in the roof",
@@ -298,9 +298,9 @@
       "master": "The hole in the roof"
     },
     {
-      "rookie": "Rain drips through here. The report says the bucket is UNDER it.",
-      "junior": "Rain drips in here. The report says the bucket is UNDER it.",
-      "master": "Rain trickles in here. The report places the bucket UNDER it."
+      "rookie": "Rain falls here. The bucket goes UNDER it.",
+      "junior": "Rain falls here. The bucket goes UNDER it.",
+      "master": "Rain falls in here. The bucket goes UNDER it."
     },
     {
       "rookie": "The door",
@@ -308,9 +308,9 @@
       "master": "The door"
     },
     {
-      "rookie": "The door is open a little. The report says the straw is NEXT TO it.",
-      "junior": "The door is slightly open. The report says the straw is NEXT TO it.",
-      "master": "The door stands slightly ajar. The report places the straw NEXT TO it."
+      "rookie": "The door. The straw goes NEXT TO it.",
+      "junior": "The door. The straw goes NEXT TO it.",
+      "master": "The door is open a little. The straw goes NEXT TO it."
     },
     {
       "rookie": "A shelf of ropes",
@@ -318,9 +318,9 @@
       "master": "A shelf of ropes"
     },
     {
-      "rookie": "Ropes and folded sails. No powder here.",
-      "junior": "Ropes and folded sails, but no powder here.",
-      "master": "Coiled ropes and folded sails, but not a grain of powder."
+      "rookie": "Ropes and sails. No powder.",
+      "junior": "Ropes and sails. No powder here.",
+      "master": "Ropes and folded sails, but no powder."
     },
     {
       "rookie": "The floor",
@@ -328,9 +328,9 @@
       "master": "The floor"
     },
     {
-      "rookie": "Wet boards. The report says the paper is ON the shelf.",
-      "junior": "Wet boards. The report says the paper is ON the shelf.",
-      "master": "Damp boards. The report places the paper ON the shelf."
+      "rookie": "Wet floor. The paper goes ON the shelf.",
+      "junior": "Wet floor. The paper goes ON the shelf.",
+      "master": "The floor is wet. The paper goes ON the shelf."
     },
     {
       "rookie": "SEARCH THE STORE ROOM",
@@ -339,23 +339,23 @@
     },
     {
       "rookie": "Find out why the powder matters.",
-      "junior": "Find out why the gunpowder is important today.",
-      "master": "Learn why the gunpowder matters so much today."
+      "junior": "Find out why the powder matters.",
+      "master": "Find out why the powder matters so much today."
     },
     {
-      "rookie": "At dawn our cannons must fire.",
-      "junior": "At dawn we test the turtle ship's cannons.",
-      "master": "At dawn the turtle ship's cannons face their trial."
+      "rookie": "Our cannons fire this morning.",
+      "junior": "Our cannons fire this morning.",
+      "master": "Our turtle ship's cannons fire at dawn this morning."
     },
     {
       "rookie": "Wet powder will not fire. Find it, and keep it dry.",
-      "junior": "Wet powder will not fire. Find it, and make sure it stays dry.",
-      "master": "Wet powder will not fire. Find it, and see that it stays dry."
+      "junior": "Wet powder will not fire. Find it, and keep it dry.",
+      "master": "Wet powder will not fire. Find it, and keep it dry."
     },
     {
-      "rookie": "I will look in the store room.",
-      "junior": "Then I will begin where it was kept.",
-      "master": "Then I shall begin where it was stored."
+      "rookie": "I will check the store room.",
+      "junior": "I will check the store room first.",
+      "master": "Then I will start in the store room."
     },
     {
       "rookie": "A WATER DROP",
@@ -363,9 +363,9 @@
       "master": "A WATER DROP"
     },
     {
-      "rookie": "Letters Ham cannot read, and a drawn water drop. Who left this note, and why?",
-      "junior": "Letters that Ham cannot read, and a water drop drawn beside them. Who left this note, and why?",
-      "master": "Letters Ham cannot read, beside a drawn water drop. Who left this note, and to what end?"
+      "rookie": "Who left this note, and why?",
+      "junior": "Who left this note, and why?",
+      "master": "Letters Ham cannot read, and a drawn water drop. Who left this note, and why?"
     },
     {
       "rookie": "a standing line, with a dot on its left",
@@ -378,78 +378,78 @@
       "master": "at the bottom"
     },
     {
-      "rookie": "The Blurred Note",
+      "rookie": "The Wet Note",
       "junior": "The Blurred Note",
       "master": "The Blurred Note"
     },
     {
-      "rookie": "You hold the wet note under Ham's lamp.",
-      "junior": "You hold the wet note up to Ham's lamp.",
-      "master": "You raise the damp note to the light of Ham's lamp."
+      "rookie": "Ham brings a lamp.",
+      "junior": "Ham brings his lamp.",
+      "master": "Ham brings his lamp. You hold the wet note up to its light."
     },
     {
       "rookie": "Three groups of letters, one under another. The rain blurred their lines and dots.",
-      "junior": "Three groups of letters sit one under another. The rain has blurred their lines and dots.",
-      "master": "Three groups of letters sit one beneath another, their lines and dots smudged by the rain."
+      "junior": "Three groups of letters, one under another. The rain blurred their lines and dots.",
+      "master": "Three groups of letters sit one under another. The rain blurred their lines and dots."
     },
     {
-      "rookie": "\"I cannot read the King's letters,\" says Ham. \"I read only Chinese letters.\"",
-      "junior": "\"I can't read the King's letters,\" Ham says. \"I read only Chinese letters.\"",
-      "master": "\"The King's letters are beyond me,\" Ham admits. \"I read only Chinese letters.\""
+      "rookie": "\"I read only Chinese letters,\" says Ham.",
+      "junior": "\"I can read only Chinese letters,\" says Ham.",
+      "master": "\"I can't read the King's letters,\" Ham explains. \"I read only Chinese letters.\""
     },
     {
-      "rookie": "\"But the young sailors learn them from that board on the wall.\"",
-      "junior": "\"But the young sailors learn them from the board on that wall.\"",
-      "master": "\"Yet the young sailors study them from the board on that wall.\""
+      "rookie": "\"Sailors learn them from that board.\"",
+      "junior": "\"Young sailors learn them from that board.\"",
+      "master": "\"The young sailors learn them from that board.\""
     },
     {
-      "rookie": "The board on the store room wall:",
-      "junior": "The board on the store room wall, and what the rain left:",
-      "master": "The board on the store room wall, and what the rain spared:"
+      "rookie": "The wall board:",
+      "junior": "The board on the wall:",
+      "master": "The board on the store room wall, and what the rain left:"
     },
     {
       "rookie": "THE SAILORS' LETTER BOARD\nThe King's letters copy the mouth:\nㄱ = the back of the tongue\nㄴ = the tongue\nㅁ = the lips\nㅅ = the teeth\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nㅁ + 1 line = ㅂ\nA flat line goes under the first sound.\nA standing line goes on its right.\nA sound at the bottom comes last.",
-      "junior": "The sailors' letter board: the King's letters copy the mouth. ㄱ copies the back of the tongue, and ㄴ copies the tongue.\nㅁ copies the lips, and ㅅ copies the teeth. A stronger sound adds one more line: ㄴ with one more line is ㄷ, and ㅁ with one more line is ㅂ.\nA flat line sits under the first sound; a standing line sits on its right. A sound at the bottom comes last.\nGroup 1: the back of the tongue, then a standing line, with a dot on its left.\nGroup 2: the lips, one step stronger. A flat line, with a dot below it. The back of the tongue sits at the bottom.\nGroup 3: the teeth, then a standing line, with a dot on its left. The tongue sits at the bottom.",
-      "master": "The sailors' letter board: the King's letters copy the mouth. ㄱ copies the back of the tongue; ㄴ, the tongue.\nㅁ copies the lips, ㅅ the teeth. Each stronger sound earns one more line: ㄴ becomes ㄷ, and ㅁ becomes ㅂ.\nA flat line tucks beneath the first sound; a standing one keeps to its right. A sound at the bottom comes last.\nGroup 1: the back of the tongue, followed by a standing line, with a dot on its left.\nGroup 2: the lips, one step stronger; a flat line with a dot beneath it, and the back of the tongue at the bottom.\nGroup 3: the teeth, followed by a standing line, with a dot on its left; the tongue rests at the bottom."
+      "junior": "The sailors' letter board. The King's letters copy the mouth. ㄱ is the back of the tongue. ㄴ is the tongue.\nㅁ is the lips, and ㅅ is the teeth. A stronger sound adds one line: ㄴ + 1 line = ㄷ, ㅁ + 1 line = ㅂ.\nA flat line goes under the first sound. A standing line goes on its right. A sound at the bottom comes last.\nGroup 1: the back of the tongue. Then a standing line, with a dot on its left.\nGroup 2: the lips + 1 line. A flat line, with a dot under it. The back of the tongue at the bottom.\nGroup 3: the teeth. Then a standing line, with a dot on its left. The tongue at the bottom.",
+      "master": "The sailors' letter board. The King's letters copy the mouth. ㄱ is the back of the tongue. ㄴ is the tongue.\nㅁ is the lips, and ㅅ is the teeth. A stronger sound adds one line: ㄴ + 1 line = ㄷ, ㅁ + 1 line = ㅂ.\nA flat line goes under the first sound. A standing line goes on its right. A sound at the bottom comes last.\nGroup 1: the back of the tongue. Then a standing line, with a dot on its left.\nGroup 2: the lips + 1 line. A flat line, with a dot under it. The back of the tongue at the bottom.\nGroup 3: the teeth. Then a standing line, with a dot on its left. The tongue at the bottom."
     },
     {
-      "rookie": "Build the three groups, from top to bottom. What does the note say?",
-      "junior": "Build the three groups from top to bottom. What does the note say?",
-      "master": "Build the three groups, top to bottom. What message does the note hold?"
+      "rookie": "Build three groups. What does the note say?",
+      "junior": "Build the three groups. What does the note say?",
+      "master": "Build the three groups, top to bottom. What does the note say?"
     },
     {
       "rookie": "Group 1 is at the top. Find the back of the tongue on the board.",
-      "junior": "Group 1 is at the top. Look for the back of the tongue on the board.",
-      "master": "Group 1 sits at the top. Seek the back of the tongue on the board."
+      "junior": "Group 1 is at the top. Find the back of the tongue on the board.",
+      "master": "Group 1 is at the top. Look for the back of the tongue on the board."
     },
     {
-      "rookie": "The lips + 1 line is ㅂ. Choose each sound, then its line and dot.",
-      "junior": "The lips one step stronger is ㅂ: one more line. For each group, pick its sound, then its line and dot.",
-      "master": "The lips a single step stronger give ㅂ, one extra line. For each group, choose its sound first, then its line and dot."
+      "rookie": "ㅂ is the lips + 1 line. Build each group.",
+      "junior": "ㅂ is the lips + 1 line. Build each group in order.",
+      "master": "ㅂ is the lips + 1 line. Build each group: sound first, then line and dot."
     },
     {
-      "rookie": "The note is whole again: 거북선, the turtle ship!",
-      "junior": "The note is complete again: 거북선, the turtle ship!",
-      "master": "The note is whole once more: 거북선, the turtle ship!"
+      "rookie": "The note says 거북선: the turtle ship!",
+      "junior": "The note says 거북선: the turtle ship!",
+      "master": "Now the note is clear: 거북선, the turtle ship!"
     },
     {
       "rookie": "거북선 means the turtle ship.",
-      "junior": "거북선 is the turtle ship.",
-      "master": "The word 거북선 names the turtle ship."
+      "junior": "거북선 means the turtle ship.",
+      "master": "The word 거북선 means the turtle ship."
     },
     {
-      "rookie": "Someone carried the powder to the turtle ship!",
+      "rookie": "Someone took the powder to the ship!",
       "junior": "Someone took the powder to the turtle ship!",
-      "master": "Someone has carried the powder aboard the turtle ship!"
+      "master": "Someone carried the powder to the turtle ship!"
     },
     {
-      "rookie": "You and Ham hurry down to the harbour.",
-      "junior": "You and Ham rush down to the harbour.",
-      "master": "You and Ham hasten down to the harbour."
+      "rookie": "You and Ham run to the ship.",
+      "junior": "You and Ham run down to the ship.",
+      "master": "You and Ham run down to the harbour."
     },
     {
-      "rookie": "Group 2 is the lips + 1 line: ㅂ, not ㅁ.",
-      "junior": "Group 2 is the lips one step stronger: ㅂ, not ㅁ.",
+      "rookie": "Group 2 is ㅂ, not ㅁ.",
+      "junior": "Group 2 is ㅂ, not ㅁ.",
       "master": "Group 2 is the lips a step stronger: ㅂ, not ㅁ."
     },
     {
@@ -458,14 +458,14 @@
       "master": "Group 3 carries a sound at the bottom: the tongue."
     },
     {
-      "rookie": "Group 1's dot is on the left of its line, not the right.",
-      "junior": "Group 1's dot is on the left of its line, not on the right.",
-      "master": "In Group 1 the dot sits left of the line, not right."
+      "rookie": "Group 1: dot on the left.",
+      "junior": "Group 1: the dot is on the left.",
+      "master": "Group 1: the dot is on the left of the line, not the right."
     },
     {
-      "rookie": "Group 3 is the teeth, not the teeth + 1 line.",
-      "junior": "Group 3 is the teeth, not the teeth made one step stronger.",
-      "master": "Group 3 is simply the teeth, not the teeth a step stronger."
+      "rookie": "Group 3 is the teeth only.",
+      "junior": "Group 3 is the teeth only.",
+      "master": "Group 3 is the teeth only, not the teeth a step stronger."
     },
     {
       "rookie": "The Note's Word",
@@ -473,24 +473,24 @@
       "master": "The Note's Word"
     },
     {
-      "rookie": "The blurred note says 거북선: the turtle ship.",
-      "junior": "The blurred note reads 거북선: the turtle ship.",
-      "master": "Once blurred, the note reads 거북선: the turtle ship."
+      "rookie": "The note says 거북선: the turtle ship.",
+      "junior": "The note says 거북선: the turtle ship.",
+      "master": "The blurred note says 거북선: the turtle ship."
     },
     {
       "rookie": "Group 1: the back of the tongue. A standing line, with a dot on its left.",
-      "junior": "Group 1: the back of the tongue, then a standing line, with a dot on its left.",
-      "master": "Group 1: the back of the tongue, followed by a standing line, with a dot on its left."
+      "junior": "Group 1: the back of the tongue. Then a standing line, with a dot on its left.",
+      "master": "Group 1: the back of the tongue. Then a standing line, with a dot on its left."
     },
     {
       "rookie": "Group 2: the lips + 1 line. A flat line, with a dot under it. The back of the tongue at the bottom.",
-      "junior": "Group 2: the lips, one step stronger. A flat line, with a dot below it. The back of the tongue sits at the bottom.",
-      "master": "Group 2: the lips, one step stronger; a flat line with a dot beneath it, and the back of the tongue at the bottom."
+      "junior": "Group 2: the lips + 1 line. A flat line, with a dot under it. The back of the tongue at the bottom.",
+      "master": "Group 2: the lips, one step stronger. A flat line, with a dot under it. The back of the tongue at the bottom."
     },
     {
       "rookie": "Group 3: the teeth. A standing line, with a dot on its left. The tongue at the bottom.",
-      "junior": "Group 3: the teeth, then a standing line, with a dot on its left. The tongue sits at the bottom.",
-      "master": "Group 3: the teeth, followed by a standing line, with a dot on its left; the tongue rests at the bottom."
+      "junior": "Group 3: the teeth. Then a standing line, with a dot on its left. The tongue at the bottom.",
+      "master": "Group 3: the teeth, then a standing line, with a dot on its left. The tongue is at the bottom."
     },
     {
       "rookie": "four barrels each time",
@@ -513,19 +513,19 @@
       "master": "THE TURTLE SHIP"
     },
     {
-      "rookie": "The turtle ship has a roof of planks over its deck.",
-      "junior": "The turtle ship has a plank roof over its deck.",
-      "master": "A roof of planks shelters the turtle ship's deck."
+      "rookie": "The ship has a wooden roof.",
+      "junior": "The turtle ship has a wooden roof.",
+      "master": "The turtle ship has a wooden roof."
     },
     {
-      "rookie": "Under the roof, you find barrels of gunpowder, dry.",
-      "junior": "Under the roof, you find dry barrels of gunpowder.",
-      "master": "Beneath that roof, you discover barrels of gunpowder, perfectly dry."
+      "rookie": "Under it: dry powder barrels.",
+      "junior": "Under it: dry barrels of powder.",
+      "master": "Under it, you discover dry barrels of powder."
     },
     {
-      "rookie": "A young sailor stands up, his clothes wet. \"I am Seok. I carried them here.\"",
-      "junior": "A young sailor in wet clothes stands up. \"I'm Seok. I brought them here.\"",
-      "master": "A young sailor rises, his clothes soaked. \"My name is Seok. I brought them here.\""
+      "rookie": "A wet sailor: \"I am Seok. I carried them.\"",
+      "junior": "A wet sailor stands up: \"I am Seok. I carried them.\"",
+      "master": "A young sailor in wet clothes: \"I am Seok. I carried them here.\""
     },
     {
       "rookie": "Seok tells you:",
@@ -534,48 +534,48 @@
     },
     {
       "rookie": "\"Rain fell on the barrels after midnight.\"\n\"I took four barrels each time, in a hand cart.\"\n\"I went from the store room to the ship three times.\"\n\"The ship's roof keeps the rain off.\"",
-      "junior": "\"After midnight, rain started falling on the barrels.\"\n\"I took four barrels each time, in a hand cart.\"\n\"I went from the store room to the ship three times.\"\n\"The ship's roof keeps the rain out.\"",
-      "master": "\"Past midnight, rain began to fall on the barrels.\"\n\"I loaded four barrels each time into a hand cart.\"\n\"I made the journey from the store room to the ship three times.\"\n\"The ship's roof shields them from the rain.\""
+      "junior": "\"Rain fell on the barrels after midnight.\"\n\"I took four barrels each time, in a hand cart.\"\n\"I went from the store room to the ship three times.\"\n\"The ship's roof keeps the rain off.\"",
+      "master": "\"Rain fell on the barrels after midnight.\"\n\"I took four barrels each time, in a hand cart.\"\n\"I went from the store room to the ship three times.\"\n\"The ship's roof keeps the rain off.\""
     },
     {
-      "rookie": "How many barrels did Seok carry to the ship? Put in the number.",
-      "junior": "How many barrels did Seok bring to the ship? Enter the number.",
-      "master": "How many barrels in all did Seok bring aboard? Enter the number."
+      "rookie": "How many barrels did Seok carry?",
+      "junior": "How many barrels did Seok carry in all?",
+      "master": "How many barrels in all did Seok carry to the ship? Enter the number."
     },
     {
       "rookie": "Find the two numbers in Seok's words.",
-      "junior": "Look for the two numbers in Seok's words.",
-      "master": "Pick out the two numbers in Seok's account."
+      "junior": "Find the two numbers in Seok's words.",
+      "master": "Find the two numbers in Seok's words."
     },
     {
-      "rookie": "Four barrels each time. How many times did he go?",
-      "junior": "Four barrels each time. How many times did he make the trip?",
-      "master": "Four barrels each time. How many trips did he make?"
+      "rookie": "Four barrels each trip. How many trips?",
+      "junior": "Four barrels each time. How many trips?",
+      "master": "Four barrels each time. How many trips?"
     },
     {
-      "rookie": "Twelve barrels: all the powder is safe and dry!",
-      "junior": "Twelve barrels: all of the powder is safe and dry!",
-      "master": "Twelve barrels: every grain of powder is safe and dry!"
+      "rookie": "Twelve barrels, all safe and dry!",
+      "junior": "Twelve barrels, all safe and dry!",
+      "master": "Twelve barrels, all safe and dry!"
     },
     {
-      "rookie": "Ham opens his book from sunset: twelve barrels.",
-      "junior": "Ham opens his book from sunset. It says twelve barrels.",
-      "master": "Ham opens the book he kept at sunset: it records twelve barrels."
+      "rookie": "Ham's sunset book: twelve barrels.",
+      "junior": "Ham's book from sunset says twelve barrels.",
+      "master": "Ham checks his book from sunset: twelve barrels."
     },
     {
-      "rookie": "\"All twelve are here,\" Ham says. \"But he moved them with no order!\"",
-      "junior": "\"All twelve are here,\" Ham says. \"But he moved them without an order!\"",
-      "master": "\"Every one of the twelve is here,\" Ham says, \"but he moved them without any order!\""
+      "rookie": "\"All twelve are here,\" says Ham. \"But no order!\"",
+      "junior": "\"All twelve are here,\" says Ham. \"But he had no order!\"",
+      "master": "\"All twelve are here,\" says Ham. \"But he moved them with no order!\""
     },
     {
-      "rookie": "The sky turns grey. The Admiral is coming aboard.",
-      "junior": "The sky grows grey. The Admiral is coming on board.",
-      "master": "The sky pales to grey as the Admiral comes aboard."
+      "rookie": "Morning comes. The Admiral is coming.",
+      "junior": "Morning comes. The Admiral is coming now.",
+      "master": "The sky grows grey. The Admiral is coming aboard."
     },
     {
-      "rookie": "That is one trip. How many times did Seok go?",
-      "junior": "That is just one trip. How many times did Seok go?",
-      "master": "That is a single trip. How many times did Seok go?"
+      "rookie": "One trip. How many trips?",
+      "junior": "That is one trip. How many trips?",
+      "master": "That is one trip. How many trips?"
     },
     {
       "rookie": "That is how many times he went. He took four barrels each time.",
@@ -585,12 +585,12 @@
     {
       "rookie": "Four and three make seven. But he took four barrels, three times.",
       "junior": "Four plus three is seven. But he took four barrels three times.",
-      "master": "Four and three make seven, yet he took four barrels three times over."
+      "master": "Four and three make seven, but he took four barrels three times."
     },
     {
-      "rookie": "The right digits, in the wrong order. Read Seok's words again.",
-      "junior": "Right digits, wrong order. Read what Seok said again.",
-      "master": "The digits are right, the order wrong. Go back over Seok's words."
+      "rookie": "Right numbers, wrong order.",
+      "junior": "Right numbers, wrong order.",
+      "master": "Right numbers, wrong order. Read Seok's words again."
     },
     {
       "rookie": "The Dry Barrels",
@@ -599,138 +599,138 @@
     },
     {
       "rookie": "Seok carried twelve barrels to the turtle ship, out of the rain.",
-      "junior": "Seok carried twelve barrels to the turtle ship to keep them out of the rain.",
-      "master": "To shield them from the rain, Seok carried twelve barrels to the turtle ship."
+      "junior": "Seok carried twelve barrels to the turtle ship, out of the bad rain.",
+      "master": "Seok carried twelve barrels to the turtle ship, to keep them dry from the rain."
     },
     {
-      "rookie": "Find out why Seok moved the powder.",
-      "junior": "Find out why Seok moved the gunpowder.",
-      "master": "Discover why Seok moved the powder."
+      "rookie": "Find why Seok moved it.",
+      "junior": "Find out why Seok moved it.",
+      "master": "Find out why Seok moved the powder."
     },
     {
       "rookie": "I left a note. Did you read it?",
-      "junior": "I left a note. Did you manage to read it?",
-      "master": "I left a note behind. Were you able to read it?"
+      "junior": "I left a note for you. Did you read it?",
+      "master": "I left a note. Were you able to read it?"
     },
     {
-      "rookie": "I did. But why did you not wake Ham?",
+      "rookie": "I did. But why not wake Ham?",
       "junior": "I did. But why didn't you wake Ham?",
-      "master": "I did. Yet why did you not wake Ham?"
+      "master": "I did. But why didn't you wake Ham?"
     },
     {
-      "rookie": "The Admiral's Judgment",
+      "rookie": "The Admiral's Answer",
       "junior": "The Admiral's Judgment",
       "master": "The Admiral's Judgment"
     },
     {
-      "rookie": "Dawn comes. Admiral Yi Sun-sin comes aboard the turtle ship.",
-      "junior": "At dawn, Admiral Yi Sun-sin comes aboard the turtle ship.",
-      "master": "As dawn breaks, Admiral Yi Sun-sin steps aboard the turtle ship."
+      "rookie": "The Admiral comes onto the ship.",
+      "junior": "The Admiral comes onto the turtle ship.",
+      "master": "At dawn, Admiral Yi Sun-sin comes onto the turtle ship."
     },
     {
-      "rookie": "Ham stands next to Seok. \"He took the powder with no order!\"",
-      "junior": "Ham stands next to Seok. \"He took the powder without any order!\"",
-      "master": "Ham stands beside Seok. \"He removed the powder without a single order!\""
+      "rookie": "Ham: \"He took it with no order!\"",
+      "junior": "Ham: \"He took it with no order!\"",
+      "master": "Ham: \"Seok took the powder with no order!\""
     },
     {
-      "rookie": "The Admiral looks at you. \"Tell me the truth of this night.\"",
-      "junior": "The Admiral turns to you. \"Tell me the truth about this night.\"",
-      "master": "The Admiral turns to you. \"Tell me the whole truth of this night.\""
+      "rookie": "\"Tell me the truth,\" says the Admiral.",
+      "junior": "\"Tell me the whole truth,\" says the Admiral.",
+      "master": "\"Tell me the whole truth of this night,\" says the Admiral."
     },
     {
       "rookie": "Your three cards say:",
-      "junior": "Here is what your three cards say:",
-      "master": "Your three cards record the following:"
+      "junior": "Your three cards say:",
+      "master": "Your three cards say:"
     },
     {
-      "rookie": "Rain came in through the store room roof.\nSeok's note named the turtle ship.\nTwelve dry barrels are on the ship, as many as at sunset.",
-      "junior": "Rain leaked in through the store room roof.\nSeok's note named the turtle ship.\nTwelve dry barrels are on the ship, the same number as at sunset.",
-      "master": "Rain leaked in through the store room roof.\nSeok's note gave the name of the turtle ship.\nTwelve dry barrels sit on the ship, matching the sunset count."
+      "rookie": "Rain came through the store room roof.\nSeok's note named the turtle ship.\nTwelve dry barrels, same as at sunset.",
+      "junior": "Rain came through the store room roof.\nSeok's note named the turtle ship.\nTwelve dry barrels, the same as at sunset.",
+      "master": "Rain came in through the store room roof.\nSeok's note named the turtle ship.\nTwelve dry barrels, the same number as at sunset."
     },
     {
-      "rookie": "What really happened to the powder? Tell the Admiral.",
-      "junior": "Which sentence tells what really happened to the powder? Tell the Admiral.",
-      "master": "Which account of the night fits every piece of your evidence? Tell the Admiral."
+      "rookie": "What happened to the powder?",
+      "junior": "What really happened to the powder?",
+      "master": "What really happened to the powder? Tell the Admiral."
     },
     {
-      "rookie": "Check each sentence with your three cards.",
-      "junior": "Check every sentence against your three cards.",
-      "master": "Test each sentence against all three of your cards."
+      "rookie": "Check with your cards.",
+      "junior": "Check it with your cards.",
+      "master": "Check each sentence with your three cards."
     },
     {
-      "rookie": "Who carried the barrels? How many? Which roof had a hole?",
-      "junior": "Who carried the barrels, and how many? Which roof had a hole?",
-      "master": "Ask who carried the barrels, how many there were, and which roof had a hole."
+      "rookie": "Who carried them? How many? Which roof had a hole?",
+      "junior": "Who carried them? How many? Which roof had a hole?",
+      "master": "Who carried the barrels? How many? Which roof had a hole?"
     },
     {
-      "rookie": "That is the truth. Seok saved the powder!",
-      "junior": "That is the truth: Seok saved the powder!",
-      "master": "That is the truth of it: Seok saved the powder!"
+      "rookie": "True! Seok saved the powder!",
+      "junior": "True! Seok saved the powder!",
+      "master": "That is true! Seok saved the powder!"
     },
     {
-      "rookie": "\"Seok, you broke an order,\" says the Admiral. \"But you saved my test.\"",
-      "junior": "\"Seok, you broke an order,\" the Admiral says, \"but you saved my test.\"",
-      "master": "\"Seok, you acted without an order,\" the Admiral says, \"yet you saved my test.\""
+      "rookie": "\"You broke an order,\" says the Admiral. \"But you saved my test.\"",
+      "junior": "\"You broke an order,\" says the Admiral. \"But you saved my test.\"",
+      "master": "\"Seok, you broke an order,\" says the Admiral. \"But you saved my test.\""
     },
     {
-      "rookie": "Dawn comes. The Admiral walks along his turtle ship.",
-      "junior": "The sun rises. The Admiral walks the length of his turtle ship.",
-      "master": "The sun climbs, and the Admiral walks the length of his turtle ship."
+      "rookie": "The Admiral walks on his ship.",
+      "junior": "The Admiral walks along his ship.",
+      "master": "The sun climbs. The Admiral walks along his turtle ship."
     },
     {
       "rookie": "Its roof is like a turtle's back, with spikes. At the front is a dragon's head, with a cannon in its mouth.",
-      "junior": "Its roof is like a turtle's back, covered in spikes. At the front is a dragon's head with a cannon in its mouth.",
-      "master": "Its spiked roof is shaped like a turtle's back, and at its front a dragon's head holds a cannon in its mouth."
+      "junior": "Its roof is like a turtle's back, with spikes. At the front is a dragon's head, with a cannon in its mouth.",
+      "master": "Its roof is like a turtle's back, covered in spikes. At the front is a dragon's head, with a cannon in its mouth."
     },
     {
-      "rookie": "My powder is dry, and my ship is ready.",
-      "junior": "My powder is dry, and my ship is ready to fight.",
-      "master": "My powder is dry, and my ship stands ready."
+      "rookie": "My powder is dry. My ship is ready.",
+      "junior": "My powder is dry. My ship is ready to fight.",
+      "master": "My powder is dry. My ship is ready to fight."
     },
     {
-      "rookie": "That day, the twelfth of the fourth month, the cannons were tested.",
-      "junior": "On that day, the twelfth of the fourth month, the cannons were tested.",
-      "master": "On that day, the twelfth of the fourth month, the cannons were put to the test."
+      "rookie": "The test day: day 12, month 4.",
+      "junior": "The test day: day 12, month 4.",
+      "master": "The cannon test day was day 12 of month 4."
     },
     {
-      "rookie": "Yi Sun-sin wrote it down in his war diary.",
-      "junior": "Yi Sun-sin recorded it in his war diary.",
-      "master": "Yi Sun-sin set it down in his war diary."
+      "rookie": "Yi Sun-sin wrote it in his diary.",
+      "junior": "Yi Sun-sin wrote it in his war diary.",
+      "master": "Yi Sun-sin wrote it down in his war diary."
     },
     {
-      "rookie": "The next day, Japanese ships covered the sea at Busan.",
-      "junior": "The following day, Japanese ships covered the sea at Busan.",
-      "master": "On the very next day, Japanese ships covered the sea at Busan."
+      "rookie": "Next day, Japanese ships came to Busan.",
+      "junior": "The next day, Japanese ships came to Busan.",
+      "master": "The next day, Japanese ships filled the sea at Busan."
     },
     {
-      "rookie": "The war had begun. Yi Sun-sin had prepared for it.",
-      "junior": "The war had started, and Yi Sun-sin was prepared for it.",
-      "master": "The war had begun, and Yi Sun-sin stood prepared."
+      "rookie": "The war began. Yi Sun-sin was ready.",
+      "junior": "The war began, and Yi Sun-sin was ready.",
+      "master": "The war began, and Yi Sun-sin was ready."
     },
     {
-      "rookie": "In the fifth month, his navy won its first victory at sea, at Okpo.",
-      "junior": "In the fifth month, his navy won its first sea victory, at Okpo.",
-      "master": "In the fifth month, his navy claimed its first victory at sea, at Okpo."
+      "rookie": "In month 5, his ships won at Okpo.",
+      "junior": "In month 5, his ships won at Okpo.",
+      "master": "In month 5, his ships won their first sea battle, at Okpo."
     },
     {
-      "rookie": "The King made these letters so that people could learn them easily.",
-      "junior": "The King made these letters so that people could learn them easily.",
-      "master": "The King made these letters so that anyone could learn them with ease."
+      "rookie": "The King made easy letters.",
+      "junior": "The King made easy letters for us.",
+      "master": "The King made letters so that anyone could learn them easily."
     },
     {
-      "rookie": "Even a sailor like me can write.",
-      "junior": "Even a sailor like me can write with them.",
-      "master": "Even a common sailor like me can write."
+      "rookie": "Even a sailor can write.",
+      "junior": "Even a sailor can write now.",
+      "master": "Even a sailor like me can write."
     },
     {
       "rookie": "Ham was asleep. The rain would not wait. So I moved the barrels.",
       "junior": "Ham was asleep, and the rain would not wait. So I moved the barrels.",
-      "master": "Ham was fast asleep, and the rain was not going to wait, so I moved the barrels myself."
+      "master": "Ham was asleep, and the rain would not wait. So I moved the barrels myself."
     },
     {
-      "rookie": "I learned the King's letters from the board in the store room.",
-      "junior": "I learned the King's letters from the board in the store room.",
-      "master": "I taught myself the King's letters from the board in the store room."
+      "rookie": "I learned them from the board.",
+      "junior": "I learned them from the board.",
+      "master": "I learned the King's letters by myself, from the store room board."
     },
     {
       "rookie": "Ham cannot read the King's letters. So I drew a water drop for him. It means rain.",
@@ -738,49 +738,49 @@
       "master": "Ham reads no King's letters, so I drew him a water drop that even he could read: rain."
     },
     {
-      "rookie": "A thief took four barrels in the night.",
-      "junior": "A thief stole four barrels during the night.",
-      "master": "A thief made off with four barrels in the night."
+      "rookie": "A thief took four barrels.",
+      "junior": "A thief took four barrels.",
+      "master": "A thief took four barrels in the night."
     },
     {
-      "rookie": "Twelve barrels are on the ship, as many as at sunset. Nothing was stolen.",
-      "junior": "Twelve barrels are on the ship, the same as at sunset. Nothing was stolen.",
-      "master": "Twelve barrels sit on the ship, matching the sunset count: nothing was stolen."
+      "rookie": "Twelve barrels, same as at sunset. Nothing was taken.",
+      "junior": "Twelve barrels, the same as at sunset. Nothing was taken.",
+      "master": "Twelve barrels are on the ship, the same as at sunset. Nothing was stolen."
     },
     {
       "rookie": "Seok moved the powder because the ship's roof let rain in.",
-      "junior": "Seok moved the powder because rain came in through the ship's roof.",
-      "master": "Seok moved the powder because the ship's roof was letting rain in."
+      "junior": "Seok moved the powder because the ship's roof let rain in.",
+      "master": "Seok moved the powder because the ship's roof let the rain in."
     },
     {
       "rookie": "The ship's roof keeps the rain off. Which roof had a hole?",
-      "junior": "The ship's roof keeps the rain off. So which roof had a hole?",
-      "master": "The ship's roof keeps the rain off. Which roof, then, had the hole?"
+      "junior": "The ship's roof keeps the rain off. Which roof had a hole?",
+      "master": "The ship's roof keeps the rain off. So which roof had a hole?"
     },
     {
       "rookie": "Seok moved all twelve barrels to the turtle ship, out of the rain.",
-      "junior": "Seok carried all twelve barrels to the turtle ship, out of the rain.",
-      "master": "Seok took all twelve barrels to the turtle ship to keep them out of the rain."
+      "junior": "Seok moved all twelve barrels to the turtle ship, out of the rain.",
+      "master": "Seok carried all twelve barrels to the turtle ship, out of the rain."
     },
     {
       "rookie": "Ham moved the powder to the ship before the rain.",
-      "junior": "Ham carried the powder to the ship before the rain started.",
-      "master": "Ham took the powder to the ship before the rain began."
+      "junior": "Ham moved the powder to the ship before the rain.",
+      "master": "Ham carried the powder to the ship before the rain started."
     },
     {
-      "rookie": "Ham was asleep. Who said, \"So I moved the barrels\"?",
-      "junior": "Ham was asleep. Who told you, \"So I moved the barrels\"?",
-      "master": "Ham was asleep. Who was it that said, \"So I moved the barrels\"?"
+      "rookie": "Ham was asleep. Who said, \"So I moved them\"?",
+      "junior": "Ham was asleep. Who said, \"So I moved them\"?",
+      "master": "Ham was asleep. Who told you, \"So I moved them\"?"
     },
     {
-      "rookie": "Show the Admiral what really happened to his powder.",
+      "rookie": "What happened to his powder? Show the Admiral.",
       "junior": "Show the Admiral what really happened to his powder.",
       "master": "Prove to the Admiral what truly became of his powder."
     },
     {
-      "rookie": "Ham says Seok took my powder with no order.",
-      "junior": "Ham says Seok took my powder without an order.",
-      "master": "Ham tells me Seok took my powder without any order."
+      "rookie": "Ham says Seok took it with no order.",
+      "junior": "Ham says Seok took it with no order.",
+      "master": "Ham says Seok took my powder with no order."
     },
     {
       "rookie": "Show me what happened, Detective.",
@@ -788,14 +788,14 @@
       "master": "Show me what truly happened, Detective."
     },
     {
-      "rookie": "The Admiral asks: \"Was my powder safe in the store room?\"",
-      "junior": "The Admiral asks: \"Was my powder safe in the store room?\"",
-      "master": "The Admiral asks: \"Was my powder truly safe in the store room?\""
+      "rookie": "The Admiral asks: \"Was the store room safe?\"",
+      "junior": "The Admiral asks: \"Was the store room safe?\"",
+      "master": "The Admiral asks: \"Was the store room safe?\""
     },
     {
-      "rookie": "No, sir. Rain came through the store room roof, over the powder.",
-      "junior": "No, sir. Rain came in through the store room roof, right over the powder.",
-      "master": "No, sir. Rain leaked through the store room roof, directly over the powder."
+      "rookie": "No, sir. Rain came through the roof.",
+      "junior": "No, sir. Rain came in through the roof.",
+      "master": "No, sir. Rain came through the store room roof, onto the powder."
     },
     {
       "rookie": "And wet powder will not fire.",
@@ -803,39 +803,39 @@
       "master": "And wet powder will not fire."
     },
     {
-      "rookie": "That does not show the store room.",
-      "junior": "That card does not show the store room.",
-      "master": "That card tells us nothing about the store room."
+      "rookie": "Not the store room.",
+      "junior": "That is not the store room.",
+      "master": "That card is not about the store room."
     },
     {
-      "rookie": "Which card was found in the store room?",
-      "junior": "Which of your cards was found in the store room?",
-      "master": "Which of your cards came from the store room?"
+      "rookie": "Which card is from the store room?",
+      "junior": "Which card is from the store room?",
+      "master": "Which of your cards is from the store room?"
     },
     {
-      "rookie": "The Admiral asks: \"How did you know where to look?\"",
-      "junior": "The Admiral asks: \"How did you know where to look?\"",
-      "master": "The Admiral asks: \"How did you know where to search?\""
+      "rookie": "The Admiral asks: \"How did you know?\"",
+      "junior": "The Admiral asks: \"How did you know?\"",
+      "master": "The Admiral asks: \"How did you know where to look?\""
     },
     {
       "rookie": "Seok's note named the turtle ship.",
       "junior": "Seok's note named the turtle ship.",
-      "master": "Seok's note gave the name of the turtle ship."
+      "master": "Seok's note named the turtle ship."
     },
     {
-      "rookie": "A note in the King's letters. Clever boy.",
-      "junior": "A note in the King's letters. What a clever boy.",
-      "master": "A note in the King's letters. A clever boy indeed."
+      "rookie": "The King's letters. Smart boy.",
+      "junior": "The King's letters. What a smart boy.",
+      "master": "A note in the King's letters. What a smart boy."
     },
     {
-      "rookie": "That does not show where the powder went.",
-      "junior": "That card does not show where the powder went.",
-      "master": "That card does not reveal where the powder went."
+      "rookie": "That is not where it went.",
+      "junior": "That is not where it went.",
+      "master": "That card does not show where the powder went."
     },
     {
-      "rookie": "Which card says what the note says?",
-      "junior": "Which card tells you what the note says?",
-      "master": "Which card records what the note says?"
+      "rookie": "Which card reads the note?",
+      "junior": "Which card reads the note?",
+      "master": "Which card tells what the note says?"
     },
     {
       "rookie": "The Admiral asks: \"Is any of my powder missing?\"",
@@ -843,9 +843,9 @@
       "master": "The Admiral asks: \"Is any of my powder missing?\""
     },
     {
-      "rookie": "None, sir. Twelve barrels, all dry, as many as at sunset.",
-      "junior": "None, sir. Twelve barrels, all dry, the same as at sunset.",
-      "master": "None, sir: twelve barrels, every one dry, just as at sunset."
+      "rookie": "None, sir. Twelve dry barrels, as at sunset.",
+      "junior": "None, sir. Twelve dry barrels, just like at sunset.",
+      "master": "None, sir. Twelve dry barrels, exactly as at sunset."
     },
     {
       "rookie": "Then nothing was stolen.",
@@ -853,13 +853,13 @@
       "master": "Then nothing at all was stolen."
     },
     {
-      "rookie": "That does not count the barrels.",
-      "junior": "That card does not count the barrels.",
-      "master": "That card gives no count of the barrels."
+      "rookie": "That is not the count.",
+      "junior": "That is not the barrel count.",
+      "master": "That card does not count the barrels."
     },
     {
       "rookie": "Which card counts the barrels?",
-      "junior": "Which card tells you how many barrels there are?",
+      "junior": "Which card counts the barrels?",
       "master": "Which card gives the number of barrels?"
     },
     {

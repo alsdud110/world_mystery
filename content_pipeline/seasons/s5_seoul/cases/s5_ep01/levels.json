@@ -8,33 +8,33 @@
       "master": "The King's Secret Letters"
     },
     {
-      "rookie": "Bun-i wants to write a letter to her mother.",
-      "junior": "Bun-i wants to write a letter to her mother.",
-      "master": "Bun-i longs to write a letter to her mother."
+      "rookie": "Bun-i writes to Mom.",
+      "junior": "Bun-i wants to write a letter to Mom.",
+      "master": "Bun-i wants to write a letter to Mom."
     },
     {
       "rookie": "But she has never learned to write.",
       "junior": "But she has never learned how to write.",
-      "master": "Yet she has never been taught to write."
+      "master": "But nobody has ever taught her to write."
     },
     {
-      "rookie": "Bun-i goes home at dawn.",
+      "rookie": "Bun-i goes home in the morning.",
       "junior": "Bun-i goes home at dawn.",
       "master": "At dawn, Bun-i goes home."
     },
     {
-      "rookie": "Find out what Bun-i wants to say.",
-      "junior": "Find out what Bun-i wants to say.",
-      "master": "Discover what Bun-i wishes to say."
+      "rookie": "Find Bun-i's words.",
+      "junior": "Find Bun-i's words for Mom.",
+      "master": "Discover what Bun-i wants to say."
     },
     {
       "rookie": "Learn how sounds become letters.",
       "junior": "Learn how sounds can become letters.",
-      "master": "Learn how sounds are turned into letters."
+      "master": "Learn how sounds can become letters."
     },
     {
-      "rookie": "Help Bun-i write her first word.",
-      "junior": "Help Bun-i write her very first word.",
+      "rookie": "Help Bun-i write a word.",
+      "junior": "Help Bun-i write her first word.",
       "master": "Help Bun-i write her very first word."
     },
     {
@@ -43,24 +43,24 @@
       "master": "Complete Bun-i's letter."
     },
     {
-      "rookie": "Summer, 1446. You visit King Sejong in Hanyang.",
-      "junior": "It is summer, 1446. You are visiting King Sejong in Hanyang.",
-      "master": "Summer, 1446. You are a guest of King Sejong in Hanyang."
+      "rookie": "Summer, 1446. You meet King Sejong.",
+      "junior": "It is summer, 1446. You meet King Sejong.",
+      "master": "Summer, 1446. You visit King Sejong in Hanyang."
     },
     {
-      "rookie": "He has made new letters. Very few people know them yet.",
-      "junior": "He has made new letters, but very few people know them yet.",
-      "master": "He has created new letters, yet hardly anyone knows them."
+      "rookie": "He made new letters.",
+      "junior": "He made new letters, but few people know them.",
+      "master": "He has made new letters, but few people know them."
     },
     {
-      "rookie": "By the kitchen well, a girl holds an empty paper.",
-      "junior": "By the kitchen well, a girl is holding an empty paper.",
-      "master": "Beside the kitchen well, a girl clutches an empty sheet of paper."
+      "rookie": "A girl has empty paper.",
+      "junior": "By the well, a girl has an empty paper.",
+      "master": "By the kitchen well, a girl holds an empty paper."
     },
     {
-      "rookie": "\"Bun-i has something to say. But she cannot write it,\" says the King.",
-      "junior": "\"Bun-i has something to say, but she cannot write it down,\" says the King.",
-      "master": "\"Bun-i has something she longs to say, yet she cannot write it down,\" says the King."
+      "rookie": "\"Bun-i cannot write,\" says the King.",
+      "junior": "\"Bun-i has something to say, but cannot write,\" says the King.",
+      "master": "\"Bun-i has something to say, but cannot write,\" says the King."
     },
     {
       "rookie": "\"Can you help her?\"",
@@ -69,8 +69,8 @@
     },
     {
       "rookie": "Bun-i wanted to thank her mother in her own words. You found her message, learned how the King's letters copy the mouth, and helped her write 엄마, 고마워요. The King named his letters 훈민정음: the right sounds, to teach the people.",
-      "junior": "Bun-i wanted to thank her mother in her own words. You found her message, learned how the King's letters copy the shapes of the mouth, and helped her write 엄마, 고마워요. The King named his letters 훈민정음: the right sounds, to teach the people.",
-      "master": "Bun-i wished to thank her mother in her own words. You uncovered her message, learned how the King's letters are modelled on the mouth, and helped her write 엄마, 고마워요. The King named his letters 훈민정음: the right sounds with which to teach the people."
+      "junior": "Bun-i wanted to thank her mother in her own words. You found her message, learned how the King's letters copy the mouth, and helped her write 엄마, 고마워요. The King named his letters 훈민정음: the right sounds, to teach the people.",
+      "master": "Bun-i wanted to thank her mother in her own words. You found her message, learned how the King's letters copy the mouth, and helped her write 엄마, 고마워요. The King named his letters 훈민정음: the right sounds, to teach the people."
     },
     {
       "rookie": "THE PALACE, HANYANG",
@@ -88,9 +88,9 @@
       "master": "Bun-i crying: SORRY"
     },
     {
-      "rookie": "Bun-i broke nothing. Look at what Mom does in each picture.",
-      "junior": "Bun-i didn't break anything. Look at what Mom does in each picture.",
-      "master": "Bun-i has broken nothing. Consider what her mother does in each picture."
+      "rookie": "She broke nothing. Look at Mom.",
+      "junior": "She didn't break anything. Look at Mom.",
+      "master": "Bun-i broke nothing. Look at what Mom does."
     },
     {
       "rookie": "Bun-i waving: GOODBYE",
@@ -98,17 +98,17 @@
       "master": "Bun-i waving: GOODBYE"
     },
     {
-      "rookie": "Bun-i is not leaving. She goes home to Mom tomorrow.",
-      "junior": "Bun-i isn't leaving. She is going home to Mom tomorrow.",
-      "master": "Bun-i is not leaving: she returns home to her mother tomorrow."
+      "rookie": "No. Bun-i is not leaving. She goes home tomorrow.",
+      "junior": "No. Bun-i isn't leaving. She goes home tomorrow.",
+      "master": "No. Bun-i is not leaving. She goes home to Mom tomorrow."
     },
     {
       "rookie": "Mom just gives me so much.",
       "junior": "Mom just gives me so much",
-      "master": "My mother simply gives me so much"
+      "master": "Mom just gives me so much."
     },
     {
-      "rookie": "The Unwritten Letter",
+      "rookie": "The Empty Letter",
       "junior": "The Unwritten Letter",
       "master": "The Unwritten Letter"
     },
@@ -118,14 +118,14 @@
       "master": "THE KITCHEN WELL"
     },
     {
-      "rookie": "By the kitchen well, Bun-i sets down her bucket.",
-      "junior": "By the kitchen well, Bun-i puts down her bucket.",
-      "master": "Beside the kitchen well, Bun-i sets down her bucket."
+      "rookie": "Bun-i puts down her bucket.",
+      "junior": "Bun-i puts down her water bucket.",
+      "master": "By the kitchen well, Bun-i puts down her bucket."
     },
     {
-      "rookie": "She holds an empty paper and a page of drawings.",
-      "junior": "She is holding an empty paper and a page of drawings.",
-      "master": "She holds an empty sheet and a page of drawings."
+      "rookie": "She has empty paper and drawings.",
+      "junior": "She has an empty paper and drawings.",
+      "master": "She holds an empty paper and some drawings."
     },
     {
       "rookie": "Bun-i's picture note:",
@@ -134,73 +134,73 @@
     },
     {
       "rookie": "Bun-i drew Mom three times. Tap each picture.\nMom sews at night, by a lamp. She makes my clothes.\nMom gives me her rice. She says, \"I am not hungry.\"\nI was sick. Mom carried me to the doctor in the rain.\nThen Bun-i drew herself three times, at the bottom.\nBun-i: \"I am not leaving Mom. I go home to her tomorrow.\"\nBun-i: \"And I broke nothing. Mom just gives me so much.\"\nBun-i: \"I never said one word back.\"",
-      "junior": "Bun-i drew her mother three times. Tap each picture.\nMom sews at night by the lamp. She makes all my clothes.\nMom gives me her own rice. She says, \"I'm not hungry.\"\nWhen I was sick, Mom carried me to the doctor in the rain.\nThen Bun-i drew herself three times, along the bottom.\nBun-i: \"I'm not leaving Mom. I'm going home to her tomorrow.\"\nBun-i: \"And I didn't break anything. Mom just gives me so much.\"\nBun-i: \"I have never said one word back.\"",
-      "master": "Bun-i has drawn her mother three times. Tap each picture.\nMy mother sews late at night by lamplight. She makes all my clothes.\nMy mother gives me her own rice and claims she is not hungry.\nWhen I fell ill, my mother carried me through the rain to the doctor.\nBeneath them, Bun-i has drawn herself three times.\nBun-i: \"I am not leaving my mother; I return home to her tomorrow.\"\nBun-i: \"Nor have I broken anything. My mother simply gives me so much.\"\nBun-i: \"Yet I have never once said a word in return.\""
+      "junior": "Bun-i drew Mom three times. Tap each picture.\nMom sews at night, by a lamp. She makes my clothes.\nMom gives me her rice. She says, \"I am not hungry.\"\nI was sick. Mom carried me to the doctor in the rain.\nThen Bun-i drew herself three times, at the bottom.\nBun-i: \"I am not leaving Mom. I go home to her tomorrow.\"\nBun-i: \"And I broke nothing. Mom just gives me so much.\"\nBun-i: \"I never said one word back.\"",
+      "master": "Bun-i drew her mother three times. Tap each picture.\nMom sews at night, by a lamp. She makes all my clothes.\nMom gives me her own rice. She says, \"I am not hungry.\"\nWhen I was sick, Mom carried me to the doctor in the rain.\nThen Bun-i drew herself three times, along the bottom.\nBun-i: \"I am not leaving Mom. I go home to her tomorrow.\"\nBun-i: \"And I broke nothing. Mom just gives me so much.\"\nBun-i: \"I never said one word back to her.\""
     },
     {
-      "rookie": "What does Bun-i want to tell Mom? Tap the right Bun-i.",
-      "junior": "What does Bun-i want to tell her mother? Tap the right drawing of Bun-i.",
-      "master": "What does Bun-i wish to tell her mother? Tap the drawing of Bun-i that says it."
+      "rookie": "What will she tell Mom? Tap the right Bun-i.",
+      "junior": "What will she tell Mom? Tap the right drawing of Bun-i.",
+      "master": "What will Bun-i tell Mom? Tap the right drawing."
     },
     {
-      "rookie": "Tap the 3 pictures of Mom. What does Mom do each time?",
-      "junior": "Tap the three pictures of Mom. What is she doing each time?",
-      "master": "Examine the three pictures of her mother. What does she do in every one?"
+      "rookie": "What does Mom do? Tap 3 pictures.",
+      "junior": "What does Mom do? Tap the 3 pictures.",
+      "master": "What does Mom do? Tap all 3 pictures of her."
     },
     {
-      "rookie": "Mom gives and gives. What do you say when someone gives you something?",
-      "junior": "Mom keeps giving. What do people say when they are given something?",
-      "master": "Her mother gives without end. What do we say to someone who gives us something?"
+      "rookie": "Mom gives and gives. What do you say?",
+      "junior": "Mom gives and gives. What do you say to her?",
+      "master": "Mom gives and gives. What do you say back?"
     },
     {
       "rookie": "Bun-i wants to say THANK YOU!",
-      "junior": "Bun-i wants to say THANK YOU!",
-      "master": "Bun-i wishes to say THANK YOU!"
+      "junior": "Bun-i wants to say THANK YOU to Mom!",
+      "master": "Bun-i really wants to say THANK YOU to Mom!"
     },
     {
-      "rookie": "\"Yes! Thank you, Mom. That is my letter,\" says Bun-i.",
-      "junior": "\"Yes! Thank you, Mom. That is what my letter will say,\" says Bun-i.",
-      "master": "\"Yes! Thank you, Mom. That is what my letter must say,\" says Bun-i."
+      "rookie": "\"Yes! Thank you, Mom!\" says Bun-i.",
+      "junior": "\"Yes! Thank you, Mom! That is my letter!\" says Bun-i.",
+      "master": "\"Yes! Thank you, Mom! That is my letter,\" says Bun-i."
     },
     {
-      "rookie": "\"I know what I want to say. But how can I write it?\"",
-      "junior": "\"Now I know what to say. But how can I write it?\"",
-      "master": "\"Now I know what to say. But how am I to write it?\""
+      "rookie": "\"How do I write my words?\"",
+      "junior": "\"But how do I write my words?\"",
+      "master": "\"Now I know. But how do I write it?\""
     },
     {
-      "rookie": "Sora, the palace maid, comes with a lamp.",
-      "junior": "Sora, a palace maid, arrives with a lamp.",
-      "master": "Sora, a palace maid, appears with a lamp."
+      "rookie": "Sora the helper comes.",
+      "junior": "Sora the helper comes with a lamp.",
+      "master": "Sora, a palace helper, comes with a lamp."
     },
     {
-      "rookie": "\"With the King's new letters,\" says Sora. \"Come, I will show you.\"",
-      "junior": "\"With the King's new letters,\" says Sora. \"Come with me, and I'll show you.\"",
-      "master": "\"With the King's new letters,\" Sora replies. \"Come, I shall show you.\""
+      "rookie": "\"Use the new letters,\" says Sora.",
+      "junior": "\"Use the King's new letters,\" says Sora.",
+      "master": "\"Use the King's new letters,\" says Sora. \"I'll show you.\""
     },
     {
-      "rookie": "Tomorrow I go home to Mom. I want to give her a present.",
-      "junior": "Tomorrow I'm going home to Mom, and I want to give her a present.",
-      "master": "Tomorrow I go home to my mother, and I long to give her a present."
+      "rookie": "I want a gift for Mom.",
+      "junior": "I go home tomorrow. I want a gift for Mom.",
+      "master": "I go home tomorrow. I want a gift for Mom."
     },
     {
-      "rookie": "But I have no coins. So I want to give her a letter!",
-      "junior": "But I don't have any coins. So I want to give her a letter!",
-      "master": "But I haven't a single coin. So I shall give her a letter instead!"
+      "rookie": "No money. So, a letter!",
+      "junior": "I have no money. So I will give her a letter!",
+      "master": "I have no money. So I will give a letter!"
     },
     {
-      "rookie": "A scribe writes in Chinese characters. Mom can't read them. I can't either.",
-      "junior": "A scribe would write in Chinese characters. Mom can't read them, and neither can I.",
-      "master": "A scribe would write in Chinese characters, which neither my mother nor I can read."
+      "rookie": "A writer knows Chinese letters. We don't.",
+      "junior": "A writer knows Chinese letters. Mom and I don't.",
+      "master": "A writer knows Chinese letters. Mom and I can't read them."
     },
     {
-      "rookie": "And they would be his words, not mine.",
-      "junior": "And they would be his words, not mine.",
-      "master": "And the words would be his, not mine."
+      "rookie": "His words, not mine.",
+      "junior": "They would be his words, not mine.",
+      "master": "And they would be his words, not mine."
     },
     {
-      "rookie": "Then what do you want to say?",
-      "junior": "So what do you want to say?",
-      "master": "Then what is it you wish to say?"
+      "rookie": "Then what will you say?",
+      "junior": "Then what will you say to her?",
+      "master": "Then what do you want to say?"
     },
     {
       "rookie": "I drew it. Look!",
@@ -213,54 +213,54 @@
       "master": "Bun-i's Mark"
     },
     {
-      "rookie": "Bun-i cannot write her name. She signs with a water drop.",
-      "junior": "Bun-i cannot write her own name, so she signs with a water drop.",
-      "master": "Unable to write her name, Bun-i signs with a water drop."
+      "rookie": "She can't write her name. She draws a drop.",
+      "junior": "She can't write her name, so she draws a water drop.",
+      "master": "She can't write her name. So she draws a water drop."
     },
     {
-      "rookie": "Bun-i's picture note, by the kitchen well",
-      "junior": "Bun-i's picture note, by the kitchen well",
-      "master": "Bun-i's picture note, beside the kitchen well"
+      "rookie": "Bun-i's picture note",
+      "junior": "Bun-i's picture note",
+      "master": "Bun-i's picture note, by the kitchen well"
     },
     {
       "rookie": "Tap the 3 pictures of Mom.",
-      "junior": "Tap the three pictures of Mom.",
-      "master": "Find the three pictures of her mother."
+      "junior": "Tap the 3 pictures of Mom.",
+      "master": "Find and tap the 3 pictures of Mom."
     },
     {
-      "rookie": "Now tap the Bun-i that says her message.",
-      "junior": "Now tap the drawing of Bun-i that shows her message.",
-      "master": "Now tap the drawing of Bun-i that carries her message."
+      "rookie": "Now tap Bun-i's message.",
+      "junior": "Now tap the drawing with Bun-i's message.",
+      "master": "Now tap the drawing with Bun-i's message."
     },
     {
-      "rookie": "Only paper here. Look at the drawings.",
-      "junior": "There is only paper here. Look at the drawings.",
-      "master": "Nothing but paper here. Study the drawings."
+      "rookie": "Just paper. See the drawings.",
+      "junior": "Just paper. Look at the drawings.",
+      "master": "Only paper here. Look carefully at the drawings."
     },
     {
-      "rookie": "Tap one of the 3 drawings of Bun-i, at the bottom.",
-      "junior": "Tap one of the three drawings of Bun-i along the bottom.",
-      "master": "Choose one of the three drawings of Bun-i along the bottom."
+      "rookie": "Tap a Bun-i below.",
+      "junior": "Tap a Bun-i at the bottom.",
+      "master": "Tap one of the three Bun-i drawings along the bottom."
     },
     {
-      "rookie": "Mom sewing by a lamp",
+      "rookie": "Mom making clothes by a lamp",
       "junior": "Mom sewing by the lamp",
       "master": "Her mother sewing by lamplight"
     },
     {
       "rookie": "Mom sews at night, by a lamp. She makes my clothes.",
-      "junior": "Mom sews at night by the lamp. She makes all my clothes.",
-      "master": "My mother sews late at night by lamplight. She makes all my clothes."
+      "junior": "Mom sews at night, by a lamp. She makes my clothes.",
+      "master": "Mom sews at night, by a lamp. She makes all my clothes."
     },
     {
       "rookie": "Two rice bowls",
-      "junior": "Two bowls of rice",
+      "junior": "Two rice bowls",
       "master": "Two bowls of rice"
     },
     {
       "rookie": "Mom gives me her rice. She says, \"I am not hungry.\"",
-      "junior": "Mom gives me her own rice. She says, \"I'm not hungry.\"",
-      "master": "My mother gives me her own rice and claims she is not hungry."
+      "junior": "Mom gives me her rice. She says, \"I am not hungry.\"",
+      "master": "Mom gives me her own rice. She says, \"I am not hungry.\""
     },
     {
       "rookie": "Mom carrying Bun-i in the rain",
@@ -269,8 +269,8 @@
     },
     {
       "rookie": "I was sick. Mom carried me to the doctor in the rain.",
-      "junior": "When I was sick, Mom carried me to the doctor in the rain.",
-      "master": "When I fell ill, my mother carried me through the rain to the doctor."
+      "junior": "I was sick. Mom carried me to the doctor in the rain.",
+      "master": "When I was sick, Mom carried me to the doctor in the rain."
     },
     {
       "rookie": "A cat",
@@ -278,9 +278,9 @@
       "master": "A cat"
     },
     {
-      "rookie": "The palace cat. It is not about Mom.",
-      "junior": "The palace cat. It has nothing to do with Mom.",
-      "master": "The palace cat. It has nothing to do with her mother."
+      "rookie": "The cat. Not about Mom.",
+      "junior": "The palace cat. Not about Mom.",
+      "master": "The palace cat. It is not about Mom."
     },
     {
       "rookie": "A water bucket",
@@ -288,9 +288,9 @@
       "master": "A water bucket"
     },
     {
-      "rookie": "Bun-i's water bucket. It is not about Mom.",
-      "junior": "Bun-i's water bucket. It has nothing to do with Mom.",
-      "master": "Bun-i's water bucket. It has nothing to do with her mother."
+      "rookie": "Bun-i's bucket. Not about Mom.",
+      "junior": "Bun-i's water bucket. Not about Mom.",
+      "master": "Bun-i's water bucket. It is not about Mom."
     },
     {
       "rookie": "A little bird",
@@ -298,9 +298,9 @@
       "master": "A small bird"
     },
     {
-      "rookie": "A little bird. It is not about Mom.",
-      "junior": "A little bird. It has nothing to do with Mom.",
-      "master": "A small bird. It has nothing to do with her mother."
+      "rookie": "A bird. Not about Mom.",
+      "junior": "A little bird. Not about Mom.",
+      "master": "A small bird. It is not about Mom."
     },
     {
       "rookie": "A blue water drop",
@@ -308,9 +308,9 @@
       "master": "A blue water drop"
     },
     {
-      "rookie": "Bun-i's mark: a water drop. She cannot write her name.",
-      "junior": "Bun-i's mark: a water drop. She cannot write her own name.",
-      "master": "Bun-i's mark: a water drop, since she cannot write her name."
+      "rookie": "Bun-i's mark: a water drop.",
+      "junior": "Bun-i's mark: a water drop.",
+      "master": "Bun-i's mark: a water drop, because she can't write her name."
     },
     {
       "rookie": "ㅁ",
@@ -339,8 +339,8 @@
     },
     {
       "rookie": "The King's letters copy your mouth.",
-      "junior": "The King's letters copy the shapes of your mouth.",
-      "master": "Each of the King's letters is modelled on your mouth."
+      "junior": "The King's letters copy your mouth.",
+      "master": "The King's letters copy the shapes of your mouth."
     },
     {
       "rookie": "The Secret of Sounds",
@@ -353,14 +353,14 @@
       "master": "THE INNER GATE"
     },
     {
-      "rookie": "Sora sets her lamp by the inner gate.",
-      "junior": "Sora puts her lamp down by the inner gate.",
-      "master": "Sora sets her lamp beside the inner gate."
+      "rookie": "Sora sets down her lamp.",
+      "junior": "Sora sets down her lamp by the gate.",
+      "master": "Sora sets down her lamp by the inner gate."
     },
     {
-      "rookie": "She lays three pictures on the stone step.",
-      "junior": "She lays out three pictures on the stone step.",
-      "master": "She spreads three pictures across the stone step."
+      "rookie": "She puts down three pictures.",
+      "junior": "She puts down her three pictures.",
+      "master": "She puts three pictures on the stone step."
     },
     {
       "rookie": "Sora's lesson:",
@@ -369,33 +369,33 @@
     },
     {
       "rookie": "The King's letters copy your mouth.\nㅁ says \"m\". Say \"mmm\".\nㄴ says \"n\". Say \"nnn\".\nㅇ is the open throat. Say \"ah\".\nㄱ says \"g\". ㅅ says \"s\".\nLook at the red line in each picture.",
-      "junior": "The King's letters copy the shapes of your mouth.\nㅁ says \"m\". Try saying \"mmm\".\nㄴ says \"n\". Try saying \"nnn\".\nㅇ is the open throat. Try saying \"ah\".\nㄱ says \"g\", and ㅅ says \"s\".\nLook closely at the red line in each picture.",
-      "master": "Each of the King's letters is modelled on your mouth.\nㅁ makes the sound \"m\": say \"mmm\".\nㄴ makes the sound \"n\": say \"nnn\".\nㅇ is the open throat: say \"ah\".\nㄱ makes \"g\", and ㅅ makes \"s\".\nStudy the red outline in each picture."
+      "junior": "The King's letters copy your mouth.\nㅁ says \"m\". Say \"mmm\".\nㄴ says \"n\". Say \"nnn\".\nㅇ is the open throat. Say \"ah\".\nㄱ says \"g\". ㅅ says \"s\".\nLook at the red line in each picture.",
+      "master": "The King's letters copy the shapes of your mouth.\nㅁ says \"m\". Try \"mmm\".\nㄴ says \"n\". Try \"nnn\".\nㅇ is the open throat. Try \"ah\".\nㄱ says \"g\", and ㅅ says \"s\".\nLook carefully at the red line in each picture."
     },
     {
       "rookie": "Put each letter on the picture it copies.",
-      "junior": "Place each letter on the picture of the mouth it copies.",
-      "master": "Match each letter to the part of the mouth it is modelled on."
+      "junior": "Put each letter on the picture that it copies.",
+      "master": "Put each letter on the mouth picture it copies."
     },
     {
       "rookie": "Say each sound. Feel your mouth. Then look at the red line.",
-      "junior": "Say each sound and feel what your mouth does. Then compare the red line.",
-      "master": "Say each sound and notice what your mouth does; then trace the red outline."
+      "junior": "Say each sound. Feel your mouth. Then look at the red line.",
+      "master": "Say each sound. Notice what your mouth does. Then check the red line."
     },
     {
       "rookie": "The tongue's red line makes a corner, like ㄴ. The throat's red line is round, like ㅇ.",
-      "junior": "The red line of the tongue bends at a corner, like ㄴ. The red line in the throat is round, like ㅇ.",
-      "master": "The tongue's outline turns a corner, as ㄴ does; the throat's outline is round, as ㅇ is."
+      "junior": "The tongue's red line makes a corner, like ㄴ. The throat's red line is round, like ㅇ.",
+      "master": "The tongue's red line makes a corner, like ㄴ. The throat's red line is round, like ㅇ."
     },
     {
       "rookie": "The letters copy the mouth!",
-      "junior": "The letters copy the shapes of the mouth!",
-      "master": "The letters are modelled on the mouth!"
+      "junior": "The letters copy the mouth!",
+      "master": "The letters copy the shapes of the mouth!"
     },
     {
-      "rookie": "ㄱ bends the other way. Find the letter with the same corner as the red line.",
-      "junior": "ㄱ bends the other way. Which letter has the same corner as the red line?",
-      "master": "ㄱ bends the opposite way. Which letter shares the red line's corner?"
+      "rookie": "ㄱ bends the other way. Match the red corner.",
+      "junior": "ㄱ bends the other way. Match the red corner.",
+      "master": "ㄱ bends the other way. Match the red corner carefully."
     },
     {
       "rookie": "ㄱ says \"g\". Say it: the back of your tongue goes up.",
@@ -403,49 +403,49 @@
       "master": "ㄱ makes \"g\": as you say it, the back of your tongue rises."
     },
     {
-      "rookie": "ㅅ is the teeth. No picture here shows the teeth.",
-      "junior": "ㅅ copies the teeth. None of these pictures shows the teeth.",
-      "master": "ㅅ is modelled on the teeth, and none of these pictures shows them."
+      "rookie": "ㅅ is teeth. No teeth here.",
+      "junior": "ㅅ is the teeth. No teeth here.",
+      "master": "ㅅ copies the teeth. No picture here shows teeth."
     },
     {
-      "rookie": "Say \"mmm\". Your lips close. Which picture shows closed lips?",
-      "junior": "Say \"mmm\": your lips close. Which picture shows closed lips?",
-      "master": "As you say \"mmm\", your lips close. Which picture shows closed lips?"
+      "rookie": "Say \"mmm\". Which picture has closed lips?",
+      "junior": "Say \"mmm\". Your lips close. Which picture has closed lips?",
+      "master": "Say \"mmm\" and feel your lips. Which picture has closed lips?"
     },
     {
       "rookie": "Say \"nnn\". Where does the tip of your tongue go?",
       "junior": "Say \"nnn\". Where does the tip of your tongue go?",
-      "master": "As you say \"nnn\", where does the tip of your tongue rest?"
+      "master": "Say \"nnn\". Where does the tip of your tongue go?"
     },
     {
-      "rookie": "ㅇ is round and open. Find the round red line.",
-      "junior": "ㅇ is round and open. Look for the round red line.",
-      "master": "ㅇ is round and open. Look for the round outline."
+      "rookie": "ㅇ is round. Find the round red line.",
+      "junior": "ㅇ is round. Find the round red line.",
+      "master": "ㅇ is round and open. Find the round red line."
     },
     {
-      "rookie": "\"So sounds can become letters!\" says Bun-i.",
-      "junior": "\"So sounds can turn into letters!\" says Bun-i.",
-      "master": "\"So sounds can become letters!\" Bun-i exclaims."
+      "rookie": "\"Sounds can be letters!\" says Bun-i.",
+      "junior": "\"Sounds can be letters too!\" says Bun-i.",
+      "master": "\"So sounds can become letters!\" says Bun-i."
     },
     {
       "rookie": "\"Yes! ㄱ is the back of the tongue. ㅅ is the teeth,\" says Sora.",
-      "junior": "\"Yes! ㄱ copies the back of the tongue, and ㅅ the teeth,\" says Sora.",
-      "master": "\"Indeed. ㄱ is modelled on the back of the tongue, and ㅅ on the teeth,\" says Sora."
+      "junior": "\"Yes! ㄱ is the back of the tongue. ㅅ is the teeth,\" says Sora.",
+      "master": "\"Yes! ㄱ is the back of the tongue. ㅅ is the teeth,\" says Sora."
     },
     {
       "rookie": "\"A stronger sound adds one line: ㄴ, then ㄷ.\"",
-      "junior": "\"A stronger sound adds one more line: ㄴ, then ㄷ.\"",
-      "master": "\"A stronger sound adds a stroke: ㄴ becomes ㄷ.\""
+      "junior": "\"A stronger sound adds one line: ㄴ, then ㄷ.\"",
+      "master": "\"A stronger sound adds one more line: ㄴ, then ㄷ.\""
     },
     {
       "rookie": "\"Now let's write your first word.\"",
-      "junior": "\"Now let's write your first word.\"",
+      "junior": "\"Now let's write your very first word.\"",
       "master": "\"Now, let us write your first word.\""
     },
     {
-      "rookie": "The King's letters are not just marks.",
-      "junior": "The King's letters are not just marks.",
-      "master": "The King's letters are more than mere marks."
+      "rookie": "Letters are more than marks.",
+      "junior": "The King's letters are more than marks.",
+      "master": "The King's letters are more than marks."
     },
     {
       "rookie": "Each one is a picture of your mouth!",
@@ -454,8 +454,8 @@
     },
     {
       "rookie": "Say a sound. Feel your mouth. Then look.",
-      "junior": "Say a sound and feel your mouth. Then look.",
-      "master": "Say a sound, feel your mouth, and then look."
+      "junior": "Say a sound. Feel your mouth. Then look.",
+      "master": "Say a sound. Feel your mouth. Then look carefully."
     },
     {
       "rookie": "Letters from the Mouth",
@@ -469,8 +469,8 @@
     },
     {
       "rookie": "Tap a letter. Then tap the picture it copies.",
-      "junior": "Tap a letter, then tap the picture it copies.",
-      "master": "Choose a letter, then tap the picture it is modelled on."
+      "junior": "Tap a letter. Then tap the picture it copies.",
+      "master": "Tap a letter. Then tap the picture it copies."
     },
     {
       "rookie": "LIPS",
@@ -478,9 +478,9 @@
       "master": "LIPS"
     },
     {
-      "rookie": "A face from the front, its lips closed.",
-      "junior": "A face seen from the front, with its lips closed.",
-      "master": "A face seen from the front, lips closed."
+      "rookie": "A face. The lips are closed.",
+      "junior": "A face. The lips are closed.",
+      "master": "A face from the front. The lips are closed."
     },
     {
       "rookie": "TONGUE",
@@ -489,8 +489,8 @@
     },
     {
       "rookie": "A mouth from the side: a red line along the tongue, its tip up behind the top teeth.",
-      "junior": "A mouth seen from the side: a red line along the tongue, its tip up behind the top teeth.",
-      "master": "A mouth in profile: a red outline along the tongue, its tip raised behind the upper teeth."
+      "junior": "A mouth from the side: a red line along the tongue, its tip up behind the top teeth.",
+      "master": "A mouth from the side: a red line along the tongue, its tip up behind the top teeth."
     },
     {
       "rookie": "THROAT",
@@ -499,13 +499,13 @@
     },
     {
       "rookie": "A girl from the side, mouth open: a round red line deep in the throat.",
-      "junior": "A girl seen from the side, mouth open: a round red line deep in her throat.",
-      "master": "A girl in profile, mouth open: a round red outline deep in her throat."
+      "junior": "A girl from the side, mouth open: a round red line deep in the throat.",
+      "master": "A girl from the side, mouth open: a round red line deep in her throat."
     },
     {
       "rookie": "A LAST SOUND sits under them, at the bottom.",
-      "junior": "A LAST SOUND, if there is one, sits under them, at the bottom.",
-      "master": "A LAST SOUND, when there is one, is written beneath them, at the bottom."
+      "junior": "A LAST SOUND sits under them, at the bottom.",
+      "master": "A LAST SOUND, if there is one, sits at the bottom."
     },
     {
       "rookie": "Bun-i's First Word",
@@ -518,19 +518,19 @@
       "master": "THE WRITING ROOM"
     },
     {
-      "rookie": "Sora's writing room. A lamp, a brush, a clean paper.",
-      "junior": "Sora's writing room: a lamp, a brush and a clean sheet of paper.",
-      "master": "Sora's writing room: a lamp, a brush and a fresh sheet of paper."
+      "rookie": "A lamp, a brush, paper.",
+      "junior": "Sora's room: a lamp, a brush, a clean paper.",
+      "master": "Sora's writing room: a lamp, a brush, a clean paper."
     },
     {
-      "rookie": "Bun-i kneels at the desk.",
-      "junior": "Bun-i kneels at the low desk.",
-      "master": "Bun-i kneels at the low desk."
+      "rookie": "Bun-i sits at the desk.",
+      "junior": "Bun-i sits at the low desk.",
+      "master": "Bun-i sits at the low desk."
     },
     {
       "rookie": "A vowel is a line and a dot.\nA standing line with the dot on the RIGHT is ㅏ. It says \"a\".\nWith the dot on the LEFT, it is ㅓ. It says \"eo\".\nEach block has a FIRST SOUND, then a VOWEL beside it.\nA LAST SOUND sits under them, at the bottom.\nDoes a block start with a vowel sound? Then ㅇ goes first. It holds the place.",
-      "junior": "A vowel is made of a line and a dot.\nA standing line with the dot on its RIGHT is ㅏ. It says \"a\".\nWith the dot on its LEFT, it is ㅓ. It says \"eo\".\nEvery block has a FIRST SOUND, with a VOWEL beside it.\nA LAST SOUND, if there is one, sits under them, at the bottom.\nIf a block starts with a vowel sound, ㅇ goes first to hold the place.",
-      "master": "A vowel is built from a line and a dot.\nA standing line with its dot on the RIGHT is ㅏ, which says \"a\".\nWith the dot on the LEFT, it becomes ㅓ, which says \"eo\".\nEvery block begins with a FIRST SOUND, its VOWEL beside it.\nA LAST SOUND, when there is one, is written beneath them, at the bottom.\nA block that begins with a vowel sound takes ㅇ first, to hold the place."
+      "junior": "A vowel is a line and a dot.\nA standing line with the dot on the RIGHT is ㅏ. It says \"a\".\nWith the dot on the LEFT, it is ㅓ. It says \"eo\".\nEach block has a FIRST SOUND, then a VOWEL beside it.\nA LAST SOUND sits under them, at the bottom.\nDoes a block start with a vowel sound? Then ㅇ goes first. It holds the place.",
+      "master": "A vowel is made of a line and a dot.\nA standing line with the dot on the RIGHT is ㅏ. It says \"a\".\nWith the dot on the LEFT, it is ㅓ. It says \"eo\".\nEach block has a FIRST SOUND, then a VOWEL beside it.\nA LAST SOUND, if there is one, sits at the bottom.\nDoes a block start with a vowel sound? Then ㅇ goes first. It holds the place."
     },
     {
       "rookie": "Build Bun-i's word, eom-ma: tap a block, then choose its parts.",
@@ -538,14 +538,14 @@
       "master": "Assemble Bun-i's word, eom-ma, one block at a time."
     },
     {
-      "rookie": "Eom ends with closed lips. Which letter is the lips? Put it at the bottom.",
-      "junior": "Eom ends with the lips closed. Which letter copies the lips? It goes at the bottom.",
-      "master": "Eom ends as the lips close: the letter for the lips belongs at the bottom."
+      "rookie": "Eom ends with closed lips. Put that letter at the bottom.",
+      "junior": "Eom ends with closed lips. Put that letter at the bottom.",
+      "master": "Eom ends with closed lips. Put the lips letter at the bottom."
     },
     {
-      "rookie": "ㅓ has its dot on the left. ㅏ has its dot on the right.",
-      "junior": "ㅓ has its dot on the left, and ㅏ has its dot on the right.",
-      "master": "ㅓ carries its dot on the left; ㅏ carries it on the right."
+      "rookie": "ㅓ: dot on the left. ㅏ: dot on the right.",
+      "junior": "ㅓ: dot on the left. ㅏ: dot on the right.",
+      "master": "ㅓ has its dot on the left. ㅏ has its dot on the right."
     },
     {
       "rookie": "Bun-i wrote 엄마!",
@@ -559,18 +559,18 @@
     },
     {
       "rookie": "That says eon-ma. Eom ends with the lips, not the tongue.",
-      "junior": "That says eon-ma. Eom ends with the lips, not with the tongue.",
-      "master": "That reads eon-ma. Eom ends with the lips, not the tongue."
+      "junior": "That says eon-ma. Eom ends with the lips, not the tongue.",
+      "master": "That says eon-ma. Eom ends with the lips, not the tongue."
     },
     {
-      "rookie": "That says am-ma. Eo has its dot on the left.",
-      "junior": "That says am-ma. Eo has its dot on the left.",
-      "master": "That reads am-ma. Eo carries its dot on the left."
+      "rookie": "That is am-ma. Eo's dot is left.",
+      "junior": "That says am-ma. Eo's dot is on the left.",
+      "master": "That says am-ma. Eo's dot is on the left."
     },
     {
       "rookie": "That says meom-ma. Eom starts with a vowel sound: ㅇ goes first.",
-      "junior": "That says meom-ma. Eom starts with a vowel sound, so ㅇ goes first.",
-      "master": "That reads meom-ma. Eom begins with a vowel sound, so ㅇ comes first."
+      "junior": "That says meom-ma. Eom starts with a vowel sound: ㅇ goes first.",
+      "master": "That says meom-ma. Eom starts with a vowel sound, so ㅇ goes first."
     },
     {
       "rookie": "That says eom-meo. Ma has its dot on the right.",
@@ -579,38 +579,38 @@
     },
     {
       "rookie": "That says eom-mam. Ma ends open: no last sound.",
-      "junior": "That says eom-mam. Ma ends open, with no last sound.",
-      "master": "That reads eom-mam. Ma ends open, without a last sound."
+      "junior": "That says eom-mam. Ma ends open: no last sound.",
+      "master": "That says eom-mam. Ma ends open, with no last sound."
     },
     {
       "rookie": "Say it with Bun-i: eom first, then ma.",
-      "junior": "Say it with Bun-i: eom comes first, then ma.",
-      "master": "Say it with Bun-i: eom first, and then ma."
+      "junior": "Say it with Bun-i: eom first, then ma.",
+      "master": "Say it slowly with Bun-i: eom first, then ma."
     },
     {
-      "rookie": "\"I wrote it! My own word!\" says Bun-i.",
-      "junior": "\"I wrote it! My very own word!\" says Bun-i.",
-      "master": "\"I wrote it! My very own word!\" Bun-i cries."
+      "rookie": "\"I wrote my own word!\" says Bun-i.",
+      "junior": "\"I wrote my own word!\" Bun-i says happily.",
+      "master": "\"I wrote my very own word!\" says Bun-i."
     },
     {
-      "rookie": "\"Your first word, at the top of your letter,\" says Sora.",
-      "junior": "\"Your first word, at the top of your letter,\" says Sora.",
-      "master": "\"Your first word, at the head of your letter,\" says Sora."
+      "rookie": "\"It goes at the top,\" says Sora.",
+      "junior": "\"Your first word goes at the top of your letter,\" says Sora.",
+      "master": "\"Your first word goes at the top,\" says Sora."
     },
     {
-      "rookie": "A servant comes to the door. The King wants to see the letter.",
-      "junior": "A servant comes to the door: the King wants to see the letter.",
-      "master": "A servant appears at the door: the King wishes to see the letter."
+      "rookie": "The King wants to see the letter.",
+      "junior": "A servant comes. The King wants to see the letter.",
+      "master": "A servant comes. The King wants to see the letter."
     },
     {
       "rookie": "I want to write MOM. We say eom-ma.",
-      "junior": "I want to write MOM. In our words, we say eom-ma.",
-      "master": "I wish to write MOM. In our language, we say eom-ma."
+      "junior": "I want to write MOM. We say eom-ma.",
+      "master": "I want to write MOM. In our words, we say eom-ma."
     },
     {
-      "rookie": "Then build it, block by block.",
-      "junior": "Then let's build it, block by block.",
-      "master": "Then let us build it, block by block."
+      "rookie": "Build it block by block.",
+      "junior": "Let's build it block by block.",
+      "master": "Then let's build it, block by block."
     },
     {
       "rookie": "The First Word",
@@ -664,8 +664,8 @@
     },
     {
       "rookie": "Thank you has the block 마.",
-      "junior": "Thank you has the block 마",
-      "master": "The word for thank you contains the block 마"
+      "junior": "Thank you has the block 마.",
+      "master": "The word thank you has the block 마."
     },
     {
       "rookie": "The Letter for Mother",
@@ -679,18 +679,18 @@
     },
     {
       "rookie": "The King's study. Books everywhere.",
-      "junior": "The King's study is full of books.",
-      "master": "The King's study is crowded with books."
+      "junior": "The King's study has books everywhere.",
+      "master": "The King's study. There are books everywhere."
     },
     {
-      "rookie": "The King holds a long, empty scroll.",
-      "junior": "The King is holding a long, empty scroll.",
-      "master": "The King holds a long scroll, still blank."
+      "rookie": "The King holds an empty paper.",
+      "junior": "The King holds up an empty paper.",
+      "master": "The King holds a long, empty paper."
     },
     {
       "rookie": "\"So this is Bun-i's letter,\" he says.",
-      "junior": "\"So this is Bun-i's letter,\" he says.",
-      "master": "\"So this is Bun-i's letter,\" he remarks."
+      "junior": "\"So this is Bun-i's letter,\" the King says.",
+      "master": "\"So this is Bun-i's letter,\" the King says quietly."
     },
     {
       "rookie": "On the King's desk:",
@@ -699,23 +699,23 @@
     },
     {
       "rookie": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one is her first word.\nSORA'S WORDS, for letters Bun-i has not learned yet: 고마워요 · 미안해요 · 잘 가요\nSora: \"Thank you has the block 마.\"\nSora: \"I'm sorry starts with the block 미.\"\nSora: \"Goodbye ends with 가요.\"",
-      "junior": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one of them is her first word.\nSORA'S WORDS, for letters Bun-i has not learned yet: 고마워요 · 미안해요 · 잘 가요\nSora: \"Thank you has the block 마 in it.\"\nSora: \"I'm sorry starts with the block 미.\"\nSora: \"Goodbye ends with the blocks 가요.\"",
-      "master": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one of them is truly her first word.\nSORA'S WORDS, for letters Bun-i has yet to learn: 고마워요 · 미안해요 · 잘 가요\nSora: \"The word for thank you contains the block 마.\"\nSora: \"The word for I'm sorry begins with the block 미.\"\nSora: \"The word for goodbye ends with the blocks 가요.\""
+      "junior": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one is her first word.\nSORA'S WORDS, for letters Bun-i has not learned yet: 고마워요 · 미안해요 · 잘 가요\nSora: \"Thank you has the block 마.\"\nSora: \"I'm sorry starts with the block 미.\"\nSora: \"Goodbye ends with 가요.\"",
+      "master": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one of them is her first word.\nSORA'S WORDS, for letters Bun-i has not learned yet: 고마워요 · 미안해요 · 잘 가요\nSora: \"The word thank you has the block 마.\"\nSora: \"I'm sorry starts with the block 미.\"\nSora: \"Goodbye ends with the blocks 가요.\""
     },
     {
-      "rookie": "Write Bun-i's letter: tap 2 papers in order.",
-      "junior": "Write Bun-i's letter: tap the two papers in order.",
-      "master": "Compose Bun-i's letter: choose the two papers, in order."
+      "rookie": "Tap 2 papers in order.",
+      "junior": "Write Bun-i's letter: tap 2 papers in order.",
+      "master": "Write Bun-i's letter: tap 2 papers in order."
     },
     {
-      "rookie": "Find Bun-i's first word. Check it with your evidence.",
-      "junior": "Find Bun-i's first word, and check it against your evidence.",
-      "master": "Identify Bun-i's first word, and compare it with your evidence."
+      "rookie": "Find her first word in your clues.",
+      "junior": "Find her first word. Check it with your clues.",
+      "master": "Find her first word. Check it with your clues."
     },
     {
-      "rookie": "Read Bun-i's Message: what does she want to say? Then find Sora's word for it.",
-      "junior": "Read Bun-i's Message to see what she wants to say. Then find Sora's word for it.",
-      "master": "Consult Bun-i's Message for what she wishes to say, then identify Sora's word for it."
+      "rookie": "What does Bun-i's Message say? Find Sora's word.",
+      "junior": "What does Bun-i's Message say? Then find Sora's word.",
+      "master": "What does Bun-i's Message say? Then find Sora's word for it."
     },
     {
       "rookie": "Bun-i's letter is ready!",
@@ -728,24 +728,24 @@
       "master": "Bun-i's letter: 엄마, 고마워요. Mom, thank you."
     },
     {
-      "rookie": "훈민정음 (訓民正音): the right sounds, to teach the people.",
-      "junior": "훈민정음 (訓民正音): the right sounds, to teach the people.",
-      "master": "훈민정음 (訓民正音): the right sounds with which to teach the people."
+      "rookie": "훈민정음 (訓民正音): right sounds to teach people.",
+      "junior": "훈민정음 (訓民正音): the right sounds to teach people.",
+      "master": "훈민정음 (訓民正音): the right sounds, to teach the people."
     },
     {
-      "rookie": "A letter starts with who it is for.",
-      "junior": "A letter begins with the person it is for.",
-      "master": "A letter opens with the one it is written to."
+      "rookie": "Start with who it is for.",
+      "junior": "Start with the person it is for.",
+      "master": "A letter starts with the person it is for."
     },
     {
       "rookie": "어마 has no last sound. Mom's first block ends with closed lips.",
-      "junior": "어마 has no last sound. The first block of Mom ends with the lips closed.",
-      "master": "어마 lacks a last sound: the first block of Mom ends as the lips close."
+      "junior": "어마 has no last sound. Mom's first block ends with closed lips.",
+      "master": "어마 has no last sound. But Mom's first block ends with closed lips."
     },
     {
-      "rookie": "엄머 has its last dot on the left. Mom ends with \"ma\": the dot on the right.",
-      "junior": "엄머 has its last dot on the left. Mom ends with \"ma\", whose dot is on the right.",
-      "master": "엄머 puts its last dot on the left, yet Mom ends with \"ma\", its dot on the right."
+      "rookie": "엄머 ends with a left dot. Mom's \"ma\" has a right dot.",
+      "junior": "엄머 ends with a left dot. Mom's \"ma\" has a right dot.",
+      "master": "엄머 ends with a left dot. But Mom's \"ma\" has a right dot."
     },
     {
       "rookie": "미안해요 starts with 미: that word is I'M SORRY. What does Bun-i want to say?",
@@ -753,44 +753,44 @@
       "master": "미안해요 begins with 미, so it means I'M SORRY. What does Bun-i wish to say?"
     },
     {
-      "rookie": "잘 가요 ends with 가요: that word is GOODBYE. What does Bun-i want to say?",
-      "junior": "잘 가요 ends with 가요, so it means GOODBYE. What does Bun-i want to say?",
-      "master": "잘 가요 ends with 가요, so it means GOODBYE. What does Bun-i wish to say?"
+      "rookie": "잘 가요 is GOODBYE. What does Bun-i want?",
+      "junior": "잘 가요 is GOODBYE. What does Bun-i want to say?",
+      "master": "잘 가요 means GOODBYE. What does Bun-i really want to say?"
     },
     {
-      "rookie": "Show the King what Bun-i will write.",
-      "junior": "Show the King what Bun-i is going to write.",
-      "master": "Show the King what Bun-i intends to write."
+      "rookie": "Show the King Bun-i's words.",
+      "junior": "Show the King Bun-i's words.",
+      "master": "Show the King Bun-i's words for Mom."
     },
     {
-      "rookie": "So this is the girl with the empty paper.",
-      "junior": "So this is the girl with the empty paper.",
-      "master": "So this is the girl with the empty sheet of paper."
+      "rookie": "The girl with empty paper!",
+      "junior": "So this is the girl with empty paper!",
+      "master": "So this is the girl with the empty paper!"
     },
     {
-      "rookie": "It is not empty now, Your Majesty.",
-      "junior": "It isn't empty any more, Your Majesty.",
-      "master": "It is no longer empty, Your Majesty."
+      "rookie": "Not empty now, Your Majesty.",
+      "junior": "It's not empty now, Your Majesty.",
+      "master": "It is not empty now, Your Majesty."
     },
     {
-      "rookie": "The King asks: \"What does she want to say to her mother?\"",
-      "junior": "The King asks: \"What does she want to tell her mother?\"",
-      "master": "The King asks: \"What does she wish to tell her mother?\""
+      "rookie": "The King asks: \"What will she tell her mom?\"",
+      "junior": "The King asks: \"What will she tell her mom?\" He smiles.",
+      "master": "The King asks: \"What will she tell her mother?\" He smiles."
     },
     {
-      "rookie": "She wants to say thank you. Her mother gives her so much.",
-      "junior": "She wants to say thank you, because her mother gives her so much.",
-      "master": "She wishes to say thank you, for her mother gives her so much."
+      "rookie": "She wants to thank her mom. Mom gives so much.",
+      "junior": "She wants to thank her mom, because Mom gives so much.",
+      "master": "She wants to thank her mom, because Mom gives so much."
     },
     {
       "rookie": "A good word to write.",
       "junior": "That is a good word to write.",
-      "master": "A fine word to write."
+      "master": "That is a fine word to write."
     },
     {
-      "rookie": "That does not show what she wants to say.",
-      "junior": "That doesn't show what she wants to say.",
-      "master": "That does not reveal what she wishes to say."
+      "rookie": "That is not her message.",
+      "junior": "That is not her message.",
+      "master": "No. That is not her message."
     },
     {
       "rookie": "Bun-i's picture note shows her message.",
@@ -798,34 +798,34 @@
       "master": "Bun-i's picture note reveals her message."
     },
     {
-      "rookie": "The King asks: \"What has she written so far?\"",
-      "junior": "The King asks: \"What has she written so far?\"",
-      "master": "The King asks: \"What has she written thus far?\""
+      "rookie": "The King asks: \"What did she write?\"",
+      "junior": "The King asks: \"What did Bun-i write?\"",
+      "master": "The King asks: \"What did she write so far?\""
     },
     {
       "rookie": "Her first word, eom-ma. She wrote it by herself.",
       "junior": "Her first word, eom-ma. She wrote it all by herself.",
-      "master": "Her first word, eom-ma, which she wrote unaided."
+      "master": "Her first word, eom-ma. She wrote it all by herself."
     },
     {
-      "rookie": "Then let us finish her letter.",
-      "junior": "Then let us finish her letter.",
-      "master": "Then let us complete her letter."
+      "rookie": "Let us finish her letter.",
+      "junior": "Then let's finish her letter.",
+      "master": "Then let us finish her letter together."
     },
     {
-      "rookie": "That does not show what she wrote.",
-      "junior": "That doesn't show what she wrote.",
-      "master": "That does not reveal what she has written."
+      "rookie": "That is not what she wrote.",
+      "junior": "No, that is not what she wrote.",
+      "master": "No. That is not what she wrote."
     },
     {
-      "rookie": "Bun-i's first word is at the top of her letter.",
-      "junior": "Bun-i's first word is at the top of her letter.",
-      "master": "Bun-i's first word heads her letter."
+      "rookie": "Her first word is at the top.",
+      "junior": "Her first word is at the top.",
+      "master": "Her first word is at the top of the letter."
     },
     {
-      "rookie": "Bun-i copies Sora's word slowly. Then she presses her water drop at the end.",
-      "junior": "Bun-i slowly copies Sora's word. Then she presses her water drop at the end.",
-      "master": "Slowly, Bun-i copies Sora's word, then presses her water drop at the end."
+      "rookie": "She writes it again and adds her drop.",
+      "junior": "She copies Sora's word again and adds her water drop.",
+      "master": "She copies Sora's word and adds her water drop."
     },
     {
       "rookie": "These letters have a name.",
@@ -833,7 +833,7 @@
       "master": "These letters have a name."
     },
     {
-      "rookie": "On the scroll: 훈민정음 · 訓民正音 · Hunminjeongeum.",
+      "rookie": "On the paper: 훈민정음 · 訓民正音 · Hunminjeongeum.",
       "junior": "On the scroll: 훈민정음 · 訓民正音 · Hunminjeongeum.",
       "master": "On the scroll: 훈민정음 · 訓民正音 · Hunminjeongeum."
     },
@@ -848,19 +848,19 @@
       "master": "정 means right; 음, sound."
     },
     {
-      "rookie": "The right sounds, to teach the people. Like you taught Bun-i.",
-      "junior": "The right sounds, to teach the people. Just as you taught Bun-i.",
-      "master": "The right sounds with which to teach the people, just as you taught Bun-i."
+      "rookie": "Right sounds to teach people. Like Bun-i.",
+      "junior": "The right sounds to teach people. Like Bun-i.",
+      "master": "The right sounds to teach the people. Just like Bun-i."
     },
     {
-      "rookie": "At dawn, Bun-i runs home with her letter.",
+      "rookie": "Next morning, Bun-i runs home with her letter.",
       "junior": "At dawn, Bun-i runs home with her letter.",
       "master": "At dawn, Bun-i hurries home with her letter."
     },
     {
-      "rookie": "Her mother cannot read. So Bun-i shows her: \"ㅁ is your lips. Say mmm.\"",
-      "junior": "Her mother cannot read, so Bun-i shows her: \"ㅁ is your lips. Say mmm.\"",
-      "master": "Her mother cannot read, so Bun-i teaches her: \"ㅁ is your lips. Say mmm.\""
+      "rookie": "Mom cannot read. Bun-i says: \"ㅁ is your lips.\"",
+      "junior": "Mom cannot read. Bun-i shows her: \"ㅁ is your lips. Say mmm.\"",
+      "master": "Mom cannot read, so Bun-i teaches her: \"ㅁ is your lips. Say mmm.\""
     },
     {
       "rookie": "Her mother reads slowly: \"엄… 마. Mom. That is me!\"",
@@ -873,9 +873,9 @@
       "master": "And 고마워요. Thank you, Mom!"
     },
     {
-      "rookie": "Her mother keeps the letter in a little wooden box.",
-      "junior": "Her mother keeps the letter safe in a little wooden box.",
-      "master": "Her mother keeps the letter safe in a small wooden box."
+      "rookie": "Mom keeps the letter in a wooden box.",
+      "junior": "Mom keeps the letter safe in a little wooden box.",
+      "master": "Mom keeps the letter safe in a small wooden box."
     }
   ],
   "glossary": {

@@ -8,34 +8,34 @@
       "master": "The Two Watches"
     },
     {
-      "rookie": "Shanghai, the morning of 29 April 1932.",
-      "junior": "It is the morning of 29 April 1932, in Shanghai.",
-      "master": "Shanghai, on the morning of 29 April 1932."
+      "rookie": "Shanghai, 29 April 1932.",
+      "junior": "Shanghai, the morning of 29 April 1932.",
+      "master": "Shanghai, early on the morning of 29 April 1932."
     },
     {
-      "rookie": "One watch, two men, and a morning no one must forget.",
-      "junior": "One watch, two men, and a morning that no one must forget.",
-      "master": "One watch, two men, and a morning that must never be forgotten."
+      "rookie": "Two men. One watch.",
+      "junior": "Two men. One watch. A morning to remember.",
+      "master": "Two men. One watch. A morning to remember."
     },
     {
       "rookie": "Put the morning in order.",
-      "junior": "Put the events of the morning in order.",
-      "master": "Set the morning's events in their true order."
+      "junior": "Put the morning in order.",
+      "master": "Put the morning's events in order."
     },
     {
-      "rookie": "Spring, 1932. Japan has ruled Korea since 1910.",
-      "junior": "It is spring, 1932. Japan has ruled Korea since 1910.",
-      "master": "It is the spring of 1932, and Korea has been under Japanese rule since 1910."
+      "rookie": "Japan has ruled Korea since 1910.",
+      "junior": "Japan has ruled Korea since 1910.",
+      "master": "It is spring, 1932. Japan has ruled Korea since 1910."
     },
     {
-      "rookie": "So Korean leaders made a government in Shanghai, China: the Provisional Government.",
-      "junior": "So Korean leaders have set up a government in Shanghai, China, called the Provisional Government.",
-      "master": "So Korean leaders have formed a government of their own in Shanghai, China: the Provisional Government."
+      "rookie": "Korean leaders made a government in Shanghai.",
+      "junior": "Korean leaders made a government in Shanghai, China.",
+      "master": "So Korean leaders made their own government in Shanghai, China. It is called the Provisional Government."
     },
     {
-      "rookie": "Kim Gu is one of its leaders. You are his guest.",
-      "junior": "Kim Gu is one of its leaders, and you are his guest.",
-      "master": "Kim Gu is among its leaders, and you are staying as his guest."
+      "rookie": "You visit Kim Gu.",
+      "junior": "You visit Kim Gu, one of its leaders, as his guest.",
+      "master": "Kim Gu is one of its leaders. You are visiting him as his guest."
     },
     {
       "rookie": "SHANGHAI",
@@ -88,14 +88,14 @@
       "master": "A SMALL HOUSE IN SHANGHAI"
     },
     {
-      "rookie": "At the door, a young man in a grey suit passes you.",
-      "junior": "At the door, you pass a young man in a grey suit.",
-      "master": "At the door, a young man in a grey suit brushes past you."
+      "rookie": "A young man in grey walks out.",
+      "junior": "At the door, a young man in grey walks out.",
+      "master": "At the door, a young man in a grey suit walks past you."
     },
     {
-      "rookie": "Inside, two rice bowls are empty on the table.",
-      "junior": "Inside, there are two empty rice bowls on the table.",
-      "master": "Inside, two empty rice bowls sit on the table."
+      "rookie": "Two rice bowls are empty.",
+      "junior": "Two rice bowls on the table are empty.",
+      "master": "Inside, two rice bowls on the table are empty."
     },
     {
       "rookie": "Haesu's note says:",
@@ -104,38 +104,38 @@
     },
     {
       "rookie": "At the end, Mr. Kim sat alone at the table, holding a watch.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, quietly.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new. He did not buy it this morning.\n— Haesu",
-      "junior": "At the end, Mr. Kim sat by himself at the table, holding a watch.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, without talking.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new, but he did not buy it this morning.\n— Haesu",
-      "master": "At the end, Mr. Kim sat alone at the table, a watch in his hand.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, in silence.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new, though he had not bought it this morning.\n— Haesu"
+      "junior": "At the end, Mr. Kim sat alone at the table, holding a watch.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, without talking.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new. He did not buy it this morning.\n— Haesu",
+      "master": "At the end, Mr. Kim sat alone at the table, holding a watch.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, quietly, without talking.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new. He had not bought it this morning.\n— Haesu"
     },
     {
-      "rookie": "Put the morning in order, from first to last.",
-      "junior": "Put the morning in order, from the first thing to the last.",
-      "master": "Arrange the morning in order, from first to last."
+      "rookie": "Put the morning in order. First to last.",
+      "junior": "Put the morning in order, from first to last.",
+      "master": "Put the morning in the right order, from first to last."
     },
     {
-      "rookie": "One line says what they did first.",
-      "junior": "One line tells you what they did first.",
-      "master": "A single line reveals what they did first."
+      "rookie": "Which came first?",
+      "junior": "Which thing did they do first?",
+      "master": "Which thing did they do first?"
     },
     {
       "rookie": "At the end means the last step. Before that means just before it.",
-      "junior": "\"At the end\" means the last step. \"Before that\" means the step just before it.",
-      "master": "\"At the end\" marks the final step; \"before that\" marks the one just ahead of it."
+      "junior": "\"At the end\" means the last step. \"Before that\" means just before it.",
+      "master": "\"At the end\" means the last step. \"Before that\" means the step just before it."
     },
     {
-      "rookie": "You put the morning in order!",
-      "junior": "You put the morning in the right order!",
-      "master": "You have set the morning in order!"
+      "rookie": "The morning is in order!",
+      "junior": "The morning is in the right order!",
+      "master": "The morning is in the right order!"
     },
     {
-      "rookie": "Breakfast, the swap, goodbye, and Mr. Kim alone.",
-      "junior": "Breakfast, the swap, goodbye, and then Mr. Kim on his own.",
-      "master": "Breakfast, the swap, the goodbye, and finally Mr. Kim alone."
+      "rookie": "Breakfast, swap, goodbye, Mr. Kim alone.",
+      "junior": "Breakfast, swap, goodbye, then Mr. Kim alone.",
+      "master": "Breakfast, the swap, goodbye, and then Mr. Kim alone."
     },
     {
-      "rookie": "\"Mr. Kim is still holding the watch. He has not said a word.\"",
-      "junior": "\"Mr. Kim is still holding the watch. He hasn't said anything.\"",
-      "master": "\"Mr. Kim still holds the watch. He has not spoken a single word.\""
+      "rookie": "\"Mr. Kim holds the watch. He says nothing.\"",
+      "junior": "\"Mr. Kim still holds the watch. He says nothing.\"",
+      "master": "\"Mr. Kim still holds the watch. He says nothing at all.\""
     },
     {
       "rookie": "The Swap",
@@ -143,29 +143,29 @@
       "master": "The Swap"
     },
     {
-      "rookie": "After breakfast, Mr. Yun and Mr. Kim swapped their watches.",
-      "junior": "After breakfast, Mr. Yun and Mr. Kim exchanged watches.",
-      "master": "Once breakfast was over, Mr. Yun and Mr. Kim exchanged watches."
+      "rookie": "After breakfast, Yun and Kim swapped watches.",
+      "junior": "After breakfast, Mr. Yun and Mr. Kim swapped watches.",
+      "master": "After breakfast, Mr. Yun and Mr. Kim swapped their watches."
     },
     {
-      "rookie": "Find out what happened at breakfast.",
-      "junior": "Find out what happened during breakfast.",
-      "master": "Learn what took place at breakfast."
+      "rookie": "Ask about breakfast.",
+      "junior": "Ask what happened at breakfast.",
+      "master": "Ask what happened at breakfast."
     },
     {
       "rookie": "Good morning. Mr. Kim is inside.",
-      "junior": "Good morning. Mr. Kim is in there.",
-      "master": "Good morning. You will find Mr. Kim inside."
+      "junior": "Good morning. Mr. Kim is inside.",
+      "master": "Good morning. Mr. Kim is inside the house."
     },
     {
-      "rookie": "Please sit with him a while.",
-      "junior": "Please stay with him for a while.",
-      "master": "Please keep him company for a while."
+      "rookie": "Please sit with him.",
+      "junior": "Please sit with him for a while.",
+      "master": "Please sit with him for a while."
     },
     {
       "rookie": "I will. Good morning, Mr. Yun.",
-      "junior": "I will. Good morning to you, Mr. Yun.",
-      "master": "I shall. Good morning, Mr. Yun."
+      "junior": "I will. Good morning, Mr. Yun.",
+      "master": "I will. Good morning to you, Mr. Yun."
     },
     {
       "rookie": "TWO WATCHES SWAPPED",
@@ -173,9 +173,9 @@
       "master": "TWO WATCHES SWAPPED"
     },
     {
-      "rookie": "Mr. Kim holds a watch now. But whose watch is it?",
-      "junior": "Mr. Kim is holding a watch now. But whose watch is it?",
-      "master": "Mr. Kim now holds a watch. Yet whose is it?"
+      "rookie": "Whose watch does Mr. Kim hold?",
+      "junior": "Mr. Kim holds a watch. Whose watch is it?",
+      "master": "Mr. Kim holds a watch. Whose watch is it?"
     },
     {
       "rookie": "The worn watch with many scratches",
@@ -183,9 +183,9 @@
       "master": "The worn watch with many scratches"
     },
     {
-      "rookie": "That is Mr. Kim's old watch. After the swap, who has it?",
-      "junior": "That is Mr. Kim's old watch. Who has it after the swap?",
-      "master": "That was Mr. Kim's old watch. After the swap, whose hands is it in?"
+      "rookie": "That is Mr. Kim's old watch. Who has it now?",
+      "junior": "That is Mr. Kim's old watch. Who has it now?",
+      "master": "That is Mr. Kim's old watch. Who has it after the swap?"
     },
     {
       "rookie": "Haesu's drawing of a worn silver pocket watch with many small scratches on its case and a thin chain",
@@ -208,9 +208,9 @@
       "master": "The small watch on a leather strap"
     },
     {
-      "rookie": "A strap, not a chain. And Haesu's watch is on her arm.",
-      "junior": "That one has a strap, not a chain. And Haesu's watch is on her arm.",
-      "master": "That hangs on a strap, not a chain. And Haesu's watch is on her own wrist."
+      "rookie": "That strap watch is Haesu's.",
+      "junior": "That watch has a strap. It is Haesu's own.",
+      "master": "That watch is on a strap, not a chain. Haesu's own watch is on her wrist."
     },
     {
       "rookie": "Haesu's drawing of a small round wristwatch on a brown leather strap",
@@ -233,19 +233,19 @@
       "master": "Which Watch?"
     },
     {
-      "rookie": "Mr. Kim sits by the window. His hand is closed around the watch.",
-      "junior": "Mr. Kim is sitting by the window. His hand is closed around the watch.",
-      "master": "Mr. Kim sits by the window, his fingers closed around the watch."
+      "rookie": "Mr. Kim holds the watch tight.",
+      "junior": "Mr. Kim sits by the window. He holds the watch tight.",
+      "master": "Mr. Kim holds the watch tight by the window."
     },
     {
-      "rookie": "Haesu opens her notebook. \"I drew every watch I saw this morning.\"",
-      "junior": "Haesu opens her notebook. \"I drew each watch I saw this morning.\"",
-      "master": "Haesu opens her notebook. \"I have drawn every watch I saw this morning.\""
+      "rookie": "Haesu says, \"I drew every watch today.\"",
+      "junior": "Haesu says, \"I drew every watch I saw today.\"",
+      "master": "Haesu opens her notebook. \"I drew every watch I saw this morning.\""
     },
     {
-      "rookie": "\"Which one is in his hand now?\" she whispers.",
-      "junior": "\"Which one is in his hand now?\" she asks quietly.",
-      "master": "\"Which of these lies in his hand now?\" she whispers."
+      "rookie": "\"Which one is in his hand?\"",
+      "junior": "\"Which one is in his hand now?\" she asks.",
+      "master": "\"Which one is in his hand now?\" she asks."
     },
     {
       "rookie": "Haesu tells you:",
@@ -254,28 +254,28 @@
     },
     {
       "rookie": "Mr. Kim's old watch has a worn case with many small scratches.\nMr. Yun's watch is new. Its case is smooth, with no scratches.\nMy own watch is small, on a leather strap. It is on my arm.\nI can see a chain between Mr. Kim's fingers.\nThey swapped. Each man took the other's watch.",
-      "junior": "Mr. Kim's old watch has a worn case with many small scratches.\nMr. Yun's watch is a new one. Its case is smooth, with no scratches.\nMy own watch is a small one, on a leather strap. It is on my arm.\nBetween Mr. Kim's fingers, I can see a chain.\nThey swapped watches. Each man took the other's watch.",
-      "master": "Mr. Kim's old watch has a worn case with many small scratches.\nMr. Yun's watch, by contrast, is new. Its case is smooth, with no scratches.\nMy own watch is small and hangs on a leather strap. It is on my wrist.\nA chain shows between Mr. Kim's fingers.\nThe two of them made a swap. Each man took the other's watch."
+      "junior": "Mr. Kim's old watch has a worn case with many small scratches.\nMr. Yun's watch is new. Its case is smooth, with no scratches.\nMy own watch is small, on a leather strap. It is on my arm.\nI can see a chain between Mr. Kim's fingers.\nThey swapped watches. Each man took the other's watch.",
+      "master": "Mr. Kim's old watch has a worn case with many small scratches.\nMr. Yun's watch is new. Its case is smooth, with no scratches.\nMy own watch is small, on a leather strap. It is on my wrist.\nI can see a gold chain between Mr. Kim's fingers.\nThey made a swap. Each man took the other's watch."
     },
     {
-      "rookie": "Which drawing shows the watch in Mr. Kim's hand?",
-      "junior": "Which drawing shows the watch Mr. Kim is holding?",
-      "master": "Which drawing matches the watch in Mr. Kim's hand?"
+      "rookie": "Which drawing is in his hand?",
+      "junior": "Which drawing is in his hand?",
+      "master": "Which drawing matches the watch in his hand?"
     },
     {
-      "rookie": "Read your first clue: what did the two men do after breakfast?",
-      "junior": "Read your first clue: what did the two men do after they ate?",
-      "master": "Recall your first clue: what did the two men do once breakfast was over?"
+      "rookie": "What did they do after breakfast?",
+      "junior": "Read your first clue. What did they do after breakfast?",
+      "master": "Check your first clue. What did they do after breakfast?"
     },
     {
-      "rookie": "After the swap, Mr. Kim has the other man's watch. What did Haesu say about Mr. Yun's watch?",
-      "junior": "After the swap, Mr. Kim has the other man's watch. What did Haesu tell you about Mr. Yun's watch?",
-      "master": "After the swap, the other man's watch is in Mr. Kim's hand. What did Haesu say of Mr. Yun's watch?"
+      "rookie": "Kim has Yun's watch. What did Haesu say?",
+      "junior": "Kim has Yun's watch now. What did Haesu say?",
+      "master": "After the swap, Mr. Kim has Mr. Yun's watch. What did Haesu say about it?"
     },
     {
-      "rookie": "Mr. Kim opens his hand: the smooth new watch!",
-      "junior": "Mr. Kim opens his hand: it is the smooth new watch!",
-      "master": "Mr. Kim's hand opens: the smooth new watch!"
+      "rookie": "The smooth new watch!",
+      "junior": "It is the smooth new watch!",
+      "master": "Mr. Kim opens his hand: the smooth new watch!"
     },
     {
       "rookie": "The New Watch",
@@ -283,9 +283,9 @@
       "master": "The New Watch"
     },
     {
-      "rookie": "Mr. Yun left his new watch with Mr. Kim, and took the old one.",
-      "junior": "Mr. Yun left his new watch with Mr. Kim and took the old one.",
-      "master": "Mr. Yun left his new watch with Mr. Kim and carried off the old one."
+      "rookie": "Yun took the old watch. Kim kept the new one.",
+      "junior": "Mr. Yun took the old watch. Mr. Kim kept the new one.",
+      "master": "Yun took the old watch. Kim kept the new one."
     },
     {
       "rookie": "WHAT YUN LEFT BEHIND",
@@ -293,9 +293,9 @@
       "master": "WHAT YUN LEFT BEHIND"
     },
     {
-      "rookie": "Mr. Kim looks at the watch, then out of the window.",
-      "junior": "Mr. Kim looks at the watch, and then out of the window.",
-      "master": "Mr. Kim gazes at the watch, then out through the window."
+      "rookie": "Mr. Kim looks out.",
+      "junior": "Mr. Kim looks at the watch, then out of the window.",
+      "master": "Mr. Kim looks at the watch, then out of the window."
     },
     {
       "rookie": "HAESU'S ROOM",
@@ -303,104 +303,104 @@
       "master": "HAESU'S ROOM"
     },
     {
-      "rookie": "His watch still ticks, Haesu. I will not forget him.",
-      "junior": "His watch is still ticking, Haesu. I will never forget him.",
-      "master": "His watch ticks on, Haesu. I shall never forget him."
+      "rookie": "His watch still ticks. I will not forget him.",
+      "junior": "His watch still ticks. I will never forget him.",
+      "master": "His watch still ticks, Haesu. I will never forget him."
     },
     {
-      "rookie": "Our record will not forget him either.",
+      "rookie": "Our record will not forget him.",
       "junior": "Our record won't forget him either.",
       "master": "Nor will our record ever forget him."
     },
     {
-      "rookie": "After that day, Chinese leaders helped the Provisional Government strongly.",
-      "junior": "After that day, Chinese leaders gave strong help to the Provisional Government.",
-      "master": "From that day on, Chinese leaders helped the Provisional Government strongly."
+      "rookie": "Then China helped more.",
+      "junior": "After that day, China helped Korea much more.",
+      "master": "From that day on, Chinese leaders helped the Provisional Government much more."
     },
     {
       "rookie": "Kim Gu and a young man, Yun Bong-gil, ate breakfast, then swapped watches.",
-      "junior": "Kim Gu had breakfast with a young man called Yun Bong-gil, and then they exchanged watches.",
-      "master": "Kim Gu shared breakfast with a young man named Yun Bong-gil, after which the two exchanged watches."
+      "junior": "Kim Gu and a young man, Yun Bong-gil, ate breakfast together. Then they swapped watches.",
+      "master": "Kim Gu and a young man, Yun Bong-gil, ate breakfast. Then they swapped watches."
     },
     {
-      "rookie": "Now Kim Gu will not say a word. What happened, and why?",
-      "junior": "Now Kim Gu won't say a word. What happened, and why?",
-      "master": "Now Kim Gu will not speak at all. What happened, and for what reason?"
+      "rookie": "Kim Gu says nothing. What happened, and why?",
+      "junior": "Kim Gu says nothing now. What happened, and why?",
+      "master": "Now Kim Gu says nothing. What happened, and why?"
     },
     {
-      "rookie": "Find the watch in Mr. Kim's hand.",
-      "junior": "Find out which watch is in Mr. Kim's hand.",
-      "master": "Work out which watch lies in Mr. Kim's hand."
+      "rookie": "Find the watch in his hand.",
+      "junior": "Find the watch in Mr. Kim's hand.",
+      "master": "Find out which watch is in his hand."
     },
     {
       "rookie": "Find out why they swapped.",
-      "junior": "Find out why the two men swapped watches.",
-      "master": "Discover the reason the two men exchanged watches."
+      "junior": "Find out why they swapped watches.",
+      "master": "Discover why the two men swapped."
     },
     {
-      "rookie": "Prove every line of Haesu's record.",
-      "junior": "Prove that every line of Haesu's record is true.",
-      "master": "Back every line of Haesu's record with proof."
+      "rookie": "Check each line of Haesu's record.",
+      "junior": "Check each line of Haesu's record.",
+      "master": "Find proof for each line of Haesu's record."
     },
     {
-      "rookie": "Early on 29 April, Kim Gu eats breakfast with a young man, Yun Bong-gil.",
-      "junior": "Early on 29 April, Kim Gu has breakfast with a young man called Yun Bong-gil.",
-      "master": "Early on 29 April, Kim Gu takes breakfast with a young man named Yun Bong-gil."
+      "rookie": "Kim Gu eats with Yun Bong-gil.",
+      "junior": "On 29 April, Kim Gu eats breakfast with Yun Bong-gil.",
+      "master": "Early on 29 April, Kim Gu eats breakfast with a young man, Yun Bong-gil."
     },
     {
-      "rookie": "Then Haesu, Kim Gu's clerk, asks you to come to the house.",
-      "junior": "Then Haesu, Kim Gu's clerk, asks you to come over to the house.",
-      "master": "Then Haesu, Kim Gu's clerk, sends for you to come to the house."
+      "rookie": "Then his helper Haesu calls you.",
+      "junior": "Then his helper Haesu calls you over.",
+      "master": "Then his clerk Haesu calls you to the house."
     },
     {
-      "rookie": "\"Mr. Kim holds a watch,\" she says. \"He will not say a word.\"",
-      "junior": "\"Mr. Kim is holding a watch,\" she says. \"He won't say a single word.\"",
-      "master": "\"Mr. Kim is clutching a watch,\" she says, \"and he will not utter a word.\""
+      "rookie": "\"Mr. Kim holds a watch. He says nothing.\"",
+      "junior": "\"Mr. Kim holds a watch. He says nothing.\"",
+      "master": "\"Mr. Kim holds a watch,\" she says. \"He says nothing.\""
     },
     {
-      "rookie": "\"Tonight I must write the record of this morning. Help me get every line right.\"",
-      "junior": "\"Tonight I have to write the record of this morning. Please help me get every line right.\"",
-      "master": "\"By tonight I must write the record of this morning. Help me make certain every line is right.\""
+      "rookie": "\"I must write about today. Help me.\"",
+      "junior": "\"Tonight I must write about today. Please help me.\"",
+      "master": "\"Tonight I must write about this morning. Please help me get every line right.\""
     },
     {
       "rookie": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu ate breakfast, then swapped watches. Yun said he would need a watch for only one more hour. So he left his new watch with Kim Gu. Haesu wrote the true record for the Provisional Government, and Kim Gu signed it. That day Yun acted at Hongkou Park and was caught. After it, Chinese leaders helped the Provisional Government strongly.",
-      "junior": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu had breakfast and then exchanged watches. Yun said he would need a watch for only one more hour, so he left his new watch with Kim Gu. Haesu wrote a true record for the Provisional Government, and Kim Gu signed it. That day Yun acted at Hongkou Park and was caught. After that, Chinese leaders helped the Provisional Government strongly.",
-      "master": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu shared breakfast and then exchanged watches. Saying he would need a watch for only one more hour, Yun left his new watch with Kim Gu. Haesu wrote a true record for the Provisional Government, which Kim Gu signed. That same day Yun acted at Hongkou Park and was caught at once. From then on, Chinese leaders helped the Provisional Government strongly."
+      "junior": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu ate breakfast, then swapped watches. Yun said he would need a watch for only one more hour. So he left his new watch with Kim Gu. Haesu wrote the true record for the Provisional Government, and Kim Gu signed it. That same day Yun acted at Hongkou Park and was caught. After that, Chinese leaders helped the Provisional Government strongly.",
+      "master": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu ate breakfast, then swapped watches. Yun said he would need a watch for only one more hour. So he left his new watch with Kim Gu. Haesu wrote the true record for the Provisional Government, and Kim Gu signed it. That same day Yun acted at Hongkou Park and was caught. After it, Chinese leaders helped the Provisional Government strongly."
     },
     {
-      "rookie": "Haesu gives you her note. \"I wrote it fast. It is all mixed up.\"",
-      "junior": "Haesu hands you her note. \"I wrote it in a hurry, so it's all mixed up.\"",
-      "master": "Haesu passes you her note. \"I scribbled it in haste, and now it is all in a muddle.\""
+      "rookie": "\"My note is all mixed up.\"",
+      "junior": "\"My note is all mixed up,\" says Haesu.",
+      "master": "Haesu gives you her note. \"I wrote it in a hurry. Now it is all mixed up.\""
     },
     {
-      "rookie": "Haesu pours tea for you.",
-      "junior": "Haesu pours you a cup of tea.",
+      "rookie": "Haesu gives you tea.",
+      "junior": "Haesu gives you a cup of tea.",
       "master": "Haesu pours you a cup of tea without a word."
     },
     {
-      "rookie": "Those are the right steps, but in the wrong order. Read first, after, before that and at the end again.",
-      "junior": "Those are the right steps, but not in the right order. Read first, after, before that and at the end once more.",
-      "master": "The steps are right, but their order is not. Read first, after, before that and at the end again."
+      "rookie": "Wrong order. Read first, after, before that, at the end.",
+      "junior": "Wrong order. Read first, after, before that, and at the end again.",
+      "master": "Right steps, wrong order. Read first, after, before that, at the end again."
     },
     {
-      "rookie": "Mr. Kim opens his hand. The watch is smooth and new.",
-      "junior": "Mr. Kim opens his hand. The watch in it is smooth and new.",
+      "rookie": "The watch is smooth and new.",
+      "junior": "The watch is smooth and new.",
       "master": "Mr. Kim's hand opens. The watch inside is smooth and new."
     },
     {
-      "rookie": "Mr. Yun took the old, scratched one with him.",
-      "junior": "Mr. Yun took the old, scratched watch away with him.",
-      "master": "Mr. Yun carried the old, scratched one away with him."
+      "rookie": "Mr. Yun took the old, scratched one.",
+      "junior": "Mr. Yun took the old, scratched one.",
+      "master": "Mr. Yun took the old, scratched one with him."
     },
     {
-      "rookie": "\"But why?\" Haesu asks. \"Why give away a good new watch?\"",
-      "junior": "\"But why?\" Haesu asks. \"Why would he give away a good new watch?\"",
-      "master": "\"But why?\" Haesu asks. \"Why would anyone part with a fine new watch?\""
+      "rookie": "\"But why give a new watch away?\"",
+      "junior": "\"But why give a good new watch away?\"",
+      "master": "\"But why?\" Haesu asks. \"Why give a new watch away?\""
     },
     {
-      "rookie": "His new watch stays with Mr. Kim. But why did they swap?",
-      "junior": "His new watch stays with Mr. Kim. But why did they swap?",
-      "master": "His new watch remains with Mr. Kim. Yet why did they make the swap?"
+      "rookie": "But why did they swap?",
+      "junior": "But why did they swap watches?",
+      "master": "His new watch stays with Mr. Kim. But why did the two men swap?"
     },
     {
       "rookie": "one more time",
@@ -418,34 +418,34 @@
       "master": "One More Hour"
     },
     {
-      "rookie": "At last, Mr. Kim speaks, very softly.",
-      "junior": "At last, Mr. Kim begins to speak, very softly.",
-      "master": "At last Mr. Kim breaks his silence, his voice very soft."
+      "rookie": "At last, Mr. Kim speaks.",
+      "junior": "At last, Mr. Kim speaks softly.",
+      "master": "At last, Mr. Kim speaks, very softly."
     },
     {
-      "rookie": "\"Before the swap, Yun looked at his new watch.\"",
-      "junior": "\"Before we swapped, Yun looked down at his new watch.\"",
-      "master": "\"Before the exchange, Yun gazed at his new watch.\""
+      "rookie": "\"Yun looked at his watch.\"",
+      "junior": "\"Before the swap, Yun looked at his new watch.\"",
+      "master": "\"Before the swap, Yun looked at his watch.\""
     },
     {
       "rookie": "\"Then he said something I will never forget.\"",
-      "junior": "\"Then he said something that I will never forget.\"",
-      "master": "\"Then he said something I shall carry with me always.\""
+      "junior": "\"Then he said something I will never forget.\"",
+      "master": "\"Then he said something I will never, ever forget.\""
     },
     {
       "rookie": "Mr. Kim tells you:",
-      "junior": "Mr. Kim tells you what Yun said:",
-      "master": "Mr. Kim repeats Yun's words to you:"
+      "junior": "Mr. Kim tells you this:",
+      "master": "Mr. Kim tells you what Yun said:"
     },
     {
       "rookie": "Yun held up his new watch.\nHe pointed at its long hand.\n\"When this hand goes round one more time, I will not need a watch.\"\n\"My watch is new, and yours is old. Let us swap.\"\n\"I will need a watch for only one more ____.\"\n\"You will need one for a long, long time.\"\nThen he took my old watch and gave me his.",
-      "junior": "Yun held his new watch up.\nHe pointed at its long hand.\n\"When this hand has gone round one more time, I will not need a watch.\"\n\"My watch is new, but yours is old. Let's swap them.\"\n\"I will need a watch for only one more ____.\"\n\"But you will need one for a long, long time.\"\nThen he took my old watch and handed me his.",
-      "master": "Yun raised his new watch.\nHe pointed to its long hand.\n\"Once this hand has gone round one more time, I shall have no need of a watch.\"\n\"My watch is new and yours is old, so let us exchange them.\"\n\"I will need a watch for only one more ____.\"\n\"You, though, will need one for a long, long time.\"\nWith that, he took my old watch and pressed his into my hand."
+      "junior": "Yun held up his new watch.\nHe pointed at its long hand.\n\"When this hand goes round one more time, I will not need a watch.\"\n\"My watch is new, and yours is old. Let's swap.\"\n\"I will need a watch for only one more ____.\"\n\"You will need one for a long, long time.\"\nThen he took my old watch and gave me his.",
+      "master": "Yun held up his new watch.\nHe pointed at its long hand.\n\"When this hand goes round one more time, I will not need a watch.\"\n\"My watch is new, and yours is old. Let us swap them.\"\n\"I will need a watch for only one more ____.\"\n\"But you will need one for a long, long time.\"\nThen he took my old watch and gave me his new one."
     },
     {
-      "rookie": "What did Mr. Yun say? Write the missing word.",
-      "junior": "What did Mr. Yun say? Write the word that is missing.",
-      "master": "What did Mr. Yun say? Supply the missing word."
+      "rookie": "What did Yun say? Write the missing word.",
+      "junior": "What did Yun say? Write the missing word.",
+      "master": "What did Mr. Yun say? Write the missing word."
     },
     {
       "rookie": "I will need a watch for only one more ____.",
@@ -454,28 +454,28 @@
     },
     {
       "rookie": "Read Yun's words: the long hand goes round one more time.",
-      "junior": "Read Yun's words again: the long hand goes round one more time.",
-      "master": "Look again at Yun's words: the long hand goes round one more time."
+      "junior": "Read Yun's words: the long hand goes round one more time.",
+      "master": "Read Yun's words again: the long hand goes round one more time."
     },
     {
       "rookie": "When the long hand goes round once, sixty minutes pass. What do we call sixty minutes?",
-      "junior": "Each time the long hand goes all the way round, sixty minutes pass. What do we call sixty minutes?",
-      "master": "One full turn of the long hand takes sixty minutes. What is the word for sixty minutes?"
+      "junior": "When the long hand goes round once, sixty minutes pass. What do we call sixty minutes?",
+      "master": "When the long hand goes all the way round once, sixty minutes pass. What do we call sixty minutes?"
     },
     {
-      "rookie": "One more hour. After that, Yun would not need a watch.",
-      "junior": "One more hour. After that, Yun would not need a watch any more.",
-      "master": "One more hour. Beyond that, Yun would have no need of a watch."
+      "rookie": "One more hour. Then Yun needs no watch.",
+      "junior": "One more hour. Then Yun needs no watch.",
+      "master": "One more hour. After that, Yun needs no watch."
     },
     {
-      "rookie": "Mr. Kim closes his eyes. \"He knew he might not come back.\"",
-      "junior": "Mr. Kim closes his eyes. \"He knew he might never come back.\"",
-      "master": "Mr. Kim shuts his eyes. \"He knew he might not return.\""
+      "rookie": "\"He knew he might not come back.\"",
+      "junior": "Mr. Kim closes his eyes. \"He knew he might not come back.\"",
+      "master": "Mr. Kim closes his eyes. \"He knew he might not come back.\""
     },
     {
-      "rookie": "\"So he gave the good watch to me.\"",
-      "junior": "\"So he gave the good watch to me instead.\"",
-      "master": "\"And so he left the good watch with me.\""
+      "rookie": "\"So he gave me the good watch.\"",
+      "junior": "\"So he gave me the good watch.\"",
+      "master": "\"So he gave the good watch to me.\""
     },
     {
       "rookie": "Haesu writes it all down, line by line.",
@@ -484,28 +484,28 @@
     },
     {
       "rookie": "One minute is one small step of the long hand. Yun said it goes round one whole time.",
-      "junior": "A minute is just one small step of the long hand. Yun said it goes all the way round one time.",
-      "master": "A minute is a single small step of the long hand. Yun spoke of one whole turn."
+      "junior": "One minute is one small step of the long hand. Yun said it goes round one whole time.",
+      "master": "One minute is just one small step of the long hand. Yun said it goes round one whole time."
     },
     {
       "rookie": "In one day, the long hand goes round many times. Yun said one time.",
-      "junior": "In one day, the long hand goes round many times. Yun said just one time.",
-      "master": "In a day, the long hand circles many times. Yun spoke of only one turn."
+      "junior": "In one day, the long hand goes round many times. Yun said one time.",
+      "master": "In one day, the long hand goes round many times. Yun said just one time."
     },
     {
       "rookie": "That is much longer. The long hand goes round one more time: how long is that?",
-      "junior": "That is much longer. The long hand goes round only one more time: how long does that take?",
-      "master": "That is far too long. The long hand makes just one more turn: how long is that?"
+      "junior": "That is much longer. It goes round only one more time: how long is that?",
+      "master": "That is much too long. The long hand goes round one more time: how long is that?"
     },
     {
       "rookie": "Close! Which word means one turn of the long hand?",
-      "junior": "Close! Which word means one full turn of the long hand?",
-      "master": "Close! Which word names one full turn of the long hand?"
+      "junior": "Close! Which word means one turn of the long hand?",
+      "master": "Close! Which word means one full turn of the long hand?"
     },
     {
       "rookie": "Yun needed a watch for only one more hour. He gave Kim Gu the good one.",
-      "junior": "Yun needed a watch for only one more hour, so he gave Kim Gu the good one.",
-      "master": "Yun would need a watch for only one more hour, so he left the good one with Kim Gu."
+      "junior": "Yun needed a watch for only one more hour. So he gave Kim Gu the good new one.",
+      "master": "Yun needed a watch for only one more hour. So he gave Kim Gu the good one."
     },
     {
       "rookie": "WHY THEY SWAPPED",
@@ -513,9 +513,9 @@
       "master": "WHY THEY SWAPPED"
     },
     {
-      "rookie": "Yun gave his good watch away. Now Haesu can write her record.",
-      "junior": "Yun gave his good watch away. Now Haesu can write her record.",
-      "master": "Yun gave away his good watch. Now Haesu can write her record."
+      "rookie": "Now Haesu can write her record.",
+      "junior": "Now Haesu can write her record.",
+      "master": "Yun gave away his good watch. Now Haesu can finally write her record."
     },
     {
       "rookie": "the proof for each line",
@@ -533,19 +533,19 @@
       "master": "The True Record"
     },
     {
-      "rookie": "That night, Haesu reads her record to you by the lamp.",
-      "junior": "That night, Haesu reads her record to you by the light of the lamp.",
-      "master": "That night, by lamplight, Haesu reads her record aloud to you."
+      "rookie": "That night, Haesu reads her record.",
+      "junior": "That night, Haesu reads her record to you.",
+      "master": "That night, by the lamp, Haesu reads her record aloud to you."
     },
     {
-      "rookie": "\"Mr. Kim will sign it for the government's record book.\"",
-      "junior": "\"Mr. Kim is going to sign it for the government's record book.\"",
-      "master": "\"Mr. Kim will sign it before it enters the government's record book.\""
+      "rookie": "\"Mr. Kim will sign it.\"",
+      "junior": "\"Mr. Kim will sign it for the government.\"",
+      "master": "\"Mr. Kim will sign it before it goes in the government's record book.\""
     },
     {
       "rookie": "\"But first, show me the proof for each line.\"",
       "junior": "\"But first, please show me the proof for each line.\"",
-      "master": "\"First, though, show me the proof for each line.\""
+      "master": "\"But first, show me the proof for each line, please.\""
     },
     {
       "rookie": "Haesu's record says:",
@@ -554,103 +554,103 @@
     },
     {
       "rookie": "After breakfast, Mr. Yun and Mr. Kim swapped watches.\nThe watch in Mr. Kim's hand is Mr. Yun's new watch.\nMr. Yun needed a watch for only one more hour.",
-      "junior": "After breakfast, Mr. Yun and Mr. Kim swapped watches with each other.\nThe watch that Mr. Kim is holding is Mr. Yun's new watch.\nMr. Yun said he needed a watch for only one more hour.",
-      "master": "Once breakfast was done, Mr. Yun and Mr. Kim swapped watches.\nThe watch held in Mr. Kim's hand is Mr. Yun's new watch.\nBy his own words, Mr. Yun needed a watch for only one more hour."
+      "junior": "After breakfast, Mr. Yun and Mr. Kim swapped watches.\nThe watch in Mr. Kim's hand is Mr. Yun's new watch.\nMr. Yun needed a watch for only one more hour.",
+      "master": "After breakfast, Mr. Yun and Mr. Kim swapped watches.\nThe watch in Mr. Kim's hand is Mr. Yun's new watch.\nMr. Yun said he needed a watch for only one more hour."
     },
     {
-      "rookie": "Show Haesu the proof for each line of her record.",
-      "junior": "Show Haesu the proof for every line of her record.",
-      "master": "Give Haesu the proof behind each line of her record."
+      "rookie": "Show proof for each line.",
+      "junior": "Show the proof for each line.",
+      "master": "Show Haesu the proof for each line."
     },
     {
-      "rookie": "Show one piece of evidence for each line. All three are from this morning.",
-      "junior": "Show one piece of evidence for each line. All three came from this morning.",
-      "master": "Each line needs one piece of evidence, and all three come from this morning."
+      "rookie": "One proof for each line.",
+      "junior": "Show one proof for each line.",
+      "master": "Show one piece of proof for each line. All three come from this morning."
     },
     {
       "rookie": "Who saw it? Which watch? Why? A note, a watch, and Yun's words.",
       "junior": "Who saw it? Which watch? Why? Think of a note, a watch, and Yun's words.",
-      "master": "Who witnessed it? Which watch? Why? A note, a watch, and Yun's own words."
+      "master": "Who saw it? Which watch? Why? A note, a watch, and Yun's own words."
     },
     {
       "rookie": "Haesu's record is true!",
-      "junior": "Every line of Haesu's record is true!",
-      "master": "Haesu's record stands true, line by line!"
+      "junior": "Haesu's record is all true!",
+      "master": "Every line of Haesu's record is true!"
     },
     {
-      "rookie": "Haesu signs her record. Mr. Kim reads it, and signs it too.",
-      "junior": "Haesu signs her record. Mr. Kim reads it and signs it as well.",
-      "master": "Haesu signs her record; Mr. Kim reads it through and adds his name."
+      "rookie": "Haesu and Mr. Kim sign the record.",
+      "junior": "Haesu signs the record, and then Mr. Kim signs it too.",
+      "master": "Haesu signs the record. Then Mr. Kim reads it and signs it too."
     },
     {
-      "rookie": "\"Now it goes into the government's record book,\" she says.",
-      "junior": "\"Now it can go into the government's record book,\" she says.",
-      "master": "\"Now it may enter the government's record book,\" she says."
+      "rookie": "\"Now it goes in the government's book.\"",
+      "junior": "\"Now it goes in the government's book.\"",
+      "master": "\"Now it goes in the government's record book.\""
     },
     {
-      "rookie": "Mr. Kim asked me to write this morning down.",
-      "junior": "Mr. Kim asked me to write down what happened this morning.",
-      "master": "Mr. Kim asked me to set this morning down in writing."
+      "rookie": "Mr. Kim asked me to write it.",
+      "junior": "Mr. Kim asked me to write it down.",
+      "master": "Mr. Kim asked me to write about this morning."
     },
     {
-      "rookie": "Then let us make every line true.",
-      "junior": "Then let's make sure every line is true.",
+      "rookie": "Let us make every line true.",
+      "junior": "Let us make every line true.",
       "master": "Then let us make certain every line is true."
     },
     {
       "rookie": "Who will read your record?",
-      "junior": "Who is going to read your record?",
-      "master": "Who will read your record?"
+      "junior": "Who will read your record?",
+      "master": "Who will read your record, Haesu?"
     },
     {
-      "rookie": "It goes into our government's record book.",
-      "junior": "It will go into our government's record book.",
-      "master": "It is to be kept in our government's record book."
+      "rookie": "It goes in our government's book.",
+      "junior": "It goes in our government's book.",
+      "master": "It goes in our government's record book."
     },
     {
-      "rookie": "People must know what really happened today.",
-      "junior": "People need to know what really happened today.",
-      "master": "People must know the truth of what happened today."
+      "rookie": "People must know the truth.",
+      "junior": "People must know the truth.",
+      "master": "People must know the truth about today."
     },
     {
-      "rookie": "Haesu asks: \"Line one: they swapped after breakfast. Who saw it happen?\"",
-      "junior": "Haesu asks: \"Line one says they swapped after breakfast. Who saw it happen?\"",
-      "master": "Haesu asks: \"Line one claims they swapped after breakfast. Who saw it happen?\""
+      "rookie": "Haesu asks: \"Line one: who saw the swap?\"",
+      "junior": "Haesu asks: \"Line one: who saw the swap?\"",
+      "master": "Haesu asks: \"Line one says they swapped after breakfast. Who saw it happen?\""
     },
     {
-      "rookie": "Your own note: breakfast first, then the swap.",
-      "junior": "Your own note from this morning: first breakfast, then the swap.",
-      "master": "Your own note: breakfast came first, and the swap followed."
+      "rookie": "Your note: breakfast, then the swap.",
+      "junior": "Your note: breakfast, then the swap.",
+      "master": "Your own note: first breakfast, then the swap."
     },
     {
-      "rookie": "Yes. I saw it with my own eyes.",
-      "junior": "That's right. I saw it with my own eyes.",
-      "master": "Yes. I witnessed it with my own eyes."
+      "rookie": "Yes. I saw it myself.",
+      "junior": "Yes. I saw it myself.",
+      "master": "Yes. I saw it with my own eyes."
     },
     {
-      "rookie": "That does not show who saw the swap.",
+      "rookie": "That does not show who saw it.",
       "junior": "That doesn't show who saw the swap.",
       "master": "That says nothing of who witnessed the swap."
     },
     {
-      "rookie": "Read the note you put in order this morning.",
-      "junior": "Read again the note you put in order this morning.",
-      "master": "Look again at the note you set in order this morning."
+      "rookie": "Read the note you put in order.",
+      "junior": "Read the note you put in order.",
+      "master": "Read again the note you put in order."
     },
     {
-      "rookie": "Haesu asks: \"Line two: Mr. Kim holds Mr. Yun's watch. Show me that watch.\"",
-      "junior": "Haesu asks: \"Line two says Mr. Kim is holding Mr. Yun's watch. Can you show me that watch?\"",
-      "master": "Haesu asks: \"Line two claims Mr. Kim holds Mr. Yun's watch. Can you produce that very watch?\""
+      "rookie": "Haesu asks: \"Line two: show me Mr. Yun's watch.\"",
+      "junior": "Haesu asks: \"Line two: show me Mr. Yun's watch.\"",
+      "master": "Haesu asks: \"Line two says Mr. Kim holds Mr. Yun's watch. Please show me that watch.\""
     },
     {
-      "rookie": "The smooth new watch, with no scratches.",
-      "junior": "This one: the smooth new watch with no scratches.",
-      "master": "The smooth new watch, without a single scratch."
+      "rookie": "The smooth new watch. No scratches.",
+      "junior": "The smooth new watch. It has no scratches.",
+      "master": "The smooth new watch. It has no scratches at all."
     },
     {
-      "rookie": "And Mr. Kim keeps it in his pocket now.",
-      "junior": "And now Mr. Kim keeps it in his pocket.",
-      "master": "And Mr. Kim now keeps it in his pocket."
+      "rookie": "Mr. Kim keeps it now.",
+      "junior": "Mr. Kim keeps it in his pocket now.",
+      "master": "Mr. Kim keeps it in his pocket now."
     },
     {
       "rookie": "That is not a watch.",
@@ -659,23 +659,23 @@
     },
     {
       "rookie": "Find the watch with no scratches.",
-      "junior": "Look for the watch with no scratches.",
-      "master": "Seek out the watch that bears no scratches."
+      "junior": "Find the watch with no scratches.",
+      "master": "Find the one watch with no scratches."
     },
     {
-      "rookie": "Haesu asks: \"Line three: why did Mr. Yun give his new watch away?\"",
-      "junior": "Haesu asks: \"Line three: why did Mr. Yun give away his new watch?\"",
-      "master": "Haesu asks: \"Line three: why would Mr. Yun part with his new watch?\""
+      "rookie": "Haesu asks: \"Line three. Why did Yun give it away?\"",
+      "junior": "Haesu asks: \"Line three. Why did Yun give it away?\"",
+      "master": "Haesu asks: \"Line three. Why did Mr. Yun give his new watch away?\""
     },
     {
       "rookie": "He needed a watch for only one more hour.",
       "junior": "He said he needed a watch for only one more hour.",
-      "master": "By his own words, he needed a watch for only one more hour."
+      "master": "He said he needed a watch for only one more hour."
     },
     {
-      "rookie": "Then that is the truest line of all.",
-      "junior": "Then that is the truest line of all.",
-      "master": "Then that is the truest line of all."
+      "rookie": "Then that is the most true line.",
+      "junior": "Then that is the most true line.",
+      "master": "Then that is the most true line of all."
     },
     {
       "rookie": "That does not say why.",
@@ -683,9 +683,9 @@
       "master": "That does not tell us why."
     },
     {
-      "rookie": "Read what Mr. Kim told you Yun said.",
-      "junior": "Read again what Mr. Kim told you Yun said.",
-      "master": "Look again at the words Mr. Kim repeated to you."
+      "rookie": "Read Yun's words from Mr. Kim.",
+      "junior": "Read Yun's words from Mr. Kim again.",
+      "master": "Read again Yun's words from Mr. Kim."
     },
     {
       "rookie": "SIGN THE RECORD",
@@ -693,19 +693,19 @@
       "master": "SIGN THE RECORD"
     },
     {
-      "rookie": "On 29 April 1932, Yun Bong-gil acted at a Japanese army event in Hongkou Park.",
-      "junior": "On 29 April 1932, Yun Bong-gil took action at a Japanese army event in Hongkou Park.",
-      "master": "On 29 April 1932, at a Japanese army event in Hongkou Park, Yun Bong-gil acted."
+      "rookie": "29 April 1932, Hongkou Park. Yun Bong-gil acted at a Japanese army party.",
+      "junior": "29 April 1932, Hongkou Park. There, Yun Bong-gil acted at a Japanese army party.",
+      "master": "On 29 April 1932, in Hongkou Park, Yun Bong-gil acted at a Japanese army party."
     },
     {
-      "rookie": "He was caught at once.",
-      "junior": "He was caught there at once.",
-      "master": "He was seized on the spot."
+      "rookie": "He was caught right away.",
+      "junior": "He was caught right away.",
+      "master": "He was caught there right away."
     },
     {
-      "rookie": "One day, children in Korea will read this.",
-      "junior": "Some day, children in Korea will read this.",
-      "master": "One day, the children of Korea will read this."
+      "rookie": "One day, Korean children will read this.",
+      "junior": "One day, Korean children will read this record.",
+      "master": "One day, Korean children will read this record."
     }
   ],
   "glossary": {

@@ -8,74 +8,74 @@
       "master": "The Emperor's Secret Letter"
     },
     {
-      "rookie": "The Emperor's secret letter for The Hague is hidden in the palace.",
-      "junior": "The Emperor's secret letter for The Hague is hidden somewhere in the palace.",
-      "master": "Somewhere in the palace lies hidden the Emperor's secret letter for The Hague."
+      "rookie": "The Emperor's secret letter is hidden.",
+      "junior": "The Emperor's secret letter is hidden somewhere.",
+      "master": "The Emperor's secret letter for The Hague is hidden in the palace."
     },
     {
-      "rookie": "Watchers stand at every gate. It must leave unseen.",
-      "junior": "Watchers guard every gate. The letter must get out unseen.",
-      "master": "Watchers stand at every gate; the letter must slip out unseen."
+      "rookie": "Watchers at every gate. It must leave unseen.",
+      "junior": "Watchers wait at every gate. It must leave unseen.",
+      "master": "Watchers wait at every gate. The letter must leave unseen."
     },
     {
-      "rookie": "The envoys were not let in, but the Emperor's letter left Seoul unseen.",
-      "junior": "The envoys were not let in, but the Emperor's letter left Seoul without being seen.",
-      "master": "The envoys were turned away, yet the Emperor's letter left Seoul unseen."
+      "rookie": "The three men were stopped. The letter left unseen.",
+      "junior": "The three men were stopped. But the letter left unseen.",
+      "master": "The three envoys were stopped. But the letter left Seoul unseen."
     },
     {
-      "rookie": "Find where the letter is hidden.",
-      "junior": "Discover where the letter is hidden.",
-      "master": "Uncover the letter's hiding place."
+      "rookie": "Find the hidden letter.",
+      "junior": "Find the hidden letter first.",
+      "master": "Find where the letter is hidden."
     },
     {
-      "rookie": "Take it out past the watchers.",
-      "junior": "Carry it out past the watchers.",
-      "master": "Smuggle it past the watchers."
+      "rookie": "Take it past the watchers.",
+      "junior": "Take it out past the watchers.",
+      "master": "Carry it out past the watchers."
     },
     {
       "rookie": "Knock at the right time.",
-      "junior": "Knock at exactly the right time.",
-      "master": "Choose the right moment to knock."
+      "junior": "Knock at just the right time.",
+      "master": "Knock at exactly the right time."
     },
     {
-      "rookie": "Show Yi Jun that no one saw the letter.",
-      "junior": "Prove to Yi Jun that no one saw the letter.",
-      "master": "Convince Yi Jun that no watcher saw the letter."
+      "rookie": "Show Yi Jun no one saw it.",
+      "junior": "Show Yi Jun no one saw the letter.",
+      "master": "Show Yi Jun that no one saw the letter."
     },
     {
-      "rookie": "Spring, 1907. You are a guest of Emperor Gojong at Gyeongun Palace.",
-      "junior": "It is spring, 1907, and you are Emperor Gojong's guest at Gyeongun Palace.",
-      "master": "Spring, 1907: you are staying with Emperor Gojong at Gyeongun Palace as his guest."
+      "rookie": "Spring, 1907. You visit Emperor Gojong.",
+      "junior": "Spring, 1907. You visit Emperor Gojong at his palace.",
+      "master": "Spring, 1907. You are staying with Emperor Gojong at Gyeongun Palace as his guest."
     },
     {
-      "rookie": "In 1897, King Gojong became Emperor Gojong. He wanted the world to see Korea as a free country.",
-      "junior": "In 1897, King Gojong became Emperor Gojong, because he wanted the world to see Korea as a free country.",
-      "master": "In 1897, King Gojong took the title of Emperor, so that the world would treat Korea as a free country."
+      "rookie": "In 1897, Gojong became Emperor. He wanted Korea free.",
+      "junior": "In 1897, Gojong became Emperor. He wanted Korea to be free.",
+      "master": "In 1897, King Gojong became Emperor. He wanted the world to treat Korea as a free country."
     },
     {
       "rookie": "In 1905, Japan forced a treaty on Korea. Korea lost the right to deal with other countries.",
-      "junior": "In 1905, Japan forced Korea to sign a treaty, so Korea lost the right to deal with other countries.",
-      "master": "In 1905, Japan forced a treaty on Korea, taking away its right to deal with other countries on its own."
+      "junior": "In 1905, Japan forced a treaty on Korea. Korea lost the right to deal with other countries.",
+      "master": "In 1905, Japan forced a treaty on Korea. Korea lost the right to deal with other countries."
     },
     {
-      "rookie": "This year, many countries meet for peace at The Hague, in Europe.",
-      "junior": "This year, many countries are meeting for a peace conference at The Hague, in Europe.",
-      "master": "This year, a great many countries are gathering at The Hague, in Europe, for a peace conference."
+      "rookie": "Many countries meet at The Hague.",
+      "junior": "Many countries meet at The Hague this year.",
+      "master": "This year, many countries meet at The Hague, in Europe, for a peace conference."
     },
     {
-      "rookie": "The Emperor will send three envoys there in secret, to tell the world the truth.",
-      "junior": "The Emperor plans to send three envoys there secretly, so they can tell the world the truth.",
-      "master": "The Emperor intends to dispatch three envoys there in secret, to lay the truth before the world."
+      "rookie": "He will send three men in secret.",
+      "junior": "He will send three men there in secret.",
+      "master": "He will send three envoys there in secret, to tell the world the truth."
     },
     {
-      "rookie": "But his secret letter is hidden, and watchers stand at every gate.",
-      "junior": "But his secret letter is hidden away, and there are watchers at every gate.",
-      "master": "Yet his secret letter lies hidden, and watchers keep guard at every gate."
+      "rookie": "But watchers are at every gate.",
+      "junior": "But watchers are at every gate.",
+      "master": "But there are watchers at every gate."
     },
     {
       "rookie": "Bongsu's note led to the Emperor's letter in the old pine. It left by the little west gate. You knocked on Yi Jun's door at 6:50, between the watchers' walks. The thread, the way and the times showed Yi Jun that no one saw it. In 1907 three envoys went to The Hague. They went to tell the world the 1905 treaty was forced. They were not let into the conference. Yi Jun died in The Hague. Japan used the envoys as an excuse to force the Emperor off his throne.",
-      "junior": "Bongsu's note led to the Emperor's letter, hidden in the old pine. It left the palace by the little west gate, and you knocked on Yi Jun's door at 6:50, between the watchers' walks. The thread, the way and the times proved to Yi Jun that no one had seen it. In 1907 three envoys went to The Hague to tell the world the 1905 treaty was forced, but they were not let into the conference. Yi Jun died in The Hague. Japan used the envoys as an excuse to force the Emperor off his throne.",
-      "master": "Bongsu's note pointed to the Emperor's letter in the old pine. It slipped out by the little west gate, and you knocked on Yi Jun's door at 6:50, in the gap between the watchers' walks. The thread, the route and the timetable convinced Yi Jun that no one had seen it. In 1907 three envoys travelled to The Hague to tell the world the 1905 treaty was forced, but they were refused entry to the conference. Yi Jun died in The Hague, and Japan used the envoys as a pretext to force the Emperor off his throne."
+      "junior": "Bongsu's note led to the Emperor's letter in the old pine. It left by the little west gate. You knocked on Yi Jun's door at 6:50, between the watchers' walks. The thread, the way and the times showed Yi Jun that no one saw it. In 1907 three envoys went to The Hague. They went to tell the world the 1905 treaty was forced. They were not let into the conference. Yi Jun died in The Hague. Japan used the envoys as an excuse to force the Emperor off his throne.",
+      "master": "Bongsu's note led to the Emperor's letter in the old pine. It left by the little west gate. You knocked on Yi Jun's door at 6:50, between the watchers' walks. The thread, the way and the times showed Yi Jun that no one saw it. In 1907 three envoys went to The Hague. They went to tell the world the 1905 treaty was forced. They were not let into the conference. Yi Jun died in The Hague. Japan used the envoys as an excuse to force the Emperor off his throne."
     },
     {
       "rookie": "GYEONGUN PALACE, SEOUL",
@@ -90,10 +90,10 @@
     {
       "rookie": "A lantern is stone. Bongsu's note says the thread was on rough bark.",
       "junior": "A lantern is made of stone. Bongsu's note says the thread was on rough bark.",
-      "master": "A lantern is carved stone, yet Bongsu's note places the thread on rough bark."
+      "master": "A lantern is made of stone. But Bongsu's note says the thread was on rough bark."
     },
     {
-      "rookie": "The hollow of the old pine",
+      "rookie": "The hole in the old pine",
       "junior": "The hollow of the old pine",
       "master": "The hollow of the old pine"
     },
@@ -109,13 +109,13 @@
     },
     {
       "rookie": "They go to the trees, not to the steps.",
-      "junior": "They lead to the trees, not to the steps.",
-      "master": "heading for the trees and not to the steps"
+      "junior": "They go to the trees, not to the steps.",
+      "master": "They go to the trees, not to the steps."
     },
     {
       "rookie": "caught on rough bark",
       "junior": "caught on rough bark",
-      "master": "snagged on rough bark"
+      "master": "caught on rough bark"
     },
     {
       "rookie": "The Thread on the Bark",
@@ -128,64 +128,64 @@
       "master": "THE PALACE GARDEN"
     },
     {
-      "rookie": "The Emperor's secretary hid the letter at dusk.",
-      "junior": "At dusk, the Emperor's secretary hid the letter.",
-      "master": "At dusk the Emperor's secretary concealed the letter."
+      "rookie": "His helper hid it at sunset.",
+      "junior": "His helper hid it at sunset last night.",
+      "master": "The Emperor's secretary hid it at sunset."
     },
     {
-      "rookie": "Then he had to leave the palace at once.",
-      "junior": "Then he had to leave the palace straight away.",
-      "master": "He then had to quit the palace at once."
+      "rookie": "Then he left.",
+      "junior": "Then he had to leave.",
+      "master": "Then he had to leave the palace."
     },
     {
-      "rookie": "Bongsu, the errand boy, saw part of it. Where is it hidden?",
-      "junior": "Bongsu, the errand boy, saw some of it. Where is the letter hidden?",
-      "master": "Bongsu, the errand boy, glimpsed part of it. Where is the letter concealed?"
+      "rookie": "Bongsu saw some. Where is it?",
+      "junior": "Bongsu saw some of it. Where is it?",
+      "master": "Bongsu, the errand boy, saw some of it. Where is the letter?"
     },
     {
-      "rookie": "Bongsu wrote down what he saw, so he would not forget. He reads it to you:",
-      "junior": "Bongsu wrote down what he saw so that he would not forget it. He reads it out to you:",
-      "master": "Bongsu set down what he saw so he would not forget. He reads it aloud for you:"
+      "rookie": "Bongsu reads you his note:",
+      "junior": "Bongsu reads his note to you:",
+      "master": "Bongsu wrote down what he saw so he would not forget. He reads his note out to you:"
     },
     {
       "rookie": "The secretary had the Emperor's letter at dusk. Watchers came to the gate.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, at hand height.\nBy a root, the moss is pushed aside. Someone knelt there.\n— Bongsu",
-      "junior": "The secretary had the Emperor's letter at dusk. Then watchers came to the gate.\nFootprints leave the path. They lead to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, about as high as a hand.\nBy a root, the moss is pushed aside. Someone must have knelt there.\n— Bongsu",
-      "master": "At dusk the Emperor's letter was in the secretary's hands, and then watchers reached the gate.\nFootprints leave the path, heading for the trees and not to the steps.\nA yellow silk thread has snagged on rough bark, at the height of a hand.\nBy a root, the moss has been pushed aside, as if someone knelt there.\n— Bongsu"
+      "junior": "The secretary had the Emperor's letter at dusk. Then watchers came to the gate.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, at hand height.\nBy a root, the moss is pushed aside. Someone knelt there.\n— Bongsu",
+      "master": "The secretary had the Emperor's letter at dusk. Then watchers came to the gate.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, at hand height.\nBy a root, the moss is pushed aside. Someone must have knelt there.\n— Bongsu"
     },
     {
-      "rookie": "Where did the secretary hide the letter? Tap the place.",
-      "junior": "Where did the secretary hide the letter? Tap the spot.",
-      "master": "Where did the secretary conceal the letter? Tap the place."
+      "rookie": "Where is the letter? Tap the place.",
+      "junior": "Where is the letter? Tap the right place.",
+      "master": "Where did the secretary hide the letter? Tap the place."
     },
     {
-      "rookie": "Tap the footprints, the thread and the moss.",
-      "junior": "Tap the footprints, then the thread, then the moss.",
-      "master": "Tap each mark in turn: the footprints, the thread and the moss."
+      "rookie": "Tap the footprints, thread and moss.",
+      "junior": "Tap the footprints, the thread and the moss.",
+      "master": "Tap each mark: the footprints, the thread and the moss."
     },
     {
-      "rookie": "Which place has bark and roots, and stands among the trees?",
-      "junior": "Which place has bark and roots, and grows among the other trees?",
-      "master": "Which spot has bark and roots, and grows among the trees?"
+      "rookie": "Which place has bark and roots?",
+      "junior": "Which place has bark and roots? Look again.",
+      "master": "Which place has both bark and roots, and grows among the trees?"
     },
     {
-      "rookie": "The letter is in the hollow of the old pine!",
-      "junior": "The letter is inside the hollow of the old pine!",
-      "master": "The letter lies in the hollow of the old pine!"
+      "rookie": "The letter is in the old pine!",
+      "junior": "The letter is in the old pine tree!",
+      "master": "The letter is hidden in the hollow of the old pine tree!"
     },
     {
-      "rookie": "In the hollow is a roll of yellow silk.",
-      "junior": "Inside the hollow is a roll of yellow silk.",
-      "master": "Within the hollow rests a roll of yellow silk."
+      "rookie": "Inside: yellow silk.",
+      "junior": "Inside: a roll of yellow silk.",
+      "master": "Inside the hollow: a roll of yellow silk."
     },
     {
-      "rookie": "Inside is the Emperor's letter, with his seal.",
-      "junior": "Inside it is the Emperor's letter, marked with his seal.",
-      "master": "Wrapped inside is the Emperor's letter, bearing his seal."
+      "rookie": "In it: the Emperor's sealed letter.",
+      "junior": "In it: the Emperor's sealed letter.",
+      "master": "Inside it: the Emperor's letter, with his seal."
     },
     {
-      "rookie": "\"Now we must get it out,\" Bongsu whispers. \"Past the watchers.\"",
-      "junior": "\"Now we have to get it out,\" Bongsu whispers. \"Past the watchers.\"",
-      "master": "\"Now it must leave the palace,\" Bongsu whispers, \"right past the watchers.\""
+      "rookie": "\"Now we take it out,\" Bongsu says softly.",
+      "junior": "\"Now we take it out,\" Bongsu says very softly.",
+      "master": "\"Now we must take it out of the palace,\" Bongsu whispers. \"Right past the watchers.\""
     },
     {
       "rookie": "The Hiding Place",
@@ -193,19 +193,19 @@
       "master": "The Hiding Place"
     },
     {
-      "rookie": "The secretary hid the Emperor's letter in the hollow of the old pine.",
-      "junior": "The secretary hid the Emperor's letter inside the hollow of the old pine.",
-      "master": "The Emperor's letter was concealed by the secretary in the hollow of the old pine."
+      "rookie": "The letter was in the old pine.",
+      "junior": "The letter was hidden in the old pine.",
+      "master": "The secretary hid the letter in the hollow of the old pine."
     },
     {
-      "rookie": "The palace garden at dusk",
+      "rookie": "The palace garden in the evening",
       "junior": "The palace garden at dusk",
       "master": "The palace garden as dusk falls"
     },
     {
       "rookie": "Look for three marks.",
-      "junior": "Search for three marks.",
-      "master": "Three marks are waiting to be found."
+      "junior": "Look for three marks here.",
+      "master": "Look carefully for three marks."
     },
     {
       "rookie": "Nothing here. Look for marks.",
@@ -213,9 +213,9 @@
       "master": "Nothing here. Keep looking for marks."
     },
     {
-      "rookie": "Tap a place where a letter could be hidden.",
-      "junior": "Tap a spot where a letter could be hidden.",
-      "master": "Tap a place where a letter might be hidden."
+      "rookie": "Where could a letter hide? Tap.",
+      "junior": "Where could a letter hide? Tap a place.",
+      "master": "Where could a letter be hidden? Tap a place."
     },
     {
       "rookie": "Footprints off the path",
@@ -224,8 +224,8 @@
     },
     {
       "rookie": "Footprints leave the path. They go to the trees, not to the steps.",
-      "junior": "Footprints leave the path. They lead to the trees, not to the steps.",
-      "master": "Footprints leave the path, heading for the trees and not to the steps."
+      "junior": "Footprints leave the path. They go to the trees, not to the steps.",
+      "master": "Footprints leave the path. They go to the trees, not to the steps."
     },
     {
       "rookie": "A yellow thread on a branch",
@@ -234,8 +234,8 @@
     },
     {
       "rookie": "A yellow silk thread is caught on rough bark, at hand height.",
-      "junior": "A yellow silk thread is caught on rough bark, about as high as a hand.",
-      "master": "A yellow silk thread has snagged on rough bark, at the height of a hand."
+      "junior": "A yellow silk thread is caught on rough bark, at hand height.",
+      "master": "A yellow silk thread is caught on rough bark, at hand height."
     },
     {
       "rookie": "Moss pushed aside",
@@ -244,8 +244,8 @@
     },
     {
       "rookie": "By a root, the moss is pushed aside. Someone knelt there.",
-      "junior": "By a root, the moss is pushed aside. Someone must have knelt there.",
-      "master": "By a root, the moss has been pushed aside, as if someone knelt there."
+      "junior": "By a root, the moss is pushed aside. Someone knelt there.",
+      "master": "By a root, the moss is pushed aside. Someone must have knelt there."
     },
     {
       "rookie": "The gate",
@@ -253,29 +253,29 @@
       "master": "The gate"
     },
     {
-      "rookie": "The garden gate. Watchers stand outside it.",
-      "junior": "The garden gate. Watchers wait just outside.",
-      "master": "The garden gate, with watchers posted outside it."
+      "rookie": "The garden gate. Watchers are outside.",
+      "junior": "The garden gate. Watchers are just outside.",
+      "master": "The garden gate. Watchers are waiting just outside."
     },
     {
-      "rookie": "Find out why the letter matters.",
-      "junior": "Find out why the letter is important.",
-      "master": "Learn why the letter matters so much."
+      "rookie": "Find why the letter matters.",
+      "junior": "Find out why the letter matters.",
+      "master": "Find out why the letter matters so much."
     },
     {
       "rookie": "My letter must reach The Hague.",
-      "junior": "My letter has to reach The Hague.",
-      "master": "My letter must reach The Hague, whatever happens."
+      "junior": "My letter must get to The Hague.",
+      "master": "My letter must reach The Hague in secret."
     },
     {
-      "rookie": "The world must hear Korea's side.",
-      "junior": "The world needs to hear Korea's side.",
-      "master": "The world must hear Korea's side of the story."
+      "rookie": "The world must hear Korea.",
+      "junior": "The world must hear Korea's side.",
+      "master": "The whole world must hear Korea's side."
     },
     {
-      "rookie": "Then I will find it, Your Majesty.",
-      "junior": "Then I will find it for you, Your Majesty.",
-      "master": "Then I shall find it, Your Majesty."
+      "rookie": "I will find it, Your Majesty.",
+      "junior": "I will find it for you, Your Majesty.",
+      "master": "I will find it for you, Your Majesty. I promise."
     },
     {
       "rookie": "The big front gate",
@@ -323,79 +323,79 @@
       "master": "The Way Past the Watchers"
     },
     {
-      "rookie": "The letter is under your coat now.",
-      "junior": "The letter is now hidden under your coat.",
-      "master": "The letter now rests beneath your coat."
+      "rookie": "It is under your coat.",
+      "junior": "It is under your coat now.",
+      "master": "The letter is hidden under your coat now."
     },
     {
-      "rookie": "The watchers report to Japan's officials. They watch the palace paths.",
-      "junior": "The watchers report to Japan's officials, so they keep an eye on the palace paths.",
-      "master": "The watchers answer to Japan's officials and keep the palace paths under watch."
+      "rookie": "Watchers work for Japan. They watch paths.",
+      "junior": "Watchers work for Japan. They watch the paths.",
+      "master": "The watchers report to Japan's officials. They watch the palace paths."
     },
     {
-      "rookie": "Bongsu knows every path. He whispers the way.",
-      "junior": "Bongsu knows every path, and he whispers the way.",
-      "master": "Bongsu knows every path by heart. He whispers the route."
+      "rookie": "Bongsu knows every path.",
+      "junior": "Bongsu knows every path here.",
+      "master": "Bongsu knows every path in the palace. He whispers the way out."
     },
     {
-      "rookie": "Bongsu whispers:",
+      "rookie": "Bongsu says softly:",
       "junior": "Bongsu whispers:",
       "master": "Bongsu whispers:"
     },
     {
       "rookie": "After the old well, go out by the little west gate. My uncle keeps it.\nThe watchers stand at the big front gate all day.\nOutside the west gate is the lane by the stone wall. Walk down it.\nDo not cross the throne hall's yard: everyone sees it.\nStart behind the library hall. From there, go to the old well.",
-      "junior": "After the old well, leave by the little west gate. My uncle guards it.\nThe watchers stand at the big front gate all day long.\nOutside the west gate is the lane by the stone wall, so walk down it.\nDo not cross the throne hall's yard, because everyone can see it.\nStart behind the library hall. From there, go on to the old well.",
-      "master": "Once past the old well, slip out by the little west gate, which my uncle keeps.\nThe watchers keep to the big front gate all day.\nBeyond the west gate runs the lane by the stone wall; follow it down.\nDo not cross the throne hall's yard: every eye can see it.\nStart behind the library hall, and from there make for the old well."
+      "junior": "After the old well, go out by the little west gate. My uncle keeps it.\nThe watchers stand at the big front gate all day.\nOutside the west gate is the lane by the stone wall. Walk down it.\nDo not cross the throne hall's yard: everyone sees it.\nStart behind the library hall. From there, go to the old well.",
+      "master": "After the old well, go out by the little west gate. My uncle keeps it.\nThe watchers stand at the big front gate all day long.\nOutside the west gate is the lane by the stone wall. Walk down it.\nDo not cross the throne hall's yard: everyone can see it.\nStart behind the library hall. From there, go on to the old well."
     },
     {
-      "rookie": "Which way do you go? Tap the places in order.",
-      "junior": "Which way do you go? Tap the places in the right order.",
-      "master": "Which route do you take? Tap the places in order."
+      "rookie": "Which way do you go? Tap in order.",
+      "junior": "Which way do you go? Tap the places in order.",
+      "master": "Which way do you go? Tap the places in the right order."
     },
     {
-      "rookie": "Find the word Start. Then find what comes after each place.",
-      "junior": "Look for the word Start. Then see what comes after each place.",
-      "master": "Begin with the word Start, then trace what follows each place."
+      "rookie": "Find Start. Then find what comes next.",
+      "junior": "Find Start. Then find what comes next.",
+      "master": "Find the word Start. Then find what comes next."
     },
     {
-      "rookie": "Two places are watched or seen by everyone. Leave them out.",
-      "junior": "Two places are guarded or seen by everyone. Skip them.",
-      "master": "Two places are either guarded or in plain view. Leave them out."
+      "rookie": "Skip the two places others can see.",
+      "junior": "Skip the two places that others can see.",
+      "master": "Skip the two places that the watchers guard or can see."
     },
     {
       "rookie": "You are out of the palace, unseen!",
-      "junior": "You have left the palace unseen!",
-      "master": "You slip out of the palace without being seen!"
+      "junior": "You are out of the palace, unseen!",
+      "master": "You are out of the palace, and unseen!"
     },
     {
-      "rookie": "Bongsu's uncle shuts the little gate behind you.",
-      "junior": "Bongsu's uncle closes the little gate behind you.",
-      "master": "Behind you, Bongsu's uncle shuts the little gate."
+      "rookie": "Bongsu's uncle shuts the gate.",
+      "junior": "Bongsu's uncle shuts the little gate.",
+      "master": "Bongsu's uncle shuts the little gate behind you."
     },
     {
-      "rookie": "The lane is quiet. Yi Jun lives at its end.",
-      "junior": "The lane is quiet. Yi Jun lives at the end of it.",
-      "master": "The lane lies quiet. At its far end lives Yi Jun."
+      "rookie": "Yi Jun lives at the lane's end.",
+      "junior": "Yi Jun lives at the lane's far end.",
+      "master": "Yi Jun lives at the far end of the lane."
     },
     {
-      "rookie": "But watchers walk this lane too.",
-      "junior": "But watchers walk along this lane too.",
-      "master": "Yet watchers patrol this lane as well."
+      "rookie": "But watchers walk here too.",
+      "junior": "But watchers walk on this lane too.",
+      "master": "But watchers walk along this lane too."
     },
     {
-      "rookie": "Everyone sees the throne hall's yard. Bongsu says to start behind the library.",
-      "junior": "Everyone can see the throne hall's yard. Bongsu says to start behind the library.",
-      "master": "The throne hall's yard is in plain view. Bongsu's way starts behind the library."
+      "rookie": "Everyone sees the throne hall. Start behind the library.",
+      "junior": "Everyone sees the throne hall. Start behind the library.",
+      "master": "Everyone can see the throne hall. Start behind the library."
     },
     {
       "rookie": "Watchers stand at the big front gate all day. Use the little west gate.",
-      "junior": "Watchers stand at the big front gate all day. Take the little west gate.",
-      "master": "The big front gate is watched all day. The little west gate is your way out."
+      "junior": "Watchers stand at the big front gate all day. Use the little west gate.",
+      "master": "Watchers stand at the big front gate all day. Use the little west gate instead."
     },
     {
-      "rookie": "The right places. Which line says Start? What comes after it?",
-      "junior": "Those are the right places. Which line says Start, and what comes after it?",
-      "master": "The places are right. Find the line that says Start, then follow what comes next."
+      "rookie": "Which line says Start? What comes next?",
+      "junior": "Which line says Start? What comes next?",
+      "master": "The places are right. Which line says Start? What comes next after it?"
     },
     {
       "rookie": "The Way Out",
@@ -404,8 +404,8 @@
     },
     {
       "rookie": "The letter left the palace by the little west gate, unseen.",
-      "junior": "The letter got out of the palace through the little west gate, unseen.",
-      "master": "Unseen, the letter left the palace by the little west gate."
+      "junior": "The letter left the palace by the little west gate, unseen.",
+      "master": "The letter left the palace by the little west gate, quite unseen."
     },
     {
       "rookie": "Each walk takes ten minutes.",
@@ -414,8 +414,8 @@
     },
     {
       "rookie": "Knock as soon as the 6:40 walk has passed.",
-      "junior": "As soon as the 6:40 walk has passed, knock on the door.",
-      "master": "Knock the very moment the 6:40 walk has passed"
+      "junior": "Knock as soon as the 6:40 walk has passed.",
+      "master": "Knock as soon as the 6:40 walk has passed."
     },
     {
       "rookie": "The Watchers' Walks",
@@ -428,74 +428,74 @@
       "master": "THE WEST LANE"
     },
     {
-      "rookie": "You wait in the dark behind a cart until dawn.",
-      "junior": "You hide behind a cart in the dark and wait until dawn.",
-      "master": "Crouched behind a cart in the dark, you wait for dawn."
+      "rookie": "You hide by a cart until morning.",
+      "junior": "You hide by a cart until morning comes.",
+      "master": "You hide behind a cart in the dark until morning."
     },
     {
-      "rookie": "Bongsu's uncle knows the watchers' times. He gives you a paper.",
-      "junior": "Bongsu's uncle knows when the watchers pass. He hands you a paper.",
-      "master": "Bongsu's uncle knows the watchers' timetable. He passes you a paper."
+      "rookie": "Bongsu's uncle gives you the watchers' times.",
+      "junior": "Bongsu's uncle gives you the watchers' times.",
+      "master": "Bongsu's uncle gives you a paper with the watchers' times."
     },
     {
       "rookie": "The uncle's paper says:",
-      "junior": "The uncle's paper reads:",
-      "master": "On the uncle's paper is written:"
+      "junior": "The uncle's paper says:",
+      "master": "The uncle's paper says this:"
     },
     {
       "rookie": "Yi Jun lives at the end of this lane.\nWatchers walk past his door at 6:00, 6:40 and 7:20.\nEach walk takes ten minutes.\nKnock as soon as the 6:40 walk has passed.",
-      "junior": "Yi Jun lives at the end of this lane.\nWatchers walk past his door at 6:00, 6:40 and 7:20.\nEach walk takes ten minutes.\nAs soon as the 6:40 walk has passed, knock on the door.",
-      "master": "Yi Jun's house stands at the end of this lane.\nWatchers pass his door at 6:00, 6:40 and 7:20.\nEach walk takes ten minutes.\nKnock the very moment the 6:40 walk has passed, not a minute later."
+      "junior": "Yi Jun lives at the end of this lane.\nWatchers walk past his door at 6:00, 6:40 and 7:20.\nEach walk takes ten minutes.\nKnock as soon as the 6:40 walk has passed.",
+      "master": "Yi Jun lives at the end of this lane.\nWatchers walk past his door at 6:00, 6:40 and 7:20.\nEach walk takes ten minutes.\nKnock as soon as the 6:40 walk has passed."
     },
     {
-      "rookie": "At what time do you knock? Use four numbers. (Seven o'clock is 07:00.)",
-      "junior": "What time do you knock? Use four numbers. (Seven o'clock is 07:00.)",
-      "master": "At what time should you knock? Enter four digits. (Seven o'clock is 07:00.)"
+      "rookie": "What time do you knock? Four numbers, like 07:00.",
+      "junior": "What time do you knock? Use four numbers, like 07:00.",
+      "master": "What time do you knock? Use four numbers, like 07:00."
     },
     {
-      "rookie": "Find the walk at 6:40. How long does one walk take?",
-      "junior": "Look for the walk at 6:40. How long does one walk last?",
-      "master": "Begin with the 6:40 walk. How long does a single walk last?"
+      "rookie": "Find the 6:40 walk. How long?",
+      "junior": "Find the 6:40 walk. How long is it?",
+      "master": "Find the 6:40 walk. How long does it take?"
     },
     {
-      "rookie": "6:40 and ten more minutes. Knock right then.",
-      "junior": "Add ten minutes to 6:40, and knock right then.",
-      "master": "Ten minutes after 6:40, knock at once."
+      "rookie": "6:40 plus ten minutes. Knock then.",
+      "junior": "6:40 plus ten minutes. Knock right then.",
+      "master": "Add ten minutes to 6:40. Knock right then."
     },
     {
       "rookie": "At 6:50 you knock. The door opens.",
-      "junior": "You knock at 6:50, and the door opens.",
-      "master": "At 6:50 you knock, and the door swings open."
+      "junior": "At 6:50 you knock. The door opens.",
+      "master": "At 6:50 you knock. The door opens slowly."
     },
     {
-      "rookie": "A tall man in a plain coat lets you in.",
-      "junior": "A tall man in a simple coat lets you inside.",
-      "master": "A tall man in a plain coat ushers you in."
+      "rookie": "A tall man opens the door.",
+      "junior": "A tall man opens the door for you.",
+      "master": "A tall man in a plain coat opens the door."
     },
     {
-      "rookie": "\"I am Yi Jun,\" he says. \"You have the Emperor's letter?\"",
-      "junior": "\"I am Yi Jun,\" he says. \"Do you have the Emperor's letter?\"",
-      "master": "\"I am Yi Jun,\" he says. \"You bring the Emperor's letter?\""
+      "rookie": "\"I am Yi Jun. You have the letter?\"",
+      "junior": "\"I am Yi Jun. You have the letter?\"",
+      "master": "\"I am Yi Jun. Do you have the Emperor's letter?\""
     },
     {
-      "rookie": "At 6:40 the watchers are just walking past. Wait until the walk has passed.",
-      "junior": "At 6:40 the watchers are only just walking past. Wait until the walk is over.",
-      "master": "At 6:40 the watchers are just passing. The walk must be over first."
+      "rookie": "At 6:40 the watchers walk by. Wait.",
+      "junior": "At 6:40 the watchers walk by. Wait a little.",
+      "master": "At 6:40 the watchers walk by. Wait until they pass."
     },
     {
-      "rookie": "That is the next walk. Watchers are there.",
-      "junior": "That is the next walk, so watchers are there.",
-      "master": "That is the next walk; the watchers would be there."
+      "rookie": "That is the next walk.",
+      "junior": "That is the next walk. Watchers are there.",
+      "master": "That is the next walk. The watchers would be there."
     },
     {
-      "rookie": "That is the 6:00 walk. The paper says 6:40.",
-      "junior": "That is after the 6:00 walk. The paper talks about the 6:40 walk.",
-      "master": "That belongs to the 6:00 walk, but the paper speaks of 6:40."
+      "rookie": "That is the 6:00 walk. Find 6:40.",
+      "junior": "That is the 6:00 walk. Find 6:40.",
+      "master": "That is the 6:00 walk. Find the 6:40 walk."
     },
     {
-      "rookie": "The right numbers, in the wrong order. Read the paper again.",
-      "junior": "Right numbers, wrong order. Read the paper again.",
-      "master": "The digits are right but jumbled. Reread the paper."
+      "rookie": "Right numbers, wrong order.",
+      "junior": "Right numbers, wrong order. Read again.",
+      "master": "Right numbers, wrong order. Read the paper again."
     },
     {
       "rookie": "The Knock",
@@ -513,59 +513,59 @@
       "master": "YI JUN'S HOUSE"
     },
     {
-      "rookie": "Bongsu folds his note and keeps it.",
-      "junior": "Bongsu folds up his note and keeps it.",
-      "master": "Bongsu folds his note and tucks it away."
+      "rookie": "Bongsu keeps his note.",
+      "junior": "Bongsu keeps his note safe.",
+      "master": "Bongsu folds his note and keeps it."
     },
     {
-      "rookie": "The letter is safe. We leave in secret.",
-      "junior": "The letter is safe. We will leave in secret.",
-      "master": "The letter is safe. We depart in secret."
+      "rookie": "The letter is safe.",
+      "junior": "The letter is safe now.",
+      "master": "The letter is safe. We leave in secret."
     },
     {
-      "rookie": "In 1907, Yi Jun, Yi Sang-seol and Yi Wi-jong went to The Hague.",
-      "junior": "In 1907, Yi Jun, Yi Sang-seol and Yi Wi-jong travelled to The Hague.",
-      "master": "In 1907, Yi Jun, Yi Sang-seol and Yi Wi-jong made the journey to The Hague."
+      "rookie": "Yi Jun, Yi Sang-seol and Yi Wi-jong went.",
+      "junior": "Yi Jun, Yi Sang-seol and Yi Wi-jong went there.",
+      "master": "In 1907, Yi Jun, Yi Sang-seol and Yi Wi-jong went to The Hague."
     },
     {
-      "rookie": "They went to tell the world the 1905 treaty was forced.",
-      "junior": "They went to tell the world that the 1905 treaty was forced.",
-      "master": "Their purpose was to tell the world the 1905 treaty was forced."
+      "rookie": "They said the 1905 treaty was forced.",
+      "junior": "They said the 1905 treaty was forced.",
+      "master": "They told the world the 1905 treaty was forced."
     },
     {
-      "rookie": "They reached The Hague. But they were not let into the conference.",
-      "junior": "They arrived in The Hague, but they were not allowed into the conference.",
-      "master": "They reached The Hague, yet the conference would not let them in."
+      "rookie": "But they were kept out.",
+      "junior": "But they were kept out of the meeting.",
+      "master": "They reached The Hague. But they were kept out of the conference."
     },
     {
-      "rookie": "Yi Jun died in The Hague that July.",
-      "junior": "Yi Jun died in The Hague in July of that year.",
-      "master": "That July, Yi Jun died in The Hague."
+      "rookie": "Yi Jun died there that July.",
+      "junior": "Yi Jun died there that July.",
+      "master": "Yi Jun died in The Hague that July."
     },
     {
-      "rookie": "Japan used the envoys as an excuse.",
+      "rookie": "Japan used the three men as a reason.",
       "junior": "Japan used the envoys as an excuse.",
-      "master": "Japan seized upon the envoys as an excuse."
+      "master": "Japan used the envoys as an excuse."
     },
     {
-      "rookie": "It forced the Emperor to give up his throne in 1907.",
-      "junior": "In 1907 it forced the Emperor to give up his throne.",
-      "master": "That year, 1907, it forced the Emperor to give up his throne."
+      "rookie": "In 1907, Japan made the Emperor quit.",
+      "junior": "In 1907, Japan made the Emperor give up his throne.",
+      "master": "In 1907, Japan forced the Emperor to give up his throne."
     },
     {
-      "rookie": "I will keep my note. One day people will read the truth.",
-      "junior": "I will keep my note. Someday people will read the truth.",
-      "master": "I will keep my note. One day the truth will be read."
+      "rookie": "I keep my note.",
+      "junior": "I will keep my note.",
+      "master": "I will keep my note safe. One day the truth will be read."
     },
     {
-      "rookie": "Read again: you go to the west gate after the old well.",
-      "junior": "Read it again: the west gate comes after the old well.",
-      "master": "Read again: the west gate comes only after the old well."
+      "rookie": "After the old well comes the west gate.",
+      "junior": "After the old well, you come to the west gate.",
+      "master": "Read again: after the old well comes the west gate."
     },
     {
-      "rookie": "Too late! Knock as soon as the walk has passed.",
-      "junior": "Too late! You must knock as soon as the walk has passed.",
-      "master": "Too late: the knock must come the moment the walk has passed."
+      "rookie": "Too late! Knock right after.",
+      "junior": "Too late! Knock right after the walk.",
+      "master": "Too late! Knock right after the walk has passed."
     },
     {
       "rookie": "Watchers walk past my door.",
@@ -583,74 +583,74 @@
       "master": "No One Saw It"
     },
     {
-      "rookie": "Yi Jun unrolls the yellow silk. He stops.",
-      "junior": "Yi Jun unrolls the yellow silk, then stops.",
-      "master": "Yi Jun unrolls the yellow silk and freezes."
+      "rookie": "Yi Jun opens the silk. He stops.",
+      "junior": "Yi Jun opens the silk. Then he stops.",
+      "master": "Yi Jun opens the yellow silk. Then he stops."
     },
     {
-      "rookie": "\"A thread is pulled out of this silk,\" he says.",
-      "junior": "\"A thread has been pulled out of this silk,\" he says.",
-      "master": "\"A thread has been torn from this silk,\" he says."
+      "rookie": "\"A thread is out,\" he says.",
+      "junior": "\"A thread is pulled out,\" he says.",
+      "master": "\"A thread is pulled out of this silk,\" he says."
     },
     {
-      "rookie": "\"If a watcher saw this letter, the Emperor's plan is lost.\"",
-      "junior": "\"If a watcher saw this letter, the Emperor's plan is ruined.\"",
-      "master": "\"Should any watcher have seen this letter, the Emperor's plan is lost.\""
+      "rookie": "\"If a watcher saw it, all is lost.\"",
+      "junior": "\"If a watcher saw it, all is lost.\"",
+      "master": "\"If any watcher saw it, the Emperor's plan is lost.\""
     },
     {
       "rookie": "Yi Jun's three worries:",
       "junior": "Yi Jun has three worries:",
-      "master": "Yi Jun names three worries:"
+      "master": "Yi Jun explains his three worries:"
     },
     {
-      "rookie": "A thread is pulled out of the silk.\nWatchers stand at every palace gate.\nWatchers walk past my door.",
-      "junior": "A thread is pulled out of the silk, and I do not know who did it.\nWatchers stand at every palace gate, all day long.\nWatchers walk past my door.",
-      "master": "A thread is pulled out of the silk, and someone must have done it.\nWatchers stand at every palace gate, from dawn to dark.\nWatchers walk past my door, again and again."
+      "rookie": "A thread is pulled out of the silk.\nWatchers at every palace gate.\nWatchers walk past my door.",
+      "junior": "A thread is pulled out of the silk.\nWatchers stand at every palace gate.\nWatchers walk past my door.",
+      "master": "A thread is pulled out of the silk.\nWatchers stand at every palace gate.\nWatchers walk past my door."
     },
     {
-      "rookie": "Show Yi Jun that no watcher saw the letter.",
-      "junior": "Prove to Yi Jun that no watcher saw the letter.",
-      "master": "Convince Yi Jun, with your evidence, that no watcher saw the letter."
+      "rookie": "Show Yi Jun no watcher saw it.",
+      "junior": "Show Yi Jun no watcher saw the letter.",
+      "master": "Use your evidence to show Yi Jun that no watcher saw the letter."
     },
     {
-      "rookie": "Each worry is about one place: the pine, the palace gate, Yi Jun's door.",
-      "junior": "Each worry is about one place: the pine, the palace gate, or Yi Jun's door.",
-      "master": "Every worry concerns a single place: the pine, the palace gate, Yi Jun's door."
+      "rookie": "Three worries: the pine, the gate, the door.",
+      "junior": "Three worries: the pine, the gate and the door.",
+      "master": "His three worries: the pine, the gate and the door."
     },
     {
       "rookie": "Thread: Bongsu's Note. Gate: Bongsu's Way. Door: the Watchers' Times.",
-      "junior": "For the thread, Bongsu's Note. For the gate, Bongsu's Way. For the door, the Watchers' Times.",
-      "master": "The thread matches Bongsu's Note, the gate Bongsu's Way, the door the Watchers' Times."
+      "junior": "Thread: Bongsu's Note. Gate: Bongsu's Way. Door: the Watchers' Times.",
+      "master": "For the thread: Bongsu's Note. Gate: Bongsu's Way. Door: the Watchers' Times."
     },
     {
-      "rookie": "Yi Jun smiles. \"No one saw it. The plan is safe.\"",
-      "junior": "Yi Jun smiles. \"No one saw it, so the plan is safe.\"",
+      "rookie": "Yi Jun smiles. \"No one saw it.\"",
+      "junior": "Yi Jun smiles. \"No one saw it at all.\"",
       "master": "Yi Jun smiles at last. \"No one saw it. The plan is safe.\""
     },
     {
-      "rookie": "Yi Jun lays the letter in his travel box and locks it.",
-      "junior": "Yi Jun puts the letter in his travel box and locks it.",
-      "master": "Yi Jun lays the letter in his travel box and turns the key."
+      "rookie": "Yi Jun locks it in his box.",
+      "junior": "Yi Jun locks the letter in his box.",
+      "master": "Yi Jun locks the letter in his travel box."
     },
     {
-      "rookie": "\"I leave Seoul today, in secret,\" he says.",
-      "junior": "\"I will leave Seoul today, in secret,\" he says.",
-      "master": "\"I leave Seoul today, in secret,\" he says quietly."
+      "rookie": "\"I leave Seoul today, in secret.\"",
+      "junior": "\"I leave Seoul today, in secret.\"",
+      "master": "\"I leave Seoul today, in secret,\" he says."
     },
     {
-      "rookie": "Answer each worry with one card.",
-      "junior": "Answer each of his worries with one card.",
-      "master": "Meet each worry with a single card."
+      "rookie": "One card for each worry.",
+      "junior": "Use one card for each worry.",
+      "master": "Use one card to answer each worry."
     },
     {
-      "rookie": "Watchers are everywhere in Seoul. I must be sure.",
-      "junior": "There are watchers all over Seoul. I have to be sure.",
+      "rookie": "Watchers are everywhere. I must know.",
+      "junior": "Watchers are everywhere. I must know.",
       "master": "Seoul is full of watchers. I must be certain."
     },
     {
-      "rookie": "Then let me show you, one worry at a time.",
-      "junior": "Then let me show you, one worry at a time, with my evidence.",
-      "master": "Then allow me to answer each worry in turn."
+      "rookie": "I will show you, one at a time.",
+      "junior": "I will show you, one at a time.",
+      "master": "I will show you, one worry at a time."
     },
     {
       "rookie": "Who are the watchers?",
@@ -658,89 +658,89 @@
       "master": "Who exactly are these watchers?"
     },
     {
-      "rookie": "Men who report to Japan's officials.",
-      "junior": "They are men who report to Japan's officials.",
-      "master": "Men who carry every report to Japan's officials."
+      "rookie": "Men who work for Japan.",
+      "junior": "They are men who work for Japan.",
+      "master": "They are men who secretly report to Japan's officials."
     },
     {
       "rookie": "They watch the Emperor and his friends.",
-      "junior": "They keep watch on the Emperor and his friends.",
-      "master": "They keep the Emperor and all his friends under watch."
+      "junior": "They watch the Emperor and his friends.",
+      "master": "They watch the Emperor and all his friends."
     },
     {
       "rookie": "Yi Jun asks: \"Who pulled this thread?\"",
-      "junior": "Yi Jun asks: \"Who pulled this thread out?\"",
-      "master": "Yi Jun asks: \"Who tore this thread loose?\""
+      "junior": "Yi Jun asks: \"Who pulled this thread?\"",
+      "master": "Yi Jun asks: \"Who pulled this thread out?\""
     },
     {
       "rookie": "No one pulled it. It caught on the pine's rough bark when he hid it.",
-      "junior": "No one pulled it. The thread caught on rough bark when the secretary hid the letter in the pine.",
-      "master": "No one pulled it. The thread snagged on the pine's rough bark as the secretary pushed the letter into the hollow."
+      "junior": "No one pulled it. It caught on rough bark in the pine when he hid it.",
+      "master": "No one pulled it. It was caught on rough bark when he hid it."
     },
     {
-      "rookie": "Bongsu saw the thread there. Good.",
-      "junior": "So Bongsu saw the thread on the tree. Good.",
-      "master": "Then Bongsu saw the very thread on the tree. Good."
+      "rookie": "Bongsu saw the thread. Good.",
+      "junior": "So Bongsu saw the thread. Good.",
+      "master": "So Bongsu saw the thread on the tree. Good."
     },
     {
-      "rookie": "That does not tell me about the thread.",
-      "junior": "That tells me nothing about the thread.",
-      "master": "That says nothing about the thread."
+      "rookie": "That is not about the thread.",
+      "junior": "That is not about the thread at all.",
+      "master": "That card is not about the thread at all."
     },
     {
-      "rookie": "Which card talks about a yellow thread? Read it again.",
-      "junior": "Which card mentions a yellow thread? Read it again.",
-      "master": "Look again for the card that mentions a yellow thread."
+      "rookie": "Which card has a yellow thread?",
+      "junior": "Which card has a yellow thread in it?",
+      "master": "Which card mentions a yellow thread? Look again."
     },
     {
-      "rookie": "Yi Jun asks: \"Watchers stand at every palace gate. Did they see you leave?\"",
-      "junior": "Yi Jun asks: \"There are watchers at every palace gate. Did they see you leave?\"",
-      "master": "Yi Jun asks: \"Every palace gate is watched. How did you leave without being seen?\""
+      "rookie": "Yi Jun asks: \"Did gate watchers see you?\"",
+      "junior": "Yi Jun asks: \"Did the gate watchers see you?\"",
+      "master": "Yi Jun asks: \"Every palace gate is watched. How did you leave unseen?\""
     },
     {
       "rookie": "We left by the little west gate. Bongsu's uncle keeps it.",
-      "junior": "We went out by the little west gate, which Bongsu's uncle keeps.",
-      "master": "We slipped out by the little west gate, which Bongsu's uncle keeps."
+      "junior": "We left by the little west gate. Bongsu's uncle keeps it.",
+      "master": "We left by the little west gate. Bongsu's uncle keeps that gate."
     },
     {
       "rookie": "Not the front gate. Good.",
       "junior": "Not the front gate, then. Good.",
-      "master": "Not the front gate, where they stand all day. Good."
+      "master": "Not the front gate, where they stand all day. Very good."
     },
     {
-      "rookie": "That does not show how you left the palace.",
-      "junior": "That does not show how you got out of the palace.",
-      "master": "That says nothing of how you left the palace."
+      "rookie": "That does not show how you left.",
+      "junior": "That does not show how you left the palace.",
+      "master": "That does not explain how you left the palace."
     },
     {
-      "rookie": "Which card shows your way out of the palace?",
-      "junior": "Which card shows how you got out of the palace?",
-      "master": "Look again for the card that traces your way out of the palace."
+      "rookie": "Which card shows your way out?",
+      "junior": "Which card shows your way out?",
+      "master": "Which card shows your way out of the palace?"
     },
     {
-      "rookie": "Yi Jun asks: \"Watchers walk past my door. Did one see you knock?\"",
-      "junior": "Yi Jun asks: \"Watchers walk past my door. Did any of them see you knock?\"",
-      "master": "Yi Jun asks: \"Watchers walk past my door. Could one have seen you knock?\""
+      "rookie": "Yi Jun asks: \"Did a watcher see you knock?\"",
+      "junior": "Yi Jun asks: \"Watchers walk past my door. Did one see you knock?\"",
+      "master": "Yi Jun asks: \"Watchers walk past my door. Did one see you knock?\""
     },
     {
       "rookie": "The 6:40 walk takes ten minutes. We knocked at 6:50, when it had passed.",
-      "junior": "The 6:40 walk takes ten minutes, so we knocked at 6:50, just after it passed.",
-      "master": "The 6:40 walk lasts ten minutes; we knocked at 6:50, the moment it had passed."
+      "junior": "The 6:40 walk takes ten minutes. We knocked at 6:50, when it had passed.",
+      "master": "The 6:40 walk takes ten minutes. We knocked at 6:50, just after it passed."
     },
     {
-      "rookie": "And the next walk is at 7:20. No one saw you.",
-      "junior": "And the next walk is not until 7:20. No one saw you.",
-      "master": "And the next walk comes only at 7:20. No one saw you."
+      "rookie": "Next walk: 7:20. No one saw you.",
+      "junior": "The next walk is at 7:20. No one saw you.",
+      "master": "The next walk is not until 7:20. No one saw you."
     },
     {
       "rookie": "That does not show when you knocked.",
-      "junior": "That does not tell me when you knocked.",
-      "master": "That says nothing of when you knocked."
+      "junior": "That does not show when you knocked.",
+      "master": "That does not explain when you knocked."
     },
     {
       "rookie": "Which card has the watchers' times?",
-      "junior": "Which card shows when the watchers walk?",
-      "master": "Look again for the card with the watchers' times."
+      "junior": "Which card has the watchers' times on it?",
+      "master": "Which card shows the watchers' times? Look again."
     },
     {
       "rookie": "GIVE YI JUN THE LETTER",
@@ -748,9 +748,9 @@
       "master": "GIVE YI JUN THE LETTER"
     },
     {
-      "rookie": "No watcher saw it. Not at the pine, not at the gate, not at your door.",
-      "junior": "No watcher saw it: not at the pine, not at the gate, and not at your door.",
-      "master": "No watcher laid eyes on it, not at the pine, not at the gate, not at your door."
+      "rookie": "No watcher saw it. Not anywhere.",
+      "junior": "No watcher saw it. Not anywhere at all.",
+      "master": "No watcher saw it: not at the pine, gate or door."
     }
   ],
   "glossary": {

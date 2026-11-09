@@ -6,8 +6,8 @@
   "actId": "act1",
   "title": "The Turtle Ship Before Dawn",
   "synopsis": [
-    "The gunpowder for the turtle ship is gone from the store room.",
-    "A note with a small water drop is waiting on the empty shelf."
+    "The gunpowder is gone!",
+    "A water-drop note is on the shelf."
   ],
   "goal": "Find out who moved the gunpowder, and where, before dawn.",
   "characters": [
@@ -34,7 +34,7 @@
             {
               "id": "straw",
               "label": "The wet straw",
-              "feedback": "The straw is wet, but it is next to the door. It shows the way the barrels went out."
+              "feedback": "Wet straw next to the door: the way out."
             },
             {
               "id": "note",
@@ -80,21 +80,21 @@
         "title": "The Empty Store Room",
         "location": "THE STORE ROOM",
         "story": [
-          "Before dawn, Ham runs to the store room.",
-          "\"All the gunpowder is gone!\" Ham shouts. \"A thief took it!\"",
+          "Ham runs to the store room.",
+          "\"A thief took the powder!\" Ham shouts.",
           "The floor is wet."
         ],
         "letterIntro": "Ham's report:",
         "letter": "A bucket is under the hole in the roof. It is full of rain.\nWet straw is next to the door.\nA small paper is on the empty shelf. A water drop is drawn on it.\n— Ham",
         "question": "Which thing shows that rain came in over the powder?",
         "hints": [
-          "Read each line of the report. Each one says where a thing is.",
-          "The Admiral says wet powder will not fire. What came through the roof?"
+          "Each line says where a thing is.",
+          "But wet powder will not fire. What came through the roof?"
         ],
-        "successMessage": "Rain came through the roof, right over the powder!",
+        "successMessage": "Rain came in, onto the powder!",
         "transition": [
           "Someone moved the barrels away from the rain.",
-          "The small paper is written in the King's letters.",
+          "The paper uses the King's letters.",
           "But the rain has blurred it."
         ],
         "mapX": 0.42,
@@ -120,10 +120,10 @@
           },
           "task": "Find the three things in Ham's report.",
           "documentTitle": "HAM'S REPORT",
-          "missLine": "Nothing here. Read the report: where is each thing?",
+          "missLine": "Nothing here. Where is each thing?",
           "doneLine": "All three things are found!",
           "arrival": [
-            "The store room smells of wet wood.",
+            "It smells of wet wood.",
             "Ham gives you his report."
           ],
           "guideAt": [
@@ -173,7 +173,7 @@
                   850
                 ]
               ],
-              "foundLine": "Wet straw next to the door. Barrels were dragged out here.",
+              "foundLine": "Wet straw next to the door.",
               "picture": {
                 "file": "assets/seasons/season_05_seoul/cases/case_02/find_straw_room.webp",
                 "pixels": {
@@ -201,7 +201,7 @@
                   520
                 ]
               ],
-              "foundLine": "A folded paper, with a small blue water drop.",
+              "foundLine": "A small paper. A blue water drop.",
               "picture": {
                 "file": "assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp",
                 "pixels": {
@@ -228,7 +228,7 @@
                   140
                 ]
               ],
-              "line": "Rain drips through here. The report says the bucket is UNDER it."
+              "line": "Rain falls here. The bucket goes UNDER it."
             },
             {
               "label": "The door",
@@ -240,7 +240,7 @@
                   690
                 ]
               ],
-              "line": "The door is open a little. The report says the straw is NEXT TO it."
+              "line": "The door. The straw goes NEXT TO it."
             },
             {
               "label": "A shelf of ropes",
@@ -252,7 +252,7 @@
                   650
                 ]
               ],
-              "line": "Ropes and folded sails. No powder here."
+              "line": "Ropes and sails. No powder."
             },
             {
               "label": "The floor",
@@ -264,7 +264,7 @@
                   1000
                 ]
               ],
-              "line": "Wet boards. The report says the paper is ON the shelf."
+              "line": "Wet floor. The paper goes ON the shelf."
             }
           ],
           "opening": [
@@ -289,7 +289,7 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "At dawn our cannons must fire."
+                "text": "Our cannons fire this morning."
               },
               {
                 "by": "speaker",
@@ -297,7 +297,7 @@
               },
               {
                 "by": "detective",
-                "text": "I will look in the store room."
+                "text": "I will check the store room."
               }
             ]
           }
@@ -305,7 +305,7 @@
         "discovery": {
           "type": "newLead",
           "title": "A WATER DROP",
-          "detail": "Letters Ham cannot read, and a drawn water drop. Who left this note, and why?"
+          "detail": "Who left this note, and why?"
         }
       }
     },
@@ -346,39 +346,39 @@
         ]
       },
       "play": {
-        "title": "The Blurred Note",
+        "title": "The Wet Note",
         "location": "THE STORE ROOM",
         "story": [
-          "You hold the wet note under Ham's lamp.",
+          "Ham brings a lamp.",
           "Three groups of letters, one under another. The rain blurred their lines and dots.",
-          "\"I cannot read the King's letters,\" says Ham. \"I read only Chinese letters.\"",
-          "\"But the young sailors learn them from that board on the wall.\""
+          "\"I read only Chinese letters,\" says Ham.",
+          "\"Sailors learn them from that board.\""
         ],
-        "letterIntro": "The board on the store room wall:",
+        "letterIntro": "The wall board:",
         "letter": "THE SAILORS' LETTER BOARD\nThe King's letters copy the mouth:\nㄱ = the back of the tongue\nㄴ = the tongue\nㅁ = the lips\nㅅ = the teeth\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nㅁ + 1 line = ㅂ\nA flat line goes under the first sound.\nA standing line goes on its right.\nA sound at the bottom comes last.",
-        "question": "Build the three groups, from top to bottom. What does the note say?",
+        "question": "Build three groups. What does the note say?",
         "hints": [
           "Group 1 is at the top. Find the back of the tongue on the board.",
-          "The lips + 1 line is ㅂ. Choose each sound, then its line and dot."
+          "ㅂ is the lips + 1 line. Build each group."
         ],
-        "successMessage": "The note is whole again: 거북선, the turtle ship!",
+        "successMessage": "The note says 거북선: the turtle ship!",
         "transition": [
           "거북선 means the turtle ship.",
-          "Someone carried the powder to the turtle ship!",
-          "You and Ham hurry down to the harbour."
+          "Someone took the powder to the ship!",
+          "You and Ham run to the ship."
         ],
         "feedback": {
-          "거묵선": "Group 2 is the lips + 1 line: ㅂ, not ㅁ.",
+          "거묵선": "Group 2 is ㅂ, not ㅁ.",
           "거북서": "Group 3 has a sound at the bottom: the tongue.",
-          "가북선": "Group 1's dot is on the left of its line, not the right.",
-          "거북전": "Group 3 is the teeth, not the teeth + 1 line."
+          "가북선": "Group 1: dot on the left.",
+          "거북전": "Group 3 is the teeth only."
         },
         "mapX": 0.42,
         "mapY": 0.56,
         "clue": {
           "title": "The Note's Word",
           "value": "거북선 · THE TURTLE SHIP",
-          "note": "The blurred note says 거북선: the turtle ship."
+          "note": "The note says 거북선: the turtle ship."
         },
         "evidence": {
           "name": "The Note, Read Again",
@@ -464,29 +464,29 @@
         "title": "Under the Turtle's Back",
         "location": "THE TURTLE SHIP",
         "story": [
-          "The turtle ship has a roof of planks over its deck.",
-          "Under the roof, you find barrels of gunpowder, dry.",
-          "A young sailor stands up, his clothes wet. \"I am Seok. I carried them here.\""
+          "The ship has a wooden roof.",
+          "Under it: dry powder barrels.",
+          "A wet sailor: \"I am Seok. I carried them.\""
         ],
         "letterIntro": "Seok tells you:",
         "letter": "\"Rain fell on the barrels after midnight.\"\n\"I took four barrels each time, in a hand cart.\"\n\"I went from the store room to the ship three times.\"\n\"The ship's roof keeps the rain off.\"",
-        "question": "How many barrels did Seok carry to the ship? Put in the number.",
+        "question": "How many barrels did Seok carry?",
         "hints": [
           "Find the two numbers in Seok's words.",
-          "Four barrels each time. How many times did he go?"
+          "Four barrels each trip. How many trips?"
         ],
-        "successMessage": "Twelve barrels: all the powder is safe and dry!",
+        "successMessage": "Twelve barrels, all safe and dry!",
         "transition": [
-          "Ham opens his book from sunset: twelve barrels.",
-          "\"All twelve are here,\" Ham says. \"But he moved them with no order!\"",
-          "The sky turns grey. The Admiral is coming aboard."
+          "Ham's sunset book: twelve barrels.",
+          "\"All twelve are here,\" says Ham. \"But no order!\"",
+          "Morning comes. The Admiral is coming."
         ],
         "feedback": {
-          "04": "That is one trip. How many times did Seok go?",
+          "04": "One trip. How many trips?",
           "03": "That is how many times he went. He took four barrels each time.",
           "07": "Four and three make seven. But he took four barrels, three times."
         },
-        "orderFeedback": "The right digits, in the wrong order. Read Seok's words again.",
+        "orderFeedback": "Right numbers, wrong order.",
         "mapX": 0.6,
         "mapY": 0.7,
         "clue": {
@@ -502,7 +502,7 @@
         "talk": {
           "speaker": "seok",
           "portrait": "assets/seasons/season_05_seoul/characters/seok.webp",
-          "goal": "Find out why Seok moved the powder.",
+          "goal": "Find why Seok moved it.",
           "after": {
             "lines": [
               {
@@ -511,7 +511,7 @@
               },
               {
                 "by": "detective",
-                "text": "I did. But why did you not wake Ham?"
+                "text": "I did. But why not wake Ham?"
               },
               {
                 "by": "speaker",
@@ -519,7 +519,7 @@
               },
               {
                 "by": "speaker",
-                "text": "I learned the King's letters from the board in the store room."
+                "text": "I learned them from the board."
               },
               {
                 "by": "speaker",
@@ -545,8 +545,8 @@
         "options": [
           {
             "id": "thief",
-            "label": "A thief took four barrels in the night.",
-            "feedback": "Twelve barrels are on the ship, as many as at sunset. Nothing was stolen."
+            "label": "A thief took four barrels.",
+            "feedback": "Twelve barrels, same as at sunset. Nothing was taken."
           },
           {
             "id": "shiproof",
@@ -560,7 +560,7 @@
           {
             "id": "ham",
             "label": "Ham moved the powder to the ship before the rain.",
-            "feedback": "Ham was asleep. Who said, \"So I moved the barrels\"?"
+            "feedback": "Ham was asleep. Who said, \"So I moved them\"?"
           }
         ]
       },
@@ -601,24 +601,24 @@
       ]
     },
     "play": {
-      "title": "The Admiral's Judgment",
+      "title": "The Admiral's Answer",
       "location": "THE TURTLE SHIP",
       "story": [
-        "Dawn comes. Admiral Yi Sun-sin comes aboard the turtle ship.",
-        "Ham stands next to Seok. \"He took the powder with no order!\"",
-        "The Admiral looks at you. \"Tell me the truth of this night.\""
+        "The Admiral comes onto the ship.",
+        "Ham: \"He took it with no order!\"",
+        "\"Tell me the truth,\" says the Admiral."
       ],
       "letterIntro": "Your three cards say:",
-      "letter": "Rain came in through the store room roof.\nSeok's note named the turtle ship.\nTwelve dry barrels are on the ship, as many as at sunset.",
-      "question": "What really happened to the powder? Tell the Admiral.",
+      "letter": "Rain came through the store room roof.\nSeok's note named the turtle ship.\nTwelve dry barrels, same as at sunset.",
+      "question": "What happened to the powder?",
       "hints": [
-        "Check each sentence with your three cards.",
-        "Who carried the barrels? How many? Which roof had a hole?"
+        "Check with your cards.",
+        "Who carried them? How many? Which roof had a hole?"
       ],
-      "successMessage": "That is the truth. Seok saved the powder!",
+      "successMessage": "True! Seok saved the powder!",
       "transition": [
-        "\"Seok, you broke an order,\" says the Admiral. \"But you saved my test.\"",
-        "Dawn comes. The Admiral walks along his turtle ship.",
+        "\"You broke an order,\" says the Admiral. \"But you saved my test.\"",
+        "The Admiral walks on his ship.",
         "Its roof is like a turtle's back, with spikes. At the front is a dragon's head, with a cannon in its mouth."
       ],
       "mapX": 0.62,
@@ -631,39 +631,39 @@
       "ending": [
         {
           "by": "speaker",
-          "text": "My powder is dry, and my ship is ready.",
+          "text": "My powder is dry. My ship is ready.",
           "speaker": "yi_sunsin",
           "portrait": "assets/seasons/season_05_seoul/characters/yi_sunsin.webp"
         },
         {
           "by": "narrator",
-          "text": "That day, the twelfth of the fourth month, the cannons were tested."
+          "text": "The test day: day 12, month 4."
         },
         {
           "by": "narrator",
-          "text": "Yi Sun-sin wrote it down in his war diary."
+          "text": "Yi Sun-sin wrote it in his diary."
         },
         {
           "by": "narrator",
-          "text": "The next day, Japanese ships covered the sea at Busan."
+          "text": "Next day, Japanese ships came to Busan."
         },
         {
           "by": "narrator",
-          "text": "The war had begun. Yi Sun-sin had prepared for it."
+          "text": "The war began. Yi Sun-sin was ready."
         },
         {
           "by": "narrator",
-          "text": "In the fifth month, his navy won its first victory at sea, at Okpo."
+          "text": "In month 5, his ships won at Okpo."
         },
         {
           "by": "speaker",
-          "text": "The King made these letters so that people could learn them easily.",
+          "text": "The King made easy letters.",
           "speaker": "seok",
           "portrait": "assets/seasons/season_05_seoul/characters/seok.webp"
         },
         {
           "by": "speaker",
-          "text": "Even a sailor like me can write.",
+          "text": "Even a sailor can write.",
           "speaker": "seok",
           "portrait": "assets/seasons/season_05_seoul/characters/seok.webp"
         }
@@ -671,12 +671,12 @@
       "talk": {
         "speaker": "yi_sunsin",
         "portrait": "assets/seasons/season_05_seoul/characters/yi_sunsin.webp",
-        "goal": "Show the Admiral what really happened to his powder.",
+        "goal": "What happened to his powder? Show the Admiral.",
         "before": {
           "lines": [
             {
               "by": "speaker",
-              "text": "Ham says Seok took my powder with no order."
+              "text": "Ham says Seok took it with no order."
             },
             {
               "by": "speaker",
@@ -686,7 +686,7 @@
           "presents": [
             {
               "id": "p_danger",
-              "prompt": "The Admiral asks: \"Was my powder safe in the store room?\"",
+              "prompt": "The Admiral asks: \"Was the store room safe?\"",
               "accepted": [
                 "s5_ep02_e1"
               ],
@@ -698,20 +698,20 @@
               "lines": [
                 {
                   "by": "detective",
-                  "text": "No, sir. Rain came through the store room roof, over the powder."
+                  "text": "No, sir. Rain came through the roof."
                 },
                 {
                   "by": "speaker",
                   "text": "And wet powder will not fire."
                 }
               ],
-              "miss": "That does not show the store room.",
-              "tell": "Which card was found in the store room?",
+              "miss": "Not the store room.",
+              "tell": "Which card is from the store room?",
               "litAfter": 3
             },
             {
               "id": "p_how",
-              "prompt": "The Admiral asks: \"How did you know where to look?\"",
+              "prompt": "The Admiral asks: \"How did you know?\"",
               "accepted": [
                 "s5_ep02_e2"
               ],
@@ -730,11 +730,11 @@
                 },
                 {
                   "by": "speaker",
-                  "text": "A note in the King's letters. Clever boy."
+                  "text": "The King's letters. Smart boy."
                 }
               ],
-              "miss": "That does not show where the powder went.",
-              "tell": "Which card says what the note says?",
+              "miss": "That is not where it went.",
+              "tell": "Which card reads the note?",
               "litAfter": 3
             },
             {
@@ -754,14 +754,14 @@
               "lines": [
                 {
                   "by": "detective",
-                  "text": "None, sir. Twelve barrels, all dry, as many as at sunset."
+                  "text": "None, sir. Twelve dry barrels, as at sunset."
                 },
                 {
                   "by": "speaker",
                   "text": "Then nothing was stolen."
                 }
               ],
-              "miss": "That does not count the barrels.",
+              "miss": "That is not the count.",
               "tell": "Which card counts the barrels?",
               "litAfter": 3
             }
@@ -771,7 +771,7 @@
       }
     }
   },
-  "hook": "The cannon test is at dawn.",
+  "hook": "The cannon test is today.",
   "learningGoal": {
     "title": "Reading where things are, and proving what happened",
     "titleKo": "위치 표현을 읽고 증거로 사건의 진상 밝히기"
@@ -779,17 +779,17 @@
   "play": {
     "objectives": [
       "Search the empty store room.",
-      "Read the blurred note.",
-      "Count the barrels on the ship.",
-      "Show the Admiral what really happened."
+      "Read the wet note.",
+      "Count the barrels.",
+      "Show the Admiral what happened."
     ],
     "intro": [
-      "Spring, 1592: the fourth month of the moon calendar.",
-      "You are a guest of Admiral Yi Sun-sin at Yeosu, on the south coast.",
-      "He commands the navy here. War with Japan may come soon.",
-      "Before the war, he built a turtle ship, with a roof over its deck.",
-      "\"Today we test its cannons,\" he says. \"We must be ready.\"",
-      "Before dawn, a bell rings at the store room."
+      "Spring, 1592.",
+      "You visit Admiral Yi Sun-sin.",
+      "He leads the ships. War may come.",
+      "He built a turtle ship with a roof.",
+      "\"Cannon test today!\" he says.",
+      "A bell rings."
     ],
     "caseSummary": "Rain came through the store room roof. Seok, a young sailor, carried all twelve barrels of gunpowder to the turtle ship. He left a note in the King's letters, with a water drop for the rain. The detective showed the Admiral that nothing was stolen. Yi Sun-sin had built the turtle ship before the war. Its front was a dragon's head. On the twelfth day of the fourth month of 1592, its cannons were tested. His war diary records it. The next day, Japanese ships came to Busan, and the war began. In the fifth month, his navy won its first victory at sea, at Okpo.",
     "place": "THE NAVY BASE, YEOSU",

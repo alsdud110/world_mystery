@@ -6,8 +6,8 @@
   "actId": "act2",
   "title": "The Emperor's Secret Letter",
   "synopsis": [
-    "The Emperor's secret letter for The Hague is hidden in the palace.",
-    "Watchers stand at every gate. It must leave unseen."
+    "The Emperor's secret letter is hidden.",
+    "Watchers at every gate. It must leave unseen."
   ],
   "goal": "Find the hidden letter, take it out unseen, and give it to the envoy Yi Jun.",
   "characters": [
@@ -38,7 +38,7 @@
             },
             {
               "id": "b",
-              "label": "The hollow of the old pine"
+              "label": "The hole in the old pine"
             },
             {
               "id": "c",
@@ -77,29 +77,29 @@
         "title": "The Thread on the Bark",
         "location": "THE PALACE GARDEN",
         "story": [
-          "The Emperor's secretary hid the letter at dusk.",
-          "Then he had to leave the palace at once.",
-          "Bongsu, the errand boy, saw part of it. Where is it hidden?"
+          "His helper hid it at sunset.",
+          "Then he left.",
+          "Bongsu saw some. Where is it?"
         ],
-        "letterIntro": "Bongsu wrote down what he saw, so he would not forget. He reads it to you:",
+        "letterIntro": "Bongsu reads you his note:",
         "letter": "The secretary had the Emperor's letter at dusk. Watchers came to the gate.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, at hand height.\nBy a root, the moss is pushed aside. Someone knelt there.\n— Bongsu",
-        "question": "Where did the secretary hide the letter? Tap the place.",
+        "question": "Where is the letter? Tap the place.",
         "hints": [
-          "Tap the footprints, the thread and the moss.",
-          "Which place has bark and roots, and stands among the trees?"
+          "Tap the footprints, thread and moss.",
+          "Which place has bark and roots?"
         ],
-        "successMessage": "The letter is in the hollow of the old pine!",
+        "successMessage": "The letter is in the old pine!",
         "transition": [
-          "In the hollow is a roll of yellow silk.",
-          "Inside is the Emperor's letter, with his seal.",
-          "\"Now we must get it out,\" Bongsu whispers. \"Past the watchers.\""
+          "Inside: yellow silk.",
+          "In it: the Emperor's sealed letter.",
+          "\"Now we take it out,\" Bongsu says softly."
         ],
         "mapX": 0.4,
         "mapY": 0.5,
         "clue": {
           "title": "The Hiding Place",
           "value": "THE OLD PINE",
-          "note": "The secretary hid the Emperor's letter in the hollow of the old pine.",
+          "note": "The letter was in the old pine.",
           "symbol": "letter"
         },
         "evidence": {
@@ -116,11 +116,11 @@
             },
             "measuredOn": "sha256:2c384756fa75f5416491c33720130105b606d1469cf9f8e4baae0d110336da45"
           },
-          "place": "The palace garden at dusk",
+          "place": "The palace garden in the evening",
           "task": "Look for three marks.",
-          "chooseTask": "Where did the secretary hide the letter? Tap the place.",
+          "chooseTask": "Where is the letter? Tap the place.",
           "missLine": "Nothing here. Look for marks.",
-          "notPlaceLine": "Tap a place where a letter could be hidden.",
+          "notPlaceLine": "Where could a letter hide? Tap.",
           "guideAt": [
             700,
             980
@@ -236,7 +236,7 @@
                   640
                 ]
               ],
-              "line": "The garden gate. Watchers stand outside it."
+              "line": "The garden gate. Watchers are outside."
             }
           ],
           "inside": [
@@ -255,7 +255,7 @@
         "talk": {
           "speaker": "gojong",
           "portrait": "assets/seasons/season_05_seoul/characters/gojong.webp",
-          "goal": "Find out why the letter matters.",
+          "goal": "Find why the letter matters.",
           "before": {
             "lines": [
               {
@@ -264,11 +264,11 @@
               },
               {
                 "by": "speaker",
-                "text": "The world must hear Korea's side."
+                "text": "The world must hear Korea."
               },
               {
                 "by": "detective",
-                "text": "Then I will find it, Your Majesty."
+                "text": "I will find it, Your Majesty."
               }
             ]
           }
@@ -346,29 +346,29 @@
         "title": "The Way Past the Watchers",
         "location": "THE PALACE GARDEN",
         "story": [
-          "The letter is under your coat now.",
-          "The watchers report to Japan's officials. They watch the palace paths.",
-          "Bongsu knows every path. He whispers the way."
+          "It is under your coat.",
+          "Watchers work for Japan. They watch paths.",
+          "Bongsu knows every path."
         ],
-        "letterIntro": "Bongsu whispers:",
+        "letterIntro": "Bongsu says softly:",
         "letter": "After the old well, go out by the little west gate. My uncle keeps it.\nThe watchers stand at the big front gate all day.\nOutside the west gate is the lane by the stone wall. Walk down it.\nDo not cross the throne hall's yard: everyone sees it.\nStart behind the library hall. From there, go to the old well.",
-        "question": "Which way do you go? Tap the places in order.",
+        "question": "Which way do you go? Tap in order.",
         "hints": [
-          "Find the word Start. Then find what comes after each place.",
-          "Two places are watched or seen by everyone. Leave them out."
+          "Find Start. Then find what comes next.",
+          "Skip the two places others can see."
         ],
         "successMessage": "You are out of the palace, unseen!",
         "transition": [
-          "Bongsu's uncle shuts the little gate behind you.",
-          "The lane is quiet. Yi Jun lives at its end.",
-          "But watchers walk this lane too."
+          "Bongsu's uncle shuts the gate.",
+          "Yi Jun lives at the lane's end.",
+          "But watchers walk here too."
         ],
         "feedback": {
-          "throne,well,west_gate,lane": "Everyone sees the throne hall's yard. Bongsu says to start behind the library.",
+          "throne,well,west_gate,lane": "Everyone sees the throne hall. Start behind the library.",
           "library,well,front_gate,lane": "Watchers stand at the big front gate all day. Use the little west gate.",
-          "library,west_gate,well,lane": "Read again: you go to the west gate after the old well."
+          "library,west_gate,well,lane": "After the old well comes the west gate."
         },
-        "orderFeedback": "The right places. Which line says Start? What comes after it?",
+        "orderFeedback": "Which line says Start? What comes next?",
         "mapX": 0.36,
         "mapY": 0.56,
         "clue": {
@@ -429,28 +429,28 @@
         "title": "The Watchers' Walks",
         "location": "THE WEST LANE",
         "story": [
-          "You wait in the dark behind a cart until dawn.",
-          "Bongsu's uncle knows the watchers' times. He gives you a paper."
+          "You hide by a cart until morning.",
+          "Bongsu's uncle gives you the watchers' times."
         ],
         "letterIntro": "The uncle's paper says:",
         "letter": "Yi Jun lives at the end of this lane.\nWatchers walk past his door at 6:00, 6:40 and 7:20.\nEach walk takes ten minutes.\nKnock as soon as the 6:40 walk has passed.",
-        "question": "At what time do you knock? Use four numbers. (Seven o'clock is 07:00.)",
+        "question": "What time do you knock? Four numbers, like 07:00.",
         "hints": [
-          "Find the walk at 6:40. How long does one walk take?",
-          "6:40 and ten more minutes. Knock right then."
+          "Find the 6:40 walk. How long?",
+          "6:40 plus ten minutes. Knock then."
         ],
         "successMessage": "At 6:50 you knock. The door opens.",
         "transition": [
-          "A tall man in a plain coat lets you in.",
-          "\"I am Yi Jun,\" he says. \"You have the Emperor's letter?\""
+          "A tall man opens the door.",
+          "\"I am Yi Jun. You have the letter?\""
         ],
         "feedback": {
-          "0640": "At 6:40 the watchers are just walking past. Wait until the walk has passed.",
-          "0720": "That is the next walk. Watchers are there.",
-          "0610": "That is the 6:00 walk. The paper says 6:40.",
-          "0700": "Too late! Knock as soon as the walk has passed."
+          "0640": "At 6:40 the watchers walk by. Wait.",
+          "0720": "That is the next walk.",
+          "0610": "That is the 6:00 walk. Find 6:40.",
+          "0700": "Too late! Knock right after."
         },
-        "orderFeedback": "The right numbers, in the wrong order. Read the paper again.",
+        "orderFeedback": "Right numbers, wrong order.",
         "mapX": 0.3,
         "mapY": 0.6,
         "clue": {
@@ -523,24 +523,24 @@
       "title": "No One Saw It",
       "location": "YI JUN'S HOUSE",
       "story": [
-        "Yi Jun unrolls the yellow silk. He stops.",
-        "\"A thread is pulled out of this silk,\" he says.",
-        "\"If a watcher saw this letter, the Emperor's plan is lost.\""
+        "Yi Jun opens the silk. He stops.",
+        "\"A thread is out,\" he says.",
+        "\"If a watcher saw it, all is lost.\""
       ],
       "letterIntro": "Yi Jun's three worries:",
-      "letter": "A thread is pulled out of the silk.\nWatchers stand at every palace gate.\nWatchers walk past my door.",
-      "question": "Show Yi Jun that no watcher saw the letter.",
+      "letter": "A thread is pulled out of the silk.\nWatchers at every palace gate.\nWatchers walk past my door.",
+      "question": "Show Yi Jun no watcher saw it.",
       "hints": [
-        "Each worry is about one place: the pine, the palace gate, Yi Jun's door.",
+        "Three worries: the pine, the gate, the door.",
         "Thread: Bongsu's Note. Gate: Bongsu's Way. Door: the Watchers' Times."
       ],
-      "successMessage": "Yi Jun smiles. \"No one saw it. The plan is safe.\"",
+      "successMessage": "Yi Jun smiles. \"No one saw it.\"",
       "transition": [
-        "Yi Jun lays the letter in his travel box and locks it.",
-        "\"I leave Seoul today, in secret,\" he says.",
-        "Bongsu folds his note and keeps it."
+        "Yi Jun locks it in his box.",
+        "\"I leave Seoul today, in secret.\"",
+        "Bongsu keeps his note."
       ],
-      "orderFeedback": "Answer each worry with one card.",
+      "orderFeedback": "One card for each worry.",
       "mapX": 0.28,
       "mapY": 0.62,
       "evidence": {
@@ -551,15 +551,15 @@
       "interview": {
         "speaker": "yi_jun",
         "portrait": "assets/seasons/season_05_seoul/characters/yi_jun.webp",
-        "goal": "Show Yi Jun that no watcher saw the letter.",
+        "goal": "Show Yi Jun no watcher saw it.",
         "opening": [
           {
             "by": "speaker",
-            "text": "Watchers are everywhere in Seoul. I must be sure."
+            "text": "Watchers are everywhere. I must know."
           },
           {
             "by": "detective",
-            "text": "Then let me show you, one worry at a time."
+            "text": "I will show you, one at a time."
           }
         ],
         "questions": [
@@ -569,7 +569,7 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "Men who report to Japan's officials."
+                "text": "Men who work for Japan."
               },
               {
                 "by": "speaker",
@@ -592,21 +592,21 @@
               },
               {
                 "by": "speaker",
-                "text": "Bongsu saw the thread there. Good."
+                "text": "Bongsu saw the thread. Good."
               }
             ],
-            "miss": "That does not tell me about the thread.",
+            "miss": "That is not about the thread.",
             "offered": [
               "s5_ep06_e3",
               "s5_ep06_e1",
               "s5_ep06_e2"
             ],
-            "tell": "Which card talks about a yellow thread? Read it again.",
+            "tell": "Which card has a yellow thread?",
             "litAfter": 3
           },
           {
             "id": "gate",
-            "prompt": "Yi Jun asks: \"Watchers stand at every palace gate. Did they see you leave?\"",
+            "prompt": "Yi Jun asks: \"Did gate watchers see you?\"",
             "accepted": [
               "s5_ep06_e2"
             ],
@@ -620,13 +620,13 @@
                 "text": "Not the front gate. Good."
               }
             ],
-            "miss": "That does not show how you left the palace.",
+            "miss": "That does not show how you left.",
             "offered": [
               "s5_ep06_e1",
               "s5_ep06_e3",
               "s5_ep06_e2"
             ],
-            "tell": "Which card shows your way out of the palace?",
+            "tell": "Which card shows your way out?",
             "litAfter": 3,
             "requires": [
               "thread"
@@ -634,7 +634,7 @@
           },
           {
             "id": "door",
-            "prompt": "Yi Jun asks: \"Watchers walk past my door. Did one see you knock?\"",
+            "prompt": "Yi Jun asks: \"Did a watcher see you knock?\"",
             "accepted": [
               "s5_ep06_e3"
             ],
@@ -645,7 +645,7 @@
               },
               {
                 "by": "speaker",
-                "text": "And the next walk is at 7:20. No one saw you."
+                "text": "Next walk: 7:20. No one saw you."
               }
             ],
             "miss": "That does not show when you knocked.",
@@ -671,67 +671,67 @@
       "ending": [
         {
           "by": "speaker",
-          "text": "The letter is safe. We leave in secret.",
+          "text": "The letter is safe.",
           "speaker": "yi_jun",
           "portrait": "assets/seasons/season_05_seoul/characters/yi_jun.webp"
         },
         {
           "by": "detective",
-          "text": "No watcher saw it. Not at the pine, not at the gate, not at your door.",
+          "text": "No watcher saw it. Not anywhere.",
           "evidence": "s5_ep06_e4"
         },
         {
           "by": "narrator",
-          "text": "In 1907, Yi Jun, Yi Sang-seol and Yi Wi-jong went to The Hague."
+          "text": "Yi Jun, Yi Sang-seol and Yi Wi-jong went."
         },
         {
           "by": "narrator",
-          "text": "They went to tell the world the 1905 treaty was forced."
+          "text": "They said the 1905 treaty was forced."
         },
         {
           "by": "narrator",
-          "text": "They reached The Hague. But they were not let into the conference."
+          "text": "But they were kept out."
         },
         {
           "by": "narrator",
-          "text": "Yi Jun died in The Hague that July."
+          "text": "Yi Jun died there that July."
         },
         {
           "by": "narrator",
-          "text": "Japan used the envoys as an excuse."
+          "text": "Japan used the three men as a reason."
         },
         {
           "by": "narrator",
-          "text": "It forced the Emperor to give up his throne in 1907."
+          "text": "In 1907, Japan made the Emperor quit."
         },
         {
           "by": "speaker",
-          "text": "I will keep my note. One day people will read the truth.",
+          "text": "I keep my note.",
           "speaker": "bongsu",
           "portrait": "assets/seasons/season_05_seoul/characters/bongsu.webp"
         }
       ]
     }
   },
-  "hook": "The envoys were not let in, but the Emperor's letter left Seoul unseen.",
+  "hook": "The three men were stopped. The letter left unseen.",
   "learningGoal": {
     "title": "Following traces, ways and times",
     "titleKo": "흔적, 길, 시각을 따라 읽기"
   },
   "play": {
     "objectives": [
-      "Find where the letter is hidden.",
-      "Take it out past the watchers.",
+      "Find the hidden letter.",
+      "Take it past the watchers.",
       "Knock at the right time.",
-      "Show Yi Jun that no one saw the letter."
+      "Show Yi Jun no one saw it."
     ],
     "intro": [
-      "Spring, 1907. You are a guest of Emperor Gojong at Gyeongun Palace.",
-      "In 1897, King Gojong became Emperor Gojong. He wanted the world to see Korea as a free country.",
+      "Spring, 1907. You visit Emperor Gojong.",
+      "In 1897, Gojong became Emperor. He wanted Korea free.",
       "In 1905, Japan forced a treaty on Korea. Korea lost the right to deal with other countries.",
-      "This year, many countries meet for peace at The Hague, in Europe.",
-      "The Emperor will send three envoys there in secret, to tell the world the truth.",
-      "But his secret letter is hidden, and watchers stand at every gate."
+      "Many countries meet at The Hague.",
+      "He will send three men in secret.",
+      "But watchers are at every gate."
     ],
     "caseSummary": "Bongsu's note led to the Emperor's letter in the old pine. It left by the little west gate. You knocked on Yi Jun's door at 6:50, between the watchers' walks. The thread, the way and the times showed Yi Jun that no one saw it. In 1907 three envoys went to The Hague. They went to tell the world the 1905 treaty was forced. They were not let into the conference. Yi Jun died in The Hague. Japan used the envoys as an excuse to force the Emperor off his throne.",
     "place": "GYEONGUN PALACE, SEOUL",

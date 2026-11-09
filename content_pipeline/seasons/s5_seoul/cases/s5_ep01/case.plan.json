@@ -6,7 +6,7 @@
   "actId": "act1",
   "title": "The King's Secret Letters",
   "synopsis": [
-    "Bun-i wants to write a letter to her mother.",
+    "Bun-i writes to Mom.",
     "But she has never learned to write."
   ],
   "goal": "Help Bun-i write her own letter before dawn.",
@@ -41,12 +41,12 @@
             {
               "id": "sorry",
               "label": "Bun-i crying: SORRY",
-              "feedback": "Bun-i broke nothing. Look at what Mom does in each picture."
+              "feedback": "She broke nothing. Look at Mom."
             },
             {
               "id": "bye",
               "label": "Bun-i waving: GOODBYE",
-              "feedback": "Bun-i is not leaving. She goes home to Mom tomorrow."
+              "feedback": "No. Bun-i is not leaving. She goes home tomorrow."
             }
           ]
         },
@@ -75,51 +75,51 @@
         ]
       },
       "play": {
-        "title": "The Unwritten Letter",
+        "title": "The Empty Letter",
         "location": "THE KITCHEN WELL",
         "story": [
-          "By the kitchen well, Bun-i sets down her bucket.",
-          "She holds an empty paper and a page of drawings."
+          "Bun-i puts down her bucket.",
+          "She has empty paper and drawings."
         ],
         "letterIntro": "Bun-i's picture note:",
         "letter": "Bun-i drew Mom three times. Tap each picture.\nMom sews at night, by a lamp. She makes my clothes.\nMom gives me her rice. She says, \"I am not hungry.\"\nI was sick. Mom carried me to the doctor in the rain.\nThen Bun-i drew herself three times, at the bottom.\nBun-i: \"I am not leaving Mom. I go home to her tomorrow.\"\nBun-i: \"And I broke nothing. Mom just gives me so much.\"\nBun-i: \"I never said one word back.\"",
-        "question": "What does Bun-i want to tell Mom? Tap the right Bun-i.",
+        "question": "What will she tell Mom? Tap the right Bun-i.",
         "hints": [
-          "Tap the 3 pictures of Mom. What does Mom do each time?",
-          "Mom gives and gives. What do you say when someone gives you something?"
+          "What does Mom do? Tap 3 pictures.",
+          "Mom gives and gives. What do you say?"
         ],
         "successMessage": "Bun-i wants to say THANK YOU!",
         "transition": [
-          "\"Yes! Thank you, Mom. That is my letter,\" says Bun-i.",
-          "\"I know what I want to say. But how can I write it?\"",
-          "Sora, the palace maid, comes with a lamp.",
-          "\"With the King's new letters,\" says Sora. \"Come, I will show you.\""
+          "\"Yes! Thank you, Mom!\" says Bun-i.",
+          "\"How do I write my words?\"",
+          "Sora the helper comes.",
+          "\"Use the new letters,\" says Sora."
         ],
         "talk": {
           "speaker": "bun_i",
           "portrait": "assets/seasons/season_05_seoul/characters/bun_i.webp",
-          "goal": "Find out what Bun-i wants to say.",
+          "goal": "Find Bun-i's words.",
           "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "Tomorrow I go home to Mom. I want to give her a present."
+                "text": "I want a gift for Mom."
               },
               {
                 "by": "speaker",
-                "text": "But I have no coins. So I want to give her a letter!"
+                "text": "No money. So, a letter!"
               },
               {
                 "by": "speaker",
-                "text": "A scribe writes in Chinese characters. Mom can't read them. I can't either."
+                "text": "A writer knows Chinese letters. We don't."
               },
               {
                 "by": "speaker",
-                "text": "And they would be his words, not mine."
+                "text": "His words, not mine."
               },
               {
                 "by": "detective",
-                "text": "Then what do you want to say?"
+                "text": "Then what will you say?"
               },
               {
                 "by": "speaker",
@@ -133,7 +133,7 @@
         "clue": {
           "title": "Bun-i's Mark",
           "value": "a water drop",
-          "note": "Bun-i cannot write her name. She signs with a water drop."
+          "note": "She can't write her name. She draws a drop."
         },
         "evidence": {
           "name": "Bun-i's Message",
@@ -149,11 +149,11 @@
             },
             "measuredOn": "sha256:bfb324a49aa6513383b045e8066728594aa3884ba37bc30a111d7db6a9e5a89f"
           },
-          "place": "Bun-i's picture note, by the kitchen well",
+          "place": "Bun-i's picture note",
           "task": "Tap the 3 pictures of Mom.",
-          "chooseTask": "Now tap the Bun-i that says her message.",
-          "missLine": "Only paper here. Look at the drawings.",
-          "notPlaceLine": "Tap one of the 3 drawings of Bun-i, at the bottom.",
+          "chooseTask": "Now tap Bun-i's message.",
+          "missLine": "Just paper. See the drawings.",
+          "notPlaceLine": "Tap a Bun-i below.",
           "guideAt": [
             300,
             560
@@ -180,7 +180,7 @@
           "clues": [
             {
               "id": "sew",
-              "label": "Mom sewing by a lamp",
+              "label": "Mom making clothes by a lamp",
               "areas": [
                 [
                   84,
@@ -291,7 +291,7 @@
                   586
                 ]
               ],
-              "line": "The palace cat. It is not about Mom."
+              "line": "The cat. Not about Mom."
             },
             {
               "label": "A water bucket",
@@ -303,7 +303,7 @@
                   579
                 ]
               ],
-              "line": "Bun-i's water bucket. It is not about Mom."
+              "line": "Bun-i's bucket. Not about Mom."
             },
             {
               "label": "A little bird",
@@ -315,7 +315,7 @@
                   572
                 ]
               ],
-              "line": "A little bird. It is not about Mom."
+              "line": "A bird. Not about Mom."
             },
             {
               "label": "A blue water drop",
@@ -327,7 +327,7 @@
                   921
                 ]
               ],
-              "line": "Bun-i's mark: a water drop. She cannot write her name."
+              "line": "Bun-i's mark: a water drop."
             }
           ]
         }
@@ -403,8 +403,8 @@
         "title": "The Secret of Sounds",
         "location": "THE INNER GATE",
         "story": [
-          "Sora sets her lamp by the inner gate.",
-          "She lays three pictures on the stone step."
+          "Sora sets down her lamp.",
+          "She puts down three pictures."
         ],
         "letterIntro": "Sora's lesson:",
         "letter": "The King's letters copy your mouth.\nㅁ says \"m\". Say \"mmm\".\nㄴ says \"n\". Say \"nnn\".\nㅇ is the open throat. Say \"ah\".\nㄱ says \"g\". ㅅ says \"s\".\nLook at the red line in each picture.",
@@ -415,21 +415,21 @@
         ],
         "successMessage": "The letters copy the mouth!",
         "feedback": {
-          "giyeok:tongue": "ㄱ bends the other way. Find the letter with the same corner as the red line.",
+          "giyeok:tongue": "ㄱ bends the other way. Match the red corner.",
           "giyeok:lips": "ㄱ says \"g\". Say it: the back of your tongue goes up.",
           "giyeok:throat": "ㄱ says \"g\". Say it: the back of your tongue goes up.",
-          "siot:lips": "ㅅ is the teeth. No picture here shows the teeth.",
-          "siot:tongue": "ㅅ is the teeth. No picture here shows the teeth.",
-          "siot:throat": "ㅅ is the teeth. No picture here shows the teeth.",
-          "mieum:tongue": "Say \"mmm\". Your lips close. Which picture shows closed lips?",
-          "mieum:throat": "Say \"mmm\". Your lips close. Which picture shows closed lips?",
+          "siot:lips": "ㅅ is teeth. No teeth here.",
+          "siot:tongue": "ㅅ is teeth. No teeth here.",
+          "siot:throat": "ㅅ is teeth. No teeth here.",
+          "mieum:tongue": "Say \"mmm\". Which picture has closed lips?",
+          "mieum:throat": "Say \"mmm\". Which picture has closed lips?",
           "nieun:lips": "Say \"nnn\". Where does the tip of your tongue go?",
           "nieun:throat": "Say \"nnn\". Where does the tip of your tongue go?",
-          "ieung:lips": "ㅇ is round and open. Find the round red line.",
-          "ieung:tongue": "ㅇ is round and open. Find the round red line."
+          "ieung:lips": "ㅇ is round. Find the round red line.",
+          "ieung:tongue": "ㅇ is round. Find the round red line."
         },
         "transition": [
-          "\"So sounds can become letters!\" says Bun-i.",
+          "\"Sounds can be letters!\" says Bun-i.",
           "\"Yes! ㄱ is the back of the tongue. ㅅ is the teeth,\" says Sora.",
           "\"A stronger sound adds one line: ㄴ, then ㄷ.\"",
           "\"Now let's write your first word.\""
@@ -442,7 +442,7 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "The King's letters are not just marks."
+                "text": "Letters are more than marks."
               },
               {
                 "by": "speaker",
@@ -474,7 +474,7 @@
               "id": "lips",
               "file": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_lips.webp",
               "name": "LIPS",
-              "label": "A face from the front, its lips closed."
+              "label": "A face. The lips are closed."
             },
             {
               "id": "tongue",
@@ -558,35 +558,35 @@
         "title": "Bun-i's First Word",
         "location": "THE WRITING ROOM",
         "story": [
-          "Sora's writing room. A lamp, a brush, a clean paper.",
-          "Bun-i kneels at the desk."
+          "A lamp, a brush, paper.",
+          "Bun-i sits at the desk."
         ],
         "letterIntro": "Sora's lesson:",
         "letter": "A vowel is a line and a dot.\nA standing line with the dot on the RIGHT is ㅏ. It says \"a\".\nWith the dot on the LEFT, it is ㅓ. It says \"eo\".\nEach block has a FIRST SOUND, then a VOWEL beside it.\nA LAST SOUND sits under them, at the bottom.\nDoes a block start with a vowel sound? Then ㅇ goes first. It holds the place.",
         "question": "Build Bun-i's word, eom-ma: tap a block, then choose its parts.",
         "hints": [
-          "Eom ends with closed lips. Which letter is the lips? Put it at the bottom.",
-          "ㅓ has its dot on the left. ㅏ has its dot on the right."
+          "Eom ends with closed lips. Put that letter at the bottom.",
+          "ㅓ: dot on the left. ㅏ: dot on the right."
         ],
         "successMessage": "Bun-i wrote 엄마!",
         "feedback": {
           "어마": "That says eo-ma. Listen: eom. At the end, the lips close.",
           "언마": "That says eon-ma. Eom ends with the lips, not the tongue.",
-          "암마": "That says am-ma. Eo has its dot on the left.",
+          "암마": "That is am-ma. Eo's dot is left.",
           "멈마": "That says meom-ma. Eom starts with a vowel sound: ㅇ goes first.",
           "엄머": "That says eom-meo. Ma has its dot on the right.",
           "엄맘": "That says eom-mam. Ma ends open: no last sound.",
           "마엄": "Say it with Bun-i: eom first, then ma."
         },
         "transition": [
-          "\"I wrote it! My own word!\" says Bun-i.",
-          "\"Your first word, at the top of your letter,\" says Sora.",
-          "A servant comes to the door. The King wants to see the letter."
+          "\"I wrote my own word!\" says Bun-i.",
+          "\"It goes at the top,\" says Sora.",
+          "The King wants to see the letter."
         ],
         "talk": {
           "speaker": "bun_i",
           "portrait": "assets/seasons/season_05_seoul/characters/bun_i.webp",
-          "goal": "Help Bun-i write her first word.",
+          "goal": "Help Bun-i write a word.",
           "before": {
             "lines": [
               {
@@ -595,7 +595,7 @@
               },
               {
                 "by": "detective",
-                "text": "Then build it, block by block."
+                "text": "Build it block by block."
               }
             ]
           }
@@ -724,47 +724,47 @@
       "location": "THE KING'S STUDY",
       "story": [
         "The King's study. Books everywhere.",
-        "The King holds a long, empty scroll.",
+        "The King holds an empty paper.",
         "\"So this is Bun-i's letter,\" he says."
       ],
       "letterIntro": "On the King's desk:",
       "letter": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one is her first word.\nSORA'S WORDS, for letters Bun-i has not learned yet: 고마워요 · 미안해요 · 잘 가요\nSora: \"Thank you has the block 마.\"\nSora: \"I'm sorry starts with the block 미.\"\nSora: \"Goodbye ends with 가요.\"",
-      "question": "Write Bun-i's letter: tap 2 papers in order.",
+      "question": "Tap 2 papers in order.",
       "hints": [
-        "Find Bun-i's first word. Check it with your evidence.",
-        "Read Bun-i's Message: what does she want to say? Then find Sora's word for it."
+        "Find her first word in your clues.",
+        "What does Bun-i's Message say? Find Sora's word."
       ],
       "successMessage": "Bun-i's letter is ready!",
       "transition": [
         "Bun-i's letter: 엄마, 고마워요. Mom, thank you.",
-        "훈민정음 (訓民正音): the right sounds, to teach the people."
+        "훈민정음 (訓民正音): right sounds to teach people."
       ],
-      "orderFeedback": "A letter starts with who it is for.",
+      "orderFeedback": "Start with who it is for.",
       "feedback": {
         "eoma,gomawoyo": "어마 has no last sound. Mom's first block ends with closed lips.",
-        "eommeo,gomawoyo": "엄머 has its last dot on the left. Mom ends with \"ma\": the dot on the right.",
+        "eommeo,gomawoyo": "엄머 ends with a left dot. Mom's \"ma\" has a right dot.",
         "eomma,mianhaeyo": "미안해요 starts with 미: that word is I'M SORRY. What does Bun-i want to say?",
-        "eomma,jalgayo": "잘 가요 ends with 가요: that word is GOODBYE. What does Bun-i want to say?"
+        "eomma,jalgayo": "잘 가요 is GOODBYE. What does Bun-i want?"
       },
       "talk": {
         "speaker": "sejong",
         "portrait": "assets/seasons/season_05_seoul/characters/sejong.webp",
-        "goal": "Show the King what Bun-i will write.",
+        "goal": "Show the King Bun-i's words.",
         "before": {
           "lines": [
             {
               "by": "speaker",
-              "text": "So this is the girl with the empty paper."
+              "text": "The girl with empty paper!"
             },
             {
               "by": "detective",
-              "text": "It is not empty now, Your Majesty."
+              "text": "Not empty now, Your Majesty."
             }
           ],
           "presents": [
             {
               "id": "what",
-              "prompt": "The King asks: \"What does she want to say to her mother?\"",
+              "prompt": "The King asks: \"What will she tell her mom?\"",
               "accepted": [
                 "s5_ep01_e1"
               ],
@@ -775,19 +775,19 @@
               "lines": [
                 {
                   "by": "detective",
-                  "text": "She wants to say thank you. Her mother gives her so much."
+                  "text": "She wants to thank her mom. Mom gives so much."
                 },
                 {
                   "by": "speaker",
                   "text": "A good word to write."
                 }
               ],
-              "miss": "That does not show what she wants to say.",
+              "miss": "That is not her message.",
               "tell": "Bun-i's picture note shows her message."
             },
             {
               "id": "written",
-              "prompt": "The King asks: \"What has she written so far?\"",
+              "prompt": "The King asks: \"What did she write?\"",
               "accepted": [
                 "s5_ep01_e3"
               ],
@@ -805,11 +805,11 @@
                 },
                 {
                   "by": "speaker",
-                  "text": "Then let us finish her letter."
+                  "text": "Let us finish her letter."
                 }
               ],
-              "miss": "That does not show what she wrote.",
-              "tell": "Bun-i's first word is at the top of her letter."
+              "miss": "That is not what she wrote.",
+              "tell": "Her first word is at the top."
             }
           ]
         }
@@ -817,7 +817,7 @@
       "ending": [
         {
           "by": "narrator",
-          "text": "Bun-i copies Sora's word slowly. Then she presses her water drop at the end."
+          "text": "She writes it again and adds her drop."
         },
         {
           "by": "speaker",
@@ -827,7 +827,7 @@
         },
         {
           "by": "narrator",
-          "text": "On the scroll: 훈민정음 · 訓民正音 · Hunminjeongeum."
+          "text": "On the paper: 훈민정음 · 訓民正音 · Hunminjeongeum."
         },
         {
           "by": "speaker",
@@ -843,18 +843,18 @@
         },
         {
           "by": "speaker",
-          "text": "The right sounds, to teach the people. Like you taught Bun-i.",
+          "text": "Right sounds to teach people. Like Bun-i.",
           "speaker": "sejong",
           "portrait": "assets/seasons/season_05_seoul/characters/sejong.webp"
         },
         {
           "by": "narrator",
-          "text": "At dawn, Bun-i runs home with her letter.",
+          "text": "Next morning, Bun-i runs home with her letter.",
           "background": "assets/seasons/season_05_seoul/cases/case_01/ending_mother_letter.webp"
         },
         {
           "by": "narrator",
-          "text": "Her mother cannot read. So Bun-i shows her: \"ㅁ is your lips. Say mmm.\"",
+          "text": "Mom cannot read. Bun-i says: \"ㅁ is your lips.\"",
           "background": "assets/seasons/season_05_seoul/cases/case_01/ending_mother_letter.webp"
         },
         {
@@ -871,7 +871,7 @@
         },
         {
           "by": "narrator",
-          "text": "Her mother keeps the letter in a little wooden box.",
+          "text": "Mom keeps the letter in a wooden box.",
           "background": "assets/seasons/season_05_seoul/cases/case_01/ending_mother_letter.webp"
         }
       ],
@@ -884,23 +884,23 @@
       }
     }
   },
-  "hook": "Bun-i goes home at dawn.",
+  "hook": "Bun-i goes home in the morning.",
   "learningGoal": {
     "title": "Reading how the new letters write a word",
     "titleKo": "새 글자로 낱말을 쓰는 원리 읽기"
   },
   "play": {
     "objectives": [
-      "Find out what Bun-i wants to say.",
+      "Find Bun-i's words.",
       "Learn how sounds become letters.",
-      "Help Bun-i write her first word.",
+      "Help Bun-i write a word.",
       "Finish Bun-i's letter."
     ],
     "intro": [
-      "Summer, 1446. You visit King Sejong in Hanyang.",
-      "He has made new letters. Very few people know them yet.",
-      "By the kitchen well, a girl holds an empty paper.",
-      "\"Bun-i has something to say. But she cannot write it,\" says the King.",
+      "Summer, 1446. You meet King Sejong.",
+      "He made new letters.",
+      "A girl has empty paper.",
+      "\"Bun-i cannot write,\" says the King.",
       "\"Can you help her?\""
     ],
     "caseSummary": "Bun-i wanted to thank her mother in her own words. You found her message, learned how the King's letters copy the mouth, and helped her write 엄마, 고마워요. The King named his letters 훈민정음: the right sounds, to teach the people.",

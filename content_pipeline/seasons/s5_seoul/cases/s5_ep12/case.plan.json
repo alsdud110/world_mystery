@@ -6,8 +6,8 @@
   "actId": "act3",
   "title": "The Box That Waited",
   "synopsis": [
-    "A girl's box is lost in a busy office in Chongqing.",
-    "Her mother said: open it on the day the war is over."
+    "A girl's box is lost in Chongqing.",
+    "Mother's rule: open it the day war ends."
   ],
   "goal": "Find Bitna's mother's box and open its lock on the right day.",
   "characters": [
@@ -33,7 +33,7 @@
             {
               "id": "two_straps",
               "label": "The trunk with two leather straps and a round brass lock",
-              "feedback": "This trunk has two straps. The note says ONE strap."
+              "feedback": "Two straps. The note says ONE strap."
             },
             {
               "id": "one_strap_peg",
@@ -78,21 +78,21 @@
         "title": "The Trunk by the Wall",
         "location": "THE GOVERNMENT OFFICE",
         "story": [
-          "The office is hot and busy. People pack papers into trunks.",
-          "Bitna looks at the trunks. \"They all look the same!\"",
-          "On the desk lies a folded note with a blue seal."
+          "The office is hot and busy.",
+          "\"The trunks all look the same!\"",
+          "The desk note has a blue stamp."
         ],
         "letterIntro": "Bitna's father wrote:",
         "letter": "\"Bitna, I am sorry! I packed Mother's box in a trunk by mistake.\"\n\"It is the trunk with ONE leather strap.\"\n\"It has a round brass lock, too.\"\n\"Do not open Mother's lock before the day! — Father\"",
         "question": "Which trunk holds Mother's box?",
         "hints": [
-          "Read the note on the desk first. Then look at the trunks.",
-          "Count the straps. Then look at the lock."
+          "Read the note first.",
+          "Count the straps."
         ],
-        "successMessage": "You found the trunk with Mother's box!",
+        "successMessage": "You found Mother's box!",
         "transition": [
-          "In the trunk lies a small wooden box.",
-          "Its top opens. Its bottom has a lock: five slots and seven letter tiles.",
+          "A small box is inside.",
+          "Its lock has five spaces and seven tiles.",
           "Mother carved on the lock: \"Five letters. Two tiles are extra.\""
         ],
         "mapX": 0.35,
@@ -100,7 +100,7 @@
         "clue": {
           "title": "Mother's Lock",
           "value": "5 SLOTS · 7 TILES",
-          "note": "Mother's lock: a word of five letters, and seven letter tiles.",
+          "note": "Mother's lock: five letters, seven tiles.",
           "symbol": "key"
         },
         "evidence": {
@@ -118,9 +118,9 @@
             "measuredOn": "sha256:66d364e37a3fef9810770e8c0c7bc6230fa3e55442a49919a692d51822c3ef67"
           },
           "place": "The government office in Chongqing",
-          "task": "Look around the office. Find the note from Bitna's father.",
-          "nextTask": "Which trunk holds the box? Look at the trunks.",
-          "missLine": "Nothing here. Look for the note.",
+          "task": "Find the father's note.",
+          "nextTask": "Which trunk holds the box?",
+          "missLine": "Nothing here. Find the note.",
           "guideAt": [
             720,
             960
@@ -148,7 +148,7 @@
               "id": "radio",
               "kind": "note",
               "title": "THE RADIO",
-              "label": "A wooden radio on a shelf",
+              "label": "A radio on a shelf",
               "areas": [
                 [
                   690,
@@ -161,13 +161,13 @@
                 780,
                 205
               ],
-              "line": "The radio hums. Everyone is waiting for news."
+              "line": "The radio is on."
             },
             {
               "id": "window",
               "kind": "note",
               "title": "THE WINDOW",
-              "label": "A window over the hill city",
+              "label": "A window over the city",
               "areas": [
                 [
                   1090,
@@ -180,7 +180,7 @@
                 1270,
                 100
               ],
-              "line": "Steep streets go down to the river."
+              "line": "Streets go down to the river."
             },
             {
               "id": "trunks",
@@ -200,8 +200,8 @@
                 640
               ],
               "requires": "note",
-              "lockedLine": "Three trunks. Which one matters? Read something first.",
-              "unreadLine": "Read the note on the desk first."
+              "lockedLine": "Read something first.",
+              "unreadLine": "Read the desk note first."
             }
           ],
           "others": [
@@ -215,7 +215,7 @@
                   680
                 ]
               ],
-              "line": "The door is open. People come and go."
+              "line": "The door is open."
             },
             {
               "label": "The bookshelf",
@@ -227,11 +227,11 @@
                   400
                 ]
               ],
-              "line": "Books and papers. No note here."
+              "line": "No note here."
             }
           ],
           "choiceTitle": "THE TRUNKS",
-          "choiceHow": "Which trunk holds the box? Tap one trunk.",
+          "choiceHow": "Tap one trunk.",
           "choicePixels": {
             "width": 1536,
             "height": 1024
@@ -263,20 +263,20 @@
         "talk": {
           "speaker": "kim_wonbong",
           "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp",
-          "goal": "Find out where the box went.",
+          "goal": "Where did the box go?",
           "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "Welcome, Detective. The war may end soon, so we pack our papers."
+                "text": "The war may end soon. We pack up."
               },
               {
                 "by": "speaker",
-                "text": "Bitna's father packed her mother's box with them, by mistake."
+                "text": "Bitna's father packed the box by mistake."
               },
               {
                 "by": "speaker",
-                "text": "He went home to the little ones. He left a note on the desk."
+                "text": "He went home. He left a note."
               },
               {
                 "by": "detective",
@@ -289,7 +289,7 @@
         "discovery": {
           "type": "newLead",
           "title": "MOTHER'S LOCK",
-          "detail": "Five letters, and two extra tiles. Which word did Mother choose?"
+          "detail": "Two extra tiles. Which word?"
         }
       }
     },
@@ -360,20 +360,20 @@
         "title": "Mother's Letters",
         "location": "BITNA'S ROOM",
         "story": [
-          "You carry the box to Bitna's room. Her father and brothers are there.",
-          "Her little brother opens the top. Mother's letters fall out.",
-          "\"Mother sends a letter when she can,\" Bitna says."
+          "You take the box to Bitna.",
+          "Her brother opens it. Letters fall out.",
+          "\"Mother sends letters when she can.\""
         ],
         "letterIntro": "What Mother's letters say:",
         "letter": "First letter (April): \"I go to the Liberation Army today. I will write to you.\"\n\"My riddle is on the backs, one piece on each. Only the right order makes sense.\"\nPine letter: \"I am far away now. There are pine trees on the hill.\"\nRain letter: \"After my pine letter, the rain came. My boots are wet.\"\nMoon letter: \"The rain is over now. The moon is bright tonight.\"",
-        "question": "Put Mother's letters in order, from the first.",
+        "question": "Put Mother's letters in order. Start with the first.",
         "hints": [
           "The first letter has its month on it. Now read the rain letter.",
           "The moon letter says the rain is over. So it came after the rain letter."
         ],
-        "successMessage": "Mother's letters are back in order!",
+        "successMessage": "The letters are in order!",
         "transition": [
-          "You turn them over, in order. The pieces join into one riddle.",
+          "Turn them over, in order. A riddle!",
           "\"The sun gives it.\" \"At night, it goes away.\"",
           "\"It comes back on the day the war is over.\" \"'May' is not enough.\""
         ],
@@ -402,7 +402,7 @@
             {
               "id": "drawing",
               "title": "A DRAWING",
-              "text": "Bitna's little brother drew a house. It is not a letter.",
+              "text": "A house drawing, not a letter.",
               "discard": true,
               "fiction": true
             },
@@ -447,19 +447,19 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "My little brother opened the top. Now Mother's letters are all mixed up!"
+                "text": "My brother mixed up Mother's letters!"
               },
               {
                 "by": "speaker",
-                "text": "Mother is far away with our army, the Liberation Army."
+                "text": "Mother is with the Liberation Army."
               },
               {
                 "by": "speaker",
-                "text": "She drew a little picture on each letter."
+                "text": "She drew on each letter."
               },
               {
                 "by": "detective",
-                "text": "Let us put them back the right way."
+                "text": "Let us put them back."
               }
             ]
           }
@@ -515,29 +515,29 @@
         "title": "News on the Radio",
         "location": "THE GOVERNMENT OFFICE",
         "story": [
-          "You and Bitna run back to the office. Everyone stands by the radio.",
-          "People hold their breath. Then some of them cry.",
-          "Bitna takes out her date card and her pen."
+          "All wait by the office radio.",
+          "Some people cry.",
+          "Bitna takes out her date card."
         ],
         "letterIntro": "The radio, Mother's rule, and Bitna's card:",
         "letter": "Radio: \"Japan has given up. The war is over!\"\n\"Today is the fifteenth of August.\"\nBitna's card: \"The fourteenth: my brothers said the war may end.\"\nMother's letter: \"'May' is not enough.\"\nBitna's card: July is month seven. August is month eight. September is month nine.\nBitna: \"Korean dates put the month before the day.\"\n\"Write the day Mother's lock can open, in numbers.\"",
-        "question": "On what day can Mother's lock open? Put the date in as a number.",
+        "question": "When can the lock open? Write the date.",
         "hints": [
-          "Mother said 'may' is not enough. On which day is the war really over?",
-          "Find August on Bitna's card. Write the month, then the day."
+          "'May' is not enough. When is the war really over?",
+          "Find August. Write month, then day."
         ],
         "successMessage": "8.15: the fifteenth of August! Today is the day.",
         "transition": [
           "Bitna writes 8.15 on her card.",
-          "\"Not a 'may' day,\" she says. \"Today the war is over.\"",
-          "\"Let us open it on the river steps. Mother said goodbye to me there.\""
+          "\"Not a 'may' day. Today the war is over.\"",
+          "\"Let us open it on the river steps.\""
         ],
         "feedback": {
           "715": "July is month seven. The radio says August.",
-          "814": "That was only a 'may' day. Mother said 'may' is not enough.",
+          "814": "That was a 'may' day. But 'may' is not enough.",
           "915": "September is month nine. The radio says August."
         },
-        "orderFeedback": "The right numbers, in the wrong order. The month goes before the day.",
+        "orderFeedback": "The month goes first.",
         "mapX": 0.35,
         "mapY": 0.45,
         "clue": {
@@ -559,11 +559,11 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "Quiet, everyone. The radio has news."
+                "text": "Quiet! The radio has news."
               },
               {
                 "by": "speaker",
-                "text": "We have waited a very long time for this."
+                "text": "We waited so long."
               }
             ]
           }
@@ -571,11 +571,11 @@
         "discovery": {
           "type": "storyDiscovery",
           "title": "THE WAR IS OVER",
-          "detail": "Japan has given up. Today Mother's lock can open."
+          "detail": "Japan gave up. Today the lock can open."
         },
         "recall": {
           "title": "Mother's Rule",
-          "prompt": "Which thing in your Notebook says when the lock can open?",
+          "prompt": "What says when to open it?",
           "miss": "Find the backs of Mother's letters."
         }
       }
@@ -676,24 +676,24 @@
       "title": "Mother's Lock",
       "location": "THE RIVER STEPS",
       "story": [
-        "The sun goes down over the river. Families meet on the steps.",
-        "Bitna sits with Mother's box on her knees.",
-        "\"Before I open it, I must be sure,\" she says."
+        "Families meet on the river steps.",
+        "Bitna holds Mother's box.",
+        "\"I must be sure,\" she says."
       ],
       "letterIntro": "Mother's lock, and her riddle:",
       "letter": "On the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\"",
-      "question": "What is Mother's word? Spell it with five of the seven tiles.",
+      "question": "Mother's word? Use five of the seven tiles.",
       "hints": [
-        "What does the sun give us in the day? At night, it is gone.",
-        "N and R are the extra tiles. Use the other five."
+        "What does the sun give us? At night, it is gone.",
+        "N and R are extra."
       ],
       "successMessage": "LIGHT. Mother's lock opens!",
       "transition": [
-        "Inside lies a flag, folded small. It is Korea's flag.",
-        "Mother sewed it for the day the war is over.",
-        "Bitna holds it up in the last light of the sun."
+        "Inside is Korea's flag.",
+        "Mother made it for this day.",
+        "Bitna holds it up in the last light."
       ],
-      "orderFeedback": "All five letters are right. Put them in order: what the sun gives us.",
+      "orderFeedback": "All letters right. Now put them in order.",
       "mapX": 0.7,
       "mapY": 0.75,
       "evidence": {
@@ -706,11 +706,11 @@
       "ending": [
         {
           "by": "narrator",
-          "text": "On 15 August 1945, Japan gave up. The war was over."
+          "text": "On 15 August 1945, Japan gave up."
         },
         {
           "by": "speaker",
-          "text": "In Korean, this day is gwangbok: the light comes back.",
+          "text": "In Korean, it is gwangbok: light comes back.",
           "speaker": "kim_wonbong",
           "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp"
         },
@@ -722,55 +722,55 @@
         },
         {
           "by": "speaker",
-          "text": "The Allies, the countries that fought Japan, won the war.",
+          "text": "The Allies beat Japan.",
           "speaker": "kim_wonbong",
           "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp"
         },
         {
           "by": "speaker",
-          "text": "Many Koreans worked for this day too, at home and far away.",
+          "text": "Many Koreans worked for this day.",
           "speaker": "kim_wonbong",
           "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp"
         },
         {
           "by": "narrator",
-          "text": "Kim Won-bong was the government's minister for the army."
+          "text": "Kim Won-bong was the army leader."
         },
         {
           "by": "narrator",
-          "text": "The Korean Liberation Army was getting ready, but Japan gave up first."
+          "text": "The Liberation Army was ready. Japan gave up first."
         },
         {
           "by": "speaker",
-          "text": "Mother is with them. Soon she will come back too.",
+          "text": "Mother will come back soon too.",
           "speaker": "bitna",
           "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp"
         },
         {
           "by": "detective",
-          "text": "Mother's flag waited in the box. Today it came out.",
+          "text": "Mother's flag came out today.",
           "evidence": "s5_ep12_e4"
         }
       ],
       "talk": {
         "speaker": "bitna",
         "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp",
-        "goal": "Show Bitna that today is the day, and where Mother hid her riddle.",
+        "goal": "Show Bitna the day and the riddle.",
         "before": {
           "lines": [
             {
               "by": "speaker",
-              "text": "Mother's rule is strict."
+              "text": "We must keep Mother's rule."
             },
             {
               "by": "detective",
-              "text": "Then let us check it together."
+              "text": "Let us check it."
             }
           ],
           "presents": [
             {
               "id": "today",
-              "prompt": "Bitna asks: \"Is today really the day? Mother said 'may' is not enough.\"",
+              "prompt": "Bitna asks: \"Is today the day?\"",
               "accepted": [
                 "s5_ep12_e3"
               ],
@@ -782,20 +782,20 @@
               "lines": [
                 {
                   "by": "detective",
-                  "text": "The radio said it: the war is over. Today is 8.15."
+                  "text": "The radio said it. Today is 8.15."
                 },
                 {
                   "by": "speaker",
                   "text": "Not a 'may' day. Today is the day!"
                 }
               ],
-              "miss": "That does not say what day it is.",
-              "tell": "Find the card with today's date on it.",
+              "miss": "That does not say the day.",
+              "tell": "Find the card with today's date.",
               "litAfter": 3
             },
             {
               "id": "riddle",
-              "prompt": "Bitna asks: \"And Mother's word? Where did she hide her riddle?\"",
+              "prompt": "Bitna asks: \"Where did Mother hide her riddle?\"",
               "accepted": [
                 "s5_ep12_e2"
               ],
@@ -814,26 +814,26 @@
                 },
                 {
                   "by": "speaker",
-                  "text": "Five letters. My brothers tried to guess it many times!"
+                  "text": "My brothers could not guess it!"
                 }
               ],
-              "miss": "There is no riddle on that.",
-              "tell": "Mother wrote on the backs of her letters.",
+              "miss": "No riddle on that.",
+              "tell": "Mother wrote on the backs.",
               "litAfter": 3
             }
           ]
         }
       },
       "feedback": {
-        "NIGHT": "Night is when it goes away. What does the sun give?",
-        "RIGHT": "The sun does not give us \"right\". Read the riddle again.",
-        "THING": "A thing can be anything. What does the sun give us?",
-        "GLINT": "A glint is only a tiny flash. This comes back for the whole country.",
-        "GIRTH": "Girth means how big around. The sun does not give it."
+        "NIGHT": "Night is when it goes.",
+        "RIGHT": "The sun does not give us \"right\".",
+        "THING": "Not a thing. What does the sun give us?",
+        "GLINT": "A glint is too small.",
+        "GIRTH": "Girth means how big around. Not that."
       }
     }
   },
-  "hook": "The radio in the office is on all day.",
+  "hook": "The office radio is on all day.",
   "learningGoal": {
     "title": "Reading clues, order, dates and the meaning of gwangbok",
     "titleKo": "단서·순서·날짜·광복의 뜻 읽기"
@@ -846,11 +846,11 @@
       "Open Mother's lock."
     ],
     "intro": [
-      "August, 1945. You are a guest of Korea's government in Chongqing, China.",
-      "Japan has ruled Korea since 1910. So this government works far from home.",
-      "Kim Won-bong, the government's minister for the army, meets you at the door.",
-      "A girl runs up to you: \"I am Bitna. My mother's box is lost!\"",
-      "\"Mother said: open its lock only on the day the war is over.\""
+      "August, 1945. You visit Korea's government in China.",
+      "Japan has ruled Korea since 1910.",
+      "Kim Won-bong, the army leader, meets you.",
+      "Bitna runs up. \"My mother's box is lost!\"",
+      "\"Open it only the day the war ends.\""
     ],
     "caseSummary": "Bitna's mother left her a box with a word lock. Open it on the day the war is over, she said. 'May' is not enough. Bitna's father packed it in a trunk by mistake. On 15 August 1945, Japan gave up and the war was over. Bitna opened the lock with Mother's word: LIGHT. Inside was the flag Mother sewed. In Korean, this day is gwangbok: the light comes back. The Allies won the war, and many Koreans worked for this day.",
     "place": "CHONGQING",

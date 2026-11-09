@@ -135,7 +135,8 @@ void main() {
         final lines = (level == Difficulty.rookie ? season.endings : season.variants[level]!.endings)[fin]!;
         final texts = [for (final l in lines) l.text];
         final name = texts.indexWhere((x) => x.contains('훈민정음') && x.contains('訓民正音') && x.contains('Hunminjeongeum'));
-        final dawn = texts.indexWhere((x) => x.contains('dawn'));
+        // Rookie says it in a child's words: the next morning.
+        final dawn = texts.indexWhere((x) => x.contains(level == Difficulty.rookie ? 'morning' : 'dawn'));
         expect(name, greaterThan(0), reason: 'the name shown in three ways');
         expect(dawn, greaterThan(name), reason: 'the name first, then the dawn');
         for (final syllable in ['훈', '민', '정', '음']) {

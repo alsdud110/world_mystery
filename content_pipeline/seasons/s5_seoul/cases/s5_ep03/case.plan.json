@@ -6,8 +6,8 @@
   "actId": "act1",
   "title": "The Crane That Lifts Stones",
   "synopsis": [
-    "Jeong Yak-yong's lifting machine will not lift a stone.",
-    "A note with a small water drop is tied to its rope."
+    "Jeong's machine cannot lift a stone.",
+    "A note hangs on its rope."
   ],
   "goal": "Find out if the lifting machine is broken, and who wrote the warning.",
   "characters": [
@@ -84,22 +84,22 @@
         "title": "Broken, or Changed?",
         "location": "THE STONE YARD",
         "story": [
-          "A big stone lies under the machine. Its ropes hang loose.",
-          "A note with a small water drop is tied to the rope.",
-          "Jeong reads its King's letters out: \"The drawing is different.\""
+          "A big stone lies under the machine.",
+          "A water-drop note is on the rope.",
+          "Jeong reads the note: \"The drawing is different.\""
         ],
         "letterIntro": "Foreman Gwak's work log:",
         "letter": "This morning, the machine could not lift a stone.\nThe note was tied to the rope in the night, after the carpenter's work.\nThe machine lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the top from a copied drawing.",
-        "question": "Put the log in order. Was the machine broken, or changed?",
+        "question": "Order the log. Broken, or changed?",
         "hints": [
-          "Look for 'until' and 'after' in the log. The lines are not in order.",
-          "What happened before the new carpenter came? What came after his work?"
+          "Look for 'until' and 'after'. Lines are out of order.",
+          "What was before the carpenter? What came after?"
         ],
         "successMessage": "The machine worked until someone changed it!",
         "transition": [
           "The machine is not broken. It was changed.",
-          "Gwak says, \"Nobody works here at night. The gate is shut. Only the water carriers come in before dawn.\"",
-          "\"A copied drawing?\" says Jeong. \"Then which drawing is mine?\""
+          "Gwak: \"Nobody works here at night. The gate is shut. Only water carriers come in, before morning.\"",
+          "\"Then which drawing is mine?\" says Jeong."
         ],
         "orderFeedback": "Read the log again. What happened until the new carpenter came?",
         "mapX": 0.5,
@@ -107,7 +107,7 @@
         "clue": {
           "title": "Changed, Not Broken",
           "value": "REBUILT FROM A COPY",
-          "note": "The machine worked until a new carpenter rebuilt its top from a copied drawing."
+          "note": "It worked until a new carpenter came."
         },
         "evidence": {
           "name": "The Note on the Rope",
@@ -119,20 +119,20 @@
             {
               "id": "note",
               "title": "THE NOTE",
-              "text": "In the night, a note with a water drop is tied to the rope.",
+              "text": "At night, someone ties on a note.",
               "fiction": true
             },
             {
               "id": "rice",
               "title": "THE RICE",
-              "text": "Workers eat rice in the shade.",
+              "text": "Workers eat rice out of the sun.",
               "discard": true,
               "fiction": true
             },
             {
               "id": "copy",
               "title": "THE NEW CARPENTER",
-              "text": "A new carpenter rebuilds the top from a copied drawing.",
+              "text": "A new carpenter makes it again from a copy.",
               "fiction": true
             },
             {
@@ -174,16 +174,16 @@
         "talk": {
           "speaker": "jeong_yakyong",
           "portrait": "assets/seasons/season_05_seoul/characters/jeong_yakyong.webp",
-          "goal": "Find out what the machine should do.",
+          "goal": "Find out what the machine does.",
           "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "My machine lifts heavy stones with ropes and pulleys."
+                "text": "My machine lifts stones with ropes and pulleys."
               },
               {
                 "by": "speaker",
-                "text": "Gwak says it is broken. I do not believe it."
+                "text": "Gwak says it is broken. I don't think so."
               },
               {
                 "by": "detective",
@@ -194,8 +194,8 @@
         },
         "discovery": {
           "type": "newLead",
-          "title": "A WARNING IN THE NIGHT",
-          "detail": "Someone knew the drawing was different, and tied this note in the night. Who?"
+          "title": "A NOTE IN THE NIGHT",
+          "detail": "Who tied this note at night?"
         }
       }
     },
@@ -215,7 +215,7 @@
               "id": "pole",
               "label": "The tall pole",
               "feedback": "This has one pole, not a frame like a gate. Read Jeong's first line.",
-              "altText": "a drawing of one tall wooden pole with one pulley at its top and one rope",
+              "altText": "one pole, one pulley on top, one rope",
               "picture": "assets/seasons/season_05_seoul/cases/case_03/drawing_pole.webp"
             },
             {
@@ -227,7 +227,7 @@
             {
               "id": "gate_plain",
               "label": "The gate with no wheels",
-              "feedback": "Are there pulleys over the stone too? Is there a wheel on each side?",
+              "feedback": "Pulleys over the stone? Wheels on each side?",
               "altText": "a drawing of a wooden frame like a gate, pulleys only under the top beam, and no wheels",
               "picture": "assets/seasons/season_05_seoul/cases/case_03/drawing_gate_plain.webp"
             }
@@ -269,22 +269,22 @@
         "title": "Which Drawing Is Mine?",
         "location": "THE DRAWING ROOM",
         "story": [
-          "Three drawings of lifting machines lie on the table. Each has a name written on it.",
-          "The new carpenter stands by the door. \"I cannot read. I took the drawing with a gate on it.\"",
+          "Three drawings, each with a name.",
+          "The carpenter says, \"I cannot read. I took the gate drawing.\"",
           "\"Only three people come in here,\" Jeong says. \"The carpenter, my clerk, and the girl who brings water for my ink.\"",
-          "\"Read my words, and find my drawing.\""
+          "\"Read my words. Find my drawing.\""
         ],
         "letterIntro": "Jeong's words about his machine:",
         "letter": "\"My machine stands like a gate, with a beam across the top.\"\n\"Pulleys hang from the beam. More pulleys hang under them, over the stone.\"\n\"Ropes run between the pulleys, up and down.\"\n\"A big wheel stands on each side. Workers turn the wheels.\"",
         "question": "Which drawing is Jeong's?",
         "hints": [
-          "Read Jeong's first line. What shape does his machine have?",
-          "Look for pulleys in two places, and a wheel on each side."
+          "Read Jeong's first line. What shape is his machine?",
+          "Pulleys in two places. A wheel on each side."
         ],
         "successMessage": "That is Jeong's drawing!",
         "transition": [
-          "The machine in the yard has pulleys only at the top, and no wheels.",
-          "\"He took the gate with no wheels,\" says Jeong. \"Let us rebuild it, and lift that stone.\""
+          "The yard machine has top pulleys only. No wheels.",
+          "\"No wheels on his gate,\" says Jeong."
         ],
         "mapX": 0.4,
         "mapY": 0.4,
@@ -371,34 +371,34 @@
         "title": "The Stone Rises",
         "location": "THE STONE YARD",
         "story": [
-          "The builders rebuild the machine from Jeong's drawing.",
-          "Now the big stone must go up onto the wall.",
-          "\"Read my steps,\" says Jeong. \"Then do them in order.\""
+          "They fix it with Jeong's drawing.",
+          "Now lift the stone onto the wall.",
+          "\"Read my steps,\" says Jeong. \"Do them in order.\""
         ],
         "letterIntro": "Jeong's steps for lifting:",
         "letter": "\"Turn the two wheels only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last.\"\n\"Nobody pulls the rope by hand, and nobody pushes the stone.\"",
         "question": "Tap the four steps in order.",
         "hints": [
-          "Find the step that comes before the hook.",
-          "The wheels turn only after the hook. What happens last?"
+          "Find the step before the hook.",
+          "The wheels turn after the hook. What happens last?"
         ],
         "successMessage": "The wheels turn, and the stone rises!",
         "transition": [
-          "The ropes go tight. Slowly, the big stone rises onto the wall.",
+          "The ropes go tight. The stone rises!",
           "Gwak takes off his hat. \"It was never broken,\" he says.",
-          "Below, a girl with a water bucket looks at the two wheels, and smiles."
+          "A water girl sees the wheels and smiles."
         ],
         "feedback": {
-          "hook,tie,turn,rise": "Read again: what do you do before you hook the stone?",
+          "hook,tie,turn,rise": "What comes before the hook?",
           "tie,turn,hook,rise": "The wheels turn only after the stone is hooked."
         },
-        "orderFeedback": "Those are the right steps. Read Jeong's 'before' and 'after' again.",
+        "orderFeedback": "Right steps, wrong order. Read 'before' and 'after' again.",
         "mapX": 0.55,
         "mapY": 0.62,
         "clue": {
           "title": "The Stone Rises",
           "value": "TIE · HOOK · TURN · RISE",
-          "note": "Rebuilt from Jeong's drawing, the machine lifts the stone onto the wall."
+          "note": "With Jeong's drawing, it lifts the stone."
         },
         "evidence": {
           "name": "Jeong's Lifting Steps",
@@ -423,7 +423,7 @@
           {
             "id": "clerk",
             "label": "The clerk",
-            "feedback": "The clerk sleeps in town, and the gate is shut at night. The note came in the night."
+            "feedback": "The clerk sleeps in town. The gate is shut at night."
           },
           {
             "id": "okbun",
@@ -437,7 +437,7 @@
           {
             "id": "carpenter",
             "label": "The new carpenter",
-            "feedback": "The carpenter cannot write. The note is written in the King's letters."
+            "feedback": "The carpenter cannot write the King's letters."
           }
         ]
       },
@@ -481,21 +481,21 @@
       "title": "Who Tied the Note?",
       "location": "THE NEW WALL",
       "story": [
-        "The big stone sits on the wall. The workers cheer.",
-        "Jeong holds up the note. \"Someone warned us. Who?\"",
-        "Four people stand in the yard."
+        "The stone is on the wall.",
+        "Jeong asks, \"Who wrote this note?\"",
+        "Four people stand there."
       ],
-      "letterIntro": "Your notebook, and what the four people say:",
+      "letterIntro": "Your notes. What four people say:",
       "letter": "The note says: \"The drawing is different.\"\nIt is written in the King's letters.\nIt was tied to the rope in the night.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room. I fill the jars before dawn.\"",
       "question": "Who tied the note to the rope?",
       "hints": [
-        "To write \"the drawing is different\", the writer had seen Jeong's drawing.",
-        "Check each person: the drawing room, the writing, the night. Only one fits all three."
+        "The writer saw Jeong's drawing.",
+        "Check each person: drawing room, writing, night."
       ],
       "successMessage": "Okbun! Only she fits all three.",
       "transition": [
         "Okbun puts down her bucket.",
-        "\"I saw the new top had no wheels,\" she says. \"Jeong's drawing has two.\""
+        "\"The new top had no wheels,\" she says."
       ],
       "mapX": 0.55,
       "mapY": 0.55,
@@ -507,7 +507,7 @@
       "ending": [
         {
           "by": "speaker",
-          "text": "The new top had no wheels. Jeong's drawing has two. So I wrote the note.",
+          "text": "The new top had no wheels. So I wrote the note.",
           "speaker": "okbun",
           "portrait": "assets/seasons/season_05_seoul/characters/okbun.webp"
         },
@@ -518,19 +518,19 @@
         },
         {
           "by": "speaker",
-          "text": "A water girl may not tell the builders they are wrong. So I wrote no name.",
+          "text": "A water girl can't say builders are wrong. So, no name.",
           "speaker": "okbun",
           "portrait": "assets/seasons/season_05_seoul/characters/okbun.webp"
         },
         {
           "by": "speaker",
-          "text": "I drew a water drop. Jeong knows the girl who brings his water.",
+          "text": "I drew a water drop. Jeong knows me.",
           "speaker": "okbun",
           "portrait": "assets/seasons/season_05_seoul/characters/okbun.webp"
         },
         {
           "by": "speaker",
-          "text": "Then I thank the girl who brings my water.",
+          "text": "Then I thank my water girl.",
           "speaker": "jeong_yakyong",
           "portrait": "assets/seasons/season_05_seoul/characters/jeong_yakyong.webp"
         },
@@ -542,26 +542,26 @@
         },
         {
           "by": "narrator",
-          "text": "The next autumn, in the ninth month of 1796, Hwaseong Fortress was finished."
+          "text": "In 1796, Hwaseong Fortress was done."
         },
         {
           "by": "speaker",
-          "text": "Machines like mine helped lift the big stones.",
+          "text": "Machines like mine helped lift big stones.",
           "speaker": "jeong_yakyong",
           "portrait": "assets/seasons/season_05_seoul/characters/jeong_yakyong.webp"
         },
         {
           "by": "narrator",
-          "text": "A record book tells how the fortress was built."
+          "text": "An old book tells the story."
         },
         {
           "by": "narrator",
-          "text": "It lists the workers, and the pay they were given."
+          "text": "It has the workers' names and pay."
         }
       ]
     }
   },
-  "hook": "A stone waits under a machine that will not lift.",
+  "hook": "The stone will not go up.",
   "learningGoal": {
     "title": "Reading order words and how a machine is made",
     "titleKo": "순서 표현과 기계의 생김새 읽기"
@@ -574,14 +574,14 @@
       "Find who tied the note to the rope."
     ],
     "intro": [
-      "Spring, 1795. You are a detective, a guest of Jeong Yak-yong at Hwaseong Fortress in Suwon.",
-      "A long stone wall is rising around the new town.",
-      "Jeong planned this fortress for the King. He also designed a lifting machine, the geojunggi.",
-      "It lifts heavy stones with ropes and pulleys. Today Jeong has come to see it work.",
-      "But Foreman Gwak shouts across the stone yard.",
-      "\"Your machine is broken! It cannot lift one stone!\""
+      "Spring, 1795. You visit Jeong Yak-yong.",
+      "A stone wall goes up.",
+      "Jeong made a lifting machine, the geojunggi.",
+      "Today Jeong comes to see it work.",
+      "But Foreman Gwak shouts at him.",
+      "\"Your machine is broken!\""
     ],
-    "caseSummary": "The lifting machine was not broken. A new carpenter, who could not read, rebuilt its top from the wrong drawing. Okbun, who carries water to the builders, had seen Jeong's drawing. She tied a warning note to the rope in the night. It had a water drop and no name. Rebuilt from Jeong Yak-yong's drawing, the machine lifted the stone. Hwaseong Fortress was finished in 1796. Machines like Jeong's geojunggi helped lift big stones. A record book lists the workers and their pay.",
+    "caseSummary": "The machine was not broken. A new carpenter used the wrong drawing. Okbun, the water girl, saw Jeong's drawing. She tied a note to the rope. It had a water drop, no name. Hwaseong Fortress was done in 1796.",
     "place": "HWASEONG FORTRESS, SUWON",
     "keyWords": [
       "until",

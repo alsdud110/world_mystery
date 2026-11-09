@@ -6,9 +6,9 @@
   "actId": "act2",
   "title": "The Fire on the Hill",
   "synopsis": [
-    "Spring 1919: students in Seoul are calling for independence.",
-    "Near Cheonan, Yu Gwan-sun plans a march at Aunae Market.",
-    "But a wrong day is going round the villages."
+    "Spring 1919. Seoul calls for independence.",
+    "Gwan-sun plans a market march.",
+    "But a wrong day goes round."
   ],
   "goal": "Find the true day of the march, and the sign that tells the villages.",
   "characters": [
@@ -40,12 +40,12 @@
             {
               "id": "april_second",
               "label": "The second of April",
-              "feedback": "Only Mr. Pyo says the second. Find two people who say the same day."
+              "feedback": "Only Mr. Pyo says the second."
             },
             {
               "id": "march_tenth",
               "label": "The tenth of March",
-              "feedback": "Nobody says March. Ask each person about the day again."
+              "feedback": "Nobody says March. Ask again."
             }
           ]
         },
@@ -81,22 +81,22 @@
         "title": "Three Messengers",
         "location": "AUNAE MARKET",
         "story": [
-          "Aunae Market is busy with baskets, rice and salt.",
-          "Under your teacup at the noodle stall, a folded note waits.",
-          "It is written in Hangeul, Korea's own letters. There is no name, only a small flame."
+          "Aunae Market is busy.",
+          "A note waits under your teacup.",
+          "Hangeul. No name, just a small flame."
         ],
         "letterIntro": "The flame note says:",
         "letter": "Three people told Gwan-sun's day to the villages.\nTwo of them say the same day.\nOne man says another day. Someone paid him to ask.\nAsk what each one heard.\n— a small flame",
         "question": "What is the true day of the march?",
         "hints": [
-          "Ask every person the same question about the day.",
-          "Two people say the same thing. Compare their answers."
+          "Ask everyone about the day.",
+          "Two people say the same. Look at their answers."
         ],
         "successMessage": "Two messengers say the same day!",
         "transition": [
           "The march is on the first of April, the big market day.",
-          "But how will far villages know the time has come?",
-          "Gyeongsun takes your arm. \"Come to Gwan-sun's house.\""
+          "How will far villages know it is time?",
+          "Gyeongsun says, \"Come to Gwan-sun's house.\""
         ],
         "mapX": 0.52,
         "mapY": 0.62,
@@ -115,8 +115,8 @@
         "dialogue": {
           "place": "AUNAE MARKET",
           "background": "assets/seasons/season_05_seoul/cases/case_08/aunae_market.webp",
-          "goal": "Find out which day the villages heard.",
-          "how": "Ask each messenger. Write down what they say.",
+          "goal": "Find which day the villages heard.",
+          "how": "Ask each messenger. Note their words.",
           "guide": "Talk to a messenger.",
           "questions": [
             {
@@ -138,11 +138,11 @@
               "name": "Gyeongsun",
               "title": "A STUDENT FROM SEOUL",
               "portrait": "assets/seasons/season_05_seoul/characters/gyeongsun.webp",
-              "description": "a girl of sixteen in a white jeogori and a black skirt, her hair in one long braid",
-              "greeting": "I carried the day to two villages.",
+              "description": "a girl of sixteen with long hair",
+              "greeting": "I took the day to two villages.",
               "answers": {
                 "day": {
-                  "line": "The big market day. The first of April.",
+                  "line": "Market day. The first of April.",
                   "thing": "the first of April"
                 },
                 "place": {
@@ -150,7 +150,7 @@
                   "thing": "at the market"
                 },
                 "who": {
-                  "line": "Nobody. Only Gwan-sun talks to me about it.",
+                  "line": "Nobody. Only Gwan-sun talks to me.",
                   "thing": "nobody asked"
                 }
               }
@@ -160,15 +160,15 @@
               "name": "Dong-il",
               "title": "A MESSENGER BOY",
               "portrait": "assets/seasons/season_05_seoul/characters/dong_il.webp",
-              "description": "a boy of ten in a patched cotton jacket, with straw sandals and a cloth bag",
-              "greeting": "I ran to five villages. I am fast!",
+              "description": "a boy of ten with straw shoes",
+              "greeting": "I ran to five villages!",
               "answers": {
                 "day": {
                   "line": "The first of April. Gwan-sun said it twice!",
                   "thing": "the first of April"
                 },
                 "place": {
-                  "line": "At the market. Everybody comes on market day.",
+                  "line": "At the market. Everybody comes!",
                   "thing": "at the market"
                 },
                 "who": {
@@ -182,11 +182,11 @@
               "name": "Mr. Pyo",
               "title": "THE SALT SELLER",
               "portrait": "assets/seasons/season_05_seoul/characters/pyo_salt.webp",
-              "description": "a thin man in his forties with a salt sack on his back and a nervous smile",
+              "description": "a thin salt seller",
               "greeting": "Salt! Good salt! Oh... a question?",
               "answers": {
                 "day": {
-                  "line": "The second of April. I am sure of it.",
+                  "line": "The second of April. I am sure.",
                   "thing": "the second of April"
                 },
                 "place": {
@@ -194,7 +194,7 @@
                   "thing": "at the station"
                 },
                 "who": {
-                  "line": "A stranger in a city coat. He gave me a coin.",
+                  "line": "A stranger. He gave me a coin.",
                   "thing": "a stranger with a coin"
                 }
               }
@@ -211,16 +211,16 @@
             ],
             "askLine": "Ask a question.",
             "anotherLine": "Ask another messenger.",
-            "readyLine": "Compare two answers.",
-            "compareGoal": "Find two messengers who say the same day.",
-            "compareHow": "Tap two answers to compare them.",
+            "readyLine": "Look at two answers.",
+            "compareGoal": "Find two with the same day.",
+            "compareHow": "Tap two answers. Are they the same?",
             "matchLine": "Both say the first of April.",
-            "offTopicLine": "These answers are not about the day.",
-            "checkLine": "Look for what each person says about the day.",
+            "offTopicLine": "These are not about the day.",
+            "checkLine": "What does each say about the day?",
             "differentLine": "These two say different days.",
             "retryLine": "Try another pair.",
             "thenGoal": "Find out who asked Mr. Pyo.",
-            "thenHow": "Ask Mr. Pyo who asked him about it.",
+            "thenHow": "Ask Mr. Pyo who asked him.",
             "doneLine": "A stranger paid Mr. Pyo to ask.",
             "notesLine": "Your messenger notes are ready."
           }
@@ -228,7 +228,7 @@
         "discovery": {
           "type": "clueFound",
           "title": "THE FIRST OF APRIL",
-          "detail": "Two messengers agree. But a stranger is asking questions too."
+          "detail": "Two say the same. But a stranger asks too."
         }
       }
     },
@@ -299,30 +299,30 @@
         "title": "Gwan-sun's Plan",
         "location": "GWAN-SUN'S HOME",
         "story": [
-          "Yu Gwan-sun studies at Ewha School in Seoul. It is closed now.",
-          "She came home with one big idea.",
-          "\"The police watch the roads,\" she says. \"We cannot send letters.\""
+          "Gwan-sun's school in Seoul is closed.",
+          "She has a big idea.",
+          "\"Police watch the roads. No letters.\""
         ],
-        "letterIntro": "Gwan-sun's plan, written in a hurry:",
+        "letterIntro": "Gwan-sun's plan, written fast:",
         "letter": "When the market is full, we start the march.\nIn the morning, people walk to the market, like shoppers.\nThey come because they saw our sign the night before.\nOur sign is a fire on Maebong hill.\nNo bell. A bell is too loud.",
-        "question": "Put the plan in order, from the first step to the last.",
+        "question": "Put the plan in order.",
         "hints": [
           "Find the step that happens the night before.",
-          "The morning comes after the night. The march starts last."
+          "Morning comes after night. The march is last."
         ],
         "successMessage": "You read Gwan-sun's plan!",
         "transition": [
-          "Fire, then the walk, then a full market, then the march.",
-          "Every village can see Maebong hill at night.",
-          "Gwan-sun smiles. \"No letter can be stolen. A fire is the letter.\""
+          "Fire, then walk, then full market, then march.",
+          "Every village can see Maebong hill.",
+          "\"A fire is our letter.\""
         ],
-        "orderFeedback": "Those are the right steps. Read when each one happens again.",
+        "orderFeedback": "Right steps. Check when each happens.",
         "mapX": 0.6,
         "mapY": 0.42,
         "clue": {
           "title": "The Sign",
           "value": "A FIRE ON MAEBONG HILL · THE NIGHT BEFORE",
-          "note": "The night before the march, a fire on the hill tells the villages.",
+          "note": "Night before: a hill fire tells the villages.",
           "symbol": "map"
         },
         "evidence": {
@@ -334,20 +334,20 @@
         "talk": {
           "speaker": "yu_gwansun",
           "portrait": "assets/seasons/season_05_seoul/characters/yu_gwansun.webp",
-          "goal": "Find out how the villages will know.",
+          "goal": "Find how the villages will know.",
           "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "On 1 March, people in Seoul called for independence. Now it is our turn."
+                "text": "Seoul called for independence. Now it is our turn."
               },
               {
                 "by": "detective",
-                "text": "But how will far villages know the time?"
+                "text": "How will far villages know?"
               },
               {
                 "by": "speaker",
-                "text": "I wrote my plan. But I wrote it all mixed up."
+                "text": "I wrote my plan all mixed up."
               }
             ],
             "finishLabel": "READ GWAN-SUN'S PLAN"
@@ -356,7 +356,7 @@
         "discovery": {
           "type": "deduction",
           "title": "A LETTER MADE OF FIRE",
-          "detail": "The villages will know by the fire. But the stranger wants this plan."
+          "detail": "The stranger wants the plan now."
         }
       }
     },
@@ -380,7 +380,7 @@
             {
               "id": "gwansun",
               "label": "Gwan-sun",
-              "feedback": "Gwan-sun asked you to find the writer. Her notebook is not on the table."
+              "feedback": "Gwan-sun asked you. Her notebook is not here."
             },
             {
               "id": "gyeongsun",
@@ -389,7 +389,7 @@
             {
               "id": "okhui",
               "label": "Okhui",
-              "feedback": "Okhui writes in Chinese characters, and her mark is stars."
+              "feedback": "Okhui writes in Chinese characters. Her mark is stars."
             }
           ]
         },
@@ -425,29 +425,29 @@
         "title": "Three Notebooks",
         "location": "GWAN-SUN'S HOME",
         "story": [
-          "\"The stranger wants my written plan,\" Gwan-sun says.",
-          "\"Give it to the one who wrote the flame note. That friend warned us about Mr. Pyo.\"",
-          "Three school friends' notebooks lie on the low table."
+          "\"The stranger wants my plan.\"",
+          "\"Give it to the flame-note writer.\"",
+          "Three notebooks lie on the table."
         ],
         "letterIntro": "What you see on the table:",
         "letter": "Sunja's notebook: a pressed flower on the cover. She writes only in Hangeul. A little flower sits by her name.\nOkhui's notebook: a blue ribbon. She writes in Chinese characters. Little stars sit by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul. A small flame sits by her name.\nYour note: written only in Hangeul. No name, only a small flame.",
-        "question": "Who wrote the flame note? Give her the plan.",
+        "question": "Who wrote the note? Give her the plan.",
         "hints": [
-          "Your note has two things: the kind of letters, and a mark.",
-          "Which notebook has the same letters AND the same mark?"
+          "Check the letters and the mark.",
+          "Same letters AND same mark?"
         ],
         "successMessage": "Gyeongsun wrote the flame note!",
         "transition": [
-          "Gyeongsun blushes. \"Yes. I wrote it.\"",
-          "\"A small flame can light a whole hill. So can our news.\"",
-          "\"Tonight I will lock Gwan-sun's plan in my old box.\""
+          "Gyeongsun's face goes red. \"Yes. I wrote it.\"",
+          "\"A small flame lights a hill.\"",
+          "\"Tonight I will lock the plan away.\""
         ],
         "mapX": 0.6,
         "mapY": 0.42,
         "clue": {
           "title": "The Note Writer",
           "value": "GYEONGSUN",
-          "note": "Gyeongsun wrote the flame note. She will keep Gwan-sun's plan safe."
+          "note": "Gyeongsun wrote it. She keeps the plan."
         },
         "evidence": {
           "name": "Gyeongsun's Notebook",
@@ -457,8 +457,8 @@
         },
         "recall": {
           "title": "The note from the market",
-          "prompt": "Your note has a small flame. Find it in your Notebook.",
-          "miss": "Find the note from under your teacup."
+          "prompt": "Your note has a flame. Check your Notebook.",
+          "miss": "Find the note from your teacup."
         },
         "talk": {
           "speaker": "gyeongsun",
@@ -468,7 +468,7 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "I saw a stranger give Mr. Pyo a coin, so I warned you."
+                "text": "I saw a stranger pay Mr. Pyo."
               },
               {
                 "by": "speaker",
@@ -476,7 +476,7 @@
               },
               {
                 "by": "detective",
-                "text": "So you drew a small flame. But it is by your name in your notebook too."
+                "text": "And the flame is by your name!"
               }
             ]
           }
@@ -484,7 +484,7 @@
         "discovery": {
           "type": "storyDiscovery",
           "title": "THE NOTE WRITER",
-          "detail": "Gyeongsun warned you about Mr. Pyo. Now she will keep the plan."
+          "detail": "Gyeongsun will keep the plan."
         }
       }
     }
@@ -543,22 +543,22 @@
       "title": "The Fire on the Hill",
       "location": "MAEBONG HILL",
       "story": [
-        "At dusk, Gyeongsun leads you up Maebong hill.",
-        "She opens her old wooden box and lays Gwan-sun's plan inside.",
-        "\"Set the lock to our two days. The stranger only knows Mr. Pyo's day.\""
+        "At night, Gyeongsun takes you up Maebong hill.",
+        "She puts the plan in her box.",
+        "\"Set the lock to our two days. Not Mr. Pyo's day.\""
       ],
       "letterIntro": "The dial lock, and Gyeongsun's words:",
       "letter": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nRemember: March has thirty-one days.",
-      "question": "Set the dials: first the night of the sign, then the day of the march.",
+      "question": "Sign night first, then the march.",
       "hints": [
-        "The map dials are for the plan. The clock dial is for the day.",
+        "Map dials: the plan. Clock dial: the day.",
         "The night before the first of April is the last night of March."
       ],
-      "successMessage": "Click! The box is locked. Only friends know the days.",
+      "successMessage": "Click! It is locked. Only friends know the days.",
       "transition": [
-        "Below, the villages are dark and quiet.",
-        "Then a small flame rises on Maebong hill.",
-        "Far away, on other hills, you see more lights."
+        "Below, the villages are dark.",
+        "A small flame goes up on Maebong hill.",
+        "On far hills, more lights."
       ],
       "feedback": {
         "131": "First the night of the sign, then the day of the march.",
@@ -567,7 +567,7 @@
         "012": "That is Mr. Pyo's day. Two messengers said the first of April.",
         "312": "The march is on the first of April, not the second."
       },
-      "orderFeedback": "These numbers fit, but not in this order. The night of the sign comes first.",
+      "orderFeedback": "Wrong order. The night of the sign is first.",
       "mapX": 0.66,
       "mapY": 0.2,
       "evidence": {
@@ -579,15 +579,15 @@
       "ending": [
         {
           "by": "narrator",
-          "text": "That night, Gwan-sun lights the fire on Maebong hill."
+          "text": "That night, Gwan-sun lights the hill fire."
         },
         {
           "by": "narrator",
-          "text": "On 1 April 1919, thousands of people gather at Aunae Market."
+          "text": "1 April 1919. Thousands meet at Aunae Market."
         },
         {
           "by": "narrator",
-          "text": "Gwan-sun helps lead them, with the village elders. They call for independence.",
+          "text": "Gwan-sun helps lead them. They call for independence.",
           "evidence": "s5_ep08_e2"
         },
         {
@@ -597,7 +597,7 @@
         },
         {
           "by": "speaker",
-          "text": "No name, only a small flame. And the plan stayed safe.",
+          "text": "No name, just a flame. The plan stayed safe.",
           "speaker": "gyeongsun",
           "portrait": "assets/seasons/season_05_seoul/characters/gyeongsun.webp"
         }
@@ -617,12 +617,12 @@
       "Lock the plan away."
     ],
     "intro": [
-      "Spring, 1919. You are a guest of Yu Gwan-sun's family, near Cheonan.",
-      "In 1910, Japan took over Korea. Koreans could not rule their own country.",
-      "On 1 March 1919, people all over Korea called for independence. This is the March First Movement.",
-      "The schools were closed, so Gwan-sun came home.",
-      "Now she and the village elders plan a march at Aunae Market.",
-      "But Japan's police watch the roads, and a wrong day is going round."
+      "1919. You stay with Gwan-sun's family.",
+      "In 1910, Japan took over Korea.",
+      "1 March 1919: the March First Movement. Korea called for independence.",
+      "Her school closed. Gwan-sun came home.",
+      "She plans a market march.",
+      "Police watch. A wrong day goes round."
     ],
     "caseSummary": "Two messengers said the true day: the first of April. Gwan-sun's sign was a fire on Maebong hill the night before. Gyeongsun wrote the flame note. She kept the plan in her box, and you locked it with the true days. On 1 April 1919, Gwan-sun helped lead thousands of people at Aunae Market. They called for Korea's independence.",
     "place": "AUNAE MARKET, NEAR CHEONAN",

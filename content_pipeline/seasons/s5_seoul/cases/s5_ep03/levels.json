@@ -8,44 +8,44 @@
       "master": "The Crane That Lifts Stones"
     },
     {
-      "rookie": "Jeong Yak-yong's lifting machine will not lift a stone.",
-      "junior": "Jeong Yak-yong's lifting machine won't lift a stone.",
-      "master": "Jeong Yak-yong's lifting machine refuses to raise a single stone."
+      "rookie": "Jeong's machine cannot lift a stone.",
+      "junior": "Jeong's lifting machine cannot lift a stone.",
+      "master": "Jeong Yak-yong's lifting machine cannot lift a single stone."
     },
     {
-      "rookie": "A note with a small water drop is tied to its rope.",
-      "junior": "A note marked with a small water drop is tied to its rope.",
-      "master": "Tied to its rope is a note bearing a tiny water drop."
+      "rookie": "A note hangs on its rope.",
+      "junior": "A note with a water drop hangs on its rope.",
+      "master": "A note with a small water drop hangs on its rope."
     },
     {
-      "rookie": "A stone waits under a machine that will not lift.",
-      "junior": "A stone sits under a machine that won't lift.",
-      "master": "A stone lies waiting beneath a machine that will not lift."
+      "rookie": "The stone will not go up.",
+      "junior": "The stone will not go up at all.",
+      "master": "The big stone will not go up at all."
     },
     {
       "rookie": "Put the work log in order.",
       "junior": "Put the work log in the right order.",
-      "master": "Arrange the work log in its proper order."
+      "master": "Put the work log in the correct order."
     },
     {
       "rookie": "Find Jeong's own drawing.",
       "junior": "Find the drawing Jeong made himself.",
-      "master": "Identify Jeong's own drawing."
+      "master": "Find the drawing that Jeong made himself."
     },
     {
       "rookie": "Lift the stone in the right order.",
-      "junior": "Lift the stone, step by step, in the right order.",
-      "master": "Raise the stone, following the correct order."
+      "junior": "Lift the stone in the right order.",
+      "master": "Lift the stone, step by step, in the correct order."
     },
     {
-      "rookie": "A long stone wall is rising around the new town.",
-      "junior": "A long stone wall is slowly rising around the new town.",
-      "master": "A long wall of stone is climbing, course by course, around the new town."
+      "rookie": "A stone wall goes up.",
+      "junior": "A long stone wall goes up around the town.",
+      "master": "The long stone wall around the new town goes up, row by row."
     },
     {
-      "rookie": "\"Your machine is broken! It cannot lift one stone!\"",
-      "junior": "\"Your machine is broken! It cannot lift even one stone!\"",
-      "master": "\"Your machine is broken! It will not raise a single stone!\""
+      "rookie": "\"Your machine is broken!\"",
+      "junior": "\"Your machine is broken! It cannot lift a stone!\"",
+      "master": "\"Your machine is broken! It cannot lift a single stone!\""
     },
     {
       "rookie": "HWASEONG FORTRESS, SUWON",
@@ -103,34 +103,34 @@
       "master": "THE STONE YARD"
     },
     {
-      "rookie": "A big stone lies under the machine. Its ropes hang loose.",
-      "junior": "A big stone lies under the machine, and its ropes hang loose.",
-      "master": "A great stone rests beneath the machine, its ropes hanging slack."
+      "rookie": "A big stone lies under the machine.",
+      "junior": "A big stone lies under the machine. Its ropes hang loose.",
+      "master": "A big stone lies under the machine, and its ropes hang loose."
     },
     {
-      "rookie": "A note with a small water drop is tied to the rope.",
-      "junior": "A note marked with a small water drop is tied to the rope.",
-      "master": "Tied to the rope is a note bearing a tiny water drop."
+      "rookie": "A water-drop note is on the rope.",
+      "junior": "A water-drop note is tied to the rope.",
+      "master": "A note with a small water drop is tied to the rope."
     },
     {
-      "rookie": "Jeong reads its King's letters out: \"The drawing is different.\"",
-      "junior": "Jeong reads the King's letters on it aloud: \"The drawing is different.\"",
-      "master": "Jeong reads its King's letters aloud: \"The drawing is different.\""
+      "rookie": "Jeong reads the note: \"The drawing is different.\"",
+      "junior": "Jeong reads the note aloud: \"The drawing is different.\"",
+      "master": "The note is in the King's letters. Jeong reads it aloud: \"The drawing is different.\""
     },
     {
       "rookie": "Foreman Gwak's work log:",
       "junior": "Here is Foreman Gwak's work log:",
-      "master": "Foreman Gwak's work log reads:"
+      "master": "Here is Foreman Gwak's work log:"
     },
     {
-      "rookie": "Put the log in order. Was the machine broken, or changed?",
-      "junior": "Put the log in order. Was the machine broken, or was it changed?",
-      "master": "Set the log in order. Was the machine broken, or altered?"
+      "rookie": "Order the log. Broken, or changed?",
+      "junior": "Put the log in order. Broken, or changed?",
+      "master": "Put the log in order. Was it broken, or changed?"
     },
     {
-      "rookie": "What happened before the new carpenter came? What came after his work?",
-      "junior": "What happened before the new carpenter came, and what came after his work?",
-      "master": "What took place before the new carpenter arrived, and what followed his work?"
+      "rookie": "What was before the carpenter? What came after?",
+      "junior": "What was before the new carpenter? What came after?",
+      "master": "What happened before the new carpenter came? What came after?"
     },
     {
       "rookie": "The machine worked until someone changed it!",
@@ -143,9 +143,9 @@
       "master": "The machine was never broken; it was changed."
     },
     {
-      "rookie": "\"A copied drawing?\" says Jeong. \"Then which drawing is mine?\"",
-      "junior": "\"A copied drawing?\" Jeong asks. \"Then which of the drawings is mine?\"",
-      "master": "\"A copied drawing?\" Jeong frowns. \"Then which drawing is truly mine?\""
+      "rookie": "\"Then which drawing is mine?\" says Jeong.",
+      "junior": "\"Then which drawing is mine?\" asks Jeong.",
+      "master": "\"A copied drawing?\" asks Jeong. \"Then which drawing is mine?\""
     },
     {
       "rookie": "Changed, Not Broken",
@@ -153,9 +153,9 @@
       "master": "Changed, Not Broken"
     },
     {
-      "rookie": "The machine worked until a new carpenter rebuilt its top from a copied drawing.",
-      "junior": "The machine worked until a new carpenter used a copied drawing to rebuild its top.",
-      "master": "The machine kept working until a new carpenter rebuilt its top from a copied drawing."
+      "rookie": "It worked until a new carpenter came.",
+      "junior": "It worked well until a new carpenter came.",
+      "master": "The machine worked well until a new carpenter came. He rebuilt its top from a copied drawing."
     },
     {
       "rookie": "The King's builders begin the wall.",
@@ -168,37 +168,37 @@
       "master": "Day after day the machine raises big stones."
     },
     {
-      "rookie": "A new carpenter rebuilds the top from a copied drawing.",
-      "junior": "A new carpenter uses a copied drawing to rebuild the top.",
-      "master": "A new carpenter takes a copied drawing and rebuilds the top from it."
+      "rookie": "A new carpenter makes it again from a copy.",
+      "junior": "A new carpenter makes the top again from a copy.",
+      "master": "A new carpenter rebuilds the top from a copied drawing."
     },
     {
       "rookie": "The machine cannot lift a stone.",
-      "junior": "The machine is unable to lift a stone.",
-      "master": "The machine fails to raise a single stone."
+      "junior": "The machine cannot lift a stone.",
+      "master": "The machine cannot lift a single stone."
     },
     {
-      "rookie": "Workers eat rice in the shade.",
+      "rookie": "Workers eat rice out of the sun.",
       "junior": "Workers eat their rice in the shade.",
       "master": "Workers share their rice in the shade."
     },
     {
       "rookie": "The machine lifted big stones every day, until the new carpenter came.",
       "junior": "The machine lifted big stones every day, until the new carpenter came.",
-      "master": "The machine had lifted big stones every day, until the new carpenter came."
+      "master": "The machine lifted big stones every day, until the new carpenter came."
     },
     {
-      "rookie": "Find out what the machine should do.",
-      "junior": "Find out what the machine is supposed to do.",
-      "master": "Learn what the machine was built to do."
+      "rookie": "Find out what the machine does.",
+      "junior": "Find out what the machine should do.",
+      "master": "Find out what the machine was built to do."
     },
     {
-      "rookie": "My machine lifts heavy stones with ropes and pulleys.",
-      "junior": "My machine uses ropes and pulleys to lift heavy stones.",
-      "master": "My machine raises heavy stones by means of ropes and pulleys."
+      "rookie": "My machine lifts stones with ropes and pulleys.",
+      "junior": "My machine lifts heavy stones with ropes and pulleys.",
+      "master": "My machine lifts heavy stones with ropes and pulleys."
     },
     {
-      "rookie": "Gwak says it is broken. I do not believe it.",
+      "rookie": "Gwak says it is broken. I don't think so.",
       "junior": "Gwak says it's broken. I don't believe him.",
       "master": "Gwak claims it is broken. I refuse to believe it."
     },
@@ -215,12 +215,12 @@
     {
       "rookie": "This has one pole, not a frame like a gate. Read Jeong's first line.",
       "junior": "This one has one pole, not a frame like a gate. Read Jeong's first line.",
-      "master": "A single pole, not a frame like a gate. Reread Jeong's first line."
+      "master": "This one has a single pole, not a frame like a gate. Read Jeong's first line again."
     },
     {
-      "rookie": "a drawing of one tall wooden pole with one pulley at its top and one rope",
-      "junior": "a drawing of a single tall wooden pole with one pulley at its top and one rope",
-      "master": "a drawing of one tall wooden pole, with a single pulley at its top and a single rope"
+      "rookie": "one pole, one pulley on top, one rope",
+      "junior": "one tall pole, one pulley on top, one rope",
+      "master": "one tall wooden pole, one pulley on top, one rope"
     },
     {
       "rookie": "The gate with two wheels",
@@ -238,14 +238,14 @@
       "master": "The gate with no wheels"
     },
     {
-      "rookie": "Are there pulleys over the stone too? Is there a wheel on each side?",
-      "junior": "Are there pulleys above the stone as well? Is there a wheel on each side?",
-      "master": "Do pulleys hang above the stone as well? Does a wheel stand on each side?"
+      "rookie": "Pulleys over the stone? Wheels on each side?",
+      "junior": "Pulleys over the stone too? Wheels on each side?",
+      "master": "Are there pulleys over the stone too? Is there a wheel on each side?"
     },
     {
       "rookie": "a drawing of a wooden frame like a gate, pulleys only under the top beam, and no wheels",
-      "junior": "a drawing of a wooden frame like a gate, with pulleys only under the top beam and no wheels",
-      "master": "a drawing of a gate-like wooden frame, with pulleys only under the top beam and no wheels at all"
+      "junior": "a drawing of a wooden frame like a gate, pulleys only under the top beam, and no wheels",
+      "master": "a drawing of a big wooden frame like a gate, pulleys only under the top beam, no wheels"
     },
     {
       "rookie": "a beam across the top",
@@ -268,44 +268,44 @@
       "master": "THE DRAWING ROOM"
     },
     {
-      "rookie": "\"Read my words, and find my drawing.\"",
-      "junior": "\"Read my words, and then find my drawing.\"",
-      "master": "\"Read my description, and pick out my drawing.\""
+      "rookie": "\"Read my words. Find my drawing.\"",
+      "junior": "\"Read my words. Then find my drawing.\"",
+      "master": "\"Read my words carefully. Then find my drawing.\""
     },
     {
       "rookie": "Jeong's words about his machine:",
       "junior": "What Jeong says about his machine:",
-      "master": "Jeong's description of his machine:"
+      "master": "Jeong's words about his own machine:"
     },
     {
       "rookie": "\"My machine stands like a gate, with a beam across the top.\"\n\"Pulleys hang from the beam. More pulleys hang under them, over the stone.\"\n\"Ropes run between the pulleys, up and down.\"\n\"A big wheel stands on each side. Workers turn the wheels.\"",
-      "junior": "\"My machine is shaped like a gate, with a beam across the top.\"\n\"From the beam hang pulleys. More pulleys hang under them, just over the stone.\"\n\"Ropes run up and down between the pulleys.\"\n\"A big wheel stands on each side. Workers turn the wheels.\"",
-      "master": "\"My machine is built like a gate, with a beam across the top.\"\n\"Pulleys are slung from the beam. More pulleys hang under them, directly above the stone.\"\n\"Ropes run up and down from pulley to pulley.\"\n\"A big wheel stands on each side, and workers turn the wheels.\""
+      "junior": "\"My machine stands like a gate, with a beam across the top.\"\n\"Pulleys hang from the beam. More pulleys hang under them, over the stone.\"\n\"Ropes run up and down between the pulleys.\"\n\"A big wheel stands on each side. Workers turn the wheels.\"",
+      "master": "\"My machine stands like a gate, with a beam across the top.\"\n\"Pulleys hang from the beam. More pulleys hang under them, just over the stone.\"\n\"Ropes run up and down between the pulleys.\"\n\"A big wheel stands on each side. Workers turn the wheels.\""
     },
     {
       "rookie": "Which drawing is Jeong's?",
       "junior": "Which one is Jeong's drawing?",
-      "master": "Which of these drawings belongs to Jeong?"
+      "master": "Which of these drawings is Jeong's?"
     },
     {
-      "rookie": "Read Jeong's first line. What shape does his machine have?",
+      "rookie": "Read Jeong's first line. What shape is his machine?",
       "junior": "Read Jeong's first line. What shape is his machine?",
       "master": "Consider Jeong's first line. What shape does his machine take?"
     },
     {
-      "rookie": "Look for pulleys in two places, and a wheel on each side.",
-      "junior": "Look for pulleys in two places, and for a wheel on each side.",
-      "master": "Seek pulleys in two places, and a wheel on either side."
+      "rookie": "Pulleys in two places. A wheel on each side.",
+      "junior": "Look for pulleys in two places. A wheel on each side.",
+      "master": "Look for pulleys in two places, and a wheel on each side."
     },
     {
       "rookie": "That is Jeong's drawing!",
-      "junior": "That's Jeong's drawing!",
+      "junior": "That is Jeong's drawing!",
       "master": "That is Jeong's very own drawing!"
     },
     {
-      "rookie": "The machine in the yard has pulleys only at the top, and no wheels.",
-      "junior": "The machine in the yard has pulleys only at the top, and it has no wheels.",
-      "master": "The machine in the yard has pulleys only along its top, and no wheels at all."
+      "rookie": "The yard machine has top pulleys only. No wheels.",
+      "junior": "The yard machine has pulleys only at the top. No wheels.",
+      "master": "The machine in the yard has pulleys only at the top. It has no wheels."
     },
     {
       "rookie": "Jeong's Drawing",
@@ -358,19 +358,19 @@
       "master": "The Stone Rises"
     },
     {
-      "rookie": "The builders rebuild the machine from Jeong's drawing.",
-      "junior": "The builders use Jeong's drawing to rebuild the machine.",
-      "master": "Following Jeong's drawing, the builders reconstruct the machine."
+      "rookie": "They fix it with Jeong's drawing.",
+      "junior": "They fix the machine with Jeong's drawing.",
+      "master": "The builders fix the machine with Jeong's drawing."
     },
     {
-      "rookie": "Now the big stone must go up onto the wall.",
-      "junior": "Now the big stone has to go up onto the wall.",
-      "master": "Now the great stone must be raised onto the wall."
+      "rookie": "Now lift the stone onto the wall.",
+      "junior": "Now lift the big stone onto the wall.",
+      "master": "Now lift the big stone up onto the wall."
     },
     {
-      "rookie": "\"Read my steps,\" says Jeong. \"Then do them in order.\"",
-      "junior": "\"Read my steps,\" Jeong says. \"Then follow them in order.\"",
-      "master": "\"Study my steps,\" says Jeong, \"and carry them out in order.\""
+      "rookie": "\"Read my steps,\" says Jeong. \"Do them in order.\"",
+      "junior": "\"Read my steps,\" says Jeong. \"Then do them in order.\"",
+      "master": "\"Read my steps carefully,\" says Jeong. \"Then do them in order.\""
     },
     {
       "rookie": "Jeong's steps for lifting:",
@@ -379,23 +379,23 @@
     },
     {
       "rookie": "\"Turn the two wheels only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last.\"\n\"Nobody pulls the rope by hand, and nobody pushes the stone.\"",
-      "junior": "\"Turn the two wheels, but only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last of all.\"\n\"No one pulls the rope by hand, and no one pushes the stone.\"",
-      "master": "\"The two wheels are turned only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last, once all else is done.\"\n\"No one hauls the rope by hand, and no one shoves the stone.\""
+      "junior": "\"Turn the two wheels only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last of all.\"\n\"Nobody pulls the rope by hand, and nobody pushes the stone.\"",
+      "master": "\"Turn the two wheels, but only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last of all.\"\n\"Nobody pulls the rope by hand, and nobody pushes the stone.\""
     },
     {
       "rookie": "Tap the four steps in order.",
       "junior": "Tap the four steps in the right order.",
-      "master": "Tap the four steps in their proper order."
+      "master": "Tap the four steps in the correct order."
     },
     {
-      "rookie": "Find the step that comes before the hook.",
+      "rookie": "Find the step before the hook.",
       "junior": "Find the step that comes before the hook.",
-      "master": "Identify the step that precedes the hook."
+      "master": "Find the step that comes before the hook."
     },
     {
-      "rookie": "The wheels turn only after the hook. What happens last?",
-      "junior": "The wheels turn only after the hook. What happens at the end?",
-      "master": "The wheels turn only once the stone is hooked. What comes last of all?"
+      "rookie": "The wheels turn after the hook. What happens last?",
+      "junior": "The wheels turn after the hook. What happens last?",
+      "master": "The wheels turn only after the hook. What happens last of all?"
     },
     {
       "rookie": "The wheels turn, and the stone rises!",
@@ -403,9 +403,9 @@
       "master": "The wheels turn, and up rises the stone!"
     },
     {
-      "rookie": "The ropes go tight. Slowly, the big stone rises onto the wall.",
-      "junior": "The ropes pull tight. Slowly, the big stone rises onto the wall.",
-      "master": "The ropes go taut, and slowly the great stone rises onto the wall."
+      "rookie": "The ropes go tight. The stone rises!",
+      "junior": "The ropes go tight. The big stone rises!",
+      "master": "The ropes go tight. Slowly, the big stone rises onto the wall!"
     },
     {
       "rookie": "Gwak takes off his hat. \"It was never broken,\" he says.",
@@ -413,124 +413,124 @@
       "master": "Gwak doffs his hat. \"It was never broken after all,\" he concedes."
     },
     {
-      "rookie": "Read again: what do you do before you hook the stone?",
-      "junior": "Read it again: what do you do before you hook the stone?",
-      "master": "Look again: what must you do before you hook the stone?"
+      "rookie": "What comes before the hook?",
+      "junior": "What do you do before the hook?",
+      "master": "Look again. What comes before the hook?"
     },
     {
       "rookie": "The wheels turn only after the stone is hooked.",
-      "junior": "Only after the stone is hooked do the wheels turn.",
-      "master": "The wheels may turn only after the stone is hooked, not before."
+      "junior": "The wheels turn only after the stone is hooked.",
+      "master": "The wheels turn only after the stone is hooked, not before."
     },
     {
-      "rookie": "Those are the right steps. Read Jeong's 'before' and 'after' again.",
-      "junior": "You have the right steps. Read Jeong's 'before' and 'after' once more.",
-      "master": "The steps are right, the order is not. Revisit Jeong's 'before' and 'after'."
+      "rookie": "Right steps, wrong order. Read 'before' and 'after' again.",
+      "junior": "Right steps, wrong order. Read 'before' and 'after' again.",
+      "master": "The steps are right, but the order is wrong. Read 'before' and 'after' again."
     },
     {
-      "rookie": "Rebuilt from Jeong's drawing, the machine lifts the stone onto the wall.",
-      "junior": "Once it is rebuilt from Jeong's drawing, the machine lifts the stone onto the wall.",
-      "master": "Reconstructed from Jeong's drawing, the machine raises the stone onto the wall."
+      "rookie": "With Jeong's drawing, it lifts the stone.",
+      "junior": "With Jeong's drawing, the machine lifts the stone.",
+      "master": "Rebuilt with Jeong's drawing, the machine lifts the stone onto the wall."
     },
     {
-      "rookie": "Machines like mine helped lift the big stones.",
-      "junior": "Machines like mine helped to lift the big stones.",
-      "master": "Machines like mine helped raise its great stones."
+      "rookie": "Machines like mine helped lift big stones.",
+      "junior": "Machines like mine helped lift the big stones.",
+      "master": "Machines like mine helped to lift its big stones."
     },
     {
-      "rookie": "A record book tells how the fortress was built.",
-      "junior": "A record book tells how the fortress was built.",
-      "master": "A record book documents how the fortress was built."
+      "rookie": "An old book tells the story.",
+      "junior": "An old record book tells how the fortress was built.",
+      "master": "An old record book tells the whole story of how the fortress was built."
     },
     {
-      "rookie": "It lists the workers, and the pay they were given.",
-      "junior": "It lists the workers, and the pay they were given.",
-      "master": "It lists every worker and the wages they were paid."
+      "rookie": "It has the workers' names and pay.",
+      "junior": "It has the workers' names and their pay.",
+      "master": "It lists the workers' names and their pay."
     },
     {
       "rookie": "Why a water drop, and no name?",
       "junior": "Why a water drop, and not your name?",
-      "master": "Why a water drop, and no name?"
+      "master": "Why a water drop, and not your name?"
     },
     {
-      "rookie": "A water girl may not tell the builders they are wrong. So I wrote no name.",
-      "junior": "A water girl may not tell the builders that they are wrong, so I wrote no name.",
-      "master": "A water girl is not allowed to tell the builders they are wrong, so I left my name off."
+      "rookie": "A water girl can't say builders are wrong. So, no name.",
+      "junior": "A water girl can't say builders are wrong. So I wrote no name.",
+      "master": "A water girl is not allowed to tell builders they are wrong. So I left no name."
     },
     {
       "rookie": "Find who tied the note to the rope.",
       "junior": "Find out who tied the note to the rope.",
-      "master": "Work out who tied the warning note to the rope."
+      "master": "Find out who tied the warning note to the rope."
     },
     {
-      "rookie": "Spring, 1795. You are a detective, a guest of Jeong Yak-yong at Hwaseong Fortress in Suwon.",
-      "junior": "Spring, 1795. You are a detective, staying as a guest of Jeong Yak-yong at Hwaseong Fortress in Suwon.",
-      "master": "Spring, 1795. You are a detective, and the guest of Jeong Yak-yong at Hwaseong Fortress in Suwon."
+      "rookie": "Spring, 1795. You visit Jeong Yak-yong.",
+      "junior": "Spring, 1795. You visit Jeong Yak-yong in Suwon.",
+      "master": "Spring, 1795. You are a detective visiting Jeong Yak-yong at Hwaseong Fortress in Suwon."
     },
     {
-      "rookie": "Jeong planned this fortress for the King. He also designed a lifting machine, the geojunggi.",
-      "junior": "Jeong made the plans for this fortress, and he designed a lifting machine, the geojunggi, to help build it.",
-      "master": "Jeong drew up the plans for this fortress and devised a lifting machine, the geojunggi, so its stones could be raised."
+      "rookie": "Jeong made a lifting machine, the geojunggi.",
+      "junior": "Jeong made a lifting machine for the fortress, the geojunggi.",
+      "master": "Jeong drew the plans for this fortress. He also designed a lifting machine, the geojunggi, to raise its stones."
     },
     {
-      "rookie": "It lifts heavy stones with ropes and pulleys. Today Jeong has come to see it work.",
-      "junior": "It raises heavy stones with ropes and pulleys, and today Jeong has come to watch it work.",
-      "master": "It hoists heavy stones by means of ropes and pulleys, and today Jeong has come to watch it at work."
+      "rookie": "Today Jeong comes to see it work.",
+      "junior": "Today Jeong comes to watch it work.",
+      "master": "It lifts heavy stones with ropes and pulleys. Today Jeong comes to watch it at work."
     },
     {
-      "rookie": "But Foreman Gwak shouts across the stone yard.",
-      "junior": "But Foreman Gwak is shouting across the stone yard.",
-      "master": "But Foreman Gwak's voice rings out across the stone yard."
+      "rookie": "But Foreman Gwak shouts at him.",
+      "junior": "But Foreman Gwak shouts at him across the yard.",
+      "master": "But Foreman Gwak shouts at him across the yard."
     },
     {
-      "rookie": "The lifting machine was not broken. A new carpenter, who could not read, rebuilt its top from the wrong drawing. Okbun, who carries water to the builders, had seen Jeong's drawing. She tied a warning note to the rope in the night. It had a water drop and no name. Rebuilt from Jeong Yak-yong's drawing, the machine lifted the stone. Hwaseong Fortress was finished in 1796. Machines like Jeong's geojunggi helped lift big stones. A record book lists the workers and their pay.",
-      "junior": "The lifting machine was never broken. A new carpenter who could not read had rebuilt its top from the wrong drawing. Okbun, who carries water to the builders, had seen Jeong's real drawing, so she tied a warning note to the rope in the night, with a water drop instead of a name. Once it was rebuilt from Jeong Yak-yong's drawing, the machine lifted the stone. Hwaseong Fortress was finished in 1796. Machines like Jeong's geojunggi helped lift its big stones, and a record book lists the workers and their pay.",
-      "master": "The lifting machine had never been broken: a new carpenter, unable to read, had rebuilt its top from the wrong drawing. Okbun, who carries water to the builders, had seen Jeong's own drawing, so in the night she tied a warning note to the rope, signed with a water drop rather than a name. Rebuilt from Jeong Yak-yong's drawing, the machine raised the stone. Hwaseong Fortress was completed in 1796; machines such as Jeong's geojunggi helped lift its massive stones, and a record book lists every worker and their pay."
+      "rookie": "The machine was not broken. A new carpenter used the wrong drawing. Okbun, the water girl, saw Jeong's drawing. She tied a note to the rope. It had a water drop, no name. Hwaseong Fortress was done in 1796.",
+      "junior": "The machine was not broken. A new carpenter used the wrong drawing. Okbun, the water girl, saw Jeong's real drawing. She tied a note to the rope in the night. It had a water drop, not a name. Hwaseong Fortress was finished in 1796.",
+      "master": "The machine was never broken. A new carpenter who could not read used the wrong drawing for its top. Okbun, the water girl, had seen Jeong's real drawing. In the night, she tied a warning note to the rope. It had a water drop instead of a name. Rebuilt from Jeong Yak-yong's drawing, the machine lifted the stone. Hwaseong Fortress was finished in 1796. Machines like Jeong's geojunggi helped lift its huge stones. A record book lists every worker and their pay."
     },
     {
       "rookie": "This morning, the machine could not lift a stone.\nThe note was tied to the rope in the night, after the carpenter's work.\nThe machine lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the top from a copied drawing.",
-      "junior": "This morning, the machine could not lift a single stone.\nThe note was tied to the rope in the night, after the carpenter's work was done.\nThe machine lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the top of the machine from a copied drawing.",
-      "master": "This morning, the machine failed to raise a single stone.\nThe note was tied to the rope in the night, after the carpenter's work was finished.\nThe machine had lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the machine's top from a copied drawing."
+      "junior": "This morning, the machine could not lift a stone.\nThe note was tied to the rope in the night, after the carpenter's work.\nThe machine lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the top from a copied drawing.",
+      "master": "This morning, the machine could not lift a single stone.\nThe note was tied to the rope in the night, after the carpenter's work.\nThe machine lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the machine's top from a copied drawing."
     },
     {
       "rookie": "The note was tied to the rope in the night, after the carpenter's work.",
-      "junior": "The note was tied to the rope in the night, after the carpenter's work was done.",
-      "master": "The note was tied to the rope in the night, after the carpenter's work was finished."
+      "junior": "The note was tied to the rope in the night, after the carpenter's work.",
+      "master": "The note was tied to the rope in the night, after the carpenter's work."
     },
     {
-      "rookie": "In the night, a note with a water drop is tied to the rope.",
-      "junior": "In the night, someone ties a note with a water drop to the rope.",
-      "master": "In the night, a note marked with a water drop is tied to the rope."
+      "rookie": "At night, someone ties on a note.",
+      "junior": "At night, someone ties a note to the rope.",
+      "master": "At night, someone ties a water-drop note to the rope."
     },
     {
-      "rookie": "Look for 'until' and 'after' in the log. The lines are not in order.",
-      "junior": "Look for the words 'until' and 'after'. The log's lines are not in order.",
-      "master": "Find 'until' and 'after' in the log; its lines are jumbled, not in time order."
+      "rookie": "Look for 'until' and 'after'. Lines are out of order.",
+      "junior": "Look for 'until' and 'after'. The lines are out of order.",
+      "master": "Look for 'until' and 'after'. The log's lines are out of order."
     },
     {
       "rookie": "Read the log again. What happened until the new carpenter came?",
-      "junior": "Read the log again. What was happening until the new carpenter came?",
-      "master": "Reread the log: what went on until the new carpenter came?"
+      "junior": "Read the log again. What happened until the new carpenter came?",
+      "master": "Read the log again carefully. What happened until the new carpenter came?"
     },
     {
-      "rookie": "Gwak says, \"Nobody works here at night. The gate is shut. Only the water carriers come in before dawn.\"",
-      "junior": "Gwak says, \"Nobody works here at night, and the gate is shut. Only the water carriers come in before dawn.\"",
-      "master": "\"Nobody works here at night,\" Gwak insists. \"The gate is shut, and only the water carriers come in before dawn.\""
+      "rookie": "Gwak: \"Nobody works here at night. The gate is shut. Only water carriers come in, before morning.\"",
+      "junior": "Gwak: \"Nobody works here at night. The gate is shut. Only water carriers come in, before morning.\"",
+      "master": "Gwak: \"Nobody works here at night. The yard gate is shut. Only water carriers come in, before morning.\""
     },
     {
-      "rookie": "A WARNING IN THE NIGHT",
+      "rookie": "A NOTE IN THE NIGHT",
       "junior": "A WARNING IN THE NIGHT",
       "master": "A WARNING IN THE NIGHT"
     },
     {
-      "rookie": "Three drawings of lifting machines lie on the table. Each has a name written on it.",
-      "junior": "Three drawings of lifting machines lie on the table, each with a name written on it.",
-      "master": "Three drawings of lifting machines lie on the table, each labelled with a name."
+      "rookie": "Three drawings, each with a name.",
+      "junior": "Three drawings lie on the table, each with a name on it.",
+      "master": "Three drawings lie on the table, each with a name."
     },
     {
-      "rookie": "The new carpenter stands by the door. \"I cannot read. I took the drawing with a gate on it.\"",
-      "junior": "The new carpenter waits by the door. \"I cannot read, so I took a drawing with a gate on it.\"",
-      "master": "The new carpenter hovers by the door. \"I cannot read, so I simply took a drawing with a gate on it.\""
+      "rookie": "The carpenter says, \"I cannot read. I took the gate drawing.\"",
+      "junior": "The new carpenter says, \"I cannot read. I took the gate drawing.\"",
+      "master": "The new carpenter says, \"I cannot read. So I took the gate drawing.\""
     },
     {
       "rookie": "\"Only three people come in here,\" Jeong says. \"The carpenter, my clerk, and the girl who brings water for my ink.\"",
@@ -538,19 +538,19 @@
       "master": "\"Only three people ever enter this room,\" Jeong says: \"the carpenter, my clerk, and the girl who brings water for my ink.\""
     },
     {
-      "rookie": "\"He took the gate with no wheels,\" says Jeong. \"Let us rebuild it, and lift that stone.\"",
-      "junior": "\"He took the gate with no wheels,\" Jeong says. \"Let us rebuild it and lift that stone.\"",
-      "master": "\"He copied the gate without wheels,\" Jeong says. \"Let us rebuild it properly and raise that stone.\""
+      "rookie": "\"No wheels on his gate,\" says Jeong.",
+      "junior": "\"His gate has no wheels,\" says Jeong.",
+      "master": "\"He copied the gate without any wheels,\" says Jeong. \"Let's rebuild it properly and lift that stone.\""
     },
     {
       "rookie": "Jeong's machine is like a gate, with pulleys in two places and two wheels. Only the carpenter, the clerk and the water girl come into the drawing room.",
-      "junior": "Jeong's machine is like a gate, with pulleys in two places and two wheels. Only the carpenter, the clerk and the water girl ever come into the drawing room.",
-      "master": "Jeong's machine resembles a gate, with pulleys in two rows and two wheels. Only the carpenter, the clerk and the water girl enter the drawing room."
+      "junior": "Jeong's machine is like a gate, with pulleys in two places and two wheels. Only the carpenter, the clerk and the water girl come into the drawing room.",
+      "master": "Jeong's machine is like a gate, with pulleys in two places and two wheels. Only the carpenter, the clerk and the water girl ever enter the drawing room."
     },
     {
-      "rookie": "Below, a girl with a water bucket looks at the two wheels, and smiles.",
-      "junior": "Below, a girl with a water bucket looks up at the two wheels and smiles.",
-      "master": "Below, a girl holding a water bucket gazes at the two wheels and smiles."
+      "rookie": "A water girl sees the wheels and smiles.",
+      "junior": "Below, a water girl sees the two wheels and smiles.",
+      "master": "Below, a water girl notices the two wheels and smiles."
     },
     {
       "rookie": "The clerk",
@@ -558,9 +558,9 @@
       "master": "The clerk"
     },
     {
-      "rookie": "The clerk sleeps in town, and the gate is shut at night. The note came in the night.",
-      "junior": "The clerk sleeps in town, and the yard gate is shut at night. But the note came in the night.",
-      "master": "The clerk sleeps in town and the yard gate is shut at night, yet the note arrived in the night."
+      "rookie": "The clerk sleeps in town. The gate is shut at night.",
+      "junior": "The clerk sleeps in town. The yard gate is shut at night.",
+      "master": "The clerk sleeps in town. The yard gate is shut at night."
     },
     {
       "rookie": "Okbun",
@@ -575,7 +575,7 @@
     {
       "rookie": "Gwak never goes into the drawing room. How could he know the drawing was different?",
       "junior": "Gwak never goes into the drawing room. So how could he know the drawing was different?",
-      "master": "Gwak never sets foot in the drawing room, so how could he have known the drawing was different?"
+      "master": "Gwak never goes into the drawing room. So how could he know the drawing was different?"
     },
     {
       "rookie": "The new carpenter",
@@ -583,9 +583,9 @@
       "master": "The new carpenter"
     },
     {
-      "rookie": "The carpenter cannot write. The note is written in the King's letters.",
-      "junior": "The carpenter cannot write, but the note is written in the King's letters.",
-      "master": "The carpenter cannot write, whereas the note is written in the King's letters."
+      "rookie": "The carpenter cannot write the King's letters.",
+      "junior": "The carpenter cannot write the King's letters at all.",
+      "master": "The carpenter cannot write, but the note uses the King's letters."
     },
     {
       "rookie": "Who Tied the Note?",
@@ -593,84 +593,84 @@
       "master": "Who Tied the Note?"
     },
     {
-      "rookie": "The big stone sits on the wall. The workers cheer.",
-      "junior": "The big stone sits on top of the wall, and the workers cheer.",
-      "master": "The great stone rests on the wall, and the workers cheer."
+      "rookie": "The stone is on the wall.",
+      "junior": "The big stone is on the wall. The workers cheer.",
+      "master": "The big stone is on the wall, and the workers cheer."
     },
     {
-      "rookie": "Jeong holds up the note. \"Someone warned us. Who?\"",
-      "junior": "Jeong holds up the note. \"Someone warned us. But who?\"",
-      "master": "Jeong raises the note. \"Someone warned us. But who was it?\""
+      "rookie": "Jeong asks, \"Who wrote this note?\"",
+      "junior": "Jeong holds up the note. \"Who wrote this note?\"",
+      "master": "Jeong holds up the note. \"Someone warned us. But who wrote this?\""
     },
     {
-      "rookie": "Four people stand in the yard.",
-      "junior": "Four people are standing in the yard.",
+      "rookie": "Four people stand there.",
+      "junior": "Four people stand in the yard.",
       "master": "Four people stand waiting in the yard."
     },
     {
-      "rookie": "Your notebook, and what the four people say:",
-      "junior": "Your notebook, and what each of the four people says:",
-      "master": "Your notebook, alongside what each of the four says:"
+      "rookie": "Your notes. What four people say:",
+      "junior": "Your notes, and what four people say:",
+      "master": "Your notes, and what each of the four says:"
     },
     {
       "rookie": "The note says: \"The drawing is different.\"\nIt is written in the King's letters.\nIt was tied to the rope in the night.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room. I fill the jars before dawn.\"",
-      "junior": "The note says: \"The drawing is different.\"\nIt is written in the King's letters.\nIt was tied to the rope in the night, while everyone slept.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room, and I fill the jars before dawn.\"",
-      "master": "The note warns: \"The drawing is different.\"\nIt is written in the King's letters.\nIt was tied to the rope in the night, while the yard slept.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I go home to sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room, and I fill the jars before dawn.\""
+      "junior": "The note says: \"The drawing is different.\"\nIt is written in the King's new letters.\nIt was tied to the rope in the night.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room. I fill the jars before dawn.\"",
+      "master": "The note says: \"The drawing is different.\"\nIt is written in the King's own letters.\nIt was tied to the rope in the night, in secret.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room. I fill the jars before dawn.\""
     },
     {
       "rookie": "Who tied the note to the rope?",
-      "junior": "Who tied the note to the rope? Check each person against your notes.",
-      "master": "Which of the four could have tied the note to the rope? Test each one against your notes."
+      "junior": "Who tied the note to the rope? Check each one.",
+      "master": "Who tied the note to the rope? Check each person against your notes."
     },
     {
-      "rookie": "To write \"the drawing is different\", the writer had seen Jeong's drawing.",
-      "junior": "To write \"the drawing is different\", the writer must have seen Jeong's drawing.",
-      "master": "Anyone who wrote \"the drawing is different\" must already have seen Jeong's drawing."
+      "rookie": "The writer saw Jeong's drawing.",
+      "junior": "The writer must have seen Jeong's drawing.",
+      "master": "The writer must have seen Jeong's drawing."
     },
     {
-      "rookie": "Check each person: the drawing room, the writing, the night. Only one fits all three.",
-      "junior": "Check each person for three things: the drawing room, the writing and the night. Only one fits all three.",
-      "master": "Test each person on three counts: the drawing room, the writing, the night. Only one passes all three."
+      "rookie": "Check each person: drawing room, writing, night.",
+      "junior": "Check each person: drawing room, writing, night.",
+      "master": "Check each person on three things: drawing room, writing, night. Only one fits all three."
     },
     {
       "rookie": "Okbun! Only she fits all three.",
-      "junior": "Okbun! She is the only one who fits all three.",
-      "master": "Okbun! She alone fits all three conditions."
+      "junior": "Okbun! Only she fits all three.",
+      "master": "Okbun! She is the only one who fits all three."
     },
     {
       "rookie": "Okbun puts down her bucket.",
-      "junior": "Okbun sets down her bucket.",
-      "master": "Okbun lowers her bucket to the ground."
+      "junior": "Okbun puts down her water bucket.",
+      "master": "Okbun slowly puts down her water bucket."
     },
     {
-      "rookie": "\"I saw the new top had no wheels,\" she says. \"Jeong's drawing has two.\"",
-      "junior": "\"I saw that the new top had no wheels,\" she says. \"Jeong's drawing has two.\"",
-      "master": "\"I noticed the new top had no wheels,\" she says, \"but Jeong's drawing has two.\""
+      "rookie": "\"The new top had no wheels,\" she says.",
+      "junior": "\"I saw the new top had no wheels,\" she says.",
+      "master": "\"I noticed the new top had no wheels,\" she says. \"But Jeong's drawing has two.\""
     },
     {
-      "rookie": "The new top had no wheels. Jeong's drawing has two. So I wrote the note.",
-      "junior": "The new top had no wheels, but Jeong's drawing has two. So I wrote the note.",
-      "master": "The new top had no wheels, yet Jeong's drawing has two. That is why I wrote the note."
+      "rookie": "The new top had no wheels. So I wrote the note.",
+      "junior": "The new top had no wheels. So I wrote the note.",
+      "master": "The new top had no wheels, but Jeong's drawing has two. That is why I wrote the note."
     },
     {
-      "rookie": "I drew a water drop. Jeong knows the girl who brings his water.",
-      "junior": "I drew a water drop instead, because Jeong knows the girl who brings his water.",
-      "master": "Instead I drew a water drop; Jeong knows well the girl who brings his water."
+      "rookie": "I drew a water drop. Jeong knows me.",
+      "junior": "I drew a water drop instead. Jeong knows me.",
+      "master": "I drew a water drop instead. Jeong knows I am the girl who brings his water."
     },
     {
-      "rookie": "Then I thank the girl who brings my water.",
-      "junior": "Then I thank the girl who brings me my water.",
-      "master": "Then my thanks go to the girl who brings my water."
+      "rookie": "Then I thank my water girl.",
+      "junior": "Then I thank my brave water girl.",
+      "master": "Then I thank my brave water girl."
     },
     {
       "rookie": "My mother taught me the King's letters.",
-      "junior": "My mother taught me how to write the King's letters.",
-      "master": "It was my mother who taught me the King's letters."
+      "junior": "My mother taught me the King's letters.",
+      "master": "My mother taught me to write the King's letters."
     },
     {
-      "rookie": "The next autumn, in the ninth month of 1796, Hwaseong Fortress was finished.",
-      "junior": "The next autumn, in the ninth month of 1796, Hwaseong Fortress was finished at last.",
-      "master": "The following autumn, in the ninth month of 1796, Hwaseong Fortress was completed."
+      "rookie": "In 1796, Hwaseong Fortress was done.",
+      "junior": "In 1796, Hwaseong Fortress was finished.",
+      "master": "In the autumn of 1796, in the ninth month, Hwaseong Fortress was finished."
     },
     {
       "rookie": "I cannot read or write.",
@@ -683,9 +683,9 @@
       "master": "The yard gate is shut at night."
     },
     {
-      "rookie": "Someone knew the drawing was different, and tied this note in the night. Who?",
-      "junior": "Someone knew that the drawing was different and tied this note in the night. Who?",
-      "master": "Someone knew the drawing had been changed, and tied this note in the dark. Who?"
+      "rookie": "Who tied this note at night?",
+      "junior": "Who tied this note to the rope at night?",
+      "master": "Someone knew the drawing was changed. Who tied this warning note on at night?"
     },
     {
       "rookie": "THE NEW WALL",

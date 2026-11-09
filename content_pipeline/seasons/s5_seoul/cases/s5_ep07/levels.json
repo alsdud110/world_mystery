@@ -8,64 +8,64 @@
       "master": "Two Reports from Harbin"
     },
     {
-      "rookie": "Two newspapers tell An Jung-geun's story in two ways.",
-      "junior": "Two newspapers tell An Jung-geun's story in two different ways.",
-      "master": "Two newspapers give two different accounts of An Jung-geun."
+      "rookie": "Two papers, two stories.",
+      "junior": "Two newspapers tell two different stories.",
+      "master": "Two newspapers tell two different stories about An Jung-geun."
     },
     {
       "rookie": "Which one tells the truth?",
-      "junior": "Which one is telling the truth?",
-      "master": "Which of them tells the truth?"
+      "junior": "Which one tells the truth?",
+      "master": "Which one of them tells the truth?"
     },
     {
       "rookie": "Two papers, one truth: \"Koreya! Ura!\"",
-      "junior": "Two papers, but only one truth: \"Koreya! Ura!\"",
-      "master": "Two papers, a single truth: \"Koreya! Ura!\""
+      "junior": "Two papers, but one truth: \"Koreya! Ura!\"",
+      "master": "Two papers, but only one truth: \"Koreya! Ura!\""
     },
     {
-      "rookie": "Find the line where the papers disagree.",
-      "junior": "Find the line where the two papers do not agree.",
-      "master": "Pinpoint the line on which the papers disagree."
+      "rookie": "Find the different line.",
+      "junior": "Find the line that is different.",
+      "master": "Find the one line that is different."
     },
     {
-      "rookie": "Find out where Paper A's story came from.",
-      "junior": "Discover where Paper A got its story.",
-      "master": "Trace where Paper A's story came from."
+      "rookie": "Find who told Paper A's story.",
+      "junior": "Find out who told Paper A its story.",
+      "master": "Discover who told Paper A its story."
     },
     {
       "rookie": "Hear what Mr. Pak heard.",
-      "junior": "Listen to what Mr. Pak heard.",
-      "master": "Learn what Mr. Pak heard with his own ears."
+      "junior": "Hear what Mr. Pak heard that day.",
+      "master": "Hear what Mr. Pak heard with his own ears."
     },
     {
-      "rookie": "Show the writer which report is true.",
-      "junior": "Prove to the writer which report is true.",
-      "master": "Convince the writer which report is true."
+      "rookie": "Show the writer the truth.",
+      "junior": "Show the writer which report is really true.",
+      "master": "Show the writer which report is true."
     },
     {
-      "rookie": "Autumn, 1909. You stay at Mrs. Kang's Korean inn in Harbin, a city in China.",
-      "junior": "It is autumn, 1909, and you are staying at Mrs. Kang's Korean inn in Harbin, a city in China.",
-      "master": "Autumn, 1909: you are lodging at Mrs. Kang's Korean inn in Harbin, a busy railway city in China."
+      "rookie": "1909. Mrs. Kang's inn, Harbin.",
+      "junior": "It is autumn, 1909. Mrs. Kang's inn, Harbin.",
+      "master": "Autumn, 1909. Mrs. Kang's Korean inn in Harbin, a busy railway city in China."
     },
     {
-      "rookie": "On the morning of 26 October, at Harbin Station, a Korean named An Jung-geun killed Itō.",
-      "junior": "On the morning of 26 October, at Harbin Station, Itō was killed by a Korean named An Jung-geun.",
-      "master": "On the morning of 26 October, at Harbin Station, a Korean named An Jung-geun killed Itō."
+      "rookie": "On the morning of 26 October, An Jung-geun killed Itō at Harbin Station.",
+      "junior": "On the morning of 26 October, An Jung-geun killed Itō at Harbin Station.",
+      "master": "On the morning of 26 October, An Jung-geun killed Itō at Harbin Station."
     },
     {
-      "rookie": "Everyone in Harbin is talking about it.",
-      "junior": "The whole of Harbin is talking about it.",
-      "master": "All of Harbin can speak of nothing else."
+      "rookie": "All Harbin talks about it.",
+      "junior": "All of Harbin is talking about it.",
+      "master": "All of Harbin is talking about it."
     },
     {
-      "rookie": "Two newspapers on Mrs. Kang's table tell his story in two ways.",
-      "junior": "On Mrs. Kang's table, two newspapers tell his story in two different ways.",
-      "master": "Two newspapers on Mrs. Kang's table give two different accounts of him."
+      "rookie": "Two papers, two ways.",
+      "junior": "Two papers tell his story in two ways.",
+      "master": "Two papers tell it in two ways."
     },
     {
       "rookie": "Paper A was written from a story told over tea. Its writer came at noon, after the 9:30 cry. Mr. Pak was on the platform: An Jung-geun called out, \"Koreya! Ura!\" (Korea, hurrah!), not for money. Mrs. Kang pinned the true report on her inn wall. In prison, An Jung-geun wrote about Korea's independence and peace in East Asia.",
-      "junior": "Paper A was based on a story told over tea, because its writer came at noon, after the 9:30 cry. Mr. Pak was on the platform: An Jung-geun called out, \"Koreya! Ura!\" (Korea, hurrah!), not for money. Mrs. Kang pinned the true report on her inn wall. In prison, An Jung-geun wrote about Korea's independence and peace in East Asia.",
-      "master": "Paper A grew out of a story told over tea, for its writer arrived only at noon, after the 9:30 cry, while Mr. Pak stood on the platform and heard An Jung-geun call out, \"Koreya! Ura!\" (Korea, hurrah!), not for money. Mrs. Kang pinned the true report on her inn wall. In prison, An Jung-geun wrote about Korea's independence and peace in East Asia."
+      "junior": "Paper A was written from a story told over tea. Its writer came at noon, after the 9:30 cry. But Mr. Pak was on the platform: An Jung-geun called out, \"Koreya! Ura!\" (Korea, hurrah!), not for money. Mrs. Kang pinned the true report on her inn wall. In prison, An Jung-geun wrote about Korea's independence and peace in East Asia.",
+      "master": "Paper A was written from a story told over tea. Its writer came only at noon, after the 9:30 cry. Mr. Pak was on the platform: An Jung-geun called out, \"Koreya! Ura!\" (Korea, hurrah!), not for money. Mrs. Kang pinned the true report on her inn wall. In prison, An Jung-geun wrote about Korea's independence and peace in East Asia."
     },
     {
       "rookie": "HARBIN",
@@ -113,24 +113,24 @@
       "master": "MRS. KANG'S INN"
     },
     {
-      "rookie": "Two newspaper reports lie on Mrs. Kang's table.",
-      "junior": "Two newspaper reports are lying on Mrs. Kang's table.",
-      "master": "Two newspaper reports rest on Mrs. Kang's table."
+      "rookie": "Two papers on the table.",
+      "junior": "Two papers are lying on the table.",
+      "master": "Two newspapers lie on Mrs. Kang's table."
     },
     {
-      "rookie": "Folded inside one is a small note from her.",
-      "junior": "Inside one of them is a small folded note from her.",
-      "master": "Tucked inside one is a small note in her own hand."
+      "rookie": "One has Mrs. Kang's note.",
+      "junior": "One has a note from Mrs. Kang.",
+      "master": "Inside one is a note from Mrs. Kang."
     },
     {
       "rookie": "Mrs. Kang's note says:",
-      "junior": "Mrs. Kang's note says this:",
-      "master": "Mrs. Kang's note reads:"
+      "junior": "Mrs. Kang's note says:",
+      "master": "Mrs. Kang's note says:"
     },
     {
       "rookie": "Detective,\nItō forced the 1905 treaty on Korea. But Paper A says An Jung-geun did it for money.\nTwo papers came today. They should agree.\nRead both, line by line. One line is not the same.\n— Kang",
-      "junior": "Detective,\nItō forced the 1905 treaty on Korea, but Paper A says An Jung-geun did it for money.\nTwo papers arrived today, so they ought to agree.\nRead them both, line by line. One line is not the same.\n— Kang",
-      "master": "Detective,\nItō forced the 1905 treaty on Korea; yet Paper A claims An Jung-geun did it for money.\nTwo papers reached me today, and they should tell the same story.\nCompare them line by line. One line is not the same.\n— Kang"
+      "junior": "Detective,\nItō forced the 1905 treaty on Korea. But Paper A says An Jung-geun did it for money.\nTwo papers came today. They should both say the same.\nRead both, line by line. One line is not the same.\n— Kang",
+      "master": "Detective,\nItō forced the 1905 treaty on Korea. But Paper A says An Jung-geun did it for money.\nTwo papers came today. They should tell the same story.\nRead both carefully, line by line. One line is not the same.\n— Kang"
     },
     {
       "rookie": "Which line does not match?",
@@ -138,59 +138,59 @@
       "master": "Which line fails to match?"
     },
     {
-      "rookie": "Read the four lines of each paper, one by one.",
-      "junior": "Read each paper's four lines, one at a time.",
-      "master": "Go through each paper's four lines in turn."
+      "rookie": "Read each paper line by line.",
+      "junior": "Read the two papers line by line.",
+      "master": "Each paper has four lines. Read them one by one."
     },
     {
-      "rookie": "The date, the place and the name agree. Look at the last line.",
-      "junior": "The date, place and name are the same, so look at the last line.",
-      "master": "Date, place and name all agree; the difference must lie in the final line."
+      "rookie": "Date, place, name match. Read the last line.",
+      "junior": "Date, place and name match. Read the last line.",
+      "master": "Date, place and name all match. Read the last line."
     },
     {
-      "rookie": "The papers do not agree on what he called out!",
-      "junior": "The papers disagree about what he called out!",
-      "master": "The papers part ways over what he called out!"
+      "rookie": "His words are not the same!",
+      "junior": "The words he called out are not the same!",
+      "master": "His words are not the same in both!"
     },
     {
-      "rookie": "One paper says he called out nothing.",
+      "rookie": "One says he called out nothing.",
       "junior": "One paper says he called out nothing at all.",
-      "master": "One paper claims he called out nothing."
+      "master": "One paper says he called out nothing."
     },
     {
       "rookie": "The other says he called out, \"Koreya! Ura!\"",
-      "junior": "The other paper says he called out, \"Koreya! Ura!\"",
-      "master": "The other reports that he called out, \"Koreya! Ura!\""
+      "junior": "The other says he called out, \"Koreya! Ura!\"",
+      "master": "The other paper says he called out, \"Koreya! Ura!\""
     },
     {
-      "rookie": "Mrs. Kang nods. \"Ask Mr. Pak. He carries bags at the station.\"",
-      "junior": "Mrs. Kang nods. \"Go and ask Mr. Pak. He is a porter at the station.\"",
-      "master": "Mrs. Kang nods. \"Speak to Mr. Pak, who carries bags at the station.\""
+      "rookie": "Mrs. Kang says, \"Ask Mr. Pak.\"",
+      "junior": "Mrs. Kang says, \"Go and ask Mr. Pak.\"",
+      "master": "Mrs. Kang nods. \"Go and ask Mr. Pak. He carries bags at the station.\""
     },
     {
-      "rookie": "Both papers say 26 OCTOBER. Look for a line that differs.",
-      "junior": "Both papers say 26 OCTOBER. Look for a line that is different.",
-      "master": "Both papers say 26 OCTOBER. Seek the line that differs."
+      "rookie": "Both say 26 OCTOBER. Read on.",
+      "junior": "Both papers say 26 OCTOBER. Read on.",
+      "master": "Both papers say 26 OCTOBER. Keep reading."
     },
     {
-      "rookie": "Both papers say HARBIN STATION. Read on.",
-      "junior": "Both papers say HARBIN STATION. Keep reading.",
-      "master": "Both papers say HARBIN STATION. Read further."
+      "rookie": "Both say HARBIN STATION. Read on.",
+      "junior": "Both papers say HARBIN STATION. Read on.",
+      "master": "Both papers say HARBIN STATION. Keep reading."
     },
     {
-      "rookie": "Both papers give the same name. Read the last line.",
-      "junior": "Both papers give the same name. Look at the last line.",
-      "master": "The name is identical in both. Read the final line."
+      "rookie": "Same name. Read the last line.",
+      "junior": "The same name. Read the last line.",
+      "master": "Both have the same name. Read the last line."
     },
     {
-      "rookie": "The Line That Disagrees",
-      "junior": "The Line That Disagrees",
-      "master": "The Line That Disagrees"
+      "rookie": "The Different Line",
+      "junior": "The Line That Is Not the Same",
+      "master": "The Line That Is Different"
     },
     {
       "rookie": "Paper A says he called out nothing. Paper B says he called out, \"Koreya! Ura!\"",
-      "junior": "According to Paper A, he called out nothing. According to Paper B, he called out, \"Koreya! Ura!\"",
-      "master": "Paper A has him calling out nothing; Paper B has him calling out, \"Koreya! Ura!\""
+      "junior": "Paper A says he called out nothing. Paper B says he called out, \"Koreya! Ura!\"",
+      "master": "Paper A says he called out nothing. But Paper B says he called out, \"Koreya! Ura!\""
     },
     {
       "rookie": "PAPER A: THE EVENING SHEET",
@@ -258,9 +258,9 @@
       "master": "Tap a paper to read it."
     },
     {
-      "rookie": "Tap the line on each paper that does not match.",
-      "junior": "On each paper, tap the line that does not match.",
-      "master": "Tap the mismatched line on each paper."
+      "rookie": "Tap the line that does not match.",
+      "junior": "Tap the line that does not match.",
+      "master": "Tap the one line that does not match."
     },
     {
       "rookie": "THESE DO NOT MATCH",
@@ -268,14 +268,14 @@
       "master": "THESE DO NOT MATCH"
     },
     {
-      "rookie": "Find out why Mrs. Kang called you.",
-      "junior": "Find out why Mrs. Kang sent for you.",
-      "master": "Learn why Mrs. Kang summoned you."
+      "rookie": "Find why Mrs. Kang called you.",
+      "junior": "Find out why Mrs. Kang called you.",
+      "master": "Find out why Mrs. Kang called for you."
     },
     {
-      "rookie": "Every Korean in Harbin reads these papers.",
-      "junior": "Every Korean in Harbin reads these newspapers.",
-      "master": "Every Korean in Harbin reads these papers closely."
+      "rookie": "All Koreans here read these.",
+      "junior": "All Koreans here read these papers.",
+      "master": "Every Korean in Harbin reads these papers."
     },
     {
       "rookie": "One of them is not true. I am sure of it.",
@@ -283,9 +283,9 @@
       "master": "One of them is untrue, of that I am certain."
     },
     {
-      "rookie": "Then we read them side by side.",
-      "junior": "Then let's read them side by side.",
-      "master": "Then we shall read them side by side."
+      "rookie": "Then we read them together.",
+      "junior": "Then we will read them together.",
+      "master": "Then we will read them together."
     },
     {
       "rookie": "THE NOON TRAIN",
@@ -323,14 +323,14 @@
       "master": "THE STATION TEA ROOM"
     },
     {
-      "rookie": "Mr. Pak drinks his tea by the window.",
-      "junior": "Mr. Pak is drinking tea by the window.",
-      "master": "Mr. Pak sips his tea by the window."
+      "rookie": "Mr. Pak drinks tea.",
+      "junior": "Mr. Pak drinks his tea by the window.",
+      "master": "Mr. Pak drinks tea by the window."
     },
     {
-      "rookie": "\"Put my day in order,\" he says.",
-      "junior": "\"Put my day in the right order,\" he says. \"Then you will understand.\"",
-      "master": "\"Set my day in order,\" he says, \"and you will understand.\""
+      "rookie": "\"Put my day in order.\"",
+      "junior": "\"Put my day in order,\" he says.",
+      "master": "\"Put my day in the right order,\" he says. \"Then you will understand.\""
     },
     {
       "rookie": "Mr. Pak tells you:",
@@ -338,19 +338,19 @@
       "master": "Mr. Pak recounts:"
     },
     {
-      "rookie": "Paper A came from a story told over tea.",
-      "junior": "Paper A's story came from a chat over tea.",
-      "master": "Paper A's story was born of talk over tea."
+      "rookie": "Paper A came from tea-room talk.",
+      "junior": "Paper A came from talk in the tea room.",
+      "master": "Paper A's story came from tea-room talk."
     },
     {
-      "rookie": "Paper B came from a man on the platform.",
-      "junior": "Paper B was written by a man on the platform.",
-      "master": "Paper B came from a man who stood on the platform."
+      "rookie": "Paper B came from the platform.",
+      "junior": "Paper B came from the platform.",
+      "master": "Paper B came from a man on the platform."
     },
     {
-      "rookie": "\"And I was on the platform too,\" Mr. Pak says quietly.",
-      "junior": "\"And I was on the platform as well,\" Mr. Pak says quietly.",
-      "master": "\"And I, too, was on the platform,\" Mr. Pak says softly."
+      "rookie": "\"I was there too,\" says Mr. Pak.",
+      "junior": "\"I was there too,\" Mr. Pak says.",
+      "master": "\"I was there too, on the platform,\" Mr. Pak says quietly."
     },
     {
       "rookie": "Not on the Platform",
@@ -368,14 +368,14 @@
       "master": "The Evening Sheet's writer arrives on the noon train."
     },
     {
-      "rookie": "A traveller tells the writer a story over tea.",
-      "junior": "Over tea, a traveller tells the writer a story.",
-      "master": "A traveller spins the writer a tale over tea."
+      "rookie": "Over tea, a traveller talks to the writer.",
+      "junior": "Over tea, a traveller talks to the writer.",
+      "master": "Over tea, a traveller tells the writer a story."
     },
     {
-      "rookie": "The writer writes his report at a tea room table.",
-      "junior": "The writer writes his report at a table in the tea room.",
-      "master": "At a tea room table, the writer composes his report."
+      "rookie": "The writer writes his report.",
+      "junior": "The writer writes his report.",
+      "master": "Then the writer writes his report at a tea room table."
     },
     {
       "rookie": "The Evening Sheet is printed.",
@@ -388,19 +388,19 @@
       "master": "A goods train pulls in."
     },
     {
-      "rookie": "Find out when the Evening Sheet's writer came.",
-      "junior": "Find out when the Evening Sheet's writer arrived.",
-      "master": "Learn when the Evening Sheet's writer arrived."
+      "rookie": "Find when the writer came.",
+      "junior": "Find out when the newspaper writer came.",
+      "master": "Find out when the Evening Sheet's writer arrived."
     },
     {
-      "rookie": "I carry bags at this station every day.",
-      "junior": "I carry bags at this station every single day.",
-      "master": "Every day I carry bags at this station."
+      "rookie": "I carry bags here every day.",
+      "junior": "I carry bags here every day.",
+      "master": "I carry bags at this station every day."
     },
     {
       "rookie": "I know every train.",
       "junior": "I know every train and every face.",
-      "master": "I know each train, and each face."
+      "master": "I know every single train."
     },
     {
       "rookie": "What Mr. Pak Heard",
@@ -413,19 +413,19 @@
       "master": "He called out for ____."
     },
     {
-      "rookie": "Paper A was wrong about his words, and about money.",
-      "junior": "Paper A got his words wrong, and it was wrong about money too.",
-      "master": "Paper A was mistaken about his words, and about money."
+      "rookie": "Paper A was wrong: his words, and money.",
+      "junior": "Paper A was wrong: his words, and money.",
+      "master": "Paper A was wrong about his words, and about money."
     },
     {
-      "rookie": "Mrs. Kang takes Paper B to the Evening Sheet's office.",
-      "junior": "Mrs. Kang carries Paper B to the Evening Sheet's office.",
-      "master": "Mrs. Kang takes Paper B to the office of the Evening Sheet."
+      "rookie": "She takes Paper B to the Evening Sheet.",
+      "junior": "Mrs. Kang takes Paper B to the Evening Sheet.",
+      "master": "Mrs. Kang carries Paper B to the Evening Sheet."
     },
     {
-      "rookie": "Its writer, Mr. Sorin, comes back with her.",
-      "junior": "Its writer, Mr. Sorin, comes back to the inn with her.",
-      "master": "Its writer, Mr. Sorin, returns with her to the inn."
+      "rookie": "The writer, Mr. Sorin, comes back.",
+      "junior": "The writer, Mr. Sorin, comes back with her.",
+      "master": "Its writer, Mr. Sorin, comes back with her to the inn."
     },
     {
       "rookie": "For Korea",
@@ -443,34 +443,34 @@
       "master": "The True Report"
     },
     {
-      "rookie": "Mr. Sorin comes to the inn with his paper.",
-      "junior": "Mr. Sorin arrives at the inn with his paper.",
-      "master": "Mr. Sorin appears at the inn, paper in hand."
+      "rookie": "Mr. Sorin comes with his paper.",
+      "junior": "Mr. Sorin comes to the inn with his paper.",
+      "master": "Mr. Sorin comes to the inn with his paper."
     },
     {
-      "rookie": "\"My paper is right,\" he says. \"Prove it is not.\"",
-      "junior": "\"My paper is correct,\" he says. \"Prove that it is not.\"",
-      "master": "\"My paper is right,\" he insists. \"Prove otherwise.\""
+      "rookie": "\"My paper is right.\"",
+      "junior": "\"My paper is right,\" he says.",
+      "master": "\"My paper is right,\" he says. \"Prove it is not.\""
     },
     {
-      "rookie": "Answer Mr. Sorin's three questions with your evidence.",
-      "junior": "Use your evidence to answer Mr. Sorin's three questions.",
-      "master": "Meet each of Mr. Sorin's three questions with your evidence."
+      "rookie": "Answer his three questions.",
+      "junior": "Answer his three questions with your cards.",
+      "master": "Answer his three questions with your evidence."
     },
     {
-      "rookie": "Mr. Sorin puts down his pen. \"I was wrong.\"",
-      "junior": "Mr. Sorin lays down his pen. \"I was wrong.\"",
-      "master": "Mr. Sorin sets down his pen. \"I was mistaken.\""
+      "rookie": "\"I was wrong,\" says Mr. Sorin.",
+      "junior": "\"I was wrong,\" Mr. Sorin says sadly.",
+      "master": "Mr. Sorin puts down his pen. \"I was wrong.\""
     },
     {
-      "rookie": "Mr. Sorin writes a new report at Mrs. Kang's table.",
-      "junior": "At Mrs. Kang's table, Mr. Sorin writes a new report.",
-      "master": "Mr. Sorin sits at Mrs. Kang's table and writes a fresh report."
+      "rookie": "Mr. Sorin writes a new report.",
+      "junior": "Then Mr. Sorin writes a new report.",
+      "master": "Then Mr. Sorin sits at Mrs. Kang's table and writes a new report."
     },
     {
-      "rookie": "Mrs. Kang pins Paper B on the inn wall, for every Korean guest to read.",
-      "junior": "Mrs. Kang pins Paper B on the inn wall, so that every Korean guest can read it.",
-      "master": "Mrs. Kang pins Paper B to the inn wall for every Korean guest to read."
+      "rookie": "Mrs. Kang puts Paper B on the wall.",
+      "junior": "Mrs. Kang puts Paper B on the inn wall.",
+      "master": "Mrs. Kang pins Paper B on the inn wall. Every Korean guest can read it."
     },
     {
       "rookie": "Outside, the trains go on, east and west.",
@@ -478,29 +478,29 @@
       "master": "Outside, the trains run on, eastward and westward."
     },
     {
-      "rookie": "Show Mr. Sorin which report is true.",
-      "junior": "Prove to Mr. Sorin which report is true.",
-      "master": "Convince Mr. Sorin which report is true."
+      "rookie": "Show Mr. Sorin the true report.",
+      "junior": "Show Mr. Sorin the true report.",
+      "master": "Show Mr. Sorin which report is true."
     },
     {
-      "rookie": "A traveller told me everything. Why would he lie?",
-      "junior": "A traveller told me the whole story. Why would he lie?",
-      "master": "A traveller told me everything. What reason had he to lie?"
+      "rookie": "A traveller told me. Why lie?",
+      "junior": "A traveller told me. Why would he lie?",
+      "master": "A traveller told me everything. Why would he lie?"
     },
     {
-      "rookie": "Let me show you what I found.",
-      "junior": "Let me show you what I discovered.",
-      "master": "Allow me to show you what I found."
+      "rookie": "Let me show you.",
+      "junior": "Let me show you what I found.",
+      "master": "Let me show you what I found."
     },
     {
       "rookie": "Did you check the traveller's story?",
-      "junior": "Did you check whether the traveller's story was true?",
+      "junior": "Did you check the traveller's story?",
       "master": "Did you ever check the traveller's story?"
     },
     {
-      "rookie": "There was no time. The paper had to be printed.",
-      "junior": "There was no time. The paper had to go to print.",
-      "master": "There was no time; the paper had to be printed."
+      "rookie": "No time to check.",
+      "junior": "There was no time to check it.",
+      "master": "There was no time to check it. The paper had to be printed."
     },
     {
       "rookie": "It was a good story.",
@@ -508,7 +508,7 @@
       "master": "It was a fine story."
     },
     {
-      "rookie": "That does not show where my story came from.",
+      "rookie": "That does not show where it came from.",
       "junior": "That doesn't show where my story came from.",
       "master": "That proves nothing about where my story came from."
     },
@@ -519,8 +519,8 @@
     },
     {
       "rookie": "Not a word about money, then.",
-      "junior": "So there was not a word about money.",
-      "master": "Not a word of money, then."
+      "junior": "So, not a word about money.",
+      "master": "So, not a single word about money."
     },
     {
       "rookie": "That does not say what he called out.",
@@ -533,44 +533,44 @@
       "master": "CLOSE THE CASE"
     },
     {
-      "rookie": "Tomorrow I will print what Mr. Pak heard.",
-      "junior": "Tomorrow I will print what Mr. Pak heard.",
-      "master": "Tomorrow my paper will carry what Mr. Pak heard."
+      "rookie": "Tomorrow I print Mr. Pak's story.",
+      "junior": "Tomorrow I will print Mr. Pak's story.",
+      "master": "Tomorrow my paper will print Mr. Pak's story."
     },
     {
       "rookie": "He called out, \"Koreya! Ura!\": \"Korea, hurrah!\" Not for money.",
-      "junior": "He called out, \"Koreya! Ura!\", which means \"Korea, hurrah!\" It was not for money.",
-      "master": "He called out, \"Koreya! Ura!\": \"Korea, hurrah!\" Money had nothing to do with it."
+      "junior": "He called out, \"Koreya! Ura!\": \"Korea, hurrah!\" It was not for money.",
+      "master": "He called out, \"Koreya! Ura!\": \"Korea, hurrah!\" It was never about money."
     },
     {
-      "rookie": "In prison, An Jung-geun began writing 'On Peace in East Asia'.",
-      "junior": "In prison, An Jung-geun started writing 'On Peace in East Asia'.",
-      "master": "In prison, An Jung-geun set about writing 'On Peace in East Asia'."
+      "rookie": "In prison, he wrote a book on peace.",
+      "junior": "In prison, he wrote a book about peace.",
+      "master": "In prison, An Jung-geun began a book called 'On Peace in East Asia'."
     },
     {
-      "rookie": "He wrote about Korea's independence and peace between the countries of East Asia.",
-      "junior": "In it, he wrote about Korea's independence and peace between the countries of East Asia.",
-      "master": "In it he wrote of Korea's independence and of peace between the countries of East Asia."
+      "rookie": "It is about Korea's independence.",
+      "junior": "It is about Korea's independence.",
+      "master": "It is about Korea's independence and peace between the countries of East Asia."
     },
     {
-      "rookie": "He began it in March 1910, and could not finish it.",
-      "junior": "He started it in March 1910, but he could not finish it.",
-      "master": "He began it in March 1910, yet was never able to finish it."
+      "rookie": "He began it in March 1910. He never finished.",
+      "junior": "He began it in March 1910. He never finished it.",
+      "master": "He began it in March 1910. He was never able to finish it."
     },
     {
-      "rookie": "Now every guest in my inn will read the truth.",
-      "junior": "Now every guest at my inn will read the truth.",
-      "master": "Now every guest under my roof will read the truth."
+      "rookie": "Now my guests will know.",
+      "junior": "Now all my guests will know the truth.",
+      "master": "Now all my guests will know the truth."
     },
     {
-      "rookie": "Itō Hirobumi was a top Japanese leader. In 1905, he made Korea sign a treaty by force.",
-      "junior": "Itō Hirobumi was a top Japanese leader who had forced Korea to sign a treaty in 1905.",
-      "master": "Itō Hirobumi, one of Japan's most powerful leaders, had forced a treaty on Korea in 1905."
+      "rookie": "Itō was a Japanese leader. In 1905, he forced a treaty on Korea.",
+      "junior": "Itō was a top Japanese leader. In 1905, he forced a treaty on Korea.",
+      "master": "Itō Hirobumi was a powerful Japanese leader. In 1905, he forced a treaty on Korea."
     },
     {
-      "rookie": "With that treaty, Korea lost the right to deal with other countries.",
-      "junior": "Because of that treaty, Korea lost the right to deal with other countries.",
-      "master": "That treaty had taken away Korea's right to deal with other countries."
+      "rookie": "Korea could not talk to other countries.",
+      "junior": "Now Korea could not talk to other countries.",
+      "master": "After that, Korea could not talk to other countries."
     },
     {
       "rookie": "HE CALLS OUT",
@@ -589,7 +589,7 @@
     },
     {
       "rookie": "I started work early, before he called out.",
-      "junior": "I started work early that day, before he called out.",
+      "junior": "I started work early, before he called out.",
       "master": "I had started work early, before he called out."
     },
     {
@@ -599,48 +599,48 @@
     },
     {
       "rookie": "The writer wrote his report after that story.",
-      "junior": "The writer wrote his report at this table, after that story.",
-      "master": "Only after that story did the writer sit down and write his report."
+      "junior": "The writer wrote his report after that story.",
+      "master": "The writer wrote his report only after that story."
     },
     {
       "rookie": "He called out at 9:30 in the morning. I heard it.\nAfter the noon train, a traveller told the writer a story over tea.\nThe Evening Sheet's writer came on the noon train.\nI started work early, before he called out.\nThe writer wrote his report after that story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. Leave it out.",
-      "junior": "He called out at 9:30 in the morning, and I heard it.\nAfter the noon train, a traveller told the writer a story over tea.\nThe Evening Sheet's writer came on the noon train.\nI started work early that day, before he called out.\nThe writer wrote his report at this table, after that story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came in too, but it does not matter. Leave it out.",
-      "master": "He called out at 9:30 in the morning; I heard it myself.\nAfter the noon train, a traveller told the writer a story over tea.\nThe Evening Sheet's writer came on the noon train.\nI had started work early, before he called out.\nOnly after that story did the writer sit down and write his report.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came through as well; it has no part in this. Leave it out."
+      "junior": "He called out at 9:30 in the morning. I heard it.\nAfter the noon train, a traveller told the writer a story over tea.\nThe Evening Sheet's writer came on the noon train.\nI started work early, before he called out.\nThe writer wrote his report after that story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too, but it does not matter. Leave it out.",
+      "master": "He called out at 9:30 in the morning. I heard it myself.\nAfter the noon train, a traveller told the writer a story over tea.\nThe Evening Sheet's writer came on the noon train.\nI had started work early, before he called out.\nThe writer wrote his report only after that story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. It does not matter. Leave it out."
     },
     {
-      "rookie": "Put Mr. Pak's day in order. Was the writer there when he called out?",
-      "junior": "Put Mr. Pak's day in order. Was the writer on the platform when he called out?",
-      "master": "Set Mr. Pak's day in order. Could the writer have been there when he called out?"
+      "rookie": "Put Mr. Pak's day in order. Was the writer there?",
+      "junior": "Put Mr. Pak's day in order. Was the writer there then?",
+      "master": "Put Mr. Pak's day in order. Was the writer there when he called out?"
     },
     {
-      "rookie": "Find the words before and after. The cards with times stay put.",
-      "junior": "Look for the words before and after. The cards with times do not move.",
-      "master": "The words before and after hold the order; the timed cards are fixed."
+      "rookie": "Fill the empty spots. Time cards stay.",
+      "junior": "Fill the empty spots. The time cards stay.",
+      "master": "Fill the empty spots. The cards with times stay. The words before and after show the order."
     },
     {
-      "rookie": "He called out at 9:30. The writer came at 12:00. Which came first?",
-      "junior": "He called out at 9:30, and the writer came at 12:00. Which happened first?",
-      "master": "He called out at 9:30; the writer arrived at 12:00. Which came first?"
+      "rookie": "He called out at 9:30. The writer came at 12:00.",
+      "junior": "He called out at 9:30. The writer came at 12:00.",
+      "master": "He called out at 9:30. The writer arrived at 12:00."
     },
     {
       "rookie": "He called out at 9:30. The writer came at noon. He did not see it!",
       "junior": "He called out at 9:30, but the writer came at noon. He did not see it!",
-      "master": "He called out at 9:30, hours before the writer arrived at noon. The writer saw nothing!"
+      "master": "He called out at 9:30. The writer only came at noon. He did not see it!"
     },
     {
-      "rookie": "Look at the times. When did he call out? When did the writer come?",
-      "junior": "Look at the times again. When did he call out, and when did the writer come?",
-      "master": "Study the times again: when did he call out, and when did the writer arrive?"
+      "rookie": "When did he call out? When did the writer come?",
+      "junior": "When did he call out? When did the writer come?",
+      "master": "Look at the times. When did he call out? When did the writer come?"
     },
     {
-      "rookie": "He saw the Evening Sheet's writer that day, at the station.",
-      "junior": "That day, he saw the Evening Sheet's writer at the station.",
-      "master": "That day, at the station, the Evening Sheet's writer crossed his path."
+      "rookie": "He saw the newspaper writer there.",
+      "junior": "That day, he saw the newspaper writer there.",
+      "master": "That day, he saw the Evening Sheet's writer at the station."
     },
     {
       "rookie": "Paper A's writer came at noon, after An Jung-geun called out at 9:30. He wrote a story told over tea.",
-      "junior": "Paper A's writer came at noon, after An Jung-geun had called out at 9:30. He wrote down a story told over tea.",
-      "master": "Paper A's writer arrived at noon, long after An Jung-geun called out at 9:30, and set down a story told over tea."
+      "junior": "Paper A's writer came at noon, after An Jung-geun called out at 9:30. He wrote a story told over tea.",
+      "master": "Paper A's writer came at noon, long after An Jung-geun called out at 9:30. He wrote a story told over tea."
     },
     {
       "rookie": "before he called out",
@@ -663,79 +663,79 @@
       "master": "Ura = Hurrah"
     },
     {
-      "rookie": "Back at the inn, Mr. Pak drinks hot tea.",
-      "junior": "Back at the inn, Mr. Pak sits and drinks a cup of hot tea.",
-      "master": "Back at the inn, Mr. Pak warms his hands around a cup of hot tea."
+      "rookie": "At the inn, Mr. Pak drinks tea.",
+      "junior": "At the inn, Mr. Pak drinks hot tea.",
+      "master": "Back at the inn, Mr. Pak drinks hot tea."
     },
     {
-      "rookie": "He works with railway men from Russia. He knows some of their words.",
-      "junior": "He works with railway men from Russia, so he knows some of their words.",
-      "master": "Working beside railway men from Russia, he has picked up some of their words."
+      "rookie": "He knows some Russian words.",
+      "junior": "He knows some Russian words from the railway.",
+      "master": "He works with Russian railway men, so he knows some Russian words."
     },
     {
-      "rookie": "Mr. Pak says, and shows you a card from the station:",
-      "junior": "Mr. Pak tells you this, and shows you a card from the station:",
-      "master": "Mr. Pak recounts what he heard, and lays a card from the station before you:"
+      "rookie": "Mr. Pak says, and shows a card:",
+      "junior": "Mr. Pak says this, and shows a card:",
+      "master": "Mr. Pak says this, and shows you a card from the station:"
     },
     {
       "rookie": "I was on the platform. I heard him.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea.",
-      "junior": "I was on the platform, and I heard him clearly.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money, not even once.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea.",
-      "master": "I stood on the platform and heard him with my own ears.\nHe called out, \"Koreya! Ura!\"\nNot once did he ask anyone for money.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea."
+      "junior": "I was on the platform. I heard him.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea.",
+      "master": "I was on the platform. I heard him clearly.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money, not once.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea."
     },
     {
-      "rookie": "What country did he call out for? Type it in English.",
-      "junior": "Which country did he call out for? Type its name in English.",
-      "master": "For which country did he call out? Type its English name."
+      "rookie": "He called out a country. Type it in English.",
+      "junior": "He called out a country. Type it in English.",
+      "master": "He called out a country. Type its name in English."
     },
     {
-      "rookie": "Find the two words he called out. Find them on the word card.",
-      "junior": "Find the two words he called out, then find each one on the word card.",
-      "master": "Take the two words he called out and look each one up on the word card."
+      "rookie": "Find his two words.",
+      "junior": "Find the two words he called out on the card.",
+      "master": "Find his two words on the word card."
     },
     {
-      "rookie": "Koreya is on the card. What is it in English?",
-      "junior": "Koreya is on the word card. What does it mean in English?",
-      "master": "Koreya appears on the card. What is its English meaning?"
+      "rookie": "Koreya: what is it in English?",
+      "junior": "Koreya: what is it in English?",
+      "master": "Koreya: what does it mean in English?"
     },
     {
       "rookie": "\"Koreya! Ura!\" means \"Korea, hurrah!\" He called out for Korea!",
-      "junior": "\"Koreya! Ura!\" means \"Korea, hurrah!\" He was calling out for Korea!",
-      "master": "\"Koreya! Ura!\" means \"Korea, hurrah!\" It was Korea he called out for!"
+      "junior": "\"Koreya! Ura!\" means \"Korea, hurrah!\" He called out for Korea!",
+      "master": "\"Koreya! Ura!\" means \"Korea, hurrah!\" He was calling out for Korea!"
     },
     {
-      "rookie": "Rossiya is on the card, but he did not call it out.",
-      "junior": "Rossiya is on the card, but he did not call that word out.",
-      "master": "Rossiya is on the card, yet it is not a word he called out."
+      "rookie": "He did not call out Rossiya.",
+      "junior": "He did not call out Rossiya, the word for Russia.",
+      "master": "Rossiya is on the card, but he did not call it out."
     },
     {
-      "rookie": "Dengi means money. He did not say it.",
-      "junior": "Dengi means money, but he never said it.",
-      "master": "Dengi means money, a word he never spoke."
+      "rookie": "Dengi means money. Not that.",
+      "junior": "Dengi means money. Not that one.",
+      "master": "Dengi means money. He never said that."
     },
     {
-      "rookie": "Ura means hurrah. That is not a country.",
-      "junior": "Ura means hurrah, but that is not a country.",
-      "master": "Ura means hurrah, which is no country."
+      "rookie": "Ura means hurrah. Not a country.",
+      "junior": "Ura means hurrah. It is not a country.",
+      "master": "Ura means hurrah. That is not a country."
     },
     {
-      "rookie": "That is the word he called out. Type it in English.",
-      "junior": "That is the word he called out. Now type it in English.",
-      "master": "That is the word as he called it out. Give it in English."
+      "rookie": "Yes! Type it in English.",
+      "junior": "Yes! Now type it in English.",
+      "master": "Yes! Now type that word in English."
     },
     {
       "rookie": "Harbin is the place, not his country.",
-      "junior": "Harbin is where it happened, not his country.",
+      "junior": "Harbin is the place where it happened, not his country.",
       "master": "Harbin is only the place, not his country."
     },
     {
       "rookie": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! Not for money: for his country.",
-      "junior": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! It was not for money, but for his country.",
-      "master": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! For his country, not for money."
+      "junior": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! Not for money: for his country.",
+      "master": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! It was not for money: it was for his country."
     },
     {
       "rookie": "Paper A's story came from tea-room talk. The man on the platform heard \"Koreya! Ura!\"",
-      "junior": "Paper A's story came from talk in the tea room. The man on the platform heard \"Koreya! Ura!\"",
-      "master": "Paper A's story sprang from tea-room talk; the man on the platform heard \"Koreya! Ura!\""
+      "junior": "Paper A's story came from tea-room talk. The man on the platform heard \"Koreya! Ura!\"",
+      "master": "Paper A's story came from tea-room talk. But the man on the platform heard \"Koreya! Ura!\""
     },
     {
       "rookie": "The Evening Sheet says:",
@@ -743,14 +743,14 @@
       "master": "The Evening Sheet asserts:"
     },
     {
-      "rookie": "Our writer knows what happened.\nHe called out nothing.\nHe wanted money.",
-      "junior": "Our writer knows exactly what happened.\nHe called out nothing.\nHe wanted money.",
-      "master": "Our writer knows precisely what took place.\nHe called out nothing.\nHe wanted money."
+      "rookie": "Our writer knows.\nHe called out nothing.\nHe wanted money.",
+      "junior": "Our writer knows what happened.\nHe called out nothing.\nHe wanted money.",
+      "master": "Our writer knows what happened.\nHe called out nothing.\nHe wanted money."
     },
     {
-      "rookie": "Each question needs one card: the times, the words, or Itō.",
-      "junior": "Each question needs one card: the times, the words, or what Itō did.",
-      "master": "Every question is answered by one card: the times, the words, or Itō's deeds."
+      "rookie": "One card each: times, words, or Itō.",
+      "junior": "One card for each: times, words, or Itō.",
+      "master": "Use one card for each: the times, the words, or what Itō did."
     },
     {
       "rookie": "Where: Mr. Pak's Day. What: Mr. Pak's Words. Why: Mrs. Kang's Note.",
@@ -759,58 +759,58 @@
     },
     {
       "rookie": "Mr. Sorin says: \"My writer saw it all.\"",
-      "junior": "Mr. Sorin says: \"My writer saw it all with his own eyes.\"",
-      "master": "Mr. Sorin insists: \"My writer saw it all, from start to finish.\""
+      "junior": "Mr. Sorin says: \"My writer saw it all.\"",
+      "master": "Mr. Sorin says: \"My writer saw it all himself.\""
     },
     {
-      "rookie": "Which card has the times of that day?",
-      "junior": "Which card shows the times of that day?",
-      "master": "Which card holds the times of that day?"
+      "rookie": "Which card has that day's times?",
+      "junior": "Which card has the times of that day?",
+      "master": "Which card shows the times of that day?"
     },
     {
       "rookie": "He called out at 9:30. Your writer came at noon. He did not see it.",
-      "junior": "He called out at 9:30, but your writer came at noon. He did not see it.",
-      "master": "He called out at 9:30; your writer only arrived at noon. He saw none of it."
+      "junior": "He called out at 9:30. Your writer came at noon. He did not see it.",
+      "master": "He called out at 9:30. Your writer only came at noon. He did not see it."
     },
     {
-      "rookie": "True. He wrote what the traveller said.",
-      "junior": "That is true. He wrote down what the traveller told him.",
-      "master": "True enough. He wrote only what the traveller said."
+      "rookie": "True. He wrote the traveller's story.",
+      "junior": "True. He wrote down the traveller's story.",
+      "master": "That is true. He wrote down the traveller's story."
     },
     {
-      "rookie": "Which card has the words Mr. Pak heard?",
-      "junior": "Which card has the words that Mr. Pak heard?",
-      "master": "Which card records the words Mr. Pak heard?"
+      "rookie": "Which card has Mr. Pak's words?",
+      "junior": "Which card has the words Mr. Pak heard?",
+      "master": "Which card has the words Mr. Pak heard?"
     },
     {
       "rookie": "\"Koreya! Ura!\" It means \"Korea, hurrah!\" Mr. Pak heard it.",
-      "junior": "\"Koreya! Ura!\" It means \"Korea, hurrah!\", and Mr. Pak heard it.",
-      "master": "\"Koreya! Ura!\", that is, \"Korea, hurrah!\" Mr. Pak heard it himself."
+      "junior": "\"Koreya! Ura!\" It means \"Korea, hurrah!\" Mr. Pak heard it.",
+      "master": "\"Koreya! Ura!\" It means \"Korea, hurrah!\" Mr. Pak heard it himself."
     },
     {
-      "rookie": "Mr. Sorin asks: \"Why would a man do this for Korea? What had Itō done to Korea?\"",
-      "junior": "Mr. Sorin asks: \"Why would a man do this for Korea? What had Itō done to it?\"",
-      "master": "Mr. Sorin asks: \"Why would a man do this for Korea? What had Itō done to that country?\""
+      "rookie": "Mr. Sorin asks: \"What had Itō done to Korea?\"",
+      "junior": "Mr. Sorin asks: \"What had Itō done to Korea?\"",
+      "master": "Mr. Sorin asks: \"What had Itō done to Korea, then?\""
     },
     {
-      "rookie": "That does not tell me what Itō did.",
-      "junior": "That doesn't tell me what Itō did.",
-      "master": "That says nothing of what Itō did."
+      "rookie": "That is not about Itō.",
+      "junior": "That is not about what Itō did.",
+      "master": "That card says nothing about Itō."
     },
     {
-      "rookie": "Which card talks about Itō and 1905?",
+      "rookie": "Which card is about Itō and 1905?",
       "junior": "Which card tells about Itō and 1905?",
       "master": "Which card speaks of Itō and 1905?"
     },
     {
       "rookie": "Itō forced the 1905 treaty on Korea. Korea lost the right to deal with other countries.",
-      "junior": "Itō forced the 1905 treaty on Korea, so Korea lost the right to deal with other countries.",
-      "master": "Itō forced the 1905 treaty on Korea, and with it Korea lost the right to deal with other countries."
+      "junior": "Itō forced the 1905 treaty on Korea. Korea lost the right to deal with other countries.",
+      "master": "Itō forced the 1905 treaty on Korea. So Korea lost the right to deal with other countries."
     },
     {
-      "rookie": "So he did it for his country, not for money. I will print that.",
-      "junior": "So he did it for his country, not for money. I will print that.",
-      "master": "Then he acted for his country, not for money. I will print that."
+      "rookie": "So, for his country. I will print that.",
+      "junior": "So, he did it for his country. I will print that.",
+      "master": "So, he did it for his country, not for money. I will print that."
     },
     {
       "rookie": "My writer saw it all",

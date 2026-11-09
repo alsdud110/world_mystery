@@ -7,7 +7,7 @@
   "title": "The Poet's Three Copies",
   "synopsis": [
     "A young poet copied his book of poems by hand, three times.",
-    "Tonight the copy for his friend is gone. His friend comes for it at dawn."
+    "The friend's copy is gone. He comes at sunrise."
   ],
   "goal": "Find the copy Yun Dong-ju made for his friend, and give it to his friend at dawn.",
   "characters": [
@@ -68,29 +68,29 @@
         ],
         "letterIntro": "Yun tells you:",
         "letter": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms.",
-        "question": "Find what is under the dictionary. Write the missing word.",
+        "question": "What is under the dictionary? Write the word.",
         "prompt": "The card is signed with a drop of ____.",
         "hints": [
           "Find the thick book with a red spine, then look under it.",
-          "Who came in tonight? What does she bring to the rooms?"
+          "Who came in? What does she bring?"
         ],
         "successMessage": "A drop of water: Miri's sign!",
         "transition": [
-          "Yun looks at the card. \"Miri signs her notes with a water drop. She took my friend's copy!\"",
-          "\"But why? And where is it now?\"",
-          "The card looks just like a list. Maybe it tells us where."
+          "Yun says, \"A water drop! Miri took it!\"",
+          "\"But why? And where is it?\"",
+          "Maybe the card tells us where."
         ],
         "feedback": {
-          "INK": "The drop is drawn, not spilled ink. Who came in tonight, and what does she bring?",
-          "RAIN": "Rain did not come into the room. What does Miri bring?"
+          "INK": "It is drawn, not an ink spot. Who came in?",
+          "RAIN": "No rain. What does Miri bring?"
         },
-        "orderFeedback": "Not that word. Read Yun's words about Miri again.",
+        "orderFeedback": "Not that. Read Yun's words again.",
         "mapX": 0.42,
         "mapY": 0.38,
         "clue": {
           "title": "Miri's Sign",
           "value": "WATER",
-          "note": "Miri signs her notes with a water drop. Her card was under the dictionary.",
+          "note": "Miri signs with a water drop. Her card was under the dictionary.",
           "symbol": "letter"
         },
         "evidence": {
@@ -108,17 +108,17 @@
             "measuredOn": "sha256:077eb3db5dc13ea5ab2835a155a27d9d4f4f511c26a71be02ad39270c3ed5201"
           },
           "place": "Yun's room at night",
-          "task": "Look closely at the desk. Which thing did Yun describe?",
-          "nextTask": "Look under it. One word of the note is worn.",
-          "dragGuide": "Drag the glass over the desk.",
-          "tapGuide": "Or tap a thing to look at it.",
-          "missLine": "Nothing here. Look at the things on the desk.",
+          "task": "Which desk thing did Yun talk about?",
+          "nextTask": "Look under it.",
+          "dragGuide": "Drag the glass around.",
+          "tapGuide": "Or tap a thing.",
+          "missLine": "Nothing here.",
           "spots": [
             {
               "id": "ink",
               "kind": "exhibit",
               "title": "BLUE INK",
-              "label": "A small bottle of blue ink",
+              "label": "Blue ink",
               "areas": [
                 [
                   175,
@@ -127,13 +127,13 @@
                   835
                 ]
               ],
-              "line": "Blue ink. But the drop on the card is drawn, not spilled."
+              "line": "Blue ink. The card's drop is drawn."
             },
             {
               "id": "own_copy",
               "kind": "exhibit",
               "title": "A THIN BOOK",
-              "label": "A thin hand-sewn book tied with brown string",
+              "label": "A thin book with brown string",
               "areas": [
                 [
                   320,
@@ -142,7 +142,7 @@
                   870
                 ]
               ],
-              "line": "One of Yun's copies. Its string is brown.",
+              "line": "Yun's copy. Brown string.",
               "checks": [
                 1
               ]
@@ -151,7 +151,7 @@
               "id": "teacher_copy",
               "kind": "exhibit",
               "title": "ANOTHER THIN BOOK",
-              "label": "A second thin hand-sewn book tied with brown string",
+              "label": "Another thin book with brown string",
               "areas": [
                 [
                   552,
@@ -160,7 +160,7 @@
                   878
                 ]
               ],
-              "line": "His teacher's copy. Its string is brown too.",
+              "line": "His teacher's copy. Brown string.",
               "checks": [
                 1
               ]
@@ -187,7 +187,7 @@
               "id": "note",
               "kind": "label",
               "title": "THE FOLDED NOTE",
-              "label": "A folded paper under the thick book",
+              "label": "A paper under the thick book",
               "areas": [
                 [
                   1015,
@@ -196,12 +196,12 @@
                   866
                 ]
               ],
-              "line": "A folded card. A small blue drop is drawn in its corner.",
+              "line": "A blue drop is in its corner.",
               "checks": [
                 1
               ],
               "requires": "dictionary",
-              "lockedLine": "A corner of paper. Which book is it under?"
+              "lockedLine": "Paper! Which book is it under?"
             },
             {
               "id": "lamp",
@@ -221,7 +221,7 @@
           ],
           "labelTitle": "THE FOLDED NOTE",
           "labelRoom": "UNDER THE DICTIONARY",
-          "labelWorn": "The last word is worn away.",
+          "labelWorn": "The last word is hard to read.",
           "taskLine": 2,
           "lensAt": [
             780,
@@ -237,7 +237,7 @@
         "talk": {
           "speaker": "yun_dongju",
           "portrait": "assets/seasons/season_05_seoul/characters/yun_dongju.webp",
-          "goal": "Find out where the copy was.",
+          "goal": "Find where the copy was.",
           "before": {
             "lines": [
               {
@@ -246,11 +246,11 @@
               },
               {
                 "by": "speaker",
-                "text": "One for my teacher, one for my friend, one for me."
+                "text": "One for my teacher. One for my friend. One for me."
               },
               {
                 "by": "detective",
-                "text": "Then let us look at your desk."
+                "text": "Let us look at your desk."
               }
             ]
           }
@@ -258,7 +258,7 @@
         "discovery": {
           "type": "clueFound",
           "title": "MIRI'S CARD",
-          "detail": "Miri took the copy. Her card may tell where it is."
+          "detail": "Miri took it. Her card may tell where."
         }
       }
     },
@@ -331,26 +331,26 @@
         "location": "YUN'S ROOM",
         "story": [
           "You open Miri's card. Yun reads it to you in English, line by line.",
-          "Yun takes a paper from his drawer. \"This is my list of the copies.\"",
-          "\"The card looks just like my list,\" he says. \"Why?\""
+          "Yun opens his drawer. \"My list of copies.\"",
+          "\"The card looks like my list. Why?\""
         ],
         "letterIntro": "Yun says:",
         "letter": "This list is for my friend's copy.\nThe card says the same things, line by line.\nBut one line on the card is not true.\nMaybe that line is a message.\nRead the card's last words too.",
         "question": "Which line on the card is not true?",
         "hints": [
-          "Read the four lines of each paper, one by one.",
-          "What colour is the string on his friend's copy? Yun told you in his room."
+          "Read each paper.",
+          "What colour is the friend's string?"
         ],
-        "successMessage": "The card says BLACK AND WHITE. But the string is white!",
+        "successMessage": "The card says BLACK AND WHITE. The string is white!",
         "transition": [
-          "\"My friend's string is white, not black and white,\" Yun says.",
-          "\"So that line is a message.\"",
+          "\"My friend's string is white,\" Yun says.",
+          "\"That line is a message.\"",
           "The card's last words: safe under keys of these colours. Keys of black and white?"
         ],
         "feedback": {
-          "copy:copy": "Both papers say 2 OF 3: the second of Yun's three copies.",
-          "for:for": "Both name Jeong Byeong-uk, Yun's young friend.",
-          "poems:poems": "Both say 18 + 1: eighteen poems and one opening poem."
+          "copy:copy": "Both say 2 OF 3.",
+          "for:for": "Both name Jeong Byeong-uk.",
+          "poems:poems": "Both say 18 + 1."
         },
         "mapX": 0.42,
         "mapY": 0.38,
@@ -429,7 +429,7 @@
               "ink": 0.62
             },
             "title": "MY FRIEND'S COPY",
-            "label": "Yun's list on his desk, in his own hand",
+            "label": "Yun's list, in his own hand",
             "note": "Copied by hand, 1941.",
             "lines": [
               {
@@ -517,7 +517,7 @@
               "ink": 0.62
             },
             "title": "MY FRIEND'S COPY",
-            "label": "Miri's card, with a small blue water drop in its corner",
+            "label": "Miri's card, with a water drop",
             "note": "It is safe under keys of these colours.",
             "lines": [
               {
@@ -542,14 +542,14 @@
               }
             ]
           },
-          "readTask": "Tap each paper to read it.",
-          "compareTask": "Tap the line on each paper that does not match.",
+          "readTask": "Tap each paper.",
+          "compareTask": "Tap the line that does not match.",
           "checkLabel": "THESE DO NOT MATCH"
         },
         "discovery": {
           "type": "newLead",
           "title": "THE CARD'S MESSAGE",
-          "detail": "Keys of black and white. Where are keys like that?"
+          "detail": "Keys of black and white. Where?"
         }
       }
     },
@@ -602,48 +602,48 @@
         "title": "Keys of Black and White",
         "location": "THE COLLEGE HALL",
         "story": [
-          "You hurry to the college hall with Yun.",
-          "Students sit on the benches. A man with a lantern walks between them.",
-          "His ring of door keys jingles. \"That man is from the office,\" Yun whispers."
+          "You run to the college hall.",
+          "A man with a lamp walks around.",
+          "His keys make noise. \"He is from the office.\""
         ],
         "letterIntro": "You think it through:",
         "letter": "The card says the copy is safe under keys of these colours.\nIts untrue line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage.\nWhat has keys of black and white?",
-        "question": "Where is the copy hidden? Write the thing's name.",
+        "question": "Where is the copy? Write the thing.",
         "prompt": "The copy is safe in the ____.",
         "hints": [
-          "Read the card's untrue line for the colours. Then read its last words.",
-          "A key can open a door. Some keys make music. Which thing here has them?"
+          "Find the card's wrong colours. Read its last words.",
+          "Some keys make music. Which thing has them?"
         ],
         "successMessage": "The piano! Its keys are black and white.",
         "transition": [
-          "When the man leaves, you lift the piano's top.",
-          "Inside lies a small wooden box with a number lock.",
-          "Miri runs in. \"Wait! He may come back. Come outside, quick!\""
+          "The man leaves. You lift the piano's top.",
+          "Inside is a box with a number lock.",
+          "Miri runs in. \"Wait! Come outside!\""
         ],
         "feedback": {
           "KEYS": "Door keys are keys, but they are all black.",
           "KEY": "Door keys are keys, but they are all black.",
           "DOORKEYS": "Door keys are keys, but they are all black.",
           "DOORKEY": "Door keys are keys, but they are all black.",
-          "JACKET": "Black and white, yes. But clothes have no keys.",
-          "JACKETS": "Black and white, yes. But clothes have no keys.",
-          "SHIRT": "Black and white, yes. But clothes have no keys.",
-          "SHIRTS": "Black and white, yes. But clothes have no keys.",
-          "STUDENTS": "Black and white, yes. But clothes have no keys.",
-          "CLOTHES": "Black and white, yes. But clothes have no keys.",
-          "LANTERN": "That has no keys of black and white.",
-          "BENCH": "That has no keys of black and white.",
-          "BENCHES": "That has no keys of black and white.",
-          "STAGE": "That has no keys of black and white.",
-          "DICTIONARY": "That has no keys of black and white."
+          "JACKET": "Clothes have no keys.",
+          "JACKETS": "Clothes have no keys.",
+          "SHIRT": "Clothes have no keys.",
+          "SHIRTS": "Clothes have no keys.",
+          "STUDENTS": "Clothes have no keys.",
+          "CLOTHES": "Clothes have no keys.",
+          "LANTERN": "That has no keys.",
+          "BENCH": "That has no keys.",
+          "BENCHES": "That has no keys.",
+          "STAGE": "That has no keys.",
+          "DICTIONARY": "That has no keys."
         },
-        "orderFeedback": "Check your spelling. Which thing has keys of black and white?",
+        "orderFeedback": "Check your spelling.",
         "mapX": 0.55,
         "mapY": 0.3,
         "clue": {
           "title": "The Piano",
           "value": "INSIDE THE PIANO",
-          "note": "The keys of black and white were the piano's. Miri's box was inside.",
+          "note": "The piano had the keys. Miri's box was inside.",
           "symbol": "key"
         },
         "evidence": {
@@ -654,7 +654,7 @@
         "discovery": {
           "type": "evidenceFound",
           "title": "THE BOX IN THE PIANO",
-          "detail": "The copy is locked inside. Dawn is coming.",
+          "detail": "The copy is locked inside.",
           "showEvidence": true
         }
       }
@@ -714,30 +714,30 @@
       "title": "The Lock at the Gate",
       "location": "THE COLLEGE GATE",
       "story": [
-        "Dawn comes over the stone college buildings.",
-        "Miri sets her box on the gate's stone step.",
-        "\"My friend comes at sunrise,\" Yun says. \"Quick!\""
+        "The sun comes up.",
+        "Miri puts the box on a step.",
+        "\"My friend comes at sunrise. Quick!\""
       ],
       "letterIntro": "Miri and Yun tell you:",
       "letter": "Miri: \"My lock wants two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\"",
       "question": "Put in the lock's number.",
       "hints": [
-        "Find the number of copies in all, then the poems in each copy.",
+        "Copies in all, then poems in each.",
         "18 poems + 1 opening poem: add them."
       ],
       "successMessage": "Click! The box opens.",
       "transition": [
         "Inside lies a thin book with a white string.",
-        "\"My friend's copy,\" Yun whispers. Its pages are in Korean.",
-        "A young man comes up the path. It is Jeong Byeong-uk."
+        "\"My friend's copy,\" Yun says softly.",
+        "Here comes Jeong Byeong-uk."
       ],
       "feedback": {
-        "119": "Count the copies again: Yun made more than one.",
-        "219": "Copy 2 is the friend's copy. How many copies are there in all?",
+        "119": "Count the copies again.",
+        "219": "Copy 2 is the friend's. How many in all?",
         "318": "18 poems + 1 opening poem: add them.",
-        "215": "That is Miri's example, not Yun's list."
+        "215": "That is Miri's, not Yun's list."
       },
-      "orderFeedback": "The right numbers, in the wrong order. The copies come first.",
+      "orderFeedback": "Wrong order. Copies come first.",
       "mapX": 0.5,
       "mapY": 0.6,
       "evidence": {
@@ -749,30 +749,30 @@
       "ending": [
         {
           "by": "narrator",
-          "text": "Yun gives the copy to his young friend, Jeong Byeong-uk."
+          "text": "Yun gives the copy to Jeong Byeong-uk."
         },
         {
           "by": "speaker",
-          "text": "Keep it safe. It is in our own language.",
+          "text": "Keep it safe. It is in our language.",
           "speaker": "yun_dongju",
           "portrait": "assets/seasons/season_05_seoul/characters/yun_dongju.webp"
         },
         {
           "by": "narrator",
-          "text": "From 1938, Korean was pushed out of the schools.",
+          "text": "From 1938, schools pushed out Korean.",
           "evidence": "s5_ep11_e4"
         },
         {
           "by": "narrator",
-          "text": "Yun Dong-ju still wrote his poems in Korean."
+          "text": "Yun Dong-ju still wrote in Korean."
         },
         {
           "by": "narrator",
-          "text": "His friend's family hid the copy under their floor."
+          "text": "His friend's family hid it under the floor."
         },
         {
           "by": "narrator",
-          "text": "In 1948, his poems became a book: Sky, Wind, Stars and Poems."
+          "text": "In 1948, his book came out. Sky, Wind, Stars and Poems."
         },
         {
           "by": "speaker",
@@ -784,38 +784,38 @@
       "talk": {
         "speaker": "miri",
         "portrait": "assets/seasons/season_05_seoul/characters/miri.webp",
-        "goal": "Find out why Miri took the copy.",
+        "goal": "Why did Miri take it?",
         "before": {
           "lines": [
             {
               "by": "speaker",
-              "text": "I took it. I am sorry I scared you."
+              "text": "I took it. I am sorry."
             },
             {
               "by": "speaker",
-              "text": "A man from the office is checking the rooms tonight."
+              "text": "Tonight, an office man checks rooms."
             },
             {
               "by": "speaker",
-              "text": "Papers in Korean can get a student in trouble now."
+              "text": "Korean papers mean trouble now."
             },
             {
               "by": "speaker",
-              "text": "I bring water to the rooms every morning. So I sign my notes with a water drop."
+              "text": "I bring water each morning. So I sign with a water drop."
             },
             {
               "by": "speaker",
-              "text": "I did not write my name. The office man must not know who wrote it."
+              "text": "I did not sign it. The office man must not know."
             },
             {
               "by": "detective",
-              "text": "And your card looked like Yun's list, so only Yun could read the message."
+              "text": "Only Yun could read my card."
             }
           ],
           "presents": [
             {
               "id": "list",
-              "prompt": "Miri asks: \"I set my lock with numbers from the paper in Yun's own hand. Show me that paper.\"",
+              "prompt": "Miri asks: \"My lock uses it. Which is in Yun's own hand?\"",
               "accepted": [
                 "s5_ep11_e2"
               ],
@@ -843,7 +843,7 @@
       }
     }
   },
-  "hook": "A man from the office checks the rooms tonight.",
+  "hook": "An office man checks rooms tonight.",
   "learningGoal": {
     "title": "Reading lists, numbers and a language's story",
     "titleKo": "목록·숫자·언어의 이야기 읽기"
@@ -851,18 +851,18 @@
   "play": {
     "objectives": [
       "Search Yun's desk.",
-      "Compare the card with Yun's list.",
+      "Check the card and Yun's list.",
       "Find the keys of black and white.",
-      "Open the box and give the copy to Yun's friend."
+      "Open the box. Give the friend his copy."
     ],
     "intro": [
-      "Late autumn, 1941. Japan rules Korea.",
-      "Schools must teach in Japanese now. Korean lessons are pushed out.",
-      "At Yonhi College in Seoul, you are the guest of a young poet, Yun Dong-ju.",
-      "He writes his poems in Korean.",
+      "Autumn, 1941. Japan rules Korea.",
+      "Schools must teach in Japanese now.",
+      "Yonhi College, Seoul. You visit poet Yun Dong-ju.",
+      "He writes poems in Korean.",
       "He could not print his book. So he copied it by hand, three times.",
-      "Tonight the copy for his friend is gone. His friend comes for it at dawn.",
-      "\"Please help me find it,\" Yun says."
+      "The friend's copy is gone. He comes at sunrise.",
+      "\"Please help me find it.\""
     ],
     "caseSummary": "Miri brings water to the college rooms. A man from the office was checking the rooms. So Miri hid Yun Dong-ju's copy in her box, inside the college piano. Her card, signed with a water drop, pointed to keys of black and white. At dawn, the numbers on Yun's list opened the box. Yun gave the copy to his friend. Yun wrote his poems in Korean when Korean was pushed out of the schools. In 1948 they became a book.",
     "place": "YONHI COLLEGE, SEOUL",

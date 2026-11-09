@@ -6,9 +6,9 @@
   "actId": "act3",
   "title": "The Two Watches",
   "synopsis": [
-    "Shanghai, the morning of 29 April 1932.",
+    "Shanghai, 29 April 1932.",
     "Kim Gu and a young man, Yun Bong-gil, ate breakfast, then swapped watches.",
-    "Now Kim Gu will not say a word. What happened, and why?"
+    "Kim Gu says nothing. What happened, and why?"
   ],
   "goal": "Find out what happened at breakfast, whose watch Kim Gu holds, and why, so Haesu's record is true.",
   "characters": [
@@ -81,30 +81,30 @@
         "title": "Breakfast for Two",
         "location": "A SMALL HOUSE IN SHANGHAI",
         "story": [
-          "At the door, a young man in a grey suit passes you.",
-          "Inside, two rice bowls are empty on the table.",
-          "Haesu gives you her note. \"I wrote it fast. It is all mixed up.\""
+          "A young man in grey walks out.",
+          "Two rice bowls are empty.",
+          "\"My note is all mixed up.\""
         ],
         "letterIntro": "Haesu's note says:",
         "letter": "At the end, Mr. Kim sat alone at the table, holding a watch.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, quietly.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new. He did not buy it this morning.\n— Haesu",
-        "question": "Put the morning in order, from first to last.",
+        "question": "Put the morning in order. First to last.",
         "hints": [
-          "One line says what they did first.",
+          "Which came first?",
           "At the end means the last step. Before that means just before it."
         ],
-        "successMessage": "You put the morning in order!",
+        "successMessage": "The morning is in order!",
         "transition": [
-          "Breakfast, the swap, goodbye, and Mr. Kim alone.",
-          "Haesu pours tea for you.",
-          "\"Mr. Kim is still holding the watch. He has not said a word.\""
+          "Breakfast, swap, goodbye, Mr. Kim alone.",
+          "Haesu gives you tea.",
+          "\"Mr. Kim holds the watch. He says nothing.\""
         ],
-        "orderFeedback": "Those are the right steps, but in the wrong order. Read first, after, before that and at the end again.",
+        "orderFeedback": "Wrong order. Read first, after, before that, at the end.",
         "mapX": 0.4,
         "mapY": 0.6,
         "clue": {
           "title": "The Swap",
           "value": "BREAKFAST · SWAP · GOODBYE",
-          "note": "After breakfast, Mr. Yun and Mr. Kim swapped their watches.",
+          "note": "After breakfast, Yun and Kim swapped watches.",
           "symbol": "watch"
         },
         "evidence": {
@@ -116,7 +116,7 @@
         "talk": {
           "speaker": "yun_bonggil",
           "portrait": "assets/seasons/season_05_seoul/characters/yun_bonggil.webp",
-          "goal": "Find out what happened at breakfast.",
+          "goal": "Ask about breakfast.",
           "before": {
             "lines": [
               {
@@ -125,7 +125,7 @@
               },
               {
                 "by": "speaker",
-                "text": "Please sit with him a while."
+                "text": "Please sit with him."
               },
               {
                 "by": "detective",
@@ -137,7 +137,7 @@
         "discovery": {
           "type": "clueFound",
           "title": "TWO WATCHES SWAPPED",
-          "detail": "Mr. Kim holds a watch now. But whose watch is it?"
+          "detail": "Whose watch does Mr. Kim hold?"
         }
       }
     },
@@ -156,7 +156,7 @@
             {
               "id": "old_watch",
               "label": "The worn watch with many scratches",
-              "feedback": "That is Mr. Kim's old watch. After the swap, who has it?",
+              "feedback": "That is Mr. Kim's old watch. Who has it now?",
               "altText": "Haesu's drawing of a worn silver pocket watch with many small scratches on its case and a thin chain",
               "picture": "assets/seasons/season_05_seoul/cases/case_10/old_watch.webp"
             },
@@ -169,7 +169,7 @@
             {
               "id": "strap_watch",
               "label": "The small watch on a leather strap",
-              "feedback": "A strap, not a chain. And Haesu's watch is on her arm.",
+              "feedback": "That strap watch is Haesu's.",
               "altText": "Haesu's drawing of a small round wristwatch on a brown leather strap",
               "picture": "assets/seasons/season_05_seoul/cases/case_10/strap_watch.webp"
             }
@@ -211,29 +211,29 @@
         "title": "Which Watch?",
         "location": "A SMALL HOUSE IN SHANGHAI",
         "story": [
-          "Mr. Kim sits by the window. His hand is closed around the watch.",
-          "Haesu opens her notebook. \"I drew every watch I saw this morning.\"",
-          "\"Which one is in his hand now?\" she whispers."
+          "Mr. Kim holds the watch tight.",
+          "Haesu says, \"I drew every watch today.\"",
+          "\"Which one is in his hand?\""
         ],
         "letterIntro": "Haesu tells you:",
         "letter": "Mr. Kim's old watch has a worn case with many small scratches.\nMr. Yun's watch is new. Its case is smooth, with no scratches.\nMy own watch is small, on a leather strap. It is on my arm.\nI can see a chain between Mr. Kim's fingers.\nThey swapped. Each man took the other's watch.",
-        "question": "Which drawing shows the watch in Mr. Kim's hand?",
+        "question": "Which drawing is in his hand?",
         "hints": [
-          "Read your first clue: what did the two men do after breakfast?",
-          "After the swap, Mr. Kim has the other man's watch. What did Haesu say about Mr. Yun's watch?"
+          "What did they do after breakfast?",
+          "Kim has Yun's watch. What did Haesu say?"
         ],
-        "successMessage": "Mr. Kim opens his hand: the smooth new watch!",
+        "successMessage": "The smooth new watch!",
         "transition": [
-          "Mr. Kim opens his hand. The watch is smooth and new.",
-          "Mr. Yun took the old, scratched one with him.",
-          "\"But why?\" Haesu asks. \"Why give away a good new watch?\""
+          "The watch is smooth and new.",
+          "Mr. Yun took the old, scratched one.",
+          "\"But why give a new watch away?\""
         ],
         "mapX": 0.4,
         "mapY": 0.6,
         "clue": {
           "title": "The New Watch",
           "value": "MR. YUN'S NEW WATCH · WITH KIM GU",
-          "note": "Mr. Yun left his new watch with Mr. Kim, and took the old one."
+          "note": "Yun took the old watch. Kim kept the new one."
         },
         "evidence": {
           "name": "Yun's New Watch",
@@ -245,7 +245,7 @@
         "discovery": {
           "type": "deduction",
           "title": "WHAT YUN LEFT BEHIND",
-          "detail": "His new watch stays with Mr. Kim. But why did they swap?"
+          "detail": "But why did they swap?"
         }
       }
     },
@@ -300,22 +300,22 @@
         "mapY": 0.6,
         "title": "One More Hour",
         "story": [
-          "At last, Mr. Kim speaks, very softly.",
-          "\"Before the swap, Yun looked at his new watch.\"",
+          "At last, Mr. Kim speaks.",
+          "\"Yun looked at his watch.\"",
           "\"Then he said something I will never forget.\""
         ],
         "letterIntro": "Mr. Kim tells you:",
         "letter": "Yun held up his new watch.\nHe pointed at its long hand.\n\"When this hand goes round one more time, I will not need a watch.\"\n\"My watch is new, and yours is old. Let us swap.\"\n\"I will need a watch for only one more ____.\"\n\"You will need one for a long, long time.\"\nThen he took my old watch and gave me his.",
-        "question": "What did Mr. Yun say? Write the missing word.",
+        "question": "What did Yun say? Write the missing word.",
         "prompt": "I will need a watch for only one more ____.",
         "hints": [
           "Read Yun's words: the long hand goes round one more time.",
           "When the long hand goes round once, sixty minutes pass. What do we call sixty minutes?"
         ],
-        "successMessage": "One more hour. After that, Yun would not need a watch.",
+        "successMessage": "One more hour. Then Yun needs no watch.",
         "transition": [
-          "Mr. Kim closes his eyes. \"He knew he might not come back.\"",
-          "\"So he gave the good watch to me.\"",
+          "\"He knew he might not come back.\"",
+          "\"So he gave me the good watch.\"",
           "Haesu writes it all down, line by line."
         ],
         "feedback": {
@@ -340,7 +340,7 @@
         "discovery": {
           "type": "storyDiscovery",
           "title": "WHY THEY SWAPPED",
-          "detail": "Yun gave his good watch away. Now Haesu can write her record."
+          "detail": "Now Haesu can write her record."
         }
       }
     }
@@ -404,54 +404,54 @@
       "ending": [
         {
           "by": "speaker",
-          "text": "His watch still ticks, Haesu. I will not forget him.",
+          "text": "His watch still ticks. I will not forget him.",
           "speaker": "kim_gu",
           "portrait": "assets/seasons/season_05_seoul/characters/kim_gu.webp"
         },
         {
           "by": "speaker",
-          "text": "Our record will not forget him either.",
+          "text": "Our record will not forget him.",
           "speaker": "haesu",
           "portrait": "assets/seasons/season_05_seoul/characters/haesu.webp"
         },
         {
           "by": "narrator",
-          "text": "On 29 April 1932, Yun Bong-gil acted at a Japanese army event in Hongkou Park.",
+          "text": "29 April 1932, Hongkou Park. Yun Bong-gil acted at a Japanese army party.",
           "evidence": "s5_ep10_e2"
         },
         {
           "by": "narrator",
-          "text": "He was caught at once."
+          "text": "He was caught right away."
         },
         {
           "by": "narrator",
-          "text": "After that day, Chinese leaders helped the Provisional Government strongly."
+          "text": "Then China helped more."
         },
         {
           "by": "speaker",
-          "text": "One day, children in Korea will read this.",
+          "text": "One day, Korean children will read this.",
           "speaker": "haesu",
           "portrait": "assets/seasons/season_05_seoul/characters/haesu.webp"
         }
       ],
       "title": "The True Record",
       "story": [
-        "That night, Haesu reads her record to you by the lamp.",
-        "\"Mr. Kim will sign it for the government's record book.\"",
+        "That night, Haesu reads her record.",
+        "\"Mr. Kim will sign it.\"",
         "\"But first, show me the proof for each line.\""
       ],
       "letterIntro": "Haesu's record says:",
       "letter": "After breakfast, Mr. Yun and Mr. Kim swapped watches.\nThe watch in Mr. Kim's hand is Mr. Yun's new watch.\nMr. Yun needed a watch for only one more hour.",
-      "question": "Show Haesu the proof for each line of her record.",
+      "question": "Show proof for each line.",
       "hints": [
-        "Show one piece of evidence for each line. All three are from this morning.",
+        "One proof for each line.",
         "Who saw it? Which watch? Why? A note, a watch, and Yun's words."
       ],
       "successMessage": "Haesu's record is true!",
       "transition": [
-        "Haesu signs her record. Mr. Kim reads it, and signs it too.",
-        "\"Now it goes into the government's record book,\" she says.",
-        "Mr. Kim looks at the watch, then out of the window."
+        "Haesu and Mr. Kim sign the record.",
+        "\"Now it goes in the government's book.\"",
+        "Mr. Kim looks out."
       ],
       "evidence": {
         "name": "Haesu's Record of the Morning",
@@ -462,15 +462,15 @@
       "interview": {
         "speaker": "haesu",
         "portrait": "assets/seasons/season_05_seoul/characters/haesu.webp",
-        "goal": "Prove every line of Haesu's record.",
+        "goal": "Check each line of Haesu's record.",
         "opening": [
           {
             "by": "speaker",
-            "text": "Mr. Kim asked me to write this morning down."
+            "text": "Mr. Kim asked me to write it."
           },
           {
             "by": "detective",
-            "text": "Then let us make every line true."
+            "text": "Let us make every line true."
           }
         ],
         "questions": [
@@ -480,11 +480,11 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "It goes into our government's record book."
+                "text": "It goes in our government's book."
               },
               {
                 "by": "speaker",
-                "text": "People must know what really happened today."
+                "text": "People must know the truth."
               }
             ]
           }
@@ -492,43 +492,43 @@
         "presents": [
           {
             "id": "after",
-            "prompt": "Haesu asks: \"Line one: they swapped after breakfast. Who saw it happen?\"",
+            "prompt": "Haesu asks: \"Line one: who saw the swap?\"",
             "accepted": [
               "s5_ep10_e1"
             ],
             "lines": [
               {
                 "by": "detective",
-                "text": "Your own note: breakfast first, then the swap."
+                "text": "Your note: breakfast, then the swap."
               },
               {
                 "by": "speaker",
-                "text": "Yes. I saw it with my own eyes."
+                "text": "Yes. I saw it myself."
               }
             ],
-            "miss": "That does not show who saw the swap.",
+            "miss": "That does not show who saw it.",
             "offered": [
               "s5_ep10_e2",
               "s5_ep10_e1",
               "s5_ep10_e3"
             ],
-            "tell": "Read the note you put in order this morning.",
+            "tell": "Read the note you put in order.",
             "litAfter": 3
           },
           {
             "id": "whose",
-            "prompt": "Haesu asks: \"Line two: Mr. Kim holds Mr. Yun's watch. Show me that watch.\"",
+            "prompt": "Haesu asks: \"Line two: show me Mr. Yun's watch.\"",
             "accepted": [
               "s5_ep10_e2"
             ],
             "lines": [
               {
                 "by": "detective",
-                "text": "The smooth new watch, with no scratches."
+                "text": "The smooth new watch. No scratches."
               },
               {
                 "by": "speaker",
-                "text": "And Mr. Kim keeps it in his pocket now."
+                "text": "Mr. Kim keeps it now."
               }
             ],
             "miss": "That is not a watch.",
@@ -545,7 +545,7 @@
           },
           {
             "id": "why",
-            "prompt": "Haesu asks: \"Line three: why did Mr. Yun give his new watch away?\"",
+            "prompt": "Haesu asks: \"Line three. Why did Yun give it away?\"",
             "accepted": [
               "s5_ep10_e3"
             ],
@@ -556,7 +556,7 @@
               },
               {
                 "by": "speaker",
-                "text": "Then that is the truest line of all."
+                "text": "Then that is the most true line."
               }
             ],
             "miss": "That does not say why.",
@@ -565,7 +565,7 @@
               "s5_ep10_e2",
               "s5_ep10_e1"
             ],
-            "tell": "Read what Mr. Kim told you Yun said.",
+            "tell": "Read Yun's words from Mr. Kim.",
             "litAfter": 3,
             "requires": [
               "whose"
@@ -581,7 +581,7 @@
       }
     }
   },
-  "hook": "One watch, two men, and a morning no one must forget.",
+  "hook": "Two men. One watch.",
   "learningGoal": {
     "title": "Order and time: first, after, one more hour",
     "titleKo": "순서와 시간: first, after, one more hour"
@@ -589,18 +589,18 @@
   "play": {
     "objectives": [
       "Put the morning in order.",
-      "Find the watch in Mr. Kim's hand.",
+      "Find the watch in his hand.",
       "Find out why they swapped.",
-      "Prove every line of Haesu's record."
+      "Check each line of Haesu's record."
     ],
     "intro": [
-      "Spring, 1932. Japan has ruled Korea since 1910.",
-      "So Korean leaders made a government in Shanghai, China: the Provisional Government.",
-      "Kim Gu is one of its leaders. You are his guest.",
-      "Early on 29 April, Kim Gu eats breakfast with a young man, Yun Bong-gil.",
-      "Then Haesu, Kim Gu's clerk, asks you to come to the house.",
-      "\"Mr. Kim holds a watch,\" she says. \"He will not say a word.\"",
-      "\"Tonight I must write the record of this morning. Help me get every line right.\""
+      "Japan has ruled Korea since 1910.",
+      "Korean leaders made a government in Shanghai.",
+      "You visit Kim Gu.",
+      "Kim Gu eats with Yun Bong-gil.",
+      "Then his helper Haesu calls you.",
+      "\"Mr. Kim holds a watch. He says nothing.\"",
+      "\"I must write about today. Help me.\""
     ],
     "caseSummary": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu ate breakfast, then swapped watches. Yun said he would need a watch for only one more hour. So he left his new watch with Kim Gu. Haesu wrote the true record for the Provisional Government, and Kim Gu signed it. That day Yun acted at Hongkou Park and was caught. After it, Chinese leaders helped the Provisional Government strongly.",
     "place": "SHANGHAI",

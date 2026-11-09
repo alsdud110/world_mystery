@@ -8,34 +8,34 @@
       "master": "The Fire on the Hill"
     },
     {
-      "rookie": "Spring 1919: students in Seoul are calling for independence.",
-      "junior": "In spring 1919, students in Seoul are calling for independence.",
-      "master": "It is spring 1919, and students across Seoul are calling for independence."
+      "rookie": "Spring 1919. Seoul calls for independence.",
+      "junior": "Spring 1919. Seoul is calling for independence.",
+      "master": "Spring 1919. Students across Seoul are calling for independence."
     },
     {
-      "rookie": "Near Cheonan, Yu Gwan-sun plans a march at Aunae Market.",
-      "junior": "Near Cheonan, Yu Gwan-sun is planning a march at Aunae Market.",
-      "master": "Not far from Cheonan, Yu Gwan-sun is quietly planning a march at Aunae Market."
+      "rookie": "Gwan-sun plans a market march.",
+      "junior": "Gwan-sun plans a march at the market.",
+      "master": "Not far from Cheonan, Yu Gwan-sun is planning a march at Aunae Market."
     },
     {
-      "rookie": "But a wrong day is going round the villages.",
-      "junior": "But a false day is spreading from village to village.",
-      "master": "Yet a false day is making its way through the villages."
+      "rookie": "But a wrong day goes round.",
+      "junior": "But a wrong day goes round the villages.",
+      "master": "But a wrong day is going round the villages."
     },
     {
       "rookie": "The fire spoke for the villages. The stranger never read the plan.",
-      "junior": "The fire spoke for the villages, and the stranger never read the plan.",
-      "master": "The fire spoke for every village; the stranger never read the plan."
+      "junior": "The fire spoke for the villages. The stranger never read the plan.",
+      "master": "The fire spoke for every village. The stranger never read the plan."
     },
     {
       "rookie": "Find the true day of the march.",
-      "junior": "Find out the real day of the march.",
-      "master": "Establish the real day of the march."
+      "junior": "Find the true day of the march.",
+      "master": "Discover the true day of the march."
     },
     {
       "rookie": "Read the plan for the sign.",
       "junior": "Read the plan to find the sign.",
-      "master": "Study the plan to discover the sign."
+      "master": "Read the plan carefully to find the sign."
     },
     {
       "rookie": "Find who wrote the flame note.",
@@ -48,34 +48,34 @@
       "master": "Lock the plan away from the stranger."
     },
     {
-      "rookie": "Spring, 1919. You are a guest of Yu Gwan-sun's family, near Cheonan.",
-      "junior": "It is spring, 1919, and you are staying with Yu Gwan-sun's family near Cheonan.",
-      "master": "Spring, 1919: you are a guest in Yu Gwan-sun's family home, not far from Cheonan."
+      "rookie": "1919. You stay with Gwan-sun's family.",
+      "junior": "1919. You stay with Gwan-sun's family near Cheonan.",
+      "master": "Spring, 1919. You stay with Gwan-sun's family near Cheonan."
     },
     {
-      "rookie": "In 1910, Japan took over Korea. Koreans could not rule their own country.",
-      "junior": "In 1910, Japan took over Korea, so Koreans could no longer rule their own country.",
-      "master": "In 1910, Japan took over Korea, and Koreans lost the right to rule their own land."
+      "rookie": "In 1910, Japan took over Korea.",
+      "junior": "In 1910, Japan took over all of Korea.",
+      "master": "In 1910, Japan took over Korea. Koreans lost the right to rule their own land."
     },
     {
-      "rookie": "The schools were closed, so Gwan-sun came home.",
-      "junior": "The schools were shut, so Gwan-sun returned home.",
-      "master": "With the schools shut, Gwan-sun returned to her home."
+      "rookie": "Her school closed. Gwan-sun came home.",
+      "junior": "Her school closed, so Gwan-sun came home.",
+      "master": "Her school in Seoul closed, so Gwan-sun came home."
     },
     {
-      "rookie": "Now she and the village elders plan a march at Aunae Market.",
-      "junior": "Now she is planning a march at Aunae Market with the village elders.",
-      "master": "Now she and the village elders are preparing a march at Aunae Market."
+      "rookie": "She plans a market march.",
+      "junior": "She plans a march at the market.",
+      "master": "Now she and the village elders are planning a march at Aunae Market."
     },
     {
-      "rookie": "But Japan's police watch the roads, and a wrong day is going round.",
-      "junior": "But Japan's police are watching the roads, and a false day is spreading.",
-      "master": "Yet Japan's police keep watch on every road, and a false day is spreading."
+      "rookie": "Police watch. A wrong day goes round.",
+      "junior": "Police watch the roads. A wrong day goes round.",
+      "master": "Japan's police watch every road. A wrong day goes round."
     },
     {
       "rookie": "Two messengers said the true day: the first of April. Gwan-sun's sign was a fire on Maebong hill the night before. Gyeongsun wrote the flame note. She kept the plan in her box, and you locked it with the true days. On 1 April 1919, Gwan-sun helped lead thousands of people at Aunae Market. They called for Korea's independence.",
-      "junior": "Two messengers gave the real day: the first of April. Gwan-sun's sign was a fire on Maebong hill the night before. Gyeongsun, who wrote the flame note, kept the plan in her box, and you locked it with the true days. On 1 April 1919, Gwan-sun helped lead thousands of people at Aunae Market, where they called for Korea's independence.",
-      "master": "Two messengers agreed on the real day: the first of April. Gwan-sun's sign was a fire on Maebong hill the night before. Gyeongsun, who wrote the flame note, kept the plan in her box, which you locked with the true days. On 1 April 1919, alongside the village elders, Gwan-sun helped lead thousands of people at Aunae Market, and together they called for Korea's independence."
+      "junior": "Two messengers said the true day: the first of April. Gwan-sun's sign was a fire on Maebong hill the night before. Gyeongsun wrote the flame note. She kept the plan in her box, and you locked it with the true days. On 1 April 1919, Gwan-sun helped lead thousands of people at Aunae Market. They called for Korea's independence.",
+      "master": "Two messengers said the true day: the first of April. Gwan-sun's sign was a fire on Maebong hill the night before. Gyeongsun wrote the flame note. She kept the plan in her box, and you locked it with the true days. On 1 April 1919, Gwan-sun helped lead thousands of people at Aunae Market. Together they called for Korea's independence."
     },
     {
       "rookie": "AUNAE MARKET, NEAR CHEONAN",
@@ -93,9 +93,9 @@
       "master": "The second of April"
     },
     {
-      "rookie": "Only Mr. Pyo says the second. Find two people who say the same day.",
-      "junior": "Mr. Pyo is the only one who says the second. Look for two people who give the same day.",
-      "master": "Only Mr. Pyo claims the second. Seek out two people whose day matches."
+      "rookie": "Only Mr. Pyo says the second.",
+      "junior": "Only Mr. Pyo says the second. Look for two the same.",
+      "master": "Only Mr. Pyo says the second. Find two people who agree."
     },
     {
       "rookie": "The tenth of March",
@@ -103,9 +103,9 @@
       "master": "The tenth of March"
     },
     {
-      "rookie": "Nobody says March. Ask each person about the day again.",
-      "junior": "No one says March. Ask each person about the day once more.",
-      "master": "Not a single person mentions March. Put the question about the day to each of them again."
+      "rookie": "Nobody says March. Ask again.",
+      "junior": "Nobody says March. Ask about the day again.",
+      "master": "Nobody says March. Ask each person about the day again."
     },
     {
       "rookie": "What day did you tell the villages?",
@@ -128,19 +128,19 @@
       "master": "AUNAE MARKET"
     },
     {
-      "rookie": "Aunae Market is busy with baskets, rice and salt.",
-      "junior": "Aunae Market is crowded with baskets, rice and salt.",
-      "master": "Aunae Market is bustling with baskets of rice and sacks of salt."
+      "rookie": "Aunae Market is busy.",
+      "junior": "Aunae Market is busy today.",
+      "master": "Aunae Market is busy with rice and salt."
     },
     {
-      "rookie": "Under your teacup at the noodle stall, a folded note waits.",
-      "junior": "A folded note is waiting under your teacup at the noodle stall.",
-      "master": "At the noodle stall, a folded note lies hidden beneath your teacup."
+      "rookie": "A note waits under your teacup.",
+      "junior": "A note waits under your teacup.",
+      "master": "At the noodle stall, a folded note waits under your teacup."
     },
     {
-      "rookie": "It is written in Hangeul, Korea's own letters. There is no name, only a small flame.",
-      "junior": "The note is in Hangeul, Korea's own letters. It has no name, only a small flame.",
-      "master": "It is written in Hangeul, Korea's own script; in place of a name, only a small flame is drawn."
+      "rookie": "Hangeul. No name, just a small flame.",
+      "junior": "It is in Hangeul. No name, just a small flame.",
+      "master": "It is written in Hangeul, Korea's own letters. No name, just a small flame."
     },
     {
       "rookie": "The flame note says:",
@@ -149,8 +149,8 @@
     },
     {
       "rookie": "Three people told Gwan-sun's day to the villages.\nTwo of them say the same day.\nOne man says another day. Someone paid him to ask.\nAsk what each one heard.\n— a small flame",
-      "junior": "Three people carried Gwan-sun's day to the villages.\nTwo of them say the same day.\nOne man gives a different day. Someone paid him to ask.\nFind out what each one heard.\n— a small flame",
-      "master": "Three people carried Gwan-sun's day out to the villages.\nTwo of them say the same day.\nOne man names a different day. Someone paid him to ask.\nDiscover what each of them heard.\n— a small flame"
+      "junior": "Three people told Gwan-sun's day to the villages.\nTwo of them say the same day.\nOne man says another day. Someone paid him to ask.\nAsk what each one of them heard.\n— a small flame",
+      "master": "Three people carried Gwan-sun's day to the villages.\nTwo of them say the same day.\nOne man says a different day. Someone paid him to ask.\nAsk carefully what each one heard.\n— a small flame"
     },
     {
       "rookie": "What is the true day of the march?",
@@ -158,34 +158,34 @@
       "master": "What is the genuine day of the march?"
     },
     {
-      "rookie": "Ask every person the same question about the day.",
-      "junior": "Ask each person the same question about the day.",
-      "master": "Put one and the same question about the day to every person."
+      "rookie": "Ask everyone about the day.",
+      "junior": "Ask everyone about the day.",
+      "master": "Ask every person about the day."
     },
     {
-      "rookie": "Two people say the same thing. Compare their answers.",
-      "junior": "Two of them give the same answer. Compare what they said.",
-      "master": "Two answers match each other. Set them side by side."
+      "rookie": "Two people say the same. Look at their answers.",
+      "junior": "Two people say the same. Look at their answers.",
+      "master": "Two people say the same. Compare their answers."
     },
     {
       "rookie": "Two messengers say the same day!",
-      "junior": "Two messengers give the same day!",
-      "master": "Two messengers agree on the very same day!"
+      "junior": "Two messengers say the same day!",
+      "master": "Two messengers say the very same day!"
     },
     {
       "rookie": "The march is on the first of April, the big market day.",
-      "junior": "The march will be on the first of April, the big market day.",
-      "master": "The march is set for the first of April, the great market day."
+      "junior": "The march is on the first of April, the big market day.",
+      "master": "The march will be on the first of April, the big market day."
     },
     {
-      "rookie": "But how will far villages know the time has come?",
-      "junior": "But how will faraway villages know the moment has arrived?",
-      "master": "Yet how will the distant villages learn that the moment has arrived?"
+      "rookie": "How will far villages know it is time?",
+      "junior": "But how will far villages know it is time?",
+      "master": "But how will faraway villages know it is time?"
     },
     {
-      "rookie": "Gyeongsun takes your arm. \"Come to Gwan-sun's house.\"",
-      "junior": "Gyeongsun takes hold of your arm. \"Come with me to Gwan-sun's house.\"",
-      "master": "Gyeongsun slips her arm through yours. \"Come with me to Gwan-sun's house.\""
+      "rookie": "Gyeongsun says, \"Come to Gwan-sun's house.\"",
+      "junior": "Gyeongsun says, \"Come with me to Gwan-sun's house.\"",
+      "master": "Gyeongsun takes your arm. \"Come with me to Gwan-sun's house.\""
     },
     {
       "rookie": "The Day",
@@ -198,19 +198,19 @@
       "master": "Two messengers both say the march falls on the first of April."
     },
     {
-      "rookie": "Find out which day the villages heard.",
-      "junior": "Find out what day the villages were told.",
-      "master": "Discover which day reached the villages."
+      "rookie": "Find which day the villages heard.",
+      "junior": "Find out which day the villages heard.",
+      "master": "Discover which day the villages heard."
     },
     {
-      "rookie": "Ask each messenger. Write down what they say.",
-      "junior": "Ask every messenger and note down their answers.",
-      "master": "Question each messenger and record what they tell you."
+      "rookie": "Ask each messenger. Note their words.",
+      "junior": "Ask each messenger. Note down their words.",
+      "master": "Ask each messenger. Write down what they say."
     },
     {
       "rookie": "Talk to a messenger.",
-      "junior": "Speak to a messenger.",
-      "master": "Speak with one of the messengers."
+      "junior": "Talk to a messenger.",
+      "master": "Talk to one of the messengers."
     },
     {
       "rookie": "Where will people meet?",
@@ -219,8 +219,8 @@
     },
     {
       "rookie": "Who asked you about it?",
-      "junior": "Has anyone asked you about it?",
-      "master": "Has anyone questioned you about it?"
+      "junior": "Who asked you about it?",
+      "master": "Has anyone asked you about it?"
     },
     {
       "rookie": "Gyeongsun",
@@ -233,19 +233,19 @@
       "master": "A STUDENT FROM SEOUL"
     },
     {
-      "rookie": "a girl of sixteen in a white jeogori and a black skirt, her hair in one long braid",
-      "junior": "a sixteen-year-old girl in a white jeogori and a black skirt, with her hair in one long braid",
-      "master": "a girl of sixteen dressed in a white jeogori and a black skirt, her hair worn in a single long braid"
+      "rookie": "a girl of sixteen with long hair",
+      "junior": "a girl of sixteen with long hair in a braid",
+      "master": "a girl of sixteen in a white jeogori and black skirt, with a long braid"
     },
     {
-      "rookie": "I carried the day to two villages.",
+      "rookie": "I took the day to two villages.",
       "junior": "I took the day to two villages.",
-      "master": "I carried word of the day to two villages."
+      "master": "I carried the day to two villages."
     },
     {
-      "rookie": "The big market day. The first of April.",
-      "junior": "The big market day: the first of April.",
-      "master": "The great market day. The first of April."
+      "rookie": "Market day. The first of April.",
+      "junior": "Market day. The first of April.",
+      "master": "The big market day. The first of April."
     },
     {
       "rookie": "Here, at Aunae Market.",
@@ -253,9 +253,9 @@
       "master": "Right here, at Aunae Market itself."
     },
     {
-      "rookie": "Nobody. Only Gwan-sun talks to me about it.",
-      "junior": "Nobody. Gwan-sun is the only one who talks to me about it.",
-      "master": "Nobody at all. Only Gwan-sun ever speaks to me of it."
+      "rookie": "Nobody. Only Gwan-sun talks to me.",
+      "junior": "Nobody. Only Gwan-sun talks to me about it.",
+      "master": "Nobody. Only Gwan-sun talks to me about it."
     },
     {
       "rookie": "Dong-il",
@@ -268,14 +268,14 @@
       "master": "A MESSENGER BOY"
     },
     {
-      "rookie": "a boy of ten in a patched cotton jacket, with straw sandals and a cloth bag",
-      "junior": "a ten-year-old boy in a patched cotton jacket, wearing straw sandals and carrying a cloth bag",
-      "master": "a boy of ten in a much-patched cotton jacket, with straw sandals on his feet and a cloth bag at his side"
+      "rookie": "a boy of ten with straw shoes",
+      "junior": "a boy of ten with straw shoes and a bag",
+      "master": "a boy of ten in a patched jacket, with straw shoes and a bag"
     },
     {
-      "rookie": "I ran to five villages. I am fast!",
-      "junior": "I ran to five villages. I'm really fast!",
-      "master": "I ran to five whole villages. Nobody is faster!"
+      "rookie": "I ran to five villages!",
+      "junior": "I ran to five villages! I'm fast!",
+      "master": "I ran to five whole villages! Nobody is faster!"
     },
     {
       "rookie": "The first of April. Gwan-sun said it twice!",
@@ -283,14 +283,14 @@
       "master": "The first of April. Gwan-sun repeated it twice!"
     },
     {
-      "rookie": "At the market. Everybody comes on market day.",
-      "junior": "At the market. Everyone comes on market day.",
-      "master": "At the market. On market day the whole countryside comes."
+      "rookie": "At the market. Everybody comes!",
+      "junior": "At the market. Everybody comes there!",
+      "master": "At the market. Everybody comes on market day!"
     },
     {
       "rookie": "Nobody. I keep secrets well.",
-      "junior": "Nobody. I'm good at keeping secrets.",
-      "master": "Nobody. My lips are sealed."
+      "junior": "Nobody. I keep secrets very well.",
+      "master": "Nobody. I am good at keeping secrets."
     },
     {
       "rookie": "Mr. Pyo",
@@ -303,19 +303,19 @@
       "master": "THE SALT SELLER"
     },
     {
-      "rookie": "a thin man in his forties with a salt sack on his back and a nervous smile",
-      "junior": "a thin man in his forties, carrying a sack of salt on his back, with a nervous smile",
-      "master": "a thin man in his forties, a salt sack slung over his back, wearing an uneasy smile"
+      "rookie": "a thin salt seller",
+      "junior": "a thin salt seller with a nervous smile",
+      "master": "a thin salt seller in his forties, with an uneasy smile"
     },
     {
       "rookie": "Salt! Good salt! Oh... a question?",
-      "junior": "Salt! Fine salt! Oh... you have a question?",
-      "master": "Salt! Finest salt! Oh... a question, is it?"
+      "junior": "Salt! Good salt! Oh... you have a question?",
+      "master": "Salt! Good salt for sale! Oh... a question?"
     },
     {
-      "rookie": "The second of April. I am sure of it.",
+      "rookie": "The second of April. I am sure.",
       "junior": "The second of April. I'm quite sure.",
-      "master": "The second of April. I am quite certain of it."
+      "master": "The second of April. I am quite certain."
     },
     {
       "rookie": "At the train station, I think.",
@@ -323,9 +323,9 @@
       "master": "At the train station, I suppose."
     },
     {
-      "rookie": "A stranger in a city coat. He gave me a coin.",
-      "junior": "A stranger in a city coat. He handed me a coin.",
-      "master": "A stranger wearing a city coat. He pressed a coin into my hand."
+      "rookie": "A stranger. He gave me a coin.",
+      "junior": "A stranger. He gave me a coin to ask.",
+      "master": "A stranger in a city coat. He gave me a coin."
     },
     {
       "rookie": "Ask a question.",
@@ -334,38 +334,38 @@
     },
     {
       "rookie": "Ask another messenger.",
-      "junior": "Ask a different messenger.",
-      "master": "Question another messenger."
+      "junior": "Ask another messenger.",
+      "master": "Go and ask another messenger."
     },
     {
-      "rookie": "Compare two answers.",
-      "junior": "Compare two of the answers.",
-      "master": "Weigh two answers against each other."
+      "rookie": "Look at two answers.",
+      "junior": "Look at two of the answers.",
+      "master": "Compare two of the answers."
     },
     {
-      "rookie": "Find two messengers who say the same day.",
-      "junior": "Find two messengers who give the same day.",
-      "master": "Identify two messengers who name the same day."
+      "rookie": "Find two with the same day.",
+      "junior": "Find two messengers with the same day.",
+      "master": "Find two messengers who say the same day."
     },
     {
-      "rookie": "Tap two answers to compare them.",
-      "junior": "Tap two answers to compare.",
-      "master": "Tap two answers to set them side by side."
+      "rookie": "Tap two answers. Are they the same?",
+      "junior": "Tap two answers. Are they the same?",
+      "master": "Tap two answers. Do they say the same?"
     },
     {
       "rookie": "Both say the first of April.",
       "junior": "They both say the first of April.",
-      "master": "Each of them names the first of April."
+      "master": "Both of them say the first of April."
     },
     {
-      "rookie": "These answers are not about the day.",
-      "junior": "These answers are about something else, not the day.",
-      "master": "Neither of these answers concerns the day."
+      "rookie": "These are not about the day.",
+      "junior": "These answers are not about the day.",
+      "master": "These two answers are not about the day."
     },
     {
-      "rookie": "Look for what each person says about the day.",
-      "junior": "Look for what each one says about the day.",
-      "master": "Seek out what each person says regarding the day."
+      "rookie": "What does each say about the day?",
+      "junior": "What does each one say about the day?",
+      "master": "What does each person say about the day?"
     },
     {
       "rookie": "These two say different days.",
@@ -374,8 +374,8 @@
     },
     {
       "rookie": "Try another pair.",
-      "junior": "Try a different pair.",
-      "master": "Try another pairing."
+      "junior": "Try another pair.",
+      "master": "Try another pair of answers."
     },
     {
       "rookie": "Find out who asked Mr. Pyo.",
@@ -383,19 +383,19 @@
       "master": "Discover who has been questioning Mr. Pyo."
     },
     {
-      "rookie": "Ask Mr. Pyo who asked him about it.",
-      "junior": "Ask Mr. Pyo who asked him about the day.",
-      "master": "Ask Mr. Pyo who questioned him about it."
+      "rookie": "Ask Mr. Pyo who asked him.",
+      "junior": "Ask Mr. Pyo who asked him.",
+      "master": "Ask Mr. Pyo who asked him about the day."
     },
     {
       "rookie": "A stranger paid Mr. Pyo to ask.",
-      "junior": "A stranger gave Mr. Pyo money to ask.",
+      "junior": "A stranger paid Mr. Pyo to ask.",
       "master": "A stranger paid Mr. Pyo to ask questions."
     },
     {
       "rookie": "Your messenger notes are ready.",
-      "junior": "Your notes on the messengers are ready.",
-      "master": "Your notes on the messengers are complete."
+      "junior": "Your messenger notes are ready.",
+      "master": "Your notes on the messengers are ready."
     },
     {
       "rookie": "THE FIRST OF APRIL",
@@ -403,9 +403,9 @@
       "master": "THE FIRST OF APRIL"
     },
     {
-      "rookie": "Two messengers agree. But a stranger is asking questions too.",
-      "junior": "The two messengers agree. But a stranger is asking questions as well.",
-      "master": "Two messengers are in agreement. Yet a stranger is asking questions as well."
+      "rookie": "Two say the same. But a stranger asks too.",
+      "junior": "Two say the same. But a stranger asks too.",
+      "master": "Two say the same day. But a stranger is asking too."
     },
     {
       "rookie": "The march starts",
@@ -448,69 +448,69 @@
       "master": "GWAN-SUN'S HOME"
     },
     {
-      "rookie": "Yu Gwan-sun studies at Ewha School in Seoul. It is closed now.",
-      "junior": "Yu Gwan-sun is a student at Ewha School in Seoul, but the school is closed now.",
-      "master": "Yu Gwan-sun is a pupil at Ewha School in Seoul, which has now been closed."
+      "rookie": "Gwan-sun's school in Seoul is closed.",
+      "junior": "Gwan-sun's school in Seoul is closed now.",
+      "master": "Gwan-sun goes to Ewha School in Seoul. It has been closed."
     },
     {
-      "rookie": "She came home with one big idea.",
-      "junior": "She returned home with one big idea.",
-      "master": "She has returned home carrying a single bold idea."
+      "rookie": "She has a big idea.",
+      "junior": "She has a big idea.",
+      "master": "She has come home with a big idea."
     },
     {
-      "rookie": "\"The police watch the roads,\" she says. \"We cannot send letters.\"",
-      "junior": "\"The police are watching the roads,\" she says. \"We can't send letters.\"",
-      "master": "\"The police keep watch on every road,\" she says. \"Letters are impossible.\""
+      "rookie": "\"Police watch the roads. No letters.\"",
+      "junior": "\"Police watch the roads. We can't send letters.\"",
+      "master": "\"Police watch every road,\" she says. \"No letters.\""
     },
     {
-      "rookie": "Gwan-sun's plan, written in a hurry:",
+      "rookie": "Gwan-sun's plan, written fast:",
       "junior": "Gwan-sun's plan, scribbled quickly:",
       "master": "Gwan-sun's plan, hastily written:"
     },
     {
       "rookie": "When the market is full, we start the march.\nIn the morning, people walk to the market, like shoppers.\nThey come because they saw our sign the night before.\nOur sign is a fire on Maebong hill.\nNo bell. A bell is too loud.",
-      "junior": "When the market is full, we start the march.\nIn the morning, people walk to the market as if they are shoppers.\nThey come because they saw our sign the night before.\nOur sign will be a fire on Maebong hill.\nNo bell. A bell makes too much noise.",
-      "master": "When the market is full, we start the march.\nIn the morning, people stroll to the market, as though they were ordinary shoppers.\nThey come because they spotted our sign the night before.\nOur sign shall be a fire on Maebong hill.\nNo bell: a bell would be far too loud."
+      "junior": "When the market is full, we start the march.\nIn the morning, people walk to the market, like shoppers.\nThey come because they saw our sign the night before.\nOur sign will be a fire on Maebong hill.\nNo bell. A bell is too loud.",
+      "master": "When the market is full, we start the march.\nIn the morning, people walk to the market, like ordinary shoppers.\nThey come because they saw our sign the night before.\nOur sign will be a fire on Maebong hill.\nNo bell. A bell would be far too loud."
     },
     {
-      "rookie": "Put the plan in order, from the first step to the last.",
-      "junior": "Put the steps of the plan in order, from first to last.",
-      "master": "Arrange the plan's steps in order, from the very first to the last."
+      "rookie": "Put the plan in order.",
+      "junior": "Put the steps of the plan in order.",
+      "master": "Put the steps of the plan in the right order."
     },
     {
       "rookie": "Find the step that happens the night before.",
-      "junior": "Look for the step that happens the night before.",
-      "master": "Begin with whatever takes place the night before."
+      "junior": "Find the step that happens the night before.",
+      "master": "First find the step that happens the night before."
     },
     {
-      "rookie": "The morning comes after the night. The march starts last.",
-      "junior": "Morning comes after night. The march is the final step.",
-      "master": "Morning follows the night, and the march comes at the very end."
+      "rookie": "Morning comes after night. The march is last.",
+      "junior": "Morning comes after night. The march is last.",
+      "master": "Morning comes after the night. The march is last of all."
     },
     {
       "rookie": "You read Gwan-sun's plan!",
-      "junior": "You understood Gwan-sun's plan!",
-      "master": "You have read Gwan-sun's plan correctly!"
+      "junior": "You read Gwan-sun's plan right!",
+      "master": "You read Gwan-sun's plan correctly!"
     },
     {
-      "rookie": "Fire, then the walk, then a full market, then the march.",
-      "junior": "First the fire, then the walk, then the full market, and then the march.",
-      "master": "The fire, then the walk, then a crowded market, and finally the march."
+      "rookie": "Fire, then walk, then full market, then march.",
+      "junior": "First fire, then walk, then full market, then march.",
+      "master": "The fire, then the walk, then a full market, then the march."
     },
     {
-      "rookie": "Every village can see Maebong hill at night.",
-      "junior": "At night, every village can see Maebong hill.",
-      "master": "By night, Maebong hill can be seen from every village."
+      "rookie": "Every village can see Maebong hill.",
+      "junior": "Every village can see Maebong hill at night.",
+      "master": "At night, every village can see Maebong hill."
     },
     {
-      "rookie": "Gwan-sun smiles. \"No letter can be stolen. A fire is the letter.\"",
-      "junior": "Gwan-sun smiles. \"Nobody can steal a letter like this. The fire is the letter.\"",
-      "master": "Gwan-sun smiles. \"No one can steal this letter. The fire itself is the letter.\""
+      "rookie": "\"A fire is our letter.\"",
+      "junior": "Gwan-sun smiles. \"A fire is our letter.\"",
+      "master": "Gwan-sun smiles. \"No one can steal this letter. The fire is our letter.\""
     },
     {
-      "rookie": "Those are the right steps. Read when each one happens again.",
-      "junior": "Those are the correct steps. Read when each one happens once more.",
-      "master": "Those steps are right, but not their order. Read again when each one takes place."
+      "rookie": "Right steps. Check when each happens.",
+      "junior": "Right steps. Check when each one happens.",
+      "master": "The steps are right, but not the order. Check when each one happens."
     },
     {
       "rookie": "The Sign",
@@ -518,29 +518,29 @@
       "master": "The Sign"
     },
     {
-      "rookie": "The night before the march, a fire on the hill tells the villages.",
-      "junior": "A fire on the hill, the night before the march, tells the villages.",
-      "master": "The night before the march, a fire on the hill carries the message to the villages."
+      "rookie": "Night before: a hill fire tells the villages.",
+      "junior": "The night before: a hill fire tells the villages.",
+      "master": "The night before: a fire on the hill tells the villages."
     },
     {
-      "rookie": "Find out how the villages will know.",
-      "junior": "Find out how the villages will learn the time.",
-      "master": "Discover how the villages are to be told."
+      "rookie": "Find how the villages will know.",
+      "junior": "Find out how the villages will know.",
+      "master": "Discover how the villages will know."
     },
     {
-      "rookie": "On 1 March, people in Seoul called for independence. Now it is our turn.",
-      "junior": "On 1 March, the people of Seoul called for independence. Now it is our turn.",
-      "master": "On 1 March, Seoul rose to call for independence. Now the turn is ours."
+      "rookie": "Seoul called for independence. Now it is our turn.",
+      "junior": "Seoul called for independence. Now it is our turn.",
+      "master": "On 1 March, Seoul called for independence. Now it is our turn."
     },
     {
-      "rookie": "But how will far villages know the time?",
-      "junior": "But how will faraway villages know when it is time?",
-      "master": "Yet how will the distant villages know the hour has come?"
+      "rookie": "How will far villages know?",
+      "junior": "How will far villages know?",
+      "master": "But how will faraway villages know it is time?"
     },
     {
-      "rookie": "I wrote my plan. But I wrote it all mixed up.",
-      "junior": "I wrote down my plan, but I wrote it all out of order.",
-      "master": "I wrote my plan down, but in a hurry, and the steps are all jumbled."
+      "rookie": "I wrote my plan all mixed up.",
+      "junior": "I wrote my plan, but all mixed up.",
+      "master": "I wrote my plan in a hurry. It is all mixed up."
     },
     {
       "rookie": "READ GWAN-SUN'S PLAN",
@@ -553,9 +553,9 @@
       "master": "A LETTER MADE OF FIRE"
     },
     {
-      "rookie": "The villages will know by the fire. But the stranger wants this plan.",
-      "junior": "The fire will tell the villages. But the stranger wants to get this plan.",
-      "master": "The fire will carry the message. Yet the stranger is hunting for this very plan."
+      "rookie": "The stranger wants the plan now.",
+      "junior": "The stranger wants the plan now.",
+      "master": "The fire will carry the message. But the stranger is looking for the plan now."
     },
     {
       "rookie": "A small flame sits by her name.",
@@ -573,19 +573,19 @@
       "master": "Three Notebooks"
     },
     {
-      "rookie": "\"The stranger wants my written plan,\" Gwan-sun says.",
-      "junior": "\"The stranger wants my written plan,\" Gwan-sun says.",
-      "master": "\"The stranger is after my written plan,\" Gwan-sun says in a low voice."
+      "rookie": "\"The stranger wants my plan.\"",
+      "junior": "\"The stranger wants my plan,\" Gwan-sun says.",
+      "master": "\"The stranger wants my plan,\" Gwan-sun says quietly."
     },
     {
-      "rookie": "\"Give it to the one who wrote the flame note. That friend warned us about Mr. Pyo.\"",
-      "junior": "\"Give it to whoever wrote the flame note, because that friend warned us about Mr. Pyo.\"",
-      "master": "\"Hand it to whoever wrote the flame note; that friend warned us about Mr. Pyo.\""
+      "rookie": "\"Give it to the flame-note writer.\"",
+      "junior": "\"Give it to the one who wrote the flame note.\"",
+      "master": "\"Give it to the friend who wrote the flame note. She warned us about Mr. Pyo.\""
     },
     {
-      "rookie": "Three school friends' notebooks lie on the low table.",
-      "junior": "The notebooks of three school friends lie on the low table.",
-      "master": "Three schoolfriends' notebooks rest upon the low table."
+      "rookie": "Three notebooks lie on the table.",
+      "junior": "Three notebooks lie on the low table.",
+      "master": "Three school friends' notebooks lie on the low table."
     },
     {
       "rookie": "What you see on the table:",
@@ -594,43 +594,43 @@
     },
     {
       "rookie": "Sunja's notebook: a pressed flower on the cover. She writes only in Hangeul. A little flower sits by her name.\nOkhui's notebook: a blue ribbon. She writes in Chinese characters. Little stars sit by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul. A small flame sits by her name.\nYour note: written only in Hangeul. No name, only a small flame.",
-      "junior": "Sunja's notebook: a pressed flower on its cover. She writes only in Hangeul, and a little flower sits by her name.\nOkhui's notebook: tied with a blue ribbon. She writes in Chinese characters, and little stars sit by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul, and a small flame sits by her name.\nYour note: written only in Hangeul. There is no name, only a small flame.",
-      "master": "Sunja's notebook: a pressed flower decorates the cover. She writes only in Hangeul; a little flower sits by her name.\nOkhui's notebook: bound with a blue ribbon. She writes in Chinese characters; little stars sit by her name.\nGyeongsun's notebook: plain brown, without decoration. She writes only in Hangeul; a small flame sits by her name.\nYour note: written only in Hangeul. In place of a name, only a small flame."
+      "junior": "Sunja's notebook: a pressed flower on the cover. She writes only in Hangeul. A little flower sits by her name.\nOkhui's notebook: a blue ribbon. She writes in Chinese characters. Little stars sit by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul. A small flame sits by her name.\nYour note: written only in Hangeul. No name, only a small flame.",
+      "master": "Sunja's notebook: a pressed flower on the cover. She writes only in Hangeul. A little flower sits by her name.\nOkhui's notebook: tied with a blue ribbon. She writes in Chinese characters. Little stars sit by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul. A small flame sits by her name.\nYour note: written only in Hangeul. There is no name, only a small flame."
     },
     {
-      "rookie": "Who wrote the flame note? Give her the plan.",
-      "junior": "Which friend wrote the flame note? Give her the plan.",
-      "master": "Whose hand wrote the flame note? Entrust the plan to her."
+      "rookie": "Who wrote the note? Give her the plan.",
+      "junior": "Who wrote the flame note? Give her the plan.",
+      "master": "Which friend wrote the flame note? Give her the plan."
     },
     {
-      "rookie": "Your note has two things: the kind of letters, and a mark.",
-      "junior": "Your note tells you two things: which letters it uses, and its mark.",
-      "master": "Your note gives two clues: the script it is written in, and its mark."
+      "rookie": "Check the letters and the mark.",
+      "junior": "Check the letters and the mark on your note.",
+      "master": "Check two things: the letters and the mark."
     },
     {
-      "rookie": "Which notebook has the same letters AND the same mark?",
-      "junior": "Which notebook matches your note in its letters AND its mark?",
-      "master": "Which notebook matches your note in both script AND mark?"
+      "rookie": "Same letters AND same mark?",
+      "junior": "The same letters AND the same mark?",
+      "master": "Which notebook has the same letters AND the same mark?"
     },
     {
       "rookie": "Gyeongsun wrote the flame note!",
       "junior": "Gyeongsun is the one who wrote the flame note!",
-      "master": "The flame note was written by Gyeongsun!"
+      "master": "Gyeongsun is the one who wrote the flame note!"
     },
     {
-      "rookie": "Gyeongsun blushes. \"Yes. I wrote it.\"",
+      "rookie": "Gyeongsun's face goes red. \"Yes. I wrote it.\"",
       "junior": "Gyeongsun turns red. \"Yes. I wrote it.\"",
       "master": "Gyeongsun's cheeks turn pink. \"Yes. The note is mine.\""
     },
     {
-      "rookie": "\"A small flame can light a whole hill. So can our news.\"",
-      "junior": "\"A small flame can light up a whole hill, and so can our news.\"",
-      "master": "\"A small flame can set a whole hill alight; so can our news.\""
+      "rookie": "\"A small flame lights a hill.\"",
+      "junior": "\"A small flame can light a hill.\"",
+      "master": "\"A small flame can light up a whole hill. So can our news.\""
     },
     {
-      "rookie": "\"Tonight I will lock Gwan-sun's plan in my old box.\"",
-      "junior": "\"Tonight I'll lock Gwan-sun's plan in my old box.\"",
-      "master": "\"Tonight I shall lock Gwan-sun's plan inside my old box.\""
+      "rookie": "\"Tonight I will lock the plan away.\"",
+      "junior": "\"Tonight I will lock the plan away in my box.\"",
+      "master": "\"Tonight I will lock the plan away in my old box.\""
     },
     {
       "rookie": "The Note Writer",
@@ -638,9 +638,9 @@
       "master": "The Note Writer"
     },
     {
-      "rookie": "Gyeongsun wrote the flame note. She will keep Gwan-sun's plan safe.",
-      "junior": "Gyeongsun wrote the flame note, and she will keep Gwan-sun's plan safe.",
-      "master": "The flame note is Gyeongsun's work, and Gwan-sun's plan will be safe with her."
+      "rookie": "Gyeongsun wrote it. She keeps the plan.",
+      "junior": "Gyeongsun wrote it. She will keep the plan.",
+      "master": "Gyeongsun wrote it. She will keep the plan safe."
     },
     {
       "rookie": "The note from the market",
@@ -648,14 +648,14 @@
       "master": "The note from the market"
     },
     {
-      "rookie": "Your note has a small flame. Find it in your Notebook.",
-      "junior": "Your note has a small flame on it. Find it in your Notebook.",
-      "master": "A small flame marks your note. Find it in your Notebook."
+      "rookie": "Your note has a flame. Check your Notebook.",
+      "junior": "Your note has a flame. Check your Notebook.",
+      "master": "Your note has a small flame. Check your Notebook."
     },
     {
-      "rookie": "Find the note from under your teacup.",
-      "junior": "Look for the note from under your teacup.",
-      "master": "Seek out the note that lay under your teacup."
+      "rookie": "Find the note from your teacup.",
+      "junior": "Find the note from under your teacup.",
+      "master": "Look for the note from under your teacup."
     },
     {
       "rookie": "Find out who wrote the flame note.",
@@ -663,19 +663,19 @@
       "master": "Discover who wrote the flame note."
     },
     {
-      "rookie": "I saw a stranger give Mr. Pyo a coin, so I warned you.",
-      "junior": "I saw a stranger hand Mr. Pyo a coin, so I sent you a warning.",
-      "master": "I watched a stranger slip Mr. Pyo a coin, so I warned you."
+      "rookie": "I saw a stranger pay Mr. Pyo.",
+      "junior": "I saw a stranger pay Mr. Pyo a coin.",
+      "master": "I saw a stranger pay Mr. Pyo, so I warned you."
     },
     {
       "rookie": "I never sign my name. A name on a note can send a friend to prison.",
-      "junior": "I never sign my name, because a name on a note can send a friend to prison.",
-      "master": "I never sign my name; a single name on a note could send a friend to prison."
+      "junior": "I never sign my name. A name on a note can send a friend to prison.",
+      "master": "I never sign my name. A single name on a note can send a friend to prison."
     },
     {
-      "rookie": "So you drew a small flame. But it is by your name in your notebook too.",
-      "junior": "So you drew a small flame instead. But it is by your name in your notebook too.",
-      "master": "So you drew a small flame in its place, yet the same flame sits by your name in your notebook."
+      "rookie": "And the flame is by your name!",
+      "junior": "And the same flame is by your name!",
+      "master": "You drew a small flame instead of a name. The same flame is by your name!"
     },
     {
       "rookie": "THE NOTE WRITER",
@@ -683,9 +683,9 @@
       "master": "THE NOTE WRITER"
     },
     {
-      "rookie": "Gyeongsun warned you about Mr. Pyo. Now she will keep the plan.",
-      "junior": "Gyeongsun warned you about Mr. Pyo, and now she will keep the plan.",
-      "master": "Gyeongsun warned you about Mr. Pyo; now the plan is in her keeping."
+      "rookie": "Gyeongsun will keep the plan.",
+      "junior": "Gyeongsun will keep the plan safe.",
+      "master": "Gyeongsun warned you. Now she will keep the plan."
     },
     {
       "rookie": "the night before",
@@ -703,39 +703,39 @@
       "master": "MAEBONG HILL"
     },
     {
-      "rookie": "At dusk, Gyeongsun leads you up Maebong hill.",
-      "junior": "As the sun sets, Gyeongsun takes you up Maebong hill.",
-      "master": "At dusk, Gyeongsun guides you up the slope of Maebong hill."
+      "rookie": "At night, Gyeongsun takes you up Maebong hill.",
+      "junior": "At night, Gyeongsun takes you up Maebong hill.",
+      "master": "At dusk, Gyeongsun takes you up Maebong hill."
     },
     {
-      "rookie": "She opens her old wooden box and lays Gwan-sun's plan inside.",
-      "junior": "She opens her old wooden box and places Gwan-sun's plan inside it.",
-      "master": "She lifts the lid of her old wooden box and lays Gwan-sun's plan within."
+      "rookie": "She puts the plan in her box.",
+      "junior": "She puts the plan in her old box.",
+      "master": "She puts Gwan-sun's plan in her old wooden box."
     },
     {
-      "rookie": "\"Set the lock to our two days. The stranger only knows Mr. Pyo's day.\"",
-      "junior": "\"Set the lock to our two days, so the stranger, who only knows Mr. Pyo's day, cannot open it.\"",
-      "master": "\"Set the lock to our two days; the stranger knows only Mr. Pyo's day, so the box will stay shut to him.\""
+      "rookie": "\"Set the lock to our two days. Not Mr. Pyo's day.\"",
+      "junior": "\"Set the lock to our two days. Not Mr. Pyo's day.\"",
+      "master": "\"Set the lock to our two true days. Not Mr. Pyo's day. The stranger only knows his day, so he cannot open the box.\""
     },
     {
       "rookie": "The dial lock, and Gyeongsun's words:",
-      "junior": "On the dial lock, and in Gyeongsun's words:",
-      "master": "The dial lock, and what Gyeongsun whispers:"
+      "junior": "The dial lock, and Gyeongsun's words:",
+      "master": "The dial lock, and what Gyeongsun says:"
     },
     {
       "rookie": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nRemember: March has thirty-one days.",
-      "junior": "The two map dials: the night of the sign, which is a night in March.\nThe clock dial: the day of the march, which is in April.\nDon't forget: March has thirty-one days.",
-      "master": "The two map dials hold the night of the sign, which falls in March.\nThe clock dial holds the day of the march, in April.\nBear in mind: March has thirty-one days."
+      "junior": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nRemember: March has thirty-one days.",
+      "master": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, which is in April.\nRemember carefully: March has thirty-one days."
     },
     {
-      "rookie": "Set the dials: first the night of the sign, then the day of the march.",
-      "junior": "Set the dials: the night of the sign first, and then the day of the march.",
-      "master": "Set the dials: first the night the sign is lit, then the day of the march."
+      "rookie": "Sign night first, then the march.",
+      "junior": "The night of the sign first, then the march.",
+      "master": "First the night of the sign, then the day of the march."
     },
     {
-      "rookie": "The map dials are for the plan. The clock dial is for the day.",
-      "junior": "The map dials go with the plan. The clock dial goes with the day.",
-      "master": "The map dials belong to the plan; the clock dial belongs to the day."
+      "rookie": "Map dials: the plan. Clock dial: the day.",
+      "junior": "Map dials: the plan. Clock dial: the day.",
+      "master": "The map dials: the plan. The clock dial: the day."
     },
     {
       "rookie": "The night before the first of April is the last night of March.",
@@ -743,79 +743,79 @@
       "master": "The night before the first of April falls on the final night of March."
     },
     {
-      "rookie": "Click! The box is locked. Only friends know the days.",
-      "junior": "Click! The box is locked, and only friends know the days.",
-      "master": "Click! The box is locked; only friends know the days."
+      "rookie": "Click! It is locked. Only friends know the days.",
+      "junior": "Click! It is locked. Only friends know the days.",
+      "master": "Click! The box is locked. Only friends know the days."
     },
     {
-      "rookie": "Below, the villages are dark and quiet.",
-      "junior": "Down below, the villages are dark and silent.",
-      "master": "Far below, the villages lie dark and silent."
+      "rookie": "Below, the villages are dark.",
+      "junior": "Below, the villages are dark and quiet.",
+      "master": "Far below, the villages are dark and silent."
     },
     {
-      "rookie": "Then a small flame rises on Maebong hill.",
-      "junior": "Then a little flame starts to rise on Maebong hill.",
-      "master": "Then a small flame climbs into the dark on Maebong hill."
+      "rookie": "A small flame goes up on Maebong hill.",
+      "junior": "A small flame goes up on Maebong hill.",
+      "master": "Then a small flame goes up on Maebong hill."
     },
     {
-      "rookie": "Far away, on other hills, you see more lights.",
-      "junior": "In the distance, more lights appear on other hills.",
-      "master": "In the distance, one hilltop after another answers with its own light."
+      "rookie": "On far hills, more lights.",
+      "junior": "On far hills, more lights come on.",
+      "master": "On far hills, more lights answer."
     },
     {
       "rookie": "First the night of the sign, then the day of the march.",
-      "junior": "The night of the sign comes first, and then the day of the march.",
-      "master": "The night of the sign must come first, the day of the march after it."
+      "junior": "First the night of the sign, then the day of the march.",
+      "master": "First the night of the sign, and then the day of the march."
     },
     {
       "rookie": "March has thirty-one days. The night before April 1 is the last night of March.",
-      "junior": "March has thirty-one days, so the night before April 1 is the last night of March.",
-      "master": "March has thirty-one days; the night before April 1 is therefore the final night of March."
+      "junior": "March has thirty-one days. So the night before April 1 is the last night of March.",
+      "master": "March has thirty-one days. So the night before April 1 is the very last night of March."
     },
     {
       "rookie": "The march is on the first of April, not the second.",
-      "junior": "The march is on the first of April, not on the second.",
-      "master": "The march falls on the first of April, not the second."
+      "junior": "The march is on the first of April, not the second.",
+      "master": "The march is on the first of April, not on the second."
     },
     {
       "rookie": "That is Mr. Pyo's day. Two messengers said the first of April.",
-      "junior": "That is the day Mr. Pyo gave. Two messengers said the first of April.",
-      "master": "That is Mr. Pyo's false day. Two messengers agreed on the first of April."
+      "junior": "That is Mr. Pyo's day. Two messengers said the first of April.",
+      "master": "That is Mr. Pyo's wrong day. Two messengers said the first of April."
     },
     {
-      "rookie": "These numbers fit, but not in this order. The night of the sign comes first.",
-      "junior": "These numbers are right, but in the wrong order. The night of the sign is first.",
-      "master": "The numbers are right but misplaced. The night of the sign comes first."
+      "rookie": "Wrong order. The night of the sign is first.",
+      "junior": "Wrong order. The night of the sign comes first.",
+      "master": "The numbers are right, but the order is wrong. The night of the sign comes first."
     },
     {
-      "rookie": "That night, Gwan-sun lights the fire on Maebong hill.",
-      "junior": "That night, Gwan-sun lights the fire up on Maebong hill.",
-      "master": "That night, Gwan-sun sets the fire blazing on Maebong hill."
+      "rookie": "That night, Gwan-sun lights the hill fire.",
+      "junior": "That night, Gwan-sun lights the fire on the hill.",
+      "master": "That night, Gwan-sun lights the fire on Maebong hill."
     },
     {
-      "rookie": "On 1 April 1919, thousands of people gather at Aunae Market.",
-      "junior": "On 1 April 1919, thousands of people come together at Aunae Market.",
-      "master": "On 1 April 1919, thousands of people gather in Aunae Market."
+      "rookie": "1 April 1919. Thousands meet at Aunae Market.",
+      "junior": "1 April 1919. Thousands of people meet at Aunae Market.",
+      "master": "1 April 1919. Thousands of people gather at Aunae Market."
     },
     {
-      "rookie": "Gwan-sun helps lead them, with the village elders. They call for independence.",
-      "junior": "Gwan-sun helps lead them, together with the village elders, and they call for independence.",
-      "master": "Alongside the village elders, Gwan-sun helps lead them as they call for independence."
+      "rookie": "Gwan-sun helps lead them. They call for independence.",
+      "junior": "Gwan-sun helps lead them. They call for independence.",
+      "master": "Gwan-sun helps the village elders lead them. Together they call for independence."
     },
     {
-      "rookie": "On 1 March 1919, people all over Korea called for independence. This is the March First Movement.",
-      "junior": "On 1 March 1919, people all over Korea called for independence, and this became the March First Movement.",
-      "master": "On 1 March 1919, people across Korea called for independence, in what we now call the March First Movement."
+      "rookie": "1 March 1919: the March First Movement. Korea called for independence.",
+      "junior": "1 March 1919: the March First Movement. All Korea called for independence.",
+      "master": "1 March 1919: the March First Movement. People across Korea called for independence."
     },
     {
       "rookie": "The stranger waits at the station, on Mr. Pyo's wrong day. He never reads the plan.",
-      "junior": "The stranger waits at the station on Mr. Pyo's wrong day, so he never reads the plan.",
-      "master": "The stranger keeps watch at the station on Mr. Pyo's false day, and never reads the plan."
+      "junior": "The stranger waits at the station, on Mr. Pyo's wrong day. He never reads the plan.",
+      "master": "The stranger waits at the station, on Mr. Pyo's wrong day. He never even reads the plan."
     },
     {
-      "rookie": "No name, only a small flame. And the plan stayed safe.",
-      "junior": "No name, only a small flame, and the plan stayed safe.",
-      "master": "No name, only a small flame; and the plan stayed safe."
+      "rookie": "No name, just a flame. The plan stayed safe.",
+      "junior": "No name, just a small flame. The plan stayed safe.",
+      "master": "No name, only a small flame. And the plan stayed safe."
     },
     {
       "rookie": "Sunja",
@@ -835,17 +835,17 @@
     {
       "rookie": "Sunja writes only in Hangeul too. But her mark is a flower, not a flame.",
       "junior": "Sunja writes only in Hangeul too, but her mark is a flower, not a flame.",
-      "master": "Sunja also writes only in Hangeul, yet her mark is a flower rather than a flame."
+      "master": "Sunja also writes only in Hangeul, but her mark is a flower, not a flame."
     },
     {
-      "rookie": "Gwan-sun asked you to find the writer. Her notebook is not on the table.",
-      "junior": "Gwan-sun asked you to find the writer, and her notebook is not on the table.",
-      "master": "Gwan-sun is the one who asked you to find the writer; her notebook is not even on the table."
+      "rookie": "Gwan-sun asked you. Her notebook is not here.",
+      "junior": "Gwan-sun asked you. Her notebook is not on the table.",
+      "master": "Gwan-sun asked you to find the writer. Her notebook is not even on the table."
     },
     {
-      "rookie": "Okhui writes in Chinese characters, and her mark is stars.",
-      "junior": "Okhui writes in Chinese characters, and she marks her name with stars.",
-      "master": "Okhui writes in Chinese characters, and stars, not a flame, mark her name."
+      "rookie": "Okhui writes in Chinese characters. Her mark is stars.",
+      "junior": "Okhui writes in Chinese characters. Her mark is stars.",
+      "master": "Okhui writes in Chinese characters. Her mark is stars, not a flame."
     }
   ],
   "glossary": {

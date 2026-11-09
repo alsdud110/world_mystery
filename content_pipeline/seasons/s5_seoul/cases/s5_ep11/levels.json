@@ -9,23 +9,23 @@
     },
     {
       "rookie": "A young poet copied his book of poems by hand, three times.",
-      "junior": "A young poet made three copies of his book of poems by hand.",
-      "master": "A young poet has copied out his book of poems by hand, three times over."
+      "junior": "A young poet copied his book of poems by hand. He made three copies.",
+      "master": "A young poet carefully copied his book of poems by hand, three times."
     },
     {
-      "rookie": "A man from the office checks the rooms tonight.",
+      "rookie": "An office man checks rooms tonight.",
       "junior": "Tonight a man from the office is checking the rooms.",
       "master": "This very night, a man from the office is inspecting the rooms."
     },
     {
       "rookie": "Search Yun's desk.",
-      "junior": "Look through Yun's desk.",
-      "master": "Examine Yun's desk."
+      "junior": "Search Yun's desk for clues.",
+      "master": "Search Yun's desk carefully."
     },
     {
-      "rookie": "Compare the card with Yun's list.",
-      "junior": "Compare the card with Yun's own list.",
-      "master": "Set the card beside Yun's own list."
+      "rookie": "Check the card and Yun's list.",
+      "junior": "Check the card and Yun's list.",
+      "master": "Check the card against Yun's list."
     },
     {
       "rookie": "YONHI COLLEGE, SEOUL",
@@ -50,12 +50,12 @@
     {
       "rookie": "Yun Dong-ju lights his lamp.",
       "junior": "Yun Dong-ju turns on his lamp.",
-      "master": "Yun Dong-ju switches on his desk lamp."
+      "master": "Yun Dong-ju lights his desk lamp."
     },
     {
       "rookie": "\"My friend's copy had a white string. Now it is gone,\" he says.",
-      "junior": "\"The copy for my friend was tied with a white string. Now it has gone,\" he says.",
-      "master": "\"My friend's copy was bound with a white string, and now it has vanished,\" he says quietly."
+      "junior": "\"My friend's copy had a white string. Now it is gone!\" he says.",
+      "master": "\"My friend's copy had a white string. Now it is gone,\" he says quietly."
     },
     {
       "rookie": "Yun tells you:",
@@ -64,13 +64,13 @@
     },
     {
       "rookie": "Find the thick book with a red spine, then look under it.",
-      "junior": "Look for the thick book with a red spine, and check under it.",
-      "master": "Seek out the thick book with a red spine, and peer beneath it."
+      "junior": "Find the thick book with a red spine, then look under it.",
+      "master": "Find the thick book with a red spine, then look carefully under it."
     },
     {
-      "rookie": "Who came in tonight? What does she bring to the rooms?",
-      "junior": "Who came in tonight? What does she bring to the rooms each day?",
-      "master": "Who entered tonight, and what does she carry to the rooms?"
+      "rookie": "Who came in? What does she bring?",
+      "junior": "Who came in tonight? What does she bring?",
+      "master": "Who came in tonight? What does she bring to the rooms?"
     },
     {
       "rookie": "A drop of water: Miri's sign!",
@@ -78,14 +78,14 @@
       "master": "A drop of water: Miri's own sign!"
     },
     {
-      "rookie": "Rain did not come into the room. What does Miri bring?",
-      "junior": "No rain came into the room. What does Miri bring?",
-      "master": "No rain fell in this room. What is it that Miri brings?"
+      "rookie": "No rain. What does Miri bring?",
+      "junior": "No rain came in. What does Miri bring?",
+      "master": "No rain came in here. What does Miri bring?"
     },
     {
-      "rookie": "Not that word. Read Yun's words about Miri again.",
-      "junior": "That is not the word. Read what Yun said about Miri again.",
-      "master": "Not that word. Look again at what Yun said about Miri."
+      "rookie": "Not that. Read Yun's words again.",
+      "junior": "Not that. Read Yun's words again.",
+      "master": "Not that word. Read what Yun said about Miri again."
     },
     {
       "rookie": "Miri's Sign",
@@ -93,9 +93,9 @@
       "master": "Miri's Sign"
     },
     {
-      "rookie": "Miri signs her notes with a water drop. Her card was under the dictionary.",
-      "junior": "Miri signs her notes with a water drop. Her card was lying under the dictionary.",
-      "master": "Miri signs her notes with a water drop; her card lay hidden beneath the dictionary."
+      "rookie": "Miri signs with a water drop. Her card was under the dictionary.",
+      "junior": "Miri signs with a water drop. Her card was under the dictionary.",
+      "master": "Miri signs her notes with a water drop. Her card was under the dictionary."
     },
     {
       "rookie": "Yun's room at night",
@@ -103,29 +103,29 @@
       "master": "Yun's room by night"
     },
     {
-      "rookie": "Look closely at the desk. Which thing did Yun describe?",
-      "junior": "Look carefully at the desk. Which thing was Yun talking about?",
-      "master": "Scan the desk with care. Which object did Yun describe?"
+      "rookie": "Which desk thing did Yun talk about?",
+      "junior": "Which desk thing did Yun talk about?",
+      "master": "Which thing on the desk did Yun talk about?"
     },
     {
-      "rookie": "Look under it. One word of the note is worn.",
-      "junior": "Check under it. One word on the note has worn away.",
-      "master": "Peer beneath it. One word of the note has faded."
+      "rookie": "Look under it.",
+      "junior": "Now look under it.",
+      "master": "Look carefully under it. One word of the note has faded."
     },
     {
-      "rookie": "Drag the glass over the desk.",
-      "junior": "Drag the glass across the desk.",
+      "rookie": "Drag the glass around.",
+      "junior": "Drag the glass around the desk.",
       "master": "Drag the glass across the desk."
     },
     {
-      "rookie": "Or tap a thing to look at it.",
-      "junior": "Or tap a thing to look at it.",
-      "master": "Or tap an object to examine it."
+      "rookie": "Or tap a thing.",
+      "junior": "Or tap a thing to look.",
+      "master": "Or tap a thing to look."
     },
     {
-      "rookie": "Nothing here. Look at the things on the desk.",
-      "junior": "Nothing here. Check the things on the desk.",
-      "master": "Nothing here. Examine the objects on the desk."
+      "rookie": "Nothing here.",
+      "junior": "Nothing here. Try the desk.",
+      "master": "Nothing here. Try the desk things."
     },
     {
       "rookie": "BLUE INK",
@@ -133,9 +133,9 @@
       "master": "BLUE INK"
     },
     {
-      "rookie": "A small bottle of blue ink",
-      "junior": "A little bottle of blue ink",
-      "master": "A little bottle of blue ink"
+      "rookie": "Blue ink",
+      "junior": "A bottle of blue ink",
+      "master": "A bottle of blue ink"
     },
     {
       "rookie": "A THIN BOOK",
@@ -143,14 +143,14 @@
       "master": "A THIN BOOK"
     },
     {
-      "rookie": "A thin hand-sewn book tied with brown string",
-      "junior": "A thin hand-sewn book tied with brown string",
-      "master": "A slim hand-sewn book bound with brown string"
+      "rookie": "A thin book with brown string",
+      "junior": "A thin book with brown string",
+      "master": "A thin hand-sewn book with brown string"
     },
     {
-      "rookie": "One of Yun's copies. Its string is brown.",
-      "junior": "One of the copies Yun made. Its string is brown.",
-      "master": "One of Yun's copies, bound with brown string."
+      "rookie": "Yun's copy. Brown string.",
+      "junior": "One of Yun's copies. Brown string.",
+      "master": "One of Yun's copies. Brown string."
     },
     {
       "rookie": "ANOTHER THIN BOOK",
@@ -158,14 +158,14 @@
       "master": "ANOTHER THIN BOOK"
     },
     {
-      "rookie": "A second thin hand-sewn book tied with brown string",
-      "junior": "Another thin hand-sewn book tied with brown string",
-      "master": "A second slim hand-sewn book bound with brown string"
+      "rookie": "Another thin book with brown string",
+      "junior": "Another thin book with brown string",
+      "master": "Another thin hand-sewn book with brown string"
     },
     {
-      "rookie": "His teacher's copy. Its string is brown too.",
-      "junior": "The copy for his teacher. This string is brown as well.",
-      "master": "His teacher's copy, its string likewise brown."
+      "rookie": "His teacher's copy. Brown string.",
+      "junior": "His teacher's copy. Brown string.",
+      "master": "His teacher's copy. Brown string too."
     },
     {
       "rookie": "A THICK BOOK",
@@ -188,14 +188,14 @@
       "master": "THE FOLDED NOTE"
     },
     {
-      "rookie": "A folded paper under the thick book",
-      "junior": "A folded paper beneath the thick book",
-      "master": "A folded paper tucked beneath the thick book"
+      "rookie": "A paper under the thick book",
+      "junior": "A paper under the thick book",
+      "master": "A folded paper under the thick book"
     },
     {
-      "rookie": "A corner of paper. Which book is it under?",
-      "junior": "A corner of paper sticks out. Which book is it under?",
-      "master": "A corner of paper peeks out. Beneath which book?"
+      "rookie": "Paper! Which book is it under?",
+      "junior": "Paper! Which book is it under?",
+      "master": "A paper! Which book is it under?"
     },
     {
       "rookie": "THE LAMP",
@@ -205,12 +205,12 @@
     {
       "rookie": "A desk lamp",
       "junior": "A lamp on the desk",
-      "master": "A desk lamp"
+      "master": "A lamp on Yun's desk"
     },
     {
       "rookie": "Yun's lamp. Nothing under it.",
-      "junior": "Yun's lamp. There is nothing under it.",
-      "master": "Yun's lamp. Nothing lies beneath it."
+      "junior": "Yun's lamp. Nothing is under it.",
+      "master": "Yun's lamp. Nothing is under it."
     },
     {
       "rookie": "UNDER THE DICTIONARY",
@@ -218,29 +218,29 @@
       "master": "UNDER THE DICTIONARY"
     },
     {
-      "rookie": "The last word is worn away.",
+      "rookie": "The last word is hard to read.",
       "junior": "The final word has worn away.",
       "master": "The final word has faded away."
     },
     {
-      "rookie": "Find out where the copy was.",
-      "junior": "Discover where the copy was kept.",
-      "master": "Learn where the copy was kept."
+      "rookie": "Find where the copy was.",
+      "junior": "Find where the copy was kept.",
+      "master": "Discover where the copy was kept."
     },
     {
       "rookie": "I copied my book three times, by hand.",
-      "junior": "I made three copies of my book by hand.",
-      "master": "I wrote out my book by hand, three times over."
+      "junior": "I copied my book three times, by hand.",
+      "master": "I copied my book three times, all by hand."
     },
     {
-      "rookie": "One for my teacher, one for my friend, one for me.",
-      "junior": "My teacher got one, my friend got one, and I kept one.",
-      "master": "One went to my teacher, one to my friend, and one I kept."
+      "rookie": "One for my teacher. One for my friend. One for me.",
+      "junior": "One for my teacher. One for my friend. One for me.",
+      "master": "One for my teacher. One for my friend. One for me."
     },
     {
-      "rookie": "Then let us look at your desk.",
-      "junior": "Then let's have a look at your desk.",
-      "master": "In that case, let us examine your desk."
+      "rookie": "Let us look at your desk.",
+      "junior": "Let's look at your desk.",
+      "master": "Then let us look at your desk."
     },
     {
       "rookie": "MIRI'S CARD",
@@ -248,29 +248,29 @@
       "master": "MIRI'S CARD"
     },
     {
-      "rookie": "Miri took the copy. Her card may tell where it is.",
-      "junior": "Miri took the copy. Her card may tell us where it is.",
-      "master": "Miri has the copy. Her card may reveal where it lies."
+      "rookie": "Miri took it. Her card may tell where.",
+      "junior": "Miri took it. Her card may tell us where.",
+      "master": "Miri took the copy. Her card may tell us where."
     },
     {
       "rookie": "The copy",
-      "junior": "Which copy",
-      "master": "Which copy it is"
+      "junior": "The copy",
+      "master": "Which copy"
     },
     {
       "rookie": "Who it is for",
-      "junior": "Who the copy is for",
-      "master": "The copy's owner"
+      "junior": "Who it is for",
+      "master": "Who the copy is for"
     },
     {
       "rookie": "The poems",
-      "junior": "The poems in it",
-      "master": "The poems it holds"
+      "junior": "The poems",
+      "master": "The poems in it"
     },
     {
       "rookie": "The string",
-      "junior": "The string's colour",
-      "master": "The colour of its string"
+      "junior": "The string",
+      "master": "The string's colour"
     },
     {
       "rookie": "line by line",
@@ -288,14 +288,14 @@
       "master": "Yun's List"
     },
     {
-      "rookie": "Yun takes a paper from his drawer. \"This is my list of the copies.\"",
-      "junior": "Yun pulls a paper out of his drawer. \"Here is my list of the copies.\"",
-      "master": "Yun draws a sheet from his drawer. \"This is the list I keep of my copies.\""
+      "rookie": "Yun opens his drawer. \"My list of copies.\"",
+      "junior": "Yun opens his drawer. \"Here is my list of copies.\"",
+      "master": "Yun opens his drawer. \"Here is my list of the copies.\""
     },
     {
-      "rookie": "\"The card looks just like my list,\" he says. \"Why?\"",
-      "junior": "\"The card looks exactly like my list,\" he says. \"But why?\"",
-      "master": "\"The card is laid out precisely like my list,\" he murmurs. \"Why would anyone do that?\""
+      "rookie": "\"The card looks like my list. Why?\"",
+      "junior": "\"The card looks like my list. But why?\"",
+      "master": "\"The card looks just like my list. But why?\""
     },
     {
       "rookie": "Yun says:",
@@ -304,8 +304,8 @@
     },
     {
       "rookie": "This list is for my friend's copy.\nThe card says the same things, line by line.\nBut one line on the card is not true.\nMaybe that line is a message.\nRead the card's last words too.",
-      "junior": "My list is about the copy for my friend.\nThe card repeats it, line by line.\nYet one line on the card is not true.\nPerhaps that line is a message for us.\nDon't forget to read the card's last words.",
-      "master": "My list describes the copy I made for my friend.\nThe card repeats it, line by line.\nYet one of its lines is not true.\nPerhaps that line is no mistake but a message.\nRead the card's closing words as well."
+      "junior": "This list is for my friend's copy.\nThe card says the same things, line by line.\nBut one line on the card is not true.\nMaybe that line is a message.\nRead the card's last words too.",
+      "master": "This list is for the copy I made for my friend.\nThe card says the same things, line by line.\nBut one line on the card is not true.\nMaybe that line is not a mistake, but a message.\nRead the card's last words too."
     },
     {
       "rookie": "Which line on the card is not true?",
@@ -313,39 +313,39 @@
       "master": "Which of the card's lines is not true?"
     },
     {
-      "rookie": "Read the four lines of each paper, one by one.",
-      "junior": "Go through the four lines on each paper, one at a time.",
-      "master": "Compare the four lines of each paper, one pair at a time."
+      "rookie": "Read each paper.",
+      "junior": "Read each paper, line by line.",
+      "master": "Read each paper line by line. Each has four lines. Compare them in pairs."
     },
     {
-      "rookie": "What colour is the string on his friend's copy? Yun told you in his room.",
-      "junior": "What colour is the string on the friend's copy? Yun told you when you arrived.",
-      "master": "Recall the colour of the string on the friend's copy: Yun mentioned it when you arrived."
+      "rookie": "What colour is the friend's string?",
+      "junior": "What colour is the friend's string?",
+      "master": "What colour is the string on the friend's copy? Yun told you when you arrived."
     },
     {
-      "rookie": "The card says BLACK AND WHITE. But the string is white!",
-      "junior": "The card says BLACK AND WHITE, but the string is only white!",
-      "master": "The card claims BLACK AND WHITE, yet the string is plain white!"
+      "rookie": "The card says BLACK AND WHITE. The string is white!",
+      "junior": "The card says BLACK AND WHITE. But the string is white!",
+      "master": "The card says BLACK AND WHITE. But the string is only white!"
     },
     {
-      "rookie": "\"My friend's string is white, not black and white,\" Yun says.",
-      "junior": "\"My friend's string is white, not black and white,\" Yun says slowly.",
-      "master": "\"The string on my friend's copy is white, not black and white,\" Yun says slowly."
+      "rookie": "\"My friend's string is white,\" Yun says.",
+      "junior": "\"My friend's string is white,\" Yun says.",
+      "master": "\"My friend's string is only white, not black and white,\" Yun says slowly."
     },
     {
-      "rookie": "Both papers say 2 OF 3: the second of Yun's three copies.",
-      "junior": "Both papers say 2 OF 3, the second of Yun's three copies.",
-      "master": "The two papers agree on 2 OF 3: the second of Yun's three copies."
+      "rookie": "Both say 2 OF 3.",
+      "junior": "Both papers say 2 OF 3.",
+      "master": "Both papers say 2 OF 3. It is the second of Yun's three copies."
     },
     {
-      "rookie": "Both name Jeong Byeong-uk, Yun's young friend.",
-      "junior": "Both papers name Jeong Byeong-uk, Yun's young friend.",
-      "master": "Both papers name the same person: Jeong Byeong-uk, Yun's young friend."
+      "rookie": "Both name Jeong Byeong-uk.",
+      "junior": "Both papers name Jeong Byeong-uk.",
+      "master": "Both papers name Jeong Byeong-uk, Yun's friend."
     },
     {
-      "rookie": "Both say 18 + 1: eighteen poems and one opening poem.",
-      "junior": "Both papers say 18 + 1: eighteen poems plus one opening poem.",
-      "master": "Both read 18 + 1: eighteen poems and a single opening poem."
+      "rookie": "Both say 18 + 1.",
+      "junior": "Both papers say 18 + 1: poems plus an opening poem.",
+      "master": "Both papers say 18 + 1: poems plus one opening poem."
     },
     {
       "rookie": "The Card's Message",
@@ -354,8 +354,8 @@
     },
     {
       "rookie": "The card's untrue line says black and white. Its last words: keys of these colours.",
-      "junior": "The line on the card that is not true says black and white. It ends: keys of these colours.",
-      "master": "The card's one untrue line reads black and white; its closing words are: keys of these colours."
+      "junior": "The card's line that is not true says black and white. Its last words: keys of these colours.",
+      "master": "The card's untrue line says black and white. Its last words are: keys of these colours."
     },
     {
       "rookie": "YUN'S LIST",
@@ -368,9 +368,9 @@
       "master": "MY FRIEND'S COPY"
     },
     {
-      "rookie": "Yun's list on his desk, in his own hand",
-      "junior": "Yun's list on his desk, written in his own hand",
-      "master": "Yun's list on his desk, in his own handwriting"
+      "rookie": "Yun's list, in his own hand",
+      "junior": "Yun's list, in his own hand",
+      "master": "Yun's list, in his own handwriting"
     },
     {
       "rookie": "Copied by hand, 1941.",
@@ -398,9 +398,9 @@
       "master": "STRING"
     },
     {
-      "rookie": "Miri's card, with a small blue water drop in its corner",
-      "junior": "Miri's card, marked with a small blue water drop in one corner",
-      "master": "Miri's card, a tiny blue water drop in its corner"
+      "rookie": "Miri's card, with a water drop",
+      "junior": "Miri's card, with a water drop",
+      "master": "Miri's card, with a small blue water drop in its corner"
     },
     {
       "rookie": "It is safe under keys of these colours.",
@@ -408,14 +408,14 @@
       "master": "It is safe under keys of these colours."
     },
     {
-      "rookie": "Tap each paper to read it.",
-      "junior": "Tap each paper to read it.",
-      "master": "Tap each paper to read it through."
+      "rookie": "Tap each paper.",
+      "junior": "Tap each paper to read it all.",
+      "master": "Tap each paper to read it carefully."
     },
     {
-      "rookie": "Tap the line on each paper that does not match.",
-      "junior": "Tap the line on each paper that doesn't match.",
-      "master": "Tap the line on each paper that does not agree."
+      "rookie": "Tap the line that does not match.",
+      "junior": "Tap the line that does not match.",
+      "master": "Tap the line on each paper that does not match."
     },
     {
       "rookie": "THESE DO NOT MATCH",
@@ -444,53 +444,53 @@
     },
     {
       "rookie": "Put in the lock's number.",
-      "junior": "Enter the number for the lock.",
-      "master": "Enter the lock's number."
+      "junior": "Put in the lock's number.",
+      "master": "Enter the number for the lock."
     },
     {
-      "rookie": "Find the number of copies in all, then the poems in each copy.",
-      "junior": "Work out how many copies there are in all, then how many poems each copy has.",
-      "master": "Determine the total number of copies first, then the number of poems in each copy."
+      "rookie": "Copies in all, then poems in each.",
+      "junior": "Copies in all first, then poems in each.",
+      "master": "First the copies in all, then the poems in each."
     },
     {
       "rookie": "18 poems + 1 opening poem: add them.",
-      "junior": "18 poems plus 1 opening poem: add them together.",
-      "master": "Eighteen poems and one opening poem: add the two."
+      "junior": "18 poems + 1 opening poem: add them.",
+      "master": "18 poems + 1 opening poem: add them together."
     },
     {
       "rookie": "Click! The box opens.",
-      "junior": "Click! The box comes open.",
+      "junior": "Click! The box opens.",
       "master": "Click! The box swings open."
     },
     {
-      "rookie": "Count the copies again: Yun made more than one.",
-      "junior": "Count the copies once more: Yun made more than one.",
-      "master": "Recount the copies: Yun made more than one."
+      "rookie": "Count the copies again.",
+      "junior": "Count the copies again.",
+      "master": "Count the copies again. Yun made more than one."
     },
     {
-      "rookie": "Copy 2 is the friend's copy. How many copies are there in all?",
-      "junior": "Copy 2 is the friend's copy. How many copies did Yun make in all?",
-      "master": "Copy 2 is merely the friend's copy. How many did Yun make altogether?"
+      "rookie": "Copy 2 is the friend's. How many in all?",
+      "junior": "Copy 2 is the friend's. How many copies in all?",
+      "master": "Copy 2 is the friend's. How many copies are there in all?"
     },
     {
-      "rookie": "The right numbers, in the wrong order. The copies come first.",
-      "junior": "Right numbers, wrong order. The copies go first.",
-      "master": "Correct numbers, but reversed. The copies come first."
+      "rookie": "Wrong order. Copies come first.",
+      "junior": "Wrong order. The copies come first.",
+      "master": "Right numbers, wrong order. The copies must come first."
     },
     {
-      "rookie": "Find out why Miri took the copy.",
-      "junior": "Discover why Miri took the copy.",
-      "master": "Learn why Miri took the copy."
+      "rookie": "Why did Miri take it?",
+      "junior": "Why did Miri take the copy?",
+      "master": "Why did Miri take the copy?"
     },
     {
-      "rookie": "Papers in Korean can get a student in trouble now.",
-      "junior": "These days, papers in Korean can get a student into trouble.",
-      "master": "At present, papers in Korean can bring a student serious trouble."
+      "rookie": "Korean papers mean trouble now.",
+      "junior": "Korean papers mean trouble these days.",
+      "master": "Papers in Korean can bring a student serious trouble these days."
     },
     {
-      "rookie": "I did not write my name. The office man must not know who wrote it.",
-      "junior": "I didn't write my name. The office man must not find out who wrote it.",
-      "master": "I left my name off. The man from the office must never learn who wrote it."
+      "rookie": "I did not sign it. The office man must not know.",
+      "junior": "I did not sign it. The office man must not know.",
+      "master": "I did not sign it. The man from the office must never know who wrote it."
     },
     {
       "rookie": "THE COLLEGE GATE",
@@ -498,59 +498,59 @@
       "master": "THE COLLEGE GATE"
     },
     {
-      "rookie": "Dawn comes over the stone college buildings.",
-      "junior": "Dawn rises over the stone buildings of the college.",
-      "master": "Dawn breaks over the college's stone buildings."
+      "rookie": "The sun comes up.",
+      "junior": "The sun comes up over the college.",
+      "master": "The sun comes up over the college."
     },
     {
-      "rookie": "Yun gives the copy to his young friend, Jeong Byeong-uk.",
-      "junior": "Yun hands the copy to his young friend, Jeong Byeong-uk.",
-      "master": "Yun entrusts the copy to his young friend, Jeong Byeong-uk."
+      "rookie": "Yun gives the copy to Jeong Byeong-uk.",
+      "junior": "Yun gives the copy to his friend, Jeong Byeong-uk.",
+      "master": "Yun gives the copy to his friend, Jeong Byeong-uk."
     },
     {
-      "rookie": "His friend's family hid the copy under their floor.",
-      "junior": "His friend's family kept the copy hidden under their floor.",
-      "master": "His friend's family kept the copy concealed beneath their floor."
+      "rookie": "His friend's family hid it under the floor.",
+      "junior": "His friend's family hid it under the floor of their house.",
+      "master": "His friend's family hid it under their floor."
     },
     {
       "rookie": "Thank you, Miri. You kept my words safe.",
-      "junior": "Thank you, Miri. You have kept my words safe.",
+      "junior": "Thank you, Miri. You kept my words safe tonight.",
       "master": "Thank you, Miri. You have kept my words safe tonight."
     },
     {
-      "rookie": "Tonight the copy for his friend is gone. His friend comes for it at dawn.",
-      "junior": "Tonight the copy meant for his friend is gone, and his friend comes for it at dawn.",
-      "master": "Tonight the copy intended for his friend has vanished, and his friend arrives for it at dawn."
+      "rookie": "The friend's copy is gone. He comes at sunrise.",
+      "junior": "The friend's copy is gone. He comes back at sunrise.",
+      "master": "The friend's copy is gone. He comes for it at sunrise."
     },
     {
       "rookie": "Find the keys of black and white.",
-      "junior": "Work out where the keys of black and white are.",
-      "master": "Deduce where the keys of black and white are."
+      "junior": "Find the keys of black and white.",
+      "master": "Find the keys of black and white."
     },
     {
-      "rookie": "Open the box and give the copy to Yun's friend.",
-      "junior": "Open the box and hand the copy to Yun's friend.",
-      "master": "Unlock the box and see the copy into the hands of Yun's friend."
+      "rookie": "Open the box. Give the friend his copy.",
+      "junior": "Open the box. Give the friend his copy.",
+      "master": "Open the box. Give Yun's friend his copy."
     },
     {
-      "rookie": "Late autumn, 1941. Japan rules Korea.",
-      "junior": "It is late autumn, 1941, and Japan rules Korea.",
-      "master": "It is late autumn, 1941, and Korea is under Japanese rule."
+      "rookie": "Autumn, 1941. Japan rules Korea.",
+      "junior": "It is autumn, 1941. Japan rules Korea.",
+      "master": "It is autumn, 1941. Japan rules Korea."
     },
     {
-      "rookie": "Schools must teach in Japanese now. Korean lessons are pushed out.",
-      "junior": "Schools have to teach in Japanese now, and Korean lessons are being pushed out.",
-      "master": "Schools are now made to teach in Japanese, and Korean lessons are being pushed aside."
+      "rookie": "Schools must teach in Japanese now.",
+      "junior": "Schools must teach in Japanese now.",
+      "master": "Schools must now teach in Japanese, not Korean."
     },
     {
-      "rookie": "At Yonhi College in Seoul, you are the guest of a young poet, Yun Dong-ju.",
-      "junior": "At Yonhi College in Seoul, you are the guest of a young poet named Yun Dong-ju.",
-      "master": "At Yonhi College in Seoul, you are staying as the guest of a young poet, Yun Dong-ju."
+      "rookie": "Yonhi College, Seoul. You visit poet Yun Dong-ju.",
+      "junior": "Yonhi College, Seoul. You visit the poet Yun Dong-ju.",
+      "master": "Yonhi College, Seoul. You are the guest of the young poet Yun Dong-ju."
     },
     {
-      "rookie": "He writes his poems in Korean.",
-      "junior": "He writes all of his poems in Korean.",
-      "master": "He composes his poems in Korean, his own language."
+      "rookie": "He writes poems in Korean.",
+      "junior": "He writes his poems in Korean.",
+      "master": "He writes his poems in Korean, his own language."
     },
     {
       "rookie": "He could not print his book. So he copied it by hand, three times.",
@@ -558,29 +558,29 @@
       "master": "Unable to print his book, he has copied it out by hand three times."
     },
     {
-      "rookie": "\"Please help me find it,\" Yun says.",
-      "junior": "\"Please, will you help me find it?\" Yun asks.",
-      "master": "\"Please help me find it before dawn,\" Yun pleads."
+      "rookie": "\"Please help me find it.\"",
+      "junior": "\"Please help me find it,\" Yun asks.",
+      "master": "\"Please help me find it before sunrise,\" Yun asks."
     },
     {
       "rookie": "Miri brings water to the college rooms. A man from the office was checking the rooms. So Miri hid Yun Dong-ju's copy in her box, inside the college piano. Her card, signed with a water drop, pointed to keys of black and white. At dawn, the numbers on Yun's list opened the box. Yun gave the copy to his friend. Yun wrote his poems in Korean when Korean was pushed out of the schools. In 1948 they became a book.",
-      "junior": "Miri, who brings water to the college rooms, hid the copy Yun Dong-ju made for his friend in her own box inside the college piano, because a man from the office was checking the rooms that night. Her card, signed with a water drop, pointed to keys of black and white. At dawn the box opened with the numbers on Yun's list, and Yun handed the copy to his friend. Yun kept writing his poems in Korean while Korean was being pushed out of the schools. In 1948 they became a book.",
-      "master": "Miri, who brings water to the college rooms, concealed the copy Yun Dong-ju had made for his friend in her own box inside the college piano, since a man from the office was inspecting the rooms that night. Her card, signed with a water drop, pointed to keys of black and white. At dawn the box yielded to the numbers on Yun's list, and Yun entrusted the copy to his friend. Yun went on writing his poems in Korean even as Korean was being pushed out of the schools, and in 1948 they became a book."
+      "junior": "Miri brings water to the college rooms. A man from the office was checking the rooms that night. So Miri hid Yun Dong-ju's copy in her box, inside the college piano. Her card, signed with a water drop, pointed to keys of black and white. At dawn, the numbers on Yun's list opened the box. Yun gave the copy to his friend. Yun wrote his poems in Korean when Korean was pushed out of the schools. In 1948 they became a book.",
+      "master": "Miri brings water to the college rooms. A man from the office was checking the rooms that night. So Miri hid Yun Dong-ju's copy in her box, inside the college piano. Her card, signed with a water drop, pointed to keys of black and white. At dawn, the numbers on Yun's list opened the box. Yun gave the copy to his friend. Yun kept writing poems in Korean when it was pushed out of the schools. In 1948 they became a book."
     },
     {
       "rookie": "Someone moved the dictionary.",
-      "junior": "Someone has moved the dictionary.",
-      "master": "Someone has shifted the dictionary out of place."
+      "junior": "Someone moved the dictionary.",
+      "master": "Someone has moved the dictionary."
     },
     {
       "rookie": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms.",
-      "junior": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy lay right next to it, tied with a white string.\nOnly Miri came in tonight. She is the one who brings water to our rooms.",
-      "master": "Someone has moved my dictionary: the thick book with a red spine.\nMy friend's copy lay beside it, bound with a white string.\nNo one but Miri came in tonight; she brings water to our rooms."
+      "junior": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms.",
+      "master": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was right next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms."
     },
     {
-      "rookie": "Find what is under the dictionary. Write the missing word.",
-      "junior": "Find out what is under the dictionary, then write the missing word.",
-      "master": "Discover what lies beneath the dictionary, then supply the missing word."
+      "rookie": "What is under the dictionary? Write the word.",
+      "junior": "What is under the dictionary? Write the missing word.",
+      "master": "What is under the dictionary? Write the missing word."
     },
     {
       "rookie": "The card is signed with a drop of ____.",
@@ -588,44 +588,44 @@
       "master": "The card is signed with a drop of ____."
     },
     {
-      "rookie": "The drop is drawn, not spilled ink. Who came in tonight, and what does she bring?",
-      "junior": "The drop was drawn, not spilled ink. Who came in tonight, and what does she bring?",
-      "master": "That drop was drawn, not spilled from an ink bottle. Who came in tonight, and what does she bring?"
+      "rookie": "It is drawn, not an ink spot. Who came in?",
+      "junior": "It is drawn, not an ink spot. Who came in tonight?",
+      "master": "It is drawn, not a spilled ink spot. Who came in tonight? What does she bring?"
     },
     {
-      "rookie": "Yun looks at the card. \"Miri signs her notes with a water drop. She took my friend's copy!\"",
-      "junior": "Yun looks at the card. \"Miri always signs her notes with a water drop. She has taken my friend's copy!\"",
-      "master": "Yun studies the card. \"Miri signs her notes with a water drop. It was she who took my friend's copy!\""
+      "rookie": "Yun says, \"A water drop! Miri took it!\"",
+      "junior": "Yun says, \"A water drop! Miri took my friend's copy!\"",
+      "master": "Yun says, \"A water drop! Miri signs her notes with it. Miri took my friend's copy!\""
     },
     {
-      "rookie": "\"But why? And where is it now?\"",
-      "junior": "\"But why would she? And where is it now?\"",
-      "master": "\"But why would she do such a thing? And where is it now?\""
+      "rookie": "\"But why? And where is it?\"",
+      "junior": "\"But why? And where is it now?\"",
+      "master": "\"But why would she? And where is it now?\""
     },
     {
-      "rookie": "The card looks just like a list. Maybe it tells us where.",
-      "junior": "The card is set out just like a list. Maybe it tells us where.",
-      "master": "The card is laid out exactly like a list. Perhaps it reveals where."
+      "rookie": "Maybe the card tells us where.",
+      "junior": "Maybe the card tells us where.",
+      "master": "The card is set out just like a list. Maybe it tells us where it is."
     },
     {
-      "rookie": "Blue ink. But the drop on the card is drawn, not spilled.",
-      "junior": "Blue ink. But the drop on the card was drawn, not spilled.",
-      "master": "Blue ink, yet the drop on the card was drawn, not spilled."
+      "rookie": "Blue ink. The card's drop is drawn.",
+      "junior": "Blue ink. The card's drop is drawn.",
+      "master": "Blue ink. But the card's drop is drawn."
     },
     {
-      "rookie": "A folded card. A small blue drop is drawn in its corner.",
-      "junior": "A folded card, with a small blue drop drawn in its corner.",
-      "master": "A folded card, a tiny blue drop drawn carefully in its corner."
+      "rookie": "A blue drop is in its corner.",
+      "junior": "A small blue drop is in its corner.",
+      "master": "A small blue drop is drawn in the corner of the folded card."
     },
     {
       "rookie": "You open Miri's card. Yun reads it to you in English, line by line.",
-      "junior": "You unfold Miri's card. Yun reads it out to you in English, line by line.",
-      "master": "You unfold Miri's small card, and Yun reads it aloud to you in English, line by line."
+      "junior": "You open Miri's card. Yun reads it to you in English, line by line.",
+      "master": "You open Miri's card. Yun reads it aloud to you in English, line by line."
     },
     {
-      "rookie": "\"So that line is a message.\"",
-      "junior": "\"So that line must be a message.\"",
-      "master": "\"So that line is no mistake. It is a message.\""
+      "rookie": "\"That line is a message.\"",
+      "junior": "\"So that line is a message.\"",
+      "master": "\"So that line must be a message.\""
     },
     {
       "rookie": "The card's last words: safe under keys of these colours. Keys of black and white?",
@@ -638,9 +638,9 @@
       "master": "THE CARD'S MESSAGE"
     },
     {
-      "rookie": "Keys of black and white. Where are keys like that?",
-      "junior": "Keys of black and white. Where could keys like that be?",
-      "master": "Keys of black and white. Where might such keys be found?"
+      "rookie": "Keys of black and white. Where?",
+      "junior": "Keys of black and white. Where are they?",
+      "master": "Keys of black and white. Where could they be?"
     },
     {
       "rookie": "Keys of Black and White",
@@ -648,34 +648,34 @@
       "master": "Keys of Black and White"
     },
     {
-      "rookie": "You hurry to the college hall with Yun.",
-      "junior": "You hurry over to the college hall with Yun.",
-      "master": "You hurry across to the college hall with Yun."
+      "rookie": "You run to the college hall.",
+      "junior": "You run quickly to the college hall.",
+      "master": "You run to the college hall with Yun."
     },
     {
-      "rookie": "Students sit on the benches. A man with a lantern walks between them.",
-      "junior": "Students are sitting on the benches. A man with a lantern walks between them.",
-      "master": "Students sit along the benches while a man with a lantern paces between them."
+      "rookie": "A man with a lamp walks around.",
+      "junior": "A man with a lamp walks around the hall.",
+      "master": "Students sit on the benches. A man with a lamp walks around the hall."
     },
     {
-      "rookie": "His ring of door keys jingles. \"That man is from the office,\" Yun whispers.",
-      "junior": "His ring of door keys jingles. \"That man is from the office,\" Yun whispers to you.",
-      "master": "His ring of door keys jingles at his belt. \"That man is from the office,\" Yun murmurs."
+      "rookie": "His keys make noise. \"He is from the office.\"",
+      "junior": "His keys make noise. \"He is from the office,\" Yun says.",
+      "master": "His ring of door keys makes noise at his belt. \"He is from the office,\" Yun whispers."
     },
     {
       "rookie": "You think it through:",
-      "junior": "You think it through carefully:",
-      "master": "You reason it through:"
+      "junior": "You think it through:",
+      "master": "You think it through carefully:"
     },
     {
       "rookie": "The card says the copy is safe under keys of these colours.\nIts untrue line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage.\nWhat has keys of black and white?",
-      "junior": "The card says the copy is safe under keys of these colours.\nThe line on it that is not true says: BLACK AND WHITE.\nIn this hall there is a ring of door keys, all black.\nThere are students in black jackets and white shirts. They have no keys.\nAnd there is an old piano by the stage.\nWhat has keys that are black and white?",
-      "master": "The card claims the copy is safe under keys of these colours.\nIts one untrue line reads: BLACK AND WHITE.\nIn this hall hangs a ring of door keys, all black.\nThe students wear black jackets over white shirts. They have no keys.\nAnd an old piano stands beside the stage.\nWhat here has keys of black and white?"
+      "junior": "The card says the copy is safe under keys of these colours.\nIts line that is not true says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage.\nWhat has keys of black and white?",
+      "master": "The card says the copy is safe under keys of these colours.\nIts untrue line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents wear black jackets and white shirts. They have no keys.\nAnd an old piano stands by the stage.\nWhat here has keys of black and white?"
     },
     {
-      "rookie": "Where is the copy hidden? Write the thing's name.",
-      "junior": "Where has the copy been hidden? Write the name of the thing.",
-      "master": "Where has the copy been hidden? Write the name of the object."
+      "rookie": "Where is the copy? Write the thing.",
+      "junior": "Where is the copy? Write the thing.",
+      "master": "Where is the copy hidden? Write the thing."
     },
     {
       "rookie": "The copy is safe in the ____.",
@@ -683,39 +683,39 @@
       "master": "The copy is safe in the ____."
     },
     {
-      "rookie": "Read the card's untrue line for the colours. Then read its last words.",
-      "junior": "Read the untrue line on the card for the colours. Then read its last words.",
-      "master": "Take the colours from the card's untrue line, then weigh its closing words."
+      "rookie": "Find the card's wrong colours. Read its last words.",
+      "junior": "Find the card's wrong colours. Then read its last words.",
+      "master": "Find the card's wrong colours. Then read its last words carefully."
     },
     {
-      "rookie": "A key can open a door. Some keys make music. Which thing here has them?",
-      "junior": "A key can open a door, but some keys make music. Which thing here has those?",
-      "master": "A key may open a door, yet other keys make music. Which object here has them?"
+      "rookie": "Some keys make music. Which thing has them?",
+      "junior": "Some keys make music. Which thing has them?",
+      "master": "Some keys open doors. Other keys make music. Which thing here has them?"
     },
     {
       "rookie": "The piano! Its keys are black and white.",
       "junior": "It's the piano! Its keys are black and white.",
-      "master": "The piano, of course! Its keys are black and white."
+      "master": "The piano! Its keys are black and white."
     },
     {
-      "rookie": "When the man leaves, you lift the piano's top.",
-      "junior": "When the man has gone, you lift the top of the piano.",
-      "master": "Once the man has left, you raise the piano's lid."
+      "rookie": "The man leaves. You lift the piano's top.",
+      "junior": "The man leaves. You lift the top of the piano.",
+      "master": "The man leaves. You carefully lift the piano's top."
     },
     {
-      "rookie": "Inside lies a small wooden box with a number lock.",
-      "junior": "Inside is a small wooden box with a number lock on it.",
-      "master": "Inside rests a small wooden box, fastened with a number lock."
+      "rookie": "Inside is a box with a number lock.",
+      "junior": "Inside, there is a box with a number lock.",
+      "master": "Inside is a small wooden box with a number lock."
     },
     {
-      "rookie": "Miri runs in. \"Wait! He may come back. Come outside, quick!\"",
-      "junior": "Miri runs in. \"Wait! He might come back. Come outside, quick!\"",
-      "master": "Miri rushes in. \"Wait! He may return at any moment. Outside, quickly!\""
+      "rookie": "Miri runs in. \"Wait! Come outside!\"",
+      "junior": "Miri runs in. \"Wait! Come outside, quick!\"",
+      "master": "Miri runs in. \"Wait! He may come back. Come outside!\""
     },
     {
-      "rookie": "Check your spelling. Which thing has keys of black and white?",
-      "junior": "Check how you spelled it. Which thing has keys of black and white?",
-      "master": "Check your spelling: which object has keys of black and white?"
+      "rookie": "Check your spelling.",
+      "junior": "Check your spelling.",
+      "master": "Check your spelling. Which thing has keys of black and white?"
     },
     {
       "rookie": "The Piano",
@@ -723,9 +723,9 @@
       "master": "The Piano"
     },
     {
-      "rookie": "The keys of black and white were the piano's. Miri's box was inside.",
-      "junior": "The keys of black and white belonged to the piano. Miri's box was inside it.",
-      "master": "The keys of black and white were the piano's own; Miri's box lay within."
+      "rookie": "The piano had the keys. Miri's box was inside.",
+      "junior": "The piano had the keys. Miri's box was inside it.",
+      "master": "The piano had the keys. Miri's box was hidden inside."
     },
     {
       "rookie": "THE BOX IN THE PIANO",
@@ -733,23 +733,23 @@
       "master": "THE BOX IN THE PIANO"
     },
     {
-      "rookie": "The copy is locked inside. Dawn is coming.",
-      "junior": "The copy is locked inside, and dawn is coming.",
-      "master": "The copy is locked within, and dawn is drawing near."
+      "rookie": "The copy is locked inside.",
+      "junior": "The copy is locked inside the box.",
+      "master": "The copy is locked inside the box. And sunrise is coming soon."
     },
     {
       "rookie": "Door keys are keys, but they are all black.",
-      "junior": "Door keys are keys, but every one of them is black.",
-      "master": "Door keys are keys indeed, yet every one is black."
+      "junior": "Door keys are keys, but they are all black.",
+      "master": "Door keys are keys, but every one is black."
     },
     {
-      "rookie": "Black and white, yes. But clothes have no keys.",
-      "junior": "They are black and white, yes. But clothes have no keys.",
-      "master": "Black and white, certainly, but clothes have no keys."
+      "rookie": "Clothes have no keys.",
+      "junior": "Clothes have no keys.",
+      "master": "Clothes are black and white, but have no keys."
     },
     {
-      "rookie": "That has no keys of black and white.",
-      "junior": "That does not have keys of black and white.",
+      "rookie": "That has no keys.",
+      "junior": "That has no keys at all.",
       "master": "That has no keys of black and white at all."
     },
     {
@@ -758,19 +758,19 @@
       "master": "The Lock at the Gate"
     },
     {
-      "rookie": "Miri sets her box on the gate's stone step.",
-      "junior": "Miri sets her box down on the stone step of the gate.",
-      "master": "Miri sets her box upon the gate's stone step."
+      "rookie": "Miri puts the box on a step.",
+      "junior": "Miri puts the box on a stone step.",
+      "master": "Miri puts the box on the gate's stone step."
     },
     {
-      "rookie": "\"My friend comes at sunrise,\" Yun says. \"Quick!\"",
-      "junior": "\"My friend will come at sunrise,\" Yun says. \"Quick!\"",
-      "master": "\"My friend arrives at sunrise,\" Yun says. \"We must hurry!\""
+      "rookie": "\"My friend comes at sunrise. Quick!\"",
+      "junior": "\"My friend comes at sunrise. Quick, please!\"",
+      "master": "\"My friend comes at sunrise. We must hurry!\""
     },
     {
       "rookie": "Miri: \"My lock wants two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\"",
-      "junior": "Miri: \"My lock needs two numbers from Yun's list, put side by side.\"\n\"First, the number of copies. Then, how many poems are in each copy.\"\n\"For example: 2 copies and 15 poems would be 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\"",
-      "master": "Miri: \"My lock takes two numbers from Yun's list, placed side by side.\"\n\"First, how many copies there are; after that, how many poems each copy holds.\"\n\"For instance: 2 copies and 15 poems would give 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\""
+      "junior": "Miri: \"My lock wants two numbers from Yun's list, put side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems make 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\"",
+      "master": "Miri: \"My lock needs two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: how many poems are in each copy.\"\n\"For example: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\""
     },
     {
       "rookie": "Inside lies a thin book with a white string.",
@@ -778,84 +778,84 @@
       "master": "Within rests a slim book tied with a white string."
     },
     {
-      "rookie": "\"My friend's copy,\" Yun whispers. Its pages are in Korean.",
-      "junior": "\"The copy for my friend,\" Yun whispers. Its pages are written in Korean.",
-      "master": "\"My friend's copy,\" Yun breathes. Every page is written in Korean."
+      "rookie": "\"My friend's copy,\" Yun says softly.",
+      "junior": "\"My friend's copy,\" Yun says very softly.",
+      "master": "\"My friend's copy,\" Yun says softly. Every page is in Korean."
     },
     {
-      "rookie": "A young man comes up the path. It is Jeong Byeong-uk.",
-      "junior": "A young man is walking up the path. It is Jeong Byeong-uk.",
-      "master": "A young man makes his way up the path: Jeong Byeong-uk."
+      "rookie": "Here comes Jeong Byeong-uk.",
+      "junior": "Here comes his friend, Jeong Byeong-uk.",
+      "master": "Here comes his friend, Jeong Byeong-uk, up the path."
     },
     {
-      "rookie": "That is Miri's example, not Yun's list.",
-      "junior": "That is only Miri's example, not the numbers on Yun's list.",
-      "master": "That is merely Miri's example, not the numbers on Yun's list."
+      "rookie": "That is Miri's, not Yun's list.",
+      "junior": "That is Miri's, not Yun's list.",
+      "master": "That is Miri's example, not Yun's list."
     },
     {
-      "rookie": "I took it. I am sorry I scared you.",
-      "junior": "I took it. I'm sorry I frightened you.",
-      "master": "It was I who took it. Forgive me for frightening you."
+      "rookie": "I took it. I am sorry.",
+      "junior": "I took it. I am very sorry.",
+      "master": "I took it. I am very sorry I scared you."
     },
     {
-      "rookie": "A man from the office is checking the rooms tonight.",
+      "rookie": "Tonight, an office man checks rooms.",
       "junior": "Tonight a man from the office is checking the rooms.",
       "master": "This very night, a man from the office is inspecting the rooms."
     },
     {
-      "rookie": "I bring water to the rooms every morning. So I sign my notes with a water drop.",
-      "junior": "I bring water to the rooms every morning, so I sign my notes with a little water drop.",
-      "master": "Each morning I carry water to the rooms, so I sign my notes with a water drop."
+      "rookie": "I bring water each morning. So I sign with a water drop.",
+      "junior": "I bring water each morning. So I sign with a water drop.",
+      "master": "I bring water each morning. So I sign my notes with a water drop."
     },
     {
-      "rookie": "And your card looked like Yun's list, so only Yun could read the message.",
-      "junior": "And your card looked just like Yun's list, so only Yun could read the message.",
-      "master": "And your card was laid out like Yun's list, so only Yun could read its message."
+      "rookie": "Only Yun could read my card.",
+      "junior": "Only Yun could read my card's message.",
+      "master": "My card was set out like Yun's list. So only Yun could read its message."
     },
     {
-      "rookie": "Miri asks: \"I set my lock with numbers from the paper in Yun's own hand. Show me that paper.\"",
-      "junior": "Miri asks: \"I set my lock with numbers from the paper in Yun's own hand. Can you show me that paper?\"",
-      "master": "Miri asks: \"I set my lock using numbers from the paper in Yun's own hand. Show me that paper.\""
+      "rookie": "Miri asks: \"My lock uses it. Which is in Yun's own hand?\"",
+      "junior": "Miri asks: \"My lock uses it. Which paper is in Yun's own hand?\"",
+      "master": "Miri asks: \"My lock uses numbers from it. Which paper is in Yun's own hand?\""
     },
     {
       "rookie": "Yun's list: copy 2 of 3, and 18 + 1 opening poem.",
-      "junior": "Here is Yun's list: copy 2 of 3, and 18 + 1 opening poem.",
+      "junior": "Yun's list: copy 2 of 3, and 18 + 1 opening poem.",
       "master": "Yun's own list: copy 2 of 3, and 18 + 1 opening poem."
     },
     {
       "rookie": "Then you can open it.",
-      "junior": "Then you can open it.",
+      "junior": "Then you can open it now.",
       "master": "Then the lock is yours to open."
     },
     {
       "rookie": "That is not in Yun's own hand.",
-      "junior": "That was not written in Yun's own hand.",
-      "master": "That was not written in Yun's own hand."
+      "junior": "That is not in Yun's own hand.",
+      "master": "That is not in Yun's own hand."
     },
     {
       "rookie": "Find the paper from Yun's drawer.",
-      "junior": "Look for the paper Yun took from his drawer.",
-      "master": "Find the paper Yun drew from his drawer."
+      "junior": "Find the paper Yun took from his drawer.",
+      "master": "Find the paper from Yun's own drawer."
     },
     {
-      "rookie": "Keep it safe. It is in our own language.",
-      "junior": "Keep it safe. It is written in our own language.",
-      "master": "Guard it well. It is written in our own language."
+      "rookie": "Keep it safe. It is in our language.",
+      "junior": "Keep it safe. It is in our own language.",
+      "master": "Keep it safe. It is written in our own language."
     },
     {
-      "rookie": "From 1938, Korean was pushed out of the schools.",
-      "junior": "From 1938, Korean was being pushed out of the schools.",
-      "master": "From 1938 onward, Korean was steadily pushed out of the schools."
+      "rookie": "From 1938, schools pushed out Korean.",
+      "junior": "From 1938, schools pushed out Korean.",
+      "master": "From 1938, the schools pushed out Korean."
     },
     {
-      "rookie": "Yun Dong-ju still wrote his poems in Korean.",
-      "junior": "Even so, Yun Dong-ju kept writing his poems in Korean.",
-      "master": "Yun Dong-ju nevertheless went on writing his poems in Korean."
+      "rookie": "Yun Dong-ju still wrote in Korean.",
+      "junior": "But Yun Dong-ju still wrote his poems in Korean.",
+      "master": "Yun Dong-ju still wrote his poems in Korean."
     },
     {
-      "rookie": "In 1948, his poems became a book: Sky, Wind, Stars and Poems.",
-      "junior": "In 1948, his poems were made into a book: Sky, Wind, Stars and Poems.",
-      "master": "In 1948, his poems were at last published as a book: Sky, Wind, Stars and Poems."
+      "rookie": "In 1948, his book came out. Sky, Wind, Stars and Poems.",
+      "junior": "In 1948, his book came out. Sky, Wind, Stars and Poems.",
+      "master": "In 1948, his poems finally came out as a book: Sky, Wind, Stars and Poems."
     },
     {
       "rookie": "brings water",
