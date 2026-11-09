@@ -54,6 +54,8 @@ void main() {
           '                  ? _timelineFor(m, timeline, progress)\n'
           '                  : syllables != null\n'
           '                  ? _syllablesFor(m, syllables, progress)\n'
+          '                  : shapes != null\n'
+          '                  ? _shapesFor(m, shapes)\n'
           '                  : _questionFor(m),',
         ),
       );
@@ -61,12 +63,13 @@ void main() {
       expect(vars['trail'], 'trails');
       expect(vars['timeline'], 'timelines');
       expect(vars['syllables'], 'syllables');
+      expect(vars['shapes'], 'shapes');
       expect(
         [
           for (final s in PuzzleEngineDispatch.mission)
             s.kind == EngineStepKind.talkBefore ? '<talkBefore>' : s.table,
         ],
-        [...order, 'clocks', 'trails', 'timelines', 'syllables'],
+        [...order, 'clocks', 'trails', 'timelines', 'syllables', 'shapes'],
       );
     });
 

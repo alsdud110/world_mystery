@@ -32,18 +32,18 @@
           "answer": "bucket",
           "options": [
             {
-              "id": "bucket",
-              "label": "The bucket of rain"
-            },
-            {
               "id": "straw",
               "label": "The wet straw",
-              "feedback": "The straw was next to the door. It shows the way out. It cannot ruin the powder."
+              "feedback": "The straw is wet, but it is next to the door. It shows the way the barrels went out."
             },
             {
               "id": "note",
               "label": "The small paper",
-              "feedback": "The paper was on the shelf. Read Ham's report: what came through the roof?"
+              "feedback": "The water drop on the paper is drawn, not rain. What is under the hole in the roof?"
+            },
+            {
+              "id": "bucket",
+              "label": "The bucket of rain"
             }
           ]
         },
@@ -55,18 +55,12 @@
         ],
         "status": "awaitingAssets",
         "notes": [
-          "Played as a search (InvestigationScene): Ham's three report lines say where each thing is (under, next to, on). The question asks which find shows the danger: the Admiral's words say wet powder will not fire, and the bucket is full of rain under the roof hole.",
+          "Played as a search (InvestigationScene): Ham's three report lines say where each thing is (under, next to, on). The question asks which find shows that rain came in over the powder: the Admiral's words say wet powder will not fire, and the bucket is full of rain under the roof hole. The options are listed straw, note, bucket (never answer first). Ham's count (twelve) is not said before M3.",
           "Measured 2026-11-06 on the grid sheet of store_room.webp (picture.measuredOn): the roof hole upper left of centre with its wet patch below (the bucket placed there), the long empty shelf across the back, the door on the right with the straw at its foot, the rope shelves on the left; no two areas overlap.",
           "The note is drawn as a blank folded paper with a small blue water drop: no writing in any picture."
         ]
       },
-      "clueInputs": [
-        {
-          "ref": "s5_ep01_c1",
-          "use": "textMention",
-          "note": "The water drop on the paper: Bun-i, the water-carrier of 1446, left water drops by her note."
-        }
-      ],
+      "clueInputs": [],
       "clueOutputs": {
         "clue": "s5_ep02_c1",
         "evidence": "s5_ep02_e1"
@@ -87,12 +81,12 @@
         "location": "THE STORE ROOM",
         "story": [
           "Before dawn, Ham runs to the store room.",
-          "\"Twelve barrels of gunpowder are gone!\"",
+          "\"All the gunpowder is gone!\" Ham shouts. \"A thief took it!\"",
           "The floor is wet."
         ],
         "letterIntro": "Ham's report:",
         "letter": "A bucket is under the hole in the roof. It is full of rain.\nWet straw is next to the door.\nA small paper is on the empty shelf. A water drop is drawn on it.\n— Ham",
-        "question": "Which thing can ruin the powder?",
+        "question": "Which thing shows that rain came in over the powder?",
         "hints": [
           "Read each line of the report. Each one says where a thing is.",
           "The Admiral says wet powder will not fire. What came through the roof?"
@@ -111,9 +105,9 @@
           "note": "Rain came in over the barrels. Wet powder will not fire."
         },
         "evidence": {
-          "name": "The Water-Drop Note (1592)",
+          "name": "The Note on the Shelf",
           "icon": "letter",
-          "description": "A short note in the King's letters, marked with a small water drop. The rain has blurred it."
+          "description": "A short note in the King's letters, with a small water drop drawn on it. It lay on the empty shelf. Rain came through the roof over the powder and blurred it."
         },
         "search": {
           "picture": {
@@ -311,7 +305,7 @@
         "discovery": {
           "type": "newLead",
           "title": "A WATER DROP",
-          "detail": "Bun-i, the girl who carried water, wrote the first note in 1446. Who draws her water drop now?"
+          "detail": "Letters Ham cannot read, and a drawn water drop. Who left this note, and why?"
         }
       }
     },
@@ -330,19 +324,13 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "The rain blurred the note's lines and dots; what is left names each group's sounds by the body part on Sora's board (Case 01) and its vowel by the dot and line. The groups sit one under another, top to bottom (one column). The note reads 거북선, the turtle ship.",
-          "Two first sounds are not used (ㅁ, ㅈ): 'the mouth + 1 line' is ㅂ, not ㅁ; 'the teeth' is ㅅ, not ㅈ.",
+          "The rain blurred the note's lines and dots; what is left names each group's sounds by the part of the mouth on the sailors' letter board, which the mission shows, and its vowel by the dot and line. The groups sit one under another, top to bottom (one column). The note reads 거북선, the turtle ship.",
+          "Two first sounds are not used (ㅁ, ㅈ): 'the lips + 1 line' is ㅂ, not ㅁ; 'the teeth' is ㅅ, not ㅈ.",
           "Every letter is the app's text (SyllableBoard): never in a picture.",
-          "2026-11-06 (Rookie R1): Rookie's letter is Sora's board only (the board's five-shape list and its ㄴ + 1 line = ㄷ example); the three groups are read on the puzzle itself. Rookie says '+ 1 line' as Case 01 and Case 11 do; Junior and Master keep 'one step stronger'."
+          "The sailors' letter board hangs on the store room wall; Ham reads only Chinese letters, so the board, not Ham, teaches the King's letters. Rookie says '+ 1 line'; Junior and Master say 'one more line' or 'one step stronger'."
         ]
       },
-      "clueInputs": [
-        {
-          "ref": "s5_ep01_e2",
-          "use": "recall",
-          "note": "Sora's Lesson Board: the letters copy the tongue, the mouth, the teeth and the throat; a stronger sound adds a line."
-        }
-      ],
+      "clueInputs": [],
       "clueOutputs": {
         "clue": "s5_ep02_c2",
         "evidence": "s5_ep02_e2"
@@ -350,7 +338,7 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "Sora의 글자판 설명(copies the teeth, a stronger sound adds one line)과 위치 표현(a dot on its left, under it, at the bottom)을 읽고 번진 쪽지의 세 글자를 세로로 다시 만든다.",
+        "objective": "창고 벽 수병 글자판(입 모양을 본뜬 자음, a stronger sound adds one line)과 위치 표현(a dot on its left, under it, at the bottom)을 읽고 번진 쪽지의 세 글자를 세로로 다시 만든다.",
         "skill": "sentenceMeaning",
         "expressions": [
           "a standing line, with a dot on its left",
@@ -363,14 +351,15 @@
         "story": [
           "You hold the wet note under Ham's lamp.",
           "Three groups of letters, one under another. The rain blurred their lines and dots.",
-          "\"I cannot read the King's letters,\" says Ham. \"Can you?\""
+          "\"I cannot read the King's letters,\" says Ham. \"I read only Chinese letters.\"",
+          "\"But the young sailors learn them from that board on the wall.\""
         ],
-        "letterIntro": "Sora's board:",
-        "letter": "SORA'S BOARD\nThese letters copy shapes:\nㄱ = the back of the tongue\nㄴ = the tongue on the gums\nㅁ = the mouth\nㅅ = the teeth\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nFlat vowels go under.\nStanding vowels go on the right.",
+        "letterIntro": "The board on the store room wall:",
+        "letter": "THE SAILORS' LETTER BOARD\nThe King's letters copy the mouth:\nㄱ = the back of the tongue\nㄴ = the tongue\nㅁ = the lips\nㅅ = the teeth\nA stronger sound adds one line.\nㄴ + 1 line = ㄷ\nㅁ + 1 line = ㅂ\nA flat line goes under the first sound.\nA standing line goes on its right.\nA sound at the bottom comes last.",
         "question": "Build the three groups, from top to bottom. What does the note say?",
         "hints": [
-          "Group 1 is at the top. Find the back of the tongue on Sora's board.",
-          "The mouth + 1 line is ㅁ with one more line. Choose each sound, then its line and dot."
+          "Group 1 is at the top. Find the back of the tongue on the board.",
+          "The lips + 1 line is ㅂ. Choose each sound, then its line and dot."
         ],
         "successMessage": "The note is whole again: 거북선, the turtle ship!",
         "transition": [
@@ -379,8 +368,8 @@
           "You and Ham hurry down to the harbour."
         ],
         "feedback": {
-          "거묵선": "Group 2 is the mouth + 1 line: one more line than ㅁ.",
-          "거북서": "Group 3 has a sound at the bottom: the tongue on the gums.",
+          "거묵선": "Group 2 is the lips + 1 line: ㅂ, not ㅁ.",
+          "거북서": "Group 3 has a sound at the bottom: the tongue.",
           "가북선": "Group 1's dot is on the left of its line, not the right.",
           "거북전": "Group 3 is the teeth, not the teeth + 1 line."
         },
@@ -394,12 +383,7 @@
         "evidence": {
           "name": "The Note, Read Again",
           "icon": "letter",
-          "description": "The note, rebuilt with Sora's board. It says 거북선: the turtle ship."
-        },
-        "recall": {
-          "title": "Read the Blurred Note",
-          "prompt": "Which page of your notebook shows how the letters are made?",
-          "miss": "That does not explain the letters. Look for a lesson board."
+          "description": "The note, rebuilt with the sailors' letter board. It says 거북선: the turtle ship."
         },
         "syllables": {
           "blocks": [
@@ -408,21 +392,21 @@
               "initial": "ㄱ",
               "vowel": "ㅓ",
               "line": "Group 1: the back of the tongue. A standing line, with a dot on its left.",
-                "given": true
+              "given": true
             },
             {
               "id": "two",
               "initial": "ㅂ",
               "vowel": "ㅜ",
               "final": "ㄱ",
-              "line": "Group 2: the mouth + 1 line. A flat line, with a dot under it. The back of the tongue at the bottom."
+              "line": "Group 2: the lips + 1 line. A flat line, with a dot under it. The back of the tongue at the bottom."
             },
             {
               "id": "three",
               "initial": "ㅅ",
               "vowel": "ㅓ",
               "final": "ㄴ",
-              "line": "Group 3: the teeth. A standing line, with a dot on its left. The tongue on the gums at the bottom."
+              "line": "Group 3: the teeth. A standing line, with a dot on its left. The tongue at the bottom."
             }
           ],
           "sounds": [
@@ -452,7 +436,7 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Seok's words give two numbers (four barrels each time, three times): twelve, the number in Ham's words at sunset (M1). All the powder is safe."
+          "Seok's words give two numbers (four barrels each time, three times): twelve. Ham's book from sunset (the transition, after the answer) says twelve too: all the powder is safe."
         ]
       },
       "clueInputs": [
@@ -493,8 +477,8 @@
         ],
         "successMessage": "Twelve barrels: all the powder is safe and dry!",
         "transition": [
-          "Ham counts the barrels: twelve, just as at sunset.",
-          "\"You saved the test, boy,\" he says.",
+          "Ham opens his book from sunset: twelve barrels.",
+          "\"All twelve are here,\" Ham says. \"But he moved them with no order!\"",
           "The sky turns grey. The Admiral is coming aboard."
         ],
         "feedback": {
@@ -513,7 +497,7 @@
         "evidence": {
           "name": "The Dry Barrels",
           "icon": "bag",
-          "description": "Twelve barrels of gunpowder, dry under the turtle ship's roof. Seok carried them there in three trips."
+          "description": "Twelve barrels of gunpowder, all dry under the turtle ship's roof. That is as many as at sunset. Seok carried them there in three trips."
         },
         "talk": {
           "speaker": "seok",
@@ -527,11 +511,19 @@
               },
               {
                 "by": "detective",
-                "text": "I did. And the water drop on it."
+                "text": "I did. But why did you not wake Ham?"
               },
               {
                 "by": "speaker",
-                "text": "My grandmother taught me that mark."
+                "text": "Ham was asleep. The rain would not wait. So I moved the barrels."
+              },
+              {
+                "by": "speaker",
+                "text": "I learned the King's letters from the board in the store room."
+              },
+              {
+                "by": "speaker",
+                "text": "Ham cannot read the King's letters. So I drew a water drop for him. It means rain."
               }
             ]
           }
@@ -544,56 +536,55 @@
     "slot": "final",
     "placeId": "s5_seoul.c02_turtle_ship",
     "puzzle": {
-      "paletteId": "letter_tile_lock",
+      "paletteId": "text_choice",
       "surface": "finalMission",
       "engineTable": null,
-      "missionType": "letterLock",
+      "missionType": "multipleChoice",
       "answerSpec": {
-        "answer": "DRAGON",
+        "answer": "seok",
         "options": [
           {
-            "id": "o",
-            "label": "O"
+            "id": "thief",
+            "label": "A thief took four barrels in the night.",
+            "feedback": "Twelve barrels are on the ship, as many as at sunset. Nothing was stolen."
           },
           {
-            "id": "g",
-            "label": "G"
+            "id": "shiproof",
+            "label": "Seok moved the powder because the ship's roof let rain in.",
+            "feedback": "The ship's roof keeps the rain off. Which roof had a hole?"
           },
           {
-            "id": "d",
-            "label": "D"
+            "id": "seok",
+            "label": "Seok moved all twelve barrels to the turtle ship, out of the rain."
           },
           {
-            "id": "n",
-            "label": "N"
-          },
-          {
-            "id": "a",
-            "label": "A"
-          },
-          {
-            "id": "r",
-            "label": "R"
+            "id": "ham",
+            "label": "Ham moved the powder to the ship before the rain.",
+            "feedback": "Ham was asleep. Who said, \"So I moved the barrels\"?"
           }
         ]
       },
       "assetNeeds": [],
       "status": "ready",
       "notes": [
-        "The answer is the real design of the turtle ship (s5_ep02_h1): a roof of planks like a turtle's back with knives and spikes on it, a turtle's tail at the back, and at the front a dragon's head whose mouth is a hole for a cannon. The Admiral's words retell the 1592 record; they are made up, never a quotation.",
-        "The head is named only by the Admiral's fourth line (not a turtle's, a dragon's); the six tiles make one word only. No picture: the tiles are the app's."
+        "The Admiral's judgment: shown this case's three cards (e1 rain through the store room roof, e2 the note naming the turtle ship, e3 twelve dry barrels), the detective picks the sentence that fits every card. Options are listed thief, shiproof, seok, ham (never answer first). Each wrong one breaks one card: thief e3 (twelve, as at sunset), shiproof e1 and Seok's words (the ship's roof keeps the rain off), ham Seok's words in M3 (Ham was asleep; so I moved the barrels). The DRAGON letter lock is gone; the dragon head (h1) is told in the transition and ending."
       ]
     },
     "clueInputs": [
       {
-        "ref": "s5_ep02_c3",
-        "use": "textMention",
-        "note": "The powder is dry on the turtle ship: the ship is ready."
+        "ref": "s5_ep02_e1",
+        "use": "answerDerivation",
+        "note": "Rain came through the store room roof, over the powder."
       },
       {
-        "ref": "s5_ep01_c1",
+        "ref": "s5_ep02_e2",
         "use": "answerDerivation",
-        "note": "Seok's water drop is Bun-i's mark: the ending names it."
+        "note": "Seok's note named the turtle ship."
+      },
+      {
+        "ref": "s5_ep02_e3",
+        "use": "answerDerivation",
+        "note": "Twelve dry barrels on the ship, as many as at sunset."
       }
     ],
     "clueOutputs": {
@@ -602,35 +593,34 @@
     "learning": {
       "dependency": "essential",
       "level": "application",
-      "objective": "이순신의 설명(a roof like a turtle's back, at the front, its mouth is a hole for a cannon)을 읽고 거북선 앞머리의 동물을 글자 타일로 맞춘다.",
+      "objective": "카드 세 장(창고 지붕으로 들어온 비, 거북선을 가리킨 쪽지, 해 질 녘과 같은 마른 화약 12통)을 이순신에게 보이고, 네 문장 가운데 모든 카드와 맞는 문장을 골라 석이 화약을 비에서 지켰음을 증명한다.",
       "skill": "sentenceMeaning",
       "expressions": [
-        "like a turtle's back",
-        "At the front is a dragon's head."
+        "all twelve barrels",
+        "out of the rain"
       ]
     },
     "play": {
-      "title": "The Ship That Was Ready",
+      "title": "The Admiral's Judgment",
       "location": "THE TURTLE SHIP",
       "story": [
-        "Dawn comes. Admiral Yi Sun-sin walks along his turtle ship.",
-        "\"The powder is dry,\" he says. \"Now look at my ship.\"",
-        "\"Tell me what is at its front, and you know how it fights.\""
+        "Dawn comes. Admiral Yi Sun-sin comes aboard the turtle ship.",
+        "Ham stands next to Seok. \"He took the powder with no order!\"",
+        "The Admiral looks at you. \"Tell me the truth of this night.\""
       ],
-      "letterIntro": "The Admiral tells you about his ship:",
-      "letter": "\"Its roof is made of planks, like a turtle's back.\"\n\"Knives and spikes stand on the roof, with a narrow path for my men.\"\n\"At the back is a turtle's tail.\"\n\"At the front is a dragon's head, not a turtle's head.\"\n\"Its mouth is a hole for a cannon.\"",
-      "question": "What head is at the front of the turtle ship? Spell it.",
+      "letterIntro": "Your three cards say:",
+      "letter": "Rain came in through the store room roof.\nSeok's note named the turtle ship.\nTwelve dry barrels are on the ship, as many as at sunset.",
+      "question": "What really happened to the powder? Tell the Admiral.",
       "hints": [
-        "Read the Admiral's fourth line: what is at the front?",
-        "It is not a turtle. Spell the animal he names."
+        "Check each sentence with your three cards.",
+        "Who carried the barrels? How many? Which roof had a hole?"
       ],
-      "successMessage": "A dragon's head, with a cannon in its mouth!",
+      "successMessage": "That is the truth. Seok saved the powder!",
       "transition": [
-        "The cannon test goes ahead that morning.",
-        "The next day, Japanese ships cover the sea at Busan.",
-        "The war has begun. Seok's note goes into your notebook."
+        "\"Seok, you broke an order,\" says the Admiral. \"But you saved my test.\"",
+        "Dawn comes. The Admiral walks along his turtle ship.",
+        "Its roof is like a turtle's back, with spikes. At the front is a dragon's head, with a cannon in its mouth."
       ],
-      "orderFeedback": "All six letters fit. Read the Admiral's words about the front.",
       "mapX": 0.62,
       "mapY": 0.72,
       "evidence": {
@@ -638,11 +628,10 @@
         "icon": "seal",
         "description": "A roof like a turtle's back, with spikes. A dragon's head at the front, its mouth a hole for a cannon. Ready the day before the war."
       },
-      "lockTitle": "THE TURTLE SHIP",
       "ending": [
         {
           "by": "speaker",
-          "text": "My turtle ship is ready. So is my navy.",
+          "text": "My powder is dry, and my ship is ready.",
           "speaker": "yi_sunsin",
           "portrait": "assets/seasons/season_05_seoul/characters/yi_sunsin.webp"
         },
@@ -667,40 +656,142 @@
           "text": "In the fifth month, his navy won its first victory at sea, at Okpo."
         },
         {
-          "by": "detective",
-          "text": "Seok's water drop is just like Bun-i's.",
-          "evidence": "s5_ep02_e1"
+          "by": "speaker",
+          "text": "The King made these letters so that people could learn them easily.",
+          "speaker": "seok",
+          "portrait": "assets/seasons/season_05_seoul/characters/seok.webp"
         },
         {
           "by": "speaker",
-          "text": "Who taught my grandmother? I never asked.",
+          "text": "Even a sailor like me can write.",
           "speaker": "seok",
           "portrait": "assets/seasons/season_05_seoul/characters/seok.webp"
         }
-      ]
+      ],
+      "talk": {
+        "speaker": "yi_sunsin",
+        "portrait": "assets/seasons/season_05_seoul/characters/yi_sunsin.webp",
+        "goal": "Show the Admiral what really happened to his powder.",
+        "before": {
+          "lines": [
+            {
+              "by": "speaker",
+              "text": "Ham says Seok took my powder with no order."
+            },
+            {
+              "by": "speaker",
+              "text": "Show me what happened, Detective."
+            }
+          ],
+          "presents": [
+            {
+              "id": "p_danger",
+              "prompt": "The Admiral asks: \"Was my powder safe in the store room?\"",
+              "accepted": [
+                "s5_ep02_e1"
+              ],
+              "offered": [
+                "s5_ep02_e3",
+                "s5_ep02_e1",
+                "s5_ep02_e2"
+              ],
+              "lines": [
+                {
+                  "by": "detective",
+                  "text": "No, sir. Rain came through the store room roof, over the powder."
+                },
+                {
+                  "by": "speaker",
+                  "text": "And wet powder will not fire."
+                }
+              ],
+              "miss": "That does not show the store room.",
+              "tell": "Which card was found in the store room?",
+              "litAfter": 3
+            },
+            {
+              "id": "p_how",
+              "prompt": "The Admiral asks: \"How did you know where to look?\"",
+              "accepted": [
+                "s5_ep02_e2"
+              ],
+              "offered": [
+                "s5_ep02_e1",
+                "s5_ep02_e3",
+                "s5_ep02_e2"
+              ],
+              "requires": [
+                "p_danger"
+              ],
+              "lines": [
+                {
+                  "by": "detective",
+                  "text": "Seok's note named the turtle ship."
+                },
+                {
+                  "by": "speaker",
+                  "text": "A note in the King's letters. Clever boy."
+                }
+              ],
+              "miss": "That does not show where the powder went.",
+              "tell": "Which card says what the note says?",
+              "litAfter": 3
+            },
+            {
+              "id": "p_count",
+              "prompt": "The Admiral asks: \"Is any of my powder missing?\"",
+              "accepted": [
+                "s5_ep02_e3"
+              ],
+              "offered": [
+                "s5_ep02_e2",
+                "s5_ep02_e3",
+                "s5_ep02_e1"
+              ],
+              "requires": [
+                "p_how"
+              ],
+              "lines": [
+                {
+                  "by": "detective",
+                  "text": "None, sir. Twelve barrels, all dry, as many as at sunset."
+                },
+                {
+                  "by": "speaker",
+                  "text": "Then nothing was stolen."
+                }
+              ],
+              "miss": "That does not count the barrels.",
+              "tell": "Which card counts the barrels?",
+              "litAfter": 3
+            }
+          ],
+          "finishLabel": "TELL THE ADMIRAL"
+        }
+      }
     }
   },
   "hook": "The cannon test is at dawn.",
   "learningGoal": {
-    "title": "Reading where things are, and how a ship is made",
-    "titleKo": "위치 표현과 거북선의 생김새 읽기"
+    "title": "Reading where things are, and proving what happened",
+    "titleKo": "위치 표현을 읽고 증거로 사건의 진상 밝히기"
   },
   "play": {
     "objectives": [
       "Search the empty store room.",
       "Read the blurred note.",
       "Count the barrels on the ship.",
-      "Tell the Admiral what is at the front."
+      "Show the Admiral what really happened."
     ],
     "intro": [
       "Spring, 1592: the fourth month of the moon calendar.",
-      "You are a guest of Admiral Yi Sun-sin at Yeosu.",
-      "He commands the navy of Jeolla, on the south coast.",
+      "You are a guest of Admiral Yi Sun-sin at Yeosu, on the south coast.",
+      "He commands the navy here. War with Japan may come soon.",
       "Before the war, he built a turtle ship, with a roof over its deck.",
       "\"Today we test its cannons,\" he says. \"We must be ready.\"",
       "Before dawn, a bell rings at the store room."
     ],
-    "caseSummary": "Rain came through the roof of the store room. Seok, a young sailor, carried the gunpowder to the turtle ship. Yi Sun-sin had built the turtle ship before the war. Its front was a dragon's head. On the twelfth day of the fourth month of 1592, its cannons were tested. His war diary records it. The next day, Japanese ships came to Busan, and the war began. In the fifth month, his navy won its first victory at sea, at Okpo.",
+    "caseSummary": "Rain came through the store room roof. Seok, a young sailor, carried all twelve barrels of gunpowder to the turtle ship. He left a note in the King's letters, with a water drop for the rain. The detective showed the Admiral that nothing was stolen. Yi Sun-sin had built the turtle ship before the war. Its front was a dragon's head. On the twelfth day of the fourth month of 1592, its cannons were tested. His war diary records it. The next day, Japanese ships came to Busan, and the war began. In the fifth month, his navy won its first victory at sea, at Okpo.",
     "place": "THE NAVY BASE, YEOSU",
     "keyWords": [
       "under",
@@ -721,11 +812,13 @@
       "navy": "수군",
       "cannon": "대포",
       "tongue": "혀",
-      "gums": "잇몸"
+      "lips": "입술",
+      "chinese": "중국 글자(한자)",
+      "board": "판"
     }
   },
   "notes": [
     "PART 10 (2026-11-06), Case 02. Admiral Yi Sun-sin is real; his words here are made up (two lines of the final retell the 1592 record of the turtle ship, s5_ep02_h1). Seok and Quartermaster Ham are made up; so are the store room, the rain and the night's test.",
-    "Ends on checked facts: the final's answer DRAGON is the turtle ship's real dragon head with a cannon hole (h1); the ending tells the real cannon test of the 12th day of the 4th lunar month, 1592, in Yi's diary (h5), the war's start at Busan the next day (h3, lunar 13th) and the first victory at sea at Okpo in the 5th lunar month (h4). All dates are of the lunar calendar; no solar date is given."
+    "Ends on checked facts: the final asks what really happened to the powder, judged with this case's three cards (rain through the store room roof, the note naming the turtle ship, twelve dry barrels); the transition names the real dragon head with a cannon hole (h1). The ending tells the real cannon test of the 12th day of the 4th lunar month, 1592, in Yi's diary (h5), the war's start at Busan the next day (h3, lunar 13th), the first victory at sea at Okpo in the 5th lunar month (h4), and the King's wish that the letters be easy to learn (h11). All dates are of the lunar calendar; no solar date is given."
   ]
 }

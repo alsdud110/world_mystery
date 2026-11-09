@@ -34,7 +34,7 @@
             {
               "id": "fire",
               "label": "The fire door",
-              "feedback": "Lady Han says he did not touch the fire. Read her note again."
+              "feedback": "The note says he did not touch the fire. Read it again."
             },
             {
               "id": "belt",
@@ -43,7 +43,7 @@
             {
               "id": "coal",
               "label": "The coal box",
-              "feedback": "Lady Han says he did not touch the coal. What did he take off?"
+              "feedback": "The note says he did not touch the coal. What did he take off?"
             }
           ]
         },
@@ -85,7 +85,7 @@
           "Last night it stopped for an hour. Who stopped it? Look for marks."
         ],
         "letterIntro": "Under the coal scoop, a note in the King's letters, with a small water drop:",
-        "letter": "Detective,\nLast night the lamps did not go out on their own.\nA stranger came into the lamp house.\nHe did not touch the fire. He did not touch the coal.\nHe took off the long leather belt that turns the big wheel.\nI put it back at dawn. His muddy hand is still on it.\n— Han",
+        "letter": "Detective,\nLast night the lamps did not go out on their own.\nOne of the two strangers came into the lamp house.\nHe did not touch the fire. He did not touch the coal.\nHe took off the long leather belt that turns the big wheel.\nI put it back at dawn. His muddy hand is still on it.",
         "question": "What did the stranger touch? Tap one picture.",
         "hints": [
           "Find the note under the coal scoop first. Then look at the machine.",
@@ -95,7 +95,7 @@
         "transition": [
           "The lamps often blink on and off. Everyone thought it was that again.",
           "But this dark was made on purpose.",
-          "The note is signed Han. You go to find her."
+          "Lady Han knows more. You follow her to the Queen's court."
         ],
         "mapX": 0.46,
         "mapY": 0.42,
@@ -106,9 +106,9 @@
           "symbol": "gear"
         },
         "evidence": {
-          "name": "The Water-Drop Note (1895)",
+          "name": "Lady Han's Note",
           "icon": "letter",
-          "description": "Court Lady Han's note in the King's letters, with a small water drop. The dark was made on purpose."
+          "description": "Lady Han's note in the King's letters, marked with her water drop. The dark was made on purpose. A stranger took off the belt on the big wheel."
         },
         "explore": {
           "picture": {
@@ -275,7 +275,11 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "You found my note. Good."
+                "text": "You found my note. Good. I wrote no name. The strangers may read it too."
+              },
+              {
+                "by": "speaker",
+                "text": "The water drop is my mark. I carry the Queen's water each dawn."
               },
               {
                 "by": "speaker",
@@ -308,32 +312,32 @@
           "answer": "lit,lamphouse,dark,gate,hall,back",
           "options": [
             {
-              "id": "lit",
-              "label": "THE LAMPS ARE LIT"
+              "id": "hall",
+              "label": "THE QUEEN'S HALL"
             },
             {
-              "id": "lamphouse",
-              "label": "THE LAMP HOUSE"
+              "id": "guards",
+              "label": "THE MAIN GATE"
             },
             {
               "id": "dark",
               "label": "THE DARK"
             },
             {
-              "id": "gate",
-              "label": "THE EAST GATE"
+              "id": "lit",
+              "label": "THE LAMPS ARE LIT"
             },
             {
-              "id": "hall",
-              "label": "THE QUEEN'S HALL"
+              "id": "gate",
+              "label": "THE EAST GATE"
             },
             {
               "id": "back",
               "label": "THE LAMP MAN RETURNS"
             },
             {
-              "id": "guards",
-              "label": "THE MAIN GATE"
+              "id": "lamphouse",
+              "label": "THE LAMP HOUSE"
             }
           ],
           "codeLength": 6
@@ -341,8 +345,9 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Letter: Lady Han's account of the night, in before/after words. 8:00 and 9:00 are fixed; the guards at the main gate are not part of it (another gate, every night).",
-          "Every card is made up (fiction): the night and the strangers are the case's own."
+          "Letter: Lady Han's account of the night, in before/after words, told out of order (9:00 first): following the lines from the top gives the wrong order. 8:00 and 9:00 are fixed; the guards at the main gate are not part of it (another gate, far away). The flat board foreshadows the final.",
+          "Every card is made up (fiction): the night and the strangers are the case's own.",
+          "Cards are listed hall, guards, dark, lit, gate, back, lamphouse: never in the answer's order (the board does not shuffle)."
         ]
       },
       "clueInputs": [
@@ -352,9 +357,9 @@
           "note": "The dark was made: the belt was taken off."
         },
         {
-          "ref": "s5_ep04_e1",
+          "ref": "s5_ep05_e1",
           "use": "recall",
-          "note": "Duri's water-drop note from the rebuilt palace: the same small water drop."
+          "note": "Lady Han's note from the lamp house: the night begins there."
         }
       ],
       "clueOutputs": {
@@ -364,11 +369,11 @@
       "learning": {
         "dependency": "essential",
         "level": "comprehension",
-        "objective": "한씨의 진술에서 after, first, before 표현을 읽고 그날 밤 일을 시간 순서로 놓는다.",
+        "objective": "한씨의 진술에서 after, only after, before 표현을 읽고, 순서가 섞인 말을 그날 밤 일어난 순서대로 놓는다.",
         "skill": "sentenceMeaning",
         "expressions": [
-          "after the strangers came",
-          "They left before the lamp man came back."
+          "only after the lamps went dark",
+          "Before the Queen's hall"
         ]
       },
       "play": {
@@ -380,45 +385,45 @@
           "\"Put my words in order,\" she says."
         ],
         "letterIntro": "Lady Han tells you:",
-        "letter": "The lamp man lit the lamps at 8:00.\nThe lamps went dark after the strangers came into the lamp house.\nIn the dark, the men went to the east gate first.\nAfter the gate, they stood by the Queen's hall.\nThey left before the lamp man came back.\nThe lamp man came back at 9:00.\nThe guards at the main gate saw nothing. They are far away.",
+        "letter": "The lamp man came back at 9:00. By then, the men were gone.\nBefore the Queen's hall, the men stood at the east gate.\nOne man had a flat board under his arm.\nThey went to the east gate only after the lamps went dark.\nThe lamps went dark after the strangers came into the lamp house.\nThe lamp man lit the lamps at 8:00.\nThe guards at the main gate saw nothing. They are far away.",
         "question": "Put the night in order, from 8:00 to 9:00.",
         "hints": [
-          "Find first, after and before in Lady Han's words.",
+          "Find after and before in Lady Han's words. Her words are not in order.",
           "The main gate is far away. Is it part of that night?"
         ],
         "successMessage": "The strangers walked straight to the Queen's hall!",
         "transition": [
           "From the east gate to the Queen's hall, in one hour of dark.",
-          "\"They counted,\" Lady Han says. \"Counted what?\"",
-          "She opens her sewing box. Inside is a long rope with knots."
+          "\"They whispered numbers,\" Lady Han says. \"Ten, twenty, thirty…\"",
+          "You look under the Queen's steps. A long rope with knots lies there!"
         ],
-        "orderFeedback": "Read Lady Han's words again. Where did the men go first?",
+        "orderFeedback": "Read Lady Han's words again. What came after the dark?",
         "mapX": 0.52,
         "mapY": 0.3,
         "clue": {
           "title": "The Strangers' Way",
           "value": "EAST GATE → THE QUEEN'S HALL",
-          "note": "In the dark, the strangers walked from the east gate to the Queen's hall.",
+          "note": "In the dark, the strangers walked from the east gate to the Queen's hall. One carried a flat board.",
           "symbol": "footprint"
         },
         "evidence": {
           "name": "Lady Han's Account",
           "icon": "feather",
-          "description": "The night in order: the dark, then the walk to the Queen's hall."
+          "description": "The night in order: first the dark. Then the walk from the east gate to the Queen's hall. One man carried a flat board."
         },
         "timeline": {
           "cards": [
             {
-              "id": "lit",
-              "title": "THE LAMPS ARE LIT",
-              "text": "The lamp man lights the lamps.",
-              "anchor": "8:00",
+              "id": "hall",
+              "title": "THE QUEEN'S HALL",
+              "text": "The men stand by the Queen's hall and count.",
               "fiction": true
             },
             {
-              "id": "lamphouse",
-              "title": "THE LAMP HOUSE",
-              "text": "The strangers come into the lamp house.",
+              "id": "guards",
+              "title": "THE MAIN GATE",
+              "text": "The guards at the main gate see nothing.",
+              "discard": true,
               "fiction": true
             },
             {
@@ -428,15 +433,16 @@
               "fiction": true
             },
             {
-              "id": "gate",
-              "title": "THE EAST GATE",
-              "text": "Two men stand at the east gate of the court.",
+              "id": "lit",
+              "title": "THE LAMPS ARE LIT",
+              "text": "The lamp man lights the lamps.",
+              "anchor": "8:00",
               "fiction": true
             },
             {
-              "id": "hall",
-              "title": "THE QUEEN'S HALL",
-              "text": "The men stand by the Queen's hall and count.",
+              "id": "gate",
+              "title": "THE EAST GATE",
+              "text": "Two men stand at the east gate of the court.",
               "fiction": true
             },
             {
@@ -447,10 +453,9 @@
               "fiction": true
             },
             {
-              "id": "guards",
-              "title": "THE MAIN GATE",
-              "text": "The guards at the main gate see nothing.",
-              "discard": true,
+              "id": "lamphouse",
+              "title": "THE LAMP HOUSE",
+              "text": "The strangers come into the lamp house.",
               "fiction": true
             }
           ],
@@ -463,17 +468,17 @@
             {
               "earlier": "dark",
               "later": "gate",
-              "line": "In the dark, the men went to the east gate first."
+              "line": "They went to the east gate only after the lamps went dark."
             },
             {
               "earlier": "gate",
               "later": "hall",
-              "line": "After the gate, they stood by the Queen's hall."
+              "line": "Before the Queen's hall, the men stood at the east gate."
             },
             {
               "earlier": "hall",
               "later": "back",
-              "line": "They left before the lamp man came back."
+              "line": "The lamp man came back at 9:00. By then, the men were gone."
             }
           ]
         },
@@ -499,9 +504,9 @@
           }
         },
         "recall": {
-          "title": "A Drop Like Duri's",
-          "prompt": "This note has a small water drop. Which note in your Notebook has one too?",
-          "miss": "That one has no drop. Look for a note from the rebuilt palace."
+          "title": "Where It Began",
+          "prompt": "Lady Han's story of the night begins in the lamp house. Which card is from there?",
+          "miss": "That card is not from the lamp house."
         }
       }
     },
@@ -521,7 +526,7 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "A number read in words: Lady Han's rule for the knots (a big knot is ten steps, a small knot is one) and the knots she counted on the rope. The strangers' map has the same number by the Queen's door (the final)."
+          "A number read in words: the knot rule (a big knot is ten steps, a small knot is one) and the knots on the rope the detective found. The strangers' board in the final counts its dots the same way."
         ]
       },
       "clueInputs": [
@@ -549,11 +554,11 @@
         "title": "The Knotted Rope",
         "location": "THE QUEEN'S COURT",
         "story": [
-          "Lady Han found the rope by the Queen's hall at dawn.",
+          "You found the rope under the Queen's steps.",
           "One stranger dropped it as the lamps came back.",
-          "It is a measuring rope. Its knots count steps."
+          "\"Builders measure with ropes like this,\" Lady Han says."
         ],
-        "letterIntro": "Lady Han shows you the rope and says:",
+        "letterIntro": "Lady Han looks at the knots and says:",
         "letter": "Builders measure with ropes like this.\nA big knot is ten steps. A small knot is one step.\nThe rope starts at the east gate.\nIt ends at the Queen's door.\nOn it are three big knots, then seven small knots.",
         "question": "How many steps is it from the east gate to the Queen's door?",
         "hints": [
@@ -562,9 +567,10 @@
         ],
         "successMessage": "Thirty-seven steps, from the east gate to the Queen's door!",
         "transition": [
-          "Lady Han goes white.",
-          "\"Last night they dropped a board too. I hid it before anyone saw.\"",
-          "\"It has a number on it. The King must see it now.\""
+          "Why measure a path? To draw a map of it.",
+          "You remember the man with the flat board. You look behind the steps again.",
+          "There it is, in the leaves: a flat board with lines and dots!",
+          "\"The King must see this,\" Lady Han says."
         ],
         "feedback": {
           "10": "That counts every knot as one step. A big knot is ten steps.",
@@ -598,40 +604,52 @@
     "slot": "final",
     "placeId": "s5_seoul.king_hall",
     "puzzle": {
-      "paletteId": "word_entry",
+      "paletteId": "text_choice",
       "surface": "finalMission",
       "engineTable": null,
-      "missionType": "wordInput",
+      "missionType": "multipleChoice",
       "answerSpec": {
-        "answer": "JAPAN",
-        "acceptedAnswers": [
-          "JAPAN'S",
-          "JAPANS"
+        "answer": "queen",
+        "options": [
+          {
+            "id": "king",
+            "label": "The King's hall",
+            "feedback": "The far door has 52 steps, and no circle. How many steps to the circled door?"
+          },
+          {
+            "id": "lamp",
+            "label": "The lamp house",
+            "feedback": "The lamp house is the square with the X and the wheel. It is not a door with a circle."
+          },
+          {
+            "id": "queen",
+            "label": "The Queen's hall"
+          }
         ]
       },
       "assetNeeds": [],
       "status": "ready",
       "notes": [
-        "The answer is the case's key fact (h4): in 1895 the Queen worked with Russia to hold back Japan's power in Korea. Russia is the country she worked with, not the one she held back.",
-        "The Queen's and the King's words are made up (dossier fiction); Lady Han's last line retells h4 only.",
-        "Puzzle kind chosen by hand: the season spread assigns Case 05 a word entry final; the answer is one word read and told apart in Lady Han's sentence."
+        "The strangers' board read with the rope's rule: big dot = ten steps, small dot = one. The circled door is 37 steps from the east gate (M3, e3; the walk from the east gate, M2, e2); the far door is 52 with no circle; the square with an X and a wheel by the pond is the lamp house (M1, e1), not a door. Only the Queen's hall fits.",
+        "A text choice of the three places (2026-11-09 PART 7): the three are places the detective has already been, so their pictures would show the answer's picture before the choice (season_playthrough 'nothing given away'). The board itself is told in words. Answer listed last.",
+        "The history (h4, h5) is told after the answer, plainly and once: in the transition and the ending."
       ]
     },
     "clueInputs": [
       {
         "ref": "s5_ep05_c1",
         "use": "answerDerivation",
-        "note": "The dark was made on purpose."
+        "note": "The lamp house is where the dark was made: the square with the X and the wheel."
       },
       {
         "ref": "s5_ep05_c2",
         "use": "answerDerivation",
-        "note": "The strangers walked to the Queen's hall."
+        "note": "The strangers walked from the east gate to the Queen's hall."
       },
       {
         "ref": "s5_ep05_c3",
         "use": "answerDerivation",
-        "note": "37 steps to the Queen's door: the same number as on the board."
+        "note": "37 steps from the east gate to the Queen's door: the circled door's dots."
       }
     ],
     "clueOutputs": {
@@ -640,52 +658,53 @@
     "learning": {
       "dependency": "essential",
       "level": "application",
-      "objective": "worked with Russia to hold back Japan's power 문장을 읽고, 왕비가 함께한 나라와 막으려 한 나라를 구별해 쓴다.",
+      "objective": "판의 설명(three big dots and seven small dots, a door with a circle)을 밧줄 매듭 규칙으로 읽어 37걸음 문을 찾고, 그 문이 왕비의 처소임을 그림에서 고른다.",
       "skill": "sentenceMeaning",
       "expressions": [
-        "hold back Japan's power"
+        "three big dots and seven small dots",
+        "a door with a circle"
       ]
     },
     "play": {
       "title": "The Board with No Names",
       "location": "JANGANDANG, THE KING'S HALL",
       "story": [
-        "Lady Han brings the strangers' board to the King.",
-        "It shows halls, doors and a path.",
-        "It is a map of the Queen's rooms.",
-        "The Queen says, \"Someone is afraid of me.\""
+        "You bring the strangers' board to the King and the Queen.",
+        "It has no names. Only lines, dots and marks.",
+        "The Queen asks, \"Whose door is marked?\""
       ],
-      "letterIntro": "Your notes, and Lady Han's words:",
-      "letter": "The dark was made on purpose.\nThe rope and the map say 37 steps to the Queen's door.\nLady Han says: \"Japan wants more power in Korea.\nThe Queen works with Russia to hold back Japan's power.\nSome men want to stop her.\"\n(To hold back = to stop something from growing.)",
-      "question": "Whose power is the Queen trying to hold back?",
-      "prompt": "The Queen holds back ____'s power.",
+      "letterIntro": "The board:",
+      "letter": "A line starts at the east gate.\nIt goes to a door with a circle.\nBy the circled door: three big dots and seven small dots.\nAnother line goes to a far door. By it: five big dots and two small dots. No circle.\nBy the pond is a square with an X. A wheel is drawn in the square.\nThe dots count like the knots on the rope.",
+      "question": "Whose door has the circle? Tap the picture.",
       "hints": [
-        "Read Lady Han's words. Two countries are named.",
-        "One country works WITH the Queen. Which one does she hold back?"
+        "A big dot is ten steps. A small dot is one step, like the rope.",
+        "Your rope measured 37 steps from the east gate. To whose door?"
       ],
-      "successMessage": "The Queen holds back Japan's power. That is why she is watched.",
+      "successMessage": "The circle is the Queen's door: 37 steps from the east gate!",
       "transition": [
-        "The King folds the map slowly.",
-        "Every path of this palace has been counted in steps.",
-        "Lady Han puts her note in a small wooden box."
+        "\"And the X is the lamp house,\" says the King. \"They will make the dark again.\"",
+        "Lady Han says, \"Japan wants more power in Korea. The Queen works with Russia to stop it.\"",
+        "\"Some men want to stop her.\"",
+        "The King folds the map slowly."
       ],
-      "feedback": {
-        "RUSSIA": "The Queen works WITH Russia. Read Lady Han's words again.",
-        "CHINA": "China is not in Lady Han's words. Which two countries does she name?",
-        "KOREA": "The Queen is Korea's Queen. Who wants more power in Korea?"
-      },
       "mapX": 0.5,
       "mapY": 0.24,
       "evidence": {
         "name": "The Strangers' Map",
         "icon": "map",
-        "description": "A map of the Queen's rooms, drawn in the dark by strangers. Lady Han found it first. The palace is watched."
+        "description": "The strangers' board, with no names. A circle marks the Queen's door, 37 steps from the east gate. An X marks the lamp house."
       },
       "ending": [
         {
           "by": "speaker",
           "text": "Thank you, Detective. I will keep this map.",
           "speaker": "gojong"
+        },
+        {
+          "by": "speaker",
+          "text": "Now I know they are watching me.",
+          "speaker": "myeongseong",
+          "portrait": "assets/seasons/season_05_seoul/characters/myeongseong.webp"
         },
         {
           "by": "speaker",
@@ -700,7 +719,7 @@
         },
         {
           "by": "narrator",
-          "text": "In 1895, the Queen worked with Russia to hold back Japan's power."
+          "text": "In 1895, the Queen worked with Russia to stop Japan's power from growing."
         },
         {
           "by": "narrator",
@@ -712,14 +731,14 @@
         },
         {
           "by": "speaker",
-          "text": "I will keep our letters, and the truth of these days.",
+          "text": "I will not forget the truth of these days.",
           "speaker": "lady_han",
           "portrait": "assets/seasons/season_05_seoul/characters/lady_han.webp"
         }
       ]
     }
   },
-  "hook": "Who will keep the next note safe?",
+  "hook": "Who walked in the dark by the Queen's door?",
   "learningGoal": {
     "title": "Reading what someone did and did not do",
     "titleKo": "한 일과 하지 않은 일 구별해 읽기"
@@ -729,18 +748,18 @@
       "Find out why the lamps went dark.",
       "Put the night in order.",
       "Count the steps on the rope.",
-      "Tell the King why the Queen is watched."
+      "Find whose door the map marks."
     ],
     "intro": [
-      "Autumn, 1895. You are a guest at Geoncheonggung, inside Gyeongbokgung.",
-      "Here the King lives in Jangandang, and the Queen in Gonnyeonhap.",
+      "Autumn, 1895. This morning, the King has called you, a detective, to Geoncheonggung.",
+      "Here, inside the great palace, the King and the Queen live.",
       "In 1887, the first electric lamps in Korea were lit here.",
       "They often blink on and off. People call them the good-for-nothing lights.",
       "Last night they went dark for an hour.",
       "And two strangers were seen in the Queen's court."
     ],
-    "caseSummary": "Strangers made the lamps go dark and measured the way to the Queen's door. Court Lady Han found their map first. In 1895 the Queen worked with Russia to hold back Japan's power. On 8 October 1895, men sent by Japan's minister attacked the palace, and the Queen was killed.",
-    "place": "GEONCHEONGGUNG, GYEONGBOKGUNG",
+    "caseSummary": "Strangers made the lamps go dark. They measured the way from the east gate to the Queen's door. Court Lady Han left a note with her water drop. The detective found the strangers' rope and their map. The map's circle marked the Queen's door. In 1895 the Queen worked with Russia to hold back Japan's power. On 8 October 1895, men sent by Japan's minister attacked the palace, and the Queen was killed.",
+    "place": "GEONCHEONGGUNG",
     "keyWords": [
       "lamp",
       "belt",
@@ -758,12 +777,16 @@
       "power": "힘, 세력",
       "court": "(궁궐의) 뜰",
       "good-for-nothing": "쓸모없는",
-      "strangers'": "낯선 사람들의"
+      "strangers'": "낯선 사람들의",
+      "circle": "동그라미",
+      "dot": "점",
+      "dots": "점들",
+      "pond": "연못",
+      "measured": "쟀다"
     }
   },
   "notes": [
     "Season 5 Case 05 (PART 10, 2026-11-06). Set weeks before the Eulmi incident; the attack is told once, plainly, in the final's ending and the reveal, never shown.",
-    "The Queen is never drawn with a detailed face: no reliable photograph of her is known, and her portrait is seen from behind (manifest). She, the King and Lady Han speak made-up words (dossier fiction).",
-    "Case 06 recalls s5_ep05_e4 (the strangers' map: the palace is watched)."
+    "The Queen is never drawn with a detailed face: no reliable photograph of her is known, and her portrait is seen from behind (manifest). She, the King and Lady Han speak made-up words (dossier fiction)."
   ]
 }

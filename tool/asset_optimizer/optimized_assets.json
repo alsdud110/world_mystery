@@ -11488,6 +11488,439 @@
         "bytes": 96554
       }
     },
+    "assets/seasons/season_05_seoul/cases/case_01/ending_mother_letter.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/ending_mother_letter.png",
+        "sha256": "sha256:09fe75f3d564f60da920972f0230b3c0de592e3d5973f162c0c6ec269c4ddbc3",
+        "bytes": 3457350
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 95 -sharp_yuv",
+      "quality": {
+        "psnr": 41.04,
+        "ssim": 0.99288,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 92 -sharp_yuv: PSNR 39.90 / SSIM 0.9896 under 35.0 / 0.99"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/ending_mother_letter.webp",
+        "sha256": "sha256:5a7ac29fa73768bb24753da0b1fbfbb04ae38eb58ebbc780c1de5f45b6692523",
+        "bytes": 752104
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_01/final_kings_study.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/final_kings_study.png",
+        "sha256": "sha256:fa1062b47373d0d2c8df6ad52efd96c1b7f818a0a75129f430462be6b33e76cb",
+        "bytes": 3291123
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 95 -sharp_yuv",
+      "quality": {
+        "psnr": 41.57,
+        "ssim": 0.99186,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 92 -sharp_yuv: PSNR 40.16 / SSIM 0.9869 under 35.0 / 0.99"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/final_kings_study.webp",
+        "sha256": "sha256:78cc754a08c48bdf841c50852a31ef96c9262754f5a6de61823f31d241a708dc",
+        "bytes": 712922
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_01/intro_side_gate.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/intro_side_gate.png",
+        "sha256": "sha256:a1add7edd89ae1bf7c5c301cab56a56485e9623b0d098bba0d9bb33983f1abf0",
+        "bytes": 3329971
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 95 -sharp_yuv",
+      "quality": {
+        "psnr": 40.94,
+        "ssim": 0.99283,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 92 -sharp_yuv: PSNR 39.58 / SSIM 0.9882 under 35.0 / 0.99"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/intro_side_gate.webp",
+        "sha256": "sha256:10f5639bb7979d54012c3731658a0e6bf536a804cca0f01372b299f666589426",
+        "bytes": 735352
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_01/m1_picture_memo.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m1_picture_memo.png",
+        "sha256": "sha256:15c17559b7b2013f647298b1327be10da168f4b9fd2631aa3d46bc8861d21e09",
+        "bytes": 3380763
+      },
+      "why": "manifest: document/puzzle",
+      "kind": "document",
+      "format": "webp",
+      "setting": "-near_lossless 60",
+      "quality": {
+        "psnr": 46.49,
+        "ssim": 0.99558,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 94 -sharp_yuv: PSNR 40.64 / SSIM 0.9898 under 37.0 / 0.993"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m1_picture_memo.webp",
+        "sha256": "sha256:bfb324a49aa6513383b045e8066728594aa3884ba37bc30a111d7db6a9e5a89f",
+        "bytes": 1098930
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_lips.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_lips.png",
+        "sha256": "sha256:1320e8d3ce87e67364497494cf9626107af7650528fd329d55f05bb4043df383",
+        "bytes": 1772687
+      },
+      "why": "manifest: object/puzzle",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-near_lossless 60: PSNR 47.05 / SSIM 0.9920 under 42.0 / 0.997"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_lips.webp",
+        "sha256": "sha256:a166528aa7b608de50a15c5f2cc2007509c8c406598c904b2a2959cde304b370",
+        "bytes": 1171034
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_throat.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_throat.png",
+        "sha256": "sha256:ea75d7d46caab433d5bf2ed02277c4e2f66150cad1fc5da2ddc8e438cc4f118b",
+        "bytes": 2018220
+      },
+      "why": "manifest: object/puzzle",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-near_lossless 60: PSNR 46.60 / SSIM 0.9934 under 42.0 / 0.997"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_throat.webp",
+        "sha256": "sha256:decefefc20852bba8a2c985185260159dc2d2480586a33a8fc9979ee8559610c",
+        "bytes": 1289198
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_tongue.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_tongue.png",
+        "sha256": "sha256:3cfe32124231c2fea9d7ed8999b751e9c9fe8236f963c7d0616a943482067a55",
+        "bytes": 1679219
+      },
+      "why": "manifest: object/puzzle",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-near_lossless 60: PSNR 47.37 / SSIM 0.9917 under 42.0 / 0.997"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_tongue.webp",
+        "sha256": "sha256:3a897a5a3592e5de35fb52f224b8798947df36b26f8d0150f6e28d53f8e1e837",
+        "bytes": 1120776
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_01/m3_writing_desk.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m3_writing_desk.png",
+        "sha256": "sha256:bbb3d55dd7eef998280769b2fdc5a67c29ce67440fdcff0ebf9d48231cd67fca",
+        "bytes": 3232092
+      },
+      "why": "path",
+      "kind": "evidence",
+      "format": "webp",
+      "setting": "-q 95 -sharp_yuv",
+      "quality": {
+        "psnr": 40.77,
+        "ssim": 0.99178,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 92 -sharp_yuv: PSNR 39.51 / SSIM 0.9867 under 35.0 / 0.99"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_01/m3_writing_desk.webp",
+        "sha256": "sha256:471415d81cfbf8b78635dd5184602e83e03b0883afdd40cf7bf45d1f53638666",
+        "bytes": 729782
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_02/find_bucket_room.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_02/find_bucket_room.png",
+        "sha256": "sha256:22c78a8c78f824f544bfd6fb6b3de81b40af28c090bf2d1ed6bb6fe785ce51dd",
+        "bytes": 552350
+      },
+      "why": "manifest: object/puzzle",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 640,
+      "height": 673,
+      "hasAlpha": true,
+      "tried": [
+        "-near_lossless 60: alpha changed (by up to 2)"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_02/find_bucket_room.webp",
+        "sha256": "sha256:dd1c9aa043b817da109a11f5f32c48df5b34c354872ddd7fdfae3a9967b56328",
+        "bytes": 359010
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_02/find_note_room.png",
+        "sha256": "sha256:d52c4bfb5513ea375dc92701a11bad81cbf77623e3ab9ee80b8c66ac0d8e53fa",
+        "bytes": 213792
+      },
+      "why": "manifest: object/puzzle",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 640,
+      "height": 578,
+      "hasAlpha": true,
+      "tried": [
+        "-near_lossless 60: alpha changed (by up to 2)"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp",
+        "sha256": "sha256:779505b545127ac346fd4696b6d5296d1ae4f3c8bcc80c7885b9718be7fb7716",
+        "bytes": 129686
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_02/find_straw_room.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_02/find_straw_room.png",
+        "sha256": "sha256:905ffe2b88ce047e7ae6af1ec6fe7559ce174032887c2d47850e6cc5a5e10a08",
+        "bytes": 278174
+      },
+      "why": "manifest: object/puzzle",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "lossless",
+      "quality": {
+        "psnr": 99.0,
+        "ssim": 1.0,
+        "alphaMaxDiff": 0
+      },
+      "width": 760,
+      "height": 438,
+      "hasAlpha": true,
+      "tried": [
+        "-near_lossless 60: alpha changed (by up to 2)"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_02/find_straw_room.webp",
+        "sha256": "sha256:4333a9b801f2e93138d811c657e2b7ca1d046214d6019f06e288365998cbfc29",
+        "bytes": 183486
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_04/palace_site_traces.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_04/palace_site_traces.png",
+        "sha256": "sha256:2e9293af153e02745bdf93a962844ead8324711d9252fa117d71a98234c2bb16",
+        "bytes": 3349295
+      },
+      "why": "twin of palace_site.webp (likeness 0.957)",
+      "kind": "puzzle",
+      "format": "webp",
+      "setting": "-near_lossless 60",
+      "quality": {
+        "psnr": 46.86,
+        "ssim": 0.99765,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_04/palace_site_traces.webp",
+        "sha256": "sha256:9155b4f0a46ae6a70b85de7df2f137e208799babca15cb40907a72b01f239314",
+        "bytes": 1214114
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_11/c11_copy_list.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_11/c11_copy_list.png",
+        "sha256": "sha256:2cf90ca190eee6bcaabe5f69500b6ad1c847ad9edea0e93be25a418520e7cdf6",
+        "bytes": 2999480
+      },
+      "why": "manifest: document/puzzle",
+      "kind": "document",
+      "format": "webp",
+      "setting": "-near_lossless 60",
+      "quality": {
+        "psnr": 46.52,
+        "ssim": 0.99417,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 94 -sharp_yuv: PSNR 40.67 / SSIM 0.9864 under 37.0 / 0.993"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_11/c11_copy_list.webp",
+        "sha256": "sha256:41afd7c0d0079d506043d7a24eca846e6eef131ac86eb0292f48816601f1c5ec",
+        "bytes": 980704
+      }
+    },
+    "assets/seasons/season_05_seoul/cases/case_11/c11_drop_card.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cases/case_11/c11_drop_card.png",
+        "sha256": "sha256:3c8efbe695fd411d860276e9f4b422a6142b24fed30b4fabd792de83422bd372",
+        "bytes": 3103437
+      },
+      "why": "manifest: document/puzzle",
+      "kind": "document",
+      "format": "webp",
+      "setting": "-near_lossless 60",
+      "quality": {
+        "psnr": 46.5,
+        "ssim": 0.99437,
+        "alphaMaxDiff": 0
+      },
+      "width": 1536,
+      "height": 1024,
+      "hasAlpha": false,
+      "tried": [
+        "-q 94 -sharp_yuv: PSNR 40.57 / SSIM 0.9869 under 37.0 / 0.993"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cases/case_11/c11_drop_card.webp",
+        "sha256": "sha256:98bfc521a7a77a0166ddef3ad64f6a1ac3fcf32bd89f211bec2d81ab7372e144",
+        "bytes": 1027312
+      }
+    },
+    "assets/seasons/season_05_seoul/cover/kings_study.webp": {
+      "source": {
+        "path": "assets/seasons/season_05_seoul/cover/kings_study.png",
+        "sha256": "sha256:97213457a3c07ba0a99af9b5a1876572bdf6c7cec0229a0d1912c97153f3ad4d",
+        "bytes": 2793558
+      },
+      "why": "manifest: scene/notWired",
+      "kind": "scene",
+      "format": "webp",
+      "setting": "-near_lossless 60",
+      "quality": {
+        "psnr": 47.12,
+        "ssim": 0.99344,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": false,
+      "tried": [
+        "-q 88 -sharp_yuv: PSNR 38.15 / SSIM 0.9556 under 30.0 / 0.975",
+        "-q 92 -sharp_yuv: PSNR 39.41 / SSIM 0.9713 under 30.0 / 0.975"
+      ],
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/seasons/season_05_seoul/cover/kings_study.webp",
+        "sha256": "sha256:94b9b03d42c3c75dd5656eae753c71409bf33056927cf649153c063e4a0bc39e",
+        "bytes": 1044996
+      }
+    },
     "assets/shared/badges/badge_clock_watcher.webp": {
       "source": {
         "path": "assets/shared/badges/badge_clock_watcher.png",

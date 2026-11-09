@@ -45,6 +45,9 @@ class ContentIssue {
 /// collected: a case that does not parse is reported and the others are
 /// still checked.
 abstract final class SeasonContentValidator {
+  /// What is wrong with [m]'s answer and its parts (empty: nothing).
+  static List<String> answerProblems(Mission m) => _SeasonCheck._answerProblems(m);
+
   /// Everything wrong in [seasons] (the game's by default), each season on
   /// its own and between them (their order, ids two seasons share).
   /// [engines]: how the puzzle engines' findings count
@@ -171,6 +174,7 @@ class _SeasonCheck {
     _levels();
     _timelines();
     _syllables();
+    _shapes();
     for (final p in _guard('place', () => ScenePlaceCheck.problemsOf(s))) {
       add('place', p);
     }
@@ -322,10 +326,12 @@ class _SeasonCheck {
         }
         if (pairs.map((p) => p.join(':')).toSet().length != pairs.length) out.add('a pair named twice');
       case MissionType.letterLock:
-        // A slot for each tile; the tiles' letters spell the word.
-        final letters = (AnswerChecker.normalize(m.answer).split('')..sort()).join();
-        final tiles = ([for (final o in m.options) ...AnswerChecker.normalize(o.label).split('')]..sort()).join();
-        if (letters != tiles) out.add('its tiles (${m.options.map((o) => o.label).join()}) do not spell ${m.answer}');
+        // A slot for each letter of the word, spelled from the tiles (each
+        // used once); any tiles left over are extra.
+        final left = [for (final o in m.options) ...AnswerChecker.normalize(o.label).split('')];
+        if (!AnswerChecker.normalize(m.answer).split('').every(left.remove)) {
+          out.add('its tiles (${m.options.map((o) => o.label).join()}) do not spell ${m.answer}');
+        }
       case MissionType.wordInput || MissionType.numberCode || MissionType.finalCode || MissionType.examine:
         if (m.codeLength != null && m.answer.length != m.codeLength) out.add('answer ${m.answer} is not ${m.codeLength} long');
         if (m.type == MissionType.numberCode && !RegExp(r'^\d+$').hasMatch(m.answer)) out.add('a number code that is not a number');
@@ -382,6 +388,25 @@ class _SeasonCheck {
       final levels = {for (final d in Difficulty.values) d: s.variants[d]?.syllables[id] ?? spec};
       for (final i in PuzzleSpecCheck.levels(rules, levels, reserved: missions.keys.toSet())) {
         add('engine', 'syllables/$id $i', caseId: caseId, missionId: id);
+      }
+    });
+  }
+
+  /// Letters laid on pictures (`shape_match`): each a match mission's, its
+  /// answer pairs the board's own letters and pictures, at every level.
+  void _shapes() {
+    final missions = {for (final e in cases) for (final m in e.allMissions) m.id: (e.id, m)};
+    s.shapes.forEach((id, spec) {
+      final found = missions[id];
+      if (found == null) return;
+      final (caseId, m) = found;
+      if (m.type != MissionType.matchPairs) {
+        add('engine', 'shapes/$id: letters on pictures answer a match mission, not ${m.type.name}', caseId: caseId, missionId: id);
+      }
+      for (final d in Difficulty.values) {
+        for (final p in (s.variants[d]?.shapes[id] ?? spec).problems(m.answer)) {
+          add('answer', 'shapes/$id ${d.name}: $p', caseId: caseId, missionId: id);
+        }
       }
     });
   }

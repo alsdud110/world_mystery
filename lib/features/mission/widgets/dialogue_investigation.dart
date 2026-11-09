@@ -1586,6 +1586,33 @@ Future<void> showTalkWords(BuildContext context, WidgetRef ref, String text) {
   );
 }
 
+/// "Words": the harder words of [text] (already read on this page) in the
+/// sheet of [showTalkWords], one tap from any puzzle, so a child finds the
+/// words to look up without long-pressing blind. Nothing when [text] has
+/// none (the sheet would be empty).
+class WordsLink extends ConsumerWidget {
+  const WordsLink({super.key, required this.text, this.color});
+
+  final String text;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final words = glossaryWordsOf(ref.watch(currentEpisodeProvider), text);
+    if (words.isEmpty) return const SizedBox.shrink();
+    return Semantics(
+      hint: 'Shows ${words.length} word${words.length == 1 ? '' : 's'} to look up',
+      child: InkTextButton(
+        key: const ValueKey('words-link'),
+        label: 'Words',
+        glyph: InkGlyph.letter,
+        color: color ?? AppColors.royalBlue,
+        onPressed: () => showTalkWords(context, ref, text),
+      ),
+    );
+  }
+}
+
 /// The statements heard so far, under who said them, and the tips opened.
 Future<void> showDialogueNotes(
   BuildContext context, {

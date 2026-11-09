@@ -23,13 +23,17 @@ bool shipsInApp(String path) => switch (path.split('/')) {
 /// A downloaded season's pictures that ship in the app (listed one by one in
 /// `pubspec.yaml`) and are kept out of its pack: added after the pack went
 /// to the bucket.
-// shortcut: Seoul Case 11 M2's papers and Case 02 M1's room finds (2026-11-07, no R2 upload yet); move them into the pack at its next upload.
+// Seoul Case 01 V4's voices: the pack holds pictures only (checkPackFiles).
 const appOnlySeasonFiles = {
-  'assets/seasons/season_05_seoul/cases/case_11/c11_copy_list.webp',
-  'assets/seasons/season_05_seoul/cases/case_11/c11_drop_card.webp',
-  'assets/seasons/season_05_seoul/cases/case_02/find_bucket_room.webp',
-  'assets/seasons/season_05_seoul/cases/case_02/find_straw_room.webp',
-  'assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp',
+  'assets/seasons/season_05_seoul/cases/case_01/audio/mieum.m4a',
+  'assets/seasons/season_05_seoul/cases/case_01/audio/nieun.m4a',
+  'assets/seasons/season_05_seoul/cases/case_01/audio/a.m4a',
+  'assets/seasons/season_05_seoul/cases/case_01/audio/eo.m4a',
+  'assets/seasons/season_05_seoul/cases/case_01/audio/eom.m4a',
+  'assets/seasons/season_05_seoul/cases/case_01/audio/ma.m4a',
+  'assets/seasons/season_05_seoul/cases/case_01/audio/eomma.m4a',
+  'assets/seasons/season_05_seoul/cases/case_01/audio/gomawoyo.m4a',
+  'assets/seasons/season_05_seoul/cases/case_01/audio/hunminjeongeum.m4a',
 };
 
 /// Every season pack: each file under `assets/seasons/<folder>/` on disk,

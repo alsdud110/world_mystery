@@ -22,6 +22,7 @@ import '../../data/models/scene_explore.dart';
 import '../../data/models/scene_inspect.dart';
 import '../../data/models/clock_puzzle.dart';
 import '../../data/models/scene_trail.dart';
+import '../../data/models/shape_match.dart';
 import '../../data/models/game_progress.dart';
 import '../../data/models/garden_puzzles.dart';
 import '../../data/models/letter_puzzles.dart';
@@ -102,6 +103,7 @@ import 'widgets/tower_records.dart';
 import '../../data/models/detective_name.dart';
 import '../../puzzles_v2/core/syllable_rules.dart';
 import '../../puzzles_v2/core/timeline_rules.dart';
+import 'widgets/shape_match_board.dart';
 import 'widgets/syllable_board.dart';
 import 'widgets/timeline_board.dart';
 
@@ -1257,6 +1259,9 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
       progress: TalkProgress.decode(progress.puzzleStateOf(key), talk),
       onProgress: (p) => ref.read(gameControllerProvider.notifier).recordPuzzleState(key, p.encode()),
       onFinish: () => _submit(m, talk.answer),
+      hints: m.hints,
+      hintsShown: progress.hintsFor(m.id),
+      onHint: () => _showHint(m),
     );
   }
 
@@ -1329,6 +1334,9 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
             children: [
               const PaperSheetTab(),
               MissionWords(mission: m),
+              // The harder words of what was read, listed (in the sheet: the
+              // puzzle page's links stay one line on a small phone).
+              WordsLink(text: [...m.story, m.letter, m.question].join('\n')),
               const SizedBox(height: AppSpace.xl),
               GameButton(
                 label: 'BACK TO THE PUZZLE',
@@ -1453,6 +1461,14 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
     saved: progress.puzzleStateOf(m.id),
     onSaved: (s) => ref.read(gameControllerProvider.notifier).recordPuzzleState(m.id, s),
     onSubmit: (a) => _submit(m, a),
+    onListen: (voice) => ref.read(audioServiceProvider).playVoice(voice),
+  );
+
+  /// Letters laid on the pictures they copy (Seoul Case 01 M2).
+  Widget _shapesFor(Mission m, ShapeMatchSpec spec) => ShapeMatchBoard(
+    key: ValueKey('shapes-${m.id}'),
+    spec: spec,
+    onSubmit: (a) => _submit(m, a),
   );
 
   /// A searched place's search (it answers the mission's puzzle).
@@ -1490,6 +1506,7 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
     final trail = SeasonCatalog.trail(m);
     final timeline = SeasonCatalog.timeline(m);
     final syllables = SeasonCatalog.syllable(m);
+    final shapes = SeasonCatalog.shape(m);
     final explore = SeasonCatalog.explore(m);
     final inspect = SeasonCatalog.inspection(m);
     final deduction = SeasonCatalog.deduction(m);
@@ -1729,6 +1746,8 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
                   ? _timelineFor(m, timeline, progress)
                   : syllables != null
                   ? _syllablesFor(m, syllables, progress)
+                  : shapes != null
+                  ? _shapesFor(m, shapes)
                   : _questionFor(m),
             ),
           };
@@ -2258,6 +2277,11 @@ class _SolvedStage extends ConsumerWidget {
         if (SeasonCatalog.syllable(m) case final spec?) ...[
           const SizedBox(height: AppSpace.lg),
           SyllableBoard(key: ValueKey('syllables-solved-${m.id}'), spec: spec, solved: true),
+        ],
+        // Letters on their pictures: as they were laid.
+        if (SeasonCatalog.shape(m) case final spec?) ...[
+          const SizedBox(height: AppSpace.lg),
+          ShapeMatchBoard(key: ValueKey('shapes-solved-${m.id}'), spec: spec, solvedAnswer: m.answer),
         ],
         if (m.clue != null) ...[
           const SizedBox(height: AppSpace.lg),

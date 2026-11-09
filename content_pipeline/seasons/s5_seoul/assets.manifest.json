@@ -892,6 +892,29 @@
       ]
     },
     {
+      "assetId": "s5_seoul.asset.c04_palace_site_traces",
+      "type": "scene",
+      "use": "puzzle",
+      "subject": "s5_seoul.c04_palace_site_traces",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "description": "M3's trace search: the palace site of 1866 with deep wheel ruts leading to the log cart and a scatter of pale fresh wood dust on the paving (the clues the letter names).",
+      "prompt": "Edit this exact picture and keep everything else identical: same palace hall, gate, mountains, people, ox cart and paving, same positions, same drawing style and colours (a Joseon Korea scene in soft ink and watercolour). Add only two small clues on the stone courtyard in the lower middle: (1) two deep, dark, muddy wheel ruts pressed into the ground, running across the paving in the gap just left of the stone workers and leading up to the wheels of the ox cart loaded with logs; (2) a small scatter of pale, fresh, light-yellow wood dust and curly wood shavings on the paving stones just to the left of those ruts, below and to the right of the two men carrying a log. Both clues must be clearly visible but natural and small. No text, no letters anywhere.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_04/palace_site_traces.webp",
+      "references": [
+        "s5_seoul.asset.c04_palace_site"
+      ],
+      "status": "generated",
+      "notes": [
+        "2026-11-09 PART 2: an edit of palace_site.webp (gpt-image-2 edits, medium, $0.0543) so the M3 trace clues are visible; areas re-measured on it. App-only until the next R2 upload."
+      ]
+    },
+    {
       "assetId": "s5_seoul.asset.heungseon_daewongun",
       "type": "character",
       "use": "puzzle",
@@ -1623,7 +1646,7 @@
       "assetId": "s5_seoul.asset.c09_desk_key",
       "type": "object",
       "use": "puzzle",
-      "subject": "s5_ep09_e2",
+      "subject": "s5_seoul.c09_desk_key",
       "caseIds": [
         "s5_ep09"
       ],
@@ -1642,7 +1665,7 @@
       "assetId": "s5_seoul.asset.c09_ink_bottle",
       "type": "object",
       "use": "puzzle",
-      "subject": "s5_ep09_e2",
+      "subject": "s5_seoul.c09_ink_bottle",
       "caseIds": [
         "s5_ep09"
       ],
@@ -2162,6 +2185,91 @@
       "status": "generated",
       "notes": [],
       "pose": "base"
+    },
+    {
+      "assetId": "s5_seoul.asset.c01_picture_memo",
+      "type": "document",
+      "use": "puzzle",
+      "subject": "s5_seoul.c01_picture_memo",
+      "caseIds": [
+        "s5_ep01"
+      ],
+      "description": "M1: Bun-i's charcoal picture note (three pictures of her mother, three of herself, a cat, a bucket, a bird, her water drop).",
+      "prompt": "Seen straight from above: one large sheet of plain cream mulberry paper (hanji) lying flat on a dark wooden floor, filling almost the whole picture with a thin margin of floor around it. On the paper, a twelve-year-old girl has drawn simple, clear charcoal pictures, like a child's drawings: bold black charcoal lines, a little smudged, no colour except ONE small pale blue watercolour water drop. TOP ROW, three separate pictures side by side with space between them: (1) LEFT: a mother sitting at night by a Joseon oil-dish lamp (deungjan: a small shallow dish of oil with one wick flame on a plain wooden stand, no glass chimney), sewing a small child's jacket, a little girl asleep under a blanket beside her. (2) MIDDLE: a low table with two rice bowls; the girl eats from a full bowl while the smiling mother's own bowl is empty. (3) RIGHT: in falling rain, the mother walks carrying the little girl on her back under one straw rain cape. MIDDLE of the sheet, small and scattered in the gaps: a sitting cat, a wooden water bucket, a little bird. BOTTOM ROW, three separate small pictures of the same girl alone, side by side with space between: (4) LEFT: the girl kneeling in a deep formal bow, forehead and hands down to the floor; (5) MIDDLE: the girl crying beside a broken bowl in pieces; (6) RIGHT: the girl walking away with a cloth bundle on her back, waving one hand. In the bottom right corner of the sheet: one small pale blue water drop mark. Each of the six pictures is clearly separate and easy to tell apart. Warm lamplight falls on the paper from one side.",
+      "stylePreset": "joseon_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_01/m1_picture_memo.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Measured 2026-11-07 on the made picture: areas in s5_ep01 M1 play.traces.",
+        "Seoul Case 01 V4 (2026-11-07). Shipped in the app (pubspec.yaml), not in the Seoul season pack, until the next pack upload."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c01_mouth_lips",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c01_mouth_lips",
+      "caseIds": [
+        "s5_ep01"
+      ],
+      "description": "M2: closed lips from the front (ㅁ).",
+      "prompt": "A child's face seen from the FRONT, from the nose down to the chin only, humming mmm: the lips are pressed gently together and closed; the whole mouth area is a soft, wide, rounded-square shape, coloured warm rose red, clearly outlined. Cheeks slightly puffed, friendly.",
+      "stylePreset": "joseon_object",
+      "width": 1024,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_lips.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Seoul Case 01 V4 (2026-11-07). Shipped in the app (pubspec.yaml), not in the Seoul season pack, until the next pack upload."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c01_mouth_tongue",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c01_mouth_tongue",
+      "caseIds": [
+        "s5_ep01"
+      ],
+      "description": "M2: the tongue's tip on the upper gums, from the side, its red line bent like ㄴ.",
+      "prompt": "A simple side-view cut-away of a child's mouth, the face FACING LEFT: the outline of the nose, upper lip, a short row of upper front teeth and the gum ridge just behind them; the lower jaw; and the tongue drawn as ONE thick, soft pink band lying flat along the floor of the mouth whose FRONT end (on the left) bends straight UP so its tip touches the gum ridge just behind the upper front teeth. The tongue is outlined with a bold warm red line, making a clear corner shape: a straight upright part at the front and a long flat part going back.",
+      "stylePreset": "joseon_object",
+      "width": 1024,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_tongue.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Seoul Case 01 V4 (2026-11-07). Shipped in the app (pubspec.yaml), not in the Seoul season pack, until the next pack upload."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c01_mouth_throat",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_seoul.c01_mouth_throat",
+      "caseIds": [
+        "s5_ep01"
+      ],
+      "description": "M2: the open throat, from the side, a round red line (ㅇ).",
+      "prompt": "A simple side-view cut-away of a Korean child's head and neck from Joseon times (black hair tied back in a plain braid, a plain white hanbok collar), the face FACING LEFT, mouth wide open saying ahh. Inside, the tongue lies low and relaxed, and at the very back of the mouth, where it turns down into the neck, the round opening of the throat is drawn as one clear CIRCLE outlined with a bold warm red line, like looking into a round hole. Simple and soft, the throat circle large enough to see at a glance.",
+      "stylePreset": "joseon_object",
+      "width": 1024,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_01/m2_mouth_throat.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Seoul Case 01 V4 (2026-11-07). Shipped in the app (pubspec.yaml), not in the Seoul season pack, until the next pack upload."
+      ]
     }
   ],
   "notes": [

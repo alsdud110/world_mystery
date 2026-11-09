@@ -17,6 +17,7 @@ import '../models/scene_trail.dart';
 import '../models/scene_inspect.dart';
 import '../models/season.dart';
 import '../../puzzles_v2/core/syllable_rules.dart';
+import '../models/shape_match.dart';
 import '../../puzzles_v2/core/timeline_rules.dart';
 
 /// The words of the game at each level (Rookie, Junior, Master).
@@ -430,6 +431,8 @@ abstract final class DifficultyContent {
         // times, the order, which card goes with which) — every word may differ.
         final TimelineSpec s => jsonEncode(const TimelineRules().structure(s)),
         final SyllableSpec s => jsonEncode(const SyllableRules().structure(s)),
+        // Letters on pictures: the pictures and the letters — every word may differ.
+        final ShapeMatchSpec s => [for (final p in s.pictures) '${p.id}:${p.file}', for (final l in s.letters) '${l.id}:${l.glyph}'].join('|'),
         _ => null,
       };
 

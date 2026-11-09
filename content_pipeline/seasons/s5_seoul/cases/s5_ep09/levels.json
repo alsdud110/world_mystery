@@ -23,9 +23,9 @@
       "master": "Kim Gu, the police chief, demands proof."
     },
     {
-      "rookie": "Kim Gu trusts Haesu now. What will he ask of her next?",
-      "junior": "Now Kim Gu trusts Haesu. What will he ask her to do next?",
-      "master": "Kim Gu has come to trust Haesu. What task will he give her next?"
+      "rookie": "A candle, a thin paper and a book of times found the spy.",
+      "junior": "A candle, a thin paper and a book of times were enough to find the spy.",
+      "master": "A candle, a sheet of thin paper and a book of times unmasked the spy."
     },
     {
       "rookie": "Find when the light went out.",
@@ -48,14 +48,9 @@
       "master": "Present your proof to the police chief."
     },
     {
-      "rookie": "Autumn, 1920. You are a guest of Kim Gu in Shanghai.",
-      "junior": "It is autumn, 1920, and you are Kim Gu's guest in Shanghai.",
-      "master": "Autumn, 1920: you are in Shanghai as the guest of Kim Gu."
-    },
-    {
-      "rookie": "After the March First Movement, Koreans began a government here in April 1919.",
-      "junior": "Koreans started a government here in April 1919, after the March First Movement.",
-      "master": "In April 1919, following the March First Movement, Koreans founded a government here."
+      "rookie": "In 1910, Japan took over Korea. Koreans could not rule their own country.",
+      "junior": "In 1910, Japan took over Korea, so Koreans could no longer rule their own country.",
+      "master": "In 1910, Japan took over Korea, and Koreans lost the right to rule their own land."
     },
     {
       "rookie": "It is the Provisional Government of the Republic of Korea.",
@@ -71,11 +66,6 @@
       "rookie": "This morning, he is worried. \"Someone was at our secret list,\" he says.",
       "junior": "This morning he looks worried. \"Someone has been at our secret list,\" he says.",
       "master": "This morning he is troubled. \"Someone has been at our secret list,\" he tells you."
-    },
-    {
-      "rookie": "A light burned at the list desk from eleven until one. Thin paper showed the list was copied. Mr. Nam Giho, a new clerk, left last. Haesu, a keeper, saw the first clue. The Provisional Government began in Shanghai in April 1919, and Kim Gu was its police chief. His police guarded it and watched for spies. Later, in 1940, Kim Gu became its head.",
-      "junior": "A light burned at the list desk from eleven until one. Thin paper showed that the list had been copied. Mr. Nam Giho, a new clerk, was the last to leave. Haesu, a keeper, noticed the first clue. The Provisional Government began in Shanghai in April 1919, and Kim Gu was its police chief. His police protected it and watched for spies. Later, in 1940, Kim Gu became the head of the government.",
-      "master": "A light burned at the list desk from eleven until one, and thin paper proved the list had been copied. Mr. Nam Giho, a newly arrived clerk, was the last to leave. Haesu, one of the keepers, spotted the first clue. The Provisional Government was founded in Shanghai in April 1919, with Kim Gu as its police chief; his police guarded it and kept watch for spies. Later, in 1940, Kim Gu rose to become its head."
     },
     {
       "rookie": "SHANGHAI",
@@ -113,34 +103,14 @@
       "master": "A young clerk hurries by and lets a folded note fall at your feet."
     },
     {
-      "rookie": "It is in Hangeul, with a small water drop in the corner.",
-      "junior": "The note is in Hangeul, and there is a small water drop in its corner.",
-      "master": "It is written in Hangeul, with a small water drop drawn in one corner."
+      "rookie": "It is in Hangeul, Korea's own letters. It has no name.",
+      "junior": "It is written in Hangeul, Korea's own letters, and it has no name.",
+      "master": "It is written in Hangeul, Korea's own script, and bears no name."
     },
     {
-      "rookie": "The water-drop note says:",
-      "junior": "The water-drop note says:",
-      "master": "The water-drop note says:"
-    },
-    {
-      "rookie": "Detective, someone used the list desk last night.\nThe guard saw a light in the office window at eleven.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a small water drop",
-      "junior": "Detective, somebody used the list desk last night.\nThe guard saw a light in the office window at eleven.\nI had left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a small water drop",
-      "master": "Detective, someone sat at the list desk last night.\nThe guard noticed a light in the office window at eleven.\nI had placed a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a small water drop"
-    },
-    {
-      "rookie": "What time did the light go out? Count the hours, then put in the time as a number.",
-      "junior": "When did the light go out? Work out the hours, then enter the time as a number.",
-      "master": "At what time was the light put out? Count the hours, then enter the time as a number."
-    },
-    {
-      "rookie": "Find when the light went on, and how much of the candle burned.",
-      "junior": "Find out when the light came on, and how much of the candle burned away.",
-      "master": "Note when the light came on and how much of the candle was consumed."
-    },
-    {
-      "rookie": "Half of four hours is two hours. Count on from eleven at night.",
-      "junior": "Half of four hours makes two hours. Count forward from eleven at night.",
-      "master": "Two hours is half of four. Count forward from eleven at night."
+      "rookie": "The note says:",
+      "junior": "The note says:",
+      "master": "The note reads:"
     },
     {
       "rookie": "The light went out at one in the night!",
@@ -158,9 +128,9 @@
       "master": "The young clerk reappears. \"My name is Haesu. I wrote that note.\""
     },
     {
-      "rookie": "\"Gyeongsun of Aunae is my cousin. She gave me the old box.\"",
-      "junior": "\"Gyeongsun of Aunae is my cousin. She handed the old box to me.\"",
-      "master": "\"My cousin is Gyeongsun of Aunae. She entrusted the old box to me.\""
+      "rookie": "\"A spy may be in this office. So I did not sign my note.\"",
+      "junior": "\"A spy may be working in this office, so I did not sign my note.\"",
+      "master": "\"A spy may be hiding in this office; that is why I left my note unsigned.\""
     },
     {
       "rookie": "It was night, not the afternoon. One in the night is 01:00.",
@@ -169,8 +139,8 @@
     },
     {
       "rookie": "Eleven is when the light went ON. When did it go out?",
-      "junior": "The light went ON at eleven. When did it go out?",
-      "master": "Eleven is when the light went ON. When was it put out?"
+      "junior": "Eleven is when the light went ON. When did it go out?",
+      "master": "Eleven is when the light went ON. When did it go out?"
     },
     {
       "rookie": "Only half of the candle burned, not all of it.",
@@ -191,21 +161,6 @@
       "rookie": "Someone sat at the list desk from eleven until one in the night.",
       "junior": "Somebody sat at the list desk from eleven until one in the night.",
       "master": "From eleven until one in the night, someone sat at the list desk."
-    },
-    {
-      "rookie": "The box from Aunae",
-      "junior": "The box from Aunae",
-      "master": "The box from Aunae"
-    },
-    {
-      "rookie": "Which thing in your Notebook holds notes with this water drop?",
-      "junior": "Which item in your Notebook holds notes with this water drop?",
-      "master": "Which item in your Notebook keeps notes bearing this water drop?"
-    },
-    {
-      "rookie": "Find the old wooden box from Maebong hill.",
-      "junior": "Look for the old wooden box from Maebong hill.",
-      "master": "Seek out the old wooden box from Maebong hill."
     },
     {
       "rookie": "TWO HOURS AT THE LIST DESK",
@@ -306,26 +261,6 @@
       "rookie": "Copying presses names through the paper. Which thing has names pressed into it?",
       "junior": "When you copy, names get pressed through the paper. Which thing has names pressed into it?",
       "master": "Copying leaves names pressed through the paper. Which thing has names pressed into it?"
-    },
-    {
-      "rookie": "You found all three things!",
-      "junior": "You found all three things!",
-      "master": "You have found all three things!"
-    },
-    {
-      "rookie": "Someone laid thin paper on the list and wrote over it.",
-      "junior": "Someone put thin paper on top of the list and wrote over it.",
-      "master": "Someone laid thin paper over the list and traced the names through it."
-    },
-    {
-      "rookie": "The names are pressed into the paper, but not inked.",
-      "junior": "The names are pressed into the paper, but there is no ink.",
-      "master": "The names are pressed into the paper, yet not a drop of ink."
-    },
-    {
-      "rookie": "Haesu frowns. \"Only clerks can come in at night.\"",
-      "junior": "Haesu frowns. \"Only clerks can get in at night.\"",
-      "master": "Haesu frowns. \"At night, only the clerks can come in.\""
     },
     {
       "rookie": "The Copy Paper",
@@ -528,11 +463,6 @@
       "master": "Last night's page of the sign-out book:"
     },
     {
-      "rookie": "Haesu: left at nine.\nMr. Pak: left at ten.\nMr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nThe night guard: here all night, at the front door.",
-      "junior": "Haesu: left at nine.\nMr. Pak: left at ten.\nMr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nThe night guard: here all night, at the front door.",
-      "master": "Haesu: left at nine.\nMr. Pak: left at ten.\nMr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nThe night guard: here all night, at the front door."
-    },
-    {
       "rookie": "Who was still in the office when the light went out? Type his name.",
       "junior": "Who was still in the office when the light went out? Type his name.",
       "master": "Who remained in the office when the light was put out? Type his name."
@@ -540,17 +470,7 @@
     {
       "rookie": "Your first clue says when the light went out.",
       "junior": "Your first clue tells you when the light went out.",
-      "master": "Your first clue holds the time the light went out."
-    },
-    {
-      "rookie": "Find the clerk who left after one o'clock.",
-      "junior": "Look for the clerk who left after one o'clock.",
-      "master": "Seek the clerk who departed after one o'clock."
-    },
-    {
-      "rookie": "Only one clerk left after one!",
-      "junior": "Only one clerk went home after one!",
-      "master": "Just one clerk left after one!"
+      "master": "Your first clue tells you when the light was put out."
     },
     {
       "rookie": "Mr. Nam Giho came to the office only last month.",
@@ -563,11 +483,6 @@
       "master": "This morning his desk stands empty."
     },
     {
-      "rookie": "Haesu runs to find the police chief.",
-      "junior": "Haesu runs off to find the police chief.",
-      "master": "Haesu hurries off in search of the police chief."
-    },
-    {
       "rookie": "Mr. Seo left at half past eleven. The light burned until one.",
       "junior": "Mr. Seo left at half past eleven, but the light burned until one.",
       "master": "Mr. Seo left at half past eleven, while the light burned until one."
@@ -576,11 +491,6 @@
       "rookie": "Mr. Pak left at ten, before the light went on.",
       "junior": "Mr. Pak left at ten, before the light came on.",
       "master": "Mr. Pak had gone by ten, before the light came on."
-    },
-    {
-      "rookie": "Haesu left at nine. Read the times again.",
-      "junior": "Haesu left at nine. Read the times once more.",
-      "master": "Haesu left at nine. Go through the times again."
     },
     {
       "rookie": "The Last Clerk",
@@ -598,21 +508,6 @@
       "master": "Learn who stayed late into the night."
     },
     {
-      "rookie": "Four clerks work here, and me.",
-      "junior": "There are four clerks here, and me.",
-      "master": "Four clerks work here, as well as me."
-    },
-    {
-      "rookie": "Nobody gets in at night. The guard sits at the front door.",
-      "junior": "No one can get in at night. The guard sits by the front door.",
-      "master": "At night no one gets in. The guard is stationed at the front door."
-    },
-    {
-      "rookie": "Then the copier signed out last night.",
-      "junior": "Then the person who copied it signed out last night.",
-      "master": "So whoever copied it must have signed out last night."
-    },
-    {
       "rookie": "THE NEW CLERK",
       "junior": "THE NEW CLERK",
       "master": "THE NEW CLERK"
@@ -623,89 +518,19 @@
       "master": "Mr. Nam Giho remained until a quarter past one. Now inform the police chief."
     },
     {
-      "rookie": "guard the government and watch for spies",
-      "junior": "guard the government and watch for spies",
-      "master": "guard the government and watch for spies"
-    },
-    {
       "rookie": "The Police Chief",
       "junior": "The Police Chief",
       "master": "The Police Chief"
     },
     {
-      "rookie": "A big man in a dark suit comes up the stairs.",
-      "junior": "A broad man in a simple dark suit walks up the stairs.",
-      "master": "A broad-shouldered man in a plain dark suit climbs the stairs."
-    },
-    {
-      "rookie": "\"I am Kim Gu,\" he says. \"I am the police chief here.\"",
-      "junior": "\"I'm Kim Gu,\" he says. \"I'm the police chief here.\"",
-      "master": "\"I am Kim Gu,\" he says. \"I am the police chief of this government.\""
-    },
-    {
-      "rookie": "\"Haesu told me what she saw. Show me your proof.\"",
-      "junior": "\"Haesu told me what she saw. Now show me your proof.\"",
-      "master": "\"Haesu has told me what she saw. Let me see your proof.\""
-    },
-    {
-      "rookie": "Your notebook says:",
-      "junior": "Your notebook says:",
-      "master": "Your notebook says:"
-    },
-    {
-      "rookie": "The light burned at the list desk from eleven until one.\nThin paper under the desk: names pressed into it.\nMr. Nam Giho left at a quarter past one.\nThe police guard the government and watch for spies.",
-      "junior": "From eleven until one, the light burned at the list desk.\nThin paper under the desk, with names pressed into it.\nMr. Nam Giho left at a quarter past one.\nThe police guard the government and watch for spies.",
-      "master": "From eleven until one, a light burned at the list desk.\nUnder the desk, thin paper with names pressed into it.\nMr. Nam Giho left at a quarter past one.\nThe police guard the government and watch for spies."
-    },
-    {
-      "rookie": "Answer the police chief's questions with your evidence.",
-      "junior": "Answer the police chief's questions using your evidence.",
-      "master": "Meet each of the police chief's questions with your evidence."
-    },
-    {
-      "rookie": "Show one piece of evidence for each question.",
-      "junior": "Show a piece of evidence for every question.",
-      "master": "Each question needs one piece of evidence."
-    },
-    {
-      "rookie": "Use Haesu's note, the police report and the sign-out book. One of them is used twice.",
-      "junior": "Use Haesu's note, the police report and the sign-out book.",
-      "master": "You hold Haesu's note, the police report and the sign-out book."
-    },
-    {
-      "rookie": "The police chief believes you!",
-      "junior": "The police chief is convinced!",
-      "master": "The police chief is persuaded!"
-    },
-    {
-      "rookie": "Kim Gu locks the real list in an iron box.",
-      "junior": "Kim Gu locks the real list away in an iron box.",
-      "master": "Kim Gu secures the real list inside an iron box."
-    },
-    {
       "rookie": "\"Haesu,\" he says, \"you saw the first clue. Thank you.\"",
-      "junior": "\"Haesu,\" he says, \"you noticed the first clue. Thank you.\"",
-      "master": "\"Haesu,\" he says, \"it was you who saw the first clue. Thank you.\""
-    },
-    {
-      "rookie": "Haesu puts her note in the old wooden box. One more water drop.",
-      "junior": "Haesu puts her note into the old wooden box. There is one more water drop now.",
-      "master": "Haesu adds her note to the old wooden box: one more water drop among the rest."
-    },
-    {
-      "rookie": "Show Kim Gu who copied the list, and why his police matter.",
-      "junior": "Show Kim Gu who copied the list, and why his police are important.",
-      "master": "Prove to Kim Gu who copied the list, and why his police matter."
+      "junior": "\"Haesu,\" he says, \"you saw the first clue. Thank you.\"",
+      "master": "\"Haesu,\" he says, \"you noticed the first clue. Thank you.\""
     },
     {
       "rookie": "That list has the names of our friends.",
       "junior": "The names of our friends are on that list.",
       "master": "That list holds the names of our friends."
-    },
-    {
-      "rookie": "Then let me show you what happened, Chief Kim.",
-      "junior": "Then let me show you what really happened, Chief Kim.",
-      "master": "Then allow me to show you what took place, Chief Kim."
     },
     {
       "rookie": "When did this government begin?",
@@ -738,116 +563,6 @@
       "master": "All I asked was to guard the door. They gave me far more."
     },
     {
-      "rookie": "Kim Gu asks: \"When was someone at my list desk?\"",
-      "junior": "Kim Gu asks: \"When was somebody at my list desk?\"",
-      "master": "Kim Gu asks: \"At what hours was someone at my list desk?\""
-    },
-    {
-      "rookie": "From eleven until one. Half of a new candle burned.",
-      "junior": "From eleven until one. Half of a new candle burned away.",
-      "master": "From eleven until one. Half of a new candle was consumed."
-    },
-    {
-      "rookie": "Two hours with our list. That is long.",
-      "junior": "Two hours with our list. That is a long time.",
-      "master": "Two whole hours with our list. That is a long while."
-    },
-    {
-      "rookie": "That does not show when.",
-      "junior": "That doesn't show when.",
-      "master": "That says nothing of when."
-    },
-    {
-      "rookie": "Haesu's note tells when the light burned.",
-      "junior": "Haesu's note tells you when the light burned.",
-      "master": "Haesu's note reveals when the light burned."
-    },
-    {
-      "rookie": "Kim Gu asks: \"How do you know the list was copied?\"",
-      "junior": "Kim Gu asks: \"How can you tell the list was copied?\"",
-      "master": "Kim Gu asks: \"What tells you the list was copied?\""
-    },
-    {
-      "rookie": "Your report found thin paper with names pressed into it.",
-      "junior": "Your own report found thin paper with names pressed into it.",
-      "master": "The thin paper your report found has names pressed into it."
-    },
-    {
-      "rookie": "He wrote over the list. An old trick.",
-      "junior": "He wrote over the list. That is an old trick.",
-      "master": "He traced over the list. An old trick indeed."
-    },
-    {
-      "rookie": "That does not show copying.",
-      "junior": "That doesn't show copying.",
-      "master": "That proves no copying."
-    },
-    {
-      "rookie": "The police report found the thin paper.",
-      "junior": "The police report is where the thin paper was found.",
-      "master": "It was the police report that found the thin paper."
-    },
-    {
-      "rookie": "Kim Gu asks: \"Who was here when the light went out?\"",
-      "junior": "Kim Gu asks: \"Who was still here when the light went out?\"",
-      "master": "Kim Gu asks: \"Who remained here when the light went out?\""
-    },
-    {
-      "rookie": "Mr. Nam Giho. He signed out at a quarter past one.",
-      "junior": "Mr. Nam Giho. He signed the book at a quarter past one.",
-      "master": "Mr. Nam Giho. He signed himself out at a quarter past one."
-    },
-    {
-      "rookie": "The new clerk. He was asking too many questions.",
-      "junior": "The new clerk. He asked far too many questions.",
-      "master": "The new clerk. He was always asking too many questions."
-    },
-    {
-      "rookie": "That does not show who.",
-      "junior": "That doesn't show who.",
-      "master": "That says nothing of who."
-    },
-    {
-      "rookie": "The sign-out book shows who left last.",
-      "junior": "The sign-out book shows who was the last to leave.",
-      "master": "The sign-out book reveals who left last."
-    },
-    {
-      "rookie": "Kim Gu asks: \"Why does our government need police, so far from home?\"",
-      "junior": "Kim Gu asks: \"Then why does a government in exile need police?\"",
-      "master": "Kim Gu asks: \"So what need has a government in exile for police?\""
-    },
-    {
-      "rookie": "Your police guard the government and watch for spies.",
-      "junior": "Your police are there to guard the government and watch for spies.",
-      "master": "Your police guard the government and keep watch for spies."
-    },
-    {
-      "rookie": "Yes. Far from home, our government must be kept safe.",
-      "junior": "Yes. So far from home, our government has to be kept safe.",
-      "master": "Indeed. So far from home, our government must be kept safe."
-    },
-    {
-      "rookie": "That does not say what the police do.",
-      "junior": "That doesn't say what the police do.",
-      "master": "That does not describe the work of the police."
-    },
-    {
-      "rookie": "The police report says what Kim Gu's police do.",
-      "junior": "The police report tells what Kim Gu's police do.",
-      "master": "The police report describes the work of Kim Gu's police."
-    },
-    {
-      "rookie": "CLOSE THE CASE",
-      "junior": "CLOSE THE CASE",
-      "master": "CLOSE THE CASE"
-    },
-    {
-      "rookie": "By noon, Mr. Nam Giho has left Shanghai. The real list is safe.",
-      "junior": "By noon, Mr. Nam Giho has gone from Shanghai. The real list is safe.",
-      "master": "By noon, Mr. Nam Giho has vanished from Shanghai, and the real list is safe."
-    },
-    {
       "rookie": "I only counted a candle, sir.",
       "junior": "All I did was count a candle, sir.",
       "master": "I merely counted a candle, sir."
@@ -868,9 +583,289 @@
       "master": "Kim Gu served as its police chief, and his police guarded it and kept watch for spies."
     },
     {
-      "rookie": "Later, in 1940, Kim Gu became the head of that government.",
-      "junior": "Later, in 1940, Kim Gu became the leader of that government.",
-      "master": "Later, in 1940, Kim Gu rose to become the head of that government."
+      "rookie": "On 1 March 1919, people all over Korea called for independence. This is the March First Movement.",
+      "junior": "On 1 March 1919, people all over Korea called for independence, and this became the March First Movement.",
+      "master": "On 1 March 1919, people across Korea called for independence, in what we now call the March First Movement."
+    },
+    {
+      "rookie": "In April 1919, Koreans began their own government here. It works outside Korea, because Japan rules Korea.",
+      "junior": "In April 1919, Koreans set up their own government here. It works outside Korea because Japan rules Korea.",
+      "master": "In April 1919, Koreans founded their own government here, working from abroad because Japan rules Korea."
+    },
+    {
+      "rookie": "Autumn, 1920. You are in Shanghai, a big city in China, as a guest of Kim Gu.",
+      "junior": "It is autumn, 1920, and you are in Shanghai, a big city in China, as Kim Gu's guest.",
+      "master": "Autumn, 1920: you are in Shanghai, a great Chinese city, as the guest of Kim Gu."
+    },
+    {
+      "rookie": "A light burned at the list desk from eleven until one. Thin paper showed the list was copied. Mr. Nam Giho, a new clerk, left last. The copy was found in his coat. Haesu, a young clerk, saw the first clue. The Provisional Government began in Shanghai in April 1919, and Kim Gu was its police chief. His police guarded it and watched for spies. Later, in 1940, Kim Gu became its chairman.",
+      "junior": "A light burned at the list desk from eleven until one, and thin paper showed that the list was copied. Mr. Nam Giho, a new clerk, was the last to leave, and the copy was found in his coat. Haesu, a young clerk, saw the first clue. The Provisional Government began in Shanghai in April 1919, with Kim Gu as its police chief. His police guarded it and watched for spies. Later, in 1940, Kim Gu became its chairman.",
+      "master": "A light burned at the list desk from eleven until one, and a sheet of thin paper proved the list had been copied. Mr. Nam Giho, a new clerk, was the last to leave, and the copy turned up sewn in his coat. Haesu, a young clerk, noticed the first clue. The Provisional Government was founded in Shanghai in April 1919, with Kim Gu as its police chief; his police guarded it and kept watch for spies. In 1940, Kim Gu became its chairman."
+    },
+    {
+      "rookie": "Detective, someone used the list desk last night.\nAt eleven, the guard saw the light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office",
+      "junior": "Detective, someone used the list desk last night.\nAt eleven o'clock, the guard saw the light in the office go on.\nI had left a new candle there, and a new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office",
+      "master": "Detective, someone was at the list desk last night.\nAt eleven, the guard watched the office light go on.\nI had set a new candle there; a new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office"
+    },
+    {
+      "rookie": "What time did the light go out? Use four numbers. (Seven in the morning is 07:00.)",
+      "junior": "At what time did the light go out? Use four numbers. (Seven in the morning is 07:00.)",
+      "master": "At what time was the light put out? Give four numbers. (Seven in the morning is 07:00.)"
+    },
+    {
+      "rookie": "The light went on at eleven. How many hours did half the candle burn?",
+      "junior": "The light went on at eleven. How many hours did half of the candle burn?",
+      "master": "The light went on at eleven. For how many hours did half the candle burn?"
+    },
+    {
+      "rookie": "Half of four hours is two hours. Eleven, twelve, one.",
+      "junior": "Half of four hours is two hours. Count on: eleven, twelve, one.",
+      "master": "Half of four hours is two. Count on from eleven: twelve, then one."
+    },
+    {
+      "rookie": "Half of four hours is two. Count two hours from eleven.",
+      "junior": "Half of four hours is two. Count two hours on from eleven.",
+      "master": "Half of four hours is two; count two hours on from eleven."
+    },
+    {
+      "rookie": "The thin paper has names pressed into it. The list was copied!",
+      "junior": "The thin paper has names pressed into it. Someone copied the list!",
+      "master": "Names are pressed into the thin paper: the list has been copied!"
+    },
+    {
+      "rookie": "Someone wrote a copy on top of this thin paper.",
+      "junior": "Someone wrote a copy while this thin paper lay under it.",
+      "master": "Someone wrote out a copy with this thin paper lying beneath it."
+    },
+    {
+      "rookie": "His pen pressed the names into it. There is no ink on it.",
+      "junior": "The pen pressed the names into it, but there is no ink on it.",
+      "master": "The pen pressed every name into it, yet not a drop of ink reached it."
+    },
+    {
+      "rookie": "The copy itself is gone.",
+      "junior": "The copy itself is nowhere to be found.",
+      "master": "The copy itself has vanished."
+    },
+    {
+      "rookie": "Haesu frowns. \"At night, only clerks have a key to this office.\"",
+      "junior": "Haesu frowns. \"At night, only the clerks have a key to this office.\"",
+      "master": "Haesu frowns. \"At night, only the clerks hold a key to this office.\""
+    },
+    {
+      "rookie": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night. He has no office key.",
+      "junior": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night, but he has no office key.",
+      "master": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night; he holds no office key."
+    },
+    {
+      "rookie": "A quarter past one is after one. Who left then?",
+      "junior": "A quarter past one is later than one. Who left then?",
+      "master": "A quarter past one comes after one o'clock. Who signed out then?"
+    },
+    {
+      "rookie": "Haesu left at nine.",
+      "junior": "Haesu left at nine, long before one.",
+      "master": "Haesu signed out at nine, long before one."
+    },
+    {
+      "rookie": "The guard has no office key. He stayed on the floor below.",
+      "junior": "The guard has no key to the office. He stayed downstairs.",
+      "master": "The guard holds no office key; he never left his post downstairs."
+    },
+    {
+      "rookie": "Only Mr. Nam Giho was still here at one!",
+      "junior": "Only Mr. Nam Giho was still in the office at one!",
+      "master": "Mr. Nam Giho alone was still in the office at one!"
+    },
+    {
+      "rookie": "Haesu runs to tell Kim Gu.",
+      "junior": "Haesu runs off to tell Kim Gu.",
+      "master": "Haesu hurries off to tell Kim Gu."
+    },
+    {
+      "rookie": "Three other clerks work here, and me.",
+      "junior": "Three other clerks work here, and so do I.",
+      "master": "Besides me, three other clerks work here."
+    },
+    {
+      "rookie": "At night this office is locked. Only clerks have a key.",
+      "junior": "At night this office is locked, and only clerks have a key.",
+      "master": "At night the office is locked, and only the clerks hold a key."
+    },
+    {
+      "rookie": "Then the copier is a clerk who stayed late.",
+      "junior": "Then the copier must be a clerk who stayed late.",
+      "master": "Then whoever copied it must be a clerk who stayed late."
+    },
+    {
+      "rookie": "At dawn, Kim Gu's police stop Mr. Nam Giho by the river.",
+      "junior": "At dawn, Kim Gu's police stop Mr. Nam Giho down by the river.",
+      "master": "At dawn, Kim Gu's police catch up with Mr. Nam Giho by the river."
+    },
+    {
+      "rookie": "Kim Gu comes back up the stairs.",
+      "junior": "Kim Gu climbs back up the stairs to the office.",
+      "master": "Kim Gu climbs the stairs back to the office."
+    },
+    {
+      "rookie": "\"Mr. Nam says he did nothing,\" he says. \"Show me your proof.\"",
+      "junior": "\"Mr. Nam says he did nothing,\" he says. \"Show me your proof.\"",
+      "master": "\"Mr. Nam insists he did nothing,\" he says. \"Show me your proof.\""
+    },
+    {
+      "rookie": "Mr. Nam says:",
+      "junior": "This is what Mr. Nam says:",
+      "master": "Mr. Nam's account:"
+    },
+    {
+      "rookie": "Nobody was at the list desk last night.\nNothing was copied.\nI went home at nine.",
+      "junior": "\"Nobody was at the list desk last night.\"\n\"Nothing was copied.\"\n\"I went home at nine.\"",
+      "master": "\"Not a soul was at the list desk last night.\"\n\"Nothing was copied.\"\n\"I went home at nine.\""
+    },
+    {
+      "rookie": "Show Kim Gu that each thing Mr. Nam says is wrong.",
+      "junior": "Show Kim Gu why each thing Mr. Nam says is wrong.",
+      "master": "Prove to Kim Gu that each of Mr. Nam's claims is false."
+    },
+    {
+      "rookie": "Each thing Mr. Nam says has one card that shows it is wrong.",
+      "junior": "For each thing Mr. Nam says, one card shows it is wrong.",
+      "master": "Each of Mr. Nam's claims is broken by exactly one card."
+    },
+    {
+      "rookie": "Desk: Haesu's Note. Copy: the police report. Nine: the sign-out book.",
+      "junior": "The desk: Haesu's Note. The copy: the police report. Nine: the sign-out book.",
+      "master": "The desk: Haesu's Note. The copy: the police report. Nine o'clock: the sign-out book."
+    },
+    {
+      "rookie": "Kim Gu nods. \"Search his coat.\"",
+      "junior": "Kim Gu nods. \"Search his coat.\"",
+      "master": "Kim Gu gives a nod. \"Search his coat.\""
+    },
+    {
+      "rookie": "Show one card for each thing Mr. Nam says.",
+      "junior": "Show one card for each thing that Mr. Nam says.",
+      "master": "Show one card against each of Mr. Nam's claims."
+    },
+    {
+      "rookie": "Sewn inside Mr. Nam's coat is the copied list. It never left Shanghai.",
+      "junior": "The copied list is sewn inside Mr. Nam's coat, so it never left Shanghai.",
+      "master": "Sewn into the lining of Mr. Nam's coat is the copied list; it never left Shanghai."
+    },
+    {
+      "rookie": "Kim Gu locks the real list and the copy in an iron box.",
+      "junior": "Kim Gu locks both the real list and the copy in an iron box.",
+      "master": "Kim Gu locks the real list and the copy away in an iron box."
+    },
+    {
+      "rookie": "Show Kim Gu that Mr. Nam's words are wrong.",
+      "junior": "Show Kim Gu that what Mr. Nam says is wrong.",
+      "master": "Prove to Kim Gu that Mr. Nam's account is false."
+    },
+    {
+      "rookie": "Without proof, I must let him go.",
+      "junior": "Without proof, I will have to let him go.",
+      "master": "Without proof, I have no choice but to let him go."
+    },
+    {
+      "rookie": "Kim Gu asks: \"He says nobody was at the list desk. Was someone?\"",
+      "junior": "Kim Gu asks: \"He says nobody was at the list desk. Was anyone there?\"",
+      "master": "Kim Gu asks: \"He claims nobody was at the list desk. Was someone there?\""
+    },
+    {
+      "rookie": "Yes. The light went on at eleven. Half a new candle burned: until one.",
+      "junior": "Yes. The light went on at eleven, and half a new candle burned: until one.",
+      "master": "Yes. The light went on at eleven, and half a new candle burned away: until one."
+    },
+    {
+      "rookie": "Two hours with our list.",
+      "junior": "Two whole hours with our list.",
+      "master": "Two long hours alone with our list."
+    },
+    {
+      "rookie": "That does not show anyone at the desk.",
+      "junior": "That does not show anyone at the desk.",
+      "master": "That proves nobody was at the desk."
+    },
+    {
+      "rookie": "Which card is about the candle and the light?",
+      "junior": "Which card tells about the candle and the light?",
+      "master": "Which card speaks of the candle and the light?"
+    },
+    {
+      "rookie": "Kim Gu asks: \"He says nothing was copied.\"",
+      "junior": "Kim Gu asks: \"He says that nothing was copied.\"",
+      "master": "Kim Gu asks: \"He insists nothing was copied.\""
+    },
+    {
+      "rookie": "This thin paper was under his copy. His pen pressed the names into it.",
+      "junior": "This thin paper lay under his copy, and his pen pressed the names into it.",
+      "master": "This thin paper lay beneath his copy; his pen pressed every name into it."
+    },
+    {
+      "rookie": "So a copy was made. Where is it?",
+      "junior": "So a copy was made. But where is it?",
+      "master": "So a copy was made. Then where is it now?"
+    },
+    {
+      "rookie": "That does not show a copy.",
+      "junior": "That does not show a copy.",
+      "master": "That proves nothing about a copy."
+    },
+    {
+      "rookie": "Which card is about the thin paper?",
+      "junior": "Which card tells about the thin paper?",
+      "master": "Which card speaks of the thin paper?"
+    },
+    {
+      "rookie": "Kim Gu asks: \"He says he went home at nine.\"",
+      "junior": "Kim Gu asks: \"He says that he went home at nine.\"",
+      "master": "Kim Gu asks: \"He claims he went home at nine.\""
+    },
+    {
+      "rookie": "The sign-out book says a quarter past one. Everyone else left before one.",
+      "junior": "The sign-out book says a quarter past one, and everyone else left before one.",
+      "master": "The sign-out book says a quarter past one; every other clerk had gone before one."
+    },
+    {
+      "rookie": "And the guard has no key. It was Mr. Nam.",
+      "junior": "And the guard has no key, so it was Mr. Nam.",
+      "master": "And the guard holds no key. It was Mr. Nam."
+    },
+    {
+      "rookie": "That does not show when he left.",
+      "junior": "That does not show when he left.",
+      "master": "That says nothing of when he left."
+    },
+    {
+      "rookie": "Which card has the times the clerks left?",
+      "junior": "Which card shows the times the clerks left?",
+      "master": "Which card records when the clerks left?"
+    },
+    {
+      "rookie": "SEARCH HIS COAT",
+      "junior": "SEARCH HIS COAT",
+      "master": "SEARCH HIS COAT"
+    },
+    {
+      "rookie": "Mr. Nam Giho can never spy in this office again.",
+      "junior": "Mr. Nam Giho will never spy in this office again.",
+      "master": "Mr. Nam Giho will never again spy in this office."
+    },
+    {
+      "rookie": "In 1940, Kim Gu became the chairman, the leader, of that government.",
+      "junior": "In 1940, Kim Gu became the chairman, the leader, of that government.",
+      "master": "In 1940, Kim Gu became chairman, the leader, of that same government."
+    },
+    {
+      "rookie": "Nothing was copied.",
+      "junior": "Nothing was copied.",
+      "master": "Nothing was copied."
+    },
+    {
+      "rookie": "I went home at nine.",
+      "junior": "I went home at nine.",
+      "master": "I went home at nine."
     }
   ],
   "glossary": {

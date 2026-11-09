@@ -246,6 +246,12 @@ class MissionPlay {
         await t.enterText(find.byType(TextField), m.answer);
         await t.pump();
       case MissionType.numberCode:
+        // A wrong code stays on the board: cleared before the next.
+        if (find.bySemanticsLabel('Clear').evaluate().isNotEmpty) {
+          await reveal(t, find.bySemanticsLabel('Clear').first);
+          await t.tap(find.bySemanticsLabel('Clear').first);
+          await t.pump();
+        }
         for (final d in m.answer.split('')) {
           await tapText(t, d, after: const Duration(milliseconds: 120));
         }

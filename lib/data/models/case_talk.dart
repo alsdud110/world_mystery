@@ -117,9 +117,10 @@ class TalkQuestion {
 /// one of [accepted] (notebook evidence ids) plays [beat] and is done; any
 /// other plays its line in [misses], else [miss] (never counted as wrong).
 ///
-/// With [choices] (two evidence ids), the two pieces are shown as cards
+/// With [choices] (two to four evidence ids), the pieces are shown as cards
 /// right there to pick from, instead of the notebook (Cases 11–12, for a
-/// child alone); after a second miss, [tell] says which one, and it is lit.
+/// child alone); after a second miss, [tell] is said over them, and from
+/// miss [litAfter] the right card is lit.
 @immutable
 class TalkPresent {
   const TalkPresent({
@@ -132,7 +133,12 @@ class TalkPresent {
     this.requires = const {},
     this.choices = const [],
     this.tell,
+    this.litAfter = 2,
   });
+
+  /// The miss from which the right card is lit (2: [tell] names it plainly;
+  /// more: [tell] only says what to read again, and the card lights later).
+  final int litAfter;
 
   /// The pieces to pick from, shown as cards (empty: the notebook).
   final List<String> choices;

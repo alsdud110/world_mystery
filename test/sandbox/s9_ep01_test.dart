@@ -88,7 +88,9 @@ void main() {
     });
 
     test('is not a season of the game: the catalog and its content are as they were', () {
-      expect([for (final s in SeasonCatalog.all) s.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork], reason: 'Rome is in the game; the sandbox never');
+      // The seasons made from plans that are in the game (Rome, New York, Seoul: 2026-11-05); the sandbox never.
+      expect([for (final s in SeasonCatalog.all) s.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul], reason: 'the sandbox (s9) is never a season of the game');
+      expect(SeasonCatalog.all.any((s) => s.id.startsWith('s9')), isFalse);
       expect(SeasonCatalog.all.any((s) => s.episodes.containsKey('s9_ep01')), isFalse);
       expect(SeasonCatalog.testPlaces, isEmpty);
     });

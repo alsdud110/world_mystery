@@ -4,24 +4,24 @@
   "city": "Seoul",
   "title": "The King's Letters of Seoul",
   "tagline": "READ THE NEW LETTERS",
-  "logline": "From King Sejong's new letters in 1446 to the light of 1945, the detective is a guest at twelve turning points of Korea's story. At each one a short note in the King's letters, marked with a small water drop, asks for help. Who keeps writing them, across five hundred years?",
+  "logline": "From King Sejong's new letters in 1446 to the light of 1945, the detective is a guest at twelve turning points of Seoul's story, and solves a separate mystery at each one.",
   "coreMystery": {
-    "question": "Who leaves the notes in the King's letters, marked with a small water drop, at every turning point of Korea's story, and what do they keep?",
-    "truth": "Bun-i, the water-carrier who wrote the first letter in the new letters in 1446 (Case 01), was given a small wooden letter box by Sora. She taught her children to read, and they taught theirs. For five hundred years one ordinary family, never famous, kept the box: in every hard time a keeper wrote one short note in the King's letters, signed it with Bun-i's water drop, and quietly helped. They never changed history; they kept the letters alive and helped people see the truth.",
-    "culprit": "No one: the season's mystery is a family of keepers, not a crime. Each case has its own small, made-up wrongdoer or puzzle; history itself is never changed.",
-    "motive": "To keep the people's own letters alive, as Bun-i promised Sora: 'Anyone can learn them. I will teach them.'",
-    "method": "A short note in Hangeul with a water-drop mark, left where the detective will find it, in each case; the letter box passed from parent to child.",
-    "revealCase": "s5_ep08",
+    "question": "What really happened at twelve turning points of Seoul's story? Each case asks its own question.",
+    "truth": "There is no single season mystery. Season 5 is twelve separate history cases set across Seoul's story, from King Sejong's new letters in 1446 to the light of 15 August 1945. Each case has its own problem, its own people and its own evidence, and is solved inside that case.",
+    "culprit": "No one across the season: each case has its own small, made-up wrongdoer or puzzle; history itself is never changed.",
+    "motive": "None across the season; each case's motive is its own.",
+    "method": "Each case is solved only with the clues found in that case; no evidence, note or object carries from one case to another.",
+    "revealCase": "s5_ep12",
     "resolvedCase": "s5_ep12"
   },
   "themes": [
     "Letters are for everyone: King Sejong made them so ordinary people could write what they meant.",
-    "Ordinary people keep a country's memory: the keepers are never famous.",
+    "Ordinary people keep a country's memory: most of them are never famous.",
     "Evidence over guesses: every case is solved by reading closely.",
     "History is not changed: the detective finds the truth of each moment and sees what really happened."
   ],
-  "startingSituation": "Autumn 1446: the detective is King Sejong's guest when a half-burnt paper in the new letters is found at the inner gate (Case 01). After that case, at each new turning point of Korea's story, the detective arrives as a guest, and a note with a small water drop is waiting.",
-  "ending": "15 August 1945, Chongqing: the news of Japan's surrender comes. Bitna, the youngest keeper, opens the old letter box: Bun-i's first note from 1446 lies under eleven more. 'Gwangbok' means the light returns. Many people, at home and far away, known and unknown, worked and waited for this day. The letters are free again.",
+  "startingSituation": "Summer 1446: the detective is King Sejong's guest when Bun-i, a water-carrier, wants to write her mother a letter in the new letters (Case 01). After that case, at each new turning point of Korea's story, the detective arrives as a guest and solves a separate case with its own people and clues.",
+  "ending": "15 August 1945, Chongqing: the news of Japan's surrender comes, and Bitna opens her mother's box on the right day (Case 12). 'Gwangbok' means the light returns. Many people, at home and far away, known and unknown, worked and waited for this day. Twelve separate cases, from 1446 to 1945, are solved.",
   "characters": [
     {
       "charId": "sejong",
@@ -45,7 +45,7 @@
       "name": "Taek",
       "role": "The night guard at the inner gate (made up)",
       "personality": "Gruff, honest, a good memory for shapes.",
-      "purpose": "Case 01: he saw the burnt paper before the fire, and remembers its shapes.",
+      "purpose": "Not in Case 01 since V4 (2026-11-07); kept for the season's cast.",
       "appearance": "Forties, guard's uniform, lantern.",
       "relationships": [
         {
@@ -62,7 +62,7 @@
       "name": "Sora",
       "role": "A palace maid who teaches the new letters (made up)",
       "personality": "Kind, patient, a little nervous.",
-      "purpose": "Case 01: she taught Bun-i; she gives Bun-i the little letter box that the keepers carry for five hundred years.",
+      "purpose": "Case 01: she teaches Bun-i the new letters.",
       "appearance": "About seventeen, simple palace maid's hanbok, braided hair.",
       "relationships": [
         {
@@ -77,9 +77,9 @@
     {
       "charId": "bun_i",
       "name": "Bun-i",
-      "role": "A water-carrier girl who writes her first letter; the first keeper (made up)",
+      "role": "A water-carrier girl who writes her first letter (made up)",
       "personality": "Brave, practical, proud of her first letter.",
-      "purpose": "Case 01: her paper holds the name of the letters; her water drop marks every keeper's note after her.",
+      "purpose": "Case 01: she writes her first letter, to her mother, in the King's letters, and signs it with her water drop.",
       "appearance": "About twelve, plain cotton clothes, a water bucket on a yoke.",
       "relationships": [
         {
@@ -128,15 +128,11 @@
     {
       "charId": "seok",
       "name": "Seok",
-      "role": "A young sailor of sixteen; the keeper of 1592 (made up)",
+      "role": "A young sailor of sixteen (made up)",
       "personality": "Quiet, quick, brave without fuss.",
-      "purpose": "Case 02: moves the gunpowder out of the rain to the turtle ship and leaves the second water-drop note.",
+      "purpose": "Case 02: moves the gunpowder out of the rain to the turtle ship and leaves a note; his water drop tells Ham, who reads only Chinese characters, that the rain was the reason.",
       "appearance": "Sixteen, lean and sunburnt, white cotton sailor's clothes, cloth headband.",
       "relationships": [
-        {
-          "charId": "bun_i",
-          "relation": "Of her family: his grandmother taught him the water drop."
-        },
         {
           "charId": "yi_sunsin",
           "relation": "His admiral."
@@ -183,14 +179,14 @@
     {
       "charId": "okbun",
       "name": "Okbun",
-      "role": "A girl of twelve who carries water to the builders; the keeper of 1795 (made up)",
+      "role": "A girl of twelve who carries water to the builders (made up)",
       "personality": "Watchful, clever, says little.",
-      "purpose": "Case 03: sees the copied drawing and ties the third water-drop note to the rope.",
+      "purpose": "Case 03: sees the copied drawing and ties a warning note to the rope, signed with a water drop instead of her name.",
       "appearance": "Twelve, plain cotton hanbok with sleeves tied back, a water bucket on a yoke.",
       "relationships": [
         {
-          "charId": "seok",
-          "relation": "Of the same family: her mother told her his name."
+          "charId": "gwak",
+          "relation": "She carries water to his builders."
         }
       ],
       "cases": [
@@ -217,14 +213,14 @@
     {
       "charId": "duri",
       "name": "Duri",
-      "role": "A carpenter's apprentice of fourteen; the keeper of 1866 (made up)",
+      "role": "A carpenter's apprentice of fourteen (made up)",
       "personality": "Keen-eyed, careful with tools, worried for his family.",
-      "purpose": "Case 04: sees the new cut on the palace logs and leaves the fourth water-drop note; lays the notes side by side.",
+      "purpose": "Case 04: sees the new cut on the palace logs and leaves a warning note.",
       "appearance": "Fourteen, padded cotton jacket, leather tool belt with a chisel, sawdust on his sleeves.",
       "relationships": [
         {
-          "charId": "okbun",
-          "relation": "Of the same family: his father taught him the mark."
+          "charId": "heungseon_daewongun",
+          "relation": "Works on the palace he rebuilds."
         }
       ],
       "cases": [
@@ -251,9 +247,9 @@
     {
       "charId": "lady_han",
       "name": "Court Lady Han",
-      "role": "A court lady who serves the Queen; the keeper of 1895 (made up)",
+      "role": "A court lady who serves the Queen (made up)",
       "personality": "Calm, watchful, brave in a quiet way.",
-      "purpose": "Case 05: she sees the strangers, keeps their rope and hides their map; her water-drop note starts the case.",
+      "purpose": "Case 05: she sees the strangers, keeps their rope and hides their map; she leaves a note marked with a water drop.",
       "appearance": "Mid-thirties, a court lady's dark green jacket and long deep-blue skirt, hair in a neat low bun with a plain wooden pin, a small sewing box in her hands.",
       "relationships": [
         {
@@ -311,14 +307,14 @@
     {
       "charId": "bongsu",
       "name": "Bongsu",
-      "role": "A palace errand boy; the keeper of 1907 (made up)",
+      "role": "A palace errand boy (made up)",
       "personality": "Quick, cheerful, knows every path and every guard.",
-      "purpose": "Case 06: his water-drop note leads to the hidden letter; he whispers the way past the watchers.",
+      "purpose": "Case 06: his note leads to the hidden letter; he whispers the way past the watchers.",
       "appearance": "About thirteen, a plain white cotton jacket and baggy trousers tied at the ankle, a dark vest, short hair under a small cloth band, a cloth bag over one shoulder.",
       "relationships": [
         {
-          "charId": "lady_han",
-          "relation": "The keeper before him (1895), of the same family."
+          "charId": "gojong",
+          "relation": "Runs errands in his palace."
         }
       ],
       "cases": [
@@ -345,15 +341,11 @@
     {
       "charId": "mrs_kang",
       "name": "Mrs. Kang",
-      "role": "She runs a Korean inn in Harbin; the keeper of 1909 (made up)",
+      "role": "She runs a Korean inn in Harbin (made up)",
       "personality": "Warm, sharp, does not believe what she has not checked.",
-      "purpose": "Case 07: her water-drop note sends the detective to compare two reports; she keeps the true one.",
+      "purpose": "Case 07: her note sends the detective to compare two reports; she keeps the true one.",
       "appearance": "Mid-fifties, a padded cotton hanbok jacket in dark plum for the cold north, a white apron, grey-streaked hair in a low bun, holding a teapot.",
       "relationships": [
-        {
-          "charId": "bongsu",
-          "relation": "The keeper before her (1907), of the same family."
-        },
         {
           "charId": "porter_pak",
           "relation": "A regular at her inn."
@@ -429,18 +421,14 @@
     {
       "charId": "gyeongsun",
       "name": "Gyeongsun",
-      "role": "Gwan-sun's school friend and the keeper of 1919 (made up)",
+      "role": "Gwan-sun's school friend (made up)",
       "personality": "Shy, clever, loyal; keeps secrets.",
-      "purpose": "Case 08: writes the water-drop note and shows the box with Bun-i's note at the bottom (Act 2's reveal).",
-      "appearance": "Sixteen, white jeogori and black skirt, a plain brown notebook with a water drop.",
+      "purpose": "Case 08: writes a note marked with a small flame and helps keep the march plan from a stranger.",
+      "appearance": "Sixteen, white jeogori and black skirt, a plain brown notebook with a small flame.",
       "relationships": [
         {
-          "charId": "haesu",
-          "relation": "Her cousin, who takes the box to Shanghai."
-        },
-        {
-          "charId": "bun_i",
-          "relation": "Her ancestor, the first keeper."
+          "charId": "yu_gwansun",
+          "relation": "Her school friend from Ewha."
         }
       ],
       "cases": [
@@ -474,7 +462,7 @@
       "relationships": [
         {
           "charId": "haesu",
-          "relation": "Trusts her after Case 09."
+          "relation": "A clerk of his office."
         },
         {
           "charId": "yun_bonggil",
@@ -489,14 +477,14 @@
     {
       "charId": "haesu",
       "name": "Haesu",
-      "role": "A young clerk of the Provisional Government and the keeper of Shanghai (made up)",
+      "role": "A clerk of the Provisional Government (made up)",
       "personality": "Sharp-eyed, quiet, brave; counts and notes everything.",
-      "purpose": "Cases 09-10: notices the first clue of the spy; keeps the true story of 29 April 1932 in the box. Bitna's mother.",
+      "purpose": "Cases 09-10: notices the first clue of the spy (Case 09); keeps the government's record of the morning of 29 April 1932 (Case 10).",
       "appearance": "Early twenties in 1920, white blouse, dark skirt, pencil behind her ear.",
       "relationships": [
         {
-          "charId": "gyeongsun",
-          "relation": "Her cousin, who gave her the box."
+          "charId": "kim_gu",
+          "relation": "Works in his office."
         }
       ],
       "cases": [
@@ -558,18 +546,14 @@
     {
       "charId": "miri",
       "name": "Miri",
-      "role": "A keeper in 1941, Haesu's cousin, who helps at the college (made up)",
+      "role": "A young woman who helps at Yonhi College (made up)",
       "personality": "Brave, quick, a little impatient; loves the King's letters.",
-      "purpose": "Case 11: hides the poet's copy in the letter box inside the college piano, and sends the box to Chongqing.",
+      "purpose": "Case 11: keeps the poet's copy safe for one night; she signs her card with a water drop.",
       "appearance": "Nineteen, short neat bob, dark skirt, cream blouse, knitted cardigan.",
       "relationships": [
         {
           "charId": "yun_dongju",
           "relation": "She admires his poems."
-        },
-        {
-          "charId": "bitna",
-          "relation": "Her young cousin's daughter, far away in Chongqing."
         }
       ],
       "cases": [
@@ -596,14 +580,14 @@
     {
       "charId": "bitna",
       "name": "Bitna",
-      "role": "The last keeper, Haesu's daughter (made up)",
+      "role": "A Korean girl of eleven in Chongqing (made up)",
       "personality": "Bright, playful, proud; loves games with letters.",
-      "purpose": "Case 12: leaves the tiles, keeps the box, writes the last water-drop note: 광복, LIGHT.",
+      "purpose": "Case 12: her mother's box is lost in the office; her mother said to open its lock only on the day the war is over. Her mother is far away with the Korean Liberation Army (made up).",
       "appearance": "Eleven, long single braid, light summer hanbok jacket.",
       "relationships": [
         {
-          "charId": "miri",
-          "relation": "Her mother's cousin, who sent the box."
+          "charId": "kim_wonbong",
+          "relation": "Her father works in his government office."
         }
       ],
       "cases": [
@@ -634,7 +618,7 @@
       "name": "The Inner Gate",
       "cityArea": "The palace in Hanyang, 1446",
       "visual": "A wooden gate, a guard post, lanterns.",
-      "storyRole": "Case 01: where the burnt paper is found.",
+      "storyRole": "Case 01: Sora's lesson by the lantern (M2).",
       "cases": [
         "s5_ep01"
       ],
@@ -823,15 +807,15 @@
   "acts": [
     {
       "actId": "act1",
-      "title": "THE WATER-DROP NOTES",
-      "summary": "1446 to the 1860s: the King's new letters, the turtle ship before the war, the crane at Hwaseong, the rebuilt palace. In every case a note with a water drop is waiting.",
+      "title": "LETTERS, SHIPS AND PALACES",
+      "summary": "1446 to the 1860s: the King's new letters, the turtle ship before the war, the crane at Hwaseong, the rebuilt palace. Each case is its own mystery.",
       "caseIds": [
         "s5_ep01",
         "s5_ep02",
         "s5_ep03",
         "s5_ep04"
       ],
-      "turningPoint": "Case 04: the detective lays the notes of 1592, 1795 and 1866 side by side. The same water drop, the same way of writing: one family, not one person, writes them."
+      "turningPoint": "Case 04: the palace is rebuilt, and the people pay a heavy price for it."
     },
     {
       "actId": "act2",
@@ -843,7 +827,7 @@
         "s5_ep07",
         "s5_ep08"
       ],
-      "turningPoint": "Case 08: Gyeongsun shows the detective the old letter box. Under the notes lies Bun-i's first note of 1446. The keepers are Bun-i's family."
+      "turningPoint": "Case 08: on 1 April 1919 thousands march for independence at Aunae Market."
     },
     {
       "actId": "act3",
@@ -855,137 +839,113 @@
         "s5_ep11",
         "s5_ep12"
       ],
-      "turningPoint": "Case 11: Korean lessons have stopped in the schools, and the keeper Miri hides the box with a poet's copy. Case 12: the box is opened in Chongqing on the day the light returns."
+      "turningPoint": "Case 12: on 15 August 1945 Japan surrenders, and the light returns."
     }
   ],
   "cases": [
     {
       "caseId": "s5_ep01",
-      "title": "The Secret of the King's Letters",
-      "question": "Who wrote the half-burnt paper in the new letters, and what were its four groups?",
-      "solution": "Bun-i, a water-carrier who could not write Chinese characters, wrote the name of the King's letters on her tenth day. The groups are found as 훈, 음, 정, 민 and built by their meanings: Hunminjeongeum, the right sounds to teach the people.",
-      "fromPrevious": "The season opens.",
-      "toNext": "Bun-i's water drops: the mark every later note carries."
+      "title": "The King's Secret Letters",
+      "question": "Can Bun-i write her own letter to her mother?",
+      "solution": "Bun-i's picture note says thank you; the King's letters copy the mouth (ㅁ the lips, ㄴ the tongue, ㅇ the throat); she writes her first word 엄마 and finishes her letter 엄마, 고마워요 with Sora's model word, signed with her water drop. The King names his letters Hunminjeongeum, the right sounds to teach the people; at dawn Bun-i teaches her mother to read it, and her mother keeps it in a wooden box.",
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep02",
       "title": "The Turtle Ship Before Dawn",
       "question": "Spring 1592, the navy base at Yeosu: the day before the turtle ship's cannon test, the gunpowder is gone from the store room. Who moved it, and where?",
       "solution": "Made up: Seok moved the powder away from a leaking roof and left the note. History (the answer DRAGON): Yi Sun-sin's turtle ship had a plank roof like a turtle's back and a dragon head with a gun hole. His diary records the cannon test on the 12th day of the 4th lunar month of 1592; on the 13th Japanese ships reached Busan and the Imjin War began; in the 5th month his navy won the first victory at sea, at Okpo.",
-      "fromPrevious": "The water drop on the note is Bun-i's mark (s5_ep01_c1: the water-carrier).",
-      "toNext": "Seok's note is the second water-drop note."
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep03",
       "title": "The Crane That Lifts Stones",
       "question": "1795, Hwaseong Fortress in Suwon: the new lifting machine is said to be broken. Is it, and who wrote the warning?",
       "solution": "Made up: a foreman built the machine from the wrong drawing; Okbun left the note. History (the answer 1796): Hwaseong Fortress was begun in 1794 and finished in 1796; lifting machines like Jeong Yak-yong's geojunggi helped move the big stones, and the 1801 record book lists the workers and their pay.",
-      "fromPrevious": "Seok's water drop of 1592 matches this note's (s5_ep02_e1).",
-      "toNext": "Two notes, two hundred years apart, the same mark."
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep04",
       "title": "The Palace of a Thousand Logs",
       "question": "1866, the rebuilding of Gyeongbokgung: timber marked for the palace is missing from the yard. Where did it go?",
       "solution": "Made up: a dealer changed the marks on the logs; Duri left the note. History (the Daewongun's talk): the rebuilding of Gyeongbokgung began in the 4th month of 1865 under the Heungseon Daewongun and the King moved in in 1868; it cost the people dearly: money they could not refuse to give, a new coin in 1866 that pushed prices up, and farmers called to work.",
-      "fromPrevious": "The note is written with Sora's rule for stronger sounds (s5_ep01_e2); the water drop matches 1592 and 1795.",
-      "toNext": "The same drop in three centuries: a family, not one person."
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep05",
       "title": "The Lights of Geoncheonggung",
       "question": "Early autumn 1895, Geoncheonggung in Gyeongbokgung: the electric lamps go dark and strangers are seen in the court. What were they doing, and why is the Queen in danger?",
       "solution": "Made up: strangers took the belt off the lamp machine and drew a map; Court Lady Han found it. History (the answer JAPAN): in 1895 Queen Myeongseong worked with Russia to hold back Japan's power. On 8 October 1895 men sent by Japan's minister attacked the palace and killed her (told plainly, once).",
-      "fromPrevious": "Duri's water-drop note of 1866 (s5_ep04_e1): the same water drop.",
-      "toNext": "The palace is no longer safe."
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep06",
       "title": "The Emperor's Secret Letter",
       "question": "Spring 1907, Gyeongun Palace: Emperor Gojong's secret letter for the peace conference in The Hague must leave the palace unseen. Where is it hidden?",
       "solution": "Made up: Bongsu read the traces to the old pine's hollow. History (the answer FORCED): Emperor Gojong sent Yi Jun, Yi Sang-seol and Yi Wi-jong to the peace conference in The Hague in 1907 to tell the world that the 1905 treaty was forced on Korea. They were not let in; Yi Jun died in The Hague, and Japan forced Gojong off the throne that year.",
-      "fromPrevious": "Court Lady Han's water drop (s5_ep05_e1) and the strangers' map (s5_ep05_e4): the palace is watched.",
-      "toNext": "Korea's rights are taken; people far from Seoul keep its truth."
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep07",
       "title": "Two Reports from Harbin",
       "question": "Late October 1909, Harbin: two newspaper reports about An Jung-geun disagree. Which one tells the truth?",
       "solution": "Made up: two newspaper reports, Mr. Pak and Mrs. Kang. History (the talk's last answer): on 26 October 1909 at Harbin Station An Jung-geun called out 'Korea, hurrah!'; in prison he began 'On Peace in East Asia', writing that he acted for Korea's independence and for peace in East Asia.",
-      "fromPrevious": "Bongsu's water drop (s5_ep06_e1) and the Emperor's letter (s5_ep06_e4): the 1905 treaty was forced.",
-      "toNext": "Ten years later, people all over Korea stand up."
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep08",
       "title": "The Fire on the Hill",
       "question": "March 1919, near Cheonan: Yu Gwan-sun plans a march at Aunae Market. When and how will the villages know the day?",
-      "solution": "Made up: the messengers, Mr. Pyo and Gyeongsun's box. History (the answer 311): Yu Gwan-sun brought the March First Movement home; a fire on Maebong hill at night was the sign, and on 1 April 1919 thousands marched for independence at Aunae Market. Her parents died that day; she was arrested and died in Seodaemun Prison in 1920 (told plainly, once).",
-      "fromPrevious": "Bun-i's note (s5_ep01_e3) is in the box; Mrs. Kang's note of 1909 (s5_ep07_e1).",
-      "toNext": "The keepers are one family. The next keeper goes to Shanghai."
+      "solution": "Made up: the messengers, Mr. Pyo and Gyeongsun's note. History (the answer 311): Yu Gwan-sun brought the March First Movement home; a fire on Maebong hill at night was the sign, and on 1 April 1919 thousands marched for independence at Aunae Market. Her parents died that day; she was arrested and died in Seodaemun Prison in 1920 (told plainly, once).",
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep09",
       "title": "The Spy in the Shanghai Office",
       "question": "1920s, Shanghai: someone copies the Provisional Government's secret list. Who?",
       "solution": "Made up: the spy Nam Giho and the copied list. History (the answer PROTECT): the Provisional Government of the Republic of Korea was founded in Shanghai in April 1919; Kim Gu was its police chief from August 1919, guarding it and watching for spies, and later led it.",
-      "fromPrevious": "Gyeongsun's box went to Shanghai with Haesu (s5_ep08_e4).",
-      "toNext": "Kim Gu trusts Haesu."
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep10",
       "title": "The Two Watches",
       "question": "29 April 1932, Shanghai: Yun Bong-gil and Kim Gu exchanged watches in the morning. Which watch is which, and what did Yun leave behind?",
       "solution": "History (the answer 1932): on the morning of 29 April 1932 Yun Bong-gil gave Kim Gu his new watch and took Kim Gu's old one; that day he carried out his act at Hongkou Park (told in one plain line). Afterwards Chinese leaders, Chiang Kai-shek among them, strongly supported the Provisional Government. Yun was arrested and died in Japan in December 1932.",
-      "fromPrevious": "Haesu again; Kim Gu of Case 09 (s5_ep09_e4).",
-      "toNext": "The box goes back to Seoul with Haesu's cousin Miri."
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep11",
       "title": "The Poet's Three Copies",
       "question": "Late 1941, Yonhi College, Seoul: Yun Dong-ju's handwritten book of poems cannot be printed. Where is the copy he made for his friend?",
       "solution": "Made up: Miri, who helps at the college, keeps the copy for one night. History (the answer KOREAN): in 1941 Yun Dong-ju copied his nineteen poems by hand in three copies, written in Korean while Korean was being pushed out of the schools; his friend Jeong Byeong-uk's copy was hidden under the floor of the family house in Gwangyang and became a book in 1948.",
-      "fromPrevious": "Haesu's water-drop note (s5_ep10_e1) and the letters themselves (s5_ep01): Korean is taught less and less in the schools.",
-      "toNext": "Miri sends the box to the family in Chongqing."
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     },
     {
       "caseId": "s5_ep12",
-      "title": "The Day the Light Returned",
-      "question": "August 1945, Chongqing: the last water-drop note is in the box, but what does it say, and who is the last keeper?",
-      "solution": "Made up: Bitna, the trunks and the keepers' notes. History (the answer LIGHT): on 15 August 1945 Japan surrendered to the Allies; gwangbok means 'the light returns'. Kim Won-bong had worked for independence since 1919 and was the government in exile's minister of military affairs in Chongqing. No one person brought the day: the Allies' victory and many Koreans at home and abroad, most of them unknown.",
-      "fromPrevious": "Every water-drop note (s5_ep02_e1 to s5_ep11_e1) and Bun-i's first note.",
-      "toNext": "The season ends."
+      "title": "The Box That Waited",
+      "question": "August 1945, Chongqing: where is Bitna's mother's box, and on which day may its lock be opened?",
+      "solution": "Made up: Bitna, her mother's box, its word lock and riddle, her father's note, the trunks and the flag. Bitna's father packed the box in a trunk by mistake; Mother's letters, put in order, give her riddle and her rule ('May' is not enough); the radio on 15 August 1945 says the war is over, so the lock may open: LIGHT. History: on 15 August 1945 Japan surrendered to the Allies; gwangbok means 'the light comes back'. Kim Won-bong was the government's minister of military affairs in Chongqing (from 1944). No one person brought the day: the Allies' victory and many Koreans at home and abroad.",
+      "fromPrevious": "None: a standalone case.",
+      "toNext": "None: a standalone case."
     }
   ],
   "mysteryQuestions": [
     {
-      "question": "Who wrote the half-burnt paper?",
+      "question": "Can Bun-i write her own letter?",
       "raisedIn": "s5_ep01",
       "answeredIn": "s5_ep01",
-      "answer": "Bun-i, the water-carrier."
-    },
-    {
-      "question": "Who leaves the water-drop notes?",
-      "raisedIn": "s5_ep02",
-      "answeredIn": "s5_ep08",
-      "answer": "Bun-i's family: a keeper in every generation."
-    },
-    {
-      "question": "Is it one person who writes them across the centuries?",
-      "raisedIn": "s5_ep03",
-      "answeredIn": "s5_ep04",
-      "answer": "No: the same mark in 1592, 1795 and 1866 cannot be one person's."
-    },
-    {
-      "question": "What do the keepers keep?",
-      "raisedIn": "s5_ep04",
-      "answeredIn": "s5_ep08",
-      "answer": "A small wooden letter box with every note, Bun-i's first one at the bottom."
-    },
-    {
-      "question": "What does the last note say?",
-      "raisedIn": "s5_ep11",
-      "answeredIn": "s5_ep12",
-      "answer": "LIGHT: gwangbok, the light returns."
+      "answer": "Yes: with the King's letters, in one night."
     }
   ],
   "clueThreads": [
@@ -995,7 +955,7 @@
         "s5_ep01_m2",
         "s5_ep01_final"
       ],
-      "meaning": "Bun-i's group: what Sora does for her. Sora teaches her, and the King hears it."
+      "meaning": "Bun-i's mark, a water drop: she cannot write her name yet; she signs her letter with it."
     },
     {
       "from": "s5_ep01_c2",
@@ -1003,30 +963,14 @@
         "s5_ep01_m3",
         "s5_ep01_final"
       ],
-      "meaning": "음, the group on Bun-i's slate: Group 2 of her last paper, and the sound in the name."
+      "meaning": "ㅁ ㄴ ㅇ copy the mouth: the first and last sounds of 엄마, and 마 told from 미 and 가 in her letter."
     },
     {
       "from": "s5_ep01_c3",
       "to": [
         "s5_ep01_final"
       ],
-      "meaning": "정음, the right sounds: the last two tiles of the name."
-    },
-    {
-      "from": "s5_ep01_c1",
-      "to": [
-        "s5_ep02_m1",
-        "s5_ep02_final"
-      ],
-      "meaning": "Bun-i the water-carrier explains the water drop on Seok's note of 1592."
-    },
-    {
-      "from": "s5_ep01_e2",
-      "to": [
-        "s5_ep02_m2",
-        "s5_ep04_m1"
-      ],
-      "meaning": "Sora's board rebuilds the blurred note 거북선 (1592), and its rule (a stronger sound adds one line) shows the new cut on the palace logs (1866)."
+      "meaning": "엄마, her first word: the top of her letter."
     },
     {
       "from": "s5_ep02_c2",
@@ -1036,27 +980,12 @@
       "meaning": "The note says 거북선: the powder is on the turtle ship."
     },
     {
-      "from": "s5_ep02_e1",
-      "to": [
-        "s5_ep03_m1",
-        "s5_ep04_final"
-      ],
-      "meaning": "Seok's water drop of 1592 is on Okbun's note of 1795 and Duri's of 1866: a family, not one person."
-    },
-    {
       "from": "s5_ep03_c1",
       "to": [
         "s5_ep03_m2",
         "s5_ep03_final"
       ],
       "meaning": "The machine was rebuilt from a copied drawing; the wall began in 1794, and counting on gives 1796."
-    },
-    {
-      "from": "s5_ep03_e1",
-      "to": [
-        "s5_ep04_final"
-      ],
-      "meaning": "Okbun's note of 1795 laid beside Duri's: the same mark (Act 1's turning point)."
     },
     {
       "from": "s5_ep04_c1",
@@ -1089,20 +1018,6 @@
       "meaning": "37 steps on the rope match the number on the strangers' map."
     },
     {
-      "from": "s5_ep05_e1",
-      "to": [
-        "s5_ep06_m1"
-      ],
-      "meaning": "Lady Han's water drop of 1895 matches Bongsu's of 1907."
-    },
-    {
-      "from": "s5_ep05_e4",
-      "to": [
-        "s5_ep06_m2"
-      ],
-      "meaning": "The strangers' map: palaces are watched, so the letter leaves by the small west gate."
-    },
-    {
       "from": "s5_ep06_c1",
       "to": [
         "s5_ep06_m2",
@@ -1111,54 +1026,12 @@
       "meaning": "The letter from the old pine is the one the envoys carry."
     },
     {
-      "from": "s5_ep06_e1",
-      "to": [
-        "s5_ep07_m1"
-      ],
-      "meaning": "Bongsu's water drop of 1907 matches Mrs. Kang's of 1909."
-    },
-    {
-      "from": "s5_ep06_e4",
-      "to": [
-        "s5_ep07_final"
-      ],
-      "meaning": "The 1905 treaty was forced and the envoys were not let in: what Korea had lost, shown to the Harbin writer."
-    },
-    {
       "from": "s5_ep07_c2",
       "to": [
         "s5_ep07_m3",
         "s5_ep07_final"
       ],
       "meaning": "Paper A's writer came on the noon train: his story came from tea-room talk."
-    },
-    {
-      "from": "s5_ep05_e1",
-      "to": [
-        "s5_ep07_m1"
-      ],
-      "meaning": "Lady Han's water drop of 1895, Bongsu's of 1907 and Mrs. Kang's of 1909: one mark across three keepers."
-    },
-    {
-      "from": "s5_ep01_e3",
-      "to": [
-        "s5_ep08_final"
-      ],
-      "meaning": "Bun-i's note of 1446 (훈민정음, the burnt corner) lies at the bottom of the keepers' box: Act 2's reveal, seven cases later."
-    },
-    {
-      "from": "s5_ep08_e4",
-      "to": [
-        "s5_ep09_m1"
-      ],
-      "meaning": "The keepers' letter box goes from Maebong hill to Shanghai with Haesu."
-    },
-    {
-      "from": "s5_ep09_e4",
-      "to": [
-        "s5_ep10_m1"
-      ],
-      "meaning": "Kim Gu's case note: he trusts Haesu, so she is at the breakfast of 29 April 1932."
     },
     {
       "from": "s5_ep08_c1",
@@ -1199,20 +1072,6 @@
       "meaning": "The water-drop note is a card that copies Yun's list: one line on it is not true."
     },
     {
-      "from": "s5_ep10_e1",
-      "to": [
-        "s5_ep11_m1"
-      ],
-      "meaning": "Haesu's water-drop note: the same blue drop under Yun's dictionary."
-    },
-    {
-      "from": "s5_ep01_c1",
-      "to": [
-        "s5_ep11_m1"
-      ],
-      "meaning": "Bun-i the water-carrier: the drop is water, not ink."
-    },
-    {
       "from": "s5_ep11_c2",
       "to": [
         "s5_ep11_m3"
@@ -1222,7 +1081,7 @@
     {
       "from": "s5_ep11_e2",
       "to": [
-        "s5_ep11_m3"
+        "s5_ep11_final"
       ],
       "meaning": "Yun's list gives the lock its numbers: copy 2 of 3, 18 + 1 opening poem."
     },
@@ -1234,46 +1093,11 @@
       "meaning": "The copy's pages are in the King's letters: Yun's poems are in Korean."
     },
     {
-      "from": "s5_ep11_e4",
-      "to": [
-        "s5_ep12_m1"
-      ],
-      "meaning": "Miri sent the box to Chongqing once the poet's copy was safe."
-    },
-    {
-      "from": "s5_ep08_e4",
-      "to": [
-        "s5_ep12_m2"
-      ],
-      "meaning": "The letter box of 1919, opened again in 1945."
-    },
-    {
-      "from": "s5_ep01_e3",
-      "to": [
-        "s5_ep12_final"
-      ],
-      "meaning": "Bun-i's first note of 1446 lies at the bottom of the box."
-    },
-    {
       "from": "s5_ep12_c3",
       "to": [
         "s5_ep12_final"
       ],
-      "meaning": "The date 8.15 on Bitna's note, and the last tiles G and L."
-    },
-    {
-      "from": "s5_ep04_e1",
-      "to": [
-        "s5_ep05_m2"
-      ],
-      "meaning": "Duri's 1866 water-drop note from the rebuilt palace: the same mark waits in the Queen's palace."
-    },
-    {
-      "from": "s5_ep07_e1",
-      "to": [
-        "s5_ep08_m3"
-      ],
-      "meaning": "Mrs. Kang's 1909 note: the same water drop as Gyeongsun's notebook."
+      "meaning": "Bitna's date card: today, 8.15, the war is over; the lock may open."
     }
   ],
   "timeline": [
@@ -1333,7 +1157,8 @@
       "verdict": "Fits (written and checked in the Seoul pilot, kept as it is).",
       "notes": [
         "The mouth words (throat, the mouth, the back of the tongue) are taught on Sora's board before they are used.",
-        "Redesigned 2026-11-07: the name read by its meanings."
+        "Redesigned 2026-11-07: the name read by its meanings.",
+        "V4 2026-11-07: Bun-i's letter to her mother (docs/SEOUL_CASE01_V4_GAME_DESIGN.md)."
       ]
     },
     {
@@ -1442,16 +1267,17 @@
       "verdict": "Fits.",
       "notes": [
         "M1 asks for two features together (ONE strap and a round brass lock); each wrong trunk has one of them.",
-        "M2 uses before/after/oldest/on top only; no years to compare beyond the two fixed notes.",
-        "M3 teaches month names as numbers (August is month eight) and the Korean date order.",
-        "The ending says liberation plainly in short lines: Japan surrendered to the Allies; many Koreans worked for it; gwangbok means the light returns."
+        "M2 orders four letters from their own lines (after my pine letter; the rain is over now); one card is not a letter.",
+        "M3 teaches month names as numbers (August is month eight), the Korean date order, and 'may' against 'is over'.",
+        "The final reads a short riddle (the sun gives it; at night, it goes away); the ending says liberation plainly in short lines."
       ]
     }
   ],
   "notes": [
     "Written by Claude Code for PART 10 (2026-11-06): Season 5 whole, Case 01 kept as it is, Cases 02-12 made with the season factory.",
-    "Real people, years, places and events follow the dossier's checked facts; the detective's cases, the keepers, the letter box and the water-drop notes are made up. The player never changes what happened.",
+    "Real people, years, places and events follow the dossier's checked facts; each case's made-up people, notes and puzzles are made up. The player never changes what happened.",
     "Ages 8-12: no violence is shown; deaths in history are told in one plain line in a reveal, never described. Liberation in 1945 is never one person's work.",
-    "Policy (user, 2026-11-06): every case ends in a verifiable historical fact. The mystery starts from the real event, the clues teach its background, the final mission's answer is the key fact (the person's real achievement, action or meaning), and the ending, case summary and REAL HISTORY state it. The made-up mystery is solved; the real outcome never changes. Made-up lines and clues are never shown as records."
+    "Policy (user, 2026-11-06): every case ends in a verifiable historical fact. The mystery starts from the real event, the clues teach its background, the final mission's answer is the key fact (the person's real achievement, action or meaning), and the ending, case summary and REAL HISTORY state it. The made-up mystery is solved; the real outcome never changes. Made-up lines and clues are never shown as records.",
+    "De-linked 2026-11-09 (docs/SEOUL_CASE02_12_REDESIGN_PLAN.md): Cases 01-12 are separate history cases. No season mystery, no keepers, no letter box carried between cases, no evidence used across cases."
   ]
 }

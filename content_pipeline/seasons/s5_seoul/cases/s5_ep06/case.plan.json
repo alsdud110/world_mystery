@@ -58,13 +58,7 @@
           "Puzzle kind chosen by hand: the season spread assigns Case 06 a trace deduction (PART 10 brief); Bongsu's note is the list of traces, each a line of it."
         ]
       },
-      "clueInputs": [
-        {
-          "ref": "s5_ep05_e1",
-          "use": "recall",
-          "note": "Lady Han's water-drop note of 1895: the same small water drop."
-        }
-      ],
+      "clueInputs": [],
       "clueOutputs": {
         "clue": "s5_ep06_c1",
         "evidence": "s5_ep06_e1"
@@ -72,7 +66,7 @@
       "learning": {
         "dependency": "essential",
         "level": "comprehension",
-        "objective": "흔적 문장(to the trees, not to the steps / on rough bark / by a root)을 읽고 세 흔적이 모두 가리키는 숨긴 곳을 고른다.",
+        "objective": "쪽지는 흔적이 세 개라고만 말한다. 그림에서 흔적을 찾아 문장(to the trees, not to the steps / on rough bark / by a root)을 읽고 세 흔적이 모두 가리키는 숨긴 곳을 고른다.",
         "skill": "sentenceMeaning",
         "expressions": [
           "They go to the trees, not to the steps.",
@@ -87,12 +81,12 @@
           "Then he had to leave the palace at once.",
           "Bongsu, the errand boy, saw part of it. Where is it hidden?"
         ],
-        "letterIntro": "A note in the King's letters, with a small water drop. Bongsu reads it to you:",
+        "letterIntro": "Bongsu wrote down what he saw, so he would not forget. He reads it to you:",
         "letter": "The secretary had the Emperor's letter at dusk. Watchers came to the gate.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, at hand height.\nBy a root, the moss is pushed aside. Someone knelt there.\n— Bongsu",
         "question": "Where did the secretary hide the letter? Tap the place.",
         "hints": [
           "Tap the footprints, the thread and the moss.",
-          "Which place has bark, roots, and stands among the trees?"
+          "Which place has bark and roots, and stands among the trees?"
         ],
         "successMessage": "The letter is in the hollow of the old pine!",
         "transition": [
@@ -109,14 +103,9 @@
           "symbol": "letter"
         },
         "evidence": {
-          "name": "The Water-Drop Note (1907)",
+          "name": "Bongsu's Note",
           "icon": "letter",
-          "description": "Bongsu's note in the King's letters, with a small water drop. It led to the hidden letter."
-        },
-        "recall": {
-          "title": "A Drop Like Lady Han's",
-          "prompt": "Bongsu's note has a small water drop. Which note in your Notebook matches it?",
-          "miss": "Not that one. Find the court lady's note with its drop."
+          "description": "Bongsu's note about the hiding place. A yellow silk thread was caught on rough bark by the old pine."
         },
         "traces": {
           "picture": {
@@ -299,28 +288,28 @@
           "answer": "library,well,west_gate,lane",
           "options": [
             {
+              "id": "lane",
+              "label": "The lane by the stone wall"
+            },
+            {
               "id": "front_gate",
               "label": "The big front gate"
-            },
-            {
-              "id": "library",
-              "label": "Behind the library hall"
-            },
-            {
-              "id": "throne",
-              "label": "The throne hall's yard"
             },
             {
               "id": "well",
               "label": "The garden by the old well"
             },
             {
-              "id": "west_gate",
-              "label": "The little west gate"
+              "id": "throne",
+              "label": "The throne hall's yard"
             },
             {
-              "id": "lane",
-              "label": "The lane by the stone wall"
+              "id": "library",
+              "label": "Behind the library hall"
+            },
+            {
+              "id": "west_gate",
+              "label": "The little west gate"
             }
           ],
           "codeLength": 4
@@ -328,7 +317,7 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Letter: Bongsu's way out, in first/after/then/last words. The front gate and the throne hall's yard are the decoys his words rule out (watched, everyone sees it).",
+          "Letter: Bongsu's way out, its lines out of order: Start (library), From there (well), After the old well (west gate), Outside the west gate (lane). The front gate and the throne hall's yard are the decoys his words rule out (watched, everyone sees it). Options listed lane, front gate, well, throne, library, west gate: never the answer's order.",
           "Made up: the way, the gates and the watchers' places are the case's own (no building of Gyeongun Palace is named)."
         ]
       },
@@ -337,11 +326,6 @@
           "ref": "s5_ep06_c1",
           "use": "textMention",
           "note": "The letter is found; now it must leave the palace."
-        },
-        {
-          "ref": "s5_ep05_e4",
-          "use": "textMention",
-          "note": "In 1895 strangers drew a map of a palace: the palace is watched."
         }
       ],
       "clueOutputs": {
@@ -351,11 +335,11 @@
       "learning": {
         "dependency": "essential",
         "level": "comprehension",
-        "objective": "First, After, Then, Last와 Do not 문장을 읽고 감시를 피하는 길을 순서대로 고른다.",
+        "objective": "섞여 있는 쪽지 줄에서 Start, From there, After, Outside와 Do not 문장을 읽고 감시를 피하는 길을 순서대로 고른다.",
         "skill": "sentenceMeaning",
         "expressions": [
           "Do not cross the throne hall's yard.",
-          "Last, walk down the lane."
+          "Start behind the library hall."
         ]
       },
       "play": {
@@ -363,14 +347,14 @@
         "location": "THE PALACE GARDEN",
         "story": [
           "The letter is under your coat now.",
-          "You remember the strangers' map of 1895. Palace paths get counted.",
+          "The watchers report to Japan's officials. They watch the palace paths.",
           "Bongsu knows every path. He whispers the way."
         ],
         "letterIntro": "Bongsu whispers:",
-        "letter": "The watchers stand at the big front gate all day.\nFirst, walk behind the library hall.\nDo not cross the throne hall's yard: everyone sees it.\nAfter the library, cross the garden by the old well.\nThen go out by the little west gate. My uncle keeps it.\nLast, walk down the lane by the stone wall.",
+        "letter": "After the old well, go out by the little west gate. My uncle keeps it.\nThe watchers stand at the big front gate all day.\nOutside the west gate is the lane by the stone wall. Walk down it.\nDo not cross the throne hall's yard: everyone sees it.\nStart behind the library hall. From there, go to the old well.",
         "question": "Which way do you go? Tap the places in order.",
         "hints": [
-          "Find the words First, After, Then and Last.",
+          "Find the word Start. Then find what comes after each place.",
           "Two places are watched or seen by everyone. Leave them out."
         ],
         "successMessage": "You are out of the palace, unseen!",
@@ -380,10 +364,11 @@
           "But watchers walk this lane too."
         ],
         "feedback": {
-          "throne,well,west_gate,lane": "Everyone sees the throne hall's yard. Bongsu says to walk behind the library.",
-          "library,well,front_gate,lane": "Watchers stand at the big front gate all day. Use the little west gate."
+          "throne,well,west_gate,lane": "Everyone sees the throne hall's yard. Bongsu says to start behind the library.",
+          "library,well,front_gate,lane": "Watchers stand at the big front gate all day. Use the little west gate.",
+          "library,west_gate,well,lane": "Read again: you go to the west gate after the old well."
         },
-        "orderFeedback": "Those are the right places. Read Bongsu's words again: which comes first?",
+        "orderFeedback": "The right places. Which line says Start? What comes after it?",
         "mapX": 0.36,
         "mapY": 0.56,
         "clue": {
@@ -395,7 +380,7 @@
         "evidence": {
           "name": "Bongsu's Way",
           "icon": "map",
-          "description": "Behind the library, by the old well, out the west gate, down the lane."
+          "description": "Behind the library, by the old well. Out the little west gate his uncle keeps, then down the lane. No watchers there."
         }
       }
     },
@@ -416,7 +401,7 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "A time read in words: the watchers' walks (6:00, 6:40, 7:20) each take ten minutes; the knock comes when the 6:40 walk has passed: 6:50 (HHMM 0650). Made up."
+          "A time read in words: the watchers' walks (6:00, 6:40, 7:20) each take ten minutes; the knock comes as soon as the 6:40 walk has passed: 6:50 (HHMM 0650). 7:00 is not 'as soon as'; 7:20 is the next walk. Made up."
         ]
       },
       "clueInputs": [
@@ -433,11 +418,11 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "Each walk takes ten minutes와 has passed를 읽고 문을 두드릴 시각을 계산해 넣는다.",
+        "objective": "Each walk takes ten minutes와 as soon as ... has passed를 읽고 문을 두드릴 단 하나의 시각을 계산해 넣는다.",
         "skill": "vocabulary",
         "expressions": [
           "Each walk takes ten minutes.",
-          "Knock when the 6:40 walk has passed."
+          "Knock as soon as the 6:40 walk has passed."
         ]
       },
       "play": {
@@ -448,11 +433,11 @@
           "Bongsu's uncle knows the watchers' times. He gives you a paper."
         ],
         "letterIntro": "The uncle's paper says:",
-        "letter": "Yi Jun lives at the end of this lane.\nWatchers walk past his door at 6:00, 6:40 and 7:20.\nEach walk takes ten minutes.\nKnock when the 6:40 walk has passed.\nDo not wait for the next walk.",
-        "question": "At what time do you knock on Yi Jun's door?",
+        "letter": "Yi Jun lives at the end of this lane.\nWatchers walk past his door at 6:00, 6:40 and 7:20.\nEach walk takes ten minutes.\nKnock as soon as the 6:40 walk has passed.",
+        "question": "At what time do you knock? Use four numbers. (Seven o'clock is 07:00.)",
         "hints": [
-          "Find the walk at 6:40.",
-          "How long does one walk take? Add it."
+          "Find the walk at 6:40. How long does one walk take?",
+          "6:40 and ten more minutes. Knock right then."
         ],
         "successMessage": "At 6:50 you knock. The door opens.",
         "transition": [
@@ -461,8 +446,9 @@
         ],
         "feedback": {
           "0640": "At 6:40 the watchers are just walking past. Wait until the walk has passed.",
-          "0720": "That is the next walk. The paper says not to wait for it.",
-          "0610": "The 6:00 walk ends then. But the paper says the 6:40 walk."
+          "0720": "That is the next walk. Watchers are there.",
+          "0610": "That is the 6:00 walk. The paper says 6:40.",
+          "0700": "Too late! Knock as soon as the walk has passed."
         },
         "orderFeedback": "The right numbers, in the wrong order. Read the paper again.",
         "mapX": 0.3,
@@ -476,7 +462,7 @@
         "evidence": {
           "name": "The Watchers' Times",
           "icon": "watch",
-          "description": "Watchers walk the lane at 6:00, 6:40 and 7:20. Each walk takes ten minutes."
+          "description": "Watchers walk Yi Jun's lane at 6:00, 6:40 and 7:20. Each walk takes ten minutes. You knocked at 6:50."
         }
       }
     }
@@ -486,57 +472,38 @@
     "slot": "final",
     "placeId": "s5_seoul.yi_jun_house",
     "puzzle": {
-      "paletteId": "letter_tile_lock",
+      "paletteId": "evidence_talk",
       "surface": "finalMission",
-      "engineTable": null,
-      "missionType": "letterLock",
+      "engineTable": "talks",
+      "missionType": "examine",
       "answerSpec": {
-        "answer": "FORCED",
-        "options": [
-          {
-            "id": "c",
-            "label": "C"
-          },
-          {
-            "id": "o",
-            "label": "O"
-          },
-          {
-            "id": "e",
-            "label": "E"
-          },
-          {
-            "id": "f",
-            "label": "F"
-          },
-          {
-            "id": "d",
-            "label": "D"
-          },
-          {
-            "id": "r",
-            "label": "R"
-          }
-        ]
+        "answer": "unseen"
       },
-      "assetNeeds": [],
-      "status": "ready",
+      "assetNeeds": [
+        "s5_seoul.asset.yi_jun",
+        "s5_seoul.asset.yi_jun_house"
+      ],
+      "status": "awaitingAssets",
       "notes": [
-        "The answer is the case's key fact (h1, h2): the 1905 treaty was forced on Korea, and the envoys went to The Hague to tell the world so.",
-        "The travel box and its lock are made up; the Emperor's and Yi Jun's words are made up (dossier fiction).",
-        "Puzzle kind chosen by hand: the season spread assigns Case 06 a letter tile lock final; the lid's lines define the word, the tiles spell it."
+        "Yi Jun's three worries, each answered by one mission's evidence: the pulled thread (Bongsu's Note: it caught on the pine's rough bark), the palace gates (Bongsu's Way: the little west gate), his own door (the Watchers' Times: 6:50, between walks). Three cards each (PART 1.5 2b2), the right one lit only from the third miss (litAfter 3); before that, the tell says which card to read again.",
+        "Replaces the FORCED letter lock (an anagram the clues did not need). The thread, the watchers, the travel box and every word Yi Jun says are made up (dossier fiction); the envoys' mission rests on h1-h2."
       ]
     },
     "clueInputs": [
       {
         "ref": "s5_ep06_c1",
         "use": "answerDerivation",
-        "note": "The letter from the old pine is the one the envoys carry."
+        "note": "The thread caught on the pine's bark where the letter was hidden."
+      },
+      {
+        "ref": "s5_ep06_c2",
+        "use": "answerDerivation",
+        "note": "The letter left by the little west gate, not the watched front gate."
       },
       {
         "ref": "s5_ep06_c3",
-        "use": "textMention",
-        "note": "You reached Yi Jun at 6:50."
+        "use": "answerDerivation",
+        "note": "You knocked at 6:50, between the watchers' walks."
       }
     ],
     "clueOutputs": {
@@ -545,43 +512,162 @@
     "learning": {
       "dependency": "essential",
       "level": "application",
-      "objective": "made Korea sign it / did not choose it 문장을 읽고 1905년 조약이 어떠했는지를 나타내는 단어 forced를 글자 타일로 맞춘다.",
-      "skill": "vocabulary",
+      "objective": "이준의 세 걱정(the thread, every palace gate, my door)을 읽고 걱정마다 그것에 답하는 이 사건의 증거 카드를 하나씩 보여 준다.",
+      "skill": "sentenceMeaning",
       "expressions": [
-        "Japan made Korea sign it.",
-        "Korea did not choose it"
+        "Watchers walk past my door.",
+        "A thread is pulled out of the silk."
       ]
     },
     "play": {
-      "title": "The Lock Word",
+      "title": "No One Saw It",
       "location": "YI JUN'S HOUSE",
       "story": [
-        "Yi Jun brings out a small travel box with a letter lock.",
-        "\"The Emperor chose its word,\" he says.",
-        "\"It is what we will tell the world.\""
+        "Yi Jun unrolls the yellow silk. He stops.",
+        "\"A thread is pulled out of this silk,\" he says.",
+        "\"If a watcher saw this letter, the Emperor's plan is lost.\""
       ],
-      "letterIntro": "Inside the lid, Yi Jun reads:",
-      "letter": "THE LOCK WORD\nTell the world the truth about the 1905 treaty.\nJapan made Korea sign it. Korea did not choose it.\nJapan ______ Korea to sign it.",
-      "question": "What did Japan do to Korea? Spell the word to open the box.",
+      "letterIntro": "Yi Jun's three worries:",
+      "letter": "A thread is pulled out of the silk.\nWatchers stand at every palace gate.\nWatchers walk past my door.",
+      "question": "Show Yi Jun that no watcher saw the letter.",
       "hints": [
-        "Read the lines inside the lid. Did Korea choose the treaty?",
-        "It starts with F. It means \"made someone do it\"."
+        "Each worry is about one place: the pine, the palace gate, Yi Jun's door.",
+        "Thread: Bongsu's Note. Gate: Bongsu's Way. Door: the Watchers' Times."
       ],
-      "successMessage": "The box opens. Japan FORCED Korea to sign it.",
+      "successMessage": "Yi Jun smiles. \"No one saw it. The plan is safe.\"",
       "transition": [
-        "Yi Jun lays the Emperor's letter in the box and locks it again.",
-        "\"Thank you both,\" he says. \"Now the world will hear us.\"",
+        "Yi Jun lays the letter in his travel box and locks it.",
+        "\"I leave Seoul today, in secret,\" he says.",
         "Bongsu folds his note and keeps it."
       ],
-      "orderFeedback": "All six letters fit. Japan made Korea sign it: Japan ____ Korea to sign it.",
+      "orderFeedback": "Answer each worry with one card.",
       "mapX": 0.28,
       "mapY": 0.62,
       "evidence": {
         "name": "The Emperor's Letter, with Yi Jun",
         "icon": "seal",
-        "description": "The Emperor's secret letter, left with the envoy Yi Jun. The envoys went to tell the world the 1905 treaty was forced."
+        "description": "The Emperor's secret letter, safe in Yi Jun's travel box. No watcher saw it. The envoys will tell the world the 1905 treaty was forced."
       },
-      "lockTitle": "YI JUN'S TRAVEL BOX",
+      "interview": {
+        "speaker": "yi_jun",
+        "portrait": "assets/seasons/season_05_seoul/characters/yi_jun.webp",
+        "goal": "Show Yi Jun that no watcher saw the letter.",
+        "opening": [
+          {
+            "by": "speaker",
+            "text": "Watchers are everywhere in Seoul. I must be sure."
+          },
+          {
+            "by": "detective",
+            "text": "Then let me show you, one worry at a time."
+          }
+        ],
+        "questions": [
+          {
+            "id": "watchers",
+            "text": "Who are the watchers?",
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "Men who report to Japan's officials."
+              },
+              {
+                "by": "speaker",
+                "text": "They watch the Emperor and his friends."
+              }
+            ]
+          }
+        ],
+        "presents": [
+          {
+            "id": "thread",
+            "prompt": "Yi Jun asks: \"Who pulled this thread?\"",
+            "accepted": [
+              "s5_ep06_e1"
+            ],
+            "lines": [
+              {
+                "by": "detective",
+                "text": "No one pulled it. It caught on the pine's rough bark when he hid it."
+              },
+              {
+                "by": "speaker",
+                "text": "Bongsu saw the thread there. Good."
+              }
+            ],
+            "miss": "That does not tell me about the thread.",
+            "offered": [
+              "s5_ep06_e3",
+              "s5_ep06_e1",
+              "s5_ep06_e2"
+            ],
+            "tell": "Which card talks about a yellow thread? Read it again.",
+            "litAfter": 3
+          },
+          {
+            "id": "gate",
+            "prompt": "Yi Jun asks: \"Watchers stand at every palace gate. Did they see you leave?\"",
+            "accepted": [
+              "s5_ep06_e2"
+            ],
+            "lines": [
+              {
+                "by": "detective",
+                "text": "We left by the little west gate. Bongsu's uncle keeps it."
+              },
+              {
+                "by": "speaker",
+                "text": "Not the front gate. Good."
+              }
+            ],
+            "miss": "That does not show how you left the palace.",
+            "offered": [
+              "s5_ep06_e1",
+              "s5_ep06_e3",
+              "s5_ep06_e2"
+            ],
+            "tell": "Which card shows your way out of the palace?",
+            "litAfter": 3,
+            "requires": [
+              "thread"
+            ]
+          },
+          {
+            "id": "door",
+            "prompt": "Yi Jun asks: \"Watchers walk past my door. Did one see you knock?\"",
+            "accepted": [
+              "s5_ep06_e3"
+            ],
+            "lines": [
+              {
+                "by": "detective",
+                "text": "The 6:40 walk takes ten minutes. We knocked at 6:50, when it had passed."
+              },
+              {
+                "by": "speaker",
+                "text": "And the next walk is at 7:20. No one saw you."
+              }
+            ],
+            "miss": "That does not show when you knocked.",
+            "offered": [
+              "s5_ep06_e2",
+              "s5_ep06_e3",
+              "s5_ep06_e1"
+            ],
+            "tell": "Which card has the watchers' times?",
+            "litAfter": 3,
+            "requires": [
+              "gate"
+            ]
+          }
+        ],
+        "finishWhen": [
+          "thread",
+          "gate",
+          "door"
+        ],
+        "finishLabel": "GIVE YI JUN THE LETTER"
+      },
       "ending": [
         {
           "by": "speaker",
@@ -591,7 +677,7 @@
         },
         {
           "by": "detective",
-          "text": "The Emperor's letter, safe in your box.",
+          "text": "No watcher saw it. Not at the pine, not at the gate, not at your door.",
           "evidence": "s5_ep06_e4"
         },
         {
@@ -627,7 +713,7 @@
       ]
     }
   },
-  "hook": "The world did not let the envoys in. Who will listen to Korea now?",
+  "hook": "The envoys were not let in, but the Emperor's letter left Seoul unseen.",
   "learningGoal": {
     "title": "Following traces, ways and times",
     "titleKo": "흔적, 길, 시각을 따라 읽기"
@@ -637,17 +723,17 @@
       "Find where the letter is hidden.",
       "Take it out past the watchers.",
       "Knock at the right time.",
-      "Open the envoy's box."
+      "Show Yi Jun that no one saw the letter."
     ],
     "intro": [
       "Spring, 1907. You are a guest of Emperor Gojong at Gyeongun Palace.",
-      "In 1905, Japan forced a treaty on Korea.",
-      "Korea lost the right to deal with other countries.",
-      "This year, many countries meet at The Hague for a peace conference.",
-      "The Emperor will send three envoys there in secret.",
+      "In 1897, King Gojong became Emperor Gojong. He wanted the world to see Korea as a free country.",
+      "In 1905, Japan forced a treaty on Korea. Korea lost the right to deal with other countries.",
+      "This year, many countries meet for peace at The Hague, in Europe.",
+      "The Emperor will send three envoys there in secret, to tell the world the truth.",
       "But his secret letter is hidden, and watchers stand at every gate."
     ],
-    "caseSummary": "Bongsu's note led to the Emperor's letter in the old pine. It left the palace unseen and reached the envoy Yi Jun. In 1907 three envoys went to The Hague. They went to tell the world the 1905 treaty was forced. They were not let into the conference. Yi Jun died in The Hague. Japan used the envoys as an excuse to force the Emperor off his throne.",
+    "caseSummary": "Bongsu's note led to the Emperor's letter in the old pine. It left by the little west gate. You knocked on Yi Jun's door at 6:50, between the watchers' walks. The thread, the way and the times showed Yi Jun that no one saw it. In 1907 three envoys went to The Hague. They went to tell the world the 1905 treaty was forced. They were not let into the conference. Yi Jun died in The Hague. Japan used the envoys as an excuse to force the Emperor off his throne.",
     "place": "GYEONGUN PALACE, SEOUL",
     "keyWords": [
       "envoy",
@@ -666,15 +752,17 @@
       "bark": "나무껍질",
       "secretary": "비서",
       "footprints": "발자국",
-      "strangers'": "낯선 사람들의",
       "moss": "이끼",
       "knelt": "무릎을 꿇었다",
       "dusk": "해 질 녘",
-      "silk": "비단"
+      "silk": "비단",
+      "officials": "관리들",
+      "unseen": "보이지 않게, 들키지 않고",
+      "worry": "걱정"
     }
   },
   "notes": [
     "Season 5 Case 06 (PART 10, 2026-11-06). the secretary, the hiding place, the way out, the watchers' times and the travel box are made up; the envoys' mission and its outcome follow the dossier's checked facts.",
-    "Emperor Gojong and Yi Jun speak made-up words (dossier fiction). Case 07 recalls s5_ep06_e4 and s5_ep06_e1."
+    "Emperor Gojong and Yi Jun speak made-up words (dossier fiction). An independent case: no other case's evidence is recalled or needed (PART 1A, 2026-11-09)."
   ]
 }

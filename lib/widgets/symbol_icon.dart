@@ -32,7 +32,7 @@ class GameSymbol {
     'museum': GameSymbol('Museum', AppColors.navy, glyph: InkGlyph.museum), // British Museum
     'clock': GameSymbol('Clock', AppColors.royalBlue, glyph: InkGlyph.clock), // Big Ben
     'park': GameSymbol('Park', AppColors.success, glyph: InkGlyph.park), // Hyde Park — tree
-    'palace': GameSymbol('Palace', AppColors.burgundy), // Buckingham Palace
+    'palace': GameSymbol('Palace', AppColors.burgundy, glyph: InkGlyph.palace), // a palace hall (Seoul Case 04)
     'crown': GameSymbol('Crown', AppColors.goldDeep, glyph: InkGlyph.crown), // The Royal Box
     'raven': GameSymbol('Raven', AppColors.ink, glyph: InkGlyph.raven), // The Raven Society
     'gear': GameSymbol(

@@ -298,7 +298,7 @@ abstract final class PuzzlePalette {
     PuzzleDefinition(
       id: 'letter_tile_lock',
       name: 'Letter lock',
-      description: 'Letter tiles, each used once, are set in the lock to spell the word the clues gave.',
+      description: 'Letter tiles, each used once, are set in the lock to spell the word the clues gave; any extra tiles are left out.',
       actions: [PuzzleAction.orderItems],
       reuseGrade: PuzzleReuseGrade.ready,
       generationMode: PuzzleGenerationMode.textOnly,
@@ -1152,6 +1152,30 @@ abstract final class PuzzlePalette {
       ],
       constraints: [
         'Missions only: 2 to 6 groups, each vowel one of ㅣ ㅏ ㅓ ㅡ ㅗ ㅜ (a line and at most one dot); the note is the mission\'s answer (SyllableRules.validate).',
+        'The letters are drawn by the app as text, never in a picture.',
+      ],
+    ),
+    PuzzleDefinition(
+      id: 'shape_match',
+      name: 'Lay each letter on what it copies',
+      description: 'Letter tiles, more than the pictures, are laid one each on the pictures whose shapes they copy (the mouth that says them).',
+      actions: [PuzzleAction.compare, PuzzleAction.matchPairs],
+      reuseGrade: PuzzleReuseGrade.ready,
+      generationMode: PuzzleGenerationMode.requiresAssets,
+      engines: [
+        PuzzleEngineBinding(widget: 'ShapeMatchBoard', source: '$_w/shape_match_board.dart', table: 'shapes', model: 'ShapeMatchSpec', missionTypes: {MissionType.matchPairs}, surfaces: _m),
+      ],
+      requiredData: [
+        PuzzleField('Mission', 'letter'),
+        PuzzleField('Mission', 'answer'),
+        PuzzleField('Mission', 'hints'),
+        PuzzleField('ShapeMatchSpec', 'pictures'),
+        PuzzleField('ShapeMatchSpec', 'letters'),
+        PuzzleField('ShapeMatchSpec', 'task'),
+      ],
+      requiredAssets: [PuzzleAsset('Each picture a letter is laid on', PuzzleField('ShapePicture', 'file'))],
+      constraints: [
+        'More letters than pictures; the answer gives every picture one letter (ShapeMatchSpec.problems).',
         'The letters are drawn by the app as text, never in a picture.',
       ],
     ),

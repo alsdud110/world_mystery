@@ -43,9 +43,9 @@ String? shownBy(String id) => ArtAssets.evidencePictures.containsKey(id)
 
 void main() {
   group('every piece of evidence is a picture', () {
-    test('the 194 of the four seasons, at every level: none left as an ink line', () {
-      expect(evidence, hasLength(194));
-      for (final s in ['ep', 's2_', 's3_', 's4_']) {
+    test('the 242 of the five seasons, at every level: none left as an ink line', () {
+      expect(evidence, hasLength(242));
+      for (final s in ['ep', 's2_', 's3_', 's4_', 's5_']) {
         expect(evidence.keys.where((id) => s == 'ep' ? !id.startsWith('s') : id.startsWith(s)), hasLength(s == 'ep' ? 50 : 48), reason: s);
       }
       for (final level in Difficulty.values) {
@@ -59,7 +59,8 @@ void main() {
       for (final id in evidence.keys) {
         by.update(shownBy(id)!, (n) => n + 1, ifAbsent: () => 1);
       }
-      expect(by, {'picture': 77, 'drawn': 33, 'paper': 84});
+      // London's map pieces became pictures (2026-11-03, 3c7e9b7); Seoul: 7 pictures, 41 papers.
+      expect(by, {'picture': 89, 'drawn': 33, 'paper': 120});
     });
 
     test('each is registered once, under a real evidence id', () {
@@ -79,11 +80,18 @@ void main() {
       expect(ArtAssets.evidenceDocs['s4_ep02_e1'], EvidencePaper.statement);
       final sole = 'assets/seasons/season_04_newyork/objects/star_sole.webp';
       expect(ArtAssets.evidencePictures.entries.where((e) => e.value == sole).map((e) => e.key), ['s4_ep07_e1']);
-      // Words that are clues stay words: the map's swans, the map pieces'
-      // ravens, the board's train, the mirror word, the chalk code, the stub.
-      for (final id in ['e04', 'ep05_e4', 'ep07_e1', 'ep07_e2', 'ep07_e3', 'ep07_e4', 'ep12_e2', 's3_ep06_e3', 's3_ep07_e2', 's4_ep01_e4']) {
+      // Words that are clues stay words: the map's swans, the board's train,
+      // the mirror word, the chalk code, the stub.
+      for (final id in ['e04', 'ep12_e2', 's3_ep06_e3', 's3_ep07_e2', 's4_ep01_e4']) {
         expect(ArtAssets.evidenceDocs[id], isNotNull, reason: id);
       }
+      // The map pieces are their own pictures (2026-11-03), their ravens drawn on them.
+      for (final id in ['ep05_e4', 'ep07_e1', 'ep07_e2', 'ep07_e3', 'ep07_e4']) {
+        expect(ArtAssets.evidencePictures[id], startsWith('assets/seasons/season_01_london/cases/case_07/'), reason: id);
+      }
+      // Seoul: a picture that is a puzzle's answer is shown only once that puzzle is solved
+      // (Jeong's drawing, Case 03 M2), and never asked for again.
+      expect(ArtAssets.evidencePictures['s5_ep03_e2'], endsWith('case_03/drawing_gate_wheels.webp'));
       // Paris's blank puzzle papers are never shown as the evidence.
       for (final id in ['s2_ep02_e4', 's2_ep03_e1', 's2_ep03_e2']) {
         expect(ArtAssets.evidencePictures[id], isNull, reason: id);
@@ -97,12 +105,13 @@ void main() {
   });
 
   group('the files', () {
-    final pubspec = File('pubspec.yaml').readAsStringSync();
+    // Shipped: in the app's own bundle, or in its season's picture pack (2026-11-06).
+    final shipped = {...shippedAssets()};
     void bundled(String path) {
       expect(File(path).existsSync(), isTrue, reason: path);
       expect(path, endsWith('.webp'), reason: 'the game ships its pictures as WebP (tool/asset_optimizer)');
       expect(imageSize(path), isNotNull, reason: '$path: a whole picture');
-      expect(pubspec, contains('- ${path.substring(0, path.lastIndexOf('/') + 1)}'), reason: path);
+      expect(shipped.contains(path) || shipped.contains(path.substring(0, path.lastIndexOf('/') + 1)), isTrue, reason: path);
     }
 
     test('every picture is on disk and bundled', () {

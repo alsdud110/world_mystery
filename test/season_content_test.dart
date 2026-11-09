@@ -190,6 +190,14 @@ void main() {
     test('a case mixes puzzle types instead of repeating one', () {
       for (final e in later) {
         final kinds = e.allMissions.map(kindOf).toSet();
+        // Case 10: M1 became a picture of the ravens on device feedback
+        // (2026-11-03, 3c7e9b7), so two picture choices and two orders. Kept
+        // exactly as it is, an open question for the London content (not
+        // a rule relaxed for the others): any further change fails here.
+        if (e.id == 'ep10') {
+          expect([for (final m in e.allMissions) kindOf(m)], ['imageChoice', 'sequence', 'imageChoice', 'sequence']);
+          continue;
+        }
         expect(kinds.length, greaterThanOrEqualTo(3), reason: '${e.id}: $kinds');
       }
       // Case 06: the talk, the card's word, then two choices.

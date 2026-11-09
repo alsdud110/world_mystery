@@ -16,12 +16,12 @@ import '../full_playthrough_test.dart' show tapText, wait;
 import '../helpers.dart';
 import 'single_case.dart';
 
-/// Seoul (Season 5) Case 01, The Secret of the King's Letters, played alone
-/// in the real app at every level: the gate's traces (a wrong place, a hint),
-/// the app opened again, the lesson box's letters with a wrong one, the last
-/// paper's first group wrong, King Sejong's three questions and the name's
-/// tiles, paid once, and the Case Closed file with its REAL HISTORY apart
-/// from IN THIS MYSTERY.
+/// Seoul (Season 5) Case 01 V4, The King's Secret Letters, played alone in
+/// the real app at every level: Bun-i's picture note (a wrong drawing, a
+/// hint), the app opened again, the letters laid on the mouth with a wrong
+/// pair, her first word with a wrong block, King Sejong's two questions and
+/// her letter's two papers, paid once, the ending at dawn, and the Case
+/// Closed file with its REAL HISTORY apart from IN THIS MYSTERY.
 void main() {
   final season = season5Content;
 
@@ -30,12 +30,13 @@ void main() {
     // A reveal for every case (the season whole since 2026-11-06).
     expect(season.historyReveals.keys, [for (var n = 1; n <= 12; n++) 's5_ep${n.toString().padLeft(2, '0')}']);
     expect([for (final s in SeasonCatalog.all) if (s.id == season.id) s], [same(season)]);
-    // Case 01's engines: the gate's traces, the lesson box, the note, the King's talk before the name's tiles.
+    // Case 01's engines: the picture note's traces, the letters on the mouth, the first word, the King's talk before the letter's papers.
     expect(season.deductions.keys.where((id) => id.startsWith('s5_ep01_')), ['s5_ep01_m1']);
+    expect(season.shapes.keys.where((id) => id.startsWith('s5_ep01_')), ['s5_ep01_m2']);
     expect(season.syllables.keys.where((id) => id.startsWith('s5_ep01_')), ['s5_ep01_m3']);
     expect(season.talks.keys.where((id) => id.startsWith('s5_ep01_')), isEmpty);
-    expect(season.talkMissions['s5_ep01_final']!.before!.presents.map((p) => p.id), ['who', 'how', 'people']);
-    expect(const SyllableRules().answer(season.syllables['s5_ep01_m3']!), '정음');
+    expect(season.talkMissions['s5_ep01_final']!.before!.presents.map((p) => p.id), ['what', 'written']);
+    expect(const SyllableRules().answer(season.syllables['s5_ep01_m3']!), '엄마');
   });
 
   for (final level in Difficulty.values) {
@@ -51,11 +52,11 @@ void main() {
       int wrong(String id) => c.read(gameControllerProvider).wrongAnswers[id] ?? 0;
       expect(c.read(currentDifficultyProvider), level);
 
-      // M1, the gate: the guard post chosen, the try-again sheet, a hint, then the path to the well.
+      // M1, Bun-i's picture note: SORRY chosen, the try-again sheet, a hint, then THANK YOU.
       final m1 = ep.missions[0];
-      expect(m1.answer, 'c');
+      expect(m1.answer, 'thanks');
       await p.toPuzzle(m1);
-      await p.answer(m1, 'b');
+      await p.answer(m1, 'sorry');
       expect(wrong(m1.id), 1, reason: p.play.texts());
       await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
       await t.ensureVisible(find.text('Get a Free Hint'));
@@ -74,44 +75,41 @@ void main() {
       expect([done(m1.id), done(ep.missions[1].id)], [true, false]);
       expect(c.read(gameControllerProvider.notifier).submitAnswer(m1, m1.answer).coins, 0, reason: 'paid once');
 
-      // M2, the lesson box: nine letters, three in Taek's order; ㅂ for "no
-      // added line" is refused with its own line.
+      // M2, the letters on the mouth: ㄱ on the tongue refused with its own line, then the three pairs.
       final m2 = ep.missions[1];
-      expect(m2.type, MissionType.sequence);
-      expect(m2.answer, 'ieung,eu,mieum');
-      expect(m2.options, hasLength(9));
+      expect(m2.type, MissionType.matchPairs);
+      expect(m2.answer, 'mieum:lips,nieun:tongue,ieung:throat');
       await p.toPuzzle(m2);
-      await p.answer(m2, 'ieung,eu,bieup');
+      const wrongPairs = 'mieum:lips,giyeok:tongue,ieung:throat';
+      await p.answer(m2, wrongPairs);
       expect([done(m2.id), wrong(m2.id)], [false, 1], reason: p.play.texts());
-      expect(findReadableContaining(AnswerChecker.feedbackFor(m2, 'ieung,eu,bieup')!), findsWidgets, reason: 'the wrong letter answered in English');
+      expect(findReadableContaining(AnswerChecker.feedbackFor(m2, wrongPairs)!), findsWidgets, reason: 'the wrong pair answered in English');
       await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
-      await tapText(t, 'Start again', after: const Duration(milliseconds: 300));
       await p.answer(m2);
       expect(done(m2.id), isTrue, reason: p.play.texts());
       await p.onToMap();
 
-      // M3, the last paper: the teeth with no added line refused, the wrong
-      // group pointed at; then Group 1 built and Group 2 from the slate.
+      // M3, Bun-i's first word: 어마 (no last sound) refused, its block pointed at; then 엄마.
       final m3 = ep.missions[2];
       await p.toPuzzle(m3);
-      await p.answer(m3, '성음');
+      await p.answer(m3, '어마');
       expect([done(m3.id), wrong(m3.id)], [false, 1], reason: p.play.texts());
-      expect(find.text('TOP · CHECK'), findsOneWidget, reason: 'the wrong place pointed at');
+      expect(find.text('BLOCK 1 · CHECK'), findsOneWidget, reason: 'the wrong block pointed at');
       await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
       await p.answer(m3);
       expect(done(m3.id), isTrue, reason: p.play.texts());
       expect(c.read(gameControllerProvider).puzzleStateOf(m3.id), startsWith('pv2:syllables:1:'), reason: 'every move saved');
       await p.onToMap();
 
-      // The final: King Sejong's three questions, then the name's four tiles.
+      // The final: King Sejong's two questions, then the letter's two papers.
       await p.solveFinal(ep.finalMission);
       await wait(t, const Duration(milliseconds: 1500));
       expect(done(ep.finalMission.id), isTrue, reason: p.play.texts());
-      // The ending (Bun-i at dawn), its Discovery Moment, then the case closed.
+      // The ending (the name, then Bun-i at dawn), its Discovery Moment, then the case closed.
       bool closing() => find.text('CLOSE THE CASE').evaluate().isNotEmpty || find.text('SEE MY CASE REPORT').evaluate().isNotEmpty;
       var heardBunI = false;
-      for (var n = 0; n < 24 && !closing(); n++) {
-        heardBunI |= findReadableContaining('The King read my letter?').evaluate().isNotEmpty;
+      for (var n = 0; n < 48 && !closing(); n++) {
+        heardBunI |= findReadableContaining('Thank you, Mom!').evaluate().isNotEmpty;
         if (find.text('CONTINUE INVESTIGATION').evaluate().isNotEmpty) {
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 1500));
         } else if (find.text('NEXT').evaluate().isNotEmpty) {

@@ -72,7 +72,7 @@ void main() {
 
   test('read back, it is the palette: ids, modes, surfaces, engines', () {
     expect(PaletteFacts.all.length, PuzzlePalette.all.length);
-    expect(PaletteFacts.all.length, 30, reason: 'STEP 2-4\'s 28 and Puzzle Engine 2.0\'s timeline_board and syllable_compose');
+    expect(PaletteFacts.all.length, 31, reason: 'STEP 2-4\'s 28, Puzzle Engine 2.0\'s timeline_board and syllable_compose, and Seoul Case 01 V4\'s shape_match');
     for (final p in PuzzlePalette.all) {
       final f = PaletteFacts.lookup(p.id)!;
       expect(f.mode.name, p.generationMode.name, reason: p.id);

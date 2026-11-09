@@ -31,10 +31,11 @@ const case01Plan = 'content_pipeline/seasons/s5_seoul/cases/s5_ep01/case.plan.js
 
 /// Case 01's missions at their places, measured on the palace map's pixels.
 const case01Spots = <String, (String, Offset)>{
-  's5_ep01_m1': ('The Inner Gate', Offset(768 / 1536, 760 / 1024)),
-  's5_ep01_m2': ('The Well Yard', Offset(1310 / 1536, 425 / 1024)),
+  // V4 (2026-11-07): Bun-i at the kitchen well first, Sora's lesson by the inner gate.
+  's5_ep01_m1': ('The Kitchen Well', Offset(1310 / 1536, 425 / 1024)),
+  's5_ep01_m2': ('The Inner Gate', Offset(768 / 1536, 760 / 1024)),
   's5_ep01_m3': ('The Writing Room', Offset(1280 / 1536, 205 / 1024)),
-  's5_ep01_final': ('The Book Hall', Offset(265 / 1536, 365 / 1024)),
+  's5_ep01_final': ("The King's Study", Offset(265 / 1536, 365 / 1024)),
 };
 
 /// Cases 02-12 on their own maps: each mission's place and spot, in pixels.
@@ -205,12 +206,12 @@ void main() {
 
     test('two spots on top of each other', () {
       final json = plan((c) => c['landmarks'][2]['missions']['s5_ep01_m3'] = [1310, 440]);
-      expect(seasonIssues(json), [contains('too close to s5_ep01_m2')]);
+      expect(seasonIssues(json), [contains('too close to s5_ep01_m1')]);
     });
 
     test('a mission left off, a mission at another place, a mission of another case', () {
       expect(caseIssues(plan((c) => c['landmarks'][3]['missions'] = {})), [contains('s5_ep01_final has no spot')]);
-      expect(caseIssues(plan((c) => c['landmarks'][3]['name'] = 'The Library')), [contains('happens at THE BOOK HALL')]);
+      expect(caseIssues(plan((c) => c['landmarks'][3]['name'] = 'The Library')), [contains("happens at THE KING'S STUDY")]);
       expect(caseIssues(plan((c) => c['landmarks'][3]['missions']['s5_ep02_m1'] = [300, 500])), [contains('s5_ep02_m1 is not a mission')]);
     });
 
@@ -281,8 +282,8 @@ void main() {
       expect(shows(seasonMapFile), isFalse);
       expect(find.byKey(const ValueKey('pin-s5_ep01_m1')), findsOneWidget);
       expect(find.byKey(const ValueKey('pin-s5_ep01_m2')), findsNothing);
-      // The Inner Gate is named by its pin; the others are not open yet.
-      for (final name in ['The Inner Gate', 'The Well Yard', 'The Writing Room', 'The Book Hall']) {
+      // The Kitchen Well is named by its pin; the others are not open yet.
+      for (final name in ['The Kitchen Well', 'The Inner Gate', 'The Writing Room', "The King's Study"]) {
         expect(named(name), findsNothing, reason: name);
       }
       expect(find.text("YOU'RE HERE", findRichText: true), findsWidgets);
@@ -298,8 +299,8 @@ void main() {
       expect(find.byKey(const ValueKey('pin-s5_ep01_m1')), findsOneWidget);
       expect(find.byKey(const ValueKey('pin-s5_ep01_m2')), findsOneWidget);
       expect(find.byKey(const ValueKey('pin-s5_ep01_m3')), findsNothing);
-      expect(named('The Inner Gate'), findsOneWidget);
-      for (final name in ['The Well Yard', 'The Writing Room', 'The Book Hall']) {
+      expect(named('The Kitchen Well'), findsOneWidget);
+      for (final name in ['The Inner Gate', 'The Writing Room', "The King's Study"]) {
         expect(named(name), findsNothing, reason: name);
       }
       expect(t.takeException(), isNull);

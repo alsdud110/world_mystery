@@ -42,16 +42,20 @@ void main() {
   });
 
   group('content', () {
-    test('only Case 12\'s train time is read as a time, and it is a real HH:MM', () {
+    test('London\'s one time is Case 12\'s train; every time of the game (Seoul\'s too) is a real HH:MM', () {
       final times = [for (final m in missions) if (m.isTimeCode) m.id];
-      expect(times, ['ep12_m2']);
-      final m = mission('ep12_m2');
-      expect(m.type, MissionType.numberCode);
-      expect(m.answer, '1140', reason: 'the answer stays the digits: no colon to type');
-      for (final code in [m.answer, ...m.feedback.keys]) {
-        expect(code, matches(RegExp(r'^\d{4}$')), reason: '$code: four digits');
-        expect(int.parse(code.substring(0, 2)), lessThan(24), reason: '$code: the hours');
-        expect(int.parse(code.substring(2)), lessThan(60), reason: '$code: the minutes');
+      expect(times.where((id) => id.startsWith('ep')), ['ep12_m2'], reason: 'London: the train time only');
+      // Seoul reads two clock times (Case 06 M3 the watchers' gap, Case 09 M1 the candle).
+      expect(times.where((id) => id.startsWith('s5_')), ['s5_ep06_m3', 's5_ep09_m1']);
+      expect(mission('ep12_m2').answer, '1140', reason: 'the answer stays the digits: no colon to type');
+      for (final id in times) {
+        final m = mission(id);
+        expect(m.type, MissionType.numberCode, reason: id);
+        for (final code in [m.answer, ...m.feedback.keys]) {
+          expect(code, matches(RegExp(r'^\d{4}$')), reason: '$id $code: four digits');
+          expect(int.parse(code.substring(0, 2)), lessThan(24), reason: '$id $code: the hours');
+          expect(int.parse(code.substring(2)), lessThan(60), reason: '$id $code: the minutes');
+        }
       }
     });
 

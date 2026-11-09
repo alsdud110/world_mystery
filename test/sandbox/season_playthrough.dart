@@ -278,8 +278,20 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
           content.records,
           content.deductions,
           content.syllables,
+          content.shapes,
           content.inspections,
         ].any((table) => table.containsKey(m.id));
+
+    /// [m]'s first free hint, opened on its puzzle page and read in the level's words.
+    Future<void> takeHint(WidgetTester t, ProviderContainer c, SandboxPlay play, Mission m) async {
+      final link = find.text('Get a Free Hint');
+      await reveal(t, link);
+      await tapText(t, 'Get a Free Hint', after: const Duration(milliseconds: 800));
+      expect(c.read(gameControllerProvider).hintsFor(m.id), 1, reason: m.id);
+      expect(findReadableContaining(m.hints.first), findsWidgets, reason: '${m.id} hint: ${play.texts()}');
+      onlyMine('${m.id} hint', [m.hints.first], (cases, _) => [at(cases, m.id)!.hints.first]);
+      if (find.text('CLOSE').evaluate().isNotEmpty) await tapText(t, 'CLOSE', after: const Duration(milliseconds: 500));
+    }
 
     /// [m] from the map to its Discovery Moment, as its plan plays it, on
     /// its own place's picture. With [hint], the puzzle's first hint is
@@ -312,6 +324,7 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
         // controls, as each case's own test plays it ([CasePlayer]).
         final engine = CasePlayer(t, content);
         await engine.toPuzzle(m);
+        if (hint) await takeHint(t, c, play, m);
         await engine.answer(m);
       } else if (content.dialogues.containsKey(m.id)) {
         final witnesses = SeasonCatalog.dialogue(m)!;
@@ -348,15 +361,7 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
           }
           unrevealed.remove(m.options.firstWhere((o) => o.id == m.answer).picture);
         }
-        if (hint) {
-          final link = find.text('Get a Free Hint');
-          await reveal(t, link);
-          await tapText(t, 'Get a Free Hint', after: const Duration(milliseconds: 800));
-          expect(c.read(gameControllerProvider).hintsFor(m.id), 1, reason: m.id);
-          expect(findReadableContaining(m.hints.first), findsWidgets, reason: '${m.id} hint: ${play.texts()}');
-          onlyMine('${m.id} hint', [m.hints.first], (cases, _) => [at(cases, m.id)!.hints.first]);
-          if (find.text('CLOSE').evaluate().isNotEmpty) await tapText(t, 'CLOSE', after: const Duration(milliseconds: 500));
-        }
+        if (hint) await takeHint(t, c, play, m);
         if (m.type == MissionType.multipleChoice || m.type == MissionType.imageChoice) {
           if (wrongOf(m) case final wrong?) await play.wrong(m, wrong.id, line: wrong.feedback);
         }
@@ -432,8 +437,10 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
         if (n + 1 < episodes.length) expect(season().isUnlocked(episodes[n + 1].id), isFalse, reason: '${episodes[n + 1].id} still sealed');
         expect(c.read(gameControllerProvider.notifier).openEpisode(e.id), isTrue, reason: e.id);
         await throughIntro(t, c, play, e);
-        // A hint in every case: in its look round, else on its first puzzle page.
-        final hintAt = e.missions.where((m) => !content.dialogues.containsKey(m.id) && !content.investigations.containsKey(m.id) && !playedOnItsEngine(m)).first;
+        // A hint in every case: in its look round, else on its first puzzle page
+        // (on its own engine's page when every mission has one: Seoul Case 01 V4).
+        final hintAt = e.missions.where((m) => !content.dialogues.containsKey(m.id) && !content.investigations.containsKey(m.id) && !playedOnItsEngine(m)).firstOrNull ??
+            e.missions.firstWhere(playedOnItsEngine);
         for (final (i, m) in e.missions.indexed) {
           await playMission(t, c, play, m, hint: m == hintAt && !content.explores.containsKey(m.id));
           await play.onToMap(m);

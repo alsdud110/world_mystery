@@ -878,6 +878,7 @@ abstract final class CaseGenerator {
     'package:world_mystery/data/models/scene_deduction.dart': ['DeductionClue', 'DeductionPlace', 'DeductionScene', 'TraceSketch'],
     'package:world_mystery/data/models/scene_explore.dart': ['ExploreKind', 'ExplorePicture', 'ExploreScene', 'ExploreSpot', 'ScenePixels'],
     'package:world_mystery/data/models/scene_inspect.dart': ['InspectKind', 'InspectScene', 'InspectSpot'],
+    'package:world_mystery/data/models/shape_match.dart': ['ShapeLetter', 'ShapeMatchSpec', 'ShapePicture'],
     'package:world_mystery/data/models/tower_puzzles.dart': ['PaperQuad', 'RecordDoc', 'RecordLayout', 'RecordLine', 'RecordsScene'],
     'package:world_mystery/puzzles_v2/core/syllable_rules.dart': ['SyllableBlock', 'SyllableSpec'],
     'package:world_mystery/puzzles_v2/core/timeline_rules.dart': ['TimelineCard', 'TimelineRelation', 'TimelineSpec'],
@@ -1056,6 +1057,7 @@ abstract final class CaseGenerator {
   static const v2SceneTables = {
     'timelines': 'TimelineSpec',
     'syllables': 'SyllableSpec',
+    'shapes': 'ShapeMatchSpec',
     // STEP 1: engines the game already played, now made from plans.
     'deductions': 'DeductionScene',
     'inspections': 'InspectScene',
@@ -1087,6 +1089,7 @@ abstract final class CaseGenerator {
       'dialogues' => w.dialogue == null ? null : _dialogue(w.dialogue!, m.puzzle.answerSpec.answer),
       'timelines' => w.timeline == null ? null : _timeline(w.timeline!, m.puzzle.answerSpec.answer),
       'syllables' => w.syllables == null ? null : _syllables(w.syllables!),
+      'shapes' => w.shapes == null ? null : _shapes(w.shapes!),
       'deductions' => w.traces == null ? null : _traces(w.traces!),
       'inspections' => w.inspect == null ? null : _inspect(w.inspect!),
       'records' => w.records == null ? null : _records(w.records!),
@@ -1124,6 +1127,17 @@ abstract final class CaseGenerator {
     ],
     if (s.sounds.isNotEmpty) 'sounds': s.sounds,
     'columnHeight': ?s.columnHeight,
+    if (s.row) 'row': true,
+    if (s.lastSounds.isNotEmpty) 'lastSounds': s.lastSounds,
+    'voice': ?s.voice,
+  });
+
+  static DartCall _shapes(ShapesPlan s) => DartCall('ShapeMatchSpec', named: {
+    'pictures': [
+      for (final p in s.pictures) DartCall('ShapePicture', named: {'id': p.id, 'file': p.file, 'name': p.name, 'label': p.label}),
+    ],
+    'letters': [for (final l in s.letters) DartCall('ShapeLetter', named: {'id': l.id, 'glyph': l.glyph})],
+    'task': s.task,
   });
 
   // ── Existing engines (Puzzle Engine 2.0 STEP 1) ─────────────────────────
@@ -1282,6 +1296,7 @@ abstract final class CaseGenerator {
         if (p.requires.isNotEmpty) 'requires': _ids(p.requires),
         if (p.offered.isNotEmpty) 'choices': p.offered,
         'tell': ?p.tell,
+        'litAfter': ?p.litAfter,
       }),
   ]);
 
@@ -1503,7 +1518,7 @@ abstract final class CaseGenerator {
     if (l.by != TalkBy.narrator) 'voice': DartCode('TalkVoice.${l.by.name}'),
     if (l.speaker case final s?) 'name': _nameOf(s, season),
     'portrait': ?portrait,
-    'background': _placeFile(m, season),
+    'background': l.background ?? _placeFile(m, season),
     'evidenceId': ?l.evidence,
   });
 }

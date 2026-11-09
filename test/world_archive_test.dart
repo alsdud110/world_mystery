@@ -347,13 +347,18 @@ void main() {
       await wait(t, const Duration(seconds: 3));
     });
 
-    testWidgets('the map menu opens the archives', (t) async {
+    testWidgets("from the case map: its menu's World Map, then the archive in the World Map's header", (t) async {
+      // The case map's menu has six items (no archive of its own since the
+      // 2026-11-03 menu): the archive is one step on, on the World Map.
       await pumpApp(t, seasonSaves(0, activeBegun: true));
       appRef.read(routerProvider).go(Routes.map);
       await wait(t, const Duration(milliseconds: 1400));
       await t.tap(find.byTooltip('Menu'));
       await wait(t);
-      await tapText(t, 'World Archive');
+      await tapText(t, 'World Map', after: const Duration(milliseconds: 1200));
+      expect(path(), Routes.worldMap);
+      await t.tap(find.byKey(const ValueKey('world-map-archive')));
+      await wait(t, const Duration(milliseconds: 1200));
       expect(path(), Routes.seasons);
       await wait(t, const Duration(seconds: 3));
     });

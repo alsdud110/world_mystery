@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:world_mystery/features/mission/widgets/letter_lock.dart';
 import 'package:world_mystery/core/utils/answer_checker.dart';
 import 'package:world_mystery/data/content/difficulty_content.dart';
 import 'package:world_mystery/data/models/difficulty.dart';
@@ -49,6 +50,14 @@ void main() {
     }
   });
 
+  test('C05 Ending: Rookie says "hold back" in plain words; Junior and Master keep it', () {
+    String line(Difficulty level) => (level == Difficulty.rookie ? season5Content.endings : season5Content.variants[level]!.endings)['s5_ep05_final']!
+        .map((e) => e.text)
+        .firstWhere((t) => t.startsWith('In 1895, the Queen'));
+    expect(line(Difficulty.rookie), contains("to stop Japan's power from growing"));
+    expect(line(Difficulty.junior), contains("hold back Japan's power"));
+  });
+
   test('C05 M2 and C07 M2: every line a wrong card points back to is in the words read', () {
     for (final id in ['s5_ep05_m2', 's5_ep07_m2']) {
       final m = mission(id);
@@ -62,13 +71,7 @@ void main() {
     expect(mission('s5_ep07_m2').letter, contains('goods train'), reason: 'why the goods train card is left out');
   });
 
-  test('C05 Final: Lady Han names both countries, and which one the Queen holds back', () {
-    final m = mission('s5_ep05_final');
-    expect(m.letter, contains("hold back Japan's power"));
-    expect(m.letter, contains('Russia'));
-    expect(m.letter, contains('37 steps'));
-    answers(m, {'RUSSIA': true, 'CHINA': true, 'KOREA': true});
-  });
+  // Superseded by the PART 2–4 redesign; its final is tested in test/sandbox/s5_seoul_c05_test.dart.
 
   test('C09 M2: the report still says where each thing is, and which one holds the names', () {
     final m = mission('s5_ep09_m2');
@@ -82,59 +85,17 @@ void main() {
     answers(m, {'key': false, 'ink': false});
   });
 
-  test('C11 M3: the lock\'s rule told step by step, its numbers read on Yun\'s list (M2), an example that is not the answer', () {
-    final m = mission('s5_ep11_m3');
-    for (final clue in ['side by side', 'First: the number of copies', 'Then: the number of poems in each copy', 'Look at my list again', 'copy 2 of 3', '18 + 1 opening poem']) {
-      expect(m.letter, contains(clue));
-    }
-    expect(m.letter, isNot(contains('319')));
-    expect(m.letter, isNot(contains('nineteen')));
-    expect(m.answer, '319');
-    answers(m, {'119': true, '219': true, '318': true, '215': false});
-    // The rule at every level: the copies, then each copy's poems (18 + 1), side by side.
-    for (final level in Difficulty.values) {
-      final l = mission('s5_ep11_m3', level).letter;
-      expect([l.contains('2 of 3'), l.contains('18 + 1 opening poem'), l.contains('side by side')], [true, true, true], reason: level.label);
-    }
-  });
+  // Superseded by the PART 2–4 redesign; its final is tested in test/sandbox/s5_seoul_c11_redesign_test.dart.
 
   // PART R3: history words said plainly at Rookie; Junior and Master read as before.
   group('R3', () {
-    test('C06 Final: FORCED as a plain verb in the gap, the treaty\'s facts kept', () {
-      final m = mission('s5_ep06_final');
-      expect(m.letter, contains('Japan made Korea sign it. Korea did not choose it.'));
-      expect(m.letter, contains('Japan ______ Korea to sign it.'));
-      expect(m.answer, 'FORCED');
-      expect(AnswerChecker.isCorrect(m, 'FORCED'), isTrue);
-      expect(AnswerChecker.isCorrect(m, 'FORDEC'), isFalse);
-      expect(m.orderFeedback, contains('Japan ____ Korea to sign it.'), reason: 'the feedback says the gap as the letter does');
-      expect(mission('s5_ep06_final', Difficulty.junior).letter, contains('on Korea'), reason: 'Junior unchanged');
-    });
+    // Superseded by the PART 2–4 redesign; its final is tested in test/sandbox/s5_seoul_c06_test.dart.
 
-    test('C09 Final: the fourth question without "in exile"; the police report still answers it', () {
-      final talk = season5Content.talks['s5_ep09_final']!;
-      final protect = talk.presents.firstWhere((p) => p.id == 'protect');
-      expect(protect.prompt, isNot(contains('exile')));
-      expect(protect.prompt, contains('so far from home'));
-      expect(mission('s5_ep09_final').letter, contains('The police guard the government and watch for spies.'));
-    });
+    // Superseded by the PART 2–4 redesign; its final is tested in test/sandbox/s5_seoul_c09_test.dart.
 
-    test('C10 Final: the year still read from words; 1919 and the date refused', () {
-      final m = mission('s5_ep10_final');
-      expect(m.letter, contains('nineteen thirty-two'));
-      expect(m.letter, contains('After that day'));
-      expect(m.letter, contains('Chinese leaders began to help our government strongly.'));
-      expect(RegExp(r'\d{4}').hasMatch(m.letter), isFalse, reason: 'no year written in numbers');
-      answers(m, {'1919': true, '0429': true});
-    });
+    // Superseded by the PART 2–4 redesign; its final is tested in test/sandbox/s5_seoul_c10_test.dart.
 
-    test('C11 Final: a choice subject explained; the language still the player\'s to name', () {
-      final m = mission('s5_ep11_final');
-      expect(m.letter, contains('choice subject'));
-      expect(m.letter, contains('Many schools stopped teaching it.'));
-      expect(m.letter, isNot(contains('Korean language')));
-      answers(m, {'JAPANESE': true, 'HANGEUL': true, 'CHINESE': true, 'ENGLISH': true});
-    });
+    // Superseded by the PART 2–4 redesign; its final is tested in test/sandbox/s5_seoul_c11_redesign_test.dart.
 
     test('C12 M3: the radio in plain words; the date and the card kept', () {
       final m = mission('s5_ep12_m3');
@@ -142,22 +103,65 @@ void main() {
       expect(m.letter, contains('the fifteenth of August'));
       expect(m.letter, contains('August is month eight'));
       answers(m, {'715': true, '814': true, '915': true, '158': false});
+      // PART 1B: the fourteenth is only a 'may' day, ruled out by Mother's rule read in the same letter.
+      expect(m.letter, contains("'May' is not enough."));
+      expect(m.letter, contains('The fourteenth'));
+      expect(AnswerChecker.feedbackFor(m, '814'), contains("'may' is not enough"));
     });
 
-    test('C05 Final: "hold back" kept as written, told once in plain words at Rookie only', () {
-      final rookie = mission('s5_ep05_final').letter;
-      expect(rookie, contains("hold back Japan's power."));
-      expect(rookie.split('\n').last, startsWith('(To hold back = to stop'));
-      for (final level in [Difficulty.junior, Difficulty.master]) {
-        expect(mission('s5_ep05_final', level).letter, isNot(contains('To hold back')), reason: level.label);
+    test('C12 stands alone: no other case\'s evidence, people or season box, at every level', () {
+      for (final level in Difficulty.values) {
+        final ep = DifficultyContent.episodeAt(
+          Episode.fromJson({...season5Content.episodes['s5_ep12']!, 'seasonId': season5Content.id}),
+          level,
+          patches: season5Content.casePatches,
+        );
+        expect(ep.title, 'The Box That Waited', reason: level.label);
+        expect(ep.title.toUpperCase(), isNot(contains('LIGHT')), reason: level.label);
+        final text = [
+          ...ep.intro,
+          for (final m in ep.allMissions) ...[...m.story, m.letterIntro, m.letter, m.question, ...m.hints, ...m.transition],
+        ].join('\n');
+        for (final w in ['Bun-i', 'Haesu', 'Miri', 'Sora', 'keeper', 'water drop', 'water-drop', 'letter box']) {
+          expect(text, isNot(contains(w)), reason: '${level.label}: $w');
+        }
+        // 815 and LIGHT are never shown before their own puzzles.
+        final beforeM3 = [...ep.intro, for (final m in ep.allMissions.take(2)) ...[...m.story, m.letter, ...m.transition]].join('\n');
+        expect(beforeM3, isNot(contains('8.15')), reason: level.label);
+        expect(beforeM3.toUpperCase(), isNot(contains('LIGHT')), reason: level.label);
+        final fin = ep.allMissions.last;
+        expect(fin.answer, 'LIGHT', reason: level.label);
+        expect(fin.letter, allOf(contains('The sun gives it.'), contains('At night, it goes away.')), reason: level.label);
       }
     });
+
+    test('C12 Final (PART 1.5): seven tiles, five slots, two extra; every word they make has its own line, at every level', () {
+      for (final level in Difficulty.values) {
+        final fin = mission('s5_ep12_final', level);
+        expect(fin.options.map((o) => o.label).join(), 'NHTIRGL', reason: level.label);
+        expect(LetterLockQuestion.slotCount(fin), 5, reason: level.label);
+        expect(fin.letter, contains('Two tiles are extra.'), reason: level.label);
+        expect(AnswerChecker.isCorrect(fin, 'LIGHT'), isTrue, reason: level.label);
+        for (final w in ['NIGHT', 'RIGHT', 'THING', 'GLINT', 'GIRTH']) {
+          expect(AnswerChecker.isCorrect(fin, w), isFalse, reason: '${level.label} $w');
+          final line = AnswerChecker.feedbackFor(fin, w);
+          expect(line, isNotNull, reason: '${level.label} $w');
+          expect(line!.toUpperCase(), isNot(contains('LIGHT')), reason: '${level.label} $w: never the answer');
+        }
+        // M2: the riddle is in pieces on the backs, said before the order is set.
+        final m2 = mission('s5_ep12_m2', level);
+        expect(m2.letter, contains('one piece on each'), reason: level.label);
+        expect(m2.transition.first, contains('in order'), reason: level.label);
+      }
+    });
+
+    // Superseded by the PART 2–4 redesign; its final is tested in test/sandbox/s5_seoul_c05_test.dart.
 
     test('words a Rookie line shows have their meaning, at every level', () {
       for (final (caseId, words) in [
         ('s5_ep06', ['moss', 'knelt', 'dusk', 'silk']),
         ('s5_ep09', ['bureau', 'pressed']),
-        ('s5_ep10', ['attacked']),
+        ('s5_ep10', ['clerk', 'provisional']),
         ('s5_ep11', ['choice']),
       ]) {
         for (final level in Difficulty.values) {

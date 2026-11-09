@@ -7,10 +7,10 @@
   "tagline": "READ THE NEW LETTERS",
   "plannedCases": 12,
   "mainMystery": {
-    "truth": "Bun-i, the water-carrier who wrote the first letter in the new letters (Case 01), kept a small letter box. For five hundred years her family kept it: in every hard time a keeper wrote one short note in the King's letters, signed it with her water drop, and quietly helped. They never changed history; they kept the letters alive.",
-    "culprit": "No one: the season's mystery is a family of keepers, not a crime; each case has its own small, made-up wrongdoer or puzzle.",
-    "motive": "To keep the people's own letters alive, as Bun-i promised her teacher Sora.",
-    "revealCase": "s5_ep08"
+    "truth": "There is no single season mystery. Season 5 is twelve separate history cases set across Seoul's story, from King Sejong's new letters in 1446 to the light of 15 August 1945. Each case has its own problem, its own people and its own evidence, and is solved inside that case.",
+    "culprit": "No one across the season: each case has its own small, made-up wrongdoer or puzzle; history itself is never changed.",
+    "motive": "None across the season: each case's motive is told in that case.",
+    "revealCase": "s5_ep12"
   },
   "characters": [
     {
@@ -52,7 +52,7 @@
     {
       "charId": "seok",
       "name": "Seok",
-      "role": "A young sailor of sixteen; the keeper of 1592 (made up)",
+      "role": "A young sailor of sixteen (made up)",
       "firstCase": "s5_ep02"
     },
     {
@@ -70,7 +70,7 @@
     {
       "charId": "okbun",
       "name": "Okbun",
-      "role": "A girl of twelve who carries water to the builders; the keeper of 1795 (made up)",
+      "role": "A girl of twelve who carries water to the builders (made up)",
       "firstCase": "s5_ep03"
     },
     {
@@ -82,7 +82,7 @@
     {
       "charId": "duri",
       "name": "Duri",
-      "role": "A carpenter's apprentice of fourteen; the keeper of 1866 (made up)",
+      "role": "A carpenter's apprentice of fourteen (made up)",
       "firstCase": "s5_ep04"
     },
     {
@@ -94,7 +94,7 @@
     {
       "charId": "lady_han",
       "name": "Court Lady Han",
-      "role": "A court lady who serves the Queen; the keeper of 1895 (made up)",
+      "role": "A court lady who serves the Queen (made up)",
       "firstCase": "s5_ep05"
     },
     {
@@ -112,7 +112,7 @@
     {
       "charId": "bongsu",
       "name": "Bongsu",
-      "role": "A palace errand boy; the keeper of 1907 (made up)",
+      "role": "A palace errand boy (made up)",
       "firstCase": "s5_ep06"
     },
     {
@@ -124,7 +124,7 @@
     {
       "charId": "mrs_kang",
       "name": "Mrs. Kang",
-      "role": "She runs a Korean inn in Harbin; the keeper of 1909 (made up)",
+      "role": "She runs a Korean inn in Harbin (made up)",
       "firstCase": "s5_ep07"
     },
     {
@@ -154,7 +154,7 @@
     {
       "charId": "gyeongsun",
       "name": "Gyeongsun",
-      "role": "Gwan-sun's school friend and the keeper of 1919 (made up)",
+      "role": "Gwan-sun's school friend (made up)",
       "firstCase": "s5_ep08"
     },
     {
@@ -172,7 +172,7 @@
     {
       "charId": "haesu",
       "name": "Haesu",
-      "role": "A young clerk of the Provisional Government and the keeper of Shanghai (made up)",
+      "role": "A clerk of the Provisional Government (made up)",
       "firstCase": "s5_ep09"
     },
     {
@@ -196,7 +196,7 @@
     {
       "charId": "miri",
       "name": "Miri",
-      "role": "A keeper, Haesu's cousin, who helps at Yonhi College (made up)",
+      "role": "A young woman who helps at Yonhi College (made up)",
       "firstCase": "s5_ep11"
     },
     {
@@ -208,7 +208,7 @@
     {
       "charId": "bitna",
       "name": "Bitna",
-      "role": "The last keeper, Haesu's daughter (made up)",
+      "role": "A Korean girl in Chongqing whose mother left her a box (made up)",
       "firstCase": "s5_ep12"
     },
     {
@@ -288,7 +288,7 @@
   "acts": [
     {
       "actId": "act1",
-      "theme": "THE WATER-DROP NOTES",
+      "theme": "LETTERS, SHIPS AND PALACES",
       "caseIds": [
         "s5_ep01",
         "s5_ep02",
@@ -320,21 +320,21 @@
   "prologue": {
     "city": "Seoul is very old.\nIts story is full of secrets.",
     "cases": [
-      "A wet note waits by a turtle ship.",
+      "Gunpowder for a turtle ship goes missing.",
       "A lifting machine will not lift.",
       "Logs for the palace go missing.",
       "And the palace lights go dark."
     ],
     "separate": [
-      "They look like different cases.",
-      "But a good detective\nputs the pieces together."
+      "Twelve cases, in twelve times of Seoul's story.",
+      "Each one is a mystery\nof its own."
     ],
-    "question": "Who keeps writing the notes?",
-    "bigger": "Every note has\nthe same small water drop.",
+    "question": "What really happened, and why?",
+    "bigger": "Every case is built on\na true story of Korea.",
     "promise": [
-      "Find the notes.",
-      "Read the letters.",
-      "Find the keepers."
+      "Look closely.",
+      "Read the clues.",
+      "Solve each case."
     ],
     "firstCase": {
       "picture": "assets/seasons/season_05_seoul/cover/kings_study.webp",
@@ -355,12 +355,12 @@
     ]
   },
   "outro": [
-    "Bun-i's first note lies under all the others.",
-    "The letters she learned in 1446 are read freely again."
+    "From 1446 to 1945: twelve cases, all solved.",
+    "In each one, you found what really happened."
   ],
   "finale": [
     "Seoul keeps its story in its letters.",
-    "This time, you read it note by note."
+    "This time, you read it case by case."
   ],
   "languageArc": [
     "Act 1: how the letters are made, place words (under, next to, on), lunar months and years.",
@@ -370,7 +370,7 @@
   "places": [
     {
       "placeId": "s5_seoul.inner_gate",
-      "file": "assets/seasons/season_05_seoul/locations/gate_courtyard.webp",
+      "file": "assets/seasons/season_05_seoul/cases/case_01/intro_side_gate.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -388,7 +388,7 @@
     },
     {
       "placeId": "s5_seoul.writing_room",
-      "file": "assets/seasons/season_05_seoul/locations/copy_room.webp",
+      "file": "assets/seasons/season_05_seoul/cases/case_01/m3_writing_desk.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -397,7 +397,7 @@
     },
     {
       "placeId": "s5_seoul.book_hall",
-      "file": "assets/seasons/season_05_seoul/locations/book_hall_rain.webp",
+      "file": "assets/seasons/season_05_seoul/cases/case_01/final_kings_study.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -744,119 +744,644 @@
     "caseMaps": {
       "s5_ep01": {
         "file": "assets/seasons/season_05_seoul/locations/map/palace_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
-        "measuredOn": "sha256:712f1c34f64518cad2db85c6ceaeebd5b639cc96ea5534a8b631ac33d22f588a",
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
+        "measuredOn": "sha256:e0d53ab2fd57df7b60c0221574f7b5b3b2778bf61defac88bafd2b923eccb534",
         "landmarks": [
-          { "spotId": "inner_gate", "name": "The Inner Gate", "at": [768, 772], "missions": { "s5_ep01_m1": [768, 760] } },
-          { "spotId": "well_yard", "name": "The Well Yard", "at": [1310, 437], "missions": { "s5_ep01_m2": [1310, 425] } },
-          { "spotId": "writing_room", "name": "The Writing Room", "at": [1280, 217], "missions": { "s5_ep01_m3": [1280, 205] } },
-          { "spotId": "book_hall", "name": "The Book Hall", "at": [265, 377], "missions": { "s5_ep01_final": [265, 365] } }
+          {
+            "spotId": "inner_gate",
+            "name": "The Inner Gate",
+            "at": [
+              768,
+              772
+            ],
+            "missions": {
+              "s5_ep01_m2": [
+                768,
+                760
+              ]
+            }
+          },
+          {
+            "spotId": "well_yard",
+            "name": "The Kitchen Well",
+            "at": [
+              1310,
+              437
+            ],
+            "missions": {
+              "s5_ep01_m1": [
+                1310,
+                425
+              ]
+            }
+          },
+          {
+            "spotId": "writing_room",
+            "name": "The Writing Room",
+            "at": [
+              1280,
+              217
+            ],
+            "missions": {
+              "s5_ep01_m3": [
+                1280,
+                205
+              ]
+            }
+          },
+          {
+            "spotId": "book_hall",
+            "name": "The King's Study",
+            "at": [
+              265,
+              377
+            ],
+            "missions": {
+              "s5_ep01_final": [
+                265,
+                365
+              ]
+            }
+          }
         ]
       },
       "s5_ep02": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_02_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:904d42e43f703821c6538ed09a9fb22a238737386ee9c0e4105d05781d050c72",
         "landmarks": [
-          { "spotId": "store_room", "name": "The Store Room", "at": [335, 662], "missions": { "s5_ep02_m1": [335, 650], "s5_ep02_m2": [430, 400] } },
-          { "spotId": "turtle_ship", "name": "The Turtle Ship", "at": [1240, 582], "missions": { "s5_ep02_m3": [1240, 570], "s5_ep02_final": [1030, 625] } }
+          {
+            "spotId": "store_room",
+            "name": "The Store Room",
+            "at": [
+              335,
+              662
+            ],
+            "missions": {
+              "s5_ep02_m1": [
+                335,
+                650
+              ],
+              "s5_ep02_m2": [
+                430,
+                400
+              ]
+            }
+          },
+          {
+            "spotId": "turtle_ship",
+            "name": "The Turtle Ship",
+            "at": [
+              1240,
+              582
+            ],
+            "missions": {
+              "s5_ep02_m3": [
+                1240,
+                570
+              ],
+              "s5_ep02_final": [
+                1030,
+                625
+              ]
+            }
+          }
         ]
       },
       "s5_ep03": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_03_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:745d1292a1cec0036b68aece9765fe1d8b878bdcbc02578e67d445fb20e5c5df",
         "landmarks": [
-          { "spotId": "stone_yard", "name": "The Stone Yard", "at": [715, 632], "missions": { "s5_ep03_m1": [715, 620], "s5_ep03_m3": [930, 730] } },
-          { "spotId": "drawing_room", "name": "The Drawing Room", "at": [255, 297], "missions": { "s5_ep03_m2": [255, 285] } },
-          { "spotId": "new_wall", "name": "The New Wall", "at": [1190, 297], "missions": { "s5_ep03_final": [1190, 285] } }
+          {
+            "spotId": "stone_yard",
+            "name": "The Stone Yard",
+            "at": [
+              715,
+              632
+            ],
+            "missions": {
+              "s5_ep03_m1": [
+                715,
+                620
+              ],
+              "s5_ep03_m3": [
+                930,
+                730
+              ]
+            }
+          },
+          {
+            "spotId": "drawing_room",
+            "name": "The Drawing Room",
+            "at": [
+              255,
+              297
+            ],
+            "missions": {
+              "s5_ep03_m2": [
+                255,
+                285
+              ]
+            }
+          },
+          {
+            "spotId": "new_wall",
+            "name": "The New Wall",
+            "at": [
+              1190,
+              297
+            ],
+            "missions": {
+              "s5_ep03_final": [
+                1190,
+                285
+              ]
+            }
+          }
         ]
       },
       "s5_ep04": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_04_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:46d2ef3949663c0af3c430a87893f4b546c08a10916b2c429d5e78ecfe3245c0",
         "landmarks": [
-          { "spotId": "timber_yard", "name": "The Timber Yard", "at": [290, 672], "missions": { "s5_ep04_m1": [290, 660] } },
-          { "spotId": "yard_office", "name": "The Yard Office", "at": [810, 802], "missions": { "s5_ep04_m2": [810, 790] } },
-          { "spotId": "palace_site", "name": "The Palace Site", "at": [960, 472], "missions": { "s5_ep04_m3": [960, 460], "s5_ep04_final": [1160, 300] } }
+          {
+            "spotId": "timber_yard",
+            "name": "The Timber Yard",
+            "at": [
+              290,
+              672
+            ],
+            "missions": {
+              "s5_ep04_m1": [
+                290,
+                660
+              ]
+            }
+          },
+          {
+            "spotId": "yard_office",
+            "name": "The Yard Office",
+            "at": [
+              810,
+              802
+            ],
+            "missions": {
+              "s5_ep04_m2": [
+                810,
+                790
+              ]
+            }
+          },
+          {
+            "spotId": "palace_site",
+            "name": "The Palace Site",
+            "at": [
+              960,
+              472
+            ],
+            "missions": {
+              "s5_ep04_m3": [
+                960,
+                460
+              ],
+              "s5_ep04_final": [
+                1160,
+                300
+              ]
+            }
+          }
         ]
       },
       "s5_ep05": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_05_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:0fdc2f37e44a6b9e472f7c24c88bc9658d3e2c19eef41c786b9343348a74956b",
         "landmarks": [
-          { "spotId": "lamp_house", "name": "The Lamp House", "at": [705, 917], "missions": { "s5_ep05_m1": [705, 905] } },
-          { "spotId": "queen_court", "name": "The Queen's Court", "at": [1047, 372], "missions": { "s5_ep05_m2": [1047, 360], "s5_ep05_m3": [1175, 265] } },
-          { "spotId": "king_hall", "name": "Jangandang, The King's Hall", "at": [345, 357], "missions": { "s5_ep05_final": [345, 345] } }
+          {
+            "spotId": "lamp_house",
+            "name": "The Lamp House",
+            "at": [
+              705,
+              917
+            ],
+            "missions": {
+              "s5_ep05_m1": [
+                705,
+                905
+              ]
+            }
+          },
+          {
+            "spotId": "queen_court",
+            "name": "The Queen's Court",
+            "at": [
+              1047,
+              372
+            ],
+            "missions": {
+              "s5_ep05_m2": [
+                1047,
+                360
+              ],
+              "s5_ep05_m3": [
+                1175,
+                265
+              ]
+            }
+          },
+          {
+            "spotId": "king_hall",
+            "name": "Jangandang, The King's Hall",
+            "at": [
+              345,
+              357
+            ],
+            "missions": {
+              "s5_ep05_final": [
+                345,
+                345
+              ]
+            }
+          }
         ]
       },
       "s5_ep06": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_06_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:78f04bcc80ae13843261f40348bd3439551865069edd199cd16763e8fbe83fa0",
         "landmarks": [
-          { "spotId": "palace_garden", "name": "The Palace Garden", "at": [1027, 412], "missions": { "s5_ep06_m1": [1027, 400], "s5_ep06_m2": [1100, 853] } },
-          { "spotId": "west_lane", "name": "The West Lane", "at": [640, 652], "missions": { "s5_ep06_m3": [640, 640] } },
-          { "spotId": "yi_jun_house", "name": "Yi Jun's House", "at": [287, 652], "missions": { "s5_ep06_final": [287, 640] } }
+          {
+            "spotId": "palace_garden",
+            "name": "The Palace Garden",
+            "at": [
+              1027,
+              412
+            ],
+            "missions": {
+              "s5_ep06_m1": [
+                1027,
+                400
+              ],
+              "s5_ep06_m2": [
+                1100,
+                853
+              ]
+            }
+          },
+          {
+            "spotId": "west_lane",
+            "name": "The West Lane",
+            "at": [
+              640,
+              652
+            ],
+            "missions": {
+              "s5_ep06_m3": [
+                640,
+                640
+              ]
+            }
+          },
+          {
+            "spotId": "yi_jun_house",
+            "name": "Yi Jun's House",
+            "at": [
+              287,
+              652
+            ],
+            "missions": {
+              "s5_ep06_final": [
+                287,
+                640
+              ]
+            }
+          }
         ]
       },
       "s5_ep07": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_07_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:ed2f35cca546e810f7994176aff43966f37146b024f9641f7b57745dc8ffd631",
         "landmarks": [
-          { "spotId": "kang_inn", "name": "Mrs. Kang's Inn", "at": [215, 852], "missions": { "s5_ep07_m1": [215, 840], "s5_ep07_m3": [427, 667], "s5_ep07_final": [820, 587] } },
-          { "spotId": "tea_room", "name": "The Station Tea Room", "at": [1013, 445], "missions": { "s5_ep07_m2": [1013, 433] } }
+          {
+            "spotId": "kang_inn",
+            "name": "Mrs. Kang's Inn",
+            "at": [
+              215,
+              852
+            ],
+            "missions": {
+              "s5_ep07_m1": [
+                215,
+                840
+              ],
+              "s5_ep07_m3": [
+                427,
+                667
+              ],
+              "s5_ep07_final": [
+                820,
+                587
+              ]
+            }
+          },
+          {
+            "spotId": "tea_room",
+            "name": "The Station Tea Room",
+            "at": [
+              1013,
+              445
+            ],
+            "missions": {
+              "s5_ep07_m2": [
+                1013,
+                433
+              ]
+            }
+          }
         ]
       },
       "s5_ep08": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_08_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:e4fa3f01f017d44f93b70ba5d9cd875b38e29e82d5b7e19712097c5eb9fec0c4",
         "landmarks": [
-          { "spotId": "aunae_market", "name": "Aunae Market", "at": [360, 652], "missions": { "s5_ep08_m1": [360, 640] } },
-          { "spotId": "gwansun_home", "name": "Gwan-sun's Home", "at": [1130, 737], "missions": { "s5_ep08_m2": [1130, 725], "s5_ep08_m3": [1240, 660] } },
-          { "spotId": "maebong_hill", "name": "Maebong Hill", "at": [833, 172], "missions": { "s5_ep08_final": [833, 160] } }
+          {
+            "spotId": "aunae_market",
+            "name": "Aunae Market",
+            "at": [
+              360,
+              652
+            ],
+            "missions": {
+              "s5_ep08_m1": [
+                360,
+                640
+              ]
+            }
+          },
+          {
+            "spotId": "gwansun_home",
+            "name": "Gwan-sun's Home",
+            "at": [
+              1130,
+              737
+            ],
+            "missions": {
+              "s5_ep08_m2": [
+                1130,
+                725
+              ],
+              "s5_ep08_m3": [
+                1240,
+                660
+              ]
+            }
+          },
+          {
+            "spotId": "maebong_hill",
+            "name": "Maebong Hill",
+            "at": [
+              833,
+              172
+            ],
+            "missions": {
+              "s5_ep08_final": [
+                833,
+                160
+              ]
+            }
+          }
         ]
       },
       "s5_ep09": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_09_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:22548a3970c28c901800d90c647914316a1c481bc89fe52f972a9775fbd331ec",
         "landmarks": [
-          { "spotId": "shanghai_lane", "name": "A Lane in Shanghai", "at": [360, 705], "missions": { "s5_ep09_m1": [360, 693] } },
-          { "spotId": "government_office", "name": "The Government Office", "at": [967, 342], "missions": { "s5_ep09_m2": [967, 330], "s5_ep09_m3": [1150, 350], "s5_ep09_final": [1345, 400] } }
+          {
+            "spotId": "shanghai_lane",
+            "name": "A Lane in Shanghai",
+            "at": [
+              360,
+              705
+            ],
+            "missions": {
+              "s5_ep09_m1": [
+                360,
+                693
+              ]
+            }
+          },
+          {
+            "spotId": "government_office",
+            "name": "The Government Office",
+            "at": [
+              967,
+              342
+            ],
+            "missions": {
+              "s5_ep09_m2": [
+                967,
+                330
+              ],
+              "s5_ep09_m3": [
+                1150,
+                350
+              ],
+              "s5_ep09_final": [
+                1345,
+                400
+              ]
+            }
+          }
         ]
       },
       "s5_ep10": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_10_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:c42c1e7ff7a345929f2140f860f074ebbb4cb63f85d3af8ee4330c2b65fc192e",
         "landmarks": [
-          { "spotId": "small_house", "name": "A Small House in Shanghai", "at": [237, 780], "missions": { "s5_ep10_m1": [237, 768], "s5_ep10_m2": [554, 782], "s5_ep10_m3": [963, 824] } },
-          { "spotId": "haesu_room", "name": "Haesu's Room", "at": [1236, 222], "missions": { "s5_ep10_final": [1236, 210] } }
+          {
+            "spotId": "small_house",
+            "name": "A Small House in Shanghai",
+            "at": [
+              237,
+              780
+            ],
+            "missions": {
+              "s5_ep10_m1": [
+                237,
+                768
+              ],
+              "s5_ep10_m2": [
+                554,
+                782
+              ],
+              "s5_ep10_m3": [
+                963,
+                824
+              ]
+            }
+          },
+          {
+            "spotId": "haesu_room",
+            "name": "Haesu's Room",
+            "at": [
+              1236,
+              222
+            ],
+            "missions": {
+              "s5_ep10_final": [
+                1236,
+                210
+              ]
+            }
+          }
         ]
       },
       "s5_ep11": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_11_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:ecd2a6666c0ed07c5af1e1647d5f1149eb828499e58de913bfe8ea3543e4a185",
         "landmarks": [
-          { "spotId": "yun_room", "name": "Yun's Room", "at": [196, 354], "missions": { "s5_ep11_m1": [196, 342], "s5_ep11_m2": [680, 230] } },
-          { "spotId": "college_hall", "name": "The College Hall", "at": [1257, 333], "missions": { "s5_ep11_m3": [1257, 321] } },
-          { "spotId": "college_gate", "name": "The College Gate", "at": [691, 836], "missions": { "s5_ep11_final": [691, 824] } }
+          {
+            "spotId": "yun_room",
+            "name": "Yun's Room",
+            "at": [
+              196,
+              354
+            ],
+            "missions": {
+              "s5_ep11_m1": [
+                196,
+                342
+              ],
+              "s5_ep11_m2": [
+                680,
+                230
+              ]
+            }
+          },
+          {
+            "spotId": "college_hall",
+            "name": "The College Hall",
+            "at": [
+              1257,
+              333
+            ],
+            "missions": {
+              "s5_ep11_m3": [
+                1257,
+                321
+              ]
+            }
+          },
+          {
+            "spotId": "college_gate",
+            "name": "The College Gate",
+            "at": [
+              691,
+              836
+            ],
+            "missions": {
+              "s5_ep11_final": [
+                691,
+                824
+              ]
+            }
+          }
         ]
       },
       "s5_ep12": {
         "file": "assets/seasons/season_05_seoul/locations/map/case_12_map.webp",
-        "pixels": { "width": 1536, "height": 1024 },
+        "pixels": {
+          "width": 1536,
+          "height": 1024
+        },
         "measuredOn": "sha256:b74203ce3103fa42b5bca3ca7b3cd5e51f6be3ea6f1f687519a688ec489a6b42",
         "landmarks": [
-          { "spotId": "government_office", "name": "The Government Office", "at": [335, 291], "missions": { "s5_ep12_m1": [335, 279], "s5_ep12_m3": [691, 237] } },
-          { "spotId": "bitna_room", "name": "Bitna's Room", "at": [1131, 410], "missions": { "s5_ep12_m2": [1131, 398] } },
-          { "spotId": "river_steps", "name": "The River Steps", "at": [1145, 836], "missions": { "s5_ep12_final": [1145, 824] } }
+          {
+            "spotId": "government_office",
+            "name": "The Government Office",
+            "at": [
+              335,
+              291
+            ],
+            "missions": {
+              "s5_ep12_m1": [
+                335,
+                279
+              ],
+              "s5_ep12_m3": [
+                691,
+                237
+              ]
+            }
+          },
+          {
+            "spotId": "bitna_room",
+            "name": "Bitna's Room",
+            "at": [
+              1131,
+              410
+            ],
+            "missions": {
+              "s5_ep12_m2": [
+                1131,
+                398
+              ]
+            }
+          },
+          {
+            "spotId": "river_steps",
+            "name": "The River Steps",
+            "at": [
+              1145,
+              836
+            ],
+            "missions": {
+              "s5_ep12_final": [
+                1145,
+                824
+              ]
+            }
+          }
         ]
       }
     },

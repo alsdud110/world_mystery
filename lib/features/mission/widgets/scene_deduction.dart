@@ -355,10 +355,14 @@ class _DeductionPicture extends StatelessWidget {
                       ),
                   if (choosing)
                     for (final p in scene.places)
+                      // A word chip (THANK YOU) is a pill as wide as its word, centred on its mark.
                       Positioned(
-                        left: p.mark.dx * size.width - placeSize / 2,
+                        left: p.mark.dx * size.width - (_PlaceMark.wide(p.chip) ? 0 : placeSize / 2),
                         top: p.mark.dy * size.height - placeSize / 2,
-                        child: _PlaceMark(key: ValueKey('place-${p.optionId}'), chosen: progress.chosen == p.optionId, chip: p.chip),
+                        child: FractionalTranslation(
+                          translation: Offset(_PlaceMark.wide(p.chip) ? -0.5 : 0, 0),
+                          child: _PlaceMark(key: ValueKey('place-${p.optionId}'), chosen: progress.chosen == p.optionId, chip: p.chip),
+                        ),
                       ),
                   if (tapAt != null)
                     Positioned(
@@ -567,16 +571,22 @@ class _PlaceMark extends StatelessWidget {
   /// places are compared before one is tapped (see [DeductionPlace.chip]).
   final String? chip;
 
+  /// A chip longer than a letter or two (an English word): a pill, not a disc.
+  static bool wide(String? chip) => (chip?.length ?? 0) > 2;
+
   @override
   Widget build(BuildContext context) {
+    final pill = wide(chip);
     return IgnorePointer(
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        width: _DeductionPicture.placeSize,
+        width: pill ? null : _DeductionPicture.placeSize,
         height: _DeductionPicture.placeSize,
+        padding: pill ? const EdgeInsets.symmetric(horizontal: AppSpace.sm) : null,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          shape: BoxShape.circle,
+          shape: pill ? BoxShape.rectangle : BoxShape.circle,
+          borderRadius: pill ? BorderRadius.circular(_DeductionPicture.placeSize / 2) : null,
           color: chosen ? AppColors.navy : AppColors.paperLight.withValues(alpha: 0.94),
           border: Border.all(color: chosen ? AppColors.goldLight : AppColors.burgundy, width: AppLine.ink),
           boxShadow: [
@@ -589,7 +599,7 @@ class _PlaceMark extends StatelessWidget {
                   chip!,
                   key: const ValueKey('place-chip'),
                   textScaler: TextScaler.noScaling,
-                  style: AppText.title(size: 19, color: chosen ? AppColors.goldLight : AppColors.navy),
+                  style: pill ? AppText.button(size: 12, color: chosen ? AppColors.goldLight : AppColors.navy) : AppText.title(size: 19, color: chosen ? AppColors.goldLight : AppColors.navy),
                 ),
               )
             : chosen

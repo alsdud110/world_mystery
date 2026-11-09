@@ -6,7 +6,7 @@
       "caseId": "s5_ep01",
       "subject": "The making of Hunminjeongeum, the new letters (1443-1446)",
       "period": "1443-1446",
-      "location": "The palace in Hanyang (no palace building named: not established for autumn 1446)",
+      "location": "The palace in Hanyang (no palace building named: not established for summer 1446)",
       "facts": [
         {
           "factId": "s5_ep01_h1",
@@ -466,124 +466,117 @@
         }
       ],
       "fiction": [
-        "The rainy night in autumn 1446, the burnt paper, the book hall and the servants' cloth are made up.",
-        "Bun-i, Sora and Taek are made up; so are the copied scrap, the groups drawn in charcoal, Sora's lesson box, board and slate, and the King's ten-day test of ordinary people.",
-        "King Sejong is real, but everything he says and does in the case is made up. Two of his lines retell his real preface (h9, h5); none is a quotation of a record.",
-        "The four groups of the name were never lost: losing and finding them is this story's own event, and only Bun-i's paper is made up.",
-        "The name is written in today's spelling. The game claims no fifteenth-century Hangul spelling of it: the book's title is in Chinese characters, 訓民正音.",
-        "Bun-i's two groups sit one above the other on her paper: that is how her paper looks in the story, not a rule of the 1446 book."
+        "The summer night in 1446, Bun-i, her mother, her picture note and her letter are made up; so are Sora, her pictures of the mouth and her board.",
+        "King Sejong is real, but everything he says and does in the case is made up. He never met Bun-i.",
+        "Bun-i's words are written in today's spelling (엄마, 고마워요), and so are Sora's model words: the game claims no fifteenth-century spelling of them.",
+        "The words are written left to right, block by block, as Korean is written today; in 1446 people wrote down the page.",
+        "The sounds shown under the blocks (eom, ma) are today's official romanization, a help for the player, not how the letters were read in 1446.",
+        "The name is told in today's spelling (훈민정음); the book's title is in Chinese characters, 訓民正音."
       ],
       "puzzles": [
         {
           "puzzleId": "s5_ep01_m1",
-          "factIds": [
-            "s5_ep01_h9"
-          ],
-          "answer": "c",
+          "fiction": true,
+          "answer": "thanks",
           "clues": [
             {
-              "text": "cannot write",
+              "text": "gives me",
               "missionId": "s5_ep01_m1"
             },
             {
-              "text": "門",
+              "text": "rain",
               "missionId": "s5_ep01_m1"
             },
             {
-              "text": "bucket",
+              "text": "never",
               "missionId": "s5_ep01_m1"
             }
           ],
-          "derivation": "The King's words (his preface, h9): many people could not write what they meant. The scrap shows a writer who could only copy 門 from the gate sign, a bucket ring and drops of water lead away from the gate: someone who carries water, from the kitchen well. Taek's shape words pick the same place's group (훈; 혼 has its dot on top, 운 no lines on top; made up: the groups by the places).",
+          "derivation": "Made up, no history in it: Bun-i's three pictures of her mother all show her giving (she sews Bun-i's clothes, gives her rice, carried her in the rain); Bun-i says she is not leaving and broke nothing, and that she never said one word back. What is said to someone who gives is thank you: the drawing of Bun-i bowing, its chip THANK YOU.",
           "whyNot": {
-            "a": "Scholars write Chinese characters well: none copies the gate sign, and that group has its dot on top.",
-            "b": "No bucket stands at the guard post, and that group has no lines on top."
+            "sorry": "Bun-i says she broke nothing, and her mother gives in every picture: nothing to be sorry for.",
+            "bye": "Bun-i says she is not leaving: she goes home to her mother tomorrow."
           }
         },
         {
           "puzzleId": "s5_ep01_m2",
           "factIds": [
-            "s5_ep01_h3",
-            "s5_ep01_h4",
-            "s5_ep01_h10"
+            "s5_ep01_h3"
           ],
-          "answer": "ieung,eu,mieum",
+          "answer": "mieum:lips,nieun:tongue,ieung:throat",
           "clues": [
             {
               "text": "throat",
               "missionId": "s5_ep01_m2"
             },
             {
-              "text": "mouth",
+              "text": "tongue",
               "missionId": "s5_ep01_m2"
             },
             {
-              "text": "stronger",
+              "text": "mouth",
               "missionId": "s5_ep01_m2"
             }
           ],
-          "derivation": "Taek names the group by the organs on Sora's board (the Jejahae's organs, h3): the throat ㅇ, the mouth ㅁ; the flat line is the earth (h4), with no dot ㅡ; no added line keeps ㅁ, not ㅂ (h10). Together they write 음, sound.",
-          "whyOnly": "Nine tiles, three used: each line of Taek's names one letter only, and the six others answer a misread organ, a dot, a standing line or an added line. Taek's order is one order."
+          "derivation": "The book's explanation (h3): ㅁ copies the mouth, ㄴ the tongue touching the upper gums, ㅇ the throat. Saying mmm closes the lips (the lips' picture); nnn lifts the tongue's tip behind the top teeth, its red line bent like ㄴ; the throat's red line is round like ㅇ.",
+          "whyOnly": "Five letters, three pictures: ㄱ (the root of the tongue, h3) bends the other way and ㅅ (the teeth) has no picture; each picture's sound and shape fit one letter only."
         },
         {
           "puzzleId": "s5_ep01_m3",
           "factIds": [
             "s5_ep01_h4",
             "s5_ep01_h11",
-            "s5_ep01_h12",
-            "s5_ep01_h10"
+            "s5_ep01_h12"
           ],
-          "answer": "정음",
+          "answer": "엄마",
           "clues": [
             {
-              "text": "dot",
+              "text": "LEFT",
               "missionId": "s5_ep01_m3"
             },
             {
-              "text": "standing line",
+              "text": "LAST SOUND",
               "missionId": "s5_ep01_m3"
             },
             {
-              "text": "one above the other",
+              "text": "eom",
               "missionId": "s5_ep01_m3"
             }
           ],
-          "derivation": "Group 1 is built from Sora's words: the teeth + 1 line ㅈ (h10), a standing line with a dot on its left ㅓ (h4, h11), the throat's ㅇ at the bottom (h12). Group 2 has no words of its own: it is the group on Bun-i's slate, Mission 2's clue (음). The paper reads 정음.",
-          "whyOnly": "Group 1's words allow one sound, one line and one place of the dot only; Group 2 is only what the slate held. Group 1 is at the top."
+          "derivation": "Sora's lesson: a standing line with the dot on its right is ㅏ, on its left ㅓ (h4, h11); the first sound comes first, ㅏ and ㅓ beside it, the last sound under them (h12). Eom starts with a vowel sound (ㅇ holds the place), says eo (ㅓ) and ends with the lips (ㅁ, Mission 2) at the bottom; ma starts with the lips and says a (ㅏ), with nothing under it. Written in today's spelling (fiction).",
+          "whyOnly": "Each block's sound allows one first sound, one place of the dot and one last sound among the pieces; the blocks read left to right, eom then ma."
         },
         {
           "puzzleId": "s5_ep01_final",
           "factIds": [
-            "s5_ep01_h14",
-            "s5_ep01_h5",
-            "s5_ep01_h6",
-            "s5_ep01_h9",
-            "s5_ep01_h3"
+            "s5_ep01_h3",
+            "s5_ep01_h11",
+            "s5_ep01_h12"
           ],
-          "answer": "teach,min,right,sound",
+          "answer": "eomma,gomawoyo",
           "clues": [
             {
-              "text": "what Sora does",
-              "missionId": "s5_ep01_m1"
+              "text": "마",
+              "missionId": "s5_ep01_final"
             },
             {
-              "text": "sound",
-              "missionId": "s5_ep01_m2"
+              "text": "미",
+              "missionId": "s5_ep01_final"
             },
             {
-              "text": "right sounds",
+              "text": "엄마",
               "missionId": "s5_ep01_final"
             }
           ],
-          "derivation": "Stage A: the King's three questions, shown evidence in turn: who wrote it, how after ten days (h5, h6), who the letters are for (h9): the copied scrap, so the people. Stage B: the name read by its meanings (h14): what the King wants to do is what Sora does for Bun-i, teach; the group for the people is the one Taek describes, 민 (mouth, standing line, tongue on the gums, h3); what he gives them is the right sounds, Bun-i's note.",
-          "whyOnly": "Nine tiles, four used: LEARN is Bun-i's part, not Sora's; GATE is the copied sign; 문 has a flat line, 만 a dot, 빈 an added line. The three questions give one order."
+          "derivation": "Stage 1: the King's two questions, answered with Bun-i's message (thank you, Mission 1) and her first word (Mission 3). Stage 2: her first word among her practice papers (어마 has no last sound, 엄머 its dot on the left: h11, h12). Sora names one block of each of her model words (thank you 마, I'm sorry 미, goodbye 가요): read with the mouth letters (h3: ㅁ not ㄱ) and the dot (h11), each word is known; the one for Bun-i's message, thank you, is 고마워요. A letter starts with who it is for.",
+          "whyOnly": "Six papers, two used: one first word fits Mission 3's; Sora's three words are each named by a block, and only Bun-i's message (Mission 1) picks thank you among them. The order is the letter's own: who it is for, then the message."
         }
       ],
       "learningObjectives": [
-        "Read why the King made the letters, and use it as a clue.",
-        "Match words for parts of the mouth, and for a stronger sound, with the letters they describe.",
-        "Read place words (on its left, at the bottom, one above the other) to build letters.",
-        "Read what each group means, and build the name by its meaning."
+        "Read short sentences about a person to find what she wants to say.",
+        "Match words for parts of the mouth with the letters that copy them.",
+        "Read place words (on the left, on the right, at the bottom) to build a word.",
+        "Read a clue about one block to choose the right word."
       ],
       "reveal": {
         "realHistory": [
@@ -612,9 +605,9 @@
             ]
           },
           {
-            "text": "Its four groups read the Chinese characters 訓民正音. People also said Jeongeum for short.",
-            "junior": "Its four groups read the Chinese characters 訓民正音, and it was also shortened to Jeongeum.",
-            "master": "Its four groups read the Chinese characters 訓民正音, and the name was also shortened to Jeongeum.",
+            "text": "Its four syllables are written in Chinese characters as 訓民正音. People also said Jeongeum for short.",
+            "junior": "Its four syllables are written in Chinese characters as 訓民正音, and it was also shortened to Jeongeum.",
+            "master": "Its four syllables are written in Chinese characters as 訓民正音, and the name was also shortened to Jeongeum.",
             "factIds": [
               "s5_ep01_h1",
               "s5_ep01_h15"
@@ -667,26 +660,27 @@
         ],
         "inThisMystery": [
           {
-            "text": "Bun-i, Sora and Taek are made up. So are the burnt paper, the lesson box and that rainy night.",
-            "junior": "Bun-i, Sora and Taek were invented for this story. So were the burnt paper, the lesson box and that rainy night.",
-            "master": "Bun-i, Sora and Taek are inventions of this story, as are the burnt paper, the lesson box and that rainy night."
+            "text": "Bun-i, Sora and Bun-i's mother are made up. So are Bun-i's picture note, her letter and that summer night.",
+            "junior": "Bun-i, Sora and Bun-i's mother were invented for this story. So were her picture note, her letter and that summer night.",
+            "master": "Bun-i, Sora and Bun-i's mother are inventions of this story, as are her picture note, her letter and that summer night."
           },
           {
-            "text": "King Sejong was real, but his words in this story are made up. Some of them retell his real preface.",
-            "junior": "King Sejong was a real king, but his words in this story were invented. Some of them retell his real preface.",
-            "master": "King Sejong was real, yet every word he speaks here is invented; a few of them echo his real preface."
+            "text": "King Sejong was real, but his words in this story are made up. He never met Bun-i.",
+            "junior": "King Sejong was a real king, but his words in this story were invented. He never met Bun-i.",
+            "master": "King Sejong was real, yet every word he speaks here is invented; he never met Bun-i."
           },
           {
-            "text": "The four groups were never lost: that event is made up, and so is the King's ten-day test. The game writes the name the way we spell today.",
-            "junior": "The four groups of the name were never lost: that event was invented, and so was the King's ten-day test. The game writes the name in today's spelling.",
-            "master": "The four groups of the name were never lost: that event is invented, as is the King's ten-day test. The game writes the name in today's spelling."
+            "text": "The game writes Bun-i's words left to right, in today's spelling. In 1446, people wrote down the page.",
+            "junior": "The game writes Bun-i's words from left to right, in today's spelling. In 1446, people wrote down the page.",
+            "master": "The game writes Bun-i's words from left to right, in today's spelling; in 1446, writing ran down the page."
           }
         ]
       },
       "notes": [
         "Seoul Pilot Case 01, redesigned 2026-11-04 (docs/SEOUL_CASE01_REDESIGN.md). Sources of h3 and h9-h13 opened and quoted by Claude on 2026-11-04; h1, h2, h4-h6 as checked before.",
         "2026-11-05: language redesign (English is the tool). M2 decoy letters and organ words, M3 the paper written down from the right (Sora's lesson, in the fiction list), the final talk in English only. docs/SEOUL_CASE01_LANGUAGE_REPORT.md.",
-        "2026-11-07: redesigned again (docs/SEOUL_CASE01_REDESIGN_PLAN.md): the four groups of the name. h14 and h15 opened and quoted on 2026-11-07 (the page text; the 1459 note's old letters are images there, so its Hangul is not copied). No fifteenth-century spelling is claimed."
+        "2026-11-07: redesigned again (docs/SEOUL_CASE01_REDESIGN_PLAN.md): the four groups of the name. h14 and h15 opened and quoted on 2026-11-07 (the page text; the 1459 note's old letters are images there, so its Hangul is not copied). No fifteenth-century spelling is claimed.",
+        "2026-11-07 V4 (docs/SEOUL_CASE01_V4_GAME_DESIGN.md): Bun-i's letter to her mother. Facts unchanged; fiction, puzzles, objectives and the made-up part of the reveal rewritten. M1 is fiction only (her pictures)."
       ]
     },
     {
@@ -883,12 +877,197 @@
             "status": "resolved",
             "note": "The Annals entry of 1592 shows him in the post; the appointment month is from the Seoul page. The game says only that he commands the navy of Jeolla."
           }
+        },
+        {
+          "factId": "s5_ep02_h7",
+          "statement": "The book's explanation of the letters (Jejahae) says the five basic consonant letters copy the speech organs: ㄱ the root of the tongue closing the throat, ㄴ the tongue touching the upper gums, ㅁ the mouth, ㅅ the teeth and ㅇ the throat.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 사료로 본 한국사: 한글의 구성 원리 (제자해)",
+              "url": "https://contents.history.go.kr/id/hm_091_0030",
+              "quote": "牙音ㄱ, 象舌根閉喉之形, 舌音ㄴ, 象舌附上腭之形, 脣音ㅁ, 象口形, 齒音ㅅ, 象齒形. 喉音ㅇ, 象喉形",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 훈민정음28자모",
+              "url": "https://encykorea.aks.ac.kr/Article/E0074518",
+              "quote": "초성의 기본 문자인 'ㄱ, ㄴ, ㅁ, ㅅ, ㅇ'의 다섯 문자는 각 문자가 발음될 때의 발음 기관의 모양을 본떠 만든 것",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "한박웃음 2020년 10월 제86호",
+              "url": "https://www.hangeul.go.kr/webzine/202010/sub1_3.html",
+              "quote": "자음자의 큰 특징은 발음기관의 모양을 본 떠 만들었는데요",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The 1443 Annals entry says the letters imitate the old seal script (倣古篆); the Jejahae says they copy the speech organs. The game says what the book (the Jejahae) says, letter by letter as it gives them: the tongue's root for ㄱ, the tongue on the upper gums for ㄴ, the mouth, the teeth, the throat."
+          },
+          "notes": [
+            "Rewritten 2026-11-04 for the redesign: Mission 2 names each letter's organ, as the Jejahae does."
+          ]
+        },
+        {
+          "factId": "s5_ep02_h8",
+          "statement": "The book says letters for stronger sounds were made by adding strokes to the basic ones: ㅋ from ㄱ, ㄷ and ㅌ from ㄴ, ㅂ and ㅍ from ㅁ, ㅈ and ㅊ from ㅅ, ㆆ and ㅎ from ㅇ.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 사료로 본 한국사: 한글의 구성 원리 (제자해)",
+              "url": "https://contents.history.go.kr/id/hm_091_0030",
+              "quote": "ㅋ比ㄱ, 聲出稍厲, 故加畫 … ㄴ而ㄷ, ㄷ而ㅌ, ㅁ而ㅂ, ㅂ而ㅍ, ㅅ而ㅈ, ㅈ而ㅊ, ㅇ而ᅙ, ᅙ而ㅎ",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한글",
+              "url": "https://encykorea.aks.ac.kr/Article/E0061508",
+              "quote": "'ㄱ ㄴ ㅁ ㅅ ㅇ'의 다섯 글자를 만들어내고, 다음으로는 소리가 세어짐에 따라, 이 다섯 글자에다가 획을 하나씩 더하여 아홉 글자를 만들었다.",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep02_h9",
+          "statement": "The book says the vowels ㅗ, ㅏ, ㅜ and ㅓ are made by joining the dot (ㆍ) with the flat line (ㅡ) or the standing line (ㅣ).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 훈민정음28자모",
+              "url": "https://encykorea.aks.ac.kr/Article/E0074518",
+              "quote": "'ㅏ'는 'ㅣ'와 'ㆍ', 'ㅜ'는 'ㅡ'와 'ㆍ', 'ㅓ'는 'ㆍ'와 'ㅣ'가 어울려서 이루어진 것이다.",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 사료로 본 한국사: 한글의 구성 원리 (해설)",
+              "url": "https://contents.history.go.kr/id/hm_091_0030",
+              "quote": "이 셋을 기반으로 ㅏ,ㅗ,ㅜ,ㅢ 등의 다양한 모음을 만들 수 있었다.",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The dot sits above ㅡ for ㅗ, under it for ㅜ, right of ㅣ for ㅏ and left of it for ㅓ, as the letters themselves show; the game draws today's letters."
+          ]
+        },
+        {
+          "factId": "s5_ep02_h10",
+          "statement": "The book says letters are joined to make one written sound: ㆍ, ㅡ, ㅗ and ㅜ are written under the first sound, ㅣ, ㅏ and ㅓ on its right, and the last sound is written with the letters of the first sounds.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "終聲復用初聲 … ㆍㅡㅗㅜㅛㅠ附書初聲之下, ㅣㅓㅏㅑㅕ附書於右。凡字必合而成音",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한글",
+              "url": "https://encykorea.aks.ac.kr/Article/E0061508",
+              "quote": "' · '와 'ㅡ' 및 'ㅡ'를 가진 글자는 첫소리 글자의 밑에 쓰고, 'ㅣ'와 'ㅣ'를 가진 글자는 그 오른쪽에 쓰도록 하였다.",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep02_h11",
+          "statement": "In his preface the King wrote that he made 28 new letters only so that people could learn them easily and find them convenient for daily use.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "予爲此憫然, 新制二十八字, 欲使人(昜)〔易〕習, 便於日用耳。",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국립한글박물관 (National Hangeul Museum)",
+              "title": "상설전시 3부 스물여덟 자를 만드니",
+              "url": "https://www.hangeul.go.kr/exhi/dailyExhibition.do?curr_menu_cd=0102010000",
+              "quote": "그 어떤 백성이라도 누구나 쉽게 배워서 편히 쓸 수 있도록 만든 한글",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Annals print 欲使人易習 (one 人, 昜 corrected to 易); the Haerye edition is usually quoted 欲使人人易習 (everyone). The game says 'easy to learn, for daily use', true to both."
+          }
+        },
+        {
+          "factId": "s5_ep02_h12",
+          "statement": "The book Hunminjeongeum, which explains the new letters, was completed in the ninth month of 1446 (Sejong 28).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "是月, 訓民正音成。",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "UNESCO",
+              "title": "Memory of the World: Hunminjeongum Manuscript",
+              "url": "https://www.unesco.org/en/memory-world/hunminjeongum-manuscript",
+              "quote": "The manuscript published in the ninth lunar month of 1446",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "세계기록유산 한국위원회 (kmowkc.org)",
+              "title": "『훈민정음』[해례본] 개요",
+              "url": "https://www.kmowkc.org/front/heritage/detail.do?heritageId=U001&type=intro",
+              "quote": "1446년 음력 9월 상순에",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Annals' entry is dated the 29th of the ninth month ('this month'); Jeong In-ji's postface says the first ten days of the ninth month. The game says only 1446 and 'autumn'."
+          },
+          "notes": [
+            "Copied from Case 01 (same statement, same checked sources) so this case stands alone."
+          ]
         }
       ],
       "fiction": [
         "Spring 1592: the night of the 11th to the 12th day of the 4th month in the store room, the rain, the leaking roof and the missing gunpowder are made up.",
-        "Seok, Quartermaster Ham, Ham's report, the twelve barrels and the water-drop note are made up.",
-        "Admiral Yi Sun-sin is real, but everything he says in the case is made up; his description of the turtle ship retells the 1592 record (h1) and is never a quotation.",
+        "Seok, Quartermaster Ham, Ham's report, Ham's book, the twelve barrels and the water-drop note are made up.",
+        "The sailors' letter board on the store room wall is made up; its rules come from the 1446 book about the letters (h7-h10).",
+        "Admiral Yi Sun-sin is real, but everything he says in the case, and his judgment of Seok, is made up; the turtle ship's description in the final transition retells the 1592 record (h1) and is never a quotation.",
         "The note 거북선 is written in today's spelling."
       ],
       "puzzles": [
@@ -908,17 +1087,17 @@
           ],
           "derivation": "Made up (no history in it): the Admiral's words (wet powder will not fire) and Ham's report (a bucket full of rain under the roof hole) show the danger: rain over the powder.",
           "whyNot": {
-            "straw": "The straw was next to the door: it shows the way out, not the danger.",
-            "note": "The paper on the shelf is the note, not the danger; the report says the rain came through the roof."
+            "straw": "The straw is wet, but it lies next to the door: it shows the way the barrels went out.",
+            "note": "The water drop on the paper is drawn, not rain; the bucket under the roof hole shows the rain."
           }
         },
         {
           "puzzleId": "s5_ep02_m2",
           "factIds": [
-            "s5_ep01_h3",
-            "s5_ep01_h10",
-            "s5_ep01_h11",
-            "s5_ep01_h12"
+            "s5_ep02_h7",
+            "s5_ep02_h8",
+            "s5_ep02_h9",
+            "s5_ep02_h10"
           ],
           "answer": "거북선",
           "clues": [
@@ -935,8 +1114,8 @@
               "missionId": "s5_ep02_m2"
             }
           ],
-          "derivation": "Sora's board (Case 01, the book's organ letters h3 and the added stroke h10): the back of the tongue ㄱ, the mouth one step stronger (Rookie: the mouth + 1 line) ㅂ, the teeth ㅅ; the vowels from the dot and lines (h11, h12): a dot left of a standing line ㅓ, under a flat line ㅜ; the sounds at the bottom ㄱ and ㄴ. 거 북 선: the turtle ship. The note itself is made up.",
-          "whyOnly": "Each group's words allow one first sound, one vowel and one last sound: ㅁ is the mouth not one step stronger, ㅈ the teeth one step stronger; the dot on the left gives ㅓ not ㅏ."
+          "derivation": "The sailors' letter board (the book's mouth letters h7 and the added stroke h8): the back of the tongue ㄱ, the lips one step stronger (Rookie: the lips + 1 line) ㅂ, the teeth ㅅ; the vowels from the dot and lines (h9, h10): a dot left of a standing line ㅓ, under a flat line ㅜ; the sounds at the bottom ㄱ and ㄴ. 거 북 선: the turtle ship. The note itself is made up.",
+          "whyOnly": "Each group's words allow one first sound, one vowel and one last sound: ㅁ is the lips not one step stronger, ㅈ the teeth one step stronger; the dot on the left gives ㅓ not ㅏ."
         },
         {
           "puzzleId": "s5_ep02_m3",
@@ -952,40 +1131,35 @@
               "missionId": "s5_ep02_m3"
             }
           ],
-          "derivation": "Made up: four barrels each time, three times: twelve, the number Ham gave at sunset.",
+          "derivation": "Made up: four barrels each time, three times: twelve, the number in Ham's book from sunset (told after the answer).",
           "whyOnly": "Seok gives two numbers only; 4, 3 and 7 are each answered as a misreading."
         },
         {
           "puzzleId": "s5_ep02_final",
-          "factIds": [
-            "s5_ep02_h1",
-            "s5_ep02_h3",
-            "s5_ep02_h4",
-            "s5_ep02_h5"
-          ],
-          "answer": "DRAGON",
+          "answer": "seok",
           "clues": [
             {
-              "text": "like a turtle's back",
+              "text": "all twelve barrels",
               "missionId": "s5_ep02_final"
             },
             {
-              "text": "dragon's head",
-              "missionId": "s5_ep02_final"
-            },
-            {
-              "text": "hole for a cannon",
+              "text": "out of the rain",
               "missionId": "s5_ep02_final"
             }
           ],
-          "derivation": "The Admiral's words retell the record of the turtle ship (h1): a plank roof like a turtle's back with knives and spikes, a turtle's tail at the back, and at the front not a turtle's head but a dragon's, its mouth a hole for a cannon. The ending rests on the real cannon test of the 12th (h5), the war's start the next day at Busan (h3) and the first victory at Okpo (h4).",
-          "whyOnly": "Six tiles, one word: DRAGON, the head the Admiral names."
+          "derivation": "Made up: the detective shows the Admiral this case's three cards: rain came through the store room roof over the powder (e1), Seok's note named the turtle ship (e2), twelve dry barrels are on the ship, as many as at sunset (e3). Only one sentence fits all three: Seok moved all twelve barrels to the turtle ship, out of the rain. The transition retells the turtle ship's dragon head (h1); the ending tells the real cannon test (h5), the war's start at Busan (h3), the victory at Okpo (h4) and the King's wish that the letters be easy to learn (h11).",
+          "fiction": true,
+          "whyNot": {
+            "thief": "Twelve barrels are on the ship, as many as at sunset (e3): nothing was stolen.",
+            "shiproof": "The ship's roof keeps the rain off (Seok, M3); the hole was in the store room roof (e1).",
+            "ham": "Ham was asleep; Seok said, \"So I moved the barrels\" (M3)."
+          }
         }
       ],
       "learningObjectives": [
         "Read place words (under, next to, on) to find things in a room.",
-        "Use Sora's board to rebuild blurred letters.",
-        "Read how a ship is made and name its parts."
+        "Use the sailors' letter board to rebuild blurred letters.",
+        "Check sentences against evidence to prove what really happened."
       ],
       "reveal": {
         "realHistory": [
@@ -1004,6 +1178,17 @@
             "master": "The turtle ship was roofed with planks like a turtle's back and studded with knives and spikes; its dragon's head at the front had a cannon hole for a mouth.",
             "factIds": [
               "s5_ep02_h1"
+            ]
+          },
+          {
+            "text": "In 1446, a book explained the King's letters. Their shapes copy the mouth, and a stronger sound adds a line. The King wrote that he made them so that people could learn them easily.",
+            "junior": "In 1446, a book explained the King's letters: their shapes copy the mouth, and a stronger sound adds a line. The King wrote that he made them so people could learn them easily.",
+            "master": "A book of 1446 explained the King's letters: their shapes copy the mouth, and a stronger sound gains a line. The King wrote that he made them so that people could learn them with ease.",
+            "factIds": [
+              "s5_ep02_h7",
+              "s5_ep02_h8",
+              "s5_ep02_h11",
+              "s5_ep02_h12"
             ]
           },
           {
@@ -1033,14 +1218,19 @@
         ],
         "inThisMystery": [
           {
-            "text": "Seok, Quartermaster Ham, the rain and the missing gunpowder are made up.",
-            "junior": "Seok, Quartermaster Ham, the rain and the missing gunpowder were invented for this case.",
-            "master": "Seok, Quartermaster Ham, the rain and the missing gunpowder are inventions of this story."
+            "text": "Seok, Quartermaster Ham, the rain, the missing gunpowder and Seok's note are made up.",
+            "junior": "Seok, Quartermaster Ham, the rain, the missing gunpowder and Seok's note were invented for this case.",
+            "master": "Seok, Quartermaster Ham, the rain, the missing gunpowder and Seok's note are inventions of this story."
           },
           {
-            "text": "Yi Sun-sin was real, but his words in this story are made up.",
-            "junior": "Yi Sun-sin was real, but his words in this story were invented.",
-            "master": "Yi Sun-sin was real, yet every word he speaks here is invented."
+            "text": "The sailors' letter board is made up. Its rules come from the 1446 book about the letters.",
+            "junior": "The sailors' letter board was invented, but its rules come from the 1446 book about the letters.",
+            "master": "The sailors' letter board is invented, though its rules are drawn from the 1446 book about the letters."
+          },
+          {
+            "text": "Yi Sun-sin was real, but his words and his judgment in this story are made up.",
+            "junior": "Yi Sun-sin was real, but his words and his judgment in this story were invented.",
+            "master": "Yi Sun-sin was real, yet his words and his judgment here are invented."
           },
           {
             "text": "All the dates are of the old moon calendar.",
@@ -1214,12 +1404,65 @@
           "notes": [
             "Not used by any puzzle or reveal line."
           ]
+        },
+        {
+          "factId": "s5_ep03_h7",
+          "statement": "The building of Hwaseong was run by a building office: Chae Je-gong was its chief minister, and Jo Sim-tae was the head who actually ran the work.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 한국사 연대기: 화성",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300890&code=kc_age_30",
+              "quote": "화성 축성을 전담할 성역소(城役所)라는 임시 기구가 설치되었고, 채제공이 최고 책임자인 총리대신을 맡았다. 실제적인 총괄 책임자는 감동당상 조심태(趙心泰), 실무 책임은 도청 이유경(李儒敬)이 담당했다.",
+              "checkedAt": "2026-11-09"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "수원시 팔달구청 (Suwon City, Paldal-gu Office)",
+              "title": "팔달구자랑 > 유적 > 화성",
+              "url": "https://paldal.suwon.go.kr/submain_view.asp?TopID=sub06&menuid=sub060504",
+              "quote": "26일 총리대신에 우의정 채제공 감동당상에 화성유수 조심태를 임명하여 사업이 진행되었는데",
+              "checkedAt": "2026-11-09"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep03_h8",
+          "statement": "In 1792 Jeong Yak-yong presented Seongseol, a plan for the fortress covering its size, shape, building methods and tools.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 한국사 연대기: 화성",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300890&code=kc_age_30",
+              "quote": "1792년(정조 16)에 정약용은 조선과 중국의 기존 성제와 관련 기술을 검토하여 「성설(城說)」을 올렸다. 「성설」에는 성의 규모, 형태, 시공 방법과 기구 등을 포괄하는 계획안이 담겨 있는데",
+              "checkedAt": "2026-11-09"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 성제도설",
+              "url": "https://encykorea.aks.ac.kr/Article/E0076317",
+              "quote": "1792년(정조 16) 말에 수원 화성(華城)을 축조하기 직전, 정조는 정약용(丁若鏞)에게 성을 쌓는 법을 조목별로 올리도록 명하였다. 정약용은 … 「성설(城說)」을 작성하였다.",
+              "checkedAt": "2026-11-09"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The game says only that Jeong planned the fortress (his Seongseol plan) and designed the machine; the site was run by officials such as Jo Sim-tae (h7). His visit to the yard is made up."
+          }
         }
       ],
       "fiction": [
-        "Spring 1795: the stopped machine, the new carpenter, the copied drawing and the three drawings are made up; so are Foreman Gwak, his log, the clerk, the record chest and Okbun.",
-        "Jeong Yak-yong is real, but everything he says in the case is made up; the steps for lifting are the game's, not his writing.",
-        "The final is set in autumn 1796, when the fortress was finished (h1)."
+        "Spring 1795: the stopped machine, the new carpenter, the copied drawing and the three drawings are made up; so are Foreman Gwak, his log, the clerk, Okbun and her note with its water drop.",
+        "Jeong Yak-yong is real, but his visit and everything he says in the case are made up; the steps for lifting are the game's, not his writing.",
+        "Who tied the note (the final) is made up: three conditions read from the case. The ending tells the real finish of the fortress in 1796 (h1)."
       ],
       "puzzles": [
         {
@@ -1292,32 +1535,34 @@
         },
         {
           "puzzleId": "s5_ep03_final",
-          "factIds": [
-            "s5_ep03_h1",
-            "s5_ep03_h2",
-            "s5_ep03_h3",
-            "s5_ep03_h4",
-            "s5_ep03_h5"
-          ],
-          "answer": "1796",
+          "fiction": true,
+          "answer": "okbun",
           "clues": [
             {
-              "text": "first month of 1794",
+              "text": "tied to the rope in the night",
               "missionId": "s5_ep03_final"
             },
             {
-              "text": "two years and eight months later",
+              "text": "I cannot read or write",
+              "missionId": "s5_ep03_final"
+            },
+            {
+              "text": "The yard gate is shut at night",
               "missionId": "s5_ep03_final"
             }
           ],
-          "derivation": "The real start and end of the building (h1): the first month of 1794 plus two years and eight months is the ninth month of 1796. The ending rests on h2, h3 (the machines helped lift the stones), h4 and h5 (the record of the workers and their pay).",
-          "whyOnly": "One year only: 1794 is the start, 1795 the case's year, 1797 one year too many; each is answered."
+          "derivation": "Made up: the writer of \"the drawing is different\" had seen Jeong's drawing (only the carpenter, the clerk and the water girl come into the drawing room; Gwak never goes in), can write the King's letters (the carpenter cannot), and was in the yard in the night (the gate is shut; the clerk sleeps in town; only the water carriers come before dawn). Only Okbun fits all three. The water drop is explained in the ending, never needed to choose.",
+          "whyNot": {
+            "gwak": "He never goes into the drawing room, so he could not know the drawing was different.",
+            "carpenter": "He cannot read or write; the note is in the King's letters.",
+            "clerk": "He sleeps in town and the yard gate is shut at night; the note was tied in the night."
+          }
         }
       ],
       "learningObjectives": [
         "Read until and after to put events in order.",
         "Match a description (like a gate, under them, on each side) with a drawing.",
-        "Count on from a start year with years and months."
+        "Check each person against three facts (the drawing room, the writing, the night) to find who wrote the note."
       ],
       "reveal": {
         "realHistory": [
@@ -1335,6 +1580,15 @@
             "master": "Jeong Yak-yong devised the geojunggi, a pulley-driven lifting machine, and described it in writing.",
             "factIds": [
               "s5_ep03_h2"
+            ]
+          },
+          {
+            "text": "Jeong also drew up a plan for the fortress. Officials such as Jo Sim-tae ran the building work.",
+            "junior": "Jeong also wrote a plan for the fortress, and officials such as Jo Sim-tae ran the building work.",
+            "master": "Jeong also drew up a plan for the fortress, while officials such as Jo Sim-tae directed the building work.",
+            "factIds": [
+              "s5_ep03_h8",
+              "s5_ep03_h7"
             ]
           },
           {
@@ -1357,14 +1611,14 @@
         ],
         "inThisMystery": [
           {
-            "text": "Okbun, Foreman Gwak, the copied drawing and the stopped machine are made up.",
-            "junior": "Okbun, Foreman Gwak, the copied drawing and the stopped machine were invented for this case.",
-            "master": "Okbun, Foreman Gwak, the copied drawing and the stalled machine are inventions of this story."
+            "text": "Okbun, Foreman Gwak, the carpenter, the clerk, the copied drawing and the stopped machine are made up. So is Okbun's note with its water drop.",
+            "junior": "Okbun, Foreman Gwak, the carpenter, the clerk, the copied drawing and the stopped machine were invented for this case, and so was Okbun's note with its water drop.",
+            "master": "Okbun, Foreman Gwak, the carpenter, the clerk, the copied drawing, the stalled machine and Okbun's water-drop note are all inventions of this story."
           },
           {
-            "text": "Jeong Yak-yong was real, but his words and steps in this story are made up.",
-            "junior": "Jeong Yak-yong was real, but his words and steps in this story were invented.",
-            "master": "Jeong Yak-yong was real, yet his words and steps here are invented."
+            "text": "Jeong Yak-yong was real, but his visit and his words in this story are made up.",
+            "junior": "Jeong Yak-yong was real, but his visit and his words in this story were invented.",
+            "master": "Jeong Yak-yong was real, yet his visit and his words here are invented."
           },
           {
             "text": "The three drawings are the game's own, not copies of the real ones.",
@@ -1374,7 +1628,8 @@
         ]
       },
       "notes": [
-        "PART 10 (2026-11-06): sources opened and quoted by Claude on 2026-11-06."
+        "PART 10 (2026-11-06): sources opened and quoted by Claude on 2026-11-06.",
+        "PART 2 (2026-11-09): final 1796 dial → who tied the note (okbun, made up); h7 (Jo Sim-tae) and h8 (Seongseol, 1792) added from 우리역사넷, opened 2026-11-09."
       ]
     },
     {
@@ -1571,18 +1826,82 @@
           "notes": [
             "Not used by any puzzle or reveal line."
           ]
+        },
+        {
+          "factId": "s5_ep04_h8",
+          "statement": "The book says letters for stronger sounds were made by adding strokes to the basic ones: ㅋ from ㄱ, ㄷ and ㅌ from ㄴ, ㅂ and ㅍ from ㅁ, ㅈ and ㅊ from ㅅ, ㆆ and ㅎ from ㅇ.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "우리역사넷 사료로 본 한국사: 한글의 구성 원리 (제자해)",
+              "url": "https://contents.history.go.kr/id/hm_091_0030",
+              "quote": "ㅋ比ㄱ, 聲出稍厲, 故加畫 … ㄴ而ㄷ, ㄷ而ㅌ, ㅁ而ㅂ, ㅂ而ㅍ, ㅅ而ㅈ, ㅈ而ㅊ, ㅇ而ᅙ, ᅙ而ㅎ",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 한글",
+              "url": "https://encykorea.aks.ac.kr/Article/E0061508",
+              "quote": "'ㄱ ㄴ ㅁ ㅅ ㅇ'의 다섯 글자를 만들어내고, 다음으로는 소리가 세어짐에 따라, 이 다섯 글자에다가 획을 하나씩 더하여 아홉 글자를 만들었다.",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep04_h9",
+          "statement": "The book Hunminjeongeum, which explains the new letters, was completed in the ninth month of 1446 (Sejong 28).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "primary",
+              "publisher": "국사편찬위원회 (National Institute of Korean History)",
+              "title": "세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사",
+              "url": "https://sillok.history.go.kr/id/kda_12809029_004",
+              "quote": "是月, 訓民正音成。",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "UNESCO",
+              "title": "Memory of the World: Hunminjeongum Manuscript",
+              "url": "https://www.unesco.org/en/memory-world/hunminjeongum-manuscript",
+              "quote": "The manuscript published in the ninth lunar month of 1446",
+              "checkedAt": "2026-11-04"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "세계기록유산 한국위원회 (kmowkc.org)",
+              "title": "『훈민정음』[해례본] 개요",
+              "url": "https://www.kmowkc.org/front/heritage/detail.do?heritageId=U001&type=intro",
+              "quote": "1446년 음력 9월 상순에",
+              "checkedAt": "2026-11-04"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The Annals' entry is dated the 29th of the ninth month ('this month'); Jeong In-ji's postface says the first ten days of the ninth month. The game says only 1446 and 'autumn'."
+          },
+          "notes": [
+            "Copied from Case 01 (same statement, same checked sources) so this case stands alone."
+          ]
         }
       ],
       "fiction": [
-        "Winter 1866: the timber yard, the yard board and its marks 가 나 다, the missing logs, the yard book and the new cuts are made up.",
-        "Duri, Mr. Pyo and the clerk are made up; Mr. Pyo's reason (the new coin buys less) is his own, made up.",
+        "Winter 1866: the timber yard, the yard board and its marks 가 나 다, the missing logs, the yard book, the new cuts, Mr. Pyo's cart and chisel are made up.",
+        "Duri, Mr. Pyo and the clerk are made up; Mr. Pyo's reason (coins buy less and less) and Duri's pine-tree signature are made up.",
         "The Heungseon Daewongun is real, but everything he says in the case is made up; none of it quotes a record."
       ],
       "puzzles": [
         {
           "puzzleId": "s5_ep04_m1",
           "factIds": [
-            "s5_ep01_h10"
+            "s5_ep04_h8"
           ],
           "answer": "GATES",
           "clues": [
@@ -1599,7 +1918,7 @@
               "missionId": "s5_ep04_m1"
             }
           ],
-          "derivation": "Sora's rule (the book's added stroke, h10 of Case 01): ㄴ then ㄷ. The made-up yard board names 나 for the palace gates; the log with one pale new cut is marked 다: take the new line away and it was 나, for the palace GATES.",
+          "derivation": "The carvers' rule, told by Duri (the book's added stroke, h8): ㄴ then ㄷ. The made-up yard board names 나 for the palace gates; the log with one pale new cut is marked 다: take the new line away and it was 나, for the palace GATES.",
           "whyOnly": "Only one log has a new cut; one line less on 다 is 나 only, and 나 names the gates only."
         },
         {
@@ -1616,34 +1935,28 @@
               "missionId": "s5_ep04_m2"
             }
           ],
-          "derivation": "Made up: six 다 logs last night, sixteen this morning, and the ten 나 logs gone: ten changed.",
-          "whyOnly": "Sixteen less six is ten; 16 and 6 are answered as misreadings."
+          "derivation": "Made up: six 다 logs last night, sixteen this morning (ten more); twelve 나 logs last night, two this morning (ten fewer): ten changed.",
+          "whyOnly": "Sixteen less six is ten, and twelve less two is ten: the two counts agree. 16, 12, 06 and 02 are answered as misreadings."
         },
         {
           "puzzleId": "s5_ep04_m3",
-          "factIds": [
-            "s5_ep04_h1",
-            "s5_ep04_h2",
-            "s5_ep04_h3",
-            "s5_ep04_h5"
-          ],
-          "answer": "burn,ruins,begin,coin,logs",
+          "fiction": true,
+          "answer": "cart",
           "clues": [
             {
-              "text": "After it burned",
+              "text": "Logs to sell leave by the east gate",
               "missionId": "s5_ep04_m3"
             },
             {
-              "text": "until 1865",
-              "missionId": "s5_ep04_m3"
-            },
-            {
-              "text": "after the work began",
+              "text": "Pale wood dust",
               "missionId": "s5_ep04_m3"
             }
           ],
-          "derivation": "The fire of 1592 (h1) is fixed first, last night's new lines (made up) last. After the fire, the ruins (h1); the ruins until 1865, then the rebuilding (h2); the new coin of 1866 after the work began (h5). The King moving in (1868, h3) has not happened yet: set aside.",
-          "whyOnly": "Three relations chain the three cards between the two fixed ones: one order; the King moving in is in no line and the palace is half-built."
+          "derivation": "Made up: the ten changed logs now carry 다, the mark of logs to sell; Duri's yard rule says logs to sell leave by the east gate on a dealer's cart. Deep wheel tracks and pale wood dust (like the new cut) lead to the ox cart.",
+          "whyNot": {
+            "hall": "The log carried to the hall is marked 가, with old cuts.",
+            "gate": "The half-built gate still waits for its logs; logs to sell do not go there."
+          }
         },
         {
           "puzzleId": "s5_ep04_final",
@@ -1657,30 +1970,26 @@
           "answer": "rebuilt",
           "clues": [
             {
-              "text": "One new cut turned 나 into 다",
+              "text": "One new cut turns 나 into 다",
               "missionId": "s5_ep04_final"
             },
             {
-              "text": "Ten palace logs",
+              "text": "with a chisel",
               "missionId": "s5_ep04_final"
             },
             {
-              "text": "The same water drop",
-              "missionId": "s5_ep04_final"
-            },
-            {
-              "text": "A new coin came in 1866",
+              "text": "only a pine tree",
               "missionId": "s5_ep04_final"
             }
           ],
-          "derivation": "Four questions, each answered by one evidence: the note (the new cut), the yard book (ten), an older water-drop note (1592 or 1795: a family, not one person) and the palace's story (the real cost: money given by force h4, the new coin and rising prices h5, people called to work h6). The ending states the real rebuilding: begun in 1865 under the Daewongun (h2), finished in 1868 (h3).",
-          "whyOnly": "Each question accepts its own evidence only (the note question either older water-drop note); a wrong one is answered, never a failure."
+          "derivation": "Three questions, each answered by one card of this case: the new cut (the note), who cut it (the cart: a chisel white with fresh wood dust), who wrote the note (the yard book: the pine tree by Duri's name). The cost question closes on the real cost (h4 money given by force, h5 the new coin and rising prices, h6 people called to work); the ending states the real rebuilding: begun in 1865 under the Daewongun (h2), finished in 1868 (h3).",
+          "whyOnly": "Each question accepts one card of three: only the note says a mark has a new line; only the cart card has the chisel and fresh wood dust (the yard book only says Mr. Pyo bought); only the yard book has a pine tree by a name (the note has a pine tree but no name). A wrong card is answered, never a failure."
         }
       ],
       "learningObjectives": [
         "Use a rule (a stronger sound adds one line) to see a changed mark.",
         "Compare two counts to find a difference.",
-        "Read after, until and then to put a palace's story in order."
+        "Read a yard rule and traces (wheel tracks, wood dust) to find where the logs were taken."
       ],
       "reveal": {
         "realHistory": [
@@ -1690,6 +1999,15 @@
             "master": "Gyeongbokgung burned down in the war of 1592 and long lay in ruins.",
             "factIds": [
               "s5_ep04_h1"
+            ]
+          },
+          {
+            "text": "The King's letters add a line for a stronger sound: ㄴ, then ㄷ. A book of 1446 says so.",
+            "junior": "In the King's letters, a stronger sound gets one more line, as with ㄴ and ㄷ. A book of 1446 explains this.",
+            "master": "The King's letters add a stroke for a stronger sound, turning ㄴ into ㄷ, as a book of 1446 explains.",
+            "factIds": [
+              "s5_ep04_h8",
+              "s5_ep04_h9"
             ]
           },
           {
@@ -1728,9 +2046,9 @@
         ],
         "inThisMystery": [
           {
-            "text": "Duri, Mr. Pyo, the missing logs and the marks on them are made up.",
-            "junior": "Duri, Mr. Pyo, the missing logs and their marks were invented for this case.",
-            "master": "Duri, Mr. Pyo, the missing logs and their marks are inventions of this story."
+            "text": "Duri, Mr. Pyo, the clerk, the missing logs, the marks, the cart and Duri's pine tree are made up.",
+            "junior": "Duri, Mr. Pyo, the clerk, the missing logs, their marks, the cart and Duri's pine tree were invented for this case.",
+            "master": "Duri, Mr. Pyo, the clerk, the missing logs, their marks, the cart and Duri's pine tree are inventions of this story."
           },
           {
             "text": "The Heungseon Daewongun was real, but his words in this story are made up.",
@@ -1895,10 +2213,9 @@
         }
       ],
       "fiction": [
-        "The night the lamps went dark in autumn 1895, the strangers, the leather belt, the knotted rope, the 37 steps and the strangers' map are made up.",
+        "The night the lamps went dark in autumn 1895, the strangers, the leather belt, the knotted rope, the 37 steps and the strangers' board (its lines, dots, circle and X) are made up.",
         "Court Lady Han is made up; so is her water-drop note. The lamp man is made up.",
-        "Queen Myeongseong and King Gojong are real, but every word they say in the case is made up. Lady Han's last words to the King retell h4 only.",
-        "Duri's note of 1866 (Case 04) is recalled for its water drop only."
+        "Queen Myeongseong and King Gojong are real, but every word they say in the case is made up. Lady Han's last words to the King retell h4 only."
       ],
       "puzzles": [
         {
@@ -1942,11 +2259,11 @@
               "missionId": "s5_ep05_m2"
             },
             {
-              "text": "before the lamp man came back",
+              "text": "By then, the men were gone",
               "missionId": "s5_ep05_m2"
             }
           ],
-          "derivation": "Made up (the case's night). 8:00 and 9:00 are fixed; the lamp house before the dark, the dark before the east gate, the gate before the Queen's hall, the hall before the lamp man returns. The main gate is not part of it.",
+          "derivation": "Made up (the case's night). Lady Han tells it out of order. 8:00 and 9:00 are fixed; the lamp house before the dark, the east gate only after the dark, the east gate before the Queen's hall, and the men gone by 9:00. The main gate is not part of it.",
           "whyOnly": "Each card but the anchors is tied by one before/after line to the next, from 8:00 to 9:00: one order only. The guards at the main gate saw nothing and are far away: set aside."
         },
         {
@@ -1968,22 +2285,27 @@
         },
         {
           "puzzleId": "s5_ep05_final",
-          "factIds": [
-            "s5_ep05_h4"
-          ],
-          "answer": "JAPAN",
+          "fiction": true,
+          "answer": "queen",
           "clues": [
             {
-              "text": "hold back Japan's power",
+              "text": "a door with a circle",
               "missionId": "s5_ep05_final"
             },
             {
-              "text": "37 steps",
+              "text": "three big dots",
+              "missionId": "s5_ep05_final"
+            },
+            {
+              "text": "like the knots on the rope",
               "missionId": "s5_ep05_final"
             }
           ],
-          "derivation": "The map shows the strangers measured the way to the Queen's door. Lady Han's words retell h4: the Queen works WITH Russia to hold back Japan's power. The country whose power she holds back is Japan.",
-          "whyOnly": "Two countries are named: Russia is the one she works with, Japan the one she holds back. China and Korea are not what the sentence holds back."
+          "derivation": "Made up (the strangers' board). Read with the rope's rule (a big knot is ten steps, a small one one), the circled door is 37 steps from the east gate: the rope measured 37 steps from the east gate to the Queen's door (M3), the strangers walked from the east gate to the Queen's hall (M2). The square with an X and a wheel by the pond is the lamp house (M1). The circled door is the Queen's. The history after the answer retells h4 and h5 (transition, ending).",
+          "whyNot": {
+            "king": "The far door is 52 steps away (five big dots, two small) and has no circle.",
+            "lamp": "The lamp house is the square with the X and the wheel, not a door with a circle."
+          }
         }
       ],
       "learningObjectives": [
@@ -2260,8 +2582,8 @@
       ],
       "fiction": [
         "Mr. Seo the secretary, the hollow pine, the yellow silk, the way past the watchers, the watchers' times and Yi Jun's travel box with its lock are made up.",
-        "Bongsu and his uncle are made up; so is Bongsu's water-drop note of 1907.",
-        "Emperor Gojong and Yi Jun are real, but every word they say in the case is made up. The lock word's lines retell h1 and h2; they are not a quotation of any document.",
+        "Bongsu and his uncle are made up; so is Bongsu's note.",
+        "Emperor Gojong and Yi Jun are real, but every word they say in the case is made up. Yi Jun's three worries and the talk at his house are made up; the envoys' mission they lead to rests on h1 and h2.",
         "No building of Gyeongun Palace is named; the garden, the gates and the lane are the case's own."
       ],
       "puzzles": [
@@ -2303,12 +2625,12 @@
               "missionId": "s5_ep06_m2"
             },
             {
-              "text": "Last, walk down the lane",
+              "text": "Start behind the library hall",
               "missionId": "s5_ep06_m2"
             }
           ],
-          "derivation": "Made up: First behind the library, after it the garden by the well, then the little west gate, last the lane. The throne hall's yard and the front gate are ruled out by Bongsu's words.",
-          "whyOnly": "Four places are given First/After/Then/Last; the two others are named as watched or seen by everyone: one way only."
+          "derivation": "Made up: the note's lines are out of order. Start behind the library; from there to the old well; after the old well, out by the little west gate; outside it, the lane. The throne hall's yard and the front gate are ruled out by Bongsu's words.",
+          "whyOnly": "Four relations (library first, library before well, well before west gate, west gate before lane) make one order of four places; the two others are named as watched or seen by everyone: one way only."
         },
         {
           "puzzleId": "s5_ep06_m3",
@@ -2320,12 +2642,12 @@
               "missionId": "s5_ep06_m3"
             },
             {
-              "text": "Knock when the 6:40 walk has passed",
+              "text": "the 6:40 walk has passed",
               "missionId": "s5_ep06_m3"
             }
           ],
-          "derivation": "Made up: the 6:40 walk takes ten minutes, so it has passed at 6:50.",
-          "whyOnly": "Only the 6:40 walk is named for the knock, and one walk takes ten minutes: 6:50. 6:40 is during the walk, 7:20 is the next walk the paper forbids."
+          "derivation": "Made up: the 6:40 walk takes ten minutes, so it has passed at 6:50; the knock comes as soon as it has passed.",
+          "whyOnly": "Only the 6:40 walk is named, and one walk takes ten minutes: 6:50. 6:40 is during the walk; 7:00 or 7:10 is not 'as soon as'; 7:20 is the next walk; 6:10 belongs to the 6:00 walk."
         },
         {
           "puzzleId": "s5_ep06_final",
@@ -2333,26 +2655,30 @@
             "s5_ep06_h1",
             "s5_ep06_h2"
           ],
-          "answer": "FORCED",
+          "answer": "unseen",
           "clues": [
             {
-              "text": "Japan made Korea sign it",
+              "text": "rough bark",
               "missionId": "s5_ep06_final"
             },
             {
-              "text": "Korea did not choose it",
+              "text": "little west gate",
+              "missionId": "s5_ep06_final"
+            },
+            {
+              "text": "6:50",
               "missionId": "s5_ep06_final"
             }
           ],
-          "derivation": "The lock word is what the envoys went to tell the world (h2): the 1905 treaty was forced on Korea (h1). The lid's lines say Japan made Korea sign it and Korea did not choose it.",
-          "whyOnly": "Six tiles, each used once: F O R C E D. The lid's last line needs a word for made to happen with no free choice: forced."
+          "derivation": "Made up, on h1-h2: Yi Jun fears a watcher saw the Emperor's letter. Each worry is answered by one card of this case: the thread caught on the pine's rough bark (Bongsu's Note), the letter left by the little west gate (Bongsu's Way), the knock came at 6:50, between the watchers' walks (the Watchers' Times). Unseen, the letter can go to The Hague (h2), to tell the world the 1905 treaty was forced (h1).",
+          "whyOnly": "Each worry names one thing (the thread, the palace gate, Yi Jun's door), and only one of the three cards speaks of it: Bongsu's Note of the thread, Bongsu's Way of the gate, the Watchers' Times of the door."
         }
       ],
       "learningObjectives": [
         "Read traces in words (not to, on, by) and find the one place they all point to.",
-        "Follow a way in First/After/Then/Last order, leaving out what is ruled out.",
-        "Work out a time from a schedule (each walk takes ten minutes).",
-        "Read what the 1905 treaty was, and spell the word for it."
+        "Put mixed-up directions in order with Start, From there, After and Outside, leaving out what is ruled out.",
+        "Work out one time from a schedule (each walk takes ten minutes; as soon as it has passed).",
+        "Answer each of Yi Jun's worries with the one piece of evidence that speaks of it."
       ],
       "reveal": {
         "realHistory": [
@@ -2457,7 +2783,7 @@
         },
         {
           "factId": "s5_ep07_h2",
-          "statement": "Right after, An Jung-geun called out \"Korea, hurrah!\" (Korea, long live).",
+          "statement": "Right after, An Jung-geun called out \"Koreya! Ura!\" (코레아 우라: Korea, hurrah!).",
           "status": "source_checked",
           "sources": [
             {
@@ -2479,7 +2805,7 @@
           ],
           "conflict": {
             "status": "resolved",
-            "note": "Incheon writes 코레아 우라 (usually called Russian); the column writes 코레아 후라 and says it was Esperanto. Both give \"Korea, hurrah!\" The game says only \"Korea, hurrah!\", naming no language and no count."
+            "note": "Incheon writes 코레아 우라 (Koreya! Ura!: the sound the game uses); a press column writes 코레아 후라 and calls it Esperanto. Both mean \"Korea, hurrah!\" The game gives the sounds as heard and their meaning from Mr. Pak's made-up word card; it never says which language the cry itself was in."
           }
         },
         {
@@ -2528,12 +2854,75 @@
           "notes": [
             "One press source only: a draft, used by no puzzle or reveal line."
           ]
+        },
+        {
+          "factId": "s5_ep07_h5",
+          "statement": "In 1905 Japan forced the Eulsa treaty on Korea; Korea lost its diplomatic rights, and with them its sovereignty.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 을사조약반대운동",
+              "url": "https://encykorea.aks.ac.kr/Article/E0042959",
+              "quote": "1905년 일제에 의해 강제체결된 을사조약을 파기하고 국권을 회복하기 위해 일어난 거국적 항일운동. … 일제에 의해 외교권을 박탈당함으로써 한국은 주권을 상실하게 되었다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "press",
+              "publisher": "서울신문",
+              "title": "“내가 살해돼도 특명 다하라”…헤이그특사단에 내린 고종의 밀명 (2019-03-14)",
+              "url": "https://m.seoul.co.kr/news/2019/03/14/20190314500011",
+              "quote": "일본에 대한제국의 외교권을 빼앗긴 고종은 1907년 네덜란드 수도 헤이그에서 열리는 제2회 만국평화회의에 이상설, 이준, 이위종을 특사로 파견했다.",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 (Seoul Metropolitan Government), 내 손안에 서울",
+              "title": "[사진] 을사늑약의 비운이 서린 곳, 덕수궁 중명전",
+              "url": "https://mediahub.seoul.go.kr/archives/1504110",
+              "quote": "1905년 11월 17일 경운궁(현 덕수궁) 중명전은 무장한 일본 군대와 경찰에 둘러싸여 공포 분위기에 잠겨 있었다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
+        },
+        {
+          "factId": "s5_ep07_h6",
+          "statement": "An Jung-geun's act at Harbin Station on 26 October 1909 took place at about 9:30 in the morning.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "인천광역시 (Incheon Metropolitan City)",
+              "title": "인천 역사 이야기: 안중근",
+              "url": "https://www.incheon.go.kr/IC020501/1904250",
+              "quote": "안의사의 의거 시각인 오전 9시 30분에 고정되어 있다.",
+              "checkedAt": "2026-11-09"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 이토 포살 의거",
+              "url": "https://encykorea.aks.ac.kr/Article/E0046347",
+              "quote": "이 때가 9시 30분경으로",
+              "checkedAt": "2026-11-09"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The same page's 1909 account says the train came at about 9:00 (9시경 열차가 도착했다): the act followed it. The game fixes the cry's card at 9:30."
+          ]
         }
       ],
       "fiction": [
-        "Mrs. Kang, her inn, Mr. Pak the porter, Mr. Sorin and the two newspapers (the Evening Sheet, the Morning News) are made up; so are their words and the noon train.",
-        "Mrs. Kang's water-drop note of 1909 is made up.",
-        "An Jung-geun never appears; the papers' lines about him follow h1 and h2, and his aims follow h3 only."
+        "Mrs. Kang, her inn, Mr. Pak the porter, Mr. Sorin and the two newspapers (the Evening Sheet, the Harbin Daily) are made up; so are their words, the noon train and Mr. Pak's word card.",
+        "Mrs. Kang's note is made up.",
+        "An Jung-geun never appears; the papers' lines about him follow h1, h2 and h6, and his aims follow h3 only."
       ],
       "puzzles": [
         {
@@ -2549,20 +2938,19 @@
               "missionId": "s5_ep07_m1"
             },
             {
-              "text": "Only one writer was on the platform",
+              "text": "line by line",
               "missionId": "s5_ep07_m1"
             }
           ],
-          "derivation": "Both papers give the date, the place and the name of h1. Only the HE CALLED line differs: NOTHING against KOREA, HURRAH! (h2).",
+          "derivation": "Both papers give the date, the place and the name of h1. Only the HE CALLED line differs: NOTHING against KOREYA! URA! (h2).",
           "whyOnly": "Four lines are shared; the date, place and name are word for word the same, and only HE CALLED differs."
         },
         {
           "puzzleId": "s5_ep07_m2",
-          "fiction": true,
-          "answer": "open,platform,noon,tea,write,print",
+          "answer": "pak_start,shout,noon,tea,write,print",
           "clues": [
             {
-              "text": "before the noon train",
+              "text": "before he called out",
               "missionId": "s5_ep07_m2"
             },
             {
@@ -2570,12 +2958,15 @@
               "missionId": "s5_ep07_m2"
             },
             {
-              "text": "after the story",
+              "text": "after that story",
               "missionId": "s5_ep07_m2"
             }
           ],
-          "derivation": "Made up: 7:00, 12:00 and 5:00 PM are fixed; Mr. Pak on the platform before the noon train; the story over tea after it; the report written after the story. The goods train is not part of it.",
-          "whyOnly": "Each card to place has one before/after line tying it between two fixed times: one order only."
+          "derivation": "He called out at 9:30 (h6); 12:00 (the noon train) and 5:00 PM (printing) are fixed and made up. Mr. Pak started work before he called out; the story over tea came after the noon train; the report was written after that story. The goods train is not part of it. So the writer came after the cry and never saw it.",
+          "whyOnly": "Only one slot is before 9:30, and only Mr. Pak's start can go there (tea and the report come after the noon train); between 12:00 and 5:00 PM the report comes after the tea story. One order only.",
+          "factIds": [
+            "s5_ep07_h6"
+          ]
         },
         {
           "puzzleId": "s5_ep07_m3",
@@ -2585,41 +2976,42 @@
           "answer": "KOREA",
           "clues": [
             {
-              "text": "Korea, hurrah!",
+              "text": "Koreya! Ura!",
               "missionId": "s5_ep07_m3"
             },
             {
-              "text": "not for himself",
+              "text": "Koreya = Korea",
               "missionId": "s5_ep07_m3"
             }
           ],
-          "derivation": "Mr. Pak (made up) retells what was called out (h2): \"Korea, hurrah!\" He called out for his country, not for money or himself: Korea.",
-          "whyOnly": "The only country named in what he called out is Korea; money and himself are ruled out by Mr. Pak's words."
+          "derivation": "Mr. Pak (made up) heard \"Koreya! Ura!\" (h2). His word card (made up) gives Koreya = Korea and Ura = Hurrah: he called out for Korea.",
+          "whyOnly": "Of the card's words, only Koreya and Ura were called out; Ura (hurrah) is no country, Rossiya and Dengi were not called out, Harbin is the place: Korea."
         },
         {
           "puzzleId": "s5_ep07_final",
           "factIds": [
             "s5_ep07_h2",
             "s5_ep07_h3",
-            "s5_ep06_h1"
+            "s5_ep07_h5",
+            "s5_ep07_h6"
           ],
           "answer": "for_korea",
           "clues": [
             {
-              "text": "noon train",
-              "missionId": "s5_ep07_final"
+              "text": "noon",
+              "missionId": "s5_ep07_m2"
             },
             {
-              "text": "Korea, hurrah!",
-              "missionId": "s5_ep07_final"
+              "text": "Koreya! Ura!",
+              "missionId": "s5_ep07_m3"
             },
             {
-              "text": "Japan forced a treaty on Korea",
-              "missionId": "s5_ep07_final"
+              "text": "Itō forced the 1905 treaty on Korea",
+              "missionId": "s5_ep07_m1"
             }
           ],
-          "derivation": "Three questions, one evidence each: where Paper A's story came from (Mr. Pak's day), what was called out (Mr. Pak's words, h2), what Korea had lost (the Emperor's letter: the 1905 treaty was forced, s5_ep06_h1). The talk ends on the key fact: he called out for Korea, not for money; the ending gives his own aims from his writing (h3).",
-          "whyOnly": "Each question accepts one evidence only; a wrong one is answered, never a failure, and the talk ends when all three are shown."
+          "derivation": "Mr. Sorin's paper claims three things; each is answered by one card of this case: his writer saw it all (Mr. Pak's Day: the cry at 9:30, h6, the writer at noon), he called out nothing (Mr. Pak's Words: \"Koreya! Ura!\", h2), he wanted money (Mrs. Kang's Note: Itō forced the 1905 treaty on Korea, h5). The ending gives his own aims from his writing (h3).",
+          "whyOnly": "Each question accepts one card of three: only Mr. Pak's Day has the times, only Mr. Pak's Words has the cry, only Mrs. Kang's Note names Itō and 1905. A wrong card is answered, never a failure."
         }
       ],
       "learningObjectives": [
@@ -2639,9 +3031,17 @@
             ]
           },
           {
-            "text": "Then he called out, \"Korea, hurrah!\"",
-            "junior": "Right after, he called out, \"Korea, hurrah!\"",
-            "master": "He then cried out, \"Korea, hurrah!\"",
+            "text": "It was about 9:30 in the morning.",
+            "junior": "It happened at about 9:30 in the morning.",
+            "master": "It took place at about 9:30 in the morning.",
+            "factIds": [
+              "s5_ep07_h6"
+            ]
+          },
+          {
+            "text": "Then he called out, \"Koreya! Ura!\": \"Korea, hurrah!\"",
+            "junior": "Right after, he called out, \"Koreya! Ura!\", which means \"Korea, hurrah!\"",
+            "master": "He then cried out, \"Koreya! Ura!\", that is, \"Korea, hurrah!\"",
             "factIds": [
               "s5_ep07_h2"
             ]
@@ -2665,9 +3065,9 @@
         ],
         "inThisMystery": [
           {
-            "text": "Mrs. Kang, Mr. Pak and Mr. Sorin are made up. So are the two newspapers and the noon train.",
-            "junior": "Mrs. Kang, Mr. Pak and Mr. Sorin were invented, and so were the two newspapers and the noon train.",
-            "master": "Mrs. Kang, Mr. Pak and Mr. Sorin are inventions, as are the two newspapers and the noon train."
+            "text": "Mrs. Kang, Mr. Pak and Mr. Sorin are made up. So are the two newspapers, the noon train and the word card.",
+            "junior": "Mrs. Kang, Mr. Pak and Mr. Sorin were invented, and so were the two newspapers, the noon train and the word card.",
+            "master": "Mrs. Kang, Mr. Pak and Mr. Sorin are inventions, as are the two newspapers, the noon train and the word card."
           },
           {
             "text": "An Jung-geun was real. He never speaks in this story.",
@@ -2678,7 +3078,7 @@
       },
       "notes": [
         "Sources opened and quoted by Claude (writer B) on 2026-11-06. The act is told once, plainly, in the intro and in the reveal; the player never sees or helps with it.",
-        "Whether \"Korea, hurrah!\" was Russian or Esperanto is disputed (h2): the game names no language."
+        "PART 3 (2026-11-09): the cry is given as heard, \"Koreya! Ura!\" (Incheon: 코레아 우라), and read off Mr. Pak's made-up word card; the game still names no language for the cry (h2 conflict). 9:30 (h6) from the Incheon page, checked 2026-11-09."
       ]
     },
     {
@@ -2833,9 +3233,8 @@
       "fiction": [
         "Gyeongsun, Dong-il, Mr. Pyo, the stranger with the coin, the three school notebooks and the girls Sunja and Okhui are made up.",
         "Yu Gwan-sun is real, but every word she says and writes in the case (her mixed-up plan, the 'no bell' line) is made up; none is a quotation of a record.",
-        "The wrong day going round the villages, the messengers' talk and the keepers' letter box with its dial lock are made up.",
-        "People walking to the market 'like shoppers' follows a press account, not a checked fact: it is said only inside Gwan-sun's made-up plan.",
-        "The keepers' notes in the box (Bun-i's of 1446, Mrs. Kang's of 1909) are the season's made-up story."
+        "The wrong day going round the villages, the messengers' talk and Gyeongsun's box with its dial lock are made up.",
+        "People walking to the market 'like shoppers' follows a press account, not a checked fact: it is said only inside Gwan-sun's made-up plan."
       ],
       "puzzles": [
         {
@@ -2887,10 +3286,10 @@
         {
           "puzzleId": "s5_ep08_m3",
           "fiction": true,
-          "answer": "GYEONGSUN",
+          "answer": "gyeongsun",
           "clues": [
             {
-              "text": "A small water drop sits by her name.",
+              "text": "A small flame sits by her name.",
               "missionId": "s5_ep08_m3"
             },
             {
@@ -2898,8 +3297,13 @@
               "missionId": "s5_ep08_m3"
             }
           ],
-          "derivation": "The note is in Hangeul only and has a small water drop. Sunja writes in Chinese characters; Okhui draws stars; only Gyeongsun's notebook has the water drop by her name. Made up: no history in this puzzle.",
-          "whyOnly": "Only one notebook on the table has the water drop; Gwan-sun's notebook is not among them."
+          "derivation": "The note has two features: it is only in Hangeul, and it has a small flame instead of a name. Sunja writes only in Hangeul but marks her name with a flower; Okhui writes in Chinese characters with stars; only Gyeongsun's notebook matches both. Made up: no history in this puzzle.",
+          "whyOnly": "Only one notebook matches the note in both its letters and its mark.",
+          "whyNot": {
+            "sunja": "Same letters (only Hangeul), but her mark is a flower, not a flame.",
+            "okhui": "Chinese characters and stars: neither feature matches.",
+            "gwansun": "Gwan-sun asked for the writer; her notebook is not on the table."
+          }
         },
         {
           "puzzleId": "s5_ep08_final",
@@ -2922,14 +3326,14 @@
               "missionId": "s5_ep08_final"
             }
           ],
-          "derivation": "The lock is set to the plan's two real days: the night of the sign, the night before 1 April (h3), is the last night of March, 31 (the letter says March has thirty-one days); the day of the march is the first of April (h2), 1. Code 311. The ending then states the history: the fire that night and the march of thousands on 1 April 1919, led by Gwan-sun.",
-          "whyOnly": "The night before the first of April can only be 31 March; Mr. Pyo's day would give 012, and the lock reads the night first."
+          "derivation": "The detective locks Gyeongsun's box with the plan's two real days. The map dials (the plan, Mission 2): the sign burns the night before the march, so the night before 1 April (h3) is the last night of March, 31 (the letter says March has thirty-one days). The clock dial (the day, Mission 1): the first of April (h2), 1. Code 311. The ending then states the history: the fire that night and the march of thousands on 1 April 1919, which Gwan-sun helped lead with the village elders.",
+          "whyOnly": "The night before the first of April can only be 31 March; 301 forgets March's thirty-one days; Mr. Pyo's day would give 012 or 312; the lock reads the night first, so 131 is out."
         }
       ],
       "learningObjectives": [
         "Ask the same question of three people and find the two answers that agree.",
         "Read time words (the night before, in the morning, when) to put a plan in order.",
-        "Work out a date from 'the night before' and the length of a month."
+        "Work out a date from 'the night before' (read in the plan) and the length of a month."
       ],
       "reveal": {
         "realHistory": [
@@ -2986,9 +3390,9 @@
             "master": "Yu Gwan-sun was real, yet every word she speaks here is invented."
           },
           {
-            "text": "The keepers' letter box and the water-drop notes are part of this season's story.",
-            "junior": "The keepers' letter box and the water-drop notes were invented for this season's story.",
-            "master": "The keepers' letter box and the water-drop notes belong to this season's invented story."
+            "text": "The flame note and Gyeongsun's box are made up for this case.",
+            "junior": "The flame note and Gyeongsun's box were invented for this case.",
+            "master": "The flame note and Gyeongsun's box are inventions of this story."
           }
         ]
       },
@@ -3113,8 +3517,8 @@
         }
       ],
       "fiction": [
-        "The autumn of 1920 case, the secret list, the candle, the police report, the sign-out book and the spy Nam Giho are made up; so are the clerks Mr. Pak and Mr. Seo.",
-        "Haesu is made up; she brings the keepers' box from Aunae (the season's story).",
+        "The autumn of 1920 case, the secret list, the candle, the police report, the sign-out book, the night guard, the spy Nam Giho and the copy sewn in his coat are made up; so are the clerks Mr. Pak and Mr. Seo.",
+        "Haesu, a young clerk, is made up; so is her unsigned note.",
         "Kim Gu is real, but every word he says in the case is made up; his lines retell checked facts (h1-h3) and are never quotations of a record."
       ],
       "puzzles": [
@@ -3137,7 +3541,7 @@
             }
           ],
           "derivation": "The light went on at eleven; half of a four-hour candle burned, two hours; so it went out at one in the night, 01:00. Made up: no history in this puzzle.",
-          "whyOnly": "Eleven plus two hours is one o'clock in the night; 2300 is when it went on, 0300 is the whole candle, 1300 is the afternoon."
+          "whyOnly": "Eleven plus two hours is one o'clock in the night; 2300 and 1100 are when it went on, 0300 is the whole candle, 0200 counts one hour, 1300 is the afternoon."
         },
         {
           "puzzleId": "s5_ep09_m2",
@@ -3176,7 +3580,7 @@
             }
           ],
           "derivation": "The light went out at one (Mission 1). In the sign-out book, only Mr. Nam Giho left after one, at a quarter past one. Made up: no history in this puzzle.",
-          "whyOnly": "Haesu left at nine, Mr. Pak at ten, Mr. Seo at half past eleven: all before the light went out; the guard stayed at the front door."
+          "whyOnly": "Haesu left at nine, Mr. Pak at ten, Mr. Seo at half past eleven: all before the light went out; the night guard stayed at the front door and has no office key. Only Mr. Nam Giho left after one."
         },
         {
           "puzzleId": "s5_ep09_final",
@@ -3185,19 +3589,23 @@
             "s5_ep09_h2",
             "s5_ep09_h3"
           ],
-          "answer": "protect",
+          "answer": "copy_found",
           "clues": [
             {
-              "text": "The police guard the government and watch for spies.",
+              "text": "Nothing was copied.",
               "missionId": "s5_ep09_final"
             },
             {
               "text": "Names are pressed into it.",
               "missionId": "s5_ep09_m2"
+            },
+            {
+              "text": "a quarter past one",
+              "missionId": "s5_ep09_m3"
             }
           ],
-          "derivation": "Kim Gu's four questions are answered by the case's evidence: when (Haesu's note), how (the police report), who (the sign-out book). The last, and the talk's answer, is history: his police guarded the government and watched for spies (h3); he was its police chief from August 1919 (h2), in the government founded in Shanghai in April 1919 (h1).",
-          "whyOnly": "Each question accepts one piece of evidence only; a wrong one is answered, never a failure, and the talk ends when all four are shown."
+          "derivation": "Mr. Nam's three claims are each refuted by one piece of this case's evidence: nobody at the desk (Haesu's note: the light from eleven to one), nothing copied (the police report: names pressed into thin paper), home at nine (the sign-out book: a quarter past one). His coat is searched and the copy found. Made up, set in the real Provisional Government in Shanghai (h1) whose police, led by Kim Gu from August 1919, watched for spies (h2, h3).",
+          "whyOnly": "Each claim has three cards and one fits: only Haesu's note speaks of the light at the desk, only the police report of the pressed paper, only the sign-out book of the times the clerks left. A wrong card is answered, never a failure."
         }
       ],
       "learningObjectives": [
@@ -3386,12 +3794,103 @@
             "status": "resolved",
             "note": "Some writers note the support came with conditions and grew in steps (secret at first, open later): the game says only that Chinese leaders began to help strongly after that day, as both public sources do. Chiang's famous words are not quoted."
           }
+        },
+        {
+          "factId": "s5_ep10_h5",
+          "statement": "After the March First Movement, the Provisional Government of the Republic of Korea was founded in Shanghai in April 1919: on 10 April 1919 a Provisional Assembly met and named the country Daehan Minguk (the Republic of Korea).",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "국사편찬위원회 우리역사넷 (National Institute of Korean History)",
+              "title": "대한민국 임시정부 1919",
+              "url": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_o400800&code=kc_age_40",
+              "quote": "1919년 4월 10일 29명의 대표자들이 모여 '대한민국임시의정원(大韓民國臨時議政院)'을 결성하였다. … 임시의정원은 첫 회의에서 국호를 '대한민국'으로 결정하는 한편",
+              "checkedAt": "2026-11-06"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국 정책브리핑 (korea.kr)",
+              "title": "임시정부 경무국과 김구 (기자 기사)",
+              "url": "https://www.korea.kr/news/reporterView.do?newsId=148973712",
+              "quote": "3·1 운동 이후 중국 상하이에 대한민국 임시정부가 수립되면서 정부 조직 안에는 내무부 산하의 '경무국'도 설치됐다.",
+              "checkedAt": "2026-11-06"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "The government in Shanghai began in April 1919 and was joined with the other provisional governments in September 1919 (우리역사넷). The game says only 'in April 1919', not a day."
+          }
+        },
+        {
+          "factId": "s5_ep10_h6",
+          "statement": "Kim Gu recorded that at the swap Yun Bong-gil said his own watch would be of use for only one more hour.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "서울특별시 내 손안에 서울 (Seoul Metropolitan Government)",
+              "title": "봄날, 매화처럼 살다 간 청년 '윤봉길'을 만나다",
+              "url": "https://mediahub.seoul.go.kr/archives/2017404",
+              "quote": "내 시계는 이제 한 시간밖에 남지 않았습니다",
+              "checkedAt": "2026-11-09"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "국가보훈부 (Ministry of Patriots and Veterans Affairs) 공식블로그",
+              "title": "“독립을 위한 일이라면 무엇이든 하겠습니다” 윤봉길 의사 의거 87주년",
+              "url": "https://m.blog.naver.com/mpvalove/221525413975",
+              "quote": "제 시계는 얼마 전에 6원을 주고 산 것입니다. 선생님의 시계는 2원짜리니 제 시계와 바꾸지요. 저는 앞으로 시계를 볼 시간이 한 시간밖에 없으니까요.",
+              "checkedAt": "2026-11-09"
+            },
+            {
+              "kind": "public_institution",
+              "publisher": "김구재단 (Kim Koo Foundation)",
+              "title": "영상실록 \"영웅\" - 윤봉길 (백범일지 인용)",
+              "url": "http://www.kimkoo.org/board/board_view.asp?brd_idx=10&idx=577&page=1&skey=&stext=",
+              "quote": "제 시계는 앞으로 한 시간밖에는 쓸 데가 없으니까요… (김구, 백범일지)",
+              "checkedAt": "2026-11-09"
+            }
+          ],
+          "conflict": {
+            "status": "resolved",
+            "note": "All sources go back to Kim Gu's own record (Baekbeom Ilji); the wording differs by edition and retelling ('한 시간밖에 쓸 데가 없으니까요', '한 시간밖에 남지 않았습니다', '한 시간밖에 없으니까요'); all keep 'one hour'. The game's English line ('I will need a watch for only one more hour') is the game's translation of Kim Gu's account, and is told as what Kim Gu remembers; the long-hand line around it is made up. The press source (세계일보) was replaced by two public ones on 2026-11-09."
+          }
+        },
+        {
+          "factId": "s5_ep10_h7",
+          "statement": "Japan ruled Korea from the annexation of 1910 until liberation in 1945.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국 정책브리핑 (Korea.kr, Ministry of Culture, Sports and Tourism)",
+              "title": "8월 15일 제79주년 광복절, 광복의 의미를 되새겨보다",
+              "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148932667",
+              "quote": "일제강점기는 1910년 한일병합조약으로 시작되어 1945년 제 2차 세계대전이 끝날 때까지 약 35년 동안 이어졌습니다.",
+              "checkedAt": "2026-11-09"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 8·15광복",
+              "url": "https://encykorea.aks.ac.kr/Article/E0059769",
+              "quote": "1910년 8월 22일 일본에 의한 ‘강제병합’ 때부터 1945년 8월 15일 광복 때까지 만 35년 동안",
+              "checkedAt": "2026-11-09"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "Copied from Case 12 (same statement, same checked sources) so this case stands alone."
+          ]
         }
       ],
       "fiction": [
-        "Haesu, her notes, the strap watch, the small house and the keepers' box with its letter lock are made up.",
-        "Yun Bong-gil and Kim Gu are real, but every word they say in the case is made up; Kim Gu's 'I gave him money for a good watch' retells h2 and is not a quotation.",
-        "The detective is not at the breakfast and takes no part in what happens at Hongkou Park; that is told once, plainly, in Haesu's made-up page and in the reveal."
+        "Haesu, her note, her drawings, her record, the strap watch and the small house are made up.",
+        "Yun Bong-gil and Kim Gu are real, but most of their words in the case are made up; Yun's 'one more hour' rests on Kim Gu's account (h6), the long-hand line around it is the game's.",
+        "The detective is not at the breakfast and takes no part in what happens at Hongkou Park; that is told once, plainly, in the ending and the reveal."
       ],
       "puzzles": [
         {
@@ -3433,7 +3932,7 @@
               "missionId": "s5_ep10_m2"
             }
           ],
-          "derivation": "They swapped (h2), so Kim Gu now holds Yun's watch; Yun's watch was new (h2), drawn smooth with no scratches.",
+          "derivation": "They swapped (h2), so Kim Gu now holds Yun's watch; Yun's watch was new (h2), drawn smooth with no scratches. Kim Gu keeps his hand closed; the options are Haesu's drawings; the chain between his fingers rules out the strap watch.",
           "whyNot": {
             "old_watch": "The worn, scratched watch is Kim Gu's old one, which Yun took.",
             "strap_watch": "The watch on a strap is Haesu's; Kim Gu holds a pocket watch."
@@ -3441,54 +3940,69 @@
         },
         {
           "puzzleId": "s5_ep10_m3",
-          "fiction": true,
-          "answer": "DROP",
+          "factIds": [
+            "s5_ep10_h6"
+          ],
+          "answer": "HOUR",
           "clues": [
             {
-              "text": "a small water drop",
+              "text": "one more time",
               "missionId": "s5_ep10_m3"
             },
             {
-              "text": "The lock wants the last word.",
+              "text": "long hand",
+              "missionId": "s5_ep10_m3"
+            },
+            {
+              "text": "for only one more ____",
               "missionId": "s5_ep10_m3"
             }
           ],
-          "derivation": "The keepers' mark is a small water drop; the lock wants the last word, DROP. Made up: no history in this puzzle.",
-          "whyOnly": "Four tiles, one word: the last word of 'a small water drop'."
+          "derivation": "Kim Gu retells Yun's words (h6): when the long hand goes round one more time, he will not need a watch. One turn of the long hand is sixty minutes: one more HOUR.",
+          "whyOnly": "One turn of the long hand is one hour: MINUTE is one small step, DAY many turns, WEEK and YEAR far longer, TIME not a length. Accepted: HOUR, ONE HOUR, AN HOUR."
         },
         {
           "puzzleId": "s5_ep10_final",
           "factIds": [
-            "s5_ep10_h4",
-            "s5_ep10_h1",
-            "s5_ep09_h1"
+            "s5_ep10_h2",
+            "s5_ep10_h6"
           ],
-          "answer": "1932",
+          "answer": "why",
           "clues": [
             {
-              "text": "nineteen thirty-two",
+              "text": "swapped watches",
               "missionId": "s5_ep10_final"
             },
             {
-              "text": "After that day",
+              "text": "Mr. Yun's new watch",
               "missionId": "s5_ep10_final"
             },
             {
-              "text": "Chinese leaders began to help our government strongly.",
+              "text": "only one more hour",
               "missionId": "s5_ep10_final"
             }
           ],
-          "derivation": "Haesu's page names two years in words: the government began in 1919 (s5_ep09_h1); Yun's day was 29 April 1932 (h1); after that day Chinese leaders began to help the government strongly (h4). The answer, 1932, is that history.",
-          "whyOnly": "Only two years are written; 1919 is the government's beginning, before Yun's day; 0429 is the day and month, not a year."
+          "derivation": "Haesu's record (made up) has three lines, each proved by one card of this case: who saw the swap after breakfast (her own note, e1; h2), the watch Kim Gu holds (Yun's new watch, e2; h2), and why Yun gave it (his words, e3; h6). The talk ends on the last line: why.",
+          "whyOnly": "The three cards are different kinds of proof: a witness's note (who saw), a thing (the watch), words (the reason). Each line takes exactly one: the note says nothing of the reason and is not a watch; the watch is not a witness or a reason; Yun's words were not seen by Haesu at breakfast and are not the watch."
         }
       ],
       "learningObjectives": [
         "Read order words (first, after, before that, at the end) to put a morning in order.",
-        "Match describing words (worn, scratches, smooth, strap) to pictures.",
-        "Read years written in words and find the one a sentence points to."
+        "Match describing words (worn, scratches, smooth, strap, chain) to pictures.",
+        "Read a clock word: one turn of the long hand is one hour.",
+        "Match each line of a record to the evidence that proves it."
       ],
       "reveal": {
         "realHistory": [
+          {
+            "text": "Japan ruled Korea from 1910. In 1919, Korean leaders set up the Provisional Government in Shanghai.",
+            "junior": "Japan ruled Korea from 1910. In 1919, Korean leaders set up the Provisional Government in Shanghai, China.",
+            "master": "Korea was under Japanese rule from 1910; in 1919, Korean leaders founded the Provisional Government in Shanghai, China.",
+            "factIds": [
+              "s5_ep10_h5",
+              "s5_ep10_h7"
+            ]
+          },
           {
             "text": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu swapped watches. Yun took Kim Gu's old watch and left him his new one.",
             "junior": "On the morning of 29 April 1932, Yun Bong-gil and Kim Gu exchanged watches: Yun took Kim Gu's old one and left him his new one.",
@@ -3496,6 +4010,14 @@
             "factIds": [
               "s5_ep10_h2",
               "s5_ep10_h1"
+            ]
+          },
+          {
+            "text": "Kim Gu wrote that Yun said his watch would be needed for only one more hour.",
+            "junior": "Kim Gu wrote that Yun told him his watch would be needed for only one more hour.",
+            "master": "Kim Gu recorded Yun's words: his own watch would be needed for only one more hour.",
+            "factIds": [
+              "s5_ep10_h6"
             ]
           },
           {
@@ -3525,20 +4047,25 @@
         ],
         "inThisMystery": [
           {
-            "text": "Haesu, her notes and the keepers' box are made up.",
-            "junior": "Haesu, her notes and the keepers' box were invented for this case.",
-            "master": "Haesu, her notes and the keepers' box are inventions of this story."
+            "text": "Haesu, her note, her drawings and her record are made up.",
+            "junior": "Haesu, her note, her drawings and her record were invented for this case.",
+            "master": "Haesu, her note, her drawings and her record are inventions of this story."
           },
           {
-            "text": "Yun Bong-gil and Kim Gu were real, but their words in this story are made up.",
-            "junior": "Yun Bong-gil and Kim Gu were real people, but their words in this story were invented.",
-            "master": "Yun Bong-gil and Kim Gu were real, yet every word they speak here is invented."
+            "text": "Yun Bong-gil and Kim Gu were real, but most of their words in this story are made up.",
+            "junior": "Yun Bong-gil and Kim Gu were real people, but most of their words in this story were invented.",
+            "master": "Yun Bong-gil and Kim Gu were real, yet most of the words they speak here are invented."
+          },
+          {
+            "text": "The words about the long hand are the game's.",
+            "junior": "The words about the watch's long hand were written for the game.",
+            "master": "The lines about the watch's long hand were written for this game."
           }
         ]
       },
       "notes": [
         "Sources opened and quoted by Claude (writer C, PART 10) on 2026-11-06. The watch prices (6 and 2 won) and Yun's letter to his two sons were found in press and blogs only: left out of the case, not added as facts.",
-        "The case ends on history (the user's policy): the final's answer is the year after which Chinese leaders supported the Provisional Government (h4); the act is told in one plain line, without detail."
+        "PART 4 (2026-11-09): M3 DROP (Haesu's box) replaced by HOUR (h6); the final is Haesu's record proved line by line (answer 'why'), no other case's fact. h6 sources opened 2026-11-09."
       ]
     },
     {
@@ -3775,11 +4302,11 @@
         }
       ],
       "fiction": [
-        "The night in late autumn 1941, the missing copy, the dictionary, the white string, the man from the office checking rooms, the piano and the number lock are made up.",
+        "The night in late autumn 1941, the missing copy, the dictionary, the white string, the man from the office checking rooms, the college hall's piano as a hiding place and the number lock are made up.",
         "Miri is made up; so are her water-drop card, Yun's list of his copies and the card's untrue line. Yonhi College is believed to have been a men's college then: Miri helps at the college and is never called its student.",
         "Yun Dong-ju is real, but everything he says and does in the case is made up; none of his lines is a quotation, and no line of his poems is quoted or translated (only the book's title).",
         "That Yun handed the copy to Jeong Byeong-uk at the college gate at dawn is made up; that the friend received a copy is fact (h3).",
-        "The keepers' letter box and its old notes (from 1446 on) are the season's fiction."
+        "Miri's small wooden box, its number lock and her water-drop sign are made up."
       ],
       "puzzles": [
         {
@@ -3792,12 +4319,12 @@
               "missionId": "s5_ep11_m1"
             },
             {
-              "text": "not ink",
+              "text": "brings water",
               "missionId": "s5_ep11_m1"
             }
           ],
-          "derivation": "Yun's words describe one thing on the desk: the thick book with a red spine. Under it is the folded note; its blue spot is 'not ink' but a drop of what Bun-i carried (Case 01): water, the keepers' mark.",
-          "whyOnly": "Only one thick book has a red spine; the ink is ruled out by 'not ink', and Bun-i's bucket held water. RAIN and INK have their own feedback."
+          "derivation": "Yun's words describe one thing on the desk: the thick book with a red spine. Under it is Miri's folded card; its blue drop is drawn, not spilled ink; only Miri, who brings water to the rooms, came in tonight: WATER, her sign.",
+          "whyOnly": "Only one thick book has a red spine. INK is ruled out: the drop is drawn, not spilled. RAIN: no rain came in, and Miri brings water. INK and RAIN have their own feedback."
         },
         {
           "puzzleId": "s5_ep11_m2",
@@ -3820,11 +4347,32 @@
               "missionId": "s5_ep11_m1"
             }
           ],
-          "derivation": "Yun's list (made up) and the keeper's card (made up) give the same copy (2 of 3: three copies, h3), the same friend (Jeong Byeong-uk, h3) and the same poems (18 + 1 opening poem: 19, h2); only the string differs, WHITE on the list and BLACK AND WHITE on the card. Yun said in M1 that his friend's copy had a white string, so the card's line is the untrue one; read with the card's last words (keys of these colours) it gives black and white keys, which M3 shows to be the hall's piano.",
+          "derivation": "Yun's list (made up) and Miri's card (made up) give the same copy (2 of 3: three copies, h3), the same friend (Jeong Byeong-uk, h3) and the same poems (18 + 1 opening poem: 19, h2); only the string differs, WHITE on the list and BLACK AND WHITE on the card. Yun said in M1 that his friend's copy had a white string, so the card's line is the untrue one; read with the card's last words (keys of these colours) it gives black and white keys, which M3 reasons out to be the hall's piano.",
           "whyOnly": "Three of the four lines are word for word the same on both papers; only the string line differs, and its pair is the answer. Each agreeing pair has its own feedback, which repeats the fact it holds."
         },
         {
           "puzzleId": "s5_ep11_m3",
+          "answer": "PIANO",
+          "clues": [
+            {
+              "text": "keys of these colours",
+              "missionId": "s5_ep11_m3"
+            },
+            {
+              "text": "all black",
+              "missionId": "s5_ep11_m3"
+            },
+            {
+              "text": "They have no keys.",
+              "missionId": "s5_ep11_m3"
+            }
+          ],
+          "derivation": "The card's untrue line gives the colours (BLACK AND WHITE) and its last words say the copy is safe under keys of these colours (M2). In the hall: door keys are keys but all black; the students' black jackets and white shirts are black and white but have no keys; the old piano has keys of black and white: PIANO (the hall, the piano and the hiding place are made up).",
+          "whyOnly": "KEYS/DOOR KEYS by 'all black'; JACKETS, SHIRTS, STUDENTS, CLOTHES by 'They have no keys.'; LANTERN, BENCH, STAGE have no keys at all. Each has its own feedback; only the piano has keys of both colours.",
+          "fiction": true
+        },
+        {
+          "puzzleId": "s5_ep11_final",
           "factIds": [
             "s5_ep11_h2",
             "s5_ep11_h3"
@@ -3833,46 +4381,22 @@
           "clues": [
             {
               "text": "2 of 3",
-              "missionId": "s5_ep11_m3"
+              "missionId": "s5_ep11_final"
             },
             {
               "text": "18 + 1 opening poem",
-              "missionId": "s5_ep11_m3"
-            }
-          ],
-          "derivation": "The lock's rule (made up) puts two numbers side by side: the copies, then the poems in each copy, both read on Yun's list (M2, recalled here): copy 2 of 3, so three copies (h3); 18 poems and 1 opening poem, so 19 (h2). 3 and 19: 319.",
-          "whyOnly": "Three copies only (2 is the friend's copy's number, refused with its own feedback), and 18 + 1 = 19: no other number fits. 318 forgets the opening poem; 193 swaps the order (order feedback)."
-        },
-        {
-          "puzzleId": "s5_ep11_final",
-          "factIds": [
-            "s5_ep11_h4",
-            "s5_ep11_h5"
-          ],
-          "answer": "KOREAN",
-          "clues": [
-            {
-              "text": "choice subject",
-              "missionId": "s5_ep11_final"
-            },
-            {
-              "text": "in the King's letters",
-              "missionId": "s5_ep11_m3"
-            },
-            {
-              "text": "the people's own language",
               "missionId": "s5_ep11_final"
             }
           ],
-          "derivation": "The copy's pages are in the King's letters (M3), which King Sejong made for the people's own language (Case 01); the schools now teach in Japanese and Korean became only a choice subject in 1938 (h4). Yun's poems are in Korean (h5): the case's key fact, said again in the ending with the friend's family keeping the copy (h6) and the 1948 book (h7).",
-          "whyOnly": "JAPANESE is what the schools push, HANGEUL names the letters not the language, CHINESE is ruled out by King Sejong's reason, ENGLISH by the pages: each has its own feedback."
+          "derivation": "Miri's lock (made up) puts two numbers from Yun's list side by side: the copies, then the poems in each copy. Yun's list (M2's evidence, shown to Miri in the talk before) says copy 2 of 3, so three copies (h3), and 18 poems + 1 opening poem, so 19 (h2). 3 and 19: 319.",
+          "whyOnly": "Three copies only (2 is the friend's copy's number: 219 has its own feedback), and 18 + 1 = 19 (318 forgets the opening poem). 119 counts one copy; 215 is Miri's example; 193 or 931 swap the order (order feedback). No other number fits both."
         }
       ],
       "learningObjectives": [
-        "Match a description (a thick book with a red spine, not ink) with a thing on a desk.",
+        "Match a description (a thick book with a red spine) with a thing on a desk, and read who brings water.",
         "Compare two records line by line, find the line that is not true, and read its message (black and white keys).",
-        "Read number words and add them (eighteen and one more).",
-        "Read why a language was pushed out of the schools, and name the language of Yun Dong-ju's poems."
+        "Read the two meanings of keys (door keys, piano keys) and match them with colours.",
+        "Read number words and add them (eighteen and one more), then put two numbers side by side."
       ],
       "reveal": {
         "realHistory": [
@@ -3903,9 +4427,9 @@
             ]
           },
           {
-            "text": "One copy went to his friend Jeong Byeong-uk. His family hid it under their floor. In 1948 it became a book.",
-            "junior": "One copy went to his friend Jeong Byeong-uk, whose family hid it under the floor. In 1948 it was published as a book.",
-            "master": "The copy given to his friend Jeong Byeong-uk survived, hidden under the floor of the family home, and was published in 1948.",
+            "text": "One copy went to his friend Jeong Byeong-uk. His family hid it under their floor. In 1948 his poems became a book.",
+            "junior": "One copy went to his friend Jeong Byeong-uk, whose family hid it under the floor. In 1948 his poems were published as a book.",
+            "master": "The copy given to his friend Jeong Byeong-uk survived, hidden under the floor of the family home; in 1948 his poems were published as a book.",
             "factIds": [
               "s5_ep11_h3",
               "s5_ep11_h6",
@@ -3936,14 +4460,14 @@
       },
       "notes": [
         "Sources opened and quoted by Claude on 2026-11-06 (WebFetch). Yun's dormitory, the exact day of the gift and his lines are not claimed.",
-        "The final ends on the checked fact (h4, h5): he wrote his poems in Korean when Korean was pushed out of the schools; the ending adds h6 and h7."
+        "PART 4 (2026-11-09): the final is Miri's number lock (319, read on Yun's list, h2, h3), after her talk; the language fact (h4, h5) is told in the intro and the ending, no longer a puzzle answer. His arrest and death (h8) are told in the reveal only."
       ]
     },
     {
       "caseId": "s5_ep12",
       "subject": "15 August 1945: Japan's surrender and Korea's liberation (gwangbok), seen from the Provisional Government in Chongqing",
       "period": "1940-1945",
-      "location": "Chongqing, China (the office, the room and the river steps made up)",
+      "location": "Chongqing, China (the office, Bitna's room and the river steps made up)",
       "facts": [
         {
           "factId": "s5_ep12_h1",
@@ -3956,7 +4480,7 @@
               "title": "1945년의 대한민국 임시 정부",
               "url": "https://archive.much.go.kr/1945/storytelling_2",
               "quote": "1919년 3.1운동 이후 상하이에 수립된 대한민국 임시 정부는 일본의 탄압을 피해 1940년 충칭으로 이동하여 한국광복군을 창설했다.",
-              "checkedAt": "2026-11-06"
+              "checkedAt": "2026-11-09"
             },
             {
               "kind": "academic",
@@ -3964,7 +4488,7 @@
               "title": "한국민족문화대백과사전: 한국광복군",
               "url": "https://encykorea.aks.ac.kr/Article/E0005134",
               "quote": "비로소 1940년 9월 17일 중국의 임시 수도였던 충칭에 정착하면서 광복군 총사령부의 성립을 보게 되었다.",
-              "checkedAt": "2026-11-06"
+              "checkedAt": "2026-11-09"
             }
           ],
           "conflict": {
@@ -3990,14 +4514,14 @@
               "title": "한국민족문화대백과사전: 김원봉",
               "url": "https://encykorea.aks.ac.kr/Article/E0010036",
               "quote": "1944년에는 임시정부의 군무부장에 취임하고, 광복군 제1지대장 및 부사령관 등을 역임하였으며,",
-              "checkedAt": "2026-11-06"
+              "checkedAt": "2026-11-09"
             }
           ],
           "conflict": {
             "status": "none"
           },
           "notes": [
-            "The game calls him 'a minister of the government' only. His life after 1945 is outside the case."
+            "The game calls him the government's minister for the army (Master: of military affairs). His life after 1945 is outside the case."
           ]
         },
         {
@@ -4090,7 +4614,7 @@
               "title": "1945년의 대한민국 임시 정부",
               "url": "https://archive.much.go.kr/1945/storytelling_2",
               "quote": "1945년 한국광복군은 중국에 주둔하고 있던 미국 전략첩보국(OSS)과 합작하여 국내 진공 작전을 준비하였으나 광복으로 인해 계획이 실행되지 못했다.",
-              "checkedAt": "2026-11-06"
+              "checkedAt": "2026-11-09"
             },
             {
               "kind": "academic",
@@ -4098,7 +4622,7 @@
               "title": "한국민족문화대백과사전: 한국광복군",
               "url": "https://encykorea.aks.ac.kr/Article/E0005134",
               "quote": "그러나 국내진공작전은 일본의 무조건 항복으로 실행에 옮기기 직전에 취소되어 계획이 무산되고 말았다.",
-              "checkedAt": "2026-11-06"
+              "checkedAt": "2026-11-09"
             }
           ],
           "conflict": {
@@ -4170,7 +4694,7 @@
               "title": "한국민족문화대백과사전: 조선의용대",
               "url": "https://encykorea.aks.ac.kr/Article/E0052178",
               "quote": "같은 해 5월 제30차 국무회의에서 광복군에 부사령직의 증설에 따라 의용대 총대장 김원봉이 광복군 부사령관에 취임하고, 의용대는 5월 18일자로 광복군 제1지대에 편입되었다.",
-              "checkedAt": "2026-11-06"
+              "checkedAt": "2026-11-09"
             },
             {
               "kind": "public_institution",
@@ -4195,13 +4719,68 @@
           "notes": [
             "The year 1942 is from the Academy of Korean Studies; the National Institute of Korean History names the posts without the year."
           ]
+        },
+        {
+          "factId": "s5_ep12_h10",
+          "statement": "On 15 August 1945, at noon, the Japanese emperor's surrender was broadcast: he announced it to his people in a radio address.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국 정책브리핑 (Korea.kr; from 대한민국역사박물관 이야기)",
+              "title": "광복과 새로운 국가 수립의 기록들",
+              "url": "https://www.korea.kr/briefing/policyBriefingView.do?newsId=148797800",
+              "quote": "우리나라에서는 8월 15일 정오, 일본 왕의 항복 방송이 울려 퍼졌다.",
+              "checkedAt": "2026-11-09"
+            },
+            {
+              "kind": "other",
+              "publisher": "Atomic Heritage Foundation (National Museum of Nuclear Science & History)",
+              "title": "Jewel Voice Broadcast",
+              "url": "https://ahf.nuclearmuseum.org/ahf/key-documents/jewel-voice-broadcast/",
+              "quote": "On August 15, 1945, Japanese Emperor Hirohito announced the surrender of Japan to his people … This was the first time an emperor had ever addressed the nation by radio",
+              "checkedAt": "2026-11-09"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          },
+          "notes": [
+            "The game says only that the radio told the news on the fifteenth; the words heard on the radio in the office are made up. No earlier date of news (e.g. 10 August) is claimed: not found in the sources checked."
+          ]
+        },
+        {
+          "factId": "s5_ep12_h11",
+          "statement": "Japan ruled Korea from the annexation of 1910 until liberation in 1945.",
+          "status": "source_checked",
+          "sources": [
+            {
+              "kind": "public_institution",
+              "publisher": "대한민국 정책브리핑 (Korea.kr, Ministry of Culture, Sports and Tourism)",
+              "title": "8월 15일 제79주년 광복절, 광복의 의미를 되새겨보다",
+              "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148932667",
+              "quote": "일제강점기는 1910년 한일병합조약으로 시작되어 1945년 제 2차 세계대전이 끝날 때까지 약 35년 동안 이어졌습니다.",
+              "checkedAt": "2026-11-09"
+            },
+            {
+              "kind": "academic",
+              "publisher": "한국학중앙연구원 (Academy of Korean Studies)",
+              "title": "한국민족문화대백과사전: 8·15광복",
+              "url": "https://encykorea.aks.ac.kr/Article/E0059769",
+              "quote": "1910년 8월 22일 일본에 의한 ‘강제병합’ 때부터 1945년 8월 15일 광복 때까지 만 35년 동안",
+              "checkedAt": "2026-11-09"
+            }
+          ],
+          "conflict": {
+            "status": "none"
+          }
         }
       ],
       "fiction": [
-        "The keepers' notes of 1446 to 1941 in the box, Haesu's lines in its lid, Bitna's drawing and tiles are the season's fiction.",
-        "Bitna, the trunks, the month card, the radio's words, the office, the family room and the river steps are made up; how the news reached the office that day is not claimed.",
+        "Bitna, her mother, father and brothers, Mother's four letters and the lines on their backs, the box, its word lock and tiles, and the flag inside are made up.",
+        "The trunks, Father's note, Bitna's date card, the brothers' words on the fourteenth, the radio's words, the office, Bitna's room and the river steps are made up; how and when the news reached the office is not claimed.",
         "Kim Won-bong is real, but everything he says and does in the case is made up; none of his lines is a quotation. His life after 1945 is outside the case.",
-        "Bitna's note dated 8.15 and the word 광복 on it are made up; what gwangbok means is fact (h5)."
+        "Mother's riddle and her word LIGHT are made up; what gwangbok means is fact (h5)."
       ],
       "puzzles": [
         {
@@ -4227,28 +4806,25 @@
         {
           "puzzleId": "s5_ep12_m2",
           "fiction": true,
-          "answer": "bun_i,seok,okbun,duri,gyeongsun,miri",
+          "answer": "first_letter,pine_letter,rain_letter,moon_letter",
           "clues": [
             {
-              "text": "Seok wrote before Okbun.",
+              "text": "After my pine letter, the rain came.",
               "missionId": "s5_ep12_m2"
             },
             {
-              "text": "Duri wrote after Okbun.",
-              "missionId": "s5_ep12_m2"
-            },
-            {
-              "text": "Gyeongsun wrote after Duri.",
+              "text": "The rain is over now.",
               "missionId": "s5_ep12_m2"
             }
           ],
-          "derivation": "Bun-i's note (1446) is fixed at the bottom and Miri's (1941) on top; the lid's three lines chain the rest: Seok, Okbun, Duri, Gyeongsun. The drawing has no water drop and is set aside.",
-          "whyOnly": "The three relations make one chain between the two fixed notes; no two cards can swap."
+          "derivation": "The first letter (April) is fixed. The rain letter came after the pine letter; the moon letter says the rain is over, so it came after the rain letter. The drawing is not a letter and is set aside.",
+          "whyOnly": "Two relations make one chain after the fixed first letter: pine, rain, moon. No two cards can swap."
         },
         {
           "puzzleId": "s5_ep12_m3",
           "factIds": [
-            "s5_ep12_h3"
+            "s5_ep12_h3",
+            "s5_ep12_h10"
           ],
           "answer": "815",
           "clues": [
@@ -4259,52 +4835,59 @@
             {
               "text": "August is month eight",
               "missionId": "s5_ep12_m3"
+            },
+            {
+              "text": "'May' is not enough.",
+              "missionId": "s5_ep12_m3"
             }
           ],
-          "derivation": "The day of Japan's surrender is the fifteenth of August (h3). Bitna's card gives August as month eight; the month goes before the day: 8 then 15, 815.",
-          "whyOnly": "Only August is the month said; the day is the fifteenth; the month comes first: 158 or 581 are the right digits in the wrong order (order feedback)."
+          "derivation": "The radio says the war is over today, the fifteenth of August (h3, h10). The fourteenth was only a 'may' day (the brothers' words, made up), and Mother's rule says 'may' is not enough. Bitna's card gives August as month eight; the month goes before the day: 815.",
+          "whyOnly": "Only August is the month said; the day the war is over is the fifteenth; 814 is the 'may' day Mother's rule rules out; the month comes first: 158 or 581 are the right digits in the wrong order (order feedback)."
         },
         {
           "puzzleId": "s5_ep12_final",
           "factIds": [
             "s5_ep12_h5",
             "s5_ep12_h3",
-            "s5_ep12_h4",
-            "s5_ep12_h7"
+            "s5_ep12_h4"
           ],
           "answer": "LIGHT",
           "clues": [
             {
-              "text": "one English letter: H",
+              "text": "Two tiles are extra.",
               "missionId": "s5_ep12_m1"
             },
             {
-              "text": "T and I",
-              "missionId": "s5_ep12_m2"
+              "text": "The sun gives it.",
+              "missionId": "s5_ep12_final"
             },
             {
-              "text": "G and L",
-              "missionId": "s5_ep12_m3"
-            },
-            {
-              "text": "the opposite of dark",
+              "text": "At night, it goes away.",
               "missionId": "s5_ep12_final"
             }
           ],
-          "derivation": "Gwangbok is 光 light and 復 to come back (h5): gwang, the opposite of dark, is LIGHT, spelled with the five tiles found in the missions. It is the day of Japan's surrender (h3), and the ending says liberation was the work of many: the Allies' victory and Koreans at home and far away (h4).",
-          "whyOnly": "The five tiles make one English word meaning the opposite of dark; the tiles are listed H, T, I, G, L so the letter never spells it."
+          "derivation": "Mother's riddle (on the backs of her letters, shown to Bitna with the date card): the sun gives it, and at night it goes away: LIGHT, five letters, spelled with five of the lock's seven tiles (two are extra). The ending tells why: gwangbok is 光 light and 復 to come back (h5), on the day of Japan's surrender (h3), the work of many (h4).",
+          "whyOnly": "Of the seven tiles N, H, T, I, R, G, L, two are extra. Five-letter words they make: LIGHT, NIGHT, RIGHT, THING, GLINT, GIRTH. Only LIGHT is what the sun gives and night takes away: NIGHT is what takes it away, the sun does not give RIGHT, a THING or GIRTH, and a GLINT is only a tiny flash, not what comes back for the country. Each wrong word has its own line. The tiles are listed so they never spell it."
         }
       ],
       "learningObjectives": [
         "Read a description with two features (one strap, a round brass lock) and choose the thing that has both.",
-        "Put events in order from before, after, the oldest and on top.",
-        "Read a date in words (the fifteenth of August) and write it as numbers, the month first.",
-        "Read what gwangbok means and spell it in English: LIGHT."
+        "Put letters in order from their own lines (after my pine letter; the rain is over now).",
+        "Read a date in words (the fifteenth of August), rule out a 'may' day, and write the date as numbers, the month first.",
+        "Read a riddle (the sun gives it; at night, it goes away) and spell the word: LIGHT."
       ],
       "reveal": {
         "realHistory": [
           {
-            "text": "Korea's government in exile moved to Chongqing in 1940. There it made the Korean Liberation Army.",
+            "text": "Japan ruled Korea from 1910 to 1945.",
+            "junior": "Japan ruled Korea for many years, from 1910 until 1945.",
+            "master": "Japanese rule over Korea lasted from the annexation of 1910 until 1945.",
+            "factIds": [
+              "s5_ep12_h11"
+            ]
+          },
+          {
+            "text": "Korea's government, far from home, moved to Chongqing in 1940. There it made the Korean Liberation Army.",
             "junior": "In 1940, Korea's Provisional Government moved to Chongqing, where it founded the Korean Liberation Army.",
             "master": "In 1940 the Provisional Government relocated to Chongqing and founded the Korean Liberation Army there.",
             "factIds": [
@@ -4330,11 +4913,12 @@
             ]
           },
           {
-            "text": "On 15 August 1945, Japan surrendered to the Allies. The war ended, and Korea was free again.",
-            "junior": "On 15 August 1945, Japan surrendered to the Allies; the war ended and Korea was liberated.",
-            "master": "On 15 August 1945 Japan surrendered to the Allies, ending the war and liberating Korea.",
+            "text": "On 15 August 1945, the radio told the news: Japan surrendered to the Allies. The war ended, and Korea was free again.",
+            "junior": "On 15 August 1945, the news came on the radio: Japan had surrendered to the Allies. The war ended and Korea was liberated.",
+            "master": "On 15 August 1945 the Japanese emperor announced on the radio that Japan had surrendered to the Allies, ending the war and liberating Korea.",
             "factIds": [
-              "s5_ep12_h3"
+              "s5_ep12_h3",
+              "s5_ep12_h10"
             ]
           },
           {
@@ -4357,9 +4941,19 @@
         ],
         "inThisMystery": [
           {
-            "text": "Bitna, the tiles, the trunks and the letter box are made up.",
-            "junior": "Bitna, the tiles, the trunks and the letter box were invented for this story.",
-            "master": "Bitna, the tiles, the trunks and the letter box are inventions of this story."
+            "text": "Korea's government in Chongqing and Kim Won-bong's work for its army are real.",
+            "junior": "Korea's government in Chongqing and Kim Won-bong's work for its army are real history.",
+            "master": "Korea's government in Chongqing and Kim Won-bong's posts in its army are historical fact."
+          },
+          {
+            "text": "The radio news of 15 August 1945 and the meaning of gwangbok are real too.",
+            "junior": "The news on the radio on 15 August 1945 and the meaning of gwangbok are real as well.",
+            "master": "So are the radio news of 15 August 1945 and the meaning of gwangbok."
+          },
+          {
+            "text": "Bitna, her mother and father, the letters, the box, the lock and the flag are made up.",
+            "junior": "Bitna, her mother and father, the letters, the box, the lock and the flag were invented for this story.",
+            "master": "Bitna, her mother and father, the letters, the box, the lock and the flag are inventions of this story."
           },
           {
             "text": "Kim Won-bong was real, but his words in this story are made up.",
@@ -4369,8 +4963,9 @@
         ]
       },
       "notes": [
-        "Sources opened and quoted by Claude on 2026-11-06 (WebFetch).",
-        "The final ends on the checked facts: gwangbok means the light returns (h5), on 15 August 1945 when Japan surrendered to the Allies (h3); liberation the work of many (h4)."
+        "Sources opened and quoted by Claude on 2026-11-06 (WebFetch); h1, h2, h6, h9 opened again and h10, h11 added on 2026-11-09 (PART 1B).",
+        "A first news of a surrender on 10 August was not found in the sources checked (우리역사넷, 한국민족문화대백과사전 8·15광복·한국광복군, 대한민국역사박물관): the case uses no such date. The 'may' day of M3 is the fourteenth, when Bitna's brothers (made up) only said the war may end.",
+        "The final ends on the checked facts: gwangbok means the light comes back (h5), on 15 August 1945 when Japan surrendered to the Allies (h3, h10); liberation the work of many (h4); the Liberation Army's plan called off (h6)."
       ]
     }
   ]

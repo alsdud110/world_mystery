@@ -10,6 +10,7 @@ import 'package:world_mystery/features/game/game_controller.dart';
 import 'package:world_mystery/puzzles_v2/core/puzzle_rules.dart';
 import 'package:world_mystery/puzzles_v2/core/timeline_rules.dart';
 
+import '../../tool/season_gen/case_levels.dart';
 import '../helpers.dart';
 
 /// Puzzle Engine 2.0 PART 3A: the rules' contract (no Flutter), the first
@@ -292,33 +293,32 @@ void main() {
     });
   });
 
-  test('no plan of any season uses the timeline\'s own keys in its play (levels read play\'s words by key)', () {
-    const keys = {'timeline', 'cards', 'order', 'relations', 'earlier', 'later', 'anchor', 'discard'};
-    final found = <String>[];
-    void walk(Object? v, String at) {
-      if (v is Map) {
-        for (final e in v.entries) {
-          if (keys.contains(e.key)) found.add('$at.${e.key}');
-          walk(e.value, '$at.${e.key}');
-        }
-      } else if (v is List) {
-        for (final x in v) {
-          walk(x, at);
-        }
-      }
-    }
-
+  test("a timeline in a plan's play (Seoul, Engine 2.0): its cards' titles, texts and relation lines are level text; its ids, times and card refs never", () {
     final plans = [
       for (final f in Directory('content_pipeline/seasons').listSync(recursive: true).whereType<File>())
         if (f.path.endsWith('case.plan.json')) f,
     ];
     expect(plans, isNotEmpty);
+    var timelines = 0;
     for (final f in plans) {
       final p = jsonDecode(f.readAsStringSync()) as Map;
+      final lines = CaseLevels.rookieLines(p).toSet();
       for (final m in [...p['missions'] as List, p['final']]) {
-        walk((m as Map)['play'], f.path);
+        final t = ((m as Map)['play'] as Map?)?['timeline'] as Map?;
+        if (t == null) continue;
+        timelines++;
+        for (final c in (t['cards'] as List).cast<Map>()) {
+          expect(lines, containsAll([c['title'], c['text']]), reason: '${f.path} ${c['id']}: its words');
+          expect(lines, isNot(contains(c['id'])), reason: '${f.path} ${c['id']}: an id');
+          if (c['anchor'] case final String a) expect(lines, isNot(contains(a)), reason: '${f.path} ${c['id']}: its time');
+        }
+        for (final r in (t['relations'] as List).cast<Map>()) {
+          expect(lines, contains(r['line']), reason: '${f.path}: a relation line');
+          expect(lines, isNot(contains(r['earlier'])), reason: '${f.path}: a card ref');
+          expect(lines, isNot(contains(r['later'])), reason: '${f.path}: a card ref');
+        }
       }
     }
-    expect(found, isEmpty);
+    expect(timelines, greaterThan(0), reason: 'Seoul plans keep their timelines in play');
   });
 }

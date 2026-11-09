@@ -62,18 +62,7 @@
           "Puzzle kind chosen by hand: the season spread assigns Case 07 a record comparison (PART 10 brief); Mrs. Kang's note asks for the one line that is not the same."
         ]
       },
-      "clueInputs": [
-        {
-          "ref": "s5_ep06_e1",
-          "use": "recall",
-          "note": "Bongsu's water-drop note of 1907: the same small water drop."
-        },
-        {
-          "ref": "s5_ep05_e1",
-          "use": "textMention",
-          "note": "Lady Han's water drop of 1895: three keepers, one mark."
-        }
-      ],
+      "clueInputs": [],
       "clueOutputs": {
         "clue": "s5_ep07_c1",
         "evidence": "s5_ep07_e1"
@@ -93,10 +82,10 @@
         "location": "MRS. KANG'S INN",
         "story": [
           "Two newspaper reports lie on Mrs. Kang's table.",
-          "Folded inside one is a small note with a water drop."
+          "Folded inside one is a small note from her."
         ],
-        "letterIntro": "Mrs. Kang's note, in the King's letters, says:",
-        "letter": "Detective,\nTwo papers came today. They should agree.\nRead both, line by line. One line is not the same.\nOnly one writer was on the platform.\n— Kang",
+        "letterIntro": "Mrs. Kang's note says:",
+        "letter": "Detective,\nItō forced the 1905 treaty on Korea. But Paper A says An Jung-geun did it for money.\nTwo papers came today. They should agree.\nRead both, line by line. One line is not the same.\n— Kang",
         "question": "Which line does not match?",
         "hints": [
           "Read the four lines of each paper, one by one.",
@@ -105,7 +94,7 @@
         "successMessage": "The papers do not agree on what he called out!",
         "transition": [
           "One paper says he called out nothing.",
-          "The other says he called out, \"Korea, hurrah!\"",
+          "The other says he called out, \"Koreya! Ura!\"",
           "Mrs. Kang nods. \"Ask Mr. Pak. He carries bags at the station.\""
         ],
         "feedback": {
@@ -118,18 +107,13 @@
         "clue": {
           "title": "The Line That Disagrees",
           "value": "WHAT HE CALLED OUT",
-          "note": "Paper A says he called out nothing. Paper B says he called out, \"Korea, hurrah!\"",
+          "note": "Paper A says he called out nothing. Paper B says he called out, \"Koreya! Ura!\"",
           "symbol": "letter"
         },
         "evidence": {
-          "name": "The Water-Drop Note (1909)",
+          "name": "Mrs. Kang's Note",
           "icon": "letter",
-          "description": "Mrs. Kang's note in the King's letters, with a small water drop. Only one writer was on the platform."
-        },
-        "recall": {
-          "title": "A Drop Like Bongsu's",
-          "prompt": "Mrs. Kang's note has a small water drop. Which note in your Notebook has the same mark?",
-          "miss": "Not that one. Look for the errand boy's note with its drop."
+          "description": "Mrs. Kang's note. Itō forced the 1905 treaty on Korea. Paper A says An Jung-geun did it for money."
         },
         "records": {
           "first": {
@@ -222,7 +206,7 @@
           },
           "second": {
             "id": "paper_b",
-            "name": "PAPER B: THE MORNING NEWS",
+            "name": "PAPER B: THE HARBIN DAILY",
             "picture": {
               "file": "assets/seasons/season_05_seoul/cases/case_07/c07_paper_b.webp",
               "pixels": {
@@ -282,7 +266,7 @@
               "reach": 3,
               "ink": 0.62
             },
-            "title": "THE MORNING NEWS",
+            "title": "THE HARBIN DAILY",
             "lines": [
               {
                 "id": "date",
@@ -302,10 +286,10 @@
               {
                 "id": "called",
                 "label": "HE CALLED",
-                "value": "KOREA, HURRAH!"
+                "value": "KOREYA! URA!"
               }
             ],
-            "label": "The Morning News, with a small note inside",
+            "label": "The Harbin Daily, with a small note inside",
             "note": "Written by a man on the platform."
           },
           "readTask": "Tap each paper to read it.",
@@ -329,10 +313,6 @@
               {
                 "by": "detective",
                 "text": "Then we read them side by side."
-              },
-              {
-                "by": "detective",
-                "text": "The same drop as Bongsu's note, and Lady Han's before him."
               }
             ]
           }
@@ -349,35 +329,35 @@
         "engineTable": "timelines",
         "missionType": "sequence",
         "answerSpec": {
-          "answer": "open,platform,noon,tea,write,print",
+          "answer": "pak_start,shout,noon,tea,write,print",
           "options": [
             {
-              "id": "open",
-              "label": "THE TEA ROOM OPENS"
+              "id": "write",
+              "label": "THE REPORT IS WRITTEN"
             },
             {
-              "id": "platform",
-              "label": "MR. PAK ON THE PLATFORM"
+              "id": "goods",
+              "label": "A GOODS TRAIN"
             },
             {
-              "id": "noon",
-              "label": "THE NOON TRAIN"
+              "id": "shout",
+              "label": "HE CALLS OUT"
             },
             {
               "id": "tea",
               "label": "A STORY OVER TEA"
             },
             {
-              "id": "write",
-              "label": "THE REPORT IS WRITTEN"
-            },
-            {
               "id": "print",
               "label": "THE EVENING SHEET IS PRINTED"
             },
             {
-              "id": "goods",
-              "label": "A GOODS TRAIN"
+              "id": "pak_start",
+              "label": "MR. PAK STARTS WORK"
+            },
+            {
+              "id": "noon",
+              "label": "THE NOON TRAIN"
             }
           ],
           "codeLength": 6
@@ -385,15 +365,15 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Letter: Mr. Pak's day in before/after words. 7:00, 12:00 and 5:00 PM are fixed; the goods train is not part of it.",
-          "Every card is made up (fiction): Mr. Pak, the writer and the Evening Sheet are the case's own."
+          "Letter: Mr. Pak's day in before/after words, told out of order. 9:30, 12:00 and 5:00 PM are fixed (9:30: when An Jung-geun called out, h6); the goods train is not part of it.",
+          "Mr. Pak, the writer, the noon train and the Evening Sheet are made up (fiction); the 9:30 card is real history (h6)."
         ]
       },
       "clueInputs": [
         {
           "ref": "s5_ep07_c1",
           "use": "textMention",
-          "note": "The papers disagree on what he called out; only one writer was on the platform."
+          "note": "The papers disagree on what he called out."
         }
       ],
       "clueOutputs": {
@@ -403,11 +383,11 @@
       "learning": {
         "dependency": "essential",
         "level": "comprehension",
-        "objective": "박씨의 말에서 before, after, that morning을 읽고 그날의 일을 순서대로 놓아, 저녁 신문 기자가 플랫폼에 없었음을 밝힌다.",
+        "objective": "박씨의 말에서 before, after, that story를 읽고 그날의 일을 순서대로 놓아, 저녁 신문 기자가 9:30에 플랫폼에 없었음을 밝힌다.",
         "skill": "sentenceMeaning",
         "expressions": [
-          "came on the noon train",
-          "after the story"
+          "before he called out",
+          "after that story"
         ]
       },
       "play": {
@@ -415,68 +395,64 @@
         "location": "THE STATION TEA ROOM",
         "story": [
           "Mr. Pak drinks his tea by the window.",
-          "He saw the Evening Sheet's writer that day.",
+          "He saw the Evening Sheet's writer that day, at the station.",
           "\"Put my day in order,\" he says."
         ],
         "letterIntro": "Mr. Pak tells you:",
-        "letter": "The tea room opened at 7:00.\nThat morning, before the noon train, I was on the platform.\nThe Evening Sheet's writer came on the noon train, at 12:00.\nAfter the noon train, a traveller told him a story over tea.\nHe wrote his report after the story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. Leave it out.",
-        "question": "Put Mr. Pak's day in order.",
+        "letter": "He called out at 9:30 in the morning. I heard it.\nAfter the noon train, a traveller told the writer a story over tea.\nThe Evening Sheet's writer came on the noon train.\nI started work early, before he called out.\nThe writer wrote his report after that story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. Leave it out.",
+        "question": "Put Mr. Pak's day in order. Was the writer there when he called out?",
         "hints": [
-          "Find the words before and after in Mr. Pak's day.",
-          "Leave the goods train out."
+          "Find the words before and after. The cards with times stay put.",
+          "He called out at 9:30. The writer came at 12:00. Which came first?"
         ],
-        "successMessage": "The writer came at noon. He was never on the platform!",
+        "successMessage": "He called out at 9:30. The writer came at noon. He did not see it!",
         "transition": [
           "Paper A came from a story told over tea.",
           "Paper B came from a man on the platform.",
           "\"And I was on the platform too,\" Mr. Pak says quietly."
         ],
-        "orderFeedback": "Read Mr. Pak's words again. When did the writer come?",
+        "orderFeedback": "Look at the times. When did he call out? When did the writer come?",
         "mapX": 0.62,
         "mapY": 0.42,
         "clue": {
           "title": "Not on the Platform",
           "value": "PAPER A'S WRITER CAME AT NOON",
-          "note": "The Evening Sheet's writer came on the noon train. He wrote a traveller's story, not what he saw.",
+          "note": "Paper A's writer came at noon, after An Jung-geun called out at 9:30. He wrote a story told over tea.",
           "symbol": "train"
         },
         "evidence": {
           "name": "Mr. Pak's Day",
           "icon": "train",
-          "description": "Paper A's writer came on the noon train. He wrote a story told over tea."
+          "description": "Paper A's writer came at noon, after An Jung-geun called out at 9:30. He wrote a story told over tea."
         },
         "timeline": {
           "cards": [
             {
-              "id": "open",
-              "title": "THE TEA ROOM OPENS",
-              "text": "The tea room opens.",
-              "anchor": "7:00",
+              "id": "write",
+              "title": "THE REPORT IS WRITTEN",
+              "text": "The writer writes his report at a tea room table.",
               "fiction": true
             },
             {
-              "id": "platform",
-              "title": "MR. PAK ON THE PLATFORM",
-              "text": "Mr. Pak carries bags on the platform.",
+              "id": "goods",
+              "title": "A GOODS TRAIN",
+              "text": "A goods train comes in.",
+              "discard": true,
               "fiction": true
             },
             {
-              "id": "noon",
-              "title": "THE NOON TRAIN",
-              "text": "The Evening Sheet's writer comes on the noon train.",
-              "anchor": "12:00",
-              "fiction": true
+              "id": "shout",
+              "title": "HE CALLS OUT",
+              "text": "An Jung-geun calls out on the platform.",
+              "anchor": "9:30",
+              "factIds": [
+                "s5_ep07_h6"
+              ]
             },
             {
               "id": "tea",
               "title": "A STORY OVER TEA",
               "text": "A traveller tells the writer a story over tea.",
-              "fiction": true
-            },
-            {
-              "id": "write",
-              "title": "THE REPORT IS WRITTEN",
-              "text": "The writer writes his report at a tea room table.",
               "fiction": true
             },
             {
@@ -487,28 +463,34 @@
               "fiction": true
             },
             {
-              "id": "goods",
-              "title": "A GOODS TRAIN",
-              "text": "A goods train comes in.",
-              "discard": true,
+              "id": "pak_start",
+              "title": "MR. PAK STARTS WORK",
+              "text": "Mr. Pak carries bags on the platform.",
+              "fiction": true
+            },
+            {
+              "id": "noon",
+              "title": "THE NOON TRAIN",
+              "text": "The Evening Sheet's writer comes on the noon train.",
+              "anchor": "12:00",
               "fiction": true
             }
           ],
           "relations": [
             {
-              "earlier": "platform",
-              "later": "noon",
-              "line": "That morning, before the noon train, I was on the platform."
+              "earlier": "pak_start",
+              "later": "shout",
+              "line": "I started work early, before he called out."
             },
             {
               "earlier": "noon",
               "later": "tea",
-              "line": "After the noon train, a traveller told him a story over tea."
+              "line": "After the noon train, a traveller told the writer a story over tea."
             },
             {
               "earlier": "tea",
               "later": "write",
-              "line": "He wrote his report after the story."
+              "line": "The writer wrote his report after that story."
             }
           ]
         },
@@ -543,22 +525,21 @@
         "answerSpec": {
           "answer": "KOREA",
           "acceptedAnswers": [
-            "COREA",
-            "HIS COUNTRY"
+            "COREA"
           ]
         },
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Mr. Pak's words retell what An Jung-geun called out (h2: 'Korea, hurrah!'); Mr. Pak and his words are made up (dossier fiction).",
-          "Puzzle kind chosen by hand: the final is the talk; this mission asks for one word read in Mr. Pak's not ... but lines."
+          "Mr. Pak heard the words as they sound, \"Koreya! Ura!\" (h2, as the Incheon record writes them: 코레아 우라); his word card (made up) gives them in English: Korea, hurrah. The game names no language for the cry itself (h2 conflict).",
+          "Puzzle kind chosen by hand: one word read off a word card and typed in English."
         ]
       },
       "clueInputs": [
         {
           "ref": "s5_ep07_c2",
           "use": "textMention",
-          "note": "Paper A's writer was not on the platform; Mr. Pak was."
+          "note": "Paper A's writer came at noon, after he called out at 9:30; Mr. Pak was on the platform."
         }
       ],
       "clueOutputs": {
@@ -568,56 +549,58 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "박씨의 not ... but 문장(not for money, but for his country)을 읽고 안중근이 무엇을 위해 외쳤는지 한 단어로 쓴다.",
+        "objective": "박씨가 들은 Koreya! Ura!를 낱말 카드(Koreya = Korea, Ura = Hurrah)로 풀어 그가 외친 나라를 영어로 쓴다.",
         "skill": "sentenceMeaning",
         "expressions": [
-          "He did not ask anyone for money.",
-          "He called out for his country."
+          "Koreya = Korea",
+          "Ura = Hurrah"
         ]
       },
       "play": {
         "title": "What Mr. Pak Heard",
         "location": "MRS. KANG'S INN",
         "story": [
-          "Back at the inn, Mrs. Kang pours hot tea for Mr. Pak.",
-          "Paper B has his words written on it. Mr. Pak heard them himself."
+          "Back at the inn, Mr. Pak drinks hot tea.",
+          "He works with railway men from Russia. He knows some of their words."
         ],
-        "letterIntro": "Mr. Pak says:",
-        "letter": "I was on the platform that morning. I heard him.\nHe did not run. He did not ask anyone for money.\nHe called out, \"Korea, hurrah!\"\nHe called out for his country, not for himself.",
-        "question": "Who did An Jung-geun call out for? Type the name of his country.",
+        "letterIntro": "Mr. Pak says, and shows you a card from the station:",
+        "letter": "I was on the platform. I heard him.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea.",
+        "question": "What country did he call out for? Type it in English.",
         "prompt": "He called out for ____.",
         "hints": [
-          "Read what he called out, word by word.",
-          "Which country is named in what he called out?"
+          "Find the two words he called out. Find them on the word card.",
+          "Koreya is on the card. What is it in English?"
         ],
-        "successMessage": "He called out for Korea!",
+        "successMessage": "\"Koreya! Ura!\" means \"Korea, hurrah!\" He called out for Korea!",
         "transition": [
           "Paper A was wrong about his words, and about money.",
           "Mrs. Kang takes Paper B to the Evening Sheet's office.",
-          "Its writer, Mr. Sorin, is waiting there."
+          "Its writer, Mr. Sorin, comes back with her."
         ],
         "feedback": {
-          "MONEY": "Mr. Pak says he did not ask anyone for money.",
-          "HIMSELF": "Mr. Pak says not for himself. Read the last line again.",
-          "HARBIN": "Harbin is the place. What country did he call out?"
+          "RUSSIA": "Rossiya is on the card, but he did not call it out.",
+          "MONEY": "Dengi means money. He did not say it.",
+          "HURRAH": "Ura means hurrah. That is not a country.",
+          "KOREYA": "That is the word he called out. Type it in English.",
+          "HARBIN": "Harbin is the place, not his country."
         },
         "mapX": 0.5,
         "mapY": 0.52,
         "clue": {
           "title": "For Korea",
           "value": "KOREA, HURRAH!",
-          "note": "Mr. Pak heard him call out, \"Korea, hurrah!\" Not for money: for his country.",
+          "note": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! Not for money: for his country.",
           "symbol": "whistle"
         },
         "evidence": {
           "name": "Mr. Pak's Words",
           "icon": "whistle",
-          "description": "Mr. Pak was on the platform. He heard \"Korea, hurrah!\" He heard no word about money."
+          "description": "Mr. Pak was on the platform. He heard \"Koreya! Ura!\": Korea, hurrah! Not a word about money."
         },
         "discovery": {
           "type": "deduction",
           "title": "NOT FOR MONEY",
-          "detail": "Paper A's story came from tea-room talk. The man on the platform heard Korea."
+          "detail": "Paper A's story came from tea-room talk. The man on the platform heard \"Koreya! Ura!\""
         }
       }
     }
@@ -640,7 +623,7 @@
       ],
       "status": "awaitingAssets",
       "notes": [
-        "Mr. Sorin's three questions, each answered by evidence: where his story came from (Mr. Pak's day), what was called out (Mr. Pak's words), why it was for Korea (the Emperor's letter of Case 06: the 1905 treaty was forced). The talk ends on the case's key fact (h2): he called out 'Korea, hurrah!'; the ending gives his own stated aims from his writing (h3).",
+        "Mr. Sorin's three questions, each answered by evidence: where his story came from (Mr. Pak's day), what was called out (Mr. Pak's words), why it was for Korea (Mrs. Kang's note: Itō forced the 1905 treaty on Korea). The talk ends on the case's key fact (h2): he called out 'Korea, hurrah!'; the ending gives his own stated aims from his writing (h3).",
         "Mr. Sorin and the Evening Sheet are made up; his words and Mrs. Kang's are made up (dossier fiction)."
       ]
     },
@@ -648,17 +631,17 @@
       {
         "ref": "s5_ep07_c2",
         "use": "answerDerivation",
-        "note": "Paper A's writer was not on the platform."
+        "note": "Paper A's writer came at noon, after he called out at 9:30."
       },
       {
         "ref": "s5_ep07_c3",
         "use": "answerDerivation",
-        "note": "He called out, \"Korea, hurrah!\""
+        "note": "He called out, \"Koreya! Ura!\": Korea, hurrah!"
       },
       {
-        "ref": "s5_ep06_e4",
+        "ref": "s5_ep07_e1",
         "use": "answerDerivation",
-        "note": "The 1905 treaty was forced on Korea; the envoys of 1907 were not let in."
+        "note": "Mrs. Kang's note: Itō forced the 1905 treaty on Korea, and Korea lost the right to deal with other countries."
       }
     ],
     "clueOutputs": {
@@ -667,11 +650,11 @@
     "learning": {
       "dependency": "essential",
       "level": "application",
-      "objective": "기자의 세 질문(Who says...? What did he call out? Why?)을 읽고 질문마다 맞는 증거를 보여 준다.",
+      "objective": "기자의 세 질문(My writer saw it all / What did he call out? / What had Itō done?)을 읽고 질문마다 맞는 증거 카드를 보여 준다.",
       "skill": "sentenceMeaning",
       "expressions": [
-        "Who says I got it wrong?",
-        "Korea, hurrah!"
+        "My writer saw it all",
+        "What had Itō done"
       ]
     },
     "play": {
@@ -681,26 +664,26 @@
         "Mr. Sorin comes to the inn with his paper.",
         "\"My paper is right,\" he says. \"Prove it is not.\""
       ],
-      "letterIntro": "Your notebook says:",
-      "letter": "Paper A's writer came on the noon train. He wrote a story told over tea.\nMr. Pak was on the platform. He heard, \"Korea, hurrah!\"\nIn 1905, Japan forced a treaty on Korea.",
+      "letterIntro": "The Evening Sheet says:",
+      "letter": "Our writer knows what happened.\nHe called out nothing.\nHe wanted money.",
       "question": "Answer Mr. Sorin's three questions with your evidence.",
       "hints": [
-        "Each question needs one thing from your notebook.",
-        "Use Mr. Pak's day, Mr. Pak's words, and the Emperor's letter."
+        "Each question needs one card: the times, the words, or Itō.",
+        "Where: Mr. Pak's Day. What: Mr. Pak's Words. Why: Mrs. Kang's Note."
       ],
       "successMessage": "Mr. Sorin puts down his pen. \"I was wrong.\"",
       "transition": [
-        "Mrs. Kang folds Paper B and her note together.",
-        "\"This one goes in my letter box,\" she says.",
+        "Mr. Sorin writes a new report at Mrs. Kang's table.",
+        "Mrs. Kang pins Paper B on the inn wall, for every Korean guest to read.",
         "Outside, the trains go on, east and west."
       ],
-      "orderFeedback": "Each question needs one thing from your notebook.",
+      "orderFeedback": "Each question needs one card: the times, the words, or Itō.",
       "mapX": 0.55,
       "mapY": 0.46,
       "evidence": {
-        "name": "The True Report, Kept by Mrs. Kang",
+        "name": "The True Report",
         "icon": "letter",
-        "description": "The Morning News: he called out, \"Korea, hurrah!\" Mrs. Kang keeps it with her note."
+        "description": "The Harbin Daily: he called out, \"Koreya! Ura!\": Korea, hurrah! Mr. Sorin will print it too."
       },
       "interview": {
         "speaker": "sorin",
@@ -735,26 +718,28 @@
         "presents": [
           {
             "id": "where",
-            "prompt": "Mr. Sorin asks: \"Who says I got it wrong?\"",
+            "prompt": "Mr. Sorin says: \"My writer saw it all.\"",
             "accepted": [
               "s5_ep07_e2"
             ],
             "lines": [
               {
                 "by": "detective",
-                "text": "You came on the noon train. You were never on the platform."
+                "text": "He called out at 9:30. Your writer came at noon. He did not see it."
               },
               {
                 "by": "speaker",
-                "text": "That is true. I wrote what the traveller said."
+                "text": "True. He wrote what the traveller said."
               }
             ],
             "miss": "That does not show where my story came from.",
             "offered": [
-              "s5_ep07_e2",
-              "s5_ep07_e1"
+              "s5_ep07_e3",
+              "s5_ep07_e1",
+              "s5_ep07_e2"
             ],
-            "tell": "Mr. Pak's day shows when the writer came."
+            "tell": "Which card has the times of that day?",
+            "litAfter": 3
           },
           {
             "id": "what",
@@ -765,7 +750,7 @@
             "lines": [
               {
                 "by": "detective",
-                "text": "\"Korea, hurrah!\" Mr. Pak heard it on the platform."
+                "text": "\"Koreya! Ura!\" It means \"Korea, hurrah!\" Mr. Pak heard it."
               },
               {
                 "by": "speaker",
@@ -774,43 +759,43 @@
             ],
             "miss": "That does not say what he called out.",
             "offered": [
+              "s5_ep07_e1",
               "s5_ep07_e3",
               "s5_ep07_e2"
             ],
-            "tell": "Mr. Pak's words say what was called out.",
+            "tell": "Which card has the words Mr. Pak heard?",
             "requires": [
               "where"
-            ]
+            ],
+            "litAfter": 3
           },
           {
             "id": "why",
-            "prompt": "Mr. Sorin asks: \"Why would a man call out for Korea?\"",
+            "prompt": "Mr. Sorin asks: \"Why would a man do this for Korea? What had Itō done to Korea?\"",
             "accepted": [
-              "s5_ep06_e4"
+              "s5_ep07_e1"
             ],
             "lines": [
               {
                 "by": "detective",
-                "text": "In 1905, Japan forced a treaty on Korea."
-              },
-              {
-                "by": "detective",
-                "text": "The Emperor's envoys went to The Hague. They were not let in."
+                "text": "Itō forced the 1905 treaty on Korea. Korea lost the right to deal with other countries."
               },
               {
                 "by": "speaker",
-                "text": "So he called out for Korea. Not for money."
+                "text": "So he did it for his country, not for money. I will print that."
               }
             ],
-            "miss": "That does not tell me what Korea lost.",
+            "miss": "That does not tell me what Itō did.",
             "offered": [
-              "s5_ep06_e4",
+              "s5_ep07_e2",
+              "s5_ep07_e3",
               "s5_ep07_e1"
             ],
-            "tell": "The Emperor's letter shows what happened to Korea in 1905.",
+            "tell": "Which card talks about Itō and 1905?",
             "requires": [
               "what"
-            ]
+            ],
+            "litAfter": 3
           }
         ],
         "finishWhen": [
@@ -829,7 +814,7 @@
         },
         {
           "by": "detective",
-          "text": "He called out, \"Korea, hurrah!\" Not for money.",
+          "text": "He called out, \"Koreya! Ura!\": \"Korea, hurrah!\" Not for money.",
           "evidence": "s5_ep07_e4"
         },
         {
@@ -838,7 +823,7 @@
         },
         {
           "by": "narrator",
-          "text": "He wrote about Korea's independence and peace in East Asia."
+          "text": "He wrote about Korea's independence and peace between the countries of East Asia."
         },
         {
           "by": "narrator",
@@ -846,14 +831,14 @@
         },
         {
           "by": "speaker",
-          "text": "One day, all of Korea will call out too.",
+          "text": "Now every guest in my inn will read the truth.",
           "speaker": "mrs_kang",
           "portrait": "assets/seasons/season_05_seoul/characters/mrs_kang.webp"
         }
       ]
     }
   },
-  "hook": "Ten years later, people all over Korea will stand up.",
+  "hook": "Two papers, one truth: \"Koreya! Ura!\"",
   "learningGoal": {
     "title": "Comparing two reports",
     "titleKo": "두 기사 비교하기"
@@ -866,12 +851,14 @@
       "Show the writer which report is true."
     ],
     "intro": [
-      "Late October, 1909. You stay at Mrs. Kang's Korean inn in Harbin.",
-      "On 26 October, at Harbin Station, An Jung-geun killed Itō Hirobumi of Japan.",
+      "Autumn, 1909. You stay at Mrs. Kang's Korean inn in Harbin, a city in China.",
+      "Itō Hirobumi was a top Japanese leader. In 1905, he made Korea sign a treaty by force.",
+      "With that treaty, Korea lost the right to deal with other countries.",
+      "On the morning of 26 October, at Harbin Station, a Korean named An Jung-geun killed Itō.",
       "Everyone in Harbin is talking about it.",
       "Two newspapers on Mrs. Kang's table tell his story in two ways."
     ],
-    "caseSummary": "Paper A was written from a story told over tea. Mr. Pak was on the platform: An Jung-geun called out, \"Korea, hurrah!\", not for money. Mrs. Kang kept the true report. In prison, An Jung-geun wrote about Korea's independence and peace in East Asia.",
+    "caseSummary": "Paper A was written from a story told over tea. Its writer came at noon, after the 9:30 cry. Mr. Pak was on the platform: An Jung-geun called out, \"Koreya! Ura!\" (Korea, hurrah!), not for money. Mrs. Kang pinned the true report on her inn wall. In prison, An Jung-geun wrote about Korea's independence and peace in East Asia.",
     "place": "HARBIN",
     "keyWords": [
       "report",
@@ -889,7 +876,11 @@
       "independence": "독립",
       "prison": "감옥",
       "porter": "짐꾼",
-      "newspapers": "신문들"
+      "newspapers": "신문들",
+      "treaty": "조약",
+      "koreya": "코레야 = 한국(Korea)",
+      "ura": "우라 = 만세(hurrah)",
+      "railway": "철도"
     }
   },
   "notes": [

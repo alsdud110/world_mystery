@@ -67,6 +67,10 @@ enum InkGlyph {
   whistle,
   train,
   museum,
+
+  /// A palace hall of Korea: a tiled roof with upswept eaves, three
+  /// columns, a stone base (never the museum's pediment).
+  palace,
   park,
   crown,
 
@@ -518,6 +522,22 @@ class _InkGlyphPainter extends CustomPainter {
         for (final x in [6.0, 10.0, 14.0, 18.0]) {
           line(x, 11.5, x, 17.5);
         }
+        line(3, 20.5, 21, 20.5);
+      case InkGlyph.palace:
+        // The roof: its top, then the eaves turned up at both ends.
+        poly(const [Offset(6, 9.5), Offset(8.5, 5.5), Offset(15.5, 5.5), Offset(18, 9.5)], close: true);
+        canvas.drawPath(
+          Path()
+            ..moveTo(2.5, 7.5)
+            ..quadraticBezierTo(4.5, 9.8, 7, 9.8)
+            ..lineTo(17, 9.8)
+            ..quadraticBezierTo(19.5, 9.8, 21.5, 7.5),
+          p,
+        );
+        for (final x in [7.0, 12.0, 17.0]) {
+          line(x, 11.5, x, 17.5);
+        }
+        line(4.5, 18, 19.5, 18);
         line(3, 20.5, 21, 20.5);
       case InkGlyph.park:
         // A park tree: a leafy crown, trunk, the grass line.

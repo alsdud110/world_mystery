@@ -3,19 +3,19 @@
   "caseId": "s5_ep12",
   "lines": [
     {
-      "rookie": "The Day the Light Returned",
-      "junior": "The Day the Light Returned",
-      "master": "The Day the Light Returned"
+      "rookie": "The Box That Waited",
+      "junior": "The Box That Waited",
+      "master": "The Box That Waited"
     },
     {
-      "rookie": "The old letter box has come to Chongqing.",
-      "junior": "The old letter box has reached Chongqing.",
-      "master": "The old letter box has made its way to Chongqing."
+      "rookie": "A girl's box is lost in a busy office in Chongqing.",
+      "junior": "A girl's box has gone missing in a busy office in Chongqing.",
+      "master": "In a crowded office in Chongqing, a girl's box has vanished."
     },
     {
-      "rookie": "Today a keeper will write the last water-drop note.",
-      "junior": "Today a keeper is going to write the final water-drop note.",
-      "master": "Today a keeper will set down the final water-drop note."
+      "rookie": "Her mother said: open it on the day the war is over.",
+      "junior": "Her mother told her to open it on the day the war is over.",
+      "master": "Her mother's instruction: open it on the day the war is over."
     },
     {
       "rookie": "The radio in the office is on all day.",
@@ -23,54 +23,54 @@
       "master": "In the office, the radio plays from dawn to dusk."
     },
     {
-      "rookie": "Find the letter box.",
-      "junior": "Track down the letter box.",
-      "master": "Locate the letter box."
+      "rookie": "Find Mother's box.",
+      "junior": "Track down Mother's box.",
+      "master": "Locate Mother's box."
     },
     {
-      "rookie": "Put the keepers' notes in order.",
-      "junior": "Put the keepers' notes back in order.",
-      "master": "Arrange the keepers' notes in their proper order."
+      "rookie": "Put Mother's letters in order.",
+      "junior": "Put Mother's letters back in order.",
+      "master": "Arrange Mother's letters in their proper order."
     },
     {
-      "rookie": "Write the date of the news.",
-      "junior": "Write down the date of the news.",
-      "master": "Record the date of the news."
+      "rookie": "Find the day the lock can open.",
+      "junior": "Work out the day the lock can open.",
+      "master": "Establish the day on which the lock can open."
     },
     {
-      "rookie": "Read the last water-drop note.",
-      "junior": "Read the final water-drop note.",
-      "master": "Read the keepers' final water-drop note."
+      "rookie": "Open Mother's lock.",
+      "junior": "Open Mother's word lock.",
+      "master": "Unlock Mother's word lock."
     },
     {
-      "rookie": "August, 1945. You are a guest of the Provisional Government in Chongqing.",
-      "junior": "It is August, 1945, and you are a guest of the Provisional Government in Chongqing.",
-      "master": "August, 1945: you are staying as a guest of the Provisional Government in Chongqing."
+      "rookie": "August, 1945. You are a guest of Korea's government in Chongqing, China.",
+      "junior": "It is August, 1945, and you are a guest of Korea's government in Chongqing, China.",
+      "master": "August, 1945: you are staying as a guest of Korea's government in Chongqing, China."
     },
     {
-      "rookie": "It is Korea's government in exile, far from home.",
-      "junior": "This is Korea's government in exile, a long way from home.",
-      "master": "It is Korea's government in exile, far from its homeland."
+      "rookie": "Japan has ruled Korea since 1910. So this government works far from home.",
+      "junior": "Japan has ruled Korea since 1910, so this government has to work far from home.",
+      "master": "Japan has ruled Korea since 1910; this government must therefore work far from home."
     },
     {
-      "rookie": "Kim Won-bong, a minister of the government, meets you at the door.",
-      "junior": "At the door you are greeted by Kim Won-bong, a minister of the government.",
-      "master": "Kim Won-bong, a minister of the government, welcomes you at the door."
+      "rookie": "Kim Won-bong, the government's minister for the army, meets you at the door.",
+      "junior": "At the door you are greeted by Kim Won-bong, the government's minister for the army.",
+      "master": "Kim Won-bong, the government's minister of military affairs, welcomes you at the door."
     },
     {
-      "rookie": "Miri sent the old letter box here from Seoul.",
-      "junior": "Miri sent the old letter box here all the way from Seoul.",
-      "master": "The old letter box was sent here from Seoul by Miri."
+      "rookie": "A girl runs up to you: \"I am Bitna. My mother's box is lost!\"",
+      "junior": "A girl runs up to you. \"I'm Bitna, and my mother's box is lost!\"",
+      "master": "A girl hurries over to you. \"I'm Bitna, and my mother's box has gone missing!\""
     },
     {
-      "rookie": "On your chair lies a small note with a water drop.",
-      "junior": "A little note with a water drop is lying on your chair.",
-      "master": "Resting on your chair is a small note marked with a water drop."
+      "rookie": "\"Mother said: open its lock only on the day the war is over.\"",
+      "junior": "\"Mother told us to open its lock only on the day the war is over.\"",
+      "master": "\"Mother insisted that its lock be opened only on the day the war is over.\""
     },
     {
-      "rookie": "Bitna, Haesu's daughter, was the last keeper. On 15 August 1945, Japan surrendered to the Allies and the war ended. Korea's light returned: gwangbok means the light comes back. The Allies won the war. Many Koreans, at home and far away, worked for this day too. Bitna's last note lies on top of Bun-i's first note.",
-      "junior": "Bitna, Haesu's daughter, was the last keeper. On 15 August 1945, Japan surrendered to the Allies, and the war came to an end. Korea's light returned: gwangbok means the light comes back. The Allies won the war, and many Koreans, at home and far away, also worked for this day. Bitna's last note rests on top of Bun-i's first note.",
-      "master": "Bitna, Haesu's daughter, was the final keeper. On 15 August 1945, Japan surrendered to the Allies and the war was over. Korea's light returned: gwangbok means the light comes back. The Allies won the war, yet many Koreans, both at home and far away, had also laboured for this day. Bitna's last note lies on top of Bun-i's first note."
+      "rookie": "Bitna's mother left her a box with a word lock. Open it on the day the war is over, she said. 'May' is not enough. Bitna's father packed it in a trunk by mistake. On 15 August 1945, Japan gave up and the war was over. Bitna opened the lock with Mother's word: LIGHT. Inside was the flag Mother sewed. In Korean, this day is gwangbok: the light comes back. The Allies won the war, and many Koreans worked for this day.",
+      "junior": "Bitna's mother left her a box with a word lock and told her to open it on the day the war is over. 'May' is not enough. By mistake, Bitna's father packed it into a trunk. On 15 August 1945, Japan surrendered and the war was over. Bitna opened the lock with Mother's word, LIGHT, and found the flag Mother had sewn. In Korean, this day is called gwangbok: the light comes back. The Allies won the war, and many Koreans also worked for this day.",
+      "master": "Bitna's mother left her a box with a word lock, to be opened only on the day the war is over. 'May' is not enough. In the rush, Bitna's father packed it into a trunk by mistake. On 15 August 1945, Japan surrendered to the Allies and the war was over. Bitna opened the lock with Mother's word, LIGHT, and inside lay the flag Mother had sewn. In Korean, this day is called gwangbok: the return of the light. The Allies won the war, yet many Koreans had laboured for this day as well."
     },
     {
       "rookie": "CHONGQING",
@@ -123,34 +123,34 @@
       "master": "THE GOVERNMENT OFFICE"
     },
     {
-      "rookie": "The office is hot and busy. People wait by the radio.",
-      "junior": "The office is hot and full of people. They wait beside the radio.",
-      "master": "The office is sweltering and crowded. People linger beside the radio."
+      "rookie": "The office is hot and busy. People pack papers into trunks.",
+      "junior": "The office is hot and full of people. They are packing papers into trunks.",
+      "master": "The office is sweltering and crowded. Everyone is packing papers into trunks."
     },
     {
-      "rookie": "Miri's box came from Seoul. But where is it now?",
-      "junior": "Miri's box was sent from Seoul. But where has it gone?",
-      "master": "Miri's box arrived from Seoul. But where could it be now?"
+      "rookie": "Bitna looks at the trunks. \"They all look the same!\"",
+      "junior": "Bitna stares at the trunks. \"They all look just the same!\"",
+      "master": "Bitna surveys the trunks. \"Every one of them looks identical!\""
     },
     {
-      "rookie": "On the desk lies a small note with a blue water drop.",
-      "junior": "A little note with a blue water drop is lying on the desk.",
-      "master": "Resting on the desk is a small note bearing a blue water drop."
+      "rookie": "On the desk lies a folded note with a blue seal.",
+      "junior": "A folded note with a blue seal is lying on the desk.",
+      "master": "Resting on the desk is a folded note bearing a blue seal."
     },
     {
-      "rookie": "The water-drop note says:",
-      "junior": "The water-drop note reads:",
-      "master": "The water-drop note reads:"
+      "rookie": "Bitna's father wrote:",
+      "junior": "Bitna's father's note reads:",
+      "master": "Bitna's father has written:"
     },
     {
-      "rookie": "The box from Seoul is in a trunk by the wall.\nLook for the trunk with ONE leather strap.\nIt has a round brass lock, too.\nUnder the box is a small wooden tile.",
-      "junior": "The box from Seoul is inside a trunk by the wall.\nLook for the trunk with ONE leather strap.\nIt has a round brass lock, too.\nBeneath the box you will find a small wooden tile.",
-      "master": "The box from Seoul rests in a trunk standing by the wall.\nSeek out the trunk with ONE leather strap.\nIt has a round brass lock, too.\nBeneath the box lies a small wooden tile."
+      "rookie": "\"Bitna, I am sorry! I packed Mother's box in a trunk by mistake.\"\n\"It is the trunk with ONE leather strap.\"\n\"It has a round brass lock, too.\"\n\"Do not open Mother's lock before the day! — Father\"",
+      "junior": "\"Bitna, I'm so sorry! By mistake, I packed Mother's box into a trunk.\"\n\"It is the trunk with ONE leather strap.\"\n\"It has a round brass lock, too.\"\n\"Don't open Mother's lock before the day comes! — Father\"",
+      "master": "\"Bitna, forgive me! In the rush, I packed Mother's box into a trunk by mistake.\"\n\"It is the trunk with ONE leather strap.\"\n\"It has a round brass lock, too.\"\n\"Do not open Mother's lock before the appointed day! — Father\""
     },
     {
-      "rookie": "Which trunk holds the box from Seoul?",
-      "junior": "Which trunk has the box from Seoul inside?",
-      "master": "In which trunk is the box from Seoul?"
+      "rookie": "Which trunk holds Mother's box?",
+      "junior": "Which trunk has Mother's box inside?",
+      "master": "In which trunk is Mother's box?"
     },
     {
       "rookie": "Read the note on the desk first. Then look at the trunks.",
@@ -163,34 +163,34 @@
       "master": "Count each trunk's straps, then examine its lock."
     },
     {
-      "rookie": "You found the trunk with the letter box!",
-      "junior": "You've found the trunk with the letter box!",
-      "master": "You have found the trunk holding the letter box!"
+      "rookie": "You found the trunk with Mother's box!",
+      "junior": "You found the trunk with Mother's box in it!",
+      "master": "You have found the trunk holding Mother's box!"
     },
     {
-      "rookie": "Inside is the old wooden letter box from Seoul.",
-      "junior": "The old wooden letter box from Seoul is inside.",
-      "master": "Within lies the old wooden letter box from Seoul."
+      "rookie": "In the trunk lies a small wooden box.",
+      "junior": "Inside the trunk is a small wooden box.",
+      "master": "Within the trunk rests a small wooden box."
     },
     {
-      "rookie": "Under it lies a small wooden tile with one English letter: H.",
-      "junior": "Beneath it is a little wooden tile with one English letter: H.",
-      "master": "Beneath it rests a small wooden tile marked with one English letter: H."
+      "rookie": "Its top opens. Its bottom has a lock: five slots and seven letter tiles.",
+      "junior": "Its top opens, but its bottom has a lock: five slots and seven letter tiles.",
+      "master": "Its upper part opens; its lower part is locked: five slots and seven letter tiles."
     },
     {
-      "rookie": "Who left this note?",
-      "junior": "Who wrote this note?",
-      "master": "Who could have left this note?"
+      "rookie": "Mother carved on the lock: \"Five letters. Two tiles are extra.\"",
+      "junior": "Mother carved these words on the lock: \"Five letters. Two tiles are extra.\"",
+      "master": "Carved into the lock in Mother's hand: \"Five letters. Two tiles are extra.\""
     },
     {
-      "rookie": "The First Tile",
-      "junior": "The First Tile",
-      "master": "The First Tile"
+      "rookie": "Mother's Lock",
+      "junior": "Mother's Lock",
+      "master": "Mother's Lock"
     },
     {
-      "rookie": "A wooden tile, H, was under the letter box.",
-      "junior": "A wooden tile, H, was lying under the letter box.",
-      "master": "A wooden tile, H, lay beneath the letter box."
+      "rookie": "Mother's lock: a word of five letters, and seven letter tiles.",
+      "junior": "Mother's lock needs a word of five letters; it has seven letter tiles.",
+      "master": "Mother's lock takes a word of five letters, spelled with five of its seven tiles."
     },
     {
       "rookie": "The government office in Chongqing",
@@ -198,9 +198,9 @@
       "master": "The government office in Chongqing"
     },
     {
-      "rookie": "Look around the office. Find the water-drop note.",
-      "junior": "Search the office and find the water-drop note.",
-      "master": "Survey the office and locate the water-drop note."
+      "rookie": "Look around the office. Find the note from Bitna's father.",
+      "junior": "Search the office. Find the note Bitna's father left.",
+      "master": "Search the office for the note Bitna's father left behind."
     },
     {
       "rookie": "Which trunk holds the box? Look at the trunks.",
@@ -213,14 +213,14 @@
       "master": "Nothing here. Seek out the note."
     },
     {
-      "rookie": "THE WATER-DROP NOTE",
-      "junior": "THE WATER-DROP NOTE",
-      "master": "THE WATER-DROP NOTE"
+      "rookie": "FATHER'S NOTE",
+      "junior": "FATHER'S NOTE",
+      "master": "FATHER'S NOTE"
     },
     {
-      "rookie": "A small note on the desk",
-      "junior": "A little note on the desk",
-      "master": "A small note on the desk"
+      "rookie": "A folded note on the desk",
+      "junior": "A folded note on the desk",
+      "master": "A folded note on the desk"
     },
     {
       "rookie": "THE RADIO",
@@ -288,9 +288,9 @@
       "master": "The bookshelf"
     },
     {
-      "rookie": "Books and papers. No water drop here.",
-      "junior": "Books and papers, but no water drop here.",
-      "master": "Books and papers, yet not a single water drop."
+      "rookie": "Books and papers. No note here.",
+      "junior": "Books and papers, but no note here.",
+      "master": "Books and papers; no note among them."
     },
     {
       "rookie": "Which trunk holds the box? Tap one trunk.",
@@ -313,24 +313,29 @@
       "master": "a travel trunk with one leather strap and a round brass lock"
     },
     {
-      "rookie": "Find out what the office is waiting for.",
-      "junior": "Discover what the office is waiting for.",
-      "master": "Learn what the whole office is waiting for."
+      "rookie": "Find out where the box went.",
+      "junior": "Find out where the box has gone.",
+      "master": "Discover where the box has gone."
     },
     {
-      "rookie": "Welcome, Detective. Everyone here is waiting for news.",
-      "junior": "Welcome, Detective. Everybody here is waiting for news.",
-      "master": "Welcome, Detective. Every one of us is waiting for news."
+      "rookie": "Welcome, Detective. The war may end soon, so we pack our papers.",
+      "junior": "Welcome, Detective. The war may end soon, so we are packing our papers.",
+      "master": "Welcome, Detective. The war may end soon, so we are packing up our papers."
     },
     {
-      "rookie": "A box came for you from Seoul. A girl knows where.",
-      "junior": "A box arrived for you from Seoul. A girl knows where it is.",
-      "master": "A box has arrived for you from Seoul. A girl can tell you where."
+      "rookie": "Bitna's father packed her mother's box with them, by mistake.",
+      "junior": "By mistake, Bitna's father packed her mother's box along with them.",
+      "master": "Bitna's father mistakenly packed her mother's box along with them."
     },
     {
-      "rookie": "Then I will look around.",
-      "junior": "In that case, I'll take a look around.",
-      "master": "In that case, I shall take a look around."
+      "rookie": "He went home to the little ones. He left a note on the desk.",
+      "junior": "He has gone home to look after the little ones, but he left a note on the desk.",
+      "master": "He has gone home to the little ones, leaving a note on the desk."
+    },
+    {
+      "rookie": "Then I will find that note.",
+      "junior": "Then I'll find that note.",
+      "master": "Then that note is where I begin."
     },
     {
       "rookie": "LOOK AROUND",
@@ -338,44 +343,19 @@
       "master": "LOOK AROUND"
     },
     {
-      "rookie": "THE FIRST TILE",
-      "junior": "THE FIRST TILE",
-      "master": "THE FIRST TILE"
+      "rookie": "MOTHER'S LOCK",
+      "junior": "MOTHER'S LOCK",
+      "master": "MOTHER'S LOCK"
     },
     {
-      "rookie": "An H, with a water drop. Someone is leaving tiles for you.",
-      "junior": "An H, marked with a water drop. Somebody is leaving tiles for you.",
-      "master": "An H, bearing a water drop. Someone is leaving tiles for you to find."
+      "rookie": "Five letters, and two extra tiles. Which word did Mother choose?",
+      "junior": "Five letters, and two extra tiles. Which word did Mother pick?",
+      "master": "Five letters, and two tiles too many. Which word did Mother settle on?"
     },
     {
-      "rookie": "BUN-I",
-      "junior": "BUN-I",
-      "master": "BUN-I"
-    },
-    {
-      "rookie": "SEOK",
-      "junior": "SEOK",
-      "master": "SEOK"
-    },
-    {
-      "rookie": "OKBUN",
-      "junior": "OKBUN",
-      "master": "OKBUN"
-    },
-    {
-      "rookie": "DURI",
-      "junior": "DURI",
-      "master": "DURI"
-    },
-    {
-      "rookie": "GYEONGSUN",
-      "junior": "GYEONGSUN",
-      "master": "GYEONGSUN"
-    },
-    {
-      "rookie": "MIRI",
-      "junior": "MIRI",
-      "master": "MIRI"
+      "rookie": "THE RAIN LETTER",
+      "junior": "THE RAIN LETTER",
+      "master": "THE RAIN LETTER"
     },
     {
       "rookie": "A DRAWING",
@@ -383,19 +363,34 @@
       "master": "A DRAWING"
     },
     {
-      "rookie": "Seok wrote before Okbun.",
-      "junior": "Seok wrote before Okbun.",
-      "master": "Seok wrote before Okbun."
+      "rookie": "THE FIRST LETTER",
+      "junior": "THE FIRST LETTER",
+      "master": "THE FIRST LETTER"
     },
     {
-      "rookie": "It is the oldest.",
-      "junior": "It is the oldest.",
-      "master": "It is the oldest."
+      "rookie": "THE MOON LETTER",
+      "junior": "THE MOON LETTER",
+      "master": "THE MOON LETTER"
     },
     {
-      "rookie": "Eleven Notes and One Box",
-      "junior": "Eleven Notes and One Box",
-      "master": "Eleven Notes and One Box"
+      "rookie": "THE PINE LETTER",
+      "junior": "THE PINE LETTER",
+      "master": "THE PINE LETTER"
+    },
+    {
+      "rookie": "After my pine letter, the rain came.",
+      "junior": "After my pine letter, the rain came.",
+      "master": "After my pine letter, the rain came."
+    },
+    {
+      "rookie": "The rain is over now.",
+      "junior": "The rain is over now.",
+      "master": "The rain is over now."
+    },
+    {
+      "rookie": "Mother's Letters",
+      "junior": "Mother's Letters",
+      "master": "Mother's Letters"
     },
     {
       "rookie": "BITNA'S ROOM",
@@ -403,154 +398,124 @@
       "master": "BITNA'S ROOM"
     },
     {
-      "rookie": "A girl with a long braid takes you to a small room.",
-      "junior": "A girl with a long braid leads you to a little room.",
-      "master": "A girl with a long braid guides you into a small room."
+      "rookie": "You carry the box to Bitna's room. Her father and brothers are there.",
+      "junior": "You carry the box to Bitna's room, where her father and brothers are waiting.",
+      "master": "You bring the box to Bitna's room, where her father and brothers await."
     },
     {
-      "rookie": "\"I am Bitna. My mother Haesu keeps this box,\" she says.",
-      "junior": "\"I'm Bitna. My mother Haesu looks after this box,\" she says.",
-      "master": "\"My name is Bitna. My mother Haesu is the keeper of this box,\" she explains."
+      "rookie": "Her little brother opens the top. Mother's letters fall out.",
+      "junior": "Her little brother opens the top, and Mother's letters fall out.",
+      "master": "Her little brother lifts the top, and Mother's letters spill out."
     },
     {
-      "rookie": "She opens it. Six notes slide out onto the floor.",
-      "junior": "She opens the box, and six notes slide out onto the floor.",
-      "master": "As she opens it, six notes slip out onto the floor."
+      "rookie": "\"Mother sends a letter when she can,\" Bitna says.",
+      "junior": "\"Mother sends us a letter whenever she can,\" Bitna says.",
+      "master": "\"Mother writes to us whenever she is able,\" Bitna explains."
     },
     {
-      "rookie": "Inside the lid, Haesu wrote:",
-      "junior": "Haesu wrote inside the lid:",
-      "master": "On the inside of the lid, Haesu wrote:"
+      "rookie": "What Mother's letters say:",
+      "junior": "This is what Mother's letters say:",
+      "master": "Mother's letters read:"
     },
     {
-      "rookie": "Bun-i's note of 1446 lies at the bottom. It is the oldest.\nSeok wrote before Okbun.\nDuri wrote after Okbun.\nGyeongsun wrote after Duri.\nMiri's note of 1941 lies on top.\nOnly notes with a water drop go in the box.",
-      "junior": "Bun-i's note of 1446 is at the bottom. It is the oldest.\nSeok wrote before Okbun.\nDuri wrote after Okbun.\nGyeongsun wrote after Duri.\nMiri's note of 1941 is on top.\nOnly notes with a water drop belong in the box.",
-      "master": "Bun-i's note of 1446 rests at the very bottom. It is the oldest.\nSeok wrote before Okbun.\nDuri wrote after Okbun.\nGyeongsun wrote after Duri.\nMiri's note of 1941 rests on top.\nNo note without a water drop belongs in the box."
+      "rookie": "First letter (April): \"I go to the Liberation Army today. I will write to you.\"\n\"My riddle is on the backs, one piece on each. Only the right order makes sense.\"\nPine letter: \"I am far away now. There are pine trees on the hill.\"\nRain letter: \"After my pine letter, the rain came. My boots are wet.\"\nMoon letter: \"The rain is over now. The moon is bright tonight.\"",
+      "junior": "First letter (April): \"Today I am going to the Liberation Army. I'll write to you.\"\n\"My riddle is on the backs, one piece on each. Only the right order makes sense of it.\"\nPine letter: \"I'm far away now. Pine trees grow on the hill here.\"\nRain letter: \"After my pine letter, the rain came. My boots are soaked.\"\nMoon letter: \"The rain is over now. The moon is shining brightly tonight.\"",
+      "master": "First letter (April): \"Today I leave to join the Liberation Army. I shall write to you.\"\n\"My riddle is written on the backs, one piece on each. Only the right order makes sense of it.\"\nPine letter: \"I am far away now. Pine trees cover the hill.\"\nRain letter: \"After my pine letter, the rain came. My boots never dry.\"\nMoon letter: \"The rain is over now. Tonight the moon shines brightly.\""
     },
     {
-      "rookie": "Put the notes back in order, from the oldest.",
-      "junior": "Put the notes back in the right order, starting with the oldest.",
-      "master": "Return the notes to their order, beginning with the oldest."
+      "rookie": "Put Mother's letters in order, from the first.",
+      "junior": "Put Mother's letters back in order, starting with the first.",
+      "master": "Arrange Mother's letters in order, beginning with the first."
     },
     {
-      "rookie": "Bun-i and Miri are fixed. Read the lines with before and after.",
-      "junior": "Bun-i's and Miri's places are fixed. Read the lines with before and after.",
-      "master": "Bun-i and Miri cannot move. Study the lines that say before and after."
+      "rookie": "The first letter has its month on it. Now read the rain letter.",
+      "junior": "The first letter shows its month. Next, read the rain letter.",
+      "master": "The first letter bears its month. Now study the rain letter."
     },
     {
-      "rookie": "The drawing has no water drop. Set it aside.",
-      "junior": "The drawing doesn't have a water drop. Put it to one side.",
-      "master": "The drawing bears no water drop, so leave it out."
+      "rookie": "The moon letter says the rain is over. So it came after the rain letter.",
+      "junior": "The moon letter says the rain is over, so it came after the rain letter.",
+      "master": "The moon letter says the rain is over: it must follow the rain letter."
     },
     {
-      "rookie": "The notes are back in order!",
-      "junior": "The notes are in the right order again!",
-      "master": "The notes are restored to their proper order!"
+      "rookie": "Mother's letters are back in order!",
+      "junior": "Mother's letters are in the right order again!",
+      "master": "Mother's letters are restored to their order!"
     },
     {
-      "rookie": "Under the last note lie two more tiles: T and I.",
-      "junior": "Two more tiles are under the last note: T and I.",
-      "master": "Beneath the last note lie two further tiles: T and I."
+      "rookie": "You turn them over, in order. The pieces join into one riddle.",
+      "junior": "You turn them over, in order. The pieces join up into one riddle.",
+      "master": "You turn them over in order, and the pieces join into a single riddle."
     },
     {
-      "rookie": "Each has a tiny water drop painted on it.",
-      "junior": "A tiny water drop is painted on each one.",
-      "master": "Each bears a tiny painted water drop."
+      "rookie": "\"The sun gives it.\" \"At night, it goes away.\"",
+      "junior": "\"The sun gives it.\" \"At night, it goes away.\"",
+      "master": "\"The sun gives it.\" \"At night, it goes away.\""
     },
     {
-      "rookie": "Then shouts come from the office down the hall.",
-      "junior": "Then you hear shouting from the office down the hall.",
-      "master": "Just then, shouts ring out from the office down the hall."
+      "rookie": "\"It comes back on the day the war is over.\" \"'May' is not enough.\"",
+      "junior": "\"It comes back on the day the war is over.\" \"'May' is not enough.\"",
+      "master": "\"It comes back on the day the war is over.\" \"'May' is not enough.\""
     },
     {
-      "rookie": "Read the lid again. Who wrote after Okbun?",
-      "junior": "Read the lid once more. Who wrote after Okbun?",
-      "master": "Consult the lid again. Whose note came after Okbun?"
+      "rookie": "Read the rain letter and the moon letter again. Which came first?",
+      "junior": "Read the rain letter and the moon letter once more. Which one came first?",
+      "master": "Reread the rain letter and the moon letter. Which was written first?"
     },
     {
-      "rookie": "Two More Tiles",
-      "junior": "Two More Tiles",
-      "master": "Two More Tiles"
+      "rookie": "Mother's Riddle",
+      "junior": "Mother's Riddle",
+      "master": "Mother's Riddle"
     },
     {
-      "rookie": "Two tiles, T and I, were under the last note.",
-      "junior": "Two tiles, T and I, were lying under the last note.",
-      "master": "Two tiles, T and I, lay beneath the last note."
+      "rookie": "On the backs of Mother's letters: The sun gives it. At night, it goes away. It comes back on the day the war is over.",
+      "junior": "On the backs of Mother's letters: The sun gives it. At night, it goes away. It comes back on the day the war is over.",
+      "master": "On the backs of Mother's letters: The sun gives it. At night, it goes away. It comes back on the day the war is over."
     },
     {
-      "rookie": "Is this the box?",
-      "junior": "Could this be the box?",
-      "master": "Might this be the box?"
+      "rookie": "A little rain cloud is drawn on it.",
+      "junior": "It has a little rain cloud drawn on it.",
+      "master": "A small rain cloud is sketched on it."
     },
     {
-      "rookie": "Which thing in your Notebook shows this old letter box?",
-      "junior": "What in your Notebook shows this old letter box?",
-      "master": "Which item in your Notebook depicts this old letter box?"
+      "rookie": "Bitna's little brother drew a house. It is not a letter.",
+      "junior": "Bitna's little brother drew a house on it. It isn't a letter.",
+      "master": "A house sketched by Bitna's little brother. It is no letter."
     },
     {
-      "rookie": "Find the old letter box Gyeongsun showed you.",
-      "junior": "Look for the old letter box that Gyeongsun showed you.",
-      "master": "Seek out the old letter box Gyeongsun once showed you."
+      "rookie": "Mother wrote it the day she left.",
+      "junior": "Mother wrote it on the day she left.",
+      "master": "Mother wrote it on the day of her departure."
     },
     {
-      "rookie": "The first note: the name of the letters.",
-      "junior": "The very first note: the name of the letters.",
-      "master": "The very first note, bearing the name of the letters."
+      "rookie": "A little moon is drawn on it.",
+      "junior": "It has a little moon drawn on it.",
+      "master": "A small moon is sketched on it."
     },
     {
-      "rookie": "A note from the navy base by the sea.",
-      "junior": "A note from the navy base beside the sea.",
-      "master": "A note sent from the navy base by the sea."
+      "rookie": "A little pine tree is drawn on it.",
+      "junior": "It has a little pine tree drawn on it.",
+      "master": "A small pine tree is sketched on it."
     },
     {
-      "rookie": "A note from the new fortress wall.",
-      "junior": "A note from the fortress wall that was being built.",
-      "master": "A note sent from the newly built fortress wall."
+      "rookie": "Find out about Mother's letters.",
+      "junior": "Learn about Mother's letters.",
+      "master": "Discover what Mother's letters hold."
     },
     {
-      "rookie": "A note from the palace timber yard.",
-      "junior": "A note from the timber yard of the palace.",
-      "master": "A note sent from the palace timber yard."
+      "rookie": "My little brother opened the top. Now Mother's letters are all mixed up!",
+      "junior": "My little brother opened the top, and now Mother's letters are all mixed up!",
+      "master": "My little brother opened the top, and now Mother's letters are in a muddle!"
     },
     {
-      "rookie": "A note from the market by the hill.",
-      "junior": "A note from the market beside the hill.",
-      "master": "A note sent from the market by the hill."
+      "rookie": "Mother is far away with our army, the Liberation Army.",
+      "junior": "Mother is far away with our own army, the Liberation Army.",
+      "master": "Mother is far away, serving with our army, the Liberation Army."
     },
     {
-      "rookie": "A note about a poet's copy.",
-      "junior": "A note about a copy made by a poet.",
-      "master": "A note concerning a poet's copy."
-    },
-    {
-      "rookie": "Bitna's drawing of a cat. No water drop.",
-      "junior": "A cat that Bitna drew. There is no water drop.",
-      "master": "Bitna's sketch of a cat, without any water drop."
-    },
-    {
-      "rookie": "Duri wrote after Okbun.",
-      "junior": "Duri wrote after Okbun.",
-      "master": "Duri wrote after Okbun."
-    },
-    {
-      "rookie": "Gyeongsun wrote after Duri.",
-      "junior": "Gyeongsun wrote after Duri.",
-      "master": "Gyeongsun wrote after Duri."
-    },
-    {
-      "rookie": "Find out about the box.",
-      "junior": "Learn about the box.",
-      "master": "Discover the story of the box."
-    },
-    {
-      "rookie": "Every note in here has a water drop.",
-      "junior": "All the notes in here have a water drop.",
-      "master": "Every note inside bears a water drop."
-    },
-    {
-      "rookie": "The first one is very, very old.",
-      "junior": "The first note is very, very old.",
-      "master": "The first of them is extraordinarily old."
+      "rookie": "She drew a little picture on each letter.",
+      "junior": "She drew a little picture on every letter.",
+      "master": "On each letter she drew a small picture."
     },
     {
       "rookie": "Let us put them back the right way.",
@@ -573,9 +538,9 @@
       "master": "News on the Radio"
     },
     {
-      "rookie": "Everyone stands around the radio. A voice speaks in English.",
-      "junior": "Everybody gathers around the radio. A voice is speaking in English.",
-      "master": "Everyone crowds around the radio as a voice speaks in English."
+      "rookie": "You and Bitna run back to the office. Everyone stands by the radio.",
+      "junior": "You and Bitna run back to the office, where everyone is standing by the radio.",
+      "master": "You and Bitna hurry back to the office, where everyone has gathered by the radio."
     },
     {
       "rookie": "People hold their breath. Then some of them cry.",
@@ -583,54 +548,54 @@
       "master": "The room falls silent. Then some begin to weep."
     },
     {
-      "rookie": "Bitna takes out a new paper and her pen.",
-      "junior": "Bitna takes out her pen and a fresh sheet of paper.",
-      "master": "Bitna draws out a fresh sheet of paper and her pen."
+      "rookie": "Bitna takes out her date card and her pen.",
+      "junior": "Bitna takes out her date card and a pen.",
+      "master": "Bitna produces her date card and a pen."
     },
     {
-      "rookie": "The radio, and Bitna's month card:",
-      "junior": "The radio, and the month card Bitna made:",
-      "master": "The radio, along with Bitna's month card:"
+      "rookie": "The radio, Mother's rule, and Bitna's card:",
+      "junior": "What the radio says, Mother's rule, and Bitna's card:",
+      "master": "The radio's words, Mother's rule and Bitna's card:"
     },
     {
-      "rookie": "Radio: \"The war is over! Japan has given up.\"\n\"Today is the fifteenth of August.\"\nBitna's card: June is month six. July is month seven.\nAugust is month eight. September is month nine.\nBitna: \"Korean dates put the month before the day.\"\n\"Write today's number on my note.\"",
-      "junior": "Radio: \"Japan has surrendered to the Allies. Today is the fifteenth of August.\"\nBitna's card: June is month six. July is month seven.\nAugust is month eight. September is month nine.\nBitna: \"In Korean dates, the month comes before the day.\"\n\"Please write today's number on my note.\"",
-      "master": "Radio: \"Japan has surrendered to the Allies. Today is the fifteenth of August.\"\nBitna's card: June is month six. July is month seven.\nAugust is month eight. September is month nine.\nBitna: \"When we write dates in Korean, the month precedes the day.\"\n\"Would you put today's number on my note?\""
+      "rookie": "Radio: \"Japan has given up. The war is over!\"\n\"Today is the fifteenth of August.\"\nBitna's card: \"The fourteenth: my brothers said the war may end.\"\nMother's letter: \"'May' is not enough.\"\nBitna's card: July is month seven. August is month eight. September is month nine.\nBitna: \"Korean dates put the month before the day.\"\n\"Write the day Mother's lock can open, in numbers.\"",
+      "junior": "Radio: \"Japan has surrendered. The war is over!\"\n\"Today is the fifteenth of August.\"\nBitna's card: \"The fourteenth: my brothers said the war may end soon.\"\nMother's letter: \"'May' is not enough.\"\nBitna's card: July is month seven. August is month eight. September is month nine.\nBitna: \"In Korean dates, the month comes before the day.\"\n\"Write the day Mother's lock can open, in numbers.\"",
+      "master": "Radio: \"Japan has surrendered. The war is over!\"\n\"Today is the fifteenth of August.\"\nBitna's card: \"The fourteenth: my brothers claimed the war may end.\"\nMother's letter: \"'May' is not enough.\"\nBitna's card: July is month seven. August is month eight. September is month nine.\nBitna: \"Korean dates place the month before the day.\"\n\"Write, in numbers, the day Mother's lock can open.\""
     },
     {
-      "rookie": "What number goes on Bitna's note? Put it in.",
-      "junior": "Which number belongs on Bitna's note? Enter it.",
-      "master": "What number should appear on Bitna's note? Enter it."
+      "rookie": "On what day can Mother's lock open? Put the date in as a number.",
+      "junior": "On which day can Mother's lock be opened? Put the date in as a number.",
+      "master": "On which day can Mother's lock be opened? Enter the date as a number."
     },
     {
-      "rookie": "Find August on Bitna's card. Then find the day on the radio.",
-      "junior": "Look for August on Bitna's card. After that, find the day from the radio.",
-      "master": "Locate August on Bitna's card, then take the day from the radio."
+      "rookie": "Mother said 'may' is not enough. On which day is the war really over?",
+      "junior": "Mother said 'may' is not enough. On which day is the war truly over?",
+      "master": "Mother said 'may' is not enough. On which day is the war actually over?"
     },
     {
-      "rookie": "Write the month, then the day of the month.",
-      "junior": "First write the month, then the day of the month.",
-      "master": "The month comes first, followed by the day of the month."
+      "rookie": "Find August on Bitna's card. Write the month, then the day.",
+      "junior": "Look for August on Bitna's card. Write the month first, then the day.",
+      "master": "Locate August on Bitna's card. Enter the month, followed by the day."
     },
     {
-      "rookie": "8.15: the fifteenth of August!",
-      "junior": "8.15: the fifteenth of August!",
-      "master": "8.15: the fifteenth of August!"
+      "rookie": "8.15: the fifteenth of August! Today is the day.",
+      "junior": "8.15: the fifteenth of August! Today is the right day.",
+      "master": "8.15: the fifteenth of August! Today is the day at last."
     },
     {
-      "rookie": "Bitna writes 8.15 at the top of her new note.",
-      "junior": "At the top of her new note, Bitna writes 8.15.",
-      "master": "Bitna inscribes 8.15 at the head of her new note."
+      "rookie": "Bitna writes 8.15 on her card.",
+      "junior": "Bitna writes 8.15 on her date card.",
+      "master": "Bitna writes 8.15 on her card in large figures."
     },
     {
-      "rookie": "By the radio lie two more tiles: G and L.",
-      "junior": "Two more tiles lie beside the radio: G and L.",
-      "master": "Beside the radio rest two further tiles: G and L."
+      "rookie": "\"Not a 'may' day,\" she says. \"Today the war is over.\"",
+      "junior": "\"It's not a 'may' day,\" she says. \"Today the war is really over.\"",
+      "master": "\"No mere 'may' day,\" she says. \"Today the war is over.\""
     },
     {
-      "rookie": "\"Come to the river steps,\" Bitna says. \"I will show you.\"",
-      "junior": "\"Come with me to the river steps,\" Bitna says. \"I'll show you.\"",
-      "master": "\"Join me at the river steps,\" says Bitna. \"I will show you.\""
+      "rookie": "\"Let us open it on the river steps. Mother said goodbye to me there.\"",
+      "junior": "\"Let's open it on the river steps. That is where Mother said goodbye to me.\"",
+      "master": "\"Let us open it on the river steps, where Mother bade me goodbye.\""
     },
     {
       "rookie": "July is month seven. The radio says August.",
@@ -638,9 +603,9 @@
       "master": "July is month seven, whereas the radio announced August."
     },
     {
-      "rookie": "Listen again: the fifteenth of August.",
-      "junior": "Listen once more: the fifteenth of August.",
-      "master": "Listen carefully once more: the fifteenth of August."
+      "rookie": "That was only a 'may' day. Mother said 'may' is not enough.",
+      "junior": "That was only a 'may' day, and Mother said 'may' is not enough.",
+      "master": "That was merely a 'may' day; Mother said 'may' is not enough."
     },
     {
       "rookie": "September is month nine. The radio says August.",
@@ -653,14 +618,14 @@
       "master": "Correct numbers, but reversed. The month precedes the day."
     },
     {
-      "rookie": "The Last Tiles",
-      "junior": "The Last Tiles",
-      "master": "The Last Tiles"
+      "rookie": "The Day",
+      "junior": "The Day",
+      "master": "The Day"
     },
     {
-      "rookie": "Two tiles, G and L, were by the radio.",
-      "junior": "Two tiles, G and L, were lying beside the radio.",
-      "master": "Two tiles, G and L, lay beside the radio."
+      "rookie": "The radio: the war is over on the fifteenth of August. The fourteenth was only a 'may' day.",
+      "junior": "The radio: the war is over on the fifteenth of August. The fourteenth was only a 'may' day.",
+      "master": "The radio: the war is over on the fifteenth of August. The fourteenth was only a 'may' day."
     },
     {
       "rookie": "Hear the news.",
@@ -683,9 +648,24 @@
       "master": "THE WAR IS OVER"
     },
     {
-      "rookie": "Japan has surrendered. Bitna writes the date on the last note.",
-      "junior": "Japan has surrendered. Bitna writes the date on the final note.",
-      "master": "Japan has surrendered. Bitna records the date on the final note."
+      "rookie": "Japan has given up. Today Mother's lock can open.",
+      "junior": "Japan has surrendered. Today Mother's lock can be opened.",
+      "master": "Japan has surrendered. Today Mother's lock can at last be opened."
+    },
+    {
+      "rookie": "Mother's Rule",
+      "junior": "Mother's Rule",
+      "master": "Mother's Rule"
+    },
+    {
+      "rookie": "Which thing in your Notebook says when the lock can open?",
+      "junior": "Which thing in your Notebook tells you when the lock can open?",
+      "master": "Which item in your Notebook states when the lock can be opened?"
+    },
+    {
+      "rookie": "Find the backs of Mother's letters.",
+      "junior": "Look for the backs of Mother's letters.",
+      "master": "Seek out the backs of Mother's letters."
     },
     {
       "rookie": "H",
@@ -713,19 +693,14 @@
       "master": "L"
     },
     {
-      "rookie": "the opposite of dark",
-      "junior": "the opposite of dark",
-      "master": "the opposite of dark"
+      "rookie": "The sun gives it.",
+      "junior": "The sun gives it.",
+      "master": "The sun gives it."
     },
     {
-      "rookie": "it comes back",
-      "junior": "it comes back",
-      "master": "it comes back"
-    },
-    {
-      "rookie": "The Last Water-Drop Note",
-      "junior": "The Last Water-Drop Note",
-      "master": "The Last Water-Drop Note"
+      "rookie": "At night, it goes away.",
+      "junior": "At night, it goes away.",
+      "master": "At night, it goes away."
     },
     {
       "rookie": "THE RIVER STEPS",
@@ -733,132 +708,231 @@
       "master": "THE RIVER STEPS"
     },
     {
-      "rookie": "The sun goes down over the two rivers.",
-      "junior": "The sun sets over the two rivers.",
-      "master": "The sun sinks over the two rivers."
+      "rookie": "The sun goes down over the river. Families meet on the steps.",
+      "junior": "The sun is setting over the river. Families gather on the steps.",
+      "master": "The sun sinks over the river, and families gather on the steps."
     },
     {
-      "rookie": "Bitna sits on the steps with the letter box.",
-      "junior": "Bitna sits down on the steps, holding the letter box.",
-      "master": "Bitna settles on the steps with the letter box in her lap."
+      "rookie": "Bitna sits with Mother's box on her knees.",
+      "junior": "Bitna sits down with Mother's box on her knees.",
+      "master": "Bitna sits with Mother's box resting on her knees."
     },
     {
-      "rookie": "\"The tiles were mine,\" she says. \"I am the keeper now.\"",
-      "junior": "\"I left the tiles,\" she says. \"Now I am the keeper.\"",
-      "master": "\"The tiles were my doing,\" she admits. \"I am the keeper now.\""
+      "rookie": "\"Before I open it, I must be sure,\" she says.",
+      "junior": "\"Before I open it, I have to be sure,\" she says.",
+      "master": "\"Before I open it, I must be certain,\" she says."
     },
     {
-      "rookie": "Bitna's new note, and what she tells you:",
-      "junior": "Bitna's new note, and what she says to you:",
-      "master": "Bitna's new note, and what she explains to you:"
+      "rookie": "Mother's lock, and her riddle:",
+      "junior": "Mother's lock, and the riddle she wrote:",
+      "master": "Mother's lock, together with her riddle:"
     },
     {
-      "rookie": "The note says one word: 광복 (gwangbok).\n\"Gwang (광) is the opposite of dark.\"\n\"Bok (복) means it comes back.\"\n\"You have five tiles: H, T, I, G, L.\"\n\"Spell what gwang means, in English.\"",
-      "junior": "The note has just one word: 광복 (gwangbok).\n\"Gwang (광) is the opposite of dark.\"\n\"Bok (복) means it comes back.\"\n\"You have five tiles: H, T, I, G, L.\"\n\"Spell out what gwang means, in English.\"",
-      "master": "The note holds a single word: 광복 (gwangbok).\n\"Gwang (광) is the opposite of dark.\"\n\"Bok (복) means that it comes back.\"\n\"You have five tiles: H, T, I, G, L.\"\n\"Spell, in English, what gwang means.\""
+      "rookie": "On the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\"",
+      "junior": "Carved on the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\"",
+      "master": "Carved into the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\""
     },
     {
-      "rookie": "Spell the word with your five tiles.",
-      "junior": "Use your five tiles to spell the word.",
-      "master": "Arrange your five tiles to spell the word."
+      "rookie": "What is Mother's word? Spell it with five of the seven tiles.",
+      "junior": "What is Mother's word? Spell it using five of the seven tiles.",
+      "master": "What is Mother's word? Spell it out with five of the seven tiles."
     },
     {
-      "rookie": "Gwang is the opposite of dark.",
-      "junior": "Gwang means the opposite of dark.",
-      "master": "Gwang stands for the opposite of dark."
+      "rookie": "What does the sun give us in the day? At night, it is gone.",
+      "junior": "What does the sun give us during the day? At night, it is gone.",
+      "master": "What does the sun give us by day? At night, it disappears."
     },
     {
-      "rookie": "Day is full of it; night has very little.",
-      "junior": "The day has lots of it; the night has very little.",
-      "master": "Daytime overflows with it; night holds precious little."
+      "rookie": "LIGHT. Mother's lock opens!",
+      "junior": "LIGHT. Mother's lock clicks open!",
+      "master": "LIGHT. Mother's lock springs open!"
     },
     {
-      "rookie": "LIGHT. The light returns!",
-      "junior": "LIGHT. The light returns!",
-      "master": "LIGHT. The light returns!"
+      "rookie": "Inside lies a flag, folded small. It is Korea's flag.",
+      "junior": "Inside is a small folded flag. It is Korea's flag.",
+      "master": "Within lies a flag, folded small: Korea's flag."
     },
     {
-      "rookie": "Bitna lays her note on top of the others.",
-      "junior": "Bitna places her note on top of the others.",
-      "master": "Bitna lays her note upon the others."
+      "rookie": "Mother sewed it for the day the war is over.",
+      "junior": "Mother sewed it by hand for the day the war is over.",
+      "master": "Mother stitched it for the day the war is over."
     },
     {
-      "rookie": "Bun-i's first note lies under eleven more.",
-      "junior": "Now eleven notes lie on top of Bun-i's first note.",
-      "master": "Bun-i's first note now rests beneath eleven more."
+      "rookie": "Bitna holds it up in the last light of the sun.",
+      "junior": "Bitna holds it up in the sun's last light.",
+      "master": "Bitna raises it in the last light of the setting sun."
     },
     {
-      "rookie": "The box is full of light now. The season ends.",
-      "junior": "Now the box is full of light. The season is over.",
-      "master": "The box is filled with light at last. The season draws to a close."
+      "rookie": "All five letters are right. Put them in order: what the sun gives us.",
+      "junior": "All five letters are right. Now put them in order: what the sun gives us.",
+      "master": "All five letters are correct. Arrange them: what the sun gives us."
     },
     {
-      "rookie": "All five tiles are right. What is the opposite of dark?",
-      "junior": "All five tiles are correct. What is the opposite of dark?",
-      "master": "Each of the five tiles is correct. What is the opposite of dark?"
+      "rookie": "On 15 August 1945, Japan gave up. The war was over.",
+      "junior": "On 15 August 1945, Japan surrendered. The war was over.",
+      "master": "On 15 August 1945, Japan surrendered to the Allies, and the war was over."
     },
     {
-      "rookie": "THE KEEPERS' LAST LOCK",
-      "junior": "THE KEEPERS' LAST LOCK",
-      "master": "THE KEEPERS' LAST LOCK"
+      "rookie": "In Korean, this day is gwangbok: the light comes back.",
+      "junior": "In Korean, we call this day gwangbok: the light comes back.",
+      "master": "In Korean, this day is called gwangbok: the return of the light."
     },
     {
-      "rookie": "On 15 August 1945, Japan surrendered to the Allies.",
-      "junior": "On 15 August 1945, Japan surrendered to the Allies.",
-      "master": "On 15 August 1945, Japan surrendered to the Allies."
+      "rookie": "Light! That is Mother's word!",
+      "junior": "Light! That's Mother's word!",
+      "master": "Light! So that is Mother's word!"
     },
     {
-      "rookie": "The war ended, and Korea's light returned: gwangbok.",
-      "junior": "The war came to an end, and Korea's light returned: gwangbok.",
-      "master": "The war was over, and Korea's light had returned: gwangbok."
+      "rookie": "The Allies, the countries that fought Japan, won the war.",
+      "junior": "The Allies, the countries that fought against Japan, won the war.",
+      "master": "The Allies, the nations that fought Japan, won the war."
     },
     {
-      "rookie": "Kim Won-bong had worked for independence since 1919.",
-      "junior": "Kim Won-bong had been working for independence since 1919.",
-      "master": "Kim Won-bong had laboured for independence ever since 1919."
+      "rookie": "Many Koreans worked for this day too, at home and far away.",
+      "junior": "Many Koreans also worked for this day, at home and far away.",
+      "master": "Many Koreans laboured for this day too, both at home and far away."
     },
     {
-      "rookie": "No one person brought this day.",
-      "junior": "This day was not brought by just one person.",
-      "master": "No single person brought about this day."
+      "rookie": "Kim Won-bong was the government's minister for the army.",
+      "junior": "Kim Won-bong was this government's minister for the army.",
+      "master": "Kim Won-bong was the government's minister of military affairs."
     },
     {
-      "rookie": "The Allies won the war, and many Koreans worked for it.",
-      "junior": "The Allies won the war, and many Koreans worked for it too.",
-      "master": "The Allies won the war, while many Koreans laboured for it as well."
+      "rookie": "The Korean Liberation Army was getting ready, but Japan gave up first.",
+      "junior": "The Korean Liberation Army was getting ready to fight, but Japan surrendered first.",
+      "master": "The Korean Liberation Army was preparing to act, but Japan surrendered first."
     },
     {
-      "rookie": "At home and far away. Most of their names are unknown.",
-      "junior": "Both at home and far away. Most of their names are not known.",
-      "master": "At home and in distant lands. Most of their names remain unknown."
+      "rookie": "Mother is with them. Soon she will come back too.",
+      "junior": "Mother is with them. Soon she will come home too.",
+      "master": "Mother is among them. Soon she too will return."
     },
     {
-      "rookie": "Bun-i's first note started it all.",
-      "junior": "It all began with Bun-i's first note.",
-      "master": "It all began with Bun-i's very first note."
+      "rookie": "Mother's flag waited in the box. Today it came out.",
+      "junior": "Mother's flag waited in the box, and today it came out.",
+      "master": "Mother's flag waited in the box until today."
     },
     {
-      "rookie": "Gwangbok. The light returns.",
-      "junior": "Gwangbok. The light returns.",
-      "master": "Gwangbok. The light returns."
+      "rookie": "Show Bitna that today is the day, and where Mother hid her riddle.",
+      "junior": "Show Bitna that today is the day, and where Mother's riddle is hidden.",
+      "master": "Prove to Bitna that today is the day, and show where Mother hid her riddle."
+    },
+    {
+      "rookie": "Mother's rule is strict.",
+      "junior": "Mother's rule is very strict.",
+      "master": "Mother's rule is a strict one."
+    },
+    {
+      "rookie": "Then let us check it together.",
+      "junior": "Then let's check it together.",
+      "master": "Then let us check it together, step by step."
+    },
+    {
+      "rookie": "Bitna asks: \"Is today really the day? Mother said 'may' is not enough.\"",
+      "junior": "Bitna asks: \"Is today truly the day? Mother said 'may' is not enough.\"",
+      "master": "Bitna asks: \"Is today really the day? Mother said 'may' is not enough, remember.\""
+    },
+    {
+      "rookie": "The radio said it: the war is over. Today is 8.15.",
+      "junior": "The radio said so: the war is over. Today is 8.15.",
+      "master": "The radio announced it: the war is over. Today is 8.15."
+    },
+    {
+      "rookie": "Not a 'may' day. Today is the day!",
+      "junior": "Not just a 'may' day. Today is the day!",
+      "master": "No mere 'may' day. Today is the day!"
+    },
+    {
+      "rookie": "That does not say what day it is.",
+      "junior": "That doesn't tell us what day it is.",
+      "master": "That says nothing about the date."
+    },
+    {
+      "rookie": "Find the card with today's date on it.",
+      "junior": "Look for the card with today's date on it.",
+      "master": "Find the card that bears today's date."
+    },
+    {
+      "rookie": "Bitna asks: \"And Mother's word? Where did she hide her riddle?\"",
+      "junior": "Bitna asks: \"And what about Mother's word? Where did she hide her riddle?\"",
+      "master": "Bitna asks: \"And Mother's word? Where did she conceal her riddle?\""
+    },
+    {
+      "rookie": "On the backs of her letters: the sun gives it. At night, it goes away.",
+      "junior": "On the backs of her letters: the sun gives it. At night, it goes away.",
+      "master": "On the backs of her letters: the sun gives it. At night, it goes away."
+    },
+    {
+      "rookie": "Five letters. My brothers tried to guess it many times!",
+      "junior": "Five letters. My brothers tried to guess it again and again!",
+      "master": "Five letters. My brothers tried to guess it countless times!"
+    },
+    {
+      "rookie": "There is no riddle on that.",
+      "junior": "There's no riddle on that.",
+      "master": "No riddle is written on that."
+    },
+    {
+      "rookie": "Mother wrote on the backs of her letters.",
+      "junior": "Mother wrote on the back of each letter.",
+      "master": "Mother wrote on the backs of her letters."
+    },
+    {
+      "rookie": "Night is when it goes away. What does the sun give?",
+      "junior": "Night is when it goes away. What does the sun give us?",
+      "master": "Night is when it disappears. What does the sun give us?"
+    },
+    {
+      "rookie": "The sun does not give us \"right\". Read the riddle again.",
+      "junior": "The sun does not give us \"right\". Read Mother's riddle again.",
+      "master": "\"Right\" is not something the sun gives. Read Mother's riddle again."
+    },
+    {
+      "rookie": "A thing can be anything. What does the sun give us?",
+      "junior": "A thing can be anything at all. What does the sun give us?",
+      "master": "\"Thing\" could mean anything at all. What exactly does the sun give us?"
+    },
+    {
+      "rookie": "A glint is only a tiny flash. This comes back for the whole country.",
+      "junior": "A glint is only a tiny flash. Mother's word comes back for the whole country.",
+      "master": "A glint is a tiny flash and nothing more. Mother's word returns for the whole country."
+    },
+    {
+      "rookie": "Girth means how big around. The sun does not give it.",
+      "junior": "Girth means how big around something is. The sun does not give it.",
+      "master": "Girth is the measure around something. The sun does not give it."
+    },
+    {
+      "rookie": "N and R are the extra tiles. Use the other five.",
+      "junior": "N and R are the two extra tiles. Use the other five.",
+      "master": "N and R are the two extra tiles. Spell the word with the other five."
+    },
+    {
+      "rookie": "N",
+      "junior": "N",
+      "master": "N"
+    },
+    {
+      "rookie": "R",
+      "junior": "R",
+      "master": "R"
     }
   ],
   "glossary": {
     "junior": {
-      "exile": "망명",
-      "braid": "땋은 머리",
       "surrendered": "항복했다",
-      "fresh": "새",
-      "beneath": "~아래에"
+      "soaked": "흠뻑 젖은"
     },
     "master": {
       "sweltering": "무더운",
       "laboured": "애썼다",
-      "precedes": "앞서다",
-      "inscribes": "써넣다",
-      "weep": "울다",
-      "specifies": "명시하다",
-      "depicts": "그려 보여주다"
+      "surrendered": "항복했다",
+      "bade": "(작별 인사를) 했다",
+      "identical": "똑같은",
+      "muddle": "뒤죽박죽",
+      "conceal": "숨기다",
+      "stitched": "바느질했다",
+      "departure": "떠남"
     }
   }
 }

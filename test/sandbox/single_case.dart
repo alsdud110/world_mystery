@@ -166,6 +166,13 @@ class CasePlayer {
         }
       }
       await _tap(find.byKey(const ValueKey('syllable-check')));
+    } else if (season.shapes.containsKey(m.id)) {
+      // Each letter tapped, then the picture it goes on; then CHECK.
+      for (final [letter, picture] in [for (final p in Mission.sequenceIds(a)) p.split(':')]) {
+        await _tap(find.byKey(ValueKey('shape-letter-$letter')));
+        await _tap(find.byKey(ValueKey('shape-picture-$picture')));
+      }
+      await _tap(find.byKey(const ValueKey('shape-check')));
     } else if (season.inspections[m.id] case final scene?) {
       await mp.openInspectLabel(t, scene);
       await mp.writeOnLabel(t, a);
@@ -236,7 +243,7 @@ class CasePlayer {
 
   /// The talk's lines heard to its next choice.
   Future<void> heard() async {
-    for (var i = 0; i < 8 && find.byKey(const ValueKey('case-talk-next')).evaluate().isNotEmpty; i++) {
+    for (var i = 0; i < 30 && find.byKey(const ValueKey('case-talk-next')).evaluate().isNotEmpty; i++) {
       await mp.tapKey(t, 'case-talk-next', after: const Duration(milliseconds: 500));
     }
   }

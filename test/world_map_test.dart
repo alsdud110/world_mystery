@@ -13,6 +13,7 @@ import 'package:world_mystery/data/models/game_progress.dart';
 import 'package:world_mystery/data/models/season.dart';
 import 'package:world_mystery/data/models/season_progress.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
+import 'package:world_mystery/features/game/wallet_controller.dart' show walletProvider;
 import 'package:world_mystery/features/world_map/widgets/world_map_view.dart';
 import 'package:world_mystery/features/world_map/world_cities.dart';
 import 'package:world_mystery/features/world_map/world_map_state.dart';
@@ -652,6 +653,11 @@ void main() {
       await pumpApp(t, seasonSaves(3, activeBegun: true));
       appRef.read(routerProvider).go(Routes.map);
       await wait(t, const Duration(milliseconds: 1500));
+      // The menu shows the coins: a player's first wallet (start coins) is
+      // written the first time it is read. That is the wallet starting, not
+      // the World Map; it is made here so the round trip itself is measured.
+      appRef.read(walletProvider);
+      await t.pump();
       final before = saves();
       final episode = appRef.read(currentEpisodeProvider).id;
       await t.tap(find.byTooltip('Menu'));

@@ -450,12 +450,23 @@ void main() {
       for (final dep in ['firebase', 'cloud_firestore', 'http:', 'dio:', 'connectivity']) {
         expect(pubspec, isNot(contains(dep)), reason: dep);
       }
+      // The one way out: a season's picture pack, fetched over HTTPS from its
+      // bucket (season_pack_downloads/storage, 2026-11-06). Nothing else talks
+      // to a network or touches files outside it.
+      const packFiles = {'lib/core/assets/season_pack_downloads.dart', 'lib/core/assets/season_pack_storage.dart'};
       for (final f in Directory('lib').listSync(recursive: true).whereType<File>().where((f) => f.path.endsWith('.dart'))) {
         final src = f.readAsStringSync();
-        for (final banned in ['package:firebase', 'package:cloud_firestore', 'package:http/', 'HttpClient', 'dart:io']) {
+        for (final banned in ['package:firebase', 'package:cloud_firestore', 'package:http/']) {
           expect(src, isNot(contains(banned)), reason: '${f.path}: $banned');
         }
+        if (packFiles.contains(f.path)) continue;
+        for (final banned in ['HttpClient', 'dart:io']) {
+          expect(src, isNot(contains(banned)), reason: '${f.path}: $banned (only the season pack download may)');
+        }
       }
+      final downloads = File('lib/core/assets/season_pack_downloads.dart').readAsStringSync();
+      expect(downloads, contains("base.scheme != 'https'"), reason: 'packs come over HTTPS only');
+      expect(downloads, isNot(contains('http://')));
       expect(File('android/app/build.gradle.kts').readAsStringSync(), isNot(contains('google-services')));
       expect(File('android/settings.gradle.kts').readAsStringSync(), isNot(contains('google-services')));
       expect(File('ios/Runner.xcodeproj/project.pbxproj').readAsStringSync(), isNot(contains('GoogleService')));

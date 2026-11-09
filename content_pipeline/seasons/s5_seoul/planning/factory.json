@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "spentUsd": 5.066434,
+  "spentUsd": 6.139979,
   "reviewed": [
     "s5_seoul.asset.aunae_market",
     "s5_seoul.asset.bae",
@@ -241,15 +241,15 @@
   "budgetFrom": "content_pipeline/image_budgets.json",
   "deploy": {
     "folder": "season_05_seoul",
-    "version": "f4a5c1af27a2bdfb",
+    "version": "1418483ef36c4e83",
     "status": "deployed",
-    "files": 101,
-    "newPictures": 11,
-    "newBytes": 7266044,
+    "files": 115,
+    "newPictures": 14,
+    "newBytes": 11504410,
     "newManifest": true,
-    "stageDir": "build/season_packs/season_05_seoul/f4a5c1af27a2bdfb",
-    "at": "2026-11-06T10:27:51.979493Z",
-    "sent": 12,
+    "stageDir": "build/season_packs/season_05_seoul/1418483ef36c4e83",
+    "at": "2026-11-09T10:16:17.617635Z",
+    "sent": 15,
     "verified": "HTTPS 200, size and SHA-256 of every object"
   }
 }

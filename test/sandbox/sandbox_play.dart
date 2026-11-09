@@ -103,6 +103,13 @@ class SandboxPlay {
         }
         await tapText(t, 'OPEN THE LOCK', after: Duration.zero);
       case MissionType.numberCode:
+        // A wrong code stays on the board: cleared before the next.
+        final clear = find.bySemanticsLabel('Clear');
+        if (clear.evaluate().isNotEmpty) {
+          await reveal(t, clear.first);
+          await t.tap(clear.first);
+          await t.pump();
+        }
         for (final d in answer.split('')) {
           final key = find.widgetWithText(PuzzleKey, d);
           await reveal(t, key);

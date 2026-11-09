@@ -99,6 +99,8 @@ abstract final class PuzzleEngineDispatch {
     // A note in the new letters put back together, in place of its typed
     // word (Seoul pilot); after every engine before it.
     EngineStep('syllables', 'SyllableBoard'),
+    // Letters laid on the pictures they copy (Seoul Case 01 M2).
+    EngineStep('shapes', 'ShapeMatchBoard'),
   ];
 
   /// The final page's steps: a talk or steps take the whole page; then its

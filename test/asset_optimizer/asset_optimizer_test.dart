@@ -5,6 +5,8 @@ import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:image/image.dart' as img;
+import 'package:crypto/crypto.dart' show sha256;
+import 'package:world_mystery/core/assets/season_pack_manifests.g.dart' show seasonPackManifests;
 
 import '../../tool/asset_optimizer/asset_size_report.dart';
 import '../../tool/asset_optimizer/bundle_assets.dart';
@@ -350,6 +352,15 @@ const named = 'assets/s/case/a.png'; // its source PNG, on purpose
   group('the game\'s own bundle', () {
     test('every bundled picture is recorded by the optimizer, or kept on purpose, or a lossy original never re-encoded', () {
       final ledger = OptimizedLedger.load();
+      // A lossy original never re-encoded: a WebP that is also a file of its
+      // season's picture pack, its bytes exactly the pack's (re-encoding it
+      // would change the uploaded pack under the app).
+      final packed = {
+        for (final m in seasonPackManifests.values)
+          for (final f in m.files) f.path: f.sha256,
+      };
+      bool packOriginal(String path) =>
+          packed[path] != null && sha256.convert(File(path).readAsBytesSync()).toString() == packed[path];
       final problems = <String>[];
       for (final f in BundleAssets.list()) {
         if (f.type != 'image') continue;
@@ -357,7 +368,7 @@ const named = 'assets/s/case/a.png'; // its source PNG, on purpose
         if (format == ImageFormat.png && policy.keepReason(f.path) == null) {
           final e = ledger.of(f.path);
           if (e == null || e['keptBecause'] == null) problems.add('${f.path}: a PNG not optimized (optimize_assets.dart --only ${f.path})');
-        } else if (format == ImageFormat.webp && ledger.of(f.path) == null) {
+        } else if (format == ImageFormat.webp && ledger.of(f.path) == null && !packOriginal(f.path)) {
           problems.add('${f.path}: a WebP the optimizer has no record of');
         }
       }

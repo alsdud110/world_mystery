@@ -20,11 +20,11 @@ const _harbin = SeasonLandmark('harbin', 'Harbin', Offset(870 / 1536, 110 / 1024
 const _shanghai = SeasonLandmark('shanghai', 'Shanghai', Offset(200 / 1536, 660 / 1024));
 const _chongqing = SeasonLandmark('chongqing', 'Chongqing', Offset(230 / 1536, 330 / 1024));
 
-// The places of s5_ep01 on its own map, measured on assets/seasons/season_05_seoul/locations/map/palace_map.webp (sha256:712f1c34f64518ca…).
+// The places of s5_ep01 on its own map, measured on assets/seasons/season_05_seoul/locations/map/palace_map.webp (sha256:e0d53ab2fd57df7b…).
 const _s5Ep01InnerGate = SeasonLandmark('inner_gate', 'The Inner Gate', Offset(768 / 1536, 772 / 1024));
-const _s5Ep01WellYard = SeasonLandmark('well_yard', 'The Well Yard', Offset(1310 / 1536, 437 / 1024));
+const _s5Ep01WellYard = SeasonLandmark('well_yard', 'The Kitchen Well', Offset(1310 / 1536, 437 / 1024));
 const _s5Ep01WritingRoom = SeasonLandmark('writing_room', 'The Writing Room', Offset(1280 / 1536, 217 / 1024));
-const _s5Ep01BookHall = SeasonLandmark('book_hall', 'The Book Hall', Offset(265 / 1536, 377 / 1024));
+const _s5Ep01BookHall = SeasonLandmark('book_hall', 'The King\'s Study', Offset(265 / 1536, 377 / 1024));
 
 /// The Mission Map of case s5_ep01.
 const _s5Ep01Map = SeasonMap(
@@ -33,14 +33,14 @@ const _s5Ep01Map = SeasonMap(
   aspect: 1536 / 1024,
   landmarks: [_s5Ep01InnerGate, _s5Ep01WellYard, _s5Ep01WritingRoom, _s5Ep01BookHall],
   missionLandmarks: <String, MapLandmark>{
-    's5_ep01_m1': _s5Ep01InnerGate,
-    's5_ep01_m2': _s5Ep01WellYard,
+    's5_ep01_m2': _s5Ep01InnerGate,
+    's5_ep01_m1': _s5Ep01WellYard,
     's5_ep01_m3': _s5Ep01WritingRoom,
     's5_ep01_final': _s5Ep01BookHall,
   },
   missionPoints: <String, Offset>{
-    's5_ep01_m1': Offset(768 / 1536, 760 / 1024),
-    's5_ep01_m2': Offset(1310 / 1536, 425 / 1024),
+    's5_ep01_m2': Offset(768 / 1536, 760 / 1024),
+    's5_ep01_m1': Offset(1310 / 1536, 425 / 1024),
     's5_ep01_m3': Offset(1280 / 1536, 205 / 1024),
     's5_ep01_final': Offset(265 / 1536, 365 / 1024),
   },
@@ -413,6 +413,6 @@ const s5SeoulWorldCity = WorldCity(
 /// each picture made for it (assets.manifest.json, on disk).
 const s5SeoulEvidencePictures = <String, String>{
   's5_ep02_e1': 'assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp',
-  's5_ep09_e2': 'assets/seasons/season_05_seoul/cases/case_09/desk_key.webp',
+  's5_ep09_e2': 'assets/seasons/season_05_seoul/cases/case_09/thin_paper.webp',
   's5_ep10_e2': 'assets/seasons/season_05_seoul/cases/case_10/new_watch.webp',
 };

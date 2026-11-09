@@ -23,6 +23,7 @@ final s5SeoulContent = SeasonContent(
   dialogues: s5SeoulDialogues,
   timelines: s5SeoulTimelines,
   syllables: s5SeoulSyllables,
+  shapes: s5SeoulShapes,
   deductions: s5SeoulDeductions,
   inspections: s5SeoulInspections,
   records: s5SeoulRecords,

@@ -23,9 +23,9 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         master: 'The name Hunminjeongeum signifies the right sounds with which to teach the people.',
       ),
       HistoryLine(
-        rookie: 'Its four groups read the Chinese characters 訓民正音. People also said Jeongeum for short.',
-        junior: 'Its four groups read the Chinese characters 訓民正音, and it was also shortened to Jeongeum.',
-        master: 'Its four groups read the Chinese characters 訓民正音, and the name was also shortened to Jeongeum.',
+        rookie: 'Its four syllables are written in Chinese characters as 訓民正音. People also said Jeongeum for short.',
+        junior: 'Its four syllables are written in Chinese characters as 訓民正音, and it was also shortened to Jeongeum.',
+        master: 'Its four syllables are written in Chinese characters as 訓民正音, and the name was also shortened to Jeongeum.',
       ),
       HistoryLine(
         rookie: 'The King wrote that our words were not like Chinese words, so many people could not write what they wanted to say. He made the letters easy to learn.',
@@ -55,19 +55,19 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     inThisMystery: [
       HistoryLine(
-        rookie: 'Bun-i, Sora and Taek are made up. So are the burnt paper, the lesson box and that rainy night.',
-        junior: 'Bun-i, Sora and Taek were invented for this story. So were the burnt paper, the lesson box and that rainy night.',
-        master: 'Bun-i, Sora and Taek are inventions of this story, as are the burnt paper, the lesson box and that rainy night.',
+        rookie: 'Bun-i, Sora and Bun-i\'s mother are made up. So are Bun-i\'s picture note, her letter and that summer night.',
+        junior: 'Bun-i, Sora and Bun-i\'s mother were invented for this story. So were her picture note, her letter and that summer night.',
+        master: 'Bun-i, Sora and Bun-i\'s mother are inventions of this story, as are her picture note, her letter and that summer night.',
       ),
       HistoryLine(
-        rookie: 'King Sejong was real, but his words in this story are made up. Some of them retell his real preface.',
-        junior: 'King Sejong was a real king, but his words in this story were invented. Some of them retell his real preface.',
-        master: 'King Sejong was real, yet every word he speaks here is invented; a few of them echo his real preface.',
+        rookie: 'King Sejong was real, but his words in this story are made up. He never met Bun-i.',
+        junior: 'King Sejong was a real king, but his words in this story were invented. He never met Bun-i.',
+        master: 'King Sejong was real, yet every word he speaks here is invented; he never met Bun-i.',
       ),
       HistoryLine(
-        rookie: 'The four groups were never lost: that event is made up, and so is the King\'s ten-day test. The game writes the name the way we spell today.',
-        junior: 'The four groups of the name were never lost: that event was invented, and so was the King\'s ten-day test. The game writes the name in today\'s spelling.',
-        master: 'The four groups of the name were never lost: that event is invented, as is the King\'s ten-day test. The game writes the name in today\'s spelling.',
+        rookie: 'The game writes Bun-i\'s words left to right, in today\'s spelling. In 1446, people wrote down the page.',
+        junior: 'The game writes Bun-i\'s words from left to right, in today\'s spelling. In 1446, people wrote down the page.',
+        master: 'The game writes Bun-i\'s words from left to right, in today\'s spelling; in 1446, writing ran down the page.',
       ),
     ],
     sources: [
@@ -161,6 +161,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         master: 'The turtle ship was roofed with planks like a turtle\'s back and studded with knives and spikes; its dragon\'s head at the front had a cannon hole for a mouth.',
       ),
       HistoryLine(
+        rookie: 'In 1446, a book explained the King\'s letters. Their shapes copy the mouth, and a stronger sound adds a line. The King wrote that he made them so that people could learn them easily.',
+        junior: 'In 1446, a book explained the King\'s letters: their shapes copy the mouth, and a stronger sound adds a line. The King wrote that he made them so people could learn them easily.',
+        master: 'A book of 1446 explained the King\'s letters: their shapes copy the mouth, and a stronger sound gains a line. The King wrote that he made them so that people could learn them with ease.',
+      ),
+      HistoryLine(
         rookie: 'On the 12th day of the 4th month of 1592 (moon calendar), its cannons were tested. His war diary records it.',
         junior: 'On the 12th day of the 4th month of 1592 (moon calendar), its cannons were test-fired, as his war diary records.',
         master: 'On the 12th day of the 4th month of 1592 (lunar calendar), its cannons were test-fired, an event recorded in his war diary.',
@@ -178,14 +183,19 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     inThisMystery: [
       HistoryLine(
-        rookie: 'Seok, Quartermaster Ham, the rain and the missing gunpowder are made up.',
-        junior: 'Seok, Quartermaster Ham, the rain and the missing gunpowder were invented for this case.',
-        master: 'Seok, Quartermaster Ham, the rain and the missing gunpowder are inventions of this story.',
+        rookie: 'Seok, Quartermaster Ham, the rain, the missing gunpowder and Seok\'s note are made up.',
+        junior: 'Seok, Quartermaster Ham, the rain, the missing gunpowder and Seok\'s note were invented for this case.',
+        master: 'Seok, Quartermaster Ham, the rain, the missing gunpowder and Seok\'s note are inventions of this story.',
       ),
       HistoryLine(
-        rookie: 'Yi Sun-sin was real, but his words in this story are made up.',
-        junior: 'Yi Sun-sin was real, but his words in this story were invented.',
-        master: 'Yi Sun-sin was real, yet every word he speaks here is invented.',
+        rookie: 'The sailors\' letter board is made up. Its rules come from the 1446 book about the letters.',
+        junior: 'The sailors\' letter board was invented, but its rules come from the 1446 book about the letters.',
+        master: 'The sailors\' letter board is invented, though its rules are drawn from the 1446 book about the letters.',
+      ),
+      HistoryLine(
+        rookie: 'Yi Sun-sin was real, but his words and his judgment in this story are made up.',
+        junior: 'Yi Sun-sin was real, but his words and his judgment in this story were invented.',
+        master: 'Yi Sun-sin was real, yet his words and his judgment here are invented.',
       ),
       HistoryLine(
         rookie: 'All the dates are of the old moon calendar.',
@@ -195,6 +205,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     sources: [
       HistorySource(
+        publisher: 'UNESCO',
+        title: 'Memory of the World: Hunminjeongum Manuscript',
+        url: 'https://www.unesco.org/en/memory-world/hunminjeongum-manuscript',
+      ),
+      HistorySource(
         publisher: '경기일보 (Kyeonggi Ilbo)',
         title: '난중일기 속 거북선 기록 (2021-01-05)',
         url: 'https://www.kyeonggi.com/article/202101051151835',
@@ -203,6 +218,16 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         publisher: '국가유산청 (Korea Heritage Service)',
         title: '국가유산포털: 여수 선소 유적',
         url: 'https://www.heritage.go.kr/DATA1/heritage/hub_img/html/cul_1333603920000.html',
+      ),
+      HistorySource(
+        publisher: '국립한글박물관 (National Hangeul Museum)',
+        title: '상설전시 3부 스물여덟 자를 만드니',
+        url: 'https://www.hangeul.go.kr/exhi/dailyExhibition.do?curr_menu_cd=0102010000',
+      ),
+      HistorySource(
+        publisher: '국립한글박물관 (National Hangeul Museum)',
+        title: '한박웃음 2020년 10월 제86호',
+        url: 'https://www.hangeul.go.kr/webzine/202010/sub1_3.html',
       ),
       HistorySource(
         publisher: '국사편찬위원회 (National Institute of Korean History)',
@@ -220,6 +245,16 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         url: 'https://sillok.history.go.kr/id/kna_12504013_001',
       ),
       HistorySource(
+        publisher: '국사편찬위원회 (National Institute of Korean History)',
+        title: '세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사',
+        url: 'https://sillok.history.go.kr/id/kda_12809029_004',
+      ),
+      HistorySource(
+        publisher: '국사편찬위원회 (National Institute of Korean History)',
+        title: '우리역사넷 사료로 본 한국사: 한글의 구성 원리 (제자해)',
+        url: 'https://contents.history.go.kr/id/hm_091_0030',
+      ),
+      HistorySource(
         publisher: '브라보마이라이프 (etoday)',
         title: '이순신과 거북선 기사',
         url: 'https://bravo.etoday.co.kr/view/atc_view/7692',
@@ -228,6 +263,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         publisher: '서울특별시 (Seoul Metropolitan Government)',
         title: '내 손안에 서울: \'난중일기\'로 살펴본 장군 이순신 VS 인간 이순신',
         url: 'https://mediahub.seoul.go.kr/archives/2016775',
+      ),
+      HistorySource(
+        publisher: '세계기록유산 한국위원회 (kmowkc.org)',
+        title: '『훈민정음』[해례본] 개요',
+        url: 'https://www.kmowkc.org/front/heritage/detail.do?heritageId=U001&type=intro',
       ),
       HistorySource(
         publisher: '여수시 (Yeosu City)',
@@ -254,6 +294,16 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         title: '한국민족문화대백과사전: 옥포해전',
         url: 'https://encykorea.aks.ac.kr/Article/E0038825',
       ),
+      HistorySource(
+        publisher: '한국학중앙연구원 (Academy of Korean Studies)',
+        title: '한국민족문화대백과사전: 한글',
+        url: 'https://encykorea.aks.ac.kr/Article/E0061508',
+      ),
+      HistorySource(
+        publisher: '한국학중앙연구원 (Academy of Korean Studies)',
+        title: '한국민족문화대백과사전: 훈민정음28자모',
+        url: 'https://encykorea.aks.ac.kr/Article/E0074518',
+      ),
     ],
   ),
   's5_ep03': HistoryReveal(
@@ -269,6 +319,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         master: 'Jeong Yak-yong devised the geojunggi, a pulley-driven lifting machine, and described it in writing.',
       ),
       HistoryLine(
+        rookie: 'Jeong also drew up a plan for the fortress. Officials such as Jo Sim-tae ran the building work.',
+        junior: 'Jeong also wrote a plan for the fortress, and officials such as Jo Sim-tae ran the building work.',
+        master: 'Jeong also drew up a plan for the fortress, while officials such as Jo Sim-tae directed the building work.',
+      ),
+      HistoryLine(
         rookie: 'New machines like the geojunggi helped the builders move and lay big stones.',
         junior: 'New machines such as the geojunggi helped the builders move and lay the huge stones.',
         master: 'Newly devised machines such as the geojunggi were used to move and lay the massive stones.',
@@ -281,14 +336,14 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     inThisMystery: [
       HistoryLine(
-        rookie: 'Okbun, Foreman Gwak, the copied drawing and the stopped machine are made up.',
-        junior: 'Okbun, Foreman Gwak, the copied drawing and the stopped machine were invented for this case.',
-        master: 'Okbun, Foreman Gwak, the copied drawing and the stalled machine are inventions of this story.',
+        rookie: 'Okbun, Foreman Gwak, the carpenter, the clerk, the copied drawing and the stopped machine are made up. So is Okbun\'s note with its water drop.',
+        junior: 'Okbun, Foreman Gwak, the carpenter, the clerk, the copied drawing and the stopped machine were invented for this case, and so was Okbun\'s note with its water drop.',
+        master: 'Okbun, Foreman Gwak, the carpenter, the clerk, the copied drawing, the stalled machine and Okbun\'s water-drop note are all inventions of this story.',
       ),
       HistoryLine(
-        rookie: 'Jeong Yak-yong was real, but his words and steps in this story are made up.',
-        junior: 'Jeong Yak-yong was real, but his words and steps in this story were invented.',
-        master: 'Jeong Yak-yong was real, yet his words and steps here are invented.',
+        rookie: 'Jeong Yak-yong was real, but his visit and his words in this story are made up.',
+        junior: 'Jeong Yak-yong was real, but his visit and his words in this story were invented.',
+        master: 'Jeong Yak-yong was real, yet his visit and his words here are invented.',
       ),
       HistoryLine(
         rookie: 'The three drawings are the game\'s own, not copies of the real ones.',
@@ -308,9 +363,19 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         url: 'https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300890&code=kc_age_30',
       ),
       HistorySource(
+        publisher: '수원시 팔달구청 (Suwon City, Paldal-gu Office)',
+        title: '팔달구자랑 > 유적 > 화성',
+        url: 'https://paldal.suwon.go.kr/submain_view.asp?TopID=sub06&menuid=sub060504',
+      ),
+      HistorySource(
         publisher: '한국학중앙연구원 (Academy of Korean Studies)',
         title: '한국민족문화대백과사전: 거중기',
         url: 'https://encykorea.aks.ac.kr/Article/E0001891',
+      ),
+      HistorySource(
+        publisher: '한국학중앙연구원 (Academy of Korean Studies)',
+        title: '한국민족문화대백과사전: 성제도설',
+        url: 'https://encykorea.aks.ac.kr/Article/E0076317',
       ),
     ],
   ),
@@ -320,6 +385,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         rookie: 'Gyeongbokgung burned in the war of 1592. It lay in ruins for a long time.',
         junior: 'Gyeongbokgung burned down in the war of 1592 and lay in ruins for a long time.',
         master: 'Gyeongbokgung burned down in the war of 1592 and long lay in ruins.',
+      ),
+      HistoryLine(
+        rookie: 'The King\'s letters add a line for a stronger sound: ㄴ, then ㄷ. A book of 1446 says so.',
+        junior: 'In the King\'s letters, a stronger sound gets one more line, as with ㄴ and ㄷ. A book of 1446 explains this.',
+        master: 'The King\'s letters add a stroke for a stronger sound, turning ㄴ into ㄷ, as a book of 1446 explains.',
       ),
       HistoryLine(
         rookie: 'In the 4th month of 1865, the rebuilding began. The Heungseon Daewongun led the work.',
@@ -344,9 +414,9 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     inThisMystery: [
       HistoryLine(
-        rookie: 'Duri, Mr. Pyo, the missing logs and the marks on them are made up.',
-        junior: 'Duri, Mr. Pyo, the missing logs and their marks were invented for this case.',
-        master: 'Duri, Mr. Pyo, the missing logs and their marks are inventions of this story.',
+        rookie: 'Duri, Mr. Pyo, the clerk, the missing logs, the marks, the cart and Duri\'s pine tree are made up.',
+        junior: 'Duri, Mr. Pyo, the clerk, the missing logs, their marks, the cart and Duri\'s pine tree were invented for this case.',
+        master: 'Duri, Mr. Pyo, the clerk, the missing logs, their marks, the cart and Duri\'s pine tree are inventions of this story.',
       ),
       HistoryLine(
         rookie: 'The Heungseon Daewongun was real, but his words in this story are made up.',
@@ -356,9 +426,24 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     sources: [
       HistorySource(
+        publisher: 'UNESCO',
+        title: 'Memory of the World: Hunminjeongum Manuscript',
+        url: 'https://www.unesco.org/en/memory-world/hunminjeongum-manuscript',
+      ),
+      HistorySource(
+        publisher: '국사편찬위원회 (National Institute of Korean History)',
+        title: '세종실록 113권, 세종 28년 9월 29일 갑오 4번째 기사',
+        url: 'https://sillok.history.go.kr/id/kda_12809029_004',
+      ),
+      HistorySource(
         publisher: '국사편찬위원회 (National Institute of Korean History)',
         title: '신편 한국사 37: 2) 서원 철폐와 경복궁 중건',
         url: 'https://db.history.go.kr/id/nh_037_0040_0020_0020',
+      ),
+      HistorySource(
+        publisher: '국사편찬위원회 (National Institute of Korean History)',
+        title: '우리역사넷 사료로 본 한국사: 한글의 구성 원리 (제자해)',
+        url: 'https://contents.history.go.kr/id/hm_091_0030',
       ),
       HistorySource(
         publisher: '서울특별시 (Seoul Metropolitan Government)',
@@ -366,9 +451,19 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         url: 'https://mediahub.seoul.go.kr/archives/2008034',
       ),
       HistorySource(
+        publisher: '세계기록유산 한국위원회 (kmowkc.org)',
+        title: '『훈민정음』[해례본] 개요',
+        url: 'https://www.kmowkc.org/front/heritage/detail.do?heritageId=U001&type=intro',
+      ),
+      HistorySource(
         publisher: '한국학중앙연구원 (Academy of Korean Studies)',
         title: '한국민족문화대백과사전: 경복궁',
         url: 'https://encykorea.aks.ac.kr/Article/E0002434',
+      ),
+      HistorySource(
+        publisher: '한국학중앙연구원 (Academy of Korean Studies)',
+        title: '한국민족문화대백과사전: 한글',
+        url: 'https://encykorea.aks.ac.kr/Article/E0061508',
       ),
     ],
   ),
@@ -536,9 +631,14 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         master: 'At Harbin Station on 26 October 1909, An Jung-geun killed Itō Hirobumi of Japan.',
       ),
       HistoryLine(
-        rookie: 'Then he called out, "Korea, hurrah!"',
-        junior: 'Right after, he called out, "Korea, hurrah!"',
-        master: 'He then cried out, "Korea, hurrah!"',
+        rookie: 'It was about 9:30 in the morning.',
+        junior: 'It happened at about 9:30 in the morning.',
+        master: 'It took place at about 9:30 in the morning.',
+      ),
+      HistoryLine(
+        rookie: 'Then he called out, "Koreya! Ura!": "Korea, hurrah!"',
+        junior: 'Right after, he called out, "Koreya! Ura!", which means "Korea, hurrah!"',
+        master: 'He then cried out, "Koreya! Ura!", that is, "Korea, hurrah!"',
       ),
       HistoryLine(
         rookie: 'An Jung-geun fought Japan\'s rule for Korea\'s independence.',
@@ -553,9 +653,9 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     inThisMystery: [
       HistoryLine(
-        rookie: 'Mrs. Kang, Mr. Pak and Mr. Sorin are made up. So are the two newspapers and the noon train.',
-        junior: 'Mrs. Kang, Mr. Pak and Mr. Sorin were invented, and so were the two newspapers and the noon train.',
-        master: 'Mrs. Kang, Mr. Pak and Mr. Sorin are inventions, as are the two newspapers and the noon train.',
+        rookie: 'Mrs. Kang, Mr. Pak and Mr. Sorin are made up. So are the two newspapers, the noon train and the word card.',
+        junior: 'Mrs. Kang, Mr. Pak and Mr. Sorin were invented, and so were the two newspapers, the noon train and the word card.',
+        master: 'Mrs. Kang, Mr. Pak and Mr. Sorin are inventions, as are the two newspapers, the noon train and the word card.',
       ),
       HistoryLine(
         rookie: 'An Jung-geun was real. He never speaks in this story.',
@@ -583,6 +683,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         publisher: '전북일보 (jjan.kr)',
         title: '안중근 관련 칼럼 (2023-10-25)',
         url: 'https://jjan.kr/article/20231025580148',
+      ),
+      HistorySource(
+        publisher: '한국학중앙연구원 (Academy of Korean Studies)',
+        title: '한국민족문화대백과사전: 이토 포살 의거',
+        url: 'https://encykorea.aks.ac.kr/Article/E0046347',
       ),
     ],
   ),
@@ -626,9 +731,9 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         master: 'Yu Gwan-sun was real, yet every word she speaks here is invented.',
       ),
       HistoryLine(
-        rookie: 'The keepers\' letter box and the water-drop notes are part of this season\'s story.',
-        junior: 'The keepers\' letter box and the water-drop notes were invented for this season\'s story.',
-        master: 'The keepers\' letter box and the water-drop notes belong to this season\'s invented story.',
+        rookie: 'The flame note and Gyeongsun\'s box are made up for this case.',
+        junior: 'The flame note and Gyeongsun\'s box were invented for this case.',
+        master: 'The flame note and Gyeongsun\'s box are inventions of this story.',
       ),
     ],
     sources: [
@@ -735,9 +840,19 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
   's5_ep10': HistoryReveal(
     realHistory: [
       HistoryLine(
+        rookie: 'Japan ruled Korea from 1910. In 1919, Korean leaders set up the Provisional Government in Shanghai.',
+        junior: 'Japan ruled Korea from 1910. In 1919, Korean leaders set up the Provisional Government in Shanghai, China.',
+        master: 'Korea was under Japanese rule from 1910; in 1919, Korean leaders founded the Provisional Government in Shanghai, China.',
+      ),
+      HistoryLine(
         rookie: 'On the morning of 29 April 1932, Yun Bong-gil and Kim Gu swapped watches. Yun took Kim Gu\'s old watch and left him his new one.',
         junior: 'On the morning of 29 April 1932, Yun Bong-gil and Kim Gu exchanged watches: Yun took Kim Gu\'s old one and left him his new one.',
         master: 'On the morning of 29 April 1932, Yun Bong-gil and Kim Gu exchanged watches, Yun taking Kim Gu\'s old one and leaving him his new one.',
+      ),
+      HistoryLine(
+        rookie: 'Kim Gu wrote that Yun said his watch would be needed for only one more hour.',
+        junior: 'Kim Gu wrote that Yun told him his watch would be needed for only one more hour.',
+        master: 'Kim Gu recorded Yun\'s words: his own watch would be needed for only one more hour.',
       ),
       HistoryLine(
         rookie: 'That day, Yun Bong-gil attacked a Japanese army ceremony at Hongkou Park in Shanghai.',
@@ -757,14 +872,19 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     inThisMystery: [
       HistoryLine(
-        rookie: 'Haesu, her notes and the keepers\' box are made up.',
-        junior: 'Haesu, her notes and the keepers\' box were invented for this case.',
-        master: 'Haesu, her notes and the keepers\' box are inventions of this story.',
+        rookie: 'Haesu, her note, her drawings and her record are made up.',
+        junior: 'Haesu, her note, her drawings and her record were invented for this case.',
+        master: 'Haesu, her note, her drawings and her record are inventions of this story.',
       ),
       HistoryLine(
-        rookie: 'Yun Bong-gil and Kim Gu were real, but their words in this story are made up.',
-        junior: 'Yun Bong-gil and Kim Gu were real people, but their words in this story were invented.',
-        master: 'Yun Bong-gil and Kim Gu were real, yet every word they speak here is invented.',
+        rookie: 'Yun Bong-gil and Kim Gu were real, but most of their words in this story are made up.',
+        junior: 'Yun Bong-gil and Kim Gu were real people, but most of their words in this story were invented.',
+        master: 'Yun Bong-gil and Kim Gu were real, yet most of the words they speak here are invented.',
+      ),
+      HistoryLine(
+        rookie: 'The words about the long hand are the game\'s.',
+        junior: 'The words about the watch\'s long hand were written for the game.',
+        master: 'The lines about the watch\'s long hand were written for this game.',
       ),
     ],
     sources: [
@@ -774,9 +894,34 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         url: 'https://www.ytn.co.kr/_ln/0484_201609190859052548',
       ),
       HistorySource(
+        publisher: '국가보훈부 (Ministry of Patriots and Veterans Affairs) 공식블로그',
+        title: '“독립을 위한 일이라면 무엇이든 하겠습니다” 윤봉길 의사 의거 87주년',
+        url: 'https://m.blog.naver.com/mpvalove/221525413975',
+      ),
+      HistorySource(
+        publisher: '국사편찬위원회 우리역사넷 (National Institute of Korean History)',
+        title: '대한민국 임시정부 1919',
+        url: 'https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_o400800&code=kc_age_40',
+      ),
+      HistorySource(
         publisher: '국사편찬위원회 우리역사넷 (National Institute of Korean History)',
         title: '윤봉길',
         url: 'https://contents.history.go.kr/mobile/eh/view.do?levelId=eh_n0890_0010&code=eh_age_40',
+      ),
+      HistorySource(
+        publisher: '김구재단 (Kim Koo Foundation)',
+        title: '영상실록 "영웅" - 윤봉길 (백범일지 인용)',
+        url: 'http://www.kimkoo.org/board/board_view.asp?brd_idx=10&idx=577&page=1&skey=&stext=',
+      ),
+      HistorySource(
+        publisher: '대한민국 정책브리핑 (Korea.kr, Ministry of Culture, Sports and Tourism)',
+        title: '8월 15일 제79주년 광복절, 광복의 의미를 되새겨보다',
+        url: 'https://www.korea.kr/news/policyNewsView.do?newsId=148932667',
+      ),
+      HistorySource(
+        publisher: '대한민국 정책브리핑 (korea.kr)',
+        title: '임시정부 경무국과 김구 (기자 기사)',
+        url: 'https://www.korea.kr/news/reporterView.do?newsId=148973712',
       ),
       HistorySource(
         publisher: '서울특별시 내 손안에 서울 (Seoul Metropolitan Government)',
@@ -789,9 +934,19 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         url: 'https://mediahub.seoul.go.kr/archives/2019020',
       ),
       HistorySource(
+        publisher: '서울특별시 내 손안에 서울 (Seoul Metropolitan Government)',
+        title: '봄날, 매화처럼 살다 간 청년 \'윤봉길\'을 만나다',
+        url: 'https://mediahub.seoul.go.kr/archives/2017404',
+      ),
+      HistorySource(
         publisher: '한교닷컴 (Hangyo)',
         title: '[라이프&역사] 윤봉길이라는 길을 걷다',
         url: 'https://hangyo.com/news/article.html?no=103359',
+      ),
+      HistorySource(
+        publisher: '한국학중앙연구원 (Academy of Korean Studies)',
+        title: '한국민족문화대백과사전: 8·15광복',
+        url: 'https://encykorea.aks.ac.kr/Article/E0059769',
       ),
       HistorySource(
         publisher: '한국학중앙연구원 (Academy of Korean Studies)',
@@ -818,9 +973,9 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         master: 'In 1941 he selected 19 poems for a book; unable to print it, he made three handwritten copies.',
       ),
       HistoryLine(
-        rookie: 'One copy went to his friend Jeong Byeong-uk. His family hid it under their floor. In 1948 it became a book.',
-        junior: 'One copy went to his friend Jeong Byeong-uk, whose family hid it under the floor. In 1948 it was published as a book.',
-        master: 'The copy given to his friend Jeong Byeong-uk survived, hidden under the floor of the family home, and was published in 1948.',
+        rookie: 'One copy went to his friend Jeong Byeong-uk. His family hid it under their floor. In 1948 his poems became a book.',
+        junior: 'One copy went to his friend Jeong Byeong-uk, whose family hid it under the floor. In 1948 his poems were published as a book.',
+        master: 'The copy given to his friend Jeong Byeong-uk survived, hidden under the floor of the family home; in 1948 his poems were published as a book.',
       ),
       HistoryLine(
         rookie: 'In 1943 Yun Dong-ju was arrested by the Japanese police. He died in a prison in Japan in 1945.',
@@ -896,7 +1051,12 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
   's5_ep12': HistoryReveal(
     realHistory: [
       HistoryLine(
-        rookie: 'Korea\'s government in exile moved to Chongqing in 1940. There it made the Korean Liberation Army.',
+        rookie: 'Japan ruled Korea from 1910 to 1945.',
+        junior: 'Japan ruled Korea for many years, from 1910 until 1945.',
+        master: 'Japanese rule over Korea lasted from the annexation of 1910 until 1945.',
+      ),
+      HistoryLine(
+        rookie: 'Korea\'s government, far from home, moved to Chongqing in 1940. There it made the Korean Liberation Army.',
         junior: 'In 1940, Korea\'s Provisional Government moved to Chongqing, where it founded the Korean Liberation Army.',
         master: 'In 1940 the Provisional Government relocated to Chongqing and founded the Korean Liberation Army there.',
       ),
@@ -911,9 +1071,9 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         master: 'He became vice-commander of the Korean Liberation Army in 1942 and the government\'s minister of military affairs in 1944.',
       ),
       HistoryLine(
-        rookie: 'On 15 August 1945, Japan surrendered to the Allies. The war ended, and Korea was free again.',
-        junior: 'On 15 August 1945, Japan surrendered to the Allies; the war ended and Korea was liberated.',
-        master: 'On 15 August 1945 Japan surrendered to the Allies, ending the war and liberating Korea.',
+        rookie: 'On 15 August 1945, the radio told the news: Japan surrendered to the Allies. The war ended, and Korea was free again.',
+        junior: 'On 15 August 1945, the news came on the radio: Japan had surrendered to the Allies. The war ended and Korea was liberated.',
+        master: 'On 15 August 1945 the Japanese emperor announced on the radio that Japan had surrendered to the Allies, ending the war and liberating Korea.',
       ),
       HistoryLine(
         rookie: 'Gwangbok means the light comes back. Gwang is light; bok is to come back.',
@@ -928,9 +1088,19 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
     ],
     inThisMystery: [
       HistoryLine(
-        rookie: 'Bitna, the tiles, the trunks and the letter box are made up.',
-        junior: 'Bitna, the tiles, the trunks and the letter box were invented for this story.',
-        master: 'Bitna, the tiles, the trunks and the letter box are inventions of this story.',
+        rookie: 'Korea\'s government in Chongqing and Kim Won-bong\'s work for its army are real.',
+        junior: 'Korea\'s government in Chongqing and Kim Won-bong\'s work for its army are real history.',
+        master: 'Korea\'s government in Chongqing and Kim Won-bong\'s posts in its army are historical fact.',
+      ),
+      HistoryLine(
+        rookie: 'The radio news of 15 August 1945 and the meaning of gwangbok are real too.',
+        junior: 'The news on the radio on 15 August 1945 and the meaning of gwangbok are real as well.',
+        master: 'So are the radio news of 15 August 1945 and the meaning of gwangbok.',
+      ),
+      HistoryLine(
+        rookie: 'Bitna, her mother and father, the letters, the box, the lock and the flag are made up.',
+        junior: 'Bitna, her mother and father, the letters, the box, the lock and the flag were invented for this story.',
+        master: 'Bitna, her mother and father, the letters, the box, the lock and the flag are inventions of this story.',
       ),
       HistoryLine(
         rookie: 'Kim Won-bong was real, but his words in this story are made up.',
@@ -939,6 +1109,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
       ),
     ],
     sources: [
+      HistorySource(
+        publisher: 'Atomic Heritage Foundation (National Museum of Nuclear Science & History)',
+        title: 'Jewel Voice Broadcast',
+        url: 'https://ahf.nuclearmuseum.org/ahf/key-documents/jewel-voice-broadcast/',
+      ),
       HistorySource(
         publisher: '국사편찬위원회 우리역사넷 (National Institute of Korean History)',
         title: '광복을 맞이하다',
@@ -958,6 +1133,11 @@ const s5SeoulHistoryReveals = <String, HistoryReveal>{
         publisher: '대한민국 정책브리핑 (Korea.kr, Ministry of Culture, Sports and Tourism)',
         title: '8월 15일 제79주년 광복절, 광복의 의미를 되새겨보다',
         url: 'https://www.korea.kr/news/policyNewsView.do?newsId=148932667',
+      ),
+      HistorySource(
+        publisher: '대한민국 정책브리핑 (Korea.kr; from 대한민국역사박물관 이야기)',
+        title: '광복과 새로운 국가 수립의 기록들',
+        url: 'https://www.korea.kr/briefing/policyBriefingView.do?newsId=148797800',
       ),
       HistorySource(
         publisher: '대한민국역사박물관 (National Museum of Korean Contemporary History)',

@@ -15,11 +15,12 @@ import 'package:world_mystery/features/mission/widgets/scene_deduction.dart';
 import '../../tool/season_gen/generate_case.dart';
 import '../../tool/season_gen/plan_models.dart';
 
-/// Seoul (Season 5) Case 01, Mission 1 (`content_pipeline/seasons/s5_seoul`): the
-/// inner gate's picture holds no writing, so the app draws the three traces
-/// (`TraceSketch`: the scrap with 門 copied on it, the bucket's wet ring, the
-/// drops of water) over their measured areas: each where a tap notes it,
-/// seen on the smallest phone, named for screen readers.
+/// Seoul (Season 5) Case 01, Mission 1 (`content_pipeline/seasons/s5_seoul`):
+/// since V4 (2026-11-07) Bun-i's picture note draws its three pictures of
+/// her mother itself, so the plan names no sketch. The engine's sketches
+/// (`TraceSketch`, drawn by the app over measured areas) are still played
+/// here on the note's areas: each where a tap notes it, seen on the
+/// smallest phone, named for screen readers.
 void main() {
   const plan = 'content_pipeline/seasons/s5_seoul/cases/s5_ep01/case.plan.json';
   final raw = jsonDecode(File(plan).readAsStringSync()) as Map<String, dynamic>;
@@ -45,7 +46,8 @@ void main() {
           areas: [for (final a in c.areas) rect(a)],
           mark: point(c.mark),
           line: c.line,
-          sketch: sketched ? TraceSketch.values.byName(c.sketch!) : null,
+          // shortcut: no plan uses sketches since V4; laid on the note's areas to keep the engine's drawing played.
+          sketch: sketched ? const [TraceSketch.copiedScrap, TraceSketch.waterRing, TraceSketch.waterDrops][traces.clues.indexOf(c) % 3] : null,
         ),
     ],
     others: [for (final o in traces.others) InvestigationSpot(label: o.label, areas: [for (final a in o.areas) rect(a)], line: o.line)],
@@ -87,16 +89,16 @@ void main() {
     return progress;
   }
 
-  test('the plan names a sketch for each of its three traces, the picture lacking them', () {
-    expect({for (final c in traces.clues) c.id: c.sketch}, {'scrap': 'copiedScrap', 'ring': 'waterRing', 'drops': 'waterDrops'});
+  test('V4: the note draws its own three pictures of Mom: the plan names no sketch', () {
+    expect({for (final c in traces.clues) c.id: c.sketch}, {'sew': null, 'rice': null, 'rain': null});
   });
 
-  test('the generator writes the sketches (made in memory only)', () {
+  test('the generator writes no sketch for it (made in memory only)', () {
     const seasonPath = 'content_pipeline/seasons/s5_seoul/season.plan.json';
     final made = CaseGenerator.sandbox(seasonPath: seasonPath, casePaths: const ['content_pipeline/seasons/s5_seoul/cases/s5_ep01/case.plan.json'], staticOnly: true);
     final code = made.files['s5_ep01.g.dart']!;
-    expect(code, allOf(contains('sketch: TraceSketch.copiedScrap'), contains('sketch: TraceSketch.waterRing'), contains('sketch: TraceSketch.waterDrops')));
-    expect(code, contains('show DeductionClue, DeductionPlace, DeductionScene, TraceSketch'));
+    expect(code, isNot(contains('TraceSketch.')));
+    expect(code, contains('show DeductionClue, DeductionPlace, DeductionScene'));
   });
 
   for (final text in [1.0, 1.6]) {

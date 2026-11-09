@@ -7,6 +7,7 @@ import '../models/discovery.dart';
 import '../models/easy_steps.dart';
 import '../models/history_reveal.dart';
 import '../../puzzles_v2/core/syllable_rules.dart';
+import '../models/shape_match.dart';
 import '../../puzzles_v2/core/timeline_rules.dart';
 import '../models/episode.dart';
 import '../models/garden_puzzles.dart';
@@ -92,6 +93,7 @@ class SeasonContent {
     this.trails = const {},
     this.timelines = const {},
     this.syllables = const {},
+    this.shapes = const {},
     this.finalClocks = const {},
     this.stationClocks = const {},
     this.compares = const {},
@@ -232,6 +234,11 @@ class SeasonContent {
   /// mission is a `wordInput`, its page `SyllableBoard`, its rules
   /// `SyllableRules`. Only Seoul (Season 5) has one.
   final Map<String, SyllableSpec> syllables;
+
+  /// Missions played as letters laid on the pictures they copy
+  /// (`shape_match`, Seoul Case 01 M2): by mission id. The mission is a
+  /// `matchPairs`, its page `ShapeMatchBoard`.
+  final Map<String, ShapeMatchSpec> shapes;
 
   /// Finals whose number lock is set on a clock's own hands (London Case 02's
   /// Great Clock): kept apart from [clocks], the missions' table the puzzle
@@ -415,6 +422,7 @@ class SeasonContent {
     'trails': trails,
     'timelines': timelines,
     'syllables': syllables,
+    'shapes': shapes,
     'finalClocks': finalClocks,
     'stationClocks': stationClocks,
     'compares': compares,
@@ -773,6 +781,8 @@ abstract final class SeasonCatalog {
   static TimelineSpec? timeline(Mission m) => _pick(m, (s) => s.timelines);
 
   static SyllableSpec? syllable(Mission m) => _pick(m, (s) => s.syllables);
+
+  static ShapeMatchSpec? shape(Mission m) => _pick(m, (s) => s.shapes);
 
   static ClockPuzzle? finalClock(Mission m) => _pick(m, (s) => s.finalClocks);
 

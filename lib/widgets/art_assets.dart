@@ -697,6 +697,11 @@ abstract final class ArtAssets {
     // The seasons made from plans (Rome on): each picture made for an
     // evidence of their cases (their asset manifests).
     ...generatedEvidencePictures,
+    // Seoul (Season 5): its own case pictures where it has one.
+    's5_ep02_e4': '$_seoul/case_02/turtle_ship.webp', // The Turtle Ship
+    's5_ep03_e2': '$_seoul/case_03/drawing_gate_wheels.webp', // Jeong's Drawing (found in M2, never asked again)
+    's5_ep11_e1': '$_seoul/case_11/c11_drop_card.webp', // Miri's Card
+    's5_ep11_e2': '$_seoul/case_11/c11_copy_list.webp', // Yun's List of Copies
   };
 
   static const _londonObjects = 'assets/seasons/season_01_london/objects';
@@ -733,6 +738,7 @@ abstract final class ArtAssets {
   };
 
   static const _docs = 'assets/shared/evidence_docs';
+  static const _seoul = 'assets/seasons/season_05_seoul/cases';
 
   /// The paper of document evidence [evidenceId], or null.
   static PaperArt? paperOf(String evidenceId) => evidencePapers[evidenceDocs[evidenceId]];
@@ -826,6 +832,48 @@ abstract final class ArtAssets {
     's4_ep10_e4': EvidencePaper.music,
     's4_ep11_e1': EvidencePaper.card,
     's4_ep12_e3': EvidencePaper.letter,
+    // Seoul (Season 5): its notes, books, maps and reports on paper, words inside.
+    's5_ep01_e1': EvidencePaper.card,
+    's5_ep01_e2': EvidencePaper.notice,
+    's5_ep01_e3': EvidencePaper.letter,
+    's5_ep01_e4': EvidencePaper.letter,
+    's5_ep02_e2': EvidencePaper.note,
+    's5_ep02_e3': EvidencePaper.tag,
+    's5_ep03_e1': EvidencePaper.note,
+    's5_ep03_e3': EvidencePaper.notice,
+    's5_ep03_e4': EvidencePaper.notice,
+    's5_ep04_e1': EvidencePaper.note,
+    's5_ep04_e2': EvidencePaper.log,
+    's5_ep04_e3': EvidencePaper.tag,
+    's5_ep04_e4': EvidencePaper.notice,
+    's5_ep05_e1': EvidencePaper.note,
+    's5_ep05_e2': EvidencePaper.statement,
+    's5_ep05_e3': EvidencePaper.tag,
+    's5_ep05_e4': EvidencePaper.map,
+    's5_ep06_e1': EvidencePaper.note,
+    's5_ep06_e2': EvidencePaper.map,
+    's5_ep06_e3': EvidencePaper.log,
+    's5_ep06_e4': EvidencePaper.letter,
+    's5_ep07_e1': EvidencePaper.note,
+    's5_ep07_e2': EvidencePaper.diary,
+    's5_ep07_e3': EvidencePaper.statement,
+    's5_ep07_e4': EvidencePaper.notice,
+    's5_ep08_e1': EvidencePaper.note,
+    's5_ep08_e2': EvidencePaper.map,
+    's5_ep08_e3': EvidencePaper.diary,
+    's5_ep08_e4': EvidencePaper.tag,
+    's5_ep09_e1': EvidencePaper.note,
+    's5_ep09_e3': EvidencePaper.log,
+    's5_ep09_e4': EvidencePaper.note,
+    's5_ep10_e1': EvidencePaper.note,
+    's5_ep10_e3': EvidencePaper.statement,
+    's5_ep10_e4': EvidencePaper.log,
+    's5_ep11_e3': EvidencePaper.tag,
+    's5_ep11_e4': EvidencePaper.diary,
+    's5_ep12_e1': EvidencePaper.note,
+    's5_ep12_e2': EvidencePaper.letter,
+    's5_ep12_e3': EvidencePaper.card,
+    's5_ep12_e4': EvidencePaper.card,
   };
 
   /// The detective's coin (wallet, tip shop, How to Play), full colour on

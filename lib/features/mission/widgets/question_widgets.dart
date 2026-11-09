@@ -522,10 +522,8 @@ class _NumberCodeQuestionState extends ConsumerState<NumberCodeQuestion> {
         GameButton(
           label: 'UNLOCK',
           onPressed: _code.length == _length
-              ? () {
-                  widget.onSubmit(_code);
-                  setState(() => _code = '');
-                }
+              // A wrong code stays, to be changed digit by digit (Clear empties it).
+              ? () => widget.onSubmit(_code)
               : null,
         ),
       ],
@@ -852,6 +850,20 @@ class _SequenceQuestionState extends ConsumerState<SequenceQuestion> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        // How to play, then where the order stands.
+        Padding(
+          padding: const EdgeInsets.only(bottom: AppSpace.sm),
+          child: Text(
+            _picked.isEmpty
+                ? 'Tap the steps below in order.'
+                : _picked.length < _length
+                ? 'Now tap step ${_picked.length + 1}.'
+                : 'All steps are set. Check, or undo one.',
+            key: const ValueKey('sequence-guide'),
+            textAlign: TextAlign.center,
+            style: AppText.caption(color: AppColors.inkBrown),
+          ),
+        ),
         // The order so far, written down like numbered notebook lines.
         for (var i = 0; i < _length; i++)
           Padding(

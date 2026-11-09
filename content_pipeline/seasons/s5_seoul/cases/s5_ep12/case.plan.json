@@ -4,12 +4,12 @@
   "seasonId": "s5_seoul",
   "number": 12,
   "actId": "act3",
-  "title": "The Day the Light Returned",
+  "title": "The Box That Waited",
   "synopsis": [
-    "The old letter box has come to Chongqing.",
-    "Today a keeper will write the last water-drop note."
+    "A girl's box is lost in a busy office in Chongqing.",
+    "Her mother said: open it on the day the war is over."
   ],
-  "goal": "Find the letter box, put its notes in order, and read the last note on the day the light returns.",
+  "goal": "Find Bitna's mother's box and open its lock on the right day.",
   "characters": [
     "kim_wonbong",
     "bitna"
@@ -54,18 +54,12 @@
         ],
         "status": "awaitingAssets",
         "notes": [
-          "Played as a look round (ExploreScene) of the government office: the water-drop note on the desk is read first, then the three trunks by the wall. Each wrong trunk shares one thing with the right one (a round brass lock, or one strap): the strap count and the lock together decide.",
+          "Played as a look round (ExploreScene) of the government office: Father's note on the desk is read first, then the three trunks by the wall. Each wrong trunk shares one thing with the right one (a round brass lock, or one strap): the strap count and the lock together decide.",
           "The three trunks are drawn the same size, colour and view; only the straps and the fastening differ (never colour alone).",
           "Measured 2026-11-06 on the grid sheet of office.webp (picture.measuredOn): the note on the near desk lower left, the radio on its shelf, the window over the river, the three trunks along the right wall, the open door, the bookshelf; no two areas overlap."
         ]
       },
-      "clueInputs": [
-        {
-          "ref": "s5_ep11_e4",
-          "use": "textMention",
-          "note": "Miri sent the letter box from Seoul after the poet's copy was safe."
-        }
-      ],
+      "clueInputs": [],
       "clueOutputs": {
         "clue": "s5_ep12_c1",
         "evidence": "s5_ep12_e1"
@@ -84,35 +78,35 @@
         "title": "The Trunk by the Wall",
         "location": "THE GOVERNMENT OFFICE",
         "story": [
-          "The office is hot and busy. People wait by the radio.",
-          "Miri's box came from Seoul. But where is it now?",
-          "On the desk lies a small note with a blue water drop."
+          "The office is hot and busy. People pack papers into trunks.",
+          "Bitna looks at the trunks. \"They all look the same!\"",
+          "On the desk lies a folded note with a blue seal."
         ],
-        "letterIntro": "The water-drop note says:",
-        "letter": "The box from Seoul is in a trunk by the wall.\nLook for the trunk with ONE leather strap.\nIt has a round brass lock, too.\nUnder the box is a small wooden tile.",
-        "question": "Which trunk holds the box from Seoul?",
+        "letterIntro": "Bitna's father wrote:",
+        "letter": "\"Bitna, I am sorry! I packed Mother's box in a trunk by mistake.\"\n\"It is the trunk with ONE leather strap.\"\n\"It has a round brass lock, too.\"\n\"Do not open Mother's lock before the day! — Father\"",
+        "question": "Which trunk holds Mother's box?",
         "hints": [
           "Read the note on the desk first. Then look at the trunks.",
           "Count the straps. Then look at the lock."
         ],
-        "successMessage": "You found the trunk with the letter box!",
+        "successMessage": "You found the trunk with Mother's box!",
         "transition": [
-          "Inside is the old wooden letter box from Seoul.",
-          "Under it lies a small wooden tile with one English letter: H.",
-          "Who left this note?"
+          "In the trunk lies a small wooden box.",
+          "Its top opens. Its bottom has a lock: five slots and seven letter tiles.",
+          "Mother carved on the lock: \"Five letters. Two tiles are extra.\""
         ],
         "mapX": 0.35,
         "mapY": 0.45,
         "clue": {
-          "title": "The First Tile",
-          "value": "TILE: H",
-          "note": "A wooden tile, H, was under the letter box.",
+          "title": "Mother's Lock",
+          "value": "5 SLOTS · 7 TILES",
+          "note": "Mother's lock: a word of five letters, and seven letter tiles.",
           "symbol": "key"
         },
         "evidence": {
-          "name": "The Water-Drop Note (1945)",
+          "name": "Father's Note",
           "icon": "letter",
-          "description": "A note in the King's letters with a small blue water drop. It shows the trunk with the letter box."
+          "description": "Bitna's father packed Mother's box by mistake. It is in the trunk with one strap and a brass lock. He says: do not open her lock before the day."
         },
         "explore": {
           "picture": {
@@ -124,7 +118,7 @@
             "measuredOn": "sha256:66d364e37a3fef9810770e8c0c7bc6230fa3e55442a49919a692d51822c3ef67"
           },
           "place": "The government office in Chongqing",
-          "task": "Look around the office. Find the water-drop note.",
+          "task": "Look around the office. Find the note from Bitna's father.",
           "nextTask": "Which trunk holds the box? Look at the trunks.",
           "missLine": "Nothing here. Look for the note.",
           "guideAt": [
@@ -135,8 +129,8 @@
             {
               "id": "note",
               "kind": "document",
-              "title": "THE WATER-DROP NOTE",
-              "label": "A small note on the desk",
+              "title": "FATHER'S NOTE",
+              "label": "A folded note on the desk",
               "areas": [
                 [
                   340,
@@ -233,7 +227,7 @@
                   400
                 ]
               ],
-              "line": "Books and papers. No water drop here."
+              "line": "Books and papers. No note here."
             }
           ],
           "choiceTitle": "THE TRUNKS",
@@ -269,20 +263,24 @@
         "talk": {
           "speaker": "kim_wonbong",
           "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp",
-          "goal": "Find out what the office is waiting for.",
+          "goal": "Find out where the box went.",
           "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "Welcome, Detective. Everyone here is waiting for news."
+                "text": "Welcome, Detective. The war may end soon, so we pack our papers."
               },
               {
                 "by": "speaker",
-                "text": "A box came for you from Seoul. A girl knows where."
+                "text": "Bitna's father packed her mother's box with them, by mistake."
+              },
+              {
+                "by": "speaker",
+                "text": "He went home to the little ones. He left a note on the desk."
               },
               {
                 "by": "detective",
-                "text": "Then I will look around."
+                "text": "Then I will find that note."
               }
             ],
             "finishLabel": "LOOK AROUND"
@@ -290,8 +288,8 @@
         },
         "discovery": {
           "type": "newLead",
-          "title": "THE FIRST TILE",
-          "detail": "An H, with a water drop. Someone is leaving tiles for you."
+          "title": "MOTHER'S LOCK",
+          "detail": "Five letters, and two extra tiles. Which word did Mother choose?"
         }
       }
     },
@@ -305,56 +303,43 @@
         "engineTable": "timelines",
         "missionType": "sequence",
         "answerSpec": {
-          "answer": "bun_i,seok,okbun,duri,gyeongsun,miri",
+          "answer": "first_letter,pine_letter,rain_letter,moon_letter",
           "options": [
             {
-              "id": "bun_i",
-              "label": "BUN-I"
-            },
-            {
-              "id": "seok",
-              "label": "SEOK"
-            },
-            {
-              "id": "okbun",
-              "label": "OKBUN"
-            },
-            {
-              "id": "duri",
-              "label": "DURI"
-            },
-            {
-              "id": "gyeongsun",
-              "label": "GYEONGSUN"
-            },
-            {
-              "id": "miri",
-              "label": "MIRI"
+              "id": "rain_letter",
+              "label": "THE RAIN LETTER"
             },
             {
               "id": "drawing",
               "label": "A DRAWING"
+            },
+            {
+              "id": "first_letter",
+              "label": "THE FIRST LETTER"
+            },
+            {
+              "id": "moon_letter",
+              "label": "THE MOON LETTER"
+            },
+            {
+              "id": "pine_letter",
+              "label": "THE PINE LETTER"
             }
           ],
-          "codeLength": 6
+          "codeLength": 4
         },
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "The lid's lines (made up) put the four notes in one order: Seok before Okbun, Duri after Okbun, Gyeongsun after Duri. Bun-i's (1446) and Miri's (1941) are fixed. The drawing has no water drop: not a keeper's note.",
-          "Every card is made up (the keepers and their notes are the season's fiction); their years are declared in the dossier's fiction lines."
+          "Mother's letters (made up) are ordered by her own lines: the rain letter says it came after the pine letter, and the moon letter says the rain is over. The first letter (April) is fixed. The drawing is not a letter and is set aside.",
+          "The cards are listed rain, drawing, first, moon, pine: never in the answer's order (the board does not shuffle)."
         ]
       },
       "clueInputs": [
         {
-          "ref": "s5_ep08_e4",
-          "use": "recall",
-          "note": "The letter box Gyeongsun showed in 1919."
-        },
-        {
           "ref": "s5_ep12_c1",
           "use": "textMention",
-          "note": "The box was in the trunk."
+          "note": "Mother's box from the trunk."
         }
       ],
       "clueOutputs": {
@@ -364,132 +349,113 @@
       "learning": {
         "dependency": "essential",
         "level": "comprehension",
-        "objective": "뚜껑 안쪽 글의 before, after, oldest, on top을 읽고 쪽지들을 시간순으로 놓는다.",
+        "objective": "편지의 After my pine letter, the rain came와 The rain is over now를 읽고 어머니의 편지를 보낸 순서대로 놓는다.",
         "skill": "sentenceMeaning",
         "expressions": [
-          "Seok wrote before Okbun.",
-          "It is the oldest."
+          "After my pine letter, the rain came.",
+          "The rain is over now."
         ]
       },
       "play": {
-        "title": "Eleven Notes and One Box",
+        "title": "Mother's Letters",
         "location": "BITNA'S ROOM",
         "story": [
-          "A girl with a long braid takes you to a small room.",
-          "\"I am Bitna. My mother Haesu keeps this box,\" she says.",
-          "She opens it. Six notes slide out onto the floor."
+          "You carry the box to Bitna's room. Her father and brothers are there.",
+          "Her little brother opens the top. Mother's letters fall out.",
+          "\"Mother sends a letter when she can,\" Bitna says."
         ],
-        "letterIntro": "Inside the lid, Haesu wrote:",
-        "letter": "Bun-i's note of 1446 lies at the bottom. It is the oldest.\nSeok wrote before Okbun.\nDuri wrote after Okbun.\nGyeongsun wrote after Duri.\nMiri's note of 1941 lies on top.\nOnly notes with a water drop go in the box.",
-        "question": "Put the notes back in order, from the oldest.",
+        "letterIntro": "What Mother's letters say:",
+        "letter": "First letter (April): \"I go to the Liberation Army today. I will write to you.\"\n\"My riddle is on the backs, one piece on each. Only the right order makes sense.\"\nPine letter: \"I am far away now. There are pine trees on the hill.\"\nRain letter: \"After my pine letter, the rain came. My boots are wet.\"\nMoon letter: \"The rain is over now. The moon is bright tonight.\"",
+        "question": "Put Mother's letters in order, from the first.",
         "hints": [
-          "Bun-i and Miri are fixed. Read the lines with before and after.",
-          "The drawing has no water drop. Set it aside."
+          "The first letter has its month on it. Now read the rain letter.",
+          "The moon letter says the rain is over. So it came after the rain letter."
         ],
-        "successMessage": "The notes are back in order!",
+        "successMessage": "Mother's letters are back in order!",
         "transition": [
-          "Under the last note lie two more tiles: T and I.",
-          "Each has a tiny water drop painted on it.",
-          "Then shouts come from the office down the hall."
+          "You turn them over, in order. The pieces join into one riddle.",
+          "\"The sun gives it.\" \"At night, it goes away.\"",
+          "\"It comes back on the day the war is over.\" \"'May' is not enough.\""
         ],
-        "orderFeedback": "Read the lid again. Who wrote after Okbun?",
+        "orderFeedback": "Read the rain letter and the moon letter again. Which came first?",
         "mapX": 0.6,
         "mapY": 0.55,
         "clue": {
-          "title": "Two More Tiles",
-          "value": "TILES: T · I",
-          "note": "Two tiles, T and I, were under the last note.",
+          "title": "Mother's Riddle",
+          "value": "THE SUN GIVES IT",
+          "note": "On the backs of Mother's letters: The sun gives it. At night, it goes away. It comes back on the day the war is over.",
           "symbol": "letter"
         },
         "evidence": {
-          "name": "Haesu's Lid",
+          "name": "Mother's Letters",
           "icon": "letter",
-          "description": "Haesu's lines inside the lid of the letter box: every keeper's note, from the oldest."
-        },
-        "recall": {
-          "title": "Is this the box?",
-          "prompt": "Which thing in your Notebook shows this old letter box?",
-          "miss": "Find the old letter box Gyeongsun showed you."
+          "description": "Four letters from Bitna's mother, in order. On the backs: The sun gives it. At night, it goes away. It comes back on the day the war is over. 'May' is not enough."
         },
         "timeline": {
           "cards": [
             {
-              "id": "bun_i",
-              "title": "BUN-I",
-              "text": "The first note: the name of the letters.",
-              "anchor": "1446",
-              "fiction": true
-            },
-            {
-              "id": "seok",
-              "title": "SEOK",
-              "text": "A note from the navy base by the sea.",
-              "fiction": true
-            },
-            {
-              "id": "okbun",
-              "title": "OKBUN",
-              "text": "A note from the new fortress wall.",
-              "fiction": true
-            },
-            {
-              "id": "duri",
-              "title": "DURI",
-              "text": "A note from the palace timber yard.",
-              "fiction": true
-            },
-            {
-              "id": "gyeongsun",
-              "title": "GYEONGSUN",
-              "text": "A note from the market by the hill.",
-              "fiction": true
-            },
-            {
-              "id": "miri",
-              "title": "MIRI",
-              "text": "A note about a poet's copy.",
-              "anchor": "1941",
+              "id": "rain_letter",
+              "title": "THE RAIN LETTER",
+              "text": "A little rain cloud is drawn on it.",
               "fiction": true
             },
             {
               "id": "drawing",
               "title": "A DRAWING",
-              "text": "Bitna's drawing of a cat. No water drop.",
+              "text": "Bitna's little brother drew a house. It is not a letter.",
               "discard": true,
+              "fiction": true
+            },
+            {
+              "id": "first_letter",
+              "title": "THE FIRST LETTER",
+              "text": "Mother wrote it the day she left.",
+              "anchor": "APRIL",
+              "fiction": true
+            },
+            {
+              "id": "moon_letter",
+              "title": "THE MOON LETTER",
+              "text": "A little moon is drawn on it.",
+              "fiction": true
+            },
+            {
+              "id": "pine_letter",
+              "title": "THE PINE LETTER",
+              "text": "A little pine tree is drawn on it.",
               "fiction": true
             }
           ],
           "relations": [
             {
-              "earlier": "seok",
-              "later": "okbun",
-              "line": "Seok wrote before Okbun."
+              "earlier": "pine_letter",
+              "later": "rain_letter",
+              "line": "After my pine letter, the rain came."
             },
             {
-              "earlier": "okbun",
-              "later": "duri",
-              "line": "Duri wrote after Okbun."
-            },
-            {
-              "earlier": "duri",
-              "later": "gyeongsun",
-              "line": "Gyeongsun wrote after Duri."
+              "earlier": "rain_letter",
+              "later": "moon_letter",
+              "line": "The rain is over now."
             }
           ]
         },
         "talk": {
           "speaker": "bitna",
           "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp",
-          "goal": "Find out about the box.",
+          "goal": "Find out about Mother's letters.",
           "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "Every note in here has a water drop."
+                "text": "My little brother opened the top. Now Mother's letters are all mixed up!"
               },
               {
                 "by": "speaker",
-                "text": "The first one is very, very old."
+                "text": "Mother is far away with our army, the Liberation Army."
+              },
+              {
+                "by": "speaker",
+                "text": "She drew a little picture on each letter."
               },
               {
                 "by": "detective",
@@ -516,14 +482,19 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "The number is read in the words: the radio's 'the fifteenth of August' and Bitna's month card (August is month eight), written month before day: 815. The date is a checked fact (h3); the radio's words and the card are made up."
+          "The number is read in the words: the radio's 'the fifteenth of August' (Japan's surrender, announced on the radio that day: h3, h10), Mother's rule ('May' is not enough: the fourteenth, when Bitna's brothers only said the war may end, is ruled out) and Bitna's month card (August is month eight), written month before day: 815. The radio's words, the brothers' words and the card are made up."
         ]
       },
       "clueInputs": [
         {
           "ref": "s5_ep12_c2",
           "use": "textMention",
-          "note": "The notes are in order; one more is to be written."
+          "note": "Mother's rule: 'may' is not enough."
+        },
+        {
+          "ref": "s5_ep12_e2",
+          "use": "recall",
+          "note": "The backs of Mother's letters: 'May' is not enough."
         }
       ],
       "clueOutputs": {
@@ -533,7 +504,7 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "the fifteenth of August와 달 이름 카드(August is month eight)를 읽고, 달을 먼저 쓰는 한국식 날짜 815를 넣는다.",
+        "objective": "라디오의 the fifteenth of August와 어머니의 'May' is not enough, 달 카드(August is month eight)를 읽고 달을 먼저 쓰는 날짜 815를 넣는다.",
         "skill": "vocabulary",
         "expressions": [
           "the fifteenth of August",
@@ -544,41 +515,41 @@
         "title": "News on the Radio",
         "location": "THE GOVERNMENT OFFICE",
         "story": [
-          "Everyone stands around the radio. A voice speaks in English.",
+          "You and Bitna run back to the office. Everyone stands by the radio.",
           "People hold their breath. Then some of them cry.",
-          "Bitna takes out a new paper and her pen."
+          "Bitna takes out her date card and her pen."
         ],
-        "letterIntro": "The radio, and Bitna's month card:",
-        "letter": "Radio: \"The war is over! Japan has given up.\"\n\"Today is the fifteenth of August.\"\nBitna's card: June is month six. July is month seven.\nAugust is month eight. September is month nine.\nBitna: \"Korean dates put the month before the day.\"\n\"Write today's number on my note.\"",
-        "question": "What number goes on Bitna's note? Put it in.",
+        "letterIntro": "The radio, Mother's rule, and Bitna's card:",
+        "letter": "Radio: \"Japan has given up. The war is over!\"\n\"Today is the fifteenth of August.\"\nBitna's card: \"The fourteenth: my brothers said the war may end.\"\nMother's letter: \"'May' is not enough.\"\nBitna's card: July is month seven. August is month eight. September is month nine.\nBitna: \"Korean dates put the month before the day.\"\n\"Write the day Mother's lock can open, in numbers.\"",
+        "question": "On what day can Mother's lock open? Put the date in as a number.",
         "hints": [
-          "Find August on Bitna's card. Then find the day on the radio.",
-          "Write the month, then the day of the month."
+          "Mother said 'may' is not enough. On which day is the war really over?",
+          "Find August on Bitna's card. Write the month, then the day."
         ],
-        "successMessage": "8.15: the fifteenth of August!",
+        "successMessage": "8.15: the fifteenth of August! Today is the day.",
         "transition": [
-          "Bitna writes 8.15 at the top of her new note.",
-          "By the radio lie two more tiles: G and L.",
-          "\"Come to the river steps,\" Bitna says. \"I will show you.\""
+          "Bitna writes 8.15 on her card.",
+          "\"Not a 'may' day,\" she says. \"Today the war is over.\"",
+          "\"Let us open it on the river steps. Mother said goodbye to me there.\""
         ],
         "feedback": {
           "715": "July is month seven. The radio says August.",
-          "814": "Listen again: the fifteenth of August.",
+          "814": "That was only a 'may' day. Mother said 'may' is not enough.",
           "915": "September is month nine. The radio says August."
         },
         "orderFeedback": "The right numbers, in the wrong order. The month goes before the day.",
         "mapX": 0.35,
         "mapY": 0.45,
         "clue": {
-          "title": "The Last Tiles",
-          "value": "TILES: G · L",
-          "note": "Two tiles, G and L, were by the radio.",
+          "title": "The Day",
+          "value": "TODAY: 8.15",
+          "note": "The radio: the war is over on the fifteenth of August. The fourteenth was only a 'may' day.",
           "symbol": "key"
         },
         "evidence": {
-          "name": "Bitna's Month Card",
+          "name": "Bitna's Date Card",
           "icon": "letter",
-          "description": "Bitna's card of month names. Today is 8.15: the fifteenth of August."
+          "description": "Bitna's card: today is 8.15, the fifteenth of August. The war is over. The fourteenth was only a 'may' day."
         },
         "talk": {
           "speaker": "kim_wonbong",
@@ -600,7 +571,12 @@
         "discovery": {
           "type": "storyDiscovery",
           "title": "THE WAR IS OVER",
-          "detail": "Japan has surrendered. Bitna writes the date on the last note."
+          "detail": "Japan has given up. Today Mother's lock can open."
+        },
+        "recall": {
+          "title": "Mother's Rule",
+          "prompt": "Which thing in your Notebook says when the lock can open?",
+          "miss": "Find the backs of Mother's letters."
         }
       }
     }
@@ -618,6 +594,10 @@
         "answer": "LIGHT",
         "options": [
           {
+            "id": "n",
+            "label": "N"
+          },
+          {
             "id": "h",
             "label": "H"
           },
@@ -628,6 +608,10 @@
           {
             "id": "i",
             "label": "I"
+          },
+          {
+            "id": "r",
+            "label": "R"
           },
           {
             "id": "g",
@@ -642,7 +626,8 @@
       "assetNeeds": [],
       "status": "ready",
       "notes": [
-        "The season's letter-collecting final: the five tiles found in this case's missions (H; T, I; G, L, listed in that order so the letter never spells the answer) spell LIGHT, what gwang (光) means in gwangbok: the light returns (h5), on the day of Japan's surrender, 15 August 1945 (h3).",
+        "Mother's lock: seven tiles N, H, T, I, R, G, L (listed so they never spell the answer), five of them spell LIGHT, read in Mother's riddle on the backs of her letters (the sun gives it; at night, it goes away; it comes back on the day the war is over). N and R are extra: NIGHT, RIGHT, THING, GLINT and GIRTH can be made too, and each has its own line pointing back to the riddle. What gwang (光) means in gwangbok, the light comes back (h5), is told in the ending.",
+        "PART 1.5 (engine 2a, decoy tiles): the lock has a slot for each letter of LIGHT; the two extra tiles stay on the desk.",
         "Liberation is never one person's work: the ending says the Allies won the war and many Koreans, at home and far away, worked for it (h3, h4)."
       ]
     },
@@ -650,22 +635,27 @@
       {
         "ref": "s5_ep12_c1",
         "use": "answerDerivation",
-        "note": "Tile H."
+        "note": "Mother's lock: a five-letter word; two tiles are extra."
       },
       {
         "ref": "s5_ep12_c2",
         "use": "answerDerivation",
-        "note": "Tiles T and I."
+        "note": "The sun gives it; at night, it goes away."
       },
       {
         "ref": "s5_ep12_c3",
         "use": "answerDerivation",
-        "note": "Tiles G and L."
+        "note": "Today is the day: the lock can open."
       },
       {
-        "ref": "s5_ep01_e3",
-        "use": "evidenceLink",
-        "note": "Bun-i's first note lies at the bottom of the box."
+        "ref": "s5_ep12_e2",
+        "use": "answerDerivation",
+        "note": "Shown to Bitna: Mother's riddle on the backs of her letters."
+      },
+      {
+        "ref": "s5_ep12_e3",
+        "use": "answerDerivation",
+        "note": "Shown to Bitna: today is 8.15, not a 'may' day."
       }
     ],
     "clueOutputs": {
@@ -674,111 +664,195 @@
     "learning": {
       "dependency": "essential",
       "level": "recall",
-      "objective": "광복의 뜻풀이(gwang = the opposite of dark, bok = it comes back)를 읽고 모은 다섯 타일로 LIGHT를 만든다.",
+      "objective": "어머니의 수수께끼(The sun gives it. At night, it goes away.)를 읽고 다섯 타일로 LIGHT를 만든다.",
       "skill": "vocabulary",
       "expressions": [
-        "the opposite of dark",
-        "it comes back"
+        "The sun gives it.",
+        "At night, it goes away."
       ],
-      "recallFrom": "s5_ep12_m3"
+      "recallFrom": "s5_ep12_m2"
     },
     "play": {
-      "title": "The Last Water-Drop Note",
+      "title": "Mother's Lock",
       "location": "THE RIVER STEPS",
       "story": [
-        "The sun goes down over the two rivers.",
-        "Bitna sits on the steps with the letter box.",
-        "\"The tiles were mine,\" she says. \"I am the keeper now.\""
+        "The sun goes down over the river. Families meet on the steps.",
+        "Bitna sits with Mother's box on her knees.",
+        "\"Before I open it, I must be sure,\" she says."
       ],
-      "letterIntro": "Bitna's new note, and what she tells you:",
-      "letter": "The note says one word: 광복 (gwangbok).\n\"Gwang (광) is the opposite of dark.\"\n\"Bok (복) means it comes back.\"\n\"You have five tiles: H, T, I, G, L.\"\n\"Spell what gwang means, in English.\"",
-      "question": "Spell the word with your five tiles.",
+      "letterIntro": "Mother's lock, and her riddle:",
+      "letter": "On the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\"",
+      "question": "What is Mother's word? Spell it with five of the seven tiles.",
       "hints": [
-        "Gwang is the opposite of dark.",
-        "Day is full of it; night has very little."
+        "What does the sun give us in the day? At night, it is gone.",
+        "N and R are the extra tiles. Use the other five."
       ],
-      "successMessage": "LIGHT. The light returns!",
+      "successMessage": "LIGHT. Mother's lock opens!",
       "transition": [
-        "Bitna lays her note on top of the others.",
-        "Bun-i's first note lies under eleven more.",
-        "The box is full of light now. The season ends."
+        "Inside lies a flag, folded small. It is Korea's flag.",
+        "Mother sewed it for the day the war is over.",
+        "Bitna holds it up in the last light of the sun."
       ],
-      "orderFeedback": "All five tiles are right. What is the opposite of dark?",
+      "orderFeedback": "All five letters are right. Put them in order: what the sun gives us.",
       "mapX": 0.7,
       "mapY": 0.75,
       "evidence": {
-        "name": "The Last Note",
+        "name": "Mother's Flag",
         "icon": "seal",
-        "description": "Bitna's note of 8.15, 1945, with a water drop. One word: 광복, the light returns.",
-        "inscription": "광복: the light returns."
+        "description": "The flag Bitna's mother sewed and locked in her box. Her word was LIGHT. Bitna opened it on 8.15, 1945, the day the war was over.",
+        "inscription": "LIGHT: on the day the war is over, it comes back."
       },
-      "evidenceLinkLine": "Bun-i's first note, from 1446, at the bottom of the box.",
-      "lockTitle": "THE KEEPERS' LAST LOCK",
+      "lockTitle": "MOTHER'S LOCK",
       "ending": [
         {
           "by": "narrator",
-          "text": "On 15 August 1945, Japan surrendered to the Allies."
-        },
-        {
-          "by": "narrator",
-          "text": "The war ended, and Korea's light returned: gwangbok."
-        },
-        {
-          "by": "narrator",
-          "text": "Kim Won-bong had worked for independence since 1919."
+          "text": "On 15 August 1945, Japan gave up. The war was over."
         },
         {
           "by": "speaker",
-          "text": "No one person brought this day.",
+          "text": "In Korean, this day is gwangbok: the light comes back.",
           "speaker": "kim_wonbong",
           "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp"
         },
         {
           "by": "speaker",
-          "text": "The Allies won the war, and many Koreans worked for it.",
+          "text": "Light! That is Mother's word!",
+          "speaker": "bitna",
+          "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp"
+        },
+        {
+          "by": "speaker",
+          "text": "The Allies, the countries that fought Japan, won the war.",
           "speaker": "kim_wonbong",
           "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp"
         },
         {
           "by": "speaker",
-          "text": "At home and far away. Most of their names are unknown.",
+          "text": "Many Koreans worked for this day too, at home and far away.",
+          "speaker": "kim_wonbong",
+          "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp"
+        },
+        {
+          "by": "narrator",
+          "text": "Kim Won-bong was the government's minister for the army."
+        },
+        {
+          "by": "narrator",
+          "text": "The Korean Liberation Army was getting ready, but Japan gave up first."
+        },
+        {
+          "by": "speaker",
+          "text": "Mother is with them. Soon she will come back too.",
           "speaker": "bitna",
           "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp"
         },
         {
           "by": "detective",
-          "text": "Bun-i's first note started it all.",
-          "evidence": "s5_ep01_e3"
-        },
-        {
-          "by": "speaker",
-          "text": "Gwangbok. The light returns.",
-          "speaker": "bitna",
-          "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp"
+          "text": "Mother's flag waited in the box. Today it came out.",
+          "evidence": "s5_ep12_e4"
         }
-      ]
+      ],
+      "talk": {
+        "speaker": "bitna",
+        "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp",
+        "goal": "Show Bitna that today is the day, and where Mother hid her riddle.",
+        "before": {
+          "lines": [
+            {
+              "by": "speaker",
+              "text": "Mother's rule is strict."
+            },
+            {
+              "by": "detective",
+              "text": "Then let us check it together."
+            }
+          ],
+          "presents": [
+            {
+              "id": "today",
+              "prompt": "Bitna asks: \"Is today really the day? Mother said 'may' is not enough.\"",
+              "accepted": [
+                "s5_ep12_e3"
+              ],
+              "offered": [
+                "s5_ep12_e2",
+                "s5_ep12_e3",
+                "s5_ep12_e1"
+              ],
+              "lines": [
+                {
+                  "by": "detective",
+                  "text": "The radio said it: the war is over. Today is 8.15."
+                },
+                {
+                  "by": "speaker",
+                  "text": "Not a 'may' day. Today is the day!"
+                }
+              ],
+              "miss": "That does not say what day it is.",
+              "tell": "Find the card with today's date on it.",
+              "litAfter": 3
+            },
+            {
+              "id": "riddle",
+              "prompt": "Bitna asks: \"And Mother's word? Where did she hide her riddle?\"",
+              "accepted": [
+                "s5_ep12_e2"
+              ],
+              "offered": [
+                "s5_ep12_e3",
+                "s5_ep12_e1",
+                "s5_ep12_e2"
+              ],
+              "requires": [
+                "today"
+              ],
+              "lines": [
+                {
+                  "by": "detective",
+                  "text": "On the backs of her letters: the sun gives it. At night, it goes away."
+                },
+                {
+                  "by": "speaker",
+                  "text": "Five letters. My brothers tried to guess it many times!"
+                }
+              ],
+              "miss": "There is no riddle on that.",
+              "tell": "Mother wrote on the backs of her letters.",
+              "litAfter": 3
+            }
+          ]
+        }
+      },
+      "feedback": {
+        "NIGHT": "Night is when it goes away. What does the sun give?",
+        "RIGHT": "The sun does not give us \"right\". Read the riddle again.",
+        "THING": "A thing can be anything. What does the sun give us?",
+        "GLINT": "A glint is only a tiny flash. This comes back for the whole country.",
+        "GIRTH": "Girth means how big around. The sun does not give it."
+      }
     }
   },
   "hook": "The radio in the office is on all day.",
   "learningGoal": {
-    "title": "Reading dates, order and the meaning of gwangbok",
-    "titleKo": "날짜·순서·광복의 뜻 읽기"
+    "title": "Reading clues, order, dates and the meaning of gwangbok",
+    "titleKo": "단서·순서·날짜·광복의 뜻 읽기"
   },
   "play": {
     "objectives": [
-      "Find the letter box.",
-      "Put the keepers' notes in order.",
-      "Write the date of the news.",
-      "Read the last water-drop note."
+      "Find Mother's box.",
+      "Put Mother's letters in order.",
+      "Find the day the lock can open.",
+      "Open Mother's lock."
     ],
     "intro": [
-      "August, 1945. You are a guest of the Provisional Government in Chongqing.",
-      "It is Korea's government in exile, far from home.",
-      "Kim Won-bong, a minister of the government, meets you at the door.",
-      "Miri sent the old letter box here from Seoul.",
-      "On your chair lies a small note with a water drop."
+      "August, 1945. You are a guest of Korea's government in Chongqing, China.",
+      "Japan has ruled Korea since 1910. So this government works far from home.",
+      "Kim Won-bong, the government's minister for the army, meets you at the door.",
+      "A girl runs up to you: \"I am Bitna. My mother's box is lost!\"",
+      "\"Mother said: open its lock only on the day the war is over.\""
     ],
-    "caseSummary": "Bitna, Haesu's daughter, was the last keeper. On 15 August 1945, Japan surrendered to the Allies and the war ended. Korea's light returned: gwangbok means the light comes back. The Allies won the war. Many Koreans, at home and far away, worked for this day too. Bitna's last note lies on top of Bun-i's first note.",
+    "caseSummary": "Bitna's mother left her a box with a word lock. Open it on the day the war is over, she said. 'May' is not enough. Bitna's father packed it in a trunk by mistake. On 15 August 1945, Japan gave up and the war was over. Bitna opened the lock with Mother's word: LIGHT. Inside was the flag Mother sewed. In Korean, this day is gwangbok: the light comes back. The Allies won the war, and many Koreans worked for this day.",
     "place": "CHONGQING",
     "keyWords": [
       "trunk",
@@ -791,19 +865,23 @@
       "trunk": "여행용 큰 상자, 트렁크",
       "strap": "가죽 끈",
       "brass": "놋쇠",
-      "surrendered": "항복했다",
+      "mistake": "실수 (by mistake: 실수로)",
+      "seal": "봉인, 도장",
+      "pine": "소나무",
+      "riddle": "수수께끼",
       "allies": "연합국",
       "government": "정부",
-      "exile": "망명",
       "minister": "장관(부장)",
-      "oldest": "가장 오래된",
-      "water-drop": "물방울 (표시)",
-      "independence": "독립"
+      "liberation": "해방, 광복",
+      "gwangbok": "광복 (빛이 돌아옴)",
+      "flag": "깃발 (태극기)",
+      "fourteenth": "14일 (열나흘째 날)",
+      "fifteenth": "15일 (보름째 날)"
     }
   },
   "notes": [
-    "Season 5 Case 12, the season's end (PART 10, 2026-11-06). Kim Won-bong is real (minister of military affairs of the Provisional Government from 1944); everything he says and does here is made up. His life after 1945 is outside the case and never told.",
-    "Bitna, the trunks, the tiles, the radio's words, the month card and the river steps are made up. Haesu (Case 09-10) is named only, never shown: her portrait is planned by the Case 09 writer.",
-    "The case ends on checked facts: Japan's surrender on 15 August 1945, liberation from the Allied victory and many Koreans' work, and gwangbok meaning 'the light returns' (LIGHT)."
+    "Season 5 Case 12, a standalone case (PART 1B, 2026-11-09): Bitna's mother's box, lost in the office, is opened on the day the war is over. Kim Won-bong is real (minister of military affairs of the Provisional Government from 1944, h2); everything he says and does here is made up. His life after 1945 is outside the case and never told.",
+    "Bitna, her mother, father and brothers, Mother's letters and the lines on their backs, the box, its lock and tiles, the flag, the trunks, Father's note, the date card and the radio's words are made up. No other case's people, notes or evidence appear.",
+    "The case ends on checked facts: Japan's surrender announced on the radio on 15 August 1945 (h3, h10), liberation from the Allied victory and many Koreans' work (h4), the Liberation Army's plan called off (h6), and gwangbok meaning 'the light comes back' (h5)."
   ]
 }

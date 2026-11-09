@@ -55,6 +55,10 @@ abstract final class SelectionCode {
 
   /// An act with fewer kinds of puzzle than the act before it.
   static const lateDiversityDrop = 'late_diversity_drop';
+
+  /// Tiles or steps listed in the answer's own order (the screen does not
+  /// shuffle: the answer would be read off the board).
+  static const answerOrderShown = 'answer_order_shown';
 }
 
 /// One finding: how much it weighs, its code, where, and why.
@@ -346,6 +350,9 @@ abstract final class PuzzleSelectionCheck {
       case 'sequence':
         if (a.options.isEmpty) break;
         final steps = _ids(a.answer);
+        if (steps.length > 1 && ids.take(steps.length).join(',') == steps.join(',')) {
+          out.add(SelectionIssue(Severity.warning, SelectionCode.answerOrderShown, '$aa.options', 'listed in the answer\'s order: list them in another order'));
+        }
         final length = a.codeLength ?? steps.length;
         if (length != steps.length) error(SelectionCode.answerMismatch, '$aa.codeLength', '$length steps, but the answer has ${steps.length}');
         for (final s in steps.toSet()) {
@@ -357,9 +364,17 @@ abstract final class PuzzleSelectionCheck {
         }
       case 'letterLock':
         if (a.options.isEmpty) break;
+        if (a.options.map((o) => o.label).join().toUpperCase().startsWith(_normalize(a.answer))) {
+          out.add(SelectionIssue(Severity.warning, SelectionCode.answerOrderShown, '$aa.options', 'the tiles spell ${a.answer} as listed: list them in another order'));
+        }
         final tiles = _normalize(a.options.map((o) => o.label).join());
-        if (!_sameLetters(tiles, _normalize(a.answer))) {
+        // Every letter of the word among the tiles; a few more are extra (decoys).
+        final word = _normalize(a.answer);
+        final extra = _extraLetters(tiles, word);
+        if (extra == null) {
           error(SelectionCode.answerMismatch, '$aa.answer', '"${a.answer}" is not spelled by the tiles (${a.options.map((o) => o.label).join(' ')}), each used once');
+        } else if (extra > maxExtraTiles) {
+          error(SelectionCode.answerMismatch, '$aa.options', '$extra extra tiles; at most $maxExtraTiles');
         }
     }
   }
@@ -416,5 +431,16 @@ abstract final class PuzzleSelectionCheck {
   /// As `Mission.sequenceIds`.
   static List<String> _ids(String answer) => answer.isEmpty ? const [] : answer.split(',').map((s) => s.trim()).toList();
 
-  static bool _sameLetters(String a, String b) => a.length == b.length && (a.split('')..sort()).join() == (b.split('')..sort()).join();
+  /// The most tiles a letter lock has beyond its word's letters.
+  static const maxExtraTiles = 4;
+
+  /// How many of [tiles]' letters are left over once [word] is spelled
+  /// from them (each used once), or null when it cannot be spelled.
+  static int? _extraLetters(String tiles, String word) {
+    final left = tiles.split('');
+    for (final c in word.split('')) {
+      if (!left.remove(c)) return null;
+    }
+    return left.length;
+  }
 }

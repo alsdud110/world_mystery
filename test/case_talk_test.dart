@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show FontLoader, rootBundle;
+import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
@@ -145,13 +147,15 @@ void main() {
       expect(again.puzzleStateOf('m'), 'its puzzle', reason: "the mission's own puzzle is kept apart");
     });
 
-    test('only Case 11\'s final is played as a case talk; Season 1 keeps its talk', () {
+    test('Paris: only Case 11\'s final is played as a case talk; Seoul: its evidence-talk finals; Season 1 keeps its talk', () {
       final talked = [
         for (final e in MockEpisodeRepository.bundled())
           for (final m in e.allMissions)
             if (SeasonCatalog.caseTalk(m) != null) m.id,
       ];
-      expect(talked, ['s2_ep11_final']);
+      expect(talked.where((id) => !id.startsWith('s5_')), ['s2_ep11_final'], reason: 'hand-made seasons');
+      // Seoul's finals played as a talk (PART 2–4 redesign); the others have a talk before their puzzle.
+      expect(talked.where((id) => id.startsWith('s5_')), ['s5_ep04_final', 's5_ep06_final', 's5_ep07_final', 's5_ep09_final', 's5_ep10_final']);
       expect(season1Content.talks, isEmpty);
       expect(season1Content.talkMissions, isEmpty);
       expect(season1Content.dialogues.keys, ['ep06_m1']);
@@ -362,5 +366,169 @@ void main() {
     await t.pumpAndSettle();
     expect(taken, 'ep12_e4');
   });
-}
+  // PART 1.5 (Seoul redesign): three or four cards to pick from, a "read it
+  // again" line before any card is lit, and the mission's hints on the talk.
+  group('cards to pick from, and hints', () {
+    // The game's own fonts (the test font draws every letter a full square:
+    // names would measure far wider than on a phone).
+    setUpAll(() async {
+      for (final (family, files) in [
+        ('Sentient', ['Sentient-Variable.ttf']),
+        ('IMFellEnglishSC', ['IMFellEnglishSC-Regular.ttf']),
+        ('LibreBaskerville', ['LibreBaskerville.ttf', 'LibreBaskerville-Italic.ttf']),
+      ]) {
+        final loader = FontLoader(family);
+        for (final f in files) {
+          loader.addFont(rootBundle.load('assets/fonts/$f'));
+        }
+        await loader.load();
+      }
+    });
 
+    final ev = [for (final e in MockEpisodeRepository.bundled().first.allEvidence) e.id];
+    TalkScene cards(int n, {int litAfter = 2}) => TalkScene(
+      id: 'test_cards',
+      speaker: const TalkSpeaker(id: 'man', name: 'MR TEST', portraits: {}),
+      goal: 'Show the right clue.',
+      opening: const [TalkLine('Show me.')],
+      presents: [
+        TalkPresent(
+          id: 'pick',
+          prompt: 'Which clue proves it?',
+          accepted: {ev[1]},
+          beat: const [TalkLine('Yes, that one.')],
+          choices: ev.take(n).toList(),
+          tell: 'Read the clue about the door again.',
+          litAfter: litAfter,
+        ),
+      ],
+      finishWhen: const {'pick'},
+    );
+
+    Future<List<int>> pump(WidgetTester t, TalkScene scene, {Size size = const Size(320, 568), List<String> hints = const []}) async {
+      t.view.physicalSize = size * t.view.devicePixelRatio;
+      addTearDown(t.view.reset);
+      final asked = <int>[];
+      var shown = 0;
+      await t.pumpWidget(
+        ProviderScope(
+          overrides: await testOverrides(),
+          child: MaterialApp(
+            home: StatefulBuilder(
+              builder: (context, setState) => Scaffold(
+                body: CaseTalk(
+                  scene: scene,
+                  progress: TalkProgress.start.skip(scene),
+                  onProgress: (_) {},
+                  onFinish: () {},
+                  hints: hints,
+                  hintsShown: shown,
+                  onHint: hints.isEmpty ? null : () => setState(() => asked.add(++shown)),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+      await t.pump(const Duration(seconds: 3));
+      return asked;
+    }
+
+    BoxDecoration? glow(WidgetTester t, String id) => t
+        .widget<AnimatedContainer>(find.descendant(of: find.byKey(ValueKey('case-talk-choice-$id')), matching: find.byType(AnimatedContainer)).first)
+        .decoration as BoxDecoration?;
+    bool lit(WidgetTester t, String id) => glow(t, id)!.border == null && glow(t, id)!.boxShadow!.first.blurRadius == 18;
+
+    Future<void> choose(WidgetTester t, String id) async {
+      await t.ensureVisible(find.byKey(ValueKey('case-talk-choice-$id')));
+      await t.tap(find.byKey(ValueKey('case-talk-choice-$id')));
+      await t.pump();
+      await t.pump(const Duration(seconds: 3));
+    }
+
+    for (final n in [3, 4]) {
+      testWidgets('$n cards fit a 320-wide phone: three in a row, four two to a row', (t) async {
+        await pump(t, cards(n));
+        for (final id in ev.take(n)) {
+          expect(find.byKey(ValueKey('case-talk-choice-$id')), findsOneWidget);
+        }
+        final a = t.getTopLeft(find.byKey(ValueKey('case-talk-choice-${ev[0]}')));
+        final b = t.getTopLeft(find.byKey(ValueKey('case-talk-choice-${ev[1]}')));
+        final c = t.getTopLeft(find.byKey(ValueKey('case-talk-choice-${ev[2]}')));
+        expect(a.dy, b.dy, reason: 'the first two side by side');
+        if (n == 3) {
+          expect(c.dy, a.dy, reason: 'three: one row');
+        } else {
+          expect(c.dy, greaterThan(a.dy), reason: 'four: the third on the next row');
+        }
+        final size = t.getSize(find.byKey(ValueKey('case-talk-choice-${ev[0]}')));
+        expect(size.width, greaterThanOrEqualTo(n == 3 ? 80 : 120), reason: 'a finger-sized card');
+        expect(size.height, greaterThanOrEqualTo(48));
+        expect(t.takeException(), isNull, reason: 'nothing overflows');
+      });
+    }
+
+    testWidgets("every Seoul talk's cards at 320 wide: each evidence name whole, nothing overflows", (t) async {
+      final talks = [
+        for (final e in MockEpisodeRepository.bundled().where((e) => e.id.startsWith('s5_')))
+          for (final m in e.allMissions) ?(SeasonCatalog.caseTalk(m) ?? SeasonCatalog.talkMission(m)?.before),
+      ];
+      var sets = 0;
+      for (final talk in talks) {
+        for (final p in talk.presents.where((p) => p.choices.length > 1)) {
+          sets++;
+          final scene = TalkScene(
+            id: 'seoul_${p.id}',
+            speaker: const TalkSpeaker(id: 'man', name: 'MR TEST', portraits: {}),
+            goal: 'Show the right clue.',
+            opening: const [TalkLine('Show me.')],
+            presents: [TalkPresent(id: p.id, prompt: p.prompt, accepted: p.accepted, beat: const [TalkLine('Yes.')], choices: p.choices)],
+            finishWhen: {p.id},
+          );
+          await pump(t, scene);
+          for (final id in p.choices) {
+            final name = t.renderObject<RenderParagraph>(find.descendant(of: find.byKey(ValueKey('case-talk-choice-name-$id')), matching: find.byType(RichText)));
+            expect(name.didExceedMaxLines, isFalse, reason: '${p.id} $id: its name is cut');
+          }
+          expect(t.takeException(), isNull, reason: p.id);
+        }
+      }
+      expect(sets, greaterThanOrEqualTo(15), reason: 'every Seoul present with cards was laid out');
+    });
+
+    testWidgets('litAfter 3: the second miss says what to read again, no card lit; the third lights it', (t) async {
+      await pump(t, cards(3, litAfter: 3));
+      await choose(t, ev[0]);
+      await choose(t, ev[2]);
+      expect(find.text('Read the clue about the door again.'), findsOneWidget);
+      expect(lit(t, ev[1]), isFalse, reason: 'not lit after two misses');
+      await choose(t, ev[0]);
+      expect(lit(t, ev[1]), isTrue, reason: 'the safety net, from the third');
+      await choose(t, ev[1]);
+      expect(find.text('"Yes, that one."'), findsOneWidget, reason: 'the right card still goes on');
+    });
+
+    testWidgets('the default (two cards, litAfter 2) lights the right card after the second miss, as before', (t) async {
+      await pump(t, cards(2));
+      await choose(t, ev[0]);
+      expect(lit(t, ev[1]), isFalse);
+      await choose(t, ev[0]);
+      expect(lit(t, ev[1]), isTrue);
+    });
+
+    testWidgets("a talk with the mission's hints: the hint link opens them one by one", (t) async {
+      final asked = await pump(t, cards(2), size: const Size(390, 844), hints: const ['Think about the door.', 'The key card.']);
+      expect(find.byKey(const ValueKey('case-talk-hint')), findsOneWidget);
+      await t.ensureVisible(find.byKey(const ValueKey('case-talk-hint')));
+      await t.tap(find.byKey(const ValueKey('case-talk-hint')));
+      await t.pump(const Duration(seconds: 1));
+      expect(asked, [1]);
+      expect(find.textContaining('Think about the door.'), findsOneWidget);
+    });
+
+    testWidgets('no hints given: no hint link (every talk before)', (t) async {
+      await pump(t, cards(2));
+      expect(find.byKey(const ValueKey('case-talk-hint')), findsNothing);
+    });
+  });
+}

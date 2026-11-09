@@ -10,6 +10,7 @@ import 'package:world_mystery/data/models/scene_exhibit.dart' show EvidenceLink;
 import 'package:world_mystery/data/models/scene_deduction.dart' show DeductionScene;
 import 'package:world_mystery/data/models/scene_explore.dart' show ExploreScene;
 import 'package:world_mystery/data/models/scene_inspect.dart' show InspectScene;
+import 'package:world_mystery/data/models/shape_match.dart' show ShapeMatchSpec;
 import 'package:world_mystery/data/models/tower_puzzles.dart' show RecordsScene;
 import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart' show SyllableSpec;
 import 'package:world_mystery/puzzles_v2/core/timeline_rules.dart' show TimelineSpec;
@@ -169,6 +170,22 @@ const s5SeoulSyllables = <String, SyllableSpec>{
   ...s5Ep10Syllables,
   ...s5Ep11Syllables,
   ...s5Ep12Syllables,
+};
+
+/// Their missions played on `shapes` (`SeasonContent.shapes`).
+const s5SeoulShapes = <String, ShapeMatchSpec>{
+  ...s5Ep01Shapes,
+  ...s5Ep02Shapes,
+  ...s5Ep03Shapes,
+  ...s5Ep04Shapes,
+  ...s5Ep05Shapes,
+  ...s5Ep06Shapes,
+  ...s5Ep07Shapes,
+  ...s5Ep08Shapes,
+  ...s5Ep09Shapes,
+  ...s5Ep10Shapes,
+  ...s5Ep11Shapes,
+  ...s5Ep12Shapes,
 };
 
 /// Their missions played on `deductions` (`SeasonContent.deductions`).

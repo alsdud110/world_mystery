@@ -56,6 +56,7 @@ import 'widgets/evidence_recall.dart';
 import 'widgets/clockwork_garden.dart';
 import 'widgets/star_records.dart';
 import 'widgets/evidence_board.dart';
+import 'widgets/dialogue_investigation.dart' show WordsLink;
 import 'widgets/letter_lock.dart' show LetterLockQuestion, LetterLockReveal;
 import 'widgets/letter_map.dart';
 import 'widgets/light_table.dart';
@@ -874,6 +875,9 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
         progress: TalkProgress.decode(progress.puzzleStateOf(key), talk),
         onProgress: (p) => ref.read(gameControllerProvider.notifier).recordPuzzleState(key, p.encode()),
         onFinish: () => _submit(talk.answer),
+        hints: m.hints,
+        hintsShown: progress.hintsFor(m.id),
+        onHint: _showHint,
       ),
     );
   }
@@ -1706,6 +1710,8 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
           ),
         ),
     ],
+    // The harder words of the final's story and letter, listed (every final puzzle).
+    Center(child: WordsLink(text: [...m.story, m.letter, m.question].join('\n'), color: AppColors.goldLight)),
     const SizedBox(height: 12),
     GameButton(
       label: 'OPEN MY NOTEBOOK',

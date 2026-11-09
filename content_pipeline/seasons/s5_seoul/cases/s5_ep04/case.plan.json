@@ -6,10 +6,10 @@
   "actId": "act1",
   "title": "The Palace of a Thousand Logs",
   "synopsis": [
-    "Ten great logs for the new palace are missing from the timber yard.",
-    "A note with a small water drop says one mark has a new line."
+    "Great logs for the new palace are missing from the timber yard.",
+    "A note with a small pine tree says one mark has a new line."
   ],
-  "goal": "Find out where the palace logs went, and what the new palace costs.",
+  "goal": "Find out where the palace logs went, and who took them.",
   "characters": [
     "heungseon_daewongun",
     "duri",
@@ -41,18 +41,12 @@
         ],
         "status": "awaitingAssets",
         "notes": [
-          "Played under the glass (InspectScene): the log whose mark has one pale, new cut is the one the note describes; its torn yard tag leads to the typed word. Take the new line away (Sora's rule: a stronger sound adds one line, ㄴ then ㄷ) and 다 was 나: good logs, for the palace gates.",
+          "Played under the glass (InspectScene): the log whose mark has one pale, new cut is the one the note describes; its torn yard tag leads to the typed word. Take the new line away (the carvers' rule on the yard board, told by Duri: a stronger sound adds one line, ㄴ then ㄷ) and 다 was 나: good logs, for the palace gates.",
           "The marks are words of the app (each spot's line): the logs in the picture have plain carved patches, no letters.",
           "Measured 2026-11-06 on the grid sheet of timber_yard.webp (picture.measuredOn): the thick log end on the left, the thin bent log in the centre, the tall straight log on the right with its blank tag hanging just right of it; the game writes each mark on its log's carved patch; no two areas overlap."
         ]
       },
-      "clueInputs": [
-        {
-          "ref": "s5_ep01_e2",
-          "use": "recall",
-          "note": "Sora's Lesson Board: a stronger sound adds one line (ㄴ, then ㄷ)."
-        }
-      ],
+      "clueInputs": [],
       "clueOutputs": {
         "clue": "s5_ep04_c1",
         "evidence": "s5_ep04_e1"
@@ -60,7 +54,7 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "목재장 게시판과 Sora의 규칙(a stronger sound adds one line)을 읽고, 새로 한 획이 더해진 표시를 찾아 원래 표시가 뜻하던 곳(palace gates)을 쓴다.",
+        "objective": "목재장 게시판과 두리가 알려 주는 새김 규칙(a stronger sound adds one line)을 읽고, 새로 한 획이 더해진 표시를 찾아 원래 표시가 뜻하던 곳(palace gates)을 쓴다.",
         "skill": "vocabulary",
         "expressions": [
           "for the palace gates",
@@ -72,16 +66,16 @@
         "location": "THE TIMBER YARD",
         "story": [
           "Every log has a mark carved on its end.",
-          "A note with a small water drop is nailed to a post.",
+          "A note with a small pine tree is nailed to a post.",
           "Duri, a carpenter's apprentice, shows you the yard board."
         ],
         "letterIntro": "The yard board, and the note:",
-        "letter": "Yard board: each log has a mark carved on its end.\n가: the best logs, for the great halls.\n나: good logs, for the palace gates.\n다: not for the palace. They may be sold.\nThe note: \"One mark has a new line. Find it.\"\nSora's board: a stronger sound adds one line: ㄴ, then ㄷ.",
+        "letter": "Yard board: each log has a mark carved on its end.\n가: the best logs, for the great halls.\n나: good logs, for the palace gates.\n다: not for the palace. They may be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: a stronger sound adds one line: ㄴ, then ㄷ.",
         "question": "Find the log with a new line. Before the new line, where was it going?",
         "prompt": "FOR THE PALACE ____",
         "hints": [
           "Look for a mark with one pale, new cut.",
-          "Take the new line away. Which mark is left? Read the yard board."
+          "Take the new line away from 다. Which mark is left?"
         ],
         "successMessage": "It was a 나 log, for the palace gates!",
         "transition": [
@@ -98,14 +92,9 @@
           "note": "One new cut turned 나 into 다: a palace log now looks like a log to sell."
         },
         "evidence": {
-          "name": "The Water-Drop Note (1866)",
+          "name": "The Note on the Post",
           "icon": "letter",
-          "description": "A short note in the King's letters, with a small water drop. It says one mark has a new line."
-        },
-        "recall": {
-          "title": "One More Line",
-          "prompt": "Which page of your notebook says how a stronger sound is written?",
-          "miss": "That does not explain the lines. Look for Sora's board."
+          "description": "A short note in the King's letters, with a small pine tree and no name. It says one mark has a new line."
         },
         "inspect": {
           "picture": {
@@ -226,7 +215,11 @@
               },
               {
                 "by": "speaker",
-                "text": "Ten great logs were 나 last night. Now I cannot find them."
+                "text": "We carve the marks in the King's letters. A stronger sound gets one more line."
+              },
+              {
+                "by": "speaker",
+                "text": "Twelve great logs were 나 last night. This morning I find only two."
               },
               {
                 "by": "detective",
@@ -237,8 +230,11 @@
         },
         "discovery": {
           "type": "newLead",
-          "title": "THE WATER DROP AGAIN",
-          "detail": "1592, 1795, and now 1866. Can one person write them all?"
+          "title": "WHO NAILED THE NOTE?",
+          "detail": "Someone saw the new line before dawn. The note has no name, only a pine tree."
+        },
+        "feedback": {
+          "HALLS": "가 is for the halls. Take the new line away from 다: which mark is left?"
         }
       }
     },
@@ -258,7 +254,7 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "The yard book, last night and this morning: 다 logs went from six to sixteen while the ten 나 logs vanished. Ten palace logs were changed."
+          "The yard book, last night and this morning: 다 logs went from six to sixteen while 나 logs went from twelve to two. Ten palace logs were changed (both counts agree)."
         ]
       },
       "clueInputs": [
@@ -275,7 +271,7 @@
       "learning": {
         "dependency": "essential",
         "level": "comprehension",
-        "objective": "목재장 장부의 수(ten, six, none, sixteen)를 읽고 어젯밤과 오늘 아침을 비교해 바뀐 통나무의 수를 넣는다.",
+        "objective": "목재장 장부의 수(twelve, six, sixteen, two)를 읽고 어젯밤과 오늘 아침을 비교해 바뀐 통나무의 수를 넣는다.",
         "skill": "vocabulary",
         "expressions": [
           "last night",
@@ -291,20 +287,22 @@
           "\"Only logs marked 다,\" the clerk says. \"Logs that may be sold.\""
         ],
         "letterIntro": "The yard book, and Mr. Pyo's paper:",
-        "letter": "Yard book, last night: 나 logs: ten. 다 logs: six.\nYard book, this morning: 나 logs: none. 다 logs: sixteen.\nMr. Pyo's paper: \"I bought every 다 log in the yard.\"",
+        "letter": "Yard book, last night. Counted by Duri, a small pine tree by his name:\n나 logs: twelve. 다 logs: six.\nYard book, this morning. Counted by the clerk:\n다 logs: sixteen. 나 logs: two.\nMr. Pyo's paper: \"I bought every 다 log in the yard.\"",
         "question": "How many palace logs got a new line? Put in the number.",
         "hints": [
           "Compare the 다 logs last night and this morning.",
-          "How many more 다 logs are there this morning?"
+          "Six were 다 already. How many more are there now?"
         ],
         "successMessage": "Ten palace logs became logs to sell!",
         "transition": [
           "Ten palace logs got a new line.",
-          "And Mr. Pyo bought every one of them.",
-          "\"Why would anyone do that?\" you ask."
+          "And Mr. Pyo bought every 다 log.",
+          "\"But where are they now?\" asks Duri."
         ],
         "feedback": {
+          "12": "That is all the 나 logs last night. Two are still 나.",
           "16": "That is all the 다 logs this morning. Six were 다 already.",
+          "02": "Two logs are still 나. How many are not 나 any more?",
           "06": "Six logs were 다 last night. How many more are there now?"
         },
         "orderFeedback": "The right digits, in the wrong order. Read the yard book again.",
@@ -318,7 +316,7 @@
         "evidence": {
           "name": "The Yard Book",
           "icon": "letter",
-          "description": "Last night: ten 나 logs, six 다 logs. This morning: no 나 logs, sixteen 다 logs."
+          "description": "Last night Duri counted twelve 나 logs and six 다 logs, and signed with a pine tree. This morning: two 나 logs, sixteen 다 logs. Mr. Pyo bought every 다 log."
         }
       }
     },
@@ -327,45 +325,37 @@
       "slot": "m3",
       "placeId": "s5_seoul.c04_palace_site",
       "puzzle": {
-        "paletteId": "timeline_board",
+        "paletteId": "trace_deduction",
         "surface": "mission",
-        "engineTable": "timelines",
-        "missionType": "sequence",
+        "engineTable": "deductions",
+        "missionType": "multipleChoice",
         "answerSpec": {
-          "answer": "burn,ruins,begin,coin,logs",
+          "answer": "cart",
           "options": [
             {
-              "id": "burn",
-              "label": "THE FIRE"
+              "id": "hall",
+              "label": "The great hall",
+              "feedback": "The logs going up to the hall are marked 가, with old cuts."
             },
             {
-              "id": "ruins",
-              "label": "THE RUINS"
+              "id": "cart",
+              "label": "The ox cart"
             },
             {
-              "id": "begin",
-              "label": "THE REBUILDING"
-            },
-            {
-              "id": "coin",
-              "label": "THE NEW COIN"
-            },
-            {
-              "id": "logs",
-              "label": "THE NEW LINES"
-            },
-            {
-              "id": "move",
-              "label": "THE KING MOVES IN"
+              "id": "gate",
+              "label": "The new gate, not finished",
+              "feedback": "The gate is still waiting for its logs. Where do logs to sell go?"
             }
-          ],
-          "codeLength": 5
+          ]
         },
-        "assetNeeds": [],
-        "status": "ready",
+        "assetNeeds": [
+          "s5_seoul.asset.c04_palace_site"
+        ],
+        "status": "awaitingAssets",
         "notes": [
-          "Duri's story of the palace: the fire of 1592 is fixed first, last night's new lines last; after / until / then place the ruins, the rebuilding (1865) and the new coin (1866). The King moving in has not happened yet (the palace is half-built): it is set aside.",
-          "The cards on history rest on checked facts (h1, h2, h3, h5); the logs are made up."
+          "Traces read (DeductionScene): the log carried to the hall is 가 with old cuts; deep wheel tracks and pale wood dust (like the new cut) lead to the ox cart. Duri's yard rule says logs to sell leave on a dealer's cart, and the ten changed logs now look like logs to sell.",
+          "Measured 2026-11-09 on the grid sheet of palace_site.webp (picture.measuredOn): the great hall under scaffolding (upper left), the half-built gate (right), the ox cart loaded with logs (right of centre, below the gate), two men carrying a log (centre), officials (lower left), stone workers (lower right); the tracks and the dust are on open paving where the game draws them; no two areas overlap.",
+          "Replaces the timeline of the palace's story (PART 2): its history is told by Duri before the search."
         ]
       },
       "clueInputs": [
@@ -381,134 +371,232 @@
       },
       "learning": {
         "dependency": "essential",
-        "level": "comprehension",
-        "objective": "두리가 말하는 경복궁 이야기(after, until, then)를 읽고 불탐–폐허–중건 시작–새 동전–어젯밤의 일을 차례로 놓는다.",
-        "skill": "grammarInContext",
+        "level": "application",
+        "objective": "두리의 목재장 규칙(Logs to sell leave by the east gate)과 흔적(Pale wood dust, 바퀴 자국)을 읽고 바뀐 통나무가 있는 곳을 고른다.",
+        "skill": "sentenceMeaning",
         "expressions": [
-          "After it burned, it lay in ruins.",
-          "The ruins stood until 1865."
+          "Logs to sell leave by the east gate",
+          "Pale wood dust"
         ]
       },
       "play": {
-        "title": "The Palace's Story",
+        "title": "Where Did the Logs Go?",
         "location": "THE PALACE SITE",
         "story": [
           "Duri takes you to the new palace. It is only half done.",
-          "\"Mr. Pyo says the new coin buys less every week,\" Duri says.",
-          "\"He wants logs, not coins. But first, hear the palace's story.\""
+          "Workers carry logs across the stones."
         ],
-        "letterIntro": "Duri tells you:",
-        "letter": "\"The palace burned in the war of 1592.\"\n\"After it burned, it lay in ruins for a long time.\"\n\"The ruins stood until 1865. Then the rebuilding began.\"\n\"A new coin came in 1866, after the work began. Prices went up.\"\n\"Last night, ten palace logs got a new line.\"",
-        "question": "Put the palace's story in order, up to last night.",
+        "letterIntro": "Duri's yard rule, and what he saw:",
+        "letter": "Logs for the halls are carried up the steps.\nLogs for the gates wait by the gate.\nLogs to sell leave by the east gate, on a dealer's cart.\nOn the way, Duri saw:\nTwo men carry a log to the hall. Its mark is 가. All its cuts are old.\nDeep wheel tracks. A heavy cart came here from the timber yard.\nPale wood dust on the stones, like the new cut on the log.",
+        "question": "The ten changed logs look like logs to sell now. Where are they?",
         "hints": [
-          "Look for 'after', 'until' and 'then' in Duri's words.",
-          "The palace is not finished yet. Set aside what has not happened yet."
+          "The changed logs now look like 다 logs: logs to sell. Where do logs to sell go?",
+          "Follow the wheel tracks and the pale wood dust."
         ],
-        "successMessage": "That is the palace's story, up to last night!",
+        "successMessage": "Ten logs, under a straw mat on Mr. Pyo's cart!",
         "transition": [
-          "A palace costs wood, money and work. Not only wood.",
-          "Duri points to a cart by the gate.",
-          "\"Mr. Pyo's cart! The ten logs are on it!\""
+          "Each 다 mark has one pale, new cut.",
+          "In the straw lies a small chisel, white with fresh wood dust.",
+          "\"Mr. Pyo says coins buy less and less,\" Duri says. \"Logs do not. So he wants logs.\""
         ],
-        "orderFeedback": "Read Duri's words again: what came after the work began?",
         "mapX": 0.55,
         "mapY": 0.4,
         "clue": {
-          "title": "The Palace's Story",
-          "value": "BURNED 1592 · BEGUN 1865 · NEW COIN 1866",
-          "note": "The palace burned in 1592 and lay in ruins. The rebuilding began in 1865; a new coin came in 1866, and prices went up."
+          "title": "The Cart",
+          "value": "MR. PYO'S CART",
+          "note": "The ten logs are on Mr. Pyo's cart, with a chisel and fresh wood dust."
         },
         "evidence": {
-          "name": "The Palace's Story",
-          "icon": "palace",
-          "description": "Burned in 1592, rebuilt from 1865. People had to give money. A new coin came in 1866, and prices went up."
-        },
-        "timeline": {
-          "cards": [
-            {
-              "id": "burn",
-              "title": "THE FIRE",
-              "text": "The palace burns in the war.",
-              "anchor": "1592",
-              "factIds": [
-                "s5_ep04_h1"
-              ]
-            },
-            {
-              "id": "ruins",
-              "title": "THE RUINS",
-              "text": "The palace lies in ruins for a long time.",
-              "factIds": [
-                "s5_ep04_h1"
-              ]
-            },
-            {
-              "id": "begin",
-              "title": "THE REBUILDING",
-              "text": "The rebuilding of the palace begins.",
-              "factIds": [
-                "s5_ep04_h2"
-              ]
-            },
-            {
-              "id": "coin",
-              "title": "THE NEW COIN",
-              "text": "A new coin is made, and prices go up.",
-              "factIds": [
-                "s5_ep04_h5"
-              ]
-            },
-            {
-              "id": "logs",
-              "title": "THE NEW LINES",
-              "text": "Ten palace logs get a new line.",
-              "anchor": "LAST NIGHT",
-              "fiction": true
-            },
-            {
-              "id": "move",
-              "title": "THE KING MOVES IN",
-              "text": "The King moves into the finished palace.",
-              "discard": true,
-              "factIds": [
-                "s5_ep04_h3"
-              ]
-            }
-          ],
-          "relations": [
-            {
-              "earlier": "burn",
-              "later": "ruins",
-              "line": "\"After it burned, it lay in ruins for a long time.\""
-            },
-            {
-              "earlier": "ruins",
-              "later": "begin",
-              "line": "\"The ruins stood until 1865. Then the rebuilding began.\""
-            },
-            {
-              "earlier": "begin",
-              "later": "coin",
-              "line": "\"A new coin came in 1866, after the work began. Prices went up.\""
-            }
-          ]
+          "name": "Mr. Pyo's Cart",
+          "icon": "bag",
+          "description": "Ten pine logs on Mr. Pyo's cart, ready to leave by the east gate. A small chisel lies in the straw, white with fresh wood dust."
         },
         "talk": {
           "speaker": "duri",
           "portrait": "assets/seasons/season_05_seoul/characters/duri.webp",
           "goal": "Find out what the palace costs the people.",
-          "after": {
+          "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "Every house gave money for it. Most had no choice."
+                "text": "The palace burned in the war of 1592. It lay in ruins for a long time."
+              },
+              {
+                "by": "speaker",
+                "text": "In 1865 the rebuilding began. Every house had to give money. Most had no choice."
               },
               {
                 "by": "speaker",
                 "text": "My uncle was called from his farm to work here."
+              },
+              {
+                "by": "speaker",
+                "text": "And with the new coin, rice costs more every week."
+              },
+              {
+                "by": "detective",
+                "text": "Then where would ten palace logs go?"
               }
             ]
           }
+        },
+        "traces": {
+          "picture": {
+            "file": "assets/seasons/season_05_seoul/cases/case_04/palace_site_traces.webp",
+            "pixels": {
+              "width": 1536,
+              "height": 1024
+            },
+            "measuredOn": "sha256:9155b4f0a46ae6a70b85de7df2f137e208799babca15cb40907a72b01f239314"
+          },
+          "place": "The palace site, half built",
+          "task": "Look for three marks.",
+          "chooseTask": "Where are the ten changed logs? Tap the place.",
+          "missLine": "Nothing here. Look for marks on the ground.",
+          "notPlaceLine": "Tap a place where the logs could be.",
+          "guideAt": [
+            700,
+            980
+          ],
+          "clues": [
+            {
+              "id": "carry",
+              "label": "Two men with a log",
+              "areas": [
+                [
+                  580,
+                  630,
+                  790,
+                  790
+                ]
+              ],
+              "mark": [
+                685,
+                710
+              ],
+              "line": "Two men carry a log to the hall. Its mark is 가. All its cuts are old."
+            },
+            {
+              "id": "tracks",
+              "label": "Deep wheel tracks",
+              "areas": [
+                [
+                  850,
+                  765,
+                  1150,
+                  905
+                ]
+              ],
+              "mark": [
+                1000,
+                840
+              ],
+              "line": "Deep wheel tracks. A heavy cart came here from the timber yard."
+            },
+            {
+              "id": "dust",
+              "label": "Pale wood dust",
+              "areas": [
+                [
+                  625,
+                  795,
+                  830,
+                  870
+                ]
+              ],
+              "mark": [
+                725,
+                832
+              ],
+              "line": "Pale wood dust on the stones, like the new cut on the log."
+            }
+          ],
+          "places": [
+            {
+              "optionId": "hall",
+              "areas": [
+                [
+                  60,
+                  70,
+                  980,
+                  520
+                ]
+              ],
+              "mark": [
+                520,
+                300
+              ]
+            },
+            {
+              "optionId": "cart",
+              "areas": [
+                [
+                  1030,
+                  600,
+                  1450,
+                  745
+                ]
+              ],
+              "mark": [
+                1300,
+                665
+              ]
+            },
+            {
+              "optionId": "gate",
+              "areas": [
+                [
+                  1085,
+                  230,
+                  1536,
+                  590
+                ]
+              ],
+              "mark": [
+                1310,
+                420
+              ]
+            }
+          ],
+          "others": [
+            {
+              "label": "The officials",
+              "areas": [
+                [
+                  20,
+                  640,
+                  330,
+                  960
+                ]
+              ],
+              "line": "Officials read a plan of the palace."
+            },
+            {
+              "label": "The stone workers",
+              "areas": [
+                [
+                  1150,
+                  765,
+                  1480,
+                  960
+                ]
+              ],
+              "line": "Workers cut stones for the steps."
+            }
+          ],
+          "inside": [
+            10,
+            60,
+            1526,
+            1014
+          ],
+          "opening": [
+            20,
+            60,
+            1516,
+            1004
+          ],
+          "rereadLetter": true
         }
       }
     }
@@ -531,7 +619,7 @@
       ],
       "status": "awaitingAssets",
       "notes": [
-        "The Daewongun's four questions, each answered by one piece of evidence: the new cut (the note), how many (the yard book), who wrote the note (the water-drop notes of 1592 and 1795: Act 1's turning point, a family not one person), and what the palace costs (the palace's story: forced gifts of money, the new coin and rising prices, and farmers called to work — h4, h5, h6). The talk closes on the real cost; the ending states the real rebuilding (h2, h3).",
+        "Three questions, each answered by one card of this case: the new cut (the note), who cut it (the cart: the chisel white with fresh wood dust), who wrote the note (the yard book's pine tree by Duri's name). Three cards each, the right one lit only from the third miss. The palace's cost is a question (h4, h5, h6) and the ending (h2, h3).",
         "His words are made up (dossier fiction); none quotes a record."
       ]
     },
@@ -539,27 +627,17 @@
       {
         "ref": "s5_ep04_c1",
         "use": "answerDerivation",
-        "note": "One new cut turned 나 into 다."
+        "note": "One new cut turns 나 into 다."
       },
       {
         "ref": "s5_ep04_c2",
         "use": "answerDerivation",
-        "note": "Ten logs were changed."
+        "note": "The yard book: Duri's pine tree by his name."
       },
       {
         "ref": "s5_ep04_c3",
         "use": "answerDerivation",
-        "note": "The palace's story and its cost."
-      },
-      {
-        "ref": "s5_ep03_e1",
-        "use": "answerDerivation",
-        "note": "Okbun's water drop of 1795: the same mark."
-      },
-      {
-        "ref": "s5_ep02_e1",
-        "use": "answerDerivation",
-        "note": "Seok's water drop of 1592: the same mark."
+        "note": "Mr. Pyo's cart: the logs, a chisel and fresh wood dust."
       }
     ],
     "clueOutputs": {
@@ -568,11 +646,11 @@
     "learning": {
       "dependency": "essential",
       "level": "application",
-      "objective": "대원군의 네 질문(How do you know? How many? Who wrote this? what the palace costs)을 읽고 각 질문에 맞는 증거를 보여 준다.",
+      "objective": "대원군의 세 질문(How do you know? Who cut the new lines? Who nailed this note?)을 읽고 각 질문에 맞는 증거 카드를 보여 준다.",
       "skill": "sentenceMeaning",
       "expressions": [
         "How do you know?",
-        "what the palace costs"
+        "Who cut the new lines?"
       ]
     },
     "play": {
@@ -580,21 +658,21 @@
       "location": "THE PALACE SITE",
       "story": [
         "The Daewongun rides up to the new throne hall. Its roof is not done.",
-        "Mr. Pyo stands by his cart, red in the face.",
+        "Mr. Pyo stands by his cart. \"I only bought logs marked 다!\" he says.",
         "\"Explain this,\" says the Daewongun."
       ],
       "letterIntro": "Your notebook says:",
-      "letter": "One new cut turned 나 into 다.\nTen palace logs were changed last night.\nThe rebuilding began in 1865. A new coin came in 1866.\nThe same water drop is on notes from 1592 and 1795.",
-      "question": "Who wrote the note, and who took the logs? Answer the Daewongun's four questions with your evidence.",
+      "letter": "One new cut turns 나 into 다.\nTen palace logs were changed last night.\nThe logs are on Mr. Pyo's cart, with a chisel.\nThe note has no name, only a pine tree.",
+      "question": "Who cut the new lines, and who wrote the note? Answer the Daewongun's three questions.",
       "hints": [
-        "Each question needs one piece of evidence.",
-        "Use the note, the yard book, an older note and the palace's story."
+        "Each question needs its own card. Read the words on each card.",
+        "The chisel is on the cart card. The pine tree by a name is in the yard book."
       ],
       "successMessage": "The Daewongun has heard the truth!",
       "transition": [
         "Mr. Pyo's cart turns back to the timber yard.",
         "The ten logs will stand in the palace gates.",
-        "Duri lays three notes side by side."
+        "Duri stands by the gate, his cap in his hands."
       ],
       "orderFeedback": "Answer each question with its own evidence.",
       "mapX": 0.55,
@@ -607,7 +685,7 @@
       "interview": {
         "speaker": "heungseon_daewongun",
         "portrait": "assets/seasons/season_05_seoul/characters/heungseon_daewongun.webp",
-        "goal": "Show the Daewongun what happened to the logs, and what the palace costs.",
+        "goal": "Show the Daewongun who changed the logs, and who wrote the note.",
         "opening": [
           {
             "by": "speaker",
@@ -632,11 +710,25 @@
                 "text": "I want it to stand again."
               }
             ]
+          },
+          {
+            "id": "q_cost",
+            "text": "What does the palace cost the people?",
+            "lines": [
+              {
+                "by": "speaker",
+                "text": "Every house gives money for it. Farmers come to work."
+              },
+              {
+                "by": "speaker",
+                "text": "Since the new coin, prices are high. It is hard, but the palace must stand."
+              }
+            ]
           }
         ],
         "presents": [
           {
-            "id": "mark",
+            "id": "p_mark2",
             "prompt": "The Daewongun asks: \"How do you know they are palace logs?\"",
             "accepted": [
               "s5_ep04_e1"
@@ -651,102 +743,76 @@
                 "text": "One more line. Clever, and wrong."
               }
             ],
-            "miss": "That does not show the new cut.",
-            "offered": [
-              "s5_ep04_e1",
-              "s5_ep04_e2"
-            ],
-            "tell": "The water-drop note says one mark has a new line."
-          },
-          {
-            "id": "count",
-            "prompt": "The Daewongun asks: \"How many of my logs?\"",
-            "accepted": [
-              "s5_ep04_e2"
-            ],
-            "lines": [
-              {
-                "by": "detective",
-                "text": "Ten. The yard book shows ten 나 logs became 다."
-              },
-              {
-                "by": "speaker",
-                "text": "Ten great logs! Take them back to the yard."
-              }
-            ],
-            "miss": "That does not count the logs.",
+            "miss": "That does not show the new line.",
             "offered": [
               "s5_ep04_e2",
-              "s5_ep04_e3"
-            ],
-            "tell": "The yard book counts the logs.",
-            "requires": [
-              "mark"
-            ]
-          },
-          {
-            "id": "note",
-            "prompt": "The Daewongun asks: \"And who nailed this note in my yard?\"",
-            "accepted": [
-              "s5_ep03_e1",
-              "s5_ep02_e1"
-            ],
-            "lines": [
-              {
-                "by": "detective",
-                "text": "The same water drop was on notes in 1592 and 1795."
-              },
-              {
-                "by": "speaker",
-                "text": "Then no one person wrote them all."
-              }
-            ],
-            "miss": "That has no water drop.",
-            "offered": [
-              "s5_ep03_e1",
-              "s5_ep04_e2"
-            ],
-            "tell": "The note of 1795 has the same water drop.",
-            "requires": [
-              "count"
-            ]
-          },
-          {
-            "id": "cost",
-            "prompt": "The Daewongun asks: \"Wood is not all a palace needs, is it?\"",
-            "accepted": [
-              "s5_ep04_e3"
-            ],
-            "lines": [
-              {
-                "by": "detective",
-                "text": "It needs money and work from the people too."
-              },
-              {
-                "by": "detective",
-                "text": "And since the new coin came, prices have gone up."
-              },
-              {
-                "by": "speaker",
-                "text": "The palace will be finished."
-              }
-            ],
-            "miss": "That does not show what the palace costs.",
-            "offered": [
               "s5_ep04_e3",
               "s5_ep04_e1"
             ],
-            "tell": "The palace's story names the money, the new coin and the prices.",
+            "tell": "Which card says one mark has a new line?",
+            "litAfter": 3
+          },
+          {
+            "id": "p_cut2",
+            "prompt": "The Daewongun asks: \"Mr. Pyo says he only bought them. Who cut the new lines?\"",
+            "accepted": [
+              "s5_ep04_e3"
+            ],
+            "lines": [
+              {
+                "by": "detective",
+                "text": "The chisel in his cart is white with fresh wood dust."
+              },
+              {
+                "by": "speaker",
+                "text": "Then the new lines are his work."
+              }
+            ],
+            "miss": "That does not show who cut the lines.",
+            "offered": [
+              "s5_ep04_e1",
+              "s5_ep04_e3",
+              "s5_ep04_e2"
+            ],
+            "tell": "Which card shows what was in Mr. Pyo's cart?",
             "requires": [
-              "note"
-            ]
+              "p_mark2"
+            ],
+            "litAfter": 3
+          },
+          {
+            "id": "p_writer2",
+            "prompt": "The Daewongun asks: \"And who nailed this note in my yard? It has no name, only a pine tree.\"",
+            "accepted": [
+              "s5_ep04_e2"
+            ],
+            "lines": [
+              {
+                "by": "detective",
+                "text": "Duri, sir. He signs the yard book with that pine tree."
+              },
+              {
+                "by": "speaker",
+                "text": "A boy saw what my officials did not."
+              }
+            ],
+            "miss": "That card does not name anyone in the yard.",
+            "offered": [
+              "s5_ep04_e3",
+              "s5_ep04_e1",
+              "s5_ep04_e2"
+            ],
+            "tell": "Whose name in the yard book has a pine tree by it?",
+            "requires": [
+              "p_cut2"
+            ],
+            "litAfter": 3
           }
         ],
         "finishWhen": [
-          "mark",
-          "count",
-          "note",
-          "cost"
+          "p_mark2",
+          "p_cut2",
+          "p_writer2"
         ],
         "finishLabel": "CLOSE THE CASE"
       },
@@ -762,27 +828,29 @@
         {
           "by": "narrator",
           "text": "It cost the people dearly: forced gifts, high prices and hard work.",
-          "evidence": "s5_ep04_e3"
+          "evidence": "s5_ep04_e4"
         },
         {
           "by": "speaker",
-          "text": "I wrote the note. My father taught me the mark.",
+          "text": "I wrote the note. Mr. Pyo is a rich man, and I am only a boy. So I wrote no name.",
           "speaker": "duri",
           "portrait": "assets/seasons/season_05_seoul/characters/duri.webp"
         },
         {
           "by": "detective",
-          "text": "1592, 1795, 1866: the same water drop.",
-          "evidence": "s5_ep03_e1"
+          "text": "Your pine tree in the yard book told me.",
+          "evidence": "s5_ep04_e2"
         },
         {
-          "by": "narrator",
-          "text": "Not one person. A family keeps writing them. But why?"
+          "by": "speaker",
+          "text": "I love the pine logs best. So I draw a little pine tree by my name.",
+          "speaker": "duri",
+          "portrait": "assets/seasons/season_05_seoul/characters/duri.webp"
         }
       ]
     }
   },
-  "hook": "Ten great logs are gone before the palace gates are built.",
+  "hook": "Palace logs are gone before the palace is finished.",
   "learningGoal": {
     "title": "Reading marks, numbers and a palace's story",
     "titleKo": "표시·수·경복궁 이야기 읽기"
@@ -791,17 +859,18 @@
     "objectives": [
       "Find the mark with a new line.",
       "Count the changed logs.",
-      "Put the palace's story in order.",
+      "Follow the logs.",
       "Answer the Daewongun's questions."
     ],
     "intro": [
-      "Winter, 1866. You are a guest of the Heungseon Daewongun in Hanyang.",
-      "He leads the rebuilding of Gyeongbokgung, the great palace.",
+      "Winter, 1866. You are a detective in Hanyang, a guest of the Heungseon Daewongun.",
+      "He is the King's father. He rules for the young King.",
+      "He is building Gyeongbokgung, the great palace, again.",
       "It burned in the war of 1592, and lay in ruins for a long time.",
       "Now great pine logs fill the timber yard.",
-      "But this morning, ten logs for the palace are missing."
+      "But this morning, some palace logs are missing."
     ],
-    "caseSummary": "Mr. Pyo, a timber dealer, had a new line cut on ten palace logs. So 나 became 다: logs that may be sold. Duri, a young carpenter, wrote the note. The real story: Gyeongbokgung burned in 1592. The Heungseon Daewongun rebuilt it from 1865, and it was finished in 1868. It cost the people dearly. People had to give money. A new coin made prices go up. Many were called to hard work.",
+    "caseSummary": "Mr. Pyo, a timber dealer, cut a new line on ten palace logs at night. So 나 became 다: logs that may be sold. He bought them and hid them on his cart. Coins were buying less and less. Duri, a young carpenter, wrote the note and signed it only with his pine tree. The real story: Gyeongbokgung burned in 1592. The Heungseon Daewongun, the King's father, rebuilt it from 1865, and it was finished in 1868. It cost the people a lot. People had to give money. A new coin made prices go up. Many were called to hard work.",
     "place": "GYEONGBOKGUNG, HANYANG",
     "keyWords": [
       "mark",
@@ -819,11 +888,14 @@
       "rebuilding": "다시 짓기(중건)",
       "coin": "동전",
       "prices": "물가",
-      "daewongun": "대원군"
+      "daewongun": "대원군",
+      "chisel": "끌",
+      "cart": "수레"
     }
   },
   "notes": [
     "PART 10 (2026-11-06), Case 04. The Heungseon Daewongun is real; his words here are made up. Duri, Mr. Pyo, the clerk, the yard board, the marks and the missing logs are made up.",
-    "Ends on checked facts: the final talk closes on the real cost of the rebuilding (h4 forced gifts of money, h5 the new coin of 1866 and rising prices, h6 farmers called to work), and the ending states the real rebuilding (h2 begun in the fourth month of 1865, the Daewongun leading it; h3 finished in 1868, the King moved in). Act 1's turning point: the same water drop in 1592, 1795 and 1866."
+    "Ends on checked facts: the final talk's cost question closes on the real cost of the rebuilding (h4 forced gifts of money, h5 the new coin of 1866 and rising prices, h6 farmers called to work), and the ending states the real rebuilding (h2 begun in the fourth month of 1865, the Daewongun leading it; h3 finished in 1868, the King moved in).",
+    "PART 2 (2026-11-09): stands alone. The stroke rule is taught in this case (Duri and the yard board); M2 counts twelve and six, then two and sixteen; M3 follows the traces to Mr. Pyo's cart (trace_deduction, measured on palace_site.webp); the final's three presents each take one card of this case (three cards, lit from the third miss)."
   ]
 }

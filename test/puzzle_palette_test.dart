@@ -37,6 +37,8 @@ void main() {
     'timeline_board',
     // Puzzle Engine 2.0 (the Seoul pilot's note in the new letters).
     'syllable_compose',
+    // Seoul Case 01 V4: letters laid on the mouth they copy.
+    'shape_match',
   ];
   const conditionalIds = [
     'clock_set',
@@ -75,7 +77,7 @@ void main() {
       expect(PuzzlePalette.contains(''), isFalse);
     });
 
-    test('grades: 23 ready, 7 conditional, no custom engine offered', () {
+    test('grades: 24 ready, 7 conditional, no custom engine offered', () {
       expect([for (final p in PuzzlePalette.ready) p.id], readyIds);
       expect([for (final p in PuzzlePalette.conditional) p.id], conditionalIds);
       expect(PuzzlePalette.ofGrade(PuzzleReuseGrade.custom), isEmpty);

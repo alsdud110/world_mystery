@@ -33,7 +33,7 @@ class SyllableBlock {
 /// to a column, the first column on the right — and each place on the
 /// paper is named by where it is, never by its group's number.
 class SyllableSpec {
-  const SyllableSpec({required this.blocks, this.sounds = const [], this.columnHeight});
+  const SyllableSpec({required this.blocks, this.sounds = const [], this.columnHeight, this.row = false, this.lastSounds = const [], this.voice});
 
   final List<SyllableBlock> blocks;
 
@@ -43,13 +43,24 @@ class SyllableSpec {
   /// Groups in a column, written down the page from the right (null: one row of groups).
   final int? columnHeight;
 
+  /// The groups side by side, left to right, as words are written today
+  /// (Seoul Case 01 V4): each named BLOCK 1, BLOCK 2…, its parts FIRST
+  /// SOUND, VOWEL and LAST SOUND, and its sound shown as it is built.
+  final bool row;
+
+  /// The last sounds to choose from (empty: the groups' own, [bottoms]).
+  final List<String> lastSounds;
+
+  /// The whole word said aloud (a voice file), heard before it is built; null: none.
+  final String? voice;
+
   SyllableBlock? block(String id) => blocks.where((b) => b.id == id).firstOrNull;
 
   /// Whether the player chooses each group's sounds (else they are given).
   bool get choosesSounds => sounds.isNotEmpty;
 
   /// The sounds that may sit under a group, in the note's order.
-  List<String> get bottoms => {for (final b in blocks) ?b.finalConsonant}.toList();
+  List<String> get bottoms => lastSounds.isNotEmpty ? lastSounds : {for (final b in blocks) ?b.finalConsonant}.toList();
 
   /// Columns on the paper ([columnHeight] set).
   int get columns => columnHeight == null ? 1 : (blocks.length + columnHeight! - 1) ~/ columnHeight!;
@@ -59,6 +70,7 @@ class SyllableSpec {
 
   /// Group [i]'s place on the paper in words ("TOP RIGHT"), never its number.
   String placeName(int i) {
+    if (this.row) return 'BLOCK ${i + 1}';
     final (c, r) = placeOf(i);
     final h = columnHeight ?? blocks.length;
     final row = switch ((h, r)) {
@@ -118,6 +130,21 @@ abstract final class Hangul {
   }
 
   /// The places a dot can take on [line].
+  /// [syllable] in the Revised Romanization of Korean (the official one),
+  /// as a lone word: 엄 eom, 마 ma, 언 eon. A lone vowel letter reads as its
+  /// vowel; a lone first sound, or anything else, as ''.
+  static String reading(String syllable) {
+    if (syllable.isEmpty) return '';
+    if (vowels.contains(syllable)) return _vowelReadings[vowels.indexOf(syllable)];
+    final code = syllable.runes.first - 0xAC00;
+    if (syllable.runes.length != 1 || code < 0 || code > 11171) return '';
+    return '${_initialReadings[code ~/ 588]}${_vowelReadings[code ~/ 28 % 21]}${_finalReadings[code % 28]}';
+  }
+
+  static const _initialReadings = ['g', 'kk', 'n', 'd', 'tt', 'r', 'm', 'b', 'pp', 's', 'ss', '', 'j', 'jj', 'ch', 'k', 't', 'p', 'h'];
+  static const _vowelReadings = ['a', 'ae', 'ya', 'yae', 'eo', 'e', 'yeo', 'ye', 'o', 'wa', 'wae', 'oe', 'yo', 'u', 'wo', 'we', 'wi', 'yu', 'eu', 'ui', 'i'];
+  static const _finalReadings = ['', 'k', 'k', 'k', 'n', 'n', 'n', 't', 'l', 'k', 'm', 'l', 'l', 'l', 'p', 'l', 'm', 'p', 'p', 't', 't', 'ng', 't', 't', 'k', 't', 'p', 't'];
+
   static List<VowelDot> dotsFor(VowelLine line) =>
       line == VowelLine.flat ? const [VowelDot.above, VowelDot.below, VowelDot.none] : const [VowelDot.left, VowelDot.right, VowelDot.none];
 }
@@ -246,6 +273,18 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
       }
       if (spec.sounds.toSet().length != spec.sounds.length) out.add(const SpecIssue('syllables_sounds_duplicate', r'$.sounds', 'a sound is given twice'));
     }
+    for (final (i, s) in spec.lastSounds.indexed) {
+      if (!Hangul.finals.contains(s) || s.isEmpty) out.add(SpecIssue('syllables_final', '\$.lastSounds[$i]', '"$s" is no sound under a syllable'));
+    }
+    if (spec.lastSounds.isNotEmpty) {
+      if (!spec.choosesSounds) out.add(const SpecIssue('syllables_last_sounds', r'$.lastSounds', 'last sounds are chosen only when first sounds are'));
+      for (final (i, b) in spec.blocks.indexed) {
+        if (b.finalConsonant case final f? when !spec.lastSounds.contains(f)) {
+          out.add(SpecIssue('syllables_sound_missing', '\$.blocks[$i].final', '"$f" is not among the last sounds to choose from'));
+        }
+      }
+    }
+    if (spec.row && spec.columnHeight != null) out.add(const SpecIssue('syllables_columns', r'$.row', 'a row of blocks has no columns'));
     if (spec.columnHeight case final h? when h < 1 || h >= spec.blocks.length) {
       out.add(SpecIssue('syllables_columns', r'$.columnHeight', '$h group(s) to a column: 1 to ${spec.blocks.length - 1}, so the paper has two columns at least'));
     }
@@ -370,6 +409,8 @@ class SyllableRules extends PuzzleRules<SyllableSpec, SyllableState, SyllableAct
     ],
     'sounds': spec.sounds,
     'columnHeight': spec.columnHeight,
+    if (spec.row) 'row': true,
+    if (spec.lastSounds.isNotEmpty) 'lastSounds': spec.lastSounds,
   };
 
   @override

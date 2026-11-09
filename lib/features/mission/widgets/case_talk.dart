@@ -7,6 +7,7 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../core/utils/audio_service.dart';
 import '../../../data/models/case_talk.dart';
 import '../../../data/models/mission.dart' show Evidence;
+import '../../../widgets/detective_tips.dart';
 import '../../../widgets/display_sized_image.dart';
 import '../../../widgets/evidence_card.dart' show EvidencePicture, EvidenceThumb;
 import '../../../widgets/game_button.dart';
@@ -17,6 +18,7 @@ import '../../../widgets/paper_background.dart';
 import '../../../widgets/place_scenery.dart';
 import '../../../widgets/typewriter_text.dart';
 import '../../game/game_providers.dart';
+import 'dialogue_investigation.dart' show WordsLink;
 import 'evidence_recall.dart';
 
 /// A talk with one person (see [TalkScene]): their portrait in the middle
@@ -30,7 +32,17 @@ import 'evidence_recall.dart';
 /// opens there again. [onFinish] is called once, when the detective goes on
 /// from a finished talk.
 class CaseTalk extends ConsumerStatefulWidget {
-  const CaseTalk({super.key, required this.scene, required this.progress, required this.onProgress, required this.onFinish, this.pickEvidence});
+  const CaseTalk({
+    super.key,
+    required this.scene,
+    required this.progress,
+    required this.onProgress,
+    required this.onFinish,
+    this.pickEvidence,
+    this.hints = const [],
+    this.hintsShown = 0,
+    this.onHint,
+  });
 
   final TalkScene scene;
   final TalkProgress progress;
@@ -41,6 +53,12 @@ class CaseTalk extends ConsumerStatefulWidget {
   /// Defaults to the notebook's evidence of this season and the scene's
   /// earlier-season pieces held ([showEvidencePicker]).
   final Future<String?> Function(BuildContext context)? pickEvidence;
+
+  /// The mission's hints, [hintsShown] of them opened, on the panel; the
+  /// next opened by [onHint] (none given: no hint link, as before).
+  final List<String> hints;
+  final int hintsShown;
+  final VoidCallback? onHint;
 
   @override
   ConsumerState<CaseTalk> createState() => _CaseTalkState();
@@ -227,6 +245,9 @@ class _CaseTalkState extends ConsumerState<CaseTalk> {
                 misses: _misses,
                 onFinish: _finish,
                 onLog: _log,
+                hints: widget.onHint == null ? const [] : widget.hints,
+                hintsShown: widget.hintsShown,
+                onHint: widget.onHint,
               ),
             ],
           ),
@@ -409,7 +430,14 @@ class _Panel extends StatelessWidget {
     required this.misses,
     required this.onFinish,
     required this.onLog,
+    this.hints = const [],
+    this.hintsShown = 0,
+    this.onHint,
   });
+
+  final List<String> hints;
+  final int hintsShown;
+  final VoidCallback? onHint;
 
   final TalkScene scene;
   final TalkProgress progress;
@@ -504,15 +532,29 @@ class _Panel extends StatelessWidget {
                 const SizedBox(height: AppSpace.xs),
               ],
             ],
-            Align(
-              alignment: Alignment.centerRight,
-              child: InkTextButton(
-                key: const ValueKey('case-talk-log'),
-                label: 'Talk log',
-                glyph: InkGlyph.notebook,
-                color: AppColors.paperLight.withValues(alpha: 0.8),
-                onPressed: onLog,
-              ),
+            // The hints opened, on the panel (never over the talk).
+            if (hints.isNotEmpty && hintsShown > 0)
+              DetectiveTipNotes(key: const ValueKey('case-talk-hints'), hints: hints, revealed: hintsShown, compact: true),
+            Wrap(
+              alignment: WrapAlignment.end,
+              spacing: AppSpace.xs,
+              children: [
+                if (nextTipLabel(hints, hintsShown) case final tip? when onHint != null)
+                  InkTextButton(
+                    key: const ValueKey('case-talk-hint'),
+                    label: tip,
+                    glyph: InkGlyph.hint,
+                    color: AppColors.goldLight,
+                    onPressed: onHint!,
+                  ),
+                InkTextButton(
+                  key: const ValueKey('case-talk-log'),
+                  label: 'Talk log',
+                  glyph: InkGlyph.notebook,
+                  color: AppColors.paperLight.withValues(alpha: 0.8),
+                  onPressed: onLog,
+                ),
+              ],
             ),
           ],
         ),
@@ -596,6 +638,15 @@ class _TalkLog extends StatelessWidget {
         children: [
           const PaperSheetTab(),
           Text('TALK LOG', key: const ValueKey('case-talk-log-sheet'), style: AppText.mark()),
+          // The harder words of what was said, listed.
+          WordsLink(
+            text: [
+              for (final b in beats) ...[
+                if (scene.question(b) case final q?) q.text,
+                for (final l in scene.beat(b)) l.text,
+              ],
+            ].join('\n'),
+          ),
           const SizedBox(height: AppSpace.sm),
           Expanded(
             child: ListView(
@@ -628,9 +679,10 @@ class _TalkLog extends StatelessWidget {
   }
 }
 
-/// What to show, from two cards right there (no notebook to search): the
-/// question over them, and the two pieces, large. After a second miss, the
-/// line that says which ([TalkPresent.tell]), and that card lit.
+/// What to show, from two to four cards right there (no notebook to
+/// search): the question over them, and the pieces, large (two in a row;
+/// three or four, two to a row). After a second miss, [TalkPresent.tell];
+/// from miss [TalkPresent.litAfter], the right card lit.
 class _EvidenceChoice extends ConsumerWidget {
   const _EvidenceChoice({required this.present, required this.missed, required this.onChoose});
 
@@ -646,6 +698,18 @@ class _EvidenceChoice extends ConsumerWidget {
     };
     final told = missed >= 2 && present.tell != null;
     final cards = [for (final id in present.choices) ?all[id]];
+    Widget card(Evidence e) => _EvidenceCard(
+      key: ValueKey('case-talk-choice-${e.id}'),
+      evidence: e,
+      lit: missed >= present.litAfter && present.accepted.contains(e.id),
+      onTap: () => onChoose(e.id),
+      compact: cards.length > 2,
+    );
+    // Two or three cards in one row; four, two to a row. Each row's cards as
+    // tall as its tallest (the panel scrolls: no height to stretch to
+    // otherwise), so the cards stay on a small phone's screen with the line.
+    final perRow = cards.length == 4 ? 2 : cards.length;
+    final rows = [for (var i = 0; i < cards.length; i += perRow) cards.sublist(i, (i + perRow).clamp(0, cards.length))];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -655,34 +719,30 @@ class _EvidenceChoice extends ConsumerWidget {
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 18, weight: FontWeight.w700, color: AppColors.goldLight),
         ),
-        const SizedBox(height: AppSpace.sm),
-        // Both cards as tall as the taller one (the panel scrolls: no
-        // height to stretch to otherwise).
-        IntrinsicHeight(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              for (final e in cards) ...[
-                Expanded(
-                  child: _EvidenceCard(
-                    key: ValueKey('case-talk-choice-${e.id}'),
-                    evidence: e,
-                    lit: missed >= 2 && present.accepted.contains(e.id),
-                    onTap: () => onChoose(e.id),
-                  ),
-                ),
-                if (e != cards.last) const SizedBox(width: AppSpace.md),
+        for (final row in rows) ...[
+          const SizedBox(height: AppSpace.sm),
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                for (final (i, e) in row.indexed) ...[
+                  if (i > 0) SizedBox(width: row.length > 2 ? AppSpace.sm : AppSpace.md),
+                  Expanded(child: card(e)),
+                ],
               ],
-            ],
+            ),
           ),
-        ),
+        ],
       ],
     );
   }
 }
 
 class _EvidenceCard extends StatelessWidget {
-  const _EvidenceCard({super.key, required this.evidence, required this.lit, required this.onTap});
+  const _EvidenceCard({super.key, required this.evidence, required this.lit, required this.onTap, this.compact = false});
+
+  /// Three or four cards (two rows): smaller, so both rows fit a small phone.
+  final bool compact;
 
   final Evidence evidence;
   final bool lit;
@@ -710,19 +770,21 @@ class _EvidenceCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppRadius.button),
             onTap: onTap,
             child: ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 120),
+              constraints: BoxConstraints(minHeight: compact ? 96 : 120),
               child: Padding(
                 padding: const EdgeInsets.all(AppSpace.sm),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    EvidenceThumb(evidence: evidence, size: 64),
+                    EvidenceThumb(evidence: evidence, size: compact ? 48 : 64),
                     const SizedBox(height: AppSpace.xs),
                     Text(
                       evidence.name,
+                      key: ValueKey('case-talk-choice-name-${evidence.id}'),
                       textAlign: TextAlign.center,
-                      maxLines: 2,
-                      style: AppText.title(size: 16, color: AppColors.navy),
+                      // Three in a row are narrow: a smaller name on up to four lines, never cut.
+                      maxLines: compact ? 4 : 2,
+                      style: AppText.title(size: compact ? 14 : 16, color: AppColors.navy),
                     ),
                   ],
                 ),

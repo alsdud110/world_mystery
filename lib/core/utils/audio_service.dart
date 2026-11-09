@@ -172,6 +172,10 @@ abstract interface class AudioService {
   /// has stopped).
   void stop(GameSound sound);
 
+  /// Says a word aloud: [asset], a voice file from the repository's root
+  /// (Seoul Case 01: 엄마). Never needed to play: the words are on screen.
+  Future<void> playVoice(String asset);
+
   /// What the page in front of the player should sound like. Only the
   /// layers that differ from what is playing change ([transition] says how);
   /// the same scene again changes nothing.
@@ -241,6 +245,15 @@ abstract class GatedAudioService implements AudioService {
     final take = sound.takes[_pickTake(sound)];
     await playFile(sound, take, (take.volume * volume).clamp(0.0, 1.0));
   }
+
+  @override
+  Future<void> playVoice(String asset) async {
+    if (!isEnabled() || !_foreground) return;
+    await voiceFile(asset);
+  }
+
+  /// Plays [asset] (sound on, the app in front); a service with no files plays nothing.
+  Future<void> voiceFile(String asset) async {}
 
   int _pickTake(GameSound sound) {
     final count = sound.takes.length;
@@ -592,9 +605,24 @@ class AssetAudioService extends GatedAudioService {
     }
   }
 
+  AudioPlayer? _voice;
+
+  @override
+  Future<void> voiceFile(String asset) async {
+    try {
+      final player = _voice ??= AudioPlayer()..setReleaseMode(ReleaseMode.stop);
+      await player.stop();
+      // audioplayers reads assets from under assets/.
+      await player.play(AssetSource(asset.replaceFirst(RegExp('^assets/'), '')));
+    } catch (e) {
+      debugPrint('Voice $asset could not play: $e');
+    }
+  }
+
   @override
   void dispose() {
     super.dispose();
+    _voice?.dispose();
     for (final p in _players.values) {
       p.dispose();
     }
@@ -624,6 +652,12 @@ class MockAudioService extends GatedAudioService {
 
   /// Every sound cut off, in order.
   final List<GameSound> stopped = [];
+
+  /// Every voice file said, in order.
+  final List<String> voices = [];
+
+  @override
+  Future<void> voiceFile(String asset) async => voices.add(asset);
 
   /// Every scene asked for, with how.
   final List<(AudioScene, AudioTransition)> scenes = [];

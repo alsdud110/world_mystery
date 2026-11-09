@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:world_mystery/data/models/shape_match.dart';
 import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart';
 import 'package:world_mystery/puzzles_v2/core/timeline_rules.dart';
 
@@ -70,6 +71,7 @@ abstract final class PlayCheck {
     'witness_compare': 'dialogues',
     'timeline_board': 'timelines',
     'syllable_compose': 'syllables',
+    'shape_match': 'shapes',
     // Puzzle Engine 2.0 STEP 1: engines the game already plays, now made from plans.
     'number_entry': null,
     'trace_deduction': 'deductions',
@@ -81,7 +83,7 @@ abstract final class PlayCheck {
   /// The generatable puzzles that need pictures beyond the place's.
   static const pictured = {
     'picture_choice', 'scene_explore_choose', 'dark_room_search', 'witness_compare', //
-    'trace_deduction', 'lens_inspect_word', 'record_mismatch', 'evidence_talk',
+    'trace_deduction', 'lens_inspect_word', 'record_mismatch', 'evidence_talk', 'shape_match',
   };
 
   /// A story picture (a talk's or an ending's face) not on disk: never
@@ -90,7 +92,7 @@ abstract final class PlayCheck {
 
   /// The `play` key a table's scene is written under.
   static const sceneKeys = {
-    'explores': 'explore', 'investigations': 'search', 'dialogues': 'dialogue', 'timelines': 'timeline', 'syllables': 'syllables', //
+    'explores': 'explore', 'investigations': 'search', 'dialogues': 'dialogue', 'timelines': 'timeline', 'syllables': 'syllables', 'shapes': 'shapes', //
     'deductions': 'traces', 'inspections': 'inspect', 'records': 'records', 'talks': 'interview',
   };
 
@@ -215,7 +217,8 @@ abstract final class PlayCheck {
       }
       _pictures(m, at, root, out);
       _timeline(m, at, out);
-      _syllables(m, at, out);
+      _syllables(m, at, root, out);
+      _shapes(m, at, out);
       _numberCode(m, at, out);
       _traces(m, at, root, out);
       _inspect(m, at, root, out);
@@ -455,7 +458,7 @@ abstract final class PlayCheck {
   /// A note in the new letters (`syllable_compose`, table `syllables`): its
   /// own rules (`SyllableRules.validate`, the game's), the note its answer,
   /// and every group's words read where the player puts it together.
-  static void _syllables(MissionPlan m, String at, List<PlayIssue> out) {
+  static void _syllables(MissionPlan m, String at, String root, List<PlayIssue> out) {
     final w = m.play;
     final s = w?.syllables;
     if (w == null || s == null || m.puzzle.engineTable != 'syllables') return;
@@ -463,7 +466,8 @@ abstract final class PlayCheck {
     final sa = '$at.play.syllables';
     final spec = SyllableSpec(blocks: [
       for (final b in s.blocks) SyllableBlock(id: b.id, initial: b.initial, vowel: b.vowel, finalConsonant: b.finalConsonant, line: b.line, given: b.given),
-    ], sounds: s.sounds, columnHeight: s.columnHeight);
+    ], sounds: s.sounds, columnHeight: s.columnHeight, row: s.row, lastSounds: s.lastSounds, voice: s.voice);
+    if (s.voice case final v? when !File('$root/$v').existsSync()) issue('asset_file_missing', '$sa.voice', '$v: no such file');
     const rules = SyllableRules();
     for (final i in rules.validate(spec)) {
       issue(i.code, '$sa${i.path.substring(1)}', i.message);
@@ -472,6 +476,27 @@ abstract final class PlayCheck {
       issue('syllables_answer_mismatch', '$at.puzzle.answerSpec.answer', '"${m.puzzle.answerSpec.answer}", but the groups write "${rules.answer(spec)}"');
     }
     if (m.puzzle.missionType != 'wordInput') issue('syllables_type', '$at.puzzle.missionType', 'a note answers a wordInput, not ${m.puzzle.missionType}');
+  }
+
+  /// Letters laid on pictures (`shape_match`, table `shapes`): a match
+  /// mission whose answer gives every picture one of the board's letters
+  /// (`ShapeMatchSpec.problems`, the game's), and a line for each wrong pair
+  /// worth saying (`play.feedback`, keyed `letter:picture`).
+  static void _shapes(MissionPlan m, String at, List<PlayIssue> out) {
+    final s = m.play?.shapes;
+    if (s == null || m.puzzle.engineTable != 'shapes') return;
+    final spec = ShapeMatchSpec(
+      pictures: [for (final p in s.pictures) ShapePicture(id: p.id, file: p.file, name: p.name, label: p.label)],
+      letters: [for (final l in s.letters) ShapeLetter(id: l.id, glyph: l.glyph)],
+      task: s.task,
+    );
+    for (final p in spec.problems(m.puzzle.answerSpec.answer)) {
+      out.add(PlayIssue('shapes_invalid', '$at.play.shapes', p));
+    }
+    if (m.puzzle.missionType != 'matchPairs') out.add(PlayIssue('shapes_type', '$at.puzzle.missionType', 'letters on pictures answer a matchPairs, not ${m.puzzle.missionType}'));
+    for (final k in m.play!.feedback.keys) {
+      if (spec.problems(k).any((p) => p.contains('no letter:picture pair'))) out.add(PlayIssue('shapes_invalid', '$at.play.feedback.$k', 'not a letter:picture pair of the board'));
+    }
   }
 
   /// Cards a timeline may hold (Puzzle Engine 2.0): to place, fixed by
@@ -866,12 +891,12 @@ abstract final class PlayCheck {
         if (!holds(e)) issue('talk_evidence_unheld', '$pa.accepted', '$e is not in the notebook by ${m.missionId}: evidence of an earlier mission or case');
       }
       if (p.offered.isNotEmpty) {
-        if (p.offered.length != 2) issue('scene_invalid', '$pa.offered', '${p.offered.length} card(s): two to pick from');
+        if (p.offered.length < 2 || p.offered.length > 4) issue('scene_invalid', '$pa.offered', '${p.offered.length} card(s): two to four to pick from');
         if (!p.offered.any(p.accepted.contains)) issue('scene_answer_mismatch', '$pa.offered', 'none of the cards is the evidence asked for');
         for (final e in p.offered) {
           if (!holds(e)) issue('talk_evidence_unheld', '$pa.offered', '$e is not in the notebook by ${m.missionId}');
         }
-      } else if (p.tell != null) {
+      } else if (p.tell != null || p.litAfter != null) {
         issue('play_range', '$pa.tell', 'said over the cards: a present with no cards (offered) has none');
       }
     }

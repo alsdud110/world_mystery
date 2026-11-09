@@ -83,10 +83,10 @@
         "story": [
           "Aunae Market is busy with baskets, rice and salt.",
           "Under your teacup at the noodle stall, a folded note waits.",
-          "It is written in Hangeul. In the corner is a small water drop."
+          "It is written in Hangeul, Korea's own letters. There is no name, only a small flame."
         ],
-        "letterIntro": "The water-drop note says:",
-        "letter": "Three people told Gwan-sun's day to the villages.\nTwo of them say the same day.\nOne man says another day. Someone paid him to ask.\nAsk what each one heard.\n— a small water drop",
+        "letterIntro": "The flame note says:",
+        "letter": "Three people told Gwan-sun's day to the villages.\nTwo of them say the same day.\nOne man says another day. Someone paid him to ask.\nAsk what each one heard.\n— a small flame",
         "question": "What is the true day of the march?",
         "hints": [
           "Ask every person the same question about the day.",
@@ -107,9 +107,9 @@
           "symbol": "clock"
         },
         "evidence": {
-          "name": "The Water-Drop Note (1919)",
+          "name": "The Flame Note",
           "icon": "letter",
-          "description": "A note in Hangeul, marked with a small water drop. Two messengers tell the truth.",
+          "description": "A note in Hangeul with no name, only a small flame. Two messengers tell the truth.",
           "inscription": "Two of them say the same day."
         },
         "dialogue": {
@@ -322,7 +322,8 @@
         "clue": {
           "title": "The Sign",
           "value": "A FIRE ON MAEBONG HILL · THE NIGHT BEFORE",
-          "note": "The night before the march, a fire on the hill tells the villages."
+          "note": "The night before the march, a fire on the hill tells the villages.",
+          "symbol": "map"
         },
         "evidence": {
           "name": "Gwan-sun's Plan",
@@ -338,7 +339,7 @@
             "lines": [
               {
                 "by": "speaker",
-                "text": "People in Seoul called for independence. Now it is our turn."
+                "text": "On 1 March, people in Seoul called for independence. Now it is our turn."
               },
               {
                 "by": "detective",
@@ -355,7 +356,7 @@
         "discovery": {
           "type": "deduction",
           "title": "A LETTER MADE OF FIRE",
-          "detail": "The villages will know by the fire. But the stranger is still asking."
+          "detail": "The villages will know by the fire. But the stranger wants this plan."
         }
       }
     },
@@ -364,30 +365,46 @@
       "slot": "m3",
       "placeId": "s5_seoul.gwansun_home",
       "puzzle": {
-        "paletteId": "word_entry",
+        "paletteId": "text_choice",
         "surface": "mission",
         "engineTable": null,
-        "missionType": "wordInput",
+        "missionType": "multipleChoice",
         "answerSpec": {
-          "answer": "GYEONGSUN",
-          "acceptedAnswers": [
-            "GYEONGSUN",
-            "GYEONG-SUN",
-            "GYEONG SUN"
+          "answer": "gyeongsun",
+          "options": [
+            {
+              "id": "sunja",
+              "label": "Sunja",
+              "feedback": "Sunja writes only in Hangeul too. But her mark is a flower, not a flame."
+            },
+            {
+              "id": "gwansun",
+              "label": "Gwan-sun",
+              "feedback": "Gwan-sun asked you to find the writer. Her notebook is not on the table."
+            },
+            {
+              "id": "gyeongsun",
+              "label": "Gyeongsun"
+            },
+            {
+              "id": "okhui",
+              "label": "Okhui",
+              "feedback": "Okhui writes in Chinese characters, and her mark is stars."
+            }
           ]
         },
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Three made-up girls' notebooks, told apart by the words: only one is in Hangeul with a water drop by the name. Mrs. Kang's note of 1909 (s5_ep07_e1, recalled) carries the same mark.",
+          "Three made-up girls' notebooks, told apart by two things in the words: the letters (only Hangeul, or Chinese characters) and the mark by the name. Sunja shares the letters but not the mark; only Gyeongsun shares both with the Mission 1 note (s5_ep08_e1, recalled). Gwan-sun asked for the writer and has no notebook on the table.",
           "Gwan-sun's school friends here are made up; Gwan-sun's words are made up."
         ]
       },
       "clueInputs": [
         {
-          "ref": "s5_ep07_e1",
+          "ref": "s5_ep08_e1",
           "use": "recall",
-          "note": "Mrs. Kang's water-drop note of 1909: the same small water drop."
+          "note": "The flame note from the market (Mission 1): only in Hangeul, with a small flame."
         }
       ],
       "clueOutputs": {
@@ -397,10 +414,10 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "세 공책의 설명(writes in Chinese characters, draws stars, a small water drop)을 쪽지의 특징과 맞춰 쪽지를 쓴 사람의 이름을 쓴다.",
+        "objective": "쪽지의 두 특징(only in Hangeul, a small flame)을 세 공책의 설명과 하나씩 맞춰, 둘 다 같은 공책의 주인을 고른다.",
         "skill": "sentenceMeaning",
         "expressions": [
-          "A small water drop sits by her name.",
+          "A small flame sits by her name.",
           "only in Hangeul"
         ]
       },
@@ -408,71 +425,66 @@
         "title": "Three Notebooks",
         "location": "GWAN-SUN'S HOME",
         "story": [
-          "Three school friends of Gwan-sun's are home from Seoul too.",
-          "Their notebooks lie on the low table.",
-          "Who wrote the note with the water drop?"
+          "\"The stranger wants my written plan,\" Gwan-sun says.",
+          "\"Give it to the one who wrote the flame note. That friend warned us about Mr. Pyo.\"",
+          "Three school friends' notebooks lie on the low table."
         ],
         "letterIntro": "What you see on the table:",
-        "letter": "Sunja's notebook: a pressed flower on the cover. She writes in Chinese characters.\nOkhui's notebook: a blue ribbon. She draws little stars by her name.\nGyeongsun's notebook: plain and brown. On its label, a small water drop sits by her name.\nYour note: written on thin paper, only in Hangeul, with a small water drop.",
-        "question": "Who wrote the water-drop note? Type her name.",
+        "letter": "Sunja's notebook: a pressed flower on the cover. She writes only in Hangeul. A little flower sits by her name.\nOkhui's notebook: a blue ribbon. She writes in Chinese characters. Little stars sit by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul. A small flame sits by her name.\nYour note: written only in Hangeul. No name, only a small flame.",
+        "question": "Who wrote the flame note? Give her the plan.",
         "hints": [
-          "Look at your note first: what mark does it have?",
-          "Which notebook has the same mark by the name?"
+          "Your note has two things: the kind of letters, and a mark.",
+          "Which notebook has the same letters AND the same mark?"
         ],
-        "successMessage": "Gyeongsun wrote the water-drop notes!",
+        "successMessage": "Gyeongsun wrote the flame note!",
         "transition": [
           "Gyeongsun blushes. \"Yes. I wrote it.\"",
-          "\"My family has used that water drop for a long time.\"",
-          "\"Tonight, on the hill, I will show you why.\""
+          "\"A small flame can light a whole hill. So can our news.\"",
+          "\"Tonight I will lock Gwan-sun's plan in my old box.\""
         ],
-        "feedback": {
-          "SUNJA": "Sunja writes in Chinese characters. Your note is only in Hangeul.",
-          "OKHUI": "Okhui draws stars, not water drops. Look at the notebooks again.",
-          "GWANSUN": "Gwan-sun's notebook is not on the table. Read the three notebooks."
-        },
         "mapX": 0.6,
         "mapY": 0.42,
         "clue": {
-          "title": "The Keeper",
+          "title": "The Note Writer",
           "value": "GYEONGSUN",
-          "note": "Gyeongsun wrote the water-drop note. Her family uses the same mark."
+          "note": "Gyeongsun wrote the flame note. She will keep Gwan-sun's plan safe."
         },
         "evidence": {
           "name": "Gyeongsun's Notebook",
           "icon": "feather",
-          "description": "A plain brown school notebook. A small water drop sits by Gyeongsun's name.",
-          "inscription": "A small water drop sits by her name."
+          "description": "A plain brown school notebook. A small flame sits by Gyeongsun's name.",
+          "inscription": "A small flame sits by her name."
         },
         "recall": {
-          "title": "The same mark",
-          "prompt": "Which thing in your Notebook has the same small water drop?",
-          "miss": "Find the note from Harbin, written in 1909."
+          "title": "The note from the market",
+          "prompt": "Your note has a small flame. Find it in your Notebook.",
+          "miss": "Find the note from under your teacup."
         },
         "talk": {
           "speaker": "gyeongsun",
           "portrait": "assets/seasons/season_05_seoul/characters/gyeongsun.webp",
-          "goal": "Find out who leaves the water-drop notes.",
+          "goal": "Find out who wrote the flame note.",
           "after": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "Mrs. Kang in Harbin is my family too."
-              },
-              {
-                "by": "detective",
-                "text": "Her note has the very same water drop."
+                "text": "I saw a stranger give Mr. Pyo a coin, so I warned you."
               },
               {
                 "by": "speaker",
-                "text": "We all learned it from the same old box."
+                "text": "I never sign my name. A name on a note can send a friend to prison."
+              },
+              {
+                "by": "detective",
+                "text": "So you drew a small flame. But it is by your name in your notebook too."
               }
             ]
           }
         },
         "discovery": {
           "type": "storyDiscovery",
-          "title": "ONE MARK, ONE FAMILY",
-          "detail": "Harbin in 1909, Aunae in 1919: the same water drop. What is in the old box?"
+          "title": "THE NOTE WRITER",
+          "detail": "Gyeongsun warned you about Mr. Pyo. Now she will keep the plan."
         }
       }
     }
@@ -490,16 +502,16 @@
         "answer": "311",
         "codeLength": 3,
         "dialSymbols": [
-          "clock",
-          "watch",
-          "map"
+          "map",
+          "map",
+          "clock"
         ]
       },
       "assetNeeds": [],
       "status": "ready",
       "notes": [
-        "The keepers' letter box, locked by Gyeongsun with the plan's two days: the night of the sign (the last night of March, 31) and the day of the march (the first of April, 1). Both days are history (h2, h3); the lock and the box are made up.",
-        "Mr. Pyo's day (the second of April) would make 012: the stranger cannot open it."
+        "Gyeongsun's old box, locked by the detective with the plan's two days: the night of the sign (the last night of March, 31, from the plan: the night before) and the day of the march (the first of April, 1, from the messengers). The dials show the clues' pictures: map, map (the plan, Mission 2), clock (the day, Mission 1). Both days are history (h2, h3); the lock and the box are made up.",
+        "Mr. Pyo's day (the second of April) would make 012 or 312: the stranger cannot open it. The letter never says the night before: that is read in the plan."
       ]
     },
     "clueInputs": [
@@ -512,11 +524,6 @@
         "ref": "s5_ep08_c1",
         "use": "answerDerivation",
         "note": "Last dial: the first of April (1)."
-      },
-      {
-        "ref": "s5_ep01_e3",
-        "use": "textMention",
-        "note": "Bun-i's note of 1446 lies at the bottom of the box (shown in the ending)."
       }
     ],
     "clueOutputs": {
@@ -537,17 +544,17 @@
       "location": "MAEBONG HILL",
       "story": [
         "At dusk, Gyeongsun leads you up Maebong hill.",
-        "She carries an old wooden box with a small dial lock.",
-        "\"I put Gwan-sun's plan inside. The stranger must not read it.\""
+        "She opens her old wooden box and lays Gwan-sun's plan inside.",
+        "\"Set the lock to our two days. The stranger only knows Mr. Pyo's day.\""
       ],
-      "letterIntro": "Gyeongsun whispers:",
-      "letter": "I set the lock to our two days.\nFirst two dials: the night of the sign. It is a night in March.\nLast dial: the day of the march, in April.\nRemember: March has thirty-one days.\nThe sign burns the night before the march.",
-      "question": "Turn the dials to the night of the sign and the day of the march.",
+      "letterIntro": "The dial lock, and Gyeongsun's words:",
+      "letter": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nRemember: March has thirty-one days.",
+      "question": "Set the dials: first the night of the sign, then the day of the march.",
       "hints": [
-        "Your notes say the day of the march. Your plan says when the sign burns.",
+        "The map dials are for the plan. The clock dial is for the day.",
         "The night before the first of April is the last night of March."
       ],
-      "successMessage": "The old box opens!",
+      "successMessage": "Click! The box is locked. Only friends know the days.",
       "transition": [
         "Below, the villages are dark and quiet.",
         "Then a small flame rises on Maebong hill.",
@@ -557,39 +564,19 @@
         "131": "First the night of the sign, then the day of the march.",
         "301": "March has thirty-one days. The night before April 1 is the last night of March.",
         "302": "The march is on the first of April, not the second.",
-        "012": "That is Mr. Pyo's day. Two messengers said the first of April."
+        "012": "That is Mr. Pyo's day. Two messengers said the first of April.",
+        "312": "The march is on the first of April, not the second."
       },
       "orderFeedback": "These numbers fit, but not in this order. The night of the sign comes first.",
       "mapX": 0.66,
       "mapY": 0.2,
       "evidence": {
-        "name": "The Keepers' Letter Box",
+        "name": "The Locked Plan",
         "icon": "key",
-        "description": "An old wooden letter box. Gwan-sun's plan is on top. Bun-i's note of 1446 is at the bottom.",
+        "description": "Gyeongsun's old wooden box, locked with the true days. Gwan-sun's plan is inside. Mr. Pyo's day cannot open it.",
         "inscription": "The night of the sign, then the day of the march."
       },
       "ending": [
-        {
-          "by": "narrator",
-          "text": "Under the plan lie old notes, each with a water drop."
-        },
-        {
-          "by": "speaker",
-          "text": "The oldest is at the bottom. One corner is burnt.",
-          "speaker": "gyeongsun",
-          "portrait": "assets/seasons/season_05_seoul/characters/gyeongsun.webp"
-        },
-        {
-          "by": "detective",
-          "text": "It says 훈민정음. This is Bun-i's note from 1446!",
-          "evidence": "s5_ep01_e3"
-        },
-        {
-          "by": "speaker",
-          "text": "Bun-i was our first keeper. We are all her family.",
-          "speaker": "gyeongsun",
-          "portrait": "assets/seasons/season_05_seoul/characters/gyeongsun.webp"
-        },
         {
           "by": "narrator",
           "text": "That night, Gwan-sun lights the fire on Maebong hill."
@@ -600,13 +587,24 @@
         },
         {
           "by": "narrator",
-          "text": "Gwan-sun leads them. They call for Korea's independence.",
+          "text": "Gwan-sun helps lead them, with the village elders. They call for independence.",
           "evidence": "s5_ep08_e2"
+        },
+        {
+          "by": "narrator",
+          "text": "The stranger waits at the station, on Mr. Pyo's wrong day. He never reads the plan.",
+          "evidence": "s5_ep08_e4"
+        },
+        {
+          "by": "speaker",
+          "text": "No name, only a small flame. And the plan stayed safe.",
+          "speaker": "gyeongsun",
+          "portrait": "assets/seasons/season_05_seoul/characters/gyeongsun.webp"
         }
       ]
     }
   },
-  "hook": "The keepers are one family. Where will the box go next?",
+  "hook": "The fire spoke for the villages. The stranger never read the plan.",
   "learningGoal": {
     "title": "When things happen: the night before, in the morning",
     "titleKo": "때를 나타내는 말: the night before, in the morning"
@@ -615,24 +613,25 @@
     "objectives": [
       "Find the true day of the march.",
       "Read the plan for the sign.",
-      "Find who wrote the water-drop note.",
-      "Open the old letter box."
+      "Find who wrote the flame note.",
+      "Lock the plan away."
     ],
     "intro": [
       "Spring, 1919. You are a guest of Yu Gwan-sun's family, near Cheonan.",
-      "In March, students in Seoul called for independence.",
+      "In 1910, Japan took over Korea. Koreans could not rule their own country.",
+      "On 1 March 1919, people all over Korea called for independence. This is the March First Movement.",
       "The schools were closed, so Gwan-sun came home.",
       "Now she and the village elders plan a march at Aunae Market.",
-      "But the police watch the roads, and a wrong day is going round."
+      "But Japan's police watch the roads, and a wrong day is going round."
     ],
-    "caseSummary": "Two messengers said the true day: the first of April. Gwan-sun's sign was a fire on Maebong hill the night before. Gyeongsun, a keeper, showed the old box with Bun-i's note at the bottom. On 1 April 1919, Gwan-sun led thousands of people at Aunae Market. They called for Korea's independence.",
+    "caseSummary": "Two messengers said the true day: the first of April. Gwan-sun's sign was a fire on Maebong hill the night before. Gyeongsun wrote the flame note. She kept the plan in her box, and you locked it with the true days. On 1 April 1919, Gwan-sun helped lead thousands of people at Aunae Market. They called for Korea's independence.",
     "place": "AUNAE MARKET, NEAR CHEONAN",
     "keyWords": [
       "march",
       "sign",
       "messenger",
       "independence",
-      "keeper"
+      "stranger"
     ],
     "glossary": {
       "independence": "독립",
@@ -641,16 +640,15 @@
       "sign": "신호",
       "elders": "마을 어른들",
       "dusk": "해 질 녘",
-      "keeper": "지키는 사람",
       "stranger": "낯선 사람",
-      "water-drop": "물방울 표시",
       "messengers": "소식을 전하는 사람들",
       "characters": "(한자 같은) 글자",
-      "thirty-one": "31"
+      "thirty-one": "31",
+      "flame": "불꽃"
     }
   },
   "notes": [
-    "PART 10 Case 08 (Act 2's reveal): the keepers are one family; the box ends here as s5_ep08_e4 and goes to Shanghai with Haesu (Case 09).",
+    "PART 10 Case 08; PART 1A (2026-11-09): an independent case. The note writer is found inside the case (the Mission 1 note, the Mission 3 notebooks); the box is Gyeongsun's own.",
     "Yu Gwan-sun is real, her words are made up (dossier fiction). Gyeongsun, Dong-il, Mr. Pyo, the stranger, the notebooks and the box are made up. The case ends on history: the sign the night before and the march of 1 April 1919 (h2, h3); her arrest and death in 1920 are told once, in the reveal."
   ]
 }

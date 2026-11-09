@@ -213,6 +213,20 @@ void main() {
       expect(found(isFinal: true, puzzle('letter_tile_lock', surface: 'finalMission', type: 'letterLock', answer: {...abc, 'answer': 'TIME'})), ['error answer_mismatch \$.final.puzzle.answerSpec.answer']);
     });
 
+    test('letter lock tiles: extra tiles pass (at most four); listed in the answer\'s order is a warning', () {
+      Map<String, Object?> lock(String answer, String tiles) => {
+        'answer': answer,
+        'options': [for (final (i, c) in tiles.split('').indexed) {'id': 't$i', 'label': c}],
+      };
+      Map<String, Object?> final_(Map<String, Object?> a) => puzzle('letter_tile_lock', surface: 'finalMission', type: 'letterLock', answer: a);
+      expect(found(isFinal: true, final_(lock('LIGHT', 'NHTIRGL'))), isEmpty, reason: 'two extra tiles');
+      expect(found(isFinal: true, final_(lock('LIGHT', 'NHTIRG'))), ['error answer_mismatch \$.final.puzzle.answerSpec.answer']);
+      expect(found(isFinal: true, final_(lock('LIGHT', 'HTIGLABCDE'))), ['error answer_mismatch \$.final.puzzle.answerSpec.options'], reason: 'five extra');
+      expect(found(isFinal: true, final_(lock('LIGHT', 'LIGHTNR'))), ['warning answer_order_shown \$.final.puzzle.answerSpec.options']);
+      expect(found(puzzle('order_sequence', type: 'sequence', answer: {...abc, 'answer': 'a,b,c'})), ['warning answer_order_shown \$.missions[0].puzzle.answerSpec.options']);
+      expect(found(puzzle('order_sequence', type: 'sequence', answer: {...abc, 'answer': 'c,a,b'})), isEmpty);
+    });
+
     test('the sample case: its final is a mission puzzle on the final page', () {
       final report = PuzzleSelectionCheck.casePlan(CasePlan.fromJson(sampleCaseJson()));
       expect([for (final i in report.errors) '${i.code} ${i.path}'], ['surface_unsupported \$.final.puzzle.surface']);

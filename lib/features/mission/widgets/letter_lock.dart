@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/utils/answer_checker.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../data/models/mission.dart';
@@ -17,7 +18,10 @@ import '../../../widgets/ink_icon.dart';
 /// another slot (they swap). With every slot filled, OPEN THE LOCK tries the
 /// word (checked like a typed one: the tiles' letters, in slot order).
 ///
-/// Nothing here knows the answer: a wrong word comes back from the check,
+/// There is a slot for each letter of the answer; more tiles than slots
+/// means some tiles are extra and stay on the desk.
+///
+/// Nothing here checks the answer: a wrong word comes back from the check,
 /// and the tiles stay where they are to be moved again.
 class LetterLockQuestion extends StatefulWidget {
   const LetterLockQuestion({super.key, required this.mission, required this.onSubmit, this.onChanged});
@@ -28,6 +32,12 @@ class LetterLockQuestion extends StatefulWidget {
   /// The letter in each slot (null: empty), after every move: the box the
   /// lock is on shows them in its own slots.
   final ValueChanged<List<String?>>? onChanged;
+
+  /// A slot for each letter of the answer (never more than there are tiles).
+  static int slotCount(Mission m) {
+    final n = AnswerChecker.normalize(m.answer).length;
+    return n == 0 || n > m.options.length ? m.options.length : n;
+  }
 
   /// A lock that names no story of its own: never another season's name.
   static const plainTitle = 'THE LOCK';
@@ -41,7 +51,7 @@ class LetterLockQuestion extends StatefulWidget {
 
 class _LetterLockQuestionState extends State<LetterLockQuestion> {
   /// The tile in each slot (an option id), or null while it is empty.
-  late final List<String?> _slots = List.filled(widget.mission.options.length, null);
+  late final List<String?> _slots = List.filled(LetterLockQuestion.slotCount(widget.mission), null);
 
   List<ChoiceOption> get _tiles => widget.mission.options;
 
@@ -149,7 +159,11 @@ class _LetterLockQuestionState extends State<LetterLockQuestion> {
         // The letters found, on the desk: each stays where it lies, faded
         // while it is in the lock.
         Text(
-          _loose.isEmpty ? 'Every letter is in the lock.' : 'Drag a letter into the lock, or tap it.',
+          _loose.isEmpty
+              ? 'Every letter is in the lock.'
+              : _full
+              ? 'The lock is full. Tap a letter in it to take it out.'
+              : 'Drag a letter into the lock, or tap it.',
           textAlign: TextAlign.center,
           style: AppText.caption(color: AppColors.inkBrown),
         ),

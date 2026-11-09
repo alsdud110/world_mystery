@@ -7,6 +7,7 @@ import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
 import 'question_widgets.dart' show AnswerState, answerPaper;
 import '../../../widgets/game_button.dart';
+import '../../../widgets/ink_icon.dart';
 import '../../../puzzles_v2/core/puzzle_rules.dart';
 import '../../../puzzles_v2/core/syllable_rules.dart';
 
@@ -19,7 +20,7 @@ import '../../../puzzles_v2/core/syllable_rules.dart';
 /// ([onSaved]); READ THE NOTE sends the note ([onSubmit]). A solved mission
 /// ([solved]) shows the note as it was written.
 class SyllableBoard extends StatefulWidget {
-  const SyllableBoard({super.key, required this.spec, this.saved, this.solved = false, this.onSaved, this.onSubmit});
+  const SyllableBoard({super.key, required this.spec, this.saved, this.solved = false, this.onSaved, this.onSubmit, this.onListen});
 
   final SyllableSpec spec;
 
@@ -28,6 +29,9 @@ class SyllableBoard extends StatefulWidget {
   final bool solved;
   final ValueChanged<String>? onSaved;
   final ValueChanged<String>? onSubmit;
+
+  /// Says [SyllableSpec.voice] aloud; with both, a LISTEN button by the word's sounds.
+  final ValueChanged<String>? onListen;
 
   @override
   State<SyllableBoard> createState() => _SyllableBoardState();
@@ -231,7 +235,18 @@ class _SyllableBoardState extends State<SyllableBoard> {
       key: const ValueKey('syllable-board'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Semantics(header: true, child: Text('WHAT EACH GROUP LOOKED LIKE', style: AppText.eyebrow())),
+        Semantics(header: true, child: Text(_spec.row ? 'WHAT EACH BLOCK SAYS' : 'WHAT EACH GROUP LOOKED LIKE', style: AppText.eyebrow())),
+        // The word heard as it is said (a help: its sounds are written below too).
+        if (_spec.voice case final voice? when widget.onListen != null)
+          Align(
+            alignment: Alignment.centerLeft,
+            child: InkTextButton(
+              key: const ValueKey('syllable-listen'),
+              label: 'Listen to the word',
+              glyph: InkGlyph.speaker,
+              onPressed: () => widget.onListen!(voice),
+            ),
+          ),
         const SizedBox(height: AppSpace.xs),
         for (final b in _spec.blocks)
           Padding(
@@ -242,7 +257,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
         Semantics(header: true, child: Text('THE PAPER', style: AppText.eyebrow())),
         Padding(
           padding: const EdgeInsets.only(top: AppSpace.xs, bottom: AppSpace.sm),
-          child: Text('Tap a place on the paper, then build what was written there.', style: AppText.aside(size: 15)),
+          child: Text(_spec.row ? 'Tap a block, then choose its parts.' : 'Tap a place on the paper, then build what was written there.', style: AppText.aside(size: 15)),
         ),
         Center(
           child: Container(
@@ -253,7 +268,11 @@ class _SyllableBoardState extends State<SyllableBoard> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               // The first column is on the right: the leftmost is the last.
+              // A row of blocks reads left to right, as words are written today.
               children: [
+                if (_spec.row)
+                  for (var i = 0; i < _spec.blocks.length; i++) Padding(padding: EdgeInsets.only(left: i == 0 ? 0 : AppSpace.md), child: _cell(i))
+                else
                 for (var c = _spec.columns - 1; c >= 0; c--)
                   Padding(
                     padding: EdgeInsets.only(left: c == _spec.columns - 1 ? 0 : AppSpace.md),
@@ -280,7 +299,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
             child: Text(_note!, key: const ValueKey('syllable-note'), style: AppText.aside(size: 15, color: AppColors.inkBrown)),
           ),
         const SizedBox(height: AppSpace.md),
-        GameButton(key: const ValueKey('syllable-check'), label: 'READ THE NOTE', onPressed: _session.complete ? _read : null),
+        GameButton(key: const ValueKey('syllable-check'), label: _spec.row ? 'READ THE WORD' : 'READ THE NOTE', onPressed: _session.complete ? _read : null),
       ],
     );
   }
@@ -342,6 +361,17 @@ class _SyllableBoardState extends State<SyllableBoard> {
                   style: AppText.eyebrow(color: wrong ? AppColors.tryAgain : (on ? AppColors.ink : AppColors.goldDeep)),
                 ),
               ),
+              // A row's block says what it sounds like now: a wrong part is heard, not guessed.
+              if (_spec.row)
+                SizedBox(
+                  width: 96,
+                  child: Text(
+                    Hangul.reading(written).isEmpty ? '…' : 'says "${Hangul.reading(written)}"',
+                    key: ValueKey('syllable-reading-${b.id}'),
+                    textAlign: TextAlign.center,
+                    style: AppText.aside(size: 14, color: AppColors.inkBrown),
+                  ),
+                ),
             ],
           ),
         ),
@@ -386,7 +416,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
                   onTap: () => _play(SetFirstSound(i, s)),
                 ),
             ]),
-          row('LINE', [
+          row(_spec.row ? 'VOWEL · LINE' : 'LINE', [
             for (final l in VowelLine.values)
               _Piece(
                 key: ValueKey('syllable-line-${b.id}-${l.name}'),
@@ -398,7 +428,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
               ),
           ]),
           if (piece.line case final line?)
-            row('DOT', [
+            row(_spec.row ? 'VOWEL · DOT' : 'DOT', [
               for (final d in Hangul.dotsFor(line))
                 _Piece(
                   key: ValueKey('syllable-dot-${b.id}-${d.name}'),
@@ -410,11 +440,11 @@ class _SyllableBoardState extends State<SyllableBoard> {
                 ),
             ]),
           if (_spec.choosesSounds && _spec.bottoms.isNotEmpty)
-            row('AT THE BOTTOM', [
+            row(_spec.row ? 'LAST SOUND (AT THE BOTTOM)' : 'AT THE BOTTOM', [
               _Piece(
                 key: ValueKey('syllable-bottom-${b.id}-none'),
                 glyph: '',
-                label: 'NOTHING',
+                label: _spec.row ? 'NONE' : 'NOTHING',
                 semanticsLabel: '$name: nothing at the bottom',
                 selected: piece.bottom == null,
                 onTap: () => _play(SetBottomSound(i, null)),

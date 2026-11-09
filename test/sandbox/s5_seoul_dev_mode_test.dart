@@ -70,9 +70,9 @@ void main() {
       await p.solveFinal(ep.finalMission);
       await wait(t, const Duration(milliseconds: 1500));
       expect(c.read(gameControllerProvider).isCompleted(ep.finalMission.id), isTrue, reason: p.play.texts());
-      // The ending (Bun-i at dawn), its Discovery Moment, then the case closed.
+      // The ending (the name, then Bun-i at dawn), its Discovery Moment, then the case closed.
       bool closing() => find.text('CLOSE THE CASE').evaluate().isNotEmpty || find.text('SEE MY CASE REPORT').evaluate().isNotEmpty;
-      for (var n = 0; n < 24 && !closing(); n++) {
+      for (var n = 0; n < 48 && !closing(); n++) {
         if (find.text('CONTINUE INVESTIGATION').evaluate().isNotEmpty) {
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 1500));
         } else if (find.text('NEXT').evaluate().isNotEmpty) {

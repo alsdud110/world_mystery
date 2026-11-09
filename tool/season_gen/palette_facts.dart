@@ -395,6 +395,16 @@ abstract final class PaletteFacts {
       ],
       requiredData: ['Mission.letter', 'Mission.question', 'Mission.answer', 'Mission.hints', 'SyllableSpec.blocks'],
     ),
+    PalettePuzzle(
+      'shape_match',
+      PaletteGrade.ready,
+      PaletteMode.requiresAssets,
+      engines: [
+        PaletteEngine('ShapeMatchBoard', 'shapes', {'matchPairs'}, {PlanSurface.mission}),
+      ],
+      requiredData: ['Mission.letter', 'Mission.answer', 'Mission.hints', 'ShapeMatchSpec.pictures', 'ShapeMatchSpec.letters', 'ShapeMatchSpec.task'],
+      requiredAssets: ['ShapePicture.file'],
+    ),
   ];
 
   /// The names a dial can show (`GameSymbol`).

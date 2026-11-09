@@ -2173,13 +2173,16 @@ class DiscoveryPlan {
 /// [speaker]'s (a charId of the case, with their [portrait] if any), the
 /// detective's or the narrator's, a piece of [evidence] laid over it.
 class EndingLinePlan {
-  const EndingLinePlan({required this.by, required this.text, this.speaker, this.portrait, this.evidence});
+  const EndingLinePlan({required this.by, required this.text, this.speaker, this.portrait, this.evidence, this.background});
 
   final TalkBy by;
   final String text;
   final String? speaker;
   final String? portrait;
   final String? evidence;
+
+  /// The picture behind the line (null: the final's place).
+  final String? background;
 
   factory EndingLinePlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
@@ -2189,6 +2192,7 @@ class EndingLinePlan {
       speaker: r.optStr('speaker', pattern: PlanIds.local),
       portrait: r.optStr('portrait', pattern: PlanIds.assetFile),
       evidence: r.optStr('evidence', pattern: PlanIds.evidence),
+      background: r.optStr('background', pattern: PlanIds.assetFile),
     );
     r.done();
     return out;
@@ -2199,6 +2203,7 @@ class EndingLinePlan {
     _putText(json, 'speaker', speaker);
     _putText(json, 'portrait', portrait);
     _putText(json, 'evidence', evidence);
+    _putText(json, 'background', background);
     return json;
   }
 }
@@ -2335,7 +2340,7 @@ class SyllableBlockPlan {
 /// note they write is the puzzle's answer (a `wordInput`'s). In a
 /// historical season its sources are the puzzle's, in the dossier.
 class SyllablesPlan {
-  const SyllablesPlan({required this.blocks, this.sounds = const [], this.columnHeight});
+  const SyllablesPlan({required this.blocks, this.sounds = const [], this.columnHeight, this.row = false, this.lastSounds = const [], this.voice});
 
   final List<SyllableBlockPlan> blocks;
 
@@ -2345,12 +2350,27 @@ class SyllablesPlan {
   /// Groups in a column, written down the page from the right (null: one row).
   final int? columnHeight;
 
+  /// The groups side by side, left to right, as words are written today
+  /// (`SyllableSpec.row`): each named BLOCK 1, BLOCK 2, its parts FIRST
+  /// SOUND, VOWEL and LAST SOUND, its sound shown as it is built.
+  final bool row;
+
+  /// The last sounds to choose from (`SyllableSpec.lastSounds`; empty: the
+  /// groups' own).
+  final List<String> lastSounds;
+
+  /// The whole word said aloud (`SyllableSpec.voice`), a voice file.
+  final String? voice;
+
   factory SyllablesPlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
     final out = SyllablesPlan(
       blocks: r.objs('blocks', SyllableBlockPlan.fromJson, min: 2, max: 6),
       sounds: r.optStrings('sounds', unique: true),
       columnHeight: r.optInt('columnHeight', min: 1),
+      row: r.optBool('row') ?? false,
+      lastSounds: r.optStrings('lastSounds', unique: true),
+      voice: r.optStr('voice', pattern: RegExp(r'^assets/([A-Za-z0-9_-]+/)*[A-Za-z0-9_-]+\.m4a$')),
     );
     r.done();
     return out;
@@ -2360,6 +2380,69 @@ class SyllablesPlan {
     'blocks': [for (final b in blocks) b.toJson()],
     if (sounds.isNotEmpty) 'sounds': sounds,
     'columnHeight': ?columnHeight,
+    if (row) 'row': true,
+    if (lastSounds.isNotEmpty) 'lastSounds': lastSounds,
+    'voice': ?voice,
+  };
+}
+
+/// A picture of a [ShapesPlan] (`ShapePicture`).
+class ShapePicturePlan {
+  const ShapePicturePlan({required this.id, required this.file, required this.name, required this.label});
+
+  final String id;
+  final String file;
+  final String name;
+
+  /// What it shows, for screen readers.
+  final String label;
+
+  factory ShapePicturePlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = ShapePicturePlan(
+      id: r.str('id', pattern: PlanIds.local),
+      file: r.str('file', pattern: PlanIds.assetFile),
+      name: r.str('name'),
+      label: r.str('label'),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {'id': id, 'file': file, 'name': name, 'label': label};
+}
+
+/// Letters laid on the pictures they copy (`ShapeMatchSpec`, table
+/// `shapes`, `shape_match`): the answer is `letter:picture` pairs.
+class ShapesPlan {
+  const ShapesPlan({required this.task, required this.pictures, required this.letters});
+
+  final String task;
+  final List<ShapePicturePlan> pictures;
+
+  /// Letter ids and the letter each shows (`ShapeLetter`).
+  final List<({String id, String glyph})> letters;
+
+  factory ShapesPlan.fromJson(Object? json, String path) {
+    final r = _Reader(json, path);
+    final out = ShapesPlan(
+      task: r.str('task'),
+      pictures: r.objs('pictures', ShapePicturePlan.fromJson, min: 2),
+      letters: r.objs('letters', (j, p) {
+        final l = _Reader(j, p);
+        final out = (id: l.str('id', pattern: PlanIds.local), glyph: l.str('glyph'));
+        l.done();
+        return out;
+      }, min: 3),
+    );
+    r.done();
+    return out;
+  }
+
+  Map<String, Object?> toJson() => {
+    'task': task,
+    'pictures': [for (final p in pictures) p.toJson()],
+    'letters': [for (final l in letters) {'id': l.id, 'glyph': l.glyph}],
   };
 }
 
@@ -2855,8 +2938,9 @@ class InterviewQuestionPlan {
 
 /// Evidence asked for in an [InterviewPlan] (`TalkPresent`): one of
 /// [accepted] (notebook evidence ids) plays [lines]; any other plays [miss]
-/// (never counted wrong). [offered]: two pieces shown as cards to pick
-/// from instead of the notebook, [tell] said after a second miss.
+/// (never counted wrong). [offered]: two to four pieces shown as cards to
+/// pick from instead of the notebook, [tell] said after a second miss, the
+/// right card lit from miss [litAfter] (none: 2).
 class InterviewPresentPlan {
   const InterviewPresentPlan({
     required this.id,
@@ -2866,6 +2950,7 @@ class InterviewPresentPlan {
     required this.miss,
     this.offered = const [],
     this.tell,
+    this.litAfter,
     this.requires = const [],
   });
 
@@ -2876,6 +2961,7 @@ class InterviewPresentPlan {
   final String miss;
   final List<String> offered;
   final String? tell;
+  final int? litAfter;
   final List<String> requires;
 
   factory InterviewPresentPlan.fromJson(Object? json, String path) {
@@ -2888,6 +2974,7 @@ class InterviewPresentPlan {
       miss: r.str('miss'),
       offered: r.optStrings('offered', pattern: PlanIds.evidence, unique: true),
       tell: r.optStr('tell'),
+      litAfter: r.optInt('litAfter', min: 2),
       requires: r.optStrings('requires', pattern: PlanIds.local, unique: true),
     );
     r.done();
@@ -2898,6 +2985,7 @@ class InterviewPresentPlan {
     final json = <String, Object?>{'id': id, 'prompt': prompt, 'accepted': accepted, 'lines': [for (final l in lines) l.toJson()], 'miss': miss};
     _putList(json, 'offered', offered);
     _putText(json, 'tell', tell);
+    if (litAfter != null) json['litAfter'] = litAfter;
     _putList(json, 'requires', requires);
     return json;
   }
@@ -2985,6 +3073,7 @@ class MissionPlayPlan {
     this.dialogue,
     this.timeline,
     this.syllables,
+    this.shapes,
     this.traces,
     this.inspect,
     this.records,
@@ -3042,6 +3131,9 @@ class MissionPlayPlan {
   /// A note in the new letters to put back together (table `syllables`).
   final SyllablesPlan? syllables;
 
+  /// Letters laid on the pictures they copy (table `shapes`, `shape_match`).
+  final ShapesPlan? shapes;
+
   /// Existing engines the generator makes (Puzzle Engine 2.0 STEP 1): a
   /// place read for its traces (`deductions`), exhibits under the glass
   /// (`inspections`), two records compared (`records`), a talk in which
@@ -3066,6 +3158,7 @@ class MissionPlayPlan {
     'dialogues': ?dialogue,
     'timelines': ?timeline,
     'syllables': ?syllables,
+    'shapes': ?shapes,
     'deductions': ?traces,
     'inspections': ?inspect,
     'records': ?records,
@@ -3100,6 +3193,7 @@ class MissionPlayPlan {
       dialogue: r.optObj('dialogue', DialoguePlan.fromJson),
       timeline: r.optObj('timeline', TimelinePlan.fromJson),
       syllables: r.optObj('syllables', SyllablesPlan.fromJson),
+      shapes: r.optObj('shapes', ShapesPlan.fromJson),
       traces: r.optObj('traces', TracesPlan.fromJson),
       inspect: r.optObj('inspect', InspectPlan.fromJson),
       records: r.optObj('records', RecordsPlan.fromJson),
@@ -3139,6 +3233,7 @@ class MissionPlayPlan {
     if (dialogue case final s?) json['dialogue'] = s.toJson();
     if (timeline case final s?) json['timeline'] = s.toJson();
     if (syllables case final s?) json['syllables'] = s.toJson();
+    if (shapes case final s?) json['shapes'] = s.toJson();
     if (traces case final s?) json['traces'] = s.toJson();
     if (inspect case final s?) json['inspect'] = s.toJson();
     if (records case final s?) json['records'] = s.toJson();

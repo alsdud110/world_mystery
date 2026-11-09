@@ -32,28 +32,28 @@
           "answer": "start,lift,copy,note,fail",
           "options": [
             {
-              "id": "start",
-              "label": "THE WALL BEGINS"
+              "id": "note",
+              "label": "THE NOTE"
             },
             {
-              "id": "lift",
-              "label": "THE MACHINE WORKS"
+              "id": "rice",
+              "label": "THE RICE"
             },
             {
               "id": "copy",
               "label": "THE NEW CARPENTER"
             },
             {
-              "id": "note",
-              "label": "THE NOTE"
-            },
-            {
               "id": "fail",
               "label": "THE MACHINE STOPS"
             },
             {
-              "id": "rice",
-              "label": "THE RICE"
+              "id": "lift",
+              "label": "THE MACHINE WORKS"
+            },
+            {
+              "id": "start",
+              "label": "THE WALL BEGINS"
             }
           ],
           "codeLength": 5
@@ -61,17 +61,11 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "Gwak's log, written with until / after: the wall's start (1794, fact h1) is fixed first and this morning's failure last; the machine worked until the carpenter came, and the note came after his work. The rice card is not part of it.",
+          "Gwak's log, written out of time order with until / after: the wall's start (1794, fact h1) is fixed first and this morning's failure last; the machine worked until the carpenter came, and the note was tied in the night after his work. The rice card is not part of it. Cards and log lines are never listed in the answer's order.",
           "One order only: lift before copy (until), copy before note (after)."
         ]
       },
-      "clueInputs": [
-        {
-          "ref": "s5_ep02_e1",
-          "use": "recall",
-          "note": "The same water drop as Seok's note of 1592."
-        }
-      ],
+      "clueInputs": [],
       "clueOutputs": {
         "clue": "s5_ep03_c1",
         "evidence": "s5_ep03_e1"
@@ -95,19 +89,19 @@
           "Jeong reads its King's letters out: \"The drawing is different.\""
         ],
         "letterIntro": "Foreman Gwak's work log:",
-        "letter": "The King's builders began the wall in 1794.\nThe machine lifted big stones every day, until the new carpenter came.\nThe new carpenter rebuilt the top from a copied drawing.\nThe note was on the rope after the carpenter's work.\nThis morning, the machine could not lift a stone.",
+        "letter": "This morning, the machine could not lift a stone.\nThe note was tied to the rope in the night, after the carpenter's work.\nThe machine lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the top from a copied drawing.",
         "question": "Put the log in order. Was the machine broken, or changed?",
         "hints": [
-          "Look for the words 'until' and 'after' in the log.",
+          "Look for 'until' and 'after' in the log. The lines are not in order.",
           "What happened before the new carpenter came? What came after his work?"
         ],
         "successMessage": "The machine worked until someone changed it!",
         "transition": [
           "The machine is not broken. It was changed.",
-          "\"A copied drawing?\" says Jeong. \"Then which drawing is mine?\"",
-          "He takes you to the drawing room."
+          "Gwak says, \"Nobody works here at night. The gate is shut. Only the water carriers come in before dawn.\"",
+          "\"A copied drawing?\" says Jeong. \"Then which drawing is mine?\""
         ],
-        "orderFeedback": "Read the log again: what came after the carpenter's work?",
+        "orderFeedback": "Read the log again. What happened until the new carpenter came?",
         "mapX": 0.5,
         "mapY": 0.6,
         "clue": {
@@ -116,42 +110,29 @@
           "note": "The machine worked until a new carpenter rebuilt its top from a copied drawing."
         },
         "evidence": {
-          "name": "The Water-Drop Note (1795)",
+          "name": "The Note on the Rope",
           "icon": "letter",
-          "description": "A short note in the King's letters, with a small water drop. It says: the drawing is different."
-        },
-        "recall": {
-          "title": "The Same Mark?",
-          "prompt": "A water drop is drawn on this note. Which note in your notebook has the same mark?",
-          "miss": "That has no water drop. Look for a note from 1592."
+          "description": "A short note in the King's letters, with a small water drop and no name. It says: the drawing is different. It was tied to the rope in the night."
         },
         "timeline": {
           "cards": [
             {
-              "id": "start",
-              "title": "THE WALL BEGINS",
-              "text": "The King's builders begin the wall.",
-              "anchor": "1794",
-              "factIds": [
-                "s5_ep03_h1"
-              ]
+              "id": "note",
+              "title": "THE NOTE",
+              "text": "In the night, a note with a water drop is tied to the rope.",
+              "fiction": true
             },
             {
-              "id": "lift",
-              "title": "THE MACHINE WORKS",
-              "text": "The machine lifts big stones every day.",
+              "id": "rice",
+              "title": "THE RICE",
+              "text": "Workers eat rice in the shade.",
+              "discard": true,
               "fiction": true
             },
             {
               "id": "copy",
               "title": "THE NEW CARPENTER",
               "text": "A new carpenter rebuilds the top from a copied drawing.",
-              "fiction": true
-            },
-            {
-              "id": "note",
-              "title": "THE NOTE",
-              "text": "A note with a water drop is tied to the rope.",
               "fiction": true
             },
             {
@@ -162,11 +143,19 @@
               "fiction": true
             },
             {
-              "id": "rice",
-              "title": "THE RICE",
-              "text": "Workers eat rice in the shade.",
-              "discard": true,
+              "id": "lift",
+              "title": "THE MACHINE WORKS",
+              "text": "The machine lifts big stones every day.",
               "fiction": true
+            },
+            {
+              "id": "start",
+              "title": "THE WALL BEGINS",
+              "text": "The King's builders begin the wall.",
+              "anchor": "1794",
+              "factIds": [
+                "s5_ep03_h1"
+              ]
             }
           ],
           "relations": [
@@ -178,7 +167,7 @@
             {
               "earlier": "copy",
               "later": "note",
-              "line": "The note was on the rope after the carpenter's work."
+              "line": "The note was tied to the rope in the night, after the carpenter's work."
             }
           ]
         },
@@ -205,8 +194,8 @@
         },
         "discovery": {
           "type": "newLead",
-          "title": "THE SAME WATER DROP",
-          "detail": "Seok drew it in 1592. Two hundred years later, it is here again."
+          "title": "A WARNING IN THE NIGHT",
+          "detail": "Someone knew the drawing was different, and tied this note in the night. Who?"
         }
       }
     },
@@ -280,8 +269,9 @@
         "title": "Which Drawing Is Mine?",
         "location": "THE DRAWING ROOM",
         "story": [
-          "Three drawings of lifting machines lie on the table.",
-          "\"One is mine,\" Jeong says. \"The carpenter took the wrong one.\"",
+          "Three drawings of lifting machines lie on the table. Each has a name written on it.",
+          "The new carpenter stands by the door. \"I cannot read. I took the drawing with a gate on it.\"",
+          "\"Only three people come in here,\" Jeong says. \"The carpenter, my clerk, and the girl who brings water for my ink.\"",
           "\"Read my words, and find my drawing.\""
         ],
         "letterIntro": "Jeong's words about his machine:",
@@ -294,15 +284,14 @@
         "successMessage": "That is Jeong's drawing!",
         "transition": [
           "The machine in the yard has pulleys only at the top, and no wheels.",
-          "\"The carpenter copied the wrong drawing,\" says Jeong.",
-          "\"Let us rebuild it, and lift that stone.\""
+          "\"He took the gate with no wheels,\" says Jeong. \"Let us rebuild it, and lift that stone.\""
         ],
         "mapX": 0.4,
         "mapY": 0.4,
         "clue": {
           "title": "Jeong's Drawing",
           "value": "PULLEYS ABOVE AND BELOW, A WHEEL ON EACH SIDE",
-          "note": "Jeong's machine is like a gate. It has pulleys in two places and two wheels."
+          "note": "Jeong's machine is like a gate, with pulleys in two places and two wheels. Only the carpenter, the clerk and the water girl come into the drawing room."
         },
         "evidence": {
           "name": "Jeong's Drawing",
@@ -397,7 +386,7 @@
         "transition": [
           "The ropes go tight. Slowly, the big stone rises onto the wall.",
           "Gwak takes off his hat. \"It was never broken,\" he says.",
-          "Below, a girl with a water bucket watches and smiles."
+          "Below, a girl with a water bucket looks at the two wheels, and smiles."
         ],
         "feedback": {
           "hook,tie,turn,rise": "Read again: what do you do before you hook the stone?",
@@ -424,36 +413,55 @@
     "slot": "final",
     "placeId": "s5_seoul.c03_stone_yard",
     "puzzle": {
-      "paletteId": "combo_dial_lock",
+      "paletteId": "text_choice",
       "surface": "finalMission",
       "engineTable": null,
-      "missionType": "finalCode",
+      "missionType": "multipleChoice",
       "answerSpec": {
-        "answer": "1796",
-        "codeLength": 4,
-        "dialSymbols": [
-          "seal",
-          "gear",
-          "key",
-          "watch"
+        "answer": "okbun",
+        "options": [
+          {
+            "id": "clerk",
+            "label": "The clerk",
+            "feedback": "The clerk sleeps in town, and the gate is shut at night. The note came in the night."
+          },
+          {
+            "id": "okbun",
+            "label": "Okbun"
+          },
+          {
+            "id": "gwak",
+            "label": "Foreman Gwak",
+            "feedback": "Gwak never goes into the drawing room. How could he know the drawing was different?"
+          },
+          {
+            "id": "carpenter",
+            "label": "The new carpenter",
+            "feedback": "The carpenter cannot write. The note is written in the King's letters."
+          }
         ]
       },
       "assetNeeds": [],
       "status": "ready",
       "notes": [
-        "The answer is the real year Hwaseong was finished (s5_ep03_h1: begun in the first month of 1794, finished in the ninth month of 1796): the clerk's words give the start (also M1's fixed card) and two years and eight months. The record chest and the clerk are made up; the record book of the fortress's building (h4) and the paid workers (h5) are real."
+        "Who tied the note (made up): three conditions read from the case: the writer saw Jeong's drawing (the drawing room: carpenter, clerk, water girl; Gwak never goes in), can write (the carpenter cannot), and was in the yard at night (the gate is shut; the clerk sleeps in town; only the water carriers come before dawn). Only Okbun fits all three. The water drop is never needed to choose: its meaning is told in the ending. Options are listed so the answer is not first."
       ]
     },
     "clueInputs": [
       {
         "ref": "s5_ep03_c1",
         "use": "answerDerivation",
-        "note": "Gwak's log: the wall began in 1794."
+        "note": "The note was tied in the night, after the carpenter's work."
+      },
+      {
+        "ref": "s5_ep03_c2",
+        "use": "answerDerivation",
+        "note": "Only the carpenter, the clerk and the water girl come into the drawing room."
       },
       {
         "ref": "s5_ep03_c3",
         "use": "textMention",
-        "note": "The machine lifts stones again: the work goes on."
+        "note": "The stone is on the wall: the machine works again."
       }
     ],
     "clueOutputs": {
@@ -462,51 +470,79 @@
     "learning": {
       "dependency": "essential",
       "level": "application",
-      "objective": "서기의 말(We began in the first month of 1794 … two years and eight months later)을 읽고 성이 완성된 해를 계산해 다이얼을 맞춘다.",
+      "objective": "쪽지에 대한 사실 세 가지(도면이 다르다, King's letters, 밤에 묶임)와 네 사람의 말을 비교해, 세 조건에 모두 맞는 사람 하나를 고른다.",
       "skill": "sentenceMeaning",
       "expressions": [
-        "two years and eight months later",
-        "the year we finished"
+        "I cannot read or write.",
+        "The yard gate is shut at night."
       ]
     },
     "play": {
-      "title": "The Record Chest",
+      "title": "Who Tied the Note?",
       "location": "THE NEW WALL",
       "story": [
-        "Autumn, 1796. Jeong invites you back to Suwon.",
-        "The last stone is on the wall.",
-        "A clerk locks a thick record book in a chest. Its lock has four number dials."
+        "The big stone sits on the wall. The workers cheer.",
+        "Jeong holds up the note. \"Someone warned us. Who?\"",
+        "Four people stand in the yard."
       ],
-      "letterIntro": "The clerk says:",
-      "letter": "\"This book holds every worker's name, and his pay.\"\n\"We began the wall in the first month of 1794.\"\n\"Today the work is done, two years and eight months later.\"\n\"The chest opens on the year we finished.\"",
-      "question": "Turn the dials to the year Hwaseong Fortress was finished.",
+      "letterIntro": "Your notebook, and what the four people say:",
+      "letter": "The note says: \"The drawing is different.\"\nIt is written in the King's letters.\nIt was tied to the rope in the night.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room. I fill the jars before dawn.\"",
+      "question": "Who tied the note to the rope?",
       "hints": [
-        "Find the year the work began.",
-        "Count on two years from the first month. Then eight more months: is it still that year?"
+        "To write \"the drawing is different\", the writer had seen Jeong's drawing.",
+        "Check each person: the drawing room, the writing, the night. Only one fits all three."
       ],
-      "successMessage": "1796! The record chest opens.",
+      "successMessage": "Okbun! Only she fits all three.",
       "transition": [
-        "Inside the book are thousands of names, each with its pay.",
-        "\"Even the water girl is in it,\" laughs the clerk.",
-        "But who is she?"
+        "Okbun puts down her bucket.",
+        "\"I saw the new top had no wheels,\" she says. \"Jeong's drawing has two.\""
       ],
-      "feedback": {
-        "1794": "That is the year the work began. Count on two years and eight months.",
-        "1795": "That was the year of the stopped machine. Count on from the first month of 1794.",
-        "1797": "Count again: two years and eight months after the first month of 1794."
-      },
-      "orderFeedback": "Those digits fit, but not in that order. Count on from 1794.",
       "mapX": 0.55,
       "mapY": 0.55,
       "evidence": {
         "name": "The Finished Fortress",
         "icon": "seal",
-        "description": "Hwaseong was finished in 1796. Machines like the geojunggi helped lift big stones. A record book lists the workers and their pay."
+        "description": "Okbun, a water girl at the yard, wrote the warning note. Hwaseong was finished in 1796. Machines like the geojunggi helped lift big stones. A record book lists the workers and their pay."
       },
       "ending": [
         {
+          "by": "speaker",
+          "text": "The new top had no wheels. Jeong's drawing has two. So I wrote the note.",
+          "speaker": "okbun",
+          "portrait": "assets/seasons/season_05_seoul/characters/okbun.webp"
+        },
+        {
+          "by": "detective",
+          "text": "Why a water drop, and no name?",
+          "evidence": "s5_ep03_e1"
+        },
+        {
+          "by": "speaker",
+          "text": "A water girl may not tell the builders they are wrong. So I wrote no name.",
+          "speaker": "okbun",
+          "portrait": "assets/seasons/season_05_seoul/characters/okbun.webp"
+        },
+        {
+          "by": "speaker",
+          "text": "I drew a water drop. Jeong knows the girl who brings his water.",
+          "speaker": "okbun",
+          "portrait": "assets/seasons/season_05_seoul/characters/okbun.webp"
+        },
+        {
+          "by": "speaker",
+          "text": "Then I thank the girl who brings my water.",
+          "speaker": "jeong_yakyong",
+          "portrait": "assets/seasons/season_05_seoul/characters/jeong_yakyong.webp"
+        },
+        {
+          "by": "speaker",
+          "text": "My mother taught me the King's letters.",
+          "speaker": "okbun",
+          "portrait": "assets/seasons/season_05_seoul/characters/okbun.webp"
+        },
+        {
           "by": "narrator",
-          "text": "In the ninth month of 1796, Hwaseong Fortress was finished."
+          "text": "The next autumn, in the ninth month of 1796, Hwaseong Fortress was finished."
         },
         {
           "by": "speaker",
@@ -521,23 +557,6 @@
         {
           "by": "narrator",
           "text": "It lists the workers, and the pay they were given."
-        },
-        {
-          "by": "speaker",
-          "text": "I carry water here. I wrote the note.",
-          "speaker": "okbun",
-          "portrait": "assets/seasons/season_05_seoul/characters/okbun.webp"
-        },
-        {
-          "by": "detective",
-          "text": "Your water drop is just like Seok's, in 1592.",
-          "evidence": "s5_ep03_e1"
-        },
-        {
-          "by": "speaker",
-          "text": "Seok? My mother told me that name.",
-          "speaker": "okbun",
-          "portrait": "assets/seasons/season_05_seoul/characters/okbun.webp"
         }
       ]
     }
@@ -552,16 +571,17 @@
       "Put the work log in order.",
       "Find Jeong's own drawing.",
       "Lift the stone in the right order.",
-      "Open the record chest."
+      "Find who tied the note to the rope."
     ],
     "intro": [
-      "Spring, 1795. You are a guest of Jeong Yak-yong at Hwaseong Fortress in Suwon.",
+      "Spring, 1795. You are a detective, a guest of Jeong Yak-yong at Hwaseong Fortress in Suwon.",
       "A long stone wall is rising around the new town.",
-      "Jeong designed a lifting machine, the geojunggi. It lifts heavy stones with ropes and pulleys.",
-      "But this morning, Foreman Gwak shouts across the stone yard.",
+      "Jeong planned this fortress for the King. He also designed a lifting machine, the geojunggi.",
+      "It lifts heavy stones with ropes and pulleys. Today Jeong has come to see it work.",
+      "But Foreman Gwak shouts across the stone yard.",
       "\"Your machine is broken! It cannot lift one stone!\""
     ],
-    "caseSummary": "The lifting machine was not broken. A new carpenter had rebuilt it from a copied drawing. Okbun, who carries water to the builders, saw it and wrote the note. Rebuilt from Jeong Yak-yong's drawing, it lifted the stone. Hwaseong Fortress was finished in 1796. Machines like Jeong's geojunggi helped lift big stones. A record book lists the workers and their pay.",
+    "caseSummary": "The lifting machine was not broken. A new carpenter, who could not read, rebuilt its top from the wrong drawing. Okbun, who carries water to the builders, had seen Jeong's drawing. She tied a warning note to the rope in the night. It had a water drop and no name. Rebuilt from Jeong Yak-yong's drawing, the machine lifted the stone. Hwaseong Fortress was finished in 1796. Machines like Jeong's geojunggi helped lift big stones. A record book lists the workers and their pay.",
     "place": "HWASEONG FORTRESS, SUWON",
     "keyWords": [
       "until",
@@ -585,6 +605,6 @@
   },
   "notes": [
     "PART 10 (2026-11-06), Case 03. Jeong Yak-yong is real; his words here are made up. Foreman Gwak, the new carpenter, the clerk and Okbun are made up; so are the stopped machine, the copied drawing, the three drawings and the record chest.",
-    "Ends on a checked fact: the final's answer 1796 is the year Hwaseong was finished (h1); the ending tells that machines like the geojunggi helped move and lay big stones (h2, h3) and that the record book lists the workers and their pay (h4, h5). It never says the machine made the work faster or how many pulleys it had (not checked)."
+    "PART 2 (2026-11-09): the final is a text choice: who tied the note (Okbun), found by three conditions (saw Jeong's drawing, can write, in the yard at night). The ending still tells 1796 (h1), the machines (h2, h3) and the record of workers and pay (h4, h5); Jeong planned the fortress (h8) and Jo Sim-tae ran the site (h7)."
   ]
 }
