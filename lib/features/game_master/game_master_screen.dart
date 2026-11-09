@@ -135,8 +135,7 @@ class GameMasterScreen extends ConsumerWidget {
                 const SizedBox(height: 8),
                 DifficultyChoice(
                   selected: ref.watch(detectiveProfileProvider.select((p) => p.difficulty)),
-                  // The pilot's case is made at its level: it starts again.
-                  onChanged: (d) => dev.pilot ? dev.enterPilot?.call(d) : _changeLevel(context, ref, d),
+                  onChanged: (d) => _changeLevel(context, ref, d),
                 ),
                 const SizedBox(height: 24),
                 const Divider(),
@@ -196,12 +195,6 @@ class GameMasterScreen extends ConsumerWidget {
                   onPressed: dev.enter,
                   child: const Text('START DEVELOPER MODE'),
                 ),
-              ],
-              // Developer mode only: a test session of its own, never the player's.
-              if (dev?.enterPilot case final pilot? when playtestToolsEnabled && testing) ...[
-                const SizedBox(height: 24),
-                const Divider(),
-                _SeoulPilot(onLevel: pilot),
               ],
               if (tools) ...[
                 const SizedBox(height: 24),
@@ -418,53 +411,6 @@ class _CaseShortcutsState extends ConsumerState<CaseShortcuts> {
               title: picked.upcomingTitles[n] ?? '',
               comingSoon: true,
             ),
-      ],
-    );
-  }
-}
-
-/// Seoul (Season 5) Case 01 at a level, in a test session of its own (see
-/// [DevSession.enterPilot]), whatever the player has solved: never in a
-/// release build.
-class _SeoulPilot extends StatelessWidget {
-  const _SeoulPilot({required this.onLevel});
-
-  final void Function(Difficulty level) onLevel;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      key: const ValueKey('seoul-pilot'),
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Text('SEOUL — CASE 01', style: AppText.title(size: 20)),
-        Text("The Secret of the King's Letters · 1446", style: AppText.eyebrow()),
-        const SizedBox(height: 4),
-        Text(
-          '서울(Season 5) Case 01을 고른 난이도로 새 테스트 세션에서 처음부터 플레이합니다. '
-          '해금 조건과 상관없이 열리고, 기록은 메모리에만 있어 이 기기의 진행 기록은 바뀌지 않습니다.',
-          style: AppText.caption(),
-        ),
-        const SizedBox(height: 12),
-        Row(
-          children: [
-            for (final (i, level) in Difficulty.values.indexed) ...[
-              if (i > 0) const SizedBox(width: 8),
-              Expanded(
-                child: OutlinedButton(
-                  key: ValueKey('seoul-pilot-${level.storageId}'),
-                  style: OutlinedButton.styleFrom(
-                    minimumSize: const Size.fromHeight(52),
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    side: const BorderSide(color: AppColors.navy, width: 1.5),
-                  ),
-                  onPressed: () => onLevel(level),
-                  child: FittedBox(child: Text(level.label, style: AppText.button(size: 15, color: AppColors.navy))),
-                ),
-              ),
-            ],
-          ],
-        ),
       ],
     );
   }

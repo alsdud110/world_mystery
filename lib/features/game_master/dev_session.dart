@@ -16,7 +16,6 @@ import '../../data/models/episode.dart';
 import '../../data/models/game_progress.dart';
 import '../../data/models/profile.dart';
 import '../../data/season5/season5_art.dart' show season5Map;
-import '../../data/season5/season5_content.dart';
 import '../../data/repositories/episode_repository.dart';
 import '../../data/repositories/memory_preferences.dart';
 import '../../data/repositories/profile_store.dart';
@@ -31,7 +30,7 @@ import 'playtest_tools.dart' show playtestDetectiveName;
 /// developer mode in this game (no [DevSessionHost] above it).
 @immutable
 class DevSession {
-  const DevSession({required this.active, required this.enter, required this.exit, this.enterPilot, this.pilot = false});
+  const DevSession({required this.active, required this.enter, required this.exit});
 
   /// This is a test session (TESTER, nothing saved on the device).
   final bool active;
@@ -42,15 +41,6 @@ class DevSession {
 
   /// Ends the test session and returns to the player's own, as it was.
   final VoidCallback exit;
-
-  /// Starts a new test session playing Seoul (Season 5) Case 01 alone at the
-  /// level given ([season5Content]), from its case file. Null: no pilot in
-  /// this game.
-  final void Function(Difficulty level)? enterPilot;
-
-  /// This test session plays Seoul Case 01 alone: its level is chosen by
-  /// starting it again ([enterPilot]).
-  final bool pilot;
 }
 
 final devSessionProvider = Provider<DevSession?>((ref) => null);
@@ -103,13 +93,7 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
     ],
   );
 
-  DevSession _session({required bool active, bool pilot = false}) => DevSession(
-        active: active,
-        enter: _enter,
-        exit: _exit,
-        enterPilot: operatorToolsInBuild ? _enterPilot : null,
-        pilot: pilot,
-      );
+  DevSession _session({required bool active}) => DevSession(active: active, enter: _enter, exit: _exit);
 
   ProviderContainer? _test;
 
@@ -140,19 +124,6 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
     });
   }
 
-  /// A new test session in place of any other, playing Seoul Case 01 at
-  /// [level] (see [DevSession.enterPilot]).
-  void _enterPilot(Difficulty level) {
-    if (!_own.read(operatorToolsAvailableProvider)) return;
-    final old = _test;
-    if (old == null) _own.read(gameControllerProvider.notifier).holdPlayClock();
-    setState(() {
-      _sessions++;
-      _test = _newTestSession(pilotLevel: level);
-    });
-    if (old != null) WidgetsBinding.instance.addPostFrameCallback((_) => old.dispose());
-  }
-
   void _exit() {
     final test = _test;
     if (test == null) return;
@@ -162,8 +133,8 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
     _own.read(gameControllerProvider.notifier).resumePlayClock();
   }
 
-  ProviderContainer _newTestSession({Difficulty? pilotLevel}) {
-    final tester = devDetective(level: pilotLevel ?? Difficulty.standard);
+  ProviderContainer _newTestSession() {
+    final tester = devDetective(level: Difficulty.standard);
     final storage = MemoryPreferences({
       AppConstants.detectiveStorageKey: jsonEncode(DetectiveRecord(profile: tester).toJson()),
       // Its first case file already carries its name, as a new detective's.
@@ -185,20 +156,15 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
         seasonPackSetupProvider.overrideWithValue(_own.read(seasonPackSetupProvider)),
         seasonPacksInAppProvider.overrideWithValue(_own.read(seasonPacksInAppProvider)),
         localSeasonPacksProvider.overrideWithValue(_own.read(localSeasonPacksProvider)),
-        // Seoul Case 01's: the same (Seoul is a season of the game).
-        if (pilotLevel != null)
-          ...pilotOverrides(season5Content, seoulCase01Id, pilotLevel, own: _own)
-        else ...[
-          allEpisodesProvider.overrideWithValue(_own.read(allEpisodesProvider)),
-          seasonMapsProvider.overrideWithValue(_own.read(seasonMapsProvider)),
-          seasonReleasedProvider.overrideWithValue(_own.read(seasonReleasedProvider)),
-        ],
+        allEpisodesProvider.overrideWithValue(_own.read(allEpisodesProvider)),
+        seasonMapsProvider.overrideWithValue(_own.read(seasonMapsProvider)),
+        seasonReleasedProvider.overrideWithValue(_own.read(seasonReleasedProvider)),
         operatorToolsAvailableProvider.overrideWithValue(_own.read(operatorToolsAvailableProvider)),
         // One sound for the device: the player's (stopped with their game).
         audioServiceProvider.overrideWithValue(_own.read(audioServiceProvider)),
         // One ads SDK for the device too: the player's, started at most once.
         adServiceProvider.overrideWithValue(_own.read(adServiceProvider)),
-        devSessionProvider.overrideWithValue(_session(active: true, pilot: pilotLevel != null)),
+        devSessionProvider.overrideWithValue(_session(active: true)),
       ],
     );
     // The sound switch is the device's: switched here, it is the player's
@@ -208,13 +174,9 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
       _own.read(soundEnabledProvider.notifier).toggle();
       _own.read(audioServiceProvider).refresh();
     });
-    // It opens on the Game Master's tools; a pilot on its case file.
+    // It opens on the Game Master's tools.
     test.read(gameMasterAccessProvider.notifier).grant();
-    if (pilotLevel != null && openPilot(test, season5Content, seoulCase01Id)) {
-      test.read(routerProvider).go(Routes.caseFile(seoulCase01Id));
-    } else {
-      test.read(routerProvider).go(Routes.gameMaster);
-    }
+    test.read(routerProvider).go(Routes.gameMaster);
     return test;
   }
 
@@ -259,8 +221,7 @@ class _DevSessionHostState extends State<DevSessionHost> with WidgetsBindingObse
 ///
 /// A season of the game (Seoul, Season 5) is played as it is: the game's
 /// own cases and maps, never a second copy beside them; the session's
-/// detective gives the level, and the season preview opens it
-/// ([openPilot]).
+/// detective gives the level, and the season preview opens it.
 ///
 /// A season not in the game (a sandbox season, in the tests): the season
 /// beside the game's own with that one case (in its level's words),
@@ -295,13 +256,4 @@ List<Override> pilotOverrides(SeasonContent season, String caseId, Difficulty le
     // The game finds a reveal by its own seasons only.
     if (season.historyReveals[caseId] case final r?) historyRevealProvider(caseId).overrideWithValue(r),
   ];
-}
-
-/// [container]'s detective in [season] at [caseId]'s case file (the
-/// season preview on, as for any unreleased season): false when it would
-/// not open.
-bool openPilot(ProviderContainer container, SeasonContent season, String caseId) {
-  container.read(seasonPreviewSwitchProvider.notifier).set(true);
-  final game = container.read(gameControllerProvider.notifier);
-  return game.openSeason(season.id) && container.read(gameControllerProvider.notifier).openEpisode(caseId);
 }
