@@ -1,1 +1,3 @@
 #include "Generated.xcconfig"
+// A debug build reads the season packs from this project folder (season_pack_local.dart).
+WM_PROJECT_DIR=$(FLUTTER_APPLICATION_PATH)

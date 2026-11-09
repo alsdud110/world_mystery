@@ -73,5 +73,7 @@
 		<string>UIStatusBarStyleLightContent</string>
 		<key>UIViewControllerBasedStatusBarAppearance</key>
 		<true/>
+		<key>WMProjectDir</key>
+		<string>$(WM_PROJECT_DIR)</string>
 	</dict>
 </plist>

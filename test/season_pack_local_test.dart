@@ -35,6 +35,13 @@ void main() {
       expect(() => AssetSource.of('cdn', debug: true, release: false), throwsArgumentError);
     });
 
+    test('unset: the project folder when this device has it, else R2; ASSET_SOURCE=local: the folder, or a named error', () {
+      expect(LocalSeasonPacks.choose(Directory.current.path, explicit: false)?.root, Directory.current.path, reason: 'a simulator');
+      expect(LocalSeasonPacks.choose('', explicit: false), isNull, reason: 'no folder known: R2');
+      expect(LocalSeasonPacks.choose('/Users/someone/world_mystery_not_here', explicit: false), isNull, reason: 'a phone: R2');
+      expect(LocalSeasonPacks.choose('', explicit: true)?.problem(), contains('SEASON_PACK_DIR'), reason: 'never a quiet download');
+    });
+
     test('this test run (debug, no ASSET_SOURCE): local', () {
       expect(AssetSource.fromEnvironment(), AssetSource.local);
     });

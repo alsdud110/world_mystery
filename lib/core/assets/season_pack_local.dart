@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'season_pack_bundle.dart';
+import 'season_pack_downloads.dart' show seasonPackChannel;
 import 'season_pack_manifest.dart';
 
 /// Where the downloaded seasons' pictures come from in this build.
@@ -33,8 +34,8 @@ enum AssetSource {
 }
 
 /// The downloaded seasons' packs read straight from the project's
-/// `assets/seasons/` on this computer ([root], `--dart-define=SEASON_PACK_DIR=`
-/// the project folder): each file checked once against the manifest the app
+/// `assets/seasons/` on this computer ([root]: `--dart-define=SEASON_PACK_DIR=`,
+/// else the folder an iOS debug build was made from): each file checked once against the manifest the app
 /// is built with (size, SHA-256), as a download is. A file missing or
 /// different is an error naming it, never a quiet download. London (in the
 /// app) and files no pack lists (Seoul's voices) are read from the app.
@@ -46,7 +47,40 @@ class LocalSeasonPacks implements SeasonPackStore {
   final _checked = <String>{};
   final _byPath = <String, Map<String, SeasonPackFile>>{};
 
-  static LocalSeasonPacks fromEnvironment() => LocalSeasonPacks(const String.fromEnvironment('SEASON_PACK_DIR'));
+  /// The packs this run reads from the project folder, or null: downloaded
+  /// (ASSET_SOURCE, [AssetSource.of]). ASSET_SOURCE=local: that folder,
+  /// files missing named. Unset (a debug build): the same when the folder is
+  /// on this device (a simulator); a phone or emulator that cannot see it
+  /// downloads from R2, and says so.
+  static Future<LocalSeasonPacks?> forThisRun() async {
+    if (AssetSource.fromEnvironment() == AssetSource.r2) return null;
+    var root = const String.fromEnvironment('SEASON_PACK_DIR');
+    if (root.isEmpty) root = await _buildProjectDir() ?? '';
+    return choose(root, explicit: const String.fromEnvironment('ASSET_SOURCE').isNotEmpty);
+  }
+
+  /// [forThisRun] once its folder is known.
+  static LocalSeasonPacks? choose(String root, {required bool explicit}) {
+    final local = LocalSeasonPacks(root);
+    if (!explicit && !local.reachable) {
+      debugPrint('SEASON PACKS: no project folder on this device (${root.isEmpty ? 'none given' : root}): downloading from R2');
+      return null;
+    }
+    if (local.problem() case final problem?) debugPrint('SEASON PACKS: $problem');
+    return local;
+  }
+
+  /// The folder a debug build was made from (iOS: Debug.xcconfig), or null.
+  static Future<String?> _buildProjectDir() async {
+    try {
+      return await seasonPackChannel.invokeMethod<String>('projectDir');
+    } on Object {
+      return null;
+    }
+  }
+
+  /// Whether [root]'s season pictures are on this device.
+  bool get reachable => root.isNotEmpty && Directory('$root/assets/seasons').existsSync();
 
   SeasonPackFile? _fileOf(SeasonPack pack, String key) =>
       _byPath.putIfAbsent(pack.folder, () => {for (final f in pack.manifest.files) f.path: f})[key];
@@ -62,7 +96,7 @@ class LocalSeasonPacks implements SeasonPackStore {
   /// What the developer must fix, or null: every file is there.
   String? problem() {
     if (root.isEmpty) {
-      return 'ASSET_SOURCE=local needs the project folder: --dart-define=SEASON_PACK_DIR=<project folder> '
+      return 'ASSET_SOURCE=local needs the project folder (an iOS debug build gives its own): --dart-define=SEASON_PACK_DIR=<project folder> '
           '(or --dart-define=ASSET_SOURCE=r2 to download)';
     }
     final gone = missing();

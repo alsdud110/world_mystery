@@ -25,6 +25,11 @@ import UIKit
   /// and profile are elsewhere and still backed up), and the space free on
   /// its volume, checked before a download.
   private static func seasonPacksCall(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    // A debug build's project folder (Debug.xcconfig; empty in a release).
+    if call.method == "projectDir" {
+      result(Bundle.main.object(forInfoDictionaryKey: "WMProjectDir") as? String)
+      return
+    }
     guard let path = call.arguments as? String else {
       result(FlutterError(code: "arguments", message: "a folder path", details: nil))
       return

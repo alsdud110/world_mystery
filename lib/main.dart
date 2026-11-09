@@ -41,8 +41,7 @@ Future<void> main() async {
   // Season packs are downloaded from the bucket (unless a build sets no URL),
   // or in a debug build read from the project folder (ASSET_SOURCE, never in
   // a release); whether the app still carries them, from its own asset list.
-  final local = AssetSource.fromEnvironment() == AssetSource.local ? LocalSeasonPacks.fromEnvironment() : null;
-  if (local?.problem() case final problem?) debugPrint('SEASON PACKS: $problem');
+  final local = await LocalSeasonPacks.forThisRun();
   final packs = local == null ? await SeasonPackSetup.fromEnvironment(prefs) : null;
   final packsInApp = local != null || await seasonPacksInApp(rootBundle);
 

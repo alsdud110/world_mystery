@@ -21,17 +21,19 @@ flutter test           # unit + full-playthrough widget tests
 flutter analyze
 ```
 
-Seasons after London are picture packs downloaded from R2. A debug build
-reads them from this folder instead (`ASSET_SOURCE=local`, its default; no
-download, no network), each file checked against the app's manifest:
+Seasons after London are picture packs downloaded from R2. A debug build on
+the iOS simulator reads them from this folder instead (no download, no
+network, no flag: Debug.xcconfig gives the app its project folder), each file
+checked against the app's manifest. A phone or emulator that cannot see the
+folder downloads from R2 as before.
 
 ```bash
-flutter run --dart-define=SEASON_PACK_DIR=$PWD      # simulator / macOS: local packs
+flutter run                                         # simulator: local packs
+flutter run --dart-define=SEASON_PACK_DIR=$PWD      # macOS or another folder
 flutter run --dart-define=ASSET_SOURCE=r2           # the R2 download, cache and checks
 ```
 
-A phone cannot read the Mac's folder: use `ASSET_SOURCE=r2` there
-(`run_iphone.sh` does). A release build always downloads from R2.
+A release build always downloads from R2.
 
 Every mission is played on the device alone: no camera, no printed cards and
 no helper needed (Mission 05's crown card is examined in its own scene).

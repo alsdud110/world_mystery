@@ -50,7 +50,7 @@ void main() {
 
   testWidgets('Seoul: the redesigned screens, played and captured', (t) async {
     final prefs = await SharedPreferences.getInstance();
-    final local = AssetSource.fromEnvironment() == AssetSource.local ? LocalSeasonPacks.fromEnvironment() : null;
+    final local = await LocalSeasonPacks.forThisRun();
     expect(local?.problem(), isNull);
     final started = Stopwatch()..start();
     final c = ProviderContainer(overrides: [
