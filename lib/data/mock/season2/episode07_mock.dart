@@ -336,6 +336,11 @@ const Map<String, dynamic> season2Episode07Json = {
     'mapY': 0.12,
   },
   'glossary': {
+    'lit': '불이 켜진',
+    'started': '시작했다',
+    'patched': '덧붙여 고쳤다',
+    'pulled': '당겨지면, 당긴',
+    'sketched': '스케치했다, 그렸다',
     'phantom': '유령 같은, 실제로 없는',
     'performance': '공연',
     'opera': '오페라',

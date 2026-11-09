@@ -260,6 +260,11 @@ const Map<String, dynamic> episode04Json = {
     'mapY': 0.8,
   },
   'glossary': {
+    'left': '두고 갔다',
+    'matches': '맞다, 일치하다',
+    'arrived': '도착했다',
+    'sealed': '봉인된',
+    'closed': '봉했다, 닫았다',
     'secret': '비밀의',
     'seal': '봉인',
     'wax': '밀랍',

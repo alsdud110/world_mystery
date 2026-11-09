@@ -668,7 +668,8 @@
       "recipe": "요리법",
       "diary": "일기",
       "note": "음 (노래의 음표); 쪽지",
-      "whole": "전부의"
+      "whole": "전부의",
+      "unlocked": "열었다"
     }
   },
   "notes": [

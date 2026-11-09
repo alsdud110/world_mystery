@@ -400,6 +400,9 @@ const Map<String, dynamic> episode01Json = {
   },
   // Only these words can be looked up; pressing and holding one shows its meaning.
   'glossary': {
+    'glided': '미끄러지듯 나아갔다',
+    'closed': '(편지를) 끝맺었다',
+    'guarded': '지켜지는',
     'mysterious': '수상한, 이상한',
     'suitcase': '여행 가방',
     'platform': '(기차역) 승강장',

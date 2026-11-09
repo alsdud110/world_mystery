@@ -236,6 +236,10 @@ const Map<String, dynamic> season2Episode11Json = {
     'mapY': 0.55,
   },
   'glossary': {
+    'rubbed': '문질러진',
+    'boxes': '상자들',
+    'matches': '맞다, 일치하다',
+    'turned': '(turned up) 나타났다',
     'archive': '기록 보관소',
     'annex': '별관',
     'page': '쪽',

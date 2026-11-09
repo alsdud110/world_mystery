@@ -230,6 +230,9 @@ const Map<String, dynamic> season2Episode12Json = {
     'mapY': 0.55,
   },
   'glossary': {
+    'turned': '돌렸다; (색이) 변했다',
+    'stopped': '멈췄다; 막았다',
+    'watches': '지켜보다',
     'museum': '박물관',
     'machine': '기계',
     'machines': '기계들',

@@ -773,7 +773,10 @@
       "witness": "목격자",
       "fortune": "큰 재산",
       "rubbing": "연필로 문질러 뜬 자국",
-      "backwards": "거꾸로"
+      "backwards": "거꾸로",
+      "noticed": "알아차렸다",
+      "witnessed": "목격했다",
+      "witnesses": "목격자들"
     }
   },
   "notes": [

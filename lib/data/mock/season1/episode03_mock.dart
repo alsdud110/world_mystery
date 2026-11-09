@@ -296,6 +296,7 @@ const Map<String, dynamic> episode03Json = {
     'mapY': 0.84,
   },
   'glossary': {
+    'buttoned': '단추를 채운',
     'vanishing': '사라지는',
     'vanished': '사라졌다',
     'painting': '그림',

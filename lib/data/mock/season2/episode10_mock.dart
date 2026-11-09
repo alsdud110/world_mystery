@@ -269,6 +269,9 @@ const Map<String, dynamic> season2Episode10Json = {
     'mapY': 0.55,
   },
   'glossary': {
+    'agreed': '일치했다',
+    'jumped': '건너뛰었다',
+    'arches': '아치들',
     'tape': '종이 테이프',
     'drum': '원통',
     'printed': '찍었다',

@@ -270,6 +270,9 @@ const Map<String, dynamic> episode02Json = {
     'mapY': 0.12,
   },
   'glossary': {
+    'hid': '숨겼다',
+    'hidden': '숨겨진',
+    'planned': '계획한',
     'frozen': '얼어붙은, 멈춘',
     'silent': '조용한, 소리 없는',
     'clockkeeper': '시계 관리인',

@@ -482,7 +482,10 @@
       "roof": "지붕",
       "messy": "지저분한",
       "copy": "복사본",
-      "great-grandmother": "증조할머니"
+      "great-grandmother": "증조할머니",
+      "closed": "닫힌, 잠긴",
+      "lingered": "머물렀다",
+      "located": "찾아냈다"
     }
   },
   "notes": [

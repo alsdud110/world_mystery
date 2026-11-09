@@ -310,6 +310,8 @@ const Map<String, dynamic> episode06Json = {
     'mapY': 0.84,
   },
   'glossary': {
+    'people': '사람들',
+    'compared': '비교했다',
     'midnight': '자정, 밤 12시',
     'stranger': '낯선 사람',
     'appears': '나타나다',

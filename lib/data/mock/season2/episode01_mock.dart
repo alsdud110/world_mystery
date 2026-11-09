@@ -305,6 +305,8 @@ const Map<String, dynamic> season2Episode01Json = {
     'mapY': 0.55,
   },
   'glossary': {
+    'matches': '맞다, 일치하다',
+    'travelled': '이동했다, 갔다',
     'notice': '안내문, 공지',
     'behind': '(시간이) 늦은, 뒤처진',
     'report': '알리다, 신고하다',

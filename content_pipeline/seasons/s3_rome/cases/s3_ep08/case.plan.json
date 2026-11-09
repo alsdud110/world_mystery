@@ -552,7 +552,9 @@
       "restorer": "복원 전문가",
       "diary": "일기",
       "locker": "사물함",
-      "swap": "바꿔치기"
+      "swap": "바꿔치기",
+      "removed": "떼어 냈다, 치웠다",
+      "hooded": "두건을 쓴"
     }
   },
   "notes": [

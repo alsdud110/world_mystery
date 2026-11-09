@@ -277,6 +277,7 @@ const Map<String, dynamic> season2Episode09Json = {
     'mapY': 0.55,
   },
   'glossary': {
+    'planned': '설계했다',
     'model': '모형',
     'tiny': '아주 작은',
     'base': '받침',

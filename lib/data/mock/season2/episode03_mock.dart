@@ -339,6 +339,7 @@ const Map<String, dynamic> season2Episode03Json = {
     'mapY': 0.12,
   },
   'glossary': {
+    'stopped': '멈춘',
     'tower': '탑',
     'iron': '철로 된, 쇠',
     'drawing': '그림, 스케치',

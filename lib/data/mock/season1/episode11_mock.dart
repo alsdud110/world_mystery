@@ -253,6 +253,9 @@ const Map<String, dynamic> episode11Json = {
     'mapY': 0.84,
   },
   'glossary': {
+    'caught': '(caught sight of) 보았다, 목격했다',
+    'matches': '일치하다',
+    'weighed': '(비교해) 따져 보았다',
     'masked': '가면을 쓴',
     'mask': '가면',
     'stranger': '낯선 사람',

@@ -810,7 +810,9 @@
       "trail": "자국, 흔적",
       "shell": "조개 모양 장식",
       "switch": "스위치",
-      "witness": "목격자"
+      "witness": "목격자",
+      "witnessed": "목격했다",
+      "witnesses": "목격자들"
     }
   },
   "notes": [

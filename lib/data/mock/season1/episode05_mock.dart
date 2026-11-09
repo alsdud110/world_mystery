@@ -268,6 +268,7 @@ const Map<String, dynamic> episode05Json = {
     'mapY': 0.8,
   },
   'glossary': {
+    'turned': '돌렸다',
     'locked': '잠긴',
     'keyhole': '열쇠 구멍',
     'dial': '다이얼',

@@ -894,7 +894,11 @@
       "lantern": "등불",
       "jingles": "짤랑거리다",
       "lock": "자물쇠",
-      "lessons": "수업"
+      "lessons": "수업",
+      "copied": "베껴 썼다",
+      "copies": "사본들",
+      "signed": "서명된",
+      "locked": "잠긴"
     }
   },
   "notes": [

@@ -337,6 +337,8 @@ const Map<String, dynamic> season2Episode05Json = {
     'mapY': 0.12,
   },
   'glossary': {
+    'copies': '복사본들, 따라 만든 것들',
+    'marked': '(번호가) 적힌, 표시된',
     'label': '배송표, 꼬리표',
     'trust': '믿다',
     'hands': '(시계) 바늘',
