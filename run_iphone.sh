@@ -38,4 +38,5 @@ echo "[run-iphone] 아이폰 연결 확인됨."
 # 3. Run and stay attached; the pid file enables duplicate checks and USR1/USR2 reloads.
 rm -f "$PID_FILE"
 trap 'rm -f "$PID_FILE"' EXIT
-flutter run -d "$DEVICE_ID" --pid-file "$PID_FILE"
+# A phone cannot read this Mac's folder: its season packs come from R2.
+flutter run -d "$DEVICE_ID" --pid-file "$PID_FILE" --dart-define=ASSET_SOURCE=r2

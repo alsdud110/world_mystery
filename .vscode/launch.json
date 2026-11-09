@@ -11,7 +11,18 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart",
-      "flutterMode": "debug"
+      "flutterMode": "debug",
+      // Downloaded seasons' pictures read from this folder (no R2) on a
+      // simulator; on a phone use the "(debug, R2)" entry.
+      "args": ["--dart-define=SEASON_PACK_DIR=${workspaceFolder}"]
+    },
+    {
+      "name": "World Mystery (debug, R2)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "debug",
+      "args": ["--dart-define=ASSET_SOURCE=r2"]
     },
     {
       "name": "World Mystery (profile)",

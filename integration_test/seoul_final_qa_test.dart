@@ -5,6 +5,7 @@ import 'package:integration_test/integration_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:world_mystery/app.dart';
 import 'package:world_mystery/core/assets/season_pack_downloads.dart';
+import 'package:world_mystery/core/assets/season_pack_local.dart';
 import 'package:world_mystery/core/router/app_router.dart';
 import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/models/mission.dart';
@@ -38,7 +39,8 @@ import '../test/helpers.dart' show testOverrides;
 ///
 /// Missions before a captured screen are answered through the controller.
 /// The game runs on in-memory saves (`testOverrides`); the Seoul picture pack
-/// is downloaded as the app downloads it (HTTPS, read only).
+/// comes as `main.dart` takes it: from the project folder (ASSET_SOURCE=local
+/// with SEASON_PACK_DIR, a debug build's default) or downloaded (ASSET_SOURCE=r2).
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   binding.framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
@@ -48,10 +50,14 @@ void main() {
 
   testWidgets('Seoul: the redesigned screens, played and captured', (t) async {
     final prefs = await SharedPreferences.getInstance();
+    final local = AssetSource.fromEnvironment() == AssetSource.local ? LocalSeasonPacks.fromEnvironment() : null;
+    expect(local?.problem(), isNull);
+    final started = Stopwatch()..start();
     final c = ProviderContainer(overrides: [
       ...await testOverrides(),
-      seasonPackSetupProvider.overrideWithValue(await SeasonPackSetup.fromEnvironment(prefs)),
-      seasonPacksInAppProvider.overrideWithValue(false),
+      seasonPackSetupProvider.overrideWithValue(local == null ? await SeasonPackSetup.fromEnvironment(prefs) : null),
+      seasonPacksInAppProvider.overrideWithValue(local != null),
+      localSeasonPacksProvider.overrideWithValue(local),
     ]);
     addTearDown(c.dispose);
     final ctrl = c.read(gameControllerProvider.notifier);
@@ -67,11 +73,17 @@ void main() {
     }
 
     await pause(1500);
-    // The Seoul pack, as a player downloads it (skipped when already on the device).
-    if (!c.read(seasonPacksProvider).contains(SeasonPack.seoul.folder)) {
-      await c.read(seasonPacksProvider.notifier).download(SeasonIds.seoul);
+    // The Seoul pack, as a player downloads it (skipped when already on the
+    // device, or read from the project folder).
+    if (local == null) {
+      if (!c.read(seasonPacksProvider).contains(SeasonPack.seoul.folder)) {
+        await c.read(seasonPacksProvider.notifier).download(SeasonIds.seoul);
+      }
+      expect(c.read(seasonPacksProvider), contains(SeasonPack.seoul.folder), reason: 'the Seoul pack is installed');
+    } else {
+      expect(c.read(seasonPacksProvider.notifier).needsDownload(SeasonIds.seoul), isFalse, reason: 'nothing to download');
     }
-    expect(c.read(seasonPacksProvider), contains(SeasonPack.seoul.folder), reason: 'the Seoul pack is installed');
+    debugPrint('QA: Seoul pictures ready ${local == null ? '(R2)' : '(local)'} after ${started.elapsedMilliseconds} ms');
     await binding.convertFlutterSurfaceToImage();
     await pause(300);
     final size = t.view.physicalSize / t.view.devicePixelRatio;

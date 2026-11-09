@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app.dart';
 import 'core/assets/season_pack_downloads.dart';
+import 'core/assets/season_pack_local.dart';
 import 'data/repositories/episode_repository.dart';
 import 'data/repositories/profile_store.dart';
 import 'features/game/game_providers.dart';
@@ -37,10 +38,13 @@ Future<void> main() async {
   // The launch screen's glass, ready for the title's first frame (not when
   // the detective must be chosen first: that page comes before the title).
   await LaunchReveal.prepare(armed: start is ProfileSession);
-  // Season packs are downloaded from the bucket (unless a build sets no URL);
-  // whether the app still carries their pictures, from its own asset list.
-  final packs = await SeasonPackSetup.fromEnvironment(prefs);
-  final packsInApp = await seasonPacksInApp(rootBundle);
+  // Season packs are downloaded from the bucket (unless a build sets no URL),
+  // or in a debug build read from the project folder (ASSET_SOURCE, never in
+  // a release); whether the app still carries them, from its own asset list.
+  final local = AssetSource.fromEnvironment() == AssetSource.local ? LocalSeasonPacks.fromEnvironment() : null;
+  if (local?.problem() case final problem?) debugPrint('SEASON PACKS: $problem');
+  final packs = local == null ? await SeasonPackSetup.fromEnvironment(prefs) : null;
+  final packsInApp = local != null || await seasonPacksInApp(rootBundle);
 
   runApp(
     DeviceDetectiveGate(
@@ -52,6 +56,7 @@ Future<void> main() async {
         allEpisodesProvider.overrideWithValue(catalog),
         seasonPackSetupProvider.overrideWithValue(packs),
         seasonPacksInAppProvider.overrideWithValue(packsInApp),
+        localSeasonPacksProvider.overrideWithValue(local),
       ],
       child: const WorldMysteryApp(),
     ),

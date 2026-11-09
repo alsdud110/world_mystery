@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/models/season.dart';
 import 'season_pack_downloads.dart';
+import 'season_pack_local.dart';
 import 'season_pack_manifest.dart';
 import 'season_pack_storage.dart';
 import 'season_pack_manifests.g.dart';
@@ -134,6 +135,8 @@ class SeasonPackBundle extends AssetBundle {
 
 /// The bundle the game reads its pictures through (see [SeasonPackBundle]).
 final seasonPackBundleProvider = Provider<SeasonPackBundle>((ref) {
+  final local = ref.watch(localSeasonPacksProvider);
+  if (local != null) return SeasonPackBundle(store: local);
   final setup = ref.watch(seasonPackSetupProvider);
   return SeasonPackBundle(store: setup == null ? const BundledSeasonPacks() : DownloadedSeasonPacks(setup.storage));
 });

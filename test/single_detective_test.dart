@@ -460,9 +460,10 @@ void main() {
           expect(src, isNot(contains(banned)), reason: '${f.path}: $banned');
         }
         if (packFiles.contains(f.path)) continue;
-        for (final banned in ['HttpClient', 'dart:io']) {
-          expect(src, isNot(contains(banned)), reason: '${f.path}: $banned (only the season pack download may)');
-        }
+        expect(src, isNot(contains('HttpClient')), reason: '${f.path}: HttpClient (only the season pack download may)');
+        // A debug build's packs read from the project folder: files, never a network.
+        if (f.path == 'lib/core/assets/season_pack_local.dart') continue;
+        expect(src, isNot(contains('dart:io')), reason: '${f.path}: dart:io (only the season pack download may)');
       }
       final downloads = File('lib/core/assets/season_pack_downloads.dart').readAsStringSync();
       expect(downloads, contains("base.scheme != 'https'"), reason: 'packs come over HTTPS only');
