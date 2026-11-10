@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/utils/formatters.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
@@ -917,7 +918,7 @@ class _ReportPageState extends State<_ReportPage> {
                   padding: const EdgeInsets.fromLTRB(AppSpace.screen, AppSpace.sm, AppSpace.screen, AppSpace.lg),
                   child: Column(
                     children: [
-                      GlossaryText(m.question, textAlign: TextAlign.center, style: AppText.title(size: 22)),
+                      GlossaryText(Formatters.sentenceLines(m.question), textAlign: TextAlign.center, style: AppText.title(size: 22)),
                       const SizedBox(height: AppSpace.xs),
                       Text(scene.reportHow, textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
                       const SizedBox(height: AppSpace.md),

@@ -4,6 +4,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../../core/utils/formatters.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
@@ -610,7 +611,7 @@ class _MatchPageState extends State<_MatchPage> {
                     ),
                     // The question, in the bar: the room below is the
                     // paintings' and the notes'.
-                    Expanded(child: GlossaryText(m.question, textAlign: TextAlign.center, style: AppText.subtitle(color: AppColors.navy))),
+                    Expanded(child: GlossaryText(Formatters.sentenceLines(m.question), textAlign: TextAlign.center, style: AppText.subtitle(color: AppColors.navy))),
                     const SizedBox(width: 48),
                   ],
                 ),

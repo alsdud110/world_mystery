@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/utils/formatters.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
@@ -922,7 +923,7 @@ class _LabelCardState extends State<_LabelCard> {
                       const SizedBox(height: AppSpace.sm),
                       Text(scene.labelWorn, textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
                       const SizedBox(height: AppSpace.sm),
-                      GlossaryText(m.question, textAlign: TextAlign.center, style: AppText.title(size: 20)),
+                      GlossaryText(Formatters.sentenceLines(m.question), textAlign: TextAlign.center, style: AppText.title(size: 20)),
                       const SizedBox(height: AppSpace.md),
                       ShakeOnChange(
                         trigger: widget.wrongPulse,

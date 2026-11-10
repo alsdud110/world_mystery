@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/utils/formatters.dart';
 import '../../core/router/app_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_text.dart';
@@ -2202,7 +2203,7 @@ class _PuzzleStage extends StatelessWidget {
         ),
         const SizedBox(height: AppSpace.sm),
         GlossaryText(
-          question ?? mission.question,
+          Formatters.sentenceLines(question ?? mission.question),
           style: AppText.title(size: 24),
           textAlign: TextAlign.center,
         ),

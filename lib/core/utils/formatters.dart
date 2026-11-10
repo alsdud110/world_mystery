@@ -15,4 +15,9 @@ abstract final class Formatters {
   }
 
   static String clueNumber(int index) => 'CLUE #${(index + 1).toString().padLeft(2, '0')}';
+
+  /// A puzzle's question as its title: each sentence on a line of its own
+  /// ("What did they touch?" / "Tap a picture."), never after Mr. or Mrs.
+  static String sentenceLines(String text) => text.replaceAllMapped(_sentenceEnd, (m) => '${m[1]}\n');
+  static final _sentenceEnd = RegExp(r'''(?<!\b(?:Mrs?|Ms|Dr|St))([.?!]) +(?=[A-Z"'])''');
 }
