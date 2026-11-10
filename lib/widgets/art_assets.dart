@@ -2,6 +2,7 @@ import 'dart:ui' show Offset, Rect, Size;
 
 import 'package:flutter/painting.dart' show Alignment;
 
+import '../core/assets/season_pack_manifests.g.dart';
 import '../data/generated/generated_season_art.g.dart';
 import '../data/models/mission.dart';
 import '../data/models/profile.dart';
@@ -237,7 +238,13 @@ abstract final class ArtAssets {
   /// the same picture without its paper, in `characters/talk/` beside it,
   /// so the person stands in the scene with the detective. Every other
   /// screen keeps the portrait as it is.
-  static String talkCutout(String portrait) => portrait.replaceFirst('/characters/', '/characters/talk/');
+  /// A season without one (London, in the app) keeps the portrait.
+  static String talkCutout(String portrait) {
+    final cut = portrait.replaceFirst('/characters/', '/characters/talk/');
+    return _packed.contains(cut) ? cut : portrait;
+  }
+
+  static final _packed = {for (final m in seasonPackManifests.values) for (final f in m.files) f.path};
 
   /// The player's detective, chosen at CREATE YOUR DETECTIVE (see
   /// `DetectiveAvatar`): a boy and a girl in the storybook's style, head and

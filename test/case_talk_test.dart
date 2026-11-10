@@ -560,6 +560,12 @@ void main() {
       }
     });
 
+    test('a portrait with no copy without paper (London) is shown as it is', () {
+      const london = 'assets/seasons/season_01_london/characters/head_butler.webp';
+      expect(ArtAssets.talkCutout(london), london);
+      expect(ArtAssets.talkCutout('assets/seasons/season_05_seoul/characters/bun_i.webp'), 'assets/seasons/season_05_seoul/characters/talk/bun_i.webp');
+    });
+
     test('every talk portrait has its copy without paper in its season\'s pack', () {
       final packed = {for (final m in seasonPackManifests.values) for (final f in m.files) f.path};
       for (final e in MockEpisodeRepository.bundled()) {
@@ -567,7 +573,9 @@ void main() {
           final talk = SeasonCatalog.talkMission(m);
           for (final s in [talk?.before, talk?.after, SeasonCatalog.caseTalk(m)]) {
             for (final p in s?.speaker.portraits.values ?? const <String>[]) {
-              expect(packed, contains(ArtAssets.talkCutout(p)), reason: '${m.id}: $p');
+              // London's portraits are in the app, without a copy: shown as they are.
+              if (p.contains('season_01_london')) continue;
+              expect(packed, contains(p.replaceFirst('/characters/', '/characters/talk/')), reason: '${m.id}: $p');
             }
           }
         }
