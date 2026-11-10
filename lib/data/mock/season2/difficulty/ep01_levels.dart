@@ -55,6 +55,7 @@ const junior01 = <String, Object?>{
   'caseSummary': "You found the clock that was running behind, put the events in order and opened the Clockmaker's box.",
   'hook': 'Inside the box is a painting of Montmartre. On the back, three words: FIND THE PAINTER.',
   'glossary': {
+    'matches': '맞다, 일치하다',
     ..._words01,
     'agree': '일치하다, 같다',
     'running': '(시계가) 가고 있는',

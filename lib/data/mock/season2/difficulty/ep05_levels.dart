@@ -74,7 +74,8 @@ final junior05 = <String, Object?>{
   ],
   'caseSummary': 'A mark, a clock that turns backwards and a mirror led you to letter No. 4417. It never arrived.',
   'hook': _hook05,
-  'glossary': {...words05, ..._nobodyCovered, ...juniorWords05},
+  'glossary': {
+    'marked': '(번호가) 적힌, 표시된',...words05, ..._nobodyCovered, ...juniorWords05},
   'missions': {
     's2_ep05_m1': {
       'story': [
@@ -188,7 +189,9 @@ final master05 = <String, Object?>{
   ],
   'caseSummary': "A maker's mark, a backward clock and a mirror led you to letter No. 4417, a letter that never arrived.",
   'hook': _hook05,
-  'glossary': {...words05, ..._backward, ...masterWords05},
+  'glossary': {
+    'marked': '(번호가) 적힌, 표시된',
+    'copies': '복사본들, 따라 만든 것들',...words05, ..._backward, ...masterWords05},
   'missions': {
     's2_ep05_m1': {
       'story': [

@@ -88,7 +88,8 @@ final junior07 = <String, Object?>{
   ],
   'caseSummary': 'The show really began at 4:00. Later, someone covered the time on FILE 3 with 3:00.',
   'hook': 'What did P. see? And what was inside the bag?',
-  'glossary': {...words07, ...juniorWords07},
+  'glossary': {
+    'started': '시작했다',...words07, ...juniorWords07},
   'missions': {
     's2_ep07_m1': {
       'story': ['FILE 3 is the office record for one show.', 'FILE 4 is the programme for the same show.'],
@@ -189,7 +190,10 @@ final master07 = <String, Object?>{
   ],
   'caseSummary': 'The show truly began at 4:00; later, someone patched FILE 3 to read 3:00.',
   'hook': 'What did P. witness — and what did the bag carry?',
-  'glossary': {...words07, ...masterWords07},
+  'glossary': {
+    'sketched': '스케치했다, 그렸다',
+    'pulled': '당겨지면, 당긴',
+    'patched': '덧붙여 고쳤다',...words07, ...masterWords07},
   'missions': {
     's2_ep07_m1': {
       'story': ["FILE 3 is the office's record of a single show.", "FILE 4 is that same show's programme."],

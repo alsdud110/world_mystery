@@ -236,6 +236,8 @@ final master02 = <String, Object?>{
   'caseSummary': "Three of the painter's clues, read together, led you to his hidden message.",
   'hook': 'Nobody took the painter. He slipped away to keep a secret safe. But who took the hour?',
   'glossary': {
+    'pencilled': '연필로 쓴',
+    'matched': '짝지어진',
     ..._words02,
     'command': '명령',
     'track': '(down) 찾아내다',

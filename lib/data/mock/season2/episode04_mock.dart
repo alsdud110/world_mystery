@@ -358,7 +358,6 @@ const Map<String, dynamic> season2Episode04Json = {
     'mapY': 0.12,
   },
   'glossary': {
-    'shelves': '선반들',
     'waves': '물결들',
     'wave': '물결',
     'brass': '황동, 놋쇠',

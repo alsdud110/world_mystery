@@ -329,9 +329,7 @@ const Map<String, dynamic> season2Episode02Json = {
     'mapY': 0.1,
   },
   'glossary': {
-    'matched': '짝지어진',
     'matches': '맞다, 일치하다',
-    'pencilled': '연필로 쓴',
     'painter': '화가',
     'painting': '그림',
     'paintings': '그림들',

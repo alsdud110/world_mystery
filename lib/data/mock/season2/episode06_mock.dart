@@ -339,7 +339,6 @@ const Map<String, dynamic> season2Episode06Json = {
   },
   'glossary': {
     'lay': '올려놓다',
-    'arched': '아치 모양의',
     'held': '보관됐다, 멈춰 있었다',
     'delivered': '배달됐다',
     'stolen': '도난당한',
