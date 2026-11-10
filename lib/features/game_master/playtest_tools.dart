@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/router/app_router.dart';
 import '../../data/models/difficulty.dart';
 import '../../data/models/game_progress.dart';
 import '../../data/models/profile.dart';
@@ -110,6 +111,23 @@ CaseJumpRefusal? jumpToCase(WidgetRef ref, String seasonId, String episodeId) {
     return CaseJumpRefusal.notOpen;
   }
   return null;
+}
+
+/// [jumpToCase], then straight to [missionId] of that case: its intro taken
+/// as seen and every mission before it solved with its own answer, so the
+/// clues and evidence it needs are there. Returns the route to open, or the
+/// refusal. A mission already solved is opened again as it is.
+(String?, CaseJumpRefusal?) jumpToMission(WidgetRef ref, String seasonId, String episodeId, String missionId) {
+  final refused = jumpToCase(ref, seasonId, episodeId);
+  if (refused != null) return (null, refused);
+  final game = ref.read(gameControllerProvider.notifier);
+  final episode = ref.read(currentEpisodeProvider);
+  if (!ref.read(gameControllerProvider).introSeen) game.startInvestigation();
+  for (final m in episode.allMissions) {
+    if (m.id == missionId) return (m.isFinal ? Routes.finalMission : Routes.mission(m.id), null);
+    game.submitAnswer(m, m.answer);
+  }
+  return (null, CaseJumpRefusal.notOpen);
 }
 
 /// Developer mode: the test session plays at [level] from now on — TESTER's

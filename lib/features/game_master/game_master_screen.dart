@@ -340,6 +340,16 @@ class _CaseShortcutsState extends ConsumerState<CaseShortcuts> {
     );
   }
 
+  /// One mission of [e], its earlier missions solved first ([jumpToMission]).
+  void _openMission(String seasonId, Episode e, String missionId) {
+    final (route, refused) = jumpToMission(ref, seasonId, e.id, missionId);
+    if (route != null) {
+      context.go(route);
+    } else if (refused != null) {
+      _open(seasonId, e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // Never in a build without operator tools (a release build).
@@ -403,6 +413,10 @@ class _CaseShortcutsState extends ConsumerState<CaseShortcuts> {
               number: cases[n - 1].numberLabel,
               title: cases[n - 1].title,
               onTap: () => _open(picked.id, cases[n - 1]),
+              missions: [
+                for (final m in cases[n - 1].allMissions)
+                  (m.isFinal ? 'FINAL' : 'M${m.number}', () => _openMission(picked.id, cases[n - 1], m.id)),
+              ],
             )
           else
             _CaseRow(
@@ -493,17 +507,20 @@ class _SeasonChoice extends StatelessWidget {
 }
 
 class _CaseRow extends StatelessWidget {
-  const _CaseRow({super.key, required this.number, required this.title, this.onTap, this.comingSoon = false});
+  const _CaseRow({super.key, required this.number, required this.title, this.onTap, this.comingSoon = false, this.missions = const []});
 
   final String number;
   final String title;
   final VoidCallback? onTap;
   final bool comingSoon;
 
+  /// Each mission of the case, opened straight away (developer mode).
+  final List<(String, VoidCallback)> missions;
+
   @override
   Widget build(BuildContext context) {
     final ink = comingSoon ? AppColors.muted : AppColors.navy;
-    return Padding(
+    final row = Padding(
       padding: const EdgeInsets.only(bottom: 6),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
@@ -529,6 +546,29 @@ class _CaseRow extends StatelessWidget {
           ],
         ),
       ),
+    );
+    if (missions.isEmpty) return row;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        row,
+        Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: [
+              for (final (label, open) in missions)
+                OutlinedButton(
+                  key: ValueKey('shortcut-mission-$number-$label'),
+                  style: OutlinedButton.styleFrom(minimumSize: const Size(64, 44), foregroundColor: AppColors.navy),
+                  onPressed: open,
+                  child: Text(label, style: AppText.button(size: 13, color: AppColors.navy)),
+                ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
