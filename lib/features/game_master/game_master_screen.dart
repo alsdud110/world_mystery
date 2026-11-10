@@ -408,14 +408,22 @@ class _CaseShortcutsState extends ConsumerState<CaseShortcuts> {
         const SizedBox(height: 8),
         for (var n = 1; n <= planned; n++)
           if (n <= cases.length)
-            _CaseRow(
-              key: ValueKey('shortcut-case-${cases[n - 1].id}'),
-              number: cases[n - 1].numberLabel,
-              title: cases[n - 1].title,
-              onTap: () => _open(picked.id, cases[n - 1]),
-              missions: [
-                for (final m in cases[n - 1].allMissions)
-                  (m.isFinal ? 'FINAL' : 'M${m.number}', () => _openMission(picked.id, cases[n - 1], m.id)),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _CaseRow(
+                  key: ValueKey('shortcut-case-${cases[n - 1].id}'),
+                  number: cases[n - 1].numberLabel,
+                  title: cases[n - 1].title,
+                  onTap: () => _open(picked.id, cases[n - 1]),
+                ),
+                _MissionShortcuts(
+                  caseNumber: cases[n - 1].numberLabel,
+                  missions: [
+                    for (final m in cases[n - 1].allMissions)
+                      (m.isFinal ? 'FINAL' : 'M${m.number}', () => _openMission(picked.id, cases[n - 1], m.id)),
+                  ],
+                ),
               ],
             )
           else
@@ -507,20 +515,17 @@ class _SeasonChoice extends StatelessWidget {
 }
 
 class _CaseRow extends StatelessWidget {
-  const _CaseRow({super.key, required this.number, required this.title, this.onTap, this.comingSoon = false, this.missions = const []});
+  const _CaseRow({super.key, required this.number, required this.title, this.onTap, this.comingSoon = false});
 
   final String number;
   final String title;
   final VoidCallback? onTap;
   final bool comingSoon;
 
-  /// Each mission of the case, opened straight away (developer mode).
-  final List<(String, VoidCallback)> missions;
-
   @override
   Widget build(BuildContext context) {
     final ink = comingSoon ? AppColors.muted : AppColors.navy;
-    final row = Padding(
+    return Padding(
       padding: const EdgeInsets.only(bottom: 6),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
@@ -547,28 +552,33 @@ class _CaseRow extends StatelessWidget {
         ),
       ),
     );
-    if (missions.isEmpty) return row;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        row,
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10),
-          child: Wrap(
-            spacing: 6,
-            runSpacing: 6,
-            children: [
-              for (final (label, open) in missions)
-                OutlinedButton(
-                  key: ValueKey('shortcut-mission-$number-$label'),
-                  style: OutlinedButton.styleFrom(minimumSize: const Size(64, 44), foregroundColor: AppColors.navy),
-                  onPressed: open,
-                  child: Text(label, style: AppText.button(size: 13, color: AppColors.navy)),
-                ),
-            ],
-          ),
-        ),
-      ],
+  }
+}
+
+/// Each mission of a case, opened straight away (developer mode).
+class _MissionShortcuts extends StatelessWidget {
+  const _MissionShortcuts({required this.caseNumber, required this.missions});
+
+  final String caseNumber;
+  final List<(String, VoidCallback)> missions;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Wrap(
+        spacing: 6,
+        runSpacing: 6,
+        children: [
+          for (final (label, open) in missions)
+            OutlinedButton(
+              key: ValueKey('shortcut-mission-$caseNumber-$label'),
+              style: OutlinedButton.styleFrom(minimumSize: const Size(64, 44), foregroundColor: AppColors.navy),
+              onPressed: open,
+              child: Text(label, style: AppText.button(size: 13, color: AppColors.navy)),
+            ),
+        ],
+      ),
     );
   }
 }
