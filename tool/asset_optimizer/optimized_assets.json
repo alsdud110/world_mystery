@@ -12389,6 +12389,32 @@
         "bytes": 563792
       }
     },
+    "assets/shared/detectives/expressions/boy/asking.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/boy/asking.png",
+        "sha256": "sha256:f7440a37192cb16ee62bfd3ab0707b0d2defc576fbc77eaa1cdf0b0f1c7e2367",
+        "bytes": 1925480
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 38.31,
+        "ssim": 0.99482,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/boy/asking.webp",
+        "sha256": "sha256:082d7df63863d699609f928445b6e77957e11204f833283c7c28324bad51773a",
+        "bytes": 286364
+      }
+    },
     "assets/shared/detectives/expressions/boy/confident.webp": {
       "source": {
         "path": "assets/shared/detectives/expressions/boy/confident.png",
@@ -12413,6 +12439,58 @@
         "path": "assets/shared/detectives/expressions/boy/confident.webp",
         "sha256": "sha256:265bbb63ba1ffd0b3e81add0700b4b4d085708dd4d792eacd6a332f124449cdb",
         "bytes": 418250
+      }
+    },
+    "assets/shared/detectives/expressions/boy/explaining.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/boy/explaining.png",
+        "sha256": "sha256:9f6a1be8ec0ae3ece65e6d5229c716cfd638701f5c703f7948f6ab4ca835defc",
+        "bytes": 1895539
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 38.51,
+        "ssim": 0.99551,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/boy/explaining.webp",
+        "sha256": "sha256:f30453cf03d1d367686b5ac4e063b59314658c833a445a613b7abe09e7af9e1f",
+        "bytes": 278142
+      }
+    },
+    "assets/shared/detectives/expressions/boy/greeting.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/boy/greeting.png",
+        "sha256": "sha256:49de96d35531de889f9249b16541753768ef2899b314c97ca0d3179038d15fba",
+        "bytes": 1966546
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 38.23,
+        "ssim": 0.99468,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/boy/greeting.webp",
+        "sha256": "sha256:82430a045640d5889c33e8938d3c0af99bc384f335f4a4b537a6a973c3945aa4",
+        "bytes": 304272
       }
     },
     "assets/shared/detectives/expressions/boy/happy.webp": {
@@ -12467,6 +12545,58 @@
         "bytes": 473754
       }
     },
+    "assets/shared/detectives/expressions/boy/reassuring.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/boy/reassuring.png",
+        "sha256": "sha256:a240582218f2d569eccb9f82842a1c2e77e710a3ed30515ceb287f80ac5ce00f",
+        "bytes": 1884894
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 38.41,
+        "ssim": 0.99511,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/boy/reassuring.webp",
+        "sha256": "sha256:a2c8e46ad0d87f2f7ae8b874f8e6674ffbca940c75ca1e2ddf26ff7d1ec7e82f",
+        "bytes": 272850
+      }
+    },
+    "assets/shared/detectives/expressions/boy/showing.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/boy/showing.png",
+        "sha256": "sha256:0bdcfb0a7b7bccd168a842f05fd680fb159b642487115a29d3943f47dc593187",
+        "bytes": 1902162
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 38.45,
+        "ssim": 0.99452,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/boy/showing.webp",
+        "sha256": "sha256:a5f4194a7b3b069d5f7e253a73aa7bbc273f0ae53932e29b7c8060c2f055fb49",
+        "bytes": 276546
+      }
+    },
     "assets/shared/detectives/expressions/boy/surprised.webp": {
       "source": {
         "path": "assets/shared/detectives/expressions/boy/surprised.png",
@@ -12519,6 +12649,32 @@
         "bytes": 407838
       }
     },
+    "assets/shared/detectives/expressions/girl/asking.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/girl/asking.png",
+        "sha256": "sha256:4b9f6a80608e0706a0f521353db650b5368e7eac20be7aa5e5146a9888b266e0",
+        "bytes": 1972545
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 39.11,
+        "ssim": 0.99445,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/girl/asking.webp",
+        "sha256": "sha256:67a81e46d11f07347afb3e70ddf4d3b94c35536c6e03371f53b358041e664f25",
+        "bytes": 309520
+      }
+    },
     "assets/shared/detectives/expressions/girl/confident.webp": {
       "source": {
         "path": "assets/shared/detectives/expressions/girl/confident.png",
@@ -12543,6 +12699,58 @@
         "path": "assets/shared/detectives/expressions/girl/confident.webp",
         "sha256": "sha256:ee5c5f7e23ea7718ad37f0426029765c60f3cb84a2968c866b7660b9c53ff708",
         "bytes": 473714
+      }
+    },
+    "assets/shared/detectives/expressions/girl/explaining.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/girl/explaining.png",
+        "sha256": "sha256:267ac53331fecb477ba5219661089e1978c270f00191ee0c0f0a5a2c3e5927cd",
+        "bytes": 1927469
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 39.37,
+        "ssim": 0.99455,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/girl/explaining.webp",
+        "sha256": "sha256:dba77c6deeb4921d77d50f78f028ea9e5cdabe3335755b57da397a17de9ae2a0",
+        "bytes": 287654
+      }
+    },
+    "assets/shared/detectives/expressions/girl/greeting.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/girl/greeting.png",
+        "sha256": "sha256:fd4cd2335ff1cc663234d79b22acc06d4cd4f883babaaa7a6eb3e4c72983274a",
+        "bytes": 2064429
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 38.33,
+        "ssim": 0.99424,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/girl/greeting.webp",
+        "sha256": "sha256:df378cdb5476ebf26a23ed0a030d0ed0f373af669a0d3387e8786f13d7804f83",
+        "bytes": 344466
       }
     },
     "assets/shared/detectives/expressions/girl/happy.webp": {
@@ -12595,6 +12803,58 @@
         "path": "assets/shared/detectives/expressions/girl/investigating.webp",
         "sha256": "sha256:027a625b3b415807b717cfd778f04b8daefe976a717e1bbe5d92d1fde73c3636",
         "bytes": 499222
+      }
+    },
+    "assets/shared/detectives/expressions/girl/reassuring.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/girl/reassuring.png",
+        "sha256": "sha256:eec7907204d29a1855327fc932e87b8aee40a4039b7b83b8c0b8d0219733d68b",
+        "bytes": 1982587
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 38.8,
+        "ssim": 0.99496,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/girl/reassuring.webp",
+        "sha256": "sha256:8598ed7af5838c79f583c2880ea9c7ac3fc993f180606b13baea30c7b3e8b21c",
+        "bytes": 310820
+      }
+    },
+    "assets/shared/detectives/expressions/girl/showing.webp": {
+      "source": {
+        "path": "assets/shared/detectives/expressions/girl/showing.png",
+        "sha256": "sha256:c5df53bb894b97b0c1e3f7bde51d5e3a2b6a02bf7efc735333db9c6345477cf9",
+        "bytes": 1978148
+      },
+      "why": "path",
+      "kind": "character",
+      "format": "webp",
+      "setting": "-q 90 -sharp_yuv",
+      "quality": {
+        "psnr": 39.05,
+        "ssim": 0.9944,
+        "alphaMaxDiff": 0
+      },
+      "width": 1024,
+      "height": 1024,
+      "hasAlpha": true,
+      "encoder": "cwebp 1.6.0",
+      "policyVersion": 2,
+      "output": {
+        "path": "assets/shared/detectives/expressions/girl/showing.webp",
+        "sha256": "sha256:c4045de6abf0d0cd453d3137c583196db26a66e3d1e930676ae8af4eaaea01d6",
+        "bytes": 311492
       }
     },
     "assets/shared/detectives/expressions/girl/surprised.webp": {

@@ -32,13 +32,15 @@
   "budgetUsd": 0.0,
   "deploy": {
     "folder": "season_03_rome",
-    "version": "925831b811fc822c",
+    "version": "1e1c0ac0af953650",
     "status": "deployed",
-    "files": 66,
-    "newPictures": 0,
-    "newBytes": 0,
-    "newManifest": false,
-    "stageDir": "build/season_packs/season_03_rome/925831b811fc822c",
-    "at": "2026-11-06T00:52:38.839286Z"
+    "files": 74,
+    "newPictures": 8,
+    "newBytes": 2139556,
+    "newManifest": true,
+    "stageDir": "build/season_packs/season_03_rome/1e1c0ac0af953650",
+    "at": "2026-11-10T02:34:19.472869Z",
+    "sent": 9,
+    "verified": "HTTPS 200, size and SHA-256 of every object"
   }
 }

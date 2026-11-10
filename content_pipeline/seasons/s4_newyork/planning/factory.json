@@ -124,13 +124,15 @@
   "budgetUsd": 6.84,
   "deploy": {
     "folder": "season_04_newyork",
-    "version": "ab063cbc1c01a5b3",
+    "version": "5e61f2a0873d8921",
     "status": "deployed",
-    "files": 68,
-    "newPictures": 0,
-    "newBytes": 0,
-    "newManifest": false,
-    "stageDir": "build/season_packs/season_04_newyork/ab063cbc1c01a5b3",
-    "at": "2026-11-06T00:52:55.313147Z"
+    "files": 73,
+    "newPictures": 5,
+    "newBytes": 1466616,
+    "newManifest": true,
+    "stageDir": "build/season_packs/season_04_newyork/5e61f2a0873d8921",
+    "at": "2026-11-10T02:35:01.762278Z",
+    "sent": 6,
+    "verified": "HTTPS 200, size and SHA-256 of every object"
   }
 }

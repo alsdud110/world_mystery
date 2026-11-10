@@ -1,16 +1,21 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show FontLoader, rootBundle;
 import 'package:flutter/rendering.dart' show RenderParagraph;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:world_mystery/core/assets/season_pack_manifests.g.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
 import 'package:world_mystery/data/mock/season_catalog.dart';
 import 'package:world_mystery/data/models/case_talk.dart';
 import 'package:world_mystery/data/models/game_progress.dart';
+import 'package:world_mystery/data/models/profile.dart';
 import 'package:world_mystery/data/models/season.dart';
 import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/mission/widgets/case_talk.dart';
 import 'package:world_mystery/features/mission/widgets/evidence_recall.dart';
+import 'package:world_mystery/widgets/art_assets.dart';
 
 import 'helpers.dart';
 
@@ -529,6 +534,81 @@ void main() {
     testWidgets('no hints given: no hint link (every talk before)', (t) async {
       await pump(t, cards(2));
       expect(find.byKey(const ValueKey('case-talk-hint')), findsNothing);
+    });
+  });
+
+  group('who speaks shows (2026-11-10)', () {
+    test('the detective\'s face follows what they say', () {
+      expect(detectiveFaceFor('I will. Good morning, Mr. Yun.'), DetectiveExpression.greeting);
+      expect(detectiveFaceFor('Who are you?'), DetectiveExpression.asking);
+      expect(detectiveFaceFor('Why?', presenting: true), DetectiveExpression.asking, reason: 'a question even while showing');
+      expect(detectiveFaceFor('This paper was under his copy.', presenting: true), DetectiveExpression.showing);
+      expect(detectiveFaceFor('I will find it, Your Majesty.'), DetectiveExpression.reassuring);
+      expect(detectiveFaceFor('Then I will find that note.'), DetectiveExpression.reassuring);
+      expect(detectiveFaceFor('And the flame is by your name!'), DetectiveExpression.surprised);
+      expect(detectiveFaceFor('Let us look at every mark.'), DetectiveExpression.explaining);
+    });
+
+    test('every face of both detectives is in the app, its medallion inside the picture', () {
+      for (final avatar in DetectiveAvatar.values) {
+        for (final e in DetectiveExpression.values) {
+          expect(File(ArtAssets.detective(avatar, e)).existsSync(), isTrue, reason: ArtAssets.detective(avatar, e));
+          final c = ArtAssets.detectiveCrop(avatar, e);
+          final box = Offset.zero & c.pixels;
+          expect(box.contains(c.centre - Offset(c.radius, c.radius)) && box.contains(c.centre + Offset(c.radius - 1, c.radius - 1)), isTrue, reason: '$avatar $e');
+        }
+      }
+    });
+
+    test('every talk portrait has its copy without paper in its season\'s pack', () {
+      final packed = {for (final m in seasonPackManifests.values) for (final f in m.files) f.path};
+      for (final e in MockEpisodeRepository.bundled()) {
+        for (final m in e.allMissions) {
+          final talk = SeasonCatalog.talkMission(m);
+          for (final s in [talk?.before, talk?.after, SeasonCatalog.caseTalk(m)]) {
+            for (final p in s?.speaker.portraits.values ?? const <String>[]) {
+              expect(packed, contains(ArtAssets.talkCutout(p)), reason: '${m.id}: $p');
+            }
+          }
+        }
+      }
+    });
+
+    // How big one of the two stands on the stage (1: two thirds, 0.5: one third).
+    double stage(WidgetTester t, String who) =>
+        t.widget<Transform>(find.byKey(ValueKey('case-talk-stage-$who'))).transform.entry(0, 0);
+
+    testWidgets('the person\'s portrait for their lines, the player\'s detective for theirs', (t) async {
+      final talk = TalkScene(
+        id: 'who_speaks',
+        speaker: const TalkSpeaker(id: 'man', name: 'MR TEST', portraits: {'base': 'missing/base.png'}),
+        goal: 'Find out.',
+        opening: const [TalkLine('Hello, detective.'), TalkLine.detective('Who are you?')],
+        finishWhen: const {},
+      );
+      await t.pumpWidget(
+        ProviderScope(
+          overrides: await testOverrides(),
+          child: MaterialApp(
+            home: Scaffold(body: CaseTalk(scene: talk, progress: TalkProgress.start, onProgress: (_) {}, onFinish: () {})),
+          ),
+        ),
+      );
+      await t.pump(const Duration(seconds: 3));
+      expect(find.byKey(const ValueKey('case-talk-portrait-missing/base.png')), findsOneWidget);
+      expect(find.byKey(const ValueKey('case-talk-detective-asking')), findsNothing);
+      expect(find.byKey(const ValueKey('case-talk-card')), findsOneWidget);
+      expect(stage(t, 'person'), moreOrLessEquals(2 * stage(t, 'detective')), reason: 'the person speaks: two thirds');
+      await t.tap(find.byKey(const ValueKey('case-talk-line')));
+      await t.pump(const Duration(seconds: 3));
+      await t.pump(const Duration(milliseconds: 300)); // the person's portrait fades out
+      await t.pump(const Duration(milliseconds: 300));
+      expect(find.text('Who are you?'), findsOneWidget);
+      expect(find.byKey(const ValueKey('case-talk-detective-asking')), findsOneWidget);
+      // Both on the stage; the speaker has two thirds of it.
+      expect(stage(t, 'detective'), moreOrLessEquals(2 * stage(t, 'person')), reason: 'the detective speaks: two thirds');
+      expect(find.text('YOU'), findsOneWidget);
+      expect(find.byKey(const ValueKey('case-talk-card-detective')), findsOneWidget, reason: 'the detective\'s words on their own card');
     });
   });
 }

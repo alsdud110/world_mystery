@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -7,6 +9,8 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../core/utils/audio_service.dart';
 import '../../../data/models/case_talk.dart';
 import '../../../data/models/mission.dart' show Evidence;
+import '../../../widgets/art_assets.dart' show ArtAssets, DetectiveExpression;
+import '../../../widgets/detective_character.dart';
 import '../../../widgets/detective_tips.dart';
 import '../../../widgets/display_sized_image.dart';
 import '../../../widgets/evidence_card.dart' show EvidencePicture, EvidenceThumb;
@@ -170,7 +174,6 @@ class _CaseTalkState extends ConsumerState<CaseTalk> {
 
   @override
   Widget build(BuildContext context) {
-    final still = MediaQuery.maybeDisableAnimationsOf(context) ?? false;
     final line = _p.current(_scene);
     final portrait = _scene.speaker.portrait(_p.mood(_scene));
     final background = _scene.background;
@@ -195,20 +198,27 @@ class _CaseTalkState extends ConsumerState<CaseTalk> {
             children: [
               _GoalStrip(goal: _scene.goal),
               Expanded(
-                child: portrait == null
-                    // No portrait yet: nothing stands in for the person.
-                    ? const SizedBox.shrink()
-                    : Padding(
-                        padding: const EdgeInsets.fromLTRB(AppSpace.lg, AppSpace.sm, AppSpace.lg, 0),
-                        child: AnimatedSwitcher(
-                          duration: still ? Duration.zero : const Duration(milliseconds: 200),
-                          child: _Portrait(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(AppSpace.md, AppSpace.sm, AppSpace.md, 0),
+                  child: _TalkStage(
+                    voice: line?.voice,
+                    person: portrait == null
+                        // No portrait yet: nothing stands in for the person.
+                        ? null
+                        : _Portrait(
                             key: ValueKey('case-talk-portrait-$portrait'),
-                            file: portrait,
+                            file: ArtAssets.talkCutout(portrait),
                             label: '${_p.speakerName(_scene)}. ${_scene.speaker.description}',
                           ),
-                        ),
-                      ),
+                    face: line?.voice == TalkVoice.detective
+                        ? detectiveFaceFor(
+                            line!.text,
+                            // A present's beat, or a miss: evidence is being shown.
+                            presenting: _scene.present(_p.beatId) != null || TalkProgress.parseMiss(_p.beatId) != null,
+                          )
+                        : DetectiveExpression.thinking,
+                  ),
+                ),
               ),
               if (line != null)
                 Padding(
@@ -316,6 +326,151 @@ class _Portrait extends StatelessWidget {
   }
 }
 
+/// The detective's face for a line they say: waving at a hello, a hand
+/// raised at a question, a note held up while evidence is shown
+/// ([presenting]), a hand on the heart for a promise or comfort ("I will
+/// find it"), surprise at "!", else explaining.
+DetectiveExpression detectiveFaceFor(String text, {bool presenting = false}) {
+  final t = text.trim().toLowerCase().replaceAll('’', "'");
+  if (RegExp(r"\b(hello|good (morning|afternoon|evening)|nice to meet)\b").hasMatch(t)) return DetectiveExpression.greeting;
+  if (t.endsWith('?')) return DetectiveExpression.asking;
+  if (presenting) return DetectiveExpression.showing;
+  if (RegExp(r"^(then )?(i will|i'll|we will|we'll)\b|don't worry|it's (all right|okay)|i'm sorry").hasMatch(t)) {
+    return DetectiveExpression.reassuring;
+  }
+  if (t.endsWith('!')) return DetectiveExpression.surprised;
+  return DetectiveExpression.explaining;
+}
+
+/// The player's own detective with [expression], as tall as the room
+/// allows and never wider than it, standing at [alignment].
+class _DetectiveSpeaking extends ConsumerWidget {
+  _DetectiveSpeaking({required this.expression, this.alignment = Alignment.bottomRight}) : super(key: ValueKey('case-talk-detective-${expression.name}'));
+
+  final DetectiveExpression expression;
+  final Alignment alignment;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final avatar = ref.watch(detectiveProfileProvider.select((p) => p.avatar));
+    return LayoutBuilder(
+      builder: (context, box) {
+        final height = math.min(box.maxHeight, box.maxWidth / DetectiveCharacter.illustrationWidth(avatar, expression, 1));
+        return Align(
+          alignment: alignment,
+          child: DetectiveCharacter(
+            avatar: avatar,
+            expression: expression,
+            style: DetectiveStyle.illustration,
+            size: height,
+            entrance: false,
+            halo: true,
+            semanticLabel: 'You, the detective',
+          ),
+        );
+      },
+    );
+  }
+}
+
+/// The two in a talk, side by side: the person on the left, the player's
+/// detective on the right. Whoever speaks takes two thirds of the stage,
+/// lit; the one listening a third, darker and a little smaller. The stage
+/// turns to the speaker in a short ease (at once with reduced motion); a
+/// narrator's line leaves it as it was. A face that changes fades.
+class _TalkStage extends StatefulWidget {
+  const _TalkStage({required this.voice, required this.person, required this.face});
+
+  final TalkVoice? voice;
+
+  /// The person's portrait, or null: none (nothing stands in for them).
+  final Widget? person;
+
+  /// The detective's face now (listening: thinking).
+  final DetectiveExpression face;
+
+  @override
+  State<_TalkStage> createState() => _TalkStageState();
+}
+
+class _TalkStageState extends State<_TalkStage> {
+  late bool _detective = widget.voice == TalkVoice.detective;
+
+  @override
+  void didUpdateWidget(_TalkStage old) {
+    super.didUpdateWidget(old);
+    if (widget.voice case final v? when v != TalkVoice.narrator) _detective = v == TalkVoice.detective;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final still = MediaQuery.maybeDisableAnimationsOf(context) ?? false;
+    final fade = still ? Duration.zero : const Duration(milliseconds: 250);
+    final detective = AnimatedSwitcher(
+      duration: fade,
+      child: _DetectiveSpeaking(expression: widget.face),
+    );
+    final person = widget.person;
+    // No portrait: only the detective's own lines show anyone.
+    if (person == null) return widget.voice == TalkVoice.detective ? detective : const SizedBox.shrink();
+    return LayoutBuilder(
+      builder: (context, box) => TweenAnimationBuilder<double>(
+        tween: Tween(end: _detective ? 1 : 0),
+        duration: still ? Duration.zero : const Duration(milliseconds: 420),
+        curve: Curves.easeInOutCubic,
+        builder: (context, t, _) {
+          // t: 0 the person speaks, 1 the detective. Each is laid out at
+          // the speaker's size (two thirds) and only scaled, so a picture is
+          // never decoded again while the stage turns.
+          final speaking = box.maxWidth * 2 / 3;
+          Widget figure(Key key, Widget child, double dim, Alignment foot) => Positioned(
+                left: foot == Alignment.bottomLeft ? 0 : null,
+                right: foot == Alignment.bottomRight ? 0 : null,
+                top: 0,
+                bottom: 0,
+                width: speaking,
+                child: Transform.scale(
+                  key: key,
+                  // Two thirds when speaking, one third when listening.
+                  scale: 1 - dim / 2,
+                  alignment: foot,
+                  child: ColorFiltered(
+                    // Darkens the figure only, never the clear space round it.
+                    colorFilter: ColorFilter.mode(AppColors.navyDeep.withValues(alpha: 0.55 * dim), BlendMode.srcATop),
+                    child: child,
+                  ),
+                ),
+              );
+          final left = figure(
+            const ValueKey('case-talk-stage-person'),
+            // A little smaller than the room, its lower edge fading out, so the
+            // person stands in the scene as the detective does.
+            FractionallySizedBox(
+              heightFactor: 0.88,
+              alignment: Alignment.bottomCenter,
+              child: ShaderMask(
+                blendMode: BlendMode.dstIn,
+                shaderCallback: (rect) => const LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.black, Colors.black, Colors.transparent],
+                  stops: [0, 0.82, 1],
+                ).createShader(rect),
+                child: AnimatedSwitcher(duration: fade, child: person),
+              ),
+            ),
+            t,
+            Alignment.bottomLeft,
+          );
+          final right = figure(const ValueKey('case-talk-stage-detective'), detective, 1 - t, Alignment.bottomRight);
+          // The speaker in front.
+          return Stack(children: t < 0.5 ? [right, left] : [left, right]);
+        },
+      ),
+    );
+  }
+}
+
 /// The line said now, in its paper card: the speaker's name plate over it
 /// (none for the narrator), typed out; tapped, it is whole at once, then the
 /// next line comes. A small arrow says there is more.
@@ -338,9 +493,12 @@ class _Speech extends StatelessWidget {
   final VoidCallback onTyped;
   final VoidCallback onTap;
 
+  static const _tail = Size(18, 10);
+
   @override
   Widget build(BuildContext context) {
     final narrator = line.voice == TalkVoice.narrator;
+    final detective = line.voice == TalkVoice.detective;
     return Semantics(
       button: true,
       liveRegion: true,
@@ -353,63 +511,100 @@ class _Speech extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            if (name != null)
-              Padding(
-                padding: const EdgeInsets.fromLTRB(AppSpace.sm, 0, AppSpace.sm, AppSpace.xs),
-                // On the line's own edge, never under the portrait as its
-                // caption: the person's name on the left, YOU on the right.
-                child: Align(
-                  alignment: line.voice == TalkVoice.detective ? Alignment.centerRight : Alignment.centerLeft,
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      name!,
-                      key: const ValueKey('case-talk-name'),
-                      maxLines: 1,
-                      style: AppText.mark(color: AppColors.goldLight, size: 15),
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 72),
+                  child: Container(
+                    key: ValueKey(detective ? 'case-talk-card-detective' : 'case-talk-card'),
+                    decoration: BoxDecoration(
+                      // The detective's own words on a cool card, the others' on warm paper.
+                      color: detective ? AppColors.royalBlueSoft : AppColors.paperLight,
+                      borderRadius: BorderRadius.circular(AppRadius.paper),
+                      border: Border.all(color: detective ? AppColors.royalBlue.withValues(alpha: 0.35) : AppLine.faint(), width: AppLine.hairline),
+                      boxShadow: AppShadow.onNight,
+                    ),
+                    padding: const EdgeInsets.fromLTRB(AppSpace.lg, AppSpace.md, AppSpace.lg, AppSpace.md),
+                    child: InkSurface(
+                      night: false,
+                      child: Column(
+                        crossAxisAlignment: detective ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                        children: [
+                          if (name != null) ...[
+                            Text(
+                              name!,
+                              key: const ValueKey('case-talk-name'),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: AppText.mark(color: detective ? AppColors.royalBlue : AppColors.goldDeep, size: 13),
+                            ),
+                            const SizedBox(height: AppSpace.xs),
+                          ],
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Expanded(
+                                child: TypewriterText(
+                                  narrator || detective ? line.text : '"${line.text}"',
+                                  key: ValueKey('case-talk-type-$lineKey'),
+                                  style: narrator
+                                      ? AppText.letter(size: 18, color: AppColors.inkBrown).copyWith(fontStyle: FontStyle.italic)
+                                      : AppText.letter(size: 19, color: AppColors.ink),
+                                  textAlign: TextAlign.start,
+                                  skip: skip,
+                                  sound: false,
+                                  onFinished: onTyped,
+                                ),
+                              ),
+                              if (more) ...[
+                                const SizedBox(width: AppSpace.sm),
+                                const InkIcon(InkGlyph.chevron, size: AppIconSize.small, color: AppColors.burgundy),
+                              ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 72),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: AppColors.paperLight,
-                  borderRadius: BorderRadius.circular(AppRadius.paper),
-                  border: Border.all(color: AppLine.faint(), width: AppLine.hairline),
-                  boxShadow: AppShadow.onNight,
-                ),
-                padding: const EdgeInsets.fromLTRB(AppSpace.lg, AppSpace.md, AppSpace.lg, AppSpace.md),
-                child: InkSurface(
-                  night: false,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Expanded(
-                        child: TypewriterText(
-                          narrator || line.voice == TalkVoice.detective ? line.text : '"${line.text}"',
-                          key: ValueKey('case-talk-type-$lineKey'),
-                          style: narrator
-                              ? AppText.letter(size: 18, color: AppColors.inkBrown).copyWith(fontStyle: FontStyle.italic)
-                              : AppText.letter(size: 19, color: AppColors.ink),
-                          textAlign: TextAlign.start,
-                          skip: skip,
-                          sound: false,
-                          onFinished: onTyped,
-                        ),
-                      ),
-                      if (more) ...[const SizedBox(width: AppSpace.sm), const InkIcon(InkGlyph.chevron, size: AppIconSize.small, color: AppColors.burgundy)],
-                    ],
+                // The tail: the card speaks from the speaker's side.
+                if (!narrator)
+                  Positioned(
+                    top: -_tail.height + 1,
+                    left: detective ? null : AppSpace.xl,
+                    right: detective ? AppSpace.xl : null,
+                    child: CustomPaint(size: _tail, painter: _TailPainter(detective ? AppColors.royalBlueSoft : AppColors.paperLight)),
                   ),
-                ),
-              ),
+              ],
             ),
           ],
         ),
       ),
     );
   }
+}
+
+/// A speech card's tail: a small triangle in the card's colour, point up.
+class _TailPainter extends CustomPainter {
+  const _TailPainter(this.color);
+
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawPath(
+      Path()
+        ..moveTo(0, size.height)
+        ..lineTo(size.width / 2, 0)
+        ..lineTo(size.width, size.height)
+        ..close(),
+      Paint()..color = color,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_TailPainter old) => old.color != color;
 }
 
 /// Under the line: while a beat is said, NEXT (and SKIP for one heard
@@ -882,6 +1077,8 @@ class _CaseEndingState extends ConsumerState<CaseEnding> {
                             key: ValueKey('ending-evidence-${evidence.id}'),
                             child: _RecordCard(evidence: evidence),
                           )
+                        : line.voice == TalkVoice.detective
+                        ? _DetectiveSpeaking(expression: detectiveFaceFor(line.text), alignment: Alignment.bottomCenter)
                         : line.portrait != null
                         ? _Portrait(key: ValueKey('ending-portrait-${line.portrait}'), file: line.portrait!, label: line.name ?? '')
                         : const SizedBox.expand(key: ValueKey('ending-empty')),

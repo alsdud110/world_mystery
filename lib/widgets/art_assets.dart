@@ -62,6 +62,21 @@ enum DetectiveExpression {
 
   /// Pointing out, glass in hand: the whole case solved.
   confident,
+
+  /// A hand raised palm up, mouth open: asking someone a question.
+  asking,
+
+  /// An open hand, mid-sentence: telling someone what was found.
+  explaining,
+
+  /// A folded note held up in both hands: showing a piece of evidence.
+  showing,
+
+  /// A hand on the heart, a gentle smile: a promise ("I will find it") or comfort.
+  reassuring,
+
+  /// Waving hello: meeting someone.
+  greeting,
 }
 
 /// Where a detective picture's medallion is cut: the centre of the circle
@@ -218,6 +233,12 @@ abstract final class ArtAssets {
   /// Pixel size of [season1LondonNight] (never decoded larger).
   static const season1LondonNightPixels = Size(941, 1671);
 
+  /// A talk portrait ([TalkSpeaker.portraits]) as the talk stage shows it:
+  /// the same picture without its paper, in `characters/talk/` beside it,
+  /// so the person stands in the scene with the detective. Every other
+  /// screen keeps the portrait as it is.
+  static String talkCutout(String portrait) => portrait.replaceFirst('/characters/', '/characters/talk/');
+
   /// The player's detective, chosen at CREATE YOUR DETECTIVE (see
   /// `DetectiveAvatar`): a boy and a girl in the storybook's style, head and
   /// shoulders on transparency, 4:5. Custom Asset Required: the folder is
@@ -245,6 +266,7 @@ abstract final class ArtAssets {
 
   static const _square = Size(1254, 1254);
   static const _wide = Size(1312, 1199);
+  static const _talk = Size(1024, 1024);
 
   static const detectiveCrops = <DetectiveAvatar, Map<DetectiveExpression, DetectiveCrop>>{
     DetectiveAvatar.boy: {
@@ -257,6 +279,12 @@ abstract final class ArtAssets {
       DetectiveExpression.happy: (pixels: _square, centre: Offset(720, 480), radius: 420),
       // The pointing hand and the glass either side of the face.
       DetectiveExpression.confident: (pixels: _wide, centre: Offset(780, 540), radius: 470),
+      // The talk's pictures (2026-11-10): the face and the hand that speaks.
+      DetectiveExpression.asking: (pixels: _talk, centre: Offset(620, 520), radius: 380),
+      DetectiveExpression.explaining: (pixels: _talk, centre: Offset(620, 560), radius: 360),
+      DetectiveExpression.showing: (pixels: _talk, centre: Offset(600, 520), radius: 340),
+      DetectiveExpression.reassuring: (pixels: _talk, centre: Offset(590, 560), radius: 340),
+      DetectiveExpression.greeting: (pixels: _talk, centre: Offset(640, 480), radius: 360),
     },
     DetectiveAvatar.girl: {
       DetectiveExpression.thinking: (pixels: _square, centre: Offset(740, 620), radius: 420),
@@ -264,6 +292,11 @@ abstract final class ArtAssets {
       DetectiveExpression.investigating: (pixels: _square, centre: Offset(830, 700), radius: 420),
       DetectiveExpression.happy: (pixels: _wide, centre: Offset(790, 520), radius: 450),
       DetectiveExpression.confident: (pixels: _wide, centre: Offset(820, 560), radius: 470),
+      DetectiveExpression.asking: (pixels: _talk, centre: Offset(650, 500), radius: 370),
+      DetectiveExpression.explaining: (pixels: _talk, centre: Offset(640, 560), radius: 370),
+      DetectiveExpression.showing: (pixels: _talk, centre: Offset(600, 540), radius: 340),
+      DetectiveExpression.reassuring: (pixels: _talk, centre: Offset(600, 540), radius: 340),
+      DetectiveExpression.greeting: (pixels: _talk, centre: Offset(640, 500), radius: 370),
     },
   };
 
