@@ -551,24 +551,18 @@ class _CaseFile extends StatelessWidget {
                     child: _Field(label: 'Detective', value: report.detectiveName, big: true),
                   ),
                   const SizedBox(width: 12),
-                  // The red stamp comes down on the case photo: placed by the
-                  // photo, not at a fixed point of the page, so it never covers
-                  // the name whatever the text size. A case with an emblem
-                  // (below its title) has no photo: the stamp comes down on
-                  // the paper in the photo's place.
+                  // The red stamp comes down on the paper beside the name,
+                  // never on a picture: the photo or emblem sits below the
+                  // case title, where both read whole.
                   Stack(
                     clipBehavior: Clip.none,
                     children: [
-                      if (emblem == null)
-                        _Photo(scene: PlaceArt.pictureOf(report.episode.finalMission))
-                      else
-                        const SizedBox(key: ValueKey('case-closed-stamp-spot'), width: 112, height: 64),
+                      const SizedBox(key: ValueKey('case-closed-stamp-spot'), width: 112, height: 64),
                       if (stamp > 0)
                         Positioned(
-                          // On the paper (no photo): kept off the name.
-                          left: emblem == null ? -AppSpace.md : 0,
+                          left: 0,
                           right: -AppSpace.md,
-                          top: emblem == null ? 34 : 6,
+                          top: 6,
                           child: IgnorePointer(
                             child: Opacity(
                               opacity: stamp.clamp(0, 1),
@@ -586,8 +580,13 @@ class _CaseFile extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: emblem == null ? AppSpace.sm : AppSpace.xs),
+              const SizedBox(height: AppSpace.xs),
               _Field(label: 'Case', value: report.episode.title.toUpperCase(), name: true),
+              if (emblem == null)
+                Padding(
+                  padding: const EdgeInsets.only(top: AppSpace.md),
+                  child: Center(child: _Photo(scene: PlaceArt.pictureOf(report.episode.finalMission))),
+                ),
               // What the case was about, alone on the paper, under its title:
               // no frame, no tilt, no shadow.
               if (emblem != null)
@@ -811,6 +810,7 @@ class _Photo extends StatelessWidget {
   const _Photo({required this.scene});
 
   final MissionScene scene;
+  static const height = 150.0;
 
   @override
   Widget build(BuildContext context) {
@@ -818,8 +818,8 @@ class _Photo extends StatelessWidget {
       angle: 0.05,
       child: Container(
         // A picture shows whole at its own ratio; a drawing stays square.
-        width: LandmarkArt.hasPictureOf(scene, solved: 1) ? 86 * LandmarkArt.aspectOfScene(scene, solved: 1) + 10 : 96,
-        height: 96,
+        width: LandmarkArt.hasPictureOf(scene, solved: 1) ? (height - 10) * LandmarkArt.aspectOfScene(scene, solved: 1) + 10 : height,
+        height: height,
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           color: AppColors.paperLight,
