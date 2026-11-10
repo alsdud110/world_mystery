@@ -241,15 +241,15 @@
   "budgetFrom": "content_pipeline/image_budgets.json",
   "deploy": {
     "folder": "season_05_seoul",
-    "version": "1c37f3d5b61bd3cd",
+    "version": "2d0674cbb11b42f6",
     "status": "deployed",
-    "files": 138,
-    "newPictures": 23,
-    "newBytes": 5168776,
+    "files": 144,
+    "newPictures": 7,
+    "newBytes": 2549090,
     "newManifest": true,
-    "stageDir": "build/season_packs/season_05_seoul/1c37f3d5b61bd3cd",
-    "at": "2026-11-10T02:37:39.260680Z",
-    "sent": 24,
+    "stageDir": "build/season_packs/season_05_seoul/2d0674cbb11b42f6",
+    "at": "2026-11-10T16:08:21.093430Z",
+    "sent": 8,
     "verified": "HTTPS 200, size and SHA-256 of every object"
   }
 }
