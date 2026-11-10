@@ -18,13 +18,18 @@ void main() {
   );
   Mission mission(String id, [Difficulty level = Difficulty.rookie]) => episode(level).allMissions.firstWhere((m) => m.id == id);
 
-  test('M2: the lines are out of order; Start and the relation words give one way, at every level', () {
+  test('M2: the lines are out of order (Rookie: in order); Start and the relation words give one way, at every level', () {
     for (final level in Difficulty.values) {
       final m = mission('s5_ep06_m2', level);
       expect(m.answer, 'library,well,west_gate,lane', reason: level.label);
       expect(m.options.map((o) => o.id).join(','), isNot(startsWith('library')), reason: '${level.label}: never the answer order');
       final lines = m.letter.split('\n');
-      expect(lines.first, isNot(contains('Start')), reason: '${level.label}: the start is not the first line');
+      // Rookie reads the way in order (2026-11-10); Junior and Master out of it.
+      if (level == Difficulty.rookie) {
+        expect(lines.first, startsWith('Start'), reason: 'Rookie: the way in order');
+      } else {
+        expect(lines.first, isNot(contains('Start')), reason: '${level.label}: the start is not the first line');
+      }
       expect(m.letter, contains('Start behind the library hall'), reason: level.label);
       expect(m.letter, contains('big front gate all day'), reason: level.label);
       expect(m.letter, contains('Do not cross the throne hall'), reason: level.label);

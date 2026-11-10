@@ -439,7 +439,7 @@ const _otherCases = <String, int>{
   // door of M5. Value before it: ep01 3696114919. Then (same day, approved)
   // the golden key's tag names the next stop, the bell: value before it
   // 2832071042.
-  'ep01': 2842519320,
+  'ep01': 2232261687, // was 2842519320 before the past forms glided, closed, guarded (2026-11-10)
   // TYPE B Phase 2 (approved 2026-10-12): Case 02, 03, 04.
   // Story links (2026-10-23, approved): in 02-F, Mrs Bell rings the great
   // bell once the hands are set. Value before it: ep02 3508708899.
@@ -448,7 +448,7 @@ const _otherCases = <String, int>{
   // before it: ep02 1562541321.
   // London gameplay upgrade (2026-10-30, requested): 02-M3's `recall` of the
   // Broken Clock Note. Value before it: ep02 1569936382.
-  'ep02': 1622728144,
+  'ep02': 2005407481, // was 1622728144 before the glossary's plural and past forms (2026-11-10, 9f602da)
   // Wave 1 (2026-10-14): 03-M1 tip 2 (the search of Gallery 8); Wave 1.1:
   // its report's first line (three things in the gallery, not on the floor);
   // Wave 1.2: a no-break space in its title ('GALLERY 8').
@@ -460,13 +460,13 @@ const _otherCases = <String, int>{
   // Asset optimization (2026-11-02): only the sketches' files, now WebP
   // (`.png` → `.webp`); with `.webp` read back as `.png` the hash is the value
   // before it, exactly. Value before it: ep03 1141287210.
-  'ep03': 1990888441, // S1 device feedback PART B (King's Cross arches, the boot brought)
+  'ep03': 3972553505, // was 1990888441 before the glossary's plural and past forms (2026-11-10, 9f602da) // S1 device feedback PART B (King's Cross arches, the boot brought)
   // Audit fix D3 (2026-10-12): the postmark keeps only its picture.
   // Puzzle wording (2026-10-23, approved): 04-M2's card says RED · SMALL ·
   // CLOCK · PLATFORM, not FOUR; tip 2 matches it (was 1263118138).
-  'ep04': 3866990594, // S1 device feedback PART B (a big black bird)
+  'ep04': 3000296845, // was 3866990594 before the glossary's plural and past forms (2026-11-10, 9f602da) // S1 device feedback PART B (a big black bird)
   // Audit fix D2 (2026-10-12): 05-M3 shows the warning on the wall.
-  'ep05': 1062733482,
+  'ep05': 284906843, // was 1062733482 before the glossary's plural and past forms (2026-11-10, 9f602da)
   // Post-discovery small pass: one transition line each (07 M3, 10 M2).
   // TYPE B Phase 3A (approved 2026-10-12): Case 07 feedback lines (06, 08: guarded above).
   // Audit follow-up (2026-10-12): Case 07 glossary 'right' also means 맞는.
@@ -497,7 +497,7 @@ const _otherCases = <String, int>{
   // S1 C11 final made easier (2026-11-03, approved): the Old Letter recall
   // at every level, the card's "I signed it" line, the question, letterIntro
   // and tips; answer The Shadow unchanged (was 3921216648).
-  'ep11': 4259668583,
+  'ep11': 1169617829, // was 4259668583 before the glossary's plural and past forms (2026-11-10, 9f602da)
   // Time code fix (2026-10-21): 12-M2 reads as HH:MM ('codeFormat': 'time').
   // Case 12 M3 (2026-10-21): UNDER ___ ___, one blank per word of BIG BEN.
   // Evidence recall (2026-10-23, requested): 12-F tip 1 says where the

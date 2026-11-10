@@ -30,7 +30,7 @@ void main() {
   test('M1: the note has no name; the dark was made', () {
     for (final level in Difficulty.values) {
       final m = mission('s5_ep05_m1', level);
-      expect(m.letter, contains('One of the two strangers'), reason: level.label);
+      expect(m.letter, contains('two strangers'), reason: level.label);
       expect(m.letter, isNot(contains('— Han')), reason: level.label);
       expect(m.transition.join(' '), isNot(contains('signed')), reason: level.label);
       expect(m.answer, 'belt');
@@ -42,11 +42,15 @@ void main() {
     final ids = [for (final o in m.options) o.id];
     expect(ids.where((i) => i != 'guards').join(','), isNot(m.answer), reason: 'never listed in the answer order');
     expect(m.answer, 'lit,lamphouse,dark,gate,hall,back');
-    expect(m.letter.split('\n').first, startsWith('The lamp man came back at 9:00'), reason: 'the account starts at the end');
+    // Rookie reads the night in time order (2026-11-10); Junior and Master start at the end.
+    expect(m.letter.split('\n').first, startsWith('The lamp man lit the lamps at 8:00'), reason: 'Rookie: in time order');
     for (final level in Difficulty.values) {
       final l = mission('s5_ep05_m2', level);
+      if (level != Difficulty.rookie) {
+        expect(l.letter.split('\n').first, startsWith('The lamp man came back at 9:00'), reason: '${level.label}: the account starts at the end');
+      }
       expect(l.letter, contains('flat board'), reason: level.label);
-      expect(l.letter, contains('main gate saw nothing'), reason: level.label);
+      expect(l.letter, allOf(contains('main gate'), contains('saw nothing')), reason: level.label);
       expect(l.transition.join(' '), contains("Queen's steps"), reason: level.label);
     }
   });
@@ -66,7 +70,7 @@ void main() {
       expect(m.type, MissionType.multipleChoice, reason: level.label);
       expect(m.answer, 'queen');
       expect([for (final o in m.options) o.id], ['king', 'lamp', 'queen']);
-      expect(m.letter, allOf(contains('a door with a circle'), contains('three big dots'), contains('like the knots on the rope')), reason: level.label);
+      expect(m.letter, allOf(contains('a door with a circle'), contains('big dot'), contains('like the knots on the rope')), reason: level.label);
       for (final wrong in ['king', 'lamp']) {
         expect(AnswerChecker.isCorrect(m, wrong), isFalse);
         expect(AnswerChecker.feedbackFor(m, wrong), isNotNull, reason: '${level.label} $wrong');

@@ -27,10 +27,10 @@ void main() {
     }
   });
 
-  test('M1: the stroke rule is read in this case, GATES only', () {
+  test('M1: the grade-line rule is read in this case, GATES only', () {
     for (final level in Difficulty.values) {
       final m = mission('s5_ep04_m1', level);
-      expect(m.letter, contains('a stronger sound adds one line'), reason: level.label);
+      expect(m.letter, contains('for each grade'), reason: level.label); // grade lines I, II, III (2026-11-11)
       expect(m.letter, isNot(contains('Sora')), reason: level.label);
       expect(m.answer, 'GATES', reason: level.label);
       expect(AnswerChecker.isCorrect(m, 'HALLS'), isFalse);
@@ -41,7 +41,7 @@ void main() {
   test('M2: twelve to two and six to sixteen: ten, never said before the answer', () {
     for (final level in Difficulty.values) {
       final m = mission('s5_ep04_m2', level);
-      expect(m.letter, allOf(contains('다 logs: six'), contains('다 logs: sixteen'), contains('twelve'), contains('two')), reason: level.label);
+      expect(m.letter, allOf(contains('III logs: six'), contains('III logs: sixteen'), contains('twelve'), contains('two')), reason: level.label);
       expect(m.answer, '10');
       for (final wrong in ['12', '16', '02', '06']) {
         expect(AnswerChecker.isCorrect(m, wrong), isFalse, reason: '${level.label} $wrong');
@@ -85,7 +85,7 @@ void main() {
     }
     for (final level in Difficulty.values) {
       final m = mission('s5_ep04_final', level);
-      expect(m.letter, allOf(contains('One new cut turns 나 into 다'), contains('with a chisel'), contains('only a pine tree')), reason: level.label);
+      expect(m.letter, allOf(contains('One new cut turns II into III'), contains('with a chisel'), contains('only a pine tree')), reason: level.label);
       expect(m.letter, isNot(contains('water drop')), reason: level.label);
       expect(m.hints, hasLength(2), reason: level.label);
     }

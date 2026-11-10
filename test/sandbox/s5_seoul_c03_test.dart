@@ -45,8 +45,13 @@ void main() {
     for (final level in Difficulty.values) {
       final m1 = mission('s5_ep03_m1', level);
       expect(m1.answer, 'start,lift,copy,note,fail', reason: level.label);
-      expect(m1.letter, contains("after the carpenter's work"), reason: level.label);
-      expect(m1.letter.split('\n').first, isNot(contains('1794')), reason: '${level.label}: the log is not in time order');
+      expect(m1.letter.toLowerCase(), contains("after the carpenter's work"), reason: level.label);
+      // Rookie reads the log in time order (2026-11-10); Junior and Master out of it.
+      if (level == Difficulty.rookie) {
+        expect(m1.letter.split('\n').first, contains('1794'), reason: 'Rookie: the log in time order');
+      } else {
+        expect(m1.letter.split('\n').first, isNot(contains('1794')), reason: '${level.label}: the log is not in time order');
+      }
       expect(m1.transition.join(' '), contains('water carriers'), reason: level.label);
       final m2 = mission('s5_ep03_m2', level);
       expect(m2.answer, 'gate_wheels', reason: level.label);

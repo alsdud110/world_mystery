@@ -78,6 +78,8 @@ void main() {
     // the secret door Mission 05 opens (2026-10-23, approved). Was
     // 3339709869 before the golden key's tag named the next stop, the bell,
     // and M2's scene after it read the bell as Big Ben (same day, approved).
-    expect(fnv(withoutNames(jsonEncode({...json, 'glossary': glossary}))), 3330943963);
+    // Was 3330943963 before the glossary got the past forms glided, closed
+    // and guarded (2026-11-10, 9f602da, requested).
+    expect(fnv(withoutNames(jsonEncode({...json, 'glossary': glossary}))), 1002971098);
   });
 }

@@ -64,7 +64,8 @@ void main() {
         expect(fin.type, MissionType.numberCode);
         expect(fin.answer, '319');
         expect(fin.letter, allOf(contains('2 of 3'), contains('18 + 1 opening poem'), contains('side by side'), contains('215')));
-        expect(fin.letter.split('\n'), hasLength(4), reason: 'the same four lines at every level');
+        // Rookie spells out "copy 2 of 3" on a line of its own (2026-11-10).
+        expect(fin.letter.split('\n'), hasLength(level == Difficulty.rookie ? 5 : 4), reason: level.label);
         expect(all, isNot(contains('319')), reason: level.label);
         expect(all.toLowerCase(), isNot(contains('nineteen')), reason: level.label);
         for (final wrong in ['119', '219', '318', '215']) {
@@ -92,7 +93,12 @@ void main() {
       for (final level in [Difficulty.junior, Difficulty.master]) {
         final e = episode(level);
         expect([for (final m in e.allMissions) m.answer], [for (final m in r.allMissions) m.answer]);
-        expect([for (final m in e.allMissions) m.letter.split('\n').length], [for (final m in r.allMissions) m.letter.split('\n').length]);
+        // Rookie may add a line that tells what the others leave to memory (M2's white string, the final's three copies).
+        final lines = [for (final m in e.allMissions) m.letter.split('\n').length];
+        final rookieLines = [for (final m in r.allMissions) m.letter.split('\n').length];
+        for (var i = 0; i < lines.length; i++) {
+          expect(rookieLines[i] - lines[i], inInclusiveRange(0, 1), reason: '${level.label} ${e.allMissions[i].id}');
+        }
         expect(e.finalMission.letter, isNot(r.finalMission.letter), reason: '${level.label}: its own English');
       }
     });

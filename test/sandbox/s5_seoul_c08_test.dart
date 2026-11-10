@@ -36,14 +36,22 @@ void main() {
         expect(gyeongsun, allOf(contains('only in Hangeul'), matches(RegExp('[Aa] small flame sits by her name'))));
       });
 
-      test('Final: the dials picture their clues; the letter never gives the date away', () {
+      test('Final: one number, March then April; the letter never gives the date away', () {
         final f = mission('s5_ep08_final', level);
         expect(f.answer, '311');
-        expect(f.dialSymbols, ['map', 'map', 'clock']);
+        // A plain number entry (2026-11-11), the March date then the April date.
+        expect(f.type, MissionType.numberCode);
         expect(f.letter, contains('March has thirty-one days.'));
-        // Both clues are needed: neither the day of the march nor "the night before" is in the letter.
-        expect(f.letter, isNot(contains('first of April')));
-        expect(f.letter, isNot(contains('night before')));
+        if (level == Difficulty.rookie) {
+          // Rookie (2026-11-10): both days are told; the night before the
+          // first of April is still worked out (31 March).
+          expect(f.letter, allOf(contains('first of April'), contains('night before')));
+          expect(f.letter, isNot(contains('31')));
+        } else {
+          // Both clues are needed: neither the day of the march nor "the night before" is in the letter.
+          expect(f.letter, isNot(contains('first of April')));
+          expect(f.letter, isNot(contains('night before')));
+        }
         for (final wrong in ['131', '301', '302', '312', '012']) {
           expect(AnswerChecker.isCorrect(f, wrong), isFalse);
           expect(AnswerChecker.feedbackFor(f, wrong), isNotNull, reason: wrong);

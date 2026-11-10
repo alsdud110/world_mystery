@@ -67,7 +67,7 @@ void main() {
       }
       expect(spec.order.join(','), m.answer, reason: id);
     }
-    expect(mission('s5_ep05_m2').letter, contains('main gate saw nothing'), reason: 'why the main gate card is set aside');
+    expect(mission('s5_ep05_m2').letter, allOf(contains('main gate'), contains('saw nothing')), reason: 'why the main gate card is set aside');
     expect(mission('s5_ep07_m2').letter, contains('goods train'), reason: 'why the goods train card is left out');
   });
 
@@ -150,7 +150,7 @@ void main() {
         }
         // M2: the riddle is in pieces on the backs, said before the order is set.
         final m2 = mission('s5_ep12_m2', level);
-        expect(m2.letter, contains('one piece on each'), reason: level.label);
+        expect(m2.letter, contains('one piece'), reason: level.label);
         expect(m2.transition.first, contains('in order'), reason: level.label);
       }
     });

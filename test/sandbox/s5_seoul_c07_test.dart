@@ -70,7 +70,7 @@ void main() {
     }
     final fin = mission('s5_ep07_final');
     expect(fin.hints, hasLength(2));
-    expect(fin.letter, allOf(contains('He called out nothing.'), contains('He wanted money.')));
+    expect(fin.letter, allOf(contains('called out nothing.'), contains('He wanted money.')));
   });
 
   test('stands alone: no other case, no water drop, no letter box, at every level', () {

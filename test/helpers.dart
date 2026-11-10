@@ -4,6 +4,7 @@ import 'dart:io' show File, FileSystemEntity, FileSystemEntityType;
 import 'package:flutter/gestures.dart' show HitTestResult;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:world_mystery/core/utils/formatters.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:world_mystery/core/assets/season_pack_manifests.g.dart';
@@ -204,11 +205,14 @@ List<String> placeAssetProblems(Map<String, ScenePlace> places) {
 /// evidence English is rich text (harder words open their meaning), and
 /// `find.text` reads the screen-reader labels of those words ("… (tap for
 /// meaning)") instead of the words themselves.
+/// A puzzle's question is set one sentence a line ([Formatters.sentenceLines]):
+/// it reads the same, so it is found by its words as written.
 Finder findReadable(String text) => find.byWidgetPredicate(
-  (w) =>
-      w is Text &&
-      (w.data ?? w.textSpan?.toPlainText(includeSemanticsLabels: false)) ==
-          text,
+  (w) {
+    if (w is! Text) return false;
+    final shown = w.data ?? w.textSpan?.toPlainText(includeSemanticsLabels: false);
+    return shown == text || shown == Formatters.sentenceLines(text);
+  },
   description: 'text "$text" (as read)',
 );
 

@@ -73,7 +73,7 @@ const ownMaps = <String, Map<String, (String, double, double)>>{
   's5_ep07': {
     's5_ep07_m1': ("Mrs. Kang's Inn", 215, 840),
     's5_ep07_m2': ('The Station Tea Room', 1013, 433),
-    's5_ep07_m3': ("Mrs. Kang's Inn", 427, 667),
+    's5_ep07_m3': ('Harbin Station', 1180, 288), // Mr. Pak on the platform (2026-11-11)
     's5_ep07_final': ("Mrs. Kang's Inn", 820, 587),
   },
   's5_ep08': {
