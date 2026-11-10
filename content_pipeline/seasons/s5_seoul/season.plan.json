@@ -142,7 +142,7 @@
     {
       "charId": "an_junggeun",
       "name": "An Jung-geun",
-      "role": "Korean independence fighter (real; spoken of only, never on stage)",
+      "role": "Korean independence fighter (real; seen on the Harbin platform in Case 07, never speaking)",
       "firstCase": "s5_ep07"
     },
     {
@@ -432,6 +432,15 @@
       "locId": "hwaseong"
     },
     {
+      "placeId": "s5_seoul.c03_new_wall",
+      "file": "assets/seasons/season_05_seoul/cases/case_03/c03_new_wall.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "hwaseong"
+    },
+    {
       "placeId": "s5_seoul.c03_drawing_room",
       "file": "assets/seasons/season_05_seoul/cases/case_03/drawing_room.webp",
       "pixels": {
@@ -461,6 +470,15 @@
     {
       "placeId": "s5_seoul.c04_palace_site",
       "file": "assets/seasons/season_05_seoul/cases/case_04/palace_site.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "royal_palace"
+    },
+    {
+      "placeId": "s5_seoul.c04_hall",
+      "file": "assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -513,6 +531,15 @@
       "locId": "gyeongun_palace"
     },
     {
+      "placeId": "s5_seoul.c06_palace_way",
+      "file": "assets/seasons/season_05_seoul/cases/case_06/c06_palace_way.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "gyeongun_palace"
+    },
+    {
       "placeId": "s5_seoul.c06_west_lane",
       "file": "assets/seasons/season_05_seoul/cases/case_06/c06_west_lane.webp",
       "pixels": {
@@ -533,6 +560,15 @@
     {
       "placeId": "s5_seoul.kang_inn",
       "file": "assets/seasons/season_05_seoul/cases/case_07/kang_inn.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "harbin"
+    },
+    {
+      "placeId": "s5_seoul.c07_harbin_platform",
+      "file": "assets/seasons/season_05_seoul/cases/case_07/c07_harbin_platform.webp",
       "pixels": {
         "width": 1536,
         "height": 1024
@@ -1116,10 +1152,6 @@
                 215,
                 840
               ],
-              "s5_ep07_m3": [
-                427,
-                667
-              ],
               "s5_ep07_final": [
                 820,
                 587
@@ -1137,6 +1169,20 @@
               "s5_ep07_m2": [
                 1013,
                 433
+              ]
+            }
+          },
+          {
+            "spotId": "harbin_station",
+            "name": "Harbin Station",
+            "at": [
+              1180,
+              300
+            ],
+            "missions": {
+              "s5_ep07_m3": [
+                1180,
+                288
               ]
             }
           }

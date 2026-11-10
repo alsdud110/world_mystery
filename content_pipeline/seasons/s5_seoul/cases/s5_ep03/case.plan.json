@@ -411,7 +411,7 @@
   "final": {
     "missionId": "s5_ep03_final",
     "slot": "final",
-    "placeId": "s5_seoul.c03_stone_yard",
+    "placeId": "s5_seoul.c03_new_wall",
     "puzzle": {
       "paletteId": "text_choice",
       "surface": "finalMission",

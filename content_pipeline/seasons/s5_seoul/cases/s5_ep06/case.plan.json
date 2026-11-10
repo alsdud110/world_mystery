@@ -278,7 +278,7 @@
     {
       "missionId": "s5_ep06_m2",
       "slot": "m2",
-      "placeId": "s5_seoul.c06_palace_garden",
+      "placeId": "s5_seoul.c06_palace_way",
       "puzzle": {
         "paletteId": "order_sequence",
         "surface": "mission",
@@ -297,7 +297,7 @@
             },
             {
               "id": "well",
-              "label": "The garden by the old well"
+              "label": "The old well"
             },
             {
               "id": "throne",

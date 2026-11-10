@@ -604,7 +604,7 @@
   "final": {
     "missionId": "s5_ep04_final",
     "slot": "final",
-    "placeId": "s5_seoul.c04_palace_site",
+    "placeId": "s5_seoul.c04_hall",
     "puzzle": {
       "paletteId": "evidence_talk",
       "surface": "finalMission",

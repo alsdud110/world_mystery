@@ -179,24 +179,25 @@ const _s5Ep06Map = SeasonMap(
 // The places of s5_ep07 on its own map, measured on assets/seasons/season_05_seoul/locations/map/case_07_map.webp (sha256:ed2f35cca546e810…).
 const _s5Ep07KangInn = SeasonLandmark('kang_inn', 'Mrs. Kang\'s Inn', Offset(215 / 1536, 852 / 1024));
 const _s5Ep07TeaRoom = SeasonLandmark('tea_room', 'The Station Tea Room', Offset(1013 / 1536, 445 / 1024));
+const _s5Ep07HarbinStation = SeasonLandmark('harbin_station', 'Harbin Station', Offset(1180 / 1536, 300 / 1024));
 
 /// The Mission Map of case s5_ep07.
 const _s5Ep07Map = SeasonMap(
   artwork: 'assets/seasons/season_05_seoul/locations/map/case_07_map.webp',
   pixels: Size(1536, 1024),
   aspect: 1536 / 1024,
-  landmarks: [_s5Ep07KangInn, _s5Ep07TeaRoom],
+  landmarks: [_s5Ep07KangInn, _s5Ep07TeaRoom, _s5Ep07HarbinStation],
   missionLandmarks: <String, MapLandmark>{
     's5_ep07_m1': _s5Ep07KangInn,
-    's5_ep07_m3': _s5Ep07KangInn,
     's5_ep07_final': _s5Ep07KangInn,
     's5_ep07_m2': _s5Ep07TeaRoom,
+    's5_ep07_m3': _s5Ep07HarbinStation,
   },
   missionPoints: <String, Offset>{
     's5_ep07_m1': Offset(215 / 1536, 840 / 1024),
-    's5_ep07_m3': Offset(427 / 1536, 667 / 1024),
     's5_ep07_final': Offset(820 / 1536, 587 / 1024),
     's5_ep07_m2': Offset(1013 / 1536, 433 / 1024),
+    's5_ep07_m3': Offset(1180 / 1536, 288 / 1024),
   },
   namesClearOfCurrent: true,
 );

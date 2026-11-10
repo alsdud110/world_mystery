@@ -93,8 +93,8 @@
         ],
         "successMessage": "His words are not the same!",
         "transition": [
-          "One says he called out nothing.",
-          "The other says he called out, \"Koreya! Ura!\"",
+          "One says An Jung-geun called out nothing.",
+          "The other says An Jung-geun called out, \"Koreya! Ura!\"",
           "Mrs. Kang says, \"Ask Mr. Pak.\""
         ],
         "feedback": {
@@ -107,7 +107,7 @@
         "clue": {
           "title": "The Different Line",
           "value": "WHAT HE CALLED OUT",
-          "note": "Paper A says he called out nothing. Paper B says he called out, \"Koreya! Ura!\"",
+          "note": "Paper A says An Jung-geun called out nothing. Paper B says he called out, \"Koreya! Ura!\"",
           "symbol": "letter"
         },
         "evidence": {
@@ -403,15 +403,15 @@
         "question": "Put Mr. Pak's day in order. Was the writer there?",
         "hints": [
           "Fill the empty spots. Time cards stay.",
-          "He called out at 9:30. The writer came at 12:00."
+          "An Jung-geun called out at 9:30. The writer came at 12:00."
         ],
-        "successMessage": "He called out at 9:30. The writer came at noon. He did not see it!",
+        "successMessage": "An Jung-geun called out at 9:30. The writer came at noon. The writer did not see it!",
         "transition": [
           "Paper A came from tea-room talk.",
           "Paper B came from the platform.",
           "\"I was there too,\" says Mr. Pak."
         ],
-        "orderFeedback": "When did he call out? When did the writer come?",
+        "orderFeedback": "When did An Jung-geun call out? When did the writer come?",
         "mapX": 0.62,
         "mapY": 0.42,
         "clue": {
@@ -430,20 +430,20 @@
             {
               "id": "write",
               "title": "THE REPORT IS WRITTEN",
-              "text": "The writer writes his report.",
+              "text": "The writer wrote his report.",
               "fiction": true
             },
             {
               "id": "goods",
               "title": "A GOODS TRAIN",
-              "text": "A goods train comes in.",
+              "text": "A goods train came.",
               "discard": true,
               "fiction": true
             },
             {
               "id": "shout",
               "title": "HE CALLS OUT",
-              "text": "An Jung-geun calls out on the platform.",
+              "text": "An Jung-geun called out.",
               "anchor": "9:30",
               "factIds": [
                 "s5_ep07_h6"
@@ -452,26 +452,26 @@
             {
               "id": "tea",
               "title": "A STORY OVER TEA",
-              "text": "Over tea, a traveller talks to the writer.",
+              "text": "A traveller told the writer a story over tea.",
               "fiction": true
             },
             {
               "id": "print",
               "title": "THE EVENING SHEET IS PRINTED",
-              "text": "The Evening Sheet is printed.",
+              "text": "The Evening Sheet was printed.",
               "anchor": "5:00 PM",
               "fiction": true
             },
             {
               "id": "pak_start",
               "title": "MR. PAK STARTS WORK",
-              "text": "Mr. Pak carries bags on the platform.",
+              "text": "Mr. Pak started work early.",
               "fiction": true
             },
             {
               "id": "noon",
               "title": "THE NOON TRAIN",
-              "text": "The Evening Sheet's writer comes on the noon train.",
+              "text": "The writer came on the noon train.",
               "anchor": "12:00",
               "fiction": true
             }
@@ -516,7 +516,7 @@
     {
       "missionId": "s5_ep07_m3",
       "slot": "m3",
-      "placeId": "s5_seoul.kang_inn",
+      "placeId": "s5_seoul.c07_harbin_platform",
       "puzzle": {
         "paletteId": "word_entry",
         "surface": "mission",
@@ -558,20 +558,20 @@
       },
       "play": {
         "title": "What Mr. Pak Heard",
-        "location": "MRS. KANG'S INN",
+        "location": "HARBIN STATION",
         "story": [
-          "At the inn, Mr. Pak drinks tea.",
+          "Mr. Pak takes you to the platform.",
           "He knows some Russian words."
         ],
         "letterIntro": "Mr. Pak says, and shows a card:",
-        "letter": "I was on the platform. I heard him.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea.",
-        "question": "He called out a country. Type it in English.",
-        "prompt": "He called out for ____.",
+        "letter": "I was on the platform. I heard An Jung-geun.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea.",
+        "question": "An Jung-geun called out a country. Type it in English.",
+        "prompt": "An Jung-geun called out for _____.",
         "hints": [
           "Find his two words.",
           "Koreya: what is it in English?"
         ],
-        "successMessage": "\"Koreya! Ura!\" means \"Korea, hurrah!\" He called out for Korea!",
+        "successMessage": "\"Koreya! Ura!\" means \"Korea, hurrah!\" An Jung-geun called out for Korea!",
         "transition": [
           "Paper A was wrong: his words, and money.",
           "She takes Paper B to the Evening Sheet.",
@@ -589,7 +589,7 @@
         "clue": {
           "title": "For Korea",
           "value": "KOREA, HURRAH!",
-          "note": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! Not for money: for his country.",
+          "note": "Mr. Pak heard An Jung-geun call out, \"Koreya! Ura!\": Korea, hurrah! Not for money: for his country.",
           "symbol": "whistle"
         },
         "evidence": {
@@ -665,7 +665,7 @@
         "\"My paper is right.\""
       ],
       "letterIntro": "The Evening Sheet says:",
-      "letter": "Our writer saw it all.\nHe called out nothing.\nHe wanted money.",
+      "letter": "Our writer saw it all.\nAn Jung-geun called out nothing.\nHe wanted money.",
       "question": "Answer his three questions.",
       "hints": [
         "One card each: times, words, or Itō.",
@@ -725,7 +725,7 @@
             "lines": [
               {
                 "by": "detective",
-                "text": "He called out at 9:30. Your writer came at noon. He did not see it."
+                "text": "An Jung-geun called out at 9:30. Your writer came at noon. Your writer did not see it."
               },
               {
                 "by": "speaker",
@@ -743,7 +743,7 @@
           },
           {
             "id": "what",
-            "prompt": "Mr. Sorin asks: \"Then what did he call out?\"",
+            "prompt": "Mr. Sorin asks: \"Then what did An Jung-geun call out?\"",
             "accepted": [
               "s5_ep07_e3"
             ],
@@ -814,12 +814,13 @@
         },
         {
           "by": "detective",
-          "text": "He called out, \"Koreya! Ura!\": \"Korea, hurrah!\" Not for money.",
-          "evidence": "s5_ep07_e4"
+          "text": "An Jung-geun called out, \"Koreya! Ura!\": \"Korea, hurrah!\" Not for money.",
+          "evidence": "s5_ep07_e4",
+          "background": "assets/seasons/season_05_seoul/cases/case_07/c07_harbin_platform.webp"
         },
         {
           "by": "narrator",
-          "text": "In prison, he wrote a book on peace."
+          "text": "In prison, An Jung-geun wrote a book on peace."
         },
         {
           "by": "narrator",

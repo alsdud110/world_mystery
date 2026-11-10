@@ -246,15 +246,15 @@
           "options": [
             {
               "id": "march",
-              "label": "The march starts"
+              "label": "We start the march"
             },
             {
               "id": "bell",
-              "label": "A church bell rings"
+              "label": "A bell"
             },
             {
               "id": "fire",
-              "label": "A fire burns on Maebong hill"
+              "label": "A fire on Maebong hill"
             },
             {
               "id": "full",
@@ -494,23 +494,18 @@
     "slot": "final",
     "placeId": "s5_seoul.maebong_hill",
     "puzzle": {
-      "paletteId": "combo_dial_lock",
+      "paletteId": "number_entry",
       "surface": "finalMission",
       "engineTable": null,
-      "missionType": "finalCode",
+      "missionType": "numberCode",
       "answerSpec": {
         "answer": "311",
-        "codeLength": 3,
-        "dialSymbols": [
-          "map",
-          "map",
-          "clock"
-        ]
+        "codeLength": 3
       },
       "assetNeeds": [],
       "status": "ready",
       "notes": [
-        "Gyeongsun's old box, locked by the detective with the plan's two days: the night of the sign (the last night of March, 31, from the plan: the night before) and the day of the march (the first of April, 1, from the messengers). The dials show the clues' pictures: map, map (the plan, Mission 2), clock (the day, Mission 1). Both days are history (h2, h3); the lock and the box are made up.",
+        "Gyeongsun's old box, locked by the detective with the plan's two days: the night of the sign (the last night of March, 31, from the plan: the night before) and the day of the march (the first of April, 1, from the messengers). Typed as one number, the March date then the April date (2026-11-11: a plain number entry, not dials). Both days are history (h2, h3); the lock and the box are made up.",
         "Mr. Pyo's day (the second of April) would make 012 or 312: the stranger cannot open it. The letter never says the night before: that is read in the plan."
       ]
     },
@@ -548,10 +543,10 @@
         "\"Set the lock to our two days. Not Mr. Pyo's day.\""
       ],
       "letterIntro": "The dial lock, and Gyeongsun's words:",
-      "letter": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nThe sign is the night before the march.\nThe march is on the first of April.\nRemember: March has thirty-one days.",
-      "question": "Sign night first, then the march.",
+      "letter": "The lock wants one number: two dates, side by side.\nFirst, the date of the sign, in March.\nThen, the date of the march, in April.\nLike this: the 20th of March and the 2nd of April is 202.\nThe sign is the night before the march.\nThe march is on the first of April.\nRemember: March has thirty-one days.",
+      "question": "Type the March date, then the April date.",
       "hints": [
-        "Map dials: the plan. Clock dial: the day.",
+        "First the March date, then the April date.",
         "The night before the first of April is the last night of March."
       ],
       "successMessage": "Click! It is locked. Only friends know the days.",

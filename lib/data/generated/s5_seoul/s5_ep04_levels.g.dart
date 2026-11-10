@@ -536,7 +536,7 @@ final s5Ep04JuniorTalks = <String, TalkScene>{
     ],
     finishWhen: const {'p_mark2', 'p_cut2', 'p_writer2'},
     place: 'THE PALACE SITE',
-    background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+    background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     finishLabel: 'CLOSE THE CASE',
     answer: 'rebuilt',
   ),
@@ -624,15 +624,15 @@ const s5Ep04JuniorEndings = <String, List<EndingLine>>{
   's5_ep04_final': [
     EndingLine(
       'The work began in the fourth month of 1865.',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     ),
     EndingLine(
       'In 1868 the palace was done.',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     ),
     EndingLine(
       'It cost the people money and hard work.',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
       evidenceId: 's5_ep04_e4',
     ),
     EndingLine(
@@ -640,12 +640,12 @@ const s5Ep04JuniorEndings = <String, List<EndingLine>>{
       voice: TalkVoice.speaker,
       name: 'DURI',
       portrait: 'assets/seasons/season_05_seoul/characters/duri.webp',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     ),
     EndingLine(
       'Your pine tree told me who you were.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
       evidenceId: 's5_ep04_e2',
     ),
     EndingLine(
@@ -653,7 +653,7 @@ const s5Ep04JuniorEndings = <String, List<EndingLine>>{
       voice: TalkVoice.speaker,
       name: 'DURI',
       portrait: 'assets/seasons/season_05_seoul/characters/duri.webp',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     ),
   ],
 };
@@ -1184,7 +1184,7 @@ final s5Ep04MasterTalks = <String, TalkScene>{
     ],
     finishWhen: const {'p_mark2', 'p_cut2', 'p_writer2'},
     place: 'THE PALACE SITE',
-    background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+    background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     finishLabel: 'CLOSE THE CASE',
     answer: 'rebuilt',
   ),
@@ -1272,15 +1272,15 @@ const s5Ep04MasterEndings = <String, List<EndingLine>>{
   's5_ep04_final': [
     EndingLine(
       'The rebuilding began in the fourth month of 1865.',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     ),
     EndingLine(
       'In 1868 the palace was finally finished, and the King moved in.',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     ),
     EndingLine(
       'It cost the people money and hard work. They were made to give money, and prices rose.',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
       evidenceId: 's5_ep04_e4',
     ),
     EndingLine(
@@ -1288,12 +1288,12 @@ const s5Ep04MasterEndings = <String, List<EndingLine>>{
       voice: TalkVoice.speaker,
       name: 'DURI',
       portrait: 'assets/seasons/season_05_seoul/characters/duri.webp',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     ),
     EndingLine(
       'The pine tree by your name in the yard book told me.',
       voice: TalkVoice.detective,
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
       evidenceId: 's5_ep04_e2',
     ),
     EndingLine(
@@ -1301,7 +1301,7 @@ const s5Ep04MasterEndings = <String, List<EndingLine>>{
       voice: TalkVoice.speaker,
       name: 'DURI',
       portrait: 'assets/seasons/season_05_seoul/characters/duri.webp',
-      background: 'assets/seasons/season_05_seoul/cases/case_04/palace_site.webp',
+      background: 'assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp',
     ),
   ],
 };

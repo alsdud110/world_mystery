@@ -34,23 +34,23 @@
           "options": [
             {
               "id": "alone",
-              "label": "Mr. Kim sits alone with a watch"
+              "label": "Mr. Kim sat alone with a watch"
             },
             {
               "id": "buy",
-              "label": "Mr. Yun buys a watch"
+              "label": "Mr. Yun bought a watch"
             },
             {
               "id": "swap",
-              "label": "They swap their watches"
+              "label": "They swapped their watches"
             },
             {
               "id": "eat",
-              "label": "They eat breakfast"
+              "label": "They ate breakfast"
             },
             {
               "id": "goodbye",
-              "label": "Mr. Yun says goodbye"
+              "label": "Mr. Yun said goodbye"
             }
           ],
           "codeLength": 4

@@ -849,6 +849,98 @@
       ]
     },
     {
+      "assetId": "s5_seoul.asset.c03_new_wall",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c03_new_wall",
+      "caseIds": [
+        "s5_ep03"
+      ],
+      "description": "The new wall of Hwaseong (Final): the stone set on top, the lifting machine at rest, four people in a row (foreman, carpenter, clerk, water girl), Jeong to one side.",
+      "prompt": "Hwaseong's new stone wall, 1794, a big stone just set on top, the lifting machine at rest; four people standing apart in a row, none singled out; Jeong to one side. No text.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_03/c03_new_wall.webp",
+      "references": [
+        "s5_seoul.asset.c03_stone_yard"
+      ],
+      "status": "generated",
+      "notes": [
+        "Made 2026-11-11 so the Final no longer shows an earlier mission's place (gpt-image-2.5-flare, $0.02)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c04_hall",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c04_hall",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "description": "A newly rebuilt Gyeongbokgung hall, winter 1866 (Final): the Daewongun seated on a platform, Mr. Pyo and Duri below him, a guard at the door, pine logs on the floor.",
+      "prompt": "Inside a new palace hall of Gyeongbokgung, winter 1866: the Daewongun seated, a log dealer and a boy wood worker standing below, a guard, pine logs on the floor. No text.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_04/c04_hall.webp",
+      "references": [
+        "s5_seoul.asset.c04_palace_site"
+      ],
+      "status": "generated",
+      "notes": [
+        "Made 2026-11-11 so the Final no longer shows an earlier mission's place (gpt-image-2.5-flare, $0.02)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c07_harbin_platform",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c07_harbin_platform",
+      "caseIds": [
+        "s5_ep07"
+      ],
+      "description": "Harbin Station platform, the morning of 26 October 1909 (M3, and the ending's line on what he called out): An Jung-geun raising an empty hand and calling out, Russian soldiers by him, a porter watching.",
+      "prompt": "Harbin Station platform, 26 October 1909: a Korean man in a dark overcoat raises an empty open hand, calling out; Russian soldiers, a porter, a steam train. No weapons, no violence, no text.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_07/c07_harbin_platform.webp",
+      "references": [
+        "s5_seoul.asset.kang_inn"
+      ],
+      "status": "generated",
+      "notes": [
+        "Made 2026-11-11 so An Jung-geun is seen, not only named (gpt-image-2.5-flare, $0.02). Nothing of the shooting is shown."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c06_palace_way",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c06_palace_way",
+      "caseIds": [
+        "s5_ep06"
+      ],
+      "description": "Bongsu's way out of the palace, seen from above at dusk (M2): the library hall, the old well, the little west gate in the stone wall, the lane outside, the watched front gate, the throne hall's open yard.",
+      "prompt": "A high bird's-eye picture map of the back of a small Korean palace in 1907 at dusk: library hall lower left, an old stone well under a tree, a stone wall with one small west gate, a lane outside it, a big front gate with two watchers, a throne hall with a wide open yard. No text.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_06/c06_palace_way.webp",
+      "references": [
+        "s5_seoul.asset.c06_palace_garden"
+      ],
+      "status": "generated",
+      "notes": [
+        "Made 2026-11-10 so M2 no longer shows M1's garden picture (gpt-image-2.5-flare, $0.02)."
+      ]
+    },
+    {
       "assetId": "s5_seoul.asset.c05_board",
       "type": "place",
       "use": "seasonPlace",

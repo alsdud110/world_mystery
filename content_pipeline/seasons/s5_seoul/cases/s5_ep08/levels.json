@@ -408,17 +408,17 @@
       "master": "Two say the same day. But a stranger is asking too."
     },
     {
-      "rookie": "The march starts",
+      "rookie": "We start the march",
       "junior": "The march starts",
       "master": "The march starts"
     },
     {
-      "rookie": "A church bell rings",
+      "rookie": "A bell",
       "junior": "A church bell rings",
       "master": "A church bell rings"
     },
     {
-      "rookie": "A fire burns on Maebong hill",
+      "rookie": "A fire on Maebong hill",
       "junior": "A fire burns on Maebong hill",
       "master": "A fire burns on Maebong hill"
     },
@@ -723,19 +723,19 @@
       "master": "The dial lock, and what Gyeongsun says:"
     },
     {
-      "rookie": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nThe sign is the night before the march.\nThe march is on the first of April.\nRemember: March has thirty-one days.",
-      "junior": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nRemember: March has thirty-one days.",
-      "master": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, which is in April.\nRemember carefully: March has thirty-one days."
+      "rookie": "The lock wants one number: two dates, side by side.\nFirst, the date of the sign, in March.\nThen, the date of the march, in April.\nLike this: the 20th of March and the 2nd of April is 202.\nThe sign is the night before the march.\nThe march is on the first of April.\nRemember: March has thirty-one days.",
+      "junior": "The lock wants one number: the night of the sign, then the day of the march.\nThe sign is a night in March.\nThe march is a day in April.\nRemember: March has thirty-one days.",
+      "master": "The lock wants one number: the night of the sign, then the day of the march, side by side.\nThe sign is a night in March.\nThe march is a day in April.\nRemember carefully: March has thirty-one days."
     },
     {
-      "rookie": "Sign night first, then the march.",
-      "junior": "The night of the sign first, then the march.",
-      "master": "First the night of the sign, then the day of the march."
+      "rookie": "Type the March date, then the April date.",
+      "junior": "Type the night of the sign, then the day of the march.",
+      "master": "Type the night of the sign first, then the day of the march."
     },
     {
-      "rookie": "Map dials: the plan. Clock dial: the day.",
-      "junior": "Map dials: the plan. Clock dial: the day.",
-      "master": "The map dials: the plan. The clock dial: the day."
+      "rookie": "First the March date, then the April date.",
+      "junior": "First the March date, then the April date.",
+      "master": "First the night in March, then the day in April."
     },
     {
       "rookie": "The night before the first of April is the last night of March.",

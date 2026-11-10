@@ -153,12 +153,12 @@
       "master": "His words are not the same in both!"
     },
     {
-      "rookie": "One says he called out nothing.",
+      "rookie": "One says An Jung-geun called out nothing.",
       "junior": "One paper says he called out nothing at all.",
       "master": "One paper says he called out nothing."
     },
     {
-      "rookie": "The other says he called out, \"Koreya! Ura!\"",
+      "rookie": "The other says An Jung-geun called out, \"Koreya! Ura!\"",
       "junior": "The other says he called out, \"Koreya! Ura!\"",
       "master": "The other paper says he called out, \"Koreya! Ura!\""
     },
@@ -188,7 +188,7 @@
       "master": "The Line That Is Different"
     },
     {
-      "rookie": "Paper A says he called out nothing. Paper B says he called out, \"Koreya! Ura!\"",
+      "rookie": "Paper A says An Jung-geun called out nothing. Paper B says he called out, \"Koreya! Ura!\"",
       "junior": "Paper A says he called out nothing. Paper B says he called out, \"Koreya! Ura!\"",
       "master": "Paper A says he called out nothing. But Paper B says he called out, \"Koreya! Ura!\""
     },
@@ -358,32 +358,32 @@
       "master": "Not on the Platform"
     },
     {
-      "rookie": "Mr. Pak carries bags on the platform.",
+      "rookie": "Mr. Pak started work early.",
       "junior": "Mr. Pak carries bags on the platform.",
       "master": "Mr. Pak carries bags on the platform."
     },
     {
-      "rookie": "The Evening Sheet's writer comes on the noon train.",
+      "rookie": "The writer came on the noon train.",
       "junior": "The Evening Sheet's writer comes on the noon train.",
       "master": "The Evening Sheet's writer arrives on the noon train."
     },
     {
-      "rookie": "Over tea, a traveller talks to the writer.",
+      "rookie": "A traveller told the writer a story over tea.",
       "junior": "Over tea, a traveller talks to the writer.",
       "master": "Over tea, a traveller tells the writer a story."
     },
     {
-      "rookie": "The writer writes his report.",
+      "rookie": "The writer wrote his report.",
       "junior": "The writer writes his report.",
       "master": "Then the writer writes his report at a tea room table."
     },
     {
-      "rookie": "The Evening Sheet is printed.",
+      "rookie": "The Evening Sheet was printed.",
       "junior": "The Evening Sheet is printed.",
       "master": "The Evening Sheet is printed."
     },
     {
-      "rookie": "A goods train comes in.",
+      "rookie": "A goods train came.",
       "junior": "A goods train arrives.",
       "master": "A goods train pulls in."
     },
@@ -408,9 +408,9 @@
       "master": "What Mr. Pak Heard"
     },
     {
-      "rookie": "He called out for ____.",
-      "junior": "He called out for ____.",
-      "master": "He called out for ____."
+      "rookie": "An Jung-geun called out for _____.",
+      "junior": "He called out for _____.",
+      "master": "He called out for _____."
     },
     {
       "rookie": "Paper A was wrong: his words, and money.",
@@ -513,7 +513,7 @@
       "master": "That proves nothing about where my story came from."
     },
     {
-      "rookie": "Mr. Sorin asks: \"Then what did he call out?\"",
+      "rookie": "Mr. Sorin asks: \"Then what did An Jung-geun call out?\"",
       "junior": "Mr. Sorin asks: \"Then what did he call out?\"",
       "master": "Mr. Sorin asks: \"Then what did he call out?\""
     },
@@ -538,12 +538,12 @@
       "master": "Tomorrow my paper will print Mr. Pak's story."
     },
     {
-      "rookie": "He called out, \"Koreya! Ura!\": \"Korea, hurrah!\" Not for money.",
+      "rookie": "An Jung-geun called out, \"Koreya! Ura!\": \"Korea, hurrah!\" Not for money.",
       "junior": "He called out, \"Koreya! Ura!\": \"Korea, hurrah!\" It was not for money.",
       "master": "He called out, \"Koreya! Ura!\": \"Korea, hurrah!\" It was never about money."
     },
     {
-      "rookie": "In prison, he wrote a book on peace.",
+      "rookie": "In prison, An Jung-geun wrote a book on peace.",
       "junior": "In prison, he wrote a book about peace.",
       "master": "In prison, An Jung-geun began a book called 'On Peace in East Asia'."
     },
@@ -583,7 +583,7 @@
       "master": "MR. PAK STARTS WORK"
     },
     {
-      "rookie": "An Jung-geun calls out on the platform.",
+      "rookie": "An Jung-geun called out.",
       "junior": "An Jung-geun calls out on the platform.",
       "master": "On the platform, An Jung-geun calls out."
     },
@@ -618,17 +618,17 @@
       "master": "Fill the empty spots. The cards with times stay. The words before and after show the order."
     },
     {
-      "rookie": "He called out at 9:30. The writer came at 12:00.",
+      "rookie": "An Jung-geun called out at 9:30. The writer came at 12:00.",
       "junior": "He called out at 9:30. The writer came at 12:00.",
       "master": "He called out at 9:30. The writer arrived at 12:00."
     },
     {
-      "rookie": "He called out at 9:30. The writer came at noon. He did not see it!",
+      "rookie": "An Jung-geun called out at 9:30. The writer came at noon. The writer did not see it!",
       "junior": "He called out at 9:30, but the writer came at noon. He did not see it!",
       "master": "He called out at 9:30. The writer only came at noon. He did not see it!"
     },
     {
-      "rookie": "When did he call out? When did the writer come?",
+      "rookie": "When did An Jung-geun call out? When did the writer come?",
       "junior": "When did he call out? When did the writer come?",
       "master": "Look at the times. When did he call out? When did the writer come?"
     },
@@ -663,9 +663,9 @@
       "master": "Ura = Hurrah"
     },
     {
-      "rookie": "At the inn, Mr. Pak drinks tea.",
-      "junior": "At the inn, Mr. Pak drinks hot tea.",
-      "master": "Back at the inn, Mr. Pak drinks hot tea."
+      "rookie": "Mr. Pak takes you to the platform.",
+      "junior": "Mr. Pak takes you to the station platform.",
+      "master": "Mr. Pak walks you back to the station platform."
     },
     {
       "rookie": "He knows some Russian words.",
@@ -678,12 +678,12 @@
       "master": "Mr. Pak says this, and shows you a card from the station:"
     },
     {
-      "rookie": "I was on the platform. I heard him.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea.",
+      "rookie": "I was on the platform. I heard An Jung-geun.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea.",
       "junior": "I was on the platform. I heard him.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea.",
       "master": "I was on the platform. I heard him clearly.\nHe called out, \"Koreya! Ura!\"\nHe did not ask anyone for money, not once.\nMY WORD CARD: Rossiya = Russia. Ura = Hurrah. Dengi = Money. Koreya = Korea."
     },
     {
-      "rookie": "He called out a country. Type it in English.",
+      "rookie": "An Jung-geun called out a country. Type it in English.",
       "junior": "He called out a country. Type it in English.",
       "master": "He called out a country. Type its name in English."
     },
@@ -698,7 +698,7 @@
       "master": "Koreya: what does it mean in English?"
     },
     {
-      "rookie": "\"Koreya! Ura!\" means \"Korea, hurrah!\" He called out for Korea!",
+      "rookie": "\"Koreya! Ura!\" means \"Korea, hurrah!\" An Jung-geun called out for Korea!",
       "junior": "\"Koreya! Ura!\" means \"Korea, hurrah!\" He called out for Korea!",
       "master": "\"Koreya! Ura!\" means \"Korea, hurrah!\" He was calling out for Korea!"
     },
@@ -728,7 +728,7 @@
       "master": "Harbin is only the place, not his country."
     },
     {
-      "rookie": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! Not for money: for his country.",
+      "rookie": "Mr. Pak heard An Jung-geun call out, \"Koreya! Ura!\": Korea, hurrah! Not for money: for his country.",
       "junior": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! Not for money: for his country.",
       "master": "Mr. Pak heard him call out, \"Koreya! Ura!\": Korea, hurrah! It was not for money: it was for his country."
     },
@@ -743,7 +743,7 @@
       "master": "The Evening Sheet asserts:"
     },
     {
-      "rookie": "Our writer saw it all.\nHe called out nothing.\nHe wanted money.",
+      "rookie": "Our writer saw it all.\nAn Jung-geun called out nothing.\nHe wanted money.",
       "junior": "Our writer knows what happened.\nHe called out nothing.\nHe wanted money.",
       "master": "Our writer knows what happened.\nHe called out nothing.\nHe wanted money."
     },
@@ -768,7 +768,7 @@
       "master": "Which card shows the times of that day?"
     },
     {
-      "rookie": "He called out at 9:30. Your writer came at noon. He did not see it.",
+      "rookie": "An Jung-geun called out at 9:30. Your writer came at noon. Your writer did not see it.",
       "junior": "He called out at 9:30. Your writer came at noon. He did not see it.",
       "master": "He called out at 9:30. Your writer only came at noon. He did not see it."
     },
@@ -821,6 +821,11 @@
       "rookie": "What had Itō done",
       "junior": "What had Itō done",
       "master": "What had Itō done"
+    },
+    {
+      "rookie": "HARBIN STATION",
+      "junior": "HARBIN STATION",
+      "master": "HARBIN STATION"
     }
   ],
   "glossary": {

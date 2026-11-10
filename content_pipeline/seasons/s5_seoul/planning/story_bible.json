@@ -680,6 +680,7 @@
         "s5_seoul.c04_timber_yard",
         "s5_seoul.c04_yard_office",
         "s5_seoul.c04_palace_site",
+        "s5_seoul.c04_hall",
         "s5_seoul.lamp_house",
         "s5_seoul.queen_court",
         "s5_seoul.king_hall",
@@ -697,6 +698,7 @@
       ],
       "placeIds": [
         "s5_seoul.c06_palace_garden",
+        "s5_seoul.c06_palace_way",
         "s5_seoul.c06_west_lane",
         "s5_seoul.yi_jun_house"
       ]
@@ -727,6 +729,7 @@
       ],
       "placeIds": [
         "s5_seoul.c03_stone_yard",
+        "s5_seoul.c03_new_wall",
         "s5_seoul.c03_drawing_room"
       ]
     },
@@ -770,6 +773,7 @@
       ],
       "placeIds": [
         "s5_seoul.kang_inn",
+        "s5_seoul.c07_harbin_platform",
         "s5_seoul.harbin_tea_room"
       ]
     },
