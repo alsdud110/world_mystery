@@ -849,6 +849,50 @@
       ]
     },
     {
+      "assetId": "s5_seoul.asset.c05_board",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c05_board",
+      "caseIds": [
+        "s5_ep05"
+      ],
+      "description": "The strangers' board seen from above (Final): a gate, two lines, a door ringed by a circle with three big and seven small dots, a far door with five big and two small dots.",
+      "prompt": "Seen straight from above: a plain pale wooden board on a lacquered low table in a palace hall at night, 1895; the board blank (the marks are drawn on it afterwards, exactly).",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_05/strangers_board.webp",
+      "references": [],
+      "status": "generated",
+      "notes": [
+        "Made 2026-11-10 so the Final shows the board, not only tells it: blank board by gpt-image-2.5-flare ($0.02), the marks drawn on it by hand (ImageMagick) so every count is exact."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c04_yard_office",
+      "type": "place",
+      "use": "seasonPlace",
+      "subject": "s5_seoul.c04_yard_office",
+      "caseIds": [
+        "s5_ep04"
+      ],
+      "description": "The timber yard's office in winter 1866 (M2: the clerk and the yard book).",
+      "prompt": "Inside the small wooden office of a royal timber yard in Seoul, 1866: a Joseon clerk at a low desk with the open yard book, a brush and an ink stone; a timber dealer standing beside him; a shelf of rolled papers; through the open door, snow, stacked pine logs and the palace scaffolding. No readable writing anywhere.",
+      "stylePreset": "joseon_scene",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_04/yard_office.webp",
+      "references": [
+        "s5_seoul.asset.c04_timber_yard"
+      ],
+      "status": "generated",
+      "notes": [
+        "Made 2026-11-10 so M2 no longer shows M1's timber yard picture (gpt-image-2.5-flare, $0.02)."
+      ]
+    },
+    {
       "assetId": "s5_seoul.asset.c04_timber_yard",
       "type": "place",
       "use": "seasonPlace",

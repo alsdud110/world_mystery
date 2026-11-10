@@ -450,6 +450,15 @@
       "locId": "royal_palace"
     },
     {
+      "placeId": "s5_seoul.c04_yard_office",
+      "file": "assets/seasons/season_05_seoul/cases/case_04/yard_office.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "royal_palace"
+    },
+    {
       "placeId": "s5_seoul.c04_palace_site",
       "file": "assets/seasons/season_05_seoul/cases/case_04/palace_site.webp",
       "pixels": {
@@ -479,6 +488,15 @@
     {
       "placeId": "s5_seoul.king_hall",
       "file": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp",
+      "pixels": {
+        "width": 1536,
+        "height": 1024
+      },
+      "locId": "royal_palace"
+    },
+    {
+      "placeId": "s5_seoul.c05_board",
+      "file": "assets/seasons/season_05_seoul/cases/case_05/strangers_board.webp",
       "pixels": {
         "width": 1536,
         "height": 1024

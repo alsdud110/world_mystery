@@ -133,7 +133,7 @@
       "master": "Bun-i's picture note:"
     },
     {
-      "rookie": "Bun-i drew Mom three times. Tap each picture.\nMom sews at night, by a lamp. She makes my clothes.\nMom gives me her rice. She says, \"I am not hungry.\"\nI was sick. Mom carried me to the doctor in the rain.\nThen Bun-i drew herself three times, at the bottom.\nBun-i: \"I am not leaving Mom. I go home to her tomorrow.\"\nBun-i: \"And I broke nothing. Mom just gives me so much.\"\nBun-i: \"I never said one word back.\"",
+      "rookie": "Bun-i drew Mom three times. Tap each picture.\nMom sews at night, by a lamp. She makes my clothes.\nMom gives me her rice. She says, \"I am not hungry.\"\nI was sick. Mom carried me to the doctor in the rain.\nBun-i drew herself three times too. Look at the bottom.\nBun-i: \"I am not leaving Mom. I go home tomorrow.\"\nBun-i: \"I broke nothing. Mom just gives me so much.\"\nBun-i: \"I never said a bad word to her.\"",
       "junior": "Bun-i drew Mom three times. Tap each picture.\nMom sews at night, by a lamp. She makes my clothes.\nMom gives me her rice. She says, \"I am not hungry.\"\nI was sick. Mom carried me to the doctor in the rain.\nThen Bun-i drew herself three times, at the bottom.\nBun-i: \"I am not leaving Mom. I go home to her tomorrow.\"\nBun-i: \"And I broke nothing. Mom just gives me so much.\"\nBun-i: \"I never said one word back.\"",
       "master": "Bun-i drew her mother three times. Tap each picture.\nMom sews at night, by a lamp. She makes all my clothes.\nMom gives me her own rice. She says, \"I am not hungry.\"\nWhen I was sick, Mom carried me to the doctor in the rain.\nThen Bun-i drew herself three times, along the bottom.\nBun-i: \"I am not leaving Mom. I go home to her tomorrow.\"\nBun-i: \"And I broke nothing. Mom just gives me so much.\"\nBun-i: \"I never said one word back to her.\""
     },
@@ -528,7 +528,7 @@
       "master": "Bun-i sits at the low desk."
     },
     {
-      "rookie": "A vowel is a line and a dot.\nA standing line with the dot on the RIGHT is ㅏ. It says \"a\".\nWith the dot on the LEFT, it is ㅓ. It says \"eo\".\nEach block has a FIRST SOUND, then a VOWEL beside it.\nA LAST SOUND sits under them, at the bottom.\nDoes a block start with a vowel sound? Then ㅇ goes first. It holds the place.",
+      "rookie": "A vowel is a line and a dot.\nLook at ㅏ. The dot is on the RIGHT. It says \"a\".\nLook at ㅓ. The dot is on the LEFT. It says \"eo\".\nA block has a FIRST SOUND. A VOWEL goes next to it.\nA LAST SOUND sits under them, at the bottom.\nDoes a block start with a vowel sound? Then ㅇ goes first.",
       "junior": "A vowel is a line and a dot.\nA standing line with the dot on the RIGHT is ㅏ. It says \"a\".\nWith the dot on the LEFT, it is ㅓ. It says \"eo\".\nEach block has a FIRST SOUND, then a VOWEL beside it.\nA LAST SOUND sits under them, at the bottom.\nDoes a block start with a vowel sound? Then ㅇ goes first. It holds the place.",
       "master": "A vowel is made of a line and a dot.\nA standing line with the dot on the RIGHT is ㅏ. It says \"a\".\nWith the dot on the LEFT, it is ㅓ. It says \"eo\".\nEach block has a FIRST SOUND, then a VOWEL beside it.\nA LAST SOUND, if there is one, sits at the bottom.\nDoes a block start with a vowel sound? Then ㅇ goes first. It holds the place."
     },
@@ -608,7 +608,7 @@
       "master": "I want to write MOM. In our words, we say eom-ma."
     },
     {
-      "rookie": "Build it block by block.",
+      "rookie": "Make one block. Then make the next.",
       "junior": "Let's build it block by block.",
       "master": "Then let's build it, block by block."
     },
@@ -698,7 +698,7 @@
       "master": "On the King's desk:"
     },
     {
-      "rookie": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one is her first word.\nSORA'S WORDS, for letters Bun-i has not learned yet: 고마워요 · 미안해요 · 잘 가요\nSora: \"Thank you has the block 마.\"\nSora: \"I'm sorry starts with the block 미.\"\nSora: \"Goodbye ends with 가요.\"",
+      "rookie": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one is her first word.\nSORA'S WORDS (Bun-i cannot read them yet): 고마워요 · 미안해요 · 잘 가요\nSora: \"Thank you has the block 마.\"\nSora: \"I'm sorry starts with the block 미.\"\nSora: \"Goodbye ends with 가요.\"",
       "junior": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one is her first word.\nSORA'S WORDS, for letters Bun-i has not learned yet: 고마워요 · 미안해요 · 잘 가요\nSora: \"Thank you has the block 마.\"\nSora: \"I'm sorry starts with the block 미.\"\nSora: \"Goodbye ends with 가요.\"",
       "master": "BUN-I'S PRACTICE PAPERS: 어마 · 엄마 · 엄머\nOnly one of them is her first word.\nSORA'S WORDS, for letters Bun-i has not learned yet: 고마워요 · 미안해요 · 잘 가요\nSora: \"The word thank you has the block 마.\"\nSora: \"I'm sorry starts with the block 미.\"\nSora: \"Goodbye ends with the blocks 가요.\""
     },

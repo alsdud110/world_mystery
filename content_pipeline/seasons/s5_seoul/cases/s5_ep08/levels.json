@@ -468,7 +468,7 @@
       "master": "Gwan-sun's plan, hastily written:"
     },
     {
-      "rookie": "When the market is full, we start the march.\nIn the morning, people walk to the market, like shoppers.\nThey come because they saw our sign the night before.\nOur sign is a fire on Maebong hill.\nNo bell. A bell is too loud.",
+      "rookie": "Our sign is a fire on Maebong hill.\nNo bell. A bell is too loud.\nPeople see our sign the night before.\nIn the morning, people walk to the market. They look like shoppers.\nWhen the market is full, we start the march.",
       "junior": "When the market is full, we start the march.\nIn the morning, people walk to the market, like shoppers.\nThey come because they saw our sign the night before.\nOur sign will be a fire on Maebong hill.\nNo bell. A bell is too loud.",
       "master": "When the market is full, we start the march.\nIn the morning, people walk to the market, like ordinary shoppers.\nThey come because they saw our sign the night before.\nOur sign will be a fire on Maebong hill.\nNo bell. A bell would be far too loud."
     },
@@ -593,7 +593,7 @@
       "master": "Laid out on the table:"
     },
     {
-      "rookie": "Sunja's notebook: a pressed flower on the cover. She writes only in Hangeul. A little flower sits by her name.\nOkhui's notebook: a blue ribbon. She writes in Chinese characters. Little stars sit by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul. A small flame sits by her name.\nYour note: written only in Hangeul. No name, only a small flame.",
+      "rookie": "Sunja's notebook: a flower on the cover. She writes only in Hangeul. A little flower is by her name.\nOkhui's notebook: a blue ribbon. She writes in Chinese characters. Little stars are by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul. A small flame sits by her name.\nYour note: written only in Hangeul. No name, only a small flame.",
       "junior": "Sunja's notebook: a pressed flower on the cover. She writes only in Hangeul. A little flower sits by her name.\nOkhui's notebook: a blue ribbon. She writes in Chinese characters. Little stars sit by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul. A small flame sits by her name.\nYour note: written only in Hangeul. No name, only a small flame.",
       "master": "Sunja's notebook: a pressed flower on the cover. She writes only in Hangeul. A little flower sits by her name.\nOkhui's notebook: tied with a blue ribbon. She writes in Chinese characters. Little stars sit by her name.\nGyeongsun's notebook: plain and brown. She writes only in Hangeul. A small flame sits by her name.\nYour note: written only in Hangeul. There is no name, only a small flame."
     },
@@ -723,7 +723,7 @@
       "master": "The dial lock, and what Gyeongsun says:"
     },
     {
-      "rookie": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nRemember: March has thirty-one days.",
+      "rookie": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nThe sign is the night before the march.\nThe march is on the first of April.\nRemember: March has thirty-one days.",
       "junior": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, in April.\nRemember: March has thirty-one days.",
       "master": "Two map dials: the night of the sign. It is a night in March.\nOne clock dial: the day of the march, which is in April.\nRemember carefully: March has thirty-one days."
     },

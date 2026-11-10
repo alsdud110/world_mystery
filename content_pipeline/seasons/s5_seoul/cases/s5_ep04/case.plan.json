@@ -41,9 +41,9 @@
         ],
         "status": "awaitingAssets",
         "notes": [
-          "Played under the glass (InspectScene): the log whose mark has one pale, new cut is the one the note describes; its torn yard tag leads to the typed word. Take the new line away (the carvers' rule on the yard board, told by Duri: a stronger sound adds one line, ㄴ then ㄷ) and 다 was 나: good logs, for the palace gates.",
+          "Played under the glass (InspectScene): the log whose mark has one pale, new cut is the one the note describes; its torn yard tag leads to the typed word. Take the new line away (the carvers' rule on the yard board, told by Duri: one line for each grade, ㄴ then ㄷ) and III was II: good logs, for the palace gates.",
           "The marks are words of the app (each spot's line): the logs in the picture have plain carved patches, no letters.",
-          "Measured 2026-11-06 on the grid sheet of timber_yard.webp (picture.measuredOn): the thick log end on the left, the thin bent log in the centre, the tall straight log on the right with its blank tag hanging just right of it; the game writes each mark on its log's carved patch; no two areas overlap."
+          "Measured 2026-11-06 on the grid sheet of timber_yard.webp (picture.measuredOn): the thick log end on the left, the thin bent log in the centre, the tall straight log on the right with its blank tag hanging just right of it; the grade lines (I, III, III with one pale new line) were cut large across the log ends on 2026-11-10, nothing moved; no two areas overlap."
         ]
       },
       "clueInputs": [],
@@ -54,7 +54,7 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "목재장 게시판과 두리가 알려 주는 새김 규칙(a stronger sound adds one line)을 읽고, 새로 한 획이 더해진 표시를 찾아 원래 표시가 뜻하던 곳(palace gates)을 쓴다.",
+        "objective": "목재장 게시판과 두리가 알려 주는 새김 규칙(one line for each grade)을 읽고, 새로 한 획이 더해진 표시를 찾아 원래 표시가 뜻하던 곳(palace gates)을 쓴다.",
         "skill": "vocabulary",
         "expressions": [
           "for the palace gates",
@@ -70,14 +70,14 @@
           "Duri, a young wood worker, shows you the board."
         ],
         "letterIntro": "The board, and the note:",
-        "letter": "Yard board: each log has a mark carved on its end.\n가: the best logs, for the great halls.\n나: good logs, for the palace gates.\n다: not for the palace. They may be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: a stronger sound adds one line: ㄴ, then ㄷ.",
-        "question": "Find the new line. Where was it going?",
+        "letter": "Yard board: each log end has a grade mark.\nI: the best logs, for the big halls.\nII: good logs, for the palace gates.\nIII: not for the palace. They can be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: one line for each grade. One more line turns II into III.",
+        "question": "Take away the new line: III was II. Where do II logs go?",
         "prompt": "FOR THE PALACE ____",
         "hints": [
           "Find one pale, new cut.",
-          "Take the new line from 다. What is left?"
+          "Take the new line from III. What is left?"
         ],
-        "successMessage": "It was a 나 log, for the gates!",
+        "successMessage": "It was a II log, for the gates!",
         "transition": [
           "Someone cut a new line on a log.",
           "Now it looks like a log to sell.",
@@ -88,8 +88,8 @@
         "mapY": 0.62,
         "clue": {
           "title": "The New Line",
-          "value": "나 → 다",
-          "note": "One new cut made 나 into 다."
+          "value": "II → III",
+          "note": "One new cut made II into III."
         },
         "evidence": {
           "name": "The Note on the Post",
@@ -103,11 +103,11 @@
               "width": 1536,
               "height": 1024
             },
-            "measuredOn": "sha256:d771417d6d8c7b6ae8ef0d3d3864627cba7e5bde14f5756eb54255b0fcc55f78"
+            "measuredOn": "sha256:4f4ec0dc80dc525abfbab1b4e4f8189ae8eaf3407817eb7f4c69bf89632b0b73"
           },
           "place": "The palace timber yard",
           "task": "Which log end has a new line?",
-          "nextTask": "Read its tag. One word is torn.",
+          "nextTask": "Now tap Label below and read the tag.",
           "dragGuide": "Move the glass over the logs.",
           "tapGuide": "Or tap a log.",
           "missLine": "Nothing here. Look at the log ends.",
@@ -116,7 +116,7 @@
               "id": "log_a",
               "kind": "exhibit",
               "title": "A THICK LOG",
-              "label": "A thick log, marked 가",
+              "label": "A thick log, marked I",
               "areas": [
                 [
                   120,
@@ -125,7 +125,7 @@
                   940
                 ]
               ],
-              "line": "Mark: 가. The cuts are old.",
+              "line": "Mark: I. The cuts are old.",
               "checks": [
                 1
               ]
@@ -134,7 +134,7 @@
               "id": "log_b",
               "kind": "exhibit",
               "title": "A BENT LOG",
-              "label": "A thin, bent log, marked 다",
+              "label": "A thin, bent log, marked III",
               "areas": [
                 [
                   710,
@@ -143,7 +143,7 @@
                   945
                 ]
               ],
-              "line": "Mark: 다. All cuts are old.",
+              "line": "Mark: III. All cuts are old.",
               "checks": [
                 3
               ]
@@ -152,7 +152,7 @@
               "id": "log_c",
               "kind": "match",
               "title": "A STRAIGHT LOG",
-              "label": "A tall log, marked 다. One cut is new.",
+              "label": "A tall log, marked III. One cut is new.",
               "areas": [
                 [
                   1110,
@@ -161,7 +161,7 @@
                   950
                 ]
               ],
-              "line": "Mark: 다. One cut is new!",
+              "line": "Mark: III. One cut is new!",
               "checks": [
                 4,
                 5
@@ -190,7 +190,7 @@
           ],
           "labelTitle": "THE YARD TAG",
           "labelRoom": "TIMBER YARD",
-          "labelWorn": "One word is torn away.",
+          "labelWorn": "The torn word said where this log goes.",
           "taskLine": 2,
           "lensAt": [
             650,
@@ -215,11 +215,11 @@
               },
               {
                 "by": "speaker",
-                "text": "We carve the marks in the King's letters. A stronger sound gets one more line."
+                "text": "We cut one line for each grade. More lines, a lower grade."
               },
               {
                 "by": "speaker",
-                "text": "Last night: twelve 나 logs. Now: two."
+                "text": "Last night: twelve II logs. Now: two."
               },
               {
                 "by": "detective",
@@ -234,14 +234,14 @@
           "detail": "Someone saw the new line before dawn. The note has no name, only a pine tree."
         },
         "feedback": {
-          "HALLS": "가 is for halls. Take the line from 다. What is left?"
+          "HALLS": "I is for halls. Take the line from III. What is left?"
         }
       }
     },
     {
       "missionId": "s5_ep04_m2",
       "slot": "m2",
-      "placeId": "s5_seoul.c04_timber_yard",
+      "placeId": "s5_seoul.c04_yard_office",
       "puzzle": {
         "paletteId": "number_entry",
         "surface": "mission",
@@ -254,14 +254,14 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "The yard book, last night and this morning: 다 logs went from six to sixteen while 나 logs went from twelve to two. Ten palace logs were changed (both counts agree)."
+          "The yard book, last night and this morning: III logs went from six to sixteen while II logs went from twelve to two. Ten palace logs were changed (both counts agree)."
         ]
       },
       "clueInputs": [
         {
           "ref": "s5_ep04_c1",
           "use": "textMention",
-          "note": "One new cut turns 나 into 다."
+          "note": "One new cut turns II into III."
         }
       ],
       "clueOutputs": {
@@ -284,26 +284,26 @@
         "story": [
           "The clerk opens his book.",
           "Mr. Pyo, a log seller, bought logs.",
-          "\"Only 다 logs,\" the clerk says. \"Logs to sell.\""
+          "\"Only III logs,\" the clerk says. \"Logs to sell.\""
         ],
         "letterIntro": "The book, and Mr. Pyo's paper:",
-        "letter": "Yard book, last night. Counted by Duri, a small pine tree by his name:\n나 logs: twelve. 다 logs: six.\nYard book, this morning. Counted by the clerk:\n다 logs: sixteen. 나 logs: two.\nMr. Pyo's paper: \"I bought every 다 log in the yard.\"",
-        "question": "How many palace logs got a new line?",
+        "letter": "Each log has a mark: I, II or III. A II log is a log marked II.\nYard book, last night. Duri counted. A small pine tree is by his name.\nII logs: twelve. III logs: six.\nYard book, this morning. The clerk counted.\nIII logs: sixteen. II logs: two.\nMr. Pyo's paper: \"I bought every log marked III.\"",
+        "question": "How many II logs became III logs?",
         "hints": [
-          "Look at the 다 logs then and now.",
-          "Six were 다 before. How many more?"
+          "Look at the III logs then and now.",
+          "Six were III before. How many more?"
         ],
         "successMessage": "Ten palace logs became logs to sell!",
         "transition": [
           "Ten palace logs got a new line.",
-          "Mr. Pyo bought every 다 log.",
+          "Mr. Pyo bought every III log.",
           "\"But where are they?\" asks Duri."
         ],
         "feedback": {
-          "12": "That is all 나 logs. Two are still 나.",
-          "16": "That is all 다 logs. Six were 다.",
-          "02": "Two are still 나. How many changed?",
-          "06": "Six were 다 before. How many more now?"
+          "12": "That is all II logs. Two are still II.",
+          "16": "That is all III logs. Six were III.",
+          "02": "Two are still II. How many changed?",
+          "06": "Six were III before. How many more now?"
         },
         "orderFeedback": "Right numbers, wrong order.",
         "mapX": 0.3,
@@ -311,12 +311,12 @@
         "clue": {
           "title": "Ten Logs",
           "value": "10 PALACE LOGS CHANGED",
-          "note": "Ten 나 logs became 다."
+          "note": "Ten II logs became III."
         },
         "evidence": {
           "name": "The Yard Book",
           "icon": "letter",
-          "description": "Last night Duri counted twelve 나 logs and six 다 logs, and signed with a pine tree. This morning: two 나 logs, sixteen 다 logs. Mr. Pyo bought every 다 log."
+          "description": "Last night Duri counted twelve II logs and six III logs, and signed with a pine tree. This morning: two II logs, sixteen III logs. Mr. Pyo bought every III log."
         }
       }
     },
@@ -335,7 +335,7 @@
             {
               "id": "hall",
               "label": "The great hall",
-              "feedback": "Hall logs are 가, with old cuts."
+              "feedback": "Hall logs are I, with old cuts."
             },
             {
               "id": "cart",
@@ -353,7 +353,7 @@
         ],
         "status": "awaitingAssets",
         "notes": [
-          "Traces read (DeductionScene): the log carried to the hall is 가 with old cuts; deep wheel tracks and pale wood dust (like the new cut) lead to the ox cart. Duri's yard rule says logs to sell leave on a dealer's cart, and the ten changed logs now look like logs to sell.",
+          "Traces read (DeductionScene): the log carried to the hall is I with old cuts; deep wheel tracks and pale wood dust (like the new cut) lead to the ox cart. Duri's yard rule says logs to sell leave on a dealer's cart, and the ten changed logs now look like logs to sell.",
           "Measured 2026-11-09 on the grid sheet of palace_site.webp (picture.measuredOn): the great hall under scaffolding (upper left), the half-built gate (right), the ox cart loaded with logs (right of centre, below the gate), two men carrying a log (centre), officials (lower left), stone workers (lower right); the tracks and the dust are on open paving where the game draws them; no two areas overlap.",
           "Replaces the timeline of the palace's story (PART 2): its history is told by Duri before the search."
         ]
@@ -387,15 +387,15 @@
           "Workers carry logs."
         ],
         "letterIntro": "Duri's rule, and what he saw:",
-        "letter": "Logs for the halls are carried up the steps.\nLogs for the gates wait by the gate.\nLogs to sell leave by the east gate, on a dealer's cart.\nOn the way, Duri saw:\nTwo men carry a log to the hall. Its mark is 가. All its cuts are old.\nDeep wheel tracks. A heavy cart came here from the timber yard.\nPale wood dust on the stones, like the new cut on the log.",
+        "letter": "Hall logs go up the steps.\nGate logs wait by the gate.\nLogs to sell leave by the east gate, on a cart.\nOn the way, Duri saw:\nTwo men carry a log to the hall. Its mark is I. All its cuts are old.\nDeep wheel tracks. A heavy cart came from the timber yard.\nPale wood dust on the stones. It looks like the new cut.",
         "question": "The ten logs look like logs to sell. Where are they?",
         "hints": [
-          "Where do 다 logs go?",
+          "Where do III logs go?",
           "Follow the wheel tracks and wood dust."
         ],
         "successMessage": "Ten logs, under a mat on Mr. Pyo's cart!",
         "transition": [
-          "Each 다 has one new cut.",
+          "Each III has one new cut.",
           "In the straw: a chisel with fresh wood dust.",
           "\"Coins buy less,\" Duri says. \"Logs do not.\""
         ],
@@ -474,7 +474,7 @@
                 685,
                 710
               ],
-              "line": "Two men carry a log to the hall. Its mark is 가. All its cuts are old."
+              "line": "Two men carry a log to the hall. Its mark is I. All its cuts are old."
             },
             {
               "id": "tracks",
@@ -491,7 +491,7 @@
                 1000,
                 840
               ],
-              "line": "Deep wheel tracks. A heavy cart came here from the timber yard."
+              "line": "Deep wheel tracks. A heavy cart came from the timber yard."
             },
             {
               "id": "dust",
@@ -508,7 +508,7 @@
                 725,
                 832
               ],
-              "line": "Pale wood dust on the stones, like the new cut on the log."
+              "line": "Pale wood dust on the stones. It looks like the new cut."
             }
           ],
           "places": [
@@ -627,7 +627,7 @@
       {
         "ref": "s5_ep04_c1",
         "use": "answerDerivation",
-        "note": "One new cut turns 나 into 다."
+        "note": "One new cut turns II into III."
       },
       {
         "ref": "s5_ep04_c2",
@@ -658,11 +658,11 @@
       "location": "THE PALACE SITE",
       "story": [
         "The Daewongun comes to the hall.",
-        "Mr. Pyo says, \"I only bought 다 logs!\"",
+        "Mr. Pyo says, \"I only bought III logs!\"",
         "\"Tell me why,\" says the Daewongun."
       ],
       "letterIntro": "Your notebook says:",
-      "letter": "One new cut turns 나 into 다.\nTen palace logs were changed last night.\nThe logs are on Mr. Pyo's cart, with a chisel.\nThe note has no name, only a pine tree.",
+      "letter": "One new cut turns II into III.\nTen palace logs were changed last night.\nThe logs are on Mr. Pyo's cart, with a chisel.\nThe note has no name, only a pine tree.",
       "question": "Who cut the lines? Who wrote the note?",
       "hints": [
         "Use one card for each question.",
@@ -689,7 +689,7 @@
         "opening": [
           {
             "by": "speaker",
-            "text": "These logs are 다. Not for my palace."
+            "text": "These logs are III. Not for my palace."
           },
           {
             "by": "detective",
@@ -736,7 +736,7 @@
             "lines": [
               {
                 "by": "detective",
-                "text": "One new cut. 나 became 다."
+                "text": "One new cut. II became III."
               },
               {
                 "by": "speaker",
@@ -870,7 +870,7 @@
       "Now pine logs fill the yard.",
       "But today, palace logs are missing."
     ],
-    "caseSummary": "At night, Mr. Pyo changed ten palace logs. One new line made 나 into 다: logs to sell. He bought them. Duri wrote the note. He drew a pine tree. Gyeongbokgung burned in 1592. The Heungseon Daewongun rebuilt it, 1865 to 1868. People paid money and did hard work.",
+    "caseSummary": "At night, Mr. Pyo changed ten palace logs. One new line made II into III: logs to sell. He bought them. Duri wrote the note. He drew a pine tree. Gyeongbokgung burned in 1592. The Heungseon Daewongun rebuilt it, 1865 to 1868. People paid money and did hard work.",
     "place": "GYEONGBOKGUNG, HANYANG",
     "keyWords": [
       "mark",
@@ -885,12 +885,225 @@
       "apprentice": "견습공",
       "dealer": "상인",
       "ruins": "폐허",
+      "pine": "소나무",
+      "grade": "등급",
       "rebuilding": "다시 짓기(중건)",
       "coin": "동전",
       "prices": "물가",
       "daewongun": "대원군",
       "chisel": "끌",
-      "cart": "수레"
+      "cart": "수레",
+      "again": "다시",
+      "ago": "전에",
+      "all": "모든",
+      "answer": "대답하다",
+      "asks": "묻는다",
+      "away": "없애다",
+      "back": "돌아가다",
+      "became": "되었다 (become의 과거)",
+      "before": "~ 전에",
+      "began": "시작되었다 (begin의 과거)",
+      "below": "아래에",
+      "bent": "구부러진",
+      "best": "가장 좋은",
+      "big": "큰",
+      "board": "판",
+      "book": "장부",
+      "bought": "샀다 (buy의 과거)",
+      "boy": "소년",
+      "build": "짓다",
+      "building": "짓고 있다",
+      "built": "지어진",
+      "burned": "불탔다",
+      "buy": "사다",
+      "came": "왔다 (come의 과거)",
+      "card": "카드",
+      "carry": "나르다",
+      "carvers": "조각하는 사람들",
+      "case": "사건",
+      "changed": "바뀐",
+      "clerk": "기록 담당자",
+      "close": "끝내다",
+      "come": "오다",
+      "comes": "온다",
+      "cost": "들게 했다",
+      "costs": "들게 하다",
+      "count": "세다",
+      "counted": "셌다",
+      "cut": "자국",
+      "cuts": "자국들",
+      "dawn": "새벽",
+      "deep": "깊은",
+      "detective": "탐정",
+      "draw": "그리다",
+      "drew": "그렸다 (draw의 과거)",
+      "dust": "가루",
+      "each": "각각의",
+      "east": "동쪽",
+      "end": "끝",
+      "ends": "끝부분들",
+      "every": "모든",
+      "farm": "농장",
+      "farmers": "농부들",
+      "father": "아버지",
+      "fill": "가득 채우다",
+      "find": "찾다",
+      "finished": "다 지어진",
+      "follow": "따라가다",
+      "fourth": "네 번째",
+      "fresh": "갓 생긴",
+      "gate": "문",
+      "gates": "문들",
+      "glass": "돋보기",
+      "go": "가다",
+      "goes": "가다",
+      "gone": "없어진 (go의 과거분사)",
+      "good": "좋은",
+      "got": "얻었다 (get의 과거)",
+      "great": "큰",
+      "ground": "땅",
+      "half": "반",
+      "hall": "전각",
+      "halls": "전각들",
+      "hangs": "걸려 있다",
+      "hard": "힘든",
+      "heavy": "무거운",
+      "high": "비싼",
+      "house": "집",
+      "into": "~로",
+      "king": "왕",
+      "know": "알다",
+      "knows": "안다",
+      "label": "이름표",
+      "last": "지난",
+      "leaders": "지도자들",
+      "leave": "떠나다",
+      "left": "떠났다 (leave의 과거)",
+      "less": "더 적게",
+      "like": "~처럼",
+      "line": "선",
+      "lines": "선들",
+      "log": "통나무",
+      "long": "오래",
+      "look": "보다",
+      "looks": "보인다",
+      "love": "아주 좋아하다",
+      "lower": "더 낮은",
+      "made": "만들었다 (make의 과거)",
+      "many": "많은",
+      "mark": "표시",
+      "marked": "표시된",
+      "marks": "표시들",
+      "mat": "돗자리",
+      "mean": "뜻하다",
+      "men": "사람들 (man의 복수)",
+      "missing": "없어진",
+      "money": "돈",
+      "month": "달",
+      "more": "더",
+      "morning": "아침",
+      "move": "움직이다",
+      "mr": "~씨",
+      "nailed": "못 박았다",
+      "name": "이름",
+      "names": "이름을 대다",
+      "new": "새",
+      "night": "밤",
+      "note": "쪽지",
+      "notebook": "수첩",
+      "nothing": "아무것도 없음",
+      "now": "이제",
+      "numbers": "숫자들",
+      "office": "사무실",
+      "old": "오래된",
+      "one": "하나",
+      "only": "~만",
+      "opens": "연다",
+      "order": "순서",
+      "over": "~ 위로",
+      "ox": "소",
+      "paid": "냈다 (pay의 과거)",
+      "palace": "궁궐",
+      "pale": "옅은 색의",
+      "paper": "종이",
+      "pays": "낸다",
+      "people": "사람들",
+      "place": "곳",
+      "plan": "설계도",
+      "post": "기둥",
+      "put": "붙였다",
+      "question": "질문",
+      "questions": "질문들",
+      "read": "읽다",
+      "rebuilt": "다시 지었다 (rebuild의 과거)",
+      "rice": "쌀",
+      "rich": "부자인",
+      "right": "맞는",
+      "rule": "규칙",
+      "said": "말했다 (say의 과거)",
+      "saw": "봤다 (see의 과거)",
+      "says": "말한다",
+      "sell": "팔다",
+      "seller": "파는 사람",
+      "show": "보여 주다",
+      "shows": "보여 준다",
+      "signs": "서명한다",
+      "sir": "나리",
+      "site": "공사장",
+      "six": "여섯",
+      "sixteen": "열여섯",
+      "small": "작은",
+      "smart": "똑똑한",
+      "sold": "팔린 (sell의 과거분사)",
+      "someone": "누군가",
+      "stand": "서다",
+      "stands": "서 있다",
+      "steps": "계단",
+      "still": "아직",
+      "stone": "돌",
+      "stones": "돌들",
+      "straight": "곧은",
+      "straw": "짚",
+      "tag": "꼬리표",
+      "take": "없애다",
+      "takes": "데려간다",
+      "tall": "긴",
+      "tap": "누르다",
+      "tell": "말하다",
+      "ten": "열",
+      "then": "그때",
+      "thick": "굵은",
+      "thin": "가는",
+      "thousand": "천",
+      "three": "셋",
+      "today": "오늘",
+      "told": "알려 줬다 (tell의 과거)",
+      "torn": "찢어진 (tear의 과거분사)",
+      "tracks": "자국",
+      "tree": "나무",
+      "truth": "진실",
+      "turns": "바꾼다",
+      "twelve": "열둘",
+      "two": "둘",
+      "uncle": "삼촌",
+      "under": "~ 아래",
+      "use": "쓰다",
+      "wait": "기다리다",
+      "waits": "기다린다",
+      "want": "원하다",
+      "war": "전쟁",
+      "way": "길",
+      "wheel": "바퀴",
+      "winter": "겨울",
+      "wood": "나무",
+      "word": "단어",
+      "work": "일하다",
+      "worker": "일꾼",
+      "workers": "일꾼들",
+      "wrong": "틀린",
+      "wrote": "썼다 (write의 과거)",
+      "yard": "마당",
+      "young": "젊은"
     }
   },
   "notes": [

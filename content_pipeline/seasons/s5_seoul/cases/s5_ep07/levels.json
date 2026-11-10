@@ -603,7 +603,7 @@
       "master": "The writer wrote his report only after that story."
     },
     {
-      "rookie": "He called out at 9:30 in the morning. I heard it.\nAfter the noon train, a traveller told the writer a story over tea.\nThe Evening Sheet's writer came on the noon train.\nI started work early, before he called out.\nThe writer wrote his report after that story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. Leave it out.",
+      "rookie": "I started work early, before he called out.\nHe called out at 9:30 in the morning. I heard it.\nThe Evening Sheet's writer came on the noon train.\nAfter the noon train, a traveller told the writer a story over tea.\nThe writer wrote his report after that story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. Leave it out.",
       "junior": "He called out at 9:30 in the morning. I heard it.\nAfter the noon train, a traveller told the writer a story over tea.\nThe Evening Sheet's writer came on the noon train.\nI started work early, before he called out.\nThe writer wrote his report after that story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too, but it does not matter. Leave it out.",
       "master": "He called out at 9:30 in the morning. I heard it myself.\nAfter the noon train, a traveller told the writer a story over tea.\nThe Evening Sheet's writer came on the noon train.\nI had started work early, before he called out.\nThe writer wrote his report only after that story.\nThe Evening Sheet was printed at 5:00 PM.\nA goods train came too. It does not matter. Leave it out."
     },
@@ -743,7 +743,7 @@
       "master": "The Evening Sheet asserts:"
     },
     {
-      "rookie": "Our writer knows.\nHe called out nothing.\nHe wanted money.",
+      "rookie": "Our writer saw it all.\nHe called out nothing.\nHe wanted money.",
       "junior": "Our writer knows what happened.\nHe called out nothing.\nHe wanted money.",
       "master": "Our writer knows what happened.\nHe called out nothing.\nHe wanted money."
     },

@@ -163,12 +163,12 @@
       "master": "The King's builders commence the wall."
     },
     {
-      "rookie": "The machine lifts big stones every day.",
+      "rookie": "The machine works every day.",
       "junior": "Every day the machine lifts big stones.",
       "master": "Day after day the machine raises big stones."
     },
     {
-      "rookie": "A new carpenter makes it again from a copy.",
+      "rookie": "A new carpenter makes the top again from a copy.",
       "junior": "A new carpenter makes the top again from a copy.",
       "master": "A new carpenter rebuilds the top from a copied drawing."
     },
@@ -183,7 +183,7 @@
       "master": "Workers share their rice in the shade."
     },
     {
-      "rookie": "The machine lifted big stones every day, until the new carpenter came.",
+      "rookie": "The machine worked every day until the new carpenter came.",
       "junior": "The machine lifted big stones every day, until the new carpenter came.",
       "master": "The machine lifted big stones every day, until the new carpenter came."
     },
@@ -278,7 +278,7 @@
       "master": "Jeong's words about his own machine:"
     },
     {
-      "rookie": "\"My machine stands like a gate, with a beam across the top.\"\n\"Pulleys hang from the beam. More pulleys hang under them, over the stone.\"\n\"Ropes run between the pulleys, up and down.\"\n\"A big wheel stands on each side. Workers turn the wheels.\"",
+      "rookie": "\"My machine is like a gate. It has a beam across the top.\"\n\"Pulleys hang from the beam. More pulleys hang under them, over the stone.\"\n\"Ropes run between the pulleys, up and down.\"\n\"A big wheel stands on each side. Workers turn the wheels.\"",
       "junior": "\"My machine stands like a gate, with a beam across the top.\"\n\"Pulleys hang from the beam. More pulleys hang under them, over the stone.\"\n\"Ropes run up and down between the pulleys.\"\n\"A big wheel stands on each side. Workers turn the wheels.\"",
       "master": "\"My machine stands like a gate, with a beam across the top.\"\n\"Pulleys hang from the beam. More pulleys hang under them, just over the stone.\"\n\"Ropes run up and down between the pulleys.\"\n\"A big wheel stands on each side. Workers turn the wheels.\""
     },
@@ -378,7 +378,7 @@
       "master": "Jeong's instructions for lifting:"
     },
     {
-      "rookie": "\"Turn the two wheels only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last.\"\n\"Nobody pulls the rope by hand, and nobody pushes the stone.\"",
+      "rookie": "\"Before you hook the stone, tie the ropes around it.\"\n\"Turn the two wheels only after the stone is hooked.\"\n\"The stone rises last.\"\n\"Nobody pulls the rope by hand. Nobody pushes the stone.\"",
       "junior": "\"Turn the two wheels only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last of all.\"\n\"Nobody pulls the rope by hand, and nobody pushes the stone.\"",
       "master": "\"Turn the two wheels, but only after the stone is hooked.\"\n\"Before you hook the stone, tie the ropes around it.\"\n\"The stone rises last of all.\"\n\"Nobody pulls the rope by hand, and nobody pushes the stone.\""
     },
@@ -488,17 +488,17 @@
       "master": "The machine was never broken. A new carpenter who could not read used the wrong drawing for its top. Okbun, the water girl, had seen Jeong's real drawing. In the night, she tied a warning note to the rope. It had a water drop instead of a name. Rebuilt from Jeong Yak-yong's drawing, the machine lifted the stone. Hwaseong Fortress was finished in 1796. Machines like Jeong's geojunggi helped lift its huge stones. A record book lists every worker and their pay."
     },
     {
-      "rookie": "This morning, the machine could not lift a stone.\nThe note was tied to the rope in the night, after the carpenter's work.\nThe machine lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the top from a copied drawing.",
+      "rookie": "The King's builders began the wall in 1794.\nThe machine worked every day until the new carpenter came.\nThe new carpenter made the top again from a copy.\nAfter the carpenter's work, someone tied a note on the rope.\nThis morning, the machine could not lift a stone.",
       "junior": "This morning, the machine could not lift a stone.\nThe note was tied to the rope in the night, after the carpenter's work.\nThe machine lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the top from a copied drawing.",
       "master": "This morning, the machine could not lift a single stone.\nThe note was tied to the rope in the night, after the carpenter's work.\nThe machine lifted big stones every day, until the new carpenter came.\nThe King's builders began the wall in 1794.\nThe new carpenter rebuilt the machine's top from a copied drawing."
     },
     {
-      "rookie": "The note was tied to the rope in the night, after the carpenter's work.",
+      "rookie": "After the carpenter's work, someone tied a note on the rope.",
       "junior": "The note was tied to the rope in the night, after the carpenter's work.",
       "master": "The note was tied to the rope in the night, after the carpenter's work."
     },
     {
-      "rookie": "At night, someone ties on a note.",
+      "rookie": "In the night, someone ties a note to the rope.",
       "junior": "At night, someone ties a note to the rope.",
       "master": "At night, someone ties a water-drop note to the rope."
     },
@@ -613,7 +613,7 @@
       "master": "Your notes, and what each of the four says:"
     },
     {
-      "rookie": "The note says: \"The drawing is different.\"\nIt is written in the King's letters.\nIt was tied to the rope in the night.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room. I fill the jars before dawn.\"",
+      "rookie": "The note says: \"The drawing is different.\"\nIt is written in the King's letters.\nIt was tied to the rope in the night.\nThe writer:\n- saw Jeong's drawing.\n- can write the King's letters.\n- was here in the night.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room. I come in the night, before dawn.\"",
       "junior": "The note says: \"The drawing is different.\"\nIt is written in the King's new letters.\nIt was tied to the rope in the night.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room. I fill the jars before dawn.\"",
       "master": "The note says: \"The drawing is different.\"\nIt is written in the King's own letters.\nIt was tied to the rope in the night, in secret.\nGwak: \"I never go into the drawing room.\"\nThe carpenter: \"I cannot read or write.\"\nThe clerk: \"I sleep in town. The yard gate is shut at night.\"\nOkbun: \"I take water to the drawing room. I fill the jars before dawn.\""
     },

@@ -148,7 +148,7 @@
       "master": "Bongsu wrote down what he saw so he would not forget. He reads his note out to you:"
     },
     {
-      "rookie": "The secretary had the Emperor's letter at dusk. Watchers came to the gate.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, at hand height.\nBy a root, the moss is pushed aside. Someone knelt there.\n— Bongsu",
+      "rookie": "The secretary had the Emperor's letter. Then watchers came.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark.\nBy a root, the moss is moved. Someone knelt there.\n— Bongsu",
       "junior": "The secretary had the Emperor's letter at dusk. Then watchers came to the gate.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, at hand height.\nBy a root, the moss is pushed aside. Someone knelt there.\n— Bongsu",
       "master": "The secretary had the Emperor's letter at dusk. Then watchers came to the gate.\nFootprints leave the path. They go to the trees, not to the steps.\nA yellow silk thread is caught on rough bark, at hand height.\nBy a root, the moss is pushed aside. Someone must have knelt there.\n— Bongsu"
     },
@@ -233,7 +233,7 @@
       "master": "A yellow thread on a branch"
     },
     {
-      "rookie": "A yellow silk thread is caught on rough bark, at hand height.",
+      "rookie": "A yellow silk thread is caught on rough bark.",
       "junior": "A yellow silk thread is caught on rough bark, at hand height.",
       "master": "A yellow silk thread is caught on rough bark, at hand height."
     },
@@ -243,7 +243,7 @@
       "master": "Moss pushed aside"
     },
     {
-      "rookie": "By a root, the moss is pushed aside. Someone knelt there.",
+      "rookie": "By a root, the moss is moved. Someone knelt there.",
       "junior": "By a root, the moss is pushed aside. Someone knelt there.",
       "master": "By a root, the moss is pushed aside. Someone must have knelt there."
     },
@@ -343,7 +343,7 @@
       "master": "Bongsu whispers:"
     },
     {
-      "rookie": "After the old well, go out by the little west gate. My uncle keeps it.\nThe watchers stand at the big front gate all day.\nOutside the west gate is the lane by the stone wall. Walk down it.\nDo not cross the throne hall's yard: everyone sees it.\nStart behind the library hall. From there, go to the old well.",
+      "rookie": "Start behind the library hall. Then go to the old well.\nAfter the old well, go out the little west gate. My uncle is there.\nOutside the west gate, walk down the lane by the stone wall.\nDo not cross the throne hall's yard. Everyone sees it.\nWatchers stand at the big front gate all day.",
       "junior": "After the old well, go out by the little west gate. My uncle keeps it.\nThe watchers stand at the big front gate all day.\nOutside the west gate is the lane by the stone wall. Walk down it.\nDo not cross the throne hall's yard: everyone sees it.\nStart behind the library hall. From there, go to the old well.",
       "master": "After the old well, go out by the little west gate. My uncle keeps it.\nThe watchers stand at the big front gate all day long.\nOutside the west gate is the lane by the stone wall. Walk down it.\nDo not cross the throne hall's yard: everyone can see it.\nStart behind the library hall. From there, go on to the old well."
     },
@@ -648,7 +648,7 @@
       "master": "Seoul is full of watchers. I must be certain."
     },
     {
-      "rookie": "I will show you, one at a time.",
+      "rookie": "I will show you. First, this one.",
       "junior": "I will show you, one at a time.",
       "master": "I will show you, one worry at a time."
     },

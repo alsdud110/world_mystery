@@ -653,7 +653,7 @@
       "master": "Haesu says, \"At night, only the clerks have keys.\""
     },
     {
-      "rookie": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night. He has no office key.",
+      "rookie": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night. He has no office key.\nYour clue: the light went out at one.",
       "junior": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night. He has no office key.",
       "master": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night. He has no office key."
     },
@@ -723,7 +723,7 @@
       "master": "\"Nobody at all was at the list desk last night.\"\n\"Nothing was copied.\"\n\"I went home at nine.\""
     },
     {
-      "rookie": "Show Mr. Nam is wrong, one by one.",
+      "rookie": "Show where Mr. Nam is wrong.",
       "junior": "Show Mr. Nam is wrong, one thing at a time.",
       "master": "Show that Mr. Nam is wrong, one claim at a time."
     },

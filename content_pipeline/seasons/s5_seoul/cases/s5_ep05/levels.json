@@ -43,7 +43,7 @@
       "master": "The fire door"
     },
     {
-      "rookie": "The note says he did not touch the fire. Read it again.",
+      "rookie": "The note says they did not touch the fire. Read it again.",
       "junior": "The note says he did not touch the fire. Read it again.",
       "master": "The note says he did not touch the fire. Read it carefully again."
     },
@@ -58,17 +58,17 @@
       "master": "The coal box"
     },
     {
-      "rookie": "The note says he did not touch the coal. What did he take off?",
+      "rookie": "The note says they did not touch the coal. What did they take off?",
       "junior": "The note says he did not touch the coal. So what did he take off?",
       "master": "The note says he did not touch the coal. So what did he take off?"
     },
     {
-      "rookie": "He did not touch the fire.",
+      "rookie": "They did not touch the fire.",
       "junior": "He did not touch the fire.",
       "master": "He did not touch the fire."
     },
     {
-      "rookie": "He took off the long leather belt.",
+      "rookie": "They took off the long leather belt.",
       "junior": "He took off the long leather belt.",
       "master": "He took off the long leather belt."
     },
@@ -103,12 +103,12 @@
       "master": "Under the coal shovel lies a note in the King's letters. It has a small water drop:"
     },
     {
-      "rookie": "Detective,\nLast night the lamps did not go out on their own.\nOne of the two strangers came into the lamp house.\nHe did not touch the fire. He did not touch the coal.\nHe took off the long leather belt that turns the big wheel.\nI put it back at dawn. His muddy hand is still on it.",
+      "rookie": "Detective,\nLast night, someone made the lamps go out.\nThe two strangers came into the lamp house.\nThey did not touch the fire. They did not touch the coal.\nThey took off the long leather belt. It turns the big wheel.\nI put it back at dawn. Their muddy hand marks are on it.",
       "junior": "Detective,\nThe lamps did not go out by themselves last night.\nOne of the two strangers slipped into the lamp house.\nHe did not touch the fire. He did not touch the coal either.\nHe took off the long leather belt that turns the big wheel.\nI put it back at dawn. His muddy handprint is still on it.",
       "master": "Detective,\nThe lamps did not go out by accident last night.\nOne of the two strangers crept into the lamp house.\nHe did not touch the fire. He did not touch the coal.\nHe took off the long leather belt that drives the big wheel.\nI fitted it back at dawn. The print of his muddy hand remains on it."
     },
     {
-      "rookie": "What did he touch? Tap a picture.",
+      "rookie": "What did they touch? Tap a picture.",
       "junior": "What did the stranger touch? Tap a picture.",
       "master": "What did the stranger touch? Tap one picture."
     },
@@ -378,7 +378,7 @@
       "master": "Lady Han recounts:"
     },
     {
-      "rookie": "The lamp man came back at 9:00. By then, the men were gone.\nBefore the Queen's hall, the men stood at the east gate.\nOne man had a flat board under his arm.\nThey went to the east gate only after the lamps went dark.\nThe lamps went dark after the strangers came into the lamp house.\nThe lamp man lit the lamps at 8:00.\nThe guards at the main gate saw nothing. They are far away.",
+      "rookie": "The lamp man lit the lamps at 8:00.\nThen the strangers came into the lamp house. After that, the lamps went dark.\nThey went to the east gate only after the lamps went dark.\nBefore the Queen's hall, they stood at the east gate.\nThey had a flat board.\nAt 9:00, the lamp man came back. The men were gone.\nThe main gate guards saw nothing.",
       "junior": "The lamp man came back at 9:00. By then, the men were gone.\nBefore the Queen's hall, the men stood at the east gate.\nOne man had a flat board under his arm.\nThey went to the east gate only after the lamps went dark.\nThe lamps went dark after the strangers came into the lamp house.\nThe lamp man lit the lamps at 8:00.\nThe guards at the main gate saw nothing. They are far away.",
       "master": "The lamp man came back at 9:00. By then, the men were gone.\nBefore the Queen's hall, the men stood at the east gate.\nOne man had a flat board under his arm.\nThey went to the east gate only after the lamps went dark.\nThe lamps went dark after the strangers came into the lamp house.\nThe lamp man lit the lamps at 8:00.\nThe guards at the main gate saw nothing. They are too far away."
     },
@@ -448,7 +448,7 @@
       "master": "The guards at the main gate notice nothing."
     },
     {
-      "rookie": "The lamps went dark after the strangers came into the lamp house.",
+      "rookie": "Then the strangers came into the lamp house. After that, the lamps went dark.",
       "junior": "The lamps went dark after the strangers came into the lamp house.",
       "master": "The lamps went dark after the strangers came into the lamp house."
     },
@@ -493,7 +493,7 @@
       "master": "Lady Han looks carefully at the knots:"
     },
     {
-      "rookie": "Builders measure with ropes like this.\nA big knot is ten steps. A small knot is one step.\nThe rope starts at the east gate.\nIt ends at the Queen's door.\nOn it are three big knots, then seven small knots.",
+      "rookie": "Builders count steps with a rope. They tie knots on it.\nA big knot is ten steps. A small knot is one step.\nThis rope goes from the east gate to the Queen's door.\nIt has three big knots, then seven small knots.\nAdd up the steps.",
       "junior": "Builders measure with ropes like this.\nA big knot is ten steps. A small knot is one step.\nThe rope starts at the east gate.\nIt ends at the Queen's door.\nOn it are three big knots, then seven small knots.",
       "master": "Builders measure with long ropes like this.\nA big knot is ten steps. A small knot is one step.\nThe rope starts at the east gate.\nIt ends right at the Queen's door.\nOn it are three big knots, then seven small knots."
     },
@@ -653,12 +653,12 @@
       "master": "They went to the east gate only after the lamps went dark."
     },
     {
-      "rookie": "Before the Queen's hall, the men stood at the east gate.",
+      "rookie": "Before the Queen's hall, they stood at the east gate.",
       "junior": "Before the Queen's hall, the men stood at the east gate.",
       "master": "Before the Queen's hall, the men stood at the east gate."
     },
     {
-      "rookie": "The lamp man came back at 9:00. By then, the men were gone.",
+      "rookie": "At 9:00, the lamp man came back. The men were gone.",
       "junior": "The lamp man came back at 9:00. By then, the men were gone.",
       "master": "The lamp man came back at 9:00. By then, the men were gone."
     },
@@ -708,12 +708,12 @@
       "master": "\"Builders measure with ropes like this,\" Lady Han explains."
     },
     {
-      "rookie": "Why count the steps? To make a map.",
-      "junior": "Why count the steps? To make a map.",
-      "master": "Why count the steps? To make a map of the path."
+      "rookie": "They counted the steps to the Queen's door. They want to make a map. With the map, they can find the Queen in the dark and kill her.",
+      "junior": "Why count the steps? To make a map. With it, they can find the Queen in the dark and kill her.",
+      "master": "Why count the steps? To make a map of the path, so they can find the Queen in the dark and kill her."
     },
     {
-      "rookie": "Remember the man's board? Look behind the steps.",
+      "rookie": "Remember their board? Look behind the steps.",
       "junior": "Remember the man's flat board? Look behind the steps.",
       "master": "Remember the man's flat board? Look behind the steps again."
     },
@@ -753,9 +753,9 @@
       "master": "The square with the X and the wheel is the lamp house, not a door with a circle."
     },
     {
-      "rookie": "three big dots and seven small dots",
-      "junior": "three big dots and seven small dots",
-      "master": "three big dots and seven small dots"
+      "rookie": "like the knots on the rope",
+      "junior": "like the knots on the rope",
+      "master": "like the knots on the rope"
     },
     {
       "rookie": "a door with a circle",
@@ -783,7 +783,7 @@
       "master": "What the board shows:"
     },
     {
-      "rookie": "A line starts at the east gate.\nIt goes to a door with a circle.\nBy the circled door: three big dots and seven small dots.\nAnother line goes to a far door. By it: five big dots and two small dots. No circle.\nBy the pond is a square with an X. A wheel is drawn in the square.\nThe dots count like the knots on the rope.",
+      "rookie": "The board has two lines.\nOne line goes from the east gate to a door with a circle.\nThe other line goes to a far door.\nLook at the dots by each door.\nThe dots are just like the knots on the rope:\na big dot is ten steps, and a small dot is one step.\nYour rope: 37 steps to the Queen's door.",
       "junior": "A line starts at the east gate.\nIt goes to a door with a circle.\nBy the circled door: three big dots and seven small dots.\nAnother line goes to a far door. By it: five big dots and two small dots. No circle.\nBy the pond is a square with an X. A wheel is drawn in the square.\nThe dots count just like the knots on the rope.",
       "master": "A line starts at the east gate.\nIt goes to a door with a circle.\nBy the circled door are three big dots and seven small dots.\nAnother line goes to a far door. By it: five big dots and two small dots. No circle.\nBy the pond is a square with an X. A wheel is drawn in the square.\nThe dots count just like the knots on the rope."
     },
@@ -831,6 +831,16 @@
       "rookie": "They are watching me.",
       "junior": "Now they are watching me.",
       "master": "So now I know they are watching me."
+    },
+    {
+      "rookie": "They turned off the lights. Then no one could see them.",
+      "junior": "They turned off the lights, so no one could see them.",
+      "master": "They turned off the lights so that no one could see them."
+    },
+    {
+      "rookie": "The King puts guards at the Queen's door tonight.",
+      "junior": "Tonight, the King puts guards at the Queen's door.",
+      "master": "That very night, the King places guards at the Queen's door."
     }
   ],
   "glossary": {

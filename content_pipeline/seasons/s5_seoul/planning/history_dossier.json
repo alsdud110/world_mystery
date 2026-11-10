@@ -1893,7 +1893,7 @@
         }
       ],
       "fiction": [
-        "Winter 1866: the timber yard, the yard board and its marks 가 나 다, the missing logs, the yard book, the new cuts, Mr. Pyo's cart and chisel are made up.",
+        "Winter 1866: the timber yard, the yard board and its marks I II III, the missing logs, the yard book, the new cuts, Mr. Pyo's cart and chisel are made up.",
         "Duri, Mr. Pyo and the clerk are made up; Mr. Pyo's reason (coins buy less and less) and Duri's pine-tree signature are made up.",
         "The Heungseon Daewongun is real, but everything he says in the case is made up; none of it quotes a record."
       ],
@@ -1910,7 +1910,7 @@
               "missionId": "s5_ep04_m1"
             },
             {
-              "text": "a stronger sound adds one line",
+              "text": "one line for each grade",
               "missionId": "s5_ep04_m1"
             },
             {
@@ -1918,8 +1918,8 @@
               "missionId": "s5_ep04_m1"
             }
           ],
-          "derivation": "The carvers' rule, told by Duri (the book's added stroke, h8): ㄴ then ㄷ. The made-up yard board names 나 for the palace gates; the log with one pale new cut is marked 다: take the new line away and it was 나, for the palace GATES.",
-          "whyOnly": "Only one log has a new cut; one line less on 다 is 나 only, and 나 names the gates only."
+          "derivation": "The carvers' rule, told by Duri (the book's added stroke, h8): ㄴ then ㄷ. The made-up yard board names II for the palace gates; the log with one pale new cut is marked III: take the new line away and it was II, for the palace GATES.",
+          "whyOnly": "Only one log has a new cut; one line less on III is II only, and II names the gates only."
         },
         {
           "puzzleId": "s5_ep04_m2",
@@ -1927,15 +1927,15 @@
           "answer": "10",
           "clues": [
             {
-              "text": "다 logs: six",
+              "text": "III logs: six",
               "missionId": "s5_ep04_m2"
             },
             {
-              "text": "다 logs: sixteen",
+              "text": "III logs: sixteen",
               "missionId": "s5_ep04_m2"
             }
           ],
-          "derivation": "Made up: six 다 logs last night, sixteen this morning (ten more); twelve 나 logs last night, two this morning (ten fewer): ten changed.",
+          "derivation": "Made up: six III logs last night, sixteen this morning (ten more); twelve II logs last night, two this morning (ten fewer): ten changed.",
           "whyOnly": "Sixteen less six is ten, and twelve less two is ten: the two counts agree. 16, 12, 06 and 02 are answered as misreadings."
         },
         {
@@ -1952,9 +1952,9 @@
               "missionId": "s5_ep04_m3"
             }
           ],
-          "derivation": "Made up: the ten changed logs now carry 다, the mark of logs to sell; Duri's yard rule says logs to sell leave by the east gate on a dealer's cart. Deep wheel tracks and pale wood dust (like the new cut) lead to the ox cart.",
+          "derivation": "Made up: the ten changed logs now carry III, the mark of logs to sell; Duri's yard rule says logs to sell leave by the east gate on a dealer's cart. Deep wheel tracks and pale wood dust (like the new cut) lead to the ox cart.",
           "whyNot": {
-            "hall": "The log carried to the hall is marked 가, with old cuts.",
+            "hall": "The log carried to the hall is marked I, with old cuts.",
             "gate": "The half-built gate still waits for its logs; logs to sell do not go there."
           }
         },
@@ -1970,7 +1970,7 @@
           "answer": "rebuilt",
           "clues": [
             {
-              "text": "One new cut turns 나 into 다",
+              "text": "One new cut turns II into III",
               "missionId": "s5_ep04_final"
             },
             {
@@ -1987,7 +1987,7 @@
         }
       ],
       "learningObjectives": [
-        "Use a rule (a stronger sound adds one line) to see a changed mark.",
+        "Use a rule (one line for each grade) to see a changed mark.",
         "Compare two counts to find a difference.",
         "Read a yard rule and traces (wheel tracks, wood dust) to find where the logs were taken."
       ],
@@ -2251,7 +2251,7 @@
           "answer": "lit,lamphouse,dark,gate,hall,back",
           "clues": [
             {
-              "text": "after the strangers came into the lamp house",
+              "text": "strangers came into the lamp house",
               "missionId": "s5_ep05_m2"
             },
             {
@@ -2259,7 +2259,7 @@
               "missionId": "s5_ep05_m2"
             },
             {
-              "text": "By then, the men were gone",
+              "text": "the men were gone",
               "missionId": "s5_ep05_m2"
             }
           ],
@@ -2293,7 +2293,7 @@
               "missionId": "s5_ep05_final"
             },
             {
-              "text": "three big dots",
+              "text": "big dot",
               "missionId": "s5_ep05_final"
             },
             {

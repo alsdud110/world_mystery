@@ -34,7 +34,7 @@
             {
               "id": "fire",
               "label": "The fire door",
-              "feedback": "The note says he did not touch the fire. Read it again."
+              "feedback": "The note says they did not touch the fire. Read it again."
             },
             {
               "id": "belt",
@@ -43,7 +43,7 @@
             {
               "id": "coal",
               "label": "The coal box",
-              "feedback": "The note says he did not touch the coal. What did he take off?"
+              "feedback": "The note says they did not touch the coal. What did they take off?"
             }
           ]
         },
@@ -72,8 +72,8 @@
         "objective": "궁녀 한씨의 쪽지에서 did not touch 문장(불, 석탄)을 읽어 지우고, 낯선 이가 벗겨 낸 것(큰 바퀴의 가죽 띠)을 그림에서 고른다.",
         "skill": "sentenceMeaning",
         "expressions": [
-          "He did not touch the fire.",
-          "He took off the long leather belt."
+          "They did not touch the fire.",
+          "They took off the long leather belt."
         ]
       },
       "play": {
@@ -85,8 +85,8 @@
           "It stopped for an hour. Look for marks."
         ],
         "letterIntro": "Under the coal shovel: a note with a water drop:",
-        "letter": "Detective,\nLast night the lamps did not go out on their own.\nOne of the two strangers came into the lamp house.\nHe did not touch the fire. He did not touch the coal.\nHe took off the long leather belt that turns the big wheel.\nI put it back at dawn. His muddy hand is still on it.",
-        "question": "What did he touch? Tap a picture.",
+        "letter": "Detective,\nLast night, someone made the lamps go out.\nThe two strangers came into the lamp house.\nThey did not touch the fire. They did not touch the coal.\nThey took off the long leather belt. It turns the big wheel.\nI put it back at dawn. Their muddy hand marks are on it.",
+        "question": "What did they touch? Tap a picture.",
         "hints": [
           "Find the note under the coal shovel.",
           "Two things in the note were NOT touched."
@@ -95,6 +95,7 @@
         "transition": [
           "The lamps often blink. Nobody worried.",
           "But this dark was on purpose.",
+          "They turned off the lights. Then no one could see them.",
           "Lady Han knows more. Follow her."
         ],
         "mapX": 0.46,
@@ -385,7 +386,7 @@
           "\"Put my words in order,\" she says."
         ],
         "letterIntro": "Lady Han tells you:",
-        "letter": "The lamp man came back at 9:00. By then, the men were gone.\nBefore the Queen's hall, the men stood at the east gate.\nOne man had a flat board under his arm.\nThey went to the east gate only after the lamps went dark.\nThe lamps went dark after the strangers came into the lamp house.\nThe lamp man lit the lamps at 8:00.\nThe guards at the main gate saw nothing. They are far away.",
+        "letter": "The lamp man lit the lamps at 8:00.\nThen the strangers came into the lamp house. After that, the lamps went dark.\nThey went to the east gate only after the lamps went dark.\nBefore the Queen's hall, they stood at the east gate.\nThey had a flat board.\nAt 9:00, the lamp man came back. The men were gone.\nThe main gate guards saw nothing.",
         "question": "Put the night in order, 8:00 to 9:00.",
         "hints": [
           "Find after and before.",
@@ -463,7 +464,7 @@
             {
               "earlier": "lamphouse",
               "later": "dark",
-              "line": "The lamps went dark after the strangers came into the lamp house."
+              "line": "Then the strangers came into the lamp house. After that, the lamps went dark."
             },
             {
               "earlier": "dark",
@@ -473,12 +474,12 @@
             {
               "earlier": "gate",
               "later": "hall",
-              "line": "Before the Queen's hall, the men stood at the east gate."
+              "line": "Before the Queen's hall, they stood at the east gate."
             },
             {
               "earlier": "hall",
               "later": "back",
-              "line": "The lamp man came back at 9:00. By then, the men were gone."
+              "line": "At 9:00, the lamp man came back. The men were gone."
             }
           ]
         },
@@ -559,7 +560,7 @@
           "\"Builders measure with ropes,\" Lady Han says."
         ],
         "letterIntro": "Lady Han looks at the knots:",
-        "letter": "Builders measure with ropes like this.\nA big knot is ten steps. A small knot is one step.\nThe rope starts at the east gate.\nIt ends at the Queen's door.\nOn it are three big knots, then seven small knots.",
+        "letter": "Builders count steps with a rope. They tie knots on it.\nA big knot is ten steps. A small knot is one step.\nThis rope goes from the east gate to the Queen's door.\nIt has three big knots, then seven small knots.\nAdd up the steps.",
         "question": "How many steps is it from the east gate to the Queen's door?",
         "hints": [
           "Read what big and small knots mean.",
@@ -567,8 +568,8 @@
         ],
         "successMessage": "Thirty-seven steps, from the east gate to the Queen's door!",
         "transition": [
-          "Why count the steps? To make a map.",
-          "Remember the man's board? Look behind the steps.",
+          "They counted the steps to the Queen's door. They want to make a map. With the map, they can find the Queen in the dark and kill her.",
+          "Remember their board? Look behind the steps.",
           "In the leaves: a flat board with lines and dots!",
           "\"The King must see this,\" Lady Han says."
         ],
@@ -602,7 +603,7 @@
   "final": {
     "missionId": "s5_ep05_final",
     "slot": "final",
-    "placeId": "s5_seoul.king_hall",
+    "placeId": "s5_seoul.c05_board",
     "puzzle": {
       "paletteId": "text_choice",
       "surface": "finalMission",
@@ -661,8 +662,8 @@
       "objective": "판의 설명(three big dots and seven small dots, a door with a circle)을 밧줄 매듭 규칙으로 읽어 37걸음 문을 찾고, 그 문이 왕비의 처소임을 그림에서 고른다.",
       "skill": "sentenceMeaning",
       "expressions": [
-        "three big dots and seven small dots",
-        "a door with a circle"
+        "a door with a circle",
+        "like the knots on the rope"
       ]
     },
     "play": {
@@ -674,7 +675,7 @@
         "The Queen asks, \"Whose door is marked?\""
       ],
       "letterIntro": "The board:",
-      "letter": "A line starts at the east gate.\nIt goes to a door with a circle.\nBy the circled door: three big dots and seven small dots.\nAnother line goes to a far door. By it: five big dots and two small dots. No circle.\nBy the pond is a square with an X. A wheel is drawn in the square.\nThe dots count like the knots on the rope.",
+      "letter": "The board has two lines.\nOne line goes from the east gate to a door with a circle.\nThe other line goes to a far door.\nLook at the dots by each door.\nThe dots are just like the knots on the rope:\na big dot is ten steps, and a small dot is one step.\nYour rope: 37 steps to the Queen's door.",
       "question": "Whose door has the circle? Tap it.",
       "hints": [
         "Big dot: ten steps. Small dot: one step.",
@@ -685,6 +686,7 @@
         "The King says, \"X is the lamp house.\"",
         "Lady Han says, \"Japan wants more power here. The Queen works with Russia.\"",
         "\"Some men want to stop her.\"",
+        "The King puts guards at the Queen's door tonight.",
         "The King folds the map."
       ],
       "mapX": 0.5,
@@ -698,42 +700,50 @@
         {
           "by": "speaker",
           "text": "Thanks, Detective. I will keep this map.",
-          "speaker": "gojong"
+          "speaker": "gojong",
+          "background": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp"
         },
         {
           "by": "speaker",
           "text": "They are watching me.",
           "speaker": "myeongseong",
-          "portrait": "assets/seasons/season_05_seoul/characters/myeongseong.webp"
+          "portrait": "assets/seasons/season_05_seoul/characters/myeongseong.webp",
+          "background": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp"
         },
         {
           "by": "speaker",
           "text": "Korea must choose its own way.",
           "speaker": "myeongseong",
-          "portrait": "assets/seasons/season_05_seoul/characters/myeongseong.webp"
+          "portrait": "assets/seasons/season_05_seoul/characters/myeongseong.webp",
+          "background": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp"
         },
         {
           "by": "detective",
           "text": "The map leads to the Queen's door.",
-          "evidence": "s5_ep05_e4"
+          "evidence": "s5_ep05_e4",
+          "background": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp"
         },
         {
           "by": "narrator",
-          "text": "In 1895, the Queen used Russia to stop Japan's power from growing."
+          "text": "In 1895, the Queen used Russia to stop Japan's power from growing.",
+          "background": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp"
         },
         {
           "by": "narrator",
-          "text": "On 8 October 1895, Japan's men attacked."
+          "text": "On 8 October 1895, Japan's men attacked.",
+          "background": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp"
         },
         {
           "by": "narrator",
-          "text": "The Queen was killed."
+          "text": "The Queen was killed.",
+          "background": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp"
         },
         {
           "by": "speaker",
           "text": "I will not forget.",
           "speaker": "lady_han",
-          "portrait": "assets/seasons/season_05_seoul/characters/lady_han.webp"
+          "portrait": "assets/seasons/season_05_seoul/characters/lady_han.webp",
+          "background": "assets/seasons/season_05_seoul/cases/case_05/king_hall.webp"
         }
       ]
     }
@@ -784,7 +794,209 @@
       "pond": "연못",
       "measured": "쟀다",
       "circled": "동그라미가 그려진",
-      "knotted": "매듭지은"
+      "knotted": "매듭지은",
+      "lit": "(불을) 켰다 (light의 과거)",
+      "add": "더하다",
+      "after": "~ 후에",
+      "again": "다시",
+      "another": "또 하나의",
+      "around": "주위를",
+      "asks": "묻는다",
+      "attacked": "공격했다",
+      "autumn": "가을",
+      "back": "제자리에",
+      "before": "~ 앞에서",
+      "began": "시작되었다 (begin의 과거)",
+      "behind": "~ 뒤를",
+      "big": "큰",
+      "black": "검은",
+      "blink": "깜빡이다",
+      "board": "판",
+      "box": "상자",
+      "builders": "집 짓는 사람들",
+      "called": "불렀다",
+      "came": "왔다 (come의 과거)",
+      "card": "카드",
+      "carried": "들고 있었다",
+      "choose": "고르다",
+      "clue": "단서",
+      "come": "오다",
+      "comes": "온다",
+      "count": "세다",
+      "counts": "센다",
+      "dark": "어두운",
+      "dawn": "새벽",
+      "detective": "탐정",
+      "door": "문",
+      "drop": "방울",
+      "dropped": "떨어뜨렸다",
+      "east": "동쪽",
+      "electric": "전기",
+      "ends": "끝난다",
+      "every": "매",
+      "far": "먼",
+      "find": "찾다",
+      "fire": "불",
+      "first": "첫",
+      "five": "다섯",
+      "flat": "평평한",
+      "folds": "접는다",
+      "follow": "따라가다",
+      "forget": "잊다",
+      "found": "찾았다 (find의 과거)",
+      "gate": "문",
+      "go": "되다",
+      "goes": "간다",
+      "gone": "가 버린 (go의 과거분사)",
+      "good": "좋아",
+      "growing": "커지는 것",
+      "guards": "경비병들",
+      "hall": "전각",
+      "halls": "전각들",
+      "hand": "손",
+      "heard": "들었다 (hear의 과거)",
+      "hid": "숨었다 (hide의 과거)",
+      "hold": "막다",
+      "hour": "한 시간",
+      "house": "집",
+      "inside": "안에",
+      "into": "~ 안으로",
+      "iron": "쇠",
+      "keep": "가지다",
+      "killed": "죽임을 당했다",
+      "king": "왕",
+      "knows": "안다",
+      "lady": "(궁녀) 상궁",
+      "lamp": "등",
+      "lamps": "등들",
+      "last": "지난",
+      "leads": "이어진다",
+      "leather": "가죽",
+      "leave": "남기다",
+      "leaves": "나뭇잎들",
+      "left": "남겼다 (leave의 과거)",
+      "lights": "불빛",
+      "like": "~ 같은",
+      "line": "선",
+      "lines": "선들",
+      "little": "작은",
+      "live": "살다",
+      "locked": "잠긴",
+      "long": "긴",
+      "look": "보다",
+      "looks": "본다",
+      "machine": "기계",
+      "made": "만들었다 (make의 과거)",
+      "main": "정",
+      "make": "만들다",
+      "man": "사람",
+      "many": "얼마나 많은",
+      "map": "지도",
+      "mark": "자국",
+      "marked": "표시된",
+      "marks": "표시",
+      "matters": "중요하다",
+      "mean": "뜻하다",
+      "meets": "만난다",
+      "men": "사람들 (man의 복수)",
+      "more": "더",
+      "muddy": "진흙 묻은",
+      "name": "이름",
+      "names": "이름들",
+      "near": "~ 가까이",
+      "needed": "필요했다",
+      "night": "밤",
+      "nobody": "아무도 ~ 않다",
+      "note": "쪽지",
+      "nothing": "아무것도 없음",
+      "now": "이제",
+      "numbers": "숫자들",
+      "october": "10월",
+      "often": "자주",
+      "one": "하나",
+      "ones": "일의 자리",
+      "only": "~만",
+      "order": "순서",
+      "over": "~ 위의",
+      "own": "자신의",
+      "palace": "궁궐",
+      "paper": "종이",
+      "part": "부분",
+      "path": "길",
+      "people": "사람들",
+      "picture": "그림",
+      "pile": "더미",
+      "purpose": "일부러",
+      "put": "두었다",
+      "queen": "왕비",
+      "read": "읽다",
+      "remember": "기억하다",
+      "returns": "돌아오다",
+      "right": "바로",
+      "rope": "밧줄",
+      "ropes": "밧줄들",
+      "saw": "봤다 (see의 과거)",
+      "say": "말하다",
+      "says": "말한다",
+      "see": "보다",
+      "sent": "보낸 (send의 과거분사)",
+      "seven": "일곱",
+      "shovel": "삽",
+      "show": "보여 주다",
+      "sleep": "자다",
+      "small": "작은",
+      "some": "어떤",
+      "someone": "누군가",
+      "south": "남쪽",
+      "square": "네모",
+      "stand": "서 있다",
+      "starts": "시작한다",
+      "step": "걸음",
+      "steps": "걸음",
+      "stood": "서 있었다 (stand의 과거)",
+      "stop": "막다",
+      "stopped": "멈췄다",
+      "take": "벗다",
+      "tap": "누르다",
+      "tell": "말하다",
+      "tells": "말한다",
+      "ten": "열",
+      "tens": "십의 자리",
+      "thanks": "고마워요",
+      "then": "그러고 나서",
+      "things": "것들",
+      "thirty": "서른",
+      "three": "셋",
+      "took": "벗었다 (take의 과거)",
+      "touch": "만지다",
+      "touched": "만져진",
+      "turns": "돌린다",
+      "twenty": "스물",
+      "two": "둘",
+      "under": "~ 아래",
+      "used": "이용했다",
+      "walk": "걷다",
+      "walked": "걸어갔다",
+      "want": "원하다",
+      "wants": "원한다",
+      "watching": "지켜보고 있다",
+      "water": "물",
+      "way": "길",
+      "week": "주",
+      "went": "됐다 (go의 과거)",
+      "wheel": "바퀴",
+      "window": "창문",
+      "wires": "전선들",
+      "wooden": "나무로 된",
+      "words": "말",
+      "worked": "함께 일했다",
+      "works": "함께 일한다",
+      "worried": "걱정했다",
+      "wrong": "틀린",
+      "wrote": "썼다 (write의 과거)",
+      "korea": "한국",
+      "japan": "일본",
+      "russia": "러시아"
     }
   },
   "notes": [

@@ -678,10 +678,12 @@
       ],
       "placeIds": [
         "s5_seoul.c04_timber_yard",
+        "s5_seoul.c04_yard_office",
         "s5_seoul.c04_palace_site",
         "s5_seoul.lamp_house",
         "s5_seoul.queen_court",
-        "s5_seoul.king_hall"
+        "s5_seoul.king_hall",
+        "s5_seoul.c05_board"
       ]
     },
     {
@@ -993,7 +995,7 @@
         "s5_ep04_m2",
         "s5_ep04_final"
       ],
-      "meaning": "One new cut turned 나 into 다: the count and the Daewongun's first question."
+      "meaning": "One new cut turned II into III: the count and the Daewongun's first question."
     },
     {
       "from": "s5_ep04_c3",

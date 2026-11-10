@@ -143,7 +143,7 @@
       "master": "Bitna's father wrote this:"
     },
     {
-      "rookie": "\"Bitna, I am sorry! I packed Mother's box in a trunk by mistake.\"\n\"It is the trunk with ONE leather strap.\"\n\"It has a round brass lock, too.\"\n\"Do not open Mother's lock before the day! — Father\"",
+      "rookie": "\"Bitna, I am sorry! I put Mother's box in a trunk by mistake.\"\n\"It is the trunk with ONE leather strap.\"\n\"It has a round brass lock, too.\"\n\"Do not open Mother's lock before the day! — Father\"",
       "junior": "\"Bitna, I am sorry! I packed Mother's box in a trunk by mistake.\"\n\"It is the trunk with ONE leather strap.\"\n\"It has a round brass lock, too.\"\n\"Do not open Mother's lock before the day! — Father\"",
       "master": "\"Bitna, I am so sorry! I packed Mother's box in a trunk by mistake.\"\n\"It is the trunk with ONE leather strap.\"\n\"It has a round brass lock, too.\"\n\"Do not open Mother's lock before the right day! — Father\""
     },
@@ -418,7 +418,7 @@
       "master": "This is what Mother's letters say:"
     },
     {
-      "rookie": "First letter (April): \"I go to the Liberation Army today. I will write to you.\"\n\"My riddle is on the backs, one piece on each. Only the right order makes sense.\"\nPine letter: \"I am far away now. There are pine trees on the hill.\"\nRain letter: \"After my pine letter, the rain came. My boots are wet.\"\nMoon letter: \"The rain is over now. The moon is bright tonight.\"",
+      "rookie": "First letter (April): \"I go to the Liberation Army today. I will write to you.\"\n\"My riddle is on the backs. Each letter has one piece. Put them in the right order.\"\nPine letter: \"I am far away now. There are pine trees on the hill.\"\nRain letter: \"After my pine letter, the rain came. My boots are wet.\"\nMoon letter: \"The rain is over now. The moon is bright tonight.\"",
       "junior": "First letter (April): \"I go to the Liberation Army today. I will write to you.\"\n\"My riddle is on the backs, one piece on each. Only the right order makes sense.\"\nPine letter: \"I am far away now. There are pine trees on the hill.\"\nRain letter: \"After my pine letter, the rain came. My boots are wet.\"\nMoon letter: \"The rain is over now. The moon is bright tonight.\"",
       "master": "First letter (April): \"Today I go to the Liberation Army. I will write to you.\"\n\"My riddle is on the backs, one piece on each. Only the right order makes sense of it.\"\nPine letter: \"I am far away now. There are pine trees on the hill here.\"\nRain letter: \"After my pine letter, the rain came. My boots are wet through.\"\nMoon letter: \"The rain is over now. The moon is very bright tonight.\""
     },
@@ -558,7 +558,7 @@
       "master": "What the radio says, Mother's rule, and Bitna's card:"
     },
     {
-      "rookie": "Radio: \"Japan has given up. The war is over!\"\n\"Today is the fifteenth of August.\"\nBitna's card: \"The fourteenth: my brothers said the war may end.\"\nMother's letter: \"'May' is not enough.\"\nBitna's card: July is month seven. August is month eight. September is month nine.\nBitna: \"Korean dates put the month before the day.\"\n\"Write the day Mother's lock can open, in numbers.\"",
+      "rookie": "Radio: \"Japan has given up. The war is over!\"\n\"Today is the fifteenth of August.\"\nBitna's card: \"The fourteenth: my brothers said the war may end.\"\nMother's letter: \"'May' is not enough.\"\nBitna's card: July is month seven. August is month eight. September is month nine.\nBitna: \"In Korea, we write the month first, then the day.\"\n\"When can Mother's lock open? Write it in numbers.\"",
       "junior": "Radio: \"Japan has given up. The war is over!\"\n\"Today is the fifteenth of August.\"\nBitna's card: \"The fourteenth: my brothers said the war may end.\"\nMother's letter: \"'May' is not enough.\"\nBitna's card: July is month seven. August is month eight. September is month nine.\nBitna: \"Korean dates put the month before the day.\"\n\"Write the day Mother's lock can open, in numbers.\"",
       "master": "Radio: \"Japan has given up. The war is over!\"\n\"Today is the fifteenth of August.\"\nBitna's card: \"The fourteenth: my brothers said the war may end soon.\"\nMother's letter: \"'May' is not enough.\"\nBitna's card: July is month seven. August is month eight. September is month nine.\nBitna: \"In Korean dates, the month comes before the day.\"\n\"Write the day Mother's lock can open, in numbers.\""
     },

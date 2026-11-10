@@ -83,12 +83,12 @@
       "master": "The yard board, and the note beside it:"
     },
     {
-      "rookie": "Yard board: each log has a mark carved on its end.\n가: the best logs, for the great halls.\n나: good logs, for the palace gates.\n다: not for the palace. They may be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: a stronger sound adds one line: ㄴ, then ㄷ.",
-      "junior": "Yard board: each log has a mark carved on its end.\n가: the best logs, for the great halls.\n나: good logs, for the palace gates.\n다: not for the palace. They may be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: a stronger sound adds one line: ㄴ, then ㄷ.",
-      "master": "Yard board: each log has a mark carved on its end.\n가: the finest logs, for the great halls.\n나: good logs, for the palace gates.\n다: not for the palace. These logs may be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: a stronger sound adds one line: first ㄴ, then ㄷ."
+      "rookie": "Yard board: each log end has a grade mark.\nI: the best logs, for the big halls.\nII: good logs, for the palace gates.\nIII: not for the palace. They can be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: one line for each grade. One more line turns II into III.",
+      "junior": "Yard board: each log has a mark carved on its end.\nI: the best logs, for the great halls.\nII: good logs, for the palace gates.\nIII: not for the palace. They may be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: one line for each grade. One more line turns II into III.",
+      "master": "Yard board: each log has a mark carved on its end.\nI: the finest logs, for the great halls.\nII: good logs, for the palace gates.\nIII: not for the palace. These logs may be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: one cut line for each grade, so one more line turns II into III."
     },
     {
-      "rookie": "Find the new line. Where was it going?",
+      "rookie": "Take away the new line: III was II. Where do II logs go?",
       "junior": "Find the new line. Where was the log going?",
       "master": "Find the new line. Before it was cut, where was the log going?"
     },
@@ -103,9 +103,9 @@
       "master": "Look for one pale, fresh cut."
     },
     {
-      "rookie": "It was a 나 log, for the gates!",
-      "junior": "It was a 나 log, for the palace gates!",
-      "master": "It was a 나 log, meant for the palace gates!"
+      "rookie": "It was a II log, for the gates!",
+      "junior": "It was a II log, for the palace gates!",
+      "master": "It was a II log, meant for the palace gates!"
     },
     {
       "rookie": "Someone cut a new line on a log.",
@@ -128,9 +128,9 @@
       "master": "No. Take away the new line. Which mark is left then?"
     },
     {
-      "rookie": "One new cut made 나 into 다.",
-      "junior": "One new cut made 나 into 다.",
-      "master": "One new cut turned 나 into 다. Now a palace log looks like one to sell."
+      "rookie": "One new cut made II into III.",
+      "junior": "One new cut made II into III.",
+      "master": "One new cut turned II into III. Now a palace log looks like one to sell."
     },
     {
       "rookie": "The palace timber yard",
@@ -143,7 +143,7 @@
       "master": "Which log end has a new line? Look carefully."
     },
     {
-      "rookie": "Read its tag. One word is torn.",
+      "rookie": "Now tap Label below and read the tag.",
       "junior": "Read its tag. One word is torn away.",
       "master": "Read its yard tag. One word is torn away."
     },
@@ -168,14 +168,14 @@
       "master": "A THICK LOG"
     },
     {
-      "rookie": "A thick log, marked 가",
-      "junior": "A thick pine log, marked 가",
-      "master": "A thick pine log, marked 가"
+      "rookie": "A thick log, marked I",
+      "junior": "A thick pine log, marked I",
+      "master": "A thick pine log, marked I"
     },
     {
-      "rookie": "Mark: 가. The cuts are old.",
-      "junior": "Mark: 가. The cuts are old and dark.",
-      "master": "Mark: 가. The cuts are old and dark."
+      "rookie": "Mark: I. The cuts are old.",
+      "junior": "Mark: I. The cuts are old and dark.",
+      "master": "Mark: I. The cuts are old and dark."
     },
     {
       "rookie": "A BENT LOG",
@@ -183,14 +183,14 @@
       "master": "A BENT LOG"
     },
     {
-      "rookie": "A thin, bent log, marked 다",
-      "junior": "A thin, bent log, marked 다",
-      "master": "The end of a thin, bent log, marked 다"
+      "rookie": "A thin, bent log, marked III",
+      "junior": "A thin, bent log, marked III",
+      "master": "The end of a thin, bent log, marked III"
     },
     {
-      "rookie": "Mark: 다. All cuts are old.",
-      "junior": "Mark: 다. All cuts are old and dark.",
-      "master": "Mark: 다. Every cut is old and dark."
+      "rookie": "Mark: III. All cuts are old.",
+      "junior": "Mark: III. All cuts are old and dark.",
+      "master": "Mark: III. Every cut is old and dark."
     },
     {
       "rookie": "A STRAIGHT LOG",
@@ -198,14 +198,14 @@
       "master": "A STRAIGHT LOG"
     },
     {
-      "rookie": "A tall log, marked 다. One cut is new.",
-      "junior": "A tall, straight log, marked 다. One cut is new.",
-      "master": "A tall, straight log, marked 다. One cut is pale and new."
+      "rookie": "A tall log, marked III. One cut is new.",
+      "junior": "A tall, straight log, marked III. One cut is new.",
+      "master": "A tall, straight log, marked III. One cut is pale and new."
     },
     {
-      "rookie": "Mark: 다. One cut is new!",
-      "junior": "Mark: 다. One cut is pale and new!",
-      "master": "Mark: 다. But one cut is pale and new!"
+      "rookie": "Mark: III. One cut is new!",
+      "junior": "Mark: III. One cut is pale and new!",
+      "master": "Mark: III. But one cut is pale and new!"
     },
     {
       "rookie": "THE YARD TAG",
@@ -233,7 +233,7 @@
       "master": "TIMBER YARD"
     },
     {
-      "rookie": "One word is torn away.",
+      "rookie": "The torn word said where this log goes.",
       "junior": "One word is torn away.",
       "master": "One word has been torn away."
     },
@@ -248,14 +248,14 @@
       "master": "Each log is for the palace, or to sell."
     },
     {
-      "rookie": "We carve the marks in the King's letters. A stronger sound gets one more line.",
-      "junior": "We carve the marks in the King's letters. A stronger sound gets one more line.",
-      "master": "We carve the marks in the King's letters. A stronger sound gets one more line."
+      "rookie": "We cut one line for each grade. More lines, a lower grade.",
+      "junior": "We cut one line for each grade. More lines, a lower grade.",
+      "master": "We cut one line for each grade. More lines, a lower grade."
     },
     {
-      "rookie": "Last night: twelve 나 logs. Now: two.",
-      "junior": "Last night: twelve 나 logs. This morning: two.",
-      "master": "Last night: twelve 나 logs. This morning, only two."
+      "rookie": "Last night: twelve II logs. Now: two.",
+      "junior": "Last night: twelve II logs. This morning: two.",
+      "master": "Last night: twelve II logs. This morning, only two."
     },
     {
       "rookie": "Let us look at every mark.",
@@ -303,9 +303,9 @@
       "master": "This morning, Mr. Pyo, a log seller, bought logs here."
     },
     {
-      "rookie": "\"Only 다 logs,\" the clerk says. \"Logs to sell.\"",
-      "junior": "\"Only 다 logs,\" the clerk says. \"Logs to sell.\"",
-      "master": "\"Only 다 logs,\" the clerk says. \"Logs that may be sold.\""
+      "rookie": "\"Only III logs,\" the clerk says. \"Logs to sell.\"",
+      "junior": "\"Only III logs,\" the clerk says. \"Logs to sell.\"",
+      "master": "\"Only III logs,\" the clerk says. \"Logs that may be sold.\""
     },
     {
       "rookie": "The book, and Mr. Pyo's paper:",
@@ -313,19 +313,19 @@
       "master": "The yard book, and Mr. Pyo's paper:"
     },
     {
-      "rookie": "Yard book, last night. Counted by Duri, a small pine tree by his name:\n나 logs: twelve. 다 logs: six.\nYard book, this morning. Counted by the clerk:\n다 logs: sixteen. 나 logs: two.\nMr. Pyo's paper: \"I bought every 다 log in the yard.\"",
-      "junior": "Yard book, last night. Counted by Duri, a small pine tree by his name:\n나 logs: twelve. 다 logs: six.\nYard book, this morning. Counted by the clerk:\n다 logs: sixteen. 나 logs: two.\nMr. Pyo's paper: \"I bought every 다 log in the yard.\"",
-      "master": "Yard book, last night. Counted by Duri, a small pine tree beside his name:\n나 logs: twelve. 다 logs: six.\nYard book, this morning. Counted by the clerk:\n다 logs: sixteen. 나 logs: two.\nMr. Pyo's paper: \"I bought every 다 log in the yard.\""
+      "rookie": "Each log has a mark: I, II or III. A II log is a log marked II.\nYard book, last night. Duri counted. A small pine tree is by his name.\nII logs: twelve. III logs: six.\nYard book, this morning. The clerk counted.\nIII logs: sixteen. II logs: two.\nMr. Pyo's paper: \"I bought every log marked III.\"",
+      "junior": "Yard book, last night. Counted by Duri, a small pine tree by his name:\nII logs: twelve. III logs: six.\nYard book, this morning. Counted by the clerk:\nIII logs: sixteen. II logs: two.\nMr. Pyo's paper: \"I bought every III log in the yard.\"",
+      "master": "Yard book, last night. Counted by Duri, a small pine tree beside his name:\nII logs: twelve. III logs: six.\nYard book, this morning. Counted by the clerk:\nIII logs: sixteen. II logs: two.\nMr. Pyo's paper: \"I bought every III log in the yard.\""
     },
     {
-      "rookie": "How many palace logs got a new line?",
+      "rookie": "How many II logs became III logs?",
       "junior": "How many palace logs got a new line?",
       "master": "How many palace logs got a new line? Enter the number."
     },
     {
-      "rookie": "Look at the 다 logs then and now.",
-      "junior": "Look at the 다 logs last night and this morning.",
-      "master": "Compare the 다 logs from last night and this morning."
+      "rookie": "Look at the III logs then and now.",
+      "junior": "Look at the III logs last night and this morning.",
+      "master": "Compare the III logs from last night and this morning."
     },
     {
       "rookie": "Ten palace logs became logs to sell!",
@@ -338,9 +338,9 @@
       "master": "Ten palace logs were given a new line."
     },
     {
-      "rookie": "Mr. Pyo bought every 다 log.",
-      "junior": "And Mr. Pyo bought every 다 log.",
-      "master": "And Mr. Pyo bought every 다 log."
+      "rookie": "Mr. Pyo bought every III log.",
+      "junior": "And Mr. Pyo bought every III log.",
+      "master": "And Mr. Pyo bought every III log."
     },
     {
       "rookie": "\"But where are they?\" asks Duri.",
@@ -348,14 +348,14 @@
       "master": "\"But where have they gone?\" asks Duri."
     },
     {
-      "rookie": "That is all 다 logs. Six were 다.",
-      "junior": "That is all 다 logs this morning. Six were 다.",
-      "master": "That is every 다 log this morning. Six were already 다."
+      "rookie": "That is all III logs. Six were III.",
+      "junior": "That is all III logs this morning. Six were III.",
+      "master": "That is every III log this morning. Six were already III."
     },
     {
-      "rookie": "Six were 다 before. How many more now?",
-      "junior": "Last night, six were 다. How many more now?",
-      "master": "Six were 다 last night. How many more are there now?"
+      "rookie": "Six were III before. How many more now?",
+      "junior": "Last night, six were III. How many more now?",
+      "master": "Six were III last night. How many more are there now?"
     },
     {
       "rookie": "Right numbers, wrong order.",
@@ -368,9 +368,9 @@
       "master": "Ten Logs"
     },
     {
-      "rookie": "Ten 나 logs became 다.",
-      "junior": "At night, ten 나 logs became 다. Mr. Pyo bought them.",
-      "master": "Overnight, ten 나 logs became 다, and Mr. Pyo bought all ten."
+      "rookie": "Ten II logs became III.",
+      "junior": "At night, ten II logs became III. Mr. Pyo bought them.",
+      "master": "Overnight, ten II logs became III, and Mr. Pyo bought all ten."
     },
     {
       "rookie": "Where Did the Logs Go?",
@@ -413,9 +413,9 @@
       "master": "The Daewongun rides up to the new throne hall. Its roof is still unfinished."
     },
     {
-      "rookie": "Mr. Pyo says, \"I only bought 다 logs!\"",
-      "junior": "Mr. Pyo says, \"I only bought 다 logs!\"",
-      "master": "Mr. Pyo stands by his cart, red-faced. \"I only bought 다 logs!\""
+      "rookie": "Mr. Pyo says, \"I only bought III logs!\"",
+      "junior": "Mr. Pyo says, \"I only bought III logs!\"",
+      "master": "Mr. Pyo stands by his cart, red-faced. \"I only bought III logs!\""
     },
     {
       "rookie": "\"Tell me why,\" says the Daewongun.",
@@ -428,9 +428,9 @@
       "master": "Your notebook records:"
     },
     {
-      "rookie": "One new cut turns 나 into 다.\nTen palace logs were changed last night.\nThe logs are on Mr. Pyo's cart, with a chisel.\nThe note has no name, only a pine tree.",
-      "junior": "One new cut turns 나 into 다.\nTen palace logs were changed last night.\nThe logs are on Mr. Pyo's cart, with a chisel.\nThe note has no name, only a pine tree.",
-      "master": "One new cut turns 나 into 다, so palace logs look like logs to sell.\nTen palace logs were changed last night.\nThe logs are on Mr. Pyo's cart, along with a chisel.\nThe note has no name, only a pine tree."
+      "rookie": "One new cut turns II into III.\nTen palace logs were changed last night.\nThe logs are on Mr. Pyo's cart, with a chisel.\nThe note has no name, only a pine tree.",
+      "junior": "One new cut turns II into III.\nTen palace logs were changed last night.\nThe logs are on Mr. Pyo's cart, with a chisel.\nThe note has no name, only a pine tree.",
+      "master": "One new cut turns II into III, so palace logs look like logs to sell.\nTen palace logs were changed last night.\nThe logs are on Mr. Pyo's cart, along with a chisel.\nThe note has no name, only a pine tree."
     },
     {
       "rookie": "The Daewongun knows the truth!",
@@ -458,9 +458,9 @@
       "master": "Answer each question with the right card."
     },
     {
-      "rookie": "These logs are 다. Not for my palace.",
-      "junior": "These logs are 다. They are not for my palace.",
-      "master": "These logs are marked 다. They are not for my palace."
+      "rookie": "These logs are III. Not for my palace.",
+      "junior": "These logs are III. They are not for my palace.",
+      "master": "These logs are marked III. They are not for my palace."
     },
     {
       "rookie": "Look again, sir.",
@@ -488,9 +488,9 @@
       "master": "The Daewongun asks: \"How do you know they are palace logs?\""
     },
     {
-      "rookie": "One new cut. 나 became 다.",
-      "junior": "Each has one new cut. 나 became 다.",
-      "master": "Each has one new cut. 나 became 다."
+      "rookie": "One new cut. II became III.",
+      "junior": "Each has one new cut. II became III.",
+      "master": "Each has one new cut. II became III."
     },
     {
       "rookie": "One more line. Smart, but wrong.",
@@ -593,39 +593,39 @@
       "master": "But this morning, some palace logs are missing."
     },
     {
-      "rookie": "At night, Mr. Pyo changed ten palace logs. One new line made 나 into 다: logs to sell. He bought them. Duri wrote the note. He drew a pine tree. Gyeongbokgung burned in 1592. The Heungseon Daewongun rebuilt it, 1865 to 1868. People paid money and did hard work.",
-      "junior": "At night, Mr. Pyo changed ten palace logs. One new line made 나 into 다: logs to sell. He bought them. Duri wrote the note. He drew a pine tree, not his name. Gyeongbokgung burned in 1592. The Heungseon Daewongun rebuilt it, 1865 to 1868. People paid money and did hard work.",
-      "master": "At night, Mr. Pyo, a log seller, changed ten palace logs. One new line turned 나 into 다: logs to sell. He bought them and hid them on his cart. Coins were buying less and less, so he wanted logs. Duri, a young wood worker, wrote the note. He signed it with a pine tree. Gyeongbokgung burned in 1592. The Heungseon Daewongun, the King's father, rebuilt it, 1865 to 1868. People paid dearly. They had to give money, and a new coin pushed prices up. Many were made to do hard work."
+      "rookie": "At night, Mr. Pyo changed ten palace logs. One new line made II into III: logs to sell. He bought them. Duri wrote the note. He drew a pine tree. Gyeongbokgung burned in 1592. The Heungseon Daewongun rebuilt it, 1865 to 1868. People paid money and did hard work.",
+      "junior": "At night, Mr. Pyo changed ten palace logs. One new line made II into III: logs to sell. He bought them. Duri wrote the note. He drew a pine tree, not his name. Gyeongbokgung burned in 1592. The Heungseon Daewongun rebuilt it, 1865 to 1868. People paid money and did hard work.",
+      "master": "At night, Mr. Pyo, a log seller, changed ten palace logs. One new line turned II into III: logs to sell. He bought them and hid them on his cart. Coins were buying less and less, so he wanted logs. Duri, a young wood worker, wrote the note. He signed it with a pine tree. Gyeongbokgung burned in 1592. The Heungseon Daewongun, the King's father, rebuilt it, 1865 to 1868. People paid dearly. They had to give money, and a new coin pushed prices up. Many were made to do hard work."
     },
     {
-      "rookie": "Take the new line from 다. What is left?",
-      "junior": "Take the new line from 다. Which mark is left?",
-      "master": "Take the new line away from 다. Which mark is left?"
+      "rookie": "Take the new line from III. What is left?",
+      "junior": "Take the new line from III. Which mark is left?",
+      "master": "Take the new line away from III. Which mark is left?"
     },
     {
-      "rookie": "가 is for halls. Take the line from 다. What is left?",
-      "junior": "가 is for the halls. Take the line from 다. What is left?",
-      "master": "가 is for the great halls. Take the line from 다. Which mark is left?"
+      "rookie": "I is for halls. Take the line from III. What is left?",
+      "junior": "I is for the halls. Take the line from III. What is left?",
+      "master": "I is for the great halls. Take the line from III. Which mark is left?"
     },
     {
-      "rookie": "Six were 다 before. How many more?",
-      "junior": "Six were 다 before. How many more are there?",
-      "master": "Six were 다 before. How many more are there?"
+      "rookie": "Six were III before. How many more?",
+      "junior": "Six were III before. How many more are there?",
+      "master": "Six were III before. How many more are there?"
     },
     {
-      "rookie": "That is all 나 logs. Two are still 나.",
-      "junior": "That is all 나 logs last night. Two are still 나.",
-      "master": "That is every 나 log from last night. Two are still 나."
+      "rookie": "That is all II logs. Two are still II.",
+      "junior": "That is all II logs last night. Two are still II.",
+      "master": "That is every II log from last night. Two are still II."
     },
     {
-      "rookie": "Two are still 나. How many changed?",
-      "junior": "Two are still 나. How many were changed?",
-      "master": "Two logs are still 나. How many were changed?"
+      "rookie": "Two are still II. How many changed?",
+      "junior": "Two are still II. How many were changed?",
+      "master": "Two logs are still II. How many were changed?"
     },
     {
-      "rookie": "Hall logs are 가, with old cuts.",
-      "junior": "Logs for the halls are 가, with old cuts.",
-      "master": "Hall logs are marked 가, with old cuts."
+      "rookie": "Hall logs are I, with old cuts.",
+      "junior": "Logs for the halls are I, with old cuts.",
+      "master": "Hall logs are marked I, with old cuts."
     },
     {
       "rookie": "The gate waits. Where do logs to sell go?",
@@ -658,9 +658,9 @@
       "master": "Duri's yard rule, and what he noticed:"
     },
     {
-      "rookie": "Logs for the halls are carried up the steps.\nLogs for the gates wait by the gate.\nLogs to sell leave by the east gate, on a dealer's cart.\nOn the way, Duri saw:\nTwo men carry a log to the hall. Its mark is 가. All its cuts are old.\nDeep wheel tracks. A heavy cart came here from the timber yard.\nPale wood dust on the stones, like the new cut on the log.",
-      "junior": "Logs for the halls are carried up the steps.\nLogs for the gates wait by the gate.\nLogs to sell leave by the east gate, on a dealer's cart.\nOn the way, Duri saw:\nTwo men carry a log to the hall. Its mark is 가. All its cuts are old.\nDeep wheel tracks. A heavy cart came here from the timber yard.\nPale wood dust on the stones, like the new cut on the log.",
-      "master": "Logs for the halls are carried up the steps.\nLogs for the gates wait beside the gate.\nLogs to sell leave by the east gate, on a dealer's cart.\nOn the way, Duri noticed:\nTwo men carry a log to the hall. Its mark is 가. All its cuts are old.\nDeep wheel tracks. A heavy cart came here from the timber yard.\nPale wood dust on the stones, like the new cut on the log."
+      "rookie": "Hall logs go up the steps.\nGate logs wait by the gate.\nLogs to sell leave by the east gate, on a cart.\nOn the way, Duri saw:\nTwo men carry a log to the hall. Its mark is I. All its cuts are old.\nDeep wheel tracks. A heavy cart came from the timber yard.\nPale wood dust on the stones. It looks like the new cut.",
+      "junior": "Logs for the halls are carried up the steps.\nLogs for the gates wait by the gate.\nLogs to sell leave by the east gate, on a dealer's cart.\nOn the way, Duri saw:\nTwo men carry a log to the hall. Its mark is I. All its cuts are old.\nDeep wheel tracks. A heavy cart came here from the timber yard.\nPale wood dust on the stones, like the new cut on the log.",
+      "master": "Logs for the halls are carried up the steps.\nLogs for the gates wait beside the gate.\nLogs to sell leave by the east gate, on a dealer's cart.\nOn the way, Duri noticed:\nTwo men carry a log to the hall. Its mark is I. All its cuts are old.\nDeep wheel tracks. A heavy cart came here from the timber yard.\nPale wood dust on the stones, like the new cut on the log."
     },
     {
       "rookie": "The ten logs look like logs to sell. Where are they?",
@@ -668,9 +668,9 @@
       "master": "The ten changed logs now look like logs to sell. Where are they?"
     },
     {
-      "rookie": "Where do 다 logs go?",
-      "junior": "Where do 다 logs go?",
-      "master": "The changed logs now look like 다 logs for sale. Where do such logs go?"
+      "rookie": "Where do III logs go?",
+      "junior": "Where do III logs go?",
+      "master": "The changed logs now look like III logs for sale. Where do such logs go?"
     },
     {
       "rookie": "Follow the wheel tracks and wood dust.",
@@ -683,9 +683,9 @@
       "master": "Ten logs, hidden under a straw mat on Mr. Pyo's cart!"
     },
     {
-      "rookie": "Each 다 has one new cut.",
-      "junior": "Each 다 has one pale, new cut.",
-      "master": "Each 다 has one pale, new cut."
+      "rookie": "Each III has one new cut.",
+      "junior": "Each III has one pale, new cut.",
+      "master": "Each III has one pale, new cut."
     },
     {
       "rookie": "In the straw: a chisel with fresh wood dust.",
@@ -738,9 +738,9 @@
       "master": "Two men hauling a log"
     },
     {
-      "rookie": "Two men carry a log to the hall. Its mark is 가. All its cuts are old.",
-      "junior": "Two men carry a log to the hall. Its mark is 가. All its cuts are old.",
-      "master": "Two men carry a log to the hall. Its mark is 가. All its cuts are old."
+      "rookie": "Two men carry a log to the hall. Its mark is I. All its cuts are old.",
+      "junior": "Two men carry a log to the hall. Its mark is I. All its cuts are old.",
+      "master": "Two men carry a log to the hall. Its mark is I. All its cuts are old."
     },
     {
       "rookie": "Deep wheel tracks",
@@ -748,7 +748,7 @@
       "master": "Deep wheel tracks in the dirt"
     },
     {
-      "rookie": "Deep wheel tracks. A heavy cart came here from the timber yard.",
+      "rookie": "Deep wheel tracks. A heavy cart came from the timber yard.",
       "junior": "Deep wheel tracks. A heavy cart came here from the timber yard.",
       "master": "Deep wheel tracks. A heavy cart came here from the timber yard."
     },
@@ -758,7 +758,7 @@
       "master": "Pale wood dust"
     },
     {
-      "rookie": "Pale wood dust on the stones, like the new cut on the log.",
+      "rookie": "Pale wood dust on the stones. It looks like the new cut.",
       "junior": "Pale wood dust on the stones, like the new cut on the log.",
       "master": "Pale wood dust on the stones, like the new cut on the log."
     },

@@ -303,7 +303,7 @@
       "master": "Yun explains:"
     },
     {
-      "rookie": "This list is for my friend's copy.\nThe card says the same things, line by line.\nBut one line on the card is not true.\nMaybe that line is a message.\nRead the card's last words too.",
+      "rookie": "This list is for my friend's copy.\nThe card says the same things, line by line.\nBut one line on the card is not true.\nMaybe that line is a message.\nMy friend's copy has a white string.\nRead the card's last words too.",
       "junior": "This list is for my friend's copy.\nThe card says the same things, line by line.\nBut one line on the card is not true.\nMaybe that line is a message.\nRead the card's last words too.",
       "master": "This list is for the copy I made for my friend.\nThe card says the same things, line by line.\nBut one line on the card is not true.\nMaybe that line is not a mistake, but a message.\nRead the card's last words too."
     },
@@ -573,7 +573,7 @@
       "master": "Someone has moved the dictionary."
     },
     {
-      "rookie": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms.",
+      "rookie": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it. It has a white string.\nOnly Miri came in tonight. She brings water to our rooms.",
       "junior": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms.",
       "master": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was right next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms."
     },
@@ -668,7 +668,7 @@
       "master": "You think it through carefully:"
     },
     {
-      "rookie": "The card says the copy is safe under keys of these colours.\nIts untrue line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage.\nWhat has keys of black and white?",
+      "rookie": "The card says: the copy is under keys of these colours.\nIts wrong line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage.\nWhat has keys of black and white?",
       "junior": "The card says the copy is safe under keys of these colours.\nIts line that is not true says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage.\nWhat has keys of black and white?",
       "master": "The card says the copy is safe under keys of these colours.\nIts untrue line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents wear black jackets and white shirts. They have no keys.\nAnd an old piano stands by the stage.\nWhat here has keys of black and white?"
     },
@@ -768,7 +768,7 @@
       "master": "\"My friend comes at sunrise. We must hurry!\""
     },
     {
-      "rookie": "Miri: \"My lock wants two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\"",
+      "rookie": "Miri: \"My lock needs two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3. So there are three copies.\"\n\"It also says 18 + 1 opening poem.\"",
       "junior": "Miri: \"My lock wants two numbers from Yun's list, put side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems make 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\"",
       "master": "Miri: \"My lock needs two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: how many poems are in each copy.\"\n\"For example: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\""
     },

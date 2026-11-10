@@ -103,7 +103,7 @@
       "master": "Haesu's note reads:"
     },
     {
-      "rookie": "At the end, Mr. Kim sat alone at the table, holding a watch.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, quietly.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new. He did not buy it this morning.\n— Haesu",
+      "rookie": "They ate breakfast first, quietly.\nAfter breakfast, they swapped their watches.\nAt the end, Mr. Kim sat alone with a watch.\nBefore that, Mr. Yun said goodbye.\nMr. Yun's watch was new. He did not buy it this morning.\n— Haesu",
       "junior": "At the end, Mr. Kim sat alone at the table, holding a watch.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, without talking.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new. He did not buy it this morning.\n— Haesu",
       "master": "At the end, Mr. Kim sat alone at the table, holding a watch.\nBefore that, Mr. Yun said goodbye.\nThey ate breakfast first, quietly, without talking.\nAfter breakfast, they swapped their watches.\nMr. Yun's watch was new. He had not bought it this morning.\n— Haesu"
     },
@@ -438,7 +438,7 @@
       "master": "Mr. Kim tells you what Yun said:"
     },
     {
-      "rookie": "Yun held up his new watch.\nHe pointed at its long hand.\n\"When this hand goes round one more time, I will not need a watch.\"\n\"My watch is new, and yours is old. Let us swap.\"\n\"I will need a watch for only one more ____.\"\n\"You will need one for a long, long time.\"\nThen he took my old watch and gave me his.",
+      "rookie": "Yun held up his new watch.\nHe pointed at its long hand.\n\"This hand will go round one more time. Then I will not need a watch.\"\n\"My watch is new, and yours is old. Let us swap.\"\n\"I will need a watch for only one more ____.\"\n\"You will need one for a long, long time.\"\nThen he took my old watch and gave me his.",
       "junior": "Yun held up his new watch.\nHe pointed at its long hand.\n\"When this hand goes round one more time, I will not need a watch.\"\n\"My watch is new, and yours is old. Let's swap.\"\n\"I will need a watch for only one more ____.\"\n\"You will need one for a long, long time.\"\nThen he took my old watch and gave me his.",
       "master": "Yun held up his new watch.\nHe pointed at its long hand.\n\"When this hand goes round one more time, I will not need a watch.\"\n\"My watch is new, and yours is old. Let us swap them.\"\n\"I will need a watch for only one more ____.\"\n\"But you will need one for a long, long time.\"\nThen he took my old watch and gave me his new one."
     },
@@ -478,7 +478,7 @@
       "master": "\"So he gave the good watch to me.\""
     },
     {
-      "rookie": "Haesu writes it all down, line by line.",
+      "rookie": "Haesu writes it all down.",
       "junior": "Haesu writes everything down, line by line.",
       "master": "Haesu records it all, line by line."
     },
