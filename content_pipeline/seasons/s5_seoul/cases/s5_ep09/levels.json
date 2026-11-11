@@ -273,69 +273,9 @@
       "master": "Someone copied the secret list onto thin paper."
     },
     {
-      "rookie": "Find the three things.",
-      "junior": "Find the three things in the report.",
-      "master": "Find the three things from the report."
-    },
-    {
-      "rookie": "POLICE REPORT",
-      "junior": "POLICE REPORT",
-      "master": "POLICE REPORT"
-    },
-    {
-      "rookie": "Nothing here. Check the report.",
-      "junior": "Nothing here. Check the report again.",
-      "master": "Nothing here. Check the report again: where is each thing?"
-    },
-    {
-      "rookie": "All three things are found!",
-      "junior": "All three things are found!",
-      "master": "You found all three things!"
-    },
-    {
-      "rookie": "Nothing has been moved.",
-      "junior": "Nothing in the office has been moved.",
-      "master": "Nothing here has been moved."
-    },
-    {
-      "rookie": "A policeman gives you the report.",
-      "junior": "A policeman gives you the morning report.",
-      "master": "A policeman hands you the morning report."
-    },
-    {
-      "rookie": "DESK KEY",
-      "junior": "DESK KEY",
-      "master": "DESK KEY"
-    },
-    {
-      "rookie": "The key is next to the stove. It opens the list desk.",
-      "junior": "The key is next to the stove. It opens the list desk.",
-      "master": "The key is next to the stove. It opens the list desk."
-    },
-    {
-      "rookie": "Next to the stove",
-      "junior": "Next to the stove",
-      "master": "Next to the stove"
-    },
-    {
       "rookie": "A key lies next to the stove.",
       "junior": "A small key lies next to the stove.",
       "master": "A small brass key lies next to the stove."
-    },
-    {
-      "rookie": "INK BOTTLE",
-      "junior": "INK BOTTLE",
-      "master": "INK BOTTLE"
-    },
-    {
-      "rookie": "The ink bottle is on the window sill.",
-      "junior": "The ink bottle is on the window sill.",
-      "master": "The ink bottle is on the window sill."
-    },
-    {
-      "rookie": "On the window sill",
-      "junior": "On the window sill",
-      "master": "On the window sill"
     },
     {
       "rookie": "An ink bottle is on the sill.",
@@ -343,79 +283,9 @@
       "master": "A small ink bottle is on the window sill."
     },
     {
-      "rookie": "THIN PAPER",
-      "junior": "THIN PAPER",
-      "master": "THIN PAPER"
-    },
-    {
-      "rookie": "The thin paper is under the list desk. Names are pressed into it.",
-      "junior": "The thin paper is under the list desk. Names are pressed into it.",
-      "master": "The thin paper is under the list desk. Names are pressed into it."
-    },
-    {
-      "rookie": "Under the list desk",
-      "junior": "Under the list desk",
-      "master": "Under the list desk"
-    },
-    {
       "rookie": "A sheet of thin paper lies under the list desk.",
       "junior": "A sheet of thin paper lies under the list desk.",
       "master": "A sheet of thin paper lies under the list desk."
-    },
-    {
-      "rookie": "On the list desk",
-      "junior": "On the list desk",
-      "master": "On the list desk"
-    },
-    {
-      "rookie": "Not on it. The report says UNDER.",
-      "junior": "Not on top of it. The report says UNDER.",
-      "master": "Not on top of the desk. The report says UNDER."
-    },
-    {
-      "rookie": "The iron stove",
-      "junior": "The iron stove",
-      "master": "The iron stove"
-    },
-    {
-      "rookie": "The report says NEXT TO it.",
-      "junior": "The report says NEXT TO it, next to the stove.",
-      "master": "The stove is cold. The report says NEXT TO it."
-    },
-    {
-      "rookie": "The window",
-      "junior": "The window",
-      "master": "The window"
-    },
-    {
-      "rookie": "The report says ON the sill.",
-      "junior": "The window is shut. The report says ON the sill.",
-      "master": "The window is closed. The report says ON the sill."
-    },
-    {
-      "rookie": "The door",
-      "junior": "The door",
-      "master": "The door"
-    },
-    {
-      "rookie": "The stairs door. Nothing here.",
-      "junior": "The stairs door. Nothing is here.",
-      "master": "The stairs door. Nothing is here."
-    },
-    {
-      "rookie": "The bookshelf",
-      "junior": "The bookshelf",
-      "master": "The bookshelf"
-    },
-    {
-      "rookie": "Only books and files here.",
-      "junior": "Only books and files are here.",
-      "master": "Only books and files. Nothing strange here."
-    },
-    {
-      "rookie": "SEARCH THE OFFICE",
-      "junior": "SEARCH THE OFFICE",
-      "master": "SEARCH THE OFFICE"
     },
     {
       "rookie": "A COPY OF THE LIST",
@@ -558,7 +428,7 @@
       "master": "I became the police chief in August 1919."
     },
     {
-      "rookie": "I only asked to guard the door.",
+      "rookie": "At first, I only asked to be the door guard.",
       "junior": "I only asked to guard the door.",
       "master": "All I asked was to guard the door. They gave me much more."
     },
@@ -603,7 +473,7 @@
       "master": "A light burned at the list desk from eleven to one. Thin paper showed the list was copied. Mr. Nam Giho, a new clerk, left last. The copy was sewn into his coat. Haesu, a young clerk, noticed the first clue. The Provisional Government began in Shanghai in April 1919. Kim Gu was its police chief. His police guarded it and watched for spies. In 1940, Kim Gu became its leader, the chairman."
     },
     {
-      "rookie": "Detective, someone used the list desk last night.\nAt eleven, the guard saw the light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office",
+      "rookie": "Detective, someone used the list desk last night.\nAt eleven, the guard saw the light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\nHalf of four hours is two hours.\n— a friend in this office",
       "junior": "Detective, someone used the list desk last night.\nAt eleven, the guard saw the office light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office",
       "master": "Detective, someone used the list desk late last night.\nAt eleven o'clock, the guard saw the office light go on.\nI had left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office"
     },
@@ -758,9 +628,9 @@
       "master": "Kim Gu locks the real list and the copy away in an iron box."
     },
     {
-      "rookie": "Show Kim Gu Mr. Nam is wrong.",
+      "rookie": "Show Kim Gu that Mr. Nam is wrong.",
       "junior": "Show Kim Gu that Mr. Nam is wrong.",
-      "master": "Prove to Kim Gu that Mr. Nam is wrong."
+      "master": "Show Kim Gu that Mr. Nam is not telling the truth."
     },
     {
       "rookie": "With no clues, he goes free.",
@@ -768,12 +638,12 @@
       "master": "With no clues, he must go free."
     },
     {
-      "rookie": "Kim Gu asks: \"Was anyone at the desk?\"",
+      "rookie": "Kim Gu asks: \"Mr. Nam says nobody was at the desk. Is that true?\"",
       "junior": "Kim Gu asks: \"Was anyone at the list desk?\"",
       "master": "Kim Gu asks: \"He says nobody was at the list desk. Was anyone really there?\""
     },
     {
-      "rookie": "Yes. The light went on at eleven. Half a new candle burned: until one.",
+      "rookie": "Yes. The light went on at eleven. Half the candle burned, so it was on until one.",
       "junior": "Yes. The light went on at eleven. Half a new candle burned: until one.",
       "master": "Yes. The light went on at eleven. Half a new candle burned: until one."
     },
@@ -793,7 +663,7 @@
       "master": "Which card tells about the candle and the light?"
     },
     {
-      "rookie": "Kim Gu asks: \"Was anything copied?\"",
+      "rookie": "Kim Gu asks: \"Mr. Nam says nothing was copied. Is that true?\"",
       "junior": "Kim Gu asks: \"He says nothing was copied. Was anything copied?\"",
       "master": "Kim Gu asks: \"He says nothing was copied. Was anything really copied?\""
     },
@@ -818,7 +688,7 @@
       "master": "Which card speaks of the thin paper?"
     },
     {
-      "rookie": "Kim Gu asks: \"Did he leave at nine?\"",
+      "rookie": "Kim Gu asks: \"Mr. Nam says he went home at nine. Is that true?\"",
       "junior": "Kim Gu asks: \"Did he leave at nine?\"",
       "master": "Kim Gu asks: \"He says he went home at nine. Did he really?\""
     },
@@ -866,6 +736,26 @@
       "rookie": "I went home at nine.",
       "junior": "I went home at nine.",
       "master": "I went home at nine."
+    },
+    {
+      "rookie": "Mr. Nam says three things.",
+      "junior": "Mr. Nam says three things.",
+      "master": "Mr. Nam has told us three things."
+    },
+    {
+      "rookie": "He says nobody was at the desk.",
+      "junior": "He says nobody was at the desk.",
+      "master": "He says nobody was at the list desk."
+    },
+    {
+      "rookie": "He says nothing was copied.",
+      "junior": "He says nothing was copied.",
+      "master": "He says nothing was copied."
+    },
+    {
+      "rookie": "He says he went home at nine.",
+      "junior": "He says he went home at nine.",
+      "master": "He says he went home at nine o'clock."
     }
   ],
   "glossary": {

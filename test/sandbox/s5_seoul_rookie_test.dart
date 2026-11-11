@@ -73,11 +73,13 @@ void main() {
 
   // Superseded by the PART 2–4 redesign; its final is tested in test/sandbox/s5_seoul_c05_test.dart.
 
-  test('C09 M2: the report still says where each thing is, and which one holds the names', () {
+  test('C09 M2: the report says which thing holds the names; the child picks it from three pictures', () {
     final m = mission('s5_ep09_m2');
-    for (final f in season5Content.investigations[m.id]!.finds) {
-      expect(m.letter, contains(f.reportLine), reason: f.id);
-    }
+    // A picture choice since 2026-11-11 (the search answered by itself).
+    expect(season5Content.investigations[m.id], isNull);
+    expect(m.type, MissionType.imageChoice);
+    expect([for (final o in m.options) o.id], ['key', 'ink', 'paper']);
+    expect(m.options.every((o) => o.picture != null), isTrue);
     expect(m.letter, contains('Names are pressed into it.'));
     for (final o in m.options.where((o) => o.id != m.answer)) {
       expect(o.feedback, isNotNull, reason: o.id);

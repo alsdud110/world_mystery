@@ -414,6 +414,8 @@ const s5SeoulWorldCity = WorldCity(
 /// each picture made for it (assets.manifest.json, on disk).
 const s5SeoulEvidencePictures = <String, String>{
   's5_ep02_e1': 'assets/seasons/season_05_seoul/cases/case_02/find_note_room.webp',
+  's5_ep09_e1': 'assets/seasons/season_05_seoul/cases/case_09/haesu_note.webp',
   's5_ep09_e2': 'assets/seasons/season_05_seoul/cases/case_09/thin_paper.webp',
+  's5_ep09_e3': 'assets/seasons/season_05_seoul/cases/case_09/signout_book.webp',
   's5_ep10_e2': 'assets/seasons/season_05_seoul/cases/case_10/new_watch.webp',
 };

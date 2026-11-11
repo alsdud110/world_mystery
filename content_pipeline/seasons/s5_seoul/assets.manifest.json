@@ -1817,6 +1817,52 @@
       "notes": []
     },
     {
+      "assetId": "s5_seoul.asset.c09_haesu_note",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_ep09_e1",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "description": "Haesu's note (evidence): a small half-folded note beside a candle stub.",
+      "prompt": "A small half-folded note with faint unreadable handwriting beside a candle stub in a brass holder, on an office table. No readable text.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/haesu_note.webp",
+      "references": [
+        "s5_seoul.asset.c09_thin_paper"
+      ],
+      "status": "generated",
+      "notes": [
+        "Made 2026-11-11 so this evidence card has its own picture, not the plain paper one (gpt-image-2.5-flare, $0.02)."
+      ]
+    },
+    {
+      "assetId": "s5_seoul.asset.c09_signout_book",
+      "type": "object",
+      "use": "puzzle",
+      "subject": "s5_ep09_e3",
+      "caseIds": [
+        "s5_ep09"
+      ],
+      "description": "The sign-out book (evidence): an open ruled book by the door, a pencil on a string, a small clock.",
+      "prompt": "An open ruled sign-out book on a shelf by an office door, a pencil tied on a string, a small brass clock beside it. No readable text or numbers.",
+      "stylePreset": "modern_object",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "outputPath": "assets/seasons/season_05_seoul/cases/case_09/signout_book.webp",
+      "references": [
+        "s5_seoul.asset.c09_thin_paper"
+      ],
+      "status": "generated",
+      "notes": [
+        "Made 2026-11-11 so this evidence card has its own picture, not the plain paper one (gpt-image-2.5-flare, $0.02)."
+      ]
+    },
+    {
       "assetId": "s5_seoul.asset.c09_thin_paper",
       "type": "object",
       "use": "puzzle",

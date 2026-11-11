@@ -65,7 +65,7 @@
           "It is in Hangeul. No name."
         ],
         "letterIntro": "The note says:",
-        "letter": "Detective, someone used the list desk last night.\nAt eleven, the guard saw the light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office",
+        "letter": "Detective, someone used the list desk last night.\nAt eleven, the guard saw the light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\nHalf of four hours is two hours.\n— a friend in this office",
         "question": "When did the light go out? Use four numbers, like 07:00.",
         "hints": [
           "The light went on at eleven. How many hours did half the candle burn?",
@@ -111,26 +111,32 @@
       "slot": "m2",
       "placeId": "s5_seoul.shanghai_office",
       "puzzle": {
-        "paletteId": "dark_room_search",
+        "paletteId": "picture_choice",
         "surface": "mission",
-        "engineTable": "investigations",
-        "missionType": "multipleChoice",
+        "engineTable": null,
+        "missionType": "imageChoice",
         "answerSpec": {
           "answer": "paper",
           "options": [
             {
               "id": "key",
               "label": "The desk key",
-              "feedback": "That opens the desk. What shows a copy?"
+              "feedback": "That opens the desk. What shows a copy?",
+              "picture": "assets/seasons/season_05_seoul/cases/case_09/desk_key.webp",
+              "altText": "A key lies next to the stove."
             },
             {
               "id": "ink",
               "label": "The ink bottle",
-              "feedback": "Just ink. What has names pressed in?"
+              "feedback": "Just ink. What has names pressed in?",
+              "picture": "assets/seasons/season_05_seoul/cases/case_09/ink_bottle.webp",
+              "altText": "An ink bottle is on the sill."
             },
             {
               "id": "paper",
-              "label": "The thin paper"
+              "label": "The thin paper",
+              "picture": "assets/seasons/season_05_seoul/cases/case_09/thin_paper.webp",
+              "altText": "A sheet of thin paper lies under the list desk."
             }
           ]
         },
@@ -144,7 +150,8 @@
         "notes": [
           "Played as a search (InvestigationScene with a picture file): the police report's three lines say where each thing is (next to, on, under); the thin paper, with names pressed into it, shows the list was copied.",
           "Measured 2026-11-06 on the grid sheet of government_office.webp (picture.measuredOn): the list desk in the middle with the thin paper drawn under it, the window and its sill (the ink bottle drawn on it) on the right, the iron stove lower right with the key drawn beside it, the door on the left, the bookshelf behind the desk; each find's place is where the picture draws it; no two areas overlap.",
-          "The police report is made up; that the police bureau watched for spies is history (h3)."
+          "The police report is made up; that the police bureau watched for spies is history (h3).",
+          "2026-11-11: played as a picture choice (key, ink, thin paper), not a search: the search found all three and answered by itself, so the child never chose."
         ]
       },
       "clueInputs": [
@@ -204,189 +211,6 @@
           "icon": "seal",
           "description": "Kim Gu's police found thin paper under the list desk. It lay under a copy: the pen pressed the names into it.",
           "inscription": "The thin paper is under the list desk."
-        },
-        "search": {
-          "picture": {
-            "file": "assets/seasons/season_05_seoul/cases/case_09/government_office.webp",
-            "pixels": {
-              "width": 1536,
-              "height": 1024
-            },
-            "measuredOn": "sha256:4e5eb65ee989daaa915dd67529a7de82cb690d40463936ebd5ede9c25911cb0c"
-          },
-          "task": "Find the three things.",
-          "documentTitle": "POLICE REPORT",
-          "missLine": "Nothing here. Check the report.",
-          "doneLine": "All three things are found!",
-          "arrival": [
-            "Nothing has been moved.",
-            "A policeman gives you the report."
-          ],
-          "guideAt": [
-            820,
-            960
-          ],
-          "finds": [
-            {
-              "id": "key",
-              "name": "The desk key",
-              "title": "DESK KEY",
-              "reportLine": "The key is next to the stove. It opens the list desk.",
-              "spot": "Next to the stove",
-              "areas": [
-                [
-                  1020,
-                  890,
-                  1200,
-                  990
-                ]
-              ],
-              "foundLine": "A key lies next to the stove.",
-              "picture": {
-                "file": "assets/seasons/season_05_seoul/cases/case_09/desk_key.webp",
-                "pixels": {
-                  "width": 1536,
-                  "height": 1024
-                }
-              },
-              "at": [
-                1095,
-                945
-              ],
-              "width": 80
-            },
-            {
-              "id": "ink",
-              "name": "The ink bottle",
-              "title": "INK BOTTLE",
-              "reportLine": "The ink bottle is on the window sill.",
-              "spot": "On the window sill",
-              "areas": [
-                [
-                  1200,
-                  510,
-                  1420,
-                  610
-                ]
-              ],
-              "foundLine": "An ink bottle is on the sill.",
-              "picture": {
-                "file": "assets/seasons/season_05_seoul/cases/case_09/ink_bottle.webp",
-                "pixels": {
-                  "width": 1536,
-                  "height": 1024
-                }
-              },
-              "at": [
-                1300,
-                555
-              ],
-              "width": 80
-            },
-            {
-              "id": "paper",
-              "name": "The thin paper",
-              "title": "THIN PAPER",
-              "reportLine": "The thin paper is under the list desk. Names are pressed into it.",
-              "spot": "Under the list desk",
-              "areas": [
-                [
-                  480,
-                  820,
-                  740,
-                  930
-                ]
-              ],
-              "foundLine": "A sheet of thin paper lies under the list desk.",
-              "picture": {
-                "file": "assets/seasons/season_05_seoul/cases/case_09/thin_paper.webp",
-                "pixels": {
-                  "width": 1536,
-                  "height": 1024
-                }
-              },
-              "at": [
-                612,
-                878
-              ],
-              "width": 130
-            }
-          ],
-          "spots": [
-            {
-              "label": "On the list desk",
-              "areas": [
-                [
-                  330,
-                  500,
-                  860,
-                  700
-                ]
-              ],
-              "line": "Not on it. The report says UNDER."
-            },
-            {
-              "label": "The iron stove",
-              "areas": [
-                [
-                  1250,
-                  630,
-                  1500,
-                  990
-                ]
-              ],
-              "line": "The report says NEXT TO it."
-            },
-            {
-              "label": "The window",
-              "areas": [
-                [
-                  1150,
-                  80,
-                  1420,
-                  505
-                ]
-              ],
-              "line": "The report says ON the sill."
-            },
-            {
-              "label": "The door",
-              "areas": [
-                [
-                  40,
-                  40,
-                  240,
-                  860
-                ]
-              ],
-              "line": "The stairs door. Nothing here."
-            },
-            {
-              "label": "The bookshelf",
-              "areas": [
-                [
-                  340,
-                  140,
-                  850,
-                  495
-                ]
-              ],
-              "line": "Only books and files here."
-            }
-          ],
-          "opening": [
-            60,
-            100,
-            1476,
-            990
-          ],
-          "inside": [
-            20,
-            40,
-            1516,
-            1004
-          ],
-          "startLabel": "SEARCH THE OFFICE"
         },
         "discovery": {
           "type": "evidenceFound",
@@ -597,11 +421,27 @@
       "interview": {
         "speaker": "kim_gu",
         "portrait": "assets/seasons/season_05_seoul/characters/kim_gu.webp",
-        "goal": "Show Kim Gu Mr. Nam is wrong.",
+        "goal": "Show Kim Gu that Mr. Nam is wrong.",
         "opening": [
           {
             "by": "speaker",
             "text": "That list has our friends' names."
+          },
+          {
+            "by": "speaker",
+            "text": "Mr. Nam says three things."
+          },
+          {
+            "by": "speaker",
+            "text": "He says nobody was at the desk."
+          },
+          {
+            "by": "speaker",
+            "text": "He says nothing was copied."
+          },
+          {
+            "by": "speaker",
+            "text": "He says he went home at nine."
           },
           {
             "by": "speaker",
@@ -633,7 +473,7 @@
               },
               {
                 "by": "speaker",
-                "text": "I only asked to guard the door."
+                "text": "At first, I only asked to be the door guard."
               }
             ]
           }
@@ -641,14 +481,14 @@
         "presents": [
           {
             "id": "when",
-            "prompt": "Kim Gu asks: \"Was anyone at the desk?\"",
+            "prompt": "Kim Gu asks: \"Mr. Nam says nobody was at the desk. Is that true?\"",
             "accepted": [
               "s5_ep09_e1"
             ],
             "lines": [
               {
                 "by": "detective",
-                "text": "Yes. The light went on at eleven. Half a new candle burned: until one."
+                "text": "Yes. The light went on at eleven. Half the candle burned, so it was on until one."
               },
               {
                 "by": "speaker",
@@ -666,7 +506,7 @@
           },
           {
             "id": "how",
-            "prompt": "Kim Gu asks: \"Was anything copied?\"",
+            "prompt": "Kim Gu asks: \"Mr. Nam says nothing was copied. Is that true?\"",
             "accepted": [
               "s5_ep09_e2"
             ],
@@ -694,7 +534,7 @@
           },
           {
             "id": "who",
-            "prompt": "Kim Gu asks: \"Did he leave at nine?\"",
+            "prompt": "Kim Gu asks: \"Mr. Nam says he went home at nine. Is that true?\"",
             "accepted": [
               "s5_ep09_e3"
             ],

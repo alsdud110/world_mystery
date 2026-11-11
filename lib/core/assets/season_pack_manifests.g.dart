@@ -462,7 +462,7 @@ const seasonPackManifests = <String, SeasonPackManifest>{
   ),
   'season_05_seoul': SeasonPackManifest(
     folder: 'season_05_seoul',
-    version: '2d0674cbb11b42f6',
+    version: '7ba83ea3e1a81a4e',
     files: [
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_01/ending_mother_letter.webp', 752104, '5a7ac29fa73768bb24753da0b1fbfbb04ae38eb58ebbc780c1de5f45b6692523'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_01/final_kings_study.webp', 712922, '78cc754a08c48bdf841c50852a31ef96c9262754f5a6de61823f31d241a708dc'),
@@ -515,8 +515,10 @@ const seasonPackManifests = <String, SeasonPackManifest>{
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_08/village_home.webp', 561102, 'b24c3fd1f38af9f367599d4758fc4714adc1fc7418ae25ce1628ae8869df8b4f'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_09/desk_key.webp', 1193178, '23bcd74a3f57639de69266b25ff3f0c92ddedb3e150dda5a411b47ec7f6ae7eb'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_09/government_office.webp', 524900, '4e5eb65ee989daaa915dd67529a7de82cb690d40463936ebd5ede9c25911cb0c'),
+      SeasonPackFile('assets/seasons/season_05_seoul/cases/case_09/haesu_note.webp', 269816, '3c506bcf29b774f163079b7c8c548825dc55296fe4a3772cf5925d78b0968b07'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_09/ink_bottle.webp', 2079296, '690986111160577865c7e809ccf6f795d7a47145f076ac32fdd5eefba38e8db9'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_09/shanghai_lane.webp', 503008, '6cb9154b3b1faf58b37e0097544d21d435f12c19336d6b5d6d471958d9b6603c'),
+      SeasonPackFile('assets/seasons/season_05_seoul/cases/case_09/signout_book.webp', 281720, 'c25075bcedc24fdd18243f891cc58f578f170627b4796cc00873fa1b38c0cc80'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_09/thin_paper.webp', 1842510, 'bc8a789965e2afea535d52c9ceabe107b1e09d626668da6a66b7eee8efb83cdd'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_10/breakfast_room.webp', 471164, '369ab6fc925591cb14954d4329bb3d7964bb868c9e781d77ccd519783a925bc4'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_10/haesu_room.webp', 544322, '2458281d0f9d2cca94cf8f5d5e01a2325407bcb3569fc4544849b8e6f03cf368'),

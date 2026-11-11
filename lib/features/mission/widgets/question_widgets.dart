@@ -387,7 +387,7 @@ class _WordInputQuestionState extends State<WordInputQuestion> {
           ],
           style: AppText.title(size: 26).copyWith(letterSpacing: 4),
           decoration: InputDecoration(
-            hintText: 'Type the word',
+            hintText: 'Type your answer',
             hintStyle: AppText.bodyText(size: 18, color: AppColors.muted),
             counterText: '',
           ),
