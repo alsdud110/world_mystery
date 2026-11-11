@@ -3,7 +3,7 @@
   "generatorVersion": 5,
   "target": "game",
   "seasonId": "s4_newyork",
-  "seasonNumber": 4,
+  "seasonNumber": 5,
   "cases": [
     "s4_ep01",
     "s4_ep02",
@@ -20,7 +20,7 @@
   ],
   "approved": false,
   "inputs": {
-    "season.plan.json": "sha256:9a28a699bc4474d876ec005d4c2440ad95a4fa0ffc1088337e57a3067770a9ef",
+    "season.plan.json": "sha256:f4b0eb0a67d71562e3bd32d97c21abeb7a2db57a401c8ed02c4862836f23d1da",
     "season.levels.json": "sha256:5cd9e6a2010fd6cb56bb5e28beee35b58db27d78557f59572d459158e1552593",
     "cases/s4_ep01/case.plan.json": "sha256:a46b4d9921ca69d5b38d3a61b30f153b2d4ea45e85e1788d997f3f2fb83fc3bc",
     "cases/s4_ep01/levels.json": "sha256:7f608884dbce18d4499e71570cfe1e794c41c3c2d30b3e7eef13432e7045ca03",
@@ -48,7 +48,7 @@
     "cases/s4_ep12/levels.json": "sha256:d833f62131a66cb751b2b77df63be7d961be1f16d8aeb3fbde768a74e909ccb5"
   },
   "outputs": {
-    "s4_newyork_season.g.dart": "sha256:984741d641600518572038d88da5d01ade17d0f21acdc0b417783c185016e236",
+    "s4_newyork_season.g.dart": "sha256:c9dfadd71e2443801114865ebd63c03766369bd0282105c46b076f0aece74c63",
     "s4_ep01.g.dart": "sha256:2c9c6c72dc469800f76d9565856003da5d0150ae20f0e8557be3de0015b3707a",
     "s4_ep02.g.dart": "sha256:b7567cfa2cff6bf83323e94c0cfa99d6cf545a4de843153ceecb819026bffad1",
     "s4_ep03.g.dart": "sha256:82d8e15dfe53add9f27d46fa72a5bb036e30fc22fef56ff670e45e67017ad619",
@@ -75,7 +75,7 @@
     "s4_ep11_levels.g.dart": "sha256:42ff21b6034cdb77233036ea8f3ff5a0dd527ca1cc30714367e2f80545f09e13",
     "s4_ep12_levels.g.dart": "sha256:bf9bb5b53c060dfe0e00e4acae85ae303882780631958db3d1f788c07a003b09",
     "s4_newyork_levels.g.dart": "sha256:42ad680835df127f53e394dd0396e9c9821415e21e95372f256582150a6f365a",
-    "s4_newyork_content.g.dart": "sha256:d1b6346d438238189441a327c6176c9838fded14eea38e58f12c2b4a6644da0d",
+    "s4_newyork_content.g.dart": "sha256:ecdcc89ba309e360f014cf293737c3c9ba2788036dffd7f6b69624486939a6a8",
     "s4_newyork_art.g.dart": "sha256:9083a6f9f56a4bc67691ab255ef7602fc9135145391b8eb2e1c395c0aba3e825"
   }
 }

@@ -5,35 +5,35 @@ import 'package:world_mystery/features/mission_map/map_world.dart' show SeasonMa
 import 'package:world_mystery/features/world_map/world_cities.dart' show WorldCity;
 import 'package:world_mystery/widgets/art_assets.dart' show SeasonCover;
 
+import 's5_seoul/s5_seoul_art.g.dart';
 import 's3_rome/s3_rome_art.g.dart';
 import 's4_newyork/s4_newyork_art.g.dart';
-import 's5_seoul/s5_seoul_art.g.dart';
 
 /// Their maps, by season id (`SeasonMap.bySeason`).
 const generatedSeasonMaps = <String, SeasonMap>{
+  's5_seoul': s5SeoulMap,
   's3_rome': s3RomeMap,
   's4_newyork': s4NewyorkMap,
-  's5_seoul': s5SeoulMap,
 };
 
 /// Their covers, by season id (`ArtAssets.seasonCovers`).
 const generatedSeasonCovers = <String, SeasonCover>{
+  's5_seoul': s5SeoulCover,
   's3_rome': s3RomeCover,
   's4_newyork': s4NewyorkCover,
-  's5_seoul': s5SeoulCover,
 };
 
 /// Their cities on the World Map (`WorldCities.all`): one already drawn
 /// as coming soon takes its season.
 const generatedWorldCities = <WorldCity>[
+  s5SeoulWorldCity,
   s3RomeWorldCity,
   s4NewyorkWorldCity,
-  s5SeoulWorldCity,
 ];
 
 /// Their evidence pictures, by evidence id (`ArtAssets.evidencePictures`).
 const generatedEvidencePictures = <String, String>{
+  ...s5SeoulEvidencePictures,
   ...s3RomeEvidencePictures,
   ...s4NewyorkEvidencePictures,
-  ...s5SeoulEvidencePictures,
 };

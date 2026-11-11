@@ -3,12 +3,12 @@
   "generatorVersion": 5,
   "target": "gameRegistry",
   "seasons": [
+    "s5_seoul",
     "s3_rome",
-    "s4_newyork",
-    "s5_seoul"
+    "s4_newyork"
   ],
   "outputs": {
-    "generated_seasons.g.dart": "sha256:59303655e10cf7dbda76341624f8ddafb42ad8b1663472976b06b88d5e6fe234",
-    "generated_season_art.g.dart": "sha256:1ffb64c0fa3e9e07cfff5e3738fc7b449e34d2b5b384b28e1b502223de86cb77"
+    "generated_seasons.g.dart": "sha256:e1fbf2828dc0e5fa02112f67373a77dd4d5bad50fc55d784fcf1ffe75a5d5ddc",
+    "generated_season_art.g.dart": "sha256:f008cc712572140ab91d4f50fea9e86834ca634c82df13005a0de29777955965"
   }
 }

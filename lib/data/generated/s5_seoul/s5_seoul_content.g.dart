@@ -8,7 +8,7 @@ import 's5_seoul_history.g.dart';
 import 's5_seoul_levels.g.dart';
 import 's5_seoul_season.g.dart';
 
-/// Season 5, The King's Letters of Seoul: its content as the game plays it, released
+/// Season 3, The King's Letters of Seoul: its content as the game plays it, released
 /// (`SeasonCatalog.all`, listed by `generated_seasons.g.dart`).
 final s5SeoulContent = SeasonContent(
   info: s5SeoulInfoJson,

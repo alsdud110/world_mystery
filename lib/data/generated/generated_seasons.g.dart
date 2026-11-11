@@ -3,14 +3,14 @@
 
 import 'package:world_mystery/data/mock/season_catalog.dart' show SeasonContent;
 
+import 's5_seoul/s5_seoul_content.g.dart';
 import 's3_rome/s3_rome_content.g.dart';
 import 's4_newyork/s4_newyork_content.g.dart';
-import 's5_seoul/s5_seoul_content.g.dart';
 
 /// The seasons of the game made from their plans, in season order, after
 /// London and Paris (`SeasonCatalog.all`).
 final generatedSeasons = <SeasonContent>[
+  s5SeoulContent,
   s3RomeContent,
   s4NewyorkContent,
-  s5SeoulContent,
 ];

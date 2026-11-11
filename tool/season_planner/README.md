@@ -44,6 +44,8 @@ dart run tool/season_planner/plan_season.dart generate content_pipeline/seasons/
 ```
 
 - `init` refuses a season number or folder already planned, and any shape
+  (the id's digit and `number` agree at `init`; later the order may change by
+  `number` alone, `docs/SEASON_PLAY_ORDER.md`)
   other than 12 cases in 3 acts (the plans' schema). It writes the folder
   whole (`<folder>.part`, then renamed) or not at all.
 - `check` exits 1 with an ERROR, and writes the report (no time, no machine:

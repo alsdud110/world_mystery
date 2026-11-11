@@ -169,13 +169,13 @@ void main() {
       ]);
       await openArchive(t);
       expect(file('s6_test').hitTestable(), findsNothing, reason: 'below the fold');
-      await reveal(t, file(SeasonIds.rome));
-      expect(find.text('SEASON THREE'), findsOneWidget);
-      await reveal(t, file(SeasonIds.newyork));
-      expect(find.text('SEASON FOUR'), findsOneWidget);
       await reveal(t, file(SeasonIds.seoul));
+      expect(find.text('SEASON THREE'), findsOneWidget);
+      expect(find.text("THE KING'S LETTERS OF SEOUL"), findsNothing, reason: 'sealed: Paris is not solved');
+      await reveal(t, file(SeasonIds.rome));
+      expect(find.text('SEASON FOUR'), findsOneWidget);
+      await reveal(t, file(SeasonIds.newyork));
       expect(find.text('SEASON FIVE'), findsOneWidget);
-      expect(find.text("THE KING'S LETTERS OF SEOUL"), findsNothing, reason: 'sealed: New York is not solved');
       await reveal(t, file('s6_test'));
       expect(find.text(third.label), findsOneWidget);
       expect(find.text('A SIXTH CITY'), findsNothing, reason: 'sealed: its season before is not solved');
@@ -427,9 +427,9 @@ void main() {
     final c = ProviderContainer(overrides: await testOverridesFor(await SharedPreferences.getInstance()));
     addTearDown(c.dispose);
     final files = c.read(seasonFilesProvider);
-    expect([for (final f in files) f.season.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul]);
-    // Rome, two files on, never names Paris while London is under way; New
-    // York, three on, never names Rome; Seoul, four on, never New York.
+    expect([for (final f in files) f.season.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.seoul, SeasonIds.rome, SeasonIds.newyork]);
+    // Seoul, two files on, never names Paris while London is under way;
+    // Rome, three on, never names Seoul; New York, four on, never Rome.
     expect(files[2].unsealNote, 'Solve the season before it to unseal this file.');
     expect(files[3].unsealNote, 'Solve the season before it to unseal this file.');
     expect(files.last.unsealNote, 'Solve the season before it to unseal this file.');
@@ -442,8 +442,8 @@ void main() {
     expect(files.last.state, SeasonFileState.sealed);
     expect(files[1].before!.id, SeasonIds.london);
     expect(files[2].before!.id, SeasonIds.paris);
-    expect(files[3].before!.id, SeasonIds.rome);
-    expect(files.last.before!.id, SeasonIds.newyork);
+    expect(files[3].before!.id, SeasonIds.seoul);
+    expect(files.last.before!.id, SeasonIds.rome);
   });
 }
 

@@ -29,7 +29,8 @@ import 'helpers.dart';
 /// The Rome integration: Season 3, made from its plans
 /// (`lib/data/generated/s3_rome/`), is in the game as London and Paris are:
 /// in the catalog, with its own map, cover, World Map city and evidence
-/// pictures; unlocked by Paris's Case 12; its saves its own, London's and
+/// pictures; unlocked by Seoul's Case 12 (Seoul plays third since
+/// 2026-11-11); its saves its own, London's and
 /// Paris's left exactly as they were. Its twelve cases are played in
 /// `test/sandbox/s3_rome_season_test.dart`.
 void main() {
@@ -41,6 +42,7 @@ void main() {
   final londonIds = [for (var i = 1; i <= 12; i++) 'ep${i.toString().padLeft(2, '0')}'];
   final parisIds = [for (var i = 1; i <= 12; i++) 's2_ep${i.toString().padLeft(2, '0')}'];
   final romeIds = [for (var i = 1; i <= 12; i++) 's3_ep${i.toString().padLeft(2, '0')}'];
+  final seoulIds = [for (var i = 1; i <= 12; i++) 's5_ep${i.toString().padLeft(2, '0')}'];
 
   Future<ProviderContainer> open() async => ProviderContainer(overrides: await testOverridesFor(prefs));
 
@@ -54,14 +56,14 @@ void main() {
   tearDown(() => container.dispose());
 
   group('in the game', () {
-    test('Rome is Season 3 of the catalog: 12 cases, released, after London and Paris', () {
-      expect([for (final s in container.read(seasonsProvider)) s.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul]);
+    test('Rome is Season 4 of the catalog: 12 cases, released, after Seoul', () {
+      expect([for (final s in container.read(seasonsProvider)) s.id], [SeasonIds.london, SeasonIds.paris, SeasonIds.seoul, SeasonIds.rome, SeasonIds.newyork]);
       final rome = SeasonCatalog.byId(SeasonIds.rome)!;
       expect(rome.released, isTrue);
-      expect(rome.season.number, 3);
+      expect(rome.season.number, 4);
       expect(rome.season.title, 'The Broken Map of Rome');
       expect(rome.season.city, 'Rome');
-      expect(rome.season.label, 'SEASON THREE');
+      expect(rome.season.label, 'SEASON FOUR');
       expect(rome.episodes.keys, romeIds);
       final cases = SeasonAvailability.casesOf(SeasonIds.rome, MockEpisodeRepository.bundled());
       expect([for (final e in cases) e.id], romeIds);
@@ -130,20 +132,22 @@ void main() {
     });
   });
 
-  group('unlocked by Paris', () {
-    test('locked while Paris\'s Case 12 is open; open the moment it is solved; entered; its saves its own', () async {
+  group('unlocked by Seoul', () {
+    test('locked while Seoul\'s Case 12 is open; open the moment it is solved; entered; its saves its own', () async {
       ctrl().createDetective('Kim', DetectiveAvatar.girl);
       save(AppConstants.seasonStorageKey, SeasonProgress(activeEpisodeId: 'ep12', solvedEpisodeIds: londonIds));
-      save(AppConstants.seasonKeyFor(SeasonIds.paris), SeasonProgress(activeEpisodeId: 's2_ep12', solvedEpisodeIds: parisIds.take(11).toList()));
+      save(AppConstants.seasonKeyFor(SeasonIds.paris), SeasonProgress(activeEpisodeId: 's2_ep12', solvedEpisodeIds: parisIds));
+    save(AppConstants.seasonKeyFor(SeasonIds.seoul), SeasonProgress(activeEpisodeId: 's5_ep12', solvedEpisodeIds: seoulIds));
+      save(AppConstants.seasonKeyFor(SeasonIds.seoul), SeasonProgress(activeEpisodeId: 's5_ep12', solvedEpisodeIds: seoulIds.take(11).toList()));
       container.dispose();
       container = await open();
-      expect(of(SeasonIds.paris).status, SeasonStatus.open);
+      expect(of(SeasonIds.seoul).status, SeasonStatus.open);
       expect(of(SeasonIds.rome).status, SeasonStatus.locked);
       expect(ctrl().openSeason(SeasonIds.rome), isFalse);
 
-      // Paris's Case 12 solved: Rome opens at once, with its map.
-      expect(ctrl().openSeason(SeasonIds.paris), isTrue);
-      expect(ctrl().openEpisode('s2_ep12'), isTrue);
+      // Seoul's Case 12 solved: Rome opens at once, with its map.
+      expect(ctrl().openSeason(SeasonIds.seoul), isTrue);
+      expect(ctrl().openEpisode('s5_ep12'), isTrue);
       final londonRecord = prefs.getString(savedKey(prefs, AppConstants.seasonStorageKey));
       final e = container.read(currentEpisodeProvider);
       ctrl().startInvestigation();
@@ -151,10 +155,12 @@ void main() {
         ctrl().markMissionStarted(m.id);
         expect(ctrl().submitAnswer(m, m.answer).result, SubmitResult.correct, reason: m.id);
       }
-      // Paris's Case 12 closes with its ending, as its page closes it.
-      expect(of(SeasonIds.rome).status, SeasonStatus.locked, reason: 'the ending not seen yet');
-      expect(ctrl().closeCase(GameProgress.examinedKey(e.finalMission.id, 'ending')), isTrue);
-      expect(of(SeasonIds.paris).isCompleted, isTrue);
+      // A Case 12 that closes with its ending closes as its page closes it.
+      if (SeasonCatalog.closesAfterLastStep(e.finalMission)) {
+        expect(of(SeasonIds.rome).status, SeasonStatus.locked, reason: 'the ending not seen yet');
+        expect(ctrl().closeCase(GameProgress.examinedKey(e.finalMission.id, 'ending')), isTrue);
+      }
+      expect(of(SeasonIds.seoul).isCompleted, isTrue);
       final rome = of(SeasonIds.rome);
       expect(rome.status, SeasonStatus.open);
       expect(rome.hasMap, isTrue);
@@ -223,6 +229,7 @@ void main() {
     ctrl().createDetective('Kim', DetectiveAvatar.boy);
     save(AppConstants.seasonStorageKey, SeasonProgress(activeEpisodeId: 'ep01', solvedEpisodeIds: londonIds));
     save(AppConstants.seasonKeyFor(SeasonIds.paris), SeasonProgress(activeEpisodeId: 's2_ep12', solvedEpisodeIds: parisIds));
+    save(AppConstants.seasonKeyFor(SeasonIds.seoul), SeasonProgress(activeEpisodeId: 's5_ep12', solvedEpisodeIds: seoulIds));
     container.dispose();
     container = await open();
     expect(ctrl().openSeason(SeasonIds.rome), isTrue);
@@ -235,7 +242,7 @@ void main() {
     router.go(Routes.season);
     await wait(t, const Duration(milliseconds: 1500));
     expect(find.text('THE BROKEN MAP OF ROME'), findsOneWidget, reason: "Rome's own board");
-    expect(find.text('SEASON THREE'), findsOneWidget);
+    expect(find.text('SEASON FOUR'), findsOneWidget);
     await t.tap(find.text('BEGIN INVESTIGATION'));
     await wait(t, const Duration(milliseconds: 3000));
     // Rome's opening: its city, never London's.
@@ -264,7 +271,7 @@ void main() {
       await wait(t, const Duration(milliseconds: 2500));
     }
 
-    testWidgets('sealed while Paris is under way; open after it; complete once its twelve cases are solved', (t) async {
+    testWidgets('sealed while Seoul is under way; open after it; complete once its twelve cases are solved', (t) async {
       ctrl().createDetective('Kim', DetectiveAvatar.boy);
       SeasonFile file() => container.read(seasonFilesProvider).firstWhere((f) => f.season.id == SeasonIds.rome);
       WorldCityState city() => container.read(worldCityStatesProvider).firstWhere((c) => c.city.id == 'rome');
@@ -274,6 +281,7 @@ void main() {
       // London's open case stays Case 01, where the detective was made.
       save(AppConstants.seasonStorageKey, SeasonProgress(activeEpisodeId: 'ep01', solvedEpisodeIds: londonIds));
       save(AppConstants.seasonKeyFor(SeasonIds.paris), SeasonProgress(activeEpisodeId: 's2_ep12', solvedEpisodeIds: parisIds));
+    save(AppConstants.seasonKeyFor(SeasonIds.seoul), SeasonProgress(activeEpisodeId: 's5_ep12', solvedEpisodeIds: seoulIds));
       container.dispose();
       container = await open();
       expect(file().state, SeasonFileState.notStarted);
@@ -300,7 +308,7 @@ void main() {
       await show(t, Routes.seasons);
       await t.scrollUntilVisible(find.text('THE BROKEN MAP OF ROME'), 300, scrollable: find.byType(Scrollable).first);
       expect(find.text('REVIEW THE FILE'), findsWidgets, reason: 'a completed season is reviewed');
-      expect(find.textContaining('SEASON FOUR'), findsNothing, reason: 'no season after Rome is offered');
+      expect(find.textContaining('SEASON FIVE'), findsNothing, reason: 'no season after Rome is offered');
     });
   });
 }

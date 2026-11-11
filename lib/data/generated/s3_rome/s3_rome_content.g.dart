@@ -7,7 +7,7 @@ import 's3_rome_cases.g.dart';
 import 's3_rome_levels.g.dart';
 import 's3_rome_season.g.dart';
 
-/// Season 3, The Broken Map of Rome: its content as the game plays it, released
+/// Season 4, The Broken Map of Rome: its content as the game plays it, released
 /// (`SeasonCatalog.all`, listed by `generated_seasons.g.dart`).
 final s3RomeContent = SeasonContent(
   info: s3RomeInfoJson,

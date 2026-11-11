@@ -10,7 +10,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 /// from there. London and Paris look as they always did.
 void main() {
   test('the maps: London, Paris and Rome, each its own; none for an unknown season', () {
-    expect(SeasonMap.bySeason.keys, [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul], reason: 'Rome its own since the Rome integration, Seoul (by hand) since 2026-11-05');
+    expect(SeasonMap.bySeason.keys, [SeasonIds.london, SeasonIds.paris, SeasonIds.seoul, SeasonIds.rome, SeasonIds.newyork], reason: 'Rome its own since the Rome integration, Seoul (by hand) since 2026-11-05');
     expect(SeasonMap.forSeason(SeasonIds.london)!.artwork, ArtAssets.londonMap);
     expect(SeasonMap.forSeason(SeasonIds.paris)!.artwork, ArtAssets.parisMap);
     expect(SeasonMap.forSeason(SeasonIds.seoul)!.artwork, 'assets/seasons/season_05_seoul/locations/map/season_map.webp');
@@ -34,7 +34,7 @@ void main() {
       const Alignment(0.3, 0),
       const Alignment(0.2, -0.2),
     ));
-    expect(ArtAssets.seasonCovers.keys, [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul]);
+    expect(ArtAssets.seasonCovers.keys, [SeasonIds.london, SeasonIds.paris, SeasonIds.seoul, SeasonIds.rome, SeasonIds.newyork]);
     // Seoul's: its palace at night, made with its pictures, its own folder.
     final seoul = ArtAssets.seasonCovers[SeasonIds.seoul]!;
     expect(seoul.file, 'assets/seasons/season_05_seoul/cover/season5_prologue_night.webp');

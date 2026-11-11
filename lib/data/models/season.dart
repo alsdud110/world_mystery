@@ -170,14 +170,14 @@ abstract final class SeasonIds {
 
   static const paris = 's2_paris';
 
-  /// Season 3, made from its plans (`content_pipeline/seasons/s3_rome`).
+  /// Rome, made from its plans (`content_pipeline/seasons/s3_rome`); plays fourth.
   static const rome = 's3_rome';
 
-  /// Season 4, made from its plans (`content_pipeline/seasons/s4_newyork`).
+  /// New York, made from its plans (`content_pipeline/seasons/s4_newyork`); plays fifth.
   static const newyork = 's4_newyork';
 
-  /// Season 5, Seoul: its Case 01 only so far, registered by hand
-  /// (`lib/data/season5/`, plans in `content_pipeline/seasons/s5_seoul`).
+  /// Seoul, made from its plans (`content_pipeline/seasons/s5_seoul`, its
+  /// Case 01 by hand in `lib/data/season5/`); plays third.
   static const seoul = 's5_seoul';
 }
 

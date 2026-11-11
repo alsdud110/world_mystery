@@ -160,11 +160,13 @@ void main() {
       expect(issues(PlanCheck.season(SeasonPlan.fromJson(swapped))), [r'$.acts[0].caseIds[0]', r'$.acts[0].caseIds[1]']);
     });
 
-    test('acts out of order, and a number its id does not say', () {
+    test('acts out of order; a number its id does not say is its place in play, no issue', () {
       final s = sampleSeasonJson()..['number'] = 4;
       final acts = s['acts'] as List;
       (acts[0] as Map)['actId'] = 'act2';
-      expect(issues(PlanCheck.season(SeasonPlan.fromJson(s))), containsAll([r'$.number', r'$.acts[0].actId']));
+      final found = issues(PlanCheck.season(SeasonPlan.fromJson(s)));
+      expect(found, contains(r'$.acts[0].actId'));
+      expect(found, isNot(contains(r'$.number')), reason: 'Seoul is s5 and plays third');
     });
 
     test('people and reveals of cases the season has', () {

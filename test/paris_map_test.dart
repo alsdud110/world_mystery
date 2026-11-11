@@ -72,7 +72,7 @@ void main() {
   group('the Paris map', () {
     test('is registered for Season 2: its own artwork, size and ratio', () {
       expect(SeasonMap.forSeason(SeasonIds.paris), same(SeasonMap.paris));
-      expect(SeasonMap.bySeason.keys, [SeasonIds.london, SeasonIds.paris, SeasonIds.rome, SeasonIds.newyork, SeasonIds.seoul], reason: 'Rome its own since the Rome integration, Seoul (by hand) since 2026-11-05');
+      expect(SeasonMap.bySeason.keys, [SeasonIds.london, SeasonIds.paris, SeasonIds.seoul, SeasonIds.rome, SeasonIds.newyork], reason: 'Rome its own since the Rome integration, Seoul (by hand) since 2026-11-05');
       expect(SeasonMap.paris.artwork, ArtAssets.parisMap);
       expect(ArtAssets.parisMap, 'assets/seasons/season_02_paris/locations/map/paris_mystery.webp');
       expect(SeasonMap.paris.aspect, 3 / 2);

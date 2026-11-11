@@ -77,8 +77,8 @@ abstract final class AssetManifest {
   static const _styleFields = {'id', 'kind', 'size', 'background', 'text'};
 
   /// `assets/seasons/season_03_rome` for season 3 in Rome.
-  static String rootFor(int number, String seasonId) =>
-      'assets/seasons/season_${number.toString().padLeft(2, '0')}_${seasonId.substring(seasonId.indexOf('_') + 1)}';
+  static String rootFor(String seasonId) =>
+      'assets/seasons/season_${seasonId.substring(1, seasonId.indexOf('_')).padLeft(2, '0')}_${seasonId.substring(seasonId.indexOf('_') + 1)}';
 
   /// Checks the manifest [json] against its [season] and [cases] (the
   /// places and the evidence the pictures are of). [root]: the repository,
@@ -99,7 +99,7 @@ abstract final class AssetManifest {
     }
     if (json['schemaVersion'] != schemaVersion) error('asset_manifest_invalid', r'$.schemaVersion', 'must be $schemaVersion');
     if (json['seasonId'] != season.seasonId) error('asset_manifest_invalid', r'$.seasonId', '${json['seasonId']}, not ${season.seasonId}');
-    final assetRoot = rootFor(season.number, season.seasonId);
+    final assetRoot = rootFor(season.seasonId);
     if (json['assetRoot'] != assetRoot) error('asset_path_invalid', r'$.assetRoot', '${json['assetRoot']}: the season\'s pictures go under $assetRoot');
     final model = json['model'] is String ? json['model'] as String : 'gpt-image-2';
     final quality = json['quality'] is String ? json['quality'] as String : 'medium';

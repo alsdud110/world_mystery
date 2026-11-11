@@ -267,6 +267,10 @@ written over (`--force`); line endings are LF and read back CRLF-blind.
 
 ## A season in the game (the Rome integration)
 
+A season's place in play is its `number` alone; the digit of its id
+(`s5_seoul` plays third) is only its name, and its case ids and asset folder
+keep it. See `docs/SEASON_PLAY_ORDER.md`.
+
 `generate_season.dart --season <season.plan.json> --target game` makes the
 season whole as the app plays it: the same files in
 `lib/data/generated/<seasonId>/`, with its `SeasonContent`

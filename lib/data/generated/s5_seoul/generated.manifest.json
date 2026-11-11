@@ -3,7 +3,7 @@
   "generatorVersion": 5,
   "target": "game",
   "seasonId": "s5_seoul",
-  "seasonNumber": 5,
+  "seasonNumber": 3,
   "cases": [
     "s5_ep01",
     "s5_ep02",
@@ -20,7 +20,7 @@
   ],
   "approved": false,
   "inputs": {
-    "season.plan.json": "sha256:ccb01d3bf8f7b8312d0a2ca6eddd6ea0cb72b6c2450b2267f7a6548a01911ee3",
+    "season.plan.json": "sha256:c9296717ead88b780c7f232dbe370300a0d553640b0f5b297eded8da73250726",
     "season.levels.json": "sha256:d234419c80e9152e7926e75396da10374fad84dce26f223f03c194c4fd6f68dd",
     "planning/history_dossier.json": "sha256:e30c928467fe3fdc8c992c3b82c1781ec58f831721cf8238ba84b3b97f0c0458",
     "cases/s5_ep01/case.plan.json": "sha256:670a8ac2709efff2c3857d8509195ed0ffc44a899e2758896f614b361a05a1be",
@@ -49,7 +49,7 @@
     "cases/s5_ep12/levels.json": "sha256:4973873f324d126051d73e8ebc373fed5c6c42ebae3089e4065db089c1679130"
   },
   "outputs": {
-    "s5_seoul_season.g.dart": "sha256:e5dae3a92713073c622b190306e68735d3049a85406d9f1b6e13721a869c4c47",
+    "s5_seoul_season.g.dart": "sha256:a94b29a3051e952a5f1fe9efd18ae6b14bc47e129e993d25c1ed68f22c3bf786",
     "s5_ep01.g.dart": "sha256:f516a24e78e6887992117fc7015c019f5de9c05c86e1a0c7a47ff92eb8d82494",
     "s5_ep02.g.dart": "sha256:0a4ac66c3bf4648ad267eea803a639b75c16c046c2afa427f8989704b5bc5658",
     "s5_ep03.g.dart": "sha256:9704ff9c04d148d0201888c78775ea782e53992078801a86c3d8c2c5aef5b422",
@@ -77,7 +77,7 @@
     "s5_ep12_levels.g.dart": "sha256:1c3615c7e469d6f6cc721ea9abbb56fa853fa98153a29b75b6fd3f2f9eb17dca",
     "s5_seoul_levels.g.dart": "sha256:630a42ba85eef8453b969c406b8d1c8b5dac8ea13ecfe6951567d321b157d65c",
     "s5_seoul_history.g.dart": "sha256:beb69da429ce710d3bfc6a588d8832a4f08493fae446c3e77797fa335d580859",
-    "s5_seoul_content.g.dart": "sha256:95a89944d2169565e79d844258f3f1a5baf6b5ffa439c4e66d074a58f30ae134",
+    "s5_seoul_content.g.dart": "sha256:b2ed15716b58f25e3ef15c74ea91637a6ee7bf793fdab5fb278095ea4fe53260",
     "s5_seoul_art.g.dart": "sha256:b32369f5cb09555bf58b76e6779f07b8bd7cd3f60a1ab27502d985719f7bbced"
   }
 }

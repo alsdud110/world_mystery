@@ -902,8 +902,6 @@ abstract final class ArtAssets {
     's5_ep08_e2': EvidencePaper.map,
     's5_ep08_e3': EvidencePaper.diary,
     's5_ep08_e4': EvidencePaper.tag,
-    's5_ep09_e1': EvidencePaper.note,
-    's5_ep09_e3': EvidencePaper.log,
     's5_ep09_e4': EvidencePaper.note,
     's5_ep10_e1': EvidencePaper.note,
     's5_ep10_e3': EvidencePaper.statement,

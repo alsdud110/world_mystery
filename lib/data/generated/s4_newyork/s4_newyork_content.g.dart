@@ -7,7 +7,7 @@ import 's4_newyork_cases.g.dart';
 import 's4_newyork_levels.g.dart';
 import 's4_newyork_season.g.dart';
 
-/// Season 4, The Silver Lark of New York: its content as the game plays it, released
+/// Season 5, The Silver Lark of New York: its content as the game plays it, released
 /// (`SeasonCatalog.all`, listed by `generated_seasons.g.dart`).
 final s4NewyorkContent = SeasonContent(
   info: s4NewyorkInfoJson,

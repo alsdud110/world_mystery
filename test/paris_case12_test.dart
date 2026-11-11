@@ -439,29 +439,29 @@ void main() {
         await play.shot('last_lines');
         await tapText(t, 'SEE MY CASE REPORT', after: const Duration(milliseconds: 4000));
 
-        // ── Case Closed: the season complete; Rome next (the Rome
-        // integration), as Paris came after London; on to the Archives ────
+        // ── Case Closed: the season complete; Seoul next (third since
+        // 2026-11-11), as Paris came after London; on to the Archives ────
         await reveal(t, find.byKey(const ValueKey('finale-next-season')));
-        expect(find.text('SEASON THREE · THE BROKEN MAP OF ROME'), findsOneWidget);
+        expect(find.text('SEASON THREE · THE KING\'S LETTERS OF SEOUL'), findsOneWidget);
         expect(find.byKey(const ValueKey('go-to-next-season')), findsOneWidget);
-        expect(find.text('GO TO ROME'), findsOneWidget);
+        expect(find.text('GO TO SEOUL'), findsOneWidget);
         await play.shot('season_complete');
         expect(ref.read(seasonOverviewProvider).complete, isTrue);
         expect(ref.read(seasonOverviewProvider).solvedCount, 12);
-        expect(ref.read(seasonAvailabilityProvider(SeasonIds.rome))!.status, SeasonStatus.open, reason: 'Rome opened by Paris\'s Case 12');
+        expect(ref.read(seasonAvailabilityProvider(SeasonIds.seoul))!.status, SeasonStatus.open, reason: 'Seoul opened by Paris\'s Case 12');
         await reveal(t, find.text('INVESTIGATION BOARD').first);
         await tapText(t, 'INVESTIGATION BOARD', after: const Duration(milliseconds: 3500));
-        // Paris's board, complete: on to Rome from here, as London's goes on to Paris.
+        // Paris's board, complete: on to Seoul from here, as London's goes on to Paris.
         await reveal(t, find.byKey(const ValueKey('begin-next-season')));
         expect(find.text('COMPLETED'), findsOneWidget);
-        expect(find.text('GO TO ROME'), findsOneWidget);
+        expect(find.text('GO TO SEOUL'), findsOneWidget);
         expect(find.byKey(const ValueKey('complete-to-archives')), findsNothing, reason: 'not the last season any more');
         await play.shot('board_complete');
         await play.tapKey('begin-next-season', after: const Duration(milliseconds: 3000));
-        expect(ref.read(selectedSeasonIdProvider), SeasonIds.rome);
+        expect(ref.read(selectedSeasonIdProvider), SeasonIds.seoul);
         expect(router.routerDelegate.currentConfiguration.uri.path, Routes.season);
-        expect(find.text('THE BROKEN MAP OF ROME'), findsOneWidget, reason: "Rome's own board");
-        await play.shot('rome_board');
+        expect(find.text('THE KING\'S LETTERS OF SEOUL'), findsOneWidget, reason: "Seoul's own board");
+        await play.shot('seoul_board');
         await wait(t, const Duration(seconds: 2));
       });
     }

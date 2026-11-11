@@ -126,7 +126,7 @@ class SeasonBrief {
       'city': city,
       'cases': 12,
       'acts': 3,
-      'assetRoot': AssetManifest.rootFor(number, seasonId),
+      'assetRoot': AssetManifest.rootFor(seasonId),
       'playbook': 'tool/season_planner/PLAYBOOK.md',
       'mode': ?mode,
     };

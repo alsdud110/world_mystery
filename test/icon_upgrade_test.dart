@@ -59,8 +59,8 @@ void main() {
       for (final id in evidence.keys) {
         by.update(shownBy(id)!, (n) => n + 1, ifAbsent: () => 1);
       }
-      // London's map pieces became pictures (2026-11-03, 3c7e9b7); Seoul: 7 pictures, 41 papers.
-      expect(by, {'picture': 89, 'drawn': 33, 'paper': 120});
+      // London's map pieces became pictures (2026-11-03, 3c7e9b7); Seoul: 9 pictures (C09's note and sign-out book since 2026-11-11), 39 papers.
+      expect(by, {'picture': 91, 'drawn': 33, 'paper': 118});
     });
 
     test('each is registered once, under a real evidence id', () {

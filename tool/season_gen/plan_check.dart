@@ -28,8 +28,9 @@ abstract final class PlanCheck {
     final out = <PlanIssue>[];
     void bad(String path, String message) => out.add(PlanIssue(path, message));
 
-    final n = PlanIds.seasonNumber(plan.seasonId);
-    if (n != plan.number) bad(r'$.number', 'season ${plan.number}, but its id ${plan.seasonId} says $n');
+    // The id's digit is the season's name from when it was planned; `number`
+    // is its place in play (Seoul, planned as s5, plays third).
+    final n = PlanIds.seasonNumber(plan.seasonId) ?? plan.number;
 
     // Three acts, in order, each with its four cases: Case 01–04, 05–08, 09–12.
     final seen = <String>{};
@@ -37,7 +38,7 @@ abstract final class PlanCheck {
       final at = '\$.acts[$i]';
       if (act.actId != 'act${i + 1}') bad('$at.actId', '${act.actId} is act ${i + 1}');
       for (final (j, id) in act.caseIds.indexed) {
-        final want = PlanIds.caseOf(plan.number, i * casesPerAct + j + 1);
+        final want = PlanIds.caseOf(n, i * casesPerAct + j + 1);
         if (!seen.add(id)) {
           bad('$at.caseIds[$j]', '$id is in two acts');
         } else if (id != want) {
