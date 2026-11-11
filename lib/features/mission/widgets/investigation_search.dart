@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_motion.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/utils/audio_service.dart';
@@ -1176,6 +1177,7 @@ Future<void> showInvestigationReport(
 }) {
   return showModalBottomSheet<void>(
     context: context,
+    sheetAnimationStyle: AppMotion.sheet(context),
     isScrollControlled: true,
     shape: paperSheetShape,
     showDragHandle: false,

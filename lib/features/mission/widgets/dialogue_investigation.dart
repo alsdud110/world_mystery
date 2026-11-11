@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_motion.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/utils/audio_service.dart';
@@ -218,6 +219,7 @@ class _DialogueInvestigationState extends ConsumerState<DialogueInvestigation> {
     var solved = false;
     await showModalBottomSheet<void>(
       context: context,
+      sheetAnimationStyle: AppMotion.sheet(context),
       isScrollControlled: true,
       shape: paperSheetShape,
       showDragHandle: false,
@@ -1544,6 +1546,7 @@ Future<void> showTalkWords(BuildContext context, WidgetRef ref, String text) {
   final words = glossaryWordsOf(ref.read(currentEpisodeProvider), text);
   return showModalBottomSheet<void>(
     context: context,
+    sheetAnimationStyle: AppMotion.sheet(context),
     shape: paperSheetShape,
     showDragHandle: false,
     builder: (context) => SafeArea(
@@ -1623,6 +1626,7 @@ Future<void> showDialogueNotes(
 }) {
   return showModalBottomSheet<void>(
     context: context,
+    sheetAnimationStyle: AppMotion.sheet(context),
     isScrollControlled: true,
     shape: paperSheetShape,
     showDragHandle: false,

@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../core/theme/app_colors.dart';
+import '../core/theme/app_motion.dart';
 import '../core/theme/app_text.dart';
 import '../core/theme/app_tokens.dart';
 import '../features/game/scoring.dart';
@@ -127,6 +128,7 @@ Future<void> showBadgeDetails(BuildContext context, GameBadge badge, {required b
   final status = BadgeMedal.statusOf(badge, earned: earned);
   return showModalBottomSheet<void>(
     context: context,
+    sheetAnimationStyle: AppMotion.sheet(context),
     // The word card's sheet: nearly square corners, the ink tab on top.
     shape: paperSheetShape,
     showDragHandle: false,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_motion.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/utils/audio_service.dart';
@@ -273,6 +274,7 @@ Future<String?> showEvidencePicker(
   List<HeldEvidence> earlier = const [],
 }) => showModalBottomSheet<String>(
   context: context,
+  sheetAnimationStyle: AppMotion.sheet(context),
   isScrollControlled: true,
   shape: paperSheetShape,
   showDragHandle: false,

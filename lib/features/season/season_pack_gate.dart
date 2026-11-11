@@ -31,7 +31,7 @@ abstract final class SeasonPackGate {
       showGameToast(context, 'This file is not in this version of the game.', glyph: InkGlyph.seal);
       return false;
     }
-    final ok = await showDialog<bool>(
+    final ok = await showGamePopup<bool>(
       context: context,
       barrierDismissible: false,
       barrierColor: AppColors.navyDeep.withValues(alpha: 0.55),

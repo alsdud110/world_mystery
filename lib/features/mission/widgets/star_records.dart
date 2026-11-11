@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
+import '../../../widgets/game_dialog.dart';
 import '../../../core/utils/audio_service.dart' show TapRole;
 import '../../../data/models/scene_explore.dart' show ScenePixels;
 import '../../../data/models/star_puzzles.dart';
@@ -890,7 +891,7 @@ class _CityClocksPuzzleState extends State<CityClocksPuzzle> {
               key: const ValueKey('city-trial-map'),
               label: 'Look at your Trial Map',
               glyph: InkGlyph.map,
-              onPressed: () => showDialog<void>(
+              onPressed: () => showGamePopup<void>(
                 context: context,
                 builder: (context) => Dialog(
                   backgroundColor: AppColors.paperLight,

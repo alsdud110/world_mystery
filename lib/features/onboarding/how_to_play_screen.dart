@@ -9,7 +9,9 @@ import 'package:go_router/go_router.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/router/app_router.dart';
 import '../../core/theme/app_colors.dart';
+import '../../core/theme/app_motion.dart';
 import '../../core/theme/app_text.dart';
+import '../../widgets/game_dialog.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/utils/audio_service.dart';
 import '../../data/models/detective_name.dart';
@@ -194,7 +196,7 @@ class _HowToPlayScreenState extends ConsumerState<HowToPlayScreen> {
     // As on a case's page: a free hint opens at once; one that costs coins
     // asks first, in the game's own coins dialog.
     if (state != TipState.free) {
-      final reveal = await showDialog<bool>(
+      final reveal = await showGamePopup<bool>(
         context: context,
         barrierColor: AppColors.navyDeep.withValues(alpha: 0.55),
         builder: (dialog) => TipShopCard(
@@ -1248,6 +1250,7 @@ class _LetterScene extends StatelessWidget {
     final scope = ProviderScope.containerOf(context);
     showModalBottomSheet<void>(
       context: context,
+      sheetAnimationStyle: AppMotion.sheet(context),
       isScrollControlled: true,
       shape: paperSheetShape,
       showDragHandle: false,

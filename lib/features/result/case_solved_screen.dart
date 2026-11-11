@@ -724,7 +724,7 @@ class _HistoryReveal extends StatelessWidget {
   final HistoryReveal reveal;
   final Difficulty level;
 
-  void _sources(BuildContext context) => showDialog<void>(
+  void _sources(BuildContext context) => showGamePopup<void>(
     context: context,
     builder: (context) => GameDialog(
       title: 'SOURCES',

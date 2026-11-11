@@ -126,7 +126,7 @@ abstract final class RestartSeasonDialog {
 
   /// Whether the detective chose RESTART SEASON.
   static Future<bool> ask(BuildContext context) async {
-    final restart = await showDialog<bool>(
+    final restart = await showGamePopup<bool>(
       context: context,
       builder: (context) => GameDialog(
         key: const ValueKey('restart-season-dialog'),

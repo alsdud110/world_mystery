@@ -1,10 +1,66 @@
 import 'package:flutter/material.dart';
 
 import '../core/theme/app_colors.dart';
+import '../core/theme/app_motion.dart';
 import '../core/theme/app_text.dart';
 import '../core/theme/app_tokens.dart';
 import 'game_button.dart';
 import 'paper.dart';
+
+/// The game's popup: [showDialog] with the popup motion — the paper grows
+/// slightly into place (scale in, ease-out) as the page behind dims.
+/// Use it wherever a dialog is shown, so every popup arrives the same way.
+Future<T?> showGamePopup<T>({
+  required BuildContext context,
+  required WidgetBuilder builder,
+  bool barrierDismissible = true,
+  Color? barrierColor,
+}) => showDialog<T>(
+  context: context,
+  barrierDismissible: barrierDismissible,
+  barrierColor: barrierColor,
+  animationStyle: AppMotion.popup(context),
+  builder: (context) => PopupScale(child: builder(context)),
+);
+
+/// Grows its popup from [AppMotion.popupScaleFrom] to full size with the
+/// route that shows it (ease-out in, ease-in out). The route itself fades.
+class PopupScale extends StatefulWidget {
+  const PopupScale({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  State<PopupScale> createState() => _PopupScaleState();
+}
+
+class _PopupScaleState extends State<PopupScale> {
+  CurvedAnimation? _curve;
+  Animation<double>? _scale;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final route = ModalRoute.of(context)?.animation;
+    if (route == null || route == _curve?.parent) return;
+    _curve?.dispose();
+    _curve = CurvedAnimation(parent: route, curve: AppMotion.popupCurve, reverseCurve: AppMotion.popupReverseCurve);
+    _scale = Tween(begin: AppMotion.popupScaleFrom, end: 1.0).animate(_curve!);
+  }
+
+  @override
+  void dispose() {
+    _curve?.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final scale = _scale;
+    if (scale == null) return widget.child;
+    return ScaleTransition(scale: scale, child: widget.child);
+  }
+}
 
 /// The game's own dialog: a ruled paper document laid over the page,
 /// instead of a Material alert.
@@ -26,9 +82,9 @@ class GameDialog extends StatelessWidget {
   /// "keep going" below as a quiet ink link. Returns true for [confirmLabel].
   ///
   /// [onScene]: asked over a painted scene (the title page's office). The
-  /// scene stays in view under a translucent night shade, and the paper is
-  /// simply laid down — a short fade and the slightest settle — rather than
-  /// popping up like an app alert.
+  /// scene stays in view under a translucent night shade instead of the
+  /// plain dim. Either way the paper arrives as every popup does
+  /// ([showGamePopup]).
   static Future<bool> confirm(
     BuildContext context, {
     required String title,
@@ -46,25 +102,11 @@ class GameDialog extends StatelessWidget {
         InkTextButton(label: cancelLabel, color: AppColors.inkBrown, onPressed: () => Navigator.of(context).pop(false)),
       ],
     );
-    final ok = onScene
-        ? await showGeneralDialog<bool>(
-            context: context,
-            barrierDismissible: true,
-            barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
-            barrierColor: AppColors.navyDeep.withValues(alpha: 0.55),
-            transitionDuration: (MediaQuery.maybeDisableAnimationsOf(context) ?? false)
-                ? Duration.zero
-                : const Duration(milliseconds: 240),
-            pageBuilder: (context, _, _) => dialog(context),
-            transitionBuilder: (context, animation, _, child) {
-              final t = CurvedAnimation(parent: animation, curve: Curves.easeOutCubic);
-              return FadeTransition(
-                opacity: t,
-                child: ScaleTransition(scale: Tween(begin: 0.98, end: 1.0).animate(t), child: child),
-              );
-            },
-          )
-        : await showDialog<bool>(context: context, builder: dialog);
+    final ok = await showGamePopup<bool>(
+      context: context,
+      barrierColor: onScene ? AppColors.navyDeep.withValues(alpha: 0.55) : null,
+      builder: dialog,
+    );
     return ok ?? false;
   }
 
@@ -78,7 +120,7 @@ class GameDialog extends StatelessWidget {
     required String cancelLabel,
     bool destructive = false,
   }) async {
-    final ok = await showDialog<bool>(
+    final ok = await showGamePopup<bool>(
       context: context,
       builder: (context) => GameDialog(
         plain: true,
@@ -112,10 +154,7 @@ class GameDialog extends StatelessWidget {
       crossAxisAlignment: plain ? CrossAxisAlignment.start : CrossAxisAlignment.stretch,
       children: [
         Text(title, textAlign: plain ? TextAlign.start : TextAlign.center, style: AppText.title(size: 22)),
-        if (!plain) ...[
-          const SizedBox(height: AppSpace.sm),
-          const Center(child: OrnamentRule(width: 96)),
-        ],
+        if (!plain) ...[const SizedBox(height: AppSpace.sm), const Center(child: OrnamentRule(width: 96))],
         const SizedBox(height: AppSpace.lg),
         content,
         const SizedBox(height: AppSpace.xl),

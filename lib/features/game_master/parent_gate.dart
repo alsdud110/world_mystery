@@ -14,7 +14,7 @@ abstract final class ParentGate {
     final rnd = math.Random();
     final a = 6 + rnd.nextInt(4);
     final b = 6 + rnd.nextInt(4);
-    final ok = await showDialog<bool>(
+    final ok = await showGamePopup<bool>(
       context: context,
       // The scene stays in view under a night shade (as the game's other
       // questions over a scene), not a plain black dim.

@@ -6,6 +6,7 @@ import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
+import '../../../widgets/game_dialog.dart';
 import '../../../data/models/mission.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/coin_balance.dart' show GameCoin;
@@ -118,7 +119,7 @@ bool _saveTip(WidgetRef ref, Mission mission, int tip) {
 /// Returns true when a hint was
 /// revealed.
 Future<bool> showTipShop(BuildContext context, Mission mission) async {
-  final revealed = await showDialog<bool>(
+  final revealed = await showGamePopup<bool>(
     context: context,
     barrierColor: AppColors.navyDeep.withValues(alpha: 0.55),
     builder: (context) => _TipDialog(mission: mission),

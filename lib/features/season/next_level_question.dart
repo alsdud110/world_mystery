@@ -93,7 +93,7 @@ class ChooseLevelDialog extends StatefulWidget {
   final String city;
 
   static Future<Difficulty?> ask(BuildContext context, {required Difficulty current, required String city}) =>
-      showDialog<Difficulty>(
+      showGamePopup<Difficulty>(
         context: context,
         builder: (_) => ChooseLevelDialog._(current: current, city: city),
       );

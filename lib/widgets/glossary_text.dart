@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/theme/app_colors.dart';
+import '../core/theme/app_motion.dart';
 import '../core/theme/app_text.dart';
 import '../core/theme/app_tokens.dart';
 import '../data/models/detective_name.dart';
@@ -264,6 +265,7 @@ Future<void> showWordMeaning(BuildContext context, String word, String meaning) 
 Future<void> _showWordCard(BuildContext context, String word, String meaning) {
   return showModalBottomSheet<void>(
     context: context,
+    sheetAnimationStyle: AppMotion.sheet(context),
     // A small reference card from the casebook (this sheet only; the others
     // keep the app's sheet theme): nearly square corners, and a thin
     // ink-brown tab in place of the grey handle (it still drags to close).

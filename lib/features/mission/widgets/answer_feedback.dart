@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_motion.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/utils/audio_service.dart';
@@ -415,6 +416,7 @@ Future<TryAgainChoice> showTryAgainSheet(
   final detective = showDetective && DetectiveCast.shows(DetectiveMoment.lookAgain);
   final choice = await showModalBottomSheet<TryAgainChoice>(
     context: context,
+    sheetAnimationStyle: AppMotion.sheet(context),
     // Let the sheet grow past the default 9/16 of the screen (both buttons
     // must fit on small phones) and scroll if it still does not fit.
     isScrollControlled: true,

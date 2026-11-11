@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/utils/formatters.dart';
 import '../../core/router/app_router.dart';
 import '../../core/theme/app_colors.dart';
+import '../../core/theme/app_motion.dart';
 import '../../core/theme/app_text.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/theme/app_tokens.dart';
@@ -1317,6 +1318,7 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
     ref.read(audioServiceProvider).play(GameSound.paperRustle);
     showModalBottomSheet<void>(
       context: context,
+      sheetAnimationStyle: AppMotion.sheet(context),
       isScrollControlled: true,
       // Paper, not an app sheet (this sheet only; the others keep the app's
       // sheet theme): nearly square corners, and a thin ink-brown tab in

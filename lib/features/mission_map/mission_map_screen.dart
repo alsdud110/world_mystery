@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/router/app_router.dart';
 import '../../core/theme/app_colors.dart';
+import '../../core/theme/app_motion.dart';
 import '../../core/theme/app_text.dart';
 import '../../core/theme/app_tokens.dart';
 import '../../core/utils/audio_service.dart';
@@ -128,6 +129,7 @@ class _MissionMapScreenState extends ConsumerState<MissionMapScreen> with Single
     final clueIndex = m.clue == null ? -1 : clues.indexWhere((c) => c.id == m.clue!.id);
     showModalBottomSheet<void>(
       context: context,
+      sheetAnimationStyle: AppMotion.sheet(context),
       isScrollControlled: true,
       builder: (sheetContext) => SafeArea(
         child: SingleChildScrollView(
