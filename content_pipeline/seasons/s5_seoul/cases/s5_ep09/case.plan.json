@@ -37,7 +37,7 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "A time worked out from Haesu's note: the light went on at eleven; half of a four-hour candle burned, two hours; the light went out at one in the night, 01:00.",
+          "A time worked out from Haesu's note: the light went on at eleven pm; half of a four-hour candle burned, two hours; the light went out at one am, 01:00.",
           "Haesu, the candle and the light are made up."
         ]
       },
@@ -49,7 +49,7 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "at eleven, burns for four hours, half of it was gone을 읽고 불이 꺼진 시각(01:00)을 계산한다.",
+        "objective": "at eleven pm, burns for four hours, half of it was gone을 읽고 불이 꺼진 시각(01:00)을 계산한다.",
         "skill": "sentenceMeaning",
         "expressions": [
           "A new candle burns for four hours.",
@@ -65,24 +65,24 @@
           "It is in Hangeul. No name."
         ],
         "letterIntro": "The note says:",
-        "letter": "Detective, someone used the list desk last night.\nAt eleven, the guard saw the light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\nHalf of four hours is two hours.\n— a friend in this office",
+        "letter": "Detective, someone used the list desk last night.\nAt eleven pm, the guard saw the light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\nHalf of four hours is two hours.\n— a friend in this office",
         "question": "When did the light go out? Use four numbers, like 07:00.",
         "hints": [
-          "The light went on at eleven. How many hours did half the candle burn?",
-          "Half of four hours is two. Eleven, twelve, one."
+          "The light went on at eleven pm. How many hours did half the candle burn?",
+          "Half of four hours is two. Eleven pm, twelve, one am."
         ],
-        "successMessage": "The light went out at one in the night!",
+        "successMessage": "The light went out at one am!",
         "transition": [
-          "Someone was there, eleven to one.",
+          "Someone was there, eleven pm to one am.",
           "\"I am Haesu. I wrote that note.\"",
           "\"A spy may be here.\""
         ],
         "feedback": {
-          "1300": "It was night, not the afternoon. One in the night is 01:00.",
-          "2300": "Eleven is when the light went ON. When did it go out?",
+          "1300": "It was night, not the afternoon. One am is 01:00.",
+          "2300": "Eleven pm is when the light went ON. When did it go out?",
           "0300": "Only half the candle burned.",
-          "1100": "Eleven is when the light went ON. When did it go out?",
-          "0200": "Count two hours from eleven."
+          "1100": "Eleven pm is when the light went ON. When did it go out?",
+          "0200": "Count two hours from eleven pm."
         },
         "orderFeedback": "Right numbers, wrong order. Hours first.",
         "mapX": 0.38,
@@ -90,13 +90,13 @@
         "clue": {
           "title": "The Late Light",
           "value": "11:00 TO 01:00 · THE LIST DESK",
-          "note": "Someone used the list desk, eleven to one.",
+          "note": "Someone used the list desk, eleven pm to one am.",
           "symbol": "clock"
         },
         "evidence": {
           "name": "Haesu's Note",
           "icon": "letter",
-          "description": "Haesu's note. At eleven, the light at the list desk went on. Half of a new candle burned.",
+          "description": "Haesu's note. At eleven pm, the light at the list desk went on. Half of a new candle burned.",
           "inscription": "This morning, half of it was gone."
         },
         "discovery": {
@@ -158,7 +158,7 @@
         {
           "ref": "s5_ep09_c1",
           "use": "textMention",
-          "note": "Someone was there, eleven to one."
+          "note": "Someone was there, eleven pm to one am."
         }
       ],
       "clueOutputs": {
@@ -215,7 +215,7 @@
         "discovery": {
           "type": "evidenceFound",
           "title": "A COPY OF THE LIST",
-          "detail": "Who stayed until one?",
+          "detail": "Who stayed until one am?",
           "showEvidence": true
         }
       }
@@ -243,14 +243,14 @@
         "assetNeeds": [],
         "status": "ready",
         "notes": [
-          "The sign-out book (listed out of time order): only one clerk left after the light went out at one (Mission 1); the guard has no office key. The clerks and the book are made up."
+          "The sign-out book (listed out of time order): only one clerk left after the light went out at one am (Mission 1); the guard has no office key. The clerks and the book are made up."
         ]
       },
       "clueInputs": [
         {
           "ref": "s5_ep09_c1",
           "use": "answerDerivation",
-          "note": "The light went out at one in the night."
+          "note": "The light went out at one am."
         }
       ],
       "clueOutputs": {
@@ -260,11 +260,11 @@
       "learning": {
         "dependency": "essential",
         "level": "application",
-        "objective": "퇴근 장부의 시각(at nine, at half past eleven, at a quarter past one)을 읽고, 불이 꺼진 뒤(01:00)에 나간 사람을 찾는다.",
+        "objective": "퇴근 장부의 시각(at nine pm, at half past eleven pm, at a quarter past one am)을 읽고, 불이 꺼진 뒤(01:00)에 나간 사람을 찾는다.",
         "skill": "vocabulary",
         "expressions": [
-          "half past eleven",
-          "a quarter past one"
+          "half past eleven pm",
+          "a quarter past one am"
         ]
       },
       "play": {
@@ -276,22 +276,22 @@
           "Haesu reads it with you."
         ],
         "letterIntro": "The sign-out book, last night:",
-        "letter": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night. He has no office key.\nYour clue: the light went out at one.",
+        "letter": "Mr. Seo: left at half past eleven pm.\nMr. Nam Giho: left at a quarter past one am.\nHaesu: left at nine pm.\nMr. Pak: left at ten pm.\nThe night guard: at the front door all night. He has no office key.\nYour clue: the light went out at one am.",
         "question": "Who was here when the light went out? Type his name.",
         "hints": [
           "See your first clue for the time.",
-          "A quarter past one is after one."
+          "A quarter past one am is after one am."
         ],
-        "successMessage": "Only Mr. Nam Giho was here at one!",
+        "successMessage": "Only Mr. Nam Giho was here at one am!",
         "transition": [
           "Mr. Nam Giho is new here.",
           "His desk is empty this morning.",
           "Haesu runs to tell Kim Gu."
         ],
         "feedback": {
-          "SEO": "Mr. Seo left at half past eleven. Too early.",
-          "PAK": "Mr. Pak left at ten. Too early.",
-          "HAESU": "Haesu left at nine.",
+          "SEO": "Mr. Seo left at half past eleven pm. Too early.",
+          "PAK": "Mr. Pak left at ten pm. Too early.",
+          "HAESU": "Haesu left at nine pm.",
           "GUARD": "The guard has no key. He stayed downstairs."
         },
         "mapX": 0.44,
@@ -304,8 +304,8 @@
         "evidence": {
           "name": "The Sign-Out Book",
           "icon": "letter",
-          "description": "The clerks' sign-out book. Mr. Nam Giho left at a quarter past one.",
-          "inscription": "Mr. Nam Giho: left at a quarter past one."
+          "description": "The clerks' sign-out book. Mr. Nam Giho left at a quarter past one am.",
+          "inscription": "Mr. Nam Giho: left at a quarter past one am."
         },
         "talk": {
           "speaker": "haesu",
@@ -331,7 +331,7 @@
         "discovery": {
           "type": "newLead",
           "title": "THE NEW CLERK",
-          "detail": "Mr. Nam Giho stayed until a quarter past one. Now tell the police chief."
+          "detail": "Mr. Nam Giho stayed until a quarter past one am. Now tell the police chief."
         }
       }
     }
@@ -354,7 +354,7 @@
       ],
       "status": "awaitingAssets",
       "notes": [
-        "Mr. Nam's three claims, each refuted by one mission's evidence picked from three cards: nobody at the desk (Haesu's note: the light from eleven to one), nothing copied (the police report: names pressed into thin paper), home at nine (the sign-out book: a quarter past one). Then his coat is searched and the copy found: the answer 'copy_found'.",
+        "Mr. Nam's three claims, each refuted by one mission's evidence picked from three cards: nobody at the desk (Haesu's note: the light from eleven pm to one am), nothing copied (the police report: names pressed into thin paper), home at nine pm (the sign-out book: a quarter past one am). Then his coat is searched and the copy found: the answer 'copy_found'.",
         "Kim Gu is real; every word he says is made up (dossier fiction), resting on h1-h3. The spy, the list and the clerks are made up."
       ]
     },
@@ -362,7 +362,7 @@
       {
         "ref": "s5_ep09_c1",
         "use": "answerDerivation",
-        "note": "The light burned from eleven until one."
+        "note": "The light burned from eleven pm until one am."
       },
       {
         "ref": "s5_ep09_c2",
@@ -372,7 +372,7 @@
       {
         "ref": "s5_ep09_c3",
         "use": "answerDerivation",
-        "note": "Mr. Nam Giho left at a quarter past one."
+        "note": "Mr. Nam Giho left at a quarter past one am."
       }
     ],
     "clueOutputs": {
@@ -381,11 +381,11 @@
     "learning": {
       "dependency": "essential",
       "level": "application",
-      "objective": "남기호의 세 주장(Nobody was at the list desk / Nothing was copied / I went home at nine)을 읽고, 각 주장이 틀렸음을 보여 주는 증거 카드를 고른다.",
+      "objective": "남기호의 세 주장(Nobody was at the list desk / Nothing was copied / I went home at nine pm)을 읽고, 각 주장이 틀렸음을 보여 주는 증거 카드를 고른다.",
       "skill": "sentenceMeaning",
       "expressions": [
         "Nothing was copied.",
-        "I went home at nine."
+        "I went home at nine pm."
       ]
     },
     "play": {
@@ -397,7 +397,7 @@
         "\"Mr. Nam says he did nothing. Show me clues.\""
       ],
       "letterIntro": "Mr. Nam says:",
-      "letter": "Nobody was at the list desk last night.\nNothing was copied.\nI went home at nine.",
+      "letter": "Nobody was at the list desk last night.\nNothing was copied.\nI went home at nine pm.",
       "question": "Show where Mr. Nam is wrong.",
       "hints": [
         "Each thing Mr. Nam says is wrong. One card shows it.",
@@ -441,7 +441,7 @@
           },
           {
             "by": "speaker",
-            "text": "He says he went home at nine."
+            "text": "He says he went home at nine pm."
           },
           {
             "by": "speaker",
@@ -488,7 +488,7 @@
             "lines": [
               {
                 "by": "detective",
-                "text": "Yes. The light went on at eleven. Half the candle burned, so it was on until one."
+                "text": "Yes. The light went on at eleven pm. Half the candle burned, so it was on until one am."
               },
               {
                 "by": "speaker",
@@ -534,14 +534,14 @@
           },
           {
             "id": "who",
-            "prompt": "Kim Gu asks: \"Mr. Nam says he went home at nine. Is that true?\"",
+            "prompt": "Kim Gu asks: \"Mr. Nam says he went home at nine pm. Is that true?\"",
             "accepted": [
               "s5_ep09_e3"
             ],
             "lines": [
               {
                 "by": "detective",
-                "text": "The sign-out book says a quarter past one. Everyone else left before one."
+                "text": "The sign-out book says a quarter past one am. Everyone else left before one am."
               },
               {
                 "by": "speaker",
@@ -622,7 +622,7 @@
       "Kim Gu is its police chief.",
       "\"Someone was at our secret list.\""
     ],
-    "caseSummary": "A light burned from eleven to one. Thin paper showed a copy. Mr. Nam Giho left last. The copy was in his coat. Kim Gu was the police chief. In 1940, he became the leader.",
+    "caseSummary": "A light burned from eleven pm to one am. Thin paper showed a copy. Mr. Nam Giho left last. The copy was in his coat. Kim Gu was the police chief. In 1940, he became the leader.",
     "place": "SHANGHAI",
     "keyWords": [
       "government",
@@ -828,7 +828,9 @@
       "wrote": "썼다 (write의 과거)",
       "young": "젊은",
       "korea": "한국",
-      "japan": "일본"
+      "japan": "일본",
+      "pm": "오후, 밤 (낮 12시부터 밤 12시까지)",
+      "am": "오전, 새벽 (밤 12시부터 낮 12시까지)"
     }
   },
   "notes": [

@@ -59,7 +59,7 @@ void main() {
     for (final level in Difficulty.values) {
       final fin = mission('s5_ep09_final', level);
       expect(fin.answer, 'copy_found', reason: level.label);
-      expect(fin.letter, allOf(contains('Nothing was copied.'), contains('I went home at nine.')), reason: level.label);
+      expect(fin.letter, allOf(contains('Nothing was copied.'), contains('I went home at nine pm.')), reason: level.label);
       expect(fin.hints, hasLength(2), reason: level.label);
       expect(fin.transition.join(' '), contains('never left Shanghai'), reason: level.label);
     }

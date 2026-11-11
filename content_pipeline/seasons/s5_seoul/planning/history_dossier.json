@@ -3528,7 +3528,7 @@
           "answer": "0100",
           "clues": [
             {
-              "text": "at eleven",
+              "text": "at eleven pm",
               "missionId": "s5_ep09_m1"
             },
             {
@@ -3540,8 +3540,8 @@
               "missionId": "s5_ep09_m1"
             }
           ],
-          "derivation": "The light went on at eleven; half of a four-hour candle burned, two hours; so it went out at one in the night, 01:00. Made up: no history in this puzzle.",
-          "whyOnly": "Eleven plus two hours is one o'clock in the night; 2300 and 1100 are when it went on, 0300 is the whole candle, 0200 counts one hour, 1300 is the afternoon."
+          "derivation": "The light went on at eleven pm; half of a four-hour candle burned, two hours; so it went out at one am, 01:00. Made up: no history in this puzzle.",
+          "whyOnly": "Eleven pm plus two hours is one o'clock in the night; 2300 and 1100 are when it went on, 0300 is the whole candle, 0200 counts one hour, 1300 is the afternoon."
         },
         {
           "puzzleId": "s5_ep09_m2",
@@ -3571,16 +3571,16 @@
           "answer": "NAM GIHO",
           "clues": [
             {
-              "text": "a quarter past one",
+              "text": "a quarter past one am",
               "missionId": "s5_ep09_m3"
             },
             {
-              "text": "The light went out at one in the night!",
+              "text": "The light went out at one am!",
               "missionId": "s5_ep09_m1"
             }
           ],
-          "derivation": "The light went out at one (Mission 1). In the sign-out book, only Mr. Nam Giho left after one, at a quarter past one. Made up: no history in this puzzle.",
-          "whyOnly": "Haesu left at nine, Mr. Pak at ten, Mr. Seo at half past eleven: all before the light went out; the night guard stayed at the front door and has no office key. Only Mr. Nam Giho left after one."
+          "derivation": "The light went out at one am (Mission 1). In the sign-out book, only Mr. Nam Giho left after one am, at a quarter past one am. Made up: no history in this puzzle.",
+          "whyOnly": "Haesu left at nine pm, Mr. Pak at ten pm, Mr. Seo at half past eleven pm: all before the light went out; the night guard stayed at the front door and has no office key. Only Mr. Nam Giho left after one am."
         },
         {
           "puzzleId": "s5_ep09_final",
@@ -3600,16 +3600,16 @@
               "missionId": "s5_ep09_m2"
             },
             {
-              "text": "a quarter past one",
+              "text": "a quarter past one am",
               "missionId": "s5_ep09_m3"
             }
           ],
-          "derivation": "Mr. Nam's three claims are each refuted by one piece of this case's evidence: nobody at the desk (Haesu's note: the light from eleven to one), nothing copied (the police report: names pressed into thin paper), home at nine (the sign-out book: a quarter past one). His coat is searched and the copy found. Made up, set in the real Provisional Government in Shanghai (h1) whose police, led by Kim Gu from August 1919, watched for spies (h2, h3).",
+          "derivation": "Mr. Nam's three claims are each refuted by one piece of this case's evidence: nobody at the desk (Haesu's note: the light from eleven pm to one am), nothing copied (the police report: names pressed into thin paper), home at nine pm (the sign-out book: a quarter past one am). His coat is searched and the copy found. Made up, set in the real Provisional Government in Shanghai (h1) whose police, led by Kim Gu from August 1919, watched for spies (h2, h3).",
           "whyOnly": "Each claim has three cards and one fits: only Haesu's note speaks of the light at the desk, only the police report of the pressed paper, only the sign-out book of the times the clerks left. A wrong card is answered, never a failure."
         }
       ],
       "learningObjectives": [
-        "Work out a time from 'at eleven', 'four hours' and 'half'.",
+        "Work out a time from 'at eleven pm', 'four hours' and 'half'.",
         "Read place words (under, on, next to) to find things in a room.",
         "Read clock times (half past, a quarter past) and compare them."
       ],

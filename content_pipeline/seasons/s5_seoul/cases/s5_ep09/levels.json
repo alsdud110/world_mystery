@@ -113,14 +113,14 @@
       "master": "The note reads:"
     },
     {
-      "rookie": "The light went out at one in the night!",
-      "junior": "The light went out at one in the night!",
-      "master": "So the light went out at one in the night! Exactly two hours had passed."
+      "rookie": "The light went out at one am!",
+      "junior": "The light went out at one am!",
+      "master": "So the light went out at one am! Exactly two hours had passed."
     },
     {
-      "rookie": "Someone was there, eleven to one.",
-      "junior": "Someone was there, from eleven to one.",
-      "master": "Someone was there, from eleven until one."
+      "rookie": "Someone was there, eleven pm to one am.",
+      "junior": "Someone was there, from eleven pm to one am.",
+      "master": "Someone was there, from eleven pm until one am."
     },
     {
       "rookie": "\"I am Haesu. I wrote that note.\"",
@@ -133,14 +133,14 @@
       "master": "\"A spy may be hiding here. That is why I did not sign my note.\""
     },
     {
-      "rookie": "It was night, not the afternoon. One in the night is 01:00.",
-      "junior": "It was at night, not the afternoon. One in the night is 01:00.",
-      "master": "It happened at night, not in the afternoon. One in the night is 01:00."
+      "rookie": "It was night, not the afternoon. One am is 01:00.",
+      "junior": "It was at night, not the afternoon. One am is 01:00.",
+      "master": "It happened at night, not in the afternoon. One am is 01:00."
     },
     {
-      "rookie": "Eleven is when the light went ON. When did it go out?",
-      "junior": "Eleven is when the light went ON. When did it go out?",
-      "master": "Eleven is when the light went ON. When did it go out?"
+      "rookie": "Eleven pm is when the light went ON. When did it go out?",
+      "junior": "Eleven pm is when the light went ON. When did it go out?",
+      "master": "Eleven pm is when the light went ON. When did it go out?"
     },
     {
       "rookie": "Only half the candle burned.",
@@ -158,9 +158,9 @@
       "master": "The Late Light"
     },
     {
-      "rookie": "Someone used the list desk, eleven to one.",
-      "junior": "Someone used the list desk, from eleven to one.",
-      "master": "Someone used the list desk from eleven until one."
+      "rookie": "Someone used the list desk, eleven pm to one am.",
+      "junior": "Someone used the list desk, from eleven pm to one am.",
+      "master": "Someone used the list desk from eleven pm until one am."
     },
     {
       "rookie": "TWO HOURS AT THE LIST DESK",
@@ -293,19 +293,19 @@
       "master": "A COPY OF THE LIST"
     },
     {
-      "rookie": "Who stayed until one?",
-      "junior": "Who stayed at the desk until one?",
-      "master": "The names went onto thin paper. Who stayed at the desk until one?"
+      "rookie": "Who stayed until one am?",
+      "junior": "Who stayed at the desk until one am?",
+      "master": "The names went onto thin paper. Who stayed at the desk until one am?"
     },
     {
-      "rookie": "half past eleven",
-      "junior": "half past eleven",
-      "master": "half past eleven"
+      "rookie": "half past eleven pm",
+      "junior": "half past eleven pm",
+      "master": "half past eleven pm"
     },
     {
-      "rookie": "a quarter past one",
-      "junior": "a quarter past one",
-      "master": "a quarter past one"
+      "rookie": "a quarter past one am",
+      "junior": "a quarter past one am",
+      "master": "a quarter past one am"
     },
     {
       "rookie": "The Sign-Out Book",
@@ -353,14 +353,14 @@
       "master": "This morning his desk stands empty."
     },
     {
-      "rookie": "Mr. Seo left at half past eleven. Too early.",
-      "junior": "Mr. Seo left at half past eleven. That is too early.",
-      "master": "Mr. Seo left at half past eleven. That is too early."
+      "rookie": "Mr. Seo left at half past eleven pm. Too early.",
+      "junior": "Mr. Seo left at half past eleven pm. That is too early.",
+      "master": "Mr. Seo left at half past eleven pm. That is too early."
     },
     {
-      "rookie": "Mr. Pak left at ten. Too early.",
-      "junior": "Mr. Pak left at ten. That is too early.",
-      "master": "Mr. Pak left at ten, before the light came on. That is much too early."
+      "rookie": "Mr. Pak left at ten pm. Too early.",
+      "junior": "Mr. Pak left at ten pm. That is too early.",
+      "master": "Mr. Pak left at ten pm, before the light came on. That is much too early."
     },
     {
       "rookie": "The Last Clerk",
@@ -383,9 +383,9 @@
       "master": "THE NEW CLERK"
     },
     {
-      "rookie": "Mr. Nam Giho stayed until a quarter past one. Now tell the police chief.",
-      "junior": "Mr. Nam Giho stayed until a quarter past one. Now go and tell the police chief.",
-      "master": "Mr. Nam Giho stayed until a quarter past one. Now go and tell the police chief."
+      "rookie": "Mr. Nam Giho stayed until a quarter past one am. Now tell the police chief.",
+      "junior": "Mr. Nam Giho stayed until a quarter past one am. Now go and tell the police chief.",
+      "master": "Mr. Nam Giho stayed until a quarter past one am. Now go and tell the police chief."
     },
     {
       "rookie": "The Police Chief",
@@ -468,14 +468,14 @@
       "master": "Autumn, 1920. You are Kim Gu's guest in Shanghai, a big Chinese city."
     },
     {
-      "rookie": "A light burned from eleven to one. Thin paper showed a copy. Mr. Nam Giho left last. The copy was in his coat. Kim Gu was the police chief. In 1940, he became the leader.",
-      "junior": "A light burned from eleven to one. Thin paper showed a copy was made. Mr. Nam Giho left last. The copy was in his coat. Kim Gu was the police chief. In 1940, he became the leader.",
-      "master": "A light burned at the list desk from eleven to one. Thin paper showed the list was copied. Mr. Nam Giho, a new clerk, left last. The copy was sewn into his coat. Haesu, a young clerk, noticed the first clue. The Provisional Government began in Shanghai in April 1919. Kim Gu was its police chief. His police guarded it and watched for spies. In 1940, Kim Gu became its leader, the chairman."
+      "rookie": "A light burned from eleven pm to one am. Thin paper showed a copy. Mr. Nam Giho left last. The copy was in his coat. Kim Gu was the police chief. In 1940, he became the leader.",
+      "junior": "A light burned from eleven pm to one am. Thin paper showed a copy was made. Mr. Nam Giho left last. The copy was in his coat. Kim Gu was the police chief. In 1940, he became the leader.",
+      "master": "A light burned at the list desk from eleven pm to one am. Thin paper showed the list was copied. Mr. Nam Giho, a new clerk, left last. The copy was sewn into his coat. Haesu, a young clerk, noticed the first clue. The Provisional Government began in Shanghai in April 1919. Kim Gu was its police chief. His police guarded it and watched for spies. In 1940, Kim Gu became its leader, the chairman."
     },
     {
-      "rookie": "Detective, someone used the list desk last night.\nAt eleven, the guard saw the light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\nHalf of four hours is two hours.\n— a friend in this office",
-      "junior": "Detective, someone used the list desk last night.\nAt eleven, the guard saw the office light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office",
-      "master": "Detective, someone used the list desk late last night.\nAt eleven o'clock, the guard saw the office light go on.\nI had left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office"
+      "rookie": "Detective, someone used the list desk last night.\nAt eleven pm, the guard saw the light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\nHalf of four hours is two hours.\n— a friend in this office",
+      "junior": "Detective, someone used the list desk last night.\nAt eleven pm, the guard saw the office light go on.\nI left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office",
+      "master": "Detective, someone used the list desk late last night.\nAt eleven pm o'clock, the guard saw the office light go on.\nI had left a new candle there. A new candle burns for four hours.\nThis morning, half of it was gone.\n— a friend in this office"
     },
     {
       "rookie": "When did the light go out? Use four numbers, like 07:00.",
@@ -483,19 +483,19 @@
       "master": "At what time did the light go out? Use four numbers, like 07:00."
     },
     {
-      "rookie": "The light went on at eleven. How many hours did half the candle burn?",
-      "junior": "The light went on at eleven. How many hours did half the candle burn?",
-      "master": "The light went on at eleven. How many hours did half the candle burn?"
+      "rookie": "The light went on at eleven pm. How many hours did half the candle burn?",
+      "junior": "The light went on at eleven pm. How many hours did half the candle burn?",
+      "master": "The light went on at eleven pm. How many hours did half the candle burn?"
     },
     {
-      "rookie": "Half of four hours is two. Eleven, twelve, one.",
-      "junior": "Half of four hours is two. Count: eleven, twelve, one.",
-      "master": "Half of four hours is two. Count on: eleven, twelve, one."
+      "rookie": "Half of four hours is two. Eleven pm, twelve, one am.",
+      "junior": "Half of four hours is two. Count: eleven pm, twelve, one am.",
+      "master": "Half of four hours is two. Count on: eleven pm, twelve, one am."
     },
     {
-      "rookie": "Count two hours from eleven.",
-      "junior": "Count two hours on from eleven.",
-      "master": "Half of four hours is two. Count two hours on from eleven."
+      "rookie": "Count two hours from eleven pm.",
+      "junior": "Count two hours on from eleven pm.",
+      "master": "Half of four hours is two. Count two hours on from eleven pm."
     },
     {
       "rookie": "Names are pressed in. The list was copied!",
@@ -523,19 +523,19 @@
       "master": "Haesu says, \"At night, only the clerks have keys.\""
     },
     {
-      "rookie": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night. He has no office key.\nYour clue: the light went out at one.",
-      "junior": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night. He has no office key.",
-      "master": "Mr. Seo: left at half past eleven.\nMr. Nam Giho: left at a quarter past one.\nHaesu: left at nine.\nMr. Pak: left at ten.\nThe night guard: at the front door all night. He has no office key."
+      "rookie": "Mr. Seo: left at half past eleven pm.\nMr. Nam Giho: left at a quarter past one am.\nHaesu: left at nine pm.\nMr. Pak: left at ten pm.\nThe night guard: at the front door all night. He has no office key.\nYour clue: the light went out at one am.",
+      "junior": "Mr. Seo: left at half past eleven pm.\nMr. Nam Giho: left at a quarter past one am.\nHaesu: left at nine pm.\nMr. Pak: left at ten pm.\nThe night guard: at the front door all night. He has no office key.",
+      "master": "Mr. Seo: left at half past eleven pm.\nMr. Nam Giho: left at a quarter past one am.\nHaesu: left at nine pm.\nMr. Pak: left at ten pm.\nThe night guard: at the front door all night. He has no office key."
     },
     {
-      "rookie": "A quarter past one is after one.",
-      "junior": "A quarter past one is after one.",
-      "master": "A quarter past one is after one o'clock. Who signed out then?"
+      "rookie": "A quarter past one am is after one am.",
+      "junior": "A quarter past one am is after one am.",
+      "master": "A quarter past one am is after one am o'clock. Who signed out then?"
     },
     {
-      "rookie": "Haesu left at nine.",
-      "junior": "Haesu left at nine, long before one.",
-      "master": "Haesu left at nine, long before one."
+      "rookie": "Haesu left at nine pm.",
+      "junior": "Haesu left at nine pm, long before one am.",
+      "master": "Haesu left at nine pm, long before one am."
     },
     {
       "rookie": "The guard has no key. He stayed downstairs.",
@@ -543,9 +543,9 @@
       "master": "The guard has no office key. He stayed downstairs."
     },
     {
-      "rookie": "Only Mr. Nam Giho was here at one!",
-      "junior": "Only Mr. Nam Giho was here at one!",
-      "master": "Only Mr. Nam Giho was still here at one!"
+      "rookie": "Only Mr. Nam Giho was here at one am!",
+      "junior": "Only Mr. Nam Giho was here at one am!",
+      "master": "Only Mr. Nam Giho was still here at one am!"
     },
     {
       "rookie": "Haesu runs to tell Kim Gu.",
@@ -588,9 +588,9 @@
       "master": "Mr. Nam says this:"
     },
     {
-      "rookie": "Nobody was at the list desk last night.\nNothing was copied.\nI went home at nine.",
-      "junior": "\"Nobody was at the list desk last night.\"\n\"Nothing was copied.\"\n\"I went home at nine.\"",
-      "master": "\"Nobody at all was at the list desk last night.\"\n\"Nothing was copied.\"\n\"I went home at nine.\""
+      "rookie": "Nobody was at the list desk last night.\nNothing was copied.\nI went home at nine pm.",
+      "junior": "\"Nobody was at the list desk last night.\"\n\"Nothing was copied.\"\n\"I went home at nine pm.\"",
+      "master": "\"Nobody at all was at the list desk last night.\"\n\"Nothing was copied.\"\n\"I went home at nine pm.\""
     },
     {
       "rookie": "Show where Mr. Nam is wrong.",
@@ -643,9 +643,9 @@
       "master": "Kim Gu asks: \"He says nobody was at the list desk. Was anyone really there?\""
     },
     {
-      "rookie": "Yes. The light went on at eleven. Half the candle burned, so it was on until one.",
-      "junior": "Yes. The light went on at eleven. Half a new candle burned: until one.",
-      "master": "Yes. The light went on at eleven. Half a new candle burned: until one."
+      "rookie": "Yes. The light went on at eleven pm. Half the candle burned, so it was on until one am.",
+      "junior": "Yes. The light went on at eleven pm. Half a new candle burned: until one am.",
+      "master": "Yes. The light went on at eleven pm. Half a new candle burned: until one am."
     },
     {
       "rookie": "Two hours with our list.",
@@ -688,14 +688,14 @@
       "master": "Which card speaks of the thin paper?"
     },
     {
-      "rookie": "Kim Gu asks: \"Mr. Nam says he went home at nine. Is that true?\"",
-      "junior": "Kim Gu asks: \"Did he leave at nine?\"",
-      "master": "Kim Gu asks: \"He says he went home at nine. Did he really?\""
+      "rookie": "Kim Gu asks: \"Mr. Nam says he went home at nine pm. Is that true?\"",
+      "junior": "Kim Gu asks: \"Did he leave at nine pm?\"",
+      "master": "Kim Gu asks: \"He says he went home at nine pm. Did he really?\""
     },
     {
-      "rookie": "The sign-out book says a quarter past one. Everyone else left before one.",
-      "junior": "The sign-out book says a quarter past one. Everyone else left before one.",
-      "master": "The sign-out book says a quarter past one. Every other clerk left before one."
+      "rookie": "The sign-out book says a quarter past one am. Everyone else left before one am.",
+      "junior": "The sign-out book says a quarter past one am. Everyone else left before one am.",
+      "master": "The sign-out book says a quarter past one am. Every other clerk left before one am."
     },
     {
       "rookie": "The guard has no key. It was Mr. Nam.",
@@ -733,9 +733,9 @@
       "master": "Nothing was copied."
     },
     {
-      "rookie": "I went home at nine.",
-      "junior": "I went home at nine.",
-      "master": "I went home at nine."
+      "rookie": "I went home at nine pm.",
+      "junior": "I went home at nine pm.",
+      "master": "I went home at nine pm."
     },
     {
       "rookie": "Mr. Nam says three things.",
@@ -753,9 +753,9 @@
       "master": "He says nothing was copied."
     },
     {
-      "rookie": "He says he went home at nine.",
-      "junior": "He says he went home at nine.",
-      "master": "He says he went home at nine o'clock."
+      "rookie": "He says he went home at nine pm.",
+      "junior": "He says he went home at nine pm.",
+      "master": "He says he went home at nine pm o'clock."
     }
   ],
   "glossary": {
