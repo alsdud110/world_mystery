@@ -339,7 +339,7 @@
         "letterIntro": "Aldo's word box says:",
         "letter": "SAPIENTIA is a Latin word.\nIt means knowing a lot and making good choices.\nThe Romans said the owl was the bird of SAPIENTIA.\n\nWORD BOX:\nWISDOM — knowing a lot and making good choices.\nWEALTH — having a lot of money.\nWEATHER — rain, sun and wind.",
         "question": "What does SAPIENTIA mean in English?",
-        "prompt": "SAPIENTIA means ____.",
+        "prompt": "SAPIENTIA means ______.",
         "hints": [
           "Read what SAPIENTIA means on Aldo's card.",
           "Find the word in the word box with the same meaning."

@@ -291,7 +291,7 @@
         "letterIntro": "The dropped page says:",
         "letter": "The bird: E, G, G. Got it.\nThe girl's box: the end of the song. Got it today!\nThe last place: ??? The keeper would not tell me.\nI said 'palace'. Wrong!\nI still need the last place.",
         "question": "What does the writer still not know?",
-        "prompt": "He does not know the last ____.",
+        "prompt": "He does not know the last _____.",
         "hints": [
           "Which line has question marks?",
           "Read the last line of the page."

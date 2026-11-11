@@ -314,7 +314,7 @@
         "letterIntro": "Giulia's list and the street signs say:",
         "letter": "GIULIA'S WORD LIST:\nCIVETTA = OWL\nLEONE = LION\nPOPOLO = PEOPLE\n\nTHE THREE SQUARES AFTER THE MARKET:\nPIAZZA DEI LEONI\nPIAZZA DELLA CIVETTA\nPIAZZA DEL POPOLO",
         "question": "Which square was the old owl square? Write the Italian word for owl in its name.",
-        "prompt": "It is Piazza della ____.",
+        "prompt": "It is Piazza della _______.",
         "hints": [
           "Find owl on Giulia's word list.",
           "Now find the square with that Italian word in its name."

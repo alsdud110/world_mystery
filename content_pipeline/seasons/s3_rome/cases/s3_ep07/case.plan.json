@@ -164,7 +164,7 @@
         "letterIntro": "The chalk says:",
         "letter": "UVFTEBZ\n\nHow to read it: B means A. C means B. D means C.\nMove each letter back by one.\nWatch the man who borrowed the piece on this day.\n— The Owl",
         "question": "What does the Owl's code say?",
-        "prompt": "The code says ____.",
+        "prompt": "The code says _______.",
         "hints": [
           "U moves back to T. V moves back to U.",
           "The word is a day of the week."

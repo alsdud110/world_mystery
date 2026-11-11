@@ -72,7 +72,7 @@
         "letterIntro": "The board, and the note:",
         "letter": "Yard board: each log end has a grade mark.\nI: the best logs, for the big halls.\nII: good logs, for the palace gates.\nIII: not for the palace. They can be sold.\nThe note: \"One mark has a new line. Find it.\"\nCarvers' rule: one line for each grade. One more line turns II into III.",
         "question": "Take away the new line: III was II. Where do II logs go?",
-        "prompt": "FOR THE PALACE ____",
+        "prompt": "FOR THE PALACE _____",
         "hints": [
           "Find one pale, new cut.",
           "Take the new line from III. What is left?"

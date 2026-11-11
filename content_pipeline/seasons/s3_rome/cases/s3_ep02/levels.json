@@ -118,9 +118,9 @@
       "master": "What is the Owl's riddle describing?"
     },
     {
-      "rookie": "It is a ____.",
-      "junior": "It is a ____.",
-      "master": "It is a ____."
+      "rookie": "It is a ___.",
+      "junior": "It is a ___.",
+      "master": "It is a ___."
     },
     {
       "rookie": "Each line is one clue. What has streets and rooms, but they are only drawn?",

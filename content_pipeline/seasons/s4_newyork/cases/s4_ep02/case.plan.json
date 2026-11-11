@@ -298,7 +298,7 @@
         "letterIntro": "Eleanor's card says:",
         "letter": "Here is my question.\nI have hands, but I cannot clap.\nI have four faces, but I never smile.\nI stand on the round booth in the middle of this hall.\nI tell everyone when to run for a train.\nWhat am I?\n— E. H.",
         "question": "What is the answer to Eleanor's question?",
-        "prompt": "It is a ____.",
+        "prompt": "It is a _____.",
         "hints": [
           "Each line is one clue. What has hands and faces, but is not a person?",
           "Look at the round booth in the middle of the hall."

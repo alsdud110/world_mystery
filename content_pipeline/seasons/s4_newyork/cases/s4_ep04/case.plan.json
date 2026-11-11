@@ -291,7 +291,7 @@
         "letterIntro": "The painter's note says:",
         "letter": "At nine, an old man sat on this bench.\nHe wore a leather apron and carried a toolbox.\nA little magnifying glass sat on his forehead.\nHe looked at the brass bird. He said he fixes clocks.\nA person who makes and fixes clocks has one job name.",
         "question": "What is the old man's job?",
-        "prompt": "He is a ____.",
+        "prompt": "He is a __________.",
         "hints": [
           "What does the old man fix?",
           "Put two words together: what he fixes, and a person who makes things."

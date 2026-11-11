@@ -444,7 +444,7 @@
         "letterIntro": "Maya's notes say:",
         "letter": "The bench had four screw holes.\nEach hole is as wide as a finger.\nOtto's brass screws are as small as grains of rice.\nA screw that small would fall right through the hole.",
         "question": "Could Otto's screws come from the bench? Finish the sentence.",
-        "prompt": "Otto's screws are too ____ for the bench's holes.",
+        "prompt": "Otto's screws are too _____ for the bench's holes.",
         "hints": [
           "Compare a finger and a grain of rice.",
           "Could a grain of rice fill a hole as wide as a finger?"

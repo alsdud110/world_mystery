@@ -373,9 +373,9 @@
       "master": "What piece of knowledge still escapes the writer?"
     },
     {
-      "rookie": "He does not know the last ____.",
-      "junior": "He does not know the last ____.",
-      "master": "He does not know the last ____."
+      "rookie": "He does not know the last _____.",
+      "junior": "He does not know the last _____.",
+      "master": "He does not know the last _____."
     },
     {
       "rookie": "Which line has question marks?",

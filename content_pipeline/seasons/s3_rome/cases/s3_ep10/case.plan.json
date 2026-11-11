@@ -670,7 +670,7 @@
       "letterIntro": "Sofia's message and your notes say:",
       "letter": "SOFIA:\n\"I can bring the city inspector tomorrow.\nBut I must tell him why the work must stop.\nWhat is under the square?\"\n\nYOUR NOTES:\nThe real piece shows a room under the owl square.\nThe room's Latin name is BIBLIOTHECA.",
       "question": "Answer Sofia. What is under the square?",
-      "prompt": "Under the square, there is an old Roman ____.",
+      "prompt": "Under the square, there is an old Roman _______.",
       "hints": [
         "Look at Aldo's Latin card in your Notebook.",
         "The room is a room for books."

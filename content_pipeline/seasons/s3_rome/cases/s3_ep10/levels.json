@@ -658,9 +658,9 @@
       "master": "Reply to Sofia. What is under the square?"
     },
     {
-      "rookie": "Under the square, there is an old Roman ____.",
-      "junior": "Under the square, there is an old Roman ____.",
-      "master": "Beneath the square lies an old Roman ____."
+      "rookie": "Under the square, there is an old Roman _______.",
+      "junior": "Under the square, there is an old Roman _______.",
+      "master": "Beneath the square lies an old Roman _______."
     },
     {
       "rookie": "Look at Aldo's Latin card in your Notebook.",

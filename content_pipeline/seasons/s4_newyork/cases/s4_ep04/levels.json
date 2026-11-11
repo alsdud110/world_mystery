@@ -373,9 +373,9 @@
       "master": "What is the old man's trade?"
     },
     {
-      "rookie": "He is a ____.",
-      "junior": "He is a ____.",
-      "master": "He is a ____."
+      "rookie": "He is a __________.",
+      "junior": "He is a __________.",
+      "master": "He is a __________."
     },
     {
       "rookie": "What does the old man fix?",

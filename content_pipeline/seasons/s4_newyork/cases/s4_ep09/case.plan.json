@@ -80,7 +80,7 @@
         "letterIntro": "Eleanor's question card says:",
         "letter": "I am not a palace, but I have a tower.\nI sit on a rock above a pond,\nin the biggest park of the city.\nI am small, and I watch the weather.\nWhat am I?\n— E. H.",
         "question": "What is the answer to Eleanor's last question?",
-        "prompt": "It is a ____.",
+        "prompt": "It is a ______.",
         "hints": [
           "It is not a palace. What else has a tower?",
           "Think of a small one, on a rock, in Central Park."

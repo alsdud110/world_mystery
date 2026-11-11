@@ -80,7 +80,7 @@
         "letterIntro": "Under the second shell, a dry paper roll says:",
         "letter": "Well done, Detective. Here is my riddle.\nI have streets, but no cars.\nI have rooms, but no doors.\nI am made of stone, and now I am in pieces.\nWhat am I?\nMy tin waits under the third step.\n— The Owl",
         "question": "What is the Owl's riddle about?",
-        "prompt": "It is a ____.",
+        "prompt": "It is a ___.",
         "hints": [
           "Each line is one clue. What has streets and rooms, but they are only drawn?",
           "Think about what is missing from the museum."

@@ -333,7 +333,7 @@
         "letterIntro": "Aldo's sketch says:",
         "letter": "TUESDAY, BASSI WORKSHOP\nA big man carried out a heavy box.\nThere was a word on the side of the box.\nI saw it in the mirror, so it looked like this:\nGNIDLIUB\nA mirror turns words back to front.",
         "question": "What word was really on the box?",
-        "prompt": "The word on the box was ____.",
+        "prompt": "The word on the box was ________.",
         "hints": [
           "Start at the last letter, B, and read to the left.",
           "The word has to do with houses and walls."
@@ -452,7 +452,7 @@
         "\"A detective must put clues together,\" he says. \"Go on.\""
       ],
       "letterIntro": "The blackboard says:",
-      "letter": "THE MAN WE ARE LOOKING FOR:\n1. A yellow helmet with a crane on it.\n2. A heavy box with BUILDING on it.\n3. Big, strong hands.\n\nWhat is his job? A ________ builds houses, walls and roads.",
+      "letter": "THE MAN WE ARE LOOKING FOR:\n1. A yellow helmet with a crane on it.\n2. A heavy box with BUILDING on it.\n3. Big, strong hands.\n\nWhat is his job? A _______ builds houses, walls and roads.",
       "question": "Put the clues together. What is the man's job? Spell it.",
       "hints": [
         "Who wears a helmet and works with cranes?",

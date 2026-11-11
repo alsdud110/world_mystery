@@ -77,7 +77,7 @@
     {"rookie": "The note to the bookseller says:", "junior": "The Owl's note to the bookseller says:", "master": "The note left for the bookseller reads:"},
     {"rookie": "Dear bookseller,\nPlease keep my parcel safe.\nGive it only to the detective who says the password.\nThe password is the opposite of LOST.\n— The Owl", "junior": "Dear bookseller,\nPlease keep my parcel safe for me.\nGive it only to the detective who can say the password.\nThe password is the opposite of LOST.\n— The Owl", "master": "Dear bookseller,\nKindly keep my parcel safe.\nHand it over only to the detective who speaks the password.\nThe password is the opposite of LOST.\n— The Owl"},
     {"rookie": "What is the password?", "junior": "What is the secret password?", "master": "What password will the bookseller accept?"},
-    {"rookie": "The password is ____.", "junior": "The password is ____.", "master": "The password is ____."},
+    {"rookie": "The password is _____.", "junior": "The password is _____.", "master": "The password is _____."},
     {"rookie": "Opposite means the other end, like big and small or hot and cold.", "junior": "An opposite is a word at the other end, like big and small, or hot and cold.", "master": "Opposites sit at the two ends of one line, as big does with small and hot with cold."},
     {"rookie": "You lose a thing. Later you see it again. Now it is not lost. It is…", "junior": "If you lose something and later see it again, it is no longer lost. It is…", "master": "Something that was lost turns up again at last. What has it now been?"},
     {"rookie": "The bookseller smiles. \"Correct!\"", "junior": "The bookseller smiles. \"That's correct!\"", "master": "The bookseller's face breaks into a smile. \"Quite correct!\""},

@@ -393,9 +393,9 @@
       "master": "Which of today's squares was once the old owl square? Write the Italian word for owl found in its name."
     },
     {
-      "rookie": "It is Piazza della ____.",
-      "junior": "It is Piazza della ____.",
-      "master": "Its name is Piazza della ____."
+      "rookie": "It is Piazza della _______.",
+      "junior": "It is Piazza della _______.",
+      "master": "Its name is Piazza della _______."
     },
     {
       "rookie": "Find owl on Giulia's word list.",

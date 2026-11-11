@@ -238,9 +238,9 @@
       "master": "What does Otto now possess?"
     },
     {
-      "rookie": "Otto has an ____.",
-      "junior": "Otto has an ____.",
-      "master": "Otto has an ____."
+      "rookie": "Otto has an _____.",
+      "junior": "Otto has an _____.",
+      "master": "Otto has an _____."
     },
     {
       "rookie": "Read the last line. It tells you the word.",

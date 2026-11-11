@@ -182,7 +182,7 @@
         "letterIntro": "Maya's notes say:",
         "letter": "The bird was taken between 9:30 and 11:30.\nOtto's boat left at 9:30.\nFrom 9:45 until noon, he was with his sister on the island.\nHis boots have no stars.\nWhen you can prove you were in another place, you have an alibi.",
         "question": "What does Otto have now?",
-        "prompt": "Otto has an ____.",
+        "prompt": "Otto has an _____.",
         "hints": [
           "Read the last line. It tells you the word.",
           "Otto can prove he was on the island. What is that called?"

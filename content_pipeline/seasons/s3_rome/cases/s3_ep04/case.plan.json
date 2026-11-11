@@ -352,7 +352,7 @@
         "letterIntro": "The note to the bookseller says:",
         "letter": "Dear bookseller,\nPlease keep my parcel safe.\nGive it only to the detective who says the password.\nThe password is the opposite of LOST.\n— The Owl",
         "question": "What is the password?",
-        "prompt": "The password is ____.",
+        "prompt": "The password is _____.",
         "hints": [
           "Opposite means the other end, like big and small or hot and cold.",
           "You lose a thing. Later you see it again. Now it is not lost. It is…"

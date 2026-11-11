@@ -297,7 +297,7 @@
         "letterIntro": "Rosa's family tree says:",
         "letter": "Eleanor Hart had a daughter, Ruth.\nRuth had a daughter, Ana.\nAna had a daughter: me, Rosa.\nSo Eleanor is my mother's grandmother.\nYour mother's grandmother is your great-grandmother.",
         "question": "What is Eleanor to Rosa? Finish the sentence.",
-        "prompt": "Eleanor is Rosa's great-____.",
+        "prompt": "Eleanor is Rosa's great-___________.",
         "hints": [
           "Read the last line of the family tree.",
           "Your mother's mother is one step back. Eleanor is one more step back."

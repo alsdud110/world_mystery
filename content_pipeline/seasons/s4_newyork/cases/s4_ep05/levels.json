@@ -488,9 +488,9 @@
       "master": "Could Otto's screws possibly have come from the bench? Complete the sentence."
     },
     {
-      "rookie": "Otto's screws are too ____ for the bench's holes.",
-      "junior": "Otto's screws are too ____ for the bench's holes.",
-      "master": "Otto's screws are too ____ for the bench's holes."
+      "rookie": "Otto's screws are too _____ for the bench's holes.",
+      "junior": "Otto's screws are too _____ for the bench's holes.",
+      "master": "Otto's screws are too _____ for the bench's holes."
     },
     {
       "rookie": "Compare a finger and a grain of rice.",

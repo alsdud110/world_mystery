@@ -383,9 +383,9 @@
       "master": "What picture was printed on the man's helmet?"
     },
     {
-      "rookie": "The helmet had a ____ on it.",
-      "junior": "The helmet had a ____ on it.",
-      "master": "The helmet had a ____ on it."
+      "rookie": "The helmet had a _____ on it.",
+      "junior": "The helmet had a _____ on it.",
+      "master": "The helmet had a _____ on it."
     },
     {
       "rookie": "Read what the machine on the helmet does.",

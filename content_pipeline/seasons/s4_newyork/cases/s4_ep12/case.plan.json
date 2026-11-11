@@ -465,7 +465,7 @@
         "letterIntro": "Eleanor's letter says:",
         "letter": "To the child who found me,\nYou read every clue carefully. Thank you.\nDo not keep my Lark. Do not sell it.\nLet every child of the city hear its song.\nWhen you give something to everyone, you share it.\n— Eleanor Hart",
         "question": "What does Eleanor want you to do with the Lark?",
-        "prompt": "____ it with every child of the city.",
+        "prompt": "_____ it with every child of the city.",
         "hints": [
           "Read the line that says what not to do. Then the next line.",
           "The last line tells you the word."
