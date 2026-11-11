@@ -318,16 +318,6 @@
       "master": "Find out where the box went."
     },
     {
-      "rookie": "The war may end soon. We pack up.",
-      "junior": "The war may end soon. We must pack up.",
-      "master": "Welcome. The war may end soon, so we are packing up our papers."
-    },
-    {
-      "rookie": "Bitna's father packed the box by mistake.",
-      "junior": "Bitna's father packed the box in a trunk by mistake.",
-      "master": "Bitna's father packed her mother's box by mistake."
-    },
-    {
       "rookie": "He went home. He left a note.",
       "junior": "He went home. He left a note on the desk.",
       "master": "He went home to the little ones. He left a note on the desk."
@@ -353,29 +343,29 @@
       "master": "Two extra tiles. Which word did Mother pick?"
     },
     {
-      "rookie": "THE RAIN LETTER",
-      "junior": "THE RAIN LETTER",
-      "master": "THE RAIN LETTER"
+      "rookie": "Rain letter",
+      "junior": "Rain letter",
+      "master": "Rain letter"
     },
     {
-      "rookie": "A DRAWING",
-      "junior": "A DRAWING",
-      "master": "A DRAWING"
+      "rookie": "A drawing",
+      "junior": "A drawing",
+      "master": "A drawing"
     },
     {
-      "rookie": "THE FIRST LETTER",
-      "junior": "THE FIRST LETTER",
-      "master": "THE FIRST LETTER"
+      "rookie": "First letter",
+      "junior": "First letter",
+      "master": "First letter"
     },
     {
-      "rookie": "THE MOON LETTER",
-      "junior": "THE MOON LETTER",
-      "master": "THE MOON LETTER"
+      "rookie": "Moon letter",
+      "junior": "Moon letter",
+      "master": "Moon letter"
     },
     {
-      "rookie": "THE PINE LETTER",
-      "junior": "THE PINE LETTER",
-      "master": "THE PINE LETTER"
+      "rookie": "Pine letter",
+      "junior": "Pine letter",
+      "master": "Pine letter"
     },
     {
       "rookie": "After my pine letter, the rain came.",
@@ -728,9 +718,9 @@
       "master": "Mother's lock, and her riddle:"
     },
     {
-      "rookie": "On the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\"",
-      "junior": "On the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\"",
-      "master": "Carved on the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\""
+      "rookie": "On the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\" In Korean, that day is gwangbok. Gwang is what the sun gives.",
+      "junior": "On the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\" Koreans call that day gwangbok. Gwang is what the sun gives.",
+      "master": "Carved on the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\" Koreans call that day gwangbok; gwang is what the sun gives."
     },
     {
       "rookie": "Mother's word? Use five of the seven tiles.",
@@ -916,6 +906,21 @@
       "rookie": "R",
       "junior": "R",
       "master": "R"
+    },
+    {
+      "rookie": "Bitna is a Korean girl. Her mother left her a box.",
+      "junior": "Bitna is a Korean girl. Her mother left a box for her.",
+      "master": "Bitna is a young Korean girl. Her mother left a box for her."
+    },
+    {
+      "rookie": "I am Bitna. My mother's box is lost!",
+      "junior": "I am Bitna. My mother's box is lost!",
+      "master": "I am Bitna. My mother's box has gone missing!"
+    },
+    {
+      "rookie": "My father packed it by mistake.",
+      "junior": "My father packed it by mistake.",
+      "master": "My father packed it away by mistake."
     }
   ],
   "glossary": {

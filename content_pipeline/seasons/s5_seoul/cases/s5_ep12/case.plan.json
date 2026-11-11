@@ -78,6 +78,7 @@
         "title": "The Trunk by the Wall",
         "location": "THE GOVERNMENT OFFICE",
         "story": [
+          "Bitna is a Korean girl. Her mother left her a box.",
           "The office is hot and busy.",
           "\"The trunks all look the same!\"",
           "The desk note has a blue stamp."
@@ -261,18 +262,18 @@
           ]
         },
         "talk": {
-          "speaker": "kim_wonbong",
-          "portrait": "assets/seasons/season_05_seoul/characters/kim_wonbong.webp",
+          "speaker": "bitna",
+          "portrait": "assets/seasons/season_05_seoul/characters/bitna.webp",
           "goal": "Where did the box go?",
           "before": {
             "lines": [
               {
                 "by": "speaker",
-                "text": "The war may end soon. We pack up."
+                "text": "I am Bitna. My mother's box is lost!"
               },
               {
                 "by": "speaker",
-                "text": "Bitna's father packed the box by mistake."
+                "text": "My father packed it by mistake."
               },
               {
                 "by": "speaker",
@@ -307,23 +308,23 @@
           "options": [
             {
               "id": "rain_letter",
-              "label": "THE RAIN LETTER"
+              "label": "Rain letter"
             },
             {
               "id": "drawing",
-              "label": "A DRAWING"
+              "label": "A drawing"
             },
             {
               "id": "first_letter",
-              "label": "THE FIRST LETTER"
+              "label": "First letter"
             },
             {
               "id": "moon_letter",
-              "label": "THE MOON LETTER"
+              "label": "Moon letter"
             },
             {
               "id": "pine_letter",
-              "label": "THE PINE LETTER"
+              "label": "Pine letter"
             }
           ],
           "codeLength": 4
@@ -395,33 +396,33 @@
           "cards": [
             {
               "id": "rain_letter",
-              "title": "THE RAIN LETTER",
+              "title": "Rain letter",
               "text": "A little rain cloud is drawn on it.",
               "fiction": true
             },
             {
               "id": "drawing",
-              "title": "A DRAWING",
+              "title": "A drawing",
               "text": "A house drawing, not a letter.",
               "discard": true,
               "fiction": true
             },
             {
               "id": "first_letter",
-              "title": "THE FIRST LETTER",
+              "title": "First letter",
               "text": "Mother wrote it the day she left.",
               "anchor": "APRIL",
               "fiction": true
             },
             {
               "id": "moon_letter",
-              "title": "THE MOON LETTER",
+              "title": "Moon letter",
               "text": "A little moon is drawn on it.",
               "fiction": true
             },
             {
               "id": "pine_letter",
-              "title": "THE PINE LETTER",
+              "title": "Pine letter",
               "text": "A little pine tree is drawn on it.",
               "fiction": true
             }
@@ -681,7 +682,7 @@
         "\"I must be sure,\" she says."
       ],
       "letterIntro": "Mother's lock, and her riddle:",
-      "letter": "On the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\"",
+      "letter": "On the lock: \"Five letters. Two tiles are extra.\"\n\"The sun gives it.\"\n\"At night, it goes away.\"\n\"It comes back on the day the war is over.\" In Korean, that day is gwangbok. Gwang is what the sun gives.",
       "question": "Mother's word? Use five of the seven tiles.",
       "hints": [
         "What does the sun give us? At night, it is gone.",
