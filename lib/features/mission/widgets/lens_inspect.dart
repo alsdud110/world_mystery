@@ -920,6 +920,13 @@ class _LabelCardState extends State<_LabelCard> {
                           ),
                         ),
                       ),
+                      if (scene.labelPicture case final f?) ...[
+                        const SizedBox(height: AppSpace.sm),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(AppRadius.paper),
+                          child: Image.asset(f, key: const ValueKey('inspect-label-picture'), height: 160, fit: BoxFit.contain),
+                        ),
+                      ],
                       const SizedBox(height: AppSpace.sm),
                       Text(scene.labelWorn, textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
                       const SizedBox(height: AppSpace.sm),

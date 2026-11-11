@@ -104,6 +104,7 @@
         "labelTitle": { "$ref": "common.schema.json#/$defs/text" },
         "labelRoom": { "$ref": "common.schema.json#/$defs/text" },
         "labelWorn": { "$ref": "common.schema.json#/$defs/text" },
+        "labelPicture": { "type": "string", "pattern": "^assets/.+\\.(webp|png)$" },
         "taskLine": { "type": "integer", "minimum": 0 },
         "lensAt": { "$ref": "#/$defs/point" },
         "inside": { "$ref": "#/$defs/rect" },

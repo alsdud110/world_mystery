@@ -300,7 +300,7 @@ class CaseLevels {
   /// statements match by; an evidence's inscription and a clue's value are
   /// what puzzles read; the evidence link's line is read by its own table).
   static const _playNotText = {
-    'id', 'by', 'speaker', 'portrait', 'picture', 'background', 'file', 'measuredOn', 'kind', 'requires', //
+    'id', 'by', 'speaker', 'portrait', 'picture', 'labelPicture', 'background', 'file', 'measuredOn', 'kind', 'requires', //
     'timing', 'type', 'optionId', 'topic', 'pair', 'then', 'evidence', 'thing', 'evidenceLinkLine',
     'inscription', 'value', 'symbol', 'icon', 'symbols',
     // A timeline's (Puzzle Engine 2.0): a card's time and sources, a relation's cards.

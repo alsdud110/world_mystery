@@ -166,7 +166,19 @@ class _GlossaryTextState extends ConsumerState<GlossaryText> {
         spans.add(TextSpan(text: text));
         continue;
       }
-      _addWords(text, episode, spans);
+      // **words** read bold (a Rookie letter's key facts); a line still
+      // typing on may end in half a mark, which is never shown.
+      final parts = text.split('**');
+      if (parts.last.endsWith('*')) parts.last = parts.last.substring(0, parts.last.length - 1);
+      for (var i = 0; i < parts.length; i++) {
+        if (i.isOdd) {
+          final words = <InlineSpan>[];
+          _addWords(parts[i], episode, words);
+          spans.add(TextSpan(style: const TextStyle(fontWeight: FontWeight.w800, color: AppColors.burgundy), children: words));
+        } else {
+          _addWords(parts[i], episode, spans);
+        }
+      }
     }
     return Text.rich(TextSpan(children: spans), style: widget.style, textAlign: widget.textAlign);
   }

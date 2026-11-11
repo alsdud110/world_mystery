@@ -67,9 +67,9 @@
           "Someone moved the dictionary."
         ],
         "letterIntro": "Yun tells you:",
-        "letter": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it. It has a white string.\nOnly Miri came in tonight. She brings water to our rooms.",
+        "letter": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it. It has a white string.\nOnly Miri came in tonight. She brings water to our rooms. She draws a water drop on her notes.",
         "question": "What is under the dictionary? Write the word.",
-        "prompt": "The card is signed with a drop of ____.",
+        "prompt": "The card is signed with a drop of _____.",
         "hints": [
           "Find the thick book with a red spine, then look under it.",
           "Who came in? What does she bring?"
@@ -109,7 +109,7 @@
           },
           "place": "Yun's room at night",
           "task": "Which desk thing did Yun talk about?",
-          "nextTask": "Look under it.",
+          "nextTask": "Find the paper under the red book.",
           "dragGuide": "Drag the glass around.",
           "tapGuide": "Or tap a thing.",
           "missLine": "Nothing here.",
@@ -178,7 +178,7 @@
                   812
                 ]
               ],
-              "line": "A thick book with a red spine. It sits a little crooked.",
+              "line": "A thick book with a red spine. A paper is under its corner!",
               "checks": [
                 0
               ]
@@ -190,10 +190,10 @@
               "label": "A paper under the thick book",
               "areas": [
                 [
-                  1015,
+                  995,
                   814,
-                  1135,
-                  866
+                  1150,
+                  880
                 ]
               ],
               "line": "A blue drop is in its corner.",
@@ -221,7 +221,7 @@
           ],
           "labelTitle": "THE FOLDED NOTE",
           "labelRoom": "UNDER THE DICTIONARY",
-          "labelWorn": "The last word is hard to read.",
+          "labelWorn": "A blue drop is drawn on it.",
           "taskLine": 2,
           "lensAt": [
             780,
@@ -232,7 +232,8 @@
             140,
             1496,
             990
-          ]
+          ],
+          "labelPicture": "assets/seasons/season_05_seoul/cases/case_11/miri_card.webp"
         },
         "talk": {
           "speaker": "yun_dongju",
@@ -607,9 +608,9 @@
           "His keys make noise. \"He is from the office.\""
         ],
         "letterIntro": "You think it through:",
-        "letter": "The card says: the copy is under keys of these colours.\nIts wrong line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage.\nWhat has keys of black and white?",
+        "letter": "The card says: the copy is under keys of these colours.\nIts wrong line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage. A piano has keys too! Its keys are black and white.\nWhat has keys of black and white?",
         "question": "Where is the copy? Write the thing.",
-        "prompt": "The copy is safe in the ____.",
+        "prompt": "The copy is safe in the _____.",
         "hints": [
           "Find the card's wrong colours. Read its last words.",
           "Some keys make music. Which thing has them?"
@@ -719,7 +720,7 @@
         "\"My friend comes at sunrise. Quick!\""
       ],
       "letterIntro": "Miri and Yun tell you:",
-      "letter": "Miri: \"My lock needs two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3. So there are three copies.\"\n\"It also says 18 + 1 opening poem.\"",
+      "letter": "Miri: \"My lock needs two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3. So there are **3 copies**.\"\n\"It says 18 + 1 opening poem. So **each copy has 19 poems**.\"",
       "question": "Put in the lock's number.",
       "hints": [
         "Copies in all, then poems in each.",
@@ -1089,7 +1090,10 @@
       "wrote": "썼다 (write의 과거)",
       "young": "젊은",
       "korea": "한국",
-      "japan": "일본"
+      "japan": "일본",
+      "draws": "그린다",
+      "signs": "서명한다, 표시한다",
+      "notes": "쪽지들"
     }
   },
   "notes": [

@@ -462,7 +462,7 @@ const seasonPackManifests = <String, SeasonPackManifest>{
   ),
   'season_05_seoul': SeasonPackManifest(
     folder: 'season_05_seoul',
-    version: '7ba83ea3e1a81a4e',
+    version: '555767fbc1b4edd8',
     files: [
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_01/ending_mother_letter.webp', 752104, '5a7ac29fa73768bb24753da0b1fbfbb04ae38eb58ebbc780c1de5f45b6692523'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_01/final_kings_study.webp', 712922, '78cc754a08c48bdf841c50852a31ef96c9262754f5a6de61823f31d241a708dc'),
@@ -530,6 +530,7 @@ const seasonPackManifests = <String, SeasonPackManifest>{
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_11/college_gate.webp', 652114, 'a65251c88af53bb3ebb4956fd05033cd2104876e170e49b58cda69ae23b391d5'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_11/college_hall.webp', 566040, 'ae0c1759a2ff9f69b4157dd7cb1ac27082083950bf572f40dd4c42cd0997bd77'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_11/dorm_room.webp', 567044, '077eb3db5dc13ea5ab2835a155a27d9d4f4f511c26a71be02ad39270c3ed5201'),
+      SeasonPackFile('assets/seasons/season_05_seoul/cases/case_11/miri_card.webp', 206310, 'f3ba3133d5ceed5f5edd13a43850d95af2d23ffcafb5a9213dfc3f85b4bec0e9'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_12/family_room.webp', 587068, '1cf70bdefed19d4e9fc465319520ae57e95a4564c5901c1dd4a16faccb2aadf1'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_12/office.webp', 489472, '66d364e37a3fef9810770e8c0c7bc6230fa3e55442a49919a692d51822c3ef67'),
       SeasonPackFile('assets/seasons/season_05_seoul/cases/case_12/river_steps.webp', 485624, 'c543039cf13ab72a70871c8c79f0d51ac96ade2c640345cbdaeda2b93f348d28'),

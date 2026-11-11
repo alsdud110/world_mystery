@@ -101,6 +101,7 @@ class InspectScene {
     this.lensAt = const Offset(0.5, 0.5),
     this.matchAction = 'READ THE LABEL',
     this.labelLink = 'Label',
+    this.labelPicture,
   });
 
   /// The room's picture (its file) and its size in pixels.
@@ -129,6 +130,10 @@ class InspectScene {
   final String labelTitle;
   final String labelRoom;
   final String labelWorn;
+
+  /// The found thing up close on the label's card (its file), when its
+  /// mark is too small to read in the room.
+  final String? labelPicture;
 
   /// The note's line still to answer once the label is read (its index):
   /// the word to complete. Ticked only by the answer.
@@ -173,6 +178,7 @@ class InspectScene {
         lensAt: lensAt,
         matchAction: matchAction,
         labelLink: labelLink,
+        labelPicture: labelPicture,
       );
 
   InspectSpot spot(String id) => spots.firstWhere((s) => s.id == id);

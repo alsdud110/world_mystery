@@ -1199,6 +1199,7 @@ abstract final class CaseGenerator {
       'labelTitle': s.labelTitle,
       'labelRoom': s.labelRoom,
       'labelWorn': s.labelWorn,
+      'labelPicture': ?s.labelPicture,
       'taskLine': s.taskLine,
       if (s.inside case final r?) 'inside': _rect(r, w, h),
       'lensAt': _point(s.lensAt, w, h),

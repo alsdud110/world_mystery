@@ -2661,6 +2661,7 @@ class InspectPlan {
     required this.taskLine,
     required this.lensAt,
     this.inside,
+    this.labelPicture,
   });
 
   final PicturePlan picture;
@@ -2677,6 +2678,7 @@ class InspectPlan {
   final int taskLine;
   final ScenePoint lensAt;
   final SceneRect? inside;
+  final String? labelPicture;
 
   factory InspectPlan.fromJson(Object? json, String path) {
     final r = _Reader(json, path);
@@ -2695,6 +2697,7 @@ class InspectPlan {
       taskLine: r.integer('taskLine', min: 0),
       lensAt: r.point('lensAt'),
       inside: r.optRect('inside'),
+      labelPicture: r.optStr('labelPicture'),
     );
     r.done();
     return out;
@@ -2717,6 +2720,7 @@ class InspectPlan {
       'lensAt': lensAt.toJson(),
     };
     if (inside case final r?) json['inside'] = r.toJson();
+    if (labelPicture case final f?) json['labelPicture'] = f;
     return json;
   }
 }

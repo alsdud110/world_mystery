@@ -108,7 +108,7 @@
       "master": "Which thing on the desk did Yun talk about?"
     },
     {
-      "rookie": "Look under it.",
+      "rookie": "Find the paper under the red book.",
       "junior": "Now look under it.",
       "master": "Look carefully under it. One word of the note has faded."
     },
@@ -178,7 +178,7 @@
       "master": "A thick book with a red spine"
     },
     {
-      "rookie": "A thick book with a red spine. It sits a little crooked.",
+      "rookie": "A thick book with a red spine. A paper is under its corner!",
       "junior": "A thick book with a red spine. It is sitting slightly crooked.",
       "master": "A thick book with a red spine, resting slightly askew."
     },
@@ -218,7 +218,7 @@
       "master": "UNDER THE DICTIONARY"
     },
     {
-      "rookie": "The last word is hard to read.",
+      "rookie": "A blue drop is drawn on it.",
       "junior": "The final word has worn away.",
       "master": "The final word has faded away."
     },
@@ -573,9 +573,9 @@
       "master": "Someone has moved the dictionary."
     },
     {
-      "rookie": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it. It has a white string.\nOnly Miri came in tonight. She brings water to our rooms.",
-      "junior": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms.",
-      "master": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was right next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms."
+      "rookie": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it. It has a white string.\nOnly Miri came in tonight. She brings water to our rooms. She draws a water drop on her notes.",
+      "junior": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms. She signs her notes with a drop.",
+      "master": "Someone moved my dictionary. It is the thick book with a red spine.\nMy friend's copy was right next to it, tied with a white string.\nOnly Miri came in tonight. She brings water to our rooms and signs her notes with a drop."
     },
     {
       "rookie": "What is under the dictionary? Write the word.",
@@ -583,9 +583,9 @@
       "master": "What is under the dictionary? Write the missing word."
     },
     {
-      "rookie": "The card is signed with a drop of ____.",
-      "junior": "The card is signed with a drop of ____.",
-      "master": "The card is signed with a drop of ____."
+      "rookie": "The card is signed with a drop of _____.",
+      "junior": "The card is signed with a drop of _____.",
+      "master": "The card is signed with a drop of _____."
     },
     {
       "rookie": "It is drawn, not an ink spot. Who came in?",
@@ -668,8 +668,8 @@
       "master": "You think it through carefully:"
     },
     {
-      "rookie": "The card says: the copy is under keys of these colours.\nIts wrong line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage.\nWhat has keys of black and white?",
-      "junior": "The card says the copy is safe under keys of these colours.\nIts line that is not true says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage.\nWhat has keys of black and white?",
+      "rookie": "The card says: the copy is under keys of these colours.\nIts wrong line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage. A piano has keys too! Its keys are black and white.\nWhat has keys of black and white?",
+      "junior": "The card says the copy is safe under keys of these colours.\nIts line that is not true says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents in black jackets and white shirts. They have no keys.\nAnd an old piano by the stage. A piano has keys too.\nWhat has keys of black and white?",
       "master": "The card says the copy is safe under keys of these colours.\nIts untrue line says: BLACK AND WHITE.\nIn this hall: a ring of door keys, all black.\nStudents wear black jackets and white shirts. They have no keys.\nAnd an old piano stands by the stage.\nWhat here has keys of black and white?"
     },
     {
@@ -678,9 +678,9 @@
       "master": "Where is the copy hidden? Write the thing."
     },
     {
-      "rookie": "The copy is safe in the ____.",
-      "junior": "The copy is safe in the ____.",
-      "master": "The copy is safe in the ____."
+      "rookie": "The copy is safe in the _____.",
+      "junior": "The copy is safe in the _____.",
+      "master": "The copy is safe in the _____."
     },
     {
       "rookie": "Find the card's wrong colours. Read its last words.",
@@ -768,7 +768,7 @@
       "master": "\"My friend comes at sunrise. We must hurry!\""
     },
     {
-      "rookie": "Miri: \"My lock needs two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3. So there are three copies.\"\n\"It also says 18 + 1 opening poem.\"",
+      "rookie": "Miri: \"My lock needs two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3. So there are **3 copies**.\"\n\"It says 18 + 1 opening poem. So **each copy has 19 poems**.\"",
       "junior": "Miri: \"My lock wants two numbers from Yun's list, put side by side.\"\n\"First: the number of copies. Then: the poems in each copy.\"\n\"Like this: 2 copies and 15 poems make 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\"",
       "master": "Miri: \"My lock needs two numbers from Yun's list, side by side.\"\n\"First: the number of copies. Then: how many poems are in each copy.\"\n\"For example: 2 copies and 15 poems is 215.\"\nYun: \"My list says copy 2 of 3, and 18 + 1 opening poem.\""
     },
