@@ -93,6 +93,8 @@ import 'widgets/show_strip.dart';
 import 'widgets/station_clocks.dart';
 import 'widgets/story_picture_view.dart';
 import 'widgets/question_widgets.dart';
+import 'widgets/shown_answer.dart';
+import 'answer_pictures.dart';
 import 'widgets/reveal_layer.dart';
 import 'widgets/river_marks.dart';
 import 'widgets/spot_differences.dart';
@@ -1305,6 +1307,8 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
   /// pencil. True when a hint was opened.
   Future<bool> _showHint(Mission m) async {
     if (ref.read(gameControllerProvider).hintsFor(m.id) >= m.hints.length) {
+      // Every hint is read: the answer, where this puzzle can show it.
+      await _showAnswer(m);
       return false;
     }
     final revealed = await requestTip(context, ref, m);
@@ -1312,6 +1316,22 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
       ref.read(audioServiceProvider).play(GameSound.pencilNote);
     }
     return revealed;
+  }
+
+  /// [m]'s puzzle with its answer entered ([answerPictureOf]); null for a
+  /// puzzle that has none.
+  AnswerPicture? _answerPicture(Mission m) => answerPictureOf(m, caseTalk: ref.read(caseTalkOfProvider)(m));
+
+  /// See the Answer (every hint read first): paid for once with coins, as a
+  /// hint is (see [requestAnswer]), then shown as a picture of the puzzle
+  /// with the answer entered. The puzzle itself is left as it is: the
+  /// detective still enters the answer.
+  Future<void> _showAnswer(Mission m) async {
+    final picture = _answerPicture(m);
+    if (picture == null) return;
+    if (!await requestAnswer(context, ref, m) || !mounted) return;
+    ref.read(audioServiceProvider).play(GameSound.paperRustle);
+    await showAnswerPicture(context, mission: m, picture: picture);
   }
 
   void _rereadLetter(Mission m) {
@@ -1370,6 +1390,7 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
         final choice = await showTryAgainSheet(
           context,
           hintAvailable: canHint,
+          answerAvailable: !canHint && _answerPicture(m) != null,
           message: AnswerChecker.feedbackFor(m, answer),
           showDetective: true,
         );
@@ -1772,11 +1793,16 @@ class _MissionScreenState extends ConsumerState<MissionScreen> {
         talkAfter;
     final searching = dark && scene != null && _stage == MissionStage.puzzle;
     final talking = dark && talk != null && _stage == MissionStage.puzzle;
-    final content = AnimatedSwitcher(
-      duration: const Duration(milliseconds: 300),
-      transitionBuilder: (child, anim) =>
-          FadeTransition(opacity: anim, child: child),
-      child: body,
+    // The puzzle's hint link offers the answer once every hint is read,
+    // where this puzzle has an answer's picture.
+    final content = AnswerOffered(
+      offered: !solved && _answerPicture(m) != null,
+      child: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 300),
+        transitionBuilder: (child, anim) =>
+            FadeTransition(opacity: anim, child: child),
+        child: body,
+      ),
     );
     // Evidence of an earlier case to bring from the notebook: its card on
     // the page's foot, from the open letter until the mission is solved
@@ -2192,7 +2218,7 @@ class _PuzzleStage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tipLabel = nextTipLabel(mission.hints, hintsShown);
+    final tipLabel = tipLabelOf(context, mission.hints, hintsShown);
     // From the heading to Reread Letter and the tip, one group: centred
     // under the bar when it fits (whatever the puzzle's size), scrolled from
     // the top when it does not — a small phone, large text, the keyboard up.

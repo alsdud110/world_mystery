@@ -282,7 +282,7 @@ class _DialogueInvestigationState extends ConsumerState<DialogueInvestigation> {
               finishing: _finishing,
               flying: _flying,
               onContinue: _complete,
-              tipLabel: nextTipLabel(widget.hints, widget.hintsShown),
+              tipLabel: tipLabelOf(context, widget.hints, widget.hintsShown),
               hints: widget.hints,
               hintsShown: widget.hintsShown,
               onTalkTo: _talkTo,
@@ -1729,8 +1729,28 @@ enum _Verdict {
 /// the game says what the two show. Nothing is chosen for the detective, no
 /// statement is marked out, a pair that is not the answer never says which
 /// is, and choosing again is always open.
+/// A talk's answer, for the answer's picture: every statement heard, laid
+/// out to compare, the two that answer the talk chosen.
+class DialogueAnswer extends StatelessWidget {
+  const DialogueAnswer({super.key, required this.scene});
+
+  final DialogueScene scene;
+
+  @override
+  Widget build(BuildContext context) => _CompareSheet(
+    scene: scene,
+    heard: [for (final s in scene.statements) s.id],
+    onSolved: () {},
+    answered: true,
+  );
+}
+
 class _CompareSheet extends ConsumerStatefulWidget {
-  const _CompareSheet({required this.scene, required this.heard, required this.onSolved});
+  const _CompareSheet({required this.scene, required this.heard, required this.onSolved, this.answered = false});
+
+  /// The answer's picture: the two statements that answer the talk are
+  /// chosen already, and what they show is said.
+  final bool answered;
 
   final DialogueScene scene;
 
@@ -1760,6 +1780,16 @@ class _CompareSheetState extends ConsumerState<_CompareSheet> {
   static const judgeAfter = Duration(milliseconds: 450);
   static const holdAfter = Duration(milliseconds: 500);
   static const closeAfter = Duration(milliseconds: 1800);
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.answered) {
+      _picked.addAll(widget.scene.deduction.pair);
+      _verdict = _Verdict.match;
+      _showPair(top: true);
+    }
+  }
 
   @override
   void dispose() {

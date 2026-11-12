@@ -168,6 +168,22 @@ class _ArchivePuzzleState extends State<ArchivePuzzle> {
   );
 }
 
+/// The archive's answer, for the answer's picture: the envelope the corner
+/// fits, up close, the corner laid where it was torn from.
+class ArchiveAnswer extends StatelessWidget {
+  const ArchiveAnswer({super.key, required this.scene, required this.mission});
+
+  final ArchiveScene scene;
+  final Mission mission;
+
+  @override
+  Widget build(BuildContext context) {
+    final at = scene.envelopes.indexWhere((e) => e.id == mission.answer);
+    if (at < 0) return const SizedBox.shrink();
+    return _EnvelopeCloser(scene: scene, envelope: scene.envelopes[at], number: at + 1, answered: true);
+  }
+}
+
 /// An envelope up close, the corner from Clock III under it: dragged (or
 /// laid by its button) onto it, the corner settles where it was torn from
 /// on the envelope it fits, and the envelope's id is returned; on one it
@@ -189,7 +205,10 @@ Future<String?> showEnvelopeCloser(BuildContext context, {required ArchiveScene 
 }
 
 class _EnvelopeCloser extends StatefulWidget {
-  const _EnvelopeCloser({required this.scene, required this.envelope, required this.number});
+  const _EnvelopeCloser({required this.scene, required this.envelope, required this.number, this.answered = false});
+
+  /// The answer's picture: the corner lies on the envelope already.
+  final bool answered;
 
   final ArchiveScene scene;
   final DrawerEnvelope envelope;
@@ -208,8 +227,8 @@ class _EnvelopeCloserState extends State<_EnvelopeCloser> with SingleTickerProvi
 
   /// Where the corner's canvas is laid (pixels of the envelope's canvas;
   /// zero: where it was torn from).
-  late Offset _at = _tray;
-  bool _settled = false;
+  late Offset _at = widget.answered ? Offset.zero : _tray;
+  late bool _settled = widget.answered;
   bool _busy = false;
   String? _line;
 

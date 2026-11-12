@@ -124,4 +124,8 @@ abstract final class AppConstants {
   /// Price of tip 1 and tip 2 of a mission. Tip 1 is always free; a tip the
   /// detective cannot pay for is given free too, so no one is ever stuck.
   static const tipPrices = [0, 20];
+
+  /// Price of a mission's answer, shown once every hint has been read (the
+  /// same as tip 2). Paid once: the answer is then the detective's.
+  static const answerPrice = 20;
 }

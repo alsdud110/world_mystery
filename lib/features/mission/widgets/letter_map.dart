@@ -214,6 +214,18 @@ class LetterMapPuzzle extends StatelessWidget {
   }
 }
 
+/// The map's answer as a picture ([showAnswerPicture]): the right building
+/// ([spot]) up close beside the letter's drawing, as it is chosen.
+class LetterMapAnswer extends StatelessWidget {
+  const LetterMapAnswer({super.key, required this.scene, required this.spot});
+
+  final LetterMapScene scene;
+  final MapSpot spot;
+
+  @override
+  Widget build(BuildContext context) => _BuildingCloser(scene: scene, spot: spot);
+}
+
 /// A building on the map up close, the letter's drawing under it to
 /// compare: THIS IS THE BUILDING returns its id.
 class _BuildingCloser extends StatelessWidget {

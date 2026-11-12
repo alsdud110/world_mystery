@@ -560,7 +560,7 @@ class _InvestigationSearchState extends ConsumerState<InvestigationSearch> with 
           ),
           actions: _SearchActions(
             scene: scene,
-            tipLabel: nextTipLabel(widget.hints, widget.hintsShown),
+            tipLabel: tipLabelOf(context, widget.hints, widget.hintsShown),
             hints: widget.hints,
             hintsShown: widget.hintsShown,
             onReport: _openReport,
@@ -1049,14 +1049,21 @@ class _SearchActions extends StatelessWidget {
               child: DetectiveTipNotes(hints: hints, revealed: hintsShown, compact: true),
             ),
           ),
-          Wrap(
-            alignment: WrapAlignment.center,
-            spacing: AppSpace.sm,
-            children: [
-              InkTextButton(label: scene.documentLabel, glyph: InkGlyph.letter, onPressed: onReport),
-              if (tipLabel != null)
-                InkTextButton(label: tipLabel!, glyph: InkGlyph.hint, color: tipLinkColor, onPressed: onTip),
-            ],
+          // One line always: on a narrow phone with large text the two links
+          // are made a little smaller rather than taking a second line from
+          // the picture (the answer's link stays once every hint is read).
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                InkTextButton(label: scene.documentLabel, glyph: InkGlyph.letter, onPressed: onReport),
+                if (tipLabel != null) ...[
+                  const SizedBox(width: AppSpace.sm),
+                  InkTextButton(label: tipLabel!, glyph: InkGlyph.hint, color: tipLinkColor, onPressed: onTip),
+                ],
+              ],
+            ),
           ),
         ],
       ),

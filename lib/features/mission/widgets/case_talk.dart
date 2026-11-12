@@ -737,7 +737,7 @@ class _Panel extends StatelessWidget {
               alignment: WrapAlignment.end,
               spacing: AppSpace.xs,
               children: [
-                if (nextTipLabel(hints, hintsShown) case final tip? when onHint != null)
+                if (tipLabelOf(context, hints, hintsShown) case final tip? when onHint != null)
                   InkTextButton(
                     key: const ValueKey('case-talk-hint'),
                     label: tip,

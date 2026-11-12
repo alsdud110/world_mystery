@@ -503,7 +503,7 @@ class PicturePuzzleActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tipLabel = nextTipLabel(hints, hintsShown);
+    final tipLabel = tipLabelOf(context, hints, hintsShown);
     return Padding(
       padding: const EdgeInsets.fromLTRB(AppSpace.lg, AppSpace.sm, AppSpace.lg, AppSpace.xs),
       child: Column(

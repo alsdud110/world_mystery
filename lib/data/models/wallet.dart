@@ -21,7 +21,10 @@ enum CoinSource {
   tip,
 
   /// A completed rewarded-ad event, keyed uniquely to prevent duplicates.
-  rewardedAd;
+  rewardedAd,
+
+  /// A mission's answer shown (paid once; seen again for free).
+  answer;
 
   static CoinSource? byName(Object? name) {
     for (final s in values) {
@@ -84,6 +87,7 @@ class Wallet {
 
   static String missionKey(String missionId) => 'mission:$missionId';
   static String tipKey(String missionId, int tip) => 'tip:$missionId:$tip';
+  static String answerKey(String missionId) => 'answer:$missionId';
   static const startKey = 'start';
 
   int get balance => entries.fold(0, (sum, e) => sum + e.amount);
@@ -93,6 +97,10 @@ class Wallet {
   /// Whether tip [tip] (1 or 2) of [missionId] is the detective's: it is
   /// then read again for free, in this run or any later one.
   bool ownsTip(String missionId, int tip) => has(tipKey(missionId, tip));
+
+  /// Whether the answer of [missionId] is the detective's: it is then seen
+  /// again for free.
+  bool ownsAnswer(String missionId) => has(answerKey(missionId));
 
   /// [entry] added, unless an entry with its key is already there.
   Wallet adding(CoinEntry entry) => has(entry.key) ? this : Wallet([...entries, entry]);

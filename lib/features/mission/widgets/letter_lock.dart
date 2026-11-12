@@ -11,6 +11,7 @@ import '../../../data/models/mission.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import '../../../core/utils/reading_lines.dart';
+import 'shown_answer.dart';
 
 /// A letter lock ([MissionType.letterLock]): a brass plate with a slot for
 /// each letter, and the letter tiles the detective found, loose below it.
@@ -55,6 +56,24 @@ class _LetterLockQuestionState extends State<LetterLockQuestion> {
   late final List<String?> _slots = List.filled(LetterLockQuestion.slotCount(widget.mission), null);
 
   List<ChoiceOption> get _tiles => widget.mission.options;
+
+  @override
+  void initState() {
+    super.initState();
+    // The answer's picture ([ShownAnswer]): the word set in the lock, each
+    // letter a tile of its own.
+    final answer = ShownAnswer.of(context);
+    if (answer == null) return;
+    final letters = AnswerChecker.normalize(answer).split('');
+    for (var i = 0; i < _slots.length && i < letters.length; i++) {
+      for (final t in _tiles) {
+        if (!_slots.contains(t.id) && AnswerChecker.normalize(t.label) == letters[i]) {
+          _slots[i] = t.id;
+          break;
+        }
+      }
+    }
+  }
 
   String _letter(String id) => _tiles.firstWhere((o) => o.id == id).label;
 

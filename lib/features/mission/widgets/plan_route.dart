@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'shown_answer.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
@@ -40,7 +41,8 @@ class _PlanRoutePuzzleState extends State<PlanRoutePuzzle> {
   /// Where the letter is now: a place moved to, or a door (kept while the
   /// page is open). Null: the last place reached.
   PlanStep? _at;
-  String? _door;
+  // Set already on the answer's picture ([ShownAnswer]).
+  late String? _door = ShownAnswer.of(context);
   String? _line;
   bool _checking = false;
 

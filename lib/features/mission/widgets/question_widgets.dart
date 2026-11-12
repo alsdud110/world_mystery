@@ -19,6 +19,7 @@ import '../../../widgets/glossary_text.dart';
 import '../../../widgets/landmark_art.dart';
 import '../../game/game_providers.dart';
 import 'letter_lock.dart';
+import 'shown_answer.dart';
 import '../../../core/utils/reading_lines.dart';
 
 /// The one look of an answer card, whatever the puzzle type, so a child
@@ -196,7 +197,8 @@ class MultipleChoiceQuestion extends ConsumerStatefulWidget {
 
 class _MultipleChoiceQuestionState
     extends ConsumerState<MultipleChoiceQuestion> {
-  String? _selected;
+  // Chosen already on the answer's picture ([ShownAnswer]).
+  late String? _selected = ShownAnswer.of(context);
 
   @override
   Widget build(BuildContext context) {
@@ -320,6 +322,8 @@ class _WordInputQuestionState extends State<WordInputQuestion> {
   @override
   void initState() {
     super.initState();
+    // Written already on the answer's picture ([ShownAnswer]).
+    if (ShownAnswer.of(context) case final answer?) _controller.text = answer.toUpperCase();
     _controller.addListener(() => setState(() {}));
   }
 
@@ -423,7 +427,11 @@ class NumberCodeQuestion extends ConsumerStatefulWidget {
 }
 
 class _NumberCodeQuestionState extends ConsumerState<NumberCodeQuestion> {
-  String _code = '';
+  // Set already on the answer's picture ([ShownAnswer]).
+  late String _code = switch (ShownAnswer.of(context)) {
+    final answer? => answer.replaceAll(RegExp(r'[^0-9]'), ''),
+    null => '',
+  };
 
   int get _length => widget.mission.codeLength ?? widget.mission.answer.length;
 
@@ -612,7 +620,8 @@ class ImageChoiceQuestion extends ConsumerStatefulWidget {
 }
 
 class _ImageChoiceQuestionState extends ConsumerState<ImageChoiceQuestion> {
-  String? _selected;
+  // Chosen already on the answer's picture ([ShownAnswer]).
+  late String? _selected = ShownAnswer.of(context);
 
   @override
   Widget build(BuildContext context) {
@@ -812,7 +821,8 @@ class SequenceQuestion extends ConsumerStatefulWidget {
 }
 
 class _SequenceQuestionState extends ConsumerState<SequenceQuestion> {
-  final _picked = <String>[];
+  // In order already on the answer's picture ([ShownAnswer]).
+  late final _picked = <String>[...Mission.sequenceIds(ShownAnswer.of(context) ?? '')];
 
   int get _length =>
       widget.mission.codeLength ??

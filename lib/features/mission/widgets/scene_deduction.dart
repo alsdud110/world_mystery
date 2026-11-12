@@ -760,7 +760,7 @@ class _DeductionActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tipLabel = nextTipLabel(hints, hintsShown);
+    final tipLabel = tipLabelOf(context, hints, hintsShown);
     return MediaQuery.withClampedTextScaling(
       maxScaleFactor: 1.15,
       child: Padding(

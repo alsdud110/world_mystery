@@ -301,15 +301,42 @@ class HintBulbLight extends CustomPainter {
 /// component (link vs. engraved button).
 const tipButtonLabel = 'GET MORE HINTS';
 
+/// Asking for the answer, once every hint has been read: the link under a
+/// puzzle and the engraved buttons.
+const answerLinkLabel = 'See the Answer';
+const answerButtonLabel = 'SEE THE ANSWER';
+
 /// Label for the link that opens the next hint ("Get a Free Hint" while the
 /// next one costs nothing, then "Get More Hints"), or null when none are left.
-String? nextTipLabel(List<String> hints, int revealed) {
-  if (revealed >= hints.length) return null;
+///
+/// [answer]: this puzzle can show its answer; once every hint is read the
+/// link offers it ([answerLinkLabel]).
+String? nextTipLabel(List<String> hints, int revealed, {bool answer = false}) {
+  if (revealed >= hints.length) return answer ? answerLinkLabel : null;
   final free =
       revealed < AppConstants.tipPrices.length &&
       AppConstants.tipPrices[revealed] == 0;
   return free ? 'Get a Free Hint' : 'Get More Hints';
 }
+
+/// Above a puzzle: whether it can show its answer once every hint is read
+/// (the mission's page knows; the puzzle's hint link asks, [tipLabelOf]).
+class AnswerOffered extends InheritedWidget {
+  const AnswerOffered({super.key, required this.offered, required super.child});
+
+  final bool offered;
+
+  static bool of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<AnswerOffered>()?.offered ?? false;
+
+  @override
+  bool updateShouldNotify(AnswerOffered old) => old.offered != offered;
+}
+
+/// [nextTipLabel] for the puzzle at [context]: the next hint, then (where
+/// the page offers it, [AnswerOffered]) the answer.
+String? tipLabelOf(BuildContext context, List<String> hints, int revealed) =>
+    nextTipLabel(hints, revealed, answer: AnswerOffered.of(context));
 
 /// Colour of the tip link (gold ink, so it reads as a helper, not an answer).
 const tipLinkColor = AppColors.goldDeep;

@@ -882,7 +882,7 @@ class _LabelCardState extends State<_LabelCard> {
   Widget build(BuildContext context) {
     final m = widget.mission;
     final scene = widget.scene;
-    final tip = nextTipLabel(m.hints, widget.hintsShown);
+    final tip = tipLabelOf(context, m.hints, widget.hintsShown);
     return ColoredBox(
       key: const ValueKey('inspect-label'),
       color: AppColors.navyDeep.withValues(alpha: 0.78),

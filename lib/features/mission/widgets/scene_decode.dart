@@ -751,7 +751,7 @@ class _DecodePanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final hints = mission.hints;
-    final tipLabel = step == DecodeStep.decoded ? null : nextTipLabel(hints, hintsShown);
+    final tipLabel = step == DecodeStep.decoded ? null : tipLabelOf(context, hints, hintsShown);
     final height = MediaQuery.sizeOf(context).height;
     final eyebrow = switch (step) {
       DecodeStep.look => 'MISSION ${mission.numberLabel} · INVESTIGATE',

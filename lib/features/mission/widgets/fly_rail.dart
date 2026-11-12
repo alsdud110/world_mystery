@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'shown_answer.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
@@ -64,10 +65,16 @@ class FlyRailPuzzle extends StatefulWidget {
 
 class _FlyRailPuzzleState extends State<FlyRailPuzzle> with SingleTickerProviderStateMixin {
   /// 0: up in the flies; 1: down on the stage.
-  late final AnimationController _drop = AnimationController(vsync: this, duration: const Duration(milliseconds: 650));
+  late final AnimationController _drop = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 650),
+    // Down already on the answer's picture.
+    value: ShownAnswer.of(context) == null ? 0 : 1,
+  );
 
   /// The backdrop on its way down or down, and the rope pulled for it.
-  String? _down;
+  // Set already on the answer's picture ([ShownAnswer]).
+  late String? _down = ShownAnswer.of(context);
   bool _checking = false;
 
   /// A backdrop on its way up or down: another pull waits for it.

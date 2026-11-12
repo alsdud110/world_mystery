@@ -409,6 +409,9 @@ enum TryAgainChoice { retry, hint }
 Future<TryAgainChoice> showTryAgainSheet(
   BuildContext context, {
   required bool hintAvailable,
+  // Every hint is read and this puzzle can show its answer: the second
+  // button offers that (the caller's hint action shows it).
+  bool answerAvailable = false,
   String? message,
   bool showDetective = false,
 }) async {
@@ -469,10 +472,10 @@ Future<TryAgainChoice> showTryAgainSheet(
               label: 'TRY AGAIN',
               onPressed: () => Navigator.of(context).pop(TryAgainChoice.retry),
             ),
-            if (hintAvailable) ...[
+            if (hintAvailable || answerAvailable) ...[
               const SizedBox(height: 12),
               GameButton(
-                label: tipButtonLabel,
+                label: hintAvailable ? tipButtonLabel : answerButtonLabel,
                 glyph: InkGlyph.hint,
                 style: GameButtonStyle.outline,
                 onPressed: () => Navigator.of(context).pop(TryAgainChoice.hint),
@@ -490,7 +493,11 @@ Future<TryAgainChoice> showTryAgainSheet(
 /// help on the way (not a failure). Hints never cost XP; hint 2 costs coins,
 /// or is given free when the coins are short (see tip_shop.dart).
 class TipsPanel extends StatelessWidget {
-  const TipsPanel({super.key, required this.hints, required this.revealed, required this.onReveal, this.dark = false});
+  const TipsPanel({super.key, required this.hints, required this.revealed, required this.onReveal, this.dark = false, this.answer = false});
+
+  /// Whether the puzzle can show its answer once every hint is read: the
+  /// button then offers it ([onReveal] shows it).
+  final bool answer;
 
   final List<String> hints;
   final int revealed;
@@ -499,7 +506,9 @@ class TipsPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final canReveal = revealed < hints.length;
+    final label = nextTipLabel(hints, revealed, answer: answer);
+    final canReveal = label != null;
+    final hintsLeft = revealed < hints.length;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -508,12 +517,12 @@ class TipsPanel extends StatelessWidget {
         // The same secondary button and words as the try-again sheet.
         if (canReveal)
           GameButton(
-            label: nextTipLabel(hints, revealed)!.toUpperCase(),
+            label: label.toUpperCase(),
             glyph: InkGlyph.hint,
             style: GameButtonStyle.outline,
             onPressed: onReveal,
           ),
-        if (canReveal)
+        if (hintsLeft)
           Padding(
             padding: const EdgeInsets.only(top: AppSpace.xs),
             child: Text(

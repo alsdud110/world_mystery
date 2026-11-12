@@ -10,6 +10,8 @@ import '../../../widgets/game_dialog.dart';
 import '../../../data/models/mission.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/coin_balance.dart' show GameCoin;
+import '../../../widgets/detective_tips.dart' show answerButtonLabel;
+import '../../../data/models/wallet.dart';
 import '../../../widgets/paper.dart';
 import '../../game/admob_rewarded_ad_gateway.dart';
 import '../../game/game_controller.dart';
@@ -113,6 +115,21 @@ bool _saveTip(WidgetRef ref, Mission mission, int tip) {
   return ref.read(gameControllerProvider).hintsFor(mission.id) > before;
 }
 
+/// See the Answer: makes [mission]'s answer the detective's. One already
+/// paid for is free; otherwise the coins dialog asks first (the same one as
+/// a paid hint: its price, or GET COINS' ad when the coins are short). True
+/// when the answer may be shown.
+Future<bool> requestAnswer(BuildContext context, WidgetRef ref, Mission mission) async {
+  if (ModalRoute.of(context)?.isCurrent == false) return false;
+  if (ref.read(walletProvider).ownsAnswer(mission.id)) return true;
+  final paid = await showGamePopup<bool>(
+    context: context,
+    barrierColor: AppColors.navyDeep.withValues(alpha: 0.55),
+    builder: (context) => _TipDialog(mission: mission, answer: true),
+  );
+  return paid ?? false;
+}
+
 /// The coins dialog for a hint that costs coins: a small paper sheet with
 /// the question, the price said once, CANCEL and GET MORE HINTS. GET MORE HINTS pays, writes
 /// the hint on the puzzle page and closes it; CANCEL (or a tap outside)
@@ -129,9 +146,12 @@ Future<bool> showTipShop(BuildContext context, Mission mission) async {
 }
 
 class _TipDialog extends ConsumerStatefulWidget {
-  const _TipDialog({required this.mission});
+  const _TipDialog({required this.mission, this.answer = false});
 
   final Mission mission;
+
+  /// True: the dialog sells the mission's answer, not its next hint.
+  final bool answer;
 
   @override
   ConsumerState<_TipDialog> createState() => _TipDialogState();
@@ -151,8 +171,7 @@ class _TipDialogState extends ConsumerState<_TipDialog> {
     // Short of coins: GET COINS' ad is loaded while the question is read
     // (nothing is asked when ads are off, or one is loaded already).
     final wallet = ref.read(walletProvider);
-    final price = WalletController.priceOf(_tip);
-    if (wallet.balance < price && !wallet.ownsTip(widget.mission.id, _tip)) {
+    if (wallet.balance < _price && !_owns(wallet)) {
       ref.read(rewardedAdGatewayProvider).preload();
     }
   }
@@ -188,14 +207,22 @@ class _TipDialogState extends ConsumerState<_TipDialog> {
   late final int _tip =
       ref.read(gameControllerProvider).hintsFor(widget.mission.id) + 1;
 
+  /// What this dialog sells costs: the answer's price, or the tip's.
+  int get _price => widget.answer ? AppConstants.answerPrice : WalletController.priceOf(_tip);
+
+  /// Whether what this dialog sells is the detective's already.
+  bool _owns(Wallet wallet) =>
+      widget.answer ? wallet.ownsAnswer(widget.mission.id) : wallet.ownsTip(widget.mission.id, _tip);
+
   void _reveal(int tip) {
     if (_opening) return;
-    if (ref.read(walletProvider).balance < WalletController.priceOf(tip) &&
-        !ref.read(walletProvider).ownsTip(widget.mission.id, tip)) {
+    if (ref.read(walletProvider).balance < _price && !_owns(ref.read(walletProvider))) {
       return;
     }
     _opening = true;
-    final saved = _saveTip(ref, widget.mission, tip);
+    final saved = widget.answer
+        ? ref.read(walletProvider.notifier).unlockAnswer(widget.mission)
+        : _saveTip(ref, widget.mission, tip);
     if (saved) {
       Navigator.of(context).pop(true);
     } else {
@@ -208,8 +235,10 @@ class _TipDialogState extends ConsumerState<_TipDialog> {
   Widget build(BuildContext context) {
     final tip = _tip;
     final wallet = ref.watch(walletProvider);
-    final state = tipStateOf(tip: tip, revealed: tip - 1,
-        owns: wallet.ownsTip(widget.mission.id, tip), balance: wallet.balance);
+    final state = widget.answer
+        ? (wallet.balance >= _price ? TipState.buy : TipState.help)
+        : tipStateOf(tip: tip, revealed: tip - 1,
+            owns: wallet.ownsTip(widget.mission.id, tip), balance: wallet.balance);
     final ads = ref.watch(rewardedAdGatewayProvider);
     // GET COINS follows its ad: loading, ready, on screen, or not there.
     return ListenableBuilder(
@@ -218,8 +247,9 @@ class _TipDialogState extends ConsumerState<_TipDialog> {
         final offer = _watchingAd ? RewardedOffer.showing : ads.offer;
         return TipShopCard(
           balance: wallet.balance,
-          price: WalletController.priceOf(tip),
+          price: _price,
           state: state,
+          forAnswer: widget.answer,
           onCancel: () => Navigator.of(context).pop(false),
           onReveal: () => _reveal(tip),
           adOffer: offer,
@@ -242,6 +272,7 @@ class TipShopCard extends StatelessWidget {
     required this.state,
     required this.onCancel,
     required this.onReveal,
+    this.forAnswer = false,
     this.adOffer,
     this.onGetCoins,
     this.rewardMessage,
@@ -252,6 +283,10 @@ class TipShopCard extends StatelessWidget {
   final TipState state;
   final VoidCallback onCancel;
   final VoidCallback onReveal;
+
+  /// True: the card sells the puzzle's answer (its title and button say
+  /// so); false: the next hint.
+  final bool forAnswer;
 
   /// GET COINS' ad, offered when coins are short (null: no ads, nothing said).
   final RewardedOffer? adOffer;
@@ -266,7 +301,7 @@ class TipShopCard extends StatelessWidget {
     final short = state == TipState.help;
     // The price leads; the title says what it buys; one line says how.
     final message = switch (state) {
-      TipState.buy => 'Spend coins to get another hint.',
+      TipState.buy => forAnswer ? 'Spend coins to see the answer.' : 'Spend coins to get another hint.',
       TipState.help =>
         'Not enough coins! You have $balance ${balance == 1 ? 'coin' : 'coins'}.',
       TipState.yours => 'This hint is already yours. Read it again for free.',
@@ -295,7 +330,7 @@ class TipShopCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Get Another Hint?',
+                  forAnswer ? 'See the Answer?' : 'Get Another Hint?',
                   textAlign: TextAlign.center,
                   style: AppText.title(size: 20),
                 ),
@@ -390,9 +425,11 @@ class TipShopCard extends StatelessWidget {
                       ),
                     if (!short)
                       CompactButton(
-                        label: 'GET MORE HINTS',
+                        label: forAnswer ? answerButtonLabel : 'GET MORE HINTS',
                         primary: true,
-                        semanticLabel: paid
+                        semanticLabel: forAnswer
+                            ? 'See the answer, $price coins'
+                            : paid
                             ? 'Get more hints, $price coins'
                             : 'Get more hints, free',
                         onPressed: onReveal,

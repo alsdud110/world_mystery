@@ -607,7 +607,7 @@ class ExploreActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tipLabel = nextTipLabel(hints, hintsShown);
+    final tipLabel = tipLabelOf(context, hints, hintsShown);
     final notes = ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * hintsHeight),
       child: SingleChildScrollView(
@@ -869,12 +869,6 @@ class _ChoicePageState extends State<_ChoicePage> {
     widget.onChanged();
   }
 
-  /// "The British Museum (treasures from long ago)" → its name and words.
-  static (String, String?) _split(String label) {
-    final at = label.indexOf(' (');
-    if (at < 0 || !label.endsWith(')')) return (label, null);
-    return (label.substring(0, at), label.substring(at + 2, label.length - 1));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -928,30 +922,7 @@ class _ChoicePageState extends State<_ChoicePage> {
                       const SizedBox(height: AppSpace.lg),
                       ShakeOnChange(
                         trigger: widget.wrongPulse,
-                        child: LayoutBuilder(
-                          builder: (context, box) {
-                            const gap = AppSpace.md;
-                            final tile = (box.maxWidth - gap) / 2;
-                            return Wrap(
-                              spacing: gap,
-                              runSpacing: AppSpace.lg,
-                              children: [
-                                for (final c in scene.choices)
-                                  SizedBox(
-                                    width: tile,
-                                    child: _PosterTile(
-                                      key: ValueKey('poster-${c.optionId}'),
-                                      picture: c,
-                                      aspect: scene.pictureAspect,
-                                      label: _split(m.options.firstWhere((o) => o.id == c.optionId).label),
-                                      selected: chosen == c.optionId,
-                                      onTap: () => _pick(c.optionId),
-                                    ),
-                                  ),
-                              ],
-                            );
-                          },
-                        ),
+                        child: _PosterGrid(scene: scene, mission: m, chosen: chosen, onPick: _pick),
                       ),
                       const SizedBox(height: AppSpace.lg),
                       DetectiveTipNotes(hints: m.hints, revealed: widget.hintsShown, compact: true),
@@ -979,7 +950,7 @@ class _ChoicePageState extends State<_ChoicePage> {
                         spacing: AppSpace.sm,
                         children: [
                           InkTextButton(label: 'Reread Letter', glyph: InkGlyph.letter, onPressed: widget.onReread),
-                          if (nextTipLabel(m.hints, widget.hintsShown) case final tip?)
+                          if (tipLabelOf(context, m.hints, widget.hintsShown) case final tip?)
                             InkTextButton(label: tip, glyph: InkGlyph.hint, color: tipLinkColor, onPressed: widget.onHint),
                         ],
                       ),
@@ -993,6 +964,68 @@ class _ChoicePageState extends State<_ChoicePage> {
       ),
     );
   }
+}
+
+/// The posters to choose from, two across: [chosen] framed.
+class _PosterGrid extends StatelessWidget {
+  const _PosterGrid({required this.scene, required this.mission, required this.chosen, required this.onPick});
+
+  final ExploreScene scene;
+  final Mission mission;
+  final String? chosen;
+  final ValueChanged<String> onPick;
+
+  /// "The British Museum (treasures from long ago)" → its name and words.
+  static (String, String?) _split(String label) {
+    final at = label.indexOf(' (');
+    if (at < 0 || !label.endsWith(')')) return (label, null);
+    return (label.substring(0, at), label.substring(at + 2, label.length - 1));
+  }
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, box) {
+      const gap = AppSpace.md;
+      final tile = (box.maxWidth - gap) / 2;
+      return Wrap(
+        spacing: gap,
+        runSpacing: AppSpace.lg,
+        children: [
+          for (final c in scene.choices)
+            SizedBox(
+              width: tile,
+              child: _PosterTile(
+                key: ValueKey('poster-${c.optionId}'),
+                picture: c,
+                aspect: scene.pictureAspect,
+                label: _split(mission.options.firstWhere((o) => o.id == c.optionId).label),
+                selected: chosen == c.optionId,
+                onTap: () => onPick(c.optionId),
+              ),
+            ),
+        ],
+      );
+    },
+  );
+}
+
+/// A looked-round place's answer, for the answer's picture: its posters
+/// with the right one chosen, as the choice page shows them.
+class ExploreAnswer extends StatelessWidget {
+  const ExploreAnswer({super.key, required this.scene, required this.mission});
+
+  final ExploreScene scene;
+  final Mission mission;
+
+  @override
+  Widget build(BuildContext context) => Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: [
+      _PosterGrid(scene: scene, mission: mission, chosen: mission.answer, onPick: (_) {}),
+      const SizedBox(height: AppSpace.lg),
+      GameButton(label: 'CHECK ANSWER', onPressed: () {}),
+    ],
+  );
 }
 
 /// One poster: the picture whole, its name under it, the option's words

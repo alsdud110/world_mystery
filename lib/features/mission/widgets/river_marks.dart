@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'shown_answer.dart';
 import 'package:flutter/services.dart';
 
 import '../../../core/theme/app_colors.dart';
@@ -44,7 +45,8 @@ class RiverMarks extends StatefulWidget {
 }
 
 class _RiverMarksState extends State<RiverMarks> {
-  String? _choice;
+  // Set already on the answer's picture ([ShownAnswer]).
+  late String? _choice = ShownAnswer.of(context);
   bool _checking = false;
 
   RiverMarksScene get _scene => widget.scene;

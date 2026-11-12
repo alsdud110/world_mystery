@@ -167,8 +167,24 @@ Future<String?> showHoldTag(
   );
 }
 
+/// The rack's answer, for the answer's picture: the right tag up close,
+/// turned to its back, the clue over it.
+class HoldRackAnswer extends StatelessWidget {
+  const HoldRackAnswer({super.key, required this.scene, required this.mission});
+
+  final HoldRackScene scene;
+  final Mission mission;
+
+  @override
+  Widget build(BuildContext context) =>
+      _TagCloser(scene: scene, mission: mission, tag: scene.rack.tag(mission.answer), onTurned: (_) {}, answered: true);
+}
+
 class _TagCloser extends StatefulWidget {
-  const _TagCloser({required this.scene, required this.mission, required this.tag, required this.onTurned});
+  const _TagCloser({required this.scene, required this.mission, required this.tag, required this.onTurned, this.answered = false});
+
+  /// The answer's picture: the tag is turned to its back already.
+  final bool answered;
 
   final HoldRackScene scene;
   final Mission mission;
@@ -180,8 +196,12 @@ class _TagCloser extends StatefulWidget {
 }
 
 class _TagCloserState extends State<_TagCloser> with SingleTickerProviderStateMixin {
-  late final AnimationController _turn = AnimationController(vsync: this, duration: const Duration(milliseconds: 450));
-  bool _back = false;
+  late final AnimationController _turn = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 450),
+    value: widget.answered ? 1 : 0,
+  );
+  late bool _back = widget.answered;
 
   void _turnOver() {
     final back = !_back;

@@ -64,6 +64,7 @@ import 'widgets/light_table.dart';
 import 'widgets/lock_box.dart';
 import 'widgets/post_trail.dart';
 import 'widgets/question_widgets.dart';
+import 'widgets/shown_answer.dart';
 import 'widgets/street_book.dart';
 import 'widgets/tip_shop.dart';
 import 'widgets/torn_hour.dart';
@@ -650,11 +651,143 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
   Future<void> _showHint() async {
     if (ref.read(gameControllerProvider).hintsFor(_mission.id) >=
         _mission.hints.length) {
+      // Every hint is read: the answer, where this puzzle can show it.
+      await _showAnswer();
       return;
     }
     if (await requestTip(context, ref, _mission) && mounted) {
       ref.read(audioServiceProvider).play(GameSound.pencilNote);
     }
+  }
+
+  /// The final's puzzle with its answer entered, for the answer's picture
+  /// ([showAnswerPicture]); null for a final played another way (a talk, a
+  /// board, small steps), which has none.
+  AnswerPicture? _answerPicture() {
+    final m = _mission;
+    // A talk and small steps light their own answers as they are played.
+    if (ref.read(caseTalkOfProvider)(m) != null || SeasonCatalog.easySteps(m) != null) return null;
+    // The four canvases: the right one looked at, chosen.
+    if (_canvases case final canvases?) {
+      if (!m.options.any((o) => o.id == m.answer)) return null;
+      return AnswerPicture(
+        dark: true,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: 220,
+              child: CanvasStage(scene: canvases, looking: m.answer, turn: const AlwaysStoppedAnimation(0), turned: false),
+            ),
+            const SizedBox(height: AppSpace.md),
+            CanvasPicker(
+              scene: canvases,
+              mission: m,
+              looking: m.answer,
+              looked: {for (final o in m.options) o.id},
+              checking: false,
+              onLook: (_) {},
+              onTurn: () {},
+            ),
+          ],
+        ),
+      );
+    }
+    // The evidence board (the torn paper's too): each question linked to its
+    // evidence, the conclusion chosen ("question:e1+e2,…,why:id").
+    if ((_board ?? _tornHour?.board) case final EvidenceBoardSpec board?) {
+      final links = <String, Set<String>>{};
+      String? conclusion;
+      for (final part in Mission.sequenceIds(m.answer)) {
+        if (part.split(':') case [final key, final value]) {
+          if (key == board.conclusionId) {
+            conclusion = value;
+          } else {
+            links[key] = value.split('+').where((e) => e.isNotEmpty).toSet();
+          }
+        }
+      }
+      return AnswerPicture(
+        PaperSheet(
+          padding: const EdgeInsets.all(AppSpace.lg),
+          child: EvidenceBoard(
+            scene: board,
+            mission: m,
+            evidence: _boardEvidence(board),
+            links: links,
+            conclusion: conclusion,
+            question: null,
+            checking: false,
+            onQuestion: (_) {},
+            onLink: (_) {},
+            onConclusion: (_) {},
+            onSubmit: () async {},
+          ),
+        ),
+      );
+    }
+    // The map of Paris: the right building up close, beside the drawing.
+    if (_letterMap case final letters?) {
+      for (final s in letters.spots) {
+        if (s.id == m.answer) return AnswerPicture(dark: true, LetterMapAnswer(scene: letters, spot: s));
+      }
+      return null;
+    }
+    if (_book != null || _trail != null || _lightTable != null) return null;
+    final digits = m.answer.replaceAll(RegExp(r'[^0-9]'), '');
+    if (m.type == MissionType.finalCode) {
+      if (_clock case final clock?) {
+        if (digits.length < 3) return null;
+        final cut = digits.length - 2;
+        return AnswerPicture(PaperSheet(
+          padding: const EdgeInsets.all(AppSpace.lg),
+          child: ClockQuestion(
+            puzzle: clock,
+            time: ClockTime.at(int.parse(digits.substring(0, cut)), int.parse(digits.substring(cut))),
+            moved: true,
+            onChanged: (_) {},
+            onSubmit: (_) {},
+          ),
+        ));
+      }
+      if (digits.length != _digits.length) return null;
+      // The locks, each wheel on its number.
+      return AnswerPicture(dark: true, Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          for (var i = 0; i < digits.length; i++)
+            Flexible(
+              child: _Dial(
+                value: int.parse(digits[i]),
+                index: i,
+                symbol: i < m.dialSymbols.length ? m.dialSymbols[i] : null,
+                onUp: () {},
+                onDown: () {},
+              ),
+            ),
+        ],
+      ));
+    }
+    return switch (m.type) {
+      MissionType.multipleChoice ||
+      MissionType.wordInput ||
+      MissionType.numberCode ||
+      MissionType.imageChoice ||
+      MissionType.sequence ||
+      MissionType.letterLock => AnswerPicture(PaperSheet(padding: const EdgeInsets.all(AppSpace.lg), child: questionFor(m, (_) {}))),
+      _ => null,
+    };
+  }
+
+  /// See the Answer (every hint read first): paid for once with coins, as a
+  /// hint is (see [requestAnswer]), then shown as a picture of the puzzle
+  /// with the answer entered. The puzzle itself is left as it is.
+  Future<void> _showAnswer() async {
+    final picture = _answerPicture();
+    if (picture == null) return;
+    if (!await requestAnswer(context, ref, _mission) || !mounted) return;
+    ref.read(audioServiceProvider).play(GameSound.paperRustle);
+    await showAnswerPicture(context, mission: _mission, picture: picture);
   }
 
   /// Back to the map the way the map opened this page (pushed): popped, so the
@@ -681,6 +814,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
         final choice = await showTryAgainSheet(
           context,
           hintAvailable: canHint,
+          answerAvailable: !canHint && _answerPicture() != null,
           message: AnswerChecker.feedbackFor(_mission, answer),
           showDetective: true,
         );
@@ -1730,6 +1864,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
       revealed: hintsShown,
       onReveal: _showHint,
       dark: true,
+      answer: _answerPicture() != null,
     ),
   ];
 

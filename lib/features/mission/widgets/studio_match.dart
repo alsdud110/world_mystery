@@ -708,7 +708,7 @@ class _MatchPageState extends State<_MatchPage> {
                         tap: TapRole.primary,
                         onPressed: allPaired && !_checking ? _check : null,
                       ),
-                      if (nextTipLabel(m.hints, widget.hintsShown) case final tip?)
+                      if (tipLabelOf(context, m.hints, widget.hintsShown) case final tip?)
                         InkTextButton(label: tip, glyph: InkGlyph.hint, color: tipLinkColor, onPressed: widget.onHint),
                     ],
                   ),

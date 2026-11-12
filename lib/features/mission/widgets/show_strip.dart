@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/gestures.dart' show DragStartBehavior;
 import 'package:flutter/material.dart';
+import 'shown_answer.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
@@ -32,7 +33,10 @@ class ShowStripPuzzle extends StatefulWidget {
 }
 
 class _ShowStripPuzzleState extends State<ShowStripPuzzle> {
-  late int _start = widget.scene.strip.initial;
+  // Where the show fits already on the answer's picture ([ShownAnswer]).
+  late int _start = ShownAnswer.of(context) == null
+      ? widget.scene.strip.initial
+      : (widget.scene.strip.fitting.firstOrNull ?? widget.scene.strip.initial);
   bool _checking = false;
 
   ShowStrip get _strip => widget.scene.strip;

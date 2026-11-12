@@ -135,6 +135,23 @@ class WalletController extends Notifier<Wallet> {
     return result;
   }
 
+  /// Makes [mission]'s answer the detective's: free when it already is,
+  /// else paid for with [AppConstants.answerPrice] coins. False, with
+  /// nothing changed, when the coins are short.
+  bool unlockAnswer(Mission mission) {
+    if (state.ownsAnswer(mission.id)) return true;
+    if (AppConstants.answerPrice > state.balance) return false;
+    _set(state.adding(
+      CoinEntry(
+        key: Wallet.answerKey(mission.id),
+        amount: -AppConstants.answerPrice,
+        source: CoinSource.answer,
+        at: GameController.now(),
+      ),
+    ));
+    return true;
+  }
+
   /// Credits one completed ad event. Call only from a trusted reward callback.
   /// [rewardId] must be stable and unique for that event. Returns 0 for a
   /// duplicate or invalid id; never credit on load, click or dismissal.

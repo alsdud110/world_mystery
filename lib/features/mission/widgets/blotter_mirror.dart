@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'shown_answer.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
@@ -38,7 +39,8 @@ class BlotterMirror extends StatefulWidget {
 class _BlotterMirrorState extends State<BlotterMirror> {
   /// Where the glass's centre is (desk pixels): at first beside the notes.
   late Offset _glass = Offset(widget.scene.blotter.right - widget.scene.glassOnDesk * 0.4, widget.scene.blotter.top + widget.scene.glassOnDesk * 0.2);
-  String? _choice;
+  // Set already on the answer's picture ([ShownAnswer]).
+  late String? _choice = ShownAnswer.of(context);
   bool _checking = false;
   final _picture = GlobalKey();
 

@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'shown_answer.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
@@ -176,7 +177,8 @@ class LightBoardPuzzle extends StatefulWidget {
 }
 
 class _LightBoardPuzzleState extends State<LightBoardPuzzle> {
-  Set<StageLight> _on = {};
+  // Lit as in the photo already on the answer's picture ([ShownAnswer]).
+  late Set<StageLight> _on = ShownAnswer.of(context) == null ? {} : {...widget.scene.board.photo};
   bool _checking = false;
 
   void _set(StageLight l, bool on) {

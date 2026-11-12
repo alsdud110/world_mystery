@@ -997,7 +997,7 @@ class _ReportPageState extends State<_ReportPage> {
                         tap: TapRole.primary,
                         onPressed: chosen == null || _checking ? null : _check,
                       ),
-                      if (nextTipLabel(m.hints, widget.hintsShown) case final tip?)
+                      if (tipLabelOf(context, m.hints, widget.hintsShown) case final tip?)
                         InkTextButton(label: tip, glyph: InkGlyph.hint, color: tipLinkColor, onPressed: widget.onHint),
                     ],
                   ),

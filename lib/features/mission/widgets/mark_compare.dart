@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'shown_answer.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
@@ -38,7 +39,8 @@ class MarkCompare extends StatefulWidget {
 }
 
 class _MarkCompareState extends State<MarkCompare> {
-  String? _choice;
+  // Set already on the answer's picture ([ShownAnswer]).
+  late String? _choice = ShownAnswer.of(context);
   bool _checking = false;
 
   MarkCompareScene get _scene => widget.scene;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'shown_answer.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text.dart';
@@ -35,7 +36,8 @@ class PainterCornerPuzzle extends StatefulWidget {
 
 class _PainterCornerPuzzleState extends State<PainterCornerPuzzle> {
   /// The corner shown under the square.
-  String? _showing;
+  // Set already on the answer's picture ([ShownAnswer]).
+  late String? _showing = ShownAnswer.of(context);
   bool _checking = false;
 
   void _show(String id) {
