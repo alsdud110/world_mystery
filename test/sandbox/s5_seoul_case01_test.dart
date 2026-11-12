@@ -183,7 +183,8 @@ void main() {
       for (final n in ['mieum', 'nieun', 'a', 'eo', 'eom', 'ma', 'eomma', 'gomawoyo', 'hunminjeongeum']) '$dir/audio/$n.m4a',
     ];
     test('every picture on disk and in the Seoul pack; every voice in the app (pubspec)', () {
-      final pubspec = File('pubspec.yaml').readAsStringSync();
+      // Read with Unix line ends, whatever the checkout wrote (CRLF on Windows).
+      final pubspec = File('pubspec.yaml').readAsStringSync().replaceAll('\r\n', '\n');
       final packed = {for (final f in seasonPackManifests['season_05_seoul']!.files) f.path};
       for (final f in pictures) {
         expect(File(f).existsSync(), isTrue, reason: f);

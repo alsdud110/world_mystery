@@ -44,7 +44,9 @@ void main() {
     (json['prologue'] as Map).remove('hero');
     File('$s/season.plan.json').writeAsStringSync(PlanFiles.encode(json));
     expect(SeasonFactory.nameOpening(s), rome.prologue!.hero!.file);
-    expect(File('$s/season.plan.json').readAsStringSync(), File('$dir/season.plan.json').readAsStringSync(),
+    // Line ends aside: a Windows checkout holds the plan with CRLF.
+    String lines(String path) => File(path).readAsStringSync().replaceAll('\r\n', '\n');
+    expect(lines('$s/season.plan.json'), lines('$dir/season.plan.json'),
         reason: 'named as Rome names it: its file and its pixels, nothing else changed');
     expect(SeasonFactory.nameOpening(s), isNull, reason: 'already named: nothing written');
   });

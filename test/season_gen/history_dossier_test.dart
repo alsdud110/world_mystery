@@ -452,6 +452,8 @@ void main() {
           shell ? 'sh' : 'dart',
           shell ? ['tool/ai_agents/history_guard_hook.sh'] : ['run', 'tool/ai_agents/history_guard.dart', '--hook'],
           environment: {'CLAUDE_PROJECT_DIR': project ?? Directory.current.path},
+          // Windows: dart is dart.bat, started through the shell.
+          runInShell: Platform.isWindows,
         );
         p.stdin.write(jsonEncode({'tool_name': 'Bash', 'tool_input': {'command': command}}));
         await p.stdin.close();

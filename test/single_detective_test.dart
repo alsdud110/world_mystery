@@ -457,14 +457,16 @@ void main() {
       const packFiles = {'lib/core/assets/season_pack_downloads.dart', 'lib/core/assets/season_pack_storage.dart'};
       for (final f in Directory('lib').listSync(recursive: true).whereType<File>().where((f) => f.path.endsWith('.dart'))) {
         final src = f.readAsStringSync();
+        // The same path on every system (Windows lists lib\core\…).
+        final path = f.path.replaceAll('\\', '/');
         for (final banned in ['package:firebase', 'package:cloud_firestore', 'package:http/']) {
-          expect(src, isNot(contains(banned)), reason: '${f.path}: $banned');
+          expect(src, isNot(contains(banned)), reason: '$path: $banned');
         }
-        if (packFiles.contains(f.path)) continue;
-        expect(src, isNot(contains('HttpClient')), reason: '${f.path}: HttpClient (only the season pack download may)');
+        if (packFiles.contains(path)) continue;
+        expect(src, isNot(contains('HttpClient')), reason: '$path: HttpClient (only the season pack download may)');
         // A debug build's packs read from the project folder: files, never a network.
-        if (f.path == 'lib/core/assets/season_pack_local.dart') continue;
-        expect(src, isNot(contains('dart:io')), reason: '${f.path}: dart:io (only the season pack download may)');
+        if (path == 'lib/core/assets/season_pack_local.dart') continue;
+        expect(src, isNot(contains('dart:io')), reason: '$path: dart:io (only the season pack download may)');
       }
       final downloads = File('lib/core/assets/season_pack_downloads.dart').readAsStringSync();
       expect(downloads, contains("base.scheme != 'https'"), reason: 'packs come over HTTPS only');

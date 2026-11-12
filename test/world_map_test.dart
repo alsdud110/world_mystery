@@ -249,15 +249,15 @@ void main() {
       expect(inCard('paris', 'In progress · 2 of 12 solved'), findsOneWidget);
     });
 
-    testWidgets('Paris solved: Rome, ready to begin (the Rome integration); Paris completed', (t) async {
+    testWidgets('Paris solved: Seoul, the third season, ready to begin; Paris completed', (t) async {
       await pumpApp(t, seasonSaves(12));
       await beginParis(t);
       solveParis(12);
       await openMap(t);
-      expect(appRef.read(homeCityIdProvider), 'rome', reason: "the next season's city, open and not begun");
-      final rome = appRef.read(worldCityStatesProvider).firstWhere((c) => c.city.id == 'rome');
-      expect(rome.status, WorldCityStatus.playable);
-      expect(rome.city.seasonId, SeasonIds.rome);
+      expect(appRef.read(homeCityIdProvider), 'seoul', reason: "the next season's city, open and not begun");
+      final seoul = appRef.read(worldCityStatesProvider).firstWhere((c) => c.city.id == 'seoul');
+      expect(seoul.status, WorldCityStatus.playable);
+      expect(seoul.city.seasonId, SeasonIds.seoul);
       final paris = appRef.read(worldCityStatesProvider).firstWhere((c) => c.city.id == 'paris');
       expect(paris.status, WorldCityStatus.completed);
     });
