@@ -37,6 +37,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 03 — The Tower's Secret: its thirteen pictures (the
 /// padlock's windows and dial measured on them), its story and puzzles as
@@ -640,7 +641,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget);
           await shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(Offset(size.width / 2, size.height / 2)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -807,7 +808,7 @@ void main() {
         await tapText(t, 'BACK TO THE ROOM', after: const Duration(milliseconds: 700));
         expect(examined(), contains('s2_ep03_final:plaque'));
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-        expect(find.text(fin.transition.first), findsOneWidget);
+        expect(findText(fin.transition.first), findsOneWidget);
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 900));
         expect(find.text('SEINE.'), findsOneWidget);

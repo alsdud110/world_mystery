@@ -6,6 +6,7 @@ import 'package:world_mystery/data/content/season_content_validator.dart';
 import 'package:world_mystery/data/models/mission.dart';
 import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/mission/widgets/letter_lock.dart';
+import 'reading_finders.dart';
 
 /// A letter lock with more tiles than letters (PART 1.5): a slot for each
 /// letter of the answer, the extra tiles left on the desk. Every lock with
@@ -61,7 +62,7 @@ void main() {
     await t.tap(find.text('OPEN THE LOCK'));
     expect(said, isEmpty, reason: 'four of five: not yet');
     await tapLetter(t, 'T');
-    expect(find.text('The lock is full. Tap a letter in it to take it out.'), findsOneWidget);
+    expect(findText('The lock is full. Tap a letter in it to take it out.'), findsOneWidget);
     await tapLetter(t, 'N');
     expect(find.bySemanticsLabel(RegExp('Letter N, in the lock')), findsNothing, reason: 'a full lock takes no more');
     await t.tap(find.text('OPEN THE LOCK'));

@@ -17,6 +17,7 @@ import 'package:world_mystery/features/game/game_providers.dart'
 
 import 'helpers.dart';
 import 'parent_gate_test.dart' show gateAnswer;
+import 'reading_finders.dart';
 
 /// Pumps frames for [d] without waiting for looping animations to settle.
 Future<void> wait(
@@ -63,8 +64,8 @@ Future<void> tapText(
   String text, {
   Duration after = const Duration(milliseconds: 800),
 }) async {
-  await reveal(t, find.text(text));
-  await t.tap(find.text(text).last);
+  await reveal(t, findText(text));
+  await t.tap(findText(text).last);
   await wait(t, after);
 }
 
@@ -92,14 +93,14 @@ Future<void> throughPostCase(
 }) async {
   await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 1000));
   expect(
-    find.text('CASE $caseNumber COMPLETE'),
+    findText('CASE $caseNumber COMPLETE'),
     findsOneWidget,
     reason: 'the post-case scene',
   );
   await t.tapAt(t.getCenter(find.byType(Scaffold).last));
   await wait(t, const Duration(milliseconds: 1200));
   expect(
-    find.text(evidence),
+    findText(evidence),
     findsOneWidget,
     reason: "the case's last evidence",
   );
@@ -193,7 +194,7 @@ Future<void> finishMission(WidgetTester t, {required String sceneLine}) async {
   );
   expect(find.text('WELL DONE'), findsNothing);
   await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-  expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+  expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
   await t.tapAt(const Offset(200, 400)); // skip typing
   await wait(t, const Duration(milliseconds: 900));
   await tapText(t, 'TO THE MAP', after: const Duration(milliseconds: 1200));

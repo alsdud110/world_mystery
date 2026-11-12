@@ -14,6 +14,7 @@ import 'package:world_mystery/widgets/game_button.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case Files as one paper page: the heading printed on it (no bar), the
 /// button resting at the bottom (no white bar), the last folder clear of it.
@@ -59,7 +60,7 @@ void main() {
       expect(t.takeException(), isNull);
       expect(find.text('SOLVED'), findsOneWidget, reason: 'Case 01');
       expect(find.text('SEALED'), findsWidgets, reason: 'Cases 03 on');
-      expect(find.text('Big Ben has stopped. Its hands do not move.'), findsOneWidget, reason: 'Case 02 open');
+      expect(findText('Big Ben has stopped. Its hands do not move.'), findsOneWidget, reason: 'Case 02 open');
       expect(find.textContaining('EPISODE'), findsNothing, reason: 'the folder already names the case');
 
       // No bar: the app bar is see-through and lies on the page itself.

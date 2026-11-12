@@ -15,6 +15,7 @@ import 'package:world_mystery/features/game/scoring.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'mission_play.dart';
+import 'reading_finders.dart';
 
 /// TYPE B Phase 2 (Case 02-04): every wrong option says what was misread,
 /// tips go "where to look" then "what the English means", Case 04 M2 and M3
@@ -152,7 +153,7 @@ void main() {
         final play = MissionPlay();
         await play.openPuzzle(t, size, 'ep04_m3');
         for (final o in m('ep04_m3').options) {
-          expect(find.text(o.label), findsNothing, reason: o.label);
+          expect(findText(o.label), findsNothing, reason: o.label);
         }
         expect(find.bySemanticsLabel(RegExp(r'^Picture B: ')), findsOneWidget, reason: 'described to screen readers (Phase 3B), never named');
         expect(t.takeException(), isNull);

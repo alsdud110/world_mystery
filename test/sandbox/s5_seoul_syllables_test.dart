@@ -9,6 +9,7 @@ import 'package:world_mystery/data/models/difficulty.dart';
 import 'package:world_mystery/data/season5/season5_content.dart';
 import 'package:world_mystery/features/mission/widgets/syllable_board.dart';
 import 'package:world_mystery/puzzles_v2/core/syllable_rules.dart';
+import '../reading_finders.dart';
 
 /// Seoul Case 01, Mission 3 (V4): Bun-i's first word, 엄마, built block by
 /// block, left to right (`SyllableBoard`, `SyllableSpec.row`) at the
@@ -76,7 +77,7 @@ void main() {
         final saves = await open(t, spec, text: text, onSubmit: (a) => sent = a);
         expect(t.takeException(), isNull);
         for (final b in spec.blocks) {
-          expect(find.text(b.line), findsOneWidget, reason: 'the sound of ${b.id} at ${level.label}');
+          expect(findText(b.line), findsOneWidget, reason: 'the sound of ${b.id} at ${level.label}');
         }
         // READ THE WORD waits for every block.
         expect(find.text('READ THE WORD'), findsOneWidget);
@@ -101,8 +102,8 @@ void main() {
           }
           await tap(t, 'syllable-bottom-${b.id}-${b.finalConsonant ?? 'none'}');
           final syllable = Hangul.compose(b.initial, b.vowel, b.finalConsonant)!;
-          expect(find.text(syllable), findsWidgets, reason: '${b.id} written');
-          expect(find.text('says "${Hangul.reading(syllable)}"'), findsOneWidget, reason: '${b.id}: its sound shown');
+          expect(findText(syllable), findsWidgets, reason: '${b.id} written');
+          expect(findText('says "${Hangul.reading(syllable)}"'), findsOneWidget, reason: '${b.id}: its sound shown');
         }
         expect(saves.last, startsWith('pv2:syllables:1:'));
         await tap(t, 'syllable-check');
@@ -123,7 +124,7 @@ void main() {
     expect(find.text('TOP'), findsNothing);
     await tap(t, 'syllable-cell-eom');
     for (final row in ['FIRST SOUND', 'VOWEL · LINE', 'LAST SOUND (AT THE BOTTOM)']) {
-      expect(find.text(row), findsOneWidget, reason: row);
+      expect(findText(row), findsOneWidget, reason: row);
     }
     expect(find.byKey(const ValueKey('syllable-bottom-eom-ㅇ')), findsNothing, reason: 'no last ㅇ: in 1446 that was another letter');
     await tap(t, 'syllable-sound-eom-ㅇ');

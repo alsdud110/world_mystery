@@ -17,6 +17,7 @@ import 'full_playthrough_test.dart' show hearTalk, reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
 import 'personalized_lines.dart';
+import 'reading_finders.dart';
 
 /// Reasoning: the final small pass (Cases 06 and 08). Each final is solved
 /// with what the detective found, not by matching a word on the page:
@@ -306,7 +307,7 @@ void main() {
       await reveal(t, findReadable(fin.question));
       await capture(t, '${fin.id}_small_pass_question_$tag');
       for (final o in fin.options) {
-        final card = find.text(o.label);
+        final card = findText(o.label);
         await reveal(t, card);
         final r = t.getRect(card);
         expect(r.left, greaterThanOrEqualTo(0), reason: o.label);
@@ -343,7 +344,7 @@ void main() {
         await wait(t, const Duration(milliseconds: 300));
         await t.tap(archive);
         await wait(t, const Duration(milliseconds: 900));
-        final folder = find.text(archiveCase);
+        final folder = findText(archiveCase);
         await t.scrollUntilVisible(folder, 300, scrollable: scroller());
         await t.ensureVisible(folder);
         await wait(t, const Duration(milliseconds: 300));
@@ -351,7 +352,7 @@ void main() {
         await wait(t, const Duration(milliseconds: 600));
         await capture(t, '${shot}_archive');
       }
-      final tile = find.text(evidence);
+      final tile = findText(evidence);
       await t.scrollUntilVisible(tile, 200, scrollable: scroller());
       await wait(t, const Duration(milliseconds: 300));
       await t.tap(tile);

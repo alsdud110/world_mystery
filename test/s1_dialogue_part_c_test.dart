@@ -25,6 +25,7 @@ import 'package:world_mystery/widgets/mission_words.dart';
 
 import 'full_playthrough_test.dart' show hearTalk, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 1 dialogue feedback, PART C (2026-11-03): every Season 1 person
 /// who talks to the detective is heard on the shared `CaseTalk` (their
@@ -231,8 +232,8 @@ void main() {
     }
 
     Future<void> tapText(WidgetTester t, String text) async {
-      await t.ensureVisible(find.text(text).last);
-      await t.tap(find.text(text).last);
+      await t.ensureVisible(findText(text).last);
+      await t.tap(findText(text).last);
       await wait(t, const Duration(milliseconds: 1500));
     }
 
@@ -257,7 +258,7 @@ void main() {
         await open(t, byId(id.split('_').first), Routes.mission(id), done: before(id));
         await tapText(t, 'INVESTIGATE');
         expect(key('case-talk-line'), findsOneWidget);
-        expect(find.descendant(of: key('case-talk-line'), matching: find.text(name)), findsOneWidget);
+        expect(find.descendant(of: key('case-talk-line'), matching: findText(name)), findsOneWidget);
         expect(shownAssets(t), contains(portrait));
         await hearTalk(t);
         expect(app.read(gameControllerProvider).hasExamined(TalkMission.beforeKey(id)), isTrue);
@@ -313,12 +314,12 @@ void main() {
           await open(t, e, Routes.finalMission, done: [for (final m in e.missions) m.id], level: level);
           expect(key('case-talk-line'), findsOneWidget);
           // The story first (the narrator), then the person: their plate.
-          for (var i = 0; i < 4 && find.descendant(of: key('case-talk-line'), matching: find.text(name)).evaluate().isEmpty; i++) {
+          for (var i = 0; i < 4 && find.descendant(of: key('case-talk-line'), matching: findText(name)).evaluate().isEmpty; i++) {
             await wait(t, const Duration(seconds: 3));
             await t.tap(key('case-talk-next'));
             await wait(t, const Duration(seconds: 2));
           }
-          expect(find.descendant(of: key('case-talk-line'), matching: find.text(name)), findsOneWidget);
+          expect(find.descendant(of: key('case-talk-line'), matching: findText(name)), findsOneWidget);
           expect(shownAssets(t), contains(portrait));
           await hearTalk(t);
           expect(key('case-talk-line'), findsNothing);

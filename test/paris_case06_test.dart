@@ -40,6 +40,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 06 — The Letter That Never Arrived: its fifteen pictures
 /// (as delivered, measured), its story and puzzles as the tags, the plan,
@@ -716,7 +717,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget);
           await shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(Offset(size.width / 2, size.height / 2)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -803,11 +804,11 @@ void main() {
         final doorE = t.getRect(find.byKey(const ValueKey('plan-door-e')));
         expect(doorE.width >= 44 && doorE.height >= 40, isTrue, reason: '$tag: a finger-sized door ($doorE)');
         await tapKey('plan-door-e');
-        expect(find.text(planScene.stairsFirst), findsOneWidget);
+        expect(findText(planScene.stairsFirst), findsOneWidget);
         await tapKey('plan-stairs', after: const Duration(milliseconds: 700));
         expect(examined(), contains('s2_ep06_m2:reached-stairs'));
         await tapKey('plan-door-e');
-        expect(find.text(planScene.statueFirst), findsOneWidget);
+        expect(findText(planScene.statueFirst), findsOneWidget);
         await tapKey('plan-statue', after: const Duration(milliseconds: 700));
         expect(examined(), contains('s2_ep06_m2:reached-statue'));
         await tapKey('plan-door-c', after: const Duration(milliseconds: 700));
@@ -854,7 +855,7 @@ void main() {
         await shot('m3_envelope_1');
         await tapKey('corner-lay', after: const Duration(milliseconds: 300));
         await wait(t, const Duration(milliseconds: 500));
-        expect(find.text(archiveScene.notFit), findsOneWidget, reason: 'it does not fit');
+        expect(findText(archiveScene.notFit), findsOneWidget, reason: 'it does not fit');
         await shot('m3_envelope_1_laid');
         await wait(t, const Duration(milliseconds: 600));
         await wrongThenTryAgain('The torn edges do not match.', 'm3');
@@ -939,7 +940,7 @@ void main() {
         expect(findReadableContaining('We found our next clue!'), findsWidgets);
         await shot('final_solved');
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-        expect(find.text(fin.transition.first), findsOneWidget);
+        expect(findText(fin.transition.first), findsOneWidget);
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 900));
         expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: 'the drawing');

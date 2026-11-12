@@ -24,6 +24,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The detective's name kept exactly as typed, the guide's pictures of the
 /// chosen detective (boy or girl), and the guide speaking to the detective
@@ -209,12 +210,12 @@ void main() {
         expect(ref.read(routerProvider).routerDelegate.currentConfiguration.uri.path, Routes.howToPlay);
 
         // 1. Welcome: the greeting by name, the chosen detective.
-        expect(find.text('Hello, Detective $name!'), findsOneWidget);
+        expect(findText('Hello, Detective $name!'), findsOneWidget);
         expect(pictureOf(ArtAssets.onboardingWelcome(avatar)), findsOneWidget);
         final other = avatar == DetectiveAvatar.boy ? DetectiveAvatar.girl : DetectiveAvatar.boy;
         expect(pictureOf(ArtAssets.onboardingWelcome(other)), findsNothing);
         // The detective in the picture is the player, not a partner.
-        expect(find.text("Your first mystery awaits. Let's find clues and solve mysteries in London!"), findsOneWidget);
+        expect(findText("Your first mystery awaits. Let's find clues and solve mysteries in London!"), findsOneWidget);
         expect(find.textContaining('partner'), findsNothing);
         expect(find.bySemanticsLabel('Detective $name'), findsOneWidget);
 
@@ -227,10 +228,10 @@ void main() {
 
         // 3. Mrs Moss greets them by name; her answers are as before.
         await next(t);
-        expect(find.text('"Hello, Detective $name! I sell tea here every day. Ask me anything!"'), findsOneWidget);
+        expect(findText('"Hello, Detective $name! I sell tea here every day. Ask me anything!"'), findsOneWidget);
         await t.tap(find.text('Did you see a cat?'));
         await wait(t, const Duration(milliseconds: 400));
-        expect(find.text('"Yes! A little cat with a red collar ran past my stall."'), findsOneWidget);
+        expect(findText('"Yes! A little cat with a red collar ran past my stall."'), findsOneWidget);
 
         // Through the practice pages to the last one: the same detective, setting off.
         for (var i = 0; i < 5; i++) {
@@ -258,7 +259,7 @@ void main() {
         await next(t);
       }
       expect(find.text('Hints When You Need Them'), findsOneWidget);
-      expect(find.text('Not enough coins? You can still get a free hint!'), findsOneWidget);
+      expect(findText('Not enough coins? You can still get a free hint!'), findsOneWidget);
       expect(find.textContaining('partner'), findsNothing);
     });
 
@@ -348,7 +349,7 @@ void main() {
         await t.tap(find.text('TAP TO OPEN'));
         await wait(t, const Duration(milliseconds: 1400));
         await next(t);
-        expect(find.text('"Hello, Detective Alexandra-Jo! I sell tea here every day. Ask me anything!"'), findsOneWidget);
+        expect(findText('"Hello, Detective Alexandra-Jo! I sell tea here every day. Ask me anything!"'), findsOneWidget);
         await capture(t, 'onboarding_witness_long_name_$tag');
         // Her questions are reachable (the page scrolls on the smallest
         // phones with large text) and answer as before.

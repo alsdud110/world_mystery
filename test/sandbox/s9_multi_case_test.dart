@@ -24,6 +24,7 @@ import '../helpers.dart';
 import 'generated/s9_sandbox/s9_ep02.g.dart';
 import 'sandbox_play.dart';
 import 'sandbox_season.dart';
+import '../reading_finders.dart';
 
 /// STEP 3-9: the sandbox season's two cases, made together by
 /// `tool/season_gen/generate_season.dart` from their plans. Case 02 ("The
@@ -244,7 +245,7 @@ Future<void> playCase(
   expect(find.text('CASE SOLVED'), findsOneWidget, reason: '${episode.id}: ${play.texts()}');
 
   await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 1000));
-  expect(find.text('CASE ${episode.numberLabel} COMPLETE'), findsOneWidget, reason: play.texts());
+  expect(findText('CASE ${episode.numberLabel} COMPLETE'), findsOneWidget, reason: play.texts());
   await t.tapAt(t.getCenter(find.byType(Scaffold).last));
   await wait(t, const Duration(milliseconds: 1200));
   expect(findReadableContaining(fin.transition.last), findsWidgets, reason: play.texts());

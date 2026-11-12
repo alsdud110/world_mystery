@@ -22,6 +22,7 @@ import 'package:world_mystery/widgets/coin_balance.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The map's menu: a page of the casebook over the map — same content,
 /// order and actions; closes by swipe, a tap outside or back.
@@ -78,7 +79,7 @@ void main() {
       expect(sheet.showDragHandle, isFalse);
       // Same content, same order.
       final labels = ['The Missing Crown', 'Detective MINYOUNG', 'Detective Notebook', 'Case Files', 'World Map', 'My Detective Profile', 'Sound Effects', 'How to Play'];
-      final tops = [for (final l in labels) t.getRect(find.descendant(of: find.byType(BottomSheet), matching: find.text(l))).top];
+      final tops = [for (final l in labels) t.getRect(find.descendant(of: find.byType(BottomSheet), matching: findText(l))).top];
       expect(tops, [...tops]..sort(), reason: 'in the same order');
       // The sound switch still switches.
       final before = t.widget<Switch>(find.byType(Switch)).value;
@@ -115,7 +116,7 @@ void main() {
         router.go(Routes.map);
         await wait(t, const Duration(milliseconds: 1200));
         await open();
-        await t.tap(find.text(label));
+        await t.tap(findText(label));
         await wait(t, const Duration(milliseconds: 1200));
         expect(router.routerDelegate.currentConfiguration.last.matchedLocation, path, reason: label);
       }
@@ -170,7 +171,7 @@ void main() {
       await open(t);
       expect(inSheet(find.byType(ListTile)), findsNWidgets(6));
       for (final gone in ['Season board', 'World Archive', 'My detective', 'Case results']) {
-        expect(inSheet(find.text(gone)), findsNothing, reason: gone);
+        expect(inSheet(findText(gone)), findsNothing, reason: gone);
       }
       expect(inSheet(find.text('My Detective Profile')), findsOneWidget);
       // The settings under their own rule, below the four places.
@@ -214,17 +215,17 @@ void main() {
       final xp = XpBreakdown.totalFor(app.read(currentEpisodeProvider), app.read(gameControllerProvider));
       final coins = app.read(walletProvider).balance;
       await open(t);
-      expect(inSheet(find.text('$xp XP')), findsOneWidget);
-      expect(inSheet(find.text('$coins Coins')), findsOneWidget);
+      expect(inSheet(findText('$xp XP')), findsOneWidget);
+      expect(inSheet(findText('$coins Coins')), findsOneWidget);
       expect(inSheet(find.byType(GameCoin)), findsOneWidget);
       expect(inSheet(find.textContaining(RegExp(r'\d+:\d\d'))), findsNothing, reason: 'no play time');
-      expect(t.getRect(inSheet(find.text('$xp XP'))).center.dy, closeTo(t.getRect(inSheet(find.text('$coins Coins'))).center.dy, 2));
+      expect(t.getRect(inSheet(findText('$xp XP'))).center.dy, closeTo(t.getRect(inSheet(findText('$coins Coins'))).center.dy, 2));
       await t.binding.handlePopRoute();
       await wait(t, const Duration(milliseconds: 600));
 
       app.read(walletProvider.notifier).rewardCompletedAd('menu-test');
       await open(t);
-      expect(inSheet(find.text('${coins + 30} Coins')), findsOneWidget);
+      expect(inSheet(findText('${coins + 30} Coins')), findsOneWidget);
       await wait(t, const Duration(seconds: 3));
     });
 
@@ -297,11 +298,11 @@ void main() {
           await pumpMap(t);
           final progress = app.read(gameControllerProvider);
           await open(t);
-          await t.tap(inSheet(find.text(label)));
+          await t.tap(inSheet(findText(label)));
           await wait(t, const Duration(milliseconds: 1500));
           expect(path(), page);
           expect(sheet, findsNothing);
-          if (title != null) expect(find.text(title), findsOneWidget);
+          if (title != null) expect(findText(title), findsOneWidget);
           if (viaButton) {
             await t.tap(find.byTooltip(backTip).hitTestable().first);
           } else {

@@ -19,6 +19,7 @@ import 'package:world_mystery/widgets/letter_card.dart';
 import 'full_playthrough_test.dart' show hearTalk, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Season 1 device feedback, PART C: the pictures that change with the solve
 /// (Case 05's iron chest opens on the map fragment; Case 10's raven caws
@@ -254,7 +255,7 @@ void main() {
         final shown = shownAssets(t);
         for (final o in m.options) {
           expect(shown, contains(o.picture), reason: '${o.id}: $shown');
-          expect(find.textContaining(o.label), findsWidgets, reason: o.label);
+          expect(findTextContaining(o.label), findsWidgets, reason: o.label);
         }
         expect(shown.where((a) => a.contains(folder)), hasLength(m.options.length));
         expect(t.takeException(), isNull);

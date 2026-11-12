@@ -43,6 +43,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 10 — The Hour of Shadows: its six pictures (as delivered,
 /// the sundial's hour lines and the photo's clock faces where the scenes
@@ -682,7 +683,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget, reason: '$name: its Discovery Moment');
           await shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(Offset(size.width / 2, size.height / 2)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -735,16 +736,16 @@ void main() {
         }
         await shot('m1_tape');
         await tapKey('tape-mark-t2');
-        expect(find.text("2:15 comes fifteen minutes after 2:00. That's fine."), findsOneWidget);
+        expect(findText("2:15 comes fifteen minutes after 2:00. That's fine."), findsOneWidget);
         expect(ref.read(gameControllerProvider).wrongCount(m1.id), 0, reason: 'never a wrong answer');
         await tapKey('tape-mark-t5');
-        expect(find.text(tape.oneMore), findsOneWidget);
+        expect(findText(tape.oneMore), findsOneWidget);
         expect(DrumTapeState.decode(ref.read(gameControllerProvider).puzzleStateOf(m1.id), tape), {'t5'}, reason: 'saved as found');
         await tapKey('tape-mark-t5');
         expect(DrumTapeState.decode(ref.read(gameControllerProvider).puzzleStateOf(m1.id), tape), {'t5'}, reason: 'found once');
         await shot('m1_one');
         await tapKey('tape-mark-t9');
-        expect(find.text(tape.found), findsOneWidget);
+        expect(findText(tape.found), findsOneWidget);
         expect(find.text('2:45 → 4:00'), findsOneWidget, reason: 'the jump named on the tape');
         await shot('m1_two');
         await finish(m1.transition.first, 'm1');
@@ -786,7 +787,7 @@ void main() {
           await wait(t, const Duration(milliseconds: 400));
         }
         expect(find.text('FOUND 4 / 4'), findsOneWidget);
-        expect(find.text(city.sortTask), findsWidgets);
+        expect(findText(city.sortTask), findsWidgets);
         for (final id in ['t1', 'cafe', 'church', 'post']) {
           finger('city-card-$id');
         }
@@ -796,7 +797,7 @@ void main() {
         // The café to the trial tray: back, with its line.
         await tapKey('city-card-cafe');
         await tapKey('city-tray-trial');
-        expect(find.text(city.photo.clock('cafe').wrongLine), findsOneWidget);
+        expect(findText(city.photo.clock('cafe').wrongLine), findsOneWidget);
         expect(ref.read(gameControllerProvider).wrongCount(m2.id), 0);
         await shot('m2_wrong');
         await tapKey('city-card-cafe');
@@ -824,17 +825,17 @@ void main() {
         await shot('m3_photo1');
         // 1:30: the photo's shadow is longer.
         await tapKey('sun-point-90');
-        expect(find.text(shadow.longer), findsOneWidget);
+        expect(findText(shadow.longer), findsOneWidget);
         expect(t.widget<Text>(find.byKey(const ValueKey('shadow-reading'))).data, 'SUN: 1:30', reason: 'settled on a line that is not the answer');
         await tapKey('sun-point-120');
-        expect(find.text(shadow.matchLine), findsOneWidget);
+        expect(findText(shadow.matchLine), findsOneWidget);
         expect(find.text('PHOTO 1: T1 2:00 · SUN 2:00 · same'), findsOneWidget);
         await shot('m3_photo1_matched');
         await tapKey('shadow-next', after: const Duration(milliseconds: 500));
         expect(find.byKey(const ValueKey('shadow-photo-photo2')), findsOneWidget);
         // 3:00: shorter than the photo's.
         await tapKey('sun-point-180');
-        expect(find.text(shadow.longer), findsOneWidget);
+        expect(findText(shadow.longer), findsOneWidget);
         // Dragged: the finger on the dial (never on the sun), round to 3:30.
         await reveal(t, find.byKey(const ValueKey('sundial')));
         await t.ensureVisible(find.byKey(const ValueKey('sundial')));
@@ -864,13 +865,13 @@ void main() {
         router.go(Routes.finalMission);
         await wait(t, const Duration(milliseconds: 2600));
         expect(find.byKey(const ValueKey('record-stage')), findsOneWidget);
-        expect(find.text(fin.question), findsNothing, reason: 'not asked before the tape and the book');
+        expect(findText(fin.question), findsNothing, reason: 'not asked before the tape and the book');
         await reveal(t, find.byKey(const ValueKey('record-tape')));
         await shot('fin_tape');
         await tapKey('tape-mark-t3');
-        expect(find.text(record.firstTwoThirty), findsOneWidget);
+        expect(findText(record.firstTwoThirty), findsOneWidget);
         await tapKey('tape-mark-t2');
-        expect(find.text(record.notTwoThirty), findsOneWidget);
+        expect(findText(record.notTwoThirty), findsOneWidget);
         expect(ref.read(gameControllerProvider).wrongCount(fin.id), 0);
         await tapKey('tape-mark-t7', after: const Duration(milliseconds: 2400));
         expect(examined(), contains(photoKey));
@@ -879,7 +880,7 @@ void main() {
         await shot('fin_sun_laid');
         // The book: page 2 is in it; page 3 is not.
         await tapKey('trial-log-line-p2');
-        expect(find.text(record.pageInBook), findsOneWidget);
+        expect(findText(record.pageInBook), findsOneWidget);
         await tapKey('trial-log-next');
         await tapKey('trial-log-next');
         await shot('fin_book');
@@ -897,7 +898,7 @@ void main() {
         expect(ref.read(gameControllerProvider).isCompleted(fin.id), isTrue);
         expect(ref.read(gameControllerProvider).isCaseSolved, isFalse, reason: 'the record list closes the case');
         await reveal(t, find.byKey(const ValueKey('final-read-list')));
-        expect(find.text(record.afterLines.first), findsOneWidget);
+        expect(findText(record.afterLines.first), findsOneWidget);
         expect(find.textContaining('Saint-Sulpice'), findsNothing, reason: 'no place named before the list is read');
         await shot('fin_solved');
 
@@ -905,18 +906,18 @@ void main() {
         await tapKey('final-read-list', after: const Duration(milliseconds: 600));
         expect(find.byKey(const ValueKey('record-list')), findsOneWidget);
         await tapKey('record-line-p1');
-        expect(find.text(record.lead.otherLine), findsOneWidget);
+        expect(findText(record.lead.otherLine), findsOneWidget);
         expect(examined(), isNot(contains(listKey)));
         await tapKey('record-line-p3', after: const Duration(milliseconds: 1000));
         expect(find.byKey(const ValueKey('record-map-ring')), findsOneWidget);
-        expect(find.text(record.lead.doneLines.first), findsOneWidget);
+        expect(findText(record.lead.doneLines.first), findsOneWidget);
         await shot('list_map');
         await tapKey('record-done', after: const Duration(milliseconds: 600));
         expect(examined(), contains(listKey));
         expect(ref.read(gameControllerProvider).isCaseSolved, isTrue, reason: 'closed with the list');
         expect(find.text('CASE SOLVED'), findsOneWidget);
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-        expect(find.text(fin.transition.first), findsOneWidget);
+        expect(findText(fin.transition.first), findsOneWidget);
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 900));
         expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget);

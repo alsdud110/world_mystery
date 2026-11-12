@@ -27,6 +27,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart' show prefsAt;
+import 'reading_finders.dart';
 
 /// Difficulty PART 6A: London Cases 01–03 written at Rookie, Junior and
 /// Master — the same case at every level (answers, order, hints, rewards),
@@ -553,7 +554,7 @@ void main() {
         final m = at('ep03_m2', level);
         expect(findReadable(m.question), findsOneWidget, reason: level.name);
         for (final o in m.options) {
-          expect(find.textContaining(o.label), findsWidgets);
+          expect(findTextContaining(o.label), findsWidgets);
         }
         await wait(t, const Duration(seconds: 2));
       });

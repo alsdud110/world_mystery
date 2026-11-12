@@ -38,6 +38,7 @@ class GlossaryText extends ConsumerStatefulWidget {
     this.practice,
     this.shownWord,
     this.onHold,
+    this.asWritten = false,
   }) : spans = null;
 
   /// Text made of [spans]: each plain [TextSpan] (a text, no children) gets
@@ -55,9 +56,14 @@ class GlossaryText extends ConsumerStatefulWidget {
     this.practice,
     this.shownWord,
     this.onHold,
-  }) : text = '';
+  }) : text = '',
+       asWritten = false;
 
   final String text;
+
+  /// True: the lines are left as written (a letter's short line), not set
+  /// sentence by sentence ([readingLines]).
+  final bool asWritten;
 
   /// See [GlossaryText.spans].
   final List<InlineSpan>? spans;
@@ -163,7 +169,7 @@ class _GlossaryTextState extends ConsumerState<GlossaryText> {
       return Text.rich(TextSpan(children: spans), style: widget.style, textAlign: widget.textAlign);
     }
     // Read sentence by sentence (see [readingLines]): only the breaks change.
-    for (final (text, isName) in _pieces(readingLines(widget.text), name)) {
+    for (final (text, isName) in _pieces(widget.asWritten ? widget.text : readingLines(widget.text), name)) {
       if (isName) {
         spans.add(TextSpan(text: text));
         continue;

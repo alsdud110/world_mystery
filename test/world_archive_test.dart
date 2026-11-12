@@ -21,6 +21,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'multi_season_test.dart' show asReleased, withParis, withParisMap;
+import 'reading_finders.dart';
 
 void main() {
   final catalog = MockEpisodeRepository.bundled();
@@ -177,7 +178,7 @@ void main() {
       await reveal(t, file(SeasonIds.newyork));
       expect(find.text('SEASON FIVE'), findsOneWidget);
       await reveal(t, file('s6_test'));
-      expect(find.text(third.label), findsOneWidget);
+      expect(findText(third.label), findsOneWidget);
       expect(find.text('A SIXTH CITY'), findsNothing, reason: 'sealed: its season before is not solved');
       expect(t.takeException(), isNull);
       await wait(t, const Duration(seconds: 3));
@@ -404,7 +405,7 @@ void main() {
           // The title and Season 1's way in are on screen without scrolling.
           final title = t.getRect(find.text('WORLD MYSTERY'));
           expect(title.top, greaterThanOrEqualTo(0));
-          final button = find.text(switch (solved) {
+          final button = findText(switch (solved) {
             0 => 'BEGIN SEASON ONE',
             12 => 'REVIEW THE FILE',
             _ => 'CONTINUE THE FILE',

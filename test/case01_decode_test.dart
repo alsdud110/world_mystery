@@ -26,6 +26,7 @@ import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case 01 Mission 05: the crown card by the palace gate. The detective
 /// finds an old card leaning on the gate's stone pier (a crown, and a
@@ -317,7 +318,7 @@ void main() {
 
         // The paving: a line, never a wrong answer.
         await play.tapDecode(t, const Offset(700 / 1536, 930 / 1024));
-        expect(find.text(scene.missLine), findsOneWidget);
+        expect(findText(scene.missLine), findsOneWidget);
         expect(play.ref.read(gameControllerProvider).wrongCount('m05'), 0);
         expect(step(t), 'MISSION 05 · INVESTIGATE');
 
@@ -404,7 +405,7 @@ void main() {
           final image = t.widget<Image>(find.descendant(of: find.byKey(ValueKey('decode-symbol-$s')), matching: find.byType(Image)));
           expect((image.image as AssetImage).assetName, RoyalBoxPicture.of(s)!.file, reason: s);
           expect(image.color, isNull, reason: 'never tinted');
-          final label = find.descendant(of: find.byKey(ValueKey('decode-name-$s')), matching: find.text(name));
+          final label = find.descendant(of: find.byKey(ValueKey('decode-name-$s')), matching: findText(name));
           expect(label, findsOneWidget, reason: name);
           expect(t.renderObject<RenderParagraph>(label).didExceedMaxLines, isFalse, reason: name);
         }

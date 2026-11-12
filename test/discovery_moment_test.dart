@@ -18,6 +18,7 @@ import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The Discovery Moment: after a regular mission's correct answer, what the
 /// detective just found or worked out, in the place it happened, then the
@@ -156,8 +157,8 @@ void main() {
           await t.pump();
           await t.pump(const Duration(milliseconds: 2600));
           expect(t.takeException(), isNull, reason: m.id);
-          expect(find.text(d.type.cheer), findsOneWidget, reason: m.id);
-          expect(find.text(d.title), findsOneWidget, reason: m.id);
+          expect(findText(d.type.cheer), findsOneWidget, reason: m.id);
+          expect(findText(d.title), findsOneWidget, reason: m.id);
           expect(find.text('WELL DONE'), findsNothing);
           final cta = find.text('CONTINUE INVESTIGATION');
           await t.scrollUntilVisible(cta, 200, scrollable: find.byType(Scrollable).last);
@@ -186,10 +187,10 @@ void main() {
 
     /// Every line of [d] on screen (title, label, detail, note), whole.
     void expectShown(WidgetTester t, Discovery d) {
-      expect(inMoment(find.text(d.type.cheer)), findsOneWidget);
-      expect(inMoment(find.text(d.title)), findsOneWidget);
-      if (d.detail.isNotEmpty) expect(inMoment(find.text(d.detail)), findsOneWidget);
-      if (d.note case final n?) expect(inMoment(find.text(n)), findsOneWidget);
+      expect(inMoment(findText(d.type.cheer)), findsOneWidget);
+      expect(inMoment(findText(d.title)), findsOneWidget);
+      if (d.detail.isNotEmpty) expect(inMoment(findText(d.detail)), findsOneWidget);
+      if (d.note case final n?) expect(inMoment(findText(n)), findsOneWidget);
       expect(inMoment(find.text('NOTED IN YOUR NOTEBOOK')), d.note == null ? findsNothing : findsOneWidget);
       expect(find.text('WELL DONE'), findsNothing);
       expect(find.textContaining('New clue'), findsNothing, reason: 'said once, not twice');
@@ -210,20 +211,20 @@ void main() {
         final d = discoveryOf(m);
         expectShown(t, d);
         for (final s in shows) {
-          await reveal(t, inMoment(find.text(s)));
-          expect(inMoment(find.text(s)), findsOneWidget, reason: s);
+          await reveal(t, inMoment(findText(s)));
+          expect(inMoment(findText(s)), findsOneWidget, reason: s);
         }
         final state = play.ref.read(gameControllerProvider);
         expect(state.isCompleted(id), isTrue, reason: 'saved before the moment opens');
-        expect(find.text('+${XpBreakdown.of(m, state).total} XP   ·   +${WalletController.coinsFor(m)} COINS'), findsOneWidget,
+        expect(findText('+${XpBreakdown.of(m, state).total} XP   ·   +${WalletController.coinsFor(m)} COINS'), findsOneWidget,
             reason: 'the XP and coins stay');
         // Nothing moves on by itself.
         await wait(t, const Duration(seconds: 4));
         expect(path(), Routes.mission(id));
-        expect(find.text(d.title), findsOneWidget);
+        expect(findText(d.title), findsOneWidget);
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
         expect(path(), Routes.story(id));
-        expect(find.text(m.transition.first), findsOneWidget, reason: 'the story scene goes on as before');
+        expect(findText(m.transition.first), findsOneWidget, reason: 'the story scene goes on as before');
         await t.tapAt(const Offset(200, 400));
         await wait(t, const Duration(milliseconds: 900));
         await tapText(t, 'TO THE MAP', after: const Duration(milliseconds: 1400));
@@ -291,7 +292,7 @@ void main() {
       await tapText(t, 'CHECK ANSWER', after: const Duration(milliseconds: 2600));
       expect(play.ref.read(gameControllerProvider).isCaseSolved, isTrue);
       for (final l in labels) {
-        expect(find.text(l), findsNothing, reason: l);
+        expect(findText(l), findsNothing, reason: l);
       }
       expect(find.text('NOTED IN YOUR NOTEBOOK'), findsNothing);
       expect(path(), Routes.finalMission, reason: "the final's own solve, as before");
@@ -324,15 +325,15 @@ void main() {
           final d = discoveryOf(m);
           expectShown(t, d);
           for (final a in absent) {
-            expect(inMoment(find.textContaining(a)), findsNothing, reason: a);
+            expect(inMoment(findTextContaining(a)), findsNothing, reason: a);
           }
           if (d.showEvidence) {
             final ev = m.evidence!;
-            await reveal(t, inMoment(find.text(ev.inscription!)));
-            expect(inMoment(find.text(ev.name)), findsOneWidget);
-            expect(inMoment(find.text(ev.inscription!)), findsOneWidget, reason: 'what is written on it');
+            await reveal(t, inMoment(findText(ev.inscription!)));
+            expect(inMoment(findText(ev.name)), findsOneWidget);
+            expect(inMoment(findText(ev.inscription!)), findsOneWidget, reason: 'what is written on it');
           } else if (m.evidence case final ev?) {
-            expect(inMoment(find.text(ev.name)), findsNothing, reason: '${ev.name}: not shown as new');
+            expect(inMoment(findText(ev.name)), findsNothing, reason: '${ev.name}: not shown as new');
           }
           await capture(t, 'discovery_${kind}_${id}_$tag');
           final cta = find.text('CONTINUE INVESTIGATION');

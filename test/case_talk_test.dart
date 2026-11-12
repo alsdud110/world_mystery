@@ -18,6 +18,7 @@ import 'package:world_mystery/features/mission/widgets/evidence_recall.dart';
 import 'package:world_mystery/widgets/art_assets.dart';
 
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// CaseTalk, the talk with one person of Season 2's Cases 11–12: questions
 /// asked, evidence shown from the notebook, the person's face changing, new
@@ -249,7 +250,7 @@ void main() {
       expect(find.text('???'), findsOneWidget, reason: 'his name is not known yet');
       expect(find.byKey(const ValueKey('case-talk-show')), findsNothing, reason: 'nothing to show before the first question');
       await tapKey(t, 'case-talk-q-who');
-      expect(find.text('"Don\'t ask me."'), findsOneWidget);
+      expect(findText('"Don\'t ask me."'), findsOneWidget);
       expect(saved.last.done, ['who']);
       await tapKey(t, 'case-talk-line');
       expect(find.text('"Find out with clues."'), findsOneWidget);

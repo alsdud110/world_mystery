@@ -5,6 +5,7 @@ import 'package:world_mystery/features/mission/widgets/question_widgets.dart' sh
 
 import '../full_playthrough_test.dart' show reveal, tapText, wait;
 import '../helpers.dart';
+import '../reading_finders.dart';
 
 /// A generated sandbox case played in the real app as a child plays it
 /// (STEP 3-9): from the map to each puzzle, its answer put in with the
@@ -84,7 +85,7 @@ class SandboxPlay {
         await tapText(t, 'CHECK ANSWER', after: Duration.zero);
       case MissionType.sequence:
         for (final id in Mission.sequenceIds(answer)) {
-          final step = find.text(m.options.firstWhere((o) => o.id == id).label).last;
+          final step = findText(m.options.firstWhere((o) => o.id == id).label).last;
           await reveal(t, step); // a long step can be below the fold
           await t.tap(step);
           await t.pump(const Duration(milliseconds: 150));

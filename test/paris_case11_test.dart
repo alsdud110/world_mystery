@@ -31,6 +31,7 @@ import 'package:world_mystery/features/season/season_overview.dart';
 import 'easy_play.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 11 — The Unwritten Hour, played very easy (the user's
 /// rules of 2026-10-27): its pictures, its steps and talks (two answers,
@@ -324,7 +325,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget, reason: '$name: its Discovery Moment');
           await play.shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(m.transition.first), findsOneWidget, reason: '$name: its story');
+          expect(findText(m.transition.first), findsOneWidget, reason: '$name: its story');
           await t.tapAt(Offset(size.width / 2, size.height / 2));
           await wait(t, const Duration(milliseconds: 900));
           await play.shot('${name}_scene');

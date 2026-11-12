@@ -6,6 +6,7 @@ import 'package:world_mystery/core/theme/app_text.dart';
 import 'package:world_mystery/core/theme/app_theme.dart';
 import 'package:world_mystery/widgets/game_button.dart';
 import 'package:world_mystery/widgets/paper.dart';
+import 'reading_finders.dart';
 
 /// Two faces, two jobs: IM Fell English SC names the world (the season, a
 /// case, a place, a document); Sentient is everything read or pressed.
@@ -72,9 +73,9 @@ void main() {
       ),
     ));
     TextStyle styleOf(String s) {
-      final w = t.widget<Text>(find.text(s));
+      final w = t.widget<Text>(findText(s));
       // A heading's text is a span (its numbers in lining figures): its style is the span's.
-      return DefaultTextStyle.of(t.element(find.text(s))).style.merge(w.style ?? w.textSpan?.style);
+      return DefaultTextStyle.of(t.element(findText(s))).style.merge(w.style ?? w.textSpan?.style);
     }
 
     expect(styleOf('THE CLOCK ROOM').fontFamily, 'IMFellEnglishSC');

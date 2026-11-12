@@ -5,6 +5,7 @@ import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/features/mission/widgets/dialogue_investigation.dart' show WordsLink;
 
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// "Words" beside Reread Letter, on the final's page and in a talk (2026-11-09):
 /// the harder words of what was read, listed, each its meaning on a tap —
@@ -34,10 +35,10 @@ void main() {
     await t.pumpAndSettle();
     expect(find.byKey(const ValueKey('words-sheet')), findsOneWidget);
     expect(find.byKey(ValueKey('word-${word.toLowerCase()}')), findsOneWidget);
-    expect(find.textContaining(meaning), findsNothing, reason: 'the meaning waits for a tap');
+    expect(findTextContaining(meaning), findsNothing, reason: 'the meaning waits for a tap');
     await t.tap(find.byKey(ValueKey('word-${word.toLowerCase()}')));
     await t.pumpAndSettle();
-    expect(find.textContaining(meaning), findsWidgets);
+    expect(findTextContaining(meaning), findsWidgets);
   });
 
   testWidgets('no hard word: no link at all', (t) async {

@@ -28,6 +28,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Difficulty PART 3: each season's level fixed at its first intro, changed
 /// freely before, only by restarting the season while it is under way (the
@@ -589,7 +590,7 @@ void main() {
         expect(t.takeException(), isNull);
         await capture(t, 'restart_dialog_$tag');
         for (final label in ['KEEP MY LEVEL', 'RESTART SEASON']) {
-          expect(find.text(label).hitTestable(), findsOneWidget, reason: '$label on screen');
+          expect(findText(label).hitTestable(), findsOneWidget, reason: '$label on screen');
         }
         await tapText(t, 'KEEP MY LEVEL', after: const Duration(milliseconds: 500));
         expect(find.byKey(const ValueKey('restart-season-dialog')), findsNothing);

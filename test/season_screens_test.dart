@@ -21,6 +21,7 @@ import 'package:world_mystery/widgets/landmark_art.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Opens every screen of every case at a small phone size and fails on any
 /// layout error (overflow, clipping exceptions). Set LM_SCREENSHOTS to a
@@ -172,7 +173,7 @@ void main() {
             final current = e.allMissions[upTo];
             final pinRect = t.getRect(find.byKey(ValueKey('pin-${current.id}')));
             final tip = Offset(pinRect.center.dx, pinRect.top + MapPin.anchorY);
-            final taken = [here, t.getRect(find.descendant(of: find.byKey(ValueKey('pin-${current.id}')), matching: find.text(current.location))), Rect.fromLTRB(tip.dx - 13, tip.dy - 34, tip.dx + 13, tip.dy)];
+            final taken = [here, t.getRect(find.descendant(of: find.byKey(ValueKey('pin-${current.id}')), matching: findText(current.location))), Rect.fromLTRB(tip.dx - 13, tip.dy - 34, tip.dx + 13, tip.dy)];
             for (final m in e.allMissions.take(upTo)) {
               final r = t.getRect(find.byKey(ValueKey('pin-${m.id}')));
               final mark = Rect.fromCircle(center: Offset(r.center.dx, r.top + MapPin.anchorY), radius: 16);
@@ -201,7 +202,7 @@ void main() {
     await t.tap(find.text('CASE ARCHIVE'));
     await wait(t, const Duration(milliseconds: 600));
     for (final e in season.take(season.length - 1)) {
-      final folder = find.text(e.title.toUpperCase());
+      final folder = findText(e.title.toUpperCase());
       await t.drag(find.byType(ListView).last, const Offset(0, 20000)); // back to the top
       await t.pump();
       await t.scrollUntilVisible(folder, 200, scrollable: find.descendant(of: find.byType(ListView).last, matching: find.byType(Scrollable)).first);

@@ -21,6 +21,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Difficulty PART 2: CHOOSE YOUR LEVEL on CREATE YOUR DETECTIVE — Rookie
 /// unless another card is picked, saved with the new detective; never on the
@@ -132,8 +133,8 @@ void main() {
       ('Junior', 'Everyday English.'),
       ('Master', 'Advanced English.'),
     ]) {
-      expect(find.text(label), findsOneWidget);
-      expect(find.text(line), findsOneWidget);
+      expect(findText(label), findsOneWidget);
+      expect(findText(line), findsOneWidget);
     }
     // Picture, then name, then level, then the button.
     double top(Finder f) => t.getRect(f).top;
@@ -250,8 +251,8 @@ void main() {
         expect(box.right, lessThanOrEqualTo(size.width));
         // Side by side, the line in a few words; under one another (too
         // narrow for three), the whole line.
-        final shown = find.text(d.tagline).evaluate().isNotEmpty ? d.tagline : d.blurb;
-        final line = t.renderObject<RenderParagraph>(find.text(shown));
+        final shown = findText(d.tagline).evaluate().isNotEmpty ? d.tagline : d.blurb;
+        final line = t.renderObject<RenderParagraph>(findText(shown));
         expect(line.didExceedMaxLines, isFalse, reason: '${d.label} line not cut');
         expect(line.size.width, lessThanOrEqualTo(box.width), reason: '${d.label} line inside its card');
       }

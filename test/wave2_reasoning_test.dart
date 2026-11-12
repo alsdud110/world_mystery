@@ -18,6 +18,7 @@ import 'package:world_mystery/widgets/glossary_text.dart';
 import 'full_playthrough_test.dart' show hearTalk, reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Reasoning wave 2 (Cases 03, 07, 10): a clue the detective already found
 /// becomes the one the next step needs. Case 03: the boot that "smells of
@@ -446,7 +447,7 @@ void main() {
       await reveal(t, notebook);
       await t.tap(notebook);
       await wait(t, const Duration(milliseconds: 900));
-      final tile = find.text(evidence);
+      final tile = findText(evidence);
       await t.scrollUntilVisible(tile, 200, scrollable: scroller());
       await wait(t, const Duration(milliseconds: 300));
       await t.tap(tile);
@@ -474,8 +475,8 @@ void main() {
           expect(shown(m2.question), findsOneWidget);
           await capture(t, 'ep03_m2_puzzle_$tag');
           for (final o in m2.options) {
-            await reveal(t, find.text(o.label));
-            final r = t.getRect(find.text(o.label));
+            await reveal(t, findText(o.label));
+            final r = t.getRect(findText(o.label));
             expect(r.right, lessThanOrEqualTo(size.width), reason: o.label);
           }
           await t.tap(find.text('Reread Letter'));
@@ -567,7 +568,7 @@ void main() {
           await reveal(t, find.text('CHECK ANSWER'));
           for (final o in m3.options) {
             expect(
-              find.text(o.label),
+              findText(o.label),
               findsOneWidget,
               reason: '${o.label}: named under its picture',
             );

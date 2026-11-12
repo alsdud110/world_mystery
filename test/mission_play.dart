@@ -31,6 +31,7 @@ import 'package:world_mystery/widgets/letter_card.dart';
 
 import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Presses [f] as a finger does: down, held a moment (the button draws its
 /// press), then up. A page with nothing moving draws no frame between a
@@ -259,7 +260,7 @@ class MissionPlay {
         return;
       case MissionType.sequence:
         for (final id in Mission.sequenceIds(m.answer)) {
-          final tile = find.text(m.options.firstWhere((o) => o.id == id).label).last;
+          final tile = findText(m.options.firstWhere((o) => o.id == id).label).last;
           await reveal(t, tile);
           await t.tap(tile);
           await t.pump(const Duration(milliseconds: 150));

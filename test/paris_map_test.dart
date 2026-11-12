@@ -20,6 +20,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'helpers.dart';
 import 'multi_season_test.dart' show assetOf, parisCase, season1Finished, showsLondon;
+import 'reading_finders.dart';
 
 /// The ten Paris landmarks where they were measured on the artwork.
 const measured = <ParisLandmark, Offset>{
@@ -336,7 +337,7 @@ void main() {
       await t.pump(const Duration(milliseconds: 1500));
     }
 
-    Finder lettered(String name) => find.text(name, findRichText: true);
+    Finder lettered(String name) => findText(name, findRichText: true);
 
     testWidgets('Paris\'s artwork and names; the current place says YOU\'RE HERE, its name on the pin', (t) async {
       final c = await playParis(SeasonMap.bySeason, caseNumber: 8);

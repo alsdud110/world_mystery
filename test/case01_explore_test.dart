@@ -16,6 +16,7 @@ import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case 01 Mission 01 played by looking round King's Cross at night: the
 /// old suitcase on the bench holds the thief's letter, Platform 9's sign
@@ -156,7 +157,7 @@ void main() {
         // The board first: the letter has not been found.
         await play.tapExplore(t, spot('posters').areas.first.center);
         expect(choice(), findsNothing);
-        expect(find.text(spot('posters').lockedLine), findsOneWidget);
+        expect(findText(spot('posters').lockedLine), findsOneWidget);
         // The suitcase: its letter, sealed.
         await play.tapExplore(t, spot('suitcase').areas.first.center);
         expect(card('suitcase'), findsOneWidget);
@@ -167,7 +168,7 @@ void main() {
         await play.tapKey(t, 'explore-close');
         await play.tapExplore(t, spot('posters').areas.first.center);
         expect(choice(), findsNothing);
-        expect(find.text(spot('posters').unreadLine), findsOneWidget);
+        expect(findText(spot('posters').unreadLine), findsOneWidget);
         // Read it.
         await play.readExploreDocument(t, scene);
         expect(findReadable(scene.nextTask), findsOneWidget, reason: 'what to do now');

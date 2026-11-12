@@ -23,6 +23,7 @@ import 'package:world_mystery/widgets/place_art.dart';
 import 'full_playthrough_test.dart' show reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// After each final case: the post-case story scene (the story scene in its
 /// after-the-case mode), the case's last evidence, then the case report.
@@ -164,7 +165,7 @@ void main() {
         await t.tap(find.text('CONTINUE INVESTIGATION'));
         await wait(t, const Duration(milliseconds: 900));
         expect(app.path, Routes.story(f.id));
-        expect(find.text('CASE ${e.numberLabel} COMPLETE'), findsOneWidget);
+        expect(findText('CASE ${e.numberLabel} COMPLETE'), findsOneWidget);
         expect(find.textContaining('MISSION'), findsNothing, reason: 'not a mission scene');
 
         // A tap shows the whole story; then the evidence and the report button.
@@ -191,17 +192,17 @@ void main() {
 
         // The case's last evidence, on screen, with what is written on it.
         final ev = f.evidence!;
-        expect(t.getRect(find.text(ev.name)).bottom, lessThan(size.height), reason: '${ev.name} on screen');
-        expect(find.descendant(of: find.byType(EvidenceChip), matching: find.text(ev.inscription!)), findsOneWidget);
+        expect(t.getRect(findText(ev.name)).bottom, lessThan(size.height), reason: '${ev.name} on screen');
+        expect(find.descendant(of: find.byType(EvidenceChip), matching: findText(ev.inscription!)), findsOneWidget);
         final cta = find.text('SEE MY CASE REPORT');
         expect(t.getRect(cta).bottom, lessThan(size.height), reason: 'SEE MY CASE REPORT on screen');
         expect(t.widget<GameButton>(find.ancestor(of: cta, matching: find.byType(GameButton))).style, GameButtonStyle.glass);
         await capture(t, 'post_case_$tag');
 
         // Tap the evidence: it opens large, as in the notebook.
-        await t.tap(find.text(ev.name));
+        await t.tap(findText(ev.name));
         await wait(t, const Duration(milliseconds: 600));
-        expect(find.text(ev.name), findsNWidgets(2), reason: 'the zoom over the scene');
+        expect(findText(ev.name), findsNWidgets(2), reason: 'the zoom over the scene');
         await t.binding.handlePopRoute();
         await wait(t, const Duration(milliseconds: 600));
 
@@ -212,16 +213,16 @@ void main() {
         await wait(t, const Duration(milliseconds: 3200));
         expect(find.text('CASE CLOSED'), findsOneWidget);
         final next = last ? 'INVESTIGATION BOARD' : 'OPEN CASE ${catalog[catalog.indexOf(e) + 1].numberLabel}';
-        await reveal(t, find.text(next));
+        await reveal(t, findText(next));
         await t.pump();
         // The hook was the scene's to tell: the report does not repeat it
         // (nor spoil the next case: Case 10 → the Shadow, Case 11 → the door).
-        if (e.hook != null) expect(find.text(e.hook!), findsNothing, reason: 'no hook on the report');
+        if (e.hook != null) expect(findText(e.hook!), findsNothing, reason: 'no hook on the report');
         expect(find.textContaining('Find the Shadow'), findsNothing);
         expect(find.textContaining('under Big Ben'), findsNothing);
         // The season's last report points on to Paris instead.
-        expect(find.text(last ? 'But the watch says PARIS.' : 'London needs you again.'), findsOneWidget);
-        await t.tap(find.text(next));
+        expect(findText(last ? 'But the watch says PARIS.' : 'London needs you again.'), findsOneWidget);
+        await t.tap(findText(next));
         await wait(t, const Duration(milliseconds: 1500));
         expect(app.location, Routes.season, reason: 'the investigation board (completed after the last case)');
         await wait(t, const Duration(seconds: 3));

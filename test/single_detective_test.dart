@@ -27,6 +27,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 String save(GameProgress p) => jsonEncode(p.toJson());
 
@@ -434,9 +435,9 @@ void main() {
             mission: m, discovery: d, xp: const XpBreakdown(base: 30), coins: firstSolve ? 30 : 0, firstSolve: firstSolve);
         await t.pump();
         await t.pump(const Duration(milliseconds: 2600));
-        expect(find.text(d.type.cheer), findsOneWidget);
+        expect(findText(d.type.cheer), findsOneWidget);
         expect(find.text('+30 XP   ·   +30 COINS'), firstSolve ? findsOneWidget : findsNothing);
-        expect(find.text(alreadyRewarded), firstSolve ? findsNothing : findsOneWidget);
+        expect(findText(alreadyRewarded), firstSolve ? findsNothing : findsOneWidget);
         await t.tap(find.text('CONTINUE INVESTIGATION'));
         await t.pumpAndSettle();
         await closed;

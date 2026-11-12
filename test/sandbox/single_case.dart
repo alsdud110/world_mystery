@@ -20,6 +20,7 @@ import '../full_playthrough_test.dart' show tapText, wait;
 import '../helpers.dart';
 import '../mission_play.dart';
 import 'sandbox_play.dart';
+import '../reading_finders.dart';
 
 /// One case of a generated sandbox season, alone in the real app, for the
 /// tests only (Seoul Pilot Case 01): the season given beside the game's own
@@ -115,7 +116,7 @@ class CasePlayer {
     // The person's talk before the puzzle, heard to its finish.
     if (SeasonCatalog.talkMission(m)?.before case final before?) await _heardTo(before.finishLabel);
     for (final step in ['TAP TO OPEN', 'SOLVE THE PUZZLE']) {
-      if (find.text(step).evaluate().isNotEmpty) await tapText(t, step, after: const Duration(milliseconds: 1500));
+      if (findText(step).evaluate().isNotEmpty) await tapText(t, step, after: const Duration(milliseconds: 1500));
     }
   }
 
@@ -187,7 +188,7 @@ class CasePlayer {
 
   /// A talk's lines heard (its typing skipped) to [finishLabel], tapped.
   Future<void> _heardTo(String finishLabel) async {
-    for (var i = 0; i < 30 && find.text(finishLabel).evaluate().isEmpty; i++) {
+    for (var i = 0; i < 30 && findText(finishLabel).evaluate().isEmpty; i++) {
       if (find.text('NEXT').evaluate().isNotEmpty) {
         await tapText(t, 'NEXT', after: const Duration(milliseconds: 400));
       } else {
@@ -195,7 +196,7 @@ class CasePlayer {
         await wait(t, const Duration(milliseconds: 600));
       }
     }
-    expect(find.text(finishLabel), findsWidgets, reason: 'the talk heard to $finishLabel: ${play.texts()}');
+    expect(findText(finishLabel), findsWidgets, reason: 'the talk heard to $finishLabel: ${play.texts()}');
     await tapText(t, finishLabel, after: const Duration(milliseconds: 1200));
   }
 

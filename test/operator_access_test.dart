@@ -14,6 +14,7 @@ import 'package:world_mystery/features/game/scoring.dart';
 
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Operator full case access (QA): every case opens in a test build, while
 /// a child's game keeps its rules, and opening a case marks nothing solved.
@@ -206,7 +207,7 @@ void main() {
       await t.dragUntilVisible(label, find.byType(ListView).last, const Offset(0, -200));
       // What it does, as it really does it (plan A, 2026-10-13).
       expect(
-        find.text('Operator Mode lets you open cases for testing. '
+        findText('Operator Mode lets you open cases for testing. '
             'If you solve missions, your progress and rewards will be saved.'),
         findsOneWidget,
       );
@@ -234,7 +235,7 @@ void main() {
         await wait(t);
         expect(t.takeException(), isNull, reason: '${e.id} answer key');
         for (final m in e.allMissions) {
-          expect(find.textContaining('정답: ${m.answerLabel}', findRichText: true), findsOneWidget, reason: '${e.id} ${m.id}');
+          expect(findTextContaining('정답: ${m.answerLabel}', findRichText: true), findsOneWidget, reason: '${e.id} ${m.id}');
         }
         appRef.read(routerProvider).go(Routes.episodes); // leave, so the key is folded next time
         await wait(t);

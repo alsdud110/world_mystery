@@ -8,6 +8,7 @@ import 'package:world_mystery/data/models/episode.dart';
 import 'package:world_mystery/data/models/mission.dart';
 import 'package:world_mystery/features/game/scoring.dart';
 import 'package:world_mystery/features/mission/widgets/answer_feedback.dart';
+import 'reading_finders.dart';
 
 /// The Discovery Moment's title: a name (Season 1's "THE ROSETTA STONE")
 /// keeps the display face; a sentence (Paris's success lines) is set in the
@@ -44,7 +45,7 @@ void main() {
   }
 
   String? faceOf(WidgetTester t, String title) {
-    final text = t.widget<Text>(find.text(title));
+    final text = t.widget<Text>(findText(title));
     return text.style?.fontFamily ?? (text.textSpan as TextSpan?)?.style?.fontFamily;
   }
 

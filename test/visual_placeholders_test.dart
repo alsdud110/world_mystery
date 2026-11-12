@@ -23,6 +23,7 @@ import 'package:world_mystery/widgets/symbol_icon.dart';
 import 'full_playthrough_test.dart' show reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The pre-release visual fixes: no lettered stand-ins where a picture is
 /// meant (Case 01's place symbols, four badges), and the right picture for
@@ -231,7 +232,7 @@ void main() {
       // Earned, each shows its own medal picture (since 2026-10-19; the ink
       // glyph stands in only while a file is missing).
       for (final b in [GameBadge.secondLook, GameBadge.wordCollector, GameBadge.puzzleSolver, GameBadge.masterDetective]) {
-        await reveal(t, find.text(b.title));
+        await reveal(t, findText(b.title));
         expect(picture(ArtAssets.badges[b]!), findsOneWidget, reason: b.name);
         expect(monogram, findsNothing, reason: 'badges');
       }

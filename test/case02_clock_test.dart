@@ -20,6 +20,7 @@ import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case 02 Mission 01 played on Mrs Bell's clock face: the detective sets
 /// the hands where her note says she saw them (8:17), by dragging them or
@@ -182,7 +183,7 @@ void main() {
         expect(find.text('UNLOCK'), findsNothing, reason: 'the keypad is gone');
         expect(findReadable(clock.question), findsOneWidget);
         expect(findReadable(m1.question), findsNothing, reason: 'no "type" heading over a clock');
-        expect(find.text(clock.lead), findsOneWidget);
+        expect(findText(clock.lead), findsOneWidget);
         expect(shown(t), '12:00');
         final hands = t.widget<CustomPaint>(find.byWidgetPredicate((w) => w is CustomPaint && w.painter is ClockHandsPainter));
         expect((hands.painter! as ClockHandsPainter).hourDegrees, 0, reason: 'not the stopped time');
@@ -261,7 +262,7 @@ void main() {
           at = (h % 12) * 60 + m;
           await play.tapKey(t, 'clock-submit', after: const Duration(milliseconds: 600));
           expect(find.text('Not quite!'), findsOneWidget, reason: '$h:$m');
-          expect(find.textContaining(line), findsOneWidget, reason: '$h:$m');
+          expect(findTextContaining(line), findsOneWidget, reason: '$h:$m');
           await tapText(t, 'TRY AGAIN', after: const Duration(milliseconds: 600));
           expect(shown(t), ClockTime.at(h, m).label, reason: 'the hands stay where they were set');
         }

@@ -27,6 +27,7 @@ import '../mission_play.dart';
 import 's9_ep03_test.dart' show hearAndCompare;
 import 'sandbox_play.dart';
 import 'single_case.dart' show CasePlayer;
+import '../reading_finders.dart';
 
 /// The screens every look round is played on again.
 const screens = [
@@ -411,7 +412,7 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
       }
       await tapText(t, 'CLOSE THE CASE', after: const Duration(milliseconds: 1500));
       expect(c.read(gameControllerProvider).isCaseSolved, isTrue, reason: e.id);
-      if (!last) expect(find.text('CASE ${e.numberLabel} COMPLETE'), findsOneWidget, reason: play.texts());
+      if (!last) expect(findText('CASE ${e.numberLabel} COMPLETE'), findsOneWidget, reason: play.texts());
       await t.tapAt(t.getCenter(find.byType(Scaffold).last));
       await wait(t, const Duration(milliseconds: 1200));
       await tapText(t, 'SEE MY CASE REPORT', after: const Duration(milliseconds: 3200));
@@ -477,10 +478,10 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
       final next = c.read(nextSeasonProvider);
       if (next == null) {
         await reveal(t, find.byKey(const ValueKey('season-complete')));
-        expect(find.text('${content.season.label} COMPLETE'), findsOneWidget, reason: play.texts());
+        expect(findText('${content.season.label} COMPLETE'), findsOneWidget, reason: play.texts());
       } else {
         await reveal(t, find.byKey(const ValueKey('finale-next-season')));
-        expect(find.text('${next.season.label} · ${next.season.title.toUpperCase()}'), findsOneWidget, reason: play.texts());
+        expect(findText('${next.season.label} · ${next.season.title.toUpperCase()}'), findsOneWidget, reason: play.texts());
         expect(find.byKey(const ValueKey('finale-ticket')), findsOneWidget, reason: play.texts());
       }
       final lastWords = next == null
@@ -512,7 +513,7 @@ void seasonPlaythroughTests(String seasonId, {Difficulty level = Difficulty.stan
       await reopen(t, c);
       // Its map says it is solved, and its case file opens from there.
       expect(find.text('EVERY PLACE SOLVED'), findsOneWidget, reason: 'its map: ${play.texts()}');
-      expect(find.text('CASE ${again.numberLabel}'), findsWidgets, reason: play.texts());
+      expect(findText('CASE ${again.numberLabel}'), findsWidgets, reason: play.texts());
       await tapText(t, 'SEE MY CASE FILE', after: const Duration(milliseconds: 3200));
       expect(find.byType(CaseSolvedScreen), findsOneWidget, reason: '${again.id} case file: ${play.texts()}');
       expect(find.text('CASE CLOSED'), findsOneWidget, reason: play.texts());

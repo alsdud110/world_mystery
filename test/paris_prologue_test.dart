@@ -18,6 +18,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'multi_season_test.dart' show assetOf;
+import 'reading_finders.dart';
 
 void main() {
   final ids = [for (final e in MockEpisodeRepository.bundled()) e.id];
@@ -103,7 +104,7 @@ void main() {
       expect(find.text('Who took it? And why?'), findsOneWidget);
       await next(t);
       // 5 — the promise: the detective's goal for the season.
-      expect(find.text('Follow the clues. Find out who took the hour.'), findsOneWidget);
+      expect(findText('Follow the clues. Find out who took the hour.'), findsOneWidget);
       expect(find.text('SEASON TWO'), findsOneWidget);
       expect(find.text('PARIS STANDS STILL'), findsOneWidget);
       expect(find.text('12 CASES'), findsOneWidget);
@@ -248,7 +249,7 @@ void main() {
         await openPrologue(t);
         for (var scene = 1; scene <= 6; scene++) {
           expect(t.takeException(), isNull, reason: 'scene $scene');
-          final way = find.text(scene < 5 ? 'NEXT ›' : scene == 5 ? 'ACCEPT THE CASE' : 'BACK TO THE ARCHIVE');
+          final way = findText(scene < 5 ? 'NEXT ›' : scene == 5 ? 'ACCEPT THE CASE' : 'BACK TO THE ARCHIVE');
           final r = t.getRect(way);
           expect(r.bottom, lessThanOrEqualTo(size.height), reason: 'scene $scene');
           expect(r.right, lessThanOrEqualTo(size.width), reason: 'scene $scene');

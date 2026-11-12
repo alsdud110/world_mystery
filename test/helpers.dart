@@ -211,7 +211,8 @@ Finder findReadable(String text) => find.byWidgetPredicate(
   (w) {
     if (w is! Text) return false;
     final shown = w.data ?? w.textSpan?.toPlainText(includeSemanticsLabels: false);
-    return shown == text || shown == Formatters.sentenceLines(text);
+    // (And any reading text is set sentence by sentence: `readingLines`.)
+    return shown == text || shown?.replaceAll('\n', ' ') == text.replaceAll('\n', ' ');
   },
   description: 'text "$text" (as read)',
 );
@@ -220,8 +221,7 @@ Finder findReadable(String text) => find.byWidgetPredicate(
 Finder findReadableContaining(String part) => find.byWidgetPredicate(
   (w) =>
       w is Text &&
-      (w.data ?? w.textSpan?.toPlainText(includeSemanticsLabels: false) ?? '')
-          .contains(part),
+      (w.data ?? w.textSpan?.toPlainText(includeSemanticsLabels: false) ?? '').replaceAll('\n', ' ').contains(part.replaceAll('\n', ' ')),
   description: 'text containing "$part" (as read)',
 );
 

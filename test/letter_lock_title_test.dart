@@ -4,6 +4,7 @@ import 'package:world_mystery/core/theme/app_theme.dart';
 import 'package:world_mystery/data/models/mission.dart';
 import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'package:world_mystery/features/mission/widgets/letter_lock.dart';
+import 'reading_finders.dart';
 
 /// The letter lock's plate names its own story's lock (`Mission.lockTitle`),
 /// never another season's: Paris Case 01's keeps THE CLOCKMAKER'S LOCK, a
@@ -48,7 +49,7 @@ void main() {
     final m = lock();
     expect(m.lockTitle, isNull);
     await show(t, m);
-    expect(find.text(LetterLockQuestion.plainTitle), findsOneWidget);
+    expect(findText(LetterLockQuestion.plainTitle), findsOneWidget);
     expect(find.textContaining('CLOCKMAKER'), findsNothing);
   });
 

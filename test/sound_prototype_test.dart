@@ -23,6 +23,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
+import 'reading_finders.dart';
 
 /// The sound prototype: which sound plays at which moment of play, its
 /// takes, and the office ambience.
@@ -201,7 +202,7 @@ void main() {
       expect(audio.stopped, contains(GameSound.typewriterKey));
       await t.pump(const Duration(seconds: 3));
       expect(keys(audio), atSkip);
-      expect(find.text(text, findRichText: true), findsOneWidget);
+      expect(findText(text, findRichText: true), findsOneWidget);
     });
 
     testWidgets('skipped from the start (a line read again): silent', (t) async {

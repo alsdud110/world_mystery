@@ -24,6 +24,7 @@ import 'package:world_mystery/widgets/letter_card.dart';
 import 'full_playthrough_test.dart' show hearTalk, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The place and the puzzle of every plain mission (not a search, a talk or
 /// the final case) follow the letter page's rule: the page's group centred
@@ -399,7 +400,7 @@ void main() {
         textScale: 1.3,
       );
       Future<void> press(String label) async {
-        final f = find.text(label).last;
+        final f = findText(label).last;
         await t.ensureVisible(f);
         await t.pumpAndSettle();
         await t.tap(f);

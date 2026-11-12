@@ -10,12 +10,13 @@ import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Wave 2.6.1: hints are written on the puzzle itself (never a sheet over
 /// it), fold and unfold, pile up in order, stay after a restart, and leave
 /// the puzzle usable.
 void main() {
-  Finder hintCard(int n) => find.text('DETECTIVE HINT $n');
+  Finder hintCard(int n) => findText('DETECTIVE HINT $n');
   final coins = find.byKey(const ValueKey('coin-balance'));
   int coinsShown(WidgetTester t) => int.parse(
     t

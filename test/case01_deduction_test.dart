@@ -23,6 +23,7 @@ import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case 01 Mission 03: the foot of Big Ben at night. Three traces are drawn
 /// in the scene — muddy footprints that stop at the tower wall, the street
@@ -179,7 +180,7 @@ void main() {
     String count(WidgetTester t) => t.widget<Text>(find.byKey(const ValueKey('deduction-count'))).data!;
     bool ticked(WidgetTester t, String id) => t.widget<LookMark>(find.byKey(ValueKey('mark-$id'))).looked;
     Finder search() => find.ancestor(of: find.text('SEARCH HERE'), matching: find.byType(GameButton));
-    Finder slip(String line) => find.text(line);
+    Finder slip(String line) => findText(line);
 
     Future<void> back(WidgetTester t) async {
       await t.tap(find.byWidgetPredicate((w) => w is IconButton && (w.tooltip == 'Back' || w.tooltip == 'Back to map')));
@@ -241,7 +242,7 @@ void main() {
 
         // Behind the stone.
         await play.tapDeduction(t, scene.placeOf('b').areas.first.center);
-        expect(find.text('Your choice: ${m03.answerLabel}'), findsOneWidget);
+        expect(findText('Your choice: ${m03.answerLabel}'), findsOneWidget);
         await capture(t, 'case01_deduction_chosen_$tag');
         await play.tapKey(t, 'deduction-search', after: const Duration(milliseconds: 1500));
         p = play.ref.read(gameControllerProvider);
@@ -356,7 +357,7 @@ void main() {
       }
       t.semantics.tap(find.semantics.byLabel(m03.answerLabel));
       await wait(t, const Duration(milliseconds: 300));
-      expect(find.text('Your choice: ${m03.answerLabel}'), findsOneWidget);
+      expect(findText('Your choice: ${m03.answerLabel}'), findsOneWidget);
       semantics.dispose();
     });
   });

@@ -30,6 +30,7 @@ import 'package:world_mystery/features/season/season_overview.dart';
 import 'easy_play.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 12 — The Clockmaker's Truth, the season's last case,
 /// played very easy (2026-10-27): its pictures, steps and talks, the
@@ -301,7 +302,7 @@ void main() {
           await wait(t, const Duration(milliseconds: 2800));
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget, reason: '$name: its Discovery Moment');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(m.transition.first), findsOneWidget, reason: '$name: its story');
+          expect(findText(m.transition.first), findsOneWidget, reason: '$name: its story');
           await t.tapAt(Offset(size.width / 2, size.height / 2));
           await wait(t, const Duration(milliseconds: 900));
           await play.shot('${name}_scene');
@@ -442,7 +443,7 @@ void main() {
         // ── Case Closed: the season complete; Seoul next (third since
         // 2026-11-11), as Paris came after London; on to the Archives ────
         await reveal(t, find.byKey(const ValueKey('finale-next-season')));
-        expect(find.text('SEASON THREE · THE KING\'S LETTERS OF SEOUL'), findsOneWidget);
+        expect(findText('SEASON THREE · THE KING\'S LETTERS OF SEOUL'), findsOneWidget);
         expect(find.byKey(const ValueKey('go-to-next-season')), findsOneWidget);
         expect(find.text('GO TO SEOUL'), findsOneWidget);
         await play.shot('season_complete');
@@ -460,7 +461,7 @@ void main() {
         await play.tapKey('begin-next-season', after: const Duration(milliseconds: 3000));
         expect(ref.read(selectedSeasonIdProvider), SeasonIds.seoul);
         expect(router.routerDelegate.currentConfiguration.uri.path, Routes.season);
-        expect(find.text('THE KING\'S LETTERS OF SEOUL'), findsOneWidget, reason: "Seoul's own board");
+        expect(findText('THE KING\'S LETTERS OF SEOUL'), findsOneWidget, reason: "Seoul's own board");
         await play.shot('seoul_board');
         await wait(t, const Duration(seconds: 2));
       });

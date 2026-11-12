@@ -19,6 +19,7 @@ import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'personalized_lines.dart';
+import 'reading_finders.dart';
 
 /// Season 1 audit fixes D4 (word meanings where a child gets stuck: answer
 /// cards, tips, the try-again line, the final case's question) and D5 (the
@@ -306,7 +307,7 @@ void main() {
           await t.holdOnText(find.textRange.ofSubstring('right'));
           await wait(t, const Duration(milliseconds: 600));
           expect(
-            find.text('= ${byId('ep05').meaningOf('right')}'),
+            findText('= ${byId('ep05').meaningOf('right')}'),
             findsOneWidget,
           );
           expect(
@@ -337,7 +338,7 @@ void main() {
         await play.openPuzzle(t, size, 'ep05_m2');
         // Wrong order: two lefts and two rights, so the order line shows.
         for (final step in ['TURN LEFT', 'TURN LEFT', 'TURN RIGHT', 'TURN RIGHT']) {
-          final tile = find.text(step).last;
+          final tile = findText(step).last;
           await reveal(t, tile);
           await t.tap(tile);
           await t.pump(const Duration(milliseconds: 150));
@@ -350,7 +351,7 @@ void main() {
         // "right" (맞는), the sense the line is about.
         await t.holdOnText(find.textRange.ofSubstring('right').first);
         await wait(t, const Duration(milliseconds: 600));
-        expect(find.text('= ${byId('ep05').meaningOf('right')}'), findsOneWidget);
+        expect(findText('= ${byId('ep05').meaningOf('right')}'), findsOneWidget);
         await tapText(t, 'GOT IT!', after: const Duration(milliseconds: 500));
         expect(find.text('Not quite!'), findsOneWidget, reason: 'the try-again sheet is still open');
         await tapText(t, 'GET MORE HINTS', after: const Duration(milliseconds: 700));
@@ -368,7 +369,7 @@ void main() {
           await t.holdOnText(find.textRange.ofSubstring('opposite'));
           await wait(t, const Duration(milliseconds: 600));
           expect(
-            find.text('= ${byId('ep05').meaningOf('opposite')}'),
+            findText('= ${byId('ep05').meaningOf('opposite')}'),
             findsOneWidget,
           );
           await tapText(t, 'GOT IT!', after: const Duration(milliseconds: 500));

@@ -29,6 +29,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Difficulty PART 4: developer mode is a test session of its own — TESTER,
 /// the boy's picture, Rookie; storage in memory; a new one at every entry —
@@ -396,7 +397,7 @@ void main() {
     expect(find.text('START DEVELOPER MODE'), findsOneWidget);
     expect(find.text('다음 플레이어를 위해 기기 초기화'), findsOneWidget, reason: 'the reset stays (36–37)');
     for (final tool in ['CASE 03부터', '사건 바로가기', '전체 사건 열기 (OPERATOR MODE)', '지금 사건(CASE 03) 처음부터']) {
-      expect(find.text(tool), findsNothing, reason: '$tool only in a test session');
+      expect(findText(tool), findsNothing, reason: '$tool only in a test session');
     }
     // Called on the player's saves anyway: refused, nothing written.
     expect(jumpToCase(ref, SeasonIds.paris, 's2_ep01'), CaseJumpRefusal.playerSaves);

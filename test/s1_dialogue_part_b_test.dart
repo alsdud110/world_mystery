@@ -27,6 +27,7 @@ import 'package:world_mystery/widgets/typewriter_text.dart';
 import 'full_playthrough_test.dart' show hearTalk, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Season 1 dialogue feedback, PART B (2026-11-03): Case 11's mask shows its
 /// word on the mask; the taxi driver and the stranger talk to the detective
@@ -262,8 +263,8 @@ void main() {
     }
 
     Future<void> tapText(WidgetTester t, String text, [Duration after = const Duration(milliseconds: 1500)]) async {
-      await t.ensureVisible(find.text(text).last);
-      await t.tap(find.text(text).last);
+      await t.ensureVisible(findText(text).last);
+      await t.tap(findText(text).last);
       await wait(t, after);
     }
 

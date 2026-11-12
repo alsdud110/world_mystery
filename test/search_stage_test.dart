@@ -14,6 +14,7 @@ import 'package:world_mystery/widgets/place_scenery.dart';
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The searched places' page (Case 01's station and Big Ben, Case 03's
 /// gallery): the room covers its whole place on screen, at the opening and
@@ -239,8 +240,8 @@ void main() {
         expect(viewer.contains(emptyAt), isTrue);
         await t.tapAt(emptyAt);
         await wait(t, const Duration(milliseconds: 700));
-        expect(find.text(miss), findsOneWidget);
-        final slip = t.getRect(find.text(miss));
+        expect(findText(miss), findsOneWidget);
+        final slip = t.getRect(findText(miss));
         expect(slip.bottom, lessThanOrEqualTo(size.height), reason: 'the slip is on screen');
         expect(slip.top >= viewer.bottom || slip.bottom <= viewer.top + viewer.height * 0.5, isTrue,
             reason: 'under the words, or over the top of the room');
@@ -291,7 +292,7 @@ void main() {
         expect(viewer.contains(at(t, target)), isTrue, reason: 'the thing is in sight');
         await t.tapAt(at(t, target));
         await wait(t, const Duration(milliseconds: 800));
-        expect(find.text(miss), findsNothing);
+        expect(findText(miss), findsNothing);
         expect(t.takeException(), isNull);
       });
     }
@@ -314,7 +315,7 @@ void main() {
       expect(after.contains(at(t, target)), isTrue);
       await t.tapAt(at(t, target));
       await wait(t, const Duration(milliseconds: 800));
-      expect(find.text(miss), findsNothing);
+      expect(findText(miss), findsNothing);
       expect(t.takeException(), isNull);
     });
   }

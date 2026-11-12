@@ -18,6 +18,7 @@ import '../tool/asset_optimizer/optimized_ledger.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case 01's Case Closed file (2026-10-19): the small tilted photo of the
 /// open box by the detective's name (the stamp coming down across it) gives
@@ -102,7 +103,7 @@ void main() {
       expect(box.width, inInclusiveRange(96, 150));
       // The rest of the file as before.
       for (final s in ['CASE CLOSED', 'MINYOUNG', 'Missions', 'Clues Found', 'Evidence', 'Hints', 'Time', 'XP']) {
-        expect(find.text(s), findsOneWidget, reason: s);
+        expect(findText(s), findsOneWidget, reason: s);
       }
       expect(find.text('5 / 5'), findsOneWidget);
       expect(find.text('6 / 6'), findsOneWidget);

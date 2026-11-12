@@ -33,6 +33,7 @@ import 'package:world_mystery/widgets/game_button.dart';
 
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Written while Season 2 Case 08 was being planned (it is in the game now,
 /// played on its own pictures: `paris_case08_test.dart`). These tests play
@@ -281,8 +282,8 @@ void main() {
       // be brought into view above it, the sketch still open.
       final cardTop = t.getRect(dock).top;
       for (final label in ['At the bottom of the steps', 'On the bench above the steps', 'CHECK ANSWER']) {
-        await revealOnPage(t, find.text(label));
-        final r = t.getRect(find.text(label));
+        await revealOnPage(t, findText(label));
+        final r = t.getRect(findText(label));
         expect(r.bottom, lessThanOrEqualTo(cardTop), reason: '$tag $label above the card');
         expect(r.top, greaterThanOrEqualTo(0), reason: '$tag $label on screen');
         expect(picture, findsOneWidget, reason: 'the sketch stays open');
@@ -357,7 +358,7 @@ void main() {
     await tapText(t, 'INVESTIGATE', after: const Duration(milliseconds: 900));
     await tapText(t, 'TAP TO OPEN', after: const Duration(milliseconds: 1800));
     await tapText(t, 'SOLVE THE PUZZLE', after: const Duration(milliseconds: 900));
-    expect(find.text(EvidenceRecall.defaultTitle), findsOneWidget, reason: "the app's words when the mission gives none");
+    expect(findText(EvidenceRecall.defaultTitle), findsOneWidget, reason: "the app's words when the mission gives none");
 
     await tapKey(t, 'evidence-recall-open', after: const Duration(milliseconds: 700));
     // Case 01's mark has no picture yet: its tile shows its ink symbol.
@@ -384,8 +385,8 @@ void main() {
     // The three choices and CHECK ANSWER come into view above the open slip.
     final cardTop = t.getRect(dock).top;
     for (final label in ['On the old station clock', 'On the opera slip', 'CHECK ANSWER']) {
-      await revealOnPage(t, find.text(label));
-      expect(t.getRect(find.text(label)).bottom, lessThanOrEqualTo(cardTop), reason: label);
+      await revealOnPage(t, findText(label));
+      expect(t.getRect(findText(label)).bottom, lessThanOrEqualTo(cardTop), reason: label);
     }
 
     // Turned on its side and back (a rebuild): no overflow, the slip still open.

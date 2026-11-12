@@ -17,6 +17,7 @@ import 'package:world_mystery/features/game/wallet_controller.dart';
 import 'fake_consent_sdk.dart';
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'mission_play.dart';
+import 'reading_finders.dart';
 
 /// The ads SDK, recording what is asked of it; each rewarded load answers
 /// with the next of [rewarded] (an ad, or an error; a new ad when empty).
@@ -370,7 +371,7 @@ void main() {
       sdk.rewarded.add(const AdLoadFailure(3, 'No fill'));
       final (play, before) = await shortOfCoins(t);
       await t.pump();
-      expect(find.text('No ad right now. Try again later.'), findsNothing);
+      expect(findText('No ad right now. Try again later.'), findsNothing);
       expect(enabled(t), isFalse);
       await tapText(t, 'CANCEL', after: const Duration(milliseconds: 400));
       expect(play.ref.read(walletProvider).balance, before);

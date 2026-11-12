@@ -18,6 +18,7 @@ import 'package:world_mystery/features/season/season_overview.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// After a case is closed, OPEN CASE NN goes to the investigation board:
 /// the solved case lands on it, the season's figure moves on, and the next
@@ -90,8 +91,8 @@ void main() {
   Future<void> fromReport(WidgetTester t, String button) async {
     ref.read(routerProvider).go(Routes.solved);
     await wait(t, const Duration(milliseconds: 3800));
-    await reveal(t, find.text(button));
-    await t.tap(find.text(button));
+    await reveal(t, findText(button));
+    await t.tap(findText(button));
     await wait(t, const Duration(milliseconds: 2400)); // the board's reveal, if any
     await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 500))); // decode the pictures
     await t.pump();
@@ -114,9 +115,9 @@ void main() {
         final overview = ref.read(seasonOverviewProvider);
         expect(overview.marks[n - 1], CaseMark.solved, reason: 'the case just closed is on the board');
         expect(overview.currentCase?.id, next.id, reason: 'the next case is the one to work on');
-        expect(find.text('$n / 12'), findsOneWidget);
+        expect(findText('$n / 12'), findsOneWidget);
         expect(find.text('CURRENT CASE'), findsOneWidget);
-        expect(find.text(next.title), findsOneWidget);
+        expect(findText(next.title), findsOneWidget);
         // The season's figure, as far as the cases solved tell.
         final figure = switch (n) { >= 5 => 'the clockmaker', 4 => 'the raven society', >= 2 => 'who are the ravens?', _ => null };
         if (figure != null) {
@@ -139,7 +140,7 @@ void main() {
     await tapText(t, 'BEGIN INVESTIGATION', after: const Duration(milliseconds: 1200));
     expect(path(), Routes.intro);
     expect(ref.read(currentEpisodeProvider).id, 'ep05');
-    expect(find.text(byNumber(5).intro.first), findsOneWidget);
+    expect(findText(byNumber(5).intro.first), findsOneWidget);
     await capture(t, 'board_begin_case05_intro_390x844');
     await wait(t, const Duration(seconds: 3));
   });
@@ -235,7 +236,7 @@ void main() {
     await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 500)));
     await t.pump();
     expect(find.textContaining(RegExp('the raven society', caseSensitive: false)), findsWidgets);
-    expect(find.text(byNumber(5).title), findsOneWidget);
+    expect(findText(byNumber(5).title), findsOneWidget);
     await capture(t, 'board_flow_case04_board_360x640');
     await tapText(t, 'BEGIN INVESTIGATION', after: const Duration(milliseconds: 1200));
     expect(path(), Routes.intro);

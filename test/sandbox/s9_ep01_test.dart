@@ -26,6 +26,7 @@ import '../full_playthrough_test.dart' show reveal, tapText, wait;
 import '../helpers.dart';
 import 'generated/s9_sandbox/s9_ep01.g.dart';
 import 'sandbox_season.dart';
+import '../reading_finders.dart';
 
 /// STEP 3-8: the sandbox case "The Lost Library Key", made by the Dart
 /// generator from its plans (`content_pipeline/seasons/s9_sandbox/`), read
@@ -203,7 +204,7 @@ void main() {
       expect(t.getTopLeft(solvedPin), isNot(t.getTopLeft(currentPin)), reason: 'the solved mark steps aside');
       await toPuzzle(m2);
       for (final id in Mission.sequenceIds(m2.answer)) {
-        final tile = find.text(m2.options.firstWhere((o) => o.id == id).label).last;
+        final tile = findText(m2.options.firstWhere((o) => o.id == id).label).last;
         await t.tap(tile);
         await t.pump(const Duration(milliseconds: 150));
       }
@@ -231,7 +232,7 @@ void main() {
       // ── The final (letter_tile_lock): B, E, L, L — the two L tiles each placed once.
       await tapText(t, 'OPEN THE FINAL CASE', after: Duration.zero);
       await wait(t, const Duration(milliseconds: 2800));
-      expect(find.text(fin.question), findsWidgets, reason: texts());
+      expect(findText(fin.question), findsWidgets, reason: texts());
       expect(find.text('THE LIBRARY LOCK'), findsOneWidget, reason: "the plate names the case's own lock");
       expect(find.textContaining('CLOCKMAKER'), findsNothing);
       for (final letter in fin.answer.split('')) {

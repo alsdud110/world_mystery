@@ -19,6 +19,7 @@ import 'package:world_mystery/widgets/place_art.dart';
 import 'full_playthrough_test.dart' show hearTalk, reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case 02's reasoning chain: the stopped time (Mission 01) is the source
 /// clue; the detective reads Gallery 8 · Picture 17 out of it (Mission 03),
@@ -228,12 +229,12 @@ void main() {
         await reveal(t, find.text('SOLVE THE PUZZLE'));
         await t.tap(find.text('SOLVE THE PUZZLE'));
         await wait(t, const Duration(milliseconds: 900));
-        expect(find.text(m3.question), findsOneWidget);
+        expect(findText(m3.question), findsOneWidget);
         await capture(t, 'case02_m3_puzzle_$tag');
 
         // Every card shows whole, on one line, inside the screen.
         for (final o in m3.options) {
-          final label = find.text(o.label);
+          final label = findText(o.label);
           await reveal(t, label);
           final box = t.getRect(label);
           expect(box.left, greaterThanOrEqualTo(0), reason: o.label);
@@ -252,7 +253,7 @@ void main() {
         await capture(t, 'case02_m3_notebook_$tag');
         await t.tap(find.byTooltip('Close'));
         await wait(t, const Duration(milliseconds: 900));
-        expect(find.text(m3.question), findsOneWidget, reason: 'back on the puzzle');
+        expect(findText(m3.question), findsOneWidget, reason: 'back on the puzzle');
         await wait(t, const Duration(seconds: 2));
       });
 

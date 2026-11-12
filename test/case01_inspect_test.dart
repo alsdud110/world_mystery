@@ -17,6 +17,7 @@ import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case 01 Mission 02 played by examining Room 4's exhibits under a
 /// magnifying glass: the note pinned above ticks its lines as the exhibits
@@ -208,9 +209,9 @@ void main() {
         await play.openPuzzle(t, size, 'm02');
         // Before the slab: its plinth and label say nothing yet.
         await play.tapInspect(t, spot('plinth').areas.first.center);
-        expect(find.text(spot('plinth').lockedLine), findsOneWidget);
+        expect(findText(spot('plinth').lockedLine), findsOneWidget);
         await play.tapInspect(t, spot('label').areas.first.center);
-        expect(find.text(spot('label').lockedLine), findsOneWidget);
+        expect(findText(spot('label').lockedLine), findsOneWidget);
         expect(label(), findsNothing);
         // The glass dragged onto the mask, then lifted: what it shows.
         await play.dragGlass(t, scene.lensAt, spot('mask').areas.first.center);
@@ -246,11 +247,11 @@ void main() {
         // The plinth now: the golden key (optional).
         await play.tapInspect(t, spot('plinth').areas.first.center);
         expect(card('plinth'), findsOneWidget);
-        expect(find.text(spot('plinth').title), findsOneWidget);
+        expect(findText(spot('plinth').title), findsOneWidget);
         expect(find.byWidgetPredicate((w) => w is InkIcon && w.glyph == InkGlyph.key), findsOneWidget);
         // ROOM 4 (the final lock's number) and the tag naming the next stop,
         // read where the key is found (2026-10-23, approved).
-        expect(find.text(spot('plinth').line), findsOneWidget);
+        expect(findText(spot('plinth').line), findsOneWidget);
         expect(spot('plinth').line, allOf(contains('ROOM 4'), contains("My next stop is where London's biggest bell rings.")));
         expect(t.takeException(), isNull, reason: '$tag: the key card fits');
         neverTheWord(t, 'the key');

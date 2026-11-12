@@ -38,6 +38,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 02 — The Vanishing Painter: its thirteen pictures, its
 /// story and puzzles as the pictures show them, its rules (unlock, saves,
@@ -676,7 +677,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget);
           await shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(Offset(size.width / 2, size.height / 2)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -715,16 +716,16 @@ void main() {
         await shot('m1_painting');
         // A tap on nothing changed: never wrong, a line to read the note again.
         await tapOn('compare-picture-painted', const Offset(0.62, 0.52));
-        expect(find.text(compare.missLine), findsOneWidget);
+        expect(findText(compare.missLine), findsOneWidget);
         // Read, it goes, the pictures clear again.
         await wait(t, const Duration(milliseconds: 3000));
-        expect(find.text(compare.missLine), findsNothing, reason: 'the line clears by itself');
+        expect(findText(compare.missLine), findsNothing, reason: 'the line clears by itself');
         // Above the red door, on the street's picture: the clock, ringed on both.
         await tapOn('compare-picture-real', compare.changes[0].area.center);
         expect(find.byKey(const ValueKey('found-clock')), findsOneWidget);
         expect(find.byKey(const ValueKey('found-clock-real')), findsOneWidget);
         await shot('m1_street');
-        expect(find.text(compare.foundLines['clock']!), findsOneWidget);
+        expect(findText(compare.foundLines['clock']!), findsOneWidget);
         expect(examined(), contains('s2_ep02_m1:clock'));
         // Out and back in: it opens as it was left.
         router.go(Routes.map);
@@ -753,7 +754,7 @@ void main() {
         await shot('m2_studio');
         // The desk before the paintings: what to do first.
         await tapOn('studio-picture', studio.desk.areas.first.center);
-        expect(find.text(studio.deskFirstLine), findsOneWidget);
+        expect(findText(studio.deskFirstLine), findsOneWidget);
         for (final p in studio.paintings) {
           await tapOn('studio-picture', p.area.center);
           expect(find.byKey(ValueKey('studio-painting-${p.id}')), findsOneWidget, reason: p.id);
@@ -822,7 +823,7 @@ void main() {
         await shot('m3_paint');
         // Under the paint, nothing can be read yet.
         await tapOn('layer-picture', layer.marks[0].area.center);
-        expect(find.text(layer.paintLine), findsOneWidget);
+        expect(findText(layer.paintLine), findsOneWidget);
         expect(examined(), isNot(contains('s2_ep02_m3:lamp')));
         final slider = find.byKey(const ValueKey('layer-slider'));
         await reveal(t, slider);
@@ -882,7 +883,7 @@ void main() {
         await tapText(t, 'BACK TO THE STUDIO', after: const Duration(milliseconds: 700));
         expect(examined(), contains('s2_ep02_final:back'));
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-        expect(find.text(fin.transition.first), findsOneWidget);
+        expect(findText(fin.transition.first), findsOneWidget);
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 900));
         expect(find.text('He left on his own.'), findsOneWidget);

@@ -20,6 +20,7 @@ import 'package:world_mystery/widgets/place_art.dart';
 import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The six new pictures, each only where the story matches it:
 /// Gallery 8 (Case 03), the theatre auditorium (Case 11), Mrs Robin's
@@ -368,9 +369,9 @@ void main() {
       // A landmark choice keeps its names (Case 10: the name is made of two words).
       await toPuzzle('ep10_m3');
       for (final o in mission('ep10_m3').options) {
-        await reveal(t, find.text(o.label));
-        expect(find.text(o.label), findsOneWidget, reason: o.label);
-        expect(t.getRect(find.text(o.label)).bottom, lessThan(size.height));
+        await reveal(t, findText(o.label));
+        expect(findText(o.label), findsOneWidget, reason: o.label);
+        expect(t.getRect(findText(o.label)).bottom, lessThan(size.height));
       }
       await capture(t, 'choice_case10_m3_$tag');
 
@@ -380,7 +381,7 @@ void main() {
         await toPuzzle(id);
         expect(mission(id).hideOptionNames || id == 'ep07_m1', isTrue);
         for (final o in mission(id).options) {
-          expect(find.text(o.label), findsNothing, reason: '$id: ${o.label} would tell the answer');
+          expect(findText(o.label), findsNothing, reason: '$id: ${o.label} would tell the answer');
         }
         if (id == 'm04') await capture(t, 'choice_case01_m04_$tag');
       }

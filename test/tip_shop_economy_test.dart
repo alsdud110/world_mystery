@@ -31,6 +31,7 @@ import 'helpers.dart';
 import 'mission_play.dart';
 import 'rewarded_ad_gateway_test.dart' show FakeAdSdk, rewardedAdsOn;
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// GET A TIP and the coins: tip 1 free, tip 2 for coins (or free help when
 /// they are short), coins paid once per mission, XP rule 4, and saves from
@@ -347,7 +348,7 @@ void main() {
   group('Get More Hints on screen: the free hint at once, a paid one asks first', () {
     Finder inDialog(Finder f) =>
         find.descendant(of: find.byType(Dialog), matching: f);
-    Finder dialogText(String s) => inDialog(find.text(s));
+    Finder dialogText(String s) => inDialog(findText(s));
     final coins = find.byKey(const ValueKey('coin-balance'));
     final notebook = find.byTooltip('Detective notebook');
     int coinsShown(WidgetTester t) => int.parse(
@@ -380,7 +381,7 @@ void main() {
       );
       // The price is said once: nowhere else in the dialog.
       expect(
-        inDialog(find.textContaining('$price')),
+        inDialog(findTextContaining('$price')),
         findsOneWidget,
         reason: 'only the price row',
       );
@@ -407,7 +408,7 @@ void main() {
         'A Closer Look',
         'Back to the puzzle',
       ]) {
-        expect(find.text(gone), findsNothing, reason: gone);
+        expect(findText(gone), findsNothing, reason: gone);
       }
       final c = t.getRect(cancel), r = t.getRect(tipSheetButton);
       // (The test font is wider than the game's: at 1.3x they may stack; the
@@ -691,7 +692,7 @@ void main() {
         await wait(t, const Duration(milliseconds: 300));
         await tapText(t, 'Get a Free Hint', after: const Duration(milliseconds: 600));
         await press(t, find.text('Get More Hints'));
-        expect(find.text('Not enough coins! You have $left ${left == 1 ? 'coin' : 'coins'}.'), findsOneWidget);
+        expect(findText('Not enough coins! You have $left ${left == 1 ? 'coin' : 'coins'}.'), findsOneWidget);
         expect(find.text('GET COINS'), findsOneWidget);
         expect(find.text('GET MORE HINTS'), findsNothing);
         await t.tap(find.text('GET COINS'));
@@ -916,7 +917,7 @@ void main() {
           await t.pump(const Duration(milliseconds: 50));
         }
       }
-      final open = find.text(
+      final open = findText(
         f.scene == Artwork.royalBox ? 'OPEN THE BOX' : 'UNLOCK',
       );
       await reveal(t, open);

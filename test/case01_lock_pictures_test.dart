@@ -23,6 +23,7 @@ import 'package:world_mystery/widgets/symbol_icon.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case 01's Royal Box lock pictures (2026-10-19): four full-colour drawings
 /// delivered by the user — a pocket watch, a steam train, a swan, the Rosetta
@@ -178,7 +179,7 @@ void main() {
       for (final s in order) {
         final image = t.widget<Image>(find.descendant(of: find.byKey(ValueKey('sequence-$s')), matching: find.byType(Image)));
         expect((image.image as AssetImage).assetName, RoyalBoxPicture.of(s)!.file);
-        expect(find.text(names[s]!), findsOneWidget);
+        expect(findText(names[s]!), findsOneWidget);
       }
       expect(find.textContaining(RegExp(r'\d')), findsNothing, reason: 'no numbers by the pictures');
       final semantics = t.ensureSemantics();
@@ -248,7 +249,7 @@ void main() {
         // its blank map paper (never a picture: its swans are its words, the
         // Royal Box's number).
         for (final (name, file) in [('Old Letter', ArtAssets.objects['letter']), ('Golden Key', ArtAssets.objects['key'])]) {
-          final other = find.descendant(of: find.ancestor(of: find.text(name), matching: find.byType(EvidenceTile)), matching: sized);
+          final other = find.descendant(of: find.ancestor(of: findText(name), matching: find.byType(EvidenceTile)), matching: sized);
           expect(asset(other), file, reason: name);
         }
         final mapTile = find.ancestor(of: find.text('London Map'), matching: find.byType(EvidenceTile));
@@ -295,7 +296,7 @@ void main() {
           expect(image.fit, BoxFit.contain);
           expect(image.color, isNull, reason: 'never tinted');
           expect(t.getRect(find.descendant(of: lock, matching: find.byType(Image))).width, greaterThanOrEqualTo(48));
-          final name = find.descendant(of: lock, matching: find.text(names[s]!));
+          final name = find.descendant(of: lock, matching: findText(names[s]!));
           expect(name, findsOneWidget, reason: names[s]);
           expect(t.renderObject<RenderParagraph>(name).didExceedMaxLines, isFalse);
           // The picture above its wheel.
@@ -373,8 +374,8 @@ void main() {
       expect(find.byType(SymbolBadge), findsNWidgets(2));
       // Titles, notes and numbers as they are.
       for (final c in ep01.allClues) {
-        expect(find.text('"${c.title}"'), findsOneWidget, reason: c.id);
-        expect(find.text(c.value), findsWidgets, reason: c.id);
+        expect(findText('"${c.title}"'), findsOneWidget, reason: c.id);
+        expect(findText(c.value), findsWidgets, reason: c.id);
       }
       await capture(t, 'case01_clue_cards');
     });

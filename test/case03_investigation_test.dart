@@ -22,6 +22,7 @@ import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart' show findReadable, findReadableContaining, tipSheetButton;
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Wave 1 / 1.1 — Case 03 M1 (Gallery 8) is played as a search: the guard's report
 /// says where each thing is; the detective finds the red button under the
@@ -179,7 +180,7 @@ void main() {
   });
 
   Finder line(String text) => findReadableContaining(text);
-  Finder counter(int n) => find.descendant(of: find.byKey(const ValueKey('found-count')), matching: find.text('FOUND $n / 3'), matchRoot: true);
+  Finder counter(int n) => find.descendant(of: find.byKey(const ValueKey('found-count')), matching: findText('FOUND $n / 3'), matchRoot: true);
   final card = find.byWidgetPredicate(
     (w) => w.key is ValueKey<String> && (w.key! as ValueKey<String>).value.startsWith('find-card-'),
     description: 'a find card',
@@ -302,7 +303,7 @@ void main() {
         final play = MissionPlay();
         await play.openPuzzle(t, size, 'ep03_m1');
         expect(findReadableContaining(scene.tapGuide), findsOneWidget);
-        expect(find.text(scene.zoomGuide), findsOneWidget);
+        expect(findText(scene.zoomGuide), findsOneWidget);
         expect(findReadable(scene.task), findsOneWidget);
         expect(find.text('GALLERY 8'), findsOneWidget);
         expect(titleCut(t), isFalse);
@@ -352,7 +353,7 @@ void main() {
         expect(card, findsOneWidget);
         await wait(t, const Duration(milliseconds: 400));
         expect(find.text('WET FOOTPRINT'), findsOneWidget);
-        expect(find.text(thing('footprint').foundLine), findsOneWidget);
+        expect(findText(thing('footprint').foundLine), findsOneWidget);
         expect(find.textContaining('XP'), findsNothing, reason: 'the card is the find, not the reward');
         expect(find.textContaining('coin', findRichText: true), findsNothing);
         expect(counter(1), findsOneWidget);
@@ -615,7 +616,7 @@ void main() {
       await play.openPuzzle(t, const Size(360, 640), 'ep03_m1', textScale: 1.3);
       final screen = Offset.zero & const Size(360, 640);
       expect(screen.contains(t.getRect(tapLine).bottomCenter), isTrue, reason: 'tap the picture');
-      expect(screen.contains(t.getRect(find.text(scene.zoomGuide)).bottomCenter), isTrue, reason: 'pinch');
+      expect(screen.contains(t.getRect(findText(scene.zoomGuide)).bottomCenter), isTrue, reason: 'pinch');
       expect(titleCut(t), isFalse, reason: 'GALLERY 8 is never cut');
       expect(t.getRect(find.byKey(const ValueKey('investigation-picture'))).height, greaterThan(150));
       await shot(t, 'case03_m1_search_360x640_text13');
@@ -633,7 +634,7 @@ void main() {
       await tapText(t, 'BACK TO THE SEARCH', after: const Duration(milliseconds: 500));
       await t.tap(find.byTooltip('Back'));
       await wait(t, const Duration(milliseconds: 1700));
-      await reveal(t, find.text(scene.startLabel));
+      await reveal(t, findText(scene.startLabel));
       await shot(t, 'case03_m1_arrival_360x640_text13');
       expect(t.takeException(), isNull);
     });

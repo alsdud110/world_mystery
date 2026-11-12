@@ -17,6 +17,7 @@ import 'package:world_mystery/widgets/place_art.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The story scene after each mission shows the place it unlocks: its own
 /// picture, or the London map for a place pinned at another landmark.
@@ -102,7 +103,7 @@ void main() {
           expect(full, findsOneWidget);
           expect(t.getRect(full), Offset.zero & size, reason: 'the place fills the screen');
         }
-        expect(find.text(next.location), findsOneWidget, reason: 'the unlocked card');
+        expect(findText(next.location), findsOneWidget, reason: 'the unlocked card');
         // Season 1 greets the detective under MISSION COMPLETE, as always.
         expect(find.byKey(const ValueKey('scene-greeting')), findsOneWidget);
         expect(find.text('Great work, Detective MINYOUNG.'), findsOneWidget);

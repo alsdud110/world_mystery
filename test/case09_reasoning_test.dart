@@ -19,6 +19,7 @@ import 'package:world_mystery/widgets/letter_card.dart';
 import 'full_playthrough_test.dart' show reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case 09's final asks "whose": R.'s note says the jewel is in the thing of
 /// "the one whose key you used". Anna used the key, but it was the guard's
@@ -245,7 +246,7 @@ void main() {
       await type('hat');
       await wait(t, const Duration(milliseconds: 3500));
       expect(find.text('CASE SOLVED'), findsOneWidget);
-      expect(find.text(fin.successMessage), findsOneWidget);
+      expect(findText(fin.successMessage), findsOneWidget);
       await capture(t, 'ep09_final_solved_390x844');
       await wait(t, const Duration(seconds: 2));
     });

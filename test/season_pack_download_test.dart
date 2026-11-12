@@ -22,6 +22,7 @@ import 'package:world_mystery/data/models/game_progress.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// A pack file for [bytes] (its object named by their SHA-256).
 SeasonPackFile _file(String name, List<int> bytes) =>
@@ -519,7 +520,7 @@ void main() {
     testWidgets('asks first with the season and its size; Not now downloads nothing', (tester) async {
       await openDialog(tester);
       expect(find.text('Download Seoul?'), findsOneWidget);
-      expect(find.textContaining(size), findsWidgets);
+      expect(findTextContaining(size), findsWidgets);
       expect(find.textContaining('On mobile data, this download uses your data plan.'), findsOneWidget);
       await tester.tap(find.text('Not now'));
       await tester.pumpAndSettle();

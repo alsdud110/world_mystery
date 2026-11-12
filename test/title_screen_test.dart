@@ -18,6 +18,7 @@ import 'package:world_mystery/widgets/ink_icon.dart';
 
 import 'full_playthrough_test.dart' show reveal, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// The title screen: the detective's study, the title centred in the
 /// window's evening sky (clear of the moon and the ship), the harbour left
@@ -73,11 +74,11 @@ void main() {
 
       // One subtitle: the invitation for a new player, the greeting for one coming back.
       final subtitle = save ? 'Welcome back, Detective MINYOUNG!' : 'Become a Detective.';
-      expect(find.text(save ? 'Become a Detective.' : 'Welcome back, Detective MINYOUNG!'), findsNothing);
+      expect(findText(save ? 'Become a Detective.' : 'Welcome back, Detective MINYOUNG!'), findsNothing);
       final (moon, ship) = _skyMarks(size);
       for (final s in ['WORLD', 'MYSTERY', subtitle]) {
-        expect(find.text(s), findsOneWidget);
-        final ink = _inkRect(t.renderObject<RenderParagraph>(find.text(s)));
+        expect(findText(s), findsOneWidget);
+        final ink = _inkRect(t.renderObject<RenderParagraph>(findText(s)));
         // Centred on the page, like the cover's title (within the letter
         // spacing after the last letter, or the space where a line wraps).
         expect(ink.center.dx, closeTo(size.width / 2, 3), reason: '$s centred');
@@ -88,12 +89,12 @@ void main() {
       expect(find.text('THE CASEBOOK OF'), findsNothing, reason: 'the name alone, under the cap');
       // The two title words never break mid-word, whatever the text size.
       for (final word in ['WORLD', 'MYSTERY']) {
-        final para = t.renderObject<RenderParagraph>(find.text(word));
+        final para = t.renderObject<RenderParagraph>(findText(word));
         expect(para.didExceedMaxLines, isFalse, reason: word);
         expect(para.getBoxesForSelection(TextSelection(baseOffset: 0, extentOffset: word.length)).map((b) => b.top).toSet().length, 1,
             reason: '$word on one line');
       }
-      final cta = find.text(save ? 'CONTINUE ADVENTURE' : 'START ADVENTURE');
+      final cta = findText(save ? 'CONTINUE ADVENTURE' : 'START ADVENTURE');
       expect(cta, findsOneWidget);
       expect(t.widget<GameButton>(find.ancestor(of: cta, matching: find.byType(GameButton))).style, GameButtonStyle.parchment);
       final button = t.getRect(find.ancestor(of: cta, matching: find.byType(GestureDetector)).first);
@@ -101,12 +102,12 @@ void main() {
       expect(button.top, greaterThan(size.height * 0.7), reason: 'below the desk things, not over the window');
       // The greeting stands with the way in: just above the button, apart
       // from it, and the middle of the page (the window) is left clear.
-      final greeting = _inkRect(t.renderObject<RenderParagraph>(find.text(subtitle)));
+      final greeting = _inkRect(t.renderObject<RenderParagraph>(findText(subtitle)));
       expect(greeting.bottom, lessThanOrEqualTo(button.top - AppSpace.sm), reason: 'above the button, not on it');
       expect(button.top - greeting.bottom, lessThan(AppSpace.xxl), reason: 'it belongs to the button');
       final title = _inkRect(t.renderObject<RenderParagraph>(find.text('MYSTERY')));
       expect(greeting.top - title.bottom, greaterThan(size.height * 0.3), reason: 'the harbour in between, nothing on it');
-      expect(t.renderObject<RenderParagraph>(find.text(subtitle)).didExceedMaxLines, isFalse, reason: 'whole, in two lines at most');
+      expect(t.renderObject<RenderParagraph>(findText(subtitle)).didExceedMaxLines, isFalse, reason: 'whole, in two lines at most');
       if (save) {
         // Starts the whole adventure over (behind its question), not a case.
         expect(find.text('NEW ADVENTURE'), findsOneWidget);
@@ -148,7 +149,7 @@ void main() {
       await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 600)));
       await wait(t);
       expect(t.takeException(), isNull, reason: 'no overflow');
-      final text = find.text('Welcome back, Detective $name!');
+      final text = findText('Welcome back, Detective $name!');
       final para = t.renderObject<RenderParagraph>(text);
       expect(para.didExceedMaxLines, isFalse, reason: 'the whole name shows');
       final lines = para.getBoxesForSelection(TextSelection(baseOffset: 0, extentOffset: para.text.toPlainText().length))
@@ -239,7 +240,7 @@ void main() {
         await wait(t, at - elapsed);
         elapsed = at;
         for (final s in ui) {
-          final f = find.text(s);
+          final f = findText(s);
           expect(f, findsOneWidget, reason: '$s at $name');
           // Painted after (above) the painting and everything that moves with it.
           final text = t.renderObject(f);
@@ -279,7 +280,7 @@ void main() {
       await wait(t);
       expect(t.takeException(), isNull, reason: 'no overflow');
       for (final s in ['LONDON DETECTIVE AGENCY', 'Create Your Detective', 'Who will take\nthe case?', 'Your Detective Name']) {
-        expect(find.text(s), findsOneWidget, reason: s);
+        expect(findText(s), findsOneWidget, reason: s);
       }
       // London at night is behind the form, not a plain page.
       expect(

@@ -23,6 +23,7 @@ import '../../tool/season_packs/season_manifests.dart' show appOnlySeasonFiles;
 import '../full_playthrough_test.dart' show tapText, wait;
 import '../helpers.dart' show findReadableContaining;
 import 'single_case.dart';
+import '../reading_finders.dart';
 
 /// Seoul Case 01 V4, The King's Secret Letters (docs/SEOUL_CASE01_V4_GAME_DESIGN.md):
 /// Bun-i's letter to her mother. M1 finds what she wants to say, M2 how
@@ -233,7 +234,7 @@ void main() {
             expect(r.width >= 48 && r.height >= 48 && r.left >= 0 && r.right <= 320, isTrue, reason: '${l.id}: $r');
           }
           for (final p in spec.pictures) {
-            expect(find.text(p.name), findsOneWidget, reason: p.id);
+            expect(findText(p.name), findsOneWidget, reason: p.id);
           }
           expect(find.text('?'), findsNWidgets(3));
           expect(t.widget<GestureDetector>(find.descendant(of: find.byKey(const ValueKey('shape-check')), matching: find.byType(GestureDetector)).first).onTap, isNull, reason: 'CHECK waits for every picture');
@@ -262,7 +263,7 @@ void main() {
       expect(find.byKey(const ValueKey('shape-check')), findsNothing);
       expect(find.byKey(const ValueKey('shape-letter-mieum')), findsNothing);
       for (final g in ['ㅁ', 'ㄴ', 'ㅇ']) {
-        expect(find.text(g), findsOneWidget, reason: g);
+        expect(findText(g), findsOneWidget, reason: g);
       }
     });
   });
@@ -325,7 +326,7 @@ void main() {
       await t.tap(find.byKey(const ValueKey('case-talk-finish')));
       await wait(t, const Duration(milliseconds: 1500));
       for (final paper in papers) {
-        expect(find.text(paper), findsWidgets, reason: paper);
+        expect(findText(paper), findsWidgets, reason: paper);
       }
 
       // 미안해요 refused with its line, then the letter.
@@ -405,7 +406,7 @@ void main() {
       await t.tap(find.bySemanticsLabel('GO TO ${m.location}'));
       await wait(t, const Duration(milliseconds: 2800));
       for (final step in ['INVESTIGATE', 'TAP TO OPEN', 'SOLVE THE PUZZLE']) {
-        if (find.text(step).evaluate().isNotEmpty) await tapText(t, step, after: const Duration(milliseconds: 1500));
+        if (findText(step).evaluate().isNotEmpty) await tapText(t, step, after: const Duration(milliseconds: 1500));
       }
       await p.answer(m);
       expect(c.read(gameControllerProvider).isCompleted(m.id), isTrue, reason: m.id);

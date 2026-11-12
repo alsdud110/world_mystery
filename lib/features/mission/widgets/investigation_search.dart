@@ -142,6 +142,9 @@ class _InvestigationArrivalState extends ConsumerState<InvestigationArrival> wit
                                   padding: EdgeInsets.only(top: i == 0 ? 0 : AppSpace.sm),
                                   child: GlossaryText(
                                     line,
+                                    // As written: with the report under them, the lines
+                                    // must stay on one small screen (no extra breaks).
+                                    asWritten: true,
                                     textAlign: TextAlign.center,
                                     linkColor: AppColors.goldLight,
                                     style: AppText.bodyText(size: 17, color: AppColors.paperLight),

@@ -16,6 +16,7 @@ import 'package:world_mystery/widgets/landmark_art.dart';
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The story intro of every case: its narration over the place it opens on
 /// (or the London map), the I'M READY button in the game's cinematic style.
@@ -116,7 +117,7 @@ void main() {
         await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 600))); // and decoded
         await wait(t, const Duration(milliseconds: 1000));
         expect(t.takeException(), isNull);
-        expect(find.text(e.intro.first), findsOneWidget, reason: 'its own first line');
+        expect(findText(e.intro.first), findsOneWidget, reason: 'its own first line');
         // The place behind the words: its picture, or the London map.
         if (e.introScene != null) {
           expect(find.byWidgetPredicate((w) => w is LandmarkArt && w.artwork == e.introScene), findsOneWidget);

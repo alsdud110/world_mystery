@@ -17,6 +17,7 @@ import 'package:world_mystery/features/game/game_providers.dart'
 import 'helpers.dart';
 import 'parent_gate_test.dart' show gateAnswer;
 import 'full_playthrough_test.dart' show wait, reveal, goToTime, tapRoomSpot, tapStationSpot, readBigBenBase, examineCrownCard;
+import 'reading_finders.dart';
 
 // Visual review tour: LM_TOUR=<folder> flutter test test/ui_tour_test.dart
 final _dir = Platform.environment['LM_TOUR'];
@@ -42,8 +43,8 @@ Future<void> tapText(
   String text, {
   Duration after = const Duration(milliseconds: 800),
 }) async {
-  await reveal(t, find.text(text));
-  await t.tap(find.text(text).last);
+  await reveal(t, findText(text));
+  await t.tap(findText(text).last);
   await wait(t, after);
 }
 

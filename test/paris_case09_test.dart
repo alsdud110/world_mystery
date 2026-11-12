@@ -40,6 +40,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 09 — The Clockwork Garden: its eight pictures (as
 /// delivered), its story and puzzles as the spec says them, its rules
@@ -654,7 +655,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget, reason: '$name: its Discovery Moment');
           await shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(Offset(size.width / 2, size.height / 2)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -684,7 +685,7 @@ void main() {
         expect(find.byKey(const ValueKey('intro-picture')), findsOneWidget);
         expect(find.byKey(const ValueKey('intro-picture-garden')), findsOneWidget, reason: 'walked in: the garden');
         expect(find.byKey(const ValueKey('garden-clock-cover')), findsWidgets, reason: 'the garden clock at four');
-        expect(find.text('The same bag was here. But why?'), findsOneWidget);
+        expect(findText('The same bag was here. But why?'), findsOneWidget);
         await shot('opening');
         await tapText(t, "I'M READY", after: const Duration(milliseconds: 1600));
 
@@ -719,7 +720,7 @@ void main() {
         expect(find.text('Look for a big arch.'), findsOneWidget);
         expect(find.byKey(const ValueKey('trial-model-t1')), findsOneWidget, reason: 'back in the box');
         await lay('t3', 'notreDame');
-        expect(find.text('Notre-Dame has two towers. Find one tall spire.'), findsOneWidget);
+        expect(findText('Notre-Dame has two towers. Find one tall spire.'), findsOneWidget);
         expect(ref.read(gameControllerProvider).wrongCount(m1.id), 0, reason: 'a clock sent back costs nothing');
         await shot('m1_wrong');
         await lay('t1', 'arcDeTriomphe');
@@ -758,7 +759,7 @@ void main() {
         expect(ref.read(gameControllerProvider).wrongCount(m2.id), 0);
         await shot('m2_one');
         await fit(GearSize.small, 'slot2');
-        expect(find.text(gears.turningLine), findsOneWidget);
+        expect(findText(gears.turningLine), findsOneWidget);
         await shot('m2_turning');
         await finish(m2.transition.first, 'm2', settle: const Duration(milliseconds: 5800));
         expect(ref.read(gameControllerProvider).isCompleted(m2.id), isTrue);
@@ -776,11 +777,11 @@ void main() {
         await shot('m3_marks');
         // The paper tapped first: pick a notebook mark first.
         await tapKey('marks-paper-emblem');
-        expect(find.text(marks.pickFirst), findsOneWidget);
+        expect(findText(marks.pickFirst), findsOneWidget);
         // The two hands to the key: said why, nothing joined.
         await tapKey('marks-card-b');
         await tapKey('marks-paper-key');
-        expect(find.text('That is a key. Look for two hands.'), findsOneWidget);
+        expect(findText('That is a key. Look for two hands.'), findsOneWidget);
         expect(ref.read(gameControllerProvider).wrongCount(m3.id), 0);
         await tapKey('marks-paper-repair');
         await tapKey('marks-card-a');
@@ -804,7 +805,7 @@ void main() {
         await tapKey('tower-forward');
         expect(find.text('5:00'), findsOneWidget);
         await tapKey('tower-test');
-        expect(find.text('That is one hour forward. Go back.'), findsOneWidget);
+        expect(findText('That is one hour forward. Go back.'), findsOneWidget);
         expect(ref.read(gameControllerProvider).wrongCount(fin.id), 0);
         await tapKey('tower-back');
         await tapKey('tower-back');
@@ -827,7 +828,7 @@ void main() {
         expect(ref.read(gameControllerProvider).isCaseSolved, isFalse, reason: 'the star closes the case');
         expect(find.text('CASE SOLVED'), findsNothing);
         await reveal(t, find.byKey(const ValueKey('final-follow-star')));
-        expect(find.text(tower.afterLines.first), findsOneWidget, reason: 'a model shows what could happen');
+        expect(findText(tower.afterLines.first), findsOneWidget, reason: 'a model shows what could happen');
         expect(find.textContaining('Arc de Triomphe'), findsNothing, reason: 'no place named before the star is followed');
         await shot('fin_solved');
 
@@ -836,7 +837,7 @@ void main() {
         expect(find.byKey(const ValueKey('star-tag')), findsOneWidget);
         expect(find.text('TRIAL RECORDS · KEPT AT THE STAR'), findsOneWidget);
         await tapKey('star-model-t2');
-        expect(find.text(tower.lead.otherLine), findsOneWidget);
+        expect(findText(tower.lead.otherLine), findsOneWidget);
         expect(examined(), isNot(contains(starKey)));
         await tapKey('star-model-t1', after: const Duration(milliseconds: 1000));
         expect(find.byKey(const ValueKey('star-map-ring')), findsOneWidget);
@@ -847,7 +848,7 @@ void main() {
         expect(ref.read(gameControllerProvider).isCaseSolved, isTrue, reason: 'closed with the star');
         expect(find.text('CASE SOLVED'), findsOneWidget);
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-        expect(find.text(fin.transition.first), findsOneWidget);
+        expect(findText(fin.transition.first), findsOneWidget);
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 900));
         expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget);
@@ -909,7 +910,7 @@ void main() {
       await wait(t, const Duration(milliseconds: 2600));
       expect(findReadable(fin.letter), findsOneWidget, reason: "the spec's card");
       expect(findReadableContaining('one hour back'), findsOneWidget, reason: 'said once only');
-      expect(find.text(fin.question), findsNothing, reason: 'not asked before the test');
+      expect(findText(fin.question), findsNothing, reason: 'not asked before the test');
       expect(t.takeException(), isNull);
     });
 
@@ -965,7 +966,7 @@ void main() {
         ),
       ));
       await t.pump(const Duration(milliseconds: 400));
-      final line = find.text(gears.turningLine);
+      final line = findText(gears.turningLine);
       expect(line, findsOneWidget);
       expect(t.getSize(line).height, greaterThan(30), reason: 'two lines at this width');
       // Its row holds it whole: the tray row starts below its last line.

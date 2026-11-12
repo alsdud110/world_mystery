@@ -41,6 +41,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 08 — The Painter's Last Sketch: its twelve pictures (as
 /// delivered, measured), its story and puzzles as the Hidden Sketch, P.'s
@@ -618,7 +619,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget);
           await shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(Offset(size.width / 2, size.height / 2)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -741,7 +742,7 @@ void main() {
         await tapKey('sketch-card-bag');
         await tapKey('sketch-slot-2');
         await tapKey('sketch-check-order');
-        expect(find.text(sketches.lampLine), findsOneWidget);
+        expect(findText(sketches.lampLine), findsOneWidget);
         await shot('m2_lamp_line');
         // Every one back to the table, then the lamp last but the sky the
         // wrong way round.
@@ -753,7 +754,7 @@ void main() {
           await tapKey('sketch-slot-$i');
         }
         await tapKey('sketch-check-order');
-        expect(find.text(sketches.skyLine), findsOneWidget);
+        expect(findText(sketches.skyLine), findsOneWidget);
         await tapKey('sketch-slot-0');
         await tapKey('sketch-slot-1');
         await tapKey('sketch-card-dark');
@@ -761,7 +762,7 @@ void main() {
         await tapKey('sketch-card-bag');
         await tapKey('sketch-slot-1');
         await tapKey('sketch-check-order');
-        expect(find.text(sketches.orderedLine), findsOneWidget);
+        expect(findText(sketches.orderedLine), findsOneWidget);
         expect(ref.read(gameControllerProvider).wrongCount(m2.id), 0, reason: 'putting them in order costs nothing');
         // Laid over each other: drawing 1 and 2.
         expect(find.byKey(const ValueKey('sketch-overlay')), findsOneWidget);
@@ -812,7 +813,7 @@ void main() {
         const paper = Rect.fromLTRB(65, 85, 1460, 915);
         Future<void> tapPaper(Offset at) => tapPicture('slip-torn', at, crop: paper);
         await tapPaper(const Offset(1380, 600));
-        expect(find.text('The opera slip is not torn. Is this the same?'), findsOneWidget);
+        expect(findText('The opera slip is not torn. Is this the same?'), findsOneWidget);
         for (final at in const [Offset(125, 500), Offset(400, 200), Offset(1050, 470)]) {
           await tapPaper(at);
         }
@@ -851,10 +852,10 @@ void main() {
         finger('place-lay');
         await shot('fin_place');
         await tapKey('place-lay');
-        expect(find.text(hour.tearLine), findsOneWidget);
+        expect(findText(hour.tearLine), findsOneWidget);
         await tapKey('place-turn');
         await tapKey('place-lay');
-        expect(find.text(hour.sealLine), findsOneWidget);
+        expect(findText(hour.sealLine), findsOneWidget);
         await tapKey('place-turn');
         expect(find.byKey(const ValueKey('place-paper-0')), findsOneWidget, reason: 'the right way round now');
         await tapKey('place-lay', after: const Duration(milliseconds: 800));
@@ -901,10 +902,10 @@ void main() {
         // The final's page stays under it, out of reach, its solve line
         // never read over the drawing.
         expect(find.byKey(const ValueKey('final-last-drawing')).hitTestable(), findsNothing);
-        expect(find.text(fin.transition.first), findsNothing, reason: 'the story after the case has not started');
+        expect(findText(fin.transition.first), findsNothing, reason: 'the story after the case has not started');
         expect(garden, findsNothing);
         await tapPicture('lead-drawing', const Offset(1170, 770));
-        expect(find.text('That is a round basket. The bag in your notebook is flat.'), findsOneWidget);
+        expect(findText('That is a round basket. The bag in your notebook is flat.'), findsOneWidget);
         expect(find.text('Found 0 of 3'), findsOneWidget, reason: 'the basket is not part of the bag');
         await tapPicture('lead-drawing', const Offset(523, 494));
         await tapPicture('lead-drawing', const Offset(560, 540));
@@ -933,7 +934,7 @@ void main() {
         expect(ref.read(gameControllerProvider).isCaseSolved, isTrue, reason: 'closed with the last drawing');
         expect(find.text('CASE SOLVED'), findsOneWidget);
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-        expect(find.text(fin.transition.first), findsOneWidget);
+        expect(findText(fin.transition.first), findsOneWidget);
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 900));
         expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: 'the last drawing');

@@ -20,6 +20,7 @@ import 'package:world_mystery/widgets/landmark_art.dart';
 
 import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Phase 4 polish: the solved Case 02 clock, a disabled Undo that looks
 /// disabled, and "OPEN CASE NN" landing on that case in the case files.
@@ -174,7 +175,7 @@ void main() {
       await tapText(t, 'OPEN CASE 02', after: const Duration(milliseconds: 1200));
 
       expect(pathOf(ref), Routes.season, reason: 'the investigation board');
-      expect(find.text(ep02.title), findsOneWidget, reason: 'Case 02 is the current case');
+      expect(findText(ep02.title), findsOneWidget, reason: 'Case 02 is the current case');
       expect(find.text('BEGIN INVESTIGATION'), findsOneWidget);
       await tapText(t, 'BEGIN INVESTIGATION', after: const Duration(milliseconds: 1200));
       expect(ref.read(currentEpisodeProvider).id, 'ep02');
@@ -196,8 +197,8 @@ void main() {
         ref.read(routerProvider).go(Routes.caseFile(ep07.id));
         await wait(t, const Duration(milliseconds: 1500));
         expect(pathOf(ref), Routes.caseFile(ep07.id));
-        expect(find.text(ep07.synopsis.first).hitTestable(), findsOneWidget, reason: 'the chosen case is on screen');
-        expect(find.text(ep07.title.toUpperCase()).hitTestable(), findsOneWidget, reason: 'its folder too');
+        expect(findText(ep07.synopsis.first).hitTestable(), findsOneWidget, reason: 'the chosen case is on screen');
+        expect(findText(ep07.title.toUpperCase()).hitTestable(), findsOneWidget, reason: 'its folder too');
         await tapText(t, 'BEGIN INVESTIGATION', after: const Duration(milliseconds: 1200));
         expect(ref.read(currentEpisodeProvider).id, ep07.id);
       });

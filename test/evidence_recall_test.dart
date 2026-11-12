@@ -34,6 +34,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// The Evidence Recall card: a mission played with evidence of an earlier
 /// case shows a card on its foot; the detective brings that evidence from
@@ -266,8 +267,8 @@ void main() {
         // The puzzle with the card on its foot, both on screen.
         expect(find.byKey(const ValueKey('rail-task')), findsOneWidget, reason: 'the puzzle');
         expect(find.byKey(const ValueKey('evidence-recall')), findsOneWidget);
-        expect(find.text(EvidenceRecall.defaultTitle), findsOneWidget);
-        expect(find.text(EvidenceRecall.defaultPrompt), findsOneWidget);
+        expect(findText(EvidenceRecall.defaultTitle), findsOneWidget);
+        expect(findText(EvidenceRecall.defaultPrompt), findsOneWidget);
         final card = t.getRect(find.byKey(const ValueKey('evidence-recall')));
         expect(card.bottom, lessThanOrEqualTo(size.height + 0.5));
         expect(t.getRect(find.byKey(const ValueKey('evidence-recall-open'))).height, greaterThanOrEqualTo(48), reason: 'finger-sized');
@@ -276,7 +277,7 @@ void main() {
 
         // The notebook's evidence opens; a wrong pick says why, and stays open.
         await tapKey(t, 'evidence-recall-open', after: const Duration(milliseconds: 700));
-        expect(find.text('Which clue fits? Tap it to bring it.'), findsOneWidget);
+        expect(findText('Which clue fits? Tap it to bring it.'), findsOneWidget);
         expect(find.byKey(const ValueKey('recall-pick-s2_ep01_e1')), findsOneWidget, reason: 'Case 01 is in the notebook');
         expect(find.byKey(const ValueKey('recall-pick-s2_ep07_e3')), findsNothing, reason: 'not found yet');
         await tapKey(t, 'recall-pick-s2_ep02_e1');
@@ -296,7 +297,7 @@ void main() {
 
         // The right one: the sheet closes and the sketch lies beside the puzzle.
         await tapKey(t, 'recall-pick-s2_ep02_e3', after: const Duration(milliseconds: 800));
-        expect(find.text('Which clue fits? Tap it to bring it.'), findsNothing);
+        expect(findText('Which clue fits? Tap it to bring it.'), findsNothing);
         expect(ref.read(gameControllerProvider).hasExamined(key), isTrue);
         expect(find.byKey(const ValueKey('evidence-recall-brought')), findsOneWidget);
         expect(find.byKey(const ValueKey('evidence-recall-picture')), findsOneWidget);

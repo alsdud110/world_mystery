@@ -22,6 +22,7 @@ import 'package:world_mystery/widgets/ink_icon.dart';
 import '../tool/asset_optimizer/image_file.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// The badge medal pictures (2026-10-19): one finished medal per badge,
 /// shown as it is when earned; the empty rosette, greyed, with a lock, for
@@ -158,7 +159,7 @@ void main() {
       expect(find.byWidgetPredicate((w) => w is InkIcon && w.glyph == GameBadge.puzzleSolver.glyph), findsNothing);
       // Its name and description still say what is to discover.
       expect(find.text('Puzzle Solver'), findsOneWidget);
-      expect(find.text(GameBadge.puzzleSolver.description), findsOneWidget);
+      expect(findText(GameBadge.puzzleSolver.description), findsOneWidget);
     });
 
     testWidgets('a screen reader hears the name and the state, once', (t) async {
@@ -250,7 +251,7 @@ void main() {
     Finder sheetMedal() => find.byWidgetPredicate((w) => w is BadgeMedal && w.size == 132);
 
     /// [text] on the details sheet.
-    Finder onSheet(String text) => find.descendant(of: find.byType(BottomSheet), matching: find.text(text));
+    Finder onSheet(String text) => find.descendant(of: find.byType(BottomSheet), matching: findText(text));
 
     for (final width in const [360.0, 430.0, 768.0]) {
       for (final scale in const [1.0, 1.3]) {
@@ -290,13 +291,13 @@ void main() {
             // One-line and two-line names alike: every name starts the same
             // distance under its medal, every description at the same height.
             final cells = shown.skip(row).take(3).toList();
-            final nameTops = {for (final b in cells) t.getTopLeft(find.text(b.title)).dy.round()};
-            final textTops = {for (final b in cells) t.getTopLeft(find.text(b.shortDescription)).dy.round()};
+            final nameTops = {for (final b in cells) t.getTopLeft(findText(b.title)).dy.round()};
+            final textTops = {for (final b in cells) t.getTopLeft(findText(b.shortDescription)).dy.round()};
             expect(nameTops, hasLength(1), reason: 'row ${row ~/ 3}: names in line');
             expect(textTops, hasLength(1), reason: 'row ${row ~/ 3}: descriptions in line');
           }
           final gaps = {
-            for (final (i, b) in shown.indexed) (t.getTopLeft(find.text(b.title)).dy - rects[i].bottom).round(),
+            for (final (i, b) in shown.indexed) (t.getTopLeft(findText(b.title)).dy - rects[i].bottom).round(),
           };
           expect(gaps, hasLength(1), reason: 'the same space under every medal');
           // Each cell: one tap target, at least 48 dp.
@@ -337,20 +338,20 @@ void main() {
           // The short descriptions: never cut off, one or two lines alike in
           // every slot.
           final captionLines = {
-            for (final b in shown) (t.renderObject(find.text(b.shortDescription)) as RenderParagraph).maxLines,
+            for (final b in shown) (t.renderObject(findText(b.shortDescription)) as RenderParagraph).maxLines,
           };
           expect(captionLines, hasLength(1));
           for (final b in shown) {
-            expect((t.renderObject(find.text(b.shortDescription)) as RenderParagraph).didExceedMaxLines, isFalse, reason: b.name);
+            expect((t.renderObject(findText(b.shortDescription)) as RenderParagraph).didExceedMaxLines, isFalse, reason: b.name);
             // (Some are one and the same: First Clue, Puzzle Solver.)
             if (b.description != b.shortDescription) {
-              expect(find.text(b.description), findsNothing, reason: 'the whole description is on the details');
+              expect(findText(b.description), findsNothing, reason: 'the whole description is on the details');
             }
           }
 
           // The count, under the medals (the page scrolls on a short phone).
-          await t.scrollUntilVisible(find.text('3 / ${shown.length} badges'), 200, scrollable: badgePage());
-          expect(find.text('3 / ${shown.length} badges'), findsOneWidget);
+          await t.scrollUntilVisible(findText('3 / ${shown.length} badges'), 200, scrollable: badgePage());
+          expect(findText('3 / ${shown.length} badges'), findsOneWidget);
           expect(t.takeException(), isNull);
         });
       }
@@ -378,7 +379,7 @@ void main() {
         expect(find.descendant(of: sheetMedal(), matching: find.byWidgetPredicate((w) => w is InkIcon && w.glyph == InkGlyph.lock)), findsOneWidget);
         expect(find.text('LOCKED'), findsOneWidget);
         expect(onSheet(GameBadge.clockWatcher.description), findsOneWidget);
-        expect(find.text(GameBadge.clockWatcher.description), findsOneWidget, reason: 'the page shows the short one');
+        expect(findText(GameBadge.clockWatcher.description), findsOneWidget, reason: 'the page shows the short one');
         // Back closes it.
         await t.binding.handlePopRoute();
         await wait(t, const Duration(milliseconds: 600));

@@ -41,6 +41,7 @@ import '../tool/asset_optimizer/image_file.dart';
 import 'easy_play.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 07 — The Phantom Performance: its twenty-nine pictures
 /// (as delivered, measured), its story and puzzles as the strip, the
@@ -874,7 +875,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget);
           await shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(Offset(size.width / 2, size.height / 2)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -1056,7 +1057,7 @@ void main() {
         expect(examined(), containsAll(['s2_ep07_final:file3', 's2_ep07_final:placed', 's2_ep07_final:lit', 's2_ep07_final:slip-back']));
         await shot('final_solved');
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-        expect(find.text(fin.transition.first), findsOneWidget);
+        expect(findText(fin.transition.first), findsOneWidget);
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 900));
         expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: 'the sketch');

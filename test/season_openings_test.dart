@@ -17,6 +17,7 @@ import 'package:world_mystery/features/game/game_providers.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// The openings of the seasons made from their plans (Rome, New York):
 /// their words at each level, their own pictures, and the shared opening
@@ -136,12 +137,12 @@ void main() {
           final season = await pumpApp(t, id, level);
           final p = season.prologue;
           expect(appRef.read(routerProvider).routerDelegate.currentConfiguration.uri.toString(), Routes.prologue);
-          expect(find.text(season.city.toUpperCase()), findsOneWidget);
+          expect(findText(season.city.toUpperCase()), findsOneWidget);
           expect(shows(p.hero), isTrue, reason: 'its city, not London');
           expect(find.text('LONDON'), findsNothing);
           for (final (i, words) in scenes(p).indexed) {
             for (final line in words) {
-              expect(find.text(line), findsOneWidget, reason: 'scene ${i + 1}: $line');
+              expect(findText(line), findsOneWidget, reason: 'scene ${i + 1}: $line');
             }
             if (i == 1 || i == 2) {
               for (final f in p.pieces) {
@@ -152,7 +153,7 @@ void main() {
               await t.tap(find.text('NEXT ›'));
               await wait(t, const Duration(milliseconds: 2800));
             } else if (i == 4) {
-              expect(find.text(season.tagline), findsOneWidget);
+              expect(findText(season.tagline), findsOneWidget);
               await t.tap(find.text('ACCEPT THE CASE'));
               await wait(t, const Duration(milliseconds: 1800));
             }

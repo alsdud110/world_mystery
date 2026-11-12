@@ -8,6 +8,7 @@ import 'package:world_mystery/features/mission/widgets/answer_feedback.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// "Not quite!" as a paper slip: nearly square corners, an ink tab instead
 /// of the grey handle, its content and buttons as before; closes as before.
@@ -80,9 +81,9 @@ void main() {
           reason: 'the ink tab instead of the grey handle',
         );
         for (final s in ['Not quite!', 'TRY AGAIN', 'GET MORE HINTS']) {
-          expect(find.text(s), findsOneWidget);
+          expect(findText(s), findsOneWidget);
           expect(
-            t.getRect(find.text(s)).bottom,
+            t.getRect(findText(s)).bottom,
             lessThan(size.height),
             reason: '$s on screen',
           );

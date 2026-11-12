@@ -21,6 +21,7 @@ import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart' show findReadable, findReadableContaining, takeTipFromSheet;
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Wave 2 – 2.5 — Case 06 M1 (the Market Hall) is played by talking to its
 /// three witnesses. The mission is said first (find out what the stranger
@@ -223,9 +224,9 @@ void main() {
   final mark = find.byKey(const ValueKey('talk-mark'));
   final next = find.byKey(const ValueKey('talk-next'));
   Finder dotted() => find.bySemanticsLabel(RegExp('hold for meaning'));
-  Finder marked(String words) => find.descendant(of: mark, matching: find.text(words), matchRoot: true);
-  Finder line(String words) => find.descendant(of: next, matching: find.text(words), matchRoot: true);
-  Finder verdict(String words) => find.descendant(of: feedback, matching: find.text(words));
+  Finder marked(String words) => find.descendant(of: mark, matching: findText(words), matchRoot: true);
+  Finder line(String words) => find.descendant(of: next, matching: findText(words), matchRoot: true);
+  Finder verdict(String words) => find.descendant(of: feedback, matching: findText(words));
 
   /// No line of what two chosen show is inked as an error.
   void noErrorInk(WidgetTester t) {
@@ -301,7 +302,7 @@ void main() {
         expect(find.text('YOUR MISSION'), findsOneWidget);
         expect(findReadable(talk.goal), findsOneWidget);
         expect(findReadable(talk.how), findsOneWidget);
-        expect(find.text(talk.guide), findsOneWidget);
+        expect(findText(talk.guide), findsOneWidget);
         expect(find.text('TALK'), findsNWidgets(3), reason: 'every witness alike');
         for (final s in talk.speakers) {
           expect(inside(t.getRect(find.byKey(ValueKey('lineup-${s.id}')))), isTrue);
@@ -332,8 +333,8 @@ void main() {
         expect(find.descendant(of: compare, matching: find.text('COMPARE TWO STATEMENTS')), findsOneWidget);
         expect(line(d.readyLine), findsOneWidget);
         await openCompare(play, t);
-        expect(find.text(d.compareGoal), findsOneWidget);
-        expect(find.text(d.compareHow), findsOneWidget);
+        expect(findText(d.compareGoal), findsOneWidget);
+        expect(findText(d.compareHow), findsOneWidget);
         expect(yesNo, findsNothing, reason: 'no YES / NO: choosing two is the deciding');
         expect(story('flowerSeller.carry'), findsNothing, reason: 'none chosen for the detective');
         expect(find.bySemanticsLabel(RegExp('chosen')), findsNothing);
@@ -350,7 +351,7 @@ void main() {
         await play.tapKey(t, 'pick-flowerSeller.carry', after: const Duration(milliseconds: 400));
         expect(story('flowerSeller.carry'), findsOneWidget, reason: 'no tap counts while two are judged');
         expect(find.text('THE STORIES MATCH!'), findsOneWidget);
-        expect(find.text(d.matchLine), findsOneWidget);
+        expect(findText(d.matchLine), findsOneWidget);
         final view = t.getRect(find.byKey(const ValueKey('compare-sheet')));
         expect(t.getRect(find.byKey(const ValueKey('compare-match'))).top, lessThan(view.bottom), reason: 'the verdict in sight');
         await shot(t, 'case06_m1_w25_${tag}_4_match');
@@ -360,7 +361,7 @@ void main() {
         // One more thing: what he wore — asked for, never named.
         expect(marked('ONE MORE THING'), findsOneWidget);
         expect(line(d.thenHow), findsOneWidget);
-        expect(find.text(d.thenGoal), findsOneWidget, reason: 'the goal on top says it');
+        expect(findText(d.thenGoal), findsOneWidget, reason: 'the goal on top says it');
         expect(compare, findsNothing);
         await shot(t, 'case06_m1_w25_${tag}_5_one_more');
         await ask(play, t, 'flowerSeller', 'wearing');
@@ -372,7 +373,7 @@ void main() {
         // Recorded — a find, not a deduction, and not yet the end.
         expect(marked('DESCRIPTION RECORDED'), findsOneWidget);
         expect(line(d.doneLine), findsOneWidget);
-        expect(find.text(d.notesLine), findsOneWidget);
+        expect(findText(d.notesLine), findsOneWidget);
         expect(find.text('THE STORIES MATCH!'), findsNothing);
         await shot(t, 'case06_m1_w25_${tag}_6_grey_hat');
         await wait(t, const Duration(milliseconds: 3000));
@@ -704,8 +705,8 @@ void main() {
       expect(said, findsOneWidget);
       expect(find.descendant(of: said, matching: find.text('WHAT THE WITNESSES TOLD YOU')), findsOneWidget);
       for (final s in talk.recorded()) {
-        expect(find.descendant(of: said, matching: find.text('"${s.text}"')), findsWidgets, reason: s.id);
-        expect(find.descendant(of: said, matching: find.text(talk.speaker(s.speakerId).title)), findsWidgets);
+        expect(find.descendant(of: said, matching: findText('"${s.text}"')), findsWidgets, reason: s.id);
+        expect(find.descendant(of: said, matching: findText(talk.speaker(s.speakerId).title)), findsWidgets);
       }
       expect(find.descendant(of: said, matching: find.text('Heard at the Market Hall · Mission 1')), findsOneWidget);
       expect(find.descendant(of: said, matching: find.text('"He had a big red umbrella."')), findsNothing,

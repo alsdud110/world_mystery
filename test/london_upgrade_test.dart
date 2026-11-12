@@ -22,6 +22,7 @@ import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// London Case 02–12 gameplay upgrade (2026-10-30,
 /// docs/LONDON_GAMEPLAY_UPGRADE_PROGRESS.md): each puzzle played on its new
@@ -295,7 +296,7 @@ void main() {
           final play = MissionPlay();
           final m = await play.openPuzzle(t, size, 'ep12_m1', textScale: scale, level: level);
           for (final o in m.options) {
-            expect(find.text(o.label), findsNothing, reason: 'the gears are unnamed');
+            expect(findText(o.label), findsNothing, reason: 'the gears are unnamed');
           }
           Future<void> pick(String letter) async {
             final tile = find.bySemanticsLabel(RegExp('^Picture $letter: '));

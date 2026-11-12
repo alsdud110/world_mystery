@@ -15,6 +15,7 @@ import 'full_playthrough_test.dart' show hearTalk, reveal, tapText, wait;
 import 'helpers.dart' show findReadable, season1Cases;
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Post-discovery small pass: the joined map's card no longer names the
 /// final's spot (Case 07); the scene after a puzzle does not read the
@@ -152,7 +153,7 @@ void main() {
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 1200));
-        expect(find.text(m.transition.first), findsOneWidget);
+        expect(findText(m.transition.first), findsOneWidget);
         expect(find.textContaining('old gate'), findsNothing);
         await capture(t, 'pass_ep07_m3_scene_$tag');
         await tapText(t, 'TO THE MAP', after: const Duration(milliseconds: 1400));
@@ -216,8 +217,8 @@ void main() {
             // 9 / 13. Laid down once, after the lines, whole on screen.
             final card = find.byType(EvidenceChip);
             expect(card, findsOneWidget);
-            expect(find.text(name), findsOneWidget);
-            expect(find.text(writing), findsOneWidget);
+            expect(findText(name), findsOneWidget);
+            expect(findText(writing), findsOneWidget);
             await wait(t, const Duration(milliseconds: 800)); // still one after more frames
             expect(card, findsOneWidget);
             final r = t.getRect(card);
@@ -228,10 +229,10 @@ void main() {
             expect(t.getRect(cta).top, greaterThanOrEqualTo(r.bottom - 1), reason: 'card and button do not overlap');
             await capture(t, shot);
             // 11 / 15. Tap: it opens large, as in the notebook.
-            await t.tap(find.text(name));
+            await t.tap(findText(name));
             await wait(t, const Duration(milliseconds: 700));
             expect(findReadable(description), findsOneWidget);
-            expect(find.text(name), findsNWidgets(2), reason: 'the zoom over the scene');
+            expect(findText(name), findsNWidgets(2), reason: 'the zoom over the scene');
             await capture(t, '${shot}_zoom');
             await tapText(t, 'CLOSE', after: const Duration(milliseconds: 600));
             expect(findReadable(description), findsNothing);
@@ -255,7 +256,7 @@ void main() {
       await play.solve(t, m);
       await wait(t, const Duration(milliseconds: 2600));
       final state = play.ref.read(gameControllerProvider);
-      expect(find.text('+${XpBreakdown.of(m, state).total} XP   ·   +${WalletController.coinsFor(m)} COINS'), findsOneWidget);
+      expect(findText('+${XpBreakdown.of(m, state).total} XP   ·   +${WalletController.coinsFor(m)} COINS'), findsOneWidget);
       expect(state.isCompleted('ep10_m3'), isTrue, reason: 'saved before the moment');
       await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
       await wait(t, const Duration(seconds: 3));

@@ -25,6 +25,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// How to Play: once for a new detective, after registration and before the
 /// season's casebook; never by surprise for one already playing; again from
@@ -94,21 +95,21 @@ void main() {
     await pump(t);
     await register(t);
     expect(path(t), Routes.howToPlay, reason: 'straight after registration');
-    expect(find.text(titles.first), findsOneWidget);
+    expect(findText(titles.first), findsOneWidget);
     expect(find.bySemanticsLabel('Page 1 of 8'), findsOneWidget);
     // The opening spread: the game's name over London at night, the detective,
     // the welcome on its card.
     expect(find.text('WORLD'), findsOneWidget);
     expect(find.text('MYSTERY'), findsOneWidget);
     expect(
-        find.text("Your first mystery awaits. Let's find clues and solve mysteries in London!"),
+        findText("Your first mystery awaits. Let's find clues and solve mysteries in London!"),
         findsOneWidget,
         reason: 'the welcome under the greeting by name');
     expect(find.text("I'm your detective partner."), findsNothing, reason: 'the detective in the picture is the player');
     expect(find.bySemanticsLabel('Detective MinYoung'), findsOneWidget, reason: 'the picture, by the detective\'s name');
     for (var i = 1; i < titles.length; i++) {
       await next(t);
-      expect(find.text(titles[i]), findsOneWidget, reason: 'page ${i + 1}');
+      expect(findText(titles[i]), findsOneWidget, reason: 'page ${i + 1}');
       expect(find.bySemanticsLabel('Page ${i + 1} of 8'), findsOneWidget);
     }
     expect(find.text('SKIP'), findsNothing, reason: 'nothing to skip on the last page');
@@ -164,24 +165,24 @@ void main() {
     await register(t);
     await next(t);
     await next(t);
-    expect(find.text(titles[2]), findsOneWidget);
+    expect(findText(titles[2]), findsOneWidget);
     // Two taps in a row (the same spot) move one page, not two.
     final spot = t.getCenter(find.text('NEXT').hitTestable());
     await t.tapAt(spot);
     await t.pump(const Duration(milliseconds: 60));
     await t.tapAt(spot);
     await wait(t, const Duration(milliseconds: 450));
-    expect(find.text(titles[3]), findsOneWidget, reason: 'one page for a double tap');
+    expect(findText(titles[3]), findsOneWidget, reason: 'one page for a double tap');
     await t.tap(find.byTooltip('Back'));
     await wait(t, const Duration(milliseconds: 450));
-    expect(find.text(titles[2]), findsOneWidget);
+    expect(findText(titles[2]), findsOneWidget);
     // Android back: the page before, then (from the first) the title page.
     await t.binding.handlePopRoute();
     await wait(t, const Duration(milliseconds: 450));
-    expect(find.text(titles[1]), findsOneWidget);
+    expect(findText(titles[1]), findsOneWidget);
     await t.binding.handlePopRoute();
     await wait(t, const Duration(milliseconds: 450));
-    expect(find.text(titles[0]), findsOneWidget);
+    expect(findText(titles[0]), findsOneWidget);
     await t.binding.handlePopRoute();
     await wait(t, const Duration(milliseconds: 900));
     expect(path(t), Routes.start);
@@ -264,13 +265,13 @@ void main() {
     expect(find.text('Good detectives use hints.'), findsOneWidget);
     const hint1 = 'Read the letter again. What does Pip love?';
     const hint2 = 'Mrs Moss saw Pip next to the warm chimney. Where are chimneys?';
-    expect(find.text(hint1), findsNothing, reason: 'not before it is asked for');
+    expect(findText(hint1), findsNothing, reason: 'not before it is asked for');
     await reveal(t, find.text('GET A FREE HINT'));
     await t.tap(find.text('GET A FREE HINT'));
     await wait(t, const Duration(milliseconds: 500));
     final dialog = find.byType(TipShopCard);
     expect(dialog, findsNothing, reason: 'a free hint asks nothing');
-    expect(find.text(hint1), findsOneWidget, reason: 'hint 1 written on its card');
+    expect(findText(hint1), findsOneWidget, reason: 'hint 1 written on its card');
     expect(find.bySemanticsLabel('Practice coins: ${AppConstants.startCoins}'), findsOneWidget);
     await reveal(t, find.text('GET MORE HINTS'));
     await t.tap(find.text('GET MORE HINTS'));
@@ -282,12 +283,12 @@ void main() {
     await t.tap(find.descendant(of: dialog, matching: find.text('GET MORE HINTS')));
     await wait(t, const Duration(milliseconds: 600));
     expect(dialog, findsNothing);
-    expect(find.text(hint2), findsOneWidget, reason: 'hint 2 on its card, open');
-    expect(find.text(hint1), findsNothing, reason: 'hint 1 folded shut meanwhile');
+    expect(findText(hint2), findsOneWidget, reason: 'hint 2 on its card, open');
+    expect(findText(hint1), findsNothing, reason: 'hint 1 folded shut meanwhile');
     // A card opened before folds open again with a tap.
     await t.tap(find.text('DETECTIVE HINT 1'));
     await wait(t, const Duration(milliseconds: 400));
-    expect(find.text(hint1), findsOneWidget);
+    expect(findText(hint1), findsOneWidget);
     expect(find.bySemanticsLabel('Practice coins: ${AppConstants.startCoins - price}'), findsOneWidget);
     await next(t);
 
@@ -344,7 +345,7 @@ void main() {
 
     String? openPage(WidgetTester t) {
       for (var i = 0; i < titles.length; i++) {
-        if (find.text(titles[i]).hitTestable().evaluate().isNotEmpty) return titles[i];
+        if (findText(titles[i]).hitTestable().evaluate().isNotEmpty) return titles[i];
       }
       return null;
     }
@@ -527,7 +528,7 @@ void main() {
       // The free hint, then the notebook's tabs.
       await swipe(t, left: true);
       await tapText(t, 'GET A FREE HINT', after: const Duration(milliseconds: 500));
-      expect(find.text('Read the letter again. What does Pip love?'), findsOneWidget);
+      expect(findText('Read the letter again. What does Pip love?'), findsOneWidget);
       await swipe(t, left: true);
       await tapText(t, 'EVIDENCE', after: const Duration(milliseconds: 400));
       expect(find.text("Mr Finch's Letter"), findsOneWidget);
@@ -545,9 +546,9 @@ void main() {
       await t.tap(find.text('NEXT').hitTestable());
       await t.pump();
       await t.pump();
-      expect(find.text(titles[1]), findsOneWidget, reason: 'no turning animation to wait for');
-      expect(find.text(titles[0]), findsNothing, reason: 'the page before already gone');
-      expect(t.getRect(find.text(titles[1])).center.dx, closeTo(195, 1), reason: 'square on the screen');
+      expect(findText(titles[1]), findsOneWidget, reason: 'no turning animation to wait for');
+      expect(findText(titles[0]), findsNothing, reason: 'the page before already gone');
+      expect(t.getRect(findText(titles[1])).center.dx, closeTo(195, 1), reason: 'square on the screen');
       await wait(t, const Duration(seconds: 3));
     });
   });
@@ -561,7 +562,7 @@ void main() {
       for (var i = 0; i < 4; i++) {
         await next(t);
       }
-      expect(find.text(titles[4]), findsOneWidget);
+      expect(findText(titles[4]), findsOneWidget);
     }
 
     final word = find.textRange.ofSubstring('mysterious');
@@ -637,7 +638,7 @@ void main() {
         await wait(t, const Duration(milliseconds: 600));
         expect(find.text('WORD CARD'), findsNothing, reason: 'a tap is not a look-up');
         expect(hand, findsNothing, reason: 'the player\'s own touch ends the showing');
-        expect(find.text(titles[4]), findsOneWidget);
+        expect(findText(titles[4]), findsOneWidget);
 
         await t.holdOnText(word);
         await wait(t, const Duration(milliseconds: 600));
@@ -648,13 +649,13 @@ void main() {
         await tapText(t, 'GOT IT!', after: const Duration(milliseconds: 600));
         expect(find.text('WORD CARD'), findsNothing);
         expect(lit(t), isFalse, reason: 'as it was');
-        expect(find.text(titles[4]), findsOneWidget, reason: 'back on the page');
+        expect(findText(titles[4]), findsOneWidget, reason: 'back on the page');
         expect(find.text('mysterious = 수상한, 이상한'), findsOneWidget, reason: 'its note pinned to the page');
         expect(hand, findsNothing);
         expect(app(t).read(gameControllerProvider).lookedUpWords, isEmpty, reason: 'practice');
         // NEXT goes on as ever.
         await next(t);
-        expect(find.text(titles[5]), findsOneWidget);
+        expect(findText(titles[5]), findsOneWidget);
         await wait(t, const Duration(seconds: 1));
       });
     }
@@ -662,7 +663,7 @@ void main() {
     testWidgets('NEXT without trying: on to the next page', (t) async {
       await openWords(t, const Size(390, 844));
       await next(t);
-      expect(find.text(titles[5]), findsOneWidget);
+      expect(findText(titles[5]), findsOneWidget);
       await wait(t, const Duration(seconds: 1));
     });
 
@@ -706,7 +707,7 @@ void main() {
         await t.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 300))); // the pictures
         await t.pump();
         expect(t.takeException(), isNull, reason: 'page ${i + 1}');
-        final button = find.text(i == titles.length - 1 ? 'EXPLORE THE WORLD' : 'NEXT');
+        final button = findText(i == titles.length - 1 ? 'EXPLORE THE WORLD' : 'NEXT');
         expect(t.getRect(button).bottom, lessThanOrEqualTo(size.height), reason: 'page ${i + 1}: the way on');
         expect(t.getRect(find.byTooltip('Back')).height, greaterThanOrEqualTo(44));
         await capture(t, 'how_to_play_${i + 1}_$tag');

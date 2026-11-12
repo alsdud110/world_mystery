@@ -21,6 +21,7 @@ import 'package:world_mystery/widgets/art_assets.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 void main() {
   final london = season1Cases();
@@ -79,7 +80,7 @@ void main() {
 
   Finder pin(String cityId) => find.byKey(ValueKey('city-pin-$cityId'));
   Finder card(String cityId) => find.byKey(ValueKey('city-card-$cityId'));
-  Finder inCard(String cityId, String text) => find.descendant(of: card(cityId), matching: find.text(text));
+  Finder inCard(String cityId, String text) => find.descendant(of: card(cityId), matching: findText(text));
 
   Map<String, Object?> saves() {
     final prefs = appRef.read(sharedPreferencesProvider);
@@ -540,7 +541,7 @@ void main() {
       await open();
       expect(t.takeException(), isNull);
       final labels = ['Sound Effects', 'My detective', 'Title screen'];
-      final tops = [for (final l in labels) t.getRect(find.descendant(of: find.byType(BottomSheet), matching: find.text(l))).top];
+      final tops = [for (final l in labels) t.getRect(find.descendant(of: find.byType(BottomSheet), matching: findText(l))).top];
       expect(tops, [...tops]..sort(), reason: 'in this order');
       // The game's one sound switch.
       final soundOn = appRef.read(soundEnabledProvider);

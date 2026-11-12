@@ -16,6 +16,7 @@ import 'package:world_mystery/features/game/game_providers.dart';
 import 'difficulty_paris_7d_test.dart' show parisAt, pk;
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 void main() {
   const scenes = ['lastClue', 'journey', 'arrival', 'missingHour', 'promise', 'firstCase'];
@@ -95,7 +96,7 @@ void main() {
       expect(appRef.read(routerProvider).routerDelegate.currentConfiguration.uri.toString(), Routes.parisPrologue);
       for (final (i, scene) in scenes.indexed) {
         for (final line in spoken(words, scene)) {
-          expect(find.text(line), findsOneWidget, reason: '$scene at ${level.name}');
+          expect(findText(line), findsOneWidget, reason: '$scene at ${level.name}');
         }
         if (i < 4) {
           await t.tap(find.text('NEXT ›'));

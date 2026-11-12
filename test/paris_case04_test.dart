@@ -38,6 +38,7 @@ import '../tool/asset_optimizer/image_file.dart';
 import 'easy_play.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 04 — The River's Secret: its eighteen pictures (the
 /// marks, the label's outline measured on them), its story and puzzles as
@@ -702,7 +703,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget);
           await shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(Offset(size.width / 2, size.height / 2)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -773,7 +774,7 @@ void main() {
         // its close-up a glass away; none chosen, no tick on the wall.
         for (final m in marks.marks) {
           expect(t.getSize(find.byKey(ValueKey('mark-${m.id}'))).width, greaterThan(size.width / 3), reason: m.id);
-          expect(find.text('${m.name} · CHOSEN'), findsNothing);
+          expect(findText('${m.name} · CHOSEN'), findsNothing);
         }
         expect(find.descendant(of: find.byKey(const ValueKey('mark-spot-a')), matching: find.byWidgetPredicate((w) => w is InkIcon && w.glyph == InkGlyph.check)), findsNothing,
             reason: 'looked at, but never ticked like an answer');
@@ -807,7 +808,7 @@ void main() {
         // Right: why, line by line, before the case goes on.
         expect(find.byKey(const ValueKey('marks-why')), findsOneWidget);
         for (final (i, line) in marks.rightLines.indexed) {
-          expect(find.descendant(of: find.byKey(ValueKey('marks-why-${i + 1}')), matching: find.text(line)), findsOneWidget);
+          expect(find.descendant(of: find.byKey(ValueKey('marks-why-${i + 1}')), matching: findText(line)), findsOneWidget);
         }
         expect(ref.read(gameControllerProvider).isCompleted(m1.id), isFalse, reason: 'checked once the why is read');
         await shot('m1_why');
@@ -856,7 +857,7 @@ void main() {
         await tapKey('ledger-check', after: const Duration(milliseconds: 900));
         // Right: page 2 is turned and read before the story goes on.
         expect(ref.read(gameControllerProvider).isCompleted(m2.id), isTrue);
-        expect(find.text(hut.solvedLine), findsOneWidget);
+        expect(findText(hut.solvedLine), findsOneWidget);
         expect(find.byKey(const ValueKey('ledger-title-1')), findsNothing);
         await shot('m2_right');
         await tapKey('ledger-turn', after: const Duration(milliseconds: 700));
@@ -865,7 +866,7 @@ void main() {
         await tapKey('ledger-1-0-box4');
         expect(find.byKey(const ValueKey('ledger-missed')), findsOneWidget);
         await tapKey('ledger-1-2-box23');
-        expect(find.text(hut.foundLine), findsOneWidget);
+        expect(findText(hut.foundLine), findsOneWidget);
         await shot('m2_page2');
         await tapKey('ledger-continue', after: const Duration(milliseconds: 300));
         expect(examined(), contains('s2_ep04_m2:page2'));
@@ -880,9 +881,9 @@ void main() {
         }
         await shot('m3_boxes');
         await tapKey('quay-box-box17');
-        expect(find.text(boxes.box('box17').note!), findsOneWidget);
+        expect(findText(boxes.box('box17').note!), findsOneWidget);
         await tapKey('quay-box-box21');
-        expect(find.text(boxes.box('box21').note!), findsOneWidget);
+        expect(findText(boxes.box('box21').note!), findsOneWidget);
         await tapKey('quay-box-box23', after: const Duration(milliseconds: 600));
         expect(find.byKey(const ValueKey('label-step')), findsOneWidget);
         expect(examined(), containsAll(['s2_ep04_m3:box17', 's2_ep04_m3:box21', 's2_ep04_m3:box23']));
@@ -970,7 +971,7 @@ void main() {
         await shot('final_back');
         await tapKey('gate-next', after: const Duration(milliseconds: 700));
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-        expect(find.text(fin.transition.first), findsOneWidget);
+        expect(findText(fin.transition.first), findsOneWidget);
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 900));
         expect(findReadable('Follow the hands that made them.'), findsOneWidget);

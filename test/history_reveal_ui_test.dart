@@ -18,6 +18,7 @@ import 'package:world_mystery/features/result/case_solved_screen.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Historical Fiction Mystery PART 2: REAL HISTORY / IN THIS MYSTERY on the
 /// Case Closed file. No season in the game is historical yet, so a reveal is
@@ -108,8 +109,8 @@ void main() {
   ]) {
     testWidgets('told at the season\'s level: ${level.label}', (t) async {
       await open(t, history: reveal, level: level);
-      expect(find.text(real), findsOneWidget);
-      expect(find.text(made), findsOneWidget);
+      expect(findText(real), findsOneWidget);
+      expect(findText(made), findsOneWidget);
       expect(find.text('King Sejong made new letters in 1443.'), findsNothing);
     });
   }

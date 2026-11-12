@@ -22,6 +22,7 @@ import '../full_playthrough_test.dart' show reveal, tapText, wait;
 import '../helpers.dart';
 import 'sandbox_play.dart';
 import 'sandbox_season.dart';
+import '../reading_finders.dart';
 
 /// STEP 3-13B: the story around the puzzles, planned in Case 02's plan
 /// (`content_pipeline/seasons/s9_sandbox/cases/s9_ep02/case.plan.json`),
@@ -162,7 +163,7 @@ void main() {
         await wait(t, const Duration(milliseconds: 1500));
         expect(findReadableContaining(d.title), findsWidgets, reason: '${m.id} discovery: ${play.texts()}');
         expect(findReadableContaining(d.detail), findsWidgets, reason: '${m.id} discovery: ${play.texts()}');
-        expect(find.text(d.type.cheer), findsWidgets, reason: '${m.id}: its kind of discovery (${d.type.label}): ${play.texts()}');
+        expect(findText(d.type.cheer), findsWidgets, reason: '${m.id}: its kind of discovery (${d.type.label}): ${play.texts()}');
       }
 
       // ── M1: the talk before the puzzle, then the letter and the puzzle.
@@ -244,7 +245,7 @@ void main() {
           TalkVoice.detective => 'YOU',
           TalkVoice.narrator => null,
         };
-        if (plate != null) expect(find.text(plate), findsWidgets, reason: 'ending line $i');
+        if (plate != null) expect(findText(plate), findsWidgets, reason: 'ending line $i');
         if (line.evidenceId case final e?) {
           expect(find.byKey(ValueKey('ending-evidence-$e')), findsOneWidget, reason: 'the note laid over the line: ${play.texts()}');
         }

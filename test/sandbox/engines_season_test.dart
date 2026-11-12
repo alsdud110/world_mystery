@@ -23,6 +23,7 @@ import '../mission_play.dart';
 import 'generated/s8_timeline/s8_timeline_cases.g.dart';
 import 'generated/s8_timeline/s8_timeline_season.g.dart';
 import 'sandbox_play.dart';
+import '../reading_finders.dart';
 
 /// Puzzle Engine 2.0 STEP 1: five engines the game already played, made by
 /// the season factory from a plan (`test/sandbox/plans/s8_timeline/cases/s8_ep02`):
@@ -150,7 +151,7 @@ void main() {
         await play.toPlace(m);
         await tapText(t, 'INVESTIGATE', after: const Duration(milliseconds: 1200));
         for (final step in ['TAP TO OPEN', 'SOLVE THE PUZZLE']) {
-          if (find.text(step).evaluate().isNotEmpty) await tapText(t, step, after: const Duration(milliseconds: 1500));
+          if (findText(step).evaluate().isNotEmpty) await tapText(t, step, after: const Duration(milliseconds: 1500));
         }
       }
 

@@ -20,6 +20,7 @@ import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'parent_gate_test.dart' show gateAnswer;
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// The last screens of the UI audit in the game's language: the evidence
 /// close-up, the absent scanner page, the parent gate, the parent report and the
@@ -136,7 +137,7 @@ void main() {
       // record, so its figures say so instead of showing zeros.
       await t.scrollUntilVisible(find.text('Play Time'), 300, scrollable: find.byType(Scrollable).last);
       for (final s in ['Missions', 'Hints Opened', 'First Try', 'Play Time']) {
-        expect(find.text(s), findsOneWidget);
+        expect(findText(s), findsOneWidget);
       }
       expect(find.text('Accuracy'), findsNothing);
       expect(find.text('기록 없음'), findsWidgets);

@@ -21,6 +21,7 @@ import 'package:world_mystery/features/season/season_overview.dart';
 
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// The season above its cases: the casebook, the investigation board, how
 /// it is reached and left, and that it never tells more than the story.
@@ -307,8 +308,8 @@ void main() {
       await wait(t, const Duration(milliseconds: 2800));
       expect(t.takeException(), isNull, reason: 'scene ${i + 1} at $tag');
       for (final s in words) {
-        expect(find.text(s), findsOneWidget, reason: 'scene ${i + 1}: $s');
-        expectOnScreen(t, find.text(s), size); // never cut off
+        expect(findText(s), findsOneWidget, reason: 'scene ${i + 1}: $s');
+        expectOnScreen(t, findText(s), size); // never cut off
       }
       final text = screenText(t);
       for (final secret in ['raven', 'clockmaker', 'paris', 'grey', 'robin', 'rose', 'the shadow', 'vocabulary', 'reading']) {
@@ -317,7 +318,7 @@ void main() {
       await capture(t, 'opening_${i + 1}_$tag');
       if (i < 4) {
         expectOnScreen(t, find.text('NEXT ›'), size);
-        expect(t.getRect(find.text(words.last)).bottom, lessThanOrEqualTo(t.getRect(find.text('NEXT ›')).top + 4),
+        expect(t.getRect(findText(words.last)).bottom, lessThanOrEqualTo(t.getRect(find.text('NEXT ›')).top + 4),
             reason: 'the words sit above the way on');
         await t.tap(find.text('NEXT ›'));
       }
@@ -337,8 +338,8 @@ void main() {
       'Your first case\nstarts tonight.',
       'ASSIGNED',
     ]) {
-      expect(find.text(s), findsOneWidget, reason: s);
-      expectOnScreen(t, find.text(s), size);
+      expect(findText(s), findsOneWidget, reason: s);
+      expectOnScreen(t, findText(s), size);
     }
     expectOnScreen(t, find.text('START CASE 01'), size);
     await capture(t, 'case01_file_$tag');
@@ -591,7 +592,7 @@ void main() {
     await t.tap(find.byKey(const ValueKey('board-ep02')));
     await wait(t, const Duration(milliseconds: 900));
     expect(path(), Routes.caseFile('ep02'));
-    expect(find.text('Big Ben has stopped. Its hands do not move.'), findsOneWidget, reason: 'its folder is open');
+    expect(findText('Big Ben has stopped. Its hands do not move.'), findsOneWidget, reason: 'its folder is open');
     await wait(t, const Duration(seconds: 3));
   });
 
@@ -640,7 +641,7 @@ void main() {
     appRef.read(routerProvider).go(Routes.season);
     await wait(t, const Duration(milliseconds: 500));
     double opacityOf(String text) => t
-        .widgetList<Opacity>(find.ancestor(of: find.text(text), matching: find.byType(Opacity)))
+        .widgetList<Opacity>(find.ancestor(of: findText(text), matching: find.byType(Opacity)))
         .fold(1.0, (a, o) => a * o.opacity);
     expect(find.text('THE RAVEN SOCIETY'), findsNothing, reason: 'not yet: the photo and thread come first');
     expect(find.text('WHO ARE THE RAVENS?'), findsOneWidget);

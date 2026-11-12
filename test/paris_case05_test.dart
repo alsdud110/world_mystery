@@ -38,6 +38,7 @@ import '../tool/asset_optimizer/image_file.dart';
 import 'easy_play.dart';
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 05 — The Silent Workshop: its fourteen pictures (as
 /// delivered, measured), its story and puzzles as the papers and clocks say
@@ -667,7 +668,7 @@ void main() {
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget);
           await shot('${name}_solved');
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(Offset(size.width / 2, size.height / 2)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -707,7 +708,7 @@ void main() {
         router.go(Routes.intro);
         await wait(t, const Duration(milliseconds: 900));
         await tapText(t, 'SKIP ›', after: const Duration(milliseconds: 900));
-        expect(find.text('Do not trust the clocks. Follow the hands that made them.'), findsOneWidget);
+        expect(findText('Do not trust the clocks. Follow the hands that made them.'), findsOneWidget);
         await shot('opening');
         await tapText(t, "I'M READY", after: const Duration(milliseconds: 1600));
 
@@ -796,7 +797,7 @@ void main() {
         await wait(t, const Duration(milliseconds: 1400));
         await visit(m2.id);
         expect(find.text('ONE MINUTE LATER…'), findsOneWidget, reason: 'saved: watched');
-        expect(find.text(wall.againLabel), findsOneWidget);
+        expect(findText(wall.againLabel), findsOneWidget);
         await tapKey('clock-iii');
         await tapKey('clocks-check');
         await finish(m2.transition.first, 'm2');
@@ -848,7 +849,7 @@ void main() {
         await play.tapKey('easy-option-4417');
         expect(findReadable('Letter 4417! Here is where it went.'), findsOneWidget);
         for (final line in ['9:00 AM — COLLECTED', '11:00 AM — SORTED', '4:00 PM — HELD', 'LOUVRE POST ROOM']) {
-          expect(find.text(line), findsOneWidget, reason: 'the trail, at once: $line');
+          expect(findText(line), findsOneWidget, reason: 'the trail, at once: $line');
         }
         await shot('final_trail');
         expect(find.text('FOLLOW THE LETTER'), findsOneWidget);
@@ -857,7 +858,7 @@ void main() {
         expect(find.byKey(const ValueKey('trail-held')), findsOneWidget, reason: 'the slip that says where it stopped');
         await shot('final_solved');
         await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-        expect(find.text(fin.transition.first), findsOneWidget);
+        expect(findText(fin.transition.first), findsOneWidget);
         await t.tapAt(Offset(size.width / 2, size.height / 2));
         await wait(t, const Duration(milliseconds: 900));
         expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: 'the workshop');

@@ -17,6 +17,7 @@ import 'package:world_mystery/widgets/game_button.dart';
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Case Closed on the detective's desk: the case file as before, the next
 /// step as the game's cinematic button, Case 12's ending untouched.
@@ -76,13 +77,13 @@ void main() {
         expect(find.byType(DeskBackground), findsOneWidget, reason: 'on the desk, not the night sky');
         await capture(t, 'case_closed_${tag}_top');
 
-        await t.scrollUntilVisible(find.text(next), 300, scrollable: find.byType(Scrollable).first);
+        await t.scrollUntilVisible(findText(next), 300, scrollable: find.byType(Scrollable).first);
         await wait(t, const Duration(milliseconds: 300));
-        final button = t.widget<GameButton>(find.ancestor(of: find.text(next), matching: find.byType(GameButton)));
+        final button = t.widget<GameButton>(find.ancestor(of: findText(next), matching: find.byType(GameButton)));
         expect(button.style, GameButtonStyle.glass);
         expect(find.text('Play again'), findsOneWidget);
         // The hook is told by the post-case scene before the report, not here.
-        if (e.hook != null) expect(find.text(e.hook!), findsNothing, reason: 'no hook on the report');
+        if (e.hook != null) expect(findText(e.hook!), findsNothing, reason: 'no hook on the report');
         if (id == 'ep12') {
           // The season's finale, as shipped (Paris released): on to Paris,
           // the one strong action; the board after it, quieter; the case
@@ -102,7 +103,7 @@ void main() {
         }
         await capture(t, 'case_closed_${tag}_actions');
 
-        await t.tap(find.text(next));
+        await t.tap(findText(next));
         await wait(t, const Duration(milliseconds: 1500));
         final path = router.routerDelegate.currentConfiguration.uri.toString();
         if (id == 'ep12') {

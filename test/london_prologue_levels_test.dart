@@ -15,6 +15,7 @@ import 'package:world_mystery/features/game/game_providers.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 void main() {
   /// The scenes' words, in the order the opening shows them.
@@ -97,7 +98,7 @@ void main() {
         expect(appRef.read(seasonDifficultyProvider(SeasonIds.london)), level);
         for (final (i, words) in scenes(at(level)).indexed) {
           for (final line in words) {
-            expect(find.text(line), findsOneWidget, reason: 'scene ${i + 1} at ${level.name}: $line');
+            expect(findText(line), findsOneWidget, reason: 'scene ${i + 1} at ${level.name}: $line');
           }
           if (i < 4) {
             await t.tap(find.text('NEXT ›'));

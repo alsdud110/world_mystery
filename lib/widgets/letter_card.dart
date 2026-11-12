@@ -116,15 +116,15 @@ class _LetterBody extends StatelessWidget {
     final scale = MediaQuery.textScalerOf(context).scale(size);
     final children = <Widget>[];
     var paragraph = false;
-    // A written line that holds several long sentences is read one
-    // sentence to a line too ([readingLines]).
-    for (final line in readingLines(text).split('\n')) {
+    for (final line in text.split('\n')) {
       if (line.trim().isEmpty) {
         paragraph = children.isNotEmpty;
         continue;
       }
       if (children.isNotEmpty) children.add(SizedBox(height: scale * (paragraph ? 1.2 : 0.4)));
-      children.add(GlossaryText(line, style: style));
+      // A line the writer kept short stays as written (two short
+      // sentences side by side); a long one reads sentence by sentence.
+      children.add(GlossaryText(line, style: style, asWritten: line.length <= 2 * readingLineLength));
       paragraph = false;
     }
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: children);

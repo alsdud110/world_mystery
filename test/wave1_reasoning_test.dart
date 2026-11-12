@@ -17,6 +17,7 @@ import 'package:world_mystery/data/repositories/episode_repository.dart';
 import 'full_playthrough_test.dart' show reveal, wait;
 import 'helpers.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// Reasoning wave 1 (Cases 01, 04, 06, 08, 11): the game gives the clues,
 /// the detective names the answer. Before a final is solved, no scene,
@@ -345,7 +346,7 @@ void main() {
       await reveal(t, findReadable(fin.question));
       await capture(t, '${caseId}_final_question_$tag');
       for (final o in fin.options) {
-        final card = find.text(o.label);
+        final card = findText(o.label);
         await reveal(t, card);
         final r = t.getRect(card);
         expect(r.left, greaterThanOrEqualTo(0), reason: o.label);
@@ -381,14 +382,14 @@ void main() {
         await wait(t, const Duration(milliseconds: 300));
         await t.tap(archive);
         await wait(t, const Duration(milliseconds: 900));
-        final folder = find.text(archiveCase);
+        final folder = findText(archiveCase);
         await t.scrollUntilVisible(folder, 300, scrollable: scroller());
         await t.ensureVisible(folder);
         await wait(t, const Duration(milliseconds: 300));
         await t.tap(folder);
         await wait(t, const Duration(milliseconds: 600));
       }
-      final tile = find.text(evidence);
+      final tile = findText(evidence);
       await t.scrollUntilVisible(tile, 200, scrollable: scroller());
       await wait(t, const Duration(milliseconds: 300));
       await t.tap(tile);

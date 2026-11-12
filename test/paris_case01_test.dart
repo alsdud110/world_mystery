@@ -38,6 +38,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'full_playthrough_test.dart' show reveal, tapText, wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Season 2, Case 01 — The Ticking Watch: its content, the release lock that
 /// keeps it from players, and a child's whole play of it (in an operator
@@ -569,7 +570,7 @@ void main() {
           await wait(t, const Duration(milliseconds: 2800));
           expect(find.byWidgetPredicate((w) => w is Text && DiscoveryType.values.any((d) => d.cheer == w.data)), findsOneWidget);
           await tapText(t, 'CONTINUE INVESTIGATION', after: const Duration(milliseconds: 900));
-          expect(find.text(sceneLine), findsOneWidget, reason: 'story transition');
+          expect(findText(sceneLine), findsOneWidget, reason: 'story transition');
           await t.tapAt(const Offset(200, 400)); // skip typing
           await wait(t, const Duration(milliseconds: 900));
           expect(find.byKey(const ValueKey('scene-backdrop')), findsOneWidget, reason: '$name: its own picture');
@@ -623,7 +624,7 @@ void main() {
         expect(find.text('GARE DU NORD · PARIS'), findsOneWidget);
         expect(find.text('YOUR OBJECTIVES'), findsOneWidget);
         for (final o in paris.objectives) {
-          expect(find.text(o), findsOneWidget, reason: o);
+          expect(findText(o), findsOneWidget, reason: o);
         }
         final begin = find.text('BEGIN INVESTIGATION');
         expect(t.getRect(begin).bottom, lessThanOrEqualTo(size.height), reason: 'the primary action on screen');
@@ -670,14 +671,14 @@ void main() {
         await shot('m1_hall');
         // The desk before anything is seen: what to do first.
         await tapHall(hall.desk.area.center);
-        expect(find.text(hall.boardFirstLine), findsOneWidget);
+        expect(findText(hall.boardFirstLine), findsOneWidget);
         // Each clock up close: its name and its time; between them, out and
         // back in (one clock seen, then two): the hall as it was left.
         for (final (i, c) in hall.clocks.indexed) {
           await tapHall(c.centre);
           expect(find.byKey(ValueKey('station-clock-${c.optionId}')), findsOneWidget, reason: c.name);
-          expect(find.text(c.name), findsOneWidget);
-          expect(find.text(c.time), findsOneWidget);
+          expect(findText(c.name), findsOneWidget);
+          expect(findText(c.time), findsOneWidget);
           await shot('m1_clock_${c.optionId}');
           await t.tap(find.byKey(const ValueKey('station-close')));
           await wait(t, const Duration(milliseconds: 400));
@@ -703,7 +704,7 @@ void main() {
         expect(boardGuide, findsOneWidget);
         // Still the notice to read before the desk.
         await tapHall(hall.desk.area.center);
-        expect(find.text(hall.boardFirstLine), findsOneWidget);
+        expect(findText(hall.boardFirstLine), findsOneWidget);
         // The departure board: its trains, and the notice under them.
         await tapHall(hall.board.area.center);
         expect(find.byKey(const ValueKey('departure-board')), findsOneWidget);
@@ -796,7 +797,7 @@ void main() {
         await shot('m2_puzzle');
         Future<void> order(List<String> ids) async {
           for (final id in ids) {
-            final tile = find.text(m2.options.firstWhere((o) => o.id == id).label).last;
+            final tile = findText(m2.options.firstWhere((o) => o.id == id).label).last;
             await reveal(t, tile);
             await t.tap(tile);
             await t.pump(const Duration(milliseconds: 150));

@@ -13,6 +13,7 @@ import 'package:world_mystery/features/game/scoring.dart';
 import 'helpers.dart';
 import 'mission_play.dart';
 import 'title_screen_test.dart' show capture;
+import 'reading_finders.dart';
 
 /// TYPE B Phase 3B (Case 09-11): wrong answers say what was misread, the
 /// protected reasoning of each case holds for feedback lines too, Case 11 M3
@@ -144,7 +145,7 @@ void main() {
         final play = MissionPlay();
         await play.openPuzzle(t, size, 'ep11_m3');
         for (final o in m('ep11_m3').options) {
-          expect(find.text(o.label), findsNothing, reason: o.label);
+          expect(findText(o.label), findsNothing, reason: o.label);
         }
         expect(find.bySemanticsLabel(RegExp(r'^Picture A: a long building with a great arched glass roof')), findsOneWidget);
         expect(find.bySemanticsLabel(RegExp(r"King's Cross")), findsNothing);

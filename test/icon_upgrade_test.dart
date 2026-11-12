@@ -16,6 +16,7 @@ import 'package:world_mystery/widgets/ink_icon.dart';
 import 'package:world_mystery/widgets/symbol_icon.dart';
 
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// The icon upgrade (docs/WORLD_MYSTERY_ICON_UPGRADE_PROGRESS.md): every
 /// piece of evidence of the four seasons is shown as a picture — its own,
@@ -200,7 +201,7 @@ void main() {
           isEmpty,
           reason: 'not again under the paper',
         );
-        expect(find.text(e.name), findsOneWidget);
+        expect(findText(e.name), findsOneWidget);
       });
     }
 
@@ -225,7 +226,7 @@ void main() {
 
       await tile(evidence['ep02_e1']!);
       expect(find.byType(EvidencePaperView), findsOneWidget);
-      expect(find.textContaining(evidence['ep02_e1']!.inscription!), findsNothing, reason: 'read in the close look');
+      expect(findTextContaining(evidence['ep02_e1']!.inscription!), findsNothing, reason: 'read in the close look');
       expect(find.bySemanticsLabel('${evidence['ep02_e1']!.name}. Tap to look closer.'), findsOneWidget);
 
       await tile(evidence['ep03_e2']!);

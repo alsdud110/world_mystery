@@ -9,6 +9,7 @@ import 'package:world_mystery/features/mission/widgets/post_trail.dart';
 import 'package:world_mystery/features/mission/widgets/river_papers.dart';
 
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Paris Cases 03–05: the papers read inside the puzzles (the ledger, the
 /// slips) have their harder words to look up, and holding a word opens its
@@ -46,7 +47,7 @@ void main() {
     expect(holdOnWord(t, crate, 'crate'), isTrue);
     await t.pumpAndSettle();
     expect(find.text('WORD CARD'), findsOneWidget);
-    expect(find.text('= ${case04.meaningOf('crate')}'), findsOneWidget);
+    expect(findText('= ${case04.meaningOf('crate')}'), findsOneWidget);
     expect(circled, ['box17'], reason: 'a word is not a box');
   });
 

@@ -17,6 +17,7 @@ import 'package:world_mystery/features/game/game_controller.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
+import 'reading_finders.dart';
 
 /// Paris's story after a solve: MISSION (or CASE) COMPLETE, then the story
 /// itself, with no "Great work, Detective …" between (the Discovery Moment
@@ -124,11 +125,11 @@ void main() {
         await wait(t, const Duration(milliseconds: 1600));
         expect(t.takeException(), isNull, reason: '$tag $missionId');
 
-        expect(find.text(m.isFinal ? 'CASE ${e.numberLabel} COMPLETE' : 'MISSION ${m.numberLabel} COMPLETE'), findsOneWidget, reason: missionId);
+        expect(findText(m.isFinal ? 'CASE ${e.numberLabel} COMPLETE' : 'MISSION ${m.numberLabel} COMPLETE'), findsOneWidget, reason: missionId);
         expect(find.byKey(const ValueKey('scene-greeting')), findsNothing, reason: missionId);
         expect(find.textContaining('Great work'), findsNothing, reason: missionId);
 
-        final cta = find.text(m.isFinal ? 'SEE MY CASE REPORT' : 'TO THE MAP');
+        final cta = findText(m.isFinal ? 'SEE MY CASE REPORT' : 'TO THE MAP');
         expect(cta, findsOneWidget, reason: missionId);
         expect(t.getRect(cta).bottom, lessThanOrEqualTo(size.height), reason: '$missionId: the way on, on screen');
         if (!m.isFinal) {
@@ -136,7 +137,7 @@ void main() {
           final last = findReadable(m.transition.last);
           expect(last, findsOneWidget, reason: missionId);
           final next = e.missionById(m.nextMissionId!)!;
-          final card = find.text(next.location);
+          final card = findText(next.location);
           expect(card, findsOneWidget, reason: '$missionId: the unlocked card');
           expect(t.getRect(last).bottom, lessThanOrEqualTo(t.getRect(card).top), reason: '$tag $missionId: the last line above the card');
           expect(t.getRect(last).top, greaterThanOrEqualTo(0));
