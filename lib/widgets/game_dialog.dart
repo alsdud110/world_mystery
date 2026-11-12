@@ -6,6 +6,7 @@ import '../core/theme/app_text.dart';
 import '../core/theme/app_tokens.dart';
 import 'game_button.dart';
 import 'paper.dart';
+import '../core/utils/reading_lines.dart';
 
 /// The game's popup: [showDialog] with the popup motion — the paper grows
 /// slightly into place (scale in, ease-out) as the page behind dims.
@@ -95,7 +96,7 @@ class GameDialog extends StatelessWidget {
   }) async {
     Widget dialog(BuildContext context) => GameDialog(
       title: title,
-      content: Text(message, textAlign: TextAlign.center, style: AppText.bodyText(size: 16)),
+      content: Text(readingLines(message), textAlign: TextAlign.center, style: AppText.bodyText(size: 16)),
       actions: [
         GameButton(label: confirmLabel, onPressed: () => Navigator.of(context).pop(true)),
         const SizedBox(height: AppSpace.xs),
@@ -125,7 +126,7 @@ class GameDialog extends StatelessWidget {
       builder: (context) => GameDialog(
         plain: true,
         title: title,
-        content: Text(message, style: AppText.bodyText(size: 16)),
+        content: Text(readingLines(message), style: AppText.bodyText(size: 16)),
         actions: [
           TextButton(onPressed: () => Navigator.of(context).pop(false), child: Text(cancelLabel)),
           FilledButton(
@@ -153,7 +154,7 @@ class GameDialog extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: plain ? CrossAxisAlignment.start : CrossAxisAlignment.stretch,
       children: [
-        Text(title, textAlign: plain ? TextAlign.start : TextAlign.center, style: AppText.title(size: 22)),
+        Text(readingLines(title), textAlign: plain ? TextAlign.start : TextAlign.center, style: AppText.title(size: 22)),
         if (!plain) ...[const SizedBox(height: AppSpace.sm), const Center(child: OrnamentRule(width: 96))],
         const SizedBox(height: AppSpace.lg),
         content,

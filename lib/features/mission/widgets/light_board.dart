@@ -15,6 +15,7 @@ import '../../../widgets/ink_icon.dart';
 import 'letter_papers.dart' show postType;
 import 'opera_papers.dart';
 import 'workshop_papers.dart' show handwriting;
+import '../../../core/utils/reading_lines.dart';
 
 /// The stage with the lights [on]: the dark stage, and each light's own
 /// picture of it laid over it lighter-only (so two lights on show both, and
@@ -272,7 +273,7 @@ class _LightBoardPuzzleState extends State<LightBoardPuzzle> {
           child: LitStage(base: scene.stage, lit: scene.lit, pixels: scene.stagePixels, on: _on),
         ),
         const SizedBox(height: AppSpace.sm),
-        Text(scene.task, key: const ValueKey('desk-task'), textAlign: TextAlign.center, style: AppText.caption()),
+        Text(readingLines(scene.task), key: const ValueKey('desk-task'), textAlign: TextAlign.center, style: AppText.caption()),
         const SizedBox(height: AppSpace.xs),
         _Desk(scene: scene, on: _on, onSet: _set),
         const SizedBox(height: AppSpace.md),
@@ -696,11 +697,11 @@ class CueFound extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(mission.successMessage, textAlign: TextAlign.center, style: AppText.title(size: 24)),
+        Text(readingLines(mission.successMessage), textAlign: TextAlign.center, style: AppText.title(size: 24)),
         const SizedBox(height: AppSpace.xs),
-        Text(scene.emptyLine, key: const ValueKey('empty-line'), textAlign: TextAlign.center, style: AppText.aside(size: 16, color: AppColors.inkBrown)),
+        Text(readingLines(scene.emptyLine), key: const ValueKey('empty-line'), textAlign: TextAlign.center, style: AppText.aside(size: 16, color: AppColors.inkBrown)),
         const SizedBox(height: AppSpace.md),
-        Text(task, key: const ValueKey('cue-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(task), key: const ValueKey('cue-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.sm),
         DecoratedBox(
           decoration: const BoxDecoration(boxShadow: AppShadow.paperLift),

@@ -68,6 +68,7 @@ import 'widgets/street_book.dart';
 import 'widgets/tip_shop.dart';
 import 'widgets/torn_hour.dart';
 import '../../data/models/detective_name.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// The final case: four picture locks. The player must combine what they
 /// collected — the lock order (Crown Symbol evidence) and the number each
@@ -1447,7 +1448,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
         for (final line in tower.testedLines)
           Padding(
             padding: const EdgeInsets.only(bottom: AppSpace.xs),
-            child: Text(line, textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.goldLight)),
+            child: Text(readingLines(line), textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.goldLight)),
           ),
         const SizedBox(height: AppSpace.sm),
         // The page's heading asks it now (no second title).
@@ -1480,7 +1481,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
         for (final line in hour.placedLines)
           Padding(
             padding: const EdgeInsets.only(bottom: AppSpace.xs),
-            child: Text(line, textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.goldLight)),
+            child: Text(readingLines(line), textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.goldLight)),
           ),
         const SizedBox(height: AppSpace.sm),
         ShakeOnChange(
@@ -1765,7 +1766,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
                   ).copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
                 )
               : Text(
-                  alreadyRewarded,
+                  readingLines(alreadyRewarded),
                   key: const ValueKey('final-reward'),
                   textAlign: TextAlign.center,
                   style: AppText.aside(size: 15, color: AppColors.paperLight.withValues(alpha: 0.8)),
@@ -1779,7 +1780,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
           for (final line in record.afterLines)
             Padding(
               padding: const EdgeInsets.only(bottom: AppSpace.xs),
-              child: Text(line, textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.paperLight)),
+              child: Text(readingLines(line), textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.paperLight)),
             ),
           const SizedBox(height: AppSpace.md),
           GameButton(
@@ -1795,7 +1796,7 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
           for (final line in tower.afterLines)
             Padding(
               padding: const EdgeInsets.only(bottom: AppSpace.xs),
-              child: Text(line, textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.paperLight)),
+              child: Text(readingLines(line), textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.paperLight)),
             ),
           const SizedBox(height: AppSpace.md),
           GameButton(
@@ -2059,13 +2060,13 @@ class _CaseSolvedBanner extends StatelessWidget {
               const SizedBox(height: 14),
             ],
             Text(
-              message,
+              readingLines(message),
               style: AppText.title(size: 24, color: AppColors.paperLight),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 6),
             Text(
-              'Brilliant work, ${DetectiveName.title(detectiveName)}!',
+              readingLines('Brilliant work, ${DetectiveName.title(detectiveName)}!'),
               style: AppText.subtitle(color: AppColors.goldLight),
               textAlign: TextAlign.center,
             ),

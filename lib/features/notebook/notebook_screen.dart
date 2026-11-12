@@ -24,6 +24,7 @@ import '../game/game_providers.dart';
 import '../game/scoring.dart';
 import 'season_archive.dart';
 import '../../data/models/detective_name.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// The Detective Notebook, in two parts: THIS CASE (clues, evidence and
 /// badges of the open case) and the CASE ARCHIVE (every case of the season,
@@ -510,7 +511,7 @@ class _Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.only(top: 8),
-        child: Text(text, textAlign: TextAlign.center, style: AppText.bodyText(size: 16, color: AppColors.muted)),
+        child: Text(readingLines(text), textAlign: TextAlign.center, style: AppText.bodyText(size: 16, color: AppColors.muted)),
       );
 }
 

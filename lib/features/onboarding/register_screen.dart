@@ -21,6 +21,7 @@ import '../../widgets/paper_background.dart';
 import '../game/game_controller.dart';
 import 'detective_form.dart';
 import 'how_to_play_state.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// CREATE YOUR DETECTIVE: the device's one detective, made once — a picture
 /// (boy or girl), a name and the level of English its seasons start at
@@ -181,7 +182,7 @@ class DetectiveDesk extends StatelessWidget {
                       ),
               ),
               Text(
-                heading,
+                readingLines(heading),
                 style: AppText.aside(size: 16, color: AppColors.burgundy),
                 textAlign: TextAlign.center,
               ),
@@ -193,7 +194,7 @@ class DetectiveDesk extends StatelessWidget {
                     : Padding(
                         padding: const EdgeInsets.only(top: AppSpace.xs),
                         child: Text(
-                          question,
+                          readingLines(question),
                           style: AppText.title(size: short ? 21 : 23),
                           textAlign: TextAlign.center,
                         ),
@@ -370,7 +371,7 @@ class DetectiveDesk extends StatelessWidget {
                               if (note != null && !typing) ...[
                                 const SizedBox(height: AppSpace.md),
                                 Text(
-                                  note!,
+                                  readingLines(note!),
                                   textAlign: TextAlign.center,
                                   style: AppText.caption(
                                     color: AppColors.paperLight.withValues(

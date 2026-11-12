@@ -8,6 +8,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/glossary_text.dart';
 import '../../../widgets/ink_icon.dart';
 import 'scene_explore.dart' show LookMark;
+import '../../../core/utils/reading_lines.dart';
 
 /// A thing handed over with the mission's document ([Exhibit]): laid on the
 /// page a little askew, a small glass on it (a tick once looked at); a tap
@@ -69,8 +70,8 @@ class ExhibitObject extends StatelessWidget {
                 const SizedBox(width: AppSpace.xs),
                 Flexible(
                   child: Text(
-                    // "THE LOST TICKET" → "Tap the ticket…".
-                    'Tap the ${exhibit.title.split(' ').last.toLowerCase()} to look ${looked ? 'again' : 'closer'}.',
+                    readingLines(// "THE LOST TICKET" → "Tap the ticket…".
+                    'Tap the ${exhibit.title.split(' ').last.toLowerCase()} to look ${looked ? 'again' : 'closer'}.'),
                     style: AppText.bodyText(size: 15, weight: FontWeight.w700, color: AppColors.burgundy),
                   ),
                 ),

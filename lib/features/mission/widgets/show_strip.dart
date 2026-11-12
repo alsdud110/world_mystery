@@ -12,6 +12,7 @@ import '../../../data/models/opera_puzzles.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'opera_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// M1, the archive table ([ShowStripScene]): FILE 3 and FILE 4 (a tap
 /// reads either up close), and the show's strip on the clock. The strip is
@@ -83,7 +84,7 @@ class _ShowStripPuzzleState extends State<ShowStripPuzzle> {
         ),
         const SizedBox(height: AppSpace.lg),
         Text(
-          scene.task,
+          readingLines(scene.task),
           key: const ValueKey('strip-task'),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 16, weight: FontWeight.w600, color: AppColors.navy).copyWith(height: 1.35),
@@ -165,7 +166,7 @@ class _PaperRow extends StatelessWidget {
                   children: [
                     Text(heading, style: AppText.eyebrow()),
                     const SizedBox(height: 2),
-                    for (final l in lines) Text(l, style: AppText.bodyText(size: 14, weight: FontWeight.w700).copyWith(height: 1.3)),
+                    for (final l in lines) Text(readingLines(l), style: AppText.bodyText(size: 14, weight: FontWeight.w700).copyWith(height: 1.3)),
                   ],
                 ),
               ),

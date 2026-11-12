@@ -19,6 +19,7 @@ import '../../../widgets/glossary_text.dart';
 import '../../../widgets/landmark_art.dart';
 import '../../game/game_providers.dart';
 import 'letter_lock.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The one look of an answer card, whatever the puzzle type, so a child
 /// learns a single rule: the card I chose is filled in navy ink.
@@ -351,7 +352,7 @@ class _WordInputQuestionState extends State<WordInputQuestion> {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
-                // Empty: the prompt's own blanks, one per letter (a case may
+                readingLines(// Empty: the prompt's own blanks, one per letter (a case may
                 // say "four letters"; a two-word answer, one blank per word:
                 // "UNDER ___ ___"). Typing: the child's words in their place,
                 // once for all the blanks.
@@ -360,7 +361,7 @@ class _WordInputQuestionState extends State<WordInputQuestion> {
                     : prompt.replaceAll(
                         RegExp(r'_+(?: +_+)*'),
                         _controller.text.trim().toUpperCase(),
-                      ),
+                      )),
                 style: AppText.title(size: 26).copyWith(letterSpacing: 2),
               ),
             ),
@@ -479,7 +480,7 @@ class _NumberCodeQuestionState extends ConsumerState<NumberCodeQuestion> {
                 ),
                 foregroundDecoration: const _WheelShade(),
                 child: Text(
-                  i < _code.length ? _code[i] : '',
+                  readingLines(i < _code.length ? _code[i] : ''),
                   style: AppText.title(size: 34, color: AppColors.goldLight),
                 ),
               ),
@@ -568,7 +569,7 @@ class PuzzleKey extends StatelessWidget {
         ),
         child: label != null
             ? Text(
-                label!,
+                readingLines(label!),
                 style: AppText.title(size: 26, color: AppColors.ink),
               )
             // The two erasers look alike as glyphs: name them under the icon.
@@ -579,7 +580,7 @@ class PuzzleKey extends StatelessWidget {
                   children: [
                     InkIcon(glyph!, color: AppColors.inkBrown, semanticLabel: semantic),
                     if (caption != null)
-                      ExcludeSemantics(child: Text(caption!, style: AppText.caption(color: AppColors.inkBrown))),
+                      ExcludeSemantics(child: Text(readingLines(caption!), style: AppText.caption(color: AppColors.inkBrown))),
                   ],
                 ),
               ),
@@ -719,7 +720,7 @@ class _ImageTile extends StatelessWidget {
                     height: 40,
                     child: Center(
                       child: Text(
-                        name!,
+                        readingLines(name!),
                         textAlign: TextAlign.center,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -737,7 +738,7 @@ class _ImageTile extends StatelessWidget {
                   height: 40,
                   child: Center(
                     child: Text(
-                      note!,
+                      readingLines(note!),
                       textAlign: TextAlign.center,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -854,11 +855,11 @@ class _SequenceQuestionState extends ConsumerState<SequenceQuestion> {
         Padding(
           padding: const EdgeInsets.only(bottom: AppSpace.sm),
           child: Text(
-            _picked.isEmpty
+            readingLines(_picked.isEmpty
                 ? 'Tap the steps below in order.'
                 : _picked.length < _length
                 ? 'Now tap step ${_picked.length + 1}.'
-                : 'All steps are set. Check, or undo one.',
+                : 'All steps are set. Check, or undo one.'),
             key: const ValueKey('sequence-guide'),
             textAlign: TextAlign.center,
             style: AppText.caption(color: AppColors.inkBrown),
@@ -894,7 +895,7 @@ class _SequenceQuestionState extends ConsumerState<SequenceQuestion> {
                     ],
                   Expanded(
                     child: Text(
-                      i < _picked.length ? _label(_picked[i]) : '',
+                      readingLines(i < _picked.length ? _label(_picked[i]) : ''),
                       semanticsLabel: i < _picked.length
                           ? 'Step ${i + 1}: ${_label(_picked[i])}'
                           : 'Step ${i + 1}: empty',
@@ -1025,7 +1026,7 @@ class _SequenceTile extends StatelessWidget {
                       _TilePicture(picture!, height: 64),
                       const SizedBox(height: AppSpace.xs),
                       Text(
-                        label,
+                        readingLines(label),
                         textAlign: TextAlign.center,
                         style: AppText.subtitle(color: AppColors.navy),
                       ),

@@ -25,6 +25,7 @@ import '../../../widgets/typewriter_text.dart';
 import '../../game/game_providers.dart';
 import 'dialogue_investigation.dart' show WordsLink;
 import 'evidence_recall.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A talk with one person (see [TalkScene]): their portrait in the middle
 /// (when there is one: never a stand-in), one short line at a time in the
@@ -288,7 +289,7 @@ class _GoalStrip extends StatelessWidget {
           const SizedBox(width: AppSpace.sm),
           Flexible(
             child: Text(
-              goal,
+              readingLines(goal),
               // Two lines on a small phone rather than the goal cut short.
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -707,7 +708,7 @@ class _Panel extends StatelessWidget {
                 const SizedBox(height: AppSpace.sm),
               ] else if (present != null) ...[
                 Text(
-                  present.prompt,
+                  readingLines(present.prompt),
                   key: const ValueKey('case-talk-show-prompt'),
                   textAlign: TextAlign.center,
                   style: AppText.bodyText(size: 16, weight: FontWeight.w600, color: AppColors.goldLight),
@@ -792,7 +793,7 @@ class _QuestionButton extends StatelessWidget {
                   const SizedBox(width: AppSpace.sm),
                   Expanded(
                     child: Text(
-                      question.text,
+                      readingLines(question.text),
                       style: AppText.bodyText(
                         size: 17,
                         weight: asked ? FontWeight.w400 : FontWeight.w600,
@@ -854,7 +855,7 @@ class _TalkLog extends StatelessWidget {
                   if (scene.question(b) case final q?)
                     Padding(
                       padding: const EdgeInsets.only(top: AppSpace.md, bottom: AppSpace.xs),
-                      child: Text(q.text, style: AppText.title(size: 16, color: AppColors.burgundy)),
+                      child: Text(readingLines(q.text), style: AppText.title(size: 16, color: AppColors.burgundy)),
                     ),
                   if (scene.present(b) case final p?)
                     Padding(
@@ -911,7 +912,7 @@ class _EvidenceChoice extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          told ? present.tell! : present.prompt,
+          readingLines(told ? present.tell! : present.prompt),
           key: const ValueKey('case-talk-show-prompt'),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 18, weight: FontWeight.w700, color: AppColors.goldLight),
@@ -1160,7 +1161,7 @@ class _RecordCard extends StatelessWidget {
           ),
           const SizedBox(height: AppSpace.xs),
           Text(
-            evidence.description,
+            readingLines(evidence.description),
             textAlign: TextAlign.center,
             style: AppText.aside(size: 15, color: AppColors.inkBrown),
           ),

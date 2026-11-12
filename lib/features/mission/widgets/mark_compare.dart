@@ -12,6 +12,7 @@ import '../../../widgets/glossary_text.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'workshop_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The stamps' ink on the bench, and the tracing sheet's.
 final _stampInk = AppColors.walnutDeep.withValues(alpha: 0.92);
@@ -62,7 +63,7 @@ class _MarkCompareState extends State<MarkCompare> {
         WorkshopNote(key: const ValueKey('maker-note'), intro: widget.mission.letterIntro, text: _scene.note),
         const SizedBox(height: AppSpace.md),
         Text(
-          all ? _scene.chooseTask : _scene.readTask,
+          readingLines(all ? _scene.chooseTask : _scene.readTask),
           key: const ValueKey('bench-task'),
           textAlign: TextAlign.center,
           style: AppText.subtitle(),
@@ -240,7 +241,7 @@ class WorkshopNote extends StatelessWidget {
     ),
     child: Column(
       children: [
-        Text(intro, textAlign: TextAlign.center, style: AppText.caption()),
+        Text(readingLines(intro), textAlign: TextAlign.center, style: AppText.caption()),
         const SizedBox(height: AppSpace.xs),
         GlossaryText(text, textAlign: TextAlign.center, style: AppText.letter(size: 18)),
       ],
@@ -287,7 +288,7 @@ class WorkshopChoices extends StatelessWidget {
       ),
       if (!open) ...[
         const SizedBox(height: AppSpace.sm),
-        Text(lockedLine, key: const ValueKey('choices-locked'), textAlign: TextAlign.center, style: AppText.aside(size: 15)),
+        Text(readingLines(lockedLine), key: const ValueKey('choices-locked'), textAlign: TextAlign.center, style: AppText.aside(size: 15)),
       ],
     ],
   );
@@ -499,7 +500,7 @@ class _SealCloserState extends State<_SealCloser> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: AppSpace.xl),
                       child: Text(
-                        _laid ? 'The blue lines are the maker\'s own mark. Do they match?' : 'Drag the tracing sheet over the stamp.',
+                        readingLines(_laid ? 'The blue lines are the maker\'s own mark. Do they match?' : 'Drag the tracing sheet over the stamp.'),
                         key: const ValueKey('seal-close-task'),
                         textAlign: TextAlign.center,
                         style: AppText.title(size: 19, color: AppColors.goldLight),

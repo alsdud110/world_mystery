@@ -10,6 +10,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import '../../../puzzles_v2/core/puzzle_rules.dart';
 import '../../../puzzles_v2/core/syllable_rules.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A note in the new letters put back together (Puzzle Engine 2.0,
 /// `syllable_compose`): each group's first sound is known, its vowel is
@@ -133,7 +134,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
         if (_note != null)
           Semantics(
             liveRegion: true,
-            child: Text(_note!, key: const ValueKey('syllable-note'), style: AppText.aside(size: 15, color: AppColors.inkBrown)),
+            child: Text(readingLines(_note!), key: const ValueKey('syllable-note'), style: AppText.aside(size: 15, color: AppColors.inkBrown)),
           ),
         const SizedBox(height: AppSpace.md),
         GameButton(key: const ValueKey('syllable-check'), label: 'READ THE NOTE', onPressed: _session.complete ? _read : null),
@@ -171,7 +172,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
                     borderRadius: BorderRadius.circular(AppRadius.paper),
                     border: Border.all(color: AppColors.goldDeep, width: AppLine.rule),
                   ),
-                  child: Text(written, style: AppText.title(size: 40, color: piece.vowel == null ? AppColors.inkBrown : AppColors.navy)),
+                  child: Text(readingLines(written), style: AppText.title(size: 40, color: piece.vowel == null ? AppColors.inkBrown : AppColors.navy)),
                 ),
               ),
               const SizedBox(width: AppSpace.md),
@@ -180,7 +181,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(wrong ? 'GROUP ${i + 1} · CHECK THIS ONE' : 'GROUP ${i + 1}', style: AppText.eyebrow(color: wrong ? AppColors.tryAgain : AppColors.goldDeep)),
-                    Text(b.line, style: AppText.bodyText(size: 15, color: AppColors.inkBrown)),
+                    Text(readingLines(b.line), style: AppText.bodyText(size: 15, color: AppColors.inkBrown)),
                   ],
                 ),
               ),
@@ -251,13 +252,13 @@ class _SyllableBoardState extends State<SyllableBoard> {
         for (final b in _spec.blocks)
           Padding(
             padding: const EdgeInsets.only(bottom: AppSpace.xs),
-            child: Text(b.line, style: AppText.bodyText(size: 15, color: AppColors.inkBrown)),
+            child: Text(readingLines(b.line), style: AppText.bodyText(size: 15, color: AppColors.inkBrown)),
           ),
         const SizedBox(height: AppSpace.sm),
         Semantics(header: true, child: Text('THE PAPER', style: AppText.eyebrow())),
         Padding(
           padding: const EdgeInsets.only(top: AppSpace.xs, bottom: AppSpace.sm),
-          child: Text(_spec.row ? 'Tap a block, then choose its parts.' : 'Tap a place on the paper, then build what was written there.', style: AppText.aside(size: 15)),
+          child: Text(readingLines(_spec.row ? 'Tap a block, then choose its parts.' : 'Tap a place on the paper, then build what was written there.'), style: AppText.aside(size: 15)),
         ),
         Center(
           child: Container(
@@ -296,7 +297,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
         if (_note != null)
           Semantics(
             liveRegion: true,
-            child: Text(_note!, key: const ValueKey('syllable-note'), style: AppText.aside(size: 15, color: AppColors.inkBrown)),
+            child: Text(readingLines(_note!), key: const ValueKey('syllable-note'), style: AppText.aside(size: 15, color: AppColors.inkBrown)),
           ),
         const SizedBox(height: AppSpace.md),
         GameButton(key: const ValueKey('syllable-check'), label: _spec.row ? 'READ THE WORD' : 'READ THE NOTE', onPressed: _session.complete ? _read : null),
@@ -350,7 +351,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
                     child: child,
                   );
                 },
-                child: Text(written, style: AppText.title(size: 40, color: AppColors.navy)),
+                child: Text(readingLines(written), style: AppText.title(size: 40, color: AppColors.navy)),
               ),
               const SizedBox(height: AppSpace.xs),
               SizedBox(
@@ -366,7 +367,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
                 SizedBox(
                   width: 96,
                   child: Text(
-                    Hangul.reading(written).isEmpty ? '…' : 'says "${Hangul.reading(written)}"',
+                    readingLines(Hangul.reading(written).isEmpty ? '…' : 'says "${Hangul.reading(written)}"'),
                     key: ValueKey('syllable-reading-${b.id}'),
                     textAlign: TextAlign.center,
                     style: AppText.aside(size: 14, color: AppColors.inkBrown),
@@ -474,7 +475,7 @@ class _SyllableBoardState extends State<SyllableBoard> {
       Semantics(
         label: 'The note: ${_session.answer}',
         excludeSemantics: true,
-        child: Text(_session.answer, textAlign: TextAlign.center, style: AppText.title(size: 40, color: AppColors.navy)),
+        child: Text(readingLines(_session.answer), textAlign: TextAlign.center, style: AppText.title(size: 40, color: AppColors.navy)),
       ),
     ],
   );
@@ -523,7 +524,7 @@ class _PieceState extends State<_Piece> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (widget.glyph.isNotEmpty) ...[
-                  Text(widget.glyph, style: AppText.title(size: 22, color: on ? AppColors.goldLight : AppColors.navy)),
+                  Text(readingLines(widget.glyph), style: AppText.title(size: 22, color: on ? AppColors.goldLight : AppColors.navy)),
                   const SizedBox(width: AppSpace.xs),
                 ],
                 // Wraps under large text rather than running off the piece.

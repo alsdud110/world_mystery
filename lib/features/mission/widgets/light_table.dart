@@ -12,6 +12,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'letter_papers.dart' show postType;
 import 'opera_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The final's stage, as the final goes: the archive table, its box
 /// labelled FILE 3–4; once FILE 3 is laid on it ([placed]), the light table
@@ -295,7 +296,7 @@ class _ChangedRecordPuzzleState extends State<ChangedRecordPuzzle> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(s.chooseTask, key: const ValueKey('final-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(s.chooseTask), key: const ValueKey('final-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         IntrinsicHeight(
           child: Row(
@@ -345,7 +346,7 @@ class _ChangedRecordPuzzleState extends State<ChangedRecordPuzzle> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(s.placeTask, key: const ValueKey('final-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(s.placeTask), key: const ValueKey('final-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         DragTarget<String>(
           onAcceptWithDetails: (_) => widget.onPlaced(),
@@ -545,7 +546,7 @@ class _ChangedRecordPuzzleState extends State<ChangedRecordPuzzle> {
             // The step itself is the page's heading ([headingOf]).
             if (widget.litSeen) ...[
               Text(
-                _picked == null ? 'Drag a time onto FILE 3, or tap a time, then a line.' : 'Now tap the line on FILE 3.',
+                readingLines(_picked == null ? 'Drag a time onto FILE 3, or tap a time, then a line.' : 'Now tap the line on FILE 3.'),
                 key: const ValueKey('pin-help'),
                 textAlign: TextAlign.center,
                 style: AppText.caption(color: AppColors.paperLight.withValues(alpha: 0.85)),
@@ -611,10 +612,10 @@ class _RecordCard extends StatelessWidget {
             children: [
               SizedBox(height: 120, child: Center(child: picture)),
               const SizedBox(height: AppSpace.sm),
-              Text(title, style: AppText.title(size: 20)),
+              Text(readingLines(title), style: AppText.title(size: 20)),
               Text(subtitle, textAlign: TextAlign.center, style: AppText.eyebrow()),
               const SizedBox(height: AppSpace.xs),
-              Text(line, textAlign: TextAlign.center, style: AppText.bodyText(size: 14, weight: FontWeight.w700)),
+              Text(readingLines(line), textAlign: TextAlign.center, style: AppText.bodyText(size: 14, weight: FontWeight.w700)),
             ],
           ),
         ),
@@ -703,7 +704,7 @@ class _Switch extends StatelessWidget {
                     children: [
                       Text(on ? 'THE LIGHT IS ON' : 'THE LIGHT IS OFF', key: const ValueKey('light-state'), style: AppText.eyebrow(color: on ? AppColors.goldLight : AppColors.parchmentDark)),
                       const SizedBox(height: 2),
-                      Text(on ? 'Tap the switch to turn it off.' : 'Tap the brass switch.', style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.paperLight)),
+                      Text(readingLines(on ? 'Tap the switch to turn it off.' : 'Tap the brass switch.'), style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.paperLight)),
                     ],
                   ),
                 ),

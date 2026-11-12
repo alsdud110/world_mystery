@@ -35,6 +35,7 @@ import '../season/season_actions.dart';
 import '../season/season_overview.dart';
 import 'detective_report.dart';
 import '../../data/models/detective_name.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// A historical season's REAL HISTORY / IN THIS MYSTERY of a case, by case
 /// id: none in any other season, so their Case Closed file is as before.
@@ -220,7 +221,7 @@ class _CaseSolvedScreenState extends ConsumerState<CaseSolvedScreen> with Single
                               ),
                               const SizedBox(height: AppSpace.sm),
                               for (final line in season.finale.isEmpty ? season.outro : season.finale)
-                                Text(line, style: AppText.cinematicPrompt(size: 20), textAlign: TextAlign.center),
+                                Text(readingLines(line), style: AppText.cinematicPrompt(size: 20), textAlign: TextAlign.center),
                             ] else
                             // What the case left unanswered is told by the post-case
                             // scene before this report (Episode.hook is not repeated
@@ -365,7 +366,7 @@ class _SeasonFinale extends ConsumerWidget {
     return Column(
       children: [
         for (final line in lines)
-          Text(line, style: AppText.cinematicPrompt(size: 22), textAlign: TextAlign.center),
+          Text(readingLines(line), style: AppText.cinematicPrompt(size: 22), textAlign: TextAlign.center),
         const SizedBox(height: AppSpace.md),
         // Small beside the case file: held out, not a second certificate.
         Semantics(
@@ -670,7 +671,7 @@ class _CaseFile extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('BADGE', style: AppText.eyebrow(color: AppColors.inkBrown)),
-                          Text(top.title.toUpperCase(), style: AppText.title(size: 22)),
+                          Text(readingLines(top.title.toUpperCase()), style: AppText.title(size: 22)),
                           const SizedBox(height: AppSpace.sm),
                           Wrap(
                             spacing: AppSpace.sm,
@@ -693,7 +694,7 @@ class _CaseFile extends StatelessWidget {
               const _Rule(),
               Text('CASE REPORT', style: AppText.mark(color: AppColors.inkBrown)),
               const SizedBox(height: 8),
-              Text('"${report.caseSummary}"', style: AppText.letter(size: 18)),
+              Text(readingLines('"${report.caseSummary}"'), style: AppText.letter(size: 18)),
               const SizedBox(height: 14),
               Row(
                 children: [
@@ -738,7 +739,7 @@ class _HistoryReveal extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(s.publisher, style: AppText.bodyText(size: 16, weight: FontWeight.w600)),
+                  Text(readingLines(s.publisher), style: AppText.bodyText(size: 16, weight: FontWeight.w600)),
                   Text(s.title, style: AppText.bodyText(size: 15)),
                   if (s.url ?? s.citation case final where?) SelectableText(where, style: AppText.caption(color: AppColors.inkBrown)),
                 ],
@@ -761,7 +762,7 @@ class _HistoryReveal extends StatelessWidget {
         for (final line in reveal.realHistory)
           Padding(
             padding: const EdgeInsets.only(bottom: AppSpace.sm),
-            child: Text(line.at(level), style: AppText.bodyText(size: 17)),
+            child: Text(readingLines(line.at(level)), style: AppText.bodyText(size: 17)),
           ),
         if (reveal.sources.isNotEmpty)
           InkTextButton(key: const ValueKey('history-sources'), label: 'SOURCES', color: AppColors.inkBrown, onPressed: () => _sources(context)),
@@ -772,7 +773,7 @@ class _HistoryReveal extends StatelessWidget {
         for (final line in reveal.inThisMystery)
           Padding(
             padding: const EdgeInsets.only(bottom: AppSpace.sm),
-            child: Text(line.at(level), style: AppText.letter(size: 17)),
+            child: Text(readingLines(line.at(level)), style: AppText.letter(size: 17)),
           ),
       ],
     );
@@ -880,7 +881,7 @@ class _Field extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(value, maxLines: 1, style: AppText.title(size: 28)),
               )
-            : Text(value, style: name ? AppText.placeTitle(size: 21) : AppText.title(size: 20)),
+            : Text(readingLines(value), style: name ? AppText.placeTitle(size: 21) : AppText.title(size: 20)),
       ],
     );
   }
@@ -900,9 +901,9 @@ class _Row extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Text(label, style: AppText.subtitle(color: AppColors.inkBrown)),
+            child: Text(readingLines(label), style: AppText.subtitle(color: AppColors.inkBrown)),
           ),
-          child ?? Text(value ?? '', style: AppText.title(size: 21)),
+          child ?? Text(readingLines(value ?? ''), style: AppText.title(size: 21)),
         ],
       ),
     );

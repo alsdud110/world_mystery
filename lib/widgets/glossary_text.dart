@@ -7,6 +7,7 @@ import '../core/theme/app_colors.dart';
 import '../core/theme/app_motion.dart';
 import '../core/theme/app_text.dart';
 import '../core/theme/app_tokens.dart';
+import '../core/utils/reading_lines.dart';
 import '../data/models/detective_name.dart';
 import '../data/models/episode.dart';
 import '../features/game/game_controller.dart';
@@ -161,7 +162,8 @@ class _GlossaryTextState extends ConsumerState<GlossaryText> {
       }
       return Text.rich(TextSpan(children: spans), style: widget.style, textAlign: widget.textAlign);
     }
-    for (final (text, isName) in _pieces(widget.text, name)) {
+    // Read sentence by sentence (see [readingLines]): only the breaks change.
+    for (final (text, isName) in _pieces(readingLines(widget.text), name)) {
       if (isName) {
         spans.add(TextSpan(text: text));
         continue;

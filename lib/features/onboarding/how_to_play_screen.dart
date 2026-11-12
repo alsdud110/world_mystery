@@ -38,6 +38,7 @@ import '../game/wallet_controller.dart';
 import '../mission/widgets/tip_shop.dart';
 import '../season/widgets/season_props.dart';
 import 'how_to_play_state.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// How to Play: an eight-page storybook before the first case, with the
 /// player's own detective (boy or girl, by name). It opens and closes on London at night (the
@@ -479,7 +480,7 @@ class _PaperSpread extends StatelessWidget {
                                       horizontal: AppSpace.md,
                                     ),
                                     child: Text(
-                                      line,
+                                      readingLines(line),
                                       textAlign: TextAlign.center,
                                       style: AppText.aside(
                                         size: compact ? 15 : 16,
@@ -549,7 +550,7 @@ class _PaperSpread extends StatelessWidget {
                             MediaQuery.withClampedTextScaling(
                               maxScaleFactor: compact ? 1.1 : 1.2,
                               child: Text(
-                                caption,
+                                readingLines(caption),
                                 textAlign: TextAlign.center,
                                 style: AppText.bodyText(
                                   size: compact ? 14 : 15,
@@ -1147,7 +1148,7 @@ class _WelcomeSpread extends StatelessWidget {
                     // The reading face, not the small-caps display face: the
                     // name shows exactly as the detective wrote it.
                     Text(
-                      DetectiveName.address(welcomeLine, name),
+                      readingLines(DetectiveName.address(welcomeLine, name)),
                       key: const ValueKey('how-to-play-welcome'),
                       textAlign: TextAlign.center,
                       style: AppText.title(size: compact ? 21 : 23),
@@ -1156,7 +1157,7 @@ class _WelcomeSpread extends StatelessWidget {
                     const OrnamentRule(width: 96),
                     const SizedBox(height: AppSpace.xs),
                     Text(
-                      welcomeBody,
+                      readingLines(welcomeBody),
                       textAlign: TextAlign.center,
                       style: AppText.bodyText(
                         size: compact ? 15 : 16,
@@ -1411,7 +1412,7 @@ class _PaperTab extends StatelessWidget {
                   ],
                   Flexible(
                     child: Text(
-                      label,
+                      readingLines(label),
                       style: AppText.bodyText(
                         size: 17,
                         weight: FontWeight.w600,
@@ -1554,7 +1555,7 @@ class _WitnessScene extends StatelessWidget {
                           child: AnimatedSwitcher(
                             duration: const Duration(milliseconds: 200),
                             child: Text(
-                              DetectiveName.address(answers[asked]!, name),
+                              readingLines(DetectiveName.address(answers[asked]!, name)),
                               key: ValueKey(asked),
                               style: AppText.letter(size: 16),
                             ),
@@ -1793,7 +1794,7 @@ class _Choice extends StatelessWidget {
                   const SizedBox(width: AppSpace.md),
                   Expanded(
                     child: Text(
-                      label,
+                      readingLines(label),
                       style: AppText.bodyText(
                         size: 17,
                         color: chosen ? AppColors.paperLight : AppColors.ink,
@@ -1831,12 +1832,12 @@ class _Slip extends StatelessWidget {
   Widget build(BuildContext context) {
     final words = Column(
       children: [
-        Text(title, style: AppText.title(size: 22, color: color)),
+        Text(readingLines(title), style: AppText.title(size: 22, color: color)),
         const SizedBox(height: AppSpace.xs),
         OrnamentRule(color: color, width: 90),
         const SizedBox(height: AppSpace.xs),
         Text(
-          text,
+          readingLines(text),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 16),
         ),
@@ -2299,9 +2300,9 @@ class _TipsScene extends StatelessWidget {
           const SizedBox(height: AppSpace.sm),
         ],
         Text(
-          revealed == 0
+          readingLines(revealed == 0
               ? 'Good detectives use hints.'
-              : 'Hint ${math.min(revealed + 1, tips.length)} of ${tips.length}',
+              : 'Hint ${math.min(revealed + 1, tips.length)} of ${tips.length}'),
           textAlign: TextAlign.center,
           style: AppText.caption(color: AppColors.inkBrown),
         ),
@@ -2439,7 +2440,7 @@ class _TipCard extends StatelessWidget {
                                 const SizedBox(width: AppSpace.xs),
                               ],
                               Text(
-                                price > 0 ? '$price coins' : 'FREE',
+                                readingLines(price > 0 ? '$price coins' : 'FREE'),
                                 style: AppText.bodyText(
                                   size: 15,
                                   weight: FontWeight.w700,
@@ -2456,7 +2457,7 @@ class _TipCard extends StatelessWidget {
                           color: AppColors.gold.withValues(alpha: 0.3),
                         ),
                         const SizedBox(height: AppSpace.sm),
-                        Text(text, style: AppText.letter(size: 17)),
+                        Text(readingLines(text), style: AppText.letter(size: 17)),
                       ],
                     ],
                   ),
@@ -2709,7 +2710,7 @@ class _IndexRow extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        about,
+                        readingLines(about),
                         style: AppText.bodyText(
                           size: 14,
                           color: AppColors.muted,
@@ -2864,7 +2865,7 @@ class _ReadySpread extends ConsumerWidget {
                 const OrnamentRule(color: AppColors.goldLight, width: 120),
                 const SizedBox(height: AppSpace.xs),
                 Text(
-                  'Trust your eyes. Follow the clues. The mystery begins!',
+                  readingLines('Trust your eyes. Follow the clues. The mystery begins!'),
                   textAlign: TextAlign.center,
                   style: AppText.aside(
                     size: 16,

@@ -17,6 +17,7 @@ import 'letter_papers.dart';
 import 'mark_compare.dart' show WorkshopNote;
 import 'river_papers.dart' show PictureCanvas;
 import 'workshop_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The archive ([ArchiveScene]): the cabinet, its drawers' labels written
 /// on their cards. A tap opens a drawer (kept: [onOpened]); one that does
@@ -67,7 +68,7 @@ class _ArchivePuzzleState extends State<ArchivePuzzle> {
         // The corner from Clock III, and its number: what to find.
         WorkshopNote(key: const ValueKey('corner-note'), intro: widget.mission.letterIntro, text: widget.mission.letter),
         const SizedBox(height: AppSpace.md),
-        Text(open ? _scene.drawerTask : _scene.cabinetTask, key: const ValueKey('archive-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(open ? _scene.drawerTask : _scene.cabinetTask), key: const ValueKey('archive-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         DecoratedBox(
           decoration: BoxDecoration(boxShadow: AppShadow.paperLift, borderRadius: BorderRadius.circular(AppRadius.paper)),
@@ -298,7 +299,7 @@ class _EnvelopeCloserState extends State<_EnvelopeCloser> with SingleTickerProvi
                 children: [
                   Text('ENVELOPE ${widget.number}', key: const ValueKey('envelope-title'), style: AppText.mark(color: AppColors.goldLight)),
                   const SizedBox(height: AppSpace.xs),
-                  Text(_scene.layTask, textAlign: TextAlign.center, style: AppText.bodyText(size: 16, color: AppColors.paperLight)),
+                  Text(readingLines(_scene.layTask), textAlign: TextAlign.center, style: AppText.bodyText(size: 16, color: AppColors.paperLight)),
                   const SizedBox(height: AppSpace.md),
                   LayoutBuilder(
                     builder: (context, box) {
@@ -356,7 +357,7 @@ class _EnvelopeCloserState extends State<_EnvelopeCloser> with SingleTickerProvi
                   ConstrainedBox(
                     constraints: const BoxConstraints(minHeight: 28),
                     child: Text(
-                      _settled ? 'It fits!' : (_line ?? ''),
+                      readingLines(_settled ? 'It fits!' : (_line ?? '')),
                       key: const ValueKey('envelope-line'),
                       textAlign: TextAlign.center,
                       style: AppText.title(size: 20, color: _settled ? AppColors.goldLight : AppColors.tryAgainSoft),
@@ -484,7 +485,7 @@ class EnvelopeFound extends StatelessWidget {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
-      Text('The corner fits. This is Letter 4417!', key: const ValueKey('envelope-found-line'), textAlign: TextAlign.center, style: AppText.title(size: 22)),
+      Text(readingLines('The corner fits. This is Letter 4417!'), key: const ValueKey('envelope-found-line'), textAlign: TextAlign.center, style: AppText.title(size: 22)),
       const SizedBox(height: AppSpace.md),
       DecoratedBox(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(AppRadius.paper), boxShadow: AppShadow.paperLift),

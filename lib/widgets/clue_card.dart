@@ -11,6 +11,7 @@ import 'glossary_text.dart';
 import 'ink_icon.dart';
 import 'royal_box_picture.dart';
 import 'symbol_icon.dart';
+import '../core/utils/reading_lines.dart';
 
 /// A notebook page entry: "CLUE #01 — Platform 9".
 class ClueCard extends StatelessWidget {
@@ -114,7 +115,7 @@ class ClueCard extends StatelessWidget {
                     children: [
                       const InkIcon(InkGlyph.pin, size: AppIconSize.small, color: AppColors.royalBlue),
                       const SizedBox(width: 4),
-                      Flexible(child: Text(location!, style: AppText.caption(color: AppColors.royalBlue))),
+                      Flexible(child: Text(readingLines(location!), style: AppText.caption(color: AppColors.royalBlue))),
                     ],
                   ),
                 ],

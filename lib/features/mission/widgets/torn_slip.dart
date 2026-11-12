@@ -12,6 +12,7 @@ import 'abbesses_papers.dart';
 import 'opera_papers.dart' show showOperaCloser;
 import 'river_papers.dart' show PictureCanvas;
 import 'workshop_papers.dart' show handwriting;
+import '../../../core/utils/reading_lines.dart';
 
 /// M3, the torn paper ([TornSlipScene]): P.'s note, the paper folded small,
 /// unfolded a fold at a tap; then its parts marked, SAME as the Amendment
@@ -164,7 +165,7 @@ class _TornSlipPuzzleState extends State<TornSlipPuzzle> {
         ),
         const SizedBox(height: AppSpace.sm),
         Text(
-          '${_scene.unfoldTask}  ${_state.opened} / ${_scene.folds}',
+          readingLines('${_scene.unfoldTask}  ${_state.opened} / ${_scene.folds}'),
           key: const ValueKey('slip-unfold-task'),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy),
@@ -186,7 +187,7 @@ class _TornSlipPuzzleState extends State<TornSlipPuzzle> {
       })),
       const SizedBox(height: AppSpace.sm),
       Text(
-        _mode == FormMark.same ? scene.sameTask : scene.missingTask,
+        readingLines(_mode == FormMark.same ? scene.sameTask : scene.missingTask),
         key: const ValueKey('slip-mark-task'),
         textAlign: TextAlign.center,
         style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy),
@@ -224,7 +225,7 @@ class _TornSlipPuzzleState extends State<TornSlipPuzzle> {
         const SizedBox(height: AppSpace.sm),
         Semantics(
           liveRegion: true,
-          child: Text(_line!, key: const ValueKey('slip-line'), textAlign: TextAlign.center, style: AppText.letter(size: 17, color: AppColors.inkBrown)),
+          child: Text(readingLines(_line!), key: const ValueKey('slip-line'), textAlign: TextAlign.center, style: AppText.letter(size: 17, color: AppColors.inkBrown)),
         ),
       ],
       const SizedBox(height: AppSpace.sm),
@@ -349,7 +350,7 @@ class _SealCheckState extends State<_SealCheck> {
         ),
         for (final (i, c) in checks.indexed) ...[
           const SizedBox(height: AppSpace.md),
-          Text(c.question, style: AppText.title(size: 19, color: AppColors.goldLight)),
+          Text(readingLines(c.question), style: AppText.title(size: 19, color: AppColors.goldLight)),
           const SizedBox(height: AppSpace.xs),
           Wrap(
             alignment: WrapAlignment.center,
@@ -370,7 +371,7 @@ class _SealCheckState extends State<_SealCheck> {
           if (_chosen[i] != null && _chosen[i] != c.answer)
             Padding(
               padding: const EdgeInsets.only(top: AppSpace.xs),
-              child: Text(c.wrongLine, key: ValueKey('seal-wrong-$i'), textAlign: TextAlign.center, style: AppText.aside(size: 16, color: AppColors.paperLight)),
+              child: Text(readingLines(c.wrongLine), key: ValueKey('seal-wrong-$i'), textAlign: TextAlign.center, style: AppText.aside(size: 16, color: AppColors.paperLight)),
             ),
         ],
         const SizedBox(height: AppSpace.lg),

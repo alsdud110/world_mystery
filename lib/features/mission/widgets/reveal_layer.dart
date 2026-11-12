@@ -14,6 +14,7 @@ import 'investigation_search.dart' show PencilSlip, SearchTapRing;
 import 'search_stage.dart';
 import 'spot_differences.dart' show PicturePuzzleActions;
 import 'zoom_picture.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A canvas painted over a sketch ([LayerScene]): the canvas on its easel
 /// fills the top of the page (pinch closer); the slider under it slides the
@@ -190,7 +191,7 @@ class _RevealLayerState extends State<RevealLayer> {
             const SizedBox(height: AppSpace.xs),
             _PaintSlider(value: _revealed, onChanged: _slide, onChangeEnd: _letGo),
             Text(
-              _readable ? 'Found: $found of ${scene.marks.length}' : 'Drag the brass handle to the right.',
+              readingLines(_readable ? 'Found: $found of ${scene.marks.length}' : 'Drag the brass handle to the right.'),
               key: const ValueKey('layer-count'),
               textAlign: TextAlign.center,
               style: _readable ? AppText.tally() : AppText.caption(),

@@ -14,6 +14,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'river_papers.dart';
 import 'tower_documents.dart' show showDocumentCloser;
+import '../../../core/utils/reading_lines.dart';
 
 /// The final's street book ([StreetBookScene]): an address is tapped, then
 /// the evidence that rules it out (one or two pieces), and CROSS IT OUT
@@ -75,7 +76,7 @@ class _StreetBookPuzzleState extends State<StreetBookPuzzle> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          oneLeft ? scene.addressTask : scene.pickTask,
+          readingLines(oneLeft ? scene.addressTask : scene.pickTask),
           key: const ValueKey('book-task'),
           textAlign: TextAlign.center,
           style: AppText.subtitle(),
@@ -136,7 +137,7 @@ class _StreetBookPuzzleState extends State<StreetBookPuzzle> {
             Padding(
               padding: const EdgeInsets.only(bottom: AppSpace.xs),
               child: Text(
-                '${e.name}: ${[for (final b in scene.evidence) if (ev.contains(b.id)) widget.evidence[b.id]?.name ?? b.id].join(' + ')}',
+                readingLines('${e.name}: ${[for (final b in scene.evidence) if (ev.contains(b.id)) widget.evidence[b.id]?.name ?? b.id].join(' + ')}'),
                 key: ValueKey('book-crossed-note-${e.id}'),
                 textAlign: TextAlign.center,
                 style: AppText.aside(size: 14, color: AppColors.burgundy),
@@ -494,7 +495,7 @@ class _GateRevealState extends State<_GateReveal> with SingleTickerProviderState
                   // What it says, in words a child reads at once.
                   ExcludeSemantics(
                     child: Text(
-                      words,
+                      readingLines(words),
                       key: ValueKey('gate-words-$_step'),
                       textAlign: TextAlign.center,
                       style: _step == 0

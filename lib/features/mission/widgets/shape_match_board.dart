@@ -9,6 +9,7 @@ import '../../../data/models/shape_match.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'question_widgets.dart' show AnswerState, answerPaper;
+import '../../../core/utils/reading_lines.dart';
 
 /// Letters laid on the pictures they copy ([ShapeMatchSpec], `shape_match`):
 /// a letter tile is tapped, then the picture it goes on; a laid letter is
@@ -70,7 +71,7 @@ class _ShapeMatchBoardState extends State<ShapeMatchBoard> {
               Semantics(
                 liveRegion: true,
                 child: Text(
-                  held == null ? spec.task : 'Now tap the picture $held copies.',
+                  readingLines(held == null ? spec.task : 'Now tap the picture $held copies.'),
                   key: const ValueKey('shape-say'),
                   style: AppText.aside(size: 15, color: AppColors.inkBrown),
                 ),
@@ -148,7 +149,7 @@ class _LetterTile extends StatelessWidget {
           height: 60,
           alignment: Alignment.center,
           decoration: answerPaper(held ? AnswerState.selected : AnswerState.idle),
-          child: Text(glyph, style: AppText.title(size: 32, color: held ? AppColors.goldLight : AppColors.navy)),
+          child: Text(readingLines(glyph), style: AppText.title(size: 32, color: held ? AppColors.goldLight : AppColors.navy)),
         ),
       ),
     ),
@@ -202,7 +203,7 @@ class _PictureRow extends StatelessWidget {
                       borderRadius: BorderRadius.circular(AppRadius.paper),
                       border: Border.all(color: glyph == null ? AppColors.goldDeep : AppColors.navy, width: AppLine.rule),
                     ),
-                    child: Text(glyph ?? '?', style: AppText.title(size: glyph == null ? 24 : 36, color: glyph == null ? AppColors.muted : AppColors.navy)),
+                    child: Text(readingLines(glyph ?? '?'), style: AppText.title(size: glyph == null ? 24 : 36, color: glyph == null ? AppColors.muted : AppColors.navy)),
                   ),
                 ],
               ),

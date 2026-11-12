@@ -24,6 +24,7 @@ import '../game/game_providers.dart';
 import 'season_actions.dart';
 import 'season_overview.dart';
 import 'widgets/investigation_board.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// The season: Season → Case → Mission. Above the case files, it shows the
 /// twelve cases as one story.
@@ -521,8 +522,8 @@ class _Dossier extends StatelessWidget {
                   children: [
                     Expanded(child: Text('CASES SOLVED', style: AppText.eyebrow(color: AppColors.inkBrown))),
                     Text(
-                      // Out of the season's planned cases, not only those in the game.
-                      '${overview.solvedCount} / ${overview.info.plannedCases ?? overview.total}',
+                      readingLines(// Out of the season's planned cases, not only those in the game.
+                      '${overview.solvedCount} / ${overview.info.plannedCases ?? overview.total}'),
                       style: AppText.title(size: 22, color: AppColors.navy)
                           .copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
                     ),
@@ -760,7 +761,7 @@ class _Completed extends StatelessWidget {
         ),
         const SizedBox(height: AppSpace.xs),
         for (final line in overview.info.outro)
-          Text(line, textAlign: TextAlign.center, style: AppText.aside(size: 15, color: AppColors.inkBrown)),
+          Text(readingLines(line), textAlign: TextAlign.center, style: AppText.aside(size: 15, color: AppColors.inkBrown)),
       ],
     );
   }

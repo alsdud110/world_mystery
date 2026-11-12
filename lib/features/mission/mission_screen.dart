@@ -108,6 +108,7 @@ import '../../puzzles_v2/core/timeline_rules.dart';
 import 'widgets/shape_match_board.dart';
 import 'widgets/syllable_board.dart';
 import 'widgets/timeline_board.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// The three steps of a mission. Each screen offers one main action.
 enum MissionStage { story, letter, puzzle }
@@ -2262,10 +2263,10 @@ class _SolvedStage extends ConsumerWidget {
         const Center(child: InkStamp('SOLVED', color: AppColors.success)),
         const SizedBox(height: AppSpace.md),
         Text(
-          DetectiveName.address(
+          readingLines(DetectiveName.address(
             m.successMessage,
             ref.watch(gameControllerProvider).detectiveName,
-          ),
+          )),
           style: AppText.bodyText(),
           textAlign: TextAlign.center,
         ),

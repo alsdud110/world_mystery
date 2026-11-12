@@ -21,6 +21,7 @@ import '../onboarding/detective_form.dart' show DetectivePortrait;
 import '../season/season_pack_gate.dart';
 import 'widgets/world_map_view.dart';
 import 'world_map_state.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// The World Map: every city of the game, the detective's own in the
 /// middle. Choosing a city on the map only shows its card; its season is
@@ -427,7 +428,7 @@ class _CityCard extends StatelessWidget {
                         ],
                         Expanded(
                           child: Text(
-                            standing,
+                            readingLines(standing),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: AppText.caption(color: AppColors.muted).copyWith(fontSize: 13, height: 1.3),

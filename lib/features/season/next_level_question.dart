@@ -12,6 +12,7 @@ import '../../widgets/ink_icon.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import '../onboarding/detective_form.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// READY FOR YOUR NEXT MYSTERY? Under a complete season's last report,
 /// before the next season begins: the detective keeps their level or
@@ -41,7 +42,7 @@ class NextLevelQuestion extends ConsumerWidget {
           ),
           const SizedBox(height: AppSpace.xs),
           Text(
-            'You can keep your level or choose a new one for $city.',
+            readingLines('You can keep your level or choose a new one for $city.'),
             textAlign: TextAlign.center,
             style: AppText.caption(color: quiet),
           ),
@@ -115,7 +116,7 @@ class _ChooseLevelDialogState extends State<ChooseLevelDialog> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'For ${widget.city}. Your solved cases stay as they are.',
+            readingLines('For ${widget.city}. Your solved cases stay as they are.'),
             textAlign: TextAlign.center,
             style: AppText.bodyText(size: 15),
           ),

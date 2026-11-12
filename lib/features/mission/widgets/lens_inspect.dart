@@ -21,6 +21,7 @@ import '../../game/game_providers.dart';
 import 'investigation_search.dart' show PencilSlip;
 import 'question_widgets.dart' show ShakeOnChange, WordInputQuestion;
 import 'scene_explore.dart' show ExplorePanel, LookMark, OverPicture;
+import '../../../core/utils/reading_lines.dart';
 
 /// A room whose exhibits are examined under a magnifying glass
 /// ([InspectScene]). The glass is dragged over the picture and shows it
@@ -822,7 +823,7 @@ class _FoundCard extends StatelessWidget {
                 const SizedBox(height: AppSpace.xs),
                 const OrnamentRule(),
                 const SizedBox(height: AppSpace.sm),
-                Text(spot.line, textAlign: TextAlign.center, style: AppText.letter(size: 17)),
+                Text(readingLines(spot.line), textAlign: TextAlign.center, style: AppText.letter(size: 17)),
                 const SizedBox(height: AppSpace.md),
                 Text('Tap to keep looking', textAlign: TextAlign.center, style: AppText.caption()),
               ],
@@ -915,7 +916,7 @@ class _LabelCardState extends State<_LabelCard> {
                             border: Border.all(color: AppColors.gold, width: AppLine.rule),
                           ),
                           child: Text(
-                            scene.labelRoom,
+                            readingLines(scene.labelRoom),
                             style: AppText.title(size: 20, color: AppColors.goldLight).copyWith(letterSpacing: 3),
                           ),
                         ),
@@ -928,7 +929,7 @@ class _LabelCardState extends State<_LabelCard> {
                         ),
                       ],
                       const SizedBox(height: AppSpace.sm),
-                      Text(scene.labelWorn, textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
+                      Text(readingLines(scene.labelWorn), textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
                       const SizedBox(height: AppSpace.sm),
                       GlossaryText(Formatters.sentenceLines(m.question), textAlign: TextAlign.center, style: AppText.title(size: 20)),
                       const SizedBox(height: AppSpace.md),

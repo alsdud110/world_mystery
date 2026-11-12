@@ -20,6 +20,7 @@ import '../../game/game_providers.dart';
 import 'opera_papers.dart' show PixelCrop;
 import 'question_widgets.dart' show ShakeOnChange;
 import 'workshop_papers.dart' show DrawnEvidenceView;
+import '../../../core/utils/reading_lines.dart';
 
 /// A puzzle of Cases 11–12 played one step at a time ([EasyStepsScene]):
 /// what to do in a few words on top (and HINT beside it, free at any
@@ -533,7 +534,7 @@ class _AnswerButton extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: AppSpace.md, vertical: AppSpace.sm),
                 child: Center(
                   child: Text(
-                    label,
+                    readingLines(label),
                     textAlign: TextAlign.center,
                     style: AppText.title(size: 21, color: AppColors.navy),
                   ),
@@ -654,7 +655,7 @@ class _PictureCard extends StatelessWidget {
                   ),
                   if (option.label case final label?) ...[
                     const SizedBox(height: AppSpace.xs),
-                    Text(label, textAlign: TextAlign.center, maxLines: 2, style: AppText.title(size: 17, color: AppColors.navy)),
+                    Text(readingLines(label), textAlign: TextAlign.center, maxLines: 2, style: AppText.title(size: 17, color: AppColors.navy)),
                   ],
                 ],
               ),
@@ -745,7 +746,7 @@ class _Panels extends StatelessWidget {
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(maxWidth: twoLines ? math.max(sizes[i].width, 110) : double.infinity),
                                 child: Text(
-                                  panels[i].caption!,
+                                  readingLines(panels[i].caption!),
                                   textAlign: TextAlign.center,
                                   maxLines: twoLines ? 2 : 1,
                                   // One line: made smaller to fit, never cut.
@@ -1178,7 +1179,7 @@ class _PaperView extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 5),
                               child: Text(
-                                l.text,
+                                readingLines(l.text),
                                 style: AppText.letter(size: l.strong ? 27 : 23, color: AppColors.ink).copyWith(
                                   height: 1.2,
                                   fontWeight: l.strong ? FontWeight.w700 : FontWeight.w500,

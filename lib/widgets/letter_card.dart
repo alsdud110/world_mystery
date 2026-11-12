@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../core/theme/app_colors.dart';
 import '../core/theme/app_text.dart';
 import '../core/theme/app_tokens.dart';
+import '../core/utils/reading_lines.dart';
 import 'glossary_text.dart';
 
 /// Aged manila, a shade darker than the letter paper.
@@ -115,7 +116,9 @@ class _LetterBody extends StatelessWidget {
     final scale = MediaQuery.textScalerOf(context).scale(size);
     final children = <Widget>[];
     var paragraph = false;
-    for (final line in text.split('\n')) {
+    // A written line that holds several long sentences is read one
+    // sentence to a line too ([readingLines]).
+    for (final line in readingLines(text).split('\n')) {
       if (line.trim().isEmpty) {
         paragraph = children.isNotEmpty;
         continue;

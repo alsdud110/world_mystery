@@ -13,6 +13,7 @@ import '../../../data/models/tower_puzzles.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'tower_documents.dart' show CroppedPicture;
+import '../../../core/utils/reading_lines.dart';
 
 /// A padlock with three dials ([DialLockScene]). Each dial is its own
 /// picture turned behind a round window of the lock: dragged round, it
@@ -102,7 +103,7 @@ class _DialLockState extends State<DialLock> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(_scene.task, textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(_scene.task), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         Semantics(
           label: _scene.label,
@@ -249,7 +250,7 @@ class _DialLockState extends State<DialLock> {
                       _SymbolCloseUp(key: ValueKey('dial-symbol-$i-${_scene.symbols[s].id}'), scene: _scene, symbol: _scene.symbols[s]),
                       const SizedBox(height: AppSpace.xs),
                       Text(
-                        _scene.symbols[s].name,
+                        readingLines(_scene.symbols[s].name),
                         key: ValueKey('dial-set-$i'),
                         style: AppText.bodyText(size: 16, weight: FontWeight.w700, color: AppColors.navy),
                       ),

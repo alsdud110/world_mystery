@@ -14,6 +14,7 @@ import '../../../widgets/glossary_text.dart';
 import '../../../widgets/ink_icon.dart';
 import 'letter_papers.dart';
 import 'workshop_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The hold rack ([HoldRackScene]): the Letter's Trail to compare with, and
 /// the rack with its four tags, lettered on their paper; a tap on a tag
@@ -46,7 +47,7 @@ class HoldRackPuzzle extends StatelessWidget {
         // The Letter's Trail (Case 05's slip): what the tag must say.
         TrailClue(key: const ValueKey('rack-clue'), slip: scene.trail, intro: mission.letterIntro, text: mission.letter),
         const SizedBox(height: AppSpace.md),
-        Text(scene.lookTask, key: const ValueKey('rack-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(scene.lookTask), key: const ValueKey('rack-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         DecoratedBox(
           decoration: BoxDecoration(boxShadow: AppShadow.paperLift, borderRadius: BorderRadius.circular(AppRadius.paper)),
@@ -131,7 +132,7 @@ class TrailClue extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(intro, style: AppText.caption()),
+              Text(readingLines(intro), style: AppText.caption()),
               const SizedBox(height: AppSpace.xs),
               GlossaryText(text, style: AppText.bodyText(size: 16, weight: FontWeight.w700).copyWith(height: 1.3)),
             ],
@@ -219,7 +220,7 @@ class _TagCloserState extends State<_TagCloser> with SingleTickerProviderStateMi
                   Text('YOUR CLUE', style: AppText.eyebrow(color: AppColors.goldLight)),
                   const SizedBox(height: AppSpace.xs),
                   Text(
-                    widget.mission.letter.replaceAll('\n', '  ·  '),
+                    readingLines(widget.mission.letter.replaceAll('\n', '  ·  ')),
                     key: const ValueKey('tag-clue'),
                     textAlign: TextAlign.center,
                     style: AppText.bodyText(size: 15, color: AppColors.paperLight, weight: FontWeight.w600),

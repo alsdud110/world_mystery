@@ -18,6 +18,7 @@ import '../../../widgets/paper_background.dart';
 import 'investigation_search.dart' show PencilSlip, SearchTapRing;
 import 'search_stage.dart';
 import 'zoom_picture.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A place compared with a painting of it ([CompareScene]): THE PAINTING
 /// over THE STREET at the top of the page, each whole, looked at closer
@@ -399,7 +400,7 @@ class _CheckLine extends StatelessWidget {
             const SizedBox(width: AppSpace.sm),
             Flexible(
               child: Text(
-                line,
+                readingLines(line),
                 style: AppText.letter(size: 16, color: done ? AppColors.muted : AppColors.inkBrown).copyWith(
                   decoration: done ? TextDecoration.lineThrough : null,
                   decorationColor: AppColors.muted,
@@ -438,7 +439,7 @@ class _Subtitle extends StatelessWidget {
                 child: MediaQuery.withClampedTextScaling(
                   maxScaleFactor: 1.2,
                   child: Text(
-                    text,
+                    readingLines(text),
                     textAlign: TextAlign.center,
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,

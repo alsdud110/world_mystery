@@ -13,6 +13,7 @@ import 'opera_papers.dart' show showOperaCloser;
 import 'question_widgets.dart' show questionFor;
 import 'river_papers.dart' show PictureCanvas;
 import 'workshop_papers.dart' show handwriting;
+import '../../../core/utils/reading_lines.dart';
 
 /// M2, P.'s three drawings ([MorningSketchesScene]), in three steps, where
 /// they are saved ([state], [onState]):
@@ -181,7 +182,7 @@ class _MorningSketchesPuzzleState extends State<MorningSketchesPuzzle> {
         ),
         const SizedBox(height: AppSpace.md),
         Text(
-          onTable.isEmpty ? 'Tap a drawing on a slot to take it back.' : (_picked == null ? 'Tap a drawing, then tap its slot. Or drag it there.' : 'Now tap a slot for ${_tableName(_picked!)}.'),
+          readingLines(onTable.isEmpty ? 'Tap a drawing on a slot to take it back.' : (_picked == null ? 'Tap a drawing, then tap its slot. Or drag it there.' : 'Now tap a slot for ${_tableName(_picked!)}.')),
           key: const ValueKey('sketch-order-task'),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy),
@@ -201,7 +202,7 @@ class _MorningSketchesPuzzleState extends State<MorningSketchesPuzzle> {
           Semantics(
             liveRegion: true,
             child: Text(
-              _line!,
+              readingLines(_line!),
               key: const ValueKey('sketch-order-line'),
               textAlign: TextAlign.center,
               style: AppText.letter(size: 17, color: _lineIsRight ? AppColors.success : AppColors.tryAgain),
@@ -300,7 +301,7 @@ class _MorningSketchesPuzzleState extends State<MorningSketchesPuzzle> {
           if (id != null)
             Padding(
               padding: const EdgeInsets.only(top: 2),
-              child: Text(_tableName(id), style: AppText.caption(color: AppColors.inkBrown)),
+              child: Text(readingLines(_tableName(id)), style: AppText.caption(color: AppColors.inkBrown)),
             ),
         ],
       ),
@@ -319,13 +320,13 @@ class _MorningSketchesPuzzleState extends State<MorningSketchesPuzzle> {
         if (_lineIsRight && _line != null && _pair == 0) ...[
           Semantics(
             liveRegion: true,
-            child: Text(_line!, key: const ValueKey('sketch-order-line'), textAlign: TextAlign.center, style: AppText.letter(size: 17, color: AppColors.success)),
+            child: Text(readingLines(_line!), key: const ValueKey('sketch-order-line'), textAlign: TextAlign.center, style: AppText.letter(size: 17, color: AppColors.success)),
           ),
           const SizedBox(height: AppSpace.sm),
         ],
         Text('DRAWING ${_pair + 1}  ·  DRAWING ${_pair + 2}', key: const ValueKey('sketch-pair'), textAlign: TextAlign.center, style: AppText.eyebrow()),
         const SizedBox(height: AppSpace.xs),
-        Text(_scene.compareTask, textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
+        Text(readingLines(_scene.compareTask), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
         const SizedBox(height: AppSpace.sm),
         ClipRRect(
           borderRadius: BorderRadius.circular(AppRadius.paper),
@@ -391,7 +392,7 @@ class _MorningSketchesPuzzleState extends State<MorningSketchesPuzzle> {
           ],
         ),
         Text(
-          'Found ${found.length} of ${later.changes.length}${_just == null ? '' : ' · $_just'}',
+          readingLines('Found ${found.length} of ${later.changes.length}${_just == null ? '' : ' · $_just'}'),
           key: const ValueKey('sketch-found-count'),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 15, weight: FontWeight.w700, color: AppColors.navy),

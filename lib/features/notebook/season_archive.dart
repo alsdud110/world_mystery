@@ -12,6 +12,7 @@ import '../../widgets/ink_icon.dart';
 import '../../widgets/paper.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// How far the detective got in one case, as the archive shows it.
 enum ArchiveStatus { solved, current, started, notOpened, sealed, reference }
@@ -92,7 +93,7 @@ class _SeasonArchiveState extends ConsumerState<SeasonArchive> {
       padding: const EdgeInsets.fromLTRB(20, 4, 20, 32),
       children: [
         Text(
-          '$solved of ${entries.length} cases solved',
+          readingLines('$solved of ${entries.length} cases solved'),
           textAlign: TextAlign.center,
           style: AppText.aside(),
         ),

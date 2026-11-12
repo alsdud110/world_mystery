@@ -11,6 +11,7 @@ import 'art_assets.dart';
 import 'game_button.dart';
 import 'ink_icon.dart';
 import 'paper.dart';
+import '../core/utils/reading_lines.dart';
 
 /// A round medal for a [GameBadge], the one way a badge is drawn.
 ///
@@ -149,7 +150,7 @@ Future<void> showBadgeDetails(BuildContext context, GameBadge badge, {required b
             const SizedBox(height: AppSpace.sm),
             const OrnamentRule(),
             const SizedBox(height: AppSpace.sm),
-            Text(badge.description, textAlign: TextAlign.center, style: AppText.letter(size: 17, color: AppColors.ink)),
+            Text(readingLines(badge.description), textAlign: TextAlign.center, style: AppText.letter(size: 17, color: AppColors.ink)),
             const SizedBox(height: AppSpace.md),
             Semantics(
               label: status.toLowerCase().replaceAll(' · ', ', '),

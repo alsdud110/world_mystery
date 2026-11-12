@@ -10,6 +10,7 @@ import '../../../widgets/glossary_text.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'tower_documents.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// Two records of the same job compared ([RecordsScene]): one shown at a
 /// time (its tab above it), its words written on its paper. Each is read
@@ -102,7 +103,7 @@ class _TowerRecordsState extends State<TowerRecords> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          _bothRead ? _scene.compareTask : _scene.readTask,
+          readingLines(_bothRead ? _scene.compareTask : _scene.readTask),
           key: const ValueKey('records-task'),
           textAlign: TextAlign.center,
           style: AppText.task(),
@@ -178,7 +179,7 @@ class _TowerRecordsState extends State<TowerRecords> {
                             child: Text(d.title, maxLines: 1, style: AppText.eyebrow()),
                           ),
                           const SizedBox(height: AppSpace.xs),
-                          Text(_pickedValue(d), key: ValueKey('picked-${d.id}'), style: AppText.bodyText(size: 16, weight: FontWeight.w600)),
+                          Text(readingLines(_pickedValue(d)), key: ValueKey('picked-${d.id}'), style: AppText.bodyText(size: 16, weight: FontWeight.w600)),
                         ],
                       ),
                     ),

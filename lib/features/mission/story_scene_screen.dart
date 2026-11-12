@@ -28,6 +28,7 @@ import '../../widgets/typewriter_text.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import '../../data/models/detective_name.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// Short cinematic scene between missions: what happened next, and which
 /// place just opened up.
@@ -166,7 +167,7 @@ class _StorySceneScreenState extends ConsumerState<StorySceneScreen> {
                           // its Discovery Moment has just cheered the solve).
                           if (SeasonCatalog.storyGreeting(m))
                             Text(
-                              'Great work, ${DetectiveName.title(name)}.',
+                              readingLines('Great work, ${DetectiveName.title(name)}.'),
                               key: const ValueKey('scene-greeting'),
                               textAlign: TextAlign.center,
                               style: AppText.bodyText(size: 16, color: AppColors.paperLight.withValues(alpha: 0.72)),

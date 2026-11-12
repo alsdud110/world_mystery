@@ -11,6 +11,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'letter_papers.dart' show postType;
 import 'opera_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// [rect] of a picture ([file], [pixels] big) drawn where it is in it, over
 /// what is drawn under (pixels of the picture).
@@ -198,7 +199,7 @@ class _FlyRailPuzzleState extends State<FlyRailPuzzle> with SingleTickerProvider
         _Stage(scene: scene, down: down, drop: _drop, onTap: _closer),
         const SizedBox(height: AppSpace.xs),
         Text(
-          (_pulled ?? down) == null ? scene.task : 'BACKDROP ${_numberOf((_pulled ?? down)!)} · Tap it to look closer.',
+          readingLines((_pulled ?? down) == null ? scene.task : 'BACKDROP ${_numberOf((_pulled ?? down)!)} · Tap it to look closer.'),
           key: const ValueKey('rail-task'),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy),
@@ -253,7 +254,7 @@ class _PaintedStreet extends StatelessWidget {
             children: [
               Text('YOUR NOTEBOOK · THE PAINTED STREET', style: AppText.eyebrow()),
               const SizedBox(height: AppSpace.xs),
-              Text(scene.clueLine, style: AppText.bodyText(size: 17, weight: FontWeight.w700)),
+              Text(readingLines(scene.clueLine), style: AppText.bodyText(size: 17, weight: FontWeight.w700)),
             ],
           ),
         ),
@@ -464,10 +465,10 @@ class PocketFound extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(open ? mission.successMessage : 'BEHIND THE BACKDROP', textAlign: TextAlign.center, style: AppText.title(size: 24)),
+        Text(readingLines(open ? mission.successMessage : 'BEHIND THE BACKDROP'), textAlign: TextAlign.center, style: AppText.title(size: 24)),
         const SizedBox(height: AppSpace.xs),
         Text(
-          open ? 'In the pocket: an old slip of paper.' : scene.pocketTask,
+          readingLines(open ? 'In the pocket: an old slip of paper.' : scene.pocketTask),
           key: const ValueKey('pocket-task'),
           textAlign: TextAlign.center,
           style: AppText.subtitle(),
@@ -513,7 +514,7 @@ class PocketFound extends StatelessWidget {
             ),
           ),
           const SizedBox(height: AppSpace.sm),
-          Text('A round stamp: a clock with no hands, in a ring of leaves. No name.', textAlign: TextAlign.center, style: AppText.aside(size: 15, color: AppColors.inkBrown)),
+          Text(readingLines('A round stamp: a clock with no hands, in a ring of leaves. No name.'), textAlign: TextAlign.center, style: AppText.aside(size: 15, color: AppColors.inkBrown)),
           const SizedBox(height: AppSpace.lg),
           GameButton(key: const ValueKey('pocket-continue'), label: 'CONTINUE', arrow: true, tap: TapRole.primary, onPressed: onContinue),
         ],

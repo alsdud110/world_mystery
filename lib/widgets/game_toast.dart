@@ -5,6 +5,7 @@ import '../core/theme/app_motion.dart';
 import '../core/theme/app_text.dart';
 import '../core/theme/app_tokens.dart';
 import 'ink_icon.dart';
+import '../core/utils/reading_lines.dart';
 
 OverlayEntry? _current;
 
@@ -100,7 +101,7 @@ class _ToastState extends State<_Toast> with SingleTickerProviderStateMixin {
                       InkIcon(widget.glyph, color: AppColors.goldLight),
                       const SizedBox(width: 12),
                       Expanded(
-                        child: Text(widget.message, style: AppText.bodyText(size: 16, color: AppColors.paperLight)),
+                        child: Text(readingLines(widget.message), style: AppText.bodyText(size: 16, color: AppColors.paperLight)),
                       ),
                     ],
                   ),

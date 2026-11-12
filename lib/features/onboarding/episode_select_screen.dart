@@ -17,6 +17,7 @@ import '../../widgets/paper.dart';
 import '../../widgets/paper_background.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// One case file on the shelf: its episode, and how far the detective got.
 class _CaseEntry {
@@ -360,9 +361,9 @@ class _EpisodeRow extends StatelessWidget {
                 if (playable && e.place != null)
                   _Briefing(episode: e, chosen: chosen)
                 else if (playable)
-                  Text(e.synopsis.first, style: AppText.caption(color: chosen ? AppColors.ink : AppColors.muted))
+                  Text(readingLines(e.synopsis.first), style: AppText.caption(color: chosen ? AppColors.ink : AppColors.muted))
                 else if (previous != null)
-                  Text('Solve Case ${previous.numberLabel} to open this file.', style: AppText.caption()),
+                  Text(readingLines('Solve Case ${previous.numberLabel} to open this file.'), style: AppText.caption()),
               ],
             ),
           ),
@@ -413,7 +414,7 @@ class _Briefing extends StatelessWidget {
         for (final line in e.synopsis)
           Padding(
             padding: const EdgeInsets.only(bottom: 2),
-            child: Text(line, style: AppText.bodyText(size: 15, color: ink)),
+            child: Text(readingLines(line), style: AppText.bodyText(size: 15, color: ink)),
           ),
         const SizedBox(height: AppSpace.md),
         Text('YOUR OBJECTIVES', style: AppText.eyebrow(color: AppColors.inkBrown)),
@@ -428,7 +429,7 @@ class _Briefing extends StatelessWidget {
                   padding: EdgeInsets.only(top: 3, right: AppSpace.sm),
                   child: InkIcon(InkGlyph.search, size: AppIconSize.tiny, color: AppColors.burgundy),
                 ),
-                Expanded(child: Text(o, style: AppText.caption(color: ink))),
+                Expanded(child: Text(readingLines(o), style: AppText.caption(color: ink))),
               ],
             ),
           ),

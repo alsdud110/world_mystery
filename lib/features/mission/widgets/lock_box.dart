@@ -12,6 +12,7 @@ import '../../../widgets/evidence_card.dart' show EvidenceLinkRow;
 import '../../../widgets/game_button.dart';
 import '../../../widgets/glossary_text.dart';
 import '../../../widgets/ink_icon.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A letter-lock box ([LockBoxArt]) on the final case's stage. Shut, the
 /// letters the detective has put in the lock below show in the box's own
@@ -412,7 +413,7 @@ class _Back extends StatelessWidget {
             const SizedBox(height: AppSpace.sm),
             FittedBox(
               fit: BoxFit.scaleDown,
-              child: Text(text, style: AppText.title(size: 30, color: AppColors.burgundy)),
+              child: Text(readingLines(text), style: AppText.title(size: 30, color: AppColors.burgundy)),
             ),
           ],
         ),

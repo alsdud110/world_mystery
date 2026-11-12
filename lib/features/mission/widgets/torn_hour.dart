@@ -12,6 +12,7 @@ import 'abbesses_papers.dart';
 import 'letter_papers.dart' show PicturePart;
 import 'river_papers.dart' show PictureCanvas;
 import 'workshop_papers.dart' show CroppedPicture;
+import '../../../core/utils/reading_lines.dart';
 
 /// The final's stage ([TornHourScene]): P.'s drawing of the steps, the
 /// paper drawn in its margin; once the torn paper is laid on it ([placed]),
@@ -100,7 +101,7 @@ class _PaperOnDrawingState extends State<PaperOnDrawing> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(scene.placeTask, key: const ValueKey('place-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(scene.placeTask), key: const ValueKey('place-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         // The drawing: its study takes the paper; the rest of it says where.
         MorningSketchView(
@@ -154,7 +155,7 @@ class _PaperOnDrawingState extends State<PaperOnDrawing> {
           const SizedBox(height: AppSpace.sm),
           Semantics(
             liveRegion: true,
-            child: Text(_line!, key: const ValueKey('place-line'), textAlign: TextAlign.center, style: AppText.letter(size: 17, color: AppColors.tryAgain)),
+            child: Text(readingLines(_line!), key: const ValueKey('place-line'), textAlign: TextAlign.center, style: AppText.letter(size: 17, color: AppColors.tryAgain)),
           ),
         ],
         const SizedBox(height: AppSpace.md),
@@ -302,11 +303,11 @@ class _NextLeadPageState extends State<_NextLeadPage> {
 
   Widget _say(String line, {Color color = AppColors.goldLight}) => Semantics(
     liveRegion: true,
-    child: Text(line, key: const ValueKey('lead-line'), textAlign: TextAlign.center, style: AppText.letter(size: 17, color: color)),
+    child: Text(readingLines(line), key: const ValueKey('lead-line'), textAlign: TextAlign.center, style: AppText.letter(size: 17, color: color)),
   );
 
   List<Widget> _bagStep() => [
-    Text(_lead.bagTask, key: const ValueKey('lead-task'), textAlign: TextAlign.center, style: AppText.title(size: 19, color: AppColors.goldLight)),
+    Text(readingLines(_lead.bagTask), key: const ValueKey('lead-task'), textAlign: TextAlign.center, style: AppText.title(size: 19, color: AppColors.goldLight)),
     const SizedBox(height: AppSpace.xs),
     Text('Found ${_found.length} of ${_lead.bagParts.length}', key: const ValueKey('lead-count'), textAlign: TextAlign.center, style: AppText.button(size: 15, color: AppColors.paperLight)),
     if (_line != null) ...[const SizedBox(height: AppSpace.sm), _say(_line!)],
@@ -317,9 +318,9 @@ class _NextLeadPageState extends State<_NextLeadPage> {
     return [
       for (final l in _lead.bagDone) _say(l),
       const SizedBox(height: AppSpace.md),
-      Text(_lead.mapTask, key: const ValueKey('lead-task'), textAlign: TextAlign.center, style: AppText.title(size: 19, color: AppColors.goldLight)),
+      Text(readingLines(_lead.mapTask), key: const ValueKey('lead-task'), textAlign: TextAlign.center, style: AppText.title(size: 19, color: AppColors.goldLight)),
       const SizedBox(height: AppSpace.xs),
-      Text('In the drawing: ${_lead.features.join(' · ')}', textAlign: TextAlign.center, style: AppText.aside(size: 16, color: AppColors.paperLight)),
+      Text(readingLines('In the drawing: ${_lead.features.join(' · ')}'), textAlign: TextAlign.center, style: AppText.aside(size: 16, color: AppColors.paperLight)),
       const SizedBox(height: AppSpace.sm),
       _LeadMap(lead: _lead, picked: spot, onPick: _pick),
       if (spot != null) ...[

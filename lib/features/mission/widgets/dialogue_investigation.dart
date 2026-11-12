@@ -11,6 +11,7 @@ import '../../../core/theme/app_motion.dart';
 import '../../../core/theme/app_text.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/utils/audio_service.dart';
+import '../../../core/utils/reading_lines.dart';
 import '../../../data/models/dialogue.dart';
 import '../../../widgets/display_sized_image.dart';
 import '../../../widgets/art_assets.dart';
@@ -445,7 +446,7 @@ class _ArrivalState extends State<_Arrival> with SingleTickerProviderStateMixin 
               // Plain words (no dotted ones that look like clues): their
               // meanings are under WORDS.
               child: Text(
-                scene.goal,
+                readingLines(scene.goal),
                 key: const ValueKey('talk-goal'),
                 textAlign: TextAlign.center,
                 style: AppText.title(size: 23, color: AppColors.paperLight),
@@ -455,7 +456,7 @@ class _ArrivalState extends State<_Arrival> with SingleTickerProviderStateMixin 
             _FadeUp(
               delay: still ? Duration.zero : const Duration(milliseconds: 650),
               child: Text(
-                scene.how,
+                readingLines(scene.how),
                 textAlign: TextAlign.center,
                 style: AppText.bodyText(size: 17, color: AppColors.paperLight.withValues(alpha: 0.85)),
               ),
@@ -834,7 +835,8 @@ class _Speech extends StatefulWidget {
     final inner = math.max(1.0, width - 2 * AppSpace.lg - 2 * AppLine.ink);
     final name = measure('A', AppText.mark(color: AppColors.goldLight, size: 15));
     final mark = note ? math.max(AppIconSize.tiny, measure('A', AppText.eyebrow(color: AppColors.burgundy))) + AppSpace.xs : 0.0;
-    final words = measure('"$line"', _lineStyle, inner);
+    // Measured as it is typed: sentence by sentence ([readingLines]).
+    final words = measure(readingLines('"$line"'), _lineStyle, inner);
     // A little to spare for rounding (a line never cut by a hair).
     return name + AppSpace.sm + 2 * AppLine.ink + 2 * AppSpace.md + mark + words + 4;
   }
@@ -1265,14 +1267,14 @@ class _Status extends StatelessWidget {
                 style: AppText.eyebrow(color: AppColors.goldDeep),
               ),
             Text(
-              line,
+              readingLines(line),
               key: ValueKey(guide ? 'talk-guide' : 'talk-next'),
               textAlign: TextAlign.center,
               style: AppText.bodyText(size: guide ? 18 : 16, weight: FontWeight.w600, color: AppColors.navy),
             ),
             if (extra != null)
               Text(
-                extra!,
+                readingLines(extra!),
                 key: const ValueKey('talk-extra'),
                 textAlign: TextAlign.center,
                 style: AppText.bodyText(size: 15, color: AppColors.inkBrown),
@@ -1522,7 +1524,7 @@ class _QuestionChoice extends StatelessWidget {
                   const SizedBox(width: AppSpace.sm),
                   Expanded(
                     child: Text(
-                      question.text,
+                      readingLines(question.text),
                       style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy),
                     ),
                   ),
@@ -1561,7 +1563,7 @@ Future<void> showTalkWords(BuildContext context, WidgetRef ref, String text) {
             Text('WORDS', textAlign: TextAlign.center, style: AppText.eyebrow()),
             const SizedBox(height: AppSpace.xs),
             Text(
-              words.isEmpty ? 'No hard words here.' : 'Tap a word to see what it means.',
+              readingLines(words.isEmpty ? 'No hard words here.' : 'Tap a word to see what it means.'),
               textAlign: TextAlign.center,
               style: AppText.caption(),
             ),
@@ -1574,7 +1576,7 @@ Future<void> showTalkWords(BuildContext context, WidgetRef ref, String text) {
                 for (final w in words)
                   ActionChip(
                     key: ValueKey('word-${w.word.toLowerCase()}'),
-                    label: Text(w.word, style: AppText.bodyText(size: 16, weight: FontWeight.w600, color: AppColors.navy)),
+                    label: Text(readingLines(w.word), style: AppText.bodyText(size: 16, weight: FontWeight.w600, color: AppColors.navy)),
                     backgroundColor: AppColors.paper,
                     side: BorderSide(color: AppLine.faint(0.3)),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.paper)),
@@ -1655,7 +1657,7 @@ Future<void> showDialogueNotes(
                     const SizedBox(height: AppSpace.sm),
                     Text('What the witnesses told you, word for word.', style: AppText.caption()),
                     if (heard.isEmpty)
-                      Text('Nothing yet. Ask the witnesses what they saw.', style: AppText.caption())
+                      Text(readingLines('Nothing yet. Ask the witnesses what they saw.'), style: AppText.caption())
                     else
                       for (final id in heard) ...[
                         const SizedBox(height: AppSpace.sm),
@@ -1700,8 +1702,8 @@ class WitnessStatementLine extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(who.title, style: AppText.eyebrow(color: AppColors.muted)),
-              Text('"${statement.text}"', style: AppText.letter(size: 17, color: AppColors.ink)),
-              if (source != null) Text(source!, style: AppText.caption()),
+              Text(readingLines('"${statement.text}"'), style: AppText.letter(size: 17, color: AppColors.ink)),
+              if (source != null) Text(readingLines(source!), style: AppText.caption()),
             ],
           ),
         ),
@@ -1874,7 +1876,7 @@ class _CompareSheetState extends ConsumerState<_CompareSheet> {
                     const SizedBox(height: AppSpace.xs),
                     // What to find, and how — never which.
                     Text(
-                      d.compareGoal,
+                      readingLines(d.compareGoal),
                       key: const ValueKey('compare-goal'),
                       textAlign: TextAlign.center,
                       textScaler: heading,
@@ -1882,7 +1884,7 @@ class _CompareSheetState extends ConsumerState<_CompareSheet> {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      d.compareHow,
+                      readingLines(d.compareHow),
                       key: const ValueKey('compare-how'),
                       textAlign: TextAlign.center,
                       textScaler: heading,
@@ -2019,7 +2021,7 @@ class _VerdictBlock extends StatelessWidget {
           ],
         );
     Widget line(String text, {Color color = AppColors.ink}) => Text(
-          text,
+          readingLines(text),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 16, weight: FontWeight.w600, color: color),
         );
@@ -2123,7 +2125,7 @@ class _PickStatement extends StatelessWidget {
                           textScaler: MediaQuery.textScalerOf(context).clamp(maxScaleFactor: 1.1),
                           style: AppText.eyebrow(color: AppColors.muted),
                         ),
-                        Text('"${statement.text}"', style: AppText.letter(size: 16, color: AppColors.ink)),
+                        Text(readingLines('"${statement.text}"'), style: AppText.letter(size: 16, color: AppColors.ink)),
                       ],
                     ),
                   ),
@@ -2200,7 +2202,7 @@ class _StoryCard extends StatelessWidget {
             ),
             const SizedBox(height: AppSpace.xs),
             Text(
-              '"${statement.text}"',
+              readingLines('"${statement.text}"'),
               textAlign: TextAlign.center,
               // Two narrow cards side by side: a little smaller with larger
               // text, so both stories read whole together.
@@ -2253,7 +2255,7 @@ class _Match extends StatelessWidget {
         children: [
           const InkStamp('THE STORIES MATCH!', color: AppColors.success, tilt: -0.05),
           const SizedBox(height: AppSpace.md),
-          Text(line, textAlign: TextAlign.center, style: AppText.title(size: 20)),
+          Text(readingLines(line), textAlign: TextAlign.center, style: AppText.title(size: 20)),
         ],
       ),
     );

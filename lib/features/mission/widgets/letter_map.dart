@@ -13,6 +13,7 @@ import '../../../widgets/ink_icon.dart';
 import 'letter_papers.dart';
 import 'river_papers.dart' show PictureCanvas;
 import 'workshop_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The final's stage ([LetterMapScene]): the letter, its two lines and its
 /// drawing (a tap on the drawing looks at it closer); with the solve, it is
@@ -152,7 +153,7 @@ class LetterMapPuzzle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(scene.mapTask, key: const ValueKey('map-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(scene.mapTask), key: const ValueKey('map-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         ClipRRect(
           borderRadius: BorderRadius.circular(AppRadius.paper),

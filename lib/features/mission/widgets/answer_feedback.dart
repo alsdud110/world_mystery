@@ -18,6 +18,7 @@ import '../../../widgets/place_art.dart';
 import '../../../widgets/place_scenery.dart';
 import '../../game/scoring.dart';
 import '../../mission_map/map_world.dart' show SeasonMap;
+import '../../../core/utils/reading_lines.dart';
 
 /// The Discovery Moment, after a regular mission's correct answer: in the
 /// place the puzzle was solved, a short cheer ("Brilliant Deduction!"), what
@@ -229,7 +230,7 @@ class _DiscoveryMomentState extends State<_DiscoveryMoment> with SingleTickerPro
                                     PlayerDetective(moment: moment, size: detectiveSize, entrance: false, halo: true),
                                     const SizedBox(height: AppSpace.xs),
                                   ],
-                                  Text(d.type.cheer,
+                                  Text(readingLines(d.type.cheer),
                                       textAlign: TextAlign.center,
                                       style: AppText.cinematicPrompt(size: 28, color: AppColors.goldLight)),
                                   const SizedBox(height: AppSpace.sm),
@@ -270,7 +271,7 @@ class _DiscoveryMomentState extends State<_DiscoveryMoment> with SingleTickerPro
                             const SizedBox(height: AppSpace.lg),
                             _rise(
                               _detail,
-                              Text(d.detail,
+                              Text(readingLines(d.detail),
                                   textAlign: TextAlign.center, style: AppText.bodyText(size: 18, color: soft).copyWith(height: 1.4)),
                             ),
                           ],
@@ -291,7 +292,7 @@ class _DiscoveryMomentState extends State<_DiscoveryMoment> with SingleTickerPro
                                             size: 16, weight: FontWeight.w700, color: AppColors.goldLight, letterSpacing: 2)
                                         .copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
                                   )
-                                : Text(alreadyRewarded,
+                                : Text(readingLines(alreadyRewarded),
                                     textAlign: TextAlign.center,
                                     style: AppText.aside(size: 15, color: AppColors.paperLight.withValues(alpha: 0.8))),
                           ),
@@ -301,7 +302,7 @@ class _DiscoveryMomentState extends State<_DiscoveryMoment> with SingleTickerPro
                             Opacity(
                               opacity: _o(_badges),
                               child: Text(
-                                'New badge: ${widget.newBadges.map((b) => b.title).join(' · ')}',
+                                readingLines('New badge: ${widget.newBadges.map((b) => b.title).join(' · ')}'),
                                 textAlign: TextAlign.center,
                                 style: AppText.caption(color: AppColors.paperLight.withValues(alpha: 0.75)),
                               ),
@@ -390,7 +391,7 @@ class _NotebookNote extends StatelessWidget {
             ],
           ),
           const SizedBox(height: AppSpace.xs),
-          Text(text, textAlign: TextAlign.center, style: AppText.bodyText(size: 16, color: color)),
+          Text(readingLines(text), textAlign: TextAlign.center, style: AppText.bodyText(size: 16, color: color)),
         ],
       ),
     );
@@ -516,7 +517,7 @@ class TipsPanel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: AppSpace.xs),
             child: Text(
-              revealed == 0 ? 'Good detectives use hints.' : 'Hint ${revealed + 1} of ${hints.length}',
+              readingLines(revealed == 0 ? 'Good detectives use hints.' : 'Hint ${revealed + 1} of ${hints.length}'),
               textAlign: TextAlign.center,
               style: AppText.caption(color: dark ? AppColors.paperLight.withValues(alpha: 0.8) : AppColors.muted),
             ),

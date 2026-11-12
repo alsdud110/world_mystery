@@ -10,6 +10,7 @@ import '../../../widgets/glossary_text.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'tower_documents.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The lift ([LiftScene]): its picture, the route plate and the log on its
 /// walls, each looked at closer by a tap (kept read: [onRead]). Once both
@@ -83,7 +84,7 @@ class _LiftRouteState extends State<LiftRoute> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          _bothRead ? _scene.chooseTask : _scene.readTask,
+          readingLines(_bothRead ? _scene.chooseTask : _scene.readTask),
           key: const ValueKey('lift-task'),
           textAlign: TextAlign.center,
           style: AppText.task(),

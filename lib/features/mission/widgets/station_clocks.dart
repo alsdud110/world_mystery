@@ -25,6 +25,7 @@ import 'investigation_search.dart' show PencilSlip, SearchTapRing, TapGuide;
 import 'question_widgets.dart' show ShakeOnChange;
 import 'scene_explore.dart' show ExploreActions, ExploreCaption, LookMark, OverPicture;
 import 'search_stage.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A station hall with clocks to compare ([StationClocksScene]): its
 /// picture fills the top of the page and can be looked at closer (pinch,
@@ -657,7 +658,7 @@ class _ClockCard extends StatelessWidget {
                   const SizedBox(height: AppSpace.md),
                   _TimePlate(time: clock.time),
                   const SizedBox(height: AppSpace.sm),
-                  Text(hands, textAlign: TextAlign.center, style: AppText.letter(size: 16)),
+                  Text(readingLines(hands), textAlign: TextAlign.center, style: AppText.letter(size: 16)),
                   Text(
                     'It is ${_hourWords[hour]} o\'clock.',
                     textAlign: TextAlign.center,
@@ -691,7 +692,7 @@ class _TimePlate extends StatelessWidget {
         border: Border.all(color: AppColors.gold.withValues(alpha: 0.6), width: AppLine.hairline),
       ),
       child: Text(
-        time,
+        readingLines(time),
         style: AppText.title(size: 30, color: AppColors.goldLight).copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
       ),
     );
@@ -920,7 +921,7 @@ class _ReportPageState extends State<_ReportPage> {
                     children: [
                       GlossaryText(Formatters.sentenceLines(m.question), textAlign: TextAlign.center, style: AppText.title(size: 22)),
                       const SizedBox(height: AppSpace.xs),
-                      Text(scene.reportHow, textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
+                      Text(readingLines(scene.reportHow), textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
                       const SizedBox(height: AppSpace.md),
                       const Center(child: OrnamentRule()),
                       const SizedBox(height: AppSpace.lg),

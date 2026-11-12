@@ -13,6 +13,7 @@ import '../../../widgets/ink_icon.dart';
 import 'letter_papers.dart' show postType;
 import 'mark_compare.dart' show WorkshopNote;
 import 'workshop_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The plan of the building ([PlanScene]): the porter's note, and the plan
 /// with the letter on it. A tap on the stairs, then on the statue, moves the
@@ -109,7 +110,7 @@ class _PlanRoutePuzzleState extends State<PlanRoutePuzzle> {
         // The porter's note, read with the plan.
         WorkshopNote(key: const ValueKey('porter-note'), intro: widget.mission.letterIntro, text: widget.mission.letter),
         const SizedBox(height: AppSpace.md),
-        Text(_scene.task, key: const ValueKey('plan-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(_scene.task), key: const ValueKey('plan-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         LayoutBuilder(
           builder: (context, box) {
@@ -189,7 +190,7 @@ class _PlanRoutePuzzleState extends State<PlanRoutePuzzle> {
             duration: const Duration(milliseconds: 200),
             child: _line == null
                 ? const SizedBox.shrink()
-                : Text(_line!, key: const ValueKey('plan-line'), textAlign: TextAlign.center, style: AppText.bodyText(size: 17, color: AppColors.inkBrown, weight: FontWeight.w600)),
+                : Text(readingLines(_line!), key: const ValueKey('plan-line'), textAlign: TextAlign.center, style: AppText.bodyText(size: 17, color: AppColors.inkBrown, weight: FontWeight.w600)),
           ),
         ),
         const SizedBox(height: AppSpace.sm),

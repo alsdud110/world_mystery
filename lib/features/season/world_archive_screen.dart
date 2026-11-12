@@ -20,6 +20,7 @@ import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import 'season_pack_gate.dart';
 import 'widgets/season_props.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// Where the detective stands with one season's file in the archives.
 enum SeasonFileState {
@@ -469,7 +470,7 @@ class _SealedFile extends StatelessWidget {
                 Text('SEALED FILE', style: AppText.placeTitle(size: 20, color: AppColors.locked)),
                 if (before != null) ...[
                   const SizedBox(height: AppSpace.xs),
-                  Text(file.unsealNote!, style: AppText.caption(color: AppColors.inkBrown)),
+                  Text(readingLines(file.unsealNote!), style: AppText.caption(color: AppColors.inkBrown)),
                 ],
               ],
             ),

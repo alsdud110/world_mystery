@@ -275,7 +275,7 @@ class _ParisPrologueScreenState extends ConsumerState<ParisPrologueScreen> with 
                               const SizedBox(height: AppSpace.sm),
                               const OrnamentRule(color: AppColors.goldLight, width: 150),
                               const SizedBox(height: AppSpace.sm),
-                              Text(season.tagline, textAlign: TextAlign.center, style: AppText.cinematicPrompt(size: 22, color: AppColors.paperLight)),
+                              Text(readingLines(season.tagline), textAlign: TextAlign.center, style: AppText.cinematicPrompt(size: 22, color: AppColors.paperLight)),
                             ],
                           ),
                         ),
@@ -561,7 +561,7 @@ class _StationClocks extends StatelessWidget {
                                 const InkIcon(InkGlyph.clock, size: AppIconSize.emblem, color: AppColors.navy),
                                 const SizedBox(height: AppSpace.sm),
                                 Text(
-                                  time,
+                                  readingLines(time),
                                   style: AppText.title(size: 22, color: i == times.length - 1 ? AppColors.burgundy : AppColors.navy)
                                       .copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
                                 ),
@@ -646,7 +646,7 @@ class _ParisCaseFile extends StatelessWidget {
                                   ),
                                 ),
                               const SizedBox(height: AppSpace.lg),
-                              Text(line, style: AppText.aside(size: 16, color: AppColors.inkBrown)),
+                              Text(readingLines(line), style: AppText.aside(size: 16, color: AppColors.inkBrown)),
                             ],
                           ),
                         ),

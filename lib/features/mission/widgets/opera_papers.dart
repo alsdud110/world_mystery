@@ -10,6 +10,7 @@ import '../../../widgets/ink_icon.dart';
 import 'letter_papers.dart' show postType;
 import 'river_papers.dart' show PictureCanvas;
 import 'workshop_papers.dart' show handwriting;
+import '../../../core/utils/reading_lines.dart';
 
 /// Case 07's papers drawn with their words: FILE 3 (its patch, and the old
 /// photo mounted on it), FILE 4, the stage cue card, the Amendment Slip and
@@ -592,7 +593,7 @@ Future<T?> showOperaCloser<T>(
                       ClipRect(child: InteractiveViewer(maxScale: 4, child: child)),
                       if (line != null) ...[
                         const SizedBox(height: 12),
-                        Text(line, key: const ValueKey('closer-line'), textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.paperLight)),
+                        Text(readingLines(line), key: const ValueKey('closer-line'), textAlign: TextAlign.center, style: AppText.aside(size: 17, color: AppColors.paperLight)),
                       ],
                       const SizedBox(height: 16),
                       ...actions,

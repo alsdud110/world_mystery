@@ -13,6 +13,7 @@ import '../../widgets/paper_background.dart';
 import '../game/game_providers.dart';
 import '../game_master/dev_session.dart';
 import '../game_master/parent_gate.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// Starts the game with the device's detective ([ProfileSession]), or — when
 /// several detectives with progress were found and nothing says which is
@@ -164,11 +165,11 @@ class _Candidate extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              detective.name == null ? '이름 없는 탐정' : 'Detective ${detective.name}',
+              readingLines(detective.name == null ? '이름 없는 탐정' : 'Detective ${detective.name}'),
               style: AppText.title(size: 20),
             ),
             const SizedBox(height: AppSpace.xs),
-            Text(details, style: AppText.caption()),
+            Text(readingLines(details), style: AppText.caption()),
             const SizedBox(height: AppSpace.md),
             GameButton(
               label: '이 탐정으로 계속',

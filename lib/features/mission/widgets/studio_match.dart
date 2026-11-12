@@ -28,6 +28,7 @@ import 'spot_differences.dart' show PicturePuzzleActions;
 import 'station_clocks.dart' show GuidePulse;
 import 'tower_documents.dart' show CroppedPicture;
 import 'zoom_picture.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A studio looked round, then its notes joined to its paintings
 /// ([StudioScene]). The room fills the top of the page (pinch, drag); a
@@ -183,7 +184,7 @@ class _StudioMatchState extends State<StudioMatch> {
                   style: AppText.tally(),
                 ),
                 const SizedBox(height: AppSpace.xs),
-                Text('Tap a glass to look. Pinch to look closer.', textAlign: TextAlign.center, style: AppText.caption()),
+                Text(readingLines('Tap a glass to look. Pinch to look closer.'), textAlign: TextAlign.center, style: AppText.caption()),
               ],
             ),
           ),
@@ -383,7 +384,7 @@ class _NotesCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(mission.letterIntro, textAlign: TextAlign.center, style: AppText.aside(color: AppColors.paperLight)),
+            Text(readingLines(mission.letterIntro), textAlign: TextAlign.center, style: AppText.aside(color: AppColors.paperLight)),
             const SizedBox(height: AppSpace.sm),
             LetterCard(text: mission.letter, textSize: 16, compact: true),
             const SizedBox(height: AppSpace.md),
@@ -685,7 +686,7 @@ class _MatchPageState extends State<_MatchPage> {
                             onTap: () => _pickNote(id),
                           ),
                         ),
-                      Text(scene.matchDrag, textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
+                      Text(readingLines(scene.matchDrag), textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
                       const SizedBox(height: AppSpace.md),
                       DetectiveTipNotes(hints: m.hints, revealed: widget.hintsShown, compact: true),
                     ],
@@ -888,7 +889,7 @@ class _MatchStep extends StatelessWidget {
                 : Text(step, style: AppText.button(size: 14, color: AppColors.goldLight)),
           ),
           const SizedBox(width: AppSpace.sm),
-          Expanded(child: Text(line, key: const ValueKey('match-step-line'), style: AppText.subtitle(color: AppColors.navy))),
+          Expanded(child: Text(readingLines(line), key: const ValueKey('match-step-line'), style: AppText.subtitle(color: AppColors.navy))),
         ],
       ),
     );
@@ -1116,7 +1117,7 @@ class _NoteChip extends StatelessWidget {
             // Plain words: the whole card picks the note (its words are
             // looked up on the notes' card, from the studio).
             child: Text(
-              words,
+              readingLines(words),
               style: AppText.letter(size: 15, color: picked ? AppColors.paperLight : AppColors.inkBrown),
             ),
           ),

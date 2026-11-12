@@ -10,6 +10,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'opera_papers.dart' show showOperaCloser;
 import 'river_papers.dart' show PictureCanvas;
+import '../../../core/utils/reading_lines.dart';
 
 /// M1, the square of Abbesses ([CornerChoiceScene]): the square with its
 /// three corners ringed; a corner tapped (on the square, or by its button)
@@ -79,7 +80,7 @@ class _PainterCornerPuzzleState extends State<PainterCornerPuzzle> {
       children: [
         _Square(scene: scene, showing: showing, looked: widget.looked, onTap: _show),
         const SizedBox(height: AppSpace.sm),
-        Text(scene.task, key: const ValueKey('corner-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
+        Text(readingLines(scene.task), key: const ValueKey('corner-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
         const SizedBox(height: AppSpace.sm),
         Row(
           children: [

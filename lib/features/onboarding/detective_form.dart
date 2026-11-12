@@ -13,6 +13,7 @@ import '../../widgets/art_assets.dart';
 import '../../widgets/game_button.dart';
 import '../../widgets/ink_icon.dart';
 import '../game/game_controller.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// The picture of [avatar] (see [ArtAssets.avatarBoy]).
 String avatarAsset(DetectiveAvatar avatar) => switch (avatar) {
@@ -82,7 +83,7 @@ class FormStep extends StatelessWidget {
         ),
         const SizedBox(width: AppSpace.md),
         Expanded(
-          child: Text(label, style: AppText.title(size: 16, color: AppColors.ink)),
+          child: Text(readingLines(label), style: AppText.title(size: 16, color: AppColors.ink)),
         ),
       ],
     );
@@ -243,7 +244,7 @@ class _AvatarCard extends StatelessWidget {
                 if (height == 0)
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: AppSpace.xs + 2),
-                    child: Text(titled(avatar.label), style: AppText.title(size: 15, color: ink)),
+                    child: Text(readingLines(titled(avatar.label)), style: AppText.title(size: 15, color: ink)),
                   ),
               ],
             ),
@@ -375,7 +376,7 @@ class _DifficultyTile extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    difficulty.tagline,
+                    readingLines(difficulty.tagline),
                     textAlign: TextAlign.center,
                     style: AppText.caption(color: selected ? AppColors.ink : AppColors.muted)
                         .copyWith(fontSize: 13, height: 1.3),
@@ -426,11 +427,11 @@ class _DifficultyCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    titled(difficulty.label),
+                    readingLines(titled(difficulty.label)),
                     style: AppText.title(size: 16, color: selected ? AppColors.navy : AppColors.muted),
                   ),
                   const SizedBox(height: 2),
-                  Text(difficulty.blurb, style: AppText.caption(color: selected ? AppColors.ink : AppColors.muted)),
+                  Text(readingLines(difficulty.blurb), style: AppText.caption(color: selected ? AppColors.ink : AppColors.muted)),
                 ],
               ),
             ),

@@ -25,6 +25,7 @@ import 'season_actions.dart';
 import 'season_overview.dart';
 import 'widgets/prologue_art.dart';
 import 'widgets/season_props.dart';
+import '../../core/utils/reading_lines.dart';
 
 part 'paris_prologue.dart';
 
@@ -296,7 +297,7 @@ class _SeasonPrologueScreenState extends ConsumerState<SeasonPrologueScreen>
                       Opacity(
                         opacity: _iv(0.45, 0.7),
                         child: Text(
-                          p.question,
+                          readingLines(p.question),
                           textAlign: TextAlign.center,
                           // The season's turn: a cinematic prompt, not a question to answer.
                           style: AppText.cinematicPrompt(size: 25),
@@ -534,7 +535,7 @@ class _Line extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Text(
-    text,
+    readingLines(text),
     textAlign: TextAlign.center,
     style: AppText.aside(
       size: size,
@@ -768,7 +769,7 @@ class _CaseFile extends StatelessWidget {
                               const SizedBox(height: AppSpace.lg),
                               if (episode.synopsis.isNotEmpty)
                                 Text(
-                                  episode.synopsis.first,
+                                  readingLines(episode.synopsis.first),
                                   style: AppText.bodyText(
                                     size: 17,
                                     weight: FontWeight.w700,
@@ -776,7 +777,7 @@ class _CaseFile extends StatelessWidget {
                                 ),
                               const SizedBox(height: AppSpace.md),
                               Text(
-                                line,
+                                readingLines(line),
                                 style: AppText.aside(
                                   size: 16,
                                   color: AppColors.inkBrown,

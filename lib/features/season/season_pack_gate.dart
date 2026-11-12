@@ -12,6 +12,7 @@ import '../../widgets/game_dialog.dart';
 import '../../widgets/game_toast.dart';
 import '../../widgets/ink_icon.dart';
 import '../game/game_providers.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// Before a season is entered: its pictures are on the device, or the
 /// detective agrees to download them first (its name and size asked, the
@@ -121,7 +122,7 @@ class _SeasonDownloadDialogState extends ConsumerState<SeasonDownloadDialog> {
         content: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(message, textAlign: TextAlign.center, style: AppText.bodyText(size: 16)),
+            Text(readingLines(message), textAlign: TextAlign.center, style: AppText.bodyText(size: 16)),
             if (_phase == _Phase.downloading) ...[
               const SizedBox(height: AppSpace.md),
               ClipRRect(

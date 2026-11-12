@@ -10,6 +10,7 @@ import '../../../widgets/glossary_text.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'workshop_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The final's slips ([PostTrailScene]): the receipt to start from, the five
 /// slips from under the door (a tap picks one, shown large under them), and
@@ -78,7 +79,7 @@ class PostTrailPuzzle extends StatelessWidget {
             ),
           ),
         const SizedBox(height: AppSpace.sm),
-        Text(picked == null ? scene.pickTask : scene.placeTask, key: const ValueKey('trail-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(picked == null ? scene.pickTask : scene.placeTask), key: const ValueKey('trail-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.sm),
         // The slip picked, read in full (its words can be looked up); the
         // same room is kept when none is picked, so nothing jumps.
@@ -245,11 +246,11 @@ class _Slot extends StatelessWidget {
                   SizedBox(width: 38, child: Text(label, style: AppText.mark(color: AppColors.navy, size: 16))),
                   Expanded(
                     child: slip == null
-                        ? Text(ready ? 'Tap to put the slip here' : 'Empty', style: AppText.aside(size: 15))
+                        ? Text(readingLines(ready ? 'Tap to put the slip here' : 'Empty'), style: AppText.aside(size: 15))
                         // Its letter's number first: 4417 and 4471 are
                         // told apart on the trail itself.
                         : Text(
-                            'No. ${slip.letter} · ${slip.time == null ? slip.date : '${slip.date} · ${slip.time}'}\n${slip.record} · ${slip.where}',
+                            readingLines('No. ${slip.letter} · ${slip.time == null ? slip.date : '${slip.date} · ${slip.time}'}\n${slip.record} · ${slip.where}'),
                             style: AppText.bodyText(size: 14, weight: FontWeight.w600).copyWith(height: 1.25),
                           ),
                   ),

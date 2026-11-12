@@ -26,6 +26,7 @@ import '../../game/game_providers.dart';
 import 'investigation_search.dart' show PencilSlip, SearchTapRing, TapGuide;
 import 'question_widgets.dart' show ShakeOnChange;
 import 'search_stage.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A place looked round ([ExploreScene]): its picture fills the screen and
 /// can be looked at closer (pinch, drag); a tap on it looks at that spot.
@@ -566,7 +567,7 @@ class ExploreCaption extends StatelessWidget {
             style: AppText.bodyText(size: 16, weight: FontWeight.w700, color: AppColors.burgundy),
           ),
           const SizedBox(height: 2),
-          Text(zoomGuide, textAlign: TextAlign.center, style: AppText.caption()),
+          Text(readingLines(zoomGuide), textAlign: TextAlign.center, style: AppText.caption()),
         ],
       ),
     );
@@ -921,7 +922,7 @@ class _ChoicePageState extends State<_ChoicePage> {
                     children: [
                       GlossaryText(Formatters.sentenceLines(m.question), textAlign: TextAlign.center, style: AppText.title(size: 22)),
                       const SizedBox(height: AppSpace.xs),
-                      Text(scene.choiceHow, textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
+                      Text(readingLines(scene.choiceHow), textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
                       const SizedBox(height: AppSpace.md),
                       const Center(child: OrnamentRule()),
                       const SizedBox(height: AppSpace.lg),

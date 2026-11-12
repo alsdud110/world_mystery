@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/utils/audio_service.dart';
+import '../core/utils/reading_lines.dart';
 import '../features/game/game_providers.dart';
 
 /// Reveals [text] one character at a time, with the soft keys of an old
@@ -55,7 +56,10 @@ class _TypewriterTextState extends ConsumerState<TypewriterText> {
   /// Whether a key has sounded for this line (and may need cutting off).
   bool _keyed = false;
 
-  bool get _done => _visible >= widget.text.length;
+  /// The line as it is laid out: read sentence by sentence ([readingLines]).
+  late String _text = readingLines(widget.text);
+
+  bool get _done => _visible >= _text.length;
 
   @override
   void initState() {
@@ -76,6 +80,7 @@ class _TypewriterTextState extends ConsumerState<TypewriterText> {
   void didUpdateWidget(TypewriterText oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.text != widget.text) {
+      _text = readingLines(widget.text);
       _visible = 0;
       _reported = false;
       _start();
@@ -97,7 +102,7 @@ class _TypewriterTextState extends ConsumerState<TypewriterText> {
       if (_done) {
         _finish();
       } else {
-        _typed(widget.text[_visible - 1]);
+        _typed(_text[_visible - 1]);
       }
     });
   }
@@ -136,7 +141,7 @@ class _TypewriterTextState extends ConsumerState<TypewriterText> {
     _silence();
     if (!mounted || _reported) return;
     _reported = true;
-    setState(() => _visible = widget.text.length);
+    setState(() => _visible = _text.length);
     widget.onFinished?.call();
   }
 
@@ -150,8 +155,8 @@ class _TypewriterTextState extends ConsumerState<TypewriterText> {
   @override
   Widget build(BuildContext context) {
     // The hidden remainder keeps the layout stable while typing.
-    final shown = widget.text.substring(0, _visible.clamp(0, widget.text.length));
-    final hidden = widget.text.substring(shown.length);
+    final shown = _text.substring(0, _visible.clamp(0, _text.length));
+    final hidden = _text.substring(shown.length);
     return Semantics(
       label: widget.text,
       excludeSemantics: true,

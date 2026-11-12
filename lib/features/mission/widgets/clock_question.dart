@@ -16,6 +16,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/landmark_art.dart' show ClockHandsPainter;
 import '../../game/game_providers.dart' show audioServiceProvider;
 import 'question_widgets.dart' show AnswerCallback, PuzzleKey;
+import '../../../core/utils/reading_lines.dart';
 
 /// A clock face whose hands the detective sets ([ClockPuzzle]): drag a hand
 /// on the face, or step it with the HOUR and MINUTE keys below. The time
@@ -74,7 +75,7 @@ class _ClockQuestionState extends ConsumerState<ClockQuestion> {
     return Column(
       children: [
         Text(
-          p.lead,
+          readingLines(p.lead),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 16, color: AppColors.inkBrown),
         ),
@@ -91,7 +92,7 @@ class _ClockQuestionState extends ConsumerState<ClockQuestion> {
         _Readout(time: time),
         const SizedBox(height: AppSpace.sm),
         Text(
-          p.guide,
+          readingLines(p.guide),
           textAlign: TextAlign.center,
           style: AppText.caption(color: AppColors.inkBrown),
         ),

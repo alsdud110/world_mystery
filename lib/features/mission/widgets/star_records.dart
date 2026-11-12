@@ -14,6 +14,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'clockwork_garden.dart' show DialFace;
 import 'river_papers.dart' show PictureCanvas;
+import '../../../core/utils/reading_lines.dart';
 
 /// Season 2, Case 10 — The Hour of Shadows, played on its pictures
 /// (`docs/SEASON2_CASE10_SPEC.md`): T1's tape and its two jumps, the roof
@@ -46,7 +47,7 @@ class _Say extends StatelessWidget {
     child: AnimatedSwitcher(
       duration: _still(context) ? Duration.zero : const Duration(milliseconds: 250),
       child: Text(
-        line,
+        readingLines(line),
         key: ValueKey('star-line-$line'),
         textAlign: TextAlign.center,
         style: AppText.letter(
@@ -488,7 +489,7 @@ class _DrumTapePuzzleState extends State<DrumTapePuzzle> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(scene.task, key: const ValueKey('tape-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
+            Text(readingLines(scene.task), key: const ValueKey('tape-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
             const SizedBox(height: AppSpace.sm),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -884,7 +885,7 @@ class _CityClocksPuzzleState extends State<CityClocksPuzzle> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(_allFound ? scene.sortTask : scene.task, key: const ValueKey('city-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
+        Text(readingLines(_allFound ? scene.sortTask : scene.task), key: const ValueKey('city-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
         if (widget.trialMap case final map?)
           Center(
             child: InkTextButton(
@@ -905,7 +906,7 @@ class _CityClocksPuzzleState extends State<CityClocksPuzzle> {
                         const SizedBox(height: AppSpace.sm),
                         ClipRRect(borderRadius: BorderRadius.circular(AppRadius.paper), child: map),
                         const SizedBox(height: AppSpace.sm),
-                        Text('T1 at the Arc de Triomphe, with a star. T2 at the Seine bridge, with three arches. T3 at Arts et Métiers, with a bell.',
+                        Text(readingLines('T1 at the Arc de Triomphe, with a star. T2 at the Seine bridge, with three arches. T3 at Arts et Métiers, with a bell.'),
                             textAlign: TextAlign.center, style: AppText.bodyText(size: 14, color: AppColors.ink)),
                         const SizedBox(height: AppSpace.sm),
                         GameButton(label: 'BACK TO THE PHOTO', style: GameButtonStyle.outline, onPressed: () => Navigator.of(context).pop()),
@@ -1341,7 +1342,7 @@ class _ShadowCheckPuzzleState extends State<ShadowCheckPuzzle> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(scene.task, key: const ValueKey('shadow-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
+        Text(readingLines(scene.task), key: const ValueKey('shadow-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
         const SizedBox(height: AppSpace.sm),
         _PhotoCard(scene: scene, photo: shown, matched: matchedShown),
         const SizedBox(height: AppSpace.sm),
@@ -1362,7 +1363,7 @@ class _ShadowCheckPuzzleState extends State<ShadowCheckPuzzle> {
         ),
         const SizedBox(height: AppSpace.xs),
         Text(
-          'SUN: ${_settled == null && !_dragging ? '--:--' : clockText(drawn.round())}',
+          readingLines('SUN: ${_settled == null && !_dragging ? '--:--' : clockText(drawn.round())}'),
           key: const ValueKey('shadow-reading'),
           textAlign: TextAlign.center,
           style: AppText.title(size: 22).copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
@@ -1372,7 +1373,7 @@ class _ShadowCheckPuzzleState extends State<ShadowCheckPuzzle> {
             Padding(
               padding: const EdgeInsets.only(top: 2),
               child: Text(
-                '${p.name}: T1 ${clockText(p.t1)} · SUN ${clockText(p.sun)} · ${p.t1 == p.sun ? 'same' : 'one hour apart'}',
+                readingLines('${p.name}: T1 ${clockText(p.t1)} · SUN ${clockText(p.sun)} · ${p.t1 == p.sun ? 'same' : 'one hour apart'}'),
                 key: ValueKey('shadow-compare-${p.id}'),
                 textAlign: TextAlign.center,
                 style: AppText.bodyText(size: 14, weight: FontWeight.w700, color: p.t1 == p.sun ? AppColors.success : AppColors.tryAgain),
@@ -1441,7 +1442,7 @@ class _PhotoCard extends StatelessWidget {
                         child: _PhotoCrop(photo: p, crop: p.dialCrop, at: photo.number, dialAngle: dial.angleAt(photo.sun.toDouble()), dialLength: dial.lengthAt(photo.sun.toDouble())),
                       ),
                       const SizedBox(height: 2),
-                      Text(matched ? 'SUN · ${clockText(photo.sun)}' : 'SUN · ?', style: AppText.bodyText(size: 13, weight: FontWeight.w700, color: AppColors.navy)),
+                      Text(readingLines(matched ? 'SUN · ${clockText(photo.sun)}' : 'SUN · ?'), style: AppText.bodyText(size: 13, weight: FontWeight.w700, color: AppColors.navy)),
                     ],
                   ),
                 ),
@@ -1713,7 +1714,7 @@ class ShadowCardView extends StatelessWidget {
                           _PhotoCrop(photo: scene.photo, crop: scene.photo.dialCrop, at: p.number, dialAngle: dial.angleAt(p.sun.toDouble()), dialLength: dial.lengthAt(p.sun.toDouble())),
                           const SizedBox(height: 4),
                           Text(p.name, style: AppText.mark()),
-                          Text('T1 ${clockText(p.t1)} · SUN ${clockText(p.sun)}', style: AppText.bodyText(size: 15, weight: FontWeight.w700, color: p.t1 == p.sun ? AppColors.success : AppColors.tryAgain)),
+                          Text(readingLines('T1 ${clockText(p.t1)} · SUN ${clockText(p.sun)}'), style: AppText.bodyText(size: 15, weight: FontWeight.w700, color: p.t1 == p.sun ? AppColors.success : AppColors.tryAgain)),
                         ],
                       ),
                     ),
@@ -1809,7 +1810,7 @@ class _HourRecordPuzzleState extends State<HourRecordPuzzle> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          widget.found ? scene.pageTask : scene.tapeTask,
+          readingLines(widget.found ? scene.pageTask : scene.tapeTask),
           key: const ValueKey('record-task'),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy),
@@ -1909,7 +1910,7 @@ class TapeTimeline extends StatelessWidget {
                 alignment: Alignment.center,
                 color: band.contains(m.id) ? AppColors.gold.withValues(alpha: 0.35) : null,
                 child: Text(
-                  clockText(scene.realAt(m.id)),
+                  readingLines(clockText(scene.realAt(m.id))),
                   style: AppText.bodyText(size: 15, weight: FontWeight.w700, color: AppColors.goldDeep).copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
                 ),
               ),
@@ -2060,7 +2061,7 @@ class TrialLogView extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: AppSpace.md),
                       child: Row(
                         children: [
-                          Expanded(child: Text(p.line, style: AppText.bodyText(size: 16, weight: FontWeight.w600, color: AppColors.ink))),
+                          Expanded(child: Text(readingLines(p.line), style: AppText.bodyText(size: 16, weight: FontWeight.w600, color: AppColors.ink))),
                           if (!p.inBook && pageFound) Text('NOT IN THE BOOK', style: AppText.bodyText(size: 12, weight: FontWeight.w700, color: AppColors.tryAgain)),
                         ],
                       ),
@@ -2225,7 +2226,7 @@ class _RecordListPageState extends State<_RecordListPage> {
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(horizontal: AppSpace.sm, vertical: AppSpace.xs),
-                                      child: Text(l.text, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.ink)),
+                                      child: Text(readingLines(l.text), style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.ink)),
                                     ),
                                   ),
                                 ),
@@ -2238,7 +2239,7 @@ class _RecordListPageState extends State<_RecordListPage> {
                 ),
                 const SizedBox(height: AppSpace.lg),
                 if (!_found) ...[
-                  Text(_lead.question, key: const ValueKey('record-question'), textAlign: TextAlign.center, style: AppText.title(size: 20, color: AppColors.goldLight)),
+                  Text(readingLines(_lead.question), key: const ValueKey('record-question'), textAlign: TextAlign.center, style: AppText.title(size: 20, color: AppColors.goldLight)),
                   if (_line != null) ...[const SizedBox(height: AppSpace.sm), _Say(_line!, dark: true)],
                 ] else ...[
                   _RecordMap(lead: _lead),

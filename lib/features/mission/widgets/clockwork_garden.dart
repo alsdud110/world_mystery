@@ -14,6 +14,7 @@ import '../../../widgets/ink_icon.dart';
 import '../../../widgets/landmark_art.dart' show ClockHandsPainter;
 import 'river_papers.dart' show PictureCanvas;
 import 'star_records.dart' show PlateCloser, StarRoomPicture;
+import '../../../core/utils/reading_lines.dart';
 
 /// Season 2, Case 09 — The Clockwork Garden, played on its pictures
 /// (`docs/SEASON2_CASE09_SPEC.md`): the little clocks put back on the map,
@@ -36,7 +37,7 @@ class _Say extends StatelessWidget {
     child: AnimatedSwitcher(
       duration: _still(context) ? Duration.zero : const Duration(milliseconds: 250),
       child: Text(
-        line,
+        readingLines(line),
         key: ValueKey('garden-line-$line'),
         textAlign: TextAlign.center,
         style: AppText.letter(
@@ -375,7 +376,7 @@ class _TrialMapPuzzleState extends State<TrialMapPuzzle> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(scene.task, key: const ValueKey('trial-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
+            Text(readingLines(scene.task), key: const ValueKey('trial-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
             const SizedBox(height: AppSpace.sm),
             DragTarget<String>(
               // Laid where its base is: just above the finger (the clock is
@@ -693,7 +694,7 @@ class _GearBoardPuzzleState extends State<GearBoardPuzzle> with SingleTickerProv
           builder: (context, candidates, _) => Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(scene.task, key: const ValueKey('gear-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
+              Text(readingLines(scene.task), key: const ValueKey('gear-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
               const SizedBox(height: AppSpace.sm),
               ClipRRect(
                 borderRadius: BorderRadius.circular(AppRadius.paper),
@@ -1185,7 +1186,7 @@ class _MakerMarksPuzzleState extends State<MakerMarksPuzzle> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(scene.task, key: const ValueKey('marks-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
+        Text(readingLines(scene.task), key: const ValueKey('marks-task'), textAlign: TextAlign.center, style: AppText.bodyText(size: 15, weight: FontWeight.w600, color: AppColors.navy)),
         const SizedBox(height: AppSpace.sm),
         ClipRRect(
           borderRadius: BorderRadius.circular(AppRadius.paper),
@@ -1295,7 +1296,7 @@ class _NotebookMarkCard extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(mark.name, maxLines: 3, style: AppText.bodyText(size: 13, weight: FontWeight.w700, color: picked ? AppColors.paperLight : AppColors.navy)),
-                        Text(joined ? '✓ $joinedTo' : mark.source, maxLines: 2, style: AppText.caption(color: picked ? AppColors.goldLight : (joined ? AppColors.success : AppColors.muted))),
+                        Text(readingLines(joined ? '✓ $joinedTo' : mark.source), maxLines: 2, style: AppText.caption(color: picked ? AppColors.goldLight : (joined ? AppColors.success : AppColors.muted))),
                       ],
                     ),
                   ),
@@ -1511,7 +1512,7 @@ class _TowerTestPuzzleState extends State<TowerTestPuzzle> {
         AnimatedOpacity(
           opacity: _handsOn || widget.tested || _still(context) ? 1 : 0,
           duration: const Duration(milliseconds: 300),
-          child: Text(scene.handsLine, textAlign: TextAlign.center, style: AppText.aside(size: 15)),
+          child: Text(readingLines(scene.handsLine), textAlign: TextAlign.center, style: AppText.aside(size: 15)),
         ),
         const SizedBox(height: AppSpace.sm),
         if (!widget.tested) ...[
@@ -1659,7 +1660,7 @@ class _StarLeadPageState extends State<_StarLeadPage> {
                 ),
                 const SizedBox(height: AppSpace.lg),
                 if (!_found) ...[
-                  Text(_lead.question, key: const ValueKey('star-question'), textAlign: TextAlign.center, style: AppText.title(size: 20, color: AppColors.goldLight)),
+                  Text(readingLines(_lead.question), key: const ValueKey('star-question'), textAlign: TextAlign.center, style: AppText.title(size: 20, color: AppColors.goldLight)),
                   const SizedBox(height: AppSpace.sm),
                   Row(
                     children: [

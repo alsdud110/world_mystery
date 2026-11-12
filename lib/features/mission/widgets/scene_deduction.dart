@@ -17,6 +17,7 @@ import 'investigation_search.dart' show PencilSlip, SearchTapRing, TapGuide;
 import 'question_widgets.dart' show ShakeOnChange;
 import 'scene_explore.dart' show LookMark;
 import 'search_stage.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A place read for its traces ([DeductionScene]): its picture fills the
 /// screen and can be looked at closer (pinch, drag). Each trace carries a
@@ -596,7 +597,7 @@ class _PlaceMark extends StatelessWidget {
         child: chip != null
             ? ExcludeSemantics(
                 child: Text(
-                  chip!,
+                  readingLines(chip!),
                   key: const ValueKey('place-chip'),
                   textScaler: TextScaler.noScaling,
                   style: pill ? AppText.button(size: 12, color: chosen ? AppColors.goldLight : AppColors.navy) : AppText.title(size: 19, color: chosen ? AppColors.goldLight : AppColors.navy),

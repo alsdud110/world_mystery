@@ -24,6 +24,7 @@ import '../../../widgets/paper_background.dart';
 import '../../../widgets/place_scenery.dart';
 import '../../game/game_providers.dart';
 import 'search_stage.dart';
+import '../../../core/utils/reading_lines.dart';
 
 // ---------------------------------------------------------------------------
 // Arriving: the place in the dark, why the document is read, the document.
@@ -945,14 +946,14 @@ class _PencilSlipState extends State<PencilSlip> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        text,
+                        readingLines(text),
                         textAlign: TextAlign.center,
                         style: AppText.letter(size: 16, color: AppColors.inkBrown),
                       ),
                       if (nudge != null) ...[
                         const SizedBox(height: 2),
                         Text(
-                          nudge,
+                          readingLines(nudge),
                           textAlign: TextAlign.center,
                           style: AppText.caption(color: AppColors.goldDeep),
                         ),
@@ -1001,7 +1002,7 @@ class _SearchCaption extends StatelessWidget {
             style: AppText.bodyText(size: 17, weight: FontWeight.w700, color: AppColors.burgundy),
           ),
           const SizedBox(height: 2),
-          Text(scene.zoomGuide, textAlign: TextAlign.center, style: AppText.caption()),
+          Text(readingLines(scene.zoomGuide), textAlign: TextAlign.center, style: AppText.caption()),
         ],
       ),
     );
@@ -1136,10 +1137,10 @@ class _FindCard extends StatelessWidget {
                                   const SizedBox(height: AppSpace.xs),
                                   const OrnamentRule(),
                                   const SizedBox(height: AppSpace.sm),
-                                  Text(find.foundLine, textAlign: TextAlign.center, style: AppText.letter(size: 18)),
+                                  Text(readingLines(find.foundLine), textAlign: TextAlign.center, style: AppText.letter(size: 18)),
                                   const SizedBox(height: AppSpace.md),
                                   Text(
-                                    last ? 'Tap to continue' : 'Tap to keep searching',
+                                    readingLines(last ? 'Tap to continue' : 'Tap to keep searching'),
                                     textAlign: TextAlign.center,
                                     style: AppText.caption(),
                                   ),

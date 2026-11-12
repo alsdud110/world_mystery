@@ -12,6 +12,7 @@ import '../../../widgets/glossary_text.dart';
 import '../../../widgets/ink_icon.dart';
 import '../../../widgets/paper.dart' show OrnamentRule;
 import 'tower_documents.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The final's board ([EvidenceBoardSpec]: Case 03's, Case 08's): its
 /// questions, the case's evidence, and what can be concluded. A question is tapped, then the
@@ -60,7 +61,7 @@ class EvidenceBoard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(scene.linkTask, key: const ValueKey('board-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(scene.linkTask), key: const ValueKey('board-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         for (final (i, q) in scene.questions.indexed) ...[
           if (i > 0) const SizedBox(height: AppSpace.sm),
@@ -99,7 +100,7 @@ class EvidenceBoard extends StatelessWidget {
           const SizedBox(height: AppSpace.md),
           const Center(child: OrnamentRule()),
           const SizedBox(height: AppSpace.md),
-          Text(scene.concludeTask, textAlign: TextAlign.center, style: AppText.subtitle()),
+          Text(readingLines(scene.concludeTask), textAlign: TextAlign.center, style: AppText.subtitle()),
           const SizedBox(height: AppSpace.sm),
           GlossaryText(scene.conclusionQuestion, textAlign: TextAlign.center, style: AppText.title(size: 21)),
           const SizedBox(height: AppSpace.sm),
@@ -163,10 +164,10 @@ class _QuestionCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(text, style: AppText.bodyText(size: 16, weight: FontWeight.w600)),
+                      Text(readingLines(text), style: AppText.bodyText(size: 16, weight: FontWeight.w600)),
                       const SizedBox(height: AppSpace.xs),
                       Text(
-                        linked.isEmpty ? 'No evidence yet' : linked.join('  +  '),
+                        readingLines(linked.isEmpty ? 'No evidence yet' : linked.join('  +  ')),
                         style: AppText.aside(size: 14, color: linked.isEmpty ? AppColors.muted : AppColors.navy),
                       ),
                     ],
@@ -274,7 +275,7 @@ class _ConclusionChoice extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  text,
+                  readingLines(text),
                   style: AppText.bodyText(size: 16, weight: FontWeight.w600, color: selected ? AppColors.paperLight : AppColors.ink),
                 ),
               ),
@@ -427,7 +428,7 @@ Future<void> showBrassPlaque(BuildContext context, {required EvidenceBoardScene 
                       // (the engraving is small on a phone).
                       ExcludeSemantics(
                         child: Text(
-                          scene.plaqueMessage,
+                          readingLines(scene.plaqueMessage),
                           key: const ValueKey('plaque-words'),
                           textAlign: TextAlign.center,
                           style: AppText.title(size: 22, color: AppColors.goldLight).copyWith(letterSpacing: 1.2, height: 1.35),

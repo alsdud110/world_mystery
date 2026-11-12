@@ -8,6 +8,7 @@ import '../core/theme/app_tokens.dart';
 import '../features/game/game_providers.dart';
 import 'ink_icon.dart';
 import 'paper.dart';
+import '../core/utils/reading_lines.dart';
 
 /// A press on the menu paper: a faint ink mark, not a Material ripple.
 Color get _press => AppColors.inkBrown.withValues(alpha: 0.08);
@@ -59,7 +60,7 @@ class PaperMenuItem extends StatelessWidget {
     final press = _press;
     return ListTile(
       leading: InkIcon(glyph, color: AppColors.ink),
-      title: Text(label, style: AppText.subtitle()),
+      title: Text(readingLines(label), style: AppText.subtitle()),
       splashColor: press,
       hoverColor: press,
       focusColor: press,

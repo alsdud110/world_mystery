@@ -15,6 +15,7 @@ import '../../game/admob_rewarded_ad_gateway.dart';
 import '../../game/game_controller.dart';
 import '../../game/rewarded_ad_service.dart';
 import '../../game/wallet_controller.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// What the next Detective Hint is (see [requestTip]).
 enum TipState {
@@ -341,7 +342,7 @@ class TipShopCard extends StatelessWidget {
                 ),
                 const SizedBox(height: AppSpace.sm),
                 Text(
-                  message,
+                  readingLines(message),
                   key: const ValueKey('tip-message'),
                   textAlign: TextAlign.center,
                   style: AppText.bodyText(size: 15, color: AppColors.muted),
@@ -361,7 +362,7 @@ class TipShopCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(AppRadius.button),
                     ),
                     child: Text(
-                      rewardMessage!,
+                      readingLines(rewardMessage!),
                       textAlign: TextAlign.center,
                       style: AppText.bodyText(
                         size: 15,

@@ -15,6 +15,7 @@ import '../../../widgets/glossary_text.dart';
 import '../../../widgets/ink_icon.dart';
 import 'studio_match.dart' show PictureCloser;
 import 'tower_documents.dart' show CroppedPicture;
+import '../../../core/utils/reading_lines.dart';
 
 /// The final's stage over a [CanvasScene]: the canvas being looked at, whole
 /// (a tap looks closer). Once the right one is chosen, [turn] (0..1) turns
@@ -110,7 +111,7 @@ class CanvasBack extends StatelessWidget {
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(
-                        scene.message,
+                        readingLines(scene.message),
                         key: const ValueKey('canvas-message'),
                         textAlign: TextAlign.center,
                         style: AppText.letter(size: 34, color: AppColors.ink).copyWith(height: 1.25),
@@ -157,7 +158,7 @@ class CanvasPicker extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(scene.chooseHow, textAlign: TextAlign.center, style: AppText.caption(color: AppColors.paperLight.withValues(alpha: 0.85))),
+        Text(readingLines(scene.chooseHow), textAlign: TextAlign.center, style: AppText.caption(color: AppColors.paperLight.withValues(alpha: 0.85))),
         const SizedBox(height: AppSpace.md),
         LayoutBuilder(
           builder: (context, box) {
@@ -188,7 +189,7 @@ class CanvasPicker extends StatelessWidget {
         const SizedBox(height: AppSpace.md),
         if (!all)
           Text(
-            'Look at all four canvases first (${looked.length} of ${scene.canvases.length}).',
+            readingLines('Look at all four canvases first (${looked.length} of ${scene.canvases.length}).'),
             key: const ValueKey('canvas-look-first'),
             textAlign: TextAlign.center,
             style: AppText.aside(size: 15, color: AppColors.goldLight),

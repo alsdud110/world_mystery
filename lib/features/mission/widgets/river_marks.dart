@@ -15,6 +15,7 @@ import '../../../widgets/paper.dart';
 import 'evidence_board.dart' show BrassPlaque;
 import 'mark_compare.dart' show SpotMarks;
 import 'river_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The quay wall ([RiverMarksScene]): four carved marks, each looked at
 /// closer by a tap (kept looked at: [onRead]), the brass plaque's two sides
@@ -89,7 +90,7 @@ class _RiverMarksState extends State<RiverMarks> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          lookedAll ? _scene.chooseTask : _scene.readTask,
+          readingLines(lookedAll ? _scene.chooseTask : _scene.readTask),
           key: const ValueKey('marks-task'),
           textAlign: TextAlign.center,
           style: AppText.subtitle(),
@@ -465,10 +466,10 @@ Future<void> showMarkFollows(BuildContext context, {required RiverMarksScene sce
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(line, style: AppText.bodyText(size: 15, color: AppColors.paperLight.withValues(alpha: 0.75))),
+                                    Text(readingLines(line), style: AppText.bodyText(size: 15, color: AppColors.paperLight.withValues(alpha: 0.75))),
                                     const SizedBox(height: 2),
                                     Text(
-                                      i < scene.rightLines.length ? scene.rightLines[i] : '',
+                                      readingLines(i < scene.rightLines.length ? scene.rightLines[i] : ''),
                                       style: AppText.bodyText(size: 18, weight: FontWeight.w700, color: AppColors.goldLight),
                                     ),
                                   ],
@@ -551,7 +552,7 @@ Future<void> showMarkCloser(BuildContext context, {required RiverMarksScene scen
                             children: [
                               _LineNumber(i + 1, light: true),
                               const SizedBox(width: AppSpace.sm),
-                              Expanded(child: Text(line, style: AppText.bodyText(size: 16, color: AppColors.paperLight))),
+                              Expanded(child: Text(readingLines(line), style: AppText.bodyText(size: 16, color: AppColors.paperLight))),
                             ],
                           ),
                         ),

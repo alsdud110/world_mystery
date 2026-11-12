@@ -10,6 +10,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'river_papers.dart';
 import 'tower_documents.dart' show showDocumentCloser;
+import '../../../core/utils/reading_lines.dart';
 
 /// The keeper's hut ([KeeperHutScene]), in three places, one after the
 /// other: outside it (its door tapped), inside it (the ledger on the desk
@@ -103,7 +104,7 @@ class _KeeperHutState extends State<KeeperHut> {
       key: key,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(task, key: const ValueKey('hut-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(task), key: const ValueKey('hut-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         DecoratedBox(
           decoration: BoxDecoration(boxShadow: AppShadow.paperLift, borderRadius: BorderRadius.circular(AppRadius.paper)),
@@ -157,7 +158,7 @@ class _KeeperHutState extends State<KeeperHut> {
       key: const ValueKey('hut-ledger-page'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(_scene.circleTask, key: const ValueKey('hut-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(_scene.circleTask), key: const ValueKey('hut-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         DecoratedBox(
           decoration: BoxDecoration(boxShadow: AppShadow.paperLift, borderRadius: BorderRadius.circular(AppRadius.paper)),
@@ -189,7 +190,7 @@ class _KeeperHutState extends State<KeeperHut> {
         ),
         const SizedBox(height: AppSpace.sm),
         Text(
-          label == null ? 'No box circled yet.' : 'You circled: ${label.toUpperCase()}',
+          readingLines(label == null ? 'No box circled yet.' : 'You circled: ${label.toUpperCase()}'),
           key: const ValueKey('ledger-circled'),
           textAlign: TextAlign.center,
           style: AppText.bodyText(size: 17, weight: FontWeight.w600, color: label == null ? AppColors.muted : AppColors.burgundy),
@@ -294,7 +295,7 @@ class _LedgerSecondPageState extends State<LedgerSecondPage> {
             ],
             Flexible(
               child: Text(
-                task,
+                readingLines(task),
                 key: const ValueKey('ledger-turn-task'),
                 textAlign: TextAlign.center,
                 style: AppText.subtitle(),

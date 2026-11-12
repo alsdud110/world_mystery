@@ -14,6 +14,7 @@ import '../../../widgets/ink_icon.dart';
 import 'mark_compare.dart' show WorkshopChoice, WorkshopChoices, WorkshopNote;
 import 'river_papers.dart' show PictureCanvas, carved;
 import 'workshop_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The wall of clocks ([ClockWallScene]): the four clocks, their hands drawn
 /// on their dials; WATCH THE CLOCKS plays one minute of them in a few
@@ -108,7 +109,7 @@ class _ClockWallState extends State<ClockWall> with SingleTickerProviderStateMix
         WorkshopNote(key: const ValueKey('repair-card-note'), intro: widget.mission.letterIntro, text: widget.mission.letter),
         const SizedBox(height: AppSpace.md),
         Text(
-          watched ? _scene.chooseTask : _scene.watchTask,
+          readingLines(watched ? _scene.chooseTask : _scene.watchTask),
           key: const ValueKey('clocks-task'),
           textAlign: TextAlign.center,
           style: AppText.subtitle(),
@@ -164,7 +165,7 @@ class _ClockWallState extends State<ClockWall> with SingleTickerProviderStateMix
             style: AppText.title(size: 20),
           )
         else if (watched) ...[
-          Text(_scene.later, key: const ValueKey('clocks-later'), textAlign: TextAlign.center, style: AppText.title(size: 22)),
+          Text(readingLines(_scene.later), key: const ValueKey('clocks-later'), textAlign: TextAlign.center, style: AppText.title(size: 22)),
           const SizedBox(height: AppSpace.sm),
           for (final c in _scene.clocks) _TimeRow(clock: c),
         ],
@@ -178,7 +179,7 @@ class _ClockWallState extends State<ClockWall> with SingleTickerProviderStateMix
           onPressed: _watching ? null : _watch,
         ),
         const SizedBox(height: AppSpace.sm),
-        Text(_scene.backTask, textAlign: TextAlign.center, style: AppText.aside()),
+        Text(readingLines(_scene.backTask), textAlign: TextAlign.center, style: AppText.aside()),
         const SizedBox(height: AppSpace.md),
         // A clock is chosen only once the minute has been watched (saved:
         // [watched]), never before.

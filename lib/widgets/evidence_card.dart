@@ -19,6 +19,7 @@ import 'paper.dart';
 import 'reading_text_scale.dart';
 import 'royal_box_picture.dart';
 import 'symbol_icon.dart';
+import '../core/utils/reading_lines.dart';
 
 /// The grid every [EvidenceTile] sits in (notebook, case archive, the final
 /// case's notebook peek): two columns of a fixed height, not a ratio, so a
@@ -568,7 +569,7 @@ class EvidenceLinkRow extends ConsumerWidget {
                       Text('MATCHES YOUR EVIDENCE', style: AppText.eyebrow(color: dark ? AppColors.goldLight : AppColors.inkBrown)),
                       Text(other.name, style: AppText.title(size: 17, color: dark ? AppColors.goldLight : AppColors.navy)),
                       const SizedBox(height: 2),
-                      Text(link.line, style: AppText.letter(size: 15, color: ink)),
+                      Text(readingLines(link.line), style: AppText.letter(size: 15, color: ink)),
                     ],
                   ),
                 ),
@@ -606,7 +607,7 @@ class EvidenceChip extends StatelessWidget {
               Text(evidence.name, style: AppText.title(size: 20)),
               if (note != null) ...[
                 const SizedBox(height: 2),
-                Text(note!, style: AppText.letter(size: 15)),
+                Text(readingLines(note!), style: AppText.letter(size: 15)),
               ],
             ],
           ),
@@ -659,7 +660,7 @@ class _WitnessesSaid extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text('WHAT THE WITNESSES TOLD YOU', style: AppText.eyebrow(color: AppColors.inkBrown)),
-          Text(where, key: const ValueKey('evidence-statements-where'), style: AppText.caption()),
+          Text(readingLines(where), key: const ValueKey('evidence-statements-where'), style: AppText.caption()),
           for (final st in scene.recorded()) ...[
             const SizedBox(height: 10),
             WitnessStatementLine(scene: scene, statement: st),

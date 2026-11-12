@@ -12,6 +12,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'mark_compare.dart' show WorkshopChoice;
 import 'workshop_papers.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The writing desk ([BlotterScene]): the blotting paper, its three notes
 /// backwards on it; the hand mirror, dragged over it (or set on a note by a
@@ -76,7 +77,7 @@ class _BlotterMirrorState extends State<BlotterMirror> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          all ? _scene.chooseTask : _scene.readTask,
+          readingLines(all ? _scene.chooseTask : _scene.readTask),
           key: const ValueKey('blotter-task'),
           textAlign: TextAlign.center,
           style: AppText.subtitle(),
@@ -343,7 +344,7 @@ class ClockHideaway extends StatelessWidget {
           for (final line in scene.hideawayLines)
             Padding(
               padding: const EdgeInsets.only(bottom: AppSpace.xs),
-              child: Text(line, textAlign: TextAlign.center, style: AppText.subtitle()),
+              child: Text(readingLines(line), textAlign: TextAlign.center, style: AppText.subtitle()),
             ),
           const SizedBox(height: AppSpace.md),
           ConstrainedBox(

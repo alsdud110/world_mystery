@@ -16,6 +16,7 @@ import '../../../widgets/paper.dart';
 import '../../game/game_controller.dart';
 import '../../game/game_providers.dart';
 import '../../notebook/season_archive.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// The [GameProgress.examined] thing saved once a mission's recalled
 /// evidence is brought from the notebook (`missionId:recall`), so the card
@@ -185,8 +186,8 @@ class _EvidenceRecallDockState extends ConsumerState<EvidenceRecallDock> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(title, style: AppText.title(size: 18)),
-                    Text(prompt, style: AppText.letter(size: 15)),
+                    Text(readingLines(title), style: AppText.title(size: 18)),
+                    Text(readingLines(prompt), style: AppText.letter(size: 15)),
                   ],
                 ),
               ),
@@ -341,7 +342,7 @@ class _EvidencePickSheetState extends ConsumerState<EvidencePickSheet> {
                   duration: const Duration(milliseconds: 200),
                   child: _miss == null
                       ? Text(
-                          widget.ask,
+                          readingLines(widget.ask),
                           key: const ValueKey('recall-ask'),
                           textAlign: TextAlign.center,
                           style: AppText.title(size: 18),

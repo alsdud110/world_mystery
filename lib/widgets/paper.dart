@@ -4,6 +4,7 @@ import '../core/theme/app_colors.dart';
 import '../core/theme/app_text.dart';
 import '../core/theme/app_tokens.dart';
 import 'paper_background.dart';
+import '../core/utils/reading_lines.dart';
 
 /// A sheet of paper lying on the desk: the base surface for documents,
 /// letters, notes and scene pictures (instead of rounded app cards).
@@ -274,7 +275,7 @@ class PageHeading extends StatelessWidget {
         if (subtitle != null) ...[
           const SizedBox(height: AppSpace.sm),
           Text(
-            subtitle!,
+            readingLines(subtitle!),
             textAlign: TextAlign.center,
             style: AppText.aside(color: night ? AppColors.goldLight.withValues(alpha: 0.85) : AppColors.muted),
           ),

@@ -8,6 +8,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import '../../../puzzles_v2/core/puzzle_rules.dart';
 import '../../../puzzles_v2/core/timeline_rules.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A timeline to put back together (Puzzle Engine 2.0, `timeline_board`):
 /// the cards' places, the cards still on the table, and the NOT PART OF IT
@@ -153,7 +154,7 @@ class _TimelineBoardState extends State<TimelineBoard> with SingleTickerProvider
           Padding(
             padding: const EdgeInsets.only(top: AppSpace.xs),
             child: Text(
-              picked == null ? 'Tap a card, then tap where it goes.' : 'Now tap where "${picked.title}" goes.',
+              readingLines(picked == null ? 'Tap a card, then tap where it goes.' : 'Now tap where "${picked.title}" goes.'),
               style: AppText.aside(size: 15),
             ),
           ),
@@ -173,7 +174,7 @@ class _TimelineBoardState extends State<TimelineBoard> with SingleTickerProvider
             liveRegion: true,
             child: Padding(
               padding: const EdgeInsets.only(top: AppSpace.sm),
-              child: Text(_note!, key: const ValueKey('timeline-note'), style: AppText.aside(size: 15, color: AppColors.inkBrown)),
+              child: Text(readingLines(_note!), key: const ValueKey('timeline-note'), style: AppText.aside(size: 15, color: AppColors.inkBrown)),
             ),
           ),
         if (!_readOnly) ...[
@@ -326,7 +327,7 @@ class _TimelineBoardState extends State<TimelineBoard> with SingleTickerProvider
                   border: Border.all(color: focused || target ? AppColors.gold : AppLine.faint(0.22), width: focused || target ? AppLine.ink : AppLine.hairline),
                 ),
                 child: Text(
-                  target ? 'Set it aside: it did not happen in this story' : 'Cards that are not part of what happened',
+                  readingLines(target ? 'Set it aside: it did not happen in this story' : 'Cards that are not part of what happened'),
                   style: AppText.aside(size: 15),
                 ),
               ),
@@ -345,10 +346,10 @@ class _TimelineBoardState extends State<TimelineBoard> with SingleTickerProvider
         children: [
           if (tag != null) Text(tag, style: AppText.eyebrow(color: chosen ? AppColors.goldLight : AppColors.goldDeep)),
           Text(c.title, style: AppText.subtitle(color: ink)),
-          Text(c.text, style: AppText.bodyText(size: 15, color: chosen ? AppColors.paperLight : AppColors.inkBrown)),
+          Text(readingLines(c.text), style: AppText.bodyText(size: 15, color: chosen ? AppColors.paperLight : AppColors.inkBrown)),
           if (line != null) ...[
             const SizedBox(height: AppSpace.xs),
-            Text(line, key: const ValueKey('timeline-problem-line'), style: AppText.aside(size: 15, color: AppColors.tryAgain)),
+            Text(readingLines(line), key: const ValueKey('timeline-problem-line'), style: AppText.aside(size: 15, color: AppColors.tryAgain)),
           ],
         ],
       ),
@@ -370,7 +371,7 @@ class _Mark extends StatelessWidget {
     padding: const EdgeInsets.symmetric(horizontal: AppSpace.xs, vertical: 2),
     decoration: year ? BoxDecoration(border: Border.all(color: AppColors.goldDeep, width: AppLine.rule), borderRadius: BorderRadius.circular(AppRadius.paper)) : null,
     child: ExcludeSemantics(
-      child: Text(text, textAlign: TextAlign.center, style: AppText.title(size: year ? 16 : 20, color: light ? AppColors.goldLight : year ? AppColors.goldDeep : AppColors.navy)),
+      child: Text(readingLines(text), textAlign: TextAlign.center, style: AppText.title(size: year ? 16 : 20, color: light ? AppColors.goldLight : year ? AppColors.goldDeep : AppColors.navy)),
     ),
   );
 }

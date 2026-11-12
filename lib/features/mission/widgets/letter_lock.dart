@@ -10,6 +10,7 @@ import '../../../core/theme/app_tokens.dart';
 import '../../../data/models/mission.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
+import '../../../core/utils/reading_lines.dart';
 
 /// A letter lock ([MissionType.letterLock]): a brass plate with a slot for
 /// each letter, and the letter tiles the detective found, loose below it.
@@ -159,11 +160,11 @@ class _LetterLockQuestionState extends State<LetterLockQuestion> {
         // The letters found, on the desk: each stays where it lies, faded
         // while it is in the lock.
         Text(
-          _loose.isEmpty
+          readingLines(_loose.isEmpty
               ? 'Every letter is in the lock.'
               : _full
               ? 'The lock is full. Tap a letter in it to take it out.'
-              : 'Drag a letter into the lock, or tap it.',
+              : 'Drag a letter into the lock, or tap it.'),
           textAlign: TextAlign.center,
           style: AppText.caption(color: AppColors.inkBrown),
         ),

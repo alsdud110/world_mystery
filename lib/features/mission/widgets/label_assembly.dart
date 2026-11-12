@@ -12,6 +12,7 @@ import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'river_papers.dart';
 import 'tower_documents.dart' show CroppedPicture;
+import '../../../core/utils/reading_lines.dart';
 
 /// The green boxes on the quay, then the open one ([BoxesScene]). A box is
 /// tried by a tap ([onTry], kept tried); only the right one opens. In it,
@@ -116,7 +117,7 @@ class _LabelAssemblyState extends State<LabelAssembly> {
       key: const ValueKey('boxes-step'),
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(_scene.boxTask, key: const ValueKey('boxes-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(_scene.boxTask), key: const ValueKey('boxes-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         DecoratedBox(
           decoration: BoxDecoration(boxShadow: AppShadow.paperLift, borderRadius: BorderRadius.circular(AppRadius.paper)),
@@ -174,7 +175,7 @@ class _LabelAssemblyState extends State<LabelAssembly> {
                     borderRadius: BorderRadius.circular(AppRadius.paper),
                     border: Border.all(color: AppColors.parchmentDark, width: AppLine.hairline),
                   ),
-                  child: Text(note, textAlign: TextAlign.center, style: AppText.bodyText(size: 17, color: AppColors.inkBrown)),
+                  child: Text(readingLines(note), textAlign: TextAlign.center, style: AppText.bodyText(size: 17, color: AppColors.inkBrown)),
                 ),
         ),
       ],
@@ -205,7 +206,7 @@ class _LabelAssemblyState extends State<LabelAssembly> {
           ),
         ),
         const SizedBox(height: AppSpace.md),
-        Text(_scene.labelTask, key: const ValueKey('label-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
+        Text(readingLines(_scene.labelTask), key: const ValueKey('label-task'), textAlign: TextAlign.center, style: AppText.subtitle()),
         const SizedBox(height: AppSpace.md),
         _Frame(
           scene: _scene,
@@ -218,7 +219,7 @@ class _LabelAssemblyState extends State<LabelAssembly> {
         ),
         const SizedBox(height: AppSpace.md),
         Text(
-          tray.isEmpty ? 'Every scrap is in the frame.' : 'THE SCRAPS IN THE BOX',
+          readingLines(tray.isEmpty ? 'Every scrap is in the frame.' : 'THE SCRAPS IN THE BOX'),
           textAlign: TextAlign.center,
           style: tray.isEmpty ? AppText.aside(size: 15, color: AppColors.inkBrown) : AppText.eyebrow(),
         ),

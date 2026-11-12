@@ -15,6 +15,7 @@ import '../../widgets/ink_icon.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
 import 'register_screen.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// The detective's name, picture and level, changed after the detective was
 /// made. The name and picture change alone: every case, XP, coin and badge
@@ -132,7 +133,7 @@ abstract final class RestartSeasonDialog {
         key: const ValueKey('restart-season-dialog'),
         title: 'Restart your season?',
         scrollable: true,
-        content: Text(message, textAlign: TextAlign.center, style: AppText.bodyText(size: 16)),
+        content: Text(readingLines(message), textAlign: TextAlign.center, style: AppText.bodyText(size: 16)),
         actions: [
           GameButton(label: 'KEEP MY LEVEL', onPressed: () => Navigator.of(context).pop(false)),
           const SizedBox(height: AppSpace.xs),

@@ -23,6 +23,7 @@ import '../game/game_providers.dart';
 import '../game_master/parent_gate.dart';
 import 'how_to_play_state.dart';
 import 'launch_reveal.dart';
+import '../../core/utils/reading_lines.dart';
 
 /// Title page of the storybook: the name of the game, the harbour at night, and one way in.
 class StartScreen extends ConsumerStatefulWidget {
@@ -831,9 +832,9 @@ class _Greeting extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppSpace.sm),
         child: Text(
-          detectiveName == null
+          readingLines(detectiveName == null
               ? 'Become a Detective.'
-              : 'Welcome back, Detective $detectiveName!',
+              : 'Welcome back, Detective $detectiveName!'),
           textAlign: TextAlign.center,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,

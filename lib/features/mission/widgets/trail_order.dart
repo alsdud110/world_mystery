@@ -9,6 +9,7 @@ import '../../../data/models/scene_trail.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
 import 'question_widgets.dart' show AnswerCallback;
+import '../../../core/utils/reading_lines.dart';
 
 /// A sequence puzzle played on its place ([TrailScene]): the traces are
 /// tapped in the picture in the order the letter gives, each numbered as it
@@ -54,7 +55,7 @@ class TrailOrderQuestion extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(scene.lead, textAlign: TextAlign.center, style: AppText.bodyText(size: 16, color: AppColors.inkBrown)),
+        Text(readingLines(scene.lead), textAlign: TextAlign.center, style: AppText.bodyText(size: 16, color: AppColors.inkBrown)),
         const SizedBox(height: AppSpace.md),
         DecoratedBox(
           decoration: const BoxDecoration(boxShadow: AppShadow.paperLift),
@@ -105,7 +106,7 @@ class TrailOrderQuestion extends StatelessWidget {
           ),
         ),
         const SizedBox(height: AppSpace.sm),
-        Text(scene.guide, textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
+        Text(readingLines(scene.guide), textAlign: TextAlign.center, style: AppText.caption(color: AppColors.inkBrown)),
         const SizedBox(height: AppSpace.md),
         // The order so far, in words: the place names are the English read.
         Semantics(
