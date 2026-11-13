@@ -190,13 +190,13 @@ void main() {
     test('debug and profile may request ads (sample units), a release only when cleared', () {
       for (final platform in AdPlatform.values) {
         expect(AdConfig.requestsAllowed(platform: platform, release: false), isTrue);
-        expect(AdConfig.requestsAllowed(platform: platform, release: true), isFalse);
+        expect(AdConfig.requestsAllowed(platform: platform, release: true, cleared: const {}), isFalse);
         expect(AdConfig.requestsAllowed(platform: platform, release: true, cleared: {platform}), isTrue);
       }
     });
 
-    test('no release is cleared yet', () {
-      expect(AdConfig.releaseCleared, isEmpty);
+    test('every store release is cleared for ads', () {
+      expect(AdConfig.releaseCleared, containsAll(AdPlatform.values));
     });
 
     test('tests are not a release: the sample units, ads allowed', () {

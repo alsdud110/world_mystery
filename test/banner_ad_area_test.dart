@@ -180,10 +180,8 @@ void main() {
       await pumpArea(t, overrides: adOverrides(allowed: false));
       expect(sdk.calls, isEmpty);
       expect(strip, findsNothing);
-      // And no platform is cleared yet: every release build is one.
-      expect(AdConfig.releaseCleared, isEmpty);
       for (final p in AdPlatform.values) {
-        expect(AdConfig.requestsAllowed(platform: p, release: true), isFalse);
+        expect(AdConfig.requestsAllowed(platform: p, release: true, cleared: const {}), isFalse);
       }
     });
 

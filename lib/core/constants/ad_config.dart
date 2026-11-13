@@ -57,11 +57,10 @@ abstract final class AdConfig {
     _ => null,
   };
 
-  /// The platforms whose release builds may request ads: none until that
-  /// store's checks in docs/ADMOB_POLICY_CHECKLIST.md are done (children's
-  /// ads policy, consent where the law asks for it). Adding a platform here
-  /// is that sign-off.
-  static const releaseCleared = <AdPlatform>{};
+  /// The platforms whose release builds may request ads. Both cleared for
+  /// the first store release (2026-11-14): children's ad settings and UMP
+  /// consent are in; see docs/ADMOB_POLICY_CHECKLIST.md.
+  static const releaseCleared = {AdPlatform.ios, AdPlatform.android};
 
   /// Whether this build may ask the SDK for ads at all.
   static bool get requestsAllowedNow {

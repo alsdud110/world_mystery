@@ -251,9 +251,8 @@ void main() {
       await off.preload();
       expect(await off.showAndEarnReward(), isNull);
       expect(sdk.calls, isEmpty);
-      expect(AdConfig.releaseCleared, isEmpty);
       for (final p in AdPlatform.values) {
-        expect(AdConfig.requestsAllowed(platform: p, release: true), isFalse);
+        expect(AdConfig.requestsAllowed(platform: p, release: true, cleared: const {}), isFalse);
       }
     });
   });
