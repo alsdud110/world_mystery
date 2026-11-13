@@ -701,17 +701,3 @@ final operatorAccessProvider = Provider<bool>(
   (ref) => ref.watch(operatorToolsAvailableProvider) && ref.watch(operatorAccessSwitchProvider),
 );
 
-/// One-time pass to the parent report: granted after the parent gate, taken
-/// back when the report is closed, so every visit asks a grown-up again.
-/// Never persisted, so a restart or a typed URL cannot reuse it.
-class ParentReportAccessNotifier extends Notifier<bool> {
-  @override
-  bool build() => false;
-
-  void grant() => state = true;
-
-  void revoke() => state = false;
-}
-
-final parentReportAccessProvider =
-    NotifierProvider<ParentReportAccessNotifier, bool>(ParentReportAccessNotifier.new);

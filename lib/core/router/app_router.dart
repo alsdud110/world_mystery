@@ -126,14 +126,6 @@ final routerProvider = Provider<GoRouter>((ref) {
       final episode = ref.read(currentEpisodeProvider);
       final path = state.uri.path;
 
-      // The parent report pass ends as soon as the app navigates anywhere
-      // else (browser back/forward or a typed URL while the report is open);
-      // a normal pop is handled by the case file screen. Nothing watches this
-      // provider, so changing it here does not trigger a rebuild.
-      if (path != Routes.report && ref.read(parentReportAccessProvider)) {
-        ref.read(parentReportAccessProvider.notifier).revoke();
-      }
-
       if (path == Routes.gameMaster) {
         return ref.read(gameMasterAccessProvider) ? null : Routes.start;
       }
@@ -193,9 +185,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         return progress.isCaseSolved ? null : Routes.map;
       }
       if (path == Routes.report) {
-        // Grown-ups only: opens only right after the parent gate was passed.
-        if (!progress.isCaseSolved) return Routes.map;
-        return ref.read(parentReportAccessProvider) ? null : Routes.solved;
+        return progress.isCaseSolved ? null : Routes.map;
       }
       return null;
     },

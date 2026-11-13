@@ -193,14 +193,13 @@ void main() {
     await wait(t, const Duration(seconds: 3));
   });
 
-  testWidgets('the parent gate still guards the report from the text button', (t) async {
+  testWidgets('the text button opens the report without a gate', (t) async {
     await pumpApp(t);
     await openReport(t);
-    await tapText(t, 'View my detective report', after: const Duration(milliseconds: 600));
-    expect(find.byType(TextField), findsOneWidget, reason: 'the gate asks first');
-    expect(path(), Routes.solved);
-    await tapText(t, 'Cancel', after: const Duration(milliseconds: 800));
-    expect(appRef.read(parentReportAccessProvider), isFalse);
+    await tapText(t, 'View my detective report', after: const Duration(milliseconds: 1200));
+    expect(find.byType(TextField), findsNothing, reason: 'no gate asks');
+    // Pushed over the case file (the router's uri stays /solved): check the screen.
+    expect(find.text('DETECTIVE REPORT'), findsOneWidget);
     await wait(t, const Duration(seconds: 3));
   });
 

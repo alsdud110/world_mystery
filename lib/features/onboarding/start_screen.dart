@@ -283,10 +283,12 @@ class _StartScreenState extends ConsumerState<StartScreen>
                               // The title, centred in the evening sky of the
                               // window, above the harbour: the moon and the
                               // ship on the right stay clear.
-                              // Long-press: the grown-ups' game master tools.
+                              // Long-press: the game master tools, debug builds
+                              // only (the gate alone is a times table, which
+                              // children pass).
                               Center(
                                 child: GestureDetector(
-                                  onLongPress: _openGameMaster,
+                                  onLongPress: kDebugMode ? _openGameMaster : null,
                                   child: _TitleBlock(
                                     intro: _intro,
                                     width: screen.width,

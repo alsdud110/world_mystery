@@ -29,7 +29,6 @@ import '../../widgets/game_dialog.dart';
 import '../../widgets/train_ticket.dart';
 import '../game/game_controller.dart';
 import '../game/game_providers.dart';
-import '../game_master/parent_gate.dart';
 import '../season/next_level_question.dart';
 import '../season/season_actions.dart';
 import '../season/season_overview.dart';
@@ -106,14 +105,8 @@ class _CaseSolvedScreenState extends ConsumerState<CaseSolvedScreen> with Single
     curve: Interval(a, b, curve: curve),
   );
 
-  /// The report is for grown-ups: ask the parent gate every time, and take
-  /// the pass back as soon as the report is closed.
-  Future<void> _openParentReport() async {
-    if (!await ParentGate.show(context) || !mounted) return;
-    final access = ref.read(parentReportAccessProvider.notifier)..grant();
-    await context.push(Routes.report);
-    access.revoke();
-  }
+  /// The report grades nothing, so it opens without a gate.
+  void _openParentReport() => context.push(Routes.report);
 
   Future<void> _playAgain() async {
     final ok = await GameDialog.confirm(
@@ -281,11 +274,9 @@ class _CaseSolvedScreenState extends ConsumerState<CaseSolvedScreen> with Single
                               ),
                             ],
                             const SizedBox(height: AppSpace.md),
-                            // For grown-ups (behind the parent gate): secondary, and
-                            // the lock says it asks first.
+                            // For grown-ups: secondary.
                             GameButton(
                               label: 'VIEW MY DETECTIVE REPORT',
-                              glyph: InkGlyph.lock,
                               singleLine: true, // one line on a 360-wide phone
                               style: GameButtonStyle.outline,
                               onPressed: _openParentReport,
@@ -433,8 +424,8 @@ class _SeasonFinale extends ConsumerWidget {
             onPressed: onBoard,
           ),
         const SizedBox(height: AppSpace.sm),
-        // For grown-ups (behind the parent gate, as the lock says).
-        InkTextButton(label: 'View my detective report', glyph: InkGlyph.lock, color: quiet, onPressed: onReport),
+        // For grown-ups.
+        InkTextButton(label: 'View my detective report', color: quiet, onPressed: onReport),
         Row(
           children: [
             Expanded(

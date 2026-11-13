@@ -9,7 +9,6 @@ import 'package:go_router/go_router.dart';
 import 'package:world_mystery/app.dart';
 import 'package:world_mystery/core/constants/app_constants.dart';
 import 'package:world_mystery/core/router/app_router.dart';
-import 'package:world_mystery/core/theme/app_colors.dart';
 import 'package:world_mystery/data/models/game_progress.dart';
 import 'package:world_mystery/features/game/game_providers.dart';
 import 'package:world_mystery/widgets/game_button.dart';
@@ -18,7 +17,6 @@ import 'package:world_mystery/widgets/paper_background.dart';
 
 import 'full_playthrough_test.dart' show wait;
 import 'helpers.dart';
-import 'parent_gate_test.dart' show gateAnswer;
 import 'title_screen_test.dart' show capture;
 import 'reading_finders.dart';
 
@@ -111,7 +109,7 @@ void main() {
       expect(find.text('No camera here'), findsNothing);
     });
 
-    testWidgets('parent gate and report $tag: the scene under a navy shade; the report, name whole', (t) async {
+    testWidgets('report $tag: opens without a gate; the report, name whole', (t) async {
       final ref = await pumpApp(t, size, solved());
       ref.read(routerProvider).go(Routes.solved);
       await wait(t, const Duration(milliseconds: 3200));
@@ -119,14 +117,8 @@ void main() {
       await t.scrollUntilVisible(report, 300, scrollable: find.byType(Scrollable).first);
       await wait(t, const Duration(milliseconds: 300));
       await t.tap(report);
-      await wait(t, const Duration(milliseconds: 600));
-      expect(find.text('For grown-ups'), findsOneWidget);
-      final barrier = t.widgetList<ModalBarrier>(find.byType(ModalBarrier)).last;
-      expect(barrier.color, AppColors.navyDeep.withValues(alpha: 0.55), reason: 'the scene stays in view');
-      await capture(t, 'parent_gate_$tag');
-      await t.enterText(find.byType(TextField), gateAnswer(t));
-      await t.tap(find.text('OK'));
       await wait(t, const Duration(milliseconds: 1200));
+      expect(find.text('For grown-ups'), findsNothing, reason: 'no gate');
       expect(find.text('DETECTIVE REPORT'), findsOneWidget, reason: 'the report opens (pushed over the case file)');
       expect(t.takeException(), isNull);
       // The name, whole on one line (shrunk if it must), not cut with "…".

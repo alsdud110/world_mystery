@@ -8,11 +8,9 @@ import 'package:world_mystery/core/constants/app_constants.dart';
 import 'package:world_mystery/core/router/app_router.dart';
 import 'package:world_mystery/data/models/game_progress.dart';
 import 'package:world_mystery/features/game/game_controller.dart';
-import 'package:world_mystery/features/game/game_providers.dart' show parentReportAccessProvider;
 
 import 'full_playthrough_test.dart' show tapText, wait;
 import 'helpers.dart';
-import 'parent_gate_test.dart' show gateAnswer;
 
 Future<WidgetRef> pumpApp(WidgetTester t, GameProgress saved) async {
   t.view.physicalSize = const Size(1170, 2532);
@@ -91,57 +89,28 @@ void main() {
   // The report is pushed on top of /solved, so check what is on screen.
   final report = find.text('Episode 01 Result');
 
-  testWidgets('the parent report needs the parent gate every time', (t) async {
+  testWidgets('the detective report opens without a gate once the case is solved', (t) async {
     final ref = await pumpApp(t, solvedCase);
     final router = ref.read(routerProvider);
+    router.go(Routes.solved);
+    await wait(t, const Duration(milliseconds: 3200)); // the file, stamp, XP and footer all in
 
-    // A typed URL or deep link cannot open it.
-    router.go(Routes.report);
-    await wait(t, const Duration(milliseconds: 600));
-    expect(pathOf(ref), Routes.solved);
-    await wait(t, const Duration(seconds: 3));
-
-    // Wrong answer or cancel: no report.
-    await tapText(t, 'VIEW MY DETECTIVE REPORT', after: const Duration(milliseconds: 600));
-    await t.enterText(find.byType(TextField), '1');
-    await tapText(t, 'OK', after: const Duration(milliseconds: 800));
-    expect(report, findsNothing);
-    expect(ref.read(parentReportAccessProvider), isFalse);
-    await tapText(t, 'VIEW MY DETECTIVE REPORT', after: const Duration(milliseconds: 600));
-    await tapText(t, 'Cancel', after: const Duration(milliseconds: 800));
-    expect(report, findsNothing);
-    expect(ref.read(parentReportAccessProvider), isFalse);
-
-    // Right answer: the report opens.
-    await tapText(t, 'VIEW MY DETECTIVE REPORT', after: const Duration(milliseconds: 600));
-    await t.enterText(find.byType(TextField), gateAnswer(t));
-    await tapText(t, 'OK', after: const Duration(milliseconds: 1200));
+    // The button opens it at once: no question asked.
+    await tapText(t, 'VIEW MY DETECTIVE REPORT', after: const Duration(milliseconds: 1200));
+    expect(find.byType(TextField), findsNothing);
     expect(report, findsOneWidget);
 
-    // Back to the case file: the pass is gone, so the URL is blocked again.
+    // Back to the case file.
     await t.tap(find.byTooltip('Back'));
     await wait(t, const Duration(milliseconds: 800));
     expect(report, findsNothing);
     expect(find.text('CASE CLOSED'), findsOneWidget);
-    expect(ref.read(parentReportAccessProvider), isFalse);
-    router.go(Routes.report);
-    await wait(t, const Duration(milliseconds: 600));
-    expect(pathOf(ref), Routes.solved);
-    expect(report, findsNothing);
-    await wait(t, const Duration(seconds: 3));
 
-    // Leaving the report any other way (e.g. browser navigation) also ends it.
-    await tapText(t, 'VIEW MY DETECTIVE REPORT', after: const Duration(milliseconds: 600));
-    await t.enterText(find.byType(TextField), gateAnswer(t));
-    await tapText(t, 'OK', after: const Duration(milliseconds: 1200));
-    expect(report, findsOneWidget);
-    router.go(Routes.map);
-    await wait(t, const Duration(milliseconds: 800));
-    expect(ref.read(parentReportAccessProvider), isFalse);
+    // A typed URL opens it too, as the case is solved.
     router.go(Routes.report);
     await wait(t, const Duration(milliseconds: 600));
-    expect(pathOf(ref), Routes.solved);
-    expect(report, findsNothing);
+    expect(pathOf(ref), Routes.report);
+    expect(report, findsOneWidget);
     await wait(t, const Duration(seconds: 3));
   });
 
