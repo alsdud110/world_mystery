@@ -516,7 +516,7 @@ void main() {
       expect(r.top, greaterThanOrEqualTo(0));
       expect(r.bottom, lessThanOrEqualTo(size.height), reason: 'CLOSE on screen at $tag');
       // The whole card is still there (it scrolls on a small phone).
-      expect(findReadable('Four pictures for four locks.\nRead them from left to right.'), findsOneWidget);
+      expect(findReadable('Four pictures for four locks.\nEach place gave you a number.'), findsOneWidget);
       await capture(t, 'art_crown_zoom_$tag');
       await t.tap(close);
       await settle(t, const Duration(milliseconds: 600));

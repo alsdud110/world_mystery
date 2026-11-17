@@ -307,13 +307,13 @@ const Map<String, dynamic> episode01Json = {
       ],
       // The card by the gate (buckingham_palace_crown_card.webp), examined in
       // the scene (season1_decodes.dart): its code, read, shows a hidden
-      // message, the letter below, and the order of the four pictures (e05's
-      // symbols). It gives the order only: the numbers stay in the notebook,
-      // for the final locks.
+      // message, the letter below, and the four pictures (e05's symbols).
+      // The locks already wear the pictures in this order; the message points
+      // at the numbers in the notebook, which is what opens them.
       'letterIntro': 'The crown card, decoded:',
       'letter':
           'Four pictures. Four locks.\n'
-          'Remember the order.',
+          'Each place gave you a number.',
       'type': 'examine',
       'question': 'Examine the card near the palace gate.',
       // Sent by the scene once the card is taken: never typed.
@@ -335,7 +335,7 @@ const Map<String, dynamic> episode01Json = {
         'icon': 'crown',
         'description': 'A golden card with a crown on it.',
         'inscription':
-            'Four pictures for four locks.\nRead them from left to right.',
+            'Four pictures for four locks.\nEach place gave you a number.',
         'symbols': ['clock', 'train', 'park', 'museum'],
       },
       'successMessage': 'The last door is open!',

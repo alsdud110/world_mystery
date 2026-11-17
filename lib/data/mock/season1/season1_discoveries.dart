@@ -66,10 +66,8 @@ const Map<String, Discovery> season1Discoveries = {
     type: DiscoveryType.evidenceFound,
     timing: DiscoveryTiming.fromPuzzle,
     title: 'CROWN SYMBOL',
-    // The order only, never the numbers: those are put together at the
-    // final locks. (Not the card's own line, "Four pictures for four
-    // locks.": said once.)
-    detail: 'The crown code, decoded: the four pictures, in the order of the locks. Keep the card for the Royal Box.',
+    // Points at the numbers (the locks already wear the pictures in order).
+    detail: 'The crown code, decoded: four pictures, one for each lock. Each place gave you a number for its lock.',
     showEvidence: true,
   ),
 

@@ -80,6 +80,6 @@ void main() {
     // and M2's scene after it read the bell as Big Ben (same day, approved).
     // Was 3330943963 before the glossary got the past forms glided, closed
     // and guarded (2026-11-10, 9f602da, requested).
-    expect(fnv(withoutNames(jsonEncode({...json, 'glossary': glossary}))), 1002971098);
+    expect(fnv(withoutNames(jsonEncode({...json, 'glossary': glossary}))), 4269963728); // was 1002971098 before the crown card pointed at the numbers (2026-11-17)
   });
 }

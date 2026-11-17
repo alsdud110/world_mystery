@@ -198,7 +198,7 @@ const Map<String, Object?> ep01Junior = {
       'letterIntro': 'The crown card, after you decode it:',
       // Drawn on the card where its code was: the same at every level.
       'letter': 'Four pictures. Four locks.\n'
-          'Remember the order.',
+          'Each place gave you a number.',
       // How to play it: the same at every level.
       'question': 'Examine the card near the palace gate.',
       'hints': [
@@ -451,7 +451,7 @@ const Map<String, Object?> ep01Master = {
       'letterIntro': 'The crown card, its code broken:',
       // Drawn on the card where its code was: the same at every level.
       'letter': 'Four pictures. Four locks.\n'
-          'Remember the order.',
+          'Each place gave you a number.',
       // How to play it: the same at every level.
       'question': 'Examine the card near the palace gate.',
       'hints': [
@@ -718,7 +718,7 @@ const Map<String, Discovery> ep01JuniorDiscoveries = {
     type: DiscoveryType.evidenceFound,
     timing: DiscoveryTiming.fromPuzzle,
     title: 'CROWN SYMBOL',
-    detail: 'The crown code is decoded: four pictures, in the order of the four locks. Keep the card for the Royal Box.',
+    detail: 'The crown code is decoded: four pictures, one for each lock. Every place you visited gave you a number for its lock.',
     showEvidence: true,
   ),
 };
@@ -757,7 +757,7 @@ const Map<String, Discovery> ep01MasterDiscoveries = {
     type: DiscoveryType.evidenceFound,
     timing: DiscoveryTiming.fromPuzzle,
     title: 'CROWN SYMBOL',
-    detail: 'The code is broken: four pictures, in the very order of the locks. Guard the card well; the Royal Box awaits.',
+    detail: 'The code is broken: four pictures, one for each lock. Every place left you a number for its lock; the Royal Box awaits.',
     showEvidence: true,
   ),
 };

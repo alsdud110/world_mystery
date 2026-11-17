@@ -1415,6 +1415,14 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
     ],
   );
 
+  Widget get _notebookButton => GameButton(
+    label: 'OPEN MY NOTEBOOK',
+    glyph: InkGlyph.notebook,
+    style: GameButtonStyle.outline,
+    // The notebook's own sound as it opens, no casebook tap with it.
+    onPressed: _peekNotebook,
+  );
+
   List<Widget> _puzzle(Mission m, int hintsShown) => [
     // The tower untested (Case 09): the case's card above says what to do,
     // once; no heading repeats it. Then the question heads the page.
@@ -1483,6 +1491,16 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
           ],
         ),
       ),
+      // Picture locks: what a picture is for, said where the dials are (the
+      // letter has scrolled away), and the notebook that holds the numbers.
+      if (m.dialSymbols.isNotEmpty) ...[
+        const SizedBox(height: 14),
+        GlossaryText(
+          'Each picture is a place. Its number is in your notebook.',
+          textAlign: TextAlign.center,
+          style: AppText.subtitle(color: AppColors.paperLight),
+        ),
+      ],
       const SizedBox(height: 22),
       // Custom Asset Required: an open-lock glyph for this button.
       GameButton(
@@ -1490,6 +1508,10 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
         style: GameButtonStyle.glass,
         onPressed: _tryOpen,
       ),
+      if (m.dialSymbols.isNotEmpty) ...[
+        const SizedBox(height: 12),
+        _notebookButton,
+      ],
       // The letter again, without scrolling back up (as on every puzzle).
       Center(
         child: InkTextButton(
@@ -1850,14 +1872,11 @@ class _FinalMissionScreenState extends ConsumerState<FinalMissionScreen>
     ],
     // The harder words of the final's story and letter, listed (every final puzzle).
     Center(child: WordsLink(text: [...m.story, m.letter, m.question].join('\n'), color: AppColors.goldLight)),
-    const SizedBox(height: 12),
-    GameButton(
-      label: 'OPEN MY NOTEBOOK',
-      glyph: InkGlyph.notebook,
-      style: GameButtonStyle.outline,
-      // The notebook's own sound as it opens, no casebook tap with it.
-      onPressed: _peekNotebook,
-    ),
+    // Picture locks have it under the dials already.
+    if (!(m.type == MissionType.finalCode && _clock == null && m.dialSymbols.isNotEmpty)) ...[
+      const SizedBox(height: 12),
+      _notebookButton,
+    ],
     const SizedBox(height: 18),
     TipsPanel(
       hints: m.hints,

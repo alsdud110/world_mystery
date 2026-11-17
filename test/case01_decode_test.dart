@@ -211,7 +211,7 @@ void main() {
     });
 
     test('the hidden message is the letter, short: four pictures, four locks, remember the order', () {
-      expect(m05.letter, 'Four pictures. Four locks.\nRemember the order.');
+      expect(m05.letter, 'Four pictures. Four locks.\nEach place gave you a number.');
     });
   });
 
@@ -221,7 +221,7 @@ void main() {
       expect(e.id, 'e05');
       expect(e.name, 'Crown Symbol');
       expect(e.icon, 'crown');
-      expect(e.inscription, 'Four pictures for four locks.\nRead them from left to right.');
+      expect(e.inscription, 'Four pictures for four locks.\nEach place gave you a number.');
       final c = m05.clue!;
       expect(c.id, 'c05');
       expect(c.title, 'The Royal Box');
@@ -412,7 +412,7 @@ void main() {
         expect(writtenNumbers(t), isEmpty, reason: 'pictures only: no number, no 7924');
         expect(find.textContaining('7924'), findsNothing);
         expect(findReadableContaining('Four pictures. Four locks.'), findsOneWidget);
-        expect(findReadableContaining('Remember the order.'), findsOneWidget);
+        expect(findReadableContaining('Each place gave you a number.'), findsOneWidget);
         expect(findReadableContaining('Detective'), findsNothing, reason: 'short: no name');
         expect(t.getRect(take()).bottom, lessThanOrEqualTo(size.height), reason: 'TAKE THE CARD in sight');
         expect(audio.played.length, heard, reason: 'no sound of its own: the card is seen, not heard');

@@ -194,7 +194,9 @@ void main() {
         // Story links (2026-10-23, approved): the final's box is behind the
         // secret door of M5 (was 972650650). Then (same day, approved) the
         // golden key's tag names the next stop, the bell (was 759690419).
-        'ep01': 681127705,
+        // The crown card's message and e05 point at the numbers, not the
+        // order (2026-11-17, requested; was 681127705).
+        'ep01': 933071191,
         // Story links (2026-10-23, approved): in 02-F, Mrs Bell rings the
         // great bell once the hands are set (was 1023821448).
         // Puzzle wording (2026-10-23, approved): 02-M2's note says "the

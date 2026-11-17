@@ -434,13 +434,13 @@ const _otherCases = <String, int>{
   // (the card's hidden message), question, answer and two tips; four
   // glossary words. Its story, clue c05, evidence e05, transition and the
   // final (7924) unchanged. Value before it: ep01 3068875867. Then its
-  // letter shortened to "Four pictures. Four locks. / Remember the order."
+  // letter shortened to "Four pictures. Four locks. / Each place gave you a number."
   // (no name; requested): value before it 2180131402.
   // Story links (2026-10-23, approved): the final's box is behind the secret
   // door of M5. Value before it: ep01 3696114919. Then (same day, approved)
   // the golden key's tag names the next stop, the bell: value before it
   // 2832071042.
-  'ep01': 2232261687, // was 2842519320 before the past forms glided, closed, guarded (2026-11-10)
+  'ep01': 3930300493, // was 2232261687 before the crown card pointed at the numbers (2026-11-17)
   // TYPE B Phase 2 (approved 2026-10-12): Case 02, 03, 04.
   // Story links (2026-10-23, approved): in 02-F, Mrs Bell rings the great
   // bell once the hands are set. Value before it: ep02 3508708899.
