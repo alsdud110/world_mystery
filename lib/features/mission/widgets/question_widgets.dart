@@ -774,7 +774,26 @@ class _ImageTile extends StatelessWidget {
                       color: ArtAssets.onParchment(file) ? AppColors.parchment : AppColors.ink,
                       child: DisplaySizedImage(file, fit: BoxFit.contain, excludeFromSemantics: true),
                     ),
-                  null => LandmarkArt(artwork, borderRadius: 2, showName: false),
+                  null => switch (ArtAssets.parkMapMarks[artwork]) {
+                      // Case 07's park map: the same picture, the X where the option says.
+                      final at? => ColoredBox(
+                          color: AppColors.parchment,
+                          child: LayoutBuilder(
+                            builder: (context, box) => Stack(
+                              fit: StackFit.expand,
+                              children: [
+                                Image.asset(ArtAssets.parkMap, fit: BoxFit.contain, excludeFromSemantics: true),
+                                Positioned(
+                                  left: box.maxWidth * at.dx - box.maxWidth * 0.08,
+                                  top: box.maxHeight * at.dy - box.maxWidth * 0.08,
+                                  child: InkIcon(InkGlyph.close, size: box.maxWidth * 0.16, color: AppColors.waxRed),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      null => LandmarkArt(artwork, borderRadius: 2, showName: false),
+                    },
                 },
               ),
               Positioned(left: 6, top: 6, child: _LetterMark(letter)),

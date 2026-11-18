@@ -15,6 +15,7 @@ import '../../../widgets/evidence_card.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/glossary_text.dart';
 import '../../../widgets/ink_icon.dart';
+import '../../../widgets/art_assets.dart';
 import '../../../widgets/landmark_art.dart' show ClockHandsPainter;
 import '../../game/game_providers.dart';
 import 'opera_papers.dart' show PixelCrop;
@@ -1304,7 +1305,11 @@ class _GearMarkView extends StatelessWidget {
                       duration: const Duration(milliseconds: 350),
                       transitionBuilder: (child, a) => ScaleTransition(scale: Tween(begin: 1.25, end: 1.0).animate(a), child: FadeTransition(opacity: a, child: child)),
                       child: p.stamped
-                          ? const InkIcon(InkGlyph.gear, key: ValueKey('gear-mark'), size: 190, color: Color(0xFF3B2340))
+                          ? ColorFiltered(
+                              key: const ValueKey('gear-mark'),
+                              colorFilter: const ColorFilter.mode(Color(0xFF3B2340), BlendMode.srcIn),
+                              child: Image.asset(ArtAssets.markGear, width: 190, height: 190, fit: BoxFit.contain, excludeFromSemantics: true),
+                            )
                           : const SizedBox(key: ValueKey('gear-blank'), width: 190, height: 190),
                     ),
                   ),

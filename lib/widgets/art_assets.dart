@@ -599,6 +599,26 @@ abstract final class ArtAssets {
   /// The Raven Society mark (full colour, not a tinted [symbols] glyph).
   static const ravenMark = '${_london}symbols/raven_mark.webp';
 
+  /// The Clockmaker before Case 12 shows his face: a figure in shadow, his
+  /// watch in hand (the London board, Cases 05 to 11).
+  static const clockmakerShadow = '${_london}characters/clockmaker_shadow.webp';
+
+  /// Case 07's park map, seen from above; each option's X is put on it at
+  /// [parkMapMarks] (fractions of the picture).
+  static const parkMap = '${_london}cases/case_07/park_map.webp';
+  static const parkMapMarks = <Artwork, Offset>{
+    Artwork.parkMapA: Offset(0.67, 0.17), // beside the right bench
+    Artwork.parkMapB: Offset(0.33, 0.28), // beside the left bench
+    Artwork.parkMapC: Offset(0.29, 0.72), // under the tree
+    Artwork.parkMapD: Offset(0.31, 0.14), // at the old gate (clear of the tile's letter)
+  };
+
+  /// The maker's marks (Paris Cases 09, 10, 12) and Case 10's sun token, on
+  /// transparency: the marks are tinted where they are shown.
+  static const markGear = '$_symbols/mark_gear.webp';
+  static const markKey = '$_symbols/mark_key.webp';
+  static const sunToken = '$_symbols/sun_token.webp';
+
   /// Case 04's black wax seal, a raven pressed into it (on transparency):
   /// the seal of R.'s letters and the Black Wax Seal in the notebook.
   static const blackWaxSeal = '${_london}objects/black_wax_seal_raven.webp';

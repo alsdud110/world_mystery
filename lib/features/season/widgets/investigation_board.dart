@@ -584,15 +584,11 @@ class _FigureNote extends StatelessWidget {
     }
 
     final center = switch (view.figure) {
-      'ravens' => InkIcon(InkGlyph.raven, size: art * 0.8, color: AppColors.ink),
+      // The feather from Case 02 (its evidence picture), not a drawn bird.
+      'ravens' => picture(ArtAssets.evidencePictures['ep02_e4']!, InkGlyph.raven),
       'ravenSociety' => picture(ArtAssets.ravenMark, InkGlyph.raven, round: true),
-      'clockmaker' => Stack(
-          alignment: Alignment.center,
-          children: [
-            InkIcon(InkGlyph.gear, size: art * 0.85, color: AppColors.inkBrown.withValues(alpha: 0.55)),
-            Text('?', style: AppText.title(size: art * 0.45, color: AppColors.burgundy)),
-          ],
-        ),
+      // The Clockmaker in shadow, his watch in hand (his face waits for Case 12).
+      'clockmaker' => picture(ArtAssets.clockmakerShadow, InkGlyph.gear),
       'clockmakerWatch' => picture(ArtAssets.objects['pocketWatch']!, InkGlyph.clock),
       // Paris: the Clockmaker's face, once Case 12 has shown it.
       'emile' => ClipOval(

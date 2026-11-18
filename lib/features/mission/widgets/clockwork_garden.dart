@@ -11,6 +11,7 @@ import '../../../data/models/garden_puzzles.dart';
 import '../../../data/models/scene_explore.dart' show ScenePixels;
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
+import '../../../widgets/art_assets.dart';
 import '../../../widgets/landmark_art.dart' show ClockHandsPainter;
 import 'river_papers.dart' show PictureCanvas;
 import 'star_records.dart' show PlateCloser, StarRoomPicture;
@@ -1014,14 +1015,18 @@ class MarkGlyph extends StatelessWidget {
   Widget build(BuildContext context) => SizedBox(
     width: size,
     height: size,
-    child: switch (kind) {
-      MarkKind.gear => InkIcon(InkGlyph.gear, size: size, color: color),
-      MarkKind.key => InkIcon(InkGlyph.key, size: size, color: color),
-      MarkKind.hands => ColorFiltered(
-        colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-        child: Image.asset(scene.handsFile, fit: BoxFit.contain, excludeFromSemantics: true),
+    child: ColorFiltered(
+      colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+      child: Image.asset(
+        switch (kind) {
+          MarkKind.gear => ArtAssets.markGear,
+          MarkKind.key => ArtAssets.markKey,
+          MarkKind.hands => scene.handsFile,
+        },
+        fit: BoxFit.contain,
+        excludeFromSemantics: true,
       ),
-    },
+    ),
   );
 }
 

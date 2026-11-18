@@ -12,6 +12,7 @@ import '../../../data/models/scene_explore.dart' show ScenePixels;
 import '../../../data/models/star_puzzles.dart';
 import '../../../widgets/game_button.dart';
 import '../../../widgets/ink_icon.dart';
+import '../../../widgets/art_assets.dart';
 import 'clockwork_garden.dart' show DialFace;
 import 'river_papers.dart' show PictureCanvas;
 import '../../../core/utils/reading_lines.dart';
@@ -34,6 +35,12 @@ const _dialFace = 495.0;
 const _photoInk = Color(0xFF2B2118);
 
 /// A short line under a puzzle: what just happened (read out as it changes).
+/// [file] (a mark on transparency) in [color], filling its box.
+Widget _tinted(String file, Color color) => ColorFiltered(
+  colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+  child: Image.asset(file, fit: BoxFit.contain, excludeFromSemantics: true),
+);
+
 class _Say extends StatelessWidget {
   const _Say(this.line, {this.good = false, this.dark = false});
 
@@ -390,7 +397,7 @@ class _Drum extends StatelessWidget {
             top: plate.center.dy * s - plate.height * s * 0.4,
             width: plate.height * s * 0.8,
             height: plate.height * s * 0.8,
-            child: InkIcon(InkGlyph.gear, size: plate.height * s * 0.8, color: AppColors.leatherDeep),
+            child: _tinted(ArtAssets.markGear, AppColors.leatherDeep),
           ),
         ],
       ),
@@ -1586,7 +1593,8 @@ class SunDialStage extends StatelessWidget {
                       border: Border.all(color: AppColors.goldLight, width: 2),
                       boxShadow: [BoxShadow(color: AppColors.goldLight.withValues(alpha: 0.55), blurRadius: 14)],
                     ),
-                    child: const Center(child: InkIcon(InkGlyph.sun, size: 34, color: AppColors.goldLight)),
+                    padding: const EdgeInsets.all(5),
+                    child: Image.asset(ArtAssets.sunToken, fit: BoxFit.contain, excludeFromSemantics: true),
                   ),
                 ),
               ),
@@ -1963,7 +1971,7 @@ class TrialLogView extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned.fill(child: Image.asset(scene.logFile, fit: BoxFit.fill, excludeFromSemantics: true)),
-                Positioned.fromRect(rect: scene.emblem.deflate(4), child: const FittedBox(child: InkIcon(InkGlyph.gear, size: 30, color: AppColors.inkBrown))),
+                Positioned.fromRect(rect: scene.emblem.deflate(4), child: _tinted(ArtAssets.markGear, AppColors.inkBrown)),
                 // The contents.
                 Positioned(
                   left: l.left + 60,
